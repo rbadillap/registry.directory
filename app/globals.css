@@ -116,10 +116,14 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   html {
-    @apply whitespace-pre-line antialiased;
+    @apply whitespace-pre-line antialiased scroll-smooth;
   }
+  
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 0, "calt" 0;
+    text-rendering: optimizeLegibility;
   }
 }

@@ -1,5 +1,3 @@
-'use client'
-
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Plus, ExternalLink as ExternalLinkIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -26,7 +24,6 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
                 variant="ghost"
                 className="text-muted-foreground hover:text-primary p-1"
                 tabIndex={0}
-                onClick={e => { e.stopPropagation(); }}
               >
                 <a
                   href={entry.url}
