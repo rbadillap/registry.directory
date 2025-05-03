@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { DirectoryList, DirectoryEntry } from "@/components/directory-list";
 
 export const metadata: Metadata = {
   title: "registry.directory - a collection of shadcn/ui registries",
@@ -22,6 +23,29 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
+  const entries: DirectoryEntry[] = [
+    {
+      name: "shadcn/ui",
+      description: "The official registry for shadcn/ui components.",
+      url: "https://ui.shadcn.com/",
+    },
+    {
+      name: "Aceternity UI",
+      description: "Professional Next.js, Tailwind CSS and Framer Motion components.",
+      url: "https://ui.aceternity.com/",
+    },
+    {
+      name: "Tweakcn",
+      description: "A powerful Theme Editor for shadcn/ui.",
+      url: "https://tweakcn.com/",
+    },
+    {
+      name: "Shadcn UI Blocks",
+      description: "Customized Shadcn UI Blocks & Components | Preview & Copy",
+      url: "https://shadcnui-blocks.com/",
+    },
+    
+  ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <div className="flex items-center gap-2">
@@ -62,6 +86,7 @@ export default async function Home() {
         <span className="text-muted-foreground"> registries</span>
       </div>
 
+      <DirectoryList entries={entries} />
     </main>
   );
 }
