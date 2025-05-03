@@ -44,7 +44,19 @@ export default async function Home() {
       description: "Customized Shadcn UI Blocks & Components | Preview & Copy",
       url: "https://shadcnui-blocks.com/",
     },
+    {
+      name: "Origin UI",
+      description: "Beautiful UI components built with Tailwind CSS and React",
+      url: "https://originui.com/",
+    },
+    {
+      name: "ui.pub",
+      description: "Perfect tools to build next-gen UI",
+      url: "https://uipub.com?ref=registry.directory",
+    },
     
+    
+
   ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
