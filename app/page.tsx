@@ -40,11 +40,6 @@ export default async function Home() {
       url: "https://tweakcn.com/",
     },
     {
-      name: "Shadcn UI Blocks",
-      description: "Customized Shadcn UI Blocks & Components | Preview & Copy",
-      url: "https://shadcnui-blocks.com/",
-    },
-    {
       name: "Origin UI",
       description: "Beautiful UI components built with Tailwind CSS and React",
       url: "https://originui.com/",
@@ -52,11 +47,28 @@ export default async function Home() {
     {
       name: "ui.pub",
       description: "Perfect tools to build next-gen UI",
-      url: "https://uipub.com?ref=registry.directory",
+      url: "https://uipub.com?utm_source=registry.directory",
     },
-    
-    
-
+    {
+      name: "Shadcn UI Blocks",
+      description: "Customized Shadcn UI Blocks & Components | Preview & Copy",
+      url: "https://shadcnui-blocks.com/",
+    },
+    {
+      name: "Shadcn Form Builder",
+      description: "Create forms with Shadcn, react-hook-form and zod within minutes.",
+      url: "https://shadcn-form.com/",
+    },
+    {
+      name: "Shadcn Blocks",
+      description: "A collection of premium blocks for Shadcn UI + Tailwind",
+      url: "https://shadcnblocks.com",
+    },
+    {
+      name: "StyleGlide",
+      description: "Create your own design system",
+      url: "https://www.styleglide.ai/",
+    },
   ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
