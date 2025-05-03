@@ -25,9 +25,20 @@ export async function GET() {
 
                 {/* Main content */}
                 <div tw="flex flex-col items-center">
-                    <h1 tw="text-7xl font-medium text-white tracking-tight">
-                        registry.directory
+                    <h1
+                        tw="flex items-center text-white font-medium text-4xl"
+                        style={{ fontFamily: 'Geist' }}
+                    >
+                        registry
+                        <span tw="text-stone-400 text-4xl font-medium">.directory</span>
+                        <span
+                            tw="text-xs text-white rounded-full border bg-rose-700 px-2 py-0.5 flex items-center ml-2"
+                            style={{ fontWeight: 500, fontFamily: 'Geist' }}
+                        >
+                            beta
+                        </span>
                     </h1>
+
                     <p tw="text-xl text-slate-300/90 mt-4">
                         the place where
                         <span tw="pl-2 flex items-center">
@@ -65,7 +76,7 @@ export async function GET() {
                     data: geistSansMedium,
                     style: "normal",
                     weight: 500,
-                }
+                },
             ],
         }
     );
