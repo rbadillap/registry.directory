@@ -56,7 +56,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
       ))}
       {/* Placeholder Card */}
       <a
-        href="https://x.com/rbadillap/status/1918371299916722679"
+        href="https://github.com/rbadillap/registry.directory"
         target="_blank"
         rel="noopener noreferrer"
         className="block h-full"
