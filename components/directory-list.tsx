@@ -15,43 +15,35 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
     <div className="w-full max-w-2xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
       {entries.map((entry) => (
         <div key={entry.url} className="h-full">
-          <a
-            href={entry.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block h-full group"
-            tabIndex={-1}
-          >
-            <Card className="transition-shadow hover:shadow-md h-full cursor-pointer">
-              <CardHeader className="flex flex-row items-start justify-between gap-2 px-4 py-2">
-                <CardTitle className="font-mono text-base">
-                  {entry.name}
-                </CardTitle>
-                <Button
-                  asChild
-                  size="icon"
-                  variant="ghost"
-                  className="text-muted-foreground hover:text-primary p-1"
-                  tabIndex={0}
-                  onClick={e => { e.stopPropagation(); }}
+          <Card className="transition-shadow hover:shadow-md h-full">
+            <CardHeader className="flex flex-row items-start justify-between gap-2 px-4 py-2">
+              <CardTitle className="font-mono text-base">
+                {entry.name}
+              </CardTitle>
+              <Button
+                asChild
+                size="icon"
+                variant="ghost"
+                className="text-muted-foreground hover:text-primary p-1"
+                tabIndex={0}
+                onClick={e => { e.stopPropagation(); }}
+              >
+                <a
+                  href={entry.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${entry.name}`}
                 >
-                  <a
-                    href={entry.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Open ${entry.name}`}
-                  >
-                    <ExternalLinkIcon className="w-4 h-4" />
-                  </a>
-                </Button>
-              </CardHeader>
-              <CardContent className="px-4 pb-4 pt-0">
-                <CardDescription className="font-mono text-xs">
-                  {entry.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </a>
+                  <ExternalLinkIcon className="w-4 h-4" />
+                </a>
+              </Button>
+            </CardHeader>
+            <CardContent className="px-4 pb-4 pt-0">
+              <CardDescription className="font-mono text-xs">
+                {entry.description}
+              </CardDescription>
+            </CardContent>
+          </Card>
         </div>
       ))}
       {/* Placeholder Card */}
