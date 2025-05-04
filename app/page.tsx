@@ -77,6 +77,11 @@ export default async function Home() {
         "A collection of neobrutalism-styled, shadcn/ui based components.",
       url: "https://neobrutalism.dev/",
     },
+    {
+      name: "kokonut/ui",
+      description: "100+ UI components built with Tailwind CSS and shadcn/ui for Next.js",
+      url: "https://kokonutui.com/",
+    },
   ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
