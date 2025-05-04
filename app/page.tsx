@@ -77,6 +77,11 @@ export default async function Home() {
         "A collection of neobrutalism-styled, shadcn/ui based components.",
       url: "https://neobrutalism.dev/",
     },
+    {
+      name: "Magic UI",
+      description: "UI library for Design Engineers",
+      url: "https://magicui.design/",
+    },
   ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
