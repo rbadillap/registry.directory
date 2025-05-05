@@ -82,6 +82,11 @@ export default async function Home() {
       description: "100+ UI components built with Tailwind CSS and shadcn/ui for Next.js",
       url: "https://kokonutui.com/",
     },
+    {
+      name: "Magic UI",
+      description: "UI library for Design Engineers",
+      url: "https://magicui.design/",
+    },
   ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
