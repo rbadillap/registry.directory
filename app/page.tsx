@@ -95,7 +95,7 @@ export default async function Home() {
     {
       name: "Kibo UI",
       description: "A custom registry of composable, accessible and open source components",
-      url: "https://cult-ui.com",
+      url: "https://kibo-ui.com",
     },
   ];
   return (
