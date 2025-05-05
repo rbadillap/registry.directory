@@ -78,6 +78,11 @@ export default async function Home() {
       url: "https://neobrutalism.dev/",
     },
     {
+      name: "kokonut/ui",
+      description: "100+ UI components built with Tailwind CSS and shadcn/ui for Next.js",
+      url: "https://kokonutui.com/",
+    },
+    {
       name: "Magic UI",
       description: "UI library for Design Engineers",
       url: "https://magicui.design/",
