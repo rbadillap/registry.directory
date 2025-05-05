@@ -87,6 +87,16 @@ export default async function Home() {
       description: "UI library for Design Engineers",
       url: "https://magicui.design/",
     },
+    {
+      name: "Cult UI",
+      description: "Components crafted for Design Engineers",
+      url: "https://cult-ui.com",
+    },
+    {
+      name: "Kibo UI",
+      description: "A custom registry of composable, accessible and open source components",
+      url: "https://cult-ui.com",
+    },
   ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
