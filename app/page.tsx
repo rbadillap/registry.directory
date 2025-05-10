@@ -28,94 +28,79 @@ export default async function Home() {
       name: "shadcn/ui",
       description: "The official registry for shadcn/ui components.",
       url: "https://ui.shadcn.com/",
-      ogImage: "https://ui.shadcn.com/og.jpg",
     },
     {
       name: "ui.pub",
       description: "Perfect tools to build next-gen UI",
       url: "https://uipub.com?utm_source=registry.directory",
-      ogImage: "https://uipub.com/opengraph-image.jpg?593c9d22e4899ff7",
     },
     {
       name: "Tweakcn",
       description: "A powerful Theme Editor for shadcn/ui.",
       url: "https://tweakcn.com/",
-      ogImage: "https://tweakcn.com/og-image.png",
     },
     {
       name: "Origin UI",
       description: "Beautiful UI components built with Tailwind CSS and React",
       url: "https://originui.com/",
-      ogImage: "https://originui.com/opengraph-image.jpg?2c969d23ed72e3ae",
     },
     {
       name: "Aceternity UI",
       description:
         "Professional Next.js, Tailwind CSS and Framer Motion components.",
       url: "https://ui.aceternity.com/",
-      ogImage: "https://ui.aceternity.com/banner.png",
     },
     {
       name: "Shadcn UI Blocks",
       description: "Customized Shadcn UI Blocks & Components | Preview & Copy",
       url: "https://shadcnui-blocks.com/",
-      ogImage: "https://www.shadcnui-blocks.com/images/og-image.png",
     },
     {
       name: "Shadcn Form Builder",
       description:
         "Create forms with Shadcn, react-hook-form and zod within minutes.",
       url: "https://shadcn-form.com/",
-      ogImage: "https://www.shadcn-form.com/meta.png",
     },
     {
       name: "Shadcn Blocks",
       description: "A collection of premium blocks for Shadcn UI + Tailwind",
       url: "https://shadcnblocks.com",
-      ogImage: "https://www.shadcnblocks.com/images/og/og-default.png",
     },
     {
       name: "StyleGlide",
       description: "Generate color palettes and typography styles. Tailored to your project. Distributed on shadcn. Edit the results to make it your own.",
       url: "https://www.styleglide.ai/",
-      ogImage: "https://www.styleglide.ai/images/og-image.png",
     },
     {
       name: "Neobrutalism components",
       description:
         "A collection of neobrutalism-styled, shadcn/ui based components.",
       url: "https://neobrutalism.dev/",
-      ogImage: "https://www.neobrutalism.dev/preview.png",
     },
     {
       name: "kokonut/ui",
       description: "100+ UI components built with Tailwind CSS and shadcn/ui for Next.js",
       url: "https://kokonutui.com/",
-      ogImage: "https://kokonutui.com/opengraph-image.png?77d9a952b4fe977f",
     },
     {
       name: "Magic UI",
       description: "UI library for Design Engineers",
       url: "https://magicui.design/",
-      ogImage: "https://magicui.design/og",
     },
     {
       name: "Cult UI",
       description: "Components crafted for Design Engineers",
       url: "https://cult-ui.com",
-      ogImage: "https://cult-ui.com/og.png",
     },
     {
       name: "Kibo UI",
       description: "A custom registry of composable, accessible and open source components",
       url: "https://kibo-ui.com",
-      ogImage: "https://www.kibo-ui.com/og?slug=overview",
     },
     {
       name: "ReUI",
       description: "UI components and fully functional apps built with React, Next.js and Tailwind",
       url: "https://reui.io",
-      ogImage: "https://reui.io/og.jpg",
     }
   ];
   return (

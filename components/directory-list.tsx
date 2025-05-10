@@ -1,12 +1,11 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Plus, ExternalLink as ExternalLinkIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import Image from "next/image";
 export type DirectoryEntry = {
   name: string;
   description: string;
   url: string;
-  ogImage: string;
 };
 
 export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
@@ -24,8 +23,8 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
           <div key={entry.url} className="h-full">
             <Card className="bg-black border border-neutral-800 rounded-xl overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col !pt-0">
               <div className="w-full aspect-[16/7] bg-transparent flex items-center justify-center ">
-                <img
-                  src={entry.ogImage}
+                <Image
+                  src={`/og/image?url=${encodeURIComponent(entry.url)}`}
                   alt={entry.name + ' preview'}
                   className="object-cover w-full h-full max-h-32 sm:max-h-40 md:max-h-48 rounded-t-xl"
                   loading="lazy"
@@ -88,7 +87,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
         className="fixed z-50 top-6 right-6 sm:top-8 sm:right-8 flex items-center gap-2 px-4 py-3 rounded-full bg-black border border-rose-700 shadow-lg hover:bg-rose-700/80 hover:scale-105 active:scale-95 transition-all duration-150 group focus-visible:ring-2 focus-visible:ring-rose-700"
       >
         <Plus className="w-6 h-6 text-neutral-100" />
-        <span className="hidden md:inline font-mono text-xs text-neutral-100">Suggest a registry</span>
+        <span className="hidden md:inline font-mono text-xs text-neutral-100">Add your registry</span>
       </a>
     </>
   );
