@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Plus, ExternalLink as ExternalLinkIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -6,57 +6,90 @@ export type DirectoryEntry = {
   name: string;
   description: string;
   url: string;
+  ogImage: string;
 };
 
 export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
+  function getHostname(url: string): string {
+    try {
+      return new URL(url).hostname;
+    } catch {
+      return url;
+    }
+  }
   return (
-    <div className="w-full max-w-2xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
-      {entries.map((entry) => (
-        <div key={entry.url} className="h-full">
-          <Card className="transition-shadow hover:shadow-md h-full">
-            <CardHeader className="flex flex-row items-start justify-between gap-2 px-4 py-2">
-              <CardTitle className="font-mono text-base">
-                {entry.name}
-              </CardTitle>
-              <Button
-                asChild
-                size="icon"
-                variant="ghost"
-                className="text-muted-foreground hover:text-primary p-1"
-                tabIndex={0}
-              >
-                <a
-                  href={entry.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open ${entry.name}`}
+    <>
+      <div className="w-full max-w-5xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
+        {entries.map((entry) => (
+          <div key={entry.url} className="h-full">
+            <Card className="bg-black border border-neutral-800 rounded-xl overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col !pt-0">
+              <div className="w-full aspect-[16/7] bg-transparent flex items-center justify-center ">
+                <img
+                  src={entry.ogImage}
+                  alt={entry.name + ' preview'}
+                  className="object-cover w-full h-full max-h-32 sm:max-h-40 md:max-h-48 rounded-t-xl"
+                  loading="lazy"
+                  width={320}
+                  height={112}
+                  style={{ background: '#18181b' }}
+                />
+              </div>
+              <CardHeader className="flex flex-row items-start justify-between gap-2 bg-black">
+                <div className="flex-1 min-w-0">
+                  <a
+                    href={entry.url}
+                    target="_blank"
+                    rel="noopener"
+                    aria-label={`Open ${entry.name}`}
+                    className="block group"
+                  >
+                    <CardTitle className="text-base text-white truncate group-hover:underline">
+                      {entry.name}
+                    </CardTitle>
+                  </a>
+                </div>
+                <Button
+                  asChild
+                  size="icon"
+                  variant="ghost"
+                  className="text-neutral-400 hover:text-white p-1"
+                  tabIndex={0}
                 >
-                  <ExternalLinkIcon className="w-4 h-4" />
+                  <a
+                    href={entry.url}
+                    target="_blank"
+                    rel="noopener"
+                    aria-label={`Open ${entry.name}`}
+                  >
+                    <ExternalLinkIcon className="w-4 h-4" />
+                  </a>
+                </Button>
+              </CardHeader>
+              <CardContent className="px-4 pb-5 pt-0 bg-black flex-1 flex flex-col justify-between">
+                <CardDescription className="text-sm text-neutral-300 min-h-[40px]">
+                  {entry.description}
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="px-4 pb-4 pt-0 bg-black">
+                <a href={entry.url} target="_blank" rel="noopener" className="text-xs text-neutral-300 leading-relaxed font-mono truncate hover:underline">
+                  {getHostname(entry.url)}
                 </a>
-              </Button>
-            </CardHeader>
-            <CardContent className="px-4 pb-4 pt-0">
-              <CardDescription className="font-mono text-xs">
-                {entry.description}
-              </CardDescription>
-            </CardContent>
-          </Card>
-        </div>
-      ))}
-      {/* Placeholder Card */}
+              </CardFooter>
+            </Card>
+          </div>
+        ))}
+      </div>
+      {/* Fixed floating button */}
       <a
         href="https://github.com/rbadillap/registry.directory"
         target="_blank"
-        rel="noopener noreferrer"
-        className="block h-full"
+        rel="noopener"
+        aria-label="Suggest a registry"
+        className="fixed z-50 top-6 right-6 sm:top-8 sm:right-8 flex items-center gap-2 px-4 py-3 rounded-full bg-black border border-rose-700 shadow-lg hover:bg-rose-700/80 hover:scale-105 active:scale-95 transition-all duration-150 group focus-visible:ring-2 focus-visible:ring-rose-700"
       >
-        <Card className="border-dashed border-2 border-muted-foreground/40 bg-muted/40 hover:bg-muted/60 flex items-center justify-center min-h-[80px] transition-colors h-full">
-          <CardContent className="flex flex-col items-center justify-center py-6">
-            <Plus className="w-6 h-6 text-muted-foreground mb-2" />
-            <span className="font-mono text-xs text-muted-foreground">Suggest a registry</span>
-          </CardContent>
-        </Card>
+        <Plus className="w-6 h-6 text-neutral-100" />
+        <span className="hidden md:inline font-mono text-xs text-neutral-100">Suggest a registry</span>
       </a>
-    </div>
+    </>
   );
 } 
