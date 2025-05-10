@@ -30,10 +30,9 @@ export default async function Home() {
       url: "https://ui.shadcn.com/",
     },
     {
-      name: "Aceternity UI",
-      description:
-        "Professional Next.js, Tailwind CSS and Framer Motion components.",
-      url: "https://ui.aceternity.com/",
+      name: "ui.pub",
+      description: "Perfect tools to build next-gen UI",
+      url: "https://uipub.com?utm_source=registry.directory",
     },
     {
       name: "Tweakcn",
@@ -46,9 +45,10 @@ export default async function Home() {
       url: "https://originui.com/",
     },
     {
-      name: "ui.pub",
-      description: "Perfect tools to build next-gen UI",
-      url: "https://uipub.com?utm_source=registry.directory",
+      name: "Aceternity UI",
+      description:
+        "Professional Next.js, Tailwind CSS and Framer Motion components.",
+      url: "https://ui.aceternity.com/",
     },
     {
       name: "Shadcn UI Blocks",
@@ -68,7 +68,7 @@ export default async function Home() {
     },
     {
       name: "StyleGlide",
-      description: "Create your own design system",
+      description: "Generate color palettes and typography styles. Tailored to your project. Distributed on shadcn. Edit the results to make it your own.",
       url: "https://www.styleglide.ai/",
     },
     {
@@ -100,11 +100,11 @@ export default async function Home() {
     {
       name: "ReUI",
       description: "UI components and fully functional apps built with React, Next.js and Tailwind",
-      url: "https://reui.io"
+      url: "https://reui.io",
     }
   ];
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
+    <main className="flex min-h-screen flex-col items-center justify-center py-20">
       <div className="flex items-center gap-2">
         <h1 className="text-sm font-medium font-mono">
           registry<span className="text-muted-foreground">.directory</span>{" "}

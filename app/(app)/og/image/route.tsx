@@ -13,15 +13,23 @@ function isValidUrl(url: string): boolean {
   }
 }
 
-// Allowed domains for security (whitelist approach)
-const ALLOWED_DOMAINS = [
-  "ui.shadcn.com",
-  "github.com",
-  "vercel.com",
-  "nextjs.org",
-  "registry.directory",
-  // Add more trusted domains as needed
-]
+function getHostname(url: string): string {
+  try {
+    return new URL(url).hostname
+  } catch {
+    return url
+  }
+}
+
+// // Allowed domains for security (whitelist approach)
+// const ALLOWED_DOMAINS = [
+//   "ui.shadcn.com",
+//   "github.com",
+//   "vercel.com",
+//   "nextjs.org",
+//   "registry.directory",
+//   // Add more trusted domains as needed
+// ]
 
 export async function GET(request: NextRequest) {
   try {
@@ -35,12 +43,12 @@ export async function GET(request: NextRequest) {
     }
 
     // Check if domain is allowed
-    const urlObj = new URL(url)
-    const domain = urlObj.hostname
+    // const urlObj = new URL(url)
+    // const domain = urlObj.hostname
 
-    if (!ALLOWED_DOMAINS.some((allowedDomain) => domain === allowedDomain || domain.endsWith(`.${allowedDomain}`))) {
-      throw new Error("Domain not allowed for security reasons")
-    }
+    // if (!ALLOWED_DOMAINS.some((allowedDomain) => domain === allowedDomain || domain.endsWith(`.${allowedDomain}`))) {
+    //   throw new Error("Domain not allowed for security reasons")
+    // }
 
     // Fetch the HTML content
     const ogImage = await fetchOgImage(url)
@@ -60,9 +68,11 @@ export async function GET(request: NextRequest) {
           tw="flex flex-col items-center justify-center w-full h-full bg-black"
           style={{
             fontFamily: "Geist",
-            background: "linear-gradient(to bottom right, #000000, #111111)",
           }}
         >
+          {/* top left logo r.d */}
+          <div tw="absolute top-4 left-4 text-white text-2xl font-medium">r.d</div>
+
           {/* Decorative borders */}
           <div tw="flex border absolute border-stone-700/50 border-dashed inset-y-0 left-16 w-[1px]" />
           <div tw="flex border absolute border-stone-700/50 border-dashed inset-y-0 right-16 w-[1px]" />
@@ -74,15 +84,12 @@ export async function GET(request: NextRequest) {
             {/* OG Image */}
             <img
               src={ogImage}
-              tw="w-full max-h-96 object-contain rounded-lg mb-8"
-              style={{
-                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-              }}
+              tw="w-full max-h-96 object-contain rounded-lg"
             />
             
             {/* Site info */}
             <div tw="flex items-center">
-              <h2 tw="text-2xl text-white font-medium">registry.directory</h2>
+              <h2 tw="text-4xl text-white font-medium">{getHostname(url)}</h2>
             </div>
           </div>
 
@@ -115,46 +122,10 @@ export async function GET(request: NextRequest) {
       },
     )
   } catch (error: unknown) {
-    // Create an error image response
-    const [geistSans, geistSansMedium] = await Promise.all([
-      readFile(join(process.cwd(), "assets/Geist-Regular.ttf")),
-      readFile(join(process.cwd(), "assets/Geist-Medium.ttf")),
-    ])
-
-    return new ImageResponse(
-      (
-        <div
-          tw="flex items-center justify-center w-full h-full bg-black"
-          style={{
-            fontFamily: "Geist",
-            background: "linear-gradient(to bottom right, #000000, #111111)",
-          }}
-        >
-          <div tw="flex flex-col items-center text-center px-4">
-            <h1 tw="text-4xl font-medium text-red-500 mb-4">Error</h1>
-            <p tw="text-xl text-slate-300">{error instanceof Error ? error.message : "An unknown error occurred"}</p>
-          </div>
-        </div>
-      ),
-      {
-        width: 1200,
-        height: 630,
-        fonts: [
-          {
-            name: "Geist",
-            data: geistSans,
-            style: "normal",
-            weight: 400,
-          },
-          {
-            name: "Geist",
-            data: geistSansMedium,
-            style: "normal",
-            weight: 500,
-          },
-        ],
-      },
-    )
+    console.error(error)
+    return new Response(`Failed to generate the image`, {
+      status: 500,
+    })    
   }
 }
 
