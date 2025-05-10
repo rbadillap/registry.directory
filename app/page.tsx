@@ -97,6 +97,11 @@ export default async function Home() {
       description: "A custom registry of composable, accessible and open source components",
       url: "https://kibo-ui.com",
     },
+    {
+      name: "ReUI",
+      description: "UI components and fully functional apps built with React, Next.js and Tailwind",
+      url: "https://reui.io"
+    }
   ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
