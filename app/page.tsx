@@ -105,7 +105,8 @@ export default async function Home() {
     {
       name: "RetroUI",
       description: "React based component library, inspired by neo-brutalism design system",
-      url: "https://retroui.dev"
+      url: "https://retroui.dev",
+    }
   ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-center py-20">
