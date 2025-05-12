@@ -101,7 +101,11 @@ export default async function Home() {
       name: "ReUI",
       description: "UI components and fully functional apps built with React, Next.js and Tailwind",
       url: "https://reui.io",
-    }
+    },
+    {
+      name: "RetroUI",
+      description: "React based component library, inspired by neo-brutalism design system",
+      url: "https://retroui.dev"
   ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-center py-20">
