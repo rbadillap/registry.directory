@@ -88,10 +88,10 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
         target="_blank"
         rel="noopener"
         aria-label="Suggest a registry"
-        className="fixed z-50 top-6 right-6 sm:top-8 sm:right-8 flex items-center gap-2 px-4 py-3 rounded-none bg-black border border-rose-700 shadow-lg hover:bg-rose-700/80 hover:scale-105 active:scale-95 transition-all duration-150 group focus-visible:ring-2 focus-visible:ring-rose-700"
+        className="fixed z-50 bottom-6 right-6 sm:bottom-8 sm:right-8 flex items-center gap-2 px-4 py-2 rounded-md bg-background border border-rose-700 shadow-sm hover:bg-rose-700/10 hover:border-rose-700/80 transition-all duration-150 group focus-visible:ring-2 focus-visible:ring-rose-700/50"
       >
-        <Plus className="w-6 h-6 text-neutral-100" />
-        <span className="hidden md:inline font-mono text-xs text-neutral-100">Add your registry</span>
+        <Plus className="w-4 h-4 text-rose-700" />
+        <span className="hidden md:inline font-medium text-xs">Suggest a registry</span>
       </a>
     </>
   );
