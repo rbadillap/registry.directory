@@ -25,7 +25,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
       <div className="w-full max-w-5xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
         {entries.map((entry) => (
           <div key={entry.url} className="h-full">
-            <Card className="bg-black border border-neutral-800 rounded-xl overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col !pt-0">
+            <Card className="bg-black border border-stone-700/50 rounded-none overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col !pt-0">
               <div className="w-full aspect-[16/7] bg-transparent flex items-center justify-center ">
                 <Image
                   src={`/og/image?url=${encodeURIComponent(entry.url)}`}
@@ -88,7 +88,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
         target="_blank"
         rel="noopener"
         aria-label="Suggest a registry"
-        className="fixed z-50 top-6 right-6 sm:top-8 sm:right-8 flex items-center gap-2 px-4 py-3 rounded-full bg-black border border-rose-700 shadow-lg hover:bg-rose-700/80 hover:scale-105 active:scale-95 transition-all duration-150 group focus-visible:ring-2 focus-visible:ring-rose-700"
+        className="fixed z-50 top-6 right-6 sm:top-8 sm:right-8 flex items-center gap-2 px-4 py-3 rounded-none bg-black border border-rose-700 shadow-lg hover:bg-rose-700/80 hover:scale-105 active:scale-95 transition-all duration-150 group focus-visible:ring-2 focus-visible:ring-rose-700"
       >
         <Plus className="w-6 h-6 text-neutral-100" />
         <span className="hidden md:inline font-mono text-xs text-neutral-100">Add your registry</span>

@@ -67,7 +67,7 @@ export async function GET(request: NextRequest) {
             {/* OG Image */}
             <img
               src={ogImage}
-              tw="w-full max-h-96 object-contain rounded-lg"
+              tw="w-full max-h-96 rounded-lg"
             />
             
             {/* Site info */}
