@@ -148,7 +148,9 @@ export default async function Home() {
         <span className="text-muted-foreground"> registries</span>
       </div>
 
-      <DirectoryList entries={entries} />
+      <DirectoryList entries={entries.map(entry => ({
+        ...entry,
+      }))} />
     </main>
   );
 }
