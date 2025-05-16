@@ -44,30 +44,35 @@ The standard folder structure includes:
    - Components with various file structures
 3. Develop robust logic to generate required files for any registry regardless of structure
 4. Implement RESTful API routes in `apps/web/app/api/registry/[name]/route.ts`
-5. Create shadcn-compatible endpoints:
-   - `apps/web/app/[registry]/r/registry.json` - Returns the registry metadata
-   - `apps/web/app/[registry]/r/[componentName]/registry-item.json` - Returns specific component data
-   - `apps/web/app/[registry]/r/index.json` - Returns a list of all items
-6. Add registry-specific endpoints:
+5. Implement standardized shadcn-compatible endpoints that follow official conventions:
+   - `apps/web/app/[registry]/r/registry.json` - Returns the full registry metadata (shadcn standard)
+   - `apps/web/app/[registry]/r/[componentName]/registry-item.json` - Returns specific component data (shadcn standard)
+   - `apps/web/app/[registry]/r/index.json` - Returns a list of all registry items (shadcn standard)
+6. Add registry.directory-specific endpoints:
    - `apps/web/app/api/registries` - Returns a list of all available registries
+   - Ensure all endpoints are designed with potential shadcn core integration in mind
 7. Implement caching strategies for better performance
 8. Add rate limiting and security measures
 
 ## Milestone 3: Registry Directory UI
 
-**Goal:** Create a user-friendly interface for browsing, searching, and previewing registry components.
+**Goal:** Create a user-friendly interface for browsing, searching, and previewing registry components that aligns with the registry schema metadata.
 
 ### Tasks:
 1. Enhance `apps/web/app/page.tsx` with:
-   - Improved registry cards
+   - Improved registry cards that display schema metadata (author, description)
    - Search functionality
-   - Category filters
+   - Category filters leveraging registry item categories
    - Featured section
-2. Build registry detail pages at `apps/web/app/registry/[name]/page.tsx`
-3. Create component preview pages at `apps/web/app/registry/[name]/[component]/page.tsx`
-4. Add interactive component playground
+2. Build registry detail pages at `apps/web/app/registry/[name]/page.tsx` that display full registry metadata
+3. Create component preview pages at `apps/web/app/registry/[name]/[component]/page.tsx` with:
+   - Component visualization
+   - Metadata display (dependencies, registryDependencies, etc.)
+   - Usage instructions based on component documentation
+4. Add interactive component playground for testing components
 5. Implement code copy functionality
 6. Create documentation pages explaining how to use registry.directory
+7. Design UI elements that would seamlessly integrate with the shadcn ecosystem
 
 ## Milestone 4: Build Process & Deployment
 
