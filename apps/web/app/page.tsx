@@ -117,6 +117,12 @@ export default async function Home() {
             beta
           </span>
         </h1>
+        <a 
+          href="/roadmap" 
+          className="text-xs text-muted-foreground hover:text-foreground font-mono ml-3 hover:underline"
+        >
+          roadmap
+        </a>
       </div>
 
       <div className="text-sm mt-10 px-4 text-center font-mono">
