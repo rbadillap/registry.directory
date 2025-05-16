@@ -148,7 +148,11 @@ export default async function Home() {
         <span className="text-muted-foreground"> registries</span>
       </div>
 
-      <DirectoryList entries={entries} />
+      <DirectoryList entries={entries.map(entry => ({
+        ...entry,
+        // For demo purposes, link to registry page instead of external URL
+        internalUrl: `/registry/${entry.name.toLowerCase().replace(/\//g, '')}`
+      }))} />
     </main>
   );
 }

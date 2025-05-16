@@ -17,6 +17,7 @@ export type DirectoryEntry = {
   name: string;
   description: string;
   url: string;
+  internalUrl?: string; // Optional internal URL for registry exploration
 };
 
 export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
@@ -73,10 +74,18 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
                   {entry.description}
                 </CardDescription>
               </CardContent>
-              <CardFooter className="px-4 pb-4 pt-0 bg-black">
+              <CardFooter className="px-4 pb-4 pt-0 bg-black flex justify-between items-center">
                 <a href={entry.url} target="_blank" rel="noopener" className="text-xs text-neutral-300 leading-relaxed font-mono truncate hover:underline">
                   {getHostname(entry.url)}
                 </a>
+                {entry.internalUrl && (
+                  <a 
+                    href={entry.internalUrl}
+                    className="text-xs text-rose-600 font-semibold hover:text-rose-500 transition-colors"
+                  >
+                    Explore Components →
+                  </a>
+                )}
               </CardFooter>
             </Card>
           </div>
