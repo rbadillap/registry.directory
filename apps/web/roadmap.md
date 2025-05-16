@@ -30,20 +30,28 @@ The standard folder structure includes:
 4. Add registry validation functions
 5. Create data access utilities for the API layer
 
-## Milestone 2: API Endpoints
+## Milestone 2: API Endpoints & Component Testing
 
-**Goal:** Build API endpoints that are compatible with the shadcn CLI and serve registry data.
+**Goal:** Build API endpoints that are compatible with the shadcn CLI and thoroughly test with various component types to ensure universal compatibility.
 
 ### Tasks:
-1. Implement RESTful API routes in `apps/web/app/api/registry/[name]/route.ts`
-2. Create shadcn-compatible endpoints:
+1. Understand and implement the fetchRegistry flow using shadcn's official approach
+2. Test with diverse component types:
+   - Simple UI components (Button, Card)
+   - Complex components with dependencies
+   - Block components
+   - Third-party components
+   - Components with various file structures
+3. Develop robust logic to generate required files for any registry regardless of structure
+4. Implement RESTful API routes in `apps/web/app/api/registry/[name]/route.ts`
+5. Create shadcn-compatible endpoints:
    - `apps/web/app/[registry]/r/registry.json` - Returns the registry metadata
    - `apps/web/app/[registry]/r/[componentName]/registry-item.json` - Returns specific component data
    - `apps/web/app/[registry]/r/index.json` - Returns a list of all items
-3. Add registry-specific endpoints:
+6. Add registry-specific endpoints:
    - `apps/web/app/api/registries` - Returns a list of all available registries
-4. Implement caching strategies for better performance
-5. Add rate limiting and security measures
+7. Implement caching strategies for better performance
+8. Add rate limiting and security measures
 
 ## Milestone 3: Registry Directory UI
 
