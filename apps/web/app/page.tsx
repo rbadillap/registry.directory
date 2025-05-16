@@ -150,8 +150,6 @@ export default async function Home() {
 
       <DirectoryList entries={entries.map(entry => ({
         ...entry,
-        // For demo purposes, link to registry page instead of external URL
-        internalUrl: `/registry/${entry.name.toLowerCase().replace(/\//g, '')}`
       }))} />
     </main>
   );
