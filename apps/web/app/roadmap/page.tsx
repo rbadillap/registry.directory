@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 const Roadmap = () => {
-  const [activeTab, setActiveTab] = useState("premium");
+  const [activeTab, setActiveTab] = useState("open-source");
 
   return (
     <main className="flex min-h-screen flex-col items-center py-20 px-4 md:px-8 lg:px-12">
