@@ -1,4 +1,4 @@
-import type { Registry } from "shadcn/registry";
+import type { Registry, RegistryItem } from "shadcn/registry";
 
 export const registry: Registry = {
   name: "shadcn/ui",
