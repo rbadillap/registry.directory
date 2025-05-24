@@ -149,17 +149,6 @@ export default async function Home() {
       </div>
 
       <DirectoryList entries={entries} />
-
-      {/* Roadmap link */}
-      <a
-        href="https://canary.registry.directory/roadmap"
-        target="_blank"
-        rel="noopener"
-        aria-label="View our roadmap"
-        className="fixed z-50 top-6 left-6 sm:top-8 sm:left-8 flex items-center gap-2 px-4 py-3 rounded-none bg-black border border-stone-700/50 shadow-lg hover:border-rose-700 hover:scale-105 active:scale-95 transition-all duration-150 focus-visible:ring-2 focus-visible:ring-rose-700"
-      >
-        <span className="font-mono text-xs text-neutral-100">Roadmap</span>
-      </a>
     </main>
   );
 }
