@@ -106,6 +106,11 @@ export default async function Home() {
       name: "RetroUI",
       description: "React based component library, inspired by neo-brutalism design system",
       url: "https://retroui.dev",
+    },
+    {
+      name: "Skiper UI",
+      description: "Skiper UI - Un-common Components for shadcn/ui | Skiper UI",
+      url: "https://skiper-ui.com/"
     }
   ];
   return (
