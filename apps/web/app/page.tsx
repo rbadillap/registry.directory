@@ -25,6 +25,11 @@ export const metadata: Metadata = {
 export default async function Home() {
   const entries: DirectoryEntry[] = [
     {
+      name: "Pure UI",
+      description: "Enhanced shadcn/ui components with advanced functionality and design patterns.",
+      url: "https://pure.ui.pub/"
+    },
+    {
       name: "shadcn/ui",
       description: "The official registry for shadcn/ui components.",
       url: "https://ui.shadcn.com/",
