@@ -25,11 +25,6 @@ export const metadata: Metadata = {
 export default async function Home() {
   const entries: DirectoryEntry[] = [
     {
-      name: "Pure UI",
-      description: "Enhanced shadcn/ui components with advanced functionality and design patterns.",
-      url: "https://pure.ui.pub/"
-    },
-    {
       name: "shadcn/ui",
       description: "The official registry for shadcn/ui components.",
       url: "https://ui.shadcn.com/",
@@ -116,6 +111,11 @@ export default async function Home() {
       name: "Skiper UI",
       description: "Skiper UI - Un-common Components for shadcn/ui | Skiper UI",
       url: "https://skiper-ui.com/"
+    },
+    {
+      name: "JollyUI",
+      description: "shadcn/ui compatible react aria components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
+      url: "https://www.jollyui.dev/"
     }
   ];
   return (
