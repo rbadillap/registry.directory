@@ -111,6 +111,11 @@ export default async function Home() {
       name: "Skiper UI",
       description: "Skiper UI - Un-common Components for shadcn/ui | Skiper UI",
       url: "https://skiper-ui.com/"
+    },
+    {
+      name: "JollyUI",
+      description: "shadcn/ui compatible react aria components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
+      url: "https://www.jollyui.dev/"
     }
   ];
   return (
