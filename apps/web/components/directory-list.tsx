@@ -12,12 +12,7 @@ import {
   Button,
 } from "@workspace/ui/components/button";
 import { getHostname } from "@/lib/utils";
-
-export type DirectoryEntry = {
-  name: string;
-  description: string;
-  url: string;
-};
+import type { DirectoryEntry } from "@/lib/types";
 
 const addUtmReference = (url: string) => {
   const u = new URL(url)
@@ -48,7 +43,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
                   <a
                     href={addUtmReference(entry.url)}
                     target="_blank"
-                    rel="noopener"
+                    rel="noreferrer"
                     aria-label={`Open ${entry.name}`}
                     className="block group"
                   >
@@ -67,7 +62,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
                   <a
                     href={addUtmReference(entry.url)}
                     target="_blank"
-                    rel="noopener"
+                    rel="noreferrer"
                     aria-label={`Open ${entry.name}`}
                   >
                     <ExternalLinkIcon className="w-4 h-4" />
@@ -80,7 +75,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
                 </CardDescription>
               </CardContent>
               <CardFooter className="px-4 pb-4 pt-0 bg-black">
-                <a href={entry.url} target="_blank" rel="noopener" className="text-xs text-neutral-300 leading-relaxed font-mono truncate hover:underline">
+                <a href={entry.url} target="_blank" rel="noreferrer" className="text-xs text-neutral-300 leading-relaxed font-mono truncate hover:underline">
                   {getHostname(entry.url)}
                 </a>
               </CardFooter>
@@ -92,7 +87,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
       <a
         href="https://github.com/rbadillap/registry.directory"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         aria-label="Suggest a registry"
         className="fixed z-50 top-6 right-6 sm:top-8 sm:right-8 flex items-center gap-2 px-4 py-3 rounded-none bg-black border border-rose-700 shadow-lg hover:bg-rose-700/80 hover:scale-105 active:scale-95 transition-all duration-150 group focus-visible:ring-2 focus-visible:ring-rose-700"
       >
