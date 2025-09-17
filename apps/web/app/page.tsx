@@ -8,7 +8,7 @@ import type { DirectoryEntry } from "@/lib/types";
 export const dynamic = 'force-static'
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.VERCEL_URL || "http://localhost:3000"),
+  // metadataBase: new URL(process.env.VERCEL_URL || "http://localhost:3000"),
   title: "registry.directory - a collection of shadcn/ui registries",
   description:
     "The place where shadcn/ui registries live. Discover, Preview, Copy, and Paste components.",
