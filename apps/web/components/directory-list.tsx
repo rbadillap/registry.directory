@@ -19,16 +19,22 @@ export type DirectoryEntry = {
   url: string;
 };
 
+const addUtmReference = (url: string) => {
+  const u = new URL(url)
+  u.searchParams.set("utm_source", "registry.directory")
+  return u.toString()
+}
+
 export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
   return (
     <>
       <div className="w-full max-w-5xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
         {entries.map((entry) => (
-          <div key={entry.url} className="h-full">
+          <div key={encodeURIComponent(entry.url)} className="h-full">
             <Card className="bg-black border border-stone-700/50 rounded-none overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col !pt-0">
               <div className="w-full aspect-[16/7] bg-transparent flex items-center justify-center ">
                 <Image
-                  src={`/og/image?url=${encodeURIComponent(entry.url)}`}
+                  src={`/og/image/${encodeURIComponent(entry.url)}`}
                   alt={entry.name + ' preview'}
                   className="object-cover w-full h-full max-h-32 sm:max-h-40 md:max-h-48 rounded-t-xl"
                   loading="lazy"
@@ -40,7 +46,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
               <CardHeader className="flex flex-row items-start justify-between gap-2 bg-black">
                 <div className="flex-1 min-w-0">
                   <a
-                    href={entry.url}
+                    href={addUtmReference(entry.url)}
                     target="_blank"
                     rel="noopener"
                     aria-label={`Open ${entry.name}`}
@@ -59,7 +65,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
                   tabIndex={0}
                 >
                   <a
-                    href={entry.url}
+                    href={addUtmReference(entry.url)}
                     target="_blank"
                     rel="noopener"
                     aria-label={`Open ${entry.name}`}
@@ -91,7 +97,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
         className="fixed z-50 top-6 right-6 sm:top-8 sm:right-8 flex items-center gap-2 px-4 py-3 rounded-none bg-black border border-rose-700 shadow-lg hover:bg-rose-700/80 hover:scale-105 active:scale-95 transition-all duration-150 group focus-visible:ring-2 focus-visible:ring-rose-700"
       >
         <Plus className="w-6 h-6 text-neutral-100" />
-        <span className="hidden md:inline font-mono text-xs text-neutral-100">Add your registry</span>
+        <span className="hidden md:inline font-mono text-xs text-neutral-100">Add a new registry</span>
       </a>
     </>
   );

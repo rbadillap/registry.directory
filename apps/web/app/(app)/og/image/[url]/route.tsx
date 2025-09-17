@@ -4,40 +4,65 @@ import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import { getHostname, isValidUrl } from "@/lib/utils"
 
-// // Allowed domains for security (whitelist approach)
-// const ALLOWED_DOMAINS = [
-//   "ui.shadcn.com",
-//   "github.com",
-//   "vercel.com",
-//   "nextjs.org",
-//   "registry.directory",
-//   // Add more trusted domains as needed
-// ]
+// Force static generation
+export const dynamic = 'force-static'
 
-export async function GET(request: NextRequest) {
+// Load registries data for validation
+async function getRegistries() {
   try {
-    // Get URL from query parameters
-    const { searchParams } = new URL(request.url)
-    const url = searchParams.get("url")
+    const filePath = join(process.cwd(), "public/registries.json");
+    const fileContents = await readFile(filePath, "utf8");
+    return JSON.parse(fileContents);
+  } catch (error) {
+    console.error("Error reading registries.json:", error);
+    return [];
+  }
+}
+
+// Generate static params for all registries
+export async function generateStaticParams() {
+  const registries = await getRegistries();
+  
+  return registries.map((registry: any) => ({
+    url: encodeURIComponent(registry.url)
+  }));
+}
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: Promise<{ url: string }> }
+) {
+  try {
+    // Decode the URL parameter
+    const resolvedParams = await params;
+    const url = decodeURIComponent(resolvedParams.url);
 
     // Validate URL
     if (!url || !isValidUrl(url)) {
       throw new Error("Invalid URL provided")
     }
 
-    // Check if domain is allowed
-    // const urlObj = new URL(url)
-    // const domain = urlObj.hostname
+    // Validate that URL belongs to a known registry
+    const registries = await getRegistries();
+    const isValidRegistry = registries.some((registry: any) => {
+      try {
+        const registryUrl = new URL(registry.url);
+        const inputUrl = new URL(url);
+        return registryUrl.hostname === inputUrl.hostname;
+      } catch {
+        return false;
+      }
+    });
 
-    // if (!ALLOWED_DOMAINS.some((allowedDomain) => domain === allowedDomain || domain.endsWith(`.${allowedDomain}`))) {
-    //   throw new Error("Domain not allowed for security reasons")
-    // }
+    if (!isValidRegistry) {
+      throw new Error("URL does not belong to a known registry")
+    }
 
     // Fetch the HTML content
     const ogImage = await fetchOgImage(url)
-    if (!ogImage) {
-      throw new Error("No OG image found")
-    }
+    
+    // Use fallback if no OG image found
+    const imageToUse = ogImage || null
 
     // Load fonts
     const [geistSans, geistSansMedium] = await Promise.all([
@@ -64,14 +89,30 @@ export async function GET(request: NextRequest) {
 
           {/* Main content */}
           <div tw="flex flex-col items-center justify-center w-full max-w-4xl px-8">
-            {/* OG Image */}
-            <img
-              src={ogImage}
-              tw="w-full max-h-96 rounded-lg"
-            />
+            {/* OG Image or Fallback */}
+            {imageToUse ? (
+              <img
+                src={imageToUse}
+                tw="w-full max-h-96 rounded-lg"
+              />
+            ) : (
+              <div tw="flex flex-col items-center justify-center w-full max-h-96 bg-stone-900 rounded-lg border border-stone-700/50 p-8">
+                {/* Registry.directory logo */}
+                <div tw="flex items-center mb-4">
+                  <div tw="w-12 h-12 bg-rose-700 rounded-lg flex items-center justify-center mr-3">
+                    <span tw="text-white text-xl font-bold">r</span>
+                  </div>
+                  <div tw="text-white text-2xl font-medium">registry.directory</div>
+                </div>
+                
+                {/* Fallback message */}
+                <div tw="text-neutral-300 text-lg mb-2">Preview not available</div>
+                <div tw="text-neutral-400 text-sm">Click to visit the registry</div>
+              </div>
+            )}
             
             {/* Site info */}
-            <div tw="flex items-center">
+            <div tw="flex items-center mt-6">
               <h2 tw="text-4xl text-white font-medium">{getHostname(url)}</h2>
             </div>
           </div>
@@ -129,7 +170,8 @@ async function fetchOgImage(url: string): Promise<string | null> {
     clearTimeout(timeoutId)
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch URL: ${response.status}`)
+      console.error(`Failed to fetch URL: ${response.status}: ${response.statusText}`)
+      return null // Return null instead of throwing
     }
 
     const html = await response.text()
@@ -170,8 +212,10 @@ async function fetchOgImage(url: string): Promise<string | null> {
     return null
   } catch (error) {
     if (error instanceof Error && error.name === "AbortError") {
-      throw new Error("Request timeout")
+      console.error("Request timeout for URL:", url)
+      return null
     }
-    throw error
+    console.error("Error fetching OG image for URL:", url, error)
+    return null // Return null instead of throwing
   }
 }
