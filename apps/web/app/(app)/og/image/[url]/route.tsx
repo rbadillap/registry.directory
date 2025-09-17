@@ -1,8 +1,9 @@
-import { ImageResponse } from "next/og"
-import { type NextRequest } from "next/server"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
+import { ImageResponse } from "next/og"
+import { type NextRequest } from "next/server"
 import { getHostname, isValidUrl } from "@/lib/utils"
+import type { DirectoryEntry } from "@/lib/types"
 
 // Force static generation
 export const dynamic = 'force-static'
@@ -23,7 +24,7 @@ async function getRegistries() {
 export async function generateStaticParams() {
   const registries = await getRegistries();
   
-  return registries.map((registry: any) => ({
+  return registries.map((registry: DirectoryEntry) => ({
     url: encodeURIComponent(registry.url)
   }));
 }
@@ -44,7 +45,7 @@ export async function GET(
 
     // Validate that URL belongs to a known registry
     const registries = await getRegistries();
-    const isValidRegistry = registries.some((registry: any) => {
+    const isValidRegistry = registries.some((registry: DirectoryEntry) => {
       try {
         const registryUrl = new URL(registry.url);
         const inputUrl = new URL(url);

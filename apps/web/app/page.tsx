@@ -1,7 +1,8 @@
-import { Metadata } from "next";
-import { DirectoryList, DirectoryEntry } from "@/components/directory-list";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { Metadata } from "next";
+import { DirectoryList } from "@/components/directory-list";
+import type { DirectoryEntry } from "@/lib/types";
 
 // Enable static generation
 export const dynamic = 'force-static'

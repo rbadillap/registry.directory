@@ -12,12 +12,7 @@ import {
   Button,
 } from "@workspace/ui/components/button";
 import { getHostname } from "@/lib/utils";
-
-export type DirectoryEntry = {
-  name: string;
-  description: string;
-  url: string;
-};
+import type { DirectoryEntry } from "@/lib/types";
 
 const addUtmReference = (url: string) => {
   const u = new URL(url)
