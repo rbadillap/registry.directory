@@ -117,6 +117,12 @@ export default async function Home() {
       description: "Skiper UI - Un-common Components for shadcn/ui | Skiper UI",
       url: "https://skiper-ui.com/"
     }
+    ,
+    {
+      name: "Inspira UI",
+      description: "A modern component registry with ready-to-use shadcn/ui components.",
+      url: "https://inspira-ui.com/"
+    }
   ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-center py-20">
