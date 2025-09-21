@@ -48,7 +48,7 @@ export async function generateRegistryItem(
   // Create registry item using official shadcn schema
   const registryItem: RegistryItem = {
     name: metadata.name,
-    type: "registry:ui", // Default to UI for MVP
+    type: "registry:ui", // Default to UI for now
     description: metadata.description,
     files: registryFiles,
   }

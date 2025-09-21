@@ -1,6 +1,6 @@
 'use client'
 
-import { Metadata } from "next"
+// import { Metadata } from "next"
 import { PageHeader } from "@/components/page-header"
 import { UploadSection } from "@/components/upload-section"
 import { OutputSection } from "@/components/output-section"

@@ -4,7 +4,7 @@ import { Button } from "@workspace/ui/components/button"
 import { Textarea } from "@workspace/ui/components/textarea"
 import { Input } from "@workspace/ui/components/input"
 import { Label } from "@workspace/ui/components/label"
-import { Loader2, Download, Copy } from "lucide-react"
+import { Loader2, Download, Copy, Check } from "lucide-react"
 import type { RegistryMetadata } from "@/lib/schemas"
 
 interface OutputSectionProps {
@@ -26,6 +26,7 @@ export function OutputSection({
     name: '',
     description: ''
   })
+  const [isCopied, setIsCopied] = useState(false)
 
   const handleGenerate = () => {
     if (!metadata.name.trim()) {
@@ -33,6 +34,23 @@ export function OutputSection({
       return
     }
     onGenerate(metadata)
+  }
+
+  const handleCopyToClipboard = async () => {
+    if (!registry) return
+    
+    try {
+      await navigator.clipboard.writeText(registry)
+      setIsCopied(true)
+      
+      // Reset after 2 seconds (following Vercel Guidelines for feedback duration)
+      setTimeout(() => {
+        setIsCopied(false)
+      }, 2000)
+    } catch (err) {
+      console.error('Failed to copy to clipboard:', err)
+      // TODO: Show error toast
+    }
   }
 
   return (
@@ -97,10 +115,20 @@ export function OutputSection({
             <div className="flex items-center justify-between">
               <Label className="text-white">Registry JSON</Label>
               <div className="flex gap-2">
-                <Button variant="outline" size="sm">
-                  <Copy className="w-4 h-4" />
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={handleCopyToClipboard}
+                  disabled={!registry}
+                  className={isCopied ? 'border-green-600 bg-green-600/10' : ''}
+                >
+                  {isCopied ? (
+                    <Check className="w-4 h-4 text-green-400" />
+                  ) : (
+                    <Copy className="w-4 h-4" />
+                  )}
                 </Button>
-                <Button variant="outline" size="sm">
+                <Button variant="outline" size="sm" disabled>
                   <Download className="w-4 h-4" />
                 </Button>
               </div>

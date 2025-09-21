@@ -34,13 +34,15 @@ export const FileUploadSchema = z.object({
 export type FileUpload = z.infer<typeof FileUploadSchema>
 export type ValidatedFile = z.infer<typeof FileSchema>
 
-// Supported registry types for MVP (no internals, no complex ones)
-export const supportedRegistryTypes = z.enum([
-  "registry:ui",
-  "registry:component"
-], {
-  required_error: "Please select a component type"
-})
+// Supported registry types for now
+export const supportedRegistryTypes = registryItemTypeSchema.exclude([
+  "registry:internal",
+  "registry:file",
+  "registry:page",
+  "registry:style",
+  "registry:theme",
+  "registry:item"
+])
 
 // File configuration schema using official shadcn types
 export const FileConfigSchema = z.object({
