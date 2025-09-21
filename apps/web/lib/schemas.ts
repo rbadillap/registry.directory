@@ -1,4 +1,10 @@
 import { z } from 'zod'
+// Import official shadcn/ui schemas
+import { 
+  registryItemSchema, 
+  registryItemTypeSchema,
+  type RegistryItem 
+} from 'shadcn/schema'
 
 // File validation schema
 export const FileSchema = z.object({
@@ -28,11 +34,17 @@ export const FileUploadSchema = z.object({
 export type FileUpload = z.infer<typeof FileUploadSchema>
 export type ValidatedFile = z.infer<typeof FileSchema>
 
-// File configuration schema
+// Supported registry types for MVP (no internals, no complex ones)
+export const supportedRegistryTypes = z.enum([
+  "registry:ui",
+  "registry:component"
+], {
+  required_error: "Please select a component type"
+})
+
+// File configuration schema using official shadcn types
 export const FileConfigSchema = z.object({
-  type: z.enum(['components:ui', 'components:component', 'components:example'], {
-    required_error: "Please select a component type"
-  }),
+  type: supportedRegistryTypes,
   name: z.string()
     .min(1, "Component name is required")
     .regex(/^[a-z0-9-]+$/, "Use lowercase letters, numbers, and dashes only")
@@ -58,5 +70,15 @@ export const FileConfigurationSchema = z.object({
   error: z.string().optional()
 })
 
+// Registry metadata schema
+export const RegistryMetadataSchema = z.object({
+  name: z.string().min(1, "Registry name is required"),
+  description: z.string().optional()
+})
+
 export type FileConfig = z.infer<typeof FileConfigSchema>
 export type FileConfiguration = z.infer<typeof FileConfigurationSchema>
+export type RegistryMetadata = z.infer<typeof RegistryMetadataSchema>
+
+// Re-export official types
+export { registryItemSchema, type RegistryItem }

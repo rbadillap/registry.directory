@@ -46,7 +46,7 @@ export function FileConfigDialog({
   }
 
   const [formData, setFormData] = useState<FileConfig>(() => ({
-    type: initialConfig?.type || 'components:ui',
+    type: initialConfig?.type || 'registry:ui',
     name: initialConfig?.name || getDefaultName(fileName),
     path: initialConfig?.path || getDefaultPath(fileName)
   }))
@@ -120,9 +120,11 @@ export function FileConfigDialog({
                 <SelectValue placeholder="Select component type" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="components:ui">UI Component</SelectItem>
-                <SelectItem value="components:component">Component</SelectItem>
-                <SelectItem value="components:example">Example</SelectItem>
+                <SelectItem value="registry:ui">✅ UI Component</SelectItem>
+                <SelectItem value="registry:component">✅ Component</SelectItem>
+                <SelectItem value="registry:hook" disabled>🟡 Hook (Coming Soon)</SelectItem>
+                <SelectItem value="registry:block" disabled>🟡 Block (Coming Soon)</SelectItem>
+                <SelectItem value="registry:lib" disabled>🟡 Library (Coming Soon)</SelectItem>
               </SelectContent>
             </Select>
             {errors.type && (

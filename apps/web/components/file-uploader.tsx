@@ -10,6 +10,7 @@ import { FileConfigDialog } from '@/components/file-config-dialog'
 
 interface FileUploaderProps {
   onFilesChange: (files: File[]) => void
+  onConfigurationsChange?: (configurations: FileConfiguration[]) => void
   maxFiles?: number
   disabled?: boolean
 }
@@ -22,6 +23,7 @@ interface ProcessedFile {
 
 export function FileUploader({ 
   onFilesChange, 
+  onConfigurationsChange,
   maxFiles = 20, 
   disabled = false 
 }: FileUploaderProps) {
@@ -48,7 +50,9 @@ export function FileUploader({
     if (fileConfigurations.length > 0) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(fileConfigurations))
     }
-  }, [fileConfigurations])
+    // Notify parent component of configuration changes
+    onConfigurationsChange?.(fileConfigurations)
+  }, [fileConfigurations, onConfigurationsChange])
 
   // Clean up configurations when files are removed
   useEffect(() => {
