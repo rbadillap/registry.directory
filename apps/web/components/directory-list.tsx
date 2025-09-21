@@ -75,7 +75,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
                 </CardDescription>
               </CardContent>
               <CardFooter className="px-4 pb-4 pt-0 bg-black">
-                <a href={entry.url} target="_blank" rel="noreferrer" className="text-xs text-neutral-300 leading-relaxed font-mono truncate hover:underline">
+                <a href={addUtmReference(entry.url)} target="_blank" rel="noreferrer" className="text-xs text-neutral-300 leading-relaxed font-mono truncate hover:underline">
                   {getHostname(entry.url)}
                 </a>
               </CardFooter>
