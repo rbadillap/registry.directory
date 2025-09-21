@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Button } from "@workspace/ui/components/button"
 import { Input } from "@workspace/ui/components/input"
 import { Badge } from "@workspace/ui/components/badge"
-import { Upload, X, Settings } from "lucide-react"
+import { X, Settings } from "lucide-react"
 import { FileUploadSchema, type FileConfiguration, type FileConfig } from '@/lib/schemas'
 import { FileConfigDialog } from '@/components/file-config-dialog'
 
@@ -63,9 +63,9 @@ export function FileUploader({
   }, [files])
 
   // Get configuration for a file
-  const getFileConfiguration = (fileId: string): FileConfiguration | undefined => {
+  const getFileConfiguration = useCallback((fileId: string): FileConfiguration | undefined => {
     return fileConfigurations.find(config => config.fileId === fileId)
-  }
+  }, [fileConfigurations])
 
   // Initialize configuration for new files
   useEffect(() => {
@@ -85,7 +85,7 @@ export function FileUploader({
     if (newConfigurations.length > 0) {
       setFileConfigurations(prev => [...prev, ...newConfigurations])
     }
-  }, [files])
+  }, [files, getFileConfiguration])
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = Array.from(event.target.files || [])

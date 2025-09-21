@@ -9,7 +9,7 @@ export function PageHeader() {
         </h1>
         <p className="text-muted-foreground text-sm leading-relaxed">
           Generate a <Link href="https://ui.shadcn.com/docs/registry/introduction" target="_blank" className="text-xs text-neutral-300 leading-relaxed font-mono truncate hover:underline">shadcn/ui registry.json</Link> from your component files automatically. 
-          Upload your components and we'll create the registry configuration for you.
+          Upload your components and we&apos;ll create the registry configuration for you.
         </p>
       </div>
     </div>

@@ -10,9 +10,7 @@ interface UploadSectionProps {
 }
 
 export function UploadSection({ 
-  files, 
   onFilesChange, 
-  configurations, 
   onConfigurationsChange 
 }: UploadSectionProps) {
   return (
