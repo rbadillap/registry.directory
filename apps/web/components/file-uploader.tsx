@@ -1,10 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from "@workspace/ui/components/button"
 import { Input } from "@workspace/ui/components/input"
-import { Upload, X } from "lucide-react"
-import { FileUploadSchema } from '@/lib/schemas'
+import { Badge } from "@workspace/ui/components/badge"
+import { Upload, X, Settings } from "lucide-react"
+import { FileUploadSchema, type FileConfiguration, type FileConfig } from '@/lib/schemas'
+import { FileConfigDialog } from '@/components/file-config-dialog'
 
 interface FileUploaderProps {
   onFilesChange: (files: File[]) => void
@@ -24,6 +26,62 @@ export function FileUploader({
   disabled = false 
 }: FileUploaderProps) {
   const [files, setFiles] = useState<ProcessedFile[]>([])
+  const [fileConfigurations, setFileConfigurations] = useState<FileConfiguration[]>([])
+
+  // localStorage key for persistence
+  const STORAGE_KEY = 'registry-generator-file-configs'
+
+  // Load configurations from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    if (saved) {
+      try {
+        setFileConfigurations(JSON.parse(saved))
+      } catch (error) {
+        console.error('Failed to load configurations:', error)
+      }
+    }
+  }, [])
+
+  // Save configurations to localStorage when they change
+  useEffect(() => {
+    if (fileConfigurations.length > 0) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(fileConfigurations))
+    }
+  }, [fileConfigurations])
+
+  // Clean up configurations when files are removed
+  useEffect(() => {
+    const currentFileIds = files.map(f => f.id)
+    setFileConfigurations(prev => 
+      prev.filter(config => currentFileIds.includes(config.fileId))
+    )
+  }, [files])
+
+  // Get configuration for a file
+  const getFileConfiguration = (fileId: string): FileConfiguration | undefined => {
+    return fileConfigurations.find(config => config.fileId === fileId)
+  }
+
+  // Initialize configuration for new files
+  useEffect(() => {
+    const newConfigurations: FileConfiguration[] = []
+    
+    files.forEach(file => {
+      const existingConfig = getFileConfiguration(file.id)
+      if (!existingConfig && !file.error) {
+        newConfigurations.push({
+          fileId: file.id,
+          fileName: file.file.name,
+          status: 'pending',
+        })
+      }
+    })
+
+    if (newConfigurations.length > 0) {
+      setFileConfigurations(prev => [...prev, ...newConfigurations])
+    }
+  }, [files])
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = Array.from(event.target.files || [])
@@ -91,6 +149,32 @@ export function FileUploader({
     onFilesChange(validFiles)
   }
 
+  const handleSaveConfiguration = (fileId: string) => (config: FileConfig) => {
+    setFileConfigurations(prev => 
+      prev.map(fileConfig => 
+        fileConfig.fileId === fileId
+          ? { ...fileConfig, status: 'configured' as const, config, error: undefined }
+          : fileConfig
+      )
+    )
+  }
+
+  const getBadgeVariant = (status: FileConfiguration['status']) => {
+    return {
+      configured: 'default',
+      error: 'destructive',
+      pending: 'secondary'
+    }[status] as any
+  }
+
+  const getBadgeText = (status: FileConfiguration['status']) => {
+    return {
+      configured: '✓ Configured',
+      error: '⚠ Error',
+      pending: 'Pending'
+    }[status] as any
+  }
+
   return (
     <div className="space-y-4">
       {/* Requirements */}
@@ -113,33 +197,67 @@ export function FileUploader({
       {/* File List */}
       {files.length > 0 && (
         <div className="space-y-2">
-          {files.map(({ file, id, error }) => (
-            <div key={id} className="flex items-center justify-between p-3 bg-muted rounded-md">
-              <div className="flex-1 min-w-0">
-                <div className="text-sm font-medium truncate">
-                  {file.name}
-                </div>
-                <div className="text-xs text-muted-foreground">
-                  {(file.size / 1024).toFixed(1)} KB
-                </div>
-                {error && (
-                  <div className="text-xs text-red-500 mt-1">
-                    {error}
+          {files.map(({ file, id, error }) => {
+            const configuration = getFileConfiguration(id)
+            const status = error ? 'error' : (configuration?.status || 'pending')
+            
+            return (
+              <div key={id} className="flex items-center justify-between p-3 bg-black border border-stone-700/50 rounded-md">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="text-sm font-medium truncate">
+                      {file.name}
+                    </div>
+                    <Badge variant={getBadgeVariant(status)} className="text-xs">
+                      {getBadgeText(status)}
+                    </Badge>
                   </div>
-                )}
+                  <div className="text-xs text-muted-foreground">
+                    {(file.size / 1024).toFixed(1)} KB
+                  </div>
+                  {error && (
+                    <div className="text-xs text-red-500 mt-1">
+                      {error}
+                    </div>
+                  )}
+                  {configuration?.error && (
+                    <div className="text-xs text-red-500 mt-1">
+                      {configuration.error}
+                    </div>
+                  )}
+                </div>
+                <div className="flex items-center gap-1 ml-2">
+                  {!error && (
+                    <FileConfigDialog
+                      fileName={file.name}
+                      onSave={handleSaveConfiguration(id)}
+                      initialConfig={configuration?.config}
+                      trigger={
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-muted-foreground hover:text-foreground"
+                        >
+                          <Settings className="w-4 h-4" />
+                        </Button>
+                      }
+                    />
+                  )}
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => removeFile(id)}
+                    className="text-muted-foreground hover:text-red-500"
+                  >
+                    <X className="w-4 h-4" />
+                  </Button>
+                </div>
               </div>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => removeFile(id)}
-                className="ml-2"
-              >
-                <X className="w-4 h-4" />
-              </Button>
-            </div>
-          ))}
+            )
+          })}
         </div>
       )}
+
     </div>
   )
 }

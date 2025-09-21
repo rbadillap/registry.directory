@@ -43,7 +43,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
         <Providers>{children}</Providers>
-        <Analytics />
       </body>
     </html>
   );

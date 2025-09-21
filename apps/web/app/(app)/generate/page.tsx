@@ -4,14 +4,26 @@ import { useState } from "react"
 import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@workspace/ui/components/card"
+import { Button } from "@workspace/ui/components/button"
+import { 
+  Dialog, 
+  DialogClose, 
+  DialogContent, 
+  DialogDescription, 
+  DialogFooter, 
+  DialogHeader, 
+  DialogTitle, 
+  DialogTrigger 
+} from "@workspace/ui/components/dialog"
 import { FileUploader } from "@/components/file-uploader"
+import { Label } from "@workspace/ui/components/label"
+import { Input } from "@workspace/ui/components/input"
 
 export default function GeneratePage() {
   const [files, setFiles] = useState<File[]>([])
 
   const handleFilesChange = (newFiles: File[]) => {
     setFiles(newFiles)
-    console.log('Files selected:', newFiles.map(f => f.name))
   }
 
   return (
@@ -19,9 +31,11 @@ export default function GeneratePage() {
       {/* Header */}
       <div className="max-w-4xl mx-auto space-y-6 mb-16">
         <div className="space-y-2">
-          <h1 className="text-2xl font-medium">
-            Registry Generator
-          </h1>
+          <div className="flex items-center gap-4">
+            <h1 className="text-2xl font-medium">
+              Registry Generator
+            </h1>
+          </div>
           <p className="text-muted-foreground text-sm leading-relaxed">
             Generate a <Link href="https://ui.shadcn.com/docs/registry/introduction" target="_blank" className="text-xs text-neutral-300 leading-relaxed font-mono truncate hover:underline">shadcn/ui registry.json</Link> from your component files automatically. 
             Upload your components and we'll create the registry configuration for you.
