@@ -1,12 +1,31 @@
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import { ImageResponse } from "next/og"
-import { type NextRequest } from "next/server"
+import { ImageResponseOptions, type NextRequest } from "next/server"
 import { getHostname, isValidUrl } from "@/lib/utils"
 import type { DirectoryEntry } from "@/lib/types"
+import urlMetadata from "url-metadata"
+import { OGImage } from "@/components/og-image"
+import sharp from "sharp"
 
 // Force static generation
 export const dynamic = 'force-static'
+
+// registry.directory uses a custom user agent to fetch metadata
+const USER_AGENT = 'Mozilla/5.0 (compatible; registry-directory/1.0; +https://registry.directory)'
+
+// Unsupported image formats
+const UNSUPPORTED_IMAGE_FORMATS = ['webp']
+
+// Configuration constants
+const METADATA_TIMEOUT = 10000
+const MAX_REDIRECTS = 5
+const DESCRIPTION_LENGTH = 200
+const IMAGE_TIMEOUT = 10000
+const OG_IMAGE_WIDTH = 1200
+const OG_IMAGE_HEIGHT = 630
+const CACHE_MAX_AGE = 3600
+const CACHE_STALE_WHILE_REVALIDATE = 86400
 
 // Load registries data for validation
 async function getRegistries() {
@@ -18,6 +37,142 @@ async function getRegistries() {
     console.error("Error reading registries.json:", error);
     return [];
   }
+}
+
+
+// Fetch and extract metadata from URL using url-metadata
+async function fetchRegistryMetadata(url: string): Promise<{
+  image: string | null;
+  title: string | null;
+  description: string | null;
+  favicon: string | null;
+  siteName: string | null;
+}> {
+  try {
+    const metadata = await urlMetadata(url, {
+      timeout: METADATA_TIMEOUT,
+      maxRedirects: MAX_REDIRECTS,
+      descriptionLength: DESCRIPTION_LENGTH,
+      ensureSecureImageRequest: true,
+      requestHeaders: {
+        'User-Agent': USER_AGENT
+      }
+    });
+
+    return {
+      image: metadata['og:image'] || metadata['twitter:image'] || null,
+      title: metadata['og:title'] || metadata.title || null,
+      description: metadata['og:description'] || metadata.description || null,
+      favicon: metadata.favicons?.[0]?.href || null,
+      siteName: metadata['og:site_name'] || null
+    };
+  } catch (error) {
+    console.error('Error fetching metadata for URL:', url, error);
+    return {
+      image: null,
+      title: null,
+      description: null,
+      favicon: null,
+      siteName: null
+    };
+  }
+}
+
+async function convertUnsupportedImageToPng(imageUrl: string): Promise<string | null> {
+  try {
+    // Since we already filtered by extension, we can directly fetch and convert
+    // But let's still verify the content-type to be safe
+    const imageResponse = await fetch(imageUrl, {
+      headers: { 'User-Agent': USER_AGENT },
+      signal: AbortSignal.timeout(IMAGE_TIMEOUT)
+    });
+
+    if (!imageResponse.ok) {
+      console.error(`Failed to fetch image: ${imageResponse.status}`);
+      return null;
+    }
+
+    const contentType = imageResponse.headers.get('content-type');
+    
+    // Double-check: if content-type doesn't indicate unsupported format, return original URL
+    if (!contentType || !UNSUPPORTED_IMAGE_FORMATS.some(format => contentType.includes(format))) {
+      return imageUrl;
+    }
+
+    const imageBuffer = await imageResponse.arrayBuffer();
+    
+    // Convert to PNG using Sharp
+    const convertedBuffer = await sharp(Buffer.from(imageBuffer))
+      .png()
+      .toBuffer();
+    
+    // Return as data URL
+    return `data:image/png;base64,${convertedBuffer.toString('base64')}`;
+  } catch (error) {
+    console.error('Error converting unsupported image:', error);
+    return null;
+  }
+}
+
+// Validate if URL belongs to a known registry
+async function isKnownRegistry(url: string): Promise<boolean> {
+  const registries = await getRegistries();
+  return registries.some((registry: DirectoryEntry) => {
+    try {
+      const registryUrl = new URL(registry.url);
+      const inputUrl = new URL(url);
+      return registryUrl.hostname === inputUrl.hostname;
+    } catch {
+      return false;
+    }
+  });
+}
+
+// Process image: convert unsupported formats if needed
+async function processImage(imageUrl: string | null): Promise<string | null> {
+  if (!imageUrl) return null;
+  
+  const fileExtension = imageUrl.split('.').pop() || '';
+  if (UNSUPPORTED_IMAGE_FORMATS.includes(fileExtension)) {
+    return await convertUnsupportedImageToPng(imageUrl);
+  }
+  
+  return imageUrl;
+}
+
+// Load fonts for ImageResponse
+async function loadFonts() {
+  return Promise.all([
+    readFile(join(process.cwd(), "assets/Geist-Regular.ttf")),
+    readFile(join(process.cwd(), "assets/Geist-Medium.ttf")),
+  ]);
+}
+
+// Create ImageResponse options
+function createImageResponseOptions(fonts: [Buffer, Buffer]): ImageResponseOptions {
+  const [geistSans, geistSansMedium] = fonts;
+  
+  return {
+    width: OG_IMAGE_WIDTH,
+    height: OG_IMAGE_HEIGHT,
+    fonts: [
+      {
+        name: "Geist",
+        data: geistSans,
+        style: "normal",
+        weight: 400,
+      },
+      {
+        name: "Geist",
+        data: geistSansMedium,
+        style: "normal",
+        weight: 500,
+      },
+    ],
+    headers: {
+      'Cache-Control': `public, max-age=${CACHE_MAX_AGE}, stale-while-revalidate=${CACHE_STALE_WHILE_REVALIDATE}`,
+    },
+  };
 }
 
 // Generate static params for all registries
@@ -34,189 +189,36 @@ export async function GET(
   { params }: { params: Promise<{ url: string }> }
 ) {
   try {
-    // Decode the URL parameter
+    // Decode and validate URL
     const resolvedParams = await params;
     const url = decodeURIComponent(resolvedParams.url);
 
-    // Validate URL
     if (!url || !isValidUrl(url)) {
-      throw new Error("Invalid URL provided")
+      return new Response(`Invalid URL provided`, { status: 400 });
     }
 
-    // Validate that URL belongs to a known registry
-    const registries = await getRegistries();
-    const isValidRegistry = registries.some((registry: DirectoryEntry) => {
-      try {
-        const registryUrl = new URL(registry.url);
-        const inputUrl = new URL(url);
-        return registryUrl.hostname === inputUrl.hostname;
-      } catch {
-        return false;
-      }
-    });
-
-    if (!isValidRegistry) {
-      throw new Error("URL does not belong to a known registry")
+    if (!(await isKnownRegistry(url))) {
+      return new Response('Registry not found', { status: 404 });
     }
 
-    // Fetch the HTML content
-    const ogImage = await fetchOgImage(url)
-    
-    // Use fallback if no OG image found
-    const imageToUse = ogImage || null
+    // Fetch metadata and process image
+    const metadata = await fetchRegistryMetadata(url);
+    const processedImage = await processImage(metadata.image);
 
-    // Load fonts
-    const [geistSans, geistSansMedium] = await Promise.all([
-      readFile(join(process.cwd(), "assets/Geist-Regular.ttf")),
-      readFile(join(process.cwd(), "assets/Geist-Medium.ttf")),
-    ])
+    // Load fonts and create response
+    const fonts = await loadFonts();
+    const options = createImageResponseOptions(fonts);
 
     return new ImageResponse(
-      (
-        <div
-          tw="flex flex-col items-center justify-center w-full h-full bg-black"
-          style={{
-            fontFamily: "Geist",
-          }}
-        >
-          {/* top left logo r.d */}
-          <div tw="absolute top-4 left-4 text-white text-2xl font-medium">r.d</div>
-
-          {/* Decorative borders */}
-          <div tw="flex border absolute border-stone-700/50 border-dashed inset-y-0 left-16 w-[1px]" />
-          <div tw="flex border absolute border-stone-700/50 border-dashed inset-y-0 right-16 w-[1px]" />
-          <div tw="flex border absolute border-stone-700/50 inset-x-0 h-[1px] top-16" />
-          <div tw="flex border absolute border-stone-700/50 inset-x-0 h-[1px] bottom-16" />
-
-          {/* Main content */}
-          <div tw="flex flex-col items-center justify-center w-full max-w-4xl px-8">
-            {/* OG Image or Fallback */}
-            {imageToUse ? (
-              <img
-                src={imageToUse}
-                tw="w-full max-h-96 rounded-lg"
-              />
-            ) : (
-              <div tw="flex flex-col items-center justify-center w-full max-h-96 bg-stone-900 rounded-lg border border-stone-700/50 p-8">
-                {/* Registry.directory logo */}
-                <div tw="flex items-center mb-4">
-                  <div tw="w-12 h-12 bg-rose-700 rounded-lg flex items-center justify-center mr-3">
-                    <span tw="text-white text-xl font-bold">r</span>
-                  </div>
-                  <div tw="text-white text-2xl font-medium">registry.directory</div>
-                </div>
-                
-                {/* Fallback message */}
-                <div tw="text-neutral-300 text-lg mb-2">Preview not available</div>
-                <div tw="text-neutral-400 text-sm">Click to visit the registry</div>
-              </div>
-            )}
-            
-            {/* Site info */}
-            <div tw="flex items-center mt-6">
-              <h2 tw="text-4xl text-white font-medium">{getHostname(url)}</h2>
-            </div>
-          </div>
-
-          {/* Subtle glow effect */}
-          <div
-            tw="absolute inset-0"
-            style={{
-              background: "radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%)",
-            }}
-          />
-        </div>
-      ),
-      {
-        width: 1200,
-        height: 630,
-        fonts: [
-          {
-            name: "Geist",
-            data: geistSans,
-            style: "normal",
-            weight: 400,
-          },
-          {
-            name: "Geist",
-            data: geistSansMedium,
-            style: "normal",
-            weight: 500,
-          },
-        ],
-      },
-    )
+      <OGImage 
+        img={processedImage} 
+        hostname={getHostname(url)} 
+      />,
+      options,
+    );
   } catch (error: unknown) {
-    console.error(error)
-    return new Response(`Failed to generate the image`, {
-      status: 500,
-    })    
+    console.error(error);
+    return new Response(`Failed to generate the image`, { status: 500 });
   }
 }
 
-// Fetch and extract og:image from URL
-async function fetchOgImage(url: string): Promise<string | null> {
-  try {
-    // Set timeout to prevent hanging requests
-    const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 5000)
-
-    const response = await fetch(url, {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (compatible; registry-directory/1.0; +https://registry.directory)",
-      },
-      signal: controller.signal,
-    })
-
-    clearTimeout(timeoutId)
-
-    if (!response.ok) {
-      console.error(`Failed to fetch URL: ${response.status}: ${response.statusText}`)
-      return null // Return null instead of throwing
-    }
-
-    const html = await response.text()
-
-    // Extract og:image using regex
-    const ogImageMatch =
-      html.match(/<meta[^>]*property=["']og:image["'][^>]*content=["']([^"']+)["'][^>]*>/i) ||
-      html.match(/<meta[^>]*content=["']([^"']+)["'][^>]*property=["']og:image["'][^>]*>/i)
-
-    if (ogImageMatch && ogImageMatch[1]) {
-      // Validate and normalize the image URL
-      try {
-        // Handle relative URLs
-        const imageUrl = new URL(ogImageMatch[1], url).toString()
-        return imageUrl
-      } catch (error) {
-        console.error("Invalid og:image URL:", error)
-        return null
-      }
-    }
-
-    // Fallback to Twitter image if og:image is not available
-    const twitterImageMatch =
-      html.match(/<meta[^>]*name=["']twitter:image["'][^>]*content=["']([^"']+)["'][^>]*>/i) ||
-      html.match(/<meta[^>]*content=["']([^"']+)["'][^>]*name=["']twitter:image["'][^>]*>/i)
-
-    if (twitterImageMatch && twitterImageMatch[1]) {
-      // Validate and normalize the image URL
-      try {
-        const imageUrl = new URL(twitterImageMatch[1], url).toString()
-        return imageUrl
-      } catch (error) {
-        console.error("Invalid twitter:image URL:", error)
-        return null
-      }
-    }
-
-    return null
-  } catch (error) {
-    if (error instanceof Error && error.name === "AbortError") {
-      console.error("Request timeout for URL:", url)
-      return null
-    }
-    console.error("Error fetching OG image for URL:", url, error)
-    return null // Return null instead of throwing
-  }
-}

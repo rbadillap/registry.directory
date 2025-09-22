@@ -15,9 +15,16 @@ import { getHostname } from "@/lib/utils";
 import type { DirectoryEntry } from "@/lib/types";
 
 const addUtmReference = (url: string) => {
-  const u = new URL(url)
-  u.searchParams.set("utm_source", "registry.directory")
-  return u.toString()
+  try {
+    const u = new URL(url)
+    u.searchParams.set("utm_source", "registry.directory")
+    u.searchParams.set("utm_medium", "directory")
+    u.searchParams.set("utm_campaign", "registry_preview")
+    return u.toString()
+  } catch {
+    // Fallback si la URL es inválida
+    return url
+  }
 }
 
 export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
@@ -30,11 +37,11 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
               <div className="w-full aspect-[16/7] bg-transparent flex items-center justify-center ">
                 <Image
                   src={`/og/image/${encodeURIComponent(entry.url)}`}
-                  alt={entry.name + ' preview'}
+                  alt={`${entry.name} registry preview`}
                   className="object-cover w-full h-full max-h-32 sm:max-h-40 md:max-h-48 rounded-t-xl"
                   loading="lazy"
                   width={320}
-                  height={112}
+                  height={140}
                   style={{ background: '#18181b' }}
                 />
               </div>
@@ -56,7 +63,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
                   asChild
                   size="icon"
                   variant="ghost"
-                  className="text-neutral-400 hover:text-white p-1"
+                  className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-rose-700 focus-visible:ring-offset-2 focus-visible:ring-offset-black p-1"
                   tabIndex={0}
                 >
                   <a
@@ -89,7 +96,7 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
         target="_blank"
         rel="noreferrer"
         aria-label="Suggest a registry"
-        className="fixed z-50 top-6 right-6 sm:top-8 sm:right-8 flex items-center gap-2 px-4 py-3 rounded-none bg-black border border-rose-700 shadow-lg hover:bg-rose-700/80 hover:scale-105 active:scale-95 transition-all duration-150 group focus-visible:ring-2 focus-visible:ring-rose-700"
+        className="fixed z-50 top-6 right-6 sm:top-8 sm:right-8 flex items-center gap-2 px-4 py-3 rounded-none bg-black border border-rose-700 shadow-lg hover:bg-rose-700/80 hover:scale-105 active:scale-95 transition-all duration-150 group focus-visible:ring-2 focus-visible:ring-rose-700 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
       >
         <Plus className="w-6 h-6 text-neutral-100" />
         <span className="hidden md:inline font-mono text-xs text-neutral-100">Add a new registry</span>
