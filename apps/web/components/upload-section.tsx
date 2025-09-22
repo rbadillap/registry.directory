@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@workspace/ui/components/card"
-import { FileUploader } from "./file-uploader"
+import { Dropzone } from "./dropzone"
 import type { FileConfiguration } from "@/lib/schemas"
 
 interface UploadSectionProps {
@@ -22,7 +22,7 @@ export function UploadSection({
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
-        <FileUploader 
+        <Dropzone 
           onFilesChange={onFilesChange}
           onConfigurationsChange={onConfigurationsChange}
           maxFiles={20}
