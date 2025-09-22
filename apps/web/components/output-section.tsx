@@ -27,6 +27,7 @@ export function OutputSection({
     description: ''
   })
   const [isCopied, setIsCopied] = useState(false)
+  const [isDownloaded, setIsDownloaded] = useState(false)
 
   const handleGenerate = () => {
     if (!metadata.name.trim()) {
@@ -49,6 +50,36 @@ export function OutputSection({
       }, 2000)
     } catch (err) {
       console.error('Failed to copy to clipboard:', err)
+      // TODO: Show error toast
+    }
+  }
+
+  const handleDownloadJson = () => {
+    if (!registry) return
+    
+    try {
+      // Create blob with the JSON content
+      const blob = new Blob([registry], { type: 'application/json' })
+      const url = URL.createObjectURL(blob)
+      
+      // Create download link
+      const a = document.createElement('a')
+      a.href = url
+      a.download = 'registry.json' // Fixed filename
+      document.body.appendChild(a)
+      a.click()
+      
+      // Cleanup
+      document.body.removeChild(a)
+      URL.revokeObjectURL(url)
+      
+      // Show success feedback
+      setIsDownloaded(true)
+      setTimeout(() => {
+        setIsDownloaded(false)
+      }, 2000)
+    } catch (err) {
+      console.error('Failed to download JSON:', err)
       // TODO: Show error toast
     }
   }
@@ -115,6 +146,10 @@ export function OutputSection({
             <div className="flex items-center justify-between">
               <Label className="text-white">Registry JSON</Label>
               <div className="flex gap-2">
+                {/* TODO: Add shadcn validation status badge */}
+                {/* <Badge variant="outline" className="text-xs">
+                  {isValidShadcn ? '✅ Valid' : '⚠️ Needs Review'}
+                </Badge> */}
                 <Button 
                   variant="outline" 
                   size="sm"
@@ -128,8 +163,18 @@ export function OutputSection({
                     <Copy className="w-4 h-4" />
                   )}
                 </Button>
-                <Button variant="outline" size="sm" disabled>
-                  <Download className="w-4 h-4" />
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={handleDownloadJson}
+                  disabled={!registry}
+                  className={isDownloaded ? 'border-green-600 bg-green-600/10' : ''}
+                >
+                  {isDownloaded ? (
+                    <Check className="w-4 h-4 text-green-400" />
+                  ) : (
+                    <Download className="w-4 h-4" />
+                  )}
                 </Button>
               </div>
             </div>
