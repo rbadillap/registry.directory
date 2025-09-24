@@ -117,6 +117,12 @@ export default async function Home() {
       description: "Skiper UI - Un-common Components for shadcn/ui | Skiper UI",
       url: "https://skiper-ui.com/"
     }
+    ,
+    {
+      name: "Extend UI",
+      description: "A component registry and design system built for Tailwind + React. Components are distributed for use with shadcn.",
+      url: "https://www.extend-ui.com/"
+    }
   ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-center py-20">
