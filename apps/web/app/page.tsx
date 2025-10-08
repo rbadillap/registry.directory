@@ -52,7 +52,7 @@ export default async function Home() {
   const entries = await getRegistries();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center py-20 pt-32">
+    <main className="flex min-h-screen flex-col items-center justify-start pt-40 pb-20">
       <div className="flex items-center gap-2">
         <h1 className="text-sm font-medium font-mono">
           registry<span className="text-muted-foreground">.directory</span>{" "}
