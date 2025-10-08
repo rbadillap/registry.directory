@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import { Plus, ExternalLink as ExternalLinkIcon } from "lucide-react";
+import { ExternalLink as ExternalLinkIcon } from "lucide-react";
 import { 
   Card, 
   CardHeader, 
@@ -117,18 +117,6 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
         ))}
         </div>
       )}
-      
-      {/* Fixed floating button */}
-      <a
-        href="https://github.com/rbadillap/registry.directory"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Suggest a registry"
-        className="fixed z-50 top-6 right-6 sm:top-8 sm:right-8 flex items-center gap-2 px-4 py-3 rounded-none bg-black border border-rose-700 shadow-lg hover:bg-rose-700/80 hover:scale-105 active:scale-95 transition-all duration-150 group focus-visible:ring-2 focus-visible:ring-rose-700 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-      >
-        <Plus className="w-6 h-6 text-neutral-100" />
-        <span className="hidden md:inline font-mono text-xs text-neutral-100">Add a new registry</span>
-      </a>
     </>
   );
 } 
