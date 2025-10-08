@@ -1,5 +1,7 @@
+'use client';
+
 import Image from "next/image";
-import { Plus, ExternalLink as ExternalLinkIcon } from "lucide-react";
+import { ExternalLink as ExternalLinkIcon } from "lucide-react";
 import { 
   Card, 
   CardHeader, 
@@ -13,6 +15,8 @@ import {
 } from "@workspace/ui/components/button";
 import { getHostname } from "@/lib/utils";
 import type { DirectoryEntry } from "@/lib/types";
+import { SearchBar } from "./search-bar";
+import { useMemo, useState } from "react";
 
 const addUtmReference = (url: string) => {
   try {
@@ -22,16 +26,38 @@ const addUtmReference = (url: string) => {
     u.searchParams.set("utm_campaign", "registry_preview")
     return u.toString()
   } catch {
-    // Fallback si la URL es inválida
+    // Fallback if URL is invalid
     return url
   }
 }
 
 export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredEntries = useMemo(() => {
+    if (!searchTerm) return entries;
+    
+    const term = searchTerm.toLowerCase();
+    return entries.filter(entry => 
+      entry.name.toLowerCase().includes(term) ||
+      entry.description.toLowerCase().includes(term) ||
+      entry.url.toLowerCase().includes(term)
+    );
+  }, [entries, searchTerm]);
+
   return (
     <>
-      <div className="w-full max-w-5xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
-        {entries.map((entry) => (
+      <SearchBar value={searchTerm} onChange={setSearchTerm} />
+      
+      {filteredEntries.length === 0 ? (
+        <div className="w-full max-w-5xl mx-auto mt-12 px-4 text-center">
+          <p className="text-neutral-400 text-sm font-mono">
+            No registries found matching "{searchTerm}"
+          </p>
+        </div>
+      ) : (
+        <div className="w-full max-w-5xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
+          {filteredEntries.map((entry) => (
           <div key={encodeURIComponent(entry.url)} className="h-full">
             <Card className="bg-black border border-stone-700/50 rounded-none overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col !pt-0">
               <div className="w-full aspect-[16/7] bg-transparent flex items-center justify-center ">
@@ -89,18 +115,8 @@ export function DirectoryList({ entries }: { entries: DirectoryEntry[] }) {
             </Card>
           </div>
         ))}
-      </div>
-      {/* Fixed floating button */}
-      <a
-        href="https://github.com/rbadillap/registry.directory"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Suggest a registry"
-        className="fixed z-50 top-6 right-6 sm:top-8 sm:right-8 flex items-center gap-2 px-4 py-3 rounded-none bg-black border border-rose-700 shadow-lg hover:bg-rose-700/80 hover:scale-105 active:scale-95 transition-all duration-150 group focus-visible:ring-2 focus-visible:ring-rose-700 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-      >
-        <Plus className="w-6 h-6 text-neutral-100" />
-        <span className="hidden md:inline font-mono text-xs text-neutral-100">Add a new registry</span>
-      </a>
+        </div>
+      )}
     </>
   );
 } 
