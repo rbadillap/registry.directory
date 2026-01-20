@@ -1,14 +1,14 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { Metadata } from "next";
-import { DirectoryList } from "@/components/directory-list";
+import { DirectoryTabs } from "@/components/directory-tabs";
 import type { DirectoryEntry } from "@/lib/types";
 
 // Enable static generation
 export const dynamic = 'force-static'
 
 export const metadata: Metadata = {
-  // metadataBase: new URL(process.env.VERCEL_URL || "http://localhost:3000"),
+  metadataBase: new URL("https://registry.directory"),
   title: "registry.directory - a collection of shadcn/ui registries",
   description:
     "The place where shadcn/ui registries live. Discover, Preview, Copy, and Paste components.",
@@ -40,6 +40,8 @@ async function getRegistries(): Promise<DirectoryEntry[]> {
       name: registry.name,
       description: registry.description,
       url: registry.url,
+      github_url: registry.github_url,
+      github_profile: registry.github_profile,
     }));
   } catch (error) {
     console.error("Error reading registries.json:", error);
@@ -48,12 +50,34 @@ async function getRegistries(): Promise<DirectoryEntry[]> {
   }
 }
 
+async function getTools(): Promise<DirectoryEntry[]> {
+  try {
+    const filePath = join(process.cwd(), "public/tools.json");
+    const fileContents = await readFile(filePath, "utf8");
+    const tools = JSON.parse(fileContents);
+    
+    // Transform to DirectoryEntry format
+    return tools.map((tool: DirectoryEntry) => ({
+      name: tool.name,
+      description: tool.description,
+      url: tool.url,
+      github_url: tool.github_url,
+      github_profile: tool.github_profile,
+    }));
+  } catch (error) {
+    console.error("Error reading tools.json:", error);
+    // Fallback to empty array
+    return [];
+  }
+}
+
 export default async function Home() {
-  const entries = await getRegistries();
+  const components = await getRegistries();
+  const tools = await getTools();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start pt-40 pb-20">
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 mb-16">
         <h1 className="text-sm font-medium font-mono">
           registry<span className="text-muted-foreground">.directory</span>{" "}
           <span className="text-xs text-foreground rounded-md border bg-rose-700 px-1">
@@ -62,7 +86,7 @@ export default async function Home() {
         </h1>
       </div>
 
-      <div className="text-sm mt-10 px-4 text-center font-mono">
+      <div className="text-sm mb-20 px-4 text-center font-mono">
         <span className="text-muted-foreground">discover, preview, copy </span>
         <span className="text-foreground">
           <svg
@@ -91,7 +115,7 @@ export default async function Home() {
         <span className="text-muted-foreground"> registries</span>
       </div>
 
-      <DirectoryList entries={entries} />
+      <DirectoryTabs components={components} tools={tools} />
     </main>
   );
 }
