@@ -61,20 +61,22 @@ export function DirectoryTabs({ components, tools }: DirectoryTabsProps) {
         </div>
 
         <TabsContent value="components">
-          <DirectoryList 
-            entries={filteredComponents} 
+          <DirectoryList
+            entries={filteredComponents}
             searchTerm={searchTerm}
             addCardUrl={addComponentUrl}
             addCardLabel="Add your Component"
+            showViewButton={true}
           />
         </TabsContent>
 
         <TabsContent value="tools">
-          <DirectoryList 
-            entries={filteredTools} 
+          <DirectoryList
+            entries={filteredTools}
             searchTerm={searchTerm}
             addCardUrl={addToolUrl}
             addCardLabel="Add your Tool"
+            showViewButton={false}
           />
         </TabsContent>
       </Tabs>

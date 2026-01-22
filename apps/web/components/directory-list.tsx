@@ -1,15 +1,16 @@
 'use client';
 
-import { ExternalLink as ExternalLinkIcon, Package, Plus } from "lucide-react";
-import { 
-  Card, 
-  CardHeader, 
-  CardTitle, 
-  CardDescription, 
-  CardContent, 
-  CardFooter 
+import Link from "next/link";
+import { ExternalLink as ExternalLinkIcon, Package, Plus, Eye } from "lucide-react";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter
 } from "@workspace/ui/components/card";
-import { 
+import {
   Button,
 } from "@workspace/ui/components/button";
 import {
@@ -17,7 +18,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@workspace/ui/components/avatar";
-import { getHostname } from "@/lib/utils";
+import { getHostname, createSlug } from "@/lib/utils";
 import type { DirectoryEntry } from "@/lib/types";
 
 const addUtmReference = (url: string) => {
@@ -38,9 +39,10 @@ interface DirectoryListProps {
   searchTerm?: string;
   addCardUrl?: string;
   addCardLabel?: string;
+  showViewButton?: boolean;
 }
 
-export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLabel }: DirectoryListProps) {
+export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLabel, showViewButton = false }: DirectoryListProps) {
   const showAddCard = !searchTerm && addCardUrl && addCardLabel;
 
   if (entries.length === 0 && !showAddCard) {
@@ -122,6 +124,18 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                 </div>
               </div>
               <div className="flex items-center gap-1">
+                {showViewButton && (
+                  <Button
+                    asChild
+                    size="icon"
+                    variant="ghost"
+                    className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-rose-700 focus-visible:ring-offset-2 focus-visible:ring-offset-black p-1"
+                  >
+                    <Link href={`/view/${createSlug(entry.name)}`}>
+                      <Eye className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                )}
                 {entry.github_url && (
                   <Button
                     asChild
