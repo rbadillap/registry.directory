@@ -10,12 +10,14 @@ import { StatusBar } from "./viewer/status-bar"
 import { getHardcodedItems } from "@/lib/hardcoded-data"
 import type { RegistryItem, RegistryFile } from "@/lib/viewer-types"
 import type { DirectoryEntry } from "@/lib/types"
+import type { Registry } from "@/lib/registry-types"
 
 interface RegistryViewerProps {
   registry: DirectoryEntry
+  registryData: Registry
 }
 
-export function RegistryViewer({ registry }: RegistryViewerProps) {
+export function RegistryViewer({ registry, registryData }: RegistryViewerProps) {
   const [selectedItem, setSelectedItem] = useState<RegistryItem | null>(null)
   const [selectedFile, setSelectedFile] = useState<RegistryFile | null>(null)
 

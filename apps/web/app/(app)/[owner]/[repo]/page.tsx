@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import { RegistryViewer } from "@/components/registry-viewer"
 import { DirectoryEntry } from "@/lib/types"
+import type { Registry } from "@/lib/registry-types"
 
 async function getRegistry(owner: string, repo: string) {
   const filePath = join(process.cwd(), "public/registries.json")
@@ -23,7 +24,7 @@ async function getRegistry(owner: string, repo: string) {
   }) || null
 }
 
-async function fetchRegistryData(registry: DirectoryEntry) {
+async function fetchRegistryData(registry: DirectoryEntry): Promise<Registry | null> {
   try {
     // Use custom registry_url if provided, otherwise construct standard URL
     const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
