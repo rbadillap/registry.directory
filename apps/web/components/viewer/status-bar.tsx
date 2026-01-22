@@ -3,7 +3,9 @@
 import { Copy, Share2, Sparkles, MessageSquare } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
 import { Avatar, AvatarImage, AvatarFallback } from "@workspace/ui/components/avatar"
-import type { RegistryFile } from "@/lib/viewer-types"
+import type { RegistryItem } from "@/lib/registry-types"
+
+type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
 interface StatusBarProps {
   totalItems: number

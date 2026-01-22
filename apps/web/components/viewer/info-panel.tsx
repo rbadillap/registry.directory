@@ -19,7 +19,7 @@ import {
   Copy,
   Check,
 } from "lucide-react"
-import type { RegistryItem } from "@/lib/viewer-types"
+import type { RegistryItem } from "@/lib/registry-types"
 import { getFileName, getTargetPath, getDirName } from "@/lib/path-utils"
 
 const REGISTRY_TYPES = [
@@ -99,7 +99,7 @@ export function InfoPanel({ item }: InfoPanelProps) {
                 )}
 
                 {/* Files */}
-                {item.files.length > 0 && (
+                {item.files && item.files.length > 0 && (
                   <div className="space-y-2 pt-2 border-t border-neutral-800">
                     <div className="flex items-center gap-2">
                       <FileCode className="h-3.5 w-3.5 text-neutral-500" />

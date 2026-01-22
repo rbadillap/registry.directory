@@ -7,31 +7,36 @@ import { CodeViewer } from "./viewer/code-viewer"
 import { InfoPanel } from "./viewer/info-panel"
 import { ViewerHeader } from "./viewer/viewer-header"
 import { StatusBar } from "./viewer/status-bar"
-import type { RegistryItem as ViewerRegistryItem, RegistryFile } from "@/lib/viewer-types"
 import type { DirectoryEntry } from "@/lib/types"
-import type { Registry, RegistryItem as SchemaRegistryItem } from "@/lib/registry-types"
+import type { Registry, RegistryItem } from "@/lib/registry-types"
+import { generateGlobalsCss } from "@/lib/css-utils"
 
 interface RegistryViewerProps {
   registry: DirectoryEntry
   registryIndex: Registry
-  selectedItem: SchemaRegistryItem | null
+  selectedItem: RegistryItem | null
   currentCategory: string
 }
 
-// Convert shadcn schema RegistryItem to viewer RegistryItem
-function convertToViewerItem(item: SchemaRegistryItem): ViewerRegistryItem {
+type RegistryFile = NonNullable<RegistryItem["files"]>[number]
+
+// Add globals.css file if item has cssVars
+function addGlobalsCssFile(item: RegistryItem): RegistryItem {
+  if (!item.cssVars) return item
+
+  const globalsCssContent = generateGlobalsCss(item.cssVars)
+  const files = [...(item.files || [])]
+
+  files.push({
+    path: "globals.css",
+    type: "registry:style",
+    content: globalsCssContent,
+    target: "globals.css"
+  })
+
   return {
-    name: item.name,
-    type: item.type as ViewerRegistryItem["type"],
-    description: item.description,
-    files: (item.files || []).map(file => ({
-      path: file.path,
-      type: file.type as RegistryFile["type"],
-      code: file.content || "",
-      target: file.target || ""
-    })),
-    dependencies: item.dependencies,
-    registryDependencies: item.registryDependencies,
+    ...item,
+    files
   }
 }
 
@@ -43,11 +48,11 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
     totalItems: registryIndex.items.length
   })
 
-  // Convert schema items to viewer items
-  const items = registryIndex.items.map(convertToViewerItem)
-  const convertedInitialItem = initialItem ? convertToViewerItem(initialItem) : null
+  // Add globals.css files to items with cssVars
+  const items = registryIndex.items.map(addGlobalsCssFile)
+  const processedInitialItem = initialItem ? addGlobalsCssFile(initialItem) : null
 
-  const [selectedItem, setSelectedItem] = useState<ViewerRegistryItem | null>(convertedInitialItem)
+  const [selectedItem, setSelectedItem] = useState<RegistryItem | null>(processedInitialItem)
   const [selectedFile, setSelectedFile] = useState<RegistryFile | null>(null)
 
   // Set initial selected file when component mounts or item changes
@@ -58,16 +63,18 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
       return
     }
 
-    const item = convertToViewerItem(initialItem)
-    const firstFile = item?.files[0]
-    if (item && firstFile) {
-      setSelectedItem(item)
-      setSelectedFile(firstFile)
+    const item = addGlobalsCssFile(initialItem)
+    const firstFile = item?.files?.[0] || null
+    setSelectedItem(item)
+    setSelectedFile(firstFile)
+    if (firstFile) {
       console.log('[RegistryViewer] Initial file selected:', firstFile.path)
+    } else {
+      console.log('[RegistryViewer] Item has no files:', item.name)
     }
   }, [initialItem])
 
-  const handleSelectFile = (item: ViewerRegistryItem, file: RegistryFile) => {
+  const handleSelectFile = (item: RegistryItem, file: RegistryFile) => {
     setSelectedItem(item)
     setSelectedFile(file)
   }

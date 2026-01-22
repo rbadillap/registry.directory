@@ -53,8 +53,15 @@ async function fetchItemData(
   registry: DirectoryEntry,
   itemName: string
 ): Promise<RegistryItem | null> {
-  const baseUrl = registry.url.replace(/\/$/, '')
-  const targetUrl = `${baseUrl}/r/${itemName}.json`
+  // Use registry_url base if available, otherwise fall back to url
+  let baseUrl: string
+  if (registry.registry_url) {
+    // Extract base from registry_url (remove /registry.json)
+    baseUrl = registry.registry_url.replace(/\/[^/]+\.json$/, '')
+  } else {
+    baseUrl = registry.url.replace(/\/$/, '')
+  }
+  const targetUrl = `${baseUrl}/${itemName}.json`
   console.log(`[Level2] Fetching item data from:`, targetUrl)
 
   try {

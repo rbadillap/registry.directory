@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useMemo } from "react"
+import React, { useState, useMemo, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { ScrollArea } from "@workspace/ui/components/scroll-area"
@@ -19,8 +19,10 @@ import {
   Diamond,
 } from "lucide-react"
 import { cn } from "@workspace/ui/lib/utils"
-import type { RegistryItem, RegistryFile } from "@/lib/viewer-types"
+import type { RegistryItem } from "@/lib/registry-types"
 import { getFileName, getTargetPath } from "@/lib/path-utils"
+
+type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
 interface FileTreeProps {
   items: RegistryItem[]
@@ -59,7 +61,7 @@ function buildPathTree(items: RegistryItem[]): PathTree {
 
   // Check if we have file content - if so, build tree from individual files
   const firstItem = items.length > 0 ? items[0] : null
-  const hasContent = Boolean(firstItem?.files?.[0]?.code)
+  const hasContent = Boolean(firstItem?.files?.[0]?.content)
 
   for (const item of items) {
     if (!item.files || item.files.length === 0) continue
@@ -194,10 +196,38 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   const hasFileContent = useMemo(() => {
     if (items.length === 0) return false
     const firstItem = items[0]
-    return Boolean(firstItem?.files?.[0]?.code)
+    return Boolean(firstItem?.files?.[0]?.content)
   }, [items])
 
   const pathTree = useMemo(() => buildPathTree(items), [items])
+
+  // Auto-expand folders when a file is selected
+  useEffect(() => {
+    if (!selectedFile) return
+
+    const targetPath = getTargetPath(selectedFile)
+    const pathParts = targetPath.split('/')
+
+    // Build all folder paths that need to be opened
+    const foldersToOpen: string[] = []
+    let currentPath = ''
+
+    for (let i = 0; i < pathParts.length - 1; i++) {
+      const segment = pathParts[i]
+      if (!segment) continue
+      currentPath = currentPath ? `${currentPath}/${segment}` : segment
+      foldersToOpen.push(currentPath)
+    }
+
+    // Open all folders in the path
+    if (foldersToOpen.length > 0) {
+      setOpenFolders(prev => {
+        const next = new Set(prev)
+        foldersToOpen.forEach(path => next.add(path))
+        return next
+      })
+    }
+  }, [selectedFile])
 
   const toggleFolder = (path: string) => {
     setOpenFolders((prev) => {

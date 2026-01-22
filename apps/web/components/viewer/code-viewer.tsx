@@ -4,9 +4,11 @@ import { useEffect, useState } from "react"
 import { ScrollArea } from "@workspace/ui/components/scroll-area"
 import { Badge } from "@workspace/ui/components/badge"
 import { FileCode, Package } from "lucide-react"
-import type { RegistryFile, RegistryItem } from "@/lib/viewer-types"
+import type { RegistryItem } from "@/lib/registry-types"
 import { codeToHtml } from "shiki"
 import { getFileName, getExtension, getTargetPath } from "@/lib/path-utils"
+
+type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
 interface CodeViewerProps {
   file: RegistryFile | null
@@ -55,8 +57,9 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
 
     setIsLoading(true)
     const language = getLanguageFromPath(file.path)
+    const code = file.content || ""
 
-    codeToHtml(file.code, {
+    codeToHtml(code, {
       lang: language,
       theme: "github-dark",
       colorReplacements: {
