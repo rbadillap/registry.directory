@@ -31,10 +31,11 @@ export const metadata: Metadata = {
 
 async function getRegistries(): Promise<DirectoryEntry[]> {
   try {
-    const filePath = join(process.cwd(), "public/registries.json");
+    const filePath = join(process.cwd(), "public/directory.json");
     const fileContents = await readFile(filePath, "utf8");
-    const registries = JSON.parse(fileContents);
-    
+    const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] };
+    const registries = data.registries;
+
     // Transform to DirectoryEntry format
     return registries.map((registry: DirectoryEntry) => ({
       name: registry.name,
@@ -44,7 +45,7 @@ async function getRegistries(): Promise<DirectoryEntry[]> {
       github_profile: registry.github_profile,
     }));
   } catch (error) {
-    console.error("Error reading registries.json:", error);
+    console.error("Error reading directory.json:", error);
     // Fallback to empty array or default registries
     return [];
   }
@@ -54,8 +55,9 @@ async function getTools(): Promise<DirectoryEntry[]> {
   try {
     const filePath = join(process.cwd(), "public/tools.json");
     const fileContents = await readFile(filePath, "utf8");
-    const tools = JSON.parse(fileContents);
-    
+    const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] };
+    const tools = data.registries;
+
     // Transform to DirectoryEntry format
     return tools.map((tool: DirectoryEntry) => ({
       name: tool.name,

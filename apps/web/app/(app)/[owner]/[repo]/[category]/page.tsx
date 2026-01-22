@@ -10,9 +10,10 @@ import { registryFetch } from "@/lib/fetch-utils"
 
 async function getRegistry(owner: string, repo: string) {
   console.log(`[CategoryView] Getting registry for ${owner}/${repo}`)
-  const filePath = join(process.cwd(), "public/registries.json")
+  const filePath = join(process.cwd(), "public/directory.json")
   const fileContents = await readFile(filePath, "utf8")
-  const registries = JSON.parse(fileContents) as DirectoryEntry[]
+  const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
+  const registries = data.registries
 
   const registry = registries.find((r) => {
     if (!r.github_url) return false
@@ -85,9 +86,10 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   console.log(`[CategoryView] Generating static params`)
-  const filePath = join(process.cwd(), "public/registries.json")
+  const filePath = join(process.cwd(), "public/directory.json")
   const fileContents = await readFile(filePath, "utf8")
-  const registries = JSON.parse(fileContents) as DirectoryEntry[]
+  const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
+  const registries = data.registries
 
   const params: { owner: string; repo: string; category: string }[] = []
 
