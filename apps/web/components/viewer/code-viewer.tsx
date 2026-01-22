@@ -5,7 +5,7 @@ import { ScrollArea } from "@workspace/ui/components/scroll-area"
 import { Badge } from "@workspace/ui/components/badge"
 import type { RegistryFile } from "@/lib/viewer-types"
 import { codeToHtml } from "shiki"
-import { getFileName, getExtension } from "@/lib/path-utils"
+import { getFileName, getExtension, getTargetPath } from "@/lib/path-utils"
 
 interface CodeViewerProps {
   file: RegistryFile | null
@@ -81,7 +81,7 @@ export function CodeViewer({ file }: CodeViewerProps) {
     )
   }
 
-  const targetPath = file.target || file.path
+  const targetPath = getTargetPath(file)
   const fileName = getFileName(targetPath)
 
   return (

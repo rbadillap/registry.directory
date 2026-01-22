@@ -98,14 +98,12 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
                   {githubInfo.username}
                 </a>
                 <span className="text-neutral-600 mx-1.5">/</span>
-                <a
-                  href={`https://github.com/${githubInfo.username}/${githubInfo.repo}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href={`/${githubInfo.username}/${githubInfo.repo}`}
                   className="text-white font-semibold hover:underline transition-colors"
                 >
                   {githubInfo.repo}
-                </a>
+                </Link>
               </>
             ) : (
               <>
@@ -118,17 +116,33 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
         </div>
       </div>
 
-      <Button
-        asChild
-        variant="ghost"
-        size="sm"
-        className="gap-2 text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-      >
-        <a href={registry.url} target="_blank" rel="noopener noreferrer">
-          Visit Registry
-          <ExternalLink className="h-4 w-4" />
-        </a>
-      </Button>
+      <div className="flex items-center gap-2">
+        <Button
+          asChild
+          variant="ghost"
+          size="sm"
+          className="gap-2 text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+        >
+          <a href={registry.url} target="_blank" rel="noopener noreferrer">
+            Visit Registry
+            <ExternalLink className="h-4 w-4" />
+          </a>
+        </Button>
+
+        {registry.github_url && (
+          <Button
+            asChild
+            variant="ghost"
+            size="sm"
+            className="gap-2 text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+          >
+            <a href={registry.github_url} target="_blank" rel="noopener noreferrer">
+              Visit Repository
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </Button>
+        )}
+      </div>
     </div>
   )
 }

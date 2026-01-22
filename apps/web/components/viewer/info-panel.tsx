@@ -17,7 +17,7 @@ import {
   ArrowRight,
 } from "lucide-react"
 import type { RegistryItem } from "@/lib/viewer-types"
-import { getFileName } from "@/lib/path-utils"
+import { getFileName, getTargetPath } from "@/lib/path-utils"
 
 const REGISTRY_TYPES = [
   { value: "registry:ui", label: "UI", description: "Primitives and base components", icon: LayoutGrid },
@@ -97,12 +97,16 @@ export function InfoPanel({ item }: InfoPanelProps) {
                       </Badge>
                     </div>
                     <div className="space-y-1.5">
-                      {item.files.map((file, index) => (
+                      {item.files.map((file, index) => {
+                        const targetPath = getTargetPath(file)
+                        const hasExplicitTarget = file.target !== undefined
+
+                        return (
                         <div key={file.path} className="flex items-center gap-2 text-xs">
                           <span className="font-mono text-neutral-400 truncate flex-1">
-                            {getFileName(file.target || file.path)}
+                            {getFileName(targetPath)}
                           </span>
-                          {file.target && (
+                          {hasExplicitTarget && (
                             <>
                               <ArrowRight className="h-3 w-3 text-neutral-600 flex-shrink-0" />
                               <span className="font-mono text-neutral-500 truncate flex-1">{file.target}</span>
@@ -112,7 +116,8 @@ export function InfoPanel({ item }: InfoPanelProps) {
                             <span className="text-[10px] text-neutral-600">entry</span>
                           )}
                         </div>
-                      ))}
+                        )
+                      })}
                     </div>
                   </div>
                 )}

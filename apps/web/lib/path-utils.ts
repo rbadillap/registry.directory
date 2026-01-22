@@ -33,3 +33,24 @@ export function getExtension(path: string): string {
   const parts = fileName.split('.')
   return parts.length > 1 ? parts.pop() || '' : ''
 }
+
+/**
+ * Infers the target path based on registry conventions
+ * @param file - File object with path, target, and type
+ * @returns The inferred or actual target path
+ */
+export function getTargetPath(file: { path: string; target?: string; type: string }): string {
+  // If target exists, use it
+  if (file.target) {
+    return file.target
+  }
+
+  // shadcn convention: registry:ui always goes to components/ui/
+  if (file.type === 'registry:ui') {
+    const fileName = getFileName(file.path)
+    return `components/ui/${fileName}`
+  }
+
+  // Otherwise use path as-is
+  return file.path
+}

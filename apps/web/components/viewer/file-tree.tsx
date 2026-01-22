@@ -20,7 +20,7 @@ import {
 } from "lucide-react"
 import { cn } from "@workspace/ui/lib/utils"
 import type { RegistryItem, RegistryFile } from "@/lib/viewer-types"
-import { getFileName } from "@/lib/path-utils"
+import { getFileName, getTargetPath } from "@/lib/path-utils"
 
 interface FileTreeProps {
   items: RegistryItem[]
@@ -66,7 +66,7 @@ function buildPathTree(items: RegistryItem[]): PathTree {
     // If we have content (Nivel 3), process each file individually
     if (hasContent) {
       for (const file of item.files) {
-        const targetPath = file.target || file.path
+        const targetPath = getTargetPath(file)
         const pathParts = targetPath.split('/')
 
         let currentLevel = root
@@ -111,7 +111,8 @@ function buildPathTree(items: RegistryItem[]): PathTree {
     if (!firstFile) continue
 
     // Use target instead of path - this is where the file will be installed
-    const pathParts = (firstFile.target || firstFile.path).split('/')
+    const targetPath = getTargetPath(firstFile)
+    const pathParts = targetPath.split('/')
 
     let currentLevel = root
     let currentPath = ''
@@ -261,7 +262,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   const getItemFileName = (item: RegistryItem) => {
     const firstFile = item.files[0]
     if (!firstFile) return item.name
-    const targetPath = firstFile.target || firstFile.path
+    const targetPath = getTargetPath(firstFile)
     const ext = targetPath.split(".").slice(1).join(".")
     return ext ? `${item.name}.${ext}` : item.name
   }
@@ -274,7 +275,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     // Render individual file nodes (Nivel 3 with content)
     if (node.type === 'file' && hasItems && node.items[0]) {
       const item = node.items[0]
-      const file = item.files.find(f => (f.target || f.path) === node.path)
+      const file = item.files.find(f => getTargetPath(f) === node.path)
 
       if (file) {
         return (
@@ -352,7 +353,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                             )}
                           >
                             {getFileIcon(file.type)}
-                            <span className="truncate text-neutral-500">{getFileName(file.target || file.path)}</span>
+                            <span className="truncate text-neutral-500">{getFileName(getTargetPath(file))}</span>
                             {index === 0 && (
                               <span className="ml-auto text-[10px] text-neutral-500/60">entry</span>
                             )}
@@ -427,7 +428,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                                     )}
                                   >
                                     {getFileIcon(file.type)}
-                                    <span className="truncate text-neutral-500">{getFileName(file.target || file.path)}</span>
+                                    <span className="truncate text-neutral-500">{getFileName(getTargetPath(file))}</span>
                                     {index === 0 && (
                                       <span className="ml-auto text-[10px] text-neutral-500/60">entry</span>
                                     )}
