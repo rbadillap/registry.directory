@@ -6,6 +6,7 @@ import { RegistryViewer } from "@/components/registry-viewer"
 import { DirectoryEntry } from "@/lib/types"
 import type { Registry } from "@/lib/registry-types"
 import { slugToType, groupItemsByCategory } from "@/lib/registry-mappings"
+import { registryFetch } from "@/lib/fetch-utils"
 
 async function getRegistry(owner: string, repo: string) {
   console.log(`[CategoryView] Getting registry for ${owner}/${repo}`)
@@ -29,15 +30,10 @@ async function fetchRegistryIndex(registry: DirectoryEntry): Promise<Registry | 
   console.log(`[CategoryView] Fetching registry index from:`, targetUrl)
 
   try {
-    const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 5000)
-
-    const response = await fetch(targetUrl, {
-      signal: controller.signal,
+    const response = await registryFetch(targetUrl, {
+      timeout: 5000,
       next: { revalidate: 3600 }
     })
-
-    clearTimeout(timeoutId)
 
     console.log(`[CategoryView] Index fetch response:`, response.status, response.ok)
 
@@ -108,7 +104,10 @@ export async function generateStaticParams() {
 
     try {
       const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
-      const response = await fetch(targetUrl, { next: { revalidate: 3600 } })
+      const response = await registryFetch(targetUrl, {
+        timeout: 10000,
+        next: { revalidate: 3600 }
+      })
 
       if (!response.ok) continue
 

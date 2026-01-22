@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels"
 import { ScrollArea } from "@workspace/ui/components/scroll-area"
-import { Package, Blocks, Code, Paintbrush, Box, Palette, FileCode } from "lucide-react"
+import { Package, Blocks, Code, Paintbrush, Box, Palette, FileCode, Diamond } from "lucide-react"
 import { ViewerHeader } from "./viewer/viewer-header"
 import { StatusBar } from "./viewer/status-bar"
 import type { RegistryItem } from "@/lib/registry-types"
@@ -19,7 +19,7 @@ interface RegistryOverviewProps {
 const CATEGORY_ICONS = {
   ui: Package,
   blocks: Blocks,
-  components: Code,
+  components: Diamond,
   hooks: Code,
   lib: FileCode,
   pages: FileCode,

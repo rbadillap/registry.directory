@@ -16,7 +16,7 @@ import {
   Blocks,
   Code2,
   LayoutGrid,
-  Component,
+  Diamond,
 } from "lucide-react"
 import { cn } from "@workspace/ui/lib/utils"
 import type { RegistryItem, RegistryFile } from "@/lib/viewer-types"
@@ -185,6 +185,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     new Set(["components", "components/ui", "lib"]),
   )
   const [openItems, setOpenItems] = useState<Set<string>>(new Set())
+  const [searchQuery, setSearchQuery] = useState<string>("")
 
   // Detect if items have file content (Nivel 3) or just metadata (Nivel 2)
   const hasFileContent = useMemo(() => {
@@ -244,7 +245,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
       case "registry:ui":
         return LayoutGrid
       case "registry:component":
-        return Component
+        return Diamond
       case "registry:block":
         return Blocks
       case "registry:hook":
@@ -472,37 +473,57 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   if (!hasFileContent) {
     const categoryLabel = currentCategory ? CATEGORY_LABELS[currentCategory] || currentCategory : "Items"
 
+    // Filter items based on search query
+    const filteredItems = items.filter(item =>
+      item.name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+
     return (
       <div className="h-full border-r border-neutral-800 bg-black">
         <div className="p-3 border-b border-neutral-800">
-          <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">
-            {categoryLabel} ({items.length})
-          </span>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder={`${categoryLabel} (${items.length})`}
+            className="w-full bg-transparent text-xs font-medium text-neutral-500 uppercase tracking-wider placeholder:text-neutral-500 focus:outline-none focus:text-neutral-400"
+          />
+          {searchQuery && (
+            <div className="text-[10px] text-neutral-600 mt-1">
+              {filteredItems.length} of {items.length} items
+            </div>
+          )}
         </div>
 
         <ScrollArea className="h-[calc(100%-49px)]">
           <div className="p-2 space-y-0.5">
-            {items
-              .sort((a, b) => a.name.localeCompare(b.name))
-              .map((item) => {
-                const isSelected = selectedItem?.name === item.name
-                const Icon = getItemIcon(item.type)
+            {filteredItems.length > 0 ? (
+              filteredItems
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((item) => {
+                  const isSelected = selectedItem?.name === item.name
+                  const Icon = getItemIcon(item.type)
 
-                return (
-                  <Link
-                    key={item.name}
-                    href={`${pathname}/${item.name}`}
-                    className={cn(
-                      "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
-                      "hover:bg-neutral-800/50 transition-colors",
-                      isSelected && "bg-neutral-800"
-                    )}
-                  >
-                    <Icon className="h-4 w-4 text-neutral-500 flex-shrink-0" />
-                    <span className="truncate text-white">{item.name}</span>
-                  </Link>
-                )
-              })}
+                  return (
+                    <Link
+                      key={item.name}
+                      href={`${pathname}/${item.name}`}
+                      className={cn(
+                        "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
+                        "hover:bg-neutral-800/50 transition-colors",
+                        isSelected && "bg-neutral-800"
+                      )}
+                    >
+                      <Icon className="h-4 w-4 text-neutral-500 flex-shrink-0" />
+                      <span className="truncate text-white">{item.name}</span>
+                    </Link>
+                  )
+                })
+            ) : (
+              <div className="text-center text-neutral-500 text-sm py-4">
+                No items found
+              </div>
+            )}
           </div>
         </ScrollArea>
       </div>

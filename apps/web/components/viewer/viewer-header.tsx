@@ -37,6 +37,16 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
   const pathname = usePathname()
   const githubInfo = parseGitHubUrl(registry.github_url)
 
+  // Get current item name from path
+  const getCurrentItem = () => {
+    const segments = pathname.split('/').filter(Boolean)
+    // If we're at /{owner}/{repo}/{category}/{item}
+    if (segments.length >= 4) {
+      return segments[3]
+    }
+    return null
+  }
+
   // Calculate back URL based on current path
   const getBackUrl = () => {
     const segments = pathname.split('/').filter(Boolean)
@@ -61,6 +71,7 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
   }
 
   const backUrl = getBackUrl()
+  const currentItem = getCurrentItem()
 
   return (
     <div className="flex items-center justify-between border-b border-neutral-800 bg-black px-6 py-4">
@@ -104,6 +115,13 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
                 >
                   {githubInfo.repo}
                 </Link>
+                {currentItem && (
+                  <>
+                    <span className="text-neutral-600 mx-1.5">/</span>
+                    <span className="text-white">{currentItem}</span>
+                    <span className="text-neutral-600">.json</span>
+                  </>
+                )}
               </>
             ) : (
               <>

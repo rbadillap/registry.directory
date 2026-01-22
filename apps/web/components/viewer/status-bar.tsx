@@ -2,6 +2,7 @@
 
 import { Copy, Share2, Sparkles, MessageSquare } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
+import { Avatar, AvatarImage, AvatarFallback } from "@workspace/ui/components/avatar"
 import type { RegistryFile } from "@/lib/viewer-types"
 
 interface StatusBarProps {
@@ -124,6 +125,21 @@ export function StatusBar({ totalItems, selectedFile, onCopyCode, onShare }: Sta
             GitHub
           </a>
         </Button>
+
+        {/* Creator */}
+        <a
+          href="https://x.com/rbadillap"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="h-7 px-2 flex items-center gap-1.5 hover:bg-neutral-800 rounded transition-colors"
+          title="Created by @rbadillap"
+        >
+          <Avatar className="h-4 w-4">
+            <AvatarImage src="https://github.com/rbadillap.png" alt="rbadillap" />
+            <AvatarFallback className="bg-neutral-800 text-neutral-400 text-[10px]">RB</AvatarFallback>
+          </Avatar>
+          <span className="text-xs text-neutral-400">@rbadillap</span>
+        </a>
       </div>
     </footer>
   )

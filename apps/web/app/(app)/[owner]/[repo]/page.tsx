@@ -6,6 +6,7 @@ import { RegistryOverview } from "@/components/registry-overview"
 import { DirectoryEntry } from "@/lib/types"
 import type { Registry } from "@/lib/registry-types"
 import { groupItemsByCategory } from "@/lib/registry-mappings"
+import { registryFetch } from "@/lib/fetch-utils"
 
 async function getRegistry(owner: string, repo: string) {
   console.log(`[Level1] Getting registry for ${owner}/${repo}`)
@@ -29,15 +30,10 @@ async function fetchRegistryData(registry: DirectoryEntry): Promise<Registry | n
   console.log(`[Level1] Fetching registry data from:`, targetUrl)
 
   try {
-    const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 5000)
-
-    const response = await fetch(targetUrl, {
-      signal: controller.signal,
+    const response = await registryFetch(targetUrl, {
+      timeout: 5000,
       next: { revalidate: 3600 }
     })
-
-    clearTimeout(timeoutId)
 
     console.log(`[Level1] Fetch response:`, response.status, response.ok)
 
