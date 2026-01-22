@@ -135,19 +135,28 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                     Visit Site
                   </a>
                 </Button>
-                {showViewButton && (
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="sm"
-                    className="border-neutral-700 hover:bg-neutral-900 hover:text-white"
-                  >
-                    <Link href={`/view/${createSlug(entry.name)}`} className="gap-1.5">
-                      <Code2 className="w-3.5 h-3.5" />
-                      Open in IDE
-                    </Link>
-                  </Button>
-                )}
+                {showViewButton && (() => {
+                  // Extract owner and repo from github_url for semantic routes
+                  const match = entry.github_url?.match(/github\.com\/([^/]+)\/([^/]+)/)
+                  if (!match) return null
+
+                  const owner = match[1]
+                  const repo = match[2]?.replace(/\.git$/, '')
+
+                  return (
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="sm"
+                      className="border-neutral-700 hover:bg-neutral-900 hover:text-white"
+                    >
+                      <Link href={`/${owner}/${repo}`} className="gap-1.5">
+                        <Code2 className="w-3.5 h-3.5" />
+                        Open in IDE
+                      </Link>
+                    </Button>
+                  )
+                })()}
               </div>
             </CardFooter>
           </Card>

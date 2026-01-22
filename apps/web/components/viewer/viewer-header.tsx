@@ -60,9 +60,23 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
           <div className="text-sm font-mono">
             {githubInfo ? (
               <>
-                <span className="text-neutral-400">{githubInfo.username}</span>
+                <a
+                  href={`https://github.com/${githubInfo.username}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-400 hover:text-white hover:underline transition-colors"
+                >
+                  {githubInfo.username}
+                </a>
                 <span className="text-neutral-600 mx-1.5">/</span>
-                <span className="text-white font-semibold">{githubInfo.repo}</span>
+                <a
+                  href={`https://github.com/${githubInfo.username}/${githubInfo.repo}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white font-semibold hover:underline transition-colors"
+                >
+                  {githubInfo.repo}
+                </a>
               </>
             ) : (
               <>
