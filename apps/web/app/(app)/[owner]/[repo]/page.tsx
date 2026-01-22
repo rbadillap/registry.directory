@@ -23,16 +23,16 @@ async function getRegistry(owner: string, repo: string) {
   }) || null
 }
 
-async function fetchRegistryData(registryUrl: string) {
+async function fetchRegistryData(registry: DirectoryEntry) {
   try {
-    // Normalize URL - remove trailing slash
-    const baseUrl = registryUrl.replace(/\/$/, '')
+    // Use custom registry_url if provided, otherwise construct standard URL
+    const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
 
-    // Attempt to fetch /r/registry.json with timeout
+    // Attempt to fetch with timeout
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 5000) // 5 second timeout
 
-    const response = await fetch(`${baseUrl}/r/registry.json`, {
+    const response = await fetch(targetUrl, {
       signal: controller.signal,
       next: { revalidate: 3600 } // ISR: cache for 1 hour
     })
@@ -81,8 +81,8 @@ export default async function RegistryPage({
     notFound()
   }
 
-  // Attempt to fetch registry data from /r/registry.json
-  const registryData = await fetchRegistryData(registry.url)
+  // Attempt to fetch registry data from registry_url or /r/registry.json
+  const registryData = await fetchRegistryData(registry)
 
   // If no registry data available, it's a 404
   if (!registryData) {

@@ -4,4 +4,5 @@ export type DirectoryEntry = {
   url: string;
   github_url?: string;
   github_profile?: string;
+  registry_url?: string;
 };
