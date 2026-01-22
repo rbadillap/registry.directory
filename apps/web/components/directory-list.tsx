@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { ExternalLink as ExternalLinkIcon, Package, Plus, Eye } from "lucide-react";
+import { ExternalLink as ExternalLinkIcon, Package, Plus, Code2 } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -49,7 +49,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
     return (
       <div className="w-full max-w-5xl mx-auto mt-12 px-4 text-center">
         <p className="text-neutral-400 text-sm font-mono">
-          {searchTerm 
+          {searchTerm
             ? `No entries found matching "${searchTerm}"`
             : "No entries available"}
         </p>
@@ -83,6 +83,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
           </Card>
         </a>
       )}
+
       {entries.map((entry) => (
         <div key={encodeURIComponent(entry.url)} className="h-full">
           <Card className="bg-black border border-neutral-700/50 rounded-none overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col">
@@ -110,75 +111,10 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                   </div>
                 )}
                 <div className="flex-1 min-w-0">
-                  <a
-                    href={addUtmReference(entry.url)}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Open ${entry.name}`}
-                    className="block group"
-                  >
-                    <CardTitle className="text-base text-white truncate group-hover:underline">
-                      {entry.name}
-                    </CardTitle>
-                  </a>
+                  <CardTitle className="text-base text-white truncate">
+                    {entry.name}
+                  </CardTitle>
                 </div>
-              </div>
-              <div className="flex items-center gap-1">
-                {showViewButton && (
-                  <Button
-                    asChild
-                    size="icon"
-                    variant="ghost"
-                    className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black p-1"
-                  >
-                    <Link href={`/view/${createSlug(entry.name)}`}>
-                      <Eye className="w-4 h-4" />
-                    </Link>
-                  </Button>
-                )}
-                {entry.github_url && (
-                  <Button
-                    asChild
-                    size="icon"
-                    variant="ghost"
-                    className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black p-1"
-                    tabIndex={0}
-                  >
-                    <a
-                      href={entry.github_url}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`View ${entry.name} on GitHub`}
-                    >
-                      <svg 
-                        width="16" 
-                        height="16" 
-                        viewBox="0 0 24 24" 
-                        fill="currentColor" 
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-4 h-4"
-                      >
-                        <path d="M22,12.247a10,10,0,0,1-6.833,9.488c-.507.1-.687-.214-.687-.481,0-.328.012-1.407.012-2.743a2.386,2.386,0,0,0-.679-1.852c2.228-.248,4.566-1.093,4.566-4.935a3.859,3.859,0,0,0-1.028-2.683,3.591,3.591,0,0,0-.1-2.647s-.838-.269-2.747,1.025a9.495,9.495,0,0,0-5.007,0c-1.91-1.294-2.75-1.025-2.75-1.025a3.6,3.6,0,0,0-.1,2.647A3.864,3.864,0,0,0,5.62,11.724c0,3.832,2.334,4.69,4.555,4.942A2.137,2.137,0,0,0,9.54,18a2.128,2.128,0,0,1-2.91-.831A2.1,2.1,0,0,0,5.1,16.142s-.977-.013-.069.608A2.646,2.646,0,0,1,6.14,18.213s.586,1.944,3.368,1.34c.005.835.014,1.463.014,1.7,0,.265-.183.574-.683.482A10,10,0,1,1,22,12.247Z"/>
-                      </svg>
-                    </a>
-                  </Button>
-                )}
-                <Button
-                  asChild
-                  size="icon"
-                  variant="ghost"
-                  className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black p-1"
-                  tabIndex={0}
-                >
-                  <a
-                    href={addUtmReference(entry.url)}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Open ${entry.name}`}
-                  >
-                    <ExternalLinkIcon className="w-4 h-4" />
-                  </a>
-                </Button>
               </div>
             </CardHeader>
             <CardContent className="px-4 pb-6 pt-0 bg-black flex-1 flex flex-col justify-between">
@@ -186,19 +122,37 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                 {entry.description}
               </CardDescription>
             </CardContent>
-            <CardFooter className="px-4 pb-6 pt-0 bg-black">
-              <a 
-                href={addUtmReference(entry.url)} 
-                target="_blank" 
-                rel="noreferrer" 
-                className="text-xs text-neutral-300 leading-relaxed font-mono truncate hover:underline"
-              >
-                {getHostname(entry.url)}
-              </a>
+            <CardFooter className="px-4 pt-0 bg-black">
+              <div className={`grid gap-2 w-full ${showViewButton ? 'grid-cols-2' : 'grid-cols-1'}`}>
+                <Button
+                  asChild
+                  variant="link"
+                  size="sm"
+                  className="border-neutral-700 hover:bg-neutral-900 hover:text-current/90"
+                >
+                  <a href={addUtmReference(entry.url)} target="_blank" rel="noreferrer" className="gap-1.5">
+                    <ExternalLinkIcon className="w-3.5 h-3.5" />
+                    Visit Site
+                  </a>
+                </Button>
+                {showViewButton && (
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className="border-neutral-700 hover:bg-neutral-900 hover:text-white"
+                  >
+                    <Link href={`/view/${createSlug(entry.name)}`} className="gap-1.5">
+                      <Code2 className="w-3.5 h-3.5" />
+                      Open in IDE
+                    </Link>
+                  </Button>
+                )}
+              </div>
             </CardFooter>
           </Card>
         </div>
       ))}
     </div>
   );
-} 
+}
