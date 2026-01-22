@@ -1,30 +1,73 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels"
 import { FileTree } from "./viewer/file-tree"
 import { CodeViewer } from "./viewer/code-viewer"
 import { InfoPanel } from "./viewer/info-panel"
 import { ViewerHeader } from "./viewer/viewer-header"
 import { StatusBar } from "./viewer/status-bar"
-import { getHardcodedItems } from "@/lib/hardcoded-data"
-import type { RegistryItem, RegistryFile } from "@/lib/viewer-types"
+import type { RegistryItem as ViewerRegistryItem, RegistryFile } from "@/lib/viewer-types"
 import type { DirectoryEntry } from "@/lib/types"
-import type { Registry } from "@/lib/registry-types"
+import type { Registry, RegistryItem as SchemaRegistryItem } from "@/lib/registry-types"
 
 interface RegistryViewerProps {
   registry: DirectoryEntry
-  registryData: Registry
+  registryIndex: Registry
+  selectedItem: SchemaRegistryItem | null
+  currentCategory: string
 }
 
-export function RegistryViewer({ registry, registryData }: RegistryViewerProps) {
-  const [selectedItem, setSelectedItem] = useState<RegistryItem | null>(null)
+// Convert shadcn schema RegistryItem to viewer RegistryItem
+function convertToViewerItem(item: SchemaRegistryItem): ViewerRegistryItem {
+  return {
+    name: item.name,
+    type: item.type as ViewerRegistryItem["type"],
+    description: item.description,
+    files: (item.files || []).map(file => ({
+      path: file.path,
+      type: file.type as RegistryFile["type"],
+      code: file.content || "",
+      target: file.target || ""
+    })),
+    dependencies: item.dependencies,
+    registryDependencies: item.registryDependencies,
+  }
+}
+
+export function RegistryViewer({ registry, registryIndex, selectedItem: initialItem, currentCategory }: RegistryViewerProps) {
+  console.log('[RegistryViewer] Rendering with:', {
+    registry: registry.name,
+    category: currentCategory,
+    item: initialItem?.name || 'none',
+    totalItems: registryIndex.items.length
+  })
+
+  // Convert schema items to viewer items
+  const items = registryIndex.items.map(convertToViewerItem)
+  const convertedInitialItem = initialItem ? convertToViewerItem(initialItem) : null
+
+  const [selectedItem, setSelectedItem] = useState<ViewerRegistryItem | null>(convertedInitialItem)
   const [selectedFile, setSelectedFile] = useState<RegistryFile | null>(null)
 
-  // Get hardcoded items for now
-  const items = getHardcodedItems(registry.name)
+  // Set initial selected file when component mounts or item changes
+  useEffect(() => {
+    if (!initialItem) {
+      setSelectedItem(null)
+      setSelectedFile(null)
+      return
+    }
 
-  const handleSelectFile = (item: RegistryItem, file: RegistryFile) => {
+    const item = convertToViewerItem(initialItem)
+    const firstFile = item?.files[0]
+    if (item && firstFile) {
+      setSelectedItem(item)
+      setSelectedFile(firstFile)
+      console.log('[RegistryViewer] Initial file selected:', firstFile.path)
+    }
+  }, [initialItem])
+
+  const handleSelectFile = (item: ViewerRegistryItem, file: RegistryFile) => {
     setSelectedItem(item)
     setSelectedFile(file)
   }
@@ -80,10 +123,11 @@ export function RegistryViewer({ registry, registryData }: RegistryViewerProps) 
         <PanelGroup direction="horizontal">
           <Panel defaultSize={25} minSize={20} maxSize={35}>
             <FileTree
-              items={items}
+              items={selectedItem ? [selectedItem] : items}
               selectedItem={selectedItem}
               selectedFile={selectedFile}
               onSelectFile={handleSelectFile}
+              currentCategory={currentCategory}
             />
           </Panel>
 

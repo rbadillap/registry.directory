@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { ArrowLeft, ExternalLink } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@workspace/ui/components/avatar"
@@ -31,7 +34,33 @@ function parseGitHubUrl(url?: string) {
 }
 
 export function ViewerHeader({ registry }: ViewerHeaderProps) {
+  const pathname = usePathname()
   const githubInfo = parseGitHubUrl(registry.github_url)
+
+  // Calculate back URL based on current path
+  const getBackUrl = () => {
+    const segments = pathname.split('/').filter(Boolean)
+
+    // If we're at /{owner}/{repo}/{category}/{item}, go back to /{owner}/{repo}/{category}
+    if (segments.length >= 4) {
+      return `/${segments.slice(0, 3).join('/')}`
+    }
+
+    // If we're at /{owner}/{repo}/{category}, go back to /{owner}/{repo}
+    if (segments.length === 3) {
+      return `/${segments.slice(0, 2).join('/')}`
+    }
+
+    // If we're at /{owner}/{repo}, go back to /
+    if (segments.length === 2) {
+      return '/'
+    }
+
+    // Default to home
+    return '/'
+  }
+
+  const backUrl = getBackUrl()
 
   return (
     <div className="flex items-center justify-between border-b border-neutral-800 bg-black px-6 py-4">
@@ -42,7 +71,7 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
           variant="ghost"
           className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
         >
-          <Link href="/">
+          <Link href={backUrl}>
             <ArrowLeft className="h-5 w-5" />
           </Link>
         </Button>

@@ -5,13 +5,14 @@ import { ScrollArea } from "@workspace/ui/components/scroll-area"
 import { Badge } from "@workspace/ui/components/badge"
 import type { RegistryFile } from "@/lib/viewer-types"
 import { codeToHtml } from "shiki"
+import { getFileName, getExtension } from "@/lib/path-utils"
 
 interface CodeViewerProps {
   file: RegistryFile | null
 }
 
 function getLanguageFromPath(path: string): string {
-  const extension = path.split(".").pop()?.toLowerCase() || ""
+  const extension = getExtension(path).toLowerCase()
 
   const extensionMap: Record<string, string> = {
     ts: "typescript",
@@ -73,20 +74,22 @@ export function CodeViewer({ file }: CodeViewerProps) {
 
   if (!file) {
     return (
-      <div className="h-full flex items-center justify-center text-neutral-500 bg-black">
-        Select a file to view its code
+      <div className="h-full flex flex-col items-center justify-center text-neutral-500 bg-black p-8">
+        <p className="text-sm mb-2">Select a component to view its code</p>
+        <p className="text-xs text-neutral-600">Click on any item in the sidebar to get started</p>
       </div>
     )
   }
 
-  const fileName = file.path.split("/").pop() || file.path
+  const targetPath = file.target || file.path
+  const fileName = getFileName(targetPath)
 
   return (
     <div className="h-full flex flex-col bg-black">
       <div className="h-[49px] flex items-center justify-between border-b border-neutral-700/50 bg-black px-4 flex-shrink-0">
         <div className="flex items-center gap-2">
           <span className="text-sm font-medium text-white">{fileName}</span>
-          <span className="text-xs text-neutral-500 font-mono">{file.path}</span>
+          <span className="text-xs text-neutral-500 font-mono">{targetPath}</span>
         </div>
         <Badge variant="secondary" className="text-xs border border-neutral-700/50">
           {file.type.replace("registry:", "")}

@@ -1,53 +1,74 @@
 import { notFound } from "next/navigation"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
-import { RegistryViewer } from "@/components/registry-viewer"
+import type { Metadata } from "next"
+import { RegistryOverview } from "@/components/registry-overview"
 import { DirectoryEntry } from "@/lib/types"
 import type { Registry } from "@/lib/registry-types"
+import { groupItemsByCategory } from "@/lib/registry-mappings"
 
 async function getRegistry(owner: string, repo: string) {
+  console.log(`[Level1] Getting registry for ${owner}/${repo}`)
   const filePath = join(process.cwd(), "public/registries.json")
   const fileContents = await readFile(filePath, "utf8")
   const registries = JSON.parse(fileContents) as DirectoryEntry[]
 
-  // Find registry by matching github_url pattern
-  return registries.find((r) => {
+  const registry = registries.find((r) => {
     if (!r.github_url) return false
-
     const match = r.github_url.match(/github\.com\/([^/]+)\/([^/]+)/)
     if (!match) return false
+    return match[1] === owner && match[2]?.replace(/\.git$/, '') === repo
+  })
 
-    const registryOwner = match[1]
-    const registryRepo = match[2]?.replace(/\.git$/, '')
-
-    return registryOwner === owner && registryRepo === repo
-  }) || null
+  console.log(`[Level1] Registry found:`, !!registry)
+  return registry || null
 }
 
 async function fetchRegistryData(registry: DirectoryEntry): Promise<Registry | null> {
-  try {
-    // Use custom registry_url if provided, otherwise construct standard URL
-    const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
+  const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
+  console.log(`[Level1] Fetching registry data from:`, targetUrl)
 
-    // Attempt to fetch with timeout
+  try {
     const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 5000) // 5 second timeout
+    const timeoutId = setTimeout(() => controller.abort(), 5000)
 
     const response = await fetch(targetUrl, {
       signal: controller.signal,
-      next: { revalidate: 3600 } // ISR: cache for 1 hour
+      next: { revalidate: 3600 }
     })
 
     clearTimeout(timeoutId)
 
-    if (!response.ok) {
-      return null
-    }
+    console.log(`[Level1] Fetch response:`, response.status, response.ok)
 
-    return await response.json()
+    if (!response.ok) return null
+
+    const data = await response.json()
+    console.log(`[Level1] Registry items count:`, data.items?.length || 0)
+    return data
   } catch (error) {
-    // Timeout, network error, or invalid JSON
+    console.error(`[Level1] Fetch error:`, error)
     return null
+  }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ owner: string; repo: string }>
+}): Promise<Metadata> {
+  const { owner, repo } = await params
+  const registry = await getRegistry(owner, repo)
+
+  if (!registry) {
+    return {
+      title: "Registry Not Found",
+    }
+  }
+
+  return {
+    title: registry.name,
+    description: registry.description || `Browse components from ${owner}/${repo}`,
   }
 }
 
@@ -70,25 +91,47 @@ export async function generateStaticParams() {
     .filter(Boolean) as { owner: string; repo: string }[]
 }
 
-export default async function RegistryPage({
+export default async function RegistryOverviewPage({
   params,
 }: {
   params: Promise<{ owner: string; repo: string }>
 }) {
+  console.log(`[Level1] Rendering registry overview page`)
   const { owner, repo } = await params
   const registry = await getRegistry(owner, repo)
 
   if (!registry) {
+    console.log(`[Level1] Registry not found, returning 404`)
     notFound()
   }
 
-  // Attempt to fetch registry data from registry_url or /r/registry.json
   const registryData = await fetchRegistryData(registry)
 
-  // If no registry data available, it's a 404
   if (!registryData) {
+    console.log(`[Level1] Registry data not available, returning 404`)
     notFound()
   }
 
-  return <RegistryViewer registry={registry} registryData={registryData} />
+  if (!registryData.items || !Array.isArray(registryData.items)) {
+    console.log(`[Level1] Registry items invalid or empty, returning 404`)
+    notFound()
+  }
+
+  // Group items by category
+  const categoriesMap = groupItemsByCategory(registryData.items)
+  console.log(`[Level1] Categories found:`, Array.from(categoriesMap.keys()))
+
+  if (categoriesMap.size === 0) {
+    console.log(`[Level1] No categories found, returning 404`)
+    notFound()
+  }
+
+  return (
+    <RegistryOverview
+      registry={registry}
+      categories={categoriesMap}
+      owner={owner}
+      repo={repo}
+    />
+  )
 }

@@ -17,9 +17,11 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "registry.directory - a collection of shadcn/ui registries",
+  title: {
+    template: "%s | registry.directory",
+    default: "registry.directory - a collection of shadcn/ui registries",
+  },
   description: "The place where shadcn/ui registries live. Discover, Preview, Copy, and Paste components.",
-  
 };
 
 export const viewport: Viewport = {

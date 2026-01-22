@@ -1,6 +1,8 @@
 "use client"
 
 import React, { useState, useMemo } from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { ScrollArea } from "@workspace/ui/components/scroll-area"
 import {
   ChevronRight,
@@ -11,15 +13,34 @@ import {
   FileText,
   Palette,
   Package,
+  Blocks,
+  Code2,
+  LayoutGrid,
+  Component,
 } from "lucide-react"
 import { cn } from "@workspace/ui/lib/utils"
 import type { RegistryItem, RegistryFile } from "@/lib/viewer-types"
+import { getFileName } from "@/lib/path-utils"
 
 interface FileTreeProps {
   items: RegistryItem[]
   selectedItem: RegistryItem | null
   selectedFile: RegistryFile | null
   onSelectFile: (item: RegistryItem, file: RegistryFile) => void
+  currentCategory?: string
+}
+
+const CATEGORY_LABELS: Record<string, string> = {
+  ui: "UI Components",
+  blocks: "Blocks",
+  components: "Components",
+  hooks: "Hooks",
+  lib: "Libraries",
+  pages: "Pages",
+  themes: "Themes",
+  styles: "Styles",
+  examples: "Examples",
+  base: "Base",
 }
 
 type TreeNode = {
@@ -36,11 +57,61 @@ type PathTree = Map<string, TreeNode>
 function buildPathTree(items: RegistryItem[]): PathTree {
   const root = new Map<string, TreeNode>()
 
+  // Check if we have file content - if so, build tree from individual files
+  const hasContent = items.length > 0 && items[0].files.length > 0 && items[0].files[0].code !== ""
+
   for (const item of items) {
+    if (!item.files || item.files.length === 0) continue
+
+    // If we have content (Nivel 3), process each file individually
+    if (hasContent) {
+      for (const file of item.files) {
+        const targetPath = file.target || file.path
+        const pathParts = targetPath.split('/')
+
+        let currentLevel = root
+        let currentPath = ''
+
+        // Create folder nodes for all segments except the last one (file name)
+        for (let i = 0; i < pathParts.length - 1; i++) {
+          const segment = pathParts[i]
+          if (!segment) continue
+          currentPath = currentPath ? `${currentPath}/${segment}` : segment
+
+          if (!currentLevel.has(segment)) {
+            currentLevel.set(segment, {
+              name: segment,
+              path: currentPath,
+              type: 'folder',
+              children: new Map(),
+              items: [],
+            })
+          }
+
+          currentLevel = currentLevel.get(segment)!.children
+        }
+
+        // Add the file at the final location
+        const fileName = pathParts[pathParts.length - 1]
+        if (fileName && !currentLevel.has(fileName)) {
+          currentLevel.set(fileName, {
+            name: fileName,
+            path: targetPath,
+            type: 'file',
+            children: new Map(),
+            items: [item],
+          })
+        }
+      }
+      continue
+    }
+
+    // Original logic for Nivel 2 (no content)
     const firstFile = item.files[0]
     if (!firstFile) continue
 
-    const pathParts = firstFile.path.split('/')
+    // Use target instead of path - this is where the file will be installed
+    const pathParts = (firstFile.target || firstFile.path).split('/')
 
     let currentLevel = root
     let currentPath = ''
@@ -106,11 +177,19 @@ function buildPathTree(items: RegistryItem[]): PathTree {
   return root
 }
 
-export function FileTree({ items, selectedItem, selectedFile, onSelectFile }: FileTreeProps) {
+export function FileTree({ items, selectedItem, selectedFile, onSelectFile, currentCategory }: FileTreeProps) {
+  const pathname = usePathname()
   const [openFolders, setOpenFolders] = useState<Set<string>>(
     new Set(["components", "components/ui", "lib"]),
   )
   const [openItems, setOpenItems] = useState<Set<string>>(new Set())
+
+  // Detect if items have file content (Nivel 3) or just metadata (Nivel 2)
+  const hasFileContent = useMemo(() => {
+    if (items.length === 0) return false
+    const firstItem = items[0]
+    return firstItem.files.length > 0 && firstItem.files[0].code !== ""
+  }, [items])
 
   const pathTree = useMemo(() => buildPathTree(items), [items])
 
@@ -158,14 +237,32 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile }: Fi
     }
   }
 
-  const getFileName = (path: string) => {
-    return path.split("/").pop() || path
+  const getItemIcon = (type: RegistryItem["type"]) => {
+    switch (type) {
+      case "registry:ui":
+        return LayoutGrid
+      case "registry:component":
+        return Component
+      case "registry:block":
+        return Blocks
+      case "registry:hook":
+        return Code2
+      case "registry:lib":
+        return FileText
+      case "registry:page":
+        return FileCode
+      case "registry:theme":
+        return Palette
+      default:
+        return Package
+    }
   }
 
   const getItemFileName = (item: RegistryItem) => {
     const firstFile = item.files[0]
     if (!firstFile) return item.name
-    const ext = firstFile.path.split(".").slice(1).join(".")
+    const targetPath = firstFile.target || firstFile.path
+    const ext = targetPath.split(".").slice(1).join(".")
     return ext ? `${item.name}.${ext}` : item.name
   }
 
@@ -173,6 +270,30 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile }: Fi
     const isOpen = openFolders.has(node.path)
     const hasChildren = node.children.size > 0
     const hasItems = node.items.length > 0
+
+    // Render individual file nodes (Nivel 3 with content)
+    if (node.type === 'file' && hasItems && node.items[0]) {
+      const item = node.items[0]
+      const file = item.files.find(f => (f.target || f.path) === node.path)
+
+      if (file) {
+        return (
+          <button
+            key={node.path}
+            onClick={() => onSelectFile(item, file)}
+            className={cn(
+              "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
+              "hover:bg-neutral-800/50 transition-colors",
+              selectedFile?.path === file.path && "bg-neutral-800",
+              depth > 0 && "ml-4 mt-0.5"
+            )}
+          >
+            {getFileIcon(file.type)}
+            <span className="truncate text-neutral-500">{node.name}</span>
+          </button>
+        )
+      }
+    }
 
     if (node.type === 'file' && !hasChildren && !hasItems) {
       return <></>
@@ -231,7 +352,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile }: Fi
                             )}
                           >
                             {getFileIcon(file.type)}
-                            <span className="truncate text-neutral-500">{getFileName(file.path)}</span>
+                            <span className="truncate text-neutral-500">{getFileName(file.target || file.path)}</span>
                             {index === 0 && (
                               <span className="ml-auto text-[10px] text-neutral-500/60">entry</span>
                             )}
@@ -306,7 +427,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile }: Fi
                                     )}
                                   >
                                     {getFileIcon(file.type)}
-                                    <span className="truncate text-neutral-500">{getFileName(file.path)}</span>
+                                    <span className="truncate text-neutral-500">{getFileName(file.target || file.path)}</span>
                                     {index === 0 && (
                                       <span className="ml-auto text-[10px] text-neutral-500/60">entry</span>
                                     )}
@@ -345,6 +466,48 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile }: Fi
     )
   }
 
+  // Render flat list of items (Nivel 2 - no file content)
+  if (!hasFileContent) {
+    const categoryLabel = currentCategory ? CATEGORY_LABELS[currentCategory] || currentCategory : "Items"
+
+    return (
+      <div className="h-full border-r border-neutral-800 bg-black">
+        <div className="p-3 border-b border-neutral-800">
+          <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">
+            {categoryLabel} ({items.length})
+          </span>
+        </div>
+
+        <ScrollArea className="h-[calc(100%-49px)]">
+          <div className="p-2 space-y-0.5">
+            {items
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((item) => {
+                const isSelected = selectedItem?.name === item.name
+                const Icon = getItemIcon(item.type)
+
+                return (
+                  <Link
+                    key={item.name}
+                    href={`${pathname}/${item.name}`}
+                    className={cn(
+                      "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
+                      "hover:bg-neutral-800/50 transition-colors",
+                      isSelected && "bg-neutral-800"
+                    )}
+                  >
+                    <Icon className="h-4 w-4 text-neutral-500 flex-shrink-0" />
+                    <span className="truncate text-white">{item.name}</span>
+                  </Link>
+                )
+              })}
+          </div>
+        </ScrollArea>
+      </div>
+    )
+  }
+
+  // Render file tree (Nivel 3 - with file content)
   return (
     <div className="h-full border-r border-neutral-800 bg-black">
       <div className="p-3 border-b border-neutral-800">

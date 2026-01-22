@@ -17,6 +17,7 @@ import {
   ArrowRight,
 } from "lucide-react"
 import type { RegistryItem } from "@/lib/viewer-types"
+import { getFileName } from "@/lib/path-utils"
 
 const REGISTRY_TYPES = [
   { value: "registry:ui", label: "UI", description: "Primitives and base components", icon: LayoutGrid },
@@ -44,10 +45,6 @@ export function InfoPanel({ item }: InfoPanelProps) {
 
   const currentType = REGISTRY_TYPES.find((t) => t.value === item.type)
   const CurrentIcon = currentType?.icon || Component
-
-  const getDisplayFileName = (filePath: string) => {
-    return filePath.split("/").pop() || filePath
-  }
 
   const allDeps = [
     ...(item.dependencies || []).map((d) => ({ name: d, type: "npm" as const })),
@@ -103,7 +100,7 @@ export function InfoPanel({ item }: InfoPanelProps) {
                       {item.files.map((file, index) => (
                         <div key={file.path} className="flex items-center gap-2 text-xs">
                           <span className="font-mono text-neutral-400 truncate flex-1">
-                            {getDisplayFileName(file.path)}
+                            {getFileName(file.target || file.path)}
                           </span>
                           {file.target && (
                             <>
