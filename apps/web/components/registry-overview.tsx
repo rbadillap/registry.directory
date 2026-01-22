@@ -181,7 +181,6 @@ export function RegistryOverview({ registry, categories, owner, repo }: Registry
       <StatusBar
         totalItems={totalItems}
         selectedFile={null}
-        githubUrl={registry.github_url}
         onCopyCode={() => {}}
         onShare={() => {}}
       />

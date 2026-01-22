@@ -20,7 +20,7 @@ export default function NotFound() {
           </EmptyMedia>
           <EmptyTitle className="text-white">Registry Not Found</EmptyTitle>
           <EmptyDescription className="text-neutral-400">
-            This registry either doesn't exist or doesn't expose a{" "}
+            This registry either does not exist or does not expose a{" "}
             <code className="text-neutral-300 bg-neutral-900 px-1.5 py-0.5 rounded">
               /r/registry.json
             </code>{" "}

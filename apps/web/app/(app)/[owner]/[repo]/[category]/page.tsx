@@ -4,7 +4,7 @@ import { join } from "node:path"
 import type { Metadata } from "next"
 import { RegistryViewer } from "@/components/registry-viewer"
 import { DirectoryEntry } from "@/lib/types"
-import type { Registry, RegistryItem } from "@/lib/registry-types"
+import type { Registry } from "@/lib/registry-types"
 import { slugToType, groupItemsByCategory } from "@/lib/registry-mappings"
 
 async function getRegistry(owner: string, repo: string) {

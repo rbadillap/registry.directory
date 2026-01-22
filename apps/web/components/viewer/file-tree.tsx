@@ -58,7 +58,8 @@ function buildPathTree(items: RegistryItem[]): PathTree {
   const root = new Map<string, TreeNode>()
 
   // Check if we have file content - if so, build tree from individual files
-  const hasContent = items.length > 0 && items[0].files.length > 0 && items[0].files[0].code !== ""
+  const firstItem = items.length > 0 ? items[0] : null
+  const hasContent = Boolean(firstItem?.files?.[0]?.code)
 
   for (const item of items) {
     if (!item.files || item.files.length === 0) continue
@@ -189,7 +190,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   const hasFileContent = useMemo(() => {
     if (items.length === 0) return false
     const firstItem = items[0]
-    return firstItem.files.length > 0 && firstItem.files[0].code !== ""
+    return Boolean(firstItem?.files?.[0]?.code)
   }, [items])
 
   const pathTree = useMemo(() => buildPathTree(items), [items])

@@ -148,7 +148,6 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
       <StatusBar
         totalItems={items.length}
         selectedFile={selectedFile}
-        githubUrl={registry.github_url}
         onCopyCode={handleCopyCode}
         onShare={handleShare}
       />

@@ -7,7 +7,6 @@ import type { RegistryFile } from "@/lib/viewer-types"
 interface StatusBarProps {
   totalItems: number
   selectedFile: RegistryFile | null
-  githubUrl?: string
   onCopyCode?: () => void
   onShare?: () => void
 }
@@ -21,7 +20,7 @@ function getFileTypeName(file: RegistryFile | null): string {
   return `${type} • ${extension}`
 }
 
-export function StatusBar({ totalItems, selectedFile, githubUrl, onCopyCode, onShare }: StatusBarProps) {
+export function StatusBar({ totalItems, selectedFile, onCopyCode, onShare }: StatusBarProps) {
   const fileType = getFileTypeName(selectedFile)
 
   const handleOpenInV0 = () => {
