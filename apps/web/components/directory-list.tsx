@@ -18,7 +18,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@workspace/ui/components/avatar";
-import { getHostname, createSlug } from "@/lib/utils";
+import { createSlug } from "@/lib/utils";
 import type { DirectoryEntry } from "@/lib/types";
 
 const addUtmReference = (url: string) => {

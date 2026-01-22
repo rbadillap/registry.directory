@@ -12,11 +12,13 @@ function parseGitHubUrl(url?: string) {
   if (!url) return null
 
   try {
-    const match = url.match(/github\.com\/([^\/]+)\/([^\/]+)/)
+    const match = url.match(/github\.com\/([^/]+)\/([^/]+)/)
     if (!match) return null
 
     const username = match[1]
     const repo = match[2]?.replace(/\.git$/, '') // Remove .git if present
+
+    if (!username || !repo) return null
 
     return {
       username,

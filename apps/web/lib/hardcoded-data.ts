@@ -1,6 +1,6 @@
 import { RegistryItem } from "./viewer-types"
 
-export function getHardcodedItems(registryName: string): RegistryItem[] {
+export function getHardcodedItems(_registryName: string): RegistryItem[] {
   // For now, return the same hardcoded items for all registries
   // In the future, this will fetch real data based on the registry name
 
