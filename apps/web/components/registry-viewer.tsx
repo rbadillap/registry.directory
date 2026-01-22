@@ -134,7 +134,7 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
           <PanelResizeHandle className="w-px bg-neutral-800" />
 
           <Panel defaultSize={50} minSize={40} maxSize={60}>
-            <CodeViewer file={selectedFile} />
+            <CodeViewer file={selectedFile} selectedItem={selectedItem} />
           </Panel>
 
           <PanelResizeHandle className="w-px bg-neutral-800" />

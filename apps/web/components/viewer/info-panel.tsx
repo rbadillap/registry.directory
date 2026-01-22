@@ -31,6 +31,7 @@ const REGISTRY_TYPES = [
   { value: "registry:page", label: "Page", description: "Full page or route component", icon: FileText },
   { value: "registry:file", label: "File", description: "Config, env, or misc files", icon: File },
   { value: "registry:theme", label: "Theme", description: "CSS variables and theming", icon: Palette },
+  { value: "registry:style", label: "Style", description: "Style configurations and presets", icon: Palette },
 ] as const
 
 interface InfoPanelProps {

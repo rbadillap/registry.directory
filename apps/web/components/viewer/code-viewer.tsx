@@ -3,12 +3,14 @@
 import { useEffect, useState } from "react"
 import { ScrollArea } from "@workspace/ui/components/scroll-area"
 import { Badge } from "@workspace/ui/components/badge"
-import type { RegistryFile } from "@/lib/viewer-types"
+import { FileCode, Package } from "lucide-react"
+import type { RegistryFile, RegistryItem } from "@/lib/viewer-types"
 import { codeToHtml } from "shiki"
 import { getFileName, getExtension, getTargetPath } from "@/lib/path-utils"
 
 interface CodeViewerProps {
   file: RegistryFile | null
+  selectedItem?: RegistryItem | null
 }
 
 function getLanguageFromPath(path: string): string {
@@ -41,7 +43,7 @@ function getLanguageFromPath(path: string): string {
   return extensionMap[extension] || "text"
 }
 
-export function CodeViewer({ file }: CodeViewerProps) {
+export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
   const [highlightedCode, setHighlightedCode] = useState<string>("")
   const [isLoading, setIsLoading] = useState(false)
 
@@ -72,6 +74,34 @@ export function CodeViewer({ file }: CodeViewerProps) {
       })
   }, [file])
 
+  // If there's a selected item but no files
+  if (!file && selectedItem) {
+    return (
+      <div className="h-full flex flex-col items-center justify-center text-neutral-500 bg-black p-8">
+        <div className="text-center space-y-4 max-w-md">
+          <FileCode className="h-12 w-12 text-neutral-700 mx-auto" />
+          <div className="space-y-2">
+            <p className="text-sm text-neutral-400 font-medium">This item has no files to display</p>
+            <p className="text-xs text-neutral-600 leading-relaxed">
+              This item only defines dependencies and configuration.
+              Check the Configuration panel on the right for more details.
+            </p>
+          </div>
+          {(selectedItem.dependencies?.length || selectedItem.registryDependencies?.length) ? (
+            <div className="pt-2 flex items-center justify-center gap-2 text-xs text-neutral-600">
+              <Package className="h-4 w-4" />
+              <span>
+                {selectedItem.dependencies?.length || 0} npm package{selectedItem.dependencies?.length !== 1 ? 's' : ''}
+                {selectedItem.registryDependencies?.length ? ` • ${selectedItem.registryDependencies.length} registry item${selectedItem.registryDependencies.length !== 1 ? 's' : ''}` : ''}
+              </span>
+            </div>
+          ) : null}
+        </div>
+      </div>
+    )
+  }
+
+  // No file and no selected item - default empty state
   if (!file) {
     return (
       <div className="h-full flex flex-col items-center justify-center text-neutral-500 bg-black p-8">

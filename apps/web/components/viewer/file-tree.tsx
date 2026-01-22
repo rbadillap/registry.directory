@@ -187,6 +187,9 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   const [openItems, setOpenItems] = useState<Set<string>>(new Set())
   const [searchQuery, setSearchQuery] = useState<string>("")
 
+  // Detect if we're viewing a single item (Nivel 3) or category list (Nivel 2)
+  const isItemView = selectedItem !== null
+
   // Detect if items have file content (Nivel 3) or just metadata (Nivel 2)
   const hasFileContent = useMemo(() => {
     if (items.length === 0) return false
@@ -235,6 +238,8 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
         return <FileCode className="h-4 w-4 text-neutral-500" />
       case "registry:theme":
         return <Palette className="h-4 w-4 text-neutral-500" />
+      case "registry:style":
+        return <Palette className="h-4 w-4 text-neutral-500" />
       default:
         return <FileText className="h-4 w-4 text-neutral-500" />
     }
@@ -255,6 +260,8 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
       case "registry:page":
         return FileCode
       case "registry:theme":
+        return Palette
+      case "registry:style":
         return Palette
       default:
         return Package
@@ -465,6 +472,22 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
             )}
           </>
         )}
+      </div>
+    )
+  }
+
+  // If viewing a single item without files, show empty file tree
+  if (isItemView && !hasFileContent) {
+    return (
+      <div className="h-full border-r border-neutral-800 bg-black">
+        <div className="p-3 border-b border-neutral-800">
+          <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Files</span>
+        </div>
+        <div className="flex items-center justify-center h-[calc(100%-49px)] p-4">
+          <p className="text-xs text-neutral-600 text-center">
+            No files
+          </p>
+        </div>
       </div>
     )
   }
