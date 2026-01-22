@@ -41,13 +41,13 @@ export function RegistryViewer({ registry }: RegistryViewerProps) {
             />
           </Panel>
 
-          <PanelResizeHandle className="w-px bg-stone-700/50" />
+          <PanelResizeHandle className="w-px bg-neutral-700/50" />
 
           <Panel defaultSize={50} minSize={40} maxSize={60}>
             <CodeViewer file={selectedFile} />
           </Panel>
 
-          <PanelResizeHandle className="w-px bg-stone-700/50" />
+          <PanelResizeHandle className="w-px bg-neutral-700/50" />
 
           <Panel defaultSize={25} minSize={20} maxSize={35}>
             <InfoPanel item={selectedItem} />

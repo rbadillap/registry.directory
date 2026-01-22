@@ -185,7 +185,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile }: Fi
             <button
               onClick={() => toggleFolder(node.path)}
               className={cn(
-                "flex items-center gap-1 w-full px-2 py-1.5 rounded hover:bg-rose-700/10 transition-colors text-sm",
+                "flex items-center gap-1 w-full px-2 py-1.5 rounded hover:bg-neutral-800/50 transition-colors text-sm",
                 depth === 0 && "mb-1"
               )}
             >
@@ -226,8 +226,8 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile }: Fi
                             onClick={() => onSelectFile(blockItem, file)}
                             className={cn(
                               "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm",
-                              "hover:bg-rose-700/10 transition-colors",
-                              selectedFile?.path === file.path && "bg-rose-700/20",
+                              "hover:bg-neutral-800/50 transition-colors",
+                              selectedFile?.path === file.path && "bg-neutral-800",
                             )}
                           >
                             {getFileIcon(file.type)}
@@ -280,8 +280,8 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile }: Fi
                               onClick={() => toggleItem(item.name)}
                               className={cn(
                                 "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
-                                "hover:bg-rose-700/10 transition-colors",
-                                isItemSelected && "bg-rose-700/10",
+                                "hover:bg-neutral-800/50 transition-colors",
+                                isItemSelected && "bg-neutral-800/50",
                               )}
                             >
                               {isItemOpen ? (
@@ -301,8 +301,8 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile }: Fi
                                     onClick={() => onSelectFile(item, file)}
                                     className={cn(
                                       "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
-                                      "hover:bg-rose-700/10 transition-colors",
-                                      selectedFile?.path === file.path && "bg-rose-700/20",
+                                      "hover:bg-neutral-800/50 transition-colors",
+                                      selectedFile?.path === file.path && "bg-neutral-800",
                                     )}
                                   >
                                     {getFileIcon(file.type)}
@@ -327,8 +327,8 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile }: Fi
                           onClick={() => onSelectFile(item, firstFile)}
                           className={cn(
                             "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
-                            "hover:bg-rose-700/10 transition-colors",
-                            selectedFile?.path === firstFile.path && "bg-rose-700/20",
+                            "hover:bg-neutral-800/50 transition-colors",
+                            selectedFile?.path === firstFile.path && "bg-neutral-800",
                           )}
                         >
                           {getFileIcon(item.type)}
@@ -346,8 +346,8 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile }: Fi
   }
 
   return (
-    <div className="h-full border-r border-stone-700/50 bg-black">
-      <div className="p-3 border-b border-stone-700/50">
+    <div className="h-full border-r border-neutral-800 bg-black">
+      <div className="p-3 border-b border-neutral-800">
         <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Registry Items</span>
       </div>
 

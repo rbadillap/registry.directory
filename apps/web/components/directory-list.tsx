@@ -66,12 +66,12 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
           rel="noreferrer"
           className="h-full group"
         >
-          <Card className="bg-black border border-stone-700/50 border-dashed rounded-none overflow-hidden shadow-none hover:shadow-lg hover:border-rose-700/50 transition-all h-full flex flex-col">
+          <Card className="bg-black border border-neutral-700/50 border-dashed rounded-none overflow-hidden shadow-none hover:shadow-lg hover:border-neutral-700 transition-all h-full flex flex-col">
             <CardHeader className="flex flex-col items-center justify-center gap-3 bg-black pt-6 min-h-[140px]">
               <div className="flex-shrink-0">
-                <Plus className="w-8 h-8 text-neutral-500 group-hover:text-rose-700 transition-colors" />
+                <Plus className="w-8 h-8 text-neutral-500 group-hover:text-neutral-400 transition-colors" />
               </div>
-              <CardTitle className="text-base text-white text-center group-hover:text-rose-700 transition-colors">
+              <CardTitle className="text-base text-white text-center group-hover:text-white transition-colors">
                 {addCardLabel}
               </CardTitle>
             </CardHeader>
@@ -85,7 +85,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
       )}
       {entries.map((entry) => (
         <div key={encodeURIComponent(entry.url)} className="h-full">
-          <Card className="bg-black border border-stone-700/50 rounded-none overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col">
+          <Card className="bg-black border border-neutral-700/50 rounded-none overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col">
             <CardHeader className="flex flex-row items-start justify-between gap-2 bg-black pt-6">
               <div className="flex items-start gap-3 flex-1 min-w-0">
                 {entry.github_profile ? (
@@ -99,7 +99,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                   >
                     <Avatar className="w-8 h-8">
                       <AvatarImage src={entry.github_profile} alt={entry.name} />
-                      <AvatarFallback className="bg-stone-800 text-neutral-400 text-xs">
+                      <AvatarFallback className="bg-neutral-800 text-neutral-400 text-xs">
                         {entry.name.charAt(0).toUpperCase()}
                       </AvatarFallback>
                     </Avatar>
@@ -129,7 +129,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                     asChild
                     size="icon"
                     variant="ghost"
-                    className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-rose-700 focus-visible:ring-offset-2 focus-visible:ring-offset-black p-1"
+                    className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black p-1"
                   >
                     <Link href={`/view/${createSlug(entry.name)}`}>
                       <Eye className="w-4 h-4" />
@@ -141,7 +141,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                     asChild
                     size="icon"
                     variant="ghost"
-                    className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-rose-700 focus-visible:ring-offset-2 focus-visible:ring-offset-black p-1"
+                    className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black p-1"
                     tabIndex={0}
                   >
                     <a
@@ -167,7 +167,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                   asChild
                   size="icon"
                   variant="ghost"
-                  className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-rose-700 focus-visible:ring-offset-2 focus-visible:ring-offset-black p-1"
+                  className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black p-1"
                   tabIndex={0}
                 >
                   <a

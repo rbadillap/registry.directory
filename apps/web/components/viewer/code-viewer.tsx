@@ -83,12 +83,12 @@ export function CodeViewer({ file }: CodeViewerProps) {
 
   return (
     <div className="h-full flex flex-col bg-black">
-      <div className="h-[49px] flex items-center justify-between border-b border-stone-700/50 bg-black px-4 flex-shrink-0">
+      <div className="h-[49px] flex items-center justify-between border-b border-neutral-700/50 bg-black px-4 flex-shrink-0">
         <div className="flex items-center gap-2">
           <span className="text-sm font-medium text-white">{fileName}</span>
           <span className="text-xs text-neutral-500 font-mono">{file.path}</span>
         </div>
-        <Badge variant="secondary" className="text-xs border border-stone-700/50">
+        <Badge variant="secondary" className="text-xs border border-neutral-700/50">
           {file.type.replace("registry:", "")}
         </Badge>
       </div>
