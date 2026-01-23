@@ -7,6 +7,7 @@ import { Button } from "@workspace/ui/components/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@workspace/ui/components/avatar"
 import { DirectoryEntry } from "@/lib/types"
 import { useAnalytics } from "@/hooks/use-analytics"
+import { addUtmParams } from "@/lib/utm-utils"
 
 interface ViewerHeaderProps {
   registry: DirectoryEntry
@@ -102,14 +103,12 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
           <div className="text-xs md:text-sm font-mono min-w-0 truncate">
             {githubInfo ? (
               <>
-                <a
-                  href={`https://github.com/${githubInfo.username}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href={`/${githubInfo.username}/${githubInfo.repo}`}
                   className="text-neutral-400 hover:text-white hover:underline transition-colors"
                 >
                   {githubInfo.username}
-                </a>
+                </Link>
                 <span className="text-neutral-600 mx-1 md:mx-1.5">/</span>
                 <Link
                   href={`/${githubInfo.username}/${githubInfo.repo}`}
@@ -144,7 +143,7 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
           className="gap-2 text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
         >
           <a
-            href={registry.url}
+            href={addUtmParams(registry.url, "registry_ide")}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {

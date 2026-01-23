@@ -19,19 +19,7 @@ import {
   AvatarImage,
 } from "@workspace/ui/components/avatar";
 import type { DirectoryEntry } from "@/lib/types";
-
-const addUtmReference = (url: string) => {
-  try {
-    const u = new URL(url)
-    u.searchParams.set("utm_source", "registry.directory")
-    u.searchParams.set("utm_medium", "directory")
-    u.searchParams.set("utm_campaign", "registry_preview")
-    return u.toString()
-  } catch {
-    // Fallback if URL is invalid
-    return url
-  }
-}
+import { addUtmParams } from "@/lib/utm-utils";
 
 interface DirectoryListProps {
   entries: DirectoryEntry[];
@@ -129,7 +117,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                   size="sm"
                   className="border-neutral-700 hover:bg-neutral-900 hover:text-current/90 h-8 text-xs"
                 >
-                  <a href={addUtmReference(entry.url)} target="_blank" rel="noreferrer" className="gap-1">
+                  <a href={addUtmParams(entry.url, "registry_preview")} target="_blank" rel="noreferrer" className="gap-1">
                     <ExternalLinkIcon className="w-3 h-3" />
                     Visit Site
                   </a>
