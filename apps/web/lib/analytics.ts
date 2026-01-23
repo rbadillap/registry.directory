@@ -146,33 +146,33 @@ export function debounce<T extends (...args: any[]) => void>(
 // ============================================================================
 
 class Analytics {
-  private sessionId: string;
-  private sessionStartTime: number;
-  private filesViewed: Set<string>;
-  private codeCopiedCount: number;
-  private interactionsCount: number;
-  private isDevelopment: boolean;
-  private isClient: boolean;
+  #sessionId: string;
+  #sessionStartTime: number;
+  #filesViewed: Set<string>;
+  #codeCopiedCount: number;
+  #interactionsCount: number;
+  #isDevelopment: boolean;
+  #isClient: boolean;
 
   constructor() {
-    this.isClient = typeof window !== "undefined";
-    this.isDevelopment = process.env.NODE_ENV === "development";
-    this.sessionId = this.generateSessionId();
-    this.sessionStartTime = Date.now();
-    this.filesViewed = new Set();
-    this.codeCopiedCount = 0;
-    this.interactionsCount = 0;
+    this.#isClient = typeof window !== "undefined";
+    this.#isDevelopment = process.env.NODE_ENV === "development";
+    this.#sessionId = this.#generateSessionId();
+    this.#sessionStartTime = Date.now();
+    this.#filesViewed = new Set();
+    this.#codeCopiedCount = 0;
+    this.#interactionsCount = 0;
 
-    if (this.isClient) {
-      this.initializeSessionTracking();
+    if (this.#isClient) {
+      this.#initializeSessionTracking();
     }
   }
 
-  private generateSessionId(): string {
+  #generateSessionId(): string {
     return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
   }
 
-  private initializeSessionTracking(): void {
+  #initializeSessionTracking(): void {
     // Track session duration on page unload
     window.addEventListener("beforeunload", () => {
       this.trackSessionDuration();
@@ -186,44 +186,44 @@ class Analytics {
     });
   }
 
-  private getDeviceType(): DeviceType {
-    if (!this.isClient) return "desktop";
+  #getDeviceType(): DeviceType {
+    if (!this.#isClient) return "desktop";
     return window.innerWidth < 768 ? "mobile" : "desktop";
   }
 
-  private getBaseProperties(): BaseEventProperties {
+  #getBaseProperties(): BaseEventProperties {
     return {
-      device_type: this.getDeviceType(),
-      viewport_width: this.isClient ? window.innerWidth : 0,
-      viewport_height: this.isClient ? window.innerHeight : 0,
-      session_id: this.sessionId,
+      device_type: this.#getDeviceType(),
+      viewport_width: this.#isClient ? window.innerWidth : 0,
+      viewport_height: this.#isClient ? window.innerHeight : 0,
+      session_id: this.#sessionId,
       timestamp: new Date().toISOString(),
     };
   }
 
-  private logEvent(eventName: string, properties: any): void {
-    if (this.isDevelopment) {
+  #logEvent(eventName: string, properties: any): void {
+    if (this.#isDevelopment) {
       console.log("[Analytics]", eventName, properties);
     }
   }
 
-  private trackEvent(eventName: string, properties: any): void {
-    if (!this.isClient) return;
+  #trackEvent(eventName: string, properties: any): void {
+    if (!this.#isClient) return;
 
     const fullProperties = {
-      ...this.getBaseProperties(),
+      ...this.#getBaseProperties(),
       ...properties,
     };
 
-    this.logEvent(eventName, fullProperties);
+    this.#logEvent(eventName, fullProperties);
 
     // Only send to Vercel Analytics in production
-    if (!this.isDevelopment) {
+    if (!this.#isDevelopment) {
       track(eventName, fullProperties);
     }
 
     // Update interaction count
-    this.interactionsCount++;
+    this.#interactionsCount++;
   }
 
   // ============================================================================
@@ -231,61 +231,61 @@ class Analytics {
   // ============================================================================
 
   trackFileSelected(properties: FileSelectedProperties & Partial<BaseEventProperties>): void {
-    this.filesViewed.add(properties.file_path);
-    this.trackEvent(ANALYTICS_EVENTS.FILE_SELECTED, properties);
+    this.#filesViewed.add(properties.file_path);
+    this.#trackEvent(ANALYTICS_EVENTS.FILE_SELECTED, properties);
   }
 
   trackCodeCopied(properties: CodeCopiedProperties & Partial<BaseEventProperties>): void {
-    this.codeCopiedCount++;
-    this.trackEvent(ANALYTICS_EVENTS.CODE_COPIED, properties);
+    this.#codeCopiedCount++;
+    this.#trackEvent(ANALYTICS_EVENTS.CODE_COPIED, properties);
   }
 
   trackShareClicked(properties: ShareClickedProperties & Partial<BaseEventProperties>): void {
-    this.trackEvent(ANALYTICS_EVENTS.SHARE_CLICKED, properties);
+    this.#trackEvent(ANALYTICS_EVENTS.SHARE_CLICKED, properties);
   }
 
   trackSessionDuration(): void {
-    const durationSeconds = Math.floor((Date.now() - this.sessionStartTime) / 1000);
+    const durationSeconds = Math.floor((Date.now() - this.#sessionStartTime) / 1000);
 
     // Only track if session was meaningful (>5 seconds)
     if (durationSeconds < 5) return;
 
     const properties: SessionDurationProperties = {
       duration_seconds: durationSeconds,
-      files_viewed: this.filesViewed.size,
-      code_copied_count: this.codeCopiedCount,
-      interactions_count: this.interactionsCount,
+      files_viewed: this.#filesViewed.size,
+      code_copied_count: this.#codeCopiedCount,
+      interactions_count: this.#interactionsCount,
     };
 
-    this.trackEvent(ANALYTICS_EVENTS.SESSION_DURATION, properties);
+    this.#trackEvent(ANALYTICS_EVENTS.SESSION_DURATION, properties);
   }
 
   trackAIClicked(properties: AIClickedProperties & Partial<BaseEventProperties>): void {
-    this.trackEvent(ANALYTICS_EVENTS.AI_CLICKED, properties);
+    this.#trackEvent(ANALYTICS_EVENTS.AI_CLICKED, properties);
   }
 
   trackSearchUsed(properties: SearchUsedProperties & Partial<BaseEventProperties>): void {
-    this.trackEvent(ANALYTICS_EVENTS.SEARCH_USED, properties);
+    this.#trackEvent(ANALYTICS_EVENTS.SEARCH_USED, properties);
   }
 
   trackFolderToggled(properties: FolderToggledProperties & Partial<BaseEventProperties>): void {
-    this.trackEvent(ANALYTICS_EVENTS.FOLDER_TOGGLED, properties);
+    this.#trackEvent(ANALYTICS_EVENTS.FOLDER_TOGGLED, properties);
   }
 
   trackMobileTabSwitched(properties: MobileTabSwitchedProperties & Partial<BaseEventProperties>): void {
-    this.trackEvent(ANALYTICS_EVENTS.MOBILE_TAB_SWITCHED, properties);
+    this.#trackEvent(ANALYTICS_EVENTS.MOBILE_TAB_SWITCHED, properties);
   }
 
   trackPathCopied(properties: PathCopiedProperties & Partial<BaseEventProperties>): void {
-    this.trackEvent(ANALYTICS_EVENTS.PATH_COPIED, properties);
+    this.#trackEvent(ANALYTICS_EVENTS.PATH_COPIED, properties);
   }
 
   trackMarkdownExported(properties: MarkdownExportedProperties & Partial<BaseEventProperties>): void {
-    this.trackEvent(ANALYTICS_EVENTS.MARKDOWN_EXPORTED, properties);
+    this.#trackEvent(ANALYTICS_EVENTS.MARKDOWN_EXPORTED, properties);
   }
 
   trackRegistryVisit(properties: RegistryVisitProperties & Partial<BaseEventProperties>): void {
-    this.trackEvent(ANALYTICS_EVENTS.REGISTRY_VISIT, properties);
+    this.#trackEvent(ANALYTICS_EVENTS.REGISTRY_VISIT, properties);
   }
 }
 
