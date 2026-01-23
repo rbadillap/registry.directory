@@ -11,6 +11,7 @@ import {
 } from "@workspace/ui/components/dropdown-menu"
 import type { RegistryItem } from "@/lib/registry-types"
 import { getTargetPath } from "@/lib/path-utils"
+import { useAnalytics } from "@/hooks/use-analytics"
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
@@ -28,6 +29,8 @@ Help me understand how to use it. Be ready to explain concepts, give examples, o
 }
 
 export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps) {
+  const analytics = useAnalytics()
+
   const getMarkdownUrl = () => {
     return `${window.location.origin}${window.location.pathname}.md`
   }
@@ -36,30 +39,76 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
     if (!selectedFile) return
     const url = getMarkdownUrl()
     window.open(url, "_blank", "noopener,noreferrer")
+
+    // Track markdown export
+    analytics.trackMarkdownExported({
+      export_method: "view",
+      file_path: getTargetPath(selectedFile),
+    })
   }
 
   const handleOpenInV0 = () => {
     if (!selectedFile) return
     const url = getMarkdownUrl()
     window.open(getPromptUrl("https://v0.dev", url), "_blank", "noopener,noreferrer")
+
+    // Track AI click and markdown export
+    analytics.trackAIClicked({
+      ai_provider: "v0",
+      file_path: getTargetPath(selectedFile),
+    })
+    analytics.trackMarkdownExported({
+      export_method: "ai_share",
+      file_path: getTargetPath(selectedFile),
+    })
   }
 
   const handleOpenInChatGPT = () => {
     if (!selectedFile) return
     const url = getMarkdownUrl()
     window.open(getPromptUrl("https://chatgpt.com", url), "_blank", "noopener,noreferrer")
+
+    // Track AI click and markdown export
+    analytics.trackAIClicked({
+      ai_provider: "chatgpt",
+      file_path: getTargetPath(selectedFile),
+    })
+    analytics.trackMarkdownExported({
+      export_method: "ai_share",
+      file_path: getTargetPath(selectedFile),
+    })
   }
 
   const handleOpenInClaude = () => {
     if (!selectedFile) return
     const url = getMarkdownUrl()
     window.open(getPromptUrl("https://claude.ai/new", url), "_blank", "noopener,noreferrer")
+
+    // Track AI click and markdown export
+    analytics.trackAIClicked({
+      ai_provider: "claude",
+      file_path: getTargetPath(selectedFile),
+    })
+    analytics.trackMarkdownExported({
+      export_method: "ai_share",
+      file_path: getTargetPath(selectedFile),
+    })
   }
 
   const handleOpenInScira = () => {
     if (!selectedFile) return
     const url = getMarkdownUrl()
     window.open(getPromptUrl("https://scira.ai/", url), "_blank", "noopener,noreferrer")
+
+    // Track AI click and markdown export
+    analytics.trackAIClicked({
+      ai_provider: "scira",
+      file_path: getTargetPath(selectedFile),
+    })
+    analytics.trackMarkdownExported({
+      export_method: "ai_share",
+      file_path: getTargetPath(selectedFile),
+    })
   }
 
   const targetPath = selectedFile ? getTargetPath(selectedFile) : null

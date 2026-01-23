@@ -21,6 +21,7 @@ import {
 import { cn } from "@workspace/ui/lib/utils"
 import type { RegistryItem } from "@/lib/registry-types"
 import { getFileName, getTargetPath } from "@/lib/path-utils"
+import { useAnalytics } from "@/hooks/use-analytics"
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
@@ -183,6 +184,7 @@ function buildPathTree(items: RegistryItem[]): PathTree {
 
 export function FileTree({ items, selectedItem, selectedFile, onSelectFile, currentCategory }: FileTreeProps) {
   const pathname = usePathname()
+  const analytics = useAnalytics()
   const [openFolders, setOpenFolders] = useState<Set<string>>(
     new Set(["components", "components/ui", "lib"]),
   )
@@ -232,11 +234,22 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   const toggleFolder = (path: string) => {
     setOpenFolders((prev) => {
       const next = new Set(prev)
+      const action = next.has(path) ? "close" : "open"
+
       if (next.has(path)) {
         next.delete(path)
       } else {
         next.add(path)
       }
+
+      // Track folder toggle with debouncing
+      const depthLevel = path.split('/').length
+      analytics.trackFolderToggled({
+        folder_path: path,
+        action,
+        depth_level: depthLevel,
+      })
+
       return next
     })
   }
@@ -320,7 +333,15 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
         return (
           <button
             key={node.path}
-            onClick={() => onSelectFile(item, file)}
+            onClick={() => {
+              onSelectFile(item, file)
+              analytics.trackFileSelected({
+                file_path: getTargetPath(file),
+                file_type: file.type,
+                is_multi_file_item: (item.files?.length || 0) > 1,
+                total_files_in_item: item.files?.length || 0,
+              })
+            }}
             className={cn(
               "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
               "hover:bg-neutral-800/50 transition-colors",
@@ -384,7 +405,15 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                         {blockItem.files.map((file, index) => (
                           <button
                             key={file.path}
-                            onClick={() => onSelectFile(blockItem, file)}
+                            onClick={() => {
+                              onSelectFile(blockItem, file)
+                              analytics.trackFileSelected({
+                                file_path: getTargetPath(file),
+                                file_type: file.type,
+                                is_multi_file_item: (blockItem.files?.length || 0) > 1,
+                                total_files_in_item: blockItem.files?.length || 0,
+                              })
+                            }}
                             className={cn(
                               "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm",
                               "hover:bg-neutral-800/50 transition-colors",
@@ -459,7 +488,15 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                                 {item.files.map((file, index) => (
                                   <button
                                     key={file.path}
-                                    onClick={() => onSelectFile(item, file)}
+                                    onClick={() => {
+                                      onSelectFile(item, file)
+                                      analytics.trackFileSelected({
+                                        file_path: getTargetPath(file),
+                                        file_type: file.type,
+                                        is_multi_file_item: (item.files?.length || 0) > 1,
+                                        total_files_in_item: item.files?.length || 0,
+                                      })
+                                    }}
                                     className={cn(
                                       "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
                                       "hover:bg-neutral-800/50 transition-colors",
@@ -485,7 +522,15 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                       return (
                         <button
                           key={item.name}
-                          onClick={() => onSelectFile(item, firstFile)}
+                          onClick={() => {
+                            onSelectFile(item, firstFile)
+                            analytics.trackFileSelected({
+                              file_path: getTargetPath(firstFile),
+                              file_type: firstFile.type,
+                              is_multi_file_item: (item.files?.length || 0) > 1,
+                              total_files_in_item: item.files?.length || 0,
+                            })
+                          }}
                           className={cn(
                             "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
                             "hover:bg-neutral-800/50 transition-colors",
@@ -537,7 +582,21 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
           <input
             type="text"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => {
+              setSearchQuery(e.target.value)
+
+              // Track search usage with debouncing
+              if (e.target.value) {
+                const filtered = items.filter(item =>
+                  item.name.toLowerCase().includes(e.target.value.toLowerCase())
+                )
+                analytics.trackSearchUsed({
+                  search_query: e.target.value,
+                  results_count: filtered.length,
+                  total_items: items.length,
+                })
+              }
+            }}
             placeholder={`${categoryLabel} (${items.length})`}
             className="w-full bg-transparent text-xs font-medium text-neutral-500 uppercase tracking-wider placeholder:text-neutral-500 focus:outline-none focus:text-neutral-400"
           />

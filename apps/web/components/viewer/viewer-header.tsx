@@ -6,6 +6,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@workspace/ui/components/avatar"
 import { DirectoryEntry } from "@/lib/types"
+import { useAnalytics } from "@/hooks/use-analytics"
 
 interface ViewerHeaderProps {
   registry: DirectoryEntry
@@ -35,6 +36,7 @@ function parseGitHubUrl(url?: string) {
 
 export function ViewerHeader({ registry }: ViewerHeaderProps) {
   const pathname = usePathname()
+  const analytics = useAnalytics()
   const githubInfo = parseGitHubUrl(registry.github_url)
 
   // Get current item name from path
@@ -141,7 +143,17 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
           size="sm"
           className="gap-2 text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
         >
-          <a href={registry.url} target="_blank" rel="noopener noreferrer">
+          <a
+            href={registry.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              analytics.trackRegistryVisit({
+                destination: "registry",
+                registry_url: registry.url,
+              })
+            }}
+          >
             Visit Registry
             <ExternalLink className="h-4 w-4" />
           </a>
@@ -154,7 +166,17 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
             size="sm"
             className="gap-2 text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
           >
-            <a href={registry.github_url} target="_blank" rel="noopener noreferrer">
+            <a
+              href={registry.github_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                analytics.trackRegistryVisit({
+                  destination: "repository",
+                  github_url: registry.github_url,
+                })
+              }}
+            >
               Visit Repository
               <ExternalLink className="h-4 w-4" />
             </a>

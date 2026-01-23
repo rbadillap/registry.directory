@@ -1,7 +1,9 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import { FolderTree, Code2, Info } from "lucide-react"
 import { cn } from "@workspace/ui/lib/utils"
+import { useAnalytics } from "@/hooks/use-analytics"
 
 export type MobileTab = 'files' | 'code' | 'info'
 
@@ -18,6 +20,26 @@ const tabs = [
 ]
 
 export function MobileTabNavigation({ activeTab, onTabChange, hasFile }: MobileTabNavigationProps) {
+  const analytics = useAnalytics()
+  const previousTabRef = useRef<MobileTab>(activeTab)
+
+  // Track tab switches
+  useEffect(() => {
+    const previousTab = previousTabRef.current
+
+    // Only track if the tab actually changed (not on initial mount)
+    if (previousTab !== activeTab && previousTab !== undefined) {
+      analytics.trackMobileTabSwitched({
+        from_tab: previousTab,
+        to_tab: activeTab,
+        has_file_selected: hasFile,
+      })
+    }
+
+    // Update the ref for next comparison
+    previousTabRef.current = activeTab
+  }, [activeTab, hasFile, analytics])
+
   return (
     <div className="md:hidden border-b border-neutral-800 bg-black">
       <div className="flex items-center">

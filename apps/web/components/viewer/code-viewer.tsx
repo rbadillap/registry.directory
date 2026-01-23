@@ -7,6 +7,7 @@ import { FileCode, Package, Copy, Check } from "lucide-react"
 import type { RegistryItem } from "@/lib/registry-types"
 import { codeToHtml } from "shiki"
 import { getFileName, getExtension, getTargetPath } from "@/lib/path-utils"
+import { useAnalytics } from "@/hooks/use-analytics"
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
@@ -46,6 +47,7 @@ function getLanguageFromPath(path: string): string {
 }
 
 export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
+  const analytics = useAnalytics()
   const [highlightedCode, setHighlightedCode] = useState<string>("")
   const [isLoading, setIsLoading] = useState(false)
   const [copied, setCopied] = useState(false)
@@ -123,6 +125,13 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
     navigator.clipboard.writeText(file.content)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
+
+    // Track code copy
+    analytics.trackCodeCopied({
+      file_path: getTargetPath(file),
+      code_length: file.content.length,
+      has_content: Boolean(file.content),
+    })
   }
 
   return (
