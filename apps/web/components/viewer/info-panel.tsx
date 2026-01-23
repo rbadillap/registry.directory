@@ -25,6 +25,7 @@ import {
 } from "lucide-react"
 import type { RegistryItem } from "@/lib/registry-types"
 import { getFileName, getTargetPath } from "@/lib/path-utils"
+import { useAnalytics } from "@/hooks/use-analytics"
 
 const REGISTRY_TYPES = [
   { value: "registry:ui", label: "UI", description: "Primitives and base components", icon: LayoutGrid },
@@ -47,12 +48,22 @@ interface InfoPanelProps {
 }
 
 export function InfoPanel({ item }: InfoPanelProps) {
+  const analytics = useAnalytics()
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
 
   const handleCopyPath = (path: string, index: number) => {
     navigator.clipboard.writeText(path)
     setCopiedIndex(index)
     setTimeout(() => setCopiedIndex(null), 1000)
+
+    // Track path copy
+    if (item) {
+      analytics.trackPathCopied({
+        path,
+        file_index: index,
+        total_files: item.files?.length || 0,
+      })
+    }
   }
 
   if (!item) {

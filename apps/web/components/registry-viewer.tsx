@@ -12,6 +12,8 @@ import { cn } from "@workspace/ui/lib/utils"
 import type { DirectoryEntry } from "@/lib/types"
 import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { generateGlobalsCss } from "@/lib/css-utils"
+import { useAnalytics } from "@/hooks/use-analytics"
+import { getTargetPath } from "@/lib/path-utils"
 
 interface RegistryViewerProps {
   registry: DirectoryEntry
@@ -43,6 +45,8 @@ function addGlobalsCssFile(item: RegistryItem): RegistryItem {
 }
 
 export function RegistryViewer({ registry, registryIndex, selectedItem: initialItem, currentCategory }: RegistryViewerProps) {
+  const analytics = useAnalytics()
+
   // Add globals.css files to items with cssVars
   const items = registryIndex.items.map(addGlobalsCssFile)
   const processedInitialItem = initialItem ? addGlobalsCssFile(initialItem) : null
@@ -89,6 +93,12 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
         title: `${selectedItem?.name} - ${selectedFile.path}`,
         text: `Check out this component from ${registry.name}`,
         url: shareUrl,
+      }).then(() => {
+        // Track successful native share
+        analytics.trackShareClicked({
+          share_method: "native",
+          file_path: getTargetPath(selectedFile),
+        })
       }).catch((err) => {
         if (err.name !== "AbortError") {
           console.error("Error sharing:", err)
@@ -98,6 +108,11 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
       // Fallback: copy URL to clipboard
       navigator.clipboard.writeText(shareUrl).then(
         () => {
+          // Track clipboard fallback
+          analytics.trackShareClicked({
+            share_method: "clipboard",
+            file_path: getTargetPath(selectedFile),
+          })
           // TODO: Show toast notification
         },
         (err) => {
