@@ -18,6 +18,10 @@ import {
   ArrowRight,
   Copy,
   Check,
+  BookOpen,
+  Sparkles,
+  Type,
+  Box,
 } from "lucide-react"
 import type { RegistryItem } from "@/lib/registry-types"
 import { getFileName, getTargetPath, getDirName } from "@/lib/path-utils"
@@ -26,12 +30,16 @@ const REGISTRY_TYPES = [
   { value: "registry:ui", label: "UI", description: "Primitives and base components", icon: LayoutGrid },
   { value: "registry:component", label: "Component", description: "Standalone reusable components", icon: Diamond },
   { value: "registry:block", label: "Block", description: "Multi-file features or sections", icon: Blocks },
+  { value: "registry:example", label: "Example", description: "Usage examples and demos", icon: BookOpen },
   { value: "registry:hook", label: "Hook", description: "Custom React hooks", icon: Code2 },
   { value: "registry:lib", label: "Library", description: "Utilities and helper functions", icon: Library },
   { value: "registry:page", label: "Page", description: "Full page or route component", icon: FileText },
   { value: "registry:file", label: "File", description: "Config, env, or misc files", icon: File },
   { value: "registry:theme", label: "Theme", description: "CSS variables and theming", icon: Palette },
   { value: "registry:style", label: "Style", description: "Style configurations and presets", icon: Palette },
+  { value: "registry:base", label: "Base", description: "Base configurations", icon: Box },
+  { value: "registry:font", label: "Font", description: "Font configurations", icon: Type },
+  { value: "registry:item", label: "Item", description: "Generic registry item", icon: Sparkles },
 ] as const
 
 interface InfoPanelProps {

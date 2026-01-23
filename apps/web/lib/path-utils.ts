@@ -45,10 +45,36 @@ export function getTargetPath(file: { path: string; target?: string; type: strin
     return file.target
   }
 
+  const fileName = getFileName(file.path)
+
   // shadcn convention: registry:ui always goes to components/ui/
   if (file.type === 'registry:ui') {
-    const fileName = getFileName(file.path)
     return `components/ui/${fileName}`
+  }
+
+  // shadcn convention: blocks, components, and examples go to components/
+  if (file.type === 'registry:block' || file.type === 'registry:component' || file.type === 'registry:example') {
+    return `components/${fileName}`
+  }
+
+  // shadcn convention: lib utilities go to lib/
+  if (file.type === 'registry:lib') {
+    return `lib/${fileName}`
+  }
+
+  // shadcn convention: hooks go to hooks/
+  if (file.type === 'registry:hook') {
+    return `hooks/${fileName}`
+  }
+
+  // shadcn convention: pages go to app/ (Next.js App Router)
+  if (file.type === 'registry:page') {
+    return `app/${fileName}`
+  }
+
+  // shadcn convention: config files go to root
+  if (file.type === 'registry:file') {
+    return fileName
   }
 
   // Otherwise use path as-is
