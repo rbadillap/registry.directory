@@ -30,7 +30,6 @@ const CATEGORY_ICONS = {
 } as const
 
 export function RegistryOverview({ registry, categories, owner, repo }: RegistryOverviewProps) {
-  console.log('[RegistryOverview] Rendering with categories:', Array.from(categories.keys()))
 
   const totalItems = Array.from(categories.values()).reduce((sum, items) => sum + items.length, 0)
 

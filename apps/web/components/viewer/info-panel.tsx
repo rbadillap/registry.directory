@@ -24,7 +24,7 @@ import {
   Box,
 } from "lucide-react"
 import type { RegistryItem } from "@/lib/registry-types"
-import { getFileName, getTargetPath, getDirName } from "@/lib/path-utils"
+import { getFileName, getTargetPath } from "@/lib/path-utils"
 
 const REGISTRY_TYPES = [
   { value: "registry:ui", label: "UI", description: "Primitives and base components", icon: LayoutGrid },

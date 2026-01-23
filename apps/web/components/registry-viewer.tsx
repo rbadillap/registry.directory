@@ -41,13 +41,6 @@ function addGlobalsCssFile(item: RegistryItem): RegistryItem {
 }
 
 export function RegistryViewer({ registry, registryIndex, selectedItem: initialItem, currentCategory }: RegistryViewerProps) {
-  console.log('[RegistryViewer] Rendering with:', {
-    registry: registry.name,
-    category: currentCategory,
-    item: initialItem?.name || 'none',
-    totalItems: registryIndex.items.length
-  })
-
   // Add globals.css files to items with cssVars
   const items = registryIndex.items.map(addGlobalsCssFile)
   const processedInitialItem = initialItem ? addGlobalsCssFile(initialItem) : null
@@ -67,11 +60,6 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
     const firstFile = item?.files?.[0] || null
     setSelectedItem(item)
     setSelectedFile(firstFile)
-    if (firstFile) {
-      console.log('[RegistryViewer] Initial file selected:', firstFile.path)
-    } else {
-      console.log('[RegistryViewer] Item has no files:', item.name)
-    }
   }, [initialItem])
 
   const handleSelectFile = (item: RegistryItem, file: RegistryFile) => {
@@ -82,13 +70,13 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
   const handleCopyCode = () => {
     if (!selectedFile) return
 
-    navigator.clipboard.writeText(selectedFile.code).then(
+    const url = window.location.href
+    navigator.clipboard.writeText(url).then(
       () => {
         // TODO: Show toast notification
-        console.log("Code copied to clipboard!")
       },
       (err) => {
-        console.error("Failed to copy code:", err)
+        console.error("Failed to copy URL:", err)
       }
     )
   }
@@ -113,7 +101,6 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
       navigator.clipboard.writeText(shareUrl).then(
         () => {
           // TODO: Show toast notification
-          console.log("Link copied to clipboard!")
         },
         (err) => {
           console.error("Failed to copy link:", err)

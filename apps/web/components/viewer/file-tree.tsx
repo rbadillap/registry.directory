@@ -299,7 +299,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   }
 
   const getItemFileName = (item: RegistryItem) => {
-    const firstFile = item.files[0]
+    const firstFile = item.files?.[0]
     if (!firstFile) return item.name
     const targetPath = getTargetPath(firstFile)
     const ext = targetPath.split(".").slice(1).join(".")
@@ -314,7 +314,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     // Render individual file nodes (Nivel 3 with content)
     if (node.type === 'file' && hasItems && node.items[0]) {
       const item = node.items[0]
-      const file = item.files.find(f => getTargetPath(f) === node.path)
+      const file = item.files?.find(f => getTargetPath(f) === node.path)
 
       if (file) {
         return (
@@ -377,7 +377,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                 {node.type === 'block' && node.items.length > 0 ? (
                   (() => {
                     const blockItem = node.items[0]
-                    if (!blockItem) return null
+                    if (!blockItem || !blockItem.files) return null
 
                     return (
                       <div className="ml-4 mt-0.5 space-y-0.5">
@@ -430,7 +430,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                       return renderTreeNode(entry.node, depth + 1)
                     } else {
                       const item = entry.item
-                      const isMultiFile = item.files.length > 1
+                      const isMultiFile = (item.files?.length || 0) > 1
                       const isItemOpen = openItems.has(item.name)
                       const isItemSelected = selectedItem?.name === item.name
 
@@ -454,7 +454,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                               <span className="truncate text-white">{item.name}</span>
                             </button>
 
-                            {isItemOpen && (
+                            {isItemOpen && item.files && (
                               <div className="ml-6 mt-0.5 space-y-0.5">
                                 {item.files.map((file, index) => (
                                   <button
@@ -479,7 +479,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                         )
                       }
 
-                      const firstFile = item.files[0]
+                      const firstFile = item.files?.[0]
                       if (!firstFile) return null
 
                       return (

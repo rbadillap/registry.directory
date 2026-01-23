@@ -9,7 +9,6 @@ import { groupItemsByCategory } from "@/lib/registry-mappings"
 import { registryFetch } from "@/lib/fetch-utils"
 
 async function getRegistry(owner: string, repo: string) {
-  console.log(`[Level1] Getting registry for ${owner}/${repo}`)
   const filePath = join(process.cwd(), "public/directory.json")
   const fileContents = await readFile(filePath, "utf8")
   const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
@@ -22,13 +21,11 @@ async function getRegistry(owner: string, repo: string) {
     return match[1] === owner && match[2]?.replace(/\.git$/, '') === repo
   })
 
-  console.log(`[Level1] Registry found:`, !!registry)
   return registry || null
 }
 
 async function fetchRegistryData(registry: DirectoryEntry): Promise<Registry | null> {
   const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
-  console.log(`[Level1] Fetching registry data from:`, targetUrl)
 
   try {
     const response = await registryFetch(targetUrl, {
@@ -36,12 +33,10 @@ async function fetchRegistryData(registry: DirectoryEntry): Promise<Registry | n
       next: { revalidate: 3600 }
     })
 
-    console.log(`[Level1] Fetch response:`, response.status, response.ok)
 
     if (!response.ok) return null
 
     const data = await response.json()
-    console.log(`[Level1] Registry items count:`, data.items?.length || 0)
     return data
   } catch (error) {
     console.error(`[Level1] Fetch error:`, error)
@@ -94,33 +89,27 @@ export default async function RegistryOverviewPage({
 }: {
   params: Promise<{ owner: string; repo: string }>
 }) {
-  console.log(`[Level1] Rendering registry overview page`)
   const { owner, repo } = await params
   const registry = await getRegistry(owner, repo)
 
   if (!registry) {
-    console.log(`[Level1] Registry not found, returning 404`)
     notFound()
   }
 
   const registryData = await fetchRegistryData(registry)
 
   if (!registryData) {
-    console.log(`[Level1] Registry data not available, returning 404`)
     notFound()
   }
 
   if (!registryData.items || !Array.isArray(registryData.items)) {
-    console.log(`[Level1] Registry items invalid or empty, returning 404`)
     notFound()
   }
 
   // Group items by category
   const categoriesMap = groupItemsByCategory(registryData.items)
-  console.log(`[Level1] Categories found:`, Array.from(categoriesMap.keys()))
 
   if (categoriesMap.size === 0) {
-    console.log(`[Level1] No categories found, returning 404`)
     notFound()
   }
 

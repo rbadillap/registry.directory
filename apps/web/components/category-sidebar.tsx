@@ -22,7 +22,6 @@ const CATEGORY_ICONS = {
 } as const
 
 export function CategorySidebar({ categories, owner, repo }: CategorySidebarProps) {
-  console.log('[CategorySidebar] Rendering with categories:', Array.from(categories.keys()))
 
   return (
     <div className="max-w-2xl w-full p-8">

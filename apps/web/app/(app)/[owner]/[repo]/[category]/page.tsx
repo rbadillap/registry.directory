@@ -9,7 +9,6 @@ import { slugToType, groupItemsByCategory } from "@/lib/registry-mappings"
 import { registryFetch } from "@/lib/fetch-utils"
 
 async function getRegistry(owner: string, repo: string) {
-  console.log(`[CategoryView] Getting registry for ${owner}/${repo}`)
   const filePath = join(process.cwd(), "public/directory.json")
   const fileContents = await readFile(filePath, "utf8")
   const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
@@ -22,13 +21,11 @@ async function getRegistry(owner: string, repo: string) {
     return match[1] === owner && match[2]?.replace(/\.git$/, '') === repo
   })
 
-  console.log(`[CategoryView] Registry found:`, !!registry)
   return registry || null
 }
 
 async function fetchRegistryIndex(registry: DirectoryEntry): Promise<Registry | null> {
   const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
-  console.log(`[CategoryView] Fetching registry index from:`, targetUrl)
 
   try {
     const response = await registryFetch(targetUrl, {
@@ -36,12 +33,10 @@ async function fetchRegistryIndex(registry: DirectoryEntry): Promise<Registry | 
       next: { revalidate: 3600 }
     })
 
-    console.log(`[CategoryView] Index fetch response:`, response.status, response.ok)
 
     if (!response.ok) return null
 
     const data = await response.json()
-    console.log(`[CategoryView] Registry items count:`, data.items?.length || 0)
     return data
   } catch (error) {
     console.error(`[CategoryView] Index fetch error:`, error)
@@ -85,7 +80,6 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  console.log(`[CategoryView] Generating static params`)
   const filePath = join(process.cwd(), "public/directory.json")
   const fileContents = await readFile(filePath, "utf8")
   const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
@@ -124,7 +118,6 @@ export async function generateStaticParams() {
     }
   }
 
-  console.log(`[CategoryView] Generated ${params.length} static params`)
   return params
 }
 
@@ -133,26 +126,20 @@ export default async function CategoryPage({
 }: {
   params: Promise<{ owner: string; repo: string; category: string }>
 }) {
-  console.log(`[CategoryView] Rendering category page`)
   const { owner, repo, category } = await params
-  console.log(`[CategoryView] Params:`, { owner, repo, category })
 
   const registryType = slugToType(category)
   if (!registryType) {
-    console.log(`[CategoryView] Invalid category slug:`, category)
     notFound()
   }
-  console.log(`[CategoryView] Category validated:`, category, '→', registryType)
 
   const registry = await getRegistry(owner, repo)
   if (!registry) {
-    console.log(`[CategoryView] Registry not found`)
     notFound()
   }
 
   const registryIndex = await fetchRegistryIndex(registry)
   if (!registryIndex) {
-    console.log(`[CategoryView] Registry index not available`)
     notFound()
   }
 
@@ -161,11 +148,9 @@ export default async function CategoryPage({
   const categoryItems = categoriesMap.get(category)
 
   if (!categoryItems || categoryItems.length === 0) {
-    console.log(`[CategoryView] No items found for category:`, category)
     notFound()
   }
 
-  console.log(`[CategoryView] Found ${categoryItems.length} items for category:`, category)
 
   // Create a filtered registry with only this category's items
   const filteredRegistry: Registry = {
