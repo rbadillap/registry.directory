@@ -7,6 +7,7 @@ import { Button } from "@workspace/ui/components/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@workspace/ui/components/avatar"
 import { DirectoryEntry } from "@/lib/types"
 import { useAnalytics } from "@/hooks/use-analytics"
+import { addUtmParams } from "@/lib/utm-utils"
 
 interface ViewerHeaderProps {
   registry: DirectoryEntry
@@ -144,7 +145,7 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
           className="gap-2 text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
         >
           <a
-            href={registry.url}
+            href={addUtmParams(registry.url, "registry_ide")}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {
