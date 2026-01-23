@@ -57,7 +57,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
   }
 
   return (
-    <div className="w-full max-w-5xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
+    <div className="w-full max-w-7xl mx-auto mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 px-2">
       {showAddCard && (
         <a
           href={addCardUrl}
@@ -66,16 +66,16 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
           className="h-full group"
         >
           <Card className="bg-black border border-neutral-700/50 border-dashed rounded-none overflow-hidden shadow-none hover:shadow-lg hover:border-neutral-700 transition-all h-full flex flex-col">
-            <CardHeader className="flex flex-col items-center justify-center gap-3 bg-black pt-6 min-h-[140px]">
+            <CardHeader className="flex flex-col items-center justify-center gap-2 bg-black pt-4 pb-3 min-h-[100px]">
               <div className="flex-shrink-0">
-                <Plus className="w-8 h-8 text-neutral-500 group-hover:text-neutral-400 transition-colors" />
+                <Plus className="w-7 h-7 text-neutral-500 group-hover:text-neutral-400 transition-colors" />
               </div>
-              <CardTitle className="text-base text-white text-center group-hover:text-white transition-colors">
+              <CardTitle className="text-sm text-white text-center group-hover:text-white transition-colors">
                 {addCardLabel}
               </CardTitle>
             </CardHeader>
-            <CardContent className="px-4 pb-5 pt-0 bg-black flex-1 flex flex-col justify-between">
-              <CardDescription className="text-sm text-neutral-400 text-center min-h-[40px]">
+            <CardContent className="px-3 pb-4 pt-0 bg-black flex-1 flex flex-col justify-between">
+              <CardDescription className="text-xs text-neutral-400 text-center">
                 Share your registry with the community
               </CardDescription>
             </CardContent>
@@ -86,8 +86,8 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
       {entries.map((entry) => (
         <div key={encodeURIComponent(entry.url)} className="h-full">
           <Card className="bg-black border border-neutral-700/50 rounded-none overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col">
-            <CardHeader className="flex flex-row items-start justify-between gap-2 bg-black pt-6">
-              <div className="flex items-start gap-3 flex-1 min-w-0">
+            <CardHeader className="flex flex-row items-start justify-between gap-2 bg-black pt-4 pb-2">
+              <div className="flex items-start gap-2 flex-1 min-w-0">
                 {entry.github_profile ? (
                   <a
                     href={entry.github_url || '#'}
@@ -97,7 +97,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                     className="flex-shrink-0 mt-0.5 hover:opacity-80 transition-opacity"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <Avatar className="w-8 h-8">
+                    <Avatar className="w-7 h-7">
                       <AvatarImage src={entry.github_profile} alt={entry.name} />
                       <AvatarFallback className="bg-neutral-800 text-neutral-400 text-xs">
                         {entry.name.charAt(0).toUpperCase()}
@@ -106,31 +106,31 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                   </a>
                 ) : (
                   <div className="flex-shrink-0 mt-0.5">
-                    <Package className="w-5 h-5 text-neutral-500" />
+                    <Package className="w-4 h-4 text-neutral-500" />
                   </div>
                 )}
                 <div className="flex-1 min-w-0">
-                  <CardTitle className="text-base text-white truncate">
+                  <CardTitle className="text-sm text-white truncate">
                     {entry.name}
                   </CardTitle>
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="px-4 pb-6 pt-0 bg-black flex-1 flex flex-col justify-between">
-              <CardDescription className="text-sm text-neutral-300 min-h-[40px]">
+            <CardContent className="px-3 pb-4 pt-0 bg-black flex-1 flex flex-col justify-between">
+              <CardDescription className="text-xs text-neutral-300 line-clamp-2">
                 {entry.description}
               </CardDescription>
             </CardContent>
-            <CardFooter className="px-4 pt-0 bg-black">
-              <div className={`grid gap-2 w-full ${showViewButton ? 'grid-cols-2' : 'grid-cols-1'}`}>
+            <CardFooter className="px-3 pt-0 pb-3 bg-black">
+              <div className={`grid gap-1.5 w-full ${showViewButton ? 'grid-cols-2' : 'grid-cols-1'}`}>
                 <Button
                   asChild
                   variant="link"
                   size="sm"
-                  className="border-neutral-700 hover:bg-neutral-900 hover:text-current/90"
+                  className="border-neutral-700 hover:bg-neutral-900 hover:text-current/90 h-8 text-xs"
                 >
-                  <a href={addUtmReference(entry.url)} target="_blank" rel="noreferrer" className="gap-1.5">
-                    <ExternalLinkIcon className="w-3.5 h-3.5" />
+                  <a href={addUtmReference(entry.url)} target="_blank" rel="noreferrer" className="gap-1">
+                    <ExternalLinkIcon className="w-3 h-3" />
                     Visit Site
                   </a>
                 </Button>
@@ -147,10 +147,10 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                       asChild
                       variant="outline"
                       size="sm"
-                      className="border-neutral-700 hover:bg-neutral-900 hover:text-white"
+                      className="border-neutral-700 hover:bg-neutral-900 hover:text-white h-8 text-xs"
                     >
-                      <Link href={`/${owner}/${repo}`} className="gap-1.5">
-                        <Code2 className="w-3.5 h-3.5" />
+                      <Link href={`/${owner}/${repo}`} className="gap-1">
+                        <Code2 className="w-3 h-3" />
                         Open in IDE
                       </Link>
                     </Button>
