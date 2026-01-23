@@ -79,20 +79,6 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
     setMobileTab('code')
   }
 
-  const handleCopyCode = () => {
-    if (!selectedFile) return
-
-    const url = window.location.href
-    navigator.clipboard.writeText(url).then(
-      () => {
-        // TODO: Show toast notification
-      },
-      (err) => {
-        console.error("Failed to copy URL:", err)
-      }
-    )
-  }
-
   const handleShare = () => {
     if (!selectedFile) return
 
@@ -181,7 +167,6 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
       <StatusBar
         totalItems={items.length}
         selectedFile={selectedFile}
-        onCopyCode={handleCopyCode}
         onShare={handleShare}
       />
     </div>

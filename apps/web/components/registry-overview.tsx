@@ -353,7 +353,6 @@ export function RegistryOverview({ registry, categories, owner, repo }: Registry
       <StatusBar
         totalItems={totalItems}
         selectedFile={null}
-        onCopyCode={() => {}}
         onShare={() => {}}
       />
     </div>

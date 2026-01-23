@@ -17,7 +17,6 @@ type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 interface StatusBarProps {
   totalItems: number
   selectedFile: RegistryFile | null
-  onCopyCode?: () => void
   onShare?: () => void
 }
 
@@ -28,7 +27,7 @@ Help me understand how to use it. Be ready to explain concepts, give examples, o
   )}`
 }
 
-export function StatusBar({ totalItems, selectedFile, onCopyCode, onShare }: StatusBarProps) {
+export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps) {
   const getMarkdownUrl = () => {
     return `${window.location.origin}${window.location.pathname}.md`
   }
