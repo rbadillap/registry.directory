@@ -39,9 +39,9 @@ export function DirectoryTabs({ components, tools }: DirectoryTabsProps) {
   const addToolUrl = 'https://github.com/rbadillap/registry.directory';
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4">
+    <div className="w-full max-w-7xl mx-auto px-4">
       <Tabs defaultValue="components" value={activeTab} onValueChange={setActiveTab}>
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-8">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mb-4 md:mb-6">
           <TabsList>
             <TabsTrigger value="components">Components</TabsTrigger>
             <TabsTrigger value="tools">Tools</TabsTrigger>
@@ -61,20 +61,22 @@ export function DirectoryTabs({ components, tools }: DirectoryTabsProps) {
         </div>
 
         <TabsContent value="components">
-          <DirectoryList 
-            entries={filteredComponents} 
+          <DirectoryList
+            entries={filteredComponents}
             searchTerm={searchTerm}
             addCardUrl={addComponentUrl}
             addCardLabel="Add your Component"
+            showViewButton={true}
           />
         </TabsContent>
 
         <TabsContent value="tools">
-          <DirectoryList 
-            entries={filteredTools} 
+          <DirectoryList
+            entries={filteredTools}
             searchTerm={searchTerm}
             addCardUrl={addToolUrl}
             addCardLabel="Add your Tool"
+            showViewButton={false}
           />
         </TabsContent>
       </Tabs>

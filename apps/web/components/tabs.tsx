@@ -109,7 +109,7 @@ export function TabsTrigger({
     >
       {children}
       {isActive && (
-        <span className="absolute bottom-0 left-0 right-0 h-px bg-rose-700" />
+        <span className="absolute bottom-0 left-0 right-0 h-px bg-neutral-500" />
       )}
     </button>
   );

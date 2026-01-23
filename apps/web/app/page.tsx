@@ -31,10 +31,11 @@ export const metadata: Metadata = {
 
 async function getRegistries(): Promise<DirectoryEntry[]> {
   try {
-    const filePath = join(process.cwd(), "public/registries.json");
+    const filePath = join(process.cwd(), "public/directory.json");
     const fileContents = await readFile(filePath, "utf8");
-    const registries = JSON.parse(fileContents);
-    
+    const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] };
+    const registries = data.registries;
+
     // Transform to DirectoryEntry format
     return registries.map((registry: DirectoryEntry) => ({
       name: registry.name,
@@ -44,7 +45,7 @@ async function getRegistries(): Promise<DirectoryEntry[]> {
       github_profile: registry.github_profile,
     }));
   } catch (error) {
-    console.error("Error reading registries.json:", error);
+    console.error("Error reading directory.json:", error);
     // Fallback to empty array or default registries
     return [];
   }
@@ -54,8 +55,9 @@ async function getTools(): Promise<DirectoryEntry[]> {
   try {
     const filePath = join(process.cwd(), "public/tools.json");
     const fileContents = await readFile(filePath, "utf8");
-    const tools = JSON.parse(fileContents);
-    
+    const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] };
+    const tools = data.registries;
+
     // Transform to DirectoryEntry format
     return tools.map((tool: DirectoryEntry) => ({
       name: tool.name,
@@ -76,8 +78,8 @@ export default async function Home() {
   const tools = await getTools();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start pt-40 pb-20">
-      <div className="flex items-center gap-2 mb-16">
+    <main className="flex min-h-screen flex-col items-center justify-start pt-24 md:pt-32 pb-12 md:pb-20">
+      <div className="flex items-center gap-2 mb-8 md:mb-10">
         <h1 className="text-sm font-medium font-mono">
           registry<span className="text-muted-foreground">.directory</span>{" "}
           <span className="text-xs text-foreground rounded-md border bg-rose-700 px-1">
@@ -86,7 +88,7 @@ export default async function Home() {
         </h1>
       </div>
 
-      <div className="text-sm mb-20 px-4 text-center font-mono">
+      <div className="text-sm mb-12 md:mb-14 px-4 text-center font-mono leading-relaxed">
         <span className="text-muted-foreground">discover, preview, copy </span>
         <span className="text-foreground">
           <svg
