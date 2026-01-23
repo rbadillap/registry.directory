@@ -59,7 +59,7 @@ async function fetchItemData(
     // Extract base from registry_url (remove /registry.json)
     baseUrl = registry.registry_url.replace(/\/[^/]+\.json$/, '')
   } else {
-    baseUrl = registry.url.replace(/\/$/, '')
+    baseUrl = `${registry.url.replace(/\/$/, '')}/r`
   }
   const targetUrl = `${baseUrl}/${itemName}.json`
   console.log(`[Level2] Fetching item data from:`, targetUrl)
