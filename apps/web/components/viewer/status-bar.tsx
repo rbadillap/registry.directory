@@ -4,6 +4,7 @@ import { Copy, Share2, Sparkles, MessageSquare } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
 import { Avatar, AvatarImage, AvatarFallback } from "@workspace/ui/components/avatar"
 import type { RegistryItem } from "@/lib/registry-types"
+import { getTargetPath } from "@/lib/path-utils"
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
@@ -14,17 +15,7 @@ interface StatusBarProps {
   onShare?: () => void
 }
 
-function getFileTypeName(file: RegistryFile | null): string {
-  if (!file) return ""
-
-  const type = file.type.replace("registry:", "")
-  const extension = file.path.split(".").pop()?.toUpperCase() || ""
-
-  return `${type} • ${extension}`
-}
-
 export function StatusBar({ totalItems, selectedFile, onCopyCode, onShare }: StatusBarProps) {
-  const fileType = getFileTypeName(selectedFile)
 
   const handleOpenInV0 = () => {
     if (!selectedFile) return
@@ -36,15 +27,17 @@ export function StatusBar({ totalItems, selectedFile, onCopyCode, onShare }: Sta
     window.open("https://chat.openai.com", "_blank", "noopener,noreferrer")
   }
 
+  const targetPath = selectedFile ? getTargetPath(selectedFile) : null
+
   return (
     <footer className="flex items-center justify-between px-4 py-2 border-t border-neutral-800 bg-black text-xs font-mono">
       {/* Left side */}
       <div className="flex items-center gap-4">
         <span className="text-neutral-500">{totalItems} items</span>
-        {fileType && (
+        {targetPath && (
           <>
             <span className="text-neutral-700">•</span>
-            <span className="text-neutral-400">{fileType}</span>
+            <span className="text-neutral-400">{targetPath}</span>
           </>
         )}
       </div>

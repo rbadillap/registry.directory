@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react"
 import { ScrollArea } from "@workspace/ui/components/scroll-area"
-import { Badge } from "@workspace/ui/components/badge"
-import { FileCode, Package } from "lucide-react"
+import { Button } from "@workspace/ui/components/button"
+import { FileCode, Package, Copy, Check } from "lucide-react"
 import type { RegistryItem } from "@/lib/registry-types"
 import { codeToHtml } from "shiki"
 import { getFileName, getExtension, getTargetPath } from "@/lib/path-utils"
@@ -48,6 +48,7 @@ function getLanguageFromPath(path: string): string {
 export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
   const [highlightedCode, setHighlightedCode] = useState<string>("")
   const [isLoading, setIsLoading] = useState(false)
+  const [copied, setCopied] = useState(false)
 
   useEffect(() => {
     if (!file) {
@@ -117,16 +118,30 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
   const targetPath = getTargetPath(file)
   const fileName = getFileName(targetPath)
 
+  const handleCopy = () => {
+    if (!file.content) return
+    navigator.clipboard.writeText(file.content)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
   return (
     <div className="h-full flex flex-col bg-black">
       <div className="h-[49px] flex items-center justify-between border-b border-neutral-700/50 bg-black px-4 flex-shrink-0">
-        <div className="flex items-center gap-2">
-          <span className="text-sm font-medium text-white">{fileName}</span>
-          <span className="text-xs text-neutral-500 font-mono">{targetPath}</span>
-        </div>
-        <Badge variant="secondary" className="text-xs border border-neutral-700/50">
-          {file.type.replace("registry:", "")}
-        </Badge>
+        <span className="text-sm font-mono text-neutral-400">{fileName}</span>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="h-7 text-neutral-400 hover:text-white px-2 flex-shrink-0"
+          onClick={handleCopy}
+          title="Copy code"
+        >
+          {copied ? (
+            <Check className="h-3.5 w-3.5 text-green-500" />
+          ) : (
+            <Copy className="h-3.5 w-3.5" />
+          )}
+        </Button>
       </div>
 
       <div className="flex-1 min-h-0">
