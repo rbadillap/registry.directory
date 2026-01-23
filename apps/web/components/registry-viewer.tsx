@@ -7,6 +7,8 @@ import { CodeViewer } from "./viewer/code-viewer"
 import { InfoPanel } from "./viewer/info-panel"
 import { ViewerHeader } from "./viewer/viewer-header"
 import { StatusBar } from "./viewer/status-bar"
+import { MobileTabNavigation, type MobileTab } from "./viewer/mobile-tab-navigation"
+import { cn } from "@workspace/ui/lib/utils"
 import type { DirectoryEntry } from "@/lib/types"
 import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { generateGlobalsCss } from "@/lib/css-utils"
@@ -45,14 +47,19 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
   const items = registryIndex.items.map(addGlobalsCssFile)
   const processedInitialItem = initialItem ? addGlobalsCssFile(initialItem) : null
 
+  // Determine initial tab: 'code' if there's a file, 'files' otherwise
+  const initialTab: MobileTab = processedInitialItem?.files?.[0] ? 'code' : 'files'
+
   const [selectedItem, setSelectedItem] = useState<RegistryItem | null>(processedInitialItem)
   const [selectedFile, setSelectedFile] = useState<RegistryFile | null>(null)
+  const [mobileTab, setMobileTab] = useState<MobileTab>(initialTab)
 
   // Set initial selected file when component mounts or item changes
   useEffect(() => {
     if (!initialItem) {
       setSelectedItem(null)
       setSelectedFile(null)
+      setMobileTab('files') // Reset to files when no item
       return
     }
 
@@ -60,11 +67,16 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
     const firstFile = item?.files?.[0] || null
     setSelectedItem(item)
     setSelectedFile(firstFile)
+
+    // Set tab based on whether there's a file
+    setMobileTab(firstFile ? 'code' : 'files')
   }, [initialItem])
 
   const handleSelectFile = (item: RegistryItem, file: RegistryFile) => {
     setSelectedItem(item)
     setSelectedFile(file)
+    // Auto-switch to code tab on mobile when file is selected
+    setMobileTab('code')
   }
 
   const handleCopyCode = () => {
@@ -113,7 +125,34 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
     <div className="h-screen bg-black text-white flex flex-col">
       <ViewerHeader registry={registry} />
 
-      <div className="flex-1 min-h-0">
+      {/* Mobile Tab Navigation - only visible on mobile */}
+      <MobileTabNavigation
+        activeTab={mobileTab}
+        onTabChange={setMobileTab}
+        hasFile={!!selectedFile}
+      />
+
+      {/* Mobile Content - one panel at a time */}
+      <div className="md:hidden flex-1 min-h-0">
+        <div className={cn("h-full", mobileTab !== 'files' && "hidden")}>
+          <FileTree
+            items={selectedItem ? [selectedItem] : items}
+            selectedItem={selectedItem}
+            selectedFile={selectedFile}
+            onSelectFile={handleSelectFile}
+            currentCategory={currentCategory}
+          />
+        </div>
+        <div className={cn("h-full", mobileTab !== 'code' && "hidden")}>
+          <CodeViewer file={selectedFile} selectedItem={selectedItem} />
+        </div>
+        <div className={cn("h-full", mobileTab !== 'info' && "hidden")}>
+          <InfoPanel item={selectedItem} />
+        </div>
+      </div>
+
+      {/* Desktop Content - 3-column layout */}
+      <div className="hidden md:flex md:flex-1 md:min-h-0">
         <PanelGroup direction="horizontal">
           <Panel defaultSize={25} minSize={20} maxSize={35}>
             <FileTree

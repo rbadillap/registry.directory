@@ -509,11 +509,11 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   // If viewing a single item without files, show empty file tree
   if (isItemView && !hasFileContent) {
     return (
-      <div className="h-full border-r border-neutral-800 bg-black">
-        <div className="p-3 border-b border-neutral-800">
+      <div className="h-full md:border-r border-neutral-800 bg-black">
+        <div className="p-2 md:p-3 border-b border-neutral-800">
           <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Files</span>
         </div>
-        <div className="flex items-center justify-center h-[calc(100%-49px)] p-4">
+        <div className="flex items-center justify-center h-[calc(100%-44px)] md:h-[calc(100%-49px)] p-4">
           <p className="text-xs text-neutral-600 text-center">
             No files
           </p>
@@ -532,8 +532,8 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     )
 
     return (
-      <div className="h-full border-r border-neutral-800 bg-black">
-        <div className="p-3 border-b border-neutral-800">
+      <div className="h-full md:border-r border-neutral-800 bg-black">
+        <div className="p-2 md:p-3 border-b border-neutral-800">
           <input
             type="text"
             value={searchQuery}
@@ -548,7 +548,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
           )}
         </div>
 
-        <ScrollArea className="h-[calc(100%-49px)]">
+        <ScrollArea className="h-[calc(100%-44px)] md:h-[calc(100%-49px)]">
           <div className="p-2 space-y-0.5">
             {filteredItems.length > 0 ? (
               filteredItems
@@ -585,12 +585,12 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
 
   // Render file tree (Nivel 3 - with file content)
   return (
-    <div className="h-full border-r border-neutral-800 bg-black">
-      <div className="p-3 border-b border-neutral-800">
+    <div className="h-full md:border-r border-neutral-800 bg-black">
+      <div className="p-2 md:p-3 border-b border-neutral-800">
         <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Registry Items</span>
       </div>
 
-      <ScrollArea className="h-[calc(100%-49px)]">
+      <ScrollArea className="h-[calc(100%-44px)] md:h-[calc(100%-49px)]">
         <div className="p-2">
           {Array.from(pathTree.values())
             .sort((a, b) => {

@@ -57,7 +57,7 @@ export function InfoPanel({ item }: InfoPanelProps) {
 
   if (!item) {
     return (
-      <div className="h-full flex items-center justify-center text-neutral-500 bg-black border-l border-neutral-800">
+      <div className="h-full flex items-center justify-center text-neutral-500 bg-black md:border-l border-neutral-800">
         Select a component to view its information
       </div>
     )
@@ -72,17 +72,17 @@ export function InfoPanel({ item }: InfoPanelProps) {
   ]
 
   return (
-    <div className="h-full flex flex-col bg-black border-l border-neutral-800">
-      <div className="h-[49px] flex items-center border-b border-neutral-800 bg-black px-4 flex-shrink-0">
+    <div className="h-full flex flex-col bg-black md:border-l border-neutral-800">
+      <div className="h-[44px] md:h-[49px] flex items-center border-b border-neutral-800 bg-black px-3 md:px-4 flex-shrink-0">
         <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Configuration</span>
       </div>
 
       <div className="flex-1 min-h-0">
         <ScrollArea className="h-full">
-          <div className="p-4 space-y-4">
+          <div className="p-3 md:p-4 space-y-3 md:space-y-4">
             {/* Main Info Card */}
             <Card className="bg-neutral-900/50 border-neutral-800">
-              <CardContent className="pt-4 space-y-4">
+              <CardContent className="p-3 md:pt-4 md:px-6 md:pb-6 space-y-3 md:space-y-4">
                 {/* Name and Type */}
                 <div className="flex gap-3 items-start">
                   <div className="flex-1 min-w-0 space-y-1">
@@ -157,13 +157,13 @@ export function InfoPanel({ item }: InfoPanelProps) {
             {/* Dependencies Card */}
             {allDeps.length > 0 && (
               <Card className="bg-neutral-900/50 border-neutral-800">
-                <CardHeader className="pb-2 pt-4 px-4">
+                <CardHeader className="pb-2 pt-3 md:pt-4 px-3 md:px-4">
                   <CardTitle className="text-sm flex items-center gap-2">
                     <Package className="h-3.5 w-3.5" />
                     Dependencies
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="px-4 pb-4 space-y-3">
+                <CardContent className="px-3 md:px-4 pb-3 md:pb-4 space-y-2 md:space-y-3">
                   {item.dependencies && item.dependencies.length > 0 && (
                     <div className="space-y-2">
                       <div className="text-xs text-neutral-500 uppercase tracking-wider">npm packages</div>

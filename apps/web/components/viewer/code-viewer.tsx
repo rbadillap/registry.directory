@@ -127,8 +127,8 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
 
   return (
     <div className="h-full flex flex-col bg-black">
-      <div className="h-[49px] flex items-center justify-between border-b border-neutral-700/50 bg-black px-4 flex-shrink-0">
-        <span className="text-sm font-mono text-neutral-400">{fileName}</span>
+      <div className="h-[44px] md:h-[49px] flex items-center justify-between border-b border-neutral-700/50 bg-black px-3 md:px-4 flex-shrink-0">
+        <span className="text-xs md:text-sm font-mono text-neutral-400 truncate">{fileName}</span>
         <Button
           variant="ghost"
           size="sm"
@@ -147,10 +147,10 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
       <div className="flex-1 min-h-0">
         <ScrollArea className="h-full">
           {isLoading ? (
-            <div className="p-4 text-sm text-neutral-500">Loading...</div>
+            <div className="p-3 md:p-4 text-sm text-neutral-500">Loading...</div>
           ) : (
             <div
-              className="p-4 text-sm font-mono"
+              className="p-3 md:p-4 text-xs md:text-sm font-mono"
               dangerouslySetInnerHTML={{ __html: highlightedCode }}
             />
           )}

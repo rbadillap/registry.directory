@@ -74,22 +74,22 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
   const currentItem = getCurrentItem()
 
   return (
-    <div className="flex items-center justify-between border-b border-neutral-800 bg-black px-6 py-4">
-      <div className="flex items-center gap-4">
+    <div className="flex items-center justify-between border-b border-neutral-800 bg-black px-4 py-3 md:px-6 md:py-4">
+      <div className="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
         <Button
           asChild
           size="icon"
           variant="ghost"
-          className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+          className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black flex-shrink-0"
         >
           <Link href={backUrl}>
-            <ArrowLeft className="h-5 w-5" />
+            <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
           </Link>
         </Button>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3 min-w-0 flex-1">
           {githubInfo && (
-            <Avatar className="h-6 w-6">
+            <Avatar className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0">
               <AvatarImage src={githubInfo.avatarUrl} alt={githubInfo.username} />
               <AvatarFallback className="bg-neutral-800 text-neutral-400 text-xs">
                 {githubInfo.username.charAt(0).toUpperCase()}
@@ -97,7 +97,7 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
             </Avatar>
           )}
 
-          <div className="text-sm font-mono">
+          <div className="text-xs md:text-sm font-mono min-w-0 truncate">
             {githubInfo ? (
               <>
                 <a
@@ -108,7 +108,7 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
                 >
                   {githubInfo.username}
                 </a>
-                <span className="text-neutral-600 mx-1.5">/</span>
+                <span className="text-neutral-600 mx-1 md:mx-1.5">/</span>
                 <Link
                   href={`/${githubInfo.username}/${githubInfo.repo}`}
                   className="text-white font-semibold hover:underline transition-colors"
@@ -117,24 +117,24 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
                 </Link>
                 {currentItem && (
                   <>
-                    <span className="text-neutral-600 mx-1.5">/</span>
-                    <span className="text-white">{currentItem}</span>
-                    <span className="text-neutral-600">.json</span>
+                    <span className="text-neutral-600 mx-1 md:mx-1.5 hidden md:inline">/</span>
+                    <span className="text-white hidden md:inline">{currentItem}</span>
+                    <span className="text-neutral-600 hidden md:inline">.json</span>
                   </>
                 )}
               </>
             ) : (
               <>
                 <span className="text-white">{registry.name}</span>
-                <span className="text-neutral-600 mx-1.5">/</span>
-                <span className="text-neutral-400">IDE Viewer</span>
+                <span className="text-neutral-600 mx-1 md:mx-1.5 hidden md:inline">/</span>
+                <span className="text-neutral-400 hidden md:inline">IDE Viewer</span>
               </>
             )}
           </div>
         </div>
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="hidden md:flex items-center gap-2 flex-shrink-0">
         <Button
           asChild
           variant="ghost"

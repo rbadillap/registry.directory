@@ -1,11 +1,13 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels"
 import { ScrollArea } from "@workspace/ui/components/scroll-area"
-import { Package, Blocks, Code, Paintbrush, Box, Palette, FileCode, Diamond } from "lucide-react"
+import { Package, Blocks, Code, Paintbrush, Box, Palette, FileCode, Diamond, Info, LayoutGrid, BarChart3 } from "lucide-react"
 import { ViewerHeader } from "./viewer/viewer-header"
 import { StatusBar } from "./viewer/status-bar"
+import { cn } from "@workspace/ui/lib/utils"
 import type { RegistryItem } from "@/lib/registry-types"
 import type { DirectoryEntry } from "@/lib/types"
 
@@ -29,15 +31,186 @@ const CATEGORY_ICONS = {
   base: Box,
 } as const
 
-export function RegistryOverview({ registry, categories, owner, repo }: RegistryOverviewProps) {
+type OverviewTab = 'info' | 'categories' | 'stats'
 
+const overviewTabs = [
+  { id: 'info' as const, label: 'Info', icon: Info },
+  { id: 'categories' as const, label: 'Categories', icon: LayoutGrid },
+  { id: 'stats' as const, label: 'Stats', icon: BarChart3 },
+]
+
+export function RegistryOverview({ registry, categories, owner, repo }: RegistryOverviewProps) {
+  const [mobileTab, setMobileTab] = useState<OverviewTab>('categories')
   const totalItems = Array.from(categories.values()).reduce((sum, items) => sum + items.length, 0)
 
   return (
     <div className="h-screen bg-black text-white flex flex-col">
       <ViewerHeader registry={registry} />
 
-      <div className="flex-1 min-h-0">
+      {/* Mobile Tab Navigation */}
+      <div className="md:hidden border-b border-neutral-800 bg-black">
+        <div className="flex items-center">
+          {overviewTabs.map((tab) => {
+            const Icon = tab.icon
+            const isActive = mobileTab === tab.id
+
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setMobileTab(tab.id)}
+                className={cn(
+                  "flex-1 flex items-center justify-center gap-2 py-3 text-sm font-medium transition-colors relative",
+                  "min-h-[44px]",
+                  isActive
+                    ? "text-white"
+                    : "text-neutral-400 hover:text-neutral-300 active:bg-neutral-800/50"
+                )}
+              >
+                <Icon className="h-4 w-4" />
+                <span>{tab.label}</span>
+                {isActive && (
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white" />
+                )}
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* Mobile Content - one panel at a time */}
+      <div className="md:hidden flex-1 min-h-0">
+        <div className={cn("h-full", mobileTab !== 'info' && "hidden")}>
+          <div className="h-full bg-black">
+            <div className="p-2 md:p-3 border-b border-neutral-800">
+              <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">
+                Registry Info
+              </span>
+            </div>
+
+            <ScrollArea className="h-[calc(100%-44px)]">
+              <div className="p-3 space-y-3">
+                <div>
+                  <h3 className="text-sm font-semibold text-white mb-2">{registry.name}</h3>
+                  {registry.description && (
+                    <p className="text-xs text-neutral-400 leading-relaxed">
+                      {registry.description}
+                    </p>
+                  )}
+                </div>
+
+                <div className="pt-3 border-t border-neutral-800">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-neutral-500">Categories</span>
+                      <span className="text-xs font-mono text-white">{categories.size}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-neutral-500">Total Items</span>
+                      <span className="text-xs font-mono text-white">{totalItems}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {registry.github_url && (
+                  <div className="pt-3 border-t border-neutral-800">
+                    <a
+                      href={registry.github_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-neutral-400 hover:text-white transition-colors"
+                    >
+                      View on GitHub →
+                    </a>
+                  </div>
+                )}
+              </div>
+            </ScrollArea>
+          </div>
+        </div>
+
+        <div className={cn("h-full", mobileTab !== 'categories' && "hidden")}>
+          <div className="h-full bg-black">
+            <div className="p-2 md:p-3 border-b border-neutral-800">
+              <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">
+                Browse Categories
+              </span>
+            </div>
+
+            <ScrollArea className="h-[calc(100%-44px)]">
+              <div className="p-3">
+                <div className="grid grid-cols-2 gap-2">
+                  {Array.from(categories.entries()).map(([slug, items]) => {
+                    const Icon = CATEGORY_ICONS[slug as keyof typeof CATEGORY_ICONS] || Package
+
+                    if (items.length === 0) return null
+
+                    return (
+                      <Link
+                        key={slug}
+                        href={`/${owner}/${repo}/${slug}`}
+                        className="group"
+                      >
+                        <div className="border border-neutral-800 hover:border-neutral-600 rounded-lg p-3 transition-all bg-black hover:bg-neutral-900/50">
+                          <div className="flex items-start gap-2">
+                            <Icon className="w-4 h-4 flex-shrink-0 mt-0.5 text-neutral-500" />
+                            <div className="flex-1 min-w-0">
+                              <h3 className="text-xs font-semibold text-white capitalize truncate">
+                                {slug}
+                              </h3>
+                              <p className="text-[10px] text-neutral-500 mt-0.5">
+                                {items.length} {items.length === 1 ? 'item' : 'items'}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    )
+                  })}
+                </div>
+              </div>
+            </ScrollArea>
+          </div>
+        </div>
+
+        <div className={cn("h-full", mobileTab !== 'stats' && "hidden")}>
+          <div className="h-full bg-black">
+            <div className="p-2 md:p-3 border-b border-neutral-800">
+              <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">
+                Quick Stats
+              </span>
+            </div>
+
+            <ScrollArea className="h-[calc(100%-44px)]">
+              <div className="p-3 space-y-3">
+                <div>
+                  <h4 className="text-sm font-semibold text-white mb-2">Select a Category</h4>
+                  <p className="text-xs text-neutral-400 leading-relaxed">
+                    Click on any category to browse its components and blocks.
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-neutral-800">
+                  <h4 className="text-sm font-semibold text-white mb-2">Top Categories</h4>
+                  <div className="space-y-2">
+                    {Array.from(categories.entries())
+                      .sort((a, b) => b[1].length - a[1].length)
+                      .slice(0, 5)
+                      .map(([slug, items]) => (
+                        <div key={slug} className="flex items-center justify-between">
+                          <span className="text-xs text-neutral-400 capitalize">{slug}</span>
+                          <span className="text-xs font-mono text-neutral-500">{items.length}</span>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              </div>
+            </ScrollArea>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Content - 3-column layout */}
+      <div className="hidden md:flex md:flex-1 md:min-h-0">
         <PanelGroup direction="horizontal">
           {/* Left Sidebar - Registry Info */}
           <Panel defaultSize={25} minSize={20} maxSize={35}>
