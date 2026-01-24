@@ -13,16 +13,19 @@ export interface WebContainerState {
   status: WebContainerStatus
   error?: string
   previewUrl?: string
+  logs: string[]
 }
 
 type StateListener = (state: WebContainerState) => void
+type LogListener = (log: string) => void
 
 class WebContainerService {
   private static instance: WebContainerService | null = null
   private container: WebContainer | null = null
   private bootPromise: Promise<WebContainer> | null = null
-  private state: WebContainerState = { status: "idle" }
+  private state: WebContainerState = { status: "idle", logs: [] }
   private listeners: Set<StateListener> = new Set()
+  private logListeners: Set<LogListener> = new Set()
   private currentPreviewUrl: string | null = null
 
   static getInstance(): WebContainerService {
@@ -37,11 +40,24 @@ class WebContainerService {
     this.listeners.forEach((listener) => listener(this.state))
   }
 
+  private addLog(log: string) {
+    // Keep last 50 logs
+    const logs = [...this.state.logs, log].slice(-50)
+    this.state = { ...this.state, logs }
+    this.logListeners.forEach((listener) => listener(log))
+    this.listeners.forEach((listener) => listener(this.state))
+  }
+
   subscribe(listener: StateListener): () => void {
     this.listeners.add(listener)
     // Immediately call with current state
     listener(this.state)
     return () => this.listeners.delete(listener)
+  }
+
+  subscribeToLogs(listener: LogListener): () => void {
+    this.logListeners.add(listener)
+    return () => this.logListeners.delete(listener)
   }
 
   getState(): WebContainerState {
@@ -92,16 +108,18 @@ class WebContainerService {
 
   async install(): Promise<void> {
     const container = await this.boot()
-    this.setState({ status: "installing" })
+    this.setState({ status: "installing", logs: [] })
+    this.addLog("$ npm install")
 
     try {
       const process = await container.spawn("npm", ["install"])
 
-      // Stream output for debugging
+      // Stream output to logs
+      const self = this
       process.output.pipeTo(
         new WritableStream({
           write(data) {
-            console.log("[npm install]", data)
+            self.addLog(data)
           },
         })
       )
@@ -111,6 +129,8 @@ class WebContainerService {
       if (exitCode !== 0) {
         throw new Error(`npm install failed with exit code ${exitCode}`)
       }
+
+      this.addLog("Dependencies installed successfully")
     } catch (error) {
       const message = error instanceof Error ? error.message : "Install failed"
       this.setState({ status: "error", error: message })
@@ -121,16 +141,18 @@ class WebContainerService {
   async startDevServer(): Promise<string> {
     const container = await this.boot()
     this.setState({ status: "starting" })
+    this.addLog("$ npm run dev")
 
     try {
       // Start the dev server (don't await - it runs indefinitely)
       const process = await container.spawn("npm", ["run", "dev"])
 
-      // Stream output for debugging
+      // Stream output to logs
+      const self = this
       process.output.pipeTo(
         new WritableStream({
           write(data) {
-            console.log("[vite]", data)
+            self.addLog(data)
           },
         })
       )
