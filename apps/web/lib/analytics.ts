@@ -10,7 +10,7 @@ export type ShareMethod = "native" | "clipboard";
 export type AIProvider = "v0" | "chatgpt" | "claude" | "scira";
 export type ExportMethod = "view" | "ai_share";
 export type FolderAction = "open" | "close";
-export type MobileTab = "files" | "code" | "info";
+export type MobileTab = "files" | "code" | "preview" | "info";
 
 // Base properties included in all events
 export interface BaseEventProperties {

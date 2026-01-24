@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://registry.directory/schemas/preview.json",
+  "title": "Registry Preview Configuration",
+  "description": "Configuration for live component previews",
+  "type": "object",
+  "required": ["registries"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "registries": {
+      "type": "object",
+      "description": "Map of registry ID to preview configuration",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["name", "previewUrl"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Registry name (must match name in directory.json)"
+          },
+          "previewUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "Base URL of the preview app"
+          }
+        }
+      }
+    }
+  }
+}

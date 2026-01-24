@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels"
 import { FileTree } from "./viewer/file-tree"
 import { CodeViewer } from "./viewer/code-viewer"
+import { CentralPanel } from "./viewer/central-panel"
+import { PreviewPanel } from "./viewer/preview-panel"
 import { InfoPanel } from "./viewer/info-panel"
 import { ViewerHeader } from "./viewer/viewer-header"
 import { StatusBar } from "./viewer/status-bar"
@@ -14,6 +16,8 @@ import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { generateGlobalsCss } from "@/lib/css-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { getTargetPath } from "@/lib/path-utils"
+import { getPreviewConfig } from "@/lib/preview-utils"
+import { usePreviewManifest } from "@/hooks/use-preview-manifest"
 
 interface RegistryViewerProps {
   registry: DirectoryEntry
@@ -47,6 +51,10 @@ function addGlobalsCssFile(item: RegistryItem): RegistryItem {
 export function RegistryViewer({ registry, registryIndex, selectedItem: initialItem, currentCategory }: RegistryViewerProps) {
   const analytics = useAnalytics()
 
+  // Get preview configuration for this registry
+  const previewConfig = getPreviewConfig(registry.name)
+  const { hasPreview: checkHasPreview } = usePreviewManifest(previewConfig?.previewUrl ?? null)
+
   // Add globals.css files to items with cssVars
   const items = registryIndex.items.map(addGlobalsCssFile)
   const processedInitialItem = initialItem ? addGlobalsCssFile(initialItem) : null
@@ -57,6 +65,11 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
   const [selectedItem, setSelectedItem] = useState<RegistryItem | null>(processedInitialItem)
   const [selectedFile, setSelectedFile] = useState<RegistryFile | null>(null)
   const [mobileTab, setMobileTab] = useState<MobileTab>(initialTab)
+
+  // Check if the current item has a preview available
+  const showPreview = Boolean(
+    previewConfig && selectedItem && checkHasPreview(selectedItem.name)
+  )
 
   // Set initial selected file when component mounts or item changes
   useEffect(() => {
@@ -131,6 +144,7 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
         activeTab={mobileTab}
         onTabChange={setMobileTab}
         hasFile={!!selectedFile}
+        showPreview={showPreview}
       />
 
       {/* Mobile Content - one panel at a time */}
@@ -147,6 +161,15 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
         <div className={cn("h-full", mobileTab !== 'code' && "hidden")}>
           <CodeViewer file={selectedFile} selectedItem={selectedItem} />
         </div>
+        {showPreview && previewConfig && selectedItem && (
+          <div className={cn("h-full", mobileTab !== 'preview' && "hidden")}>
+            <PreviewPanel
+              registryId={previewConfig.id}
+              itemName={selectedItem.name}
+              baseUrl={previewConfig.previewUrl}
+            />
+          </div>
+        )}
         <div className={cn("h-full", mobileTab !== 'info' && "hidden")}>
           <InfoPanel item={selectedItem} />
         </div>
@@ -168,7 +191,15 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
           <PanelResizeHandle className="w-px bg-neutral-800" />
 
           <Panel defaultSize={50} minSize={40} maxSize={60}>
-            <CodeViewer file={selectedFile} selectedItem={selectedItem} />
+            <CentralPanel
+              file={selectedFile}
+              selectedItem={selectedItem}
+              showPreview={showPreview}
+              previewConfig={previewConfig ? {
+                registryId: previewConfig.id,
+                baseUrl: previewConfig.previewUrl,
+              } : null}
+            />
           </Panel>
 
           <PanelResizeHandle className="w-px bg-neutral-800" />

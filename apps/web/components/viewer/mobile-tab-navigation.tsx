@@ -1,27 +1,34 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import { FolderTree, Code2, Info } from "lucide-react"
+import { useEffect, useRef, useMemo } from "react"
+import { FolderTree, Code2, Info, Eye } from "lucide-react"
 import { cn } from "@workspace/ui/lib/utils"
 import { useAnalytics } from "@/hooks/use-analytics"
 
-export type MobileTab = 'files' | 'code' | 'info'
+export type MobileTab = 'files' | 'code' | 'preview' | 'info'
 
 interface MobileTabNavigationProps {
   activeTab: MobileTab
   onTabChange: (tab: MobileTab) => void
   hasFile: boolean
+  showPreview?: boolean
 }
 
-const tabs = [
-  { id: 'files' as const, label: 'Files', icon: FolderTree },
-  { id: 'code' as const, label: 'Code', icon: Code2 },
-  { id: 'info' as const, label: 'Info', icon: Info },
+const baseTabs = [
+  { id: 'files' as const, label: 'Files', icon: FolderTree, isNew: false },
+  { id: 'code' as const, label: 'Code', icon: Code2, isNew: false },
+  { id: 'preview' as const, label: 'Preview', icon: Eye, isNew: true },
+  { id: 'info' as const, label: 'Info', icon: Info, isNew: false },
 ]
 
-export function MobileTabNavigation({ activeTab, onTabChange, hasFile }: MobileTabNavigationProps) {
+export function MobileTabNavigation({ activeTab, onTabChange, hasFile, showPreview = false }: MobileTabNavigationProps) {
   const analytics = useAnalytics()
   const previousTabRef = useRef<MobileTab>(activeTab)
+
+  // Filter tabs based on showPreview prop
+  const tabs = useMemo(() => {
+    return baseTabs.filter((tab) => tab.id !== 'preview' || showPreview)
+  }, [showPreview])
 
   // Track tab switches
   useEffect(() => {
@@ -46,6 +53,7 @@ export function MobileTabNavigation({ activeTab, onTabChange, hasFile }: MobileT
         {tabs.map((tab) => {
           const Icon = tab.icon
           const isActive = activeTab === tab.id
+          // Disable code, preview, and info tabs when no file is selected (except files tab)
           const isDisabled = !hasFile && tab.id !== 'files'
 
           return (
@@ -54,7 +62,7 @@ export function MobileTabNavigation({ activeTab, onTabChange, hasFile }: MobileT
               onClick={() => !isDisabled && onTabChange(tab.id)}
               disabled={isDisabled}
               className={cn(
-                "flex-1 flex items-center justify-center gap-2 py-3 text-sm font-medium transition-colors relative",
+                "flex-1 flex items-center justify-center gap-1.5 py-3 text-sm font-medium transition-colors relative",
                 "min-h-[44px]", // Touch target size
                 isActive
                   ? "text-white"
@@ -65,6 +73,11 @@ export function MobileTabNavigation({ activeTab, onTabChange, hasFile }: MobileT
             >
               <Icon className="h-4 w-4" />
               <span>{tab.label}</span>
+              {tab.isNew && (
+                <span className="px-1 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-rose-400 border border-rose-500/50 rounded bg-rose-500/10">
+                  New
+                </span>
+              )}
               {isActive && (
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white" />
               )}
