@@ -29,6 +29,9 @@ importers:
       '@vercel/analytics':
         specifier: ^1.6.1
         version: 1.6.1(next@15.5.9(@babel/core@7.28.6)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)
+      '@webcontainer/api':
+        specifier: ^1.6.1
+        version: 1.6.1
       '@workspace/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -1355,6 +1358,9 @@ packages:
         optional: true
       vue-router:
         optional: true
+
+  '@webcontainer/api@1.6.1':
+    resolution: {integrity: sha512-2RS2KiIw32BY1Icf6M1DvqSmcon9XICZCDgS29QJb2NmF12ZY2V5Ia+949hMKB3Wno+P/Y8W+sPP59PZeXSELg==}
 
   accepts@2.0.0:
     resolution: {integrity: sha512-5cvg6CtKwfgdmVqY1WIiXKc3Q1bkRqGLi+2W/6ao+6Y7gu/RCwRuAhGEzh5B4KlszSuTLgZYuqFqo5bImjNKng==}
@@ -5199,6 +5205,8 @@ snapshots:
     optionalDependencies:
       next: 15.5.9(@babel/core@7.28.6)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react: 19.2.3
+
+  '@webcontainer/api@1.6.1': {}
 
   accepts@2.0.0:
     dependencies:

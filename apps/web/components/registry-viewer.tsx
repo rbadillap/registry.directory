@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels"
 import { FileTree } from "./viewer/file-tree"
 import { CodeViewer } from "./viewer/code-viewer"
+import { CentralPanel } from "./viewer/central-panel"
+import { WebContainerPreview } from "./viewer/webcontainer-preview"
 import { InfoPanel } from "./viewer/info-panel"
 import { ViewerHeader } from "./viewer/viewer-header"
 import { StatusBar } from "./viewer/status-bar"
@@ -14,6 +16,7 @@ import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { generateGlobalsCss } from "@/lib/css-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { getTargetPath } from "@/lib/path-utils"
+import { usePreview } from "@/hooks/use-preview"
 
 interface RegistryViewerProps {
   registry: DirectoryEntry
@@ -57,6 +60,12 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
   const [selectedItem, setSelectedItem] = useState<RegistryItem | null>(processedInitialItem)
   const [selectedFile, setSelectedFile] = useState<RegistryFile | null>(null)
   const [mobileTab, setMobileTab] = useState<MobileTab>(initialTab)
+
+  // Check if preview is available for the current item
+  const { previewCode, hasPreview } = usePreview(
+    registry.name,
+    selectedItem?.name || ""
+  )
 
   // Set initial selected file when component mounts or item changes
   useEffect(() => {
@@ -131,6 +140,7 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
         activeTab={mobileTab}
         onTabChange={setMobileTab}
         hasFile={!!selectedFile}
+        showPreview={hasPreview}
       />
 
       {/* Mobile Content - one panel at a time */}
@@ -147,6 +157,11 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
         <div className={cn("h-full", mobileTab !== 'code' && "hidden")}>
           <CodeViewer file={selectedFile} selectedItem={selectedItem} />
         </div>
+        {hasPreview && previewCode && selectedItem && (
+          <div className={cn("h-full", mobileTab !== 'preview' && "hidden")}>
+            <WebContainerPreview item={selectedItem} previewCode={previewCode} />
+          </div>
+        )}
         <div className={cn("h-full", mobileTab !== 'info' && "hidden")}>
           <InfoPanel item={selectedItem} />
         </div>
@@ -168,7 +183,12 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
           <PanelResizeHandle className="w-px bg-neutral-800" />
 
           <Panel defaultSize={50} minSize={40} maxSize={60}>
-            <CodeViewer file={selectedFile} selectedItem={selectedItem} />
+            <CentralPanel
+              file={selectedFile}
+              selectedItem={selectedItem}
+              showPreview={hasPreview}
+              previewCode={previewCode}
+            />
           </Panel>
 
           <PanelResizeHandle className="w-px bg-neutral-800" />
