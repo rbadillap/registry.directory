@@ -114,8 +114,9 @@ export async function generateMetadata({
     }
   }
 
-  // Item view
-  const itemData = await fetchItemData(registry, slug)
+  // Item view - use registry index instead of individual fetch to avoid timeout during build
+  const registryIndex = await fetchRegistryIndex(registry)
+  const itemData = registryIndex?.items?.find(item => item.name === slug)
   const categorySlug = itemData ? typeToSlug(itemData.type) : null
   const categoryLabel = categorySlug ? (CATEGORY_LABELS[categorySlug] || categorySlug) : "Component"
 

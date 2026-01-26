@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import type { DirectoryEntry } from "@/lib/types"
-import type { RegistryItem } from "@/lib/registry-types"
+import type { Registry } from "@/lib/registry-types"
 import { registryFetch } from "@/lib/fetch-utils"
 import { typeToSlug, SLUG_TO_REGISTRY_TYPE } from "@/lib/registry-mappings"
 
@@ -48,21 +48,12 @@ async function getRegistry(owner: string, repo: string) {
   return registry || null
 }
 
-async function fetchItemData(
-  registry: DirectoryEntry,
-  itemName: string
-): Promise<RegistryItem | null> {
-  let baseUrl: string
-  if (registry.registry_url) {
-    baseUrl = registry.registry_url.replace(/\/[^/]+\.json$/, '')
-  } else {
-    baseUrl = `${registry.url.replace(/\/$/, '')}/r`
-  }
-  const targetUrl = `${baseUrl}/${itemName}.json`
+async function fetchRegistryIndex(registry: DirectoryEntry): Promise<Registry | null> {
+  const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
 
   try {
     const response = await registryFetch(targetUrl, {
-      timeout: 5000,
+      timeout: 10000,
       next: { revalidate: 3600 }
     })
 
@@ -144,8 +135,9 @@ export default async function Image({
     )
   }
 
-  // Item OG image
-  const itemData = registry ? await fetchItemData(registry, slug) : null
+  // Item OG image - use registry index instead of individual fetch to avoid timeout during build
+  const registryIndex = registry ? await fetchRegistryIndex(registry) : null
+  const itemData = registryIndex?.items?.find(item => item.name === slug)
   const categorySlug = itemData ? typeToSlug(itemData.type) : null
   const categoryLabel = categorySlug ? (CATEGORY_LABELS[categorySlug] || categorySlug) : "Component"
 
