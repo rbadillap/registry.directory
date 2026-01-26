@@ -11,7 +11,7 @@ export const contentType = 'image/png'
 
 export default async function Icon() {
   const ibmPlexMono = await readFile(
-    join(process.cwd(), 'assets/IBMPlexMono-Regular.ttf')
+    join(process.cwd(), 'public/fonts/IBMPlexMono-Regular.ttf')
   );
 
   return new ImageResponse(

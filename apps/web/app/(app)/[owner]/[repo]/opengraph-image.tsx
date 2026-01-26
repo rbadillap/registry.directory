@@ -57,8 +57,8 @@ export default async function Image({
   const { owner, repo } = await params
 
   const [dmSansRegular, dmSansMedium] = await Promise.all([
-    readFile(join(process.cwd(), 'assets/DMSans-Regular.ttf')),
-    readFile(join(process.cwd(), 'assets/DMSans-Medium.ttf'))
+    readFile(join(process.cwd(), 'public/fonts/DMSans-Regular.ttf')),
+    readFile(join(process.cwd(), 'public/fonts/DMSans-Medium.ttf'))
   ])
 
   const registry = await getRegistry(owner, repo)
