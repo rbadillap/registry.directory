@@ -2,11 +2,13 @@ import { NextRequest } from "next/server"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import { DirectoryEntry } from "@/lib/types"
-import type { Registry, RegistryItem } from "@/lib/registry-types"
+import type { RegistryItem } from "@/lib/registry-types"
 import { registryFetch } from "@/lib/fetch-utils"
 import { generateMarkdownForItem } from "@/lib/markdown-generator"
-import { hasOnlyRenderableFiles } from "@/lib/file-utils"
 import { SLUG_TO_REGISTRY_TYPE } from "@/lib/registry-mappings"
+
+// Force dynamic rendering - don't pre-generate during build
+export const dynamic = 'force-dynamic'
 
 function isCategory(slug: string): boolean {
   return slug in SLUG_TO_REGISTRY_TYPE
@@ -54,55 +56,6 @@ async function fetchItemData(
     console.error(`[Markdown API] Error fetching item:`, error)
     return null
   }
-}
-
-export async function generateStaticParams() {
-  const filePath = join(process.cwd(), "public/directory.json")
-  const fileContents = await readFile(filePath, "utf8")
-  const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
-  const registries = data.registries
-
-  const params: { owner: string; repo: string; slug: string }[] = []
-
-  for (const registry of registries) {
-    if (!registry.github_url) continue
-
-    const match = registry.github_url.match(/github\.com\/([^/]+)\/([^/]+)/)
-    if (!match) continue
-
-    const owner = match[1]
-    const repo = match[2]?.replace(/\.git$/, '')
-
-    if (!owner || !repo) continue
-
-    try {
-      const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
-      const response = await registryFetch(targetUrl, {
-        timeout: 10000,
-        next: { revalidate: 3600 }
-      })
-
-      if (!response.ok) continue
-
-      const registryData = await response.json() as Registry
-
-      for (const item of registryData.items) {
-        if (!hasOnlyRenderableFiles(item.files)) {
-          continue
-        }
-
-        params.push({
-          owner,
-          repo,
-          slug: item.name
-        })
-      }
-    } catch (error) {
-      console.error(`[Markdown API] Error generating params for ${owner}/${repo}:`, error)
-    }
-  }
-
-  return params
 }
 
 export async function GET(
