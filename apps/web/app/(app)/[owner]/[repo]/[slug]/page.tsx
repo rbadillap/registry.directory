@@ -243,6 +243,10 @@ export default async function SlugPage({
   }
 
   const currentCategory = typeToSlug(itemData.type)
+  if (!currentCategory) {
+    notFound()
+  }
+
   const categoryItems = categoriesMap.get(currentCategory) || []
 
   const filteredRegistry: Registry = {

@@ -82,9 +82,10 @@ export default async function Image({
 }) {
   const { owner, repo, slug } = await params
 
-  const [geistSans, geistSansMedium] = await Promise.all([
-    readFile(join(process.cwd(), 'assets/Geist-Regular.ttf')),
-    readFile(join(process.cwd(), 'assets/Geist-Medium.ttf'))
+  const [dmSansRegular, dmSansMedium, ibmPlexMono] = await Promise.all([
+    readFile(join(process.cwd(), 'assets/DMSans-Regular.ttf')),
+    readFile(join(process.cwd(), 'assets/DMSans-Medium.ttf')),
+    readFile(join(process.cwd(), 'assets/IBMPlexMono-Regular.ttf'))
   ])
 
   const registry = await getRegistry(owner, repo)
@@ -98,7 +99,7 @@ export default async function Image({
         <div
           tw="flex flex-col items-center justify-center w-full h-full bg-black"
           style={{
-            fontFamily: 'Geist',
+            fontFamily: 'DM Sans',
             background: 'linear-gradient(to bottom right, #000000, #111111)',
           }}
         >
@@ -110,7 +111,7 @@ export default async function Image({
           <div tw="flex flex-col items-center">
             <h1
               tw="text-white font-medium text-5xl mb-4"
-              style={{ fontFamily: 'Geist', fontWeight: 500 }}
+              style={{ fontFamily: 'DM Sans', fontWeight: 500 }}
             >
               {categoryLabel}
             </h1>
@@ -136,8 +137,8 @@ export default async function Image({
       {
         ...size,
         fonts: [
-          { name: "Geist", data: geistSans, style: "normal", weight: 400 },
-          { name: "Geist", data: geistSansMedium, style: "normal", weight: 500 },
+          { name: "DM Sans", data: dmSansRegular, style: "normal", weight: 400 },
+          { name: "DM Sans", data: dmSansMedium, style: "normal", weight: 500 },
         ],
       }
     )
@@ -153,7 +154,7 @@ export default async function Image({
       <div
         tw="flex flex-col items-center justify-center w-full h-full bg-black"
         style={{
-          fontFamily: 'Geist',
+          fontFamily: 'DM Sans',
           background: 'linear-gradient(to bottom right, #000000, #111111)',
         }}
       >
@@ -172,7 +173,7 @@ export default async function Image({
 
           <h1
             tw="text-white font-medium text-5xl mb-4"
-            style={{ fontFamily: 'Geist', fontWeight: 500 }}
+            style={{ fontFamily: 'DM Sans', fontWeight: 500 }}
           >
             {slug}
           </h1>
@@ -183,7 +184,7 @@ export default async function Image({
 
           <div
             tw="flex items-center bg-stone-900 border border-stone-800 rounded-lg px-6 py-3"
-            style={{ fontFamily: 'monospace' }}
+            style={{ fontFamily: 'IBM Plex Mono' }}
           >
             <span tw="text-stone-500 mr-2">$</span>
             <span tw="text-stone-300">npx shadcn@latest add</span>
@@ -207,8 +208,9 @@ export default async function Image({
     {
       ...size,
       fonts: [
-        { name: "Geist", data: geistSans, style: "normal", weight: 400 },
-        { name: "Geist", data: geistSansMedium, style: "normal", weight: 500 },
+        { name: "DM Sans", data: dmSansRegular, style: "normal", weight: 400 },
+        { name: "DM Sans", data: dmSansMedium, style: "normal", weight: 500 },
+        { name: "IBM Plex Mono", data: ibmPlexMono, style: "normal", weight: 400 },
       ],
     }
   )

@@ -20,21 +20,11 @@ export const metadata: Metadata = {
     description: "The home for shadcn/ui registries. Explore components in our IDE viewer, then install with one command.",
     url: "https://registry.directory",
     type: "website",
-    images: [
-      {
-        url: "/og",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "registry.directory - Explore your favorite shadcn/ui registry",
     description: "The home for shadcn/ui registries. Explore components in our IDE viewer, then install with one command.",
-    images: [
-      {
-        url: "/og",
-      },
-    ],
   },
 };
 
