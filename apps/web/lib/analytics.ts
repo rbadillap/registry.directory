@@ -202,13 +202,15 @@ class Analytics {
     };
   }
 
-  #logEvent(eventName: string, properties: Record<string, unknown>): void {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  #logEvent(eventName: string, properties: Record<string, any>): void {
     if (this.#isDevelopment) {
       console.log("[Analytics]", eventName, properties);
     }
   }
 
-  #trackEvent(eventName: string, properties: Record<string, unknown>): void {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  #trackEvent(eventName: string, properties: Record<string, any>): void {
     if (!this.#isClient) return;
 
     const fullProperties = {
