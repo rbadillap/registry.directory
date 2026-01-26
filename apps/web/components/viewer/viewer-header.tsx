@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { ArrowLeft, ExternalLink } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@workspace/ui/components/avatar"
@@ -38,7 +37,6 @@ function parseGitHubUrl(url?: string) {
 }
 
 export function ViewerHeader({ registry, currentCategory, selectedItemName }: ViewerHeaderProps) {
-  const pathname = usePathname()
   const analytics = useAnalytics()
   const githubInfo = parseGitHubUrl(registry.github_url)
 

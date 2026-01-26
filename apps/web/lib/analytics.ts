@@ -122,6 +122,7 @@ export const ANALYTICS_EVENTS = {
 // Debounce Utility
 // ============================================================================
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function debounce<T extends (...args: any[]) => void>(
   func: T,
   wait: number
@@ -201,13 +202,15 @@ class Analytics {
     };
   }
 
-  #logEvent(eventName: string, properties: any): void {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  #logEvent(eventName: string, properties: Record<string, any>): void {
     if (this.#isDevelopment) {
       console.log("[Analytics]", eventName, properties);
     }
   }
 
-  #trackEvent(eventName: string, properties: any): void {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  #trackEvent(eventName: string, properties: Record<string, any>): void {
     if (!this.#isClient) return;
 
     const fullProperties = {
