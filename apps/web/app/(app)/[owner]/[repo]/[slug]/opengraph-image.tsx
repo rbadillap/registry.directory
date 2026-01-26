@@ -6,6 +6,7 @@ import type { DirectoryEntry } from "@/lib/types"
 import type { Registry } from "@/lib/registry-types"
 import { registryFetch } from "@/lib/fetch-utils"
 import { typeToSlug, SLUG_TO_REGISTRY_TYPE } from "@/lib/registry-mappings"
+import { getInstallCommand } from "@/lib/install-command"
 
 export const runtime = 'nodejs'
 export const alt = 'registry.directory component preview'
@@ -80,10 +81,13 @@ export default async function Image({
   ])
 
   const registry = await getRegistry(owner, repo)
+  const registryIndex = registry ? await fetchRegistryIndex(registry) : null
 
   // Category OG image
   if (isCategory(slug)) {
     const categoryLabel = CATEGORY_LABELS[slug] || slug
+    const categoryItems = registryIndex?.items?.filter(item => typeToSlug(item.type) === slug)
+    const itemCount = categoryItems?.length || 0
 
     return new ImageResponse(
       (
@@ -107,9 +111,16 @@ export default async function Image({
               {categoryLabel}
             </h1>
 
-            <p tw="text-xl text-stone-400 mb-8">
-              {owner}/{repo}
+            <p tw="text-xl text-stone-400 mb-4">
+              {registry?.name || `${owner}/${repo}`}
             </p>
+
+            {itemCount > 0 && (
+              <div tw="flex items-center bg-stone-900 border border-stone-800 rounded-lg px-4 py-2 mt-4">
+                <span tw="text-white font-medium mr-2">{itemCount}</span>
+                <span tw="text-stone-400">{itemCount === 1 ? 'registry item' : 'registry items'}</span>
+              </div>
+            )}
 
             <div tw="flex items-center mt-8">
               <span tw="text-stone-500 text-lg">registry</span>
@@ -135,8 +146,7 @@ export default async function Image({
     )
   }
 
-  // Item OG image - use registry index instead of individual fetch to avoid timeout during build
-  const registryIndex = registry ? await fetchRegistryIndex(registry) : null
+  // Item OG image - reuse registryIndex from above
   const itemData = registryIndex?.items?.find(item => item.name === slug)
   const categorySlug = itemData ? typeToSlug(itemData.type) : null
   const categoryLabel = categorySlug ? (CATEGORY_LABELS[categorySlug] || categorySlug) : "Component"
@@ -180,7 +190,11 @@ export default async function Image({
           >
             <span tw="text-stone-500 mr-2">$</span>
             <span tw="text-stone-300">npx shadcn@latest add</span>
-            <span tw="text-white ml-2">{registry?.url ? `${registry.url}/${slug}` : slug}</span>
+            <span tw="text-white ml-2">{
+              registry
+                ? getInstallCommand({ registry, itemName: slug, owner, repo })
+                : slug
+            }</span>
           </div>
 
           <div tw="flex items-center mt-12">

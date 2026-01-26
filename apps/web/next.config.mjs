@@ -5,16 +5,6 @@ const nextConfig = {
     '/[owner]/[repo]/opengraph-image': ['./public/fonts/**/*'],
     '/[owner]/[repo]/[slug]/opengraph-image': ['./public/fonts/**/*'],
   },
-  async redirects() {
-    return [
-      // Redirect old URLs: /{owner}/{repo}/{category}/{item} → /{owner}/{repo}/{item}
-      {
-        source: "/:owner/:repo/:category/:item",
-        destination: "/:owner/:repo/:item",
-        permanent: true,
-      },
-    ]
-  },
   async rewrites() {
     return [
       {
