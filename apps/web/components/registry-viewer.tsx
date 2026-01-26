@@ -124,7 +124,7 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
 
   return (
     <div className="h-screen bg-black text-white flex flex-col">
-      <ViewerHeader registry={registry} />
+      <ViewerHeader registry={registry} currentCategory={currentCategory} selectedItemName={initialItem?.name} />
 
       {/* Mobile Tab Navigation - only visible on mobile */}
       <MobileTabNavigation

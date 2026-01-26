@@ -11,6 +11,8 @@ import { addUtmParams } from "@/lib/utm-utils"
 
 interface ViewerHeaderProps {
   registry: DirectoryEntry
+  currentCategory?: string | null
+  selectedItemName?: string | null
 }
 
 function parseGitHubUrl(url?: string) {
@@ -35,46 +37,33 @@ function parseGitHubUrl(url?: string) {
   }
 }
 
-export function ViewerHeader({ registry }: ViewerHeaderProps) {
+export function ViewerHeader({ registry, currentCategory, selectedItemName }: ViewerHeaderProps) {
   const pathname = usePathname()
   const analytics = useAnalytics()
   const githubInfo = parseGitHubUrl(registry.github_url)
 
-  // Get current item name from path
-  const getCurrentItem = () => {
-    const segments = pathname.split('/').filter(Boolean)
-    // If we're at /{owner}/{repo}/{category}/{item}
-    if (segments.length >= 4) {
-      return segments[3]
-    }
-    return null
-  }
+  // Build base path
+  const basePath = githubInfo ? `/${githubInfo.username}/${githubInfo.repo}` : ''
 
-  // Calculate back URL based on current path
+  // Calculate back URL based on context
   const getBackUrl = () => {
-    const segments = pathname.split('/').filter(Boolean)
+    if (!basePath) return '/'
 
-    // If we're at /{owner}/{repo}/{category}/{item}, go back to /{owner}/{repo}/{category}
-    if (segments.length >= 4) {
-      return `/${segments.slice(0, 3).join('/')}`
+    // If viewing an item, go back to category
+    if (selectedItemName && currentCategory) {
+      return `${basePath}/${currentCategory}`
     }
 
-    // If we're at /{owner}/{repo}/{category}, go back to /{owner}/{repo}
-    if (segments.length === 3) {
-      return `/${segments.slice(0, 2).join('/')}`
+    // If viewing a category, go back to overview
+    if (currentCategory) {
+      return basePath
     }
 
-    // If we're at /{owner}/{repo}, go back to /
-    if (segments.length === 2) {
-      return '/'
-    }
-
-    // Default to home
+    // Default: go to home
     return '/'
   }
 
   const backUrl = getBackUrl()
-  const currentItem = getCurrentItem()
 
   return (
     <div className="flex items-center justify-between border-b border-neutral-800 bg-black px-4 py-3 md:px-6 md:py-4">
@@ -116,10 +105,25 @@ export function ViewerHeader({ registry }: ViewerHeaderProps) {
                 >
                   {githubInfo.repo}
                 </Link>
-                {currentItem && (
+                {currentCategory && (
                   <>
                     <span className="text-neutral-600 mx-1 md:mx-1.5 hidden md:inline">/</span>
-                    <span className="text-white hidden md:inline">{currentItem}</span>
+                    {selectedItemName ? (
+                      <Link
+                        href={`${basePath}/${currentCategory}`}
+                        className="text-neutral-400 hover:text-white hover:underline transition-colors hidden md:inline"
+                      >
+                        {currentCategory}
+                      </Link>
+                    ) : (
+                      <span className="text-white hidden md:inline">{currentCategory}</span>
+                    )}
+                  </>
+                )}
+                {selectedItemName && (
+                  <>
+                    <span className="text-neutral-600 mx-1 md:mx-1.5 hidden md:inline">/</span>
+                    <span className="text-white hidden md:inline">{selectedItemName}</span>
                     <span className="text-neutral-600 hidden md:inline">.json</span>
                   </>
                 )}

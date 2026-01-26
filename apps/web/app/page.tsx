@@ -9,23 +9,22 @@ export const dynamic = 'force-static'
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://registry.directory"),
-  title: "registry.directory - a collection of shadcn/ui registries",
+  title: "registry.directory - Explore your favorite shadcn/ui registry",
   description:
-    "The place where shadcn/ui registries live. Discover, Preview, Copy, and Paste components.",
+    "The home for shadcn/ui registries. Explore components in our IDE viewer, then install with one command.",
+  alternates: {
+    canonical: "https://registry.directory",
+  },
   openGraph: {
-    images: [
-      {
-        url: "/og",
-      },
-    ],
+    title: "registry.directory - Explore your favorite shadcn/ui registry",
+    description: "The home for shadcn/ui registries. Explore components in our IDE viewer, then install with one command.",
+    url: "https://registry.directory",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    images: [
-      {
-        url: "/og",
-      },
-    ],
+    title: "registry.directory - Explore your favorite shadcn/ui registry",
+    description: "The home for shadcn/ui registries. Explore components in our IDE viewer, then install with one command.",
   },
 };
 
@@ -76,7 +75,6 @@ async function getTools(): Promise<DirectoryEntry[]> {
 export default async function Home() {
   const components = await getRegistries();
   const tools = await getTools();
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-start pt-24 md:pt-32 pb-12 md:pb-20">
       <div className="flex items-center gap-2 mb-8 md:mb-10">

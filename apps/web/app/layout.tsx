@@ -17,11 +17,12 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://registry.directory"),
   title: {
     template: "%s | registry.directory",
-    default: "registry.directory - a collection of shadcn/ui registries",
+    default: "registry.directory - Explore your favorite shadcn/ui registry",
   },
-  description: "The place where shadcn/ui registries live. Discover, Preview, Copy, and Paste components.",
+  description: "The home for shadcn/ui registries. Explore components in our IDE viewer, then install with one command.",
 };
 
 export const viewport: Viewport = {

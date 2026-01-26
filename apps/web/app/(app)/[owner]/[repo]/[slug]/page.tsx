@@ -5,7 +5,7 @@ import type { Metadata } from "next"
 import { RegistryViewer } from "@/components/registry-viewer"
 import { DirectoryEntry } from "@/lib/types"
 import type { Registry, RegistryItem } from "@/lib/registry-types"
-import { slugToType, typeToSlug, groupItemsByCategory } from "@/lib/registry-mappings"
+import { slugToType, typeToSlug, groupItemsByCategory, SLUG_TO_REGISTRY_TYPE } from "@/lib/registry-mappings"
 import { registryFetch } from "@/lib/fetch-utils"
 import { hasOnlyRenderableFiles } from "@/lib/file-utils"
 
@@ -34,13 +34,12 @@ async function fetchRegistryIndex(registry: DirectoryEntry): Promise<Registry | 
       next: { revalidate: 3600 }
     })
 
-
     if (!response.ok) return null
 
     const data = await response.json()
     return data
   } catch (error) {
-    console.error(`[Level2] Index fetch error:`, error)
+    console.error(`[SlugView] Index fetch error:`, error)
     return null
   }
 }
@@ -49,10 +48,8 @@ async function fetchItemData(
   registry: DirectoryEntry,
   itemName: string
 ): Promise<RegistryItem | null> {
-  // Use registry_url base if available, otherwise fall back to url
   let baseUrl: string
   if (registry.registry_url) {
-    // Extract base from registry_url (remove /registry.json)
     baseUrl = registry.registry_url.replace(/\/[^/]+\.json$/, '')
   } else {
     baseUrl = `${registry.url.replace(/\/$/, '')}/r`
@@ -65,13 +62,12 @@ async function fetchItemData(
       next: { revalidate: 3600 }
     })
 
-
     if (!response.ok) return null
 
     const data = await response.json()
     return data
   } catch (error) {
-    console.error(`[Level2] Item fetch error:`, error)
+    console.error(`[SlugView] Item fetch error:`, error)
     return null
   }
 }
@@ -89,25 +85,58 @@ const CATEGORY_LABELS: Record<string, string> = {
   base: "Base",
 }
 
+// Check if slug is a category
+function isCategory(slug: string): boolean {
+  return slug in SLUG_TO_REGISTRY_TYPE
+}
+
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ owner: string; repo: string; category: string; item: string }>
+  params: Promise<{ owner: string; repo: string; slug: string }>
 }): Promise<Metadata> {
-  const { owner, repo, category, item } = await params
+  const { owner, repo, slug } = await params
   const registry = await getRegistry(owner, repo)
 
   if (!registry) {
+    return { title: "Registry Not Found" }
+  }
+
+  // Category view
+  if (isCategory(slug)) {
+    const categoryLabel = CATEGORY_LABELS[slug] || slug
     return {
-      title: "Registry Not Found",
+      title: `${categoryLabel} - ${registry.name}`,
+      description: `Browse ${categoryLabel.toLowerCase()} from ${registry.name}.`,
+      alternates: {
+        canonical: `https://registry.directory/${owner}/${repo}/${slug}`,
+      },
     }
   }
 
-  const categoryLabel = CATEGORY_LABELS[category] || category
+  // Item view - use registry index instead of individual fetch to avoid timeout during build
+  const registryIndex = await fetchRegistryIndex(registry)
+  const itemData = registryIndex?.items?.find(item => item.name === slug)
+  const categorySlug = itemData ? typeToSlug(itemData.type) : null
+  const categoryLabel = categorySlug ? (CATEGORY_LABELS[categorySlug] || categorySlug) : "Component"
 
   return {
-    title: `${item} - ${categoryLabel}`,
-    description: `View ${item} from ${registry.name} ${categoryLabel.toLowerCase()}`,
+    title: `${slug} - ${categoryLabel}`,
+    description: `${itemData?.description || slug}: A ${categoryLabel.toLowerCase()} from ${registry.name}. Preview code and install with one command.`,
+    alternates: {
+      canonical: `https://registry.directory/${owner}/${repo}/${slug}`,
+    },
+    openGraph: {
+      title: `${slug} - ${registry.name}`,
+      description: `${itemData?.description || slug}: A ${categoryLabel.toLowerCase()} from ${registry.name}.`,
+      url: `https://registry.directory/${owner}/${repo}/${slug}`,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${slug} - ${registry.name}`,
+      description: `${itemData?.description || slug}: A ${categoryLabel.toLowerCase()} from ${registry.name}.`,
+    },
   }
 }
 
@@ -117,7 +146,7 @@ export async function generateStaticParams() {
   const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
   const registries = data.registries
 
-  const params: { owner: string; repo: string; category: string; item: string }[] = []
+  const params: { owner: string; repo: string; slug: string }[] = []
 
   for (const registry of registries) {
     if (!registry.github_url) continue
@@ -130,7 +159,6 @@ export async function generateStaticParams() {
 
     if (!owner || !repo) continue
 
-    // Fetch registry data to get all items
     try {
       const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
       const response = await registryFetch(targetUrl, {
@@ -143,70 +171,84 @@ export async function generateStaticParams() {
       const registryData = await response.json() as Registry
       const categoriesMap = groupItemsByCategory(registryData.items)
 
-      // Generate params for each category/item combination
-      for (const [category, items] of categoriesMap.entries()) {
-        for (const item of items) {
-          // Skip items with only binary files (cannot be rendered as code)
-          if (!hasOnlyRenderableFiles(item.files)) {
-            continue
-          }
+      // Add category slugs
+      for (const category of categoriesMap.keys()) {
+        params.push({ owner, repo, slug: category })
+      }
 
-          params.push({
-            owner,
-            repo,
-            category,
-            item: item.name
-          })
+      // Add item slugs
+      for (const item of registryData.items) {
+        if (!hasOnlyRenderableFiles(item.files)) {
+          continue
         }
+        params.push({ owner, repo, slug: item.name })
       }
     } catch (error) {
-      console.error(`[Level2] Error generating params for ${owner}/${repo}:`, error)
+      console.error(`[SlugView] Error generating params for ${owner}/${repo}:`, error)
     }
   }
 
   return params
 }
 
-export default async function ItemViewerPage({
+export default async function SlugPage({
   params,
 }: {
-  params: Promise<{ owner: string; repo: string; category: string; item: string }>
+  params: Promise<{ owner: string; repo: string; slug: string }>
 }) {
-  const { owner, repo, category, item } = await params
-
-  // Validate that the category is valid
-  const registryType = slugToType(category)
-  if (!registryType) {
-    notFound()
-  }
+  const { owner, repo, slug } = await params
 
   const registry = await getRegistry(owner, repo)
   if (!registry) {
     notFound()
   }
 
-  // Fetch registry index for sidebar
   const registryIndex = await fetchRegistryIndex(registry)
   if (!registryIndex) {
     notFound()
   }
 
-  // Fetch specific item
-  const itemData = await fetchItemData(registry, item)
+  const categoriesMap = groupItemsByCategory(registryIndex.items)
+
+  // Category view: show list of items in category
+  if (isCategory(slug)) {
+    const registryType = slugToType(slug)
+    if (!registryType) {
+      notFound()
+    }
+
+    const categoryItems = categoriesMap.get(slug)
+    if (!categoryItems || categoryItems.length === 0) {
+      notFound()
+    }
+
+    const filteredRegistry: Registry = {
+      ...registryIndex,
+      items: categoryItems
+    }
+
+    return (
+      <RegistryViewer
+        registry={registry}
+        registryIndex={filteredRegistry}
+        selectedItem={null}
+        currentCategory={slug}
+      />
+    )
+  }
+
+  // Item view: show specific item
+  const itemData = await fetchItemData(registry, slug)
   if (!itemData) {
     notFound()
   }
 
-  // Validate that the item belongs to the category
-  const itemCategory = typeToSlug(itemData.type)
-  if (itemCategory !== category) {
+  const currentCategory = typeToSlug(itemData.type)
+  if (!currentCategory) {
     notFound()
   }
 
-
-  // Filter registry to only show items from this category
-  const categoriesMap = groupItemsByCategory(registryIndex.items)
-  const categoryItems = categoriesMap.get(category) || []
+  const categoryItems = categoriesMap.get(currentCategory) || []
 
   const filteredRegistry: Registry = {
     ...registryIndex,
@@ -218,7 +260,7 @@ export default async function ItemViewerPage({
       registry={registry}
       registryIndex={filteredRegistry}
       selectedItem={itemData}
-      currentCategory={category}
+      currentCategory={currentCategory}
     />
   )
 }

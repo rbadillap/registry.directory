@@ -185,6 +185,16 @@ function buildPathTree(items: RegistryItem[]): PathTree {
 export function FileTree({ items, selectedItem, selectedFile, onSelectFile, currentCategory }: FileTreeProps) {
   const pathname = usePathname()
   const analytics = useAnalytics()
+
+  // Extract base path (/{owner}/{repo}) from current pathname
+  const getBasePath = () => {
+    const segments = pathname.split('/').filter(Boolean)
+    if (segments.length >= 2) {
+      return `/${segments[0]}/${segments[1]}`
+    }
+    return pathname
+  }
+  const basePath = getBasePath()
   const [openFolders, setOpenFolders] = useState<Set<string>>(
     new Set(["components", "components/ui", "lib"]),
   )
@@ -619,7 +629,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                   return (
                     <Link
                       key={item.name}
-                      href={`${pathname}/${item.name}`}
+                      href={`${basePath}/${item.name}`}
                       className={cn(
                         "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
                         "hover:bg-neutral-800/50 transition-colors",

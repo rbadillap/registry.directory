@@ -6,8 +6,7 @@ export function generateMarkdownForItem(
   item: RegistryItem,
   registry: DirectoryEntry,
   owner: string,
-  repo: string,
-  category: string
+  repo: string
 ): string {
   const markdown: string[] = []
 
@@ -82,7 +81,7 @@ export function generateMarkdownForItem(
   // Footer
   markdown.push('---')
   markdown.push('')
-  markdown.push(`Generated from [registry.directory](https://registry.directory/${owner}/${repo}/${category}/${item.name})`)
+  markdown.push(`Generated from [registry.directory](https://registry.directory/${owner}/${repo}/${item.name})`)
 
   return markdown.join('\n')
 }

@@ -58,9 +58,26 @@ export async function generateMetadata({
     }
   }
 
+  const registryData = await fetchRegistryData(registry)
+  const itemCount = registryData?.items?.length || 0
+
   return {
     title: registry.name,
-    description: registry.description || `Browse components from ${owner}/${repo}`,
+    description: registry.description || `Browse ${itemCount} components from ${registry.name}. Preview code in our IDE viewer and install with one command.`,
+    alternates: {
+      canonical: `https://registry.directory/${owner}/${repo}`,
+    },
+    openGraph: {
+      title: registry.name,
+      description: registry.description || `Browse ${itemCount} components from ${registry.name}.`,
+      url: `https://registry.directory/${owner}/${repo}`,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: registry.name,
+      description: registry.description || `Browse ${itemCount} components from ${registry.name}.`,
+    },
   }
 }
 

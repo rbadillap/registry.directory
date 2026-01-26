@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const size = {
   width: 32,
@@ -7,24 +9,40 @@ export const size = {
 
 export const contentType = 'image/png'
 
-export default function Icon() {
+export default async function Icon() {
+  const ibmPlexMono = await readFile(
+    join(process.cwd(), 'public/fonts/IBMPlexMono-Regular.ttf')
+  );
+
   return new ImageResponse(
     (
-        <div
+      <div
         style={{
-            fontSize: 20,
-            background: 'black',
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'white',
+          fontSize: 18,
+          fontFamily: 'IBM Plex Mono',
+          background: 'black',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: 'white',
+          letterSpacing: '-0.5px',
         }}
-        >r.d</div>
+      >
+        r.d
+      </div>
     ),
     {
-        ...size,
+      ...size,
+      fonts: [
+        {
+          name: 'IBM Plex Mono',
+          data: ibmPlexMono,
+          style: 'normal',
+          weight: 400,
+        },
+      ],
     }
   )
 }
