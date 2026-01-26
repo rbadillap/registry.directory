@@ -37,7 +37,7 @@ export function CategorySidebar({ categories, owner, repo }: CategorySidebarProp
           return (
             <Link
               key={slug}
-              href={`/${owner}/${repo}/${slug}/${firstItem.name}`}
+              href={`/${owner}/${repo}/${firstItem.name}`}
               className="group"
             >
               <div className="border border-neutral-800 rounded-lg p-6 hover:border-neutral-600 transition-colors">

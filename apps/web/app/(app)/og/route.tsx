@@ -41,7 +41,7 @@ export async function GET() {
                     </h1>
 
                     <p tw="text-xl text-slate-300/90 mt-4">
-                        the place where
+                        Explore your favorite
                         <span tw="pl-2 flex items-center">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
                                 <path d="M21.0001 12.4286L12.4287 21" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -49,7 +49,7 @@ export async function GET() {
                             </svg>
                         </span>
                         <span tw="text-white font-medium px-2">shadcn/ui</span>
-                        registries live.
+                        registry
                     </p>
                 </div>
 

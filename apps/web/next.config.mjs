@@ -4,8 +4,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/:owner/:repo/:category/:item.md",
-        destination: "/api/markdown/:owner/:repo/:category/:item",
+        source: "/:owner/:repo/:slug.md",
+        destination: "/api/markdown/:owner/:repo/:slug",
       },
     ]
   },

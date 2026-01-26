@@ -5,8 +5,12 @@ import { DirectoryEntry } from "@/lib/types"
 import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { registryFetch } from "@/lib/fetch-utils"
 import { generateMarkdownForItem } from "@/lib/markdown-generator"
-import { groupItemsByCategory } from "@/lib/registry-mappings"
 import { hasOnlyRenderableFiles } from "@/lib/file-utils"
+import { SLUG_TO_REGISTRY_TYPE } from "@/lib/registry-mappings"
+
+function isCategory(slug: string): boolean {
+  return slug in SLUG_TO_REGISTRY_TYPE
+}
 
 async function getRegistry(owner: string, repo: string) {
   const filePath = join(process.cwd(), "public/directory.json")
@@ -58,7 +62,7 @@ export async function generateStaticParams() {
   const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
   const registries = data.registries
 
-  const params: { owner: string; repo: string; category: string; item: string }[] = []
+  const params: { owner: string; repo: string; slug: string }[] = []
 
   for (const registry of registries) {
     if (!registry.github_url) continue
@@ -71,7 +75,6 @@ export async function generateStaticParams() {
 
     if (!owner || !repo) continue
 
-    // Fetch registry data to get all items
     try {
       const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
       const response = await registryFetch(targetUrl, {
@@ -82,23 +85,17 @@ export async function generateStaticParams() {
       if (!response.ok) continue
 
       const registryData = await response.json() as Registry
-      const categoriesMap = groupItemsByCategory(registryData.items)
 
-      // Generate params for each category/item combination
-      for (const [category, items] of categoriesMap.entries()) {
-        for (const item of items) {
-          // Skip items with only binary files (cannot be rendered as code)
-          if (!hasOnlyRenderableFiles(item.files)) {
-            continue
-          }
-
-          params.push({
-            owner,
-            repo,
-            category,
-            item: item.name
-          })
+      for (const item of registryData.items) {
+        if (!hasOnlyRenderableFiles(item.files)) {
+          continue
         }
+
+        params.push({
+          owner,
+          repo,
+          slug: item.name
+        })
       }
     } catch (error) {
       console.error(`[Markdown API] Error generating params for ${owner}/${repo}:`, error)
@@ -110,21 +107,26 @@ export async function generateStaticParams() {
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ owner: string; repo: string; category: string; item: string }> }
+  { params }: { params: Promise<{ owner: string; repo: string; slug: string }> }
 ) {
-  const { owner, repo, category, item } = await params
+  const { owner, repo, slug } = await params
+
+  // Categories don't have markdown
+  if (isCategory(slug)) {
+    return new Response("Markdown not available for categories", { status: 404 })
+  }
 
   const registry = await getRegistry(owner, repo)
   if (!registry) {
     return new Response("Registry not found", { status: 404 })
   }
 
-  const itemData = await fetchItemData(registry, item)
+  const itemData = await fetchItemData(registry, slug)
   if (!itemData) {
     return new Response("Item not found", { status: 404 })
   }
 
-  const markdown = generateMarkdownForItem(itemData, registry, owner, repo, category)
+  const markdown = generateMarkdownForItem(itemData, registry, owner, repo)
 
   return new Response(markdown, {
     headers: {
