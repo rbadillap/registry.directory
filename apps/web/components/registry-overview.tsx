@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels"
 import { ScrollArea } from "@workspace/ui/components/scroll-area"
 import { Package, Blocks, Code, Paintbrush, Box, Palette, FileCode, Diamond, Info, LayoutGrid, BarChart3 } from "lucide-react"
@@ -10,6 +11,7 @@ import { StatusBar } from "./viewer/status-bar"
 import { cn } from "@workspace/ui/lib/utils"
 import type { RegistryItem } from "@/lib/registry-types"
 import type { DirectoryEntry } from "@/lib/types"
+import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts"
 
 interface RegistryOverviewProps {
   registry: DirectoryEntry
@@ -40,8 +42,45 @@ const overviewTabs = [
 ]
 
 export function RegistryOverview({ registry, categories, owner, repo }: RegistryOverviewProps) {
+  const router = useRouter()
   const [mobileTab, setMobileTab] = useState<OverviewTab>('categories')
+  const [focusedIndex, setFocusedIndex] = useState<number>(0)
+  const [helpOpen, setHelpOpen] = useState(false)
   const totalItems = Array.from(categories.values()).reduce((sum, items) => sum + items.length, 0)
+
+  // Get navigable categories (those with items)
+  const navigableCategories = useMemo(() => {
+    return Array.from(categories.entries()).filter(([, items]) => items.length > 0)
+  }, [categories])
+
+  // Keyboard navigation - using left/right for horizontal grid
+  useKeyboardShortcuts({
+    onExpandCollapse: (direction) => {
+      if (direction === "left") {
+        setFocusedIndex(prev => {
+          if (prev <= 0) return navigableCategories.length - 1
+          return prev - 1
+        })
+      } else {
+        setFocusedIndex(prev => {
+          if (prev >= navigableCategories.length - 1) return 0
+          return prev + 1
+        })
+      }
+    },
+    onEnter: () => {
+      if (focusedIndex >= 0 && focusedIndex < navigableCategories.length) {
+        const [slug] = navigableCategories[focusedIndex]
+        router.push(`/${owner}/${repo}/${slug}`)
+      }
+    },
+    onEscape: () => {
+      setFocusedIndex(0)
+    },
+    onHelp: () => {
+      setHelpOpen(prev => !prev)
+    },
+  })
 
   return (
     <div className="h-screen bg-black text-white flex flex-col">
@@ -139,10 +178,9 @@ export function RegistryOverview({ registry, categories, owner, repo }: Registry
             <ScrollArea className="h-[calc(100%-44px)]">
               <div className="p-3">
                 <div className="grid grid-cols-2 gap-2">
-                  {Array.from(categories.entries()).map(([slug, items]) => {
+                  {navigableCategories.map(([slug, items], index) => {
                     const Icon = CATEGORY_ICONS[slug as keyof typeof CATEGORY_ICONS] || Package
-
-                    if (items.length === 0) return null
+                    const isFocused = focusedIndex === index
 
                     return (
                       <Link
@@ -150,7 +188,12 @@ export function RegistryOverview({ registry, categories, owner, repo }: Registry
                         href={`/${owner}/${repo}/${slug}`}
                         className="group"
                       >
-                        <div className="border border-neutral-800 hover:border-neutral-600 rounded-lg p-3 transition-all bg-black hover:bg-neutral-900/50">
+                        <div className={cn(
+                          "border rounded-lg p-3 transition-all bg-black",
+                          isFocused
+                            ? "border-neutral-500 bg-neutral-900/50 ring-1 ring-neutral-600"
+                            : "border-neutral-800 hover:border-neutral-600 hover:bg-neutral-900/50"
+                        )}>
                           <div className="flex items-start gap-2">
                             <Icon className="w-4 h-4 flex-shrink-0 mt-0.5 text-neutral-500" />
                             <div className="flex-1 min-w-0">
@@ -276,10 +319,9 @@ export function RegistryOverview({ registry, categories, owner, repo }: Registry
               <ScrollArea className="h-[calc(100%-49px)]">
                 <div className="p-6">
                   <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-                    {Array.from(categories.entries()).map(([slug, items]) => {
+                    {navigableCategories.map(([slug, items], index) => {
                       const Icon = CATEGORY_ICONS[slug as keyof typeof CATEGORY_ICONS] || Package
-
-                      if (items.length === 0) return null
+                      const isFocused = focusedIndex === index
 
                       return (
                         <Link
@@ -287,7 +329,12 @@ export function RegistryOverview({ registry, categories, owner, repo }: Registry
                           href={`/${owner}/${repo}/${slug}`}
                           className="group"
                         >
-                          <div className="border border-neutral-800 hover:border-neutral-600 rounded-lg p-4 transition-all bg-black hover:bg-neutral-900/50">
+                          <div className={cn(
+                            "border rounded-lg p-4 transition-all bg-black",
+                            isFocused
+                              ? "border-neutral-500 bg-neutral-900/50 ring-1 ring-neutral-600"
+                              : "border-neutral-800 hover:border-neutral-600 hover:bg-neutral-900/50"
+                          )}>
                             <div className="flex items-start gap-3">
                               <Icon className="w-5 h-5 flex-shrink-0 mt-0.5 text-neutral-500" />
                               <div className="flex-1 min-w-0">
@@ -354,6 +401,8 @@ export function RegistryOverview({ registry, categories, owner, repo }: Registry
         totalItems={totalItems}
         selectedFile={null}
         onShare={() => {}}
+        helpOpen={helpOpen}
+        onHelpOpenChange={setHelpOpen}
       />
     </div>
   )

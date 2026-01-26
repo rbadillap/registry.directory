@@ -12,6 +12,7 @@ import {
 import type { RegistryItem } from "@/lib/registry-types"
 import { getTargetPath } from "@/lib/path-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
+import { KeyboardHints } from "./keyboard-hints"
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
@@ -19,6 +20,8 @@ interface StatusBarProps {
   totalItems: number
   selectedFile: RegistryFile | null
   onShare?: () => void
+  helpOpen?: boolean
+  onHelpOpenChange?: (open: boolean) => void
 }
 
 function getPromptUrl(baseURL: string, url: string) {
@@ -28,7 +31,7 @@ Help me understand how to use it. Be ready to explain concepts, give examples, o
   )}`
 }
 
-export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps) {
+export function StatusBar({ totalItems, selectedFile, onShare, helpOpen, onHelpOpenChange }: StatusBarProps) {
   const analytics = useAnalytics()
 
   const getMarkdownUrl = () => {
@@ -124,6 +127,7 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
             <span className="text-neutral-400 truncate hidden md:inline">{targetPath}</span>
           </>
         )}
+        <KeyboardHints open={helpOpen} onOpenChange={onHelpOpenChange} />
       </div>
 
       {/* Right side */}

@@ -1,8 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels"
-import { FileTree } from "./viewer/file-tree"
+import { FileTree, type FileTreeRef } from "./viewer/file-tree"
 import { CodeViewer } from "./viewer/code-viewer"
 import { InfoPanel } from "./viewer/info-panel"
 import { ViewerHeader } from "./viewer/viewer-header"
@@ -14,6 +14,7 @@ import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { generateGlobalsCss } from "@/lib/css-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { getTargetPath } from "@/lib/path-utils"
+import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts"
 
 interface RegistryViewerProps {
   registry: DirectoryEntry
@@ -46,6 +47,7 @@ function addGlobalsCssFile(item: RegistryItem): RegistryItem {
 
 export function RegistryViewer({ registry, registryIndex, selectedItem: initialItem, currentCategory }: RegistryViewerProps) {
   const analytics = useAnalytics()
+  const fileTreeRef = useRef<FileTreeRef>(null)
 
   // Add globals.css files to items with cssVars
   const items = registryIndex.items.map(addGlobalsCssFile)
@@ -57,6 +59,28 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
   const [selectedItem, setSelectedItem] = useState<RegistryItem | null>(processedInitialItem)
   const [selectedFile, setSelectedFile] = useState<RegistryFile | null>(null)
   const [mobileTab, setMobileTab] = useState<MobileTab>(initialTab)
+
+  // Copy code handler
+  const handleCopyCode = useCallback(() => {
+    if (!selectedFile?.content) return
+    navigator.clipboard.writeText(selectedFile.content)
+    analytics.trackCodeCopied({
+      file_path: getTargetPath(selectedFile),
+      code_length: selectedFile.content.length,
+      has_content: true,
+    })
+  }, [selectedFile, analytics])
+
+  // Keyboard shortcuts
+  useKeyboardShortcuts({
+    onCopy: handleCopyCode,
+    onSearch: () => fileTreeRef.current?.focusSearch(),
+    onEscape: () => fileTreeRef.current?.clearSearch(),
+    onNavigateUp: () => fileTreeRef.current?.navigateUp(),
+    onNavigateDown: () => fileTreeRef.current?.navigateDown(),
+    onExpandCollapse: (direction) => fileTreeRef.current?.expandCollapse(direction),
+    onEnter: () => fileTreeRef.current?.selectFocused(),
+  })
 
   // Set initial selected file when component mounts or item changes
   useEffect(() => {
@@ -157,6 +181,7 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
         <PanelGroup direction="horizontal">
           <Panel defaultSize={25} minSize={20} maxSize={35}>
             <FileTree
+              ref={fileTreeRef}
               items={selectedItem ? [selectedItem] : items}
               selectedItem={selectedItem}
               selectedFile={selectedFile}

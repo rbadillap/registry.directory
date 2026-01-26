@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useState, useMemo, useEffect } from "react"
+import React, { useState, useMemo, useEffect, useRef, useImperativeHandle, forwardRef, useCallback } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { ScrollArea } from "@workspace/ui/components/scroll-area"
 import {
   ChevronRight,
@@ -25,12 +25,23 @@ import { useAnalytics } from "@/hooks/use-analytics"
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
+export interface FileTreeRef {
+  focusSearch: () => void
+  clearSearch: () => void
+  navigateUp: () => void
+  navigateDown: () => void
+  expandCollapse: (direction: "left" | "right") => void
+  selectFocused: () => void
+  getFocusedIndex: () => number
+}
+
 interface FileTreeProps {
   items: RegistryItem[]
   selectedItem: RegistryItem | null
   selectedFile: RegistryFile | null
   onSelectFile: (item: RegistryItem, file: RegistryFile) => void
   currentCategory?: string
+  onSearchChange?: (query: string) => void
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -182,14 +193,20 @@ function buildPathTree(items: RegistryItem[]): PathTree {
   return root
 }
 
-export function FileTree({ items, selectedItem, selectedFile, onSelectFile, currentCategory }: FileTreeProps) {
+export const FileTree = forwardRef<FileTreeRef, FileTreeProps>(function FileTree(
+  { items, selectedItem, selectedFile, onSelectFile, currentCategory, onSearchChange },
+  ref
+) {
   const pathname = usePathname()
+  const router = useRouter()
   const analytics = useAnalytics()
+  const searchInputRef = useRef<HTMLInputElement>(null)
   const [openFolders, setOpenFolders] = useState<Set<string>>(
     new Set(["components", "components/ui", "lib"]),
   )
   const [openItems, setOpenItems] = useState<Set<string>>(new Set())
   const [searchQuery, setSearchQuery] = useState<string>("")
+  const [focusedIndex, setFocusedIndex] = useState<number>(0)
 
   // Detect if we're viewing a single item (Nivel 3) or category list (Nivel 2)
   const isItemView = selectedItem !== null
@@ -202,6 +219,78 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   }, [items])
 
   const pathTree = useMemo(() => buildPathTree(items), [items])
+
+  // Build flat list of navigable items for keyboard navigation (Nivel 2 only)
+  const navigableItems = useMemo(() => {
+    if (hasFileContent) return [] // Nivel 3 uses tree navigation
+    return items
+      .filter(item => item.name.toLowerCase().includes(searchQuery.toLowerCase()))
+      .sort((a, b) => a.name.localeCompare(b.name))
+  }, [items, hasFileContent, searchQuery])
+
+  // Reset focused index when search changes or items change
+  useEffect(() => {
+    setFocusedIndex(-1)
+  }, [searchQuery, items])
+
+  // Sync focused index with selected item
+  useEffect(() => {
+    if (selectedItem && navigableItems.length > 0) {
+      const index = navigableItems.findIndex(item => item.name === selectedItem.name)
+      if (index !== -1) {
+        setFocusedIndex(index)
+      }
+    }
+  }, [selectedItem, navigableItems])
+
+  // Expose imperative methods for keyboard navigation
+  useImperativeHandle(ref, () => ({
+    focusSearch: () => {
+      searchInputRef.current?.focus()
+      searchInputRef.current?.select()
+    },
+    clearSearch: () => {
+      setSearchQuery("")
+      onSearchChange?.("")
+      searchInputRef.current?.blur()
+    },
+    navigateUp: () => {
+      if (navigableItems.length === 0) return
+      setFocusedIndex(prev => {
+        if (prev <= 0) return navigableItems.length - 1
+        return prev - 1
+      })
+    },
+    navigateDown: () => {
+      if (navigableItems.length === 0) return
+      setFocusedIndex(prev => {
+        if (prev >= navigableItems.length - 1) return 0
+        return prev + 1
+      })
+    },
+    expandCollapse: (direction: "left" | "right") => {
+      // For Nivel 2, navigate to item on right, go back on left
+      if (!hasFileContent && focusedIndex >= 0 && focusedIndex < navigableItems.length) {
+        const focusedItem = navigableItems[focusedIndex]
+        if (direction === "right" && focusedItem) {
+          router.push(`${pathname}/${focusedItem.name}`)
+        } else if (direction === "left") {
+          // Go back to parent category
+          const parentPath = pathname.split("/").slice(0, -1).join("/")
+          if (parentPath) router.push(parentPath)
+        }
+      }
+    },
+    selectFocused: () => {
+      if (!hasFileContent && focusedIndex >= 0 && focusedIndex < navigableItems.length) {
+        const focusedItem = navigableItems[focusedIndex]
+        if (focusedItem) {
+          router.push(`${pathname}/${focusedItem.name}`)
+        }
+      }
+    },
+    getFocusedIndex: () => focusedIndex,
+  }), [navigableItems, focusedIndex, hasFileContent, pathname, router, onSearchChange])
 
   // Auto-expand folders when a file is selected
   useEffect(() => {
@@ -571,19 +660,16 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   if (!hasFileContent) {
     const categoryLabel = currentCategory ? CATEGORY_LABELS[currentCategory] || currentCategory : "Items"
 
-    // Filter items based on search query
-    const filteredItems = items.filter(item =>
-      item.name.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-
     return (
       <div className="h-full md:border-r border-neutral-800 bg-black">
         <div className="p-2 md:p-3 border-b border-neutral-800">
           <input
+            ref={searchInputRef}
             type="text"
             value={searchQuery}
             onChange={(e) => {
               setSearchQuery(e.target.value)
+              onSearchChange?.(e.target.value)
 
               // Track search usage with debouncing
               if (e.target.value) {
@@ -597,23 +683,44 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                 })
               }
             }}
+            onKeyDown={(e) => {
+              // Allow arrow navigation while in search
+              if (e.key === "ArrowDown") {
+                e.preventDefault()
+                setFocusedIndex(prev => {
+                  if (prev >= navigableItems.length - 1) return 0
+                  return prev + 1
+                })
+              } else if (e.key === "ArrowUp") {
+                e.preventDefault()
+                setFocusedIndex(prev => {
+                  if (prev <= 0) return navigableItems.length - 1
+                  return prev - 1
+                })
+              } else if (e.key === "Enter" && focusedIndex >= 0) {
+                e.preventDefault()
+                const focusedItem = navigableItems[focusedIndex]
+                if (focusedItem) {
+                  router.push(`${pathname}/${focusedItem.name}`)
+                }
+              }
+            }}
             placeholder={`${categoryLabel} (${items.length})`}
             className="w-full bg-transparent text-xs font-medium text-neutral-500 uppercase tracking-wider placeholder:text-neutral-500 focus:outline-none focus:text-neutral-400"
           />
           {searchQuery && (
             <div className="text-[10px] text-neutral-600 mt-1">
-              {filteredItems.length} of {items.length} items
+              {navigableItems.length} of {items.length} items
             </div>
           )}
         </div>
 
         <ScrollArea className="h-[calc(100%-44px)] md:h-[calc(100%-49px)]">
           <div className="p-2 space-y-0.5">
-            {filteredItems.length > 0 ? (
-              filteredItems
-                .sort((a, b) => a.name.localeCompare(b.name))
-                .map((item) => {
+            {navigableItems.length > 0 ? (
+              navigableItems.map((item, index) => {
                   const isSelected = selectedItem?.name === item.name
+                  const isFocused = focusedIndex === index
                   const Icon = getItemIcon(item.type)
 
                   return (
@@ -623,7 +730,8 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                       className={cn(
                         "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
                         "hover:bg-neutral-800/50 transition-colors",
-                        isSelected && "bg-neutral-800"
+                        isSelected && "bg-neutral-800",
+                        isFocused && "bg-neutral-800/50 ring-1 ring-neutral-500"
                       )}
                     >
                       <Icon className="h-4 w-4 text-neutral-500 flex-shrink-0" />
@@ -666,4 +774,4 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
       </ScrollArea>
     </div>
   )
-}
+})
