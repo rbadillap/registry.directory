@@ -1,4 +1,4 @@
-![screenshot](https://registry.directory/og)
+![screenshot](https://registry.directory/opengraph-image)
 
 ### How to suggest a registry?
 
