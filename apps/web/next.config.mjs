@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: ["@workspace/ui"],
+  outputFileTracingIncludes: {
+    '/[owner]/[repo]/opengraph-image': ['./public/fonts/**/*'],
+    '/[owner]/[repo]/[slug]/opengraph-image': ['./public/fonts/**/*'],
+  },
   async redirects() {
     return [
       // Redirect old URLs: /{owner}/{repo}/{category}/{item} → /{owner}/{repo}/{item}
