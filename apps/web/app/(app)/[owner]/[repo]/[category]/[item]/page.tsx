@@ -7,6 +7,7 @@ import { DirectoryEntry } from "@/lib/types"
 import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { slugToType, typeToSlug, groupItemsByCategory } from "@/lib/registry-mappings"
 import { registryFetch } from "@/lib/fetch-utils"
+import { hasOnlyRenderableFiles } from "@/lib/file-utils"
 
 async function getRegistry(owner: string, repo: string) {
   const filePath = join(process.cwd(), "public/directory.json")
@@ -145,6 +146,11 @@ export async function generateStaticParams() {
       // Generate params for each category/item combination
       for (const [category, items] of categoriesMap.entries()) {
         for (const item of items) {
+          // Skip items with only binary files (cannot be rendered as code)
+          if (!hasOnlyRenderableFiles(item.files)) {
+            continue
+          }
+
           params.push({
             owner,
             repo,

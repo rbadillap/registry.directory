@@ -6,6 +6,7 @@ import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { registryFetch } from "@/lib/fetch-utils"
 import { generateMarkdownForItem } from "@/lib/markdown-generator"
 import { groupItemsByCategory } from "@/lib/registry-mappings"
+import { hasOnlyRenderableFiles } from "@/lib/file-utils"
 
 async function getRegistry(owner: string, repo: string) {
   const filePath = join(process.cwd(), "public/directory.json")
@@ -86,6 +87,11 @@ export async function generateStaticParams() {
       // Generate params for each category/item combination
       for (const [category, items] of categoriesMap.entries()) {
         for (const item of items) {
+          // Skip items with only binary files (cannot be rendered as code)
+          if (!hasOnlyRenderableFiles(item.files)) {
+            continue
+          }
+
           params.push({
             owner,
             repo,
