@@ -3,11 +3,12 @@
 import { useEffect, useState } from "react"
 import { ScrollArea } from "@workspace/ui/components/scroll-area"
 import { Button } from "@workspace/ui/components/button"
-import { FileCode, Package, Copy, Check } from "lucide-react"
+import { FileCode, Package, Copy, Check, FileWarning } from "lucide-react"
 import type { RegistryItem } from "@/lib/registry-types"
 import { codeToHtml } from "shiki"
 import { getFileName, getExtension, getTargetPath } from "@/lib/path-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
+import { isBinaryExtension } from "@/lib/file-utils"
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
@@ -119,6 +120,34 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
 
   const targetPath = getTargetPath(file)
   const fileName = getFileName(targetPath)
+  const fileExtension = getExtension(targetPath)
+
+  console.log('[CodeViewer] Rendering file:', {
+    path: file.path,
+    targetPath,
+    fileName,
+    extension: fileExtension,
+    isBinary: isBinaryExtension(fileExtension),
+  })
+
+  // Handle binary files that cannot be rendered
+  if (isBinaryExtension(fileExtension)) {
+    console.log('[CodeViewer] Binary file detected, showing fallback UI:', fileName)
+    return (
+      <div className="h-full flex flex-col bg-black">
+        <div className="h-[44px] md:h-[49px] flex items-center border-b border-neutral-700/50 bg-black px-3 md:px-4 flex-shrink-0">
+          <span className="text-xs md:text-sm font-mono text-neutral-400 truncate">{fileName}</span>
+        </div>
+        <div className="flex-1 flex flex-col items-center justify-center text-neutral-500 p-8">
+          <FileWarning className="h-12 w-12 text-neutral-700 mb-4" />
+          <p className="text-sm text-neutral-400 font-medium mb-2">Binary file</p>
+          <p className="text-xs text-neutral-600 text-center max-w-xs">
+            This file ({fileExtension.toUpperCase()}) cannot be displayed as code.
+          </p>
+        </div>
+      </div>
+    )
+  }
 
   const handleCopy = () => {
     if (!file.content) return
