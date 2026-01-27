@@ -25,11 +25,9 @@ export function getInstallCommand(options: InstallCommandOptions): string {
   // }
 
   // Default: URL to registry JSON
-  if (registry.registry_url) {
-    const baseUrl = registry.registry_url.replace(/\/[^/]+\.json$/, '')
-    return `${baseUrl}/${itemName}.json`
-  }
+  const baseUrl = registry.registry_url
+    ? registry.registry_url.replace(/\/[^/]+\.json$/, '')
+    : `${registry.url.replace(/\/$/, '')}/r`
 
-  // Fallback: just the item name
-  return itemName
+  return `${baseUrl}/${itemName}.json`
 }
