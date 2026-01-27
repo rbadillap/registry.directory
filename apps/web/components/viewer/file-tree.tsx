@@ -628,7 +628,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
 
                   return (
                     <Link
-                      key={item.name}
+                      key={`${item.type}-${item.name}`}
                       href={`${basePath}/${item.name}`}
                       className={cn(
                         "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
