@@ -4,15 +4,16 @@ import { useState, useMemo } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
 import { DirectoryList } from './directory-list';
 import { SearchBar } from './search-bar';
-import type { DirectoryEntry, RegistryStats } from '@/lib/types';
+import type { DirectoryEntry, GitHubStats, RegistryStats } from '@/lib/types';
 
 interface DirectoryTabsProps {
   components: DirectoryEntry[];
   tools: DirectoryEntry[];
   stats: Record<string, RegistryStats>;
+  githubStats: Record<string, Omit<GitHubStats, 'fetchedAt'>>;
 }
 
-export function DirectoryTabs({ components, tools, stats }: DirectoryTabsProps) {
+export function DirectoryTabs({ components, tools, stats, githubStats }: DirectoryTabsProps) {
   const [activeTab, setActiveTab] = useState('components');
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -69,6 +70,7 @@ export function DirectoryTabs({ components, tools, stats }: DirectoryTabsProps) 
             addCardLabel="Add your Component"
             showViewButton={true}
             stats={stats}
+            githubStats={githubStats}
           />
         </TabsContent>
 

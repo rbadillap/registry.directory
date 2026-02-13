@@ -18,7 +18,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@workspace/ui/components/avatar";
-import type { DirectoryEntry, RegistryStats } from "@/lib/types";
+import type { DirectoryEntry, GitHubStats, RegistryStats } from "@/lib/types";
 import { addUtmParams } from "@/lib/utm-utils";
 
 interface DirectoryListProps {
@@ -28,9 +28,32 @@ interface DirectoryListProps {
   addCardLabel?: string;
   showViewButton?: boolean;
   stats?: Record<string, RegistryStats>;
+  githubStats?: Record<string, Omit<GitHubStats, "fetchedAt">>;
 }
 
-export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLabel, showViewButton = false, stats }: DirectoryListProps) {
+function formatStars(count: number): string {
+  if (count >= 1000) {
+    return `${(count / 1000).toFixed(1).replace(/\.0$/, "")}k`;
+  }
+  return String(count);
+}
+
+function formatRelativeTime(isoDate: string): string {
+  const now = Date.now();
+  const then = new Date(isoDate).getTime();
+  const diffMs = now - then;
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+  if (diffDays < 1) return "today";
+  if (diffDays === 1) return "yesterday";
+  if (diffDays < 30) return `${diffDays}d ago`;
+  const diffMonths = Math.floor(diffDays / 30);
+  if (diffMonths < 12) return `${diffMonths}mo ago`;
+  const diffYears = Math.floor(diffDays / 365);
+  return `${diffYears}y ago`;
+}
+
+export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLabel, showViewButton = false, stats, githubStats }: DirectoryListProps) {
   const showAddCard = !searchTerm && addCardUrl && addCardLabel;
 
   if (entries.length === 0 && !showAddCard) {
@@ -130,6 +153,20 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                         {s.topItems.join(", ")}
                       </p>
                     )}
+                  </div>
+                );
+              })()}
+              {(() => {
+                const gh = entry.github_url ? githubStats?.[entry.github_url] : undefined;
+                if (!gh) return null;
+                return (
+                  <div className="mt-1.5 flex items-center gap-1.5">
+                    <span className="text-[10px] font-mono text-neutral-500">
+                      {formatStars(gh.stars)} stars
+                    </span>
+                    <span className="text-[10px] font-mono text-neutral-600">
+                      updated {formatRelativeTime(gh.lastCommit)}
+                    </span>
                   </div>
                 );
               })()}

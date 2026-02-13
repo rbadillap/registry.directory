@@ -17,3 +17,9 @@ export type RegistryStats = {
   categories: CategoryStat[];
   topItems: string[];
 };
+
+export type GitHubStats = {
+  stars: number;
+  lastCommit: string; // ISO date
+  fetchedAt: string; // ISO date — for cache expiry
+};

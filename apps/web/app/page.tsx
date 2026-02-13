@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { Metadata } from "next";
 import { DirectoryTabs } from "@/components/directory-tabs";
 import { fetchAllRegistryStats } from "@/lib/registry-stats";
+import { fetchAllGitHubStats } from "@/lib/github-stats";
 import type { DirectoryEntry } from "@/lib/types";
 
 // Enable static generation
@@ -76,7 +77,10 @@ async function getTools(): Promise<DirectoryEntry[]> {
 export default async function Home() {
   const components = await getRegistries();
   const tools = await getTools();
-  const stats = await fetchAllRegistryStats(components);
+  const [stats, githubStats] = await Promise.all([
+    fetchAllRegistryStats(components),
+    fetchAllGitHubStats(components),
+  ]);
   return (
     <main className="flex min-h-screen flex-col items-center justify-start pt-24 md:pt-32 pb-12 md:pb-20">
       <div className="flex items-center gap-2 mb-8 md:mb-10">
@@ -117,7 +121,7 @@ export default async function Home() {
         <span className="text-muted-foreground"> registries</span>
       </div>
 
-      <DirectoryTabs components={components} tools={tools} stats={stats} />
+      <DirectoryTabs components={components} tools={tools} stats={stats} githubStats={githubStats} />
     </main>
   );
 }

@@ -6,7 +6,7 @@
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**"],
-      "env": ["CRON_SECRET", "VERCEL_DEPLOY_HOOK_URL", "NODE_ENV"]
+      "env": ["CRON_SECRET", "VERCEL_DEPLOY_HOOK_URL", "NODE_ENV", "GITHUB_TOKEN", "BLOB_READ_WRITE_TOKEN"]
     },
     "lint": {
       "dependsOn": ["^lint"]
