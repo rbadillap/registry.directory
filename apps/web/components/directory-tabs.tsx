@@ -45,7 +45,7 @@ export function DirectoryTabs({ components, tools, stats, githubStats }: Directo
       <Tabs defaultValue="components" value={activeTab} onValueChange={setActiveTab}>
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mb-4 md:mb-6">
           <TabsList>
-            <TabsTrigger value="components">Components</TabsTrigger>
+            <TabsTrigger value="components">Registries</TabsTrigger>
             <TabsTrigger value="tools">Tools</TabsTrigger>
           </TabsList>
 
@@ -55,7 +55,7 @@ export function DirectoryTabs({ components, tools, stats, githubStats }: Directo
               onChange={setSearchTerm}
               placeholder={
                 activeTab === 'components' 
-                  ? "Search components by name, description, or url..."
+                  ? "Search registries by name, description, or url..."
                   : "Search tools by name, description, or url..."
               }
             />
@@ -67,7 +67,7 @@ export function DirectoryTabs({ components, tools, stats, githubStats }: Directo
             entries={filteredComponents}
             searchTerm={searchTerm}
             addCardUrl={addComponentUrl}
-            addCardLabel="Add your Component"
+            addCardLabel="Add your Registry"
             showViewButton={true}
             stats={stats}
             githubStats={githubStats}
