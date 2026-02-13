@@ -18,7 +18,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@workspace/ui/components/avatar";
-import type { DirectoryEntry } from "@/lib/types";
+import type { DirectoryEntry, RegistryStats } from "@/lib/types";
 import { addUtmParams } from "@/lib/utm-utils";
 
 interface DirectoryListProps {
@@ -27,9 +27,10 @@ interface DirectoryListProps {
   addCardUrl?: string;
   addCardLabel?: string;
   showViewButton?: boolean;
+  stats?: Record<string, RegistryStats>;
 }
 
-export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLabel, showViewButton = false }: DirectoryListProps) {
+export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLabel, showViewButton = false, stats }: DirectoryListProps) {
   const showAddCard = !searchTerm && addCardUrl && addCardLabel;
 
   if (entries.length === 0 && !showAddCard) {
@@ -104,10 +105,34 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="px-3 pb-4 pt-0 bg-black flex-1 flex flex-col justify-between">
+            <CardContent className="px-3 pb-3 pt-0 bg-black flex-1 flex flex-col justify-between">
               <CardDescription className="text-xs text-neutral-300 line-clamp-2">
                 {entry.description}
               </CardDescription>
+              {(() => {
+                const s = stats?.[entry.url];
+                if (!s) return null;
+                const topCategories = s.categories.slice(0, 3);
+                return (
+                  <div className="mt-2 space-y-1.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[10px] font-mono text-neutral-500">
+                        {s.totalItems} {s.totalItems === 1 ? "item" : "items"}
+                      </span>
+                      {topCategories.length > 0 && (
+                        <span className="text-[10px] font-mono text-neutral-600">
+                          {topCategories.map((c) => c.slug).join(" · ")}
+                        </span>
+                      )}
+                    </div>
+                    {s.topItems.length > 0 && (
+                      <p className="text-[10px] font-mono text-neutral-600 truncate">
+                        {s.topItems.join(", ")}
+                      </p>
+                    )}
+                  </div>
+                );
+              })()}
             </CardContent>
             <CardFooter className="px-3 pt-0 pb-3 bg-black">
               <div className={`grid gap-1.5 w-full ${showViewButton ? 'grid-cols-2' : 'grid-cols-1'}`}>

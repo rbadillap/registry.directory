@@ -55,7 +55,7 @@ async function fetchRegistryIndex(registry: DirectoryEntry): Promise<Registry | 
   try {
     const response = await registryFetch(targetUrl, {
       timeout: 10000,
-      next: { revalidate: 3600 }
+      next: { revalidate: 86400 }
     })
 
     if (!response.ok) return null

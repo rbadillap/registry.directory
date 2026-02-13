@@ -45,7 +45,7 @@ async function fetchItemData(
   try {
     const response = await registryFetch(targetUrl, {
       timeout: 5000,
-      next: { revalidate: 3600 }
+      next: { revalidate: 86400 }
     })
 
     if (!response.ok) return null

@@ -48,7 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
         const response = await registryFetch(targetUrl, {
           timeout: 10000,
-          next: { revalidate: 3600 }
+          next: { revalidate: 86400 }
         })
 
         if (!response.ok) continue

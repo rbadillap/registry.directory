@@ -30,7 +30,7 @@ async function fetchRegistryData(registry: DirectoryEntry): Promise<Registry | n
   try {
     const response = await registryFetch(targetUrl, {
       timeout: 5000,
-      next: { revalidate: 3600 }
+      next: { revalidate: 86400 }
     })
 
 
