@@ -157,7 +157,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                 </div>
               </CardHeader>
               <CardContent className="px-3 pb-3 pt-0 bg-black flex-1 flex flex-col justify-between">
-                <CardDescription className="text-xs text-neutral-300 line-clamp-2">
+                <CardDescription className="text-[13px] text-neutral-300 line-clamp-2">
                   {entry.description}
                 </CardDescription>
                 {(gh || s) && (
