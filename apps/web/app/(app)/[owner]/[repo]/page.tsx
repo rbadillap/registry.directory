@@ -4,9 +4,10 @@ import { join } from "node:path"
 import type { Metadata } from "next"
 import { RegistryOverview } from "@/components/registry-overview"
 import { DirectoryEntry } from "@/lib/types"
-import type { Registry } from "@/lib/registry-types"
+import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { groupItemsByCategory } from "@/lib/registry-mappings"
 import { registryFetch } from "@/lib/fetch-utils"
+import { fetchGitHubStatsForUrl } from "@/lib/github-stats"
 
 async function getRegistry(owner: string, repo: string) {
   const filePath = join(process.cwd(), "public/directory.json")
@@ -101,6 +102,22 @@ export async function generateStaticParams() {
     .filter(Boolean) as { owner: string; repo: string }[]
 }
 
+export type SemanticCategory = { name: string; count: number }
+
+function extractSemanticCategories(items: RegistryItem[]): SemanticCategory[] {
+  const counts = new Map<string, number>()
+  for (const item of items) {
+    if (item.categories) {
+      for (const cat of item.categories) {
+        counts.set(cat, (counts.get(cat) || 0) + 1)
+      }
+    }
+  }
+  return Array.from(counts.entries())
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count)
+}
+
 export default async function RegistryOverviewPage({
   params,
 }: {
@@ -123,12 +140,20 @@ export default async function RegistryOverviewPage({
     notFound()
   }
 
-  // Group items by category
+  // Group items by type
   const categoriesMap = groupItemsByCategory(registryData.items)
 
   if (categoriesMap.size === 0) {
     notFound()
   }
+
+  // Fetch GitHub stats and extract semantic categories in parallel
+  const [githubStats, semanticCategories] = await Promise.all([
+    registry.github_url
+      ? fetchGitHubStatsForUrl(registry.github_url)
+      : Promise.resolve(null),
+    Promise.resolve(extractSemanticCategories(registryData.items)),
+  ])
 
   return (
     <RegistryOverview
@@ -136,6 +161,8 @@ export default async function RegistryOverviewPage({
       categories={categoriesMap}
       owner={owner}
       repo={repo}
+      githubStats={githubStats}
+      semanticCategories={semanticCategories}
     />
   )
 }

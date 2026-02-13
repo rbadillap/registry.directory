@@ -5,7 +5,7 @@ import type { Metadata } from "next"
 import { RegistryViewer } from "@/components/registry-viewer"
 import { DirectoryEntry } from "@/lib/types"
 import type { Registry, RegistryItem } from "@/lib/registry-types"
-import { slugToType, typeToSlug, groupItemsByCategory, SLUG_TO_REGISTRY_TYPE } from "@/lib/registry-mappings"
+import { slugToType, typeToSlug, groupItemsByCategory, SLUG_TO_REGISTRY_TYPE, REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
 import { registryFetch } from "@/lib/fetch-utils"
 import { hasOnlyRenderableFiles } from "@/lib/file-utils"
 
@@ -72,19 +72,6 @@ async function fetchItemData(
   }
 }
 
-const CATEGORY_LABELS: Record<string, string> = {
-  ui: "UI Components",
-  blocks: "Blocks",
-  components: "Components",
-  hooks: "Hooks",
-  lib: "Libraries",
-  pages: "Pages",
-  themes: "Themes",
-  styles: "Styles",
-  examples: "Examples",
-  base: "Base",
-}
-
 // Check if slug is a category
 function isCategory(slug: string): boolean {
   return slug in SLUG_TO_REGISTRY_TYPE
@@ -104,7 +91,7 @@ export async function generateMetadata({
 
   // Category view
   if (isCategory(slug)) {
-    const categoryLabel = CATEGORY_LABELS[slug] || slug
+    const categoryLabel = REGISTRY_TYPE_LABELS[slug] || slug
     return {
       title: `${categoryLabel} - ${registry.name}`,
       description: `Browse ${categoryLabel.toLowerCase()} from ${registry.name}.`,
@@ -118,7 +105,7 @@ export async function generateMetadata({
   const registryIndex = await fetchRegistryIndex(registry)
   const itemData = registryIndex?.items?.find(item => item.name === slug)
   const categorySlug = itemData ? typeToSlug(itemData.type) : null
-  const categoryLabel = categorySlug ? (CATEGORY_LABELS[categorySlug] || categorySlug) : "Component"
+  const categoryLabel = categorySlug ? (REGISTRY_TYPE_LABELS[categorySlug] || categorySlug) : "Component"
 
   return {
     title: `${slug} - ${categoryLabel}`,

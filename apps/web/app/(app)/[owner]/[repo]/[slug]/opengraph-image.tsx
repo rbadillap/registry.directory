@@ -5,7 +5,7 @@ import { join } from "node:path"
 import type { DirectoryEntry } from "@/lib/types"
 import type { Registry } from "@/lib/registry-types"
 import { registryFetch } from "@/lib/fetch-utils"
-import { typeToSlug, SLUG_TO_REGISTRY_TYPE } from "@/lib/registry-mappings"
+import { typeToSlug, SLUG_TO_REGISTRY_TYPE, REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
 import { getInstallCommand } from "@/lib/install-command"
 
 export const runtime = 'nodejs'
@@ -16,18 +16,6 @@ export const size = {
 }
 export const contentType = 'image/png'
 
-const CATEGORY_LABELS: Record<string, string> = {
-  ui: "UI Components",
-  blocks: "Blocks",
-  components: "Components",
-  hooks: "Hooks",
-  lib: "Libraries",
-  pages: "Pages",
-  themes: "Themes",
-  styles: "Styles",
-  examples: "Examples",
-  base: "Base",
-}
 
 function isCategory(slug: string): boolean {
   return slug in SLUG_TO_REGISTRY_TYPE
@@ -85,7 +73,7 @@ export default async function Image({
 
   // Category OG image
   if (isCategory(slug)) {
-    const categoryLabel = CATEGORY_LABELS[slug] || slug
+    const categoryLabel = REGISTRY_TYPE_LABELS[slug] || slug
     const categoryItems = registryIndex?.items?.filter(item => typeToSlug(item.type) === slug)
     const itemCount = categoryItems?.length || 0
 
@@ -149,7 +137,7 @@ export default async function Image({
   // Item OG image - reuse registryIndex from above
   const itemData = registryIndex?.items?.find(item => item.name === slug)
   const categorySlug = itemData ? typeToSlug(itemData.type) : null
-  const categoryLabel = categorySlug ? (CATEGORY_LABELS[categorySlug] || categorySlug) : "Component"
+  const categoryLabel = categorySlug ? (REGISTRY_TYPE_LABELS[categorySlug] || categorySlug) : "Component"
 
   return new ImageResponse(
     (

@@ -3,6 +3,19 @@
  * DO NOT use string splitting or dynamic parsing
  */
 
+import type { LucideIcon } from "lucide-react"
+import {
+  Package,
+  Blocks,
+  Code,
+  Paintbrush,
+  Box,
+  Palette,
+  FileCode,
+  Diamond,
+  Type,
+  File,
+} from "lucide-react"
 import type { RegistryItem } from "./registry-types"
 
 export const REGISTRY_TYPE_TO_SLUG = {
@@ -72,4 +85,65 @@ export function groupItemsByCategory(items: RegistryItem[]) {
   }
 
   return grouped
+}
+
+/**
+ * Human-readable labels for registry type slugs.
+ * Consolidates the duplicated CATEGORY_LABELS that existed in
+ * file-tree.tsx, [slug]/page.tsx, and [slug]/opengraph-image.tsx.
+ */
+export const REGISTRY_TYPE_LABELS: Record<string, string> = {
+  ui: "Components",
+  blocks: "Blocks",
+  components: "Components",
+  hooks: "Hooks",
+  lib: "Utilities",
+  pages: "Demo Pages",
+  themes: "Themes",
+  styles: "Styles",
+  examples: "Examples",
+  base: "Base",
+  fonts: "Fonts",
+  files: "Files",
+  items: "Items",
+}
+
+/**
+ * Relevance-based ordering: installable → configuration → reference → other
+ */
+export const REGISTRY_TYPE_ORDER: string[] = [
+  "ui", "components", "blocks", "hooks",
+  "styles", "themes",
+  "examples", "pages",
+  "lib", "base", "fonts", "files", "items",
+]
+
+/**
+ * Icons for each registry type slug.
+ */
+export const REGISTRY_TYPE_ICONS: Record<string, LucideIcon> = {
+  ui: Package,
+  blocks: Blocks,
+  components: Diamond,
+  hooks: Code,
+  lib: FileCode,
+  pages: FileCode,
+  themes: Paintbrush,
+  styles: Palette,
+  examples: Box,
+  base: Box,
+  fonts: Type,
+  files: File,
+  items: Package,
+}
+
+/**
+ * Sort type slugs by relevance order.
+ */
+export function sortByTypeRelevance(slugs: string[]): string[] {
+  return [...slugs].sort((a, b) => {
+    const ai = REGISTRY_TYPE_ORDER.indexOf(a)
+    const bi = REGISTRY_TYPE_ORDER.indexOf(b)
+    return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi)
+  })
 }

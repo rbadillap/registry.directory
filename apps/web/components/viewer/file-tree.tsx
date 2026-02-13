@@ -21,6 +21,7 @@ import {
 import { cn } from "@workspace/ui/lib/utils"
 import type { RegistryItem } from "@/lib/registry-types"
 import { getFileName, getTargetPath } from "@/lib/path-utils"
+import { REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
 import { useAnalytics } from "@/hooks/use-analytics"
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
@@ -31,19 +32,6 @@ interface FileTreeProps {
   selectedFile: RegistryFile | null
   onSelectFile: (item: RegistryItem, file: RegistryFile) => void
   currentCategory?: string
-}
-
-const CATEGORY_LABELS: Record<string, string> = {
-  ui: "UI Components",
-  blocks: "Blocks",
-  components: "Components",
-  hooks: "Hooks",
-  lib: "Libraries",
-  pages: "Pages",
-  themes: "Themes",
-  styles: "Styles",
-  examples: "Examples",
-  base: "Base",
 }
 
 type TreeNode = {
@@ -579,11 +567,14 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
 
   // Render flat list of items (Nivel 2 - no file content)
   if (!hasFileContent) {
-    const categoryLabel = currentCategory ? CATEGORY_LABELS[currentCategory] || currentCategory : "Items"
+    const categoryLabel = currentCategory ? REGISTRY_TYPE_LABELS[currentCategory] || currentCategory : "Items"
 
-    // Filter items based on search query
+    // Filter items based on search query (match name, title, description)
+    const query = searchQuery.toLowerCase()
     const filteredItems = items.filter(item =>
-      item.name.toLowerCase().includes(searchQuery.toLowerCase())
+      item.name.toLowerCase().includes(query) ||
+      (item.title && item.title.toLowerCase().includes(query)) ||
+      (item.description && item.description.toLowerCase().includes(query))
     )
 
     return (
@@ -631,13 +622,27 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                       key={`${item.type}-${item.name}`}
                       href={`${basePath}/${item.name}`}
                       className={cn(
-                        "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
+                        "flex items-start gap-2 w-full px-2 py-1.5 rounded",
                         "hover:bg-neutral-800/50 transition-colors",
                         isSelected && "bg-neutral-800"
                       )}
                     >
-                      <Icon className="h-4 w-4 text-neutral-500 flex-shrink-0" />
-                      <span className="truncate text-white">{item.name}</span>
+                      <Icon className="h-4 w-4 text-neutral-500 flex-shrink-0 mt-0.5" />
+                      <div className="flex-1 min-w-0">
+                        <span className="block truncate text-sm text-white">
+                          {item.title || item.name}
+                        </span>
+                        {item.title && (
+                          <span className="block truncate text-xs font-mono text-neutral-600">
+                            {item.name}
+                          </span>
+                        )}
+                        {item.description && (
+                          <span className="block truncate text-xs text-neutral-500 mt-0.5">
+                            {item.description}
+                          </span>
+                        )}
+                      </div>
                     </Link>
                   )
                 })

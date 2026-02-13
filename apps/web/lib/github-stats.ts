@@ -195,3 +195,36 @@ export async function fetchAllGitHubStats(
 
   return statsRecord;
 }
+
+/**
+ * Fetch GitHub stats for a single registry URL.
+ * Reads blob cache using ISR-compatible fetch (revalidate, not no-store)
+ * so it works during static generation without triggering DYNAMIC_SERVER_USAGE.
+ * Returns null if blob cache is unavailable or entry not found.
+ */
+export async function fetchGitHubStatsForUrl(
+  githubUrl: string
+): Promise<Omit<GitHubStats, "fetchedAt"> | null> {
+  const blobToken = process.env.BLOB_READ_WRITE_TOKEN;
+  if (!blobToken) return null;
+
+  try {
+    const storeMatch = blobToken.match(/vercel_blob_rw_([^_]+)_/);
+    if (!storeMatch) return null;
+
+    const storeId = storeMatch[1];
+    const blobUrl = `https://${storeId}.public.blob.vercel-storage.com/${BLOB_FILENAME}`;
+
+    // Use revalidate instead of no-store to be compatible with static generation
+    const response = await fetch(blobUrl, { next: { revalidate: 86400 } });
+    if (!response.ok) return null;
+
+    const cache = (await response.json()) as GitHubCache;
+    if (!cache[githubUrl]) return null;
+
+    const { fetchedAt: _, ...publicStats } = cache[githubUrl];
+    return publicStats;
+  } catch {
+    return null;
+  }
+}
