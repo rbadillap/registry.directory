@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ScrollArea } from "@workspace/ui/components/scroll-area"
+import { ScrollArea, ScrollBar } from "@workspace/ui/components/scroll-area"
 import { Button } from "@workspace/ui/components/button"
 import { FileCode, Package, Copy, Check, FileWarning } from "lucide-react"
 import type { RegistryItem } from "@/lib/registry-types"
@@ -192,6 +192,7 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
               dangerouslySetInnerHTML={{ __html: highlightedCode }}
             />
           )}
+          <ScrollBar orientation="horizontal" />
         </ScrollArea>
       </div>
     </div>
