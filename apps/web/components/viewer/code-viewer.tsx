@@ -122,17 +122,8 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
   const fileName = getFileName(targetPath)
   const fileExtension = getExtension(targetPath)
 
-  console.log('[CodeViewer] Rendering file:', {
-    path: file.path,
-    targetPath,
-    fileName,
-    extension: fileExtension,
-    isBinary: isBinaryExtension(fileExtension),
-  })
-
   // Handle binary files that cannot be rendered
   if (isBinaryExtension(fileExtension)) {
-    console.log('[CodeViewer] Binary file detected, showing fallback UI:', fileName)
     return (
       <div className="h-full flex flex-col bg-black">
         <div className="h-[44px] md:h-[49px] flex items-center border-b border-neutral-700/50 bg-black px-3 md:px-4 flex-shrink-0">

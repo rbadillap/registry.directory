@@ -249,8 +249,8 @@ function ItemResults({ items }: { items: IndexedItem[] }) {
                           {item.registry.name}
                         </span>
                       </div>
-                      <span className="flex-shrink-0" title={typeLabel}>
-                        <TypeIcon className="w-3.5 h-3.5 text-neutral-600" aria-label={typeLabel} />
+                      <span className="flex-shrink-0" role="img" aria-label={typeLabel} title={typeLabel}>
+                        <TypeIcon className="w-3.5 h-3.5 text-neutral-600" aria-hidden="true" />
                       </span>
                     </div>
                     <CardTitle className="text-sm text-white truncate">

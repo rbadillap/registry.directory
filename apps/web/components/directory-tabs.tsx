@@ -68,8 +68,8 @@ export function DirectoryTabs({ components, tools, stats, githubStats, items }: 
               onChange={setSearchTerm}
               placeholder={
                 activeTab === 'components' 
-                  ? "Search registries by name, description, or url..."
-                  : "Search tools by name, description, or url..."
+                  ? "Search registries and components..."
+                  : "Search tools..."
               }
             />
           </div>

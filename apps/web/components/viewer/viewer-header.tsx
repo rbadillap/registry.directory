@@ -72,7 +72,7 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName }: Vi
           variant="ghost"
           className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black flex-shrink-0"
         >
-          <Link href={backUrl}>
+          <Link href={backUrl} aria-label="Go back">
             <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
           </Link>
         </Button>
