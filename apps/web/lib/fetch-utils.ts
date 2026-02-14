@@ -2,6 +2,8 @@
  * Fetch utilities with proper identification for registry.directory
  */
 
+import type { DirectoryEntry } from "./types";
+
 const USER_AGENT = 'Mozilla/5.0 (compatible; registry-directory/1.0; +https://registry.directory)'
 
 interface FetchOptions extends RequestInit {
@@ -37,6 +39,22 @@ export async function registryFetch(
     clearTimeout(timeoutId)
     throw error
   }
+}
+
+/**
+ * Resolve the registry.json URL for a directory entry.
+ * Used by registry-stats.ts and registry-items.ts.
+ */
+export function getRegistryJsonUrl(registry: DirectoryEntry): string | null {
+  if (registry.registry_url) {
+    return registry.registry_url;
+  }
+
+  if (registry.url) {
+    return `${registry.url.replace(/\/$/, "")}/r/registry.json`;
+  }
+
+  return null;
 }
 
 /**

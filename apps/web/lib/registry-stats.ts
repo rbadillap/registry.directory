@@ -1,19 +1,7 @@
-import { registryFetch } from "./fetch-utils";
+import { registryFetch, getRegistryJsonUrl } from "./fetch-utils";
 import { groupItemsByCategory } from "./registry-mappings";
 import type { Registry } from "./registry-types";
 import type { DirectoryEntry, RegistryStats } from "./types";
-
-function getRegistryJsonUrl(registry: DirectoryEntry): string | null {
-  if (registry.registry_url) {
-    return registry.registry_url;
-  }
-
-  if (registry.url) {
-    return `${registry.url.replace(/\/$/, "")}/r/registry.json`;
-  }
-
-  return null;
-}
 
 async function fetchStatsForRegistry(
   registry: DirectoryEntry
