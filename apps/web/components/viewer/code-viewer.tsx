@@ -188,7 +188,7 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
             <div className="p-3 md:p-4 text-sm text-neutral-500">Loading...</div>
           ) : (
             <div
-              className="p-3 md:p-4 text-xs md:text-sm font-mono"
+              className="p-3 md:p-4 text-xs md:text-sm font-mono [counter-reset:line] [&_.line]:before:content-[counter(line)] [&_.line]:before:[counter-increment:line] [&_.line]:before:sticky [&_.line]:before:left-0 [&_.line]:before:inline-block [&_.line]:before:w-12 [&_.line]:before:pr-4 [&_.line]:before:pl-3 [&_.line]:before:text-right [&_.line]:before:text-neutral-600 [&_.line]:before:select-none [&_.line]:before:bg-black"
               dangerouslySetInnerHTML={{ __html: highlightedCode }}
             />
           )}
