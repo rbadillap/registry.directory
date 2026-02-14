@@ -9,7 +9,7 @@ interface SearchBarProps {
   className?: string;
 }
 
-export function SearchBar({ value, onChange, placeholder = "Search by name, description, or url...", className }: SearchBarProps) {
+export function SearchBar({ value, onChange, placeholder = "Search registries and components...", className }: SearchBarProps) {
   const handleClear = () => {
     onChange('');
   };

@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowLeft, ExternalLink } from "lucide-react"
+import { ArrowLeft, ExternalLink, Home } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@workspace/ui/components/avatar"
 import { DirectoryEntry } from "@/lib/types"
@@ -74,6 +74,17 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName }: Vi
         >
           <Link href={backUrl}>
             <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
+          </Link>
+        </Button>
+
+        <Button
+          asChild
+          size="icon"
+          variant="ghost"
+          className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black flex-shrink-0"
+        >
+          <Link href="/" aria-label="Go to home">
+            <Home className="h-4 w-4 md:h-5 md:w-5" />
           </Link>
         </Button>
 
