@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useMemo, useDeferredValue } from 'react';
+import { useState, useMemo, useDeferredValue, useEffect, useCallback } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
 import { DirectoryList } from './directory-list';
 import { SearchBar } from './search-bar';
+import { useAnalytics, type SearchResultType } from '@/hooks/use-analytics';
 import type { DirectoryEntry, GitHubStats, RegistryStats } from '@/lib/types';
 import type { IndexedItem } from '@/lib/items-index';
 
@@ -16,6 +17,7 @@ interface DirectoryTabsProps {
 }
 
 export function DirectoryTabs({ components, tools, stats, githubStats, items }: DirectoryTabsProps) {
+  const analytics = useAnalytics();
   const [activeTab, setActiveTab] = useState('components');
   const [searchTerm, setSearchTerm] = useState('');
   const deferredSearchTerm = useDeferredValue(searchTerm);
@@ -49,6 +51,26 @@ export function DirectoryTabs({ components, tools, stats, githubStats, items }: 
       item.categories.some(c => c.toLowerCase().includes(term))
     );
   }, [items, deferredSearchTerm]);
+
+  // Track search performed (debounced via hook)
+  const activeRegistryResults = activeTab === 'components' ? filteredComponents : filteredTools;
+  useEffect(() => {
+    if (!deferredSearchTerm) return;
+    analytics.trackSearchPerformed({
+      search_query: deferredSearchTerm,
+      active_tab: activeTab as "components" | "tools",
+      registry_results_count: activeRegistryResults.length,
+      item_results_count: activeTab === 'components' ? filteredItems.length : 0,
+    });
+  }, [deferredSearchTerm, activeTab, activeRegistryResults.length, filteredItems.length, analytics]);
+
+  const handleResultClick = useCallback((result: { result_type: SearchResultType; result_name: string; result_position: number }) => {
+    if (!searchTerm) return;
+    analytics.trackSearchResultClicked({
+      search_query: searchTerm,
+      ...result,
+    });
+  }, [searchTerm, analytics]);
 
   const addComponentUrl = 'https://github.com/rbadillap/registry.directory';
   const addToolUrl = 'https://github.com/rbadillap/registry.directory';
@@ -85,6 +107,7 @@ export function DirectoryTabs({ components, tools, stats, githubStats, items }: 
             stats={stats}
             githubStats={githubStats}
             itemResults={activeTab === 'components' ? filteredItems : []}
+            onResultClick={handleResultClick}
           />
         </TabsContent>
 
@@ -95,6 +118,7 @@ export function DirectoryTabs({ components, tools, stats, githubStats, items }: 
             addCardUrl={addToolUrl}
             addCardLabel="Add your Tool"
             showViewButton={false}
+            onResultClick={handleResultClick}
           />
         </TabsContent>
       </Tabs>

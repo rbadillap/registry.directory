@@ -97,6 +97,23 @@ export interface RegistryVisitProperties {
   github_url?: string;
 }
 
+export type SearchResultType = "registry" | "item";
+export type HomeTab = "components" | "tools";
+
+export interface SearchPerformedProperties {
+  search_query: string;
+  active_tab: HomeTab;
+  registry_results_count: number;
+  item_results_count: number;
+}
+
+export interface SearchResultClickedProperties {
+  search_query: string;
+  result_type: SearchResultType;
+  result_name: string;
+  result_position: number;
+}
+
 // ============================================================================
 // Event Names
 // ============================================================================
@@ -116,6 +133,10 @@ export const ANALYTICS_EVENTS = {
   PATH_COPIED: "ide.path.copied",
   MARKDOWN_EXPORTED: "ide.markdown.exported",
   REGISTRY_VISIT: "ide.registry.visit",
+
+  // Home search
+  HOME_SEARCH_PERFORMED: "home.search.performed",
+  HOME_SEARCH_RESULT_CLICKED: "home.search.result_clicked",
 } as const;
 
 // ============================================================================
@@ -289,6 +310,14 @@ class Analytics {
 
   trackRegistryVisit(properties: RegistryVisitProperties & Partial<BaseEventProperties>): void {
     this.#trackEvent(ANALYTICS_EVENTS.REGISTRY_VISIT, properties);
+  }
+
+  trackSearchPerformed(properties: SearchPerformedProperties & Partial<BaseEventProperties>): void {
+    this.#trackEvent(ANALYTICS_EVENTS.HOME_SEARCH_PERFORMED, properties);
+  }
+
+  trackSearchResultClicked(properties: SearchResultClickedProperties & Partial<BaseEventProperties>): void {
+    this.#trackEvent(ANALYTICS_EVENTS.HOME_SEARCH_RESULT_CLICKED, properties);
   }
 }
 

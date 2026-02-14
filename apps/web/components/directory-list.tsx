@@ -26,6 +26,12 @@ import { addUtmParams } from "@/lib/utm-utils";
 import { formatStars, formatRelativeTime } from "@/lib/format-utils";
 import { REGISTRY_TYPE_LABELS, REGISTRY_TYPE_ICONS } from "@/lib/registry-mappings";
 
+interface ResultClickData {
+  result_type: "registry" | "item";
+  result_name: string;
+  result_position: number;
+}
+
 interface DirectoryListProps {
   entries: DirectoryEntry[];
   searchTerm?: string;
@@ -35,9 +41,10 @@ interface DirectoryListProps {
   stats?: Record<string, RegistryStats>;
   githubStats?: Record<string, Omit<GitHubStats, "fetchedAt">>;
   itemResults?: IndexedItem[];
+  onResultClick?: (data: ResultClickData) => void;
 }
 
-export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLabel, showViewButton = false, stats, githubStats, itemResults = [] }: DirectoryListProps) {
+export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLabel, showViewButton = false, stats, githubStats, itemResults = [], onResultClick }: DirectoryListProps) {
   const showAddCard = !searchTerm && addCardUrl && addCardLabel;
   const hasItems = itemResults.length > 0;
   const hasRegistries = entries.length > 0;
@@ -84,7 +91,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
         </a>
       )}
 
-      {entries.map((entry) => {
+      {entries.map((entry, index) => {
         const gh = entry.github_url ? githubStats?.[entry.github_url] : undefined;
         const s = stats?.[entry.url];
 
@@ -182,7 +189,10 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                     size="sm"
                     className="w-full border-neutral-700 hover:bg-neutral-900 hover:text-white h-8 text-xs"
                   >
-                    <Link href={viewerHref}>
+                    <Link
+                      href={viewerHref}
+                      onClick={() => searchTerm && onResultClick?.({ result_type: "registry", result_name: entry.name, result_position: index })}
+                    >
                       Explore
                     </Link>
                   </Button>
@@ -197,7 +207,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
 
     {/* Item results — flat list, each card shows registry as metadata */}
     {hasItems && (
-      <ItemResults key={searchTerm} items={itemResults} />
+      <ItemResults key={searchTerm} items={itemResults} onResultClick={onResultClick} />
     )}
 
     </>
@@ -206,7 +216,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
 
 const INITIAL_ITEMS_LIMIT = 12;
 
-function ItemResults({ items }: { items: IndexedItem[] }) {
+function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultClick?: (data: ResultClickData) => void }) {
   const [expanded, setExpanded] = useState(false);
   const hasMore = items.length > INITIAL_ITEMS_LIMIT;
   const visibleItems = expanded ? items : items.slice(0, INITIAL_ITEMS_LIMIT);
@@ -224,7 +234,7 @@ function ItemResults({ items }: { items: IndexedItem[] }) {
 
       <div className="relative">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5">
-          {visibleItems.map((item) => {
+          {visibleItems.map((item, index) => {
             const registryKey = `${item.registry.owner}/${item.registry.repo}`;
             const itemTypeSlug = item.type.replace('registry:', '');
             const typeLabel = REGISTRY_TYPE_LABELS[itemTypeSlug] || itemTypeSlug;
@@ -234,6 +244,7 @@ function ItemResults({ items }: { items: IndexedItem[] }) {
               <Link
                 key={`${registryKey}/${item.name}`}
                 href={`/${item.registry.owner}/${item.registry.repo}/${item.name}`}
+                onClick={() => onResultClick?.({ result_type: "item", result_name: item.name, result_position: index })}
               >
                 <Card className="bg-black border border-neutral-700/50 rounded-none overflow-hidden shadow-none hover:shadow-lg hover:border-neutral-600 transition-all h-full flex flex-col">
                   <CardHeader className="bg-black pt-3 pb-2 space-y-2">

@@ -13,11 +13,15 @@ import {
   type PathCopiedProperties,
   type MarkdownExportedProperties,
   type RegistryVisitProperties,
+  type SearchPerformedProperties,
+  type SearchResultClickedProperties,
   type AIProvider,
   type ShareMethod,
   type ExportMethod,
   type FolderAction,
   type MobileTab,
+  type HomeTab,
+  type SearchResultType,
 } from "@/lib/analytics";
 
 interface RegistryContext {
@@ -167,6 +171,26 @@ export function useAnalytics() {
     [analytics, context]
   );
 
+  const trackSearchPerformed = useCallback(
+    (properties: Omit<SearchPerformedProperties, keyof RegistryContext>) => {
+      analytics.trackSearchPerformed({
+        ...context,
+        ...properties,
+      });
+    },
+    [analytics, context]
+  );
+
+  const trackSearchResultClicked = useCallback(
+    (properties: Omit<SearchResultClickedProperties, keyof RegistryContext>) => {
+      analytics.trackSearchResultClicked({
+        ...context,
+        ...properties,
+      });
+    },
+    [analytics, context]
+  );
+
   // Debounced tracking methods for high-frequency events
   const trackSearchUsedDebounced = useMemo(
     () => debounce(trackSearchUsed, 500),
@@ -176,6 +200,11 @@ export function useAnalytics() {
   const trackFolderToggledDebounced = useMemo(
     () => debounce(trackFolderToggled, 300),
     [trackFolderToggled]
+  );
+
+  const trackSearchPerformedDebounced = useMemo(
+    () => debounce(trackSearchPerformed, 500),
+    [trackSearchPerformed]
   );
 
   return {
@@ -191,6 +220,10 @@ export function useAnalytics() {
     trackMarkdownExported,
     trackRegistryVisit,
     trackMobileTabSwitched,
+
+    // Home search
+    trackSearchPerformed: trackSearchPerformedDebounced,
+    trackSearchResultClicked,
 
     // Debounced methods
     trackSearchUsed: trackSearchUsedDebounced,
@@ -208,4 +241,6 @@ export type {
   ExportMethod,
   FolderAction,
   MobileTab,
+  HomeTab,
+  SearchResultType,
 };
