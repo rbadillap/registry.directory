@@ -68,7 +68,7 @@ export function InfoPanel({ item }: InfoPanelProps) {
 
   if (!item) {
     return (
-      <div className="h-full flex items-center justify-center text-neutral-500 bg-black md:border-l border-neutral-800">
+      <div className="h-full flex items-center justify-center text-muted-foreground bg-background md:border-l border-border">
         Select a component to view its information
       </div>
     )
@@ -83,46 +83,46 @@ export function InfoPanel({ item }: InfoPanelProps) {
   ]
 
   return (
-    <div className="h-full flex flex-col bg-black md:border-l border-neutral-800">
-      <div className="h-[44px] md:h-[49px] flex items-center border-b border-neutral-800 bg-black px-3 md:px-4 flex-shrink-0">
-        <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Configuration</span>
+    <div className="h-full flex flex-col bg-background md:border-l border-border">
+      <div className="h-[44px] md:h-[49px] flex items-center border-b border-border bg-background px-3 md:px-4 flex-shrink-0">
+        <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Configuration</span>
       </div>
 
       <div className="flex-1 min-h-0">
         <ScrollArea className="h-full">
           <div className="p-3 md:p-4 space-y-3 md:space-y-4">
             {/* Main Info Card */}
-            <Card className="bg-neutral-900/50 border-neutral-800">
+            <Card className="bg-surface/50 border-border">
               <CardContent className="p-3 md:pt-4 md:px-6 md:pb-6 space-y-3 md:space-y-4">
                 {/* Name and Type */}
                 <div className="flex gap-3 items-start">
                   <div className="flex-1 min-w-0 space-y-1">
-                    <div className="text-xs text-neutral-500 uppercase tracking-wider">Name</div>
-                    <div className="text-sm font-medium text-white truncate">{item.name}</div>
+                    <div className="text-xs text-muted-foreground uppercase tracking-wider">Name</div>
+                    <div className="text-sm font-medium text-foreground truncate">{item.name}</div>
                   </div>
                   <div className="space-y-1 flex-shrink-0">
-                    <div className="text-xs text-neutral-500 uppercase tracking-wider">Type</div>
-                    <div className="flex items-center gap-2 px-2 py-1 bg-neutral-800/50 border border-neutral-800 rounded">
-                      <CurrentIcon className="h-3.5 w-3.5 text-neutral-400" />
-                      <span className="text-xs text-neutral-300">{currentType?.label}</span>
+                    <div className="text-xs text-muted-foreground uppercase tracking-wider">Type</div>
+                    <div className="flex items-center gap-2 px-2 py-1 bg-surface-elevated/50 border border-border rounded">
+                      <CurrentIcon className="h-3.5 w-3.5 text-muted-foreground" />
+                      <span className="text-xs text-foreground-secondary">{currentType?.label}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Description */}
                 {item.description && (
-                  <div className="space-y-1 pt-2 border-t border-neutral-800">
-                    <div className="text-xs text-neutral-500 uppercase tracking-wider">Description</div>
-                    <p className="text-sm text-neutral-400">{item.description}</p>
+                  <div className="space-y-1 pt-2 border-t border-border">
+                    <div className="text-xs text-muted-foreground uppercase tracking-wider">Description</div>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
                   </div>
                 )}
 
                 {/* Files */}
                 {item.files && item.files.length > 0 && (
-                  <div className="space-y-2 pt-2 border-t border-neutral-800">
+                  <div className="space-y-2 pt-2 border-t border-border">
                     <div className="flex items-center gap-2">
-                      <FileCode className="h-3.5 w-3.5 text-neutral-500" />
-                      <span className="text-xs text-neutral-500 uppercase tracking-wider">Files</span>
+                      <FileCode className="h-3.5 w-3.5 text-muted-foreground" />
+                      <span className="text-xs text-muted-foreground uppercase tracking-wider">Files</span>
                       <Badge variant="secondary" className="ml-auto text-xs h-5">
                         {item.files.length}
                       </Badge>
@@ -137,22 +137,22 @@ export function InfoPanel({ item }: InfoPanelProps) {
                         <button
                           key={file.path}
                           onClick={() => handleCopyPath(targetPath, index)}
-                          className="w-full text-left group hover:bg-neutral-800/50 rounded px-2 py-1.5 transition-colors"
+                          className="w-full text-left group hover:bg-accent rounded px-2 py-1.5 transition-colors"
                           title="Click to copy path"
                         >
                           <div className="flex items-center gap-2 text-xs min-w-0">
-                            <span className="font-mono text-neutral-400 flex-shrink-0">
+                            <span className="font-mono text-muted-foreground flex-shrink-0">
                               {fileName}
                             </span>
-                            <ArrowRight className="h-3 w-3 text-neutral-600 flex-shrink-0" />
-                            <span className="font-mono text-neutral-500 truncate flex-1">
+                            <ArrowRight className="h-3 w-3 text-foreground-subtle flex-shrink-0" />
+                            <span className="font-mono text-muted-foreground truncate flex-1">
                               {targetPath}
                             </span>
                             <span className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
                               {isCopied ? (
                                 <Check className="h-3 w-3 text-green-500" />
                               ) : (
-                                <Copy className="h-3 w-3 text-neutral-500" />
+                                <Copy className="h-3 w-3 text-muted-foreground" />
                               )}
                             </span>
                           </div>
@@ -167,7 +167,7 @@ export function InfoPanel({ item }: InfoPanelProps) {
 
             {/* Dependencies Card */}
             {allDeps.length > 0 && (
-              <Card className="bg-neutral-900/50 border-neutral-800">
+              <Card className="bg-surface/50 border-border">
                 <CardHeader className="pb-2 pt-3 md:pt-4 px-3 md:px-4">
                   <CardTitle className="text-sm flex items-center gap-2">
                     <Package className="h-3.5 w-3.5" />
@@ -177,7 +177,7 @@ export function InfoPanel({ item }: InfoPanelProps) {
                 <CardContent className="px-3 md:px-4 pb-3 md:pb-4 space-y-2 md:space-y-3">
                   {item.dependencies && item.dependencies.length > 0 && (
                     <div className="space-y-2">
-                      <div className="text-xs text-neutral-500 uppercase tracking-wider">npm packages</div>
+                      <div className="text-xs text-muted-foreground uppercase tracking-wider">npm packages</div>
                       <div className="flex flex-wrap gap-1.5">
                         {item.dependencies.map((dep) => (
                           <Badge key={dep} variant="outline" className="text-xs font-mono font-normal">
@@ -189,7 +189,7 @@ export function InfoPanel({ item }: InfoPanelProps) {
                   )}
                   {item.registryDependencies && item.registryDependencies.length > 0 && (
                     <div className="space-y-2">
-                      <div className="text-xs text-neutral-500 uppercase tracking-wider">Registry items</div>
+                      <div className="text-xs text-muted-foreground uppercase tracking-wider">Registry items</div>
                       <div className="flex flex-wrap gap-1.5">
                         {item.registryDependencies.map((dep) => (
                           <Badge key={dep} variant="secondary" className="text-xs font-normal">

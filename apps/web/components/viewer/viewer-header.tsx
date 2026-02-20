@@ -7,6 +7,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@workspace/ui/components/av
 import { DirectoryEntry } from "@/lib/types"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { addUtmParams } from "@/lib/utm-utils"
+import { ThemeToggle } from "@/components/theme-toggle"
+import { GitHubIcon } from "@/components/icons/github"
 
 interface ViewerHeaderProps {
   registry: DirectoryEntry
@@ -64,13 +66,13 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName }: Vi
   const backUrl = getBackUrl()
 
   return (
-    <div className="flex items-center justify-between border-b border-neutral-800 bg-black px-4 py-3 md:px-6 md:py-4">
+    <div className="flex items-center justify-between border-b border-border bg-background px-4 py-3 md:px-6 md:py-4">
       <div className="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
         <Button
           asChild
           size="icon"
           variant="ghost"
-          className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black flex-shrink-0"
+          className="text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background flex-shrink-0"
         >
           <Link href={backUrl} aria-label="Go back">
             <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
@@ -81,7 +83,7 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName }: Vi
           asChild
           size="icon"
           variant="ghost"
-          className="text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black flex-shrink-0"
+          className="text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background flex-shrink-0"
         >
           <Link href="/" aria-label="Go to home">
             <Home className="h-4 w-4 md:h-5 md:w-5" />
@@ -92,7 +94,7 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName }: Vi
           {githubInfo && (
             <Avatar className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0">
               <AvatarImage src={githubInfo.avatarUrl} alt={githubInfo.username} />
-              <AvatarFallback className="bg-neutral-800 text-neutral-400 text-xs">
+              <AvatarFallback className="bg-secondary text-muted-foreground text-xs">
                 {githubInfo.username.charAt(0).toUpperCase()}
               </AvatarFallback>
             </Avatar>
@@ -103,62 +105,63 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName }: Vi
               <>
                 <Link
                   href={`/${githubInfo.username}/${githubInfo.repo}`}
-                  className="text-neutral-400 hover:text-white hover:underline transition-colors"
+                  className="text-muted-foreground hover:text-foreground hover:underline transition-colors"
                 >
                   {githubInfo.username}
                 </Link>
-                <span className="text-neutral-600 mx-1 md:mx-1.5">/</span>
+                <span className="text-foreground-subtle mx-1 md:mx-1.5">/</span>
                 <Link
                   href={`/${githubInfo.username}/${githubInfo.repo}`}
-                  className="text-white font-semibold hover:underline transition-colors"
+                  className="text-foreground font-semibold hover:underline transition-colors"
                 >
                   {githubInfo.repo}
                 </Link>
                 {currentCategory && (
                   <>
-                    <span className="text-neutral-600 mx-1 md:mx-1.5 hidden md:inline">/</span>
+                    <span className="text-foreground-subtle mx-1 md:mx-1.5 hidden md:inline">/</span>
                     {selectedItemName ? (
                       <Link
                         href={`${basePath}/${currentCategory}`}
-                        className="text-neutral-400 hover:text-white hover:underline transition-colors hidden md:inline"
+                        className="text-muted-foreground hover:text-foreground hover:underline transition-colors hidden md:inline"
                       >
                         {currentCategory}
                       </Link>
                     ) : (
-                      <span className="text-white hidden md:inline">{currentCategory}</span>
+                      <span className="text-foreground hidden md:inline">{currentCategory}</span>
                     )}
                   </>
                 )}
                 {selectedItemName && (
                   <>
-                    <span className="text-neutral-600 mx-1 md:mx-1.5 hidden md:inline">/</span>
-                    <span className="text-white hidden md:inline">{selectedItemName}</span>
-                    <span className="text-neutral-600 hidden md:inline">.json</span>
+                    <span className="text-foreground-subtle mx-1 md:mx-1.5 hidden md:inline">/</span>
+                    <span className="text-foreground hidden md:inline">{selectedItemName}</span>
+                    <span className="text-foreground-subtle hidden md:inline">.json</span>
                   </>
                 )}
               </>
             ) : (
               <>
-                <span className="text-white">{registry.name}</span>
-                <span className="text-neutral-600 mx-1 md:mx-1.5 hidden md:inline">/</span>
-                <span className="text-neutral-400 hidden md:inline">IDE Viewer</span>
+                <span className="text-foreground">{registry.name}</span>
+                <span className="text-foreground-subtle mx-1 md:mx-1.5 hidden md:inline">/</span>
+                <span className="text-muted-foreground hidden md:inline">IDE Viewer</span>
               </>
             )}
           </div>
         </div>
       </div>
 
-      <div className="hidden md:flex items-center gap-2 flex-shrink-0">
+      <div className="flex items-center gap-1 flex-shrink-0">
         <Button
           asChild
           variant="ghost"
-          size="sm"
-          className="gap-2 text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+          size="icon"
+          className="text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <a
             href={addUtmParams(registry.url, "registry_ide")}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit registry"
             onClick={() => {
               analytics.trackRegistryVisit({
                 destination: "registry",
@@ -166,7 +169,6 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName }: Vi
               })
             }}
           >
-            Visit Registry
             <ExternalLink className="h-4 w-4" />
           </a>
         </Button>
@@ -175,13 +177,14 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName }: Vi
           <Button
             asChild
             variant="ghost"
-            size="sm"
-            className="gap-2 text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            size="icon"
+            className="text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <a
               href={registry.github_url}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="View repository"
               onClick={() => {
                 analytics.trackRegistryVisit({
                   destination: "repository",
@@ -189,11 +192,12 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName }: Vi
                 })
               }}
             >
-              Visit Repository
-              <ExternalLink className="h-4 w-4" />
+              <GitHubIcon className="h-4 w-4" aria-hidden="true" />
             </a>
           </Button>
         )}
+
+        <ThemeToggle />
       </div>
     </div>
   )

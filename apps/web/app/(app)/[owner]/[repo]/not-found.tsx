@@ -12,16 +12,16 @@ import {
 
 export default function NotFound() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black p-6">
+    <div className="flex items-center justify-center min-h-screen bg-background p-6">
       <Empty className="border-0">
         <EmptyHeader>
           <EmptyMedia variant="icon">
-            <Package className="text-neutral-500" />
+            <Package className="text-muted-foreground" />
           </EmptyMedia>
-          <EmptyTitle className="text-white">Registry Not Found</EmptyTitle>
-          <EmptyDescription className="text-neutral-400">
+          <EmptyTitle className="text-foreground">Registry Not Found</EmptyTitle>
+          <EmptyDescription className="text-muted-foreground">
             This registry either does not exist or does not expose a{" "}
-            <code className="text-neutral-300 bg-neutral-900 px-1.5 py-0.5 rounded">
+            <code className="text-foreground-secondary bg-secondary px-1.5 py-0.5 rounded">
               /r/registry.json
             </code>{" "}
             file.

@@ -41,7 +41,7 @@ export function MobileTabNavigation({ activeTab, onTabChange, hasFile }: MobileT
   }, [activeTab, hasFile, analytics])
 
   return (
-    <div className="md:hidden border-b border-neutral-800 bg-black">
+    <div className="md:hidden border-b border-border bg-background">
       <div className="flex items-center">
         {tabs.map((tab) => {
           const Icon = tab.icon
@@ -57,16 +57,16 @@ export function MobileTabNavigation({ activeTab, onTabChange, hasFile }: MobileT
                 "flex-1 flex items-center justify-center gap-2 py-3 text-sm font-medium transition-colors relative",
                 "min-h-[44px]", // Touch target size
                 isActive
-                  ? "text-white"
+                  ? "text-foreground"
                   : isDisabled
-                  ? "text-neutral-600 cursor-not-allowed"
-                  : "text-neutral-400 hover:text-neutral-300 active:bg-neutral-800/50"
+                  ? "text-foreground-subtle cursor-not-allowed"
+                  : "text-muted-foreground hover:text-foreground-secondary active:bg-accent"
               )}
             >
               <Icon className="h-4 w-4" />
               <span>{tab.label}</span>
               {isActive && (
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-foreground" />
               )}
             </button>
           )

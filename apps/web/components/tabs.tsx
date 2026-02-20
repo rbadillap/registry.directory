@@ -102,14 +102,14 @@ export function TabsTrigger({
         "focus-visible:outline-none focus-visible:ring-0",
         "disabled:pointer-events-none disabled:opacity-50",
         isActive
-          ? "text-white"
-          : "text-neutral-500 hover:text-neutral-300",
+          ? "text-foreground"
+          : "text-muted-foreground hover:text-foreground-secondary",
         className
       )}
     >
       {children}
       {isActive && (
-        <span className="absolute bottom-0 left-0 right-0 h-px bg-neutral-500" />
+        <span className="absolute bottom-0 left-0 right-0 h-px bg-muted-foreground" />
       )}
     </button>
   );

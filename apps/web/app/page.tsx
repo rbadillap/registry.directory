@@ -8,28 +8,29 @@ import { fetchAllRegistryStats } from "@/lib/registry-stats";
 import { fetchAllGitHubStats } from "@/lib/github-stats";
 import { fetchAllRegistryItems } from "@/lib/registry-items";
 import type { DirectoryEntry } from "@/lib/types";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 // Enable static generation
 export const dynamic = 'force-static'
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://registry.directory"),
-  title: "registry.directory - Explore your favorite shadcn/ui registry",
+  title: "registry.directory - The explorer for shadcn/ui registries",
   description:
-    "The home for shadcn/ui registries. Explore components in our IDE viewer, then install with one command.",
+    "Browse, preview, and install from any shadcn/ui registry. Explore components in an IDE viewer, then copy the install command.",
   alternates: {
     canonical: "https://registry.directory",
   },
   openGraph: {
-    title: "registry.directory - Explore your favorite shadcn/ui registry",
-    description: "The home for shadcn/ui registries. Explore components in our IDE viewer, then install with one command.",
+    title: "registry.directory - The explorer for shadcn/ui registries",
+    description: "Browse, preview, and install from any shadcn/ui registry. Explore components in an IDE viewer, then copy the install command.",
     url: "https://registry.directory",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "registry.directory - Explore your favorite shadcn/ui registry",
-    description: "The home for shadcn/ui registries. Explore components in our IDE viewer, then install with one command.",
+    title: "registry.directory - The explorer for shadcn/ui registries",
+    description: "Browse, preview, and install from any shadcn/ui registry. Explore components in an IDE viewer, then copy the install command.",
   },
 };
 
@@ -86,18 +87,22 @@ export default async function Home() {
     fetchAllRegistryItems(components),
   ]);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start pt-24 md:pt-32 pb-12 md:pb-20">
+    <main className="relative flex min-h-screen flex-col items-center justify-start pt-24 md:pt-32 pb-12 md:pb-20">
+      <div className="absolute top-4 right-4">
+        <ThemeToggle />
+      </div>
+
       <div className="flex items-center gap-2 mb-8 md:mb-10">
         <h1 className="text-base font-medium font-mono">
           registry<span className="text-muted-foreground">.directory</span>{" "}
-          <span className="text-xs text-foreground rounded-md border bg-rose-700 px-1">
+          <span className="text-[10px] text-muted-foreground rounded-full border border-border px-1.5 py-0.5 font-normal uppercase tracking-widest align-middle">
             beta
           </span>
         </h1>
       </div>
 
-      <div className="text-sm mb-12 md:mb-14 px-4 text-center font-mono leading-relaxed">
-        <span className="text-muted-foreground">discover, preview, copy </span>
+      <p className="text-sm mb-12 md:mb-14 px-4 text-center font-mono text-muted-foreground">
+        The explorer for{" "}
         <span className="text-foreground">
           <svg
             viewBox="0 0 24 24"
@@ -122,8 +127,8 @@ export default async function Home() {
           </svg>
         </span>
         <span className="ml-1 font-mono font-bold">shadcn/ui</span>
-        <span className="text-muted-foreground"> registries</span>
-      </div>
+        <span className="text-muted-foreground"> registries.</span>
+      </p>
 
       <Suspense fallback={<DirectoryTabsSkeleton />}>
         <DirectoryTabs components={components} tools={tools} stats={stats} githubStats={githubStats} items={items} />

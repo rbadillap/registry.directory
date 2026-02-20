@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { useTheme } from "next-themes"
 import { ScrollArea, ScrollBar } from "@workspace/ui/components/scroll-area"
 import { Button } from "@workspace/ui/components/button"
 import { FileCode, Package, Copy, Check, FileWarning } from "lucide-react"
@@ -49,6 +50,7 @@ function getLanguageFromPath(path: string): string {
 
 export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
   const analytics = useAnalytics()
+  const { resolvedTheme } = useTheme()
   const [highlightedCode, setHighlightedCode] = useState<string>("")
   const [isLoading, setIsLoading] = useState(false)
   const [copied, setCopied] = useState(false)
@@ -62,13 +64,19 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
     setIsLoading(true)
     const language = getLanguageFromPath(file.path)
     const code = file.content || ""
+    const isDark = resolvedTheme === "dark"
+    const shikiTheme = isDark ? "github-dark" : "github-light"
+
+    // Only replace background colors — not foreground text colors.
+    // github-dark bg: #24292e, github-light bg: #fff/#ffffff
+    const colorReplacements: Record<string, string> = isDark
+      ? { "#24292e": "transparent" }
+      : { "#fff": "transparent", "#ffffff": "transparent" }
 
     codeToHtml(code, {
       lang: language,
-      theme: "github-dark",
-      colorReplacements: {
-        "#24292e": "transparent",
-      },
+      theme: shikiTheme,
+      colorReplacements,
     })
       .then((html: string) => {
         setHighlightedCode(html)
@@ -79,23 +87,23 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
         setHighlightedCode("")
         setIsLoading(false)
       })
-  }, [file])
+  }, [file, resolvedTheme])
 
   // If there's a selected item but no files
   if (!file && selectedItem) {
     return (
-      <div className="h-full flex flex-col items-center justify-center text-neutral-500 bg-black p-8">
+      <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
         <div className="text-center space-y-4 max-w-md">
-          <FileCode className="h-12 w-12 text-neutral-700 mx-auto" />
+          <FileCode className="h-12 w-12 text-foreground-faint mx-auto" />
           <div className="space-y-2">
-            <p className="text-sm text-neutral-400 font-medium">This item has no files to display</p>
-            <p className="text-xs text-neutral-600 leading-relaxed">
+            <p className="text-sm text-muted-foreground font-medium">This item has no files to display</p>
+            <p className="text-xs text-foreground-subtle leading-relaxed">
               This item only defines dependencies and configuration.
               Check the Configuration panel on the right for more details.
             </p>
           </div>
           {(selectedItem.dependencies?.length || selectedItem.registryDependencies?.length) ? (
-            <div className="pt-2 flex items-center justify-center gap-2 text-xs text-neutral-600">
+            <div className="pt-2 flex items-center justify-center gap-2 text-xs text-foreground-subtle">
               <Package className="h-4 w-4" />
               <span>
                 {selectedItem.dependencies?.length || 0} npm package{selectedItem.dependencies?.length !== 1 ? 's' : ''}
@@ -111,9 +119,9 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
   // No file and no selected item - default empty state
   if (!file) {
     return (
-      <div className="h-full flex flex-col items-center justify-center text-neutral-500 bg-black p-8">
+      <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
         <p className="text-sm mb-2">Select a component to view its code</p>
-        <p className="text-xs text-neutral-600">Click on any item in the sidebar to get started</p>
+        <p className="text-xs text-foreground-subtle">Click on any item in the sidebar to get started</p>
       </div>
     )
   }
@@ -125,14 +133,14 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
   // Handle binary files that cannot be rendered
   if (isBinaryExtension(fileExtension)) {
     return (
-      <div className="h-full flex flex-col bg-black">
-        <div className="h-[44px] md:h-[49px] flex items-center border-b border-neutral-700/50 bg-black px-3 md:px-4 flex-shrink-0">
-          <span className="text-xs md:text-sm font-mono text-neutral-400 truncate">{fileName}</span>
+      <div className="h-full flex flex-col bg-background">
+        <div className="h-[44px] md:h-[49px] flex items-center border-b border-border-subtle bg-background px-3 md:px-4 flex-shrink-0">
+          <span className="text-xs md:text-sm font-mono text-muted-foreground truncate">{fileName}</span>
         </div>
-        <div className="flex-1 flex flex-col items-center justify-center text-neutral-500 p-8">
-          <FileWarning className="h-12 w-12 text-neutral-700 mb-4" />
-          <p className="text-sm text-neutral-400 font-medium mb-2">Binary file</p>
-          <p className="text-xs text-neutral-600 text-center max-w-xs">
+        <div className="flex-1 flex flex-col items-center justify-center text-muted-foreground p-8">
+          <FileWarning className="h-12 w-12 text-foreground-faint mb-4" />
+          <p className="text-sm text-muted-foreground font-medium mb-2">Binary file</p>
+          <p className="text-xs text-foreground-subtle text-center max-w-xs">
             This file ({fileExtension.toUpperCase()}) cannot be displayed as code.
           </p>
         </div>
@@ -155,13 +163,13 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
   }
 
   return (
-    <div className="h-full flex flex-col bg-black">
-      <div className="h-[44px] md:h-[49px] flex items-center justify-between border-b border-neutral-700/50 bg-black px-3 md:px-4 flex-shrink-0">
-        <span className="text-xs md:text-sm font-mono text-neutral-400 truncate">{fileName}</span>
+    <div className="h-full flex flex-col bg-background">
+      <div className="h-[44px] md:h-[49px] flex items-center justify-between border-b border-border-subtle bg-background px-3 md:px-4 flex-shrink-0">
+        <span className="text-xs md:text-sm font-mono text-muted-foreground truncate">{fileName}</span>
         <Button
           variant="ghost"
           size="sm"
-          className="h-7 text-neutral-400 hover:text-white px-2 flex-shrink-0"
+          className="h-7 text-muted-foreground hover:text-foreground px-2 flex-shrink-0"
           onClick={handleCopy}
           title="Copy code"
         >
@@ -176,10 +184,10 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
       <div className="flex-1 min-h-0">
         <ScrollArea className="h-full">
           {isLoading ? (
-            <div className="p-3 md:p-4 text-sm text-neutral-500">Loading...</div>
+            <div className="p-3 md:p-4 text-sm text-muted-foreground">Loading...</div>
           ) : (
             <div
-              className="p-3 md:p-4 text-xs md:text-sm font-mono [counter-reset:line] [&_.line]:before:content-[counter(line)] [&_.line]:before:[counter-increment:line] [&_.line]:before:sticky [&_.line]:before:left-0 [&_.line]:before:inline-block [&_.line]:before:w-12 [&_.line]:before:pr-4 [&_.line]:before:pl-3 [&_.line]:before:text-right [&_.line]:before:text-neutral-600 [&_.line]:before:select-none [&_.line]:before:bg-black"
+              className="p-3 md:p-4 text-xs md:text-sm font-mono [counter-reset:line] [&_.line]:before:content-[counter(line)] [&_.line]:before:[counter-increment:line] [&_.line]:before:sticky [&_.line]:before:left-0 [&_.line]:before:inline-block [&_.line]:before:w-12 [&_.line]:before:pr-4 [&_.line]:before:pl-3 [&_.line]:before:text-right [&_.line]:before:text-foreground-subtle [&_.line]:before:select-none [&_.line]:before:bg-background"
               dangerouslySetInnerHTML={{ __html: highlightedCode }}
             />
           )}

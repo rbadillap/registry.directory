@@ -123,7 +123,7 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
   }
 
   return (
-    <div className="h-screen bg-black text-white flex flex-col">
+    <div className="h-screen bg-background text-foreground flex flex-col">
       <ViewerHeader registry={registry} currentCategory={currentCategory} selectedItemName={initialItem?.name} />
 
       {/* Mobile Tab Navigation - only visible on mobile */}
@@ -165,13 +165,13 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
             />
           </Panel>
 
-          <PanelResizeHandle className="w-px bg-neutral-800" />
+          <PanelResizeHandle className="w-px bg-border" />
 
           <Panel defaultSize={45} minSize={35} maxSize={55}>
             <CodeViewer file={selectedFile} selectedItem={selectedItem} />
           </Panel>
 
-          <PanelResizeHandle className="w-px bg-neutral-800" />
+          <PanelResizeHandle className="w-px bg-border" />
 
           <Panel defaultSize={30} minSize={20} maxSize={40}>
             <InfoPanel item={selectedItem} />

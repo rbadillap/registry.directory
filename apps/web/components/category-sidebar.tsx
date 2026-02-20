@@ -25,7 +25,7 @@ export function CategorySidebar({ categories, owner, repo }: CategorySidebarProp
 
   return (
     <div className="max-w-2xl w-full p-8">
-      <h2 className="text-2xl font-bold text-white mb-6">Categories</h2>
+      <h2 className="text-2xl font-bold text-foreground mb-6">Categories</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {Array.from(categories.entries()).map(([slug, items]) => {
@@ -40,14 +40,14 @@ export function CategorySidebar({ categories, owner, repo }: CategorySidebarProp
               href={`/${owner}/${repo}/${firstItem.name}`}
               className="group"
             >
-              <div className="border border-neutral-800 rounded-lg p-6 hover:border-neutral-600 transition-colors">
+              <div className="border border-border rounded-lg p-6 hover:border-border-subtle transition-colors">
                 <div className="flex items-center gap-3 mb-2">
-                  <Icon className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
-                  <h3 className="text-lg font-semibold text-white capitalize">
+                  <Icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                  <h3 className="text-lg font-semibold text-foreground capitalize">
                     {slug}
                   </h3>
                 </div>
-                <p className="text-sm text-neutral-400">
+                <p className="text-sm text-muted-foreground">
                   {items.length} {items.length === 1 ? 'item' : 'items'}
                 </p>
               </div>
