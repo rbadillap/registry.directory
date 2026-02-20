@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useMemo, useDeferredValue, useEffect, useCallback } from 'react';
+import { useMemo, useDeferredValue, useEffect, useCallback } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
 import { DirectoryList } from './directory-list';
 import { SearchBar } from './search-bar';
 import { useAnalytics, type SearchResultType } from '@/hooks/use-analytics';
+import { useUrlState } from '@/hooks/use-url-state';
 import type { DirectoryEntry, GitHubStats, RegistryStats } from '@/lib/types';
 import type { IndexedItem } from '@/lib/items-index';
 
@@ -18,8 +19,7 @@ interface DirectoryTabsProps {
 
 export function DirectoryTabs({ components, tools, stats, githubStats, items }: DirectoryTabsProps) {
   const analytics = useAnalytics();
-  const [activeTab, setActiveTab] = useState('components');
-  const [searchTerm, setSearchTerm] = useState('');
+  const { activeTab, setActiveTab, searchTerm, setSearchTerm } = useUrlState();
   const deferredSearchTerm = useDeferredValue(searchTerm);
 
   const filteredComponents = useMemo(() => {
