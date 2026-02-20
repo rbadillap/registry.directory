@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useMemo, useDeferredValue, useEffect, useCallback } from 'react';
+import { useMemo, useDeferredValue, useEffect, useCallback } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
 import { DirectoryList } from './directory-list';
 import { SearchBar } from './search-bar';
 import { useAnalytics, type SearchResultType } from '@/hooks/use-analytics';
+import { useUrlState } from '@/hooks/use-url-state';
 import type { DirectoryEntry, GitHubStats, RegistryStats } from '@/lib/types';
 import type { IndexedItem } from '@/lib/items-index';
 
@@ -18,8 +19,7 @@ interface DirectoryTabsProps {
 
 export function DirectoryTabs({ components, tools, stats, githubStats, items }: DirectoryTabsProps) {
   const analytics = useAnalytics();
-  const [activeTab, setActiveTab] = useState('components');
-  const [searchTerm, setSearchTerm] = useState('');
+  const { activeTab, setActiveTab, searchTerm, setSearchTerm } = useUrlState();
   const deferredSearchTerm = useDeferredValue(searchTerm);
 
   const filteredComponents = useMemo(() => {
@@ -78,7 +78,7 @@ export function DirectoryTabs({ components, tools, stats, githubStats, items }: 
   return (
     <div className="w-full max-w-7xl mx-auto px-4">
       <Tabs defaultValue="components" value={activeTab} onValueChange={setActiveTab}>
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mb-4 md:mb-6">
+        <div className="sticky top-0 z-10 bg-black flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mb-4 md:mb-6 py-3">
           <TabsList>
             <TabsTrigger value="components">Registries</TabsTrigger>
             <TabsTrigger value="tools">Tools</TabsTrigger>

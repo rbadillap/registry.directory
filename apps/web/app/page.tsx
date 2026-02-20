@@ -1,7 +1,9 @@
+import { Suspense } from "react";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { Metadata } from "next";
 import { DirectoryTabs } from "@/components/directory-tabs";
+import { DirectoryTabsSkeleton } from "@/components/directory-tabs-skeleton";
 import { fetchAllRegistryStats } from "@/lib/registry-stats";
 import { fetchAllGitHubStats } from "@/lib/github-stats";
 import { fetchAllRegistryItems } from "@/lib/registry-items";
@@ -123,7 +125,9 @@ export default async function Home() {
         <span className="text-muted-foreground"> registries</span>
       </div>
 
-      <DirectoryTabs components={components} tools={tools} stats={stats} githubStats={githubStats} items={items} />
+      <Suspense fallback={<DirectoryTabsSkeleton />}>
+        <DirectoryTabs components={components} tools={tools} stats={stats} githubStats={githubStats} items={items} />
+      </Suspense>
     </main>
   );
 }
