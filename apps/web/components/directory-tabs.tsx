@@ -8,6 +8,7 @@ import { useAnalytics, type SearchResultType } from '@/hooks/use-analytics';
 import { useUrlState } from '@/hooks/use-url-state';
 import type { DirectoryEntry, GitHubStats, RegistryStats } from '@/lib/types';
 import type { IndexedItem } from '@/lib/items-index';
+import { searchItems } from '@/lib/search-utils';
 
 interface DirectoryTabsProps {
   components: DirectoryEntry[];
@@ -44,12 +45,7 @@ export function DirectoryTabs({ components, tools, stats, githubStats, items }: 
 
   const filteredItems = useMemo(() => {
     if (!deferredSearchTerm) return [];
-    const term = deferredSearchTerm.toLowerCase();
-    return items.filter(item =>
-      item.name.toLowerCase().includes(term) ||
-      item.description.toLowerCase().includes(term) ||
-      item.categories.some(c => c.toLowerCase().includes(term))
-    );
+    return searchItems(items, deferredSearchTerm);
   }, [items, deferredSearchTerm]);
 
   // Track search performed (debounced via hook)
@@ -78,7 +74,7 @@ export function DirectoryTabs({ components, tools, stats, githubStats, items }: 
   return (
     <div className="w-full max-w-7xl mx-auto px-4">
       <Tabs defaultValue="components" value={activeTab} onValueChange={setActiveTab}>
-        <div className="sticky top-0 z-10 bg-black flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mb-4 md:mb-6 py-3">
+        <div className="sticky top-0 z-10 bg-background flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mb-4 md:mb-6 py-3">
           <TabsList>
             <TabsTrigger value="components">Registries</TabsTrigger>
             <TabsTrigger value="tools">Tools</TabsTrigger>
