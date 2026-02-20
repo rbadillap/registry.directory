@@ -2,18 +2,19 @@
 
 import Link from "next/link"
 import { ArrowLeft, ExternalLink, Home } from "lucide-react"
+import { GitHubIcon } from "@/components/icons/github"
 import { Button } from "@workspace/ui/components/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@workspace/ui/components/avatar"
-import { DirectoryEntry } from "@/lib/types"
+import type { DirectoryEntry, AffiliateConfig } from "@/lib/types"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { addUtmParams } from "@/lib/utm-utils"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { GitHubIcon } from "@/components/icons/github"
 
 interface ViewerHeaderProps {
   registry: DirectoryEntry
   currentCategory?: string | null
   selectedItemName?: string | null
+  affiliate?: AffiliateConfig | null
 }
 
 function parseGitHubUrl(url?: string) {
@@ -38,7 +39,7 @@ function parseGitHubUrl(url?: string) {
   }
 }
 
-export function ViewerHeader({ registry, currentCategory, selectedItemName }: ViewerHeaderProps) {
+export function ViewerHeader({ registry, currentCategory, selectedItemName, affiliate }: ViewerHeaderProps) {
   const analytics = useAnalytics()
   const githubInfo = parseGitHubUrl(registry.github_url)
 
@@ -153,15 +154,15 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName }: Vi
       <div className="flex items-center gap-1 flex-shrink-0">
         <Button
           asChild
-          variant="ghost"
           size="icon"
+          variant="ghost"
           className="text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <a
-            href={addUtmParams(registry.url, "registry_ide")}
+            href={affiliate ? affiliate.affiliate_url : addUtmParams(registry.url, "registry_ide")}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit registry"
+            aria-label={`Visit ${registry.name} website`}
             onClick={() => {
               analytics.trackRegistryVisit({
                 destination: "registry",
@@ -176,15 +177,15 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName }: Vi
         {registry.github_url && (
           <Button
             asChild
-            variant="ghost"
             size="icon"
+            variant="ghost"
             className="text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <a
               href={registry.github_url}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="View repository"
+              aria-label={`${registry.name} on GitHub`}
               onClick={() => {
                 analytics.trackRegistryVisit({
                   destination: "repository",

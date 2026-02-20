@@ -9,7 +9,7 @@ import { ViewerHeader } from "./viewer/viewer-header"
 import { StatusBar } from "./viewer/status-bar"
 import { MobileTabNavigation, type MobileTab } from "./viewer/mobile-tab-navigation"
 import { cn } from "@workspace/ui/lib/utils"
-import type { DirectoryEntry } from "@/lib/types"
+import type { DirectoryEntry, AffiliateConfig } from "@/lib/types"
 import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { generateGlobalsCss } from "@/lib/css-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
@@ -20,6 +20,7 @@ interface RegistryViewerProps {
   registryIndex: Registry
   selectedItem: RegistryItem | null
   currentCategory: string
+  affiliate?: AffiliateConfig | null
 }
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
@@ -44,7 +45,7 @@ function addGlobalsCssFile(item: RegistryItem): RegistryItem {
   }
 }
 
-export function RegistryViewer({ registry, registryIndex, selectedItem: initialItem, currentCategory }: RegistryViewerProps) {
+export function RegistryViewer({ registry, registryIndex, selectedItem: initialItem, currentCategory, affiliate }: RegistryViewerProps) {
   const analytics = useAnalytics()
 
   // Add globals.css files to items with cssVars
@@ -124,7 +125,7 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
 
   return (
     <div className="h-screen bg-background text-foreground flex flex-col">
-      <ViewerHeader registry={registry} currentCategory={currentCategory} selectedItemName={initialItem?.name} />
+      <ViewerHeader registry={registry} currentCategory={currentCategory} selectedItemName={initialItem?.name} affiliate={affiliate} />
 
       {/* Mobile Tab Navigation - only visible on mobile */}
       <MobileTabNavigation

@@ -8,6 +8,7 @@ import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { slugToType, typeToSlug, groupItemsByCategory, SLUG_TO_REGISTRY_TYPE, REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
 import { registryFetch } from "@/lib/fetch-utils"
 import { hasOnlyRenderableFiles } from "@/lib/file-utils"
+import { getAffiliates } from "@/lib/affiliates"
 
 async function getRegistry(owner: string, repo: string) {
   const filePath = join(process.cwd(), "public/directory.json")
@@ -195,7 +196,11 @@ export default async function SlugPage({
     notFound()
   }
 
-  const categoriesMap = groupItemsByCategory(registryIndex.items)
+  const [categoriesMap, affiliates] = await Promise.all([
+    Promise.resolve(groupItemsByCategory(registryIndex.items)),
+    getAffiliates(),
+  ])
+  const affiliate = affiliates[registry.url] ?? null
 
   // Category view: show list of items in category
   if (isCategory(slug)) {
@@ -220,6 +225,7 @@ export default async function SlugPage({
         registryIndex={filteredRegistry}
         selectedItem={null}
         currentCategory={slug}
+        affiliate={affiliate}
       />
     )
   }
@@ -248,6 +254,7 @@ export default async function SlugPage({
       registryIndex={filteredRegistry}
       selectedItem={itemData}
       currentCategory={currentCategory}
+      affiliate={affiliate}
     />
   )
 }

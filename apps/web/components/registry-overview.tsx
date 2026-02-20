@@ -12,7 +12,7 @@ import {
 import { formatStars, formatRelativeTime } from "@/lib/format-utils"
 import { addUtmParams } from "@/lib/utm-utils"
 import type { RegistryItem } from "@/lib/registry-types"
-import type { DirectoryEntry } from "@/lib/types"
+import type { DirectoryEntry, AffiliateConfig } from "@/lib/types"
 import type { SemanticCategory } from "@/app/(app)/[owner]/[repo]/page"
 
 interface RegistryOverviewProps {
@@ -22,6 +22,7 @@ interface RegistryOverviewProps {
   repo: string
   githubStats?: { stars: number; lastCommit: string } | null
   semanticCategories?: SemanticCategory[]
+  affiliate?: AffiliateConfig | null
 }
 
 export function RegistryOverview({
@@ -31,6 +32,7 @@ export function RegistryOverview({
   repo,
   githubStats,
   semanticCategories = [],
+  affiliate,
 }: RegistryOverviewProps) {
   const totalItems = Array.from(categories.values()).reduce(
     (sum, items) => sum + items.length,
@@ -44,7 +46,7 @@ export function RegistryOverview({
 
   return (
     <div className="h-screen bg-background text-foreground flex flex-col">
-      <ViewerHeader registry={registry} />
+      <ViewerHeader registry={registry} affiliate={affiliate} />
 
       <main className="flex-1 overflow-y-auto">
         <div className="max-w-3xl mx-auto px-4 py-8 md:py-12 space-y-8">
@@ -130,7 +132,7 @@ export function RegistryOverview({
                 </a>
               )}
               <a
-                href={addUtmParams(registry.url, "registry_overview")}
+                href={affiliate ? affiliate.affiliate_url : addUtmParams(registry.url, "registry_overview")}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Visit ${registry.name} website`}

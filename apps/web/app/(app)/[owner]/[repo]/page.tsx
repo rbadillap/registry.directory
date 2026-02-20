@@ -8,6 +8,7 @@ import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { groupItemsByCategory } from "@/lib/registry-mappings"
 import { registryFetch } from "@/lib/fetch-utils"
 import { fetchGitHubStatsForUrl } from "@/lib/github-stats"
+import { getAffiliates } from "@/lib/affiliates"
 
 async function getRegistry(owner: string, repo: string) {
   const filePath = join(process.cwd(), "public/directory.json")
@@ -147,13 +148,16 @@ export default async function RegistryOverviewPage({
     notFound()
   }
 
-  // Fetch GitHub stats and extract semantic categories in parallel
-  const [githubStats, semanticCategories] = await Promise.all([
+  // Fetch GitHub stats, semantic categories, and affiliates in parallel
+  const [githubStats, semanticCategories, affiliates] = await Promise.all([
     registry.github_url
       ? fetchGitHubStatsForUrl(registry.github_url)
       : Promise.resolve(null),
     Promise.resolve(extractSemanticCategories(registryData.items)),
+    getAffiliates(),
   ])
+
+  const affiliate = affiliates[registry.url] ?? null
 
   return (
     <RegistryOverview
@@ -163,6 +167,7 @@ export default async function RegistryOverviewPage({
       repo={repo}
       githubStats={githubStats}
       semanticCategories={semanticCategories}
+      affiliate={affiliate}
     />
   )
 }
