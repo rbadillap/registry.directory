@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Geist_Mono, IBM_Plex_Mono } from "next/font/google"
+import { DM_Sans, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 
 import "@workspace/ui/globals.css"
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://registry.directory"),
   title: {
     template: "%s | registry.directory",
-    default: "registry.directory - Explore your favorite shadcn/ui registry",
+    default: "registry.directory - The explorer for shadcn/ui registries",
   },
-  description: "The home for shadcn/ui registries. Explore components in our IDE viewer, then install with one command.",
+  description: "Browse, preview, and install from any shadcn/ui registry. Explore components in an IDE viewer, then copy the install command.",
 };
 
 export const viewport: Viewport = {
@@ -31,8 +31,8 @@ export const viewport: Viewport = {
   maximumScale: 5,
   userScalable: true,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "var(--background)" },
-    { media: "(prefers-color-scheme: dark)", color: "var(--background)" },
+    { media: "(prefers-color-scheme: light)", color: "#f9f7f4" },
+    { media: "(prefers-color-scheme: dark)", color: "#262626" },
   ],
 };
 
@@ -46,7 +46,9 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+        </Providers>
         <Analytics />
       </body>
     </html>

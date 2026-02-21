@@ -268,21 +268,21 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     switch (type) {
       case "registry:ui":
       case "registry:component":
-        return <FileCode className="h-4 w-4 text-neutral-500" />
+        return <FileCode className="h-4 w-4 text-muted-foreground" />
       case "registry:hook":
-        return <FileCode className="h-4 w-4 text-neutral-500" />
+        return <FileCode className="h-4 w-4 text-muted-foreground" />
       case "registry:block":
-        return <FileCode className="h-4 w-4 text-neutral-500" />
+        return <FileCode className="h-4 w-4 text-muted-foreground" />
       case "registry:lib":
-        return <FileText className="h-4 w-4 text-neutral-500" />
+        return <FileText className="h-4 w-4 text-muted-foreground" />
       case "registry:page":
-        return <FileCode className="h-4 w-4 text-neutral-500" />
+        return <FileCode className="h-4 w-4 text-muted-foreground" />
       case "registry:theme":
-        return <Palette className="h-4 w-4 text-neutral-500" />
+        return <Palette className="h-4 w-4 text-muted-foreground" />
       case "registry:style":
-        return <Palette className="h-4 w-4 text-neutral-500" />
+        return <Palette className="h-4 w-4 text-muted-foreground" />
       default:
-        return <FileText className="h-4 w-4 text-neutral-500" />
+        return <FileText className="h-4 w-4 text-muted-foreground" />
     }
   }
 
@@ -342,13 +342,13 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
             }}
             className={cn(
               "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
-              "hover:bg-neutral-800/50 transition-colors",
-              selectedFile?.path === file.path && "bg-neutral-800",
+              "hover:bg-accent transition-colors",
+              selectedFile?.path === file.path && "bg-surface-elevated",
               depth > 0 && "ml-4 mt-0.5"
             )}
           >
             {getFileIcon(file.type)}
-            <span className="truncate text-neutral-500">{node.name}</span>
+            <span className="truncate text-muted-foreground">{node.name}</span>
           </button>
         )
       }
@@ -365,27 +365,27 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
             <button
               onClick={() => toggleFolder(node.path)}
               className={cn(
-                "flex items-center gap-1 w-full px-2 py-1.5 rounded hover:bg-neutral-800/50 transition-colors text-sm",
+                "flex items-center gap-1 w-full px-2 py-1.5 rounded hover:bg-accent transition-colors text-sm",
                 depth === 0 && "mb-1"
               )}
             >
               {hasChildren || hasItems || node.type === 'block' ? (
                 <>
                   {isOpen ? (
-                    <ChevronDown className="h-4 w-4 text-neutral-500" />
+                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
                   ) : (
-                    <ChevronRight className="h-4 w-4 text-neutral-500" />
+                    <ChevronRight className="h-4 w-4 text-muted-foreground" />
                   )}
                   {isOpen ? (
-                    <FolderOpen className="h-4 w-4 text-neutral-500" />
+                    <FolderOpen className="h-4 w-4 text-muted-foreground" />
                   ) : (
-                    <Folder className="h-4 w-4 text-neutral-500" />
+                    <Folder className="h-4 w-4 text-muted-foreground" />
                   )}
                 </>
               ) : null}
-              <span className="ml-1 text-white">{node.name}</span>
+              <span className="ml-1 text-foreground">{node.name}</span>
               {(hasItems || hasChildren) && (
-                <span className="ml-auto text-xs text-neutral-500">
+                <span className="ml-auto text-xs text-muted-foreground">
                   {hasItems ? node.items.length : node.children.size}
                 </span>
               )}
@@ -414,14 +414,14 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                             }}
                             className={cn(
                               "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm",
-                              "hover:bg-neutral-800/50 transition-colors",
-                              selectedFile?.path === file.path && "bg-neutral-800",
+                              "hover:bg-accent transition-colors",
+                              selectedFile?.path === file.path && "bg-surface-elevated",
                             )}
                           >
                             {getFileIcon(file.type)}
-                            <span className="truncate text-neutral-500">{getFileName(getTargetPath(file))}</span>
+                            <span className="truncate text-muted-foreground">{getFileName(getTargetPath(file))}</span>
                             {index === 0 && (
-                              <span className="ml-auto text-[10px] text-neutral-500/60">entry</span>
+                              <span className="ml-auto text-[10px] text-muted-foreground/60">entry</span>
                             )}
                           </button>
                         ))}
@@ -468,17 +468,17 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                               onClick={() => toggleItem(item.name)}
                               className={cn(
                                 "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
-                                "hover:bg-neutral-800/50 transition-colors",
-                                isItemSelected && "bg-neutral-800/50",
+                                "hover:bg-accent transition-colors",
+                                isItemSelected && "bg-surface-elevated/50",
                               )}
                             >
                               {isItemOpen ? (
-                                <ChevronDown className="h-4 w-4 text-neutral-500" />
+                                <ChevronDown className="h-4 w-4 text-muted-foreground" />
                               ) : (
-                                <ChevronRight className="h-4 w-4 text-neutral-500" />
+                                <ChevronRight className="h-4 w-4 text-muted-foreground" />
                               )}
-                              <Package className="h-4 w-4 text-neutral-500" />
-                              <span className="truncate text-white">{item.name}</span>
+                              <Package className="h-4 w-4 text-muted-foreground" />
+                              <span className="truncate text-foreground">{item.name}</span>
                             </button>
 
                             {isItemOpen && item.files && (
@@ -497,14 +497,14 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                                     }}
                                     className={cn(
                                       "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
-                                      "hover:bg-neutral-800/50 transition-colors",
-                                      selectedFile?.path === file.path && "bg-neutral-800",
+                                      "hover:bg-accent transition-colors",
+                                      selectedFile?.path === file.path && "bg-surface-elevated",
                                     )}
                                   >
                                     {getFileIcon(file.type)}
-                                    <span className="truncate text-neutral-500">{getFileName(getTargetPath(file))}</span>
+                                    <span className="truncate text-muted-foreground">{getFileName(getTargetPath(file))}</span>
                                     {index === 0 && (
-                                      <span className="ml-auto text-[10px] text-neutral-500/60">entry</span>
+                                      <span className="ml-auto text-[10px] text-muted-foreground/60">entry</span>
                                     )}
                                   </button>
                                 ))}
@@ -531,12 +531,12 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                           }}
                           className={cn(
                             "flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm font-mono",
-                            "hover:bg-neutral-800/50 transition-colors",
-                            selectedFile?.path === firstFile.path && "bg-neutral-800",
+                            "hover:bg-accent transition-colors",
+                            selectedFile?.path === firstFile.path && "bg-surface-elevated",
                           )}
                         >
                           {getFileIcon(item.type)}
-                          <span className="truncate text-neutral-500">{getItemFileName(item)}</span>
+                          <span className="truncate text-muted-foreground">{getItemFileName(item)}</span>
                         </button>
                       )
                     }
@@ -552,12 +552,12 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   // If viewing a single item without files, show empty file tree
   if (isItemView && !hasFileContent) {
     return (
-      <div className="h-full md:border-r border-neutral-800 bg-black">
-        <div className="p-2 md:p-3 border-b border-neutral-800">
-          <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Files</span>
+      <div className="h-full md:border-r border-border bg-background">
+        <div className="p-2 md:p-3 border-b border-border">
+          <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Files</span>
         </div>
         <div className="flex items-center justify-center h-[calc(100%-44px)] md:h-[calc(100%-49px)] p-4">
-          <p className="text-xs text-neutral-600 text-center">
+          <p className="text-xs text-foreground-subtle text-center">
             No files
           </p>
         </div>
@@ -578,8 +578,8 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     )
 
     return (
-      <div className="h-full md:border-r border-neutral-800 bg-black">
-        <div className="p-2 md:p-3 border-b border-neutral-800">
+      <div className="h-full md:border-r border-border bg-background">
+        <div className="p-2 md:p-3 border-b border-border">
           <input
             type="text"
             value={searchQuery}
@@ -599,10 +599,10 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
               }
             }}
             placeholder={`${categoryLabel} (${items.length})`}
-            className="w-full bg-transparent text-xs font-medium text-neutral-500 uppercase tracking-wider placeholder:text-neutral-500 focus:outline-none focus:text-neutral-400"
+            className="w-full bg-transparent text-xs font-medium text-muted-foreground uppercase tracking-wider placeholder:text-muted-foreground focus:outline-none focus:text-muted-foreground"
           />
           {searchQuery && (
-            <div className="text-[10px] text-neutral-600 mt-1">
+            <div className="text-[10px] text-foreground-subtle mt-1">
               {filteredItems.length} of {items.length} items
             </div>
           )}
@@ -623,22 +623,22 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                       href={`${basePath}/${item.name}`}
                       className={cn(
                         "flex items-start gap-2 w-full px-2 py-1.5 rounded",
-                        "hover:bg-neutral-800/50 transition-colors",
-                        isSelected && "bg-neutral-800"
+                        "hover:bg-accent transition-colors",
+                        isSelected && "bg-surface-elevated"
                       )}
                     >
-                      <Icon className="h-4 w-4 text-neutral-500 flex-shrink-0 mt-0.5" />
+                      <Icon className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
                       <div className="flex-1 min-w-0">
-                        <span className="block truncate text-sm text-white">
+                        <span className="block truncate text-sm text-foreground">
                           {item.title || item.name}
                         </span>
                         {item.title && (
-                          <span className="block truncate text-xs font-mono text-neutral-600">
+                          <span className="block truncate text-xs font-mono text-foreground-subtle">
                             {item.name}
                           </span>
                         )}
                         {item.description && (
-                          <span className="block truncate text-xs text-neutral-500 mt-0.5">
+                          <span className="block truncate text-xs text-muted-foreground mt-0.5">
                             {item.description}
                           </span>
                         )}
@@ -647,7 +647,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                   )
                 })
             ) : (
-              <div className="text-center text-neutral-500 text-sm py-4">
+              <div className="text-center text-muted-foreground text-sm py-4">
                 No items found
               </div>
             )}
@@ -659,9 +659,9 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
 
   // Render file tree (Nivel 3 - with file content)
   return (
-    <div className="h-full md:border-r border-neutral-800 bg-black">
-      <div className="p-2 md:p-3 border-b border-neutral-800">
-        <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Registry Items</span>
+    <div className="h-full md:border-r border-border bg-background">
+      <div className="p-2 md:p-3 border-b border-border">
+        <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Registry Items</span>
       </div>
 
       <ScrollArea className="h-[calc(100%-44px)] md:h-[calc(100%-49px)]">

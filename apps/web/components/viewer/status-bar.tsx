@@ -115,14 +115,14 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
   const targetPath = selectedFile ? getTargetPath(selectedFile) : null
 
   return (
-    <footer className="flex items-center justify-between px-3 md:px-4 py-2 border-t border-neutral-800 bg-black text-xs font-mono">
+    <footer className="flex items-center justify-between px-3 md:px-4 py-2 border-t border-border bg-background text-xs font-mono">
       {/* Left side */}
       <div className="flex items-center gap-2 md:gap-4 min-w-0">
-        <span className="text-neutral-500 flex-shrink-0">{totalItems}<span className="hidden md:inline"> items</span></span>
+        <span className="text-muted-foreground flex-shrink-0">{totalItems}<span className="hidden md:inline"> items</span></span>
         {targetPath && (
           <>
-            <span className="text-neutral-700 hidden md:inline">•</span>
-            <span className="text-neutral-400 truncate hidden md:inline">{targetPath}</span>
+            <span className="text-foreground-faint hidden md:inline">•</span>
+            <span className="text-muted-foreground truncate hidden md:inline">{targetPath}</span>
           </>
         )}
       </div>
@@ -135,7 +135,7 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden h-7 gap-1 text-neutral-400 hover:text-white text-xs px-2"
+              className="md:hidden h-7 gap-1 text-muted-foreground hover:text-foreground text-xs px-2"
               disabled={!selectedFile}
               title="Open in AI"
             >
@@ -239,7 +239,7 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
         <Button
           variant="ghost"
           size="sm"
-          className="hidden md:flex h-7 w-7 md:w-auto p-0 md:px-2 md:gap-1.5 text-neutral-400 hover:text-white text-xs"
+          className="hidden md:flex h-7 w-7 md:w-auto p-0 md:px-2 md:gap-1.5 text-muted-foreground hover:text-foreground text-xs"
           onClick={handleOpenInV0}
           disabled={!selectedFile}
           title="Open in v0"
@@ -258,7 +258,7 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
         <Button
           variant="ghost"
           size="sm"
-          className="hidden md:flex h-7 w-7 md:w-auto p-0 md:px-2 md:gap-1.5 text-neutral-400 hover:text-white text-xs"
+          className="hidden md:flex h-7 w-7 md:w-auto p-0 md:px-2 md:gap-1.5 text-muted-foreground hover:text-foreground text-xs"
           onClick={handleOpenInChatGPT}
           disabled={!selectedFile}
           title="Open in ChatGPT"
@@ -275,7 +275,7 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
         <Button
           variant="ghost"
           size="sm"
-          className="hidden md:flex h-7 w-7 md:w-auto p-0 md:px-2 md:gap-1.5 text-neutral-400 hover:text-white text-xs"
+          className="hidden md:flex h-7 w-7 md:w-auto p-0 md:px-2 md:gap-1.5 text-muted-foreground hover:text-foreground text-xs"
           onClick={handleOpenInClaude}
           disabled={!selectedFile}
           title="Open in Claude"
@@ -292,7 +292,7 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
         <Button
           variant="ghost"
           size="sm"
-          className="hidden md:flex h-7 w-7 md:w-auto p-0 md:px-2 md:gap-1.5 text-neutral-400 hover:text-white text-xs"
+          className="hidden md:flex h-7 w-7 md:w-auto p-0 md:px-2 md:gap-1.5 text-muted-foreground hover:text-foreground text-xs"
           onClick={handleOpenInScira}
           disabled={!selectedFile}
           title="Open in Scira"
@@ -356,13 +356,13 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
           <span className="hidden md:inline">Scira</span>
         </Button>
 
-        <div className="hidden md:block w-px h-4 bg-neutral-800 mx-1" />
+        <div className="hidden md:block w-px h-4 bg-border mx-1" />
 
         {/* View as Markdown */}
         <Button
           variant="ghost"
           size="sm"
-          className="h-7 gap-1.5 text-neutral-400 hover:text-white text-xs px-2"
+          className="h-7 gap-1.5 text-muted-foreground hover:text-foreground text-xs px-2"
           onClick={handleOpenMarkdown}
           disabled={!selectedFile}
           title="View as Markdown"
@@ -383,7 +383,7 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
         <Button
           variant="ghost"
           size="sm"
-          className="h-7 gap-1.5 text-neutral-400 hover:text-white text-xs px-2"
+          className="h-7 gap-1.5 text-muted-foreground hover:text-foreground text-xs px-2"
           onClick={onShare}
           disabled={!selectedFile}
           title="Share"
@@ -396,7 +396,7 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
         <Button
           variant="ghost"
           size="sm"
-          className="h-7 w-7 md:w-auto p-0 md:px-2 md:gap-1.5 text-neutral-400 hover:text-white text-xs"
+          className="h-7 w-7 md:w-auto p-0 md:px-2 md:gap-1.5 text-muted-foreground hover:text-foreground text-xs"
           asChild
           title="View on GitHub"
         >
@@ -411,14 +411,14 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
           href="https://x.com/rbadillap"
           target="_blank"
           rel="noopener noreferrer"
-          className="h-7 px-2 flex items-center gap-1.5 hover:bg-neutral-800 rounded transition-colors"
+          className="h-7 px-2 flex items-center gap-1.5 hover:bg-accent rounded transition-colors"
           title="Created by @rbadillap"
         >
           <Avatar className="h-4 w-4">
             <AvatarImage src="https://github.com/rbadillap.png" alt="rbadillap" />
-            <AvatarFallback className="bg-neutral-800 text-neutral-400 text-[10px]">RB</AvatarFallback>
+            <AvatarFallback className="bg-border text-muted-foreground text-[10px]">RB</AvatarFallback>
           </Avatar>
-          <span className="text-xs text-neutral-400 hidden md:inline">@rbadillap</span>
+          <span className="text-xs text-muted-foreground hidden md:inline">@rbadillap</span>
         </a>
       </div>
     </footer>

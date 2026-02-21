@@ -43,7 +43,7 @@ export function RegistryOverview({
   )
 
   return (
-    <div className="h-screen bg-black text-white flex flex-col">
+    <div className="h-screen bg-background text-foreground flex flex-col">
       <ViewerHeader registry={registry} />
 
       <main className="flex-1 overflow-y-auto">
@@ -61,22 +61,22 @@ export function RegistryOverview({
                   loading="eager"
                 />
               )}
-              <h1 className="text-xl md:text-2xl font-semibold text-white text-pretty">
+              <h1 className="text-xl md:text-2xl font-semibold text-foreground text-pretty">
                 {registry.name}
               </h1>
             </div>
             {registry.description && (
-              <p className="text-sm text-neutral-400 leading-relaxed max-w-prose">
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-prose">
                 {registry.description}
               </p>
             )}
 
             {/* Stats Row */}
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-mono text-neutral-400">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-mono text-muted-foreground">
               <span className="tabular-nums">
                 {categories.size} {categories.size === 1 ? "type" : "types"}
               </span>
-              <span className="text-neutral-700" aria-hidden="true">
+              <span className="text-foreground-faint" aria-hidden="true">
                 ·
               </span>
               <span className="tabular-nums">
@@ -84,7 +84,7 @@ export function RegistryOverview({
               </span>
               {githubStats && (
                 <>
-                  <span className="text-neutral-700" aria-hidden="true">
+                  <span className="text-foreground-faint" aria-hidden="true">
                     ·
                   </span>
                   <span className="inline-flex items-center gap-1 tabular-nums">
@@ -94,7 +94,7 @@ export function RegistryOverview({
                     />
                     {formatStars(githubStats.stars)}
                   </span>
-                  <span className="text-neutral-700" aria-hidden="true">
+                  <span className="text-foreground-faint" aria-hidden="true">
                     ·
                   </span>
                   {registry.github_url ? (
@@ -102,12 +102,12 @@ export function RegistryOverview({
                       href={`${registry.github_url.replace(/\.git$/, "")}/commits`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-neutral-500 hover:text-neutral-300 transition-colors"
+                      className="text-muted-foreground hover:text-foreground-secondary transition-colors"
                     >
                       updated {formatRelativeTime(githubStats.lastCommit)}
                     </a>
                   ) : (
-                    <span className="text-neutral-500">
+                    <span className="text-muted-foreground">
                       updated {formatRelativeTime(githubStats.lastCommit)}
                     </span>
                   )}
@@ -123,7 +123,7 @@ export function RegistryOverview({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${registry.name} on GitHub`}
-                  className="inline-flex items-center gap-1.5 text-xs text-neutral-400 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <GitHubIcon className="w-3.5 h-3.5" />
                   <span>GitHub</span>
@@ -134,7 +134,7 @@ export function RegistryOverview({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Visit ${registry.name} website`}
-                className="inline-flex items-center gap-1.5 text-xs text-neutral-400 hover:text-white transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
                 <span>Website</span>
@@ -144,7 +144,7 @@ export function RegistryOverview({
 
           {/* Browse by Type */}
           <section className="space-y-4">
-            <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-wider">
+            <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
               Browse by Type
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -160,17 +160,17 @@ export function RegistryOverview({
                     href={`/${owner}/${repo}/${slug}`}
                     className="group"
                   >
-                    <div className="border border-neutral-800 hover:border-neutral-600 rounded-lg p-4 transition-all bg-black hover:bg-neutral-900/50">
+                    <div className="border border-border hover:border-border rounded-lg p-4 transition-all bg-background hover:bg-accent">
                       <div className="flex items-start gap-3">
                         <Icon
-                          className="w-5 h-5 flex-shrink-0 mt-0.5 text-neutral-500"
+                          className="w-5 h-5 flex-shrink-0 mt-0.5 text-muted-foreground"
                           aria-hidden="true"
                         />
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-sm font-semibold text-white truncate">
+                          <h3 className="text-sm font-semibold text-foreground truncate">
                             {label}
                           </h3>
-                          <p className="text-xs text-neutral-500 mt-1 tabular-nums">
+                          <p className="text-xs text-muted-foreground mt-1 tabular-nums">
                             {items.length}{" "}
                             {items.length === 1 ? "item" : "items"}
                           </p>
@@ -186,17 +186,17 @@ export function RegistryOverview({
           {/* Tags — semantic categories from registry items */}
           {semanticCategories.length > 0 && (
             <section className="space-y-4">
-              <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-wider">
+              <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
                 Tags
               </h2>
               <div className="flex flex-wrap gap-2">
                 {semanticCategories.map((cat) => (
                   <span
                     key={cat.name}
-                    className="inline-flex items-center gap-1.5 rounded-md border border-neutral-800 bg-neutral-900/50 px-2.5 py-1 text-xs text-neutral-300"
+                    className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface/50 px-2.5 py-1 text-xs text-foreground-secondary"
                   >
                     {cat.name}
-                    <span className="text-neutral-500 tabular-nums">
+                    <span className="text-muted-foreground tabular-nums">
                       {cat.count}
                     </span>
                   </span>
