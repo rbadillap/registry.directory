@@ -9,6 +9,7 @@ import { fetchAllGitHubStats } from "@/lib/github-stats";
 import { fetchAllRegistryItems } from "@/lib/registry-items";
 import type { DirectoryEntry } from "@/lib/types";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { HeroTitle } from "@/components/hero-title";
 
 // Enable static generation
 export const dynamic = 'force-static'
@@ -93,12 +94,7 @@ export default async function Home() {
       </div>
 
       <div className="flex items-center gap-2 mb-8 md:mb-10">
-        <h1 className="text-base font-medium font-mono">
-          registry<span className="text-muted-foreground">.directory</span>{" "}
-          <span className="text-[10px] text-muted-foreground rounded-full border border-border px-1.5 py-0.5 font-normal uppercase tracking-widest align-middle">
-            beta
-          </span>
-        </h1>
+        <HeroTitle />
       </div>
 
       <p className="text-sm mb-12 md:mb-14 px-4 text-center font-mono text-muted-foreground">
