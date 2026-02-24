@@ -23,3 +23,11 @@ export type GitHubStats = {
   lastCommit: string; // ISO date
   fetchedAt: string; // ISO date — for cache expiry
 };
+
+export type AffiliateConfig = {
+  url: string;           // Matches DirectoryEntry.url — the join key
+  affiliate_url: string; // URL with tracking params
+  label: string;         // Display name
+  program: string;       // Program identifier for bulk operations
+  logo_url?: string;     // Avatar for entries without github_profile
+};

@@ -6,7 +6,7 @@ import { DirectoryList } from './directory-list';
 import { SearchBar } from './search-bar';
 import { useAnalytics, type SearchResultType } from '@/hooks/use-analytics';
 import { useUrlState } from '@/hooks/use-url-state';
-import type { DirectoryEntry, GitHubStats, RegistryStats } from '@/lib/types';
+import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from '@/lib/types';
 import type { IndexedItem } from '@/lib/items-index';
 import { searchItems } from '@/lib/search-utils';
 
@@ -16,9 +16,10 @@ interface DirectoryTabsProps {
   stats: Record<string, RegistryStats>;
   githubStats: Record<string, Omit<GitHubStats, 'fetchedAt'>>;
   items: IndexedItem[];
+  affiliates: Record<string, AffiliateConfig>;
 }
 
-export function DirectoryTabs({ components, tools, stats, githubStats, items }: DirectoryTabsProps) {
+export function DirectoryTabs({ components, tools, stats, githubStats, items, affiliates }: DirectoryTabsProps) {
   const analytics = useAnalytics();
   const { activeTab, setActiveTab, searchTerm, setSearchTerm } = useUrlState();
   const deferredSearchTerm = useDeferredValue(searchTerm);
@@ -102,6 +103,7 @@ export function DirectoryTabs({ components, tools, stats, githubStats, items }: 
             showViewButton={true}
             stats={stats}
             githubStats={githubStats}
+            affiliates={affiliates}
             itemResults={activeTab === 'components' ? filteredItems : []}
             onResultClick={handleResultClick}
           />

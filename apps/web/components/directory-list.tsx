@@ -20,7 +20,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@workspace/ui/components/avatar";
-import type { DirectoryEntry, GitHubStats, RegistryStats } from "@/lib/types";
+import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from "@/lib/types";
 import type { IndexedItem } from "@/lib/items-index";
 import { addUtmParams } from "@/lib/utm-utils";
 import { formatStars, formatRelativeTime } from "@/lib/format-utils";
@@ -40,11 +40,12 @@ interface DirectoryListProps {
   showViewButton?: boolean;
   stats?: Record<string, RegistryStats>;
   githubStats?: Record<string, Omit<GitHubStats, "fetchedAt">>;
+  affiliates?: Record<string, AffiliateConfig>;
   itemResults?: IndexedItem[];
   onResultClick?: (data: ResultClickData) => void;
 }
 
-export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLabel, showViewButton = false, stats, githubStats, itemResults = [], onResultClick }: DirectoryListProps) {
+export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], onResultClick }: DirectoryListProps) {
   const showAddCard = !searchTerm && addCardUrl && addCardLabel;
   const hasItems = itemResults.length > 0;
   const hasRegistries = entries.length > 0;
@@ -94,6 +95,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
       {entries.map((entry, index) => {
         const gh = entry.github_url ? githubStats?.[entry.github_url] : undefined;
         const s = stats?.[entry.url];
+        const affiliate = affiliates?.[entry.url];
 
         // Build viewer route for Components tab
         const viewerHref = (() => {
@@ -105,9 +107,15 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
           return `/${owner}/${repo}`;
         })();
 
+        // Standard card (same layout for all, with optional sponsored ribbon for affiliates)
         return (
           <div key={encodeURIComponent(entry.url)} className="h-full">
-            <Card className="bg-background border border-border-subtle rounded-none overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col">
+            <Card className="bg-background border border-border-subtle rounded-none overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col relative">
+              {affiliate && (
+                <span className="absolute top-0 right-0 text-[9px] font-mono uppercase tracking-wider text-muted-foreground bg-secondary border-b border-l border-border-subtle px-1.5 py-0.5 z-10">
+                  Sponsored
+                </span>
+              )}
               <CardHeader className="flex flex-row items-start justify-between gap-2 bg-background pt-4 pb-2">
                 <div className="flex items-center gap-2.5 flex-1 min-w-0">
                   {entry.github_profile ? (
@@ -141,9 +149,9 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
                     </a>
                   )}
                   <a
-                    href={addUtmParams(entry.url, "registry_preview")}
+                    href={affiliate ? affiliate.affiliate_url : addUtmParams(entry.url, "registry_preview")}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     aria-label={`Visit ${entry.name} website`}
                     className="text-foreground-subtle hover:text-muted-foreground transition-colors"
                   >

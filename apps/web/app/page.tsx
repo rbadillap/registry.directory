@@ -7,6 +7,8 @@ import { DirectoryTabsSkeleton } from "@/components/directory-tabs-skeleton";
 import { fetchAllRegistryStats } from "@/lib/registry-stats";
 import { fetchAllGitHubStats } from "@/lib/github-stats";
 import { fetchAllRegistryItems } from "@/lib/registry-items";
+import { getAffiliates } from "@/lib/affiliates";
+import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import type { DirectoryEntry } from "@/lib/types";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { HeroTitle } from "@/components/hero-title";
@@ -82,10 +84,11 @@ async function getTools(): Promise<DirectoryEntry[]> {
 export default async function Home() {
   const components = await getRegistries();
   const tools = await getTools();
-  const [stats, githubStats, items] = await Promise.all([
+  const [stats, githubStats, items, affiliates] = await Promise.all([
     fetchAllRegistryStats(components),
     fetchAllGitHubStats(components),
     fetchAllRegistryItems(components),
+    getAffiliates(),
   ]);
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-start pt-24 md:pt-32 pb-12 md:pb-20">
@@ -127,8 +130,10 @@ export default async function Home() {
       </p>
 
       <Suspense fallback={<DirectoryTabsSkeleton />}>
-        <DirectoryTabs components={components} tools={tools} stats={stats} githubStats={githubStats} items={items} />
+        <DirectoryTabs components={components} tools={tools} stats={stats} githubStats={githubStats} items={items} affiliates={affiliates} />
       </Suspense>
+
+      <AffiliateDisclosure />
     </main>
   );
 }
