@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next"
 
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
+import { FeedbackWidget } from "@/components/feedback-widget"
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -49,6 +50,7 @@ export default function RootLayout({
         <Providers>
           {children}
         </Providers>
+        <FeedbackWidget />
         <Analytics />
       </body>
     </html>
