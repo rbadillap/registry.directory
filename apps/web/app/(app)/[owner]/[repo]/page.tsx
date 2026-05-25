@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation"
+import { notFound, redirect } from "next/navigation"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import type { Metadata } from "next"
@@ -103,6 +103,20 @@ export async function generateStaticParams() {
     .filter(Boolean) as { owner: string; repo: string }[]
 }
 
+// Some partner registries (e.g. shadcn/studio) don't publish an aggregate
+// registry.json index — they only expose per-item namespaced files. We can't
+// build an overview without that index, so we send visitors to the registry's
+// own site (tagged with ?ref=registrydirectory) instead of showing a 404.
+function externalRegistryUrl(rawUrl: string): string {
+  try {
+    const url = new URL(rawUrl)
+    url.searchParams.set("ref", "registrydirectory")
+    return url.toString()
+  } catch {
+    return rawUrl
+  }
+}
+
 export type SemanticCategory = { name: string; count: number }
 
 function extractSemanticCategories(items: RegistryItem[]): SemanticCategory[] {
@@ -133,19 +147,17 @@ export default async function RegistryOverviewPage({
 
   const registryData = await fetchRegistryData(registry)
 
-  if (!registryData) {
-    notFound()
-  }
-
-  if (!registryData.items || !Array.isArray(registryData.items)) {
-    notFound()
+  // Registry is known but exposes no usable aggregate index — redirect to the
+  // partner's own site rather than dead-ending visitors on a 404.
+  if (!registryData || !registryData.items || !Array.isArray(registryData.items)) {
+    redirect(externalRegistryUrl(registry.url))
   }
 
   // Group items by type
   const categoriesMap = groupItemsByCategory(registryData.items)
 
   if (categoriesMap.size === 0) {
-    notFound()
+    redirect(externalRegistryUrl(registry.url))
   }
 
   // Fetch GitHub stats, semantic categories, and affiliates in parallel
