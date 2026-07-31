@@ -1,3 +1,23 @@
+export type ProOfferings = {
+  pro_blocks: boolean;
+  templates: boolean;
+  figma_kit: boolean;
+  mcp_agent: boolean;
+  team_license: boolean;
+};
+
+// Fixed row order for the PRO card — the offer taxonomy is comparable
+// across registries only if every landing lists the same five, in the same order.
+export const PRO_OFFERING_LABELS: ReadonlyArray<
+  [keyof ProOfferings, string]
+> = [
+  ["pro_blocks", "Pro blocks & components"],
+  ["templates", "Templates"],
+  ["figma_kit", "Figma kit"],
+  ["mcp_agent", "MCP / agent skills"],
+  ["team_license", "Team license"],
+];
+
 export type DirectoryEntry = {
   name: string;
   description: string;
@@ -5,6 +25,9 @@ export type DirectoryEntry = {
   github_url?: string;
   github_profile?: string;
   registry_url?: string;
+  namespace?: string; // official shadcn registry handle, e.g. "@aceternity"
+  featured?: string[]; // 1–6 item names, curated; empty/absent hides the section
+  pro?: ProOfferings; // absent hides the PRO card; present requires all five
 };
 
 export type CategoryStat = {

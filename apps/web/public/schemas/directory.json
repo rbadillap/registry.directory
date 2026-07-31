@@ -50,6 +50,56 @@
             "format": "uri",
             "description": "Direct URL to registry.json file (if different from url/r/registry.json)",
             "pattern": "^https://"
+          },
+          "namespace": {
+            "type": "string",
+            "description": "Official shadcn registry namespace handle (e.g. @aceternity), as listed in the shadcn registry index",
+            "pattern": "^@[a-z0-9][a-z0-9-]*$"
+          },
+          "featured": {
+            "type": "array",
+            "description": "Item names curated for the landing page. Absent or empty hides the Featured section; at most 6 are shown",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "maxItems": 6,
+            "uniqueItems": true
+          },
+          "pro": {
+            "type": "object",
+            "description": "Paid offering checks. Absent hides the PRO card; when present all five must be declared so absences (false) are comparable data",
+            "required": [
+              "pro_blocks",
+              "templates",
+              "figma_kit",
+              "mcp_agent",
+              "team_license"
+            ],
+            "properties": {
+              "pro_blocks": {
+                "type": "boolean",
+                "description": "Sells pro blocks / components"
+              },
+              "templates": {
+                "type": "boolean",
+                "description": "Sells complete templates"
+              },
+              "figma_kit": {
+                "type": "boolean",
+                "description": "Offers a Figma kit"
+              },
+              "mcp_agent": {
+                "type": "boolean",
+                "description": "Offers MCP server / agent skills / AI tooling"
+              },
+              "team_license": {
+                "type": "boolean",
+                "description": "Offers a team license tier"
+              }
+            },
+            "additionalProperties": false
           }
         },
         "additionalProperties": false

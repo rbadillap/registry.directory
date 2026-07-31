@@ -26,6 +26,9 @@ Derive every field from data you already control. Fetch your own `registry.json`
 | `registry_url` | yes | Direct https URL to the `registry.json` index. **This is the unique key of your submission** — updates and deduplication match on it |
 | `github_url` | no | Source repository, must start with `https://github.com/` |
 | `github_profile` | no | Avatar URL, typically `https://github.com/<owner>.png` |
+| `namespace` | no | Your official [shadcn registry index](https://ui.shadcn.com/docs/registry/registry-index) handle, e.g. `"@acme"` (pattern `@[a-z0-9][a-z0-9-]*`). Only send it if your registry is actually listed there — it is verified during review, and it powers the namespaced install command on your landing page |
+| `featured` | no | 1–6 item `name`s from your own `registry.json`, in display order. They become the Featured section of your landing page and the item shown in the install command. Every name is verified against your index during review; names that don't resolve are dropped. Omit the field entirely rather than sending an empty array |
+| `pro` | no | Declare it only if you sell a paid tier. An object with **all five** booleans: `pro_blocks`, `templates`, `figma_kit`, `mcp_agent`, `team_license`. `false` values are data (they render as explicit ✗ on your landing page), so declare the five honestly — claims are audited against your site during review |
 
 ## Submit
 
@@ -38,9 +41,20 @@ curl -X POST https://registry.directory/api/submit \
     "url": "https://example.com/",
     "registry_url": "https://example.com/r/registry.json",
     "github_url": "https://github.com/acme/example-ui",
-    "github_profile": "https://github.com/acme.png"
+    "github_profile": "https://github.com/acme.png",
+    "namespace": "@example",
+    "featured": ["area-chart", "sparkline", "data-table"],
+    "pro": {
+      "pro_blocks": true,
+      "templates": true,
+      "figma_kit": false,
+      "mcp_agent": false,
+      "team_license": true
+    }
   }'
 ```
+
+The last three fields are optional — a plain open-source registry submits only the first six.
 
 ## Responses
 
@@ -75,7 +89,7 @@ The pending submission is replaced by the new payload. The token exists so only 
 
 ## What happens after you submit
 
-1. A maintainer's agent audits the submission: it fetches your `registry.json` and several individual items, and verifies they resolve with real content (the criterion in [Prerequisites](#prerequisites)).
+1. A maintainer's agent audits the submission: it fetches your `registry.json` and several individual items, and verifies they resolve with real content (the criterion in [Prerequisites](#prerequisites)). If you sent the optional fields, those are audited too: `namespace` is checked against the official shadcn registry index, every `featured` name is checked against your index, and each `pro` boolean is checked against what your site actually offers.
 2. A human maintainer makes the final decision.
 3. On approval, your registry is committed to the directory and appears on the site after the next build. Review typically takes a few days.
 

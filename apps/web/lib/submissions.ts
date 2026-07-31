@@ -31,6 +31,33 @@ export const submissionSchema = z.object({
     .url("github_profile must be a valid URL")
     .startsWith("https://", `github_profile must use https — typically https://github.com/<owner>.png. See ${DOCS_URL}#fields`)
     .optional(),
+  namespace: z
+    .string()
+    .regex(
+      /^@[a-z0-9][a-z0-9-]*$/,
+      `namespace must be your official shadcn registry handle, e.g. @acme. See ${DOCS_URL}#fields`
+    )
+    .optional(),
+  featured: z
+    .array(z.string().min(1, "featured item names cannot be empty"))
+    .min(1, "featured cannot be an empty array — omit it instead")
+    .max(6, "featured accepts at most 6 item names")
+    .optional(),
+  pro: z
+    .object(
+      {
+        pro_blocks: z.boolean(),
+        templates: z.boolean(),
+        figma_kit: z.boolean(),
+        mcp_agent: z.boolean(),
+        team_license: z.boolean(),
+      },
+      {
+        invalid_type_error: `pro must be an object declaring all five offering booleans: pro_blocks, templates, figma_kit, mcp_agent, team_license. See ${DOCS_URL}#fields`,
+      }
+    )
+    .strict()
+    .optional(),
 });
 
 export type SubmissionInput = z.infer<typeof submissionSchema>;
