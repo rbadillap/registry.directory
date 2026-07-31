@@ -7,9 +7,10 @@ interface SearchBarProps {
   onChange: (value: string) => void;
   placeholder?: string;
   className?: string;
+  large?: boolean;
 }
 
-export function SearchBar({ value, onChange, placeholder = "Search registries and components...", className }: SearchBarProps) {
+export function SearchBar({ value, onChange, placeholder = "Search registries and components...", className, large }: SearchBarProps) {
   const handleClear = () => {
     onChange('');
   };
@@ -17,14 +18,14 @@ export function SearchBar({ value, onChange, placeholder = "Search registries an
   return (
     <div className={className}>
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+        <Search className={`absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground ${large ? "w-5 h-5 left-4" : "w-4 h-4"}`} />
         <input
           type="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           aria-label={placeholder}
-          className="w-full pl-10 pr-10 py-2 bg-background border border-input rounded-none text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground outline-none transition-[color,box-shadow] font-mono text-sm focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+          className={`w-full pr-10 bg-background border border-input rounded-none text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground outline-none transition-[color,box-shadow] font-mono focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ${large ? "pl-12 py-3.5 text-base" : "pl-10 py-2 text-sm"}`}
           autoComplete="off"
           spellCheck="false"
         />

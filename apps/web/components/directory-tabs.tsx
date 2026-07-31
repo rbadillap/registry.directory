@@ -1,16 +1,26 @@
 'use client';
 
-import { useMemo, useDeferredValue, useEffect, useCallback } from 'react';
+import { useState, useMemo, useDeferredValue, useEffect, useCallback } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
 import { DirectoryList } from './directory-list';
 import { SearchBar } from './search-bar';
-import { useAnalytics, type SearchResultType } from '@/hooks/use-analytics';
+import { useAnalytics, type SearchResultType, type HomeTab } from '@/hooks/use-analytics';
 import { useUrlState } from '@/hooks/use-url-state';
 import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from '@/lib/types';
 import type { IndexedItem } from '@/lib/items-index';
 import { searchItems } from '@/lib/search-utils';
 
 type SortMode = 'popular' | 'stars' | 'recently-active';
+
+function filterBySearch(entries: DirectoryEntry[], searchTerm: string): DirectoryEntry[] {
+  if (!searchTerm) return entries;
+  const term = searchTerm.toLowerCase();
+  return entries.filter(entry =>
+    entry.name.toLowerCase().includes(term) ||
+    entry.description.toLowerCase().includes(term) ||
+    entry.url.toLowerCase().includes(term)
+  );
+}
 
 type GitHubStatsRecord = Record<string, Omit<GitHubStats, 'fetchedAt'>>;
 
@@ -69,15 +79,23 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
   const { activeTab, setActiveTab, searchTerm, setSearchTerm } = useUrlState();
   const deferredSearchTerm = useDeferredValue(searchTerm);
 
-  const filteredComponents = useMemo(() => {
-    if (!searchTerm) return components;
-    const term = searchTerm.toLowerCase();
-    return components.filter(entry =>
-      entry.name.toLowerCase().includes(term) ||
-      entry.description.toLowerCase().includes(term) ||
-      entry.url.toLowerCase().includes(term)
-    );
-  }, [components, searchTerm]);
+  const [premiumOnly, setPremiumOnly] = useState(false);
+
+  const filteredComponents = useMemo(
+    () => filterBySearch(premiumOnly ? components.filter(entry => entry.pro) : components, searchTerm),
+    [components, searchTerm, premiumOnly]
+  );
+
+  const handlePremiumToggle = useCallback(() => {
+    const enabled = !premiumOnly;
+    setPremiumOnly(enabled);
+    analytics.trackPremiumToggled({
+      enabled,
+      active_tab: activeTab as HomeTab,
+      has_query: Boolean(searchTerm),
+      results_count: filterBySearch(enabled ? components.filter(entry => entry.pro) : components, searchTerm).length,
+    });
+  }, [premiumOnly, activeTab, searchTerm, components, analytics]);
 
   // Sort the (filtered) registries by the active tab. Search filters, sort orders.
   const sortedComponents = useMemo(
@@ -98,8 +116,9 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
       active_tab: activeTab as SortMode,
       registry_results_count: sortedComponents.length,
       item_results_count: filteredItems.length,
+      premium_only: premiumOnly,
     });
-  }, [deferredSearchTerm, activeTab, sortedComponents.length, filteredItems.length, analytics]);
+  }, [deferredSearchTerm, activeTab, sortedComponents.length, filteredItems.length, premiumOnly, analytics]);
 
   const handleResultClick = useCallback((result: { result_type: SearchResultType; result_name: string; result_position: number }) => {
     if (!searchTerm) return;
@@ -113,19 +132,56 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
   return (
     <div className="w-full max-w-7xl mx-auto px-4">
       <Tabs defaultValue="popular" value={activeTab} onValueChange={setActiveTab}>
-        <div className="sticky top-0 z-10 bg-background flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mb-4 md:mb-6 py-3">
-          <TabsList>
-            <TabsTrigger value="popular">Popular</TabsTrigger>
-            <TabsTrigger value="stars">Stars</TabsTrigger>
-            <TabsTrigger value="recently-active">Recently active</TabsTrigger>
-          </TabsList>
+        <div className="sticky top-0 z-10 bg-background flex flex-col gap-3 mb-4 md:mb-6 py-3">
+          <SearchBar
+            large
+            value={searchTerm}
+            onChange={setSearchTerm}
+            placeholder="Search registries and components..."
+          />
 
-          <div className="flex-1 w-full sm:w-auto">
-            <SearchBar
-              value={searchTerm}
-              onChange={setSearchTerm}
-              placeholder="Search registries and components..."
-            />
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <TabsList>
+              <TabsTrigger value="popular">Popular</TabsTrigger>
+              <TabsTrigger value="stars">Stars</TabsTrigger>
+              <TabsTrigger value="recently-active">Recently active</TabsTrigger>
+            </TabsList>
+
+            <div className="h-4 w-px bg-border" aria-hidden="true" />
+
+            <button
+              type="button"
+              role="switch"
+              aria-checked={premiumOnly}
+              onClick={handlePremiumToggle}
+              className="group inline-flex items-center gap-2 py-2 font-mono text-sm font-medium transition-colors"
+            >
+              <span
+                aria-hidden="true"
+                className={`flex h-4 w-7 items-center border p-0.5 transition-colors ${
+                  premiumOnly
+                    ? "justify-end border-emerald-500/60 bg-emerald-500/15"
+                    : "justify-start border-border bg-transparent"
+                }`}
+              >
+                <span
+                  className={`h-2.5 w-2.5 transition-colors ${
+                    premiumOnly
+                      ? "bg-emerald-500 dark:bg-emerald-400"
+                      : "bg-muted-foreground group-hover:bg-foreground-secondary"
+                  }`}
+                />
+              </span>
+              <span
+                className={
+                  premiumOnly
+                    ? "text-emerald-600 dark:text-emerald-400"
+                    : "text-muted-foreground group-hover:text-foreground-secondary"
+                }
+              >
+                Premium only
+              </span>
+            </button>
           </div>
         </div>
 
@@ -140,6 +196,7 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
             affiliates={affiliates}
             itemResults={filteredItems}
             onResultClick={handleResultClick}
+            premiumFilterActive={premiumOnly}
           />
         </TabsContent>
       </Tabs>

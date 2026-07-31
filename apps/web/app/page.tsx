@@ -52,6 +52,7 @@ async function getRegistries(): Promise<DirectoryEntry[]> {
       github_url: registry.github_url,
       github_profile: registry.github_profile,
       registry_url: registry.registry_url,
+      pro: registry.pro,
     }));
   } catch (error) {
     console.error("Error reading directory.json:", error);
