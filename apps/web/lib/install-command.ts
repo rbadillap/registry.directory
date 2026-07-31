@@ -3,8 +3,7 @@ import type { DirectoryEntry } from "@/lib/types"
 type InstallCommandOptions = {
   registry: DirectoryEntry
   itemName: string
-  owner: string
-  repo: string
+  basePath?: string
 }
 
 /**
@@ -12,10 +11,10 @@ type InstallCommandOptions = {
  * Returns the appropriate format based on the registry type.
  */
 export function getInstallCommand(options: InstallCommandOptions): string {
-  const { registry, itemName, owner, repo } = options
+  const { registry, itemName, basePath } = options
 
   // Special case: official shadcn uses simple alias
-  if (owner === 'shadcn-ui' && repo === 'ui') {
+  if (basePath === '/shadcn-ui/ui') {
     return itemName
   }
 

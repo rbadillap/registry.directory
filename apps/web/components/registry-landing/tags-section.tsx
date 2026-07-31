@@ -1,4 +1,4 @@
-import type { SemanticCategory } from "@/app/(app)/[owner]/[repo]/page"
+import type { SemanticCategory } from "@/lib/landing-data"
 
 interface TagsSectionProps {
   tags: SemanticCategory[]

@@ -4,7 +4,7 @@ import { getInstallCommand } from "@/lib/install-command"
 import { sortByTypeRelevance } from "@/lib/registry-mappings"
 import type { RegistryItem } from "@/lib/registry-types"
 import type { AffiliateConfig, DirectoryEntry } from "@/lib/types"
-import type { SemanticCategory } from "@/app/(app)/[owner]/[repo]/page"
+import type { SemanticCategory } from "@/lib/landing-data"
 import { LandingHero } from "./landing-hero"
 import { InstallCard } from "./install-card"
 import { ProCard } from "./pro-card"
@@ -14,8 +14,8 @@ import { TagsSection } from "./tags-section"
 
 interface RegistryLandingProps {
   registry: DirectoryEntry
-  owner: string
-  repo: string
+  // Route prefix this landing lives under: "/{owner}/{repo}" or "/{handle}"
+  basePath: string
   // null = degraded mode: the registry exposes no usable aggregate index
   categories: Map<string, RegistryItem[]> | null
   featuredItems: RegistryItem[]
@@ -27,8 +27,7 @@ interface RegistryLandingProps {
 
 export function RegistryLanding({
   registry,
-  owner,
-  repo,
+  basePath,
   categories,
   featuredItems,
   totalItems,
@@ -51,20 +50,19 @@ export function RegistryLanding({
       : null
   }
   const installArg = installItemName
-    ? getInstallCommand({ registry, itemName: installItemName, owner, repo })
+    ? getInstallCommand({ registry, itemName: installItemName, basePath })
     : null
 
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
-      <ViewerHeader registry={registry} affiliate={affiliate} />
+      <ViewerHeader registry={registry} affiliate={affiliate} basePath={basePath} />
 
       <main className="flex-1 overflow-y-auto">
         <div className="mx-auto w-full max-w-[1080px] space-y-10 px-4 py-8 md:px-6 md:py-12">
           <section className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_440px] lg:items-start lg:gap-16">
             <LandingHero
               registry={registry}
-              owner={owner}
-              repo={repo}
+              basePath={basePath}
               typesCount={categories?.size ?? 0}
               totalItems={totalItems}
               githubStats={githubStats}
@@ -83,13 +81,12 @@ export function RegistryLanding({
           {featuredItems.length > 0 && (
             <FeaturedGrid
               items={featuredItems.slice(0, 6)}
-              owner={owner}
-              repo={repo}
+              basePath={basePath}
             />
           )}
 
           {!degraded && (
-            <BrowseByType categories={categories!} owner={owner} repo={repo} />
+            <BrowseByType categories={categories!} basePath={basePath} />
           )}
 
           {!degraded && <TagsSection tags={semanticCategories} />}

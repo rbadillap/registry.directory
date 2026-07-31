@@ -1,12 +1,12 @@
 import type { RegistryItem } from "./registry-types"
 import type { DirectoryEntry } from "./types"
 import { getTargetPath } from "./path-utils"
+import { parseGithubRef } from "./resolve-registry"
 
 export function generateMarkdownForItem(
   item: RegistryItem,
   registry: DirectoryEntry,
-  owner: string,
-  repo: string
+  basePath: string
 ): string {
   const markdown: string[] = []
 
@@ -25,8 +25,9 @@ export function generateMarkdownForItem(
   markdown.push('')
   markdown.push(`- **Type**: \`${item.type}\``)
   markdown.push(`- **Registry**: [${registry.name}](${registry.url})`)
-  if (registry.github_url) {
-    markdown.push(`- **Repository**: [${owner}/${repo}](${registry.github_url})`)
+  const gh = parseGithubRef(registry.github_url)
+  if (gh && registry.github_url) {
+    markdown.push(`- **Repository**: [${gh.owner}/${gh.repo}](${registry.github_url})`)
   }
   markdown.push(`- **Files**: ${item.files?.length || 0}`)
 
@@ -81,7 +82,7 @@ export function generateMarkdownForItem(
   // Footer
   markdown.push('---')
   markdown.push('')
-  markdown.push(`Generated from [registry.directory](https://registry.directory/${owner}/${repo}/${item.name})`)
+  markdown.push(`Generated from [registry.directory](https://registry.directory${basePath}/${item.name})`)
 
   return markdown.join('\n')
 }
