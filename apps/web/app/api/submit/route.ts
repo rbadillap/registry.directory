@@ -26,9 +26,13 @@ function directoryJsonUrl(requestUrl: string): URL {
   return new URL("https://registry.directory/directory.json");
 }
 
+// A registry is "already listed" when EITHER of the submitted identifiers
+// (registry_url or homepage url) matches EITHER identifier of a listed entry —
+// 31 of 65 entries have no registry_url, so matching only on it lets anyone
+// re-submit them under a fresh registry_url.
 async function isAlreadyListed(
   requestUrl: string,
-  registryUrl: string
+  submission: { url: string; registry_url: string }
 ): Promise<boolean> {
   try {
     const response = await fetch(directoryJsonUrl(requestUrl), {
@@ -36,13 +40,15 @@ async function isAlreadyListed(
     });
     if (!response.ok) return false;
     const directory = (await response.json()) as DirectoryFile;
-    const normalized = normalizeRegistryUrl(registryUrl);
-    return directory.registries.some(
-      (entry) =>
-        (entry.registry_url &&
-          normalizeRegistryUrl(entry.registry_url) === normalized) ||
-        normalizeRegistryUrl(entry.url) === normalized
+    const submitted = [submission.registry_url, submission.url].map(
+      normalizeRegistryUrl
     );
+    return directory.registries.some((entry) => {
+      const listed = [entry.registry_url, entry.url]
+        .filter((u): u is string => Boolean(u))
+        .map(normalizeRegistryUrl);
+      return listed.some((identifier) => submitted.includes(identifier));
+    });
   } catch {
     return false;
   }
@@ -92,7 +98,7 @@ export async function POST(request: Request) {
     );
   }
 
-  if (await isAlreadyListed(request.url, parsed.data.registry_url)) {
+  if (await isAlreadyListed(request.url, parsed.data)) {
     return NextResponse.json(
       {
         error:
