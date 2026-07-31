@@ -105,6 +105,7 @@ export interface SearchPerformedProperties {
   active_tab: HomeTab;
   registry_results_count: number;
   item_results_count: number;
+  premium_only: boolean;
 }
 
 export interface SearchResultClickedProperties {
@@ -112,6 +113,19 @@ export interface SearchResultClickedProperties {
   result_type: SearchResultType;
   result_name: string;
   result_position: number;
+}
+
+export interface PremiumToggledProperties {
+  enabled: boolean;
+  active_tab: HomeTab;
+  has_query: boolean;
+  results_count: number;
+}
+
+export interface HomeRegistryVisitProperties {
+  registry: string;
+  sponsored: boolean;
+  premium_filter_active: boolean;
 }
 
 // ============================================================================
@@ -137,6 +151,10 @@ export const ANALYTICS_EVENTS = {
   // Home search
   HOME_SEARCH_PERFORMED: "home.search.performed",
   HOME_SEARCH_RESULT_CLICKED: "home.search.result_clicked",
+
+  // Home discovery
+  HOME_PREMIUM_TOGGLED: "home.premium.toggled",
+  HOME_REGISTRY_VISIT: "home.registry.visit",
 } as const;
 
 // ============================================================================
@@ -318,6 +336,14 @@ class Analytics {
 
   trackSearchResultClicked(properties: SearchResultClickedProperties & Partial<BaseEventProperties>): void {
     this.#trackEvent(ANALYTICS_EVENTS.HOME_SEARCH_RESULT_CLICKED, properties);
+  }
+
+  trackPremiumToggled(properties: PremiumToggledProperties & Partial<BaseEventProperties>): void {
+    this.#trackEvent(ANALYTICS_EVENTS.HOME_PREMIUM_TOGGLED, properties);
+  }
+
+  trackHomeRegistryVisit(properties: HomeRegistryVisitProperties & Partial<BaseEventProperties>): void {
+    this.#trackEvent(ANALYTICS_EVENTS.HOME_REGISTRY_VISIT, properties);
   }
 }
 

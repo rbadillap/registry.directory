@@ -23,6 +23,7 @@ import {
 import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from "@/lib/types";
 import type { IndexedItem } from "@/lib/items-index";
 import { addUtmParams } from "@/lib/utm-utils";
+import { useAnalytics } from "@/hooks/use-analytics";
 import { formatStars, formatRelativeTime } from "@/lib/format-utils";
 import { REGISTRY_TYPE_LABELS, REGISTRY_TYPE_ICONS } from "@/lib/registry-mappings";
 import { SubmitRegistryCard } from "@/components/submit-registry-dialog";
@@ -43,9 +44,11 @@ interface DirectoryListProps {
   affiliates?: Record<string, AffiliateConfig>;
   itemResults?: IndexedItem[];
   onResultClick?: (data: ResultClickData) => void;
+  premiumFilterActive?: boolean;
 }
 
-export function DirectoryList({ entries, searchTerm = '', addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], onResultClick }: DirectoryListProps) {
+export function DirectoryList({ entries, searchTerm = '', addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], onResultClick, premiumFilterActive = false }: DirectoryListProps) {
+  const { trackHomeRegistryVisit } = useAnalytics();
   const showAddCard = !searchTerm && addCardLabel;
   const hasItems = itemResults.length > 0;
   const hasRegistries = entries.length > 0;
@@ -131,6 +134,11 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
                     rel="noopener noreferrer"
                     aria-label={`Visit ${entry.name} website`}
                     className="text-foreground-subtle hover:text-muted-foreground transition-colors"
+                    onClick={() => trackHomeRegistryVisit({
+                      registry: entry.name,
+                      sponsored: Boolean(affiliate),
+                      premium_filter_active: premiumFilterActive,
+                    })}
                   >
                     <ExternalLinkIcon className="w-3.5 h-3.5" />
                   </a>
