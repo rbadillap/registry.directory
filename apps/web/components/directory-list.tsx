@@ -77,14 +77,20 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
         const s = stats?.[entry.url];
         const affiliate = affiliates?.[entry.url];
 
-        // Build viewer route for Components tab
+        // Build viewer route for Components tab: github pair first, then the
+        // /{handle} shortlink for namespaced entries without a repo
         const viewerHref = (() => {
           if (!showViewButton) return null;
           const match = entry.github_url?.match(/github\.com\/([^/]+)\/([^/]+)/);
-          if (!match) return null;
-          const owner = match[1];
-          const repo = match[2]?.replace(/\.git$/, '');
-          return `/${owner}/${repo}`;
+          if (match) {
+            const owner = match[1];
+            const repo = match[2]?.replace(/\.git$/, '');
+            return `/${owner}/${repo}`;
+          }
+          if (entry.namespace) {
+            return `/${entry.namespace.replace(/^@/, '')}`;
+          }
+          return null;
         })();
 
         // Standard card (same layout for all, with optional sponsored ribbon for affiliates)
@@ -228,7 +234,7 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
       <div className="relative">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5">
           {visibleItems.map((item, index) => {
-            const registryKey = `${item.registry.owner}/${item.registry.repo}`;
+            const registryKey = item.registry.basePath;
             const itemTypeSlug = item.type.replace('registry:', '');
             const typeLabel = REGISTRY_TYPE_LABELS[itemTypeSlug] || itemTypeSlug;
             const TypeIcon = REGISTRY_TYPE_ICONS[itemTypeSlug] || Package;
@@ -236,7 +242,7 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
             return (
               <Link
                 key={`${registryKey}/${item.name}`}
-                href={`/${item.registry.owner}/${item.registry.repo}/${item.name}`}
+                href={`${item.registry.basePath}/${item.name}`}
                 onClick={() => onResultClick?.({ result_type: "item", result_name: item.name, result_position: index })}
               >
                 <Card className="bg-background border border-border-subtle rounded-none overflow-hidden shadow-none hover:shadow-lg hover:border-border transition-all h-full flex flex-col">
@@ -244,7 +250,9 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-1.5 min-w-0">
                         <Avatar className="w-4 h-4 flex-shrink-0">
-                          <AvatarImage src={`https://github.com/${item.registry.owner}.png`} alt="" />
+                          {item.registry.avatarUrl && (
+                            <AvatarImage src={item.registry.avatarUrl} alt="" />
+                          )}
                           <AvatarFallback className="bg-secondary text-muted-foreground text-[10px]">
                             {item.registry.name.charAt(0)}
                           </AvatarFallback>

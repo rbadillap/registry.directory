@@ -68,7 +68,7 @@ export function searchItems(
       scored.push({
         item,
         score: totalScore,
-        registryKey: `${item.registry.owner}/${item.registry.repo}`,
+        registryKey: item.registry.basePath,
       });
     }
   }
