@@ -91,15 +91,9 @@ function SubmitRegistryModal({ onClose }: { onClose: () => void }) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-4 flex items-start justify-between gap-4 animate-in fade-in-0 slide-in-from-bottom-2 fill-mode-backwards duration-300">
-          <div>
-            <h2 className="text-base font-semibold text-balance">
-              Submit your registry
-            </h2>
-            <p className="mt-1 text-sm text-muted-foreground text-pretty">
-              One POST, no account, no fork. Hand the instructions to your
-              agent — or run the request yourself.
-            </p>
-          </div>
+          <h2 className="text-base font-semibold text-balance">
+            Submit your registry
+          </h2>
           <Button
             type="button"
             variant="ghost"
@@ -117,13 +111,13 @@ function SubmitRegistryModal({ onClose }: { onClose: () => void }) {
             className="animate-in fade-in-0 slide-in-from-bottom-2 fill-mode-backwards duration-300"
             style={{ animationDelay: "75ms" }}
           >
-            <CopyBlock label="Tell your agent" text={AGENT_PROMPT} />
+            <CopyBlock label="Agent prompt" text={AGENT_PROMPT} />
           </div>
           <div
             className="animate-in fade-in-0 slide-in-from-bottom-2 fill-mode-backwards duration-300"
             style={{ animationDelay: "150ms" }}
           >
-            <CopyBlock label="Or do it yourself" text={CURL_SNIPPET} />
+            <CopyBlock label="curl" text={CURL_SNIPPET} />
           </div>
         </div>
 
@@ -131,7 +125,7 @@ function SubmitRegistryModal({ onClose }: { onClose: () => void }) {
           className="mt-4 text-xs text-muted-foreground text-pretty animate-in fade-in-0 slide-in-from-bottom-2 fill-mode-backwards duration-300"
           style={{ animationDelay: "225ms" }}
         >
-          Full contract — fields, responses, updates:{" "}
+          Docs:{" "}
           <a
             href={DOCS_PATH}
             target="_blank"
@@ -140,8 +134,8 @@ function SubmitRegistryModal({ onClose }: { onClose: () => void }) {
           >
             /how-to-submit.md
           </a>
-          . Every submission is audited before listing: your registry must
-          resolve with real, installable content.
+          {" "}· Every submission is audited before listing. Your registry
+          must resolve with real, installable content.
         </p>
       </div>
     </div>
