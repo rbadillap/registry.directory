@@ -1,3 +1,4 @@
+import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 import { put } from "@vercel/blob";
 import { z } from "zod";
 
@@ -47,12 +48,45 @@ export function normalizeRegistryUrl(url: string): string {
   return url.trim().toLowerCase().replace(/\/+$/, "");
 }
 
+// The readable slug alone is not injective (e.g. "r/registry.json" and
+// "r/registry-json" collapse to the same slug), which would let one URL
+// overwrite another URL's pending submission. The hash suffix guarantees
+// distinct URLs always map to distinct blob paths.
 export function submissionId(registryUrl: string): string {
-  return normalizeRegistryUrl(registryUrl)
+  const normalized = normalizeRegistryUrl(registryUrl);
+  const slug = normalized
     .replace(/^https:\/\//, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
-    .slice(0, 100);
+    .slice(0, 80);
+  const hash = createHash("sha256").update(normalized).digest("hex").slice(0, 8);
+  return `${slug}-${hash}`;
+}
+
+// Stateless update credential: derived from the registry_url and a server
+// secret, so no token storage is needed. Returned once on creation; required
+// to overwrite a pending submission. Without it, anyone could deface a
+// pending submission by re-POSTing its registry_url with different fields.
+export function submissionToken(registryUrl: string): string | null {
+  const secret = process.env.SUBMISSION_SECRET;
+  if (!secret) return null;
+
+  return createHmac("sha256", secret)
+    .update(normalizeRegistryUrl(registryUrl))
+    .digest("hex");
+}
+
+export function isValidSubmissionToken(
+  registryUrl: string,
+  provided: string
+): boolean {
+  const expected = submissionToken(registryUrl);
+  if (!expected) return false;
+
+  const expectedBuffer = Buffer.from(expected, "utf8");
+  const providedBuffer = Buffer.from(provided, "utf8");
+  if (expectedBuffer.length !== providedBuffer.length) return false;
+  return timingSafeEqual(expectedBuffer, providedBuffer);
 }
 
 function getBlobFilename(id: string): string {
@@ -69,10 +103,10 @@ function getBlobPublicUrl(filename: string): string | null {
   return `https://${storeMatch[1]}.public.blob.vercel-storage.com/${filename}`;
 }
 
-async function readSubmissionBlob(
-  filename: string
+export async function getSubmission(
+  registryUrl: string
 ): Promise<SubmissionEntry | null> {
-  const url = getBlobPublicUrl(filename);
+  const url = getBlobPublicUrl(getBlobFilename(submissionId(registryUrl)));
   if (!url) return null;
 
   try {
@@ -84,12 +118,11 @@ async function readSubmissionBlob(
   }
 }
 
-export async function upsertSubmission(
-  input: SubmissionInput
-): Promise<{ entry: SubmissionEntry; created: boolean }> {
+export async function saveSubmission(
+  input: SubmissionInput,
+  existing: SubmissionEntry | null
+): Promise<SubmissionEntry> {
   const id = submissionId(input.registry_url);
-  const filename = getBlobFilename(id);
-  const existing = await readSubmissionBlob(filename);
   const now = new Date().toISOString();
 
   const entry: SubmissionEntry = {
@@ -101,7 +134,7 @@ export async function upsertSubmission(
     registry: input,
   };
 
-  await put(filename, JSON.stringify(entry, null, 2), {
+  await put(getBlobFilename(id), JSON.stringify(entry, null, 2), {
     access: "public",
     token: process.env.BLOB_READ_WRITE_TOKEN,
     addRandomSuffix: false,
@@ -111,5 +144,5 @@ export async function upsertSubmission(
   console.log(
     `[submissions] ${existing ? "Updated" : "Created"} submission ${id}`
   );
-  return { entry, created: !existing };
+  return entry;
 }

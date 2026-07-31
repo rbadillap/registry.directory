@@ -73,3 +73,10 @@ These exist because public actions represent the maintainer personally:
 
 - **Approved**: add the entry to `apps/web/public/directory.json` (match the existing format and the schema in `apps/web/public/schemas/directory.json`), commit on a branch, open a PR for the maintainer unless instructed otherwise. Then delete the pending blob (`submissions/pending/<id>.json`) so the inbox stays truthful.
 - **Rejected**: delete the pending blob. Any communication to the author is the maintainer's, per the boundaries above.
+
+## References for the probe
+
+- [registry.json schema](https://ui.shadcn.com/docs/registry/registry-json) — what a valid index looks like
+- [registry-item.json schema](https://ui.shadcn.com/docs/registry/registry-item-json) — what a valid item looks like; `files[].content` is where real code lives
+- [shadcn CLI](https://ui.shadcn.com/docs/cli) — `npx shadcn@latest add <item-url>` is the consumer behavior the probe simulates
+- `apps/web/public/how-to-submit.md` — the contract submitters were given; what they were promised is what you audit against

@@ -12,6 +12,7 @@ import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import type { DirectoryEntry } from "@/lib/types";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { HeroTitle } from "@/components/hero-title";
+import { SubmitRegistryDialog } from "@/components/submit-registry-dialog";
 
 // Enable static generation
 export const dynamic = 'force-static'
@@ -95,7 +96,8 @@ export default async function Home() {
   ]);
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-start pt-24 md:pt-32 pb-12 md:pb-20">
-      <div className="absolute top-4 right-4">
+      <div className="absolute top-4 right-4 flex items-center gap-2">
+        <SubmitRegistryDialog />
         <ThemeToggle />
       </div>
 
