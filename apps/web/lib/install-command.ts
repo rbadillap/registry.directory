@@ -19,10 +19,13 @@ export function getInstallCommand(options: InstallCommandOptions): string {
     return itemName
   }
 
-  // Future: if scope is configured
-  // if (registry.scope) {
-  //   return `@${registry.scope}/${itemName}`
-  // }
+  // Namespaced registries resolve through the shadcn registry index
+  if (registry.namespace) {
+    const ns = registry.namespace.startsWith("@")
+      ? registry.namespace
+      : `@${registry.namespace}`
+    return `${ns}/${itemName}`
+  }
 
   // Default: URL to registry JSON
   const baseUrl = registry.registry_url

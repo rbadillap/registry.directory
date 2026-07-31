@@ -1,14 +1,15 @@
-import { notFound, redirect } from "next/navigation"
+import { notFound } from "next/navigation"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import type { Metadata } from "next"
-import { RegistryOverview } from "@/components/registry-overview"
+import { RegistryLanding } from "@/components/registry-landing/registry-landing"
 import { DirectoryEntry } from "@/lib/types"
 import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { groupItemsByCategory } from "@/lib/registry-mappings"
 import { registryFetch } from "@/lib/fetch-utils"
 import { fetchGitHubStatsForUrl } from "@/lib/github-stats"
 import { getAffiliates } from "@/lib/affiliates"
+import { hasOnlyRenderableFiles } from "@/lib/file-utils"
 
 async function getRegistry(owner: string, repo: string) {
   const filePath = join(process.cwd(), "public/directory.json")
@@ -103,20 +104,6 @@ export async function generateStaticParams() {
     .filter(Boolean) as { owner: string; repo: string }[]
 }
 
-// Some partner registries (e.g. shadcn/studio) don't publish an aggregate
-// registry.json index — they only expose per-item namespaced files. We can't
-// build an overview without that index, so we send visitors to the registry's
-// own site (tagged with ?ref=registrydirectory) instead of showing a 404.
-function externalRegistryUrl(rawUrl: string): string {
-  try {
-    const url = new URL(rawUrl)
-    url.searchParams.set("ref", "registrydirectory")
-    return url.toString()
-  } catch {
-    return rawUrl
-  }
-}
-
 export type SemanticCategory = { name: string; count: number }
 
 function extractSemanticCategories(items: RegistryItem[]): SemanticCategory[] {
@@ -133,7 +120,36 @@ function extractSemanticCategories(items: RegistryItem[]): SemanticCategory[] {
     .sort((a, b) => b.count - a.count)
 }
 
-export default async function RegistryOverviewPage({
+// Resolve the curated featured names against the fetched index. Declared
+// names that don't resolve (or aren't renderable) are dropped with a build
+// warning — the daily rebuild re-verifies, so drift surfaces in Vercel logs.
+function resolveFeaturedItems(
+  registry: DirectoryEntry,
+  items: RegistryItem[]
+): RegistryItem[] {
+  if (!registry.featured?.length) return []
+
+  const byName = new Map(items.map((item) => [item.name, item]))
+  const resolved = registry.featured
+    .map((name) => byName.get(name))
+    .filter((item): item is RegistryItem => Boolean(item))
+    .filter((item) => hasOnlyRenderableFiles(item.files))
+    .slice(0, 6)
+
+  if (resolved.length < registry.featured.length) {
+    const missing = registry.featured.filter(
+      (name) => !resolved.some((item) => item.name === name)
+    )
+    console.warn(
+      `[Landing] ${registry.name}: featured items not resolved:`,
+      missing
+    )
+  }
+
+  return resolved
+}
+
+export default async function RegistryLandingPage({
   params,
 }: {
   params: Promise<{ owner: string; repo: string }>
@@ -147,34 +163,41 @@ export default async function RegistryOverviewPage({
 
   const registryData = await fetchRegistryData(registry)
 
-  // Registry is known but exposes no usable aggregate index — redirect to the
-  // partner's own site rather than dead-ending visitors on a 404.
-  if (!registryData || !registryData.items || !Array.isArray(registryData.items)) {
-    redirect(externalRegistryUrl(registry.url))
+  // No usable aggregate index (e.g. shadcn/studio only exposes per-item
+  // namespaced files) → render the landing in degraded mode instead of
+  // bouncing visitors to the registry's own site.
+  const items = Array.isArray(registryData?.items) ? registryData.items : []
+  const categoriesMap = items.length > 0 ? groupItemsByCategory(items) : null
+  const degraded = !categoriesMap || categoriesMap.size === 0
+
+  if (degraded) {
+    console.warn(`[Landing] ${registry.name}: degraded mode (no usable index)`)
   }
 
-  // Group items by type
-  const categoriesMap = groupItemsByCategory(registryData.items)
-
-  if (categoriesMap.size === 0) {
-    redirect(externalRegistryUrl(registry.url))
-  }
+  const totalItems = categoriesMap
+    ? Array.from(categoriesMap.values()).reduce(
+        (sum, typed) => sum + typed.length,
+        0
+      )
+    : 0
 
   // Fetch GitHub stats, semantic categories, and affiliates in parallel
   const [githubStats, semanticCategories, affiliates] = await Promise.all([
     registry.github_url
       ? fetchGitHubStatsForUrl(registry.github_url)
       : Promise.resolve(null),
-    Promise.resolve(extractSemanticCategories(registryData.items)),
+    Promise.resolve(extractSemanticCategories(items)),
     getAffiliates(),
   ])
 
   const affiliate = affiliates[registry.url] ?? null
 
   return (
-    <RegistryOverview
+    <RegistryLanding
       registry={registry}
-      categories={categoriesMap}
+      categories={degraded ? null : categoriesMap}
+      featuredItems={resolveFeaturedItems(registry, items)}
+      totalItems={totalItems}
       owner={owner}
       repo={repo}
       githubStats={githubStats}

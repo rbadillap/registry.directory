@@ -40,6 +40,11 @@ Never skip steps, and never conclude from the index alone — an index can be he
 2. **Items**: pick 3–5 items spread across different types (ui, block, lib, etc. — not 5 of the same kind). Fetch each item's individual JSON from the same base URL pattern. For each, verify `files[].content` holds real source code: non-trivial length and plausible content for its declared path (a `.tsx` file should read as TypeScript/React). Record per-item file counts and content sizes — they are your evidence.
 3. **Declared fields vs reality**: the submitted `name`/`description` must reasonably match what the registry actually serves, and `url` must be a live homepage. Mismatches are a signal of carelessness or misrepresentation — note them.
 4. **Source repo**: if `github_url` was provided, confirm the repo exists and is public (`gh repo view owner/repo`). Note whether the submitter appears to be the owner (informative, not required).
+5. **Optional v2 claims** — audit each one that was submitted; skip silently the ones that weren't:
+   - `namespace`: fetch `https://ui.shadcn.com/r/registries.json` (the official shadcn registry index) and confirm the handle exists there AND its homepage domain matches the submitted `url`. A namespace that isn't in the official index, or that belongs to a different site, is a false claim.
+   - `featured`: every name must exist as an exact item `name` in the fetched `registry.json` (case-sensitive). Record which resolve and which don't. One or two unresolved names is sloppiness (note it); mostly-unresolved is misrepresentation.
+   - `pro`: each boolean is a claim about what the vendor sells — check the live site (pricing page, homepage). `true` claims need visible evidence (a pro tier, templates for sale, a Figma kit, MCP/agent tooling, a team license tier). A `false` that's visibly true on the site is fine (under-claiming is allowed); a `true` without evidence is not.
+   - Any false v2 claim → NEEDS_HUMAN with the evidence. These fields render on the registry's public landing page, so a false claim ships a lie under our name.
 
 ## Origin determines scrutiny, not leniency
 
@@ -57,6 +62,7 @@ Deliver one report for the whole inbox, most recent submission first. For each s
 - Items probed: <name> (<n> files, <total chars>), <name> (…), …
 - Fields vs reality: <ok | discrepancies>
 - Repo: <exists/public/owner-match | not provided>
+- V2 claims: <not submitted | namespace ok/false, featured n/m resolved, pro ok/unsupported claims>
 - Notes: <anything the maintainer should weigh — edge cases, oddities, standout quality>
 ```
 
