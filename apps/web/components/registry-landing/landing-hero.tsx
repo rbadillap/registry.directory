@@ -39,8 +39,11 @@ export function LandingHero({
           <h1 className="text-2xl font-semibold tracking-tight text-foreground md:text-[28px] md:leading-9">
             {registry.name}
           </h1>
-          <p className="truncate font-mono text-xs text-foreground-faint">
-            registry.directory/{owner}/{repo}
+          <p className="truncate font-mono text-xs">
+            <span className="text-foreground-faint">registry.directory/</span>
+            <span className="text-muted-foreground">
+              {owner}/{repo}
+            </span>
           </p>
         </div>
       </div>

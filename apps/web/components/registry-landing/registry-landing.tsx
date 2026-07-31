@@ -50,8 +50,8 @@ export function RegistryLanding({
       ? (categories!.get(firstSlug)?.[0]?.name ?? null)
       : null
   }
-  const installCommand = installItemName
-    ? `npx shadcn@latest add ${getInstallCommand({ registry, itemName: installItemName, owner, repo })}`
+  const installArg = installItemName
+    ? getInstallCommand({ registry, itemName: installItemName, owner, repo })
     : null
 
   return (
@@ -70,10 +70,10 @@ export function RegistryLanding({
               githubStats={githubStats}
               visitHref={visitHref}
             />
-            {(installCommand || registry.pro) && (
+            {(installArg || registry.pro) && (
               <div className="flex w-full max-w-[440px] flex-col gap-4">
-                {installCommand && (
-                  <InstallCard command={installCommand} totalItems={totalItems} />
+                {installArg && (
+                  <InstallCard installArg={installArg} totalItems={totalItems} />
                 )}
                 {registry.pro && <ProCard pro={registry.pro} />}
               </div>
