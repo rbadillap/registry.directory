@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ExternalLink as ExternalLinkIcon, Package, Plus, Star } from "lucide-react";
+import { ExternalLink as ExternalLinkIcon, Package, Star } from "lucide-react";
 import { GitHubIcon } from "@/components/icons/github";
 import {
   Card,
@@ -25,6 +25,7 @@ import type { IndexedItem } from "@/lib/items-index";
 import { addUtmParams } from "@/lib/utm-utils";
 import { formatStars, formatRelativeTime } from "@/lib/format-utils";
 import { REGISTRY_TYPE_LABELS, REGISTRY_TYPE_ICONS } from "@/lib/registry-mappings";
+import { SubmitRegistryCard } from "@/components/submit-registry-dialog";
 
 interface ResultClickData {
   result_type: "registry" | "item";
@@ -35,7 +36,6 @@ interface ResultClickData {
 interface DirectoryListProps {
   entries: DirectoryEntry[];
   searchTerm?: string;
-  addCardUrl?: string;
   addCardLabel?: string;
   showViewButton?: boolean;
   stats?: Record<string, RegistryStats>;
@@ -45,8 +45,8 @@ interface DirectoryListProps {
   onResultClick?: (data: ResultClickData) => void;
 }
 
-export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], onResultClick }: DirectoryListProps) {
-  const showAddCard = !searchTerm && addCardUrl && addCardLabel;
+export function DirectoryList({ entries, searchTerm = '', addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], onResultClick }: DirectoryListProps) {
+  const showAddCard = !searchTerm && addCardLabel;
   const hasItems = itemResults.length > 0;
   const hasRegistries = entries.length > 0;
 
@@ -67,30 +67,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardUrl, addCardLab
     {/* Registry cards — only shown when there are registry-level matches */}
     {hasRegistries && (
     <div className="w-full max-w-7xl mx-auto mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 px-2">
-      {showAddCard && (
-        <a
-          href={addCardUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="h-full group"
-        >
-          <Card className="bg-background border border-border-subtle border-dashed rounded-none overflow-hidden shadow-none hover:shadow-lg hover:border-border transition-all h-full flex flex-col">
-            <CardHeader className="flex flex-col items-center justify-center gap-2 bg-background pt-4 pb-3 min-h-[100px]">
-              <div className="flex-shrink-0">
-                <Plus className="w-7 h-7 text-muted-foreground group-hover:text-foreground transition-colors" />
-              </div>
-              <CardTitle className="text-sm text-foreground text-center group-hover:text-foreground transition-colors">
-                {addCardLabel}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-3 pb-4 pt-0 bg-background flex-1 flex flex-col justify-between">
-              <CardDescription className="text-xs text-muted-foreground text-center">
-                Share your registry with the community
-              </CardDescription>
-            </CardContent>
-          </Card>
-        </a>
-      )}
+      {showAddCard && <SubmitRegistryCard label={addCardLabel} />}
 
       {entries.map((entry, index) => {
         const gh = entry.github_url ? githubStats?.[entry.github_url] : undefined;
