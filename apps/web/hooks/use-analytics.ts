@@ -15,6 +15,8 @@ import {
   type RegistryVisitProperties,
   type SearchPerformedProperties,
   type SearchResultClickedProperties,
+  type PremiumToggledProperties,
+  type HomeRegistryVisitProperties,
   type AIProvider,
   type ShareMethod,
   type ExportMethod,
@@ -191,6 +193,26 @@ export function useAnalytics() {
     [analytics, context]
   );
 
+  const trackPremiumToggled = useCallback(
+    (properties: Omit<PremiumToggledProperties, keyof RegistryContext>) => {
+      analytics.trackPremiumToggled({
+        ...context,
+        ...properties,
+      });
+    },
+    [analytics, context]
+  );
+
+  const trackHomeRegistryVisit = useCallback(
+    (properties: Omit<HomeRegistryVisitProperties, keyof RegistryContext>) => {
+      analytics.trackHomeRegistryVisit({
+        ...context,
+        ...properties,
+      });
+    },
+    [analytics, context]
+  );
+
   // Debounced tracking methods for high-frequency events
   const trackSearchUsedDebounced = useMemo(
     () => debounce(trackSearchUsed, 500),
@@ -224,6 +246,10 @@ export function useAnalytics() {
     // Home search
     trackSearchPerformed: trackSearchPerformedDebounced,
     trackSearchResultClicked,
+
+    // Home discovery
+    trackPremiumToggled,
+    trackHomeRegistryVisit,
 
     // Debounced methods
     trackSearchUsed: trackSearchUsedDebounced,
