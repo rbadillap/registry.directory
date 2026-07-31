@@ -63,25 +63,26 @@ The last three fields are optional — a plain open-source registry submits only
 | `201` | Submission created and queued for review | Done. Save the returned `id` and `submission_token` — the token is the only credential for updating this submission and is shown exactly once |
 | `200` | Existing pending submission updated in place | Done |
 | `400` | Body is not valid JSON, or field validation failed | Read `fields` in the response — each key lists exactly what is wrong — fix and POST again |
-| `403` | A pending submission exists for this `registry_url` and the `submission_token` is missing or wrong | Retry with the token from the creation response. Lost it? The pending version will be reviewed as-is |
-| `409` | This registry is already listed, or a pending submission exists and updates are disabled | Nothing to do |
+| `403` | A pending submission exists for this `registry_url` and the `Authorization: Bearer` token is missing or wrong | Retry with the token from the creation response sent as a header. Lost it? The pending version will be reviewed as-is |
+| `409` | This registry is already listed (by URL or by `namespace`), or a pending submission exists and updates are disabled | Nothing to do |
+| `422` | The `namespace` claim failed verification against the official shadcn registry index | Either the handle doesn't exist there or it belongs to a different domain than your `url`. Omit the field, or fix the claim |
 | `413` | Body larger than 10 KB | A submission is a handful of short fields — trim and retry |
 | `503` | Storage temporarily unavailable | Retry later |
 | `500` | Server error | Retry later; if persistent, open an issue at [rbadillap/registry.directory](https://github.com/rbadillap/registry.directory/issues) |
 
 ## Updating a submission
 
-POST again with the same `registry_url`, all fields, plus the `submission_token` you received on creation:
+POST again with the same `registry_url` and all fields, sending the `submission_token` you received on creation as an `Authorization: Bearer` header — the token never travels in the body:
 
 ```bash
 curl -X POST https://registry.directory/api/submit \
   -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <token from the 201 response>" \
   -d '{
     "name": "Example UI",
     "description": "An improved description.",
     "url": "https://example.com/",
-    "registry_url": "https://example.com/r/registry.json",
-    "submission_token": "<token from the 201 response>"
+    "registry_url": "https://example.com/r/registry.json"
   }'
 ```
 
