@@ -109,7 +109,6 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
     });
   }, [searchTerm, analytics]);
 
-  const addRegistryUrl = 'https://github.com/rbadillap/registry.directory';
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4">
@@ -134,7 +133,6 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
           <DirectoryList
             entries={sortedComponents}
             searchTerm={searchTerm}
-            addCardUrl={addRegistryUrl}
             addCardLabel="Add your Registry"
             showViewButton={true}
             stats={stats}
