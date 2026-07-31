@@ -16,7 +16,11 @@ if (blobs.length === 0) {
 
 const entries = await Promise.all(
   blobs.map(async (blob) => {
-    const response = await fetch(blob.url, { cache: "no-store" });
+    // Cache-busting query — the public URL goes through the Blob CDN, which
+    // can serve stale content right after an update.
+    const response = await fetch(`${blob.url}?v=${Date.now()}`, {
+      cache: "no-store",
+    });
     return response.json();
   })
 );

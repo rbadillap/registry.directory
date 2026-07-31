@@ -1,5 +1,5 @@
 import { createHash, createHmac, timingSafeEqual } from "node:crypto";
-import { put } from "@vercel/blob";
+import { list, put } from "@vercel/blob";
 import { z } from "zod";
 
 const DOCS_URL = "https://registry.directory/how-to-submit.md";
@@ -44,8 +44,16 @@ export interface SubmissionEntry {
   registry: SubmissionInput;
 }
 
+// Scheme and host are case-insensitive per URL semantics; the path is NOT —
+// lowercasing it would collapse genuinely distinct registry paths onto one
+// submission id. new URL() lowercases scheme/host and drops default ports.
 export function normalizeRegistryUrl(url: string): string {
-  return url.trim().toLowerCase().replace(/\/+$/, "");
+  try {
+    const parsed = new URL(url.trim());
+    return parsed.origin + parsed.pathname.replace(/\/+$/, "") + parsed.search;
+  } catch {
+    return url.trim().replace(/\/+$/, "");
+  }
 }
 
 // The readable slug alone is not injective (e.g. "r/registry.json" and
@@ -103,16 +111,34 @@ function getBlobPublicUrl(filename: string): string | null {
   return `https://${storeMatch[1]}.public.blob.vercel-storage.com/${filename}`;
 }
 
+export interface PendingSubmissionRef {
+  submitted_at: string;
+}
+
+// Existence MUST be checked against the Blob API (authoritative), not the
+// public CDN URL: reads through the CDN right after a write can miss the
+// blob, which would let an update slip past the token gate as a "create".
 export async function getSubmission(
   registryUrl: string
-): Promise<SubmissionEntry | null> {
-  const url = getBlobPublicUrl(getBlobFilename(submissionId(registryUrl)));
-  if (!url) return null;
+): Promise<PendingSubmissionRef | null> {
+  const token = process.env.BLOB_READ_WRITE_TOKEN;
+  if (!token) return null;
 
+  const pathname = getBlobFilename(submissionId(registryUrl));
   try {
-    const response = await fetch(url, { cache: "no-store" });
-    if (!response.ok) return null;
-    return (await response.json()) as SubmissionEntry;
+    const { blobs } = await list({ prefix: pathname, token, limit: 1 });
+    const blob = blobs.find((b) => b.pathname === pathname);
+    if (!blob) return null;
+
+    // Cache-busting query so the CDN can't serve a stale copy; if the copy
+    // still isn't readable, the blob's uploadedAt approximates submitted_at.
+    const response = await fetch(`${blob.url}?v=${Date.now()}`, {
+      cache: "no-store",
+    });
+    if (response.ok) {
+      return (await response.json()) as SubmissionEntry;
+    }
+    return { submitted_at: new Date(blob.uploadedAt).toISOString() };
   } catch {
     return null;
   }
@@ -120,7 +146,7 @@ export async function getSubmission(
 
 export async function saveSubmission(
   input: SubmissionInput,
-  existing: SubmissionEntry | null
+  existing: PendingSubmissionRef | null
 ): Promise<SubmissionEntry> {
   const id = submissionId(input.registry_url);
   const now = new Date().toISOString();
@@ -139,6 +165,9 @@ export async function saveSubmission(
     token: process.env.BLOB_READ_WRITE_TOKEN,
     addRandomSuffix: false,
     allowOverwrite: true,
+    // Shortest allowed CDN cache — narrows the stale-read window for any
+    // consumer that reads the public URL.
+    cacheControlMaxAge: 60,
   });
 
   console.log(
