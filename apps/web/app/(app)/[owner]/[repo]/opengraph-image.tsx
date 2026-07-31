@@ -3,9 +3,13 @@ import { ImageResponse } from "next/og"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import type { DirectoryEntry } from "@/lib/types"
-import type { Registry } from "@/lib/registry-types"
-import { registryFetch } from "@/lib/fetch-utils"
 import { groupItemsByCategory } from "@/lib/registry-mappings"
+import {
+  resolveByGithub,
+  resolveByHandle,
+  parseGithubRef,
+  fetchRegistryIndex,
+} from "@/lib/resolve-registry"
 
 export const runtime = 'nodejs'
 export const alt = 'registry.directory registry preview'
@@ -15,38 +19,16 @@ export const size = {
 }
 export const contentType = 'image/png'
 
-async function getRegistry(owner: string, repo: string) {
-  const filePath = join(process.cwd(), "public/directory.json")
-  const fileContents = await readFile(filePath, "utf8")
-  const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
-  const registries = data.registries
+// Github pair first, then github-less handle (the /{handle}/{slug} OG shape)
+async function getRegistry(owner: string, repo: string): Promise<DirectoryEntry | null> {
+  const ghRegistry = await resolveByGithub(owner, repo)
+  if (ghRegistry) return ghRegistry
 
-  const registry = registries.find((r) => {
-    if (!r.github_url) return false
-    const match = r.github_url.match(/github\.com\/([^/]+)\/([^/]+)/)
-    if (!match) return false
-    return match[1] === owner && match[2]?.replace(/\.git$/, '') === repo
-  })
-
-  return registry || null
-}
-
-async function fetchRegistryData(registry: DirectoryEntry): Promise<Registry | null> {
-  const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
-
-  try {
-    const response = await registryFetch(targetUrl, {
-      timeout: 5000,
-      next: { revalidate: 86400 }
-    })
-
-    if (!response.ok) return null
-
-    const data = await response.json()
-    return data
-  } catch {
-    return null
+  const handleRegistry = await resolveByHandle(owner)
+  if (handleRegistry && !parseGithubRef(handleRegistry.github_url)) {
+    return handleRegistry
   }
+  return null
 }
 
 export default async function Image({
@@ -62,7 +44,7 @@ export default async function Image({
   ])
 
   const registry = await getRegistry(owner, repo)
-  const registryData = registry ? await fetchRegistryData(registry) : null
+  const registryData = registry ? await fetchRegistryIndex(registry) : null
 
   const itemCount = registryData?.items?.length || 0
   const categoriesMap = registryData?.items ? groupItemsByCategory(registryData.items) : new Map()

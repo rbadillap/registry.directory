@@ -1,51 +1,21 @@
-import { notFound } from "next/navigation"
-import { readFile } from "node:fs/promises"
-import { join } from "node:path"
+import { notFound, permanentRedirect } from "next/navigation"
 import type { Metadata } from "next"
 import { RegistryLanding } from "@/components/registry-landing/registry-landing"
-import { DirectoryEntry } from "@/lib/types"
-import type { Registry, RegistryItem } from "@/lib/registry-types"
 import { groupItemsByCategory } from "@/lib/registry-mappings"
-import { registryFetch } from "@/lib/fetch-utils"
-import { fetchGitHubStatsForUrl } from "@/lib/github-stats"
-import { getAffiliates } from "@/lib/affiliates"
 import { hasOnlyRenderableFiles } from "@/lib/file-utils"
-
-async function getRegistry(owner: string, repo: string) {
-  const filePath = join(process.cwd(), "public/directory.json")
-  const fileContents = await readFile(filePath, "utf8")
-  const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
-  const registries = data.registries
-
-  const registry = registries.find((r) => {
-    if (!r.github_url) return false
-    const match = r.github_url.match(/github\.com\/([^/]+)\/([^/]+)/)
-    if (!match) return false
-    return match[1] === owner && match[2]?.replace(/\.git$/, '') === repo
-  })
-
-  return registry || null
-}
-
-async function fetchRegistryData(registry: DirectoryEntry): Promise<Registry | null> {
-  const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
-
-  try {
-    const response = await registryFetch(targetUrl, {
-      timeout: 5000,
-      next: { revalidate: 86400 }
-    })
-
-
-    if (!response.ok) return null
-
-    const data = await response.json()
-    return data
-  } catch (error) {
-    console.error(`[Level1] Fetch error:`, error)
-    return null
-  }
-}
+import { loadLandingData } from "@/lib/landing-data"
+import {
+  loadDirectory,
+  entryHandle,
+  parseGithubRef,
+  resolveByGithub,
+  resolveByHandle,
+  fetchRegistryIndex,
+} from "@/lib/resolve-registry"
+import {
+  RegistrySlugView,
+  buildSlugMetadata,
+} from "@/components/registry-slug-view"
 
 export async function generateMetadata({
   params,
@@ -53,100 +23,83 @@ export async function generateMetadata({
   params: Promise<{ owner: string; repo: string }>
 }): Promise<Metadata> {
   const { owner, repo } = await params
-  const registry = await getRegistry(owner, repo)
 
-  if (!registry) {
+  // Canonical github pair → registry landing metadata
+  const ghRegistry = await resolveByGithub(owner, repo)
+  if (ghRegistry) {
+    const index = await fetchRegistryIndex(ghRegistry)
+    const itemCount = index?.items?.length || 0
+    const canonical = `https://registry.directory/${owner}/${repo}`
+
     return {
-      title: "Registry Not Found",
+      title: ghRegistry.name,
+      description: ghRegistry.description || `Browse ${itemCount} components from ${ghRegistry.name}. Preview code in our IDE viewer and install with one command.`,
+      alternates: { canonical },
+      openGraph: {
+        title: ghRegistry.name,
+        description: ghRegistry.description || `Browse ${itemCount} components from ${ghRegistry.name}.`,
+        url: canonical,
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: ghRegistry.name,
+        description: ghRegistry.description || `Browse ${itemCount} components from ${ghRegistry.name}.`,
+      },
     }
   }
 
-  const registryData = await fetchRegistryData(registry)
-  const itemCount = registryData?.items?.length || 0
-
-  return {
-    title: registry.name,
-    description: registry.description || `Browse ${itemCount} components from ${registry.name}. Preview code in our IDE viewer and install with one command.`,
-    alternates: {
-      canonical: `https://registry.directory/${owner}/${repo}`,
-    },
-    openGraph: {
-      title: registry.name,
-      description: registry.description || `Browse ${itemCount} components from ${registry.name}.`,
-      url: `https://registry.directory/${owner}/${repo}`,
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: registry.name,
-      description: registry.description || `Browse ${itemCount} components from ${registry.name}.`,
-    },
+  // Handle + slug (github-less entry) → viewer metadata; redirecting aliases get none
+  const handleRegistry = await resolveByHandle(owner)
+  if (!handleRegistry) {
+    return { title: "Registry Not Found" }
   }
+  if (parseGithubRef(handleRegistry.github_url)) {
+    return {}
+  }
+
+  return buildSlugMetadata(handleRegistry, `/${owner}`, repo)
 }
 
 export async function generateStaticParams() {
-  const filePath = join(process.cwd(), "public/directory.json")
-  const fileContents = await readFile(filePath, "utf8")
-  const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
-  const registries = data.registries
+  const registries = await loadDirectory()
+  const params: { owner: string; repo: string }[] = []
 
-  return registries
-    .filter((r) => r.github_url)
-    .map((r) => {
-      const match = r.github_url!.match(/github\.com\/([^/]+)\/([^/]+)/)
-      if (!match) return null
+  for (const registry of registries) {
+    // Canonical github pairs
+    const gh = parseGithubRef(registry.github_url)
+    if (gh) {
+      params.push({ owner: gh.owner, repo: gh.repo })
+      continue
+    }
 
-      return {
-        owner: match[1],
-        repo: match[2]?.replace(/\.git$/, '')
+    // Github-less entries: /{handle}/{category|item} pages. Prerender only
+    // categories + featured items — some of these catalogs are huge (4k+
+    // items, many paywalled) and would double the daily build; the rest
+    // renders on demand via dynamicParams.
+    const handle = entryHandle(registry)
+    if (!handle) continue
+
+    const index = await fetchRegistryIndex(registry, 10000)
+    if (!index) continue
+
+    const categoriesMap = groupItemsByCategory(index.items)
+
+    for (const category of categoriesMap.keys()) {
+      params.push({ owner: handle, repo: category })
+    }
+
+    const byName = new Map(index.items.map((item) => [item.name, item]))
+    for (const name of registry.featured ?? []) {
+      const item = byName.get(name)
+      if (!item || !hasOnlyRenderableFiles(item.files)) {
+        continue
       }
-    })
-    .filter(Boolean) as { owner: string; repo: string }[]
-}
-
-export type SemanticCategory = { name: string; count: number }
-
-function extractSemanticCategories(items: RegistryItem[]): SemanticCategory[] {
-  const counts = new Map<string, number>()
-  for (const item of items) {
-    if (item.categories) {
-      for (const cat of item.categories) {
-        counts.set(cat, (counts.get(cat) || 0) + 1)
-      }
+      params.push({ owner: handle, repo: name })
     }
   }
-  return Array.from(counts.entries())
-    .map(([name, count]) => ({ name, count }))
-    .sort((a, b) => b.count - a.count)
-}
 
-// Resolve the curated featured names against the fetched index. Declared
-// names that don't resolve (or aren't renderable) are dropped with a build
-// warning — the daily rebuild re-verifies, so drift surfaces in Vercel logs.
-function resolveFeaturedItems(
-  registry: DirectoryEntry,
-  items: RegistryItem[]
-): RegistryItem[] {
-  if (!registry.featured?.length) return []
-
-  const byName = new Map(items.map((item) => [item.name, item]))
-  const resolved = registry.featured
-    .map((name) => byName.get(name))
-    .filter((item): item is RegistryItem => Boolean(item))
-    .filter((item) => hasOnlyRenderableFiles(item.files))
-    .slice(0, 6)
-
-  if (resolved.length < registry.featured.length) {
-    const missing = registry.featured.filter(
-      (name) => !resolved.some((item) => item.name === name)
-    )
-    console.warn(
-      `[Landing] ${registry.name}: featured items not resolved:`,
-      missing
-    )
-  }
-
-  return resolved
+  return params
 }
 
 export default async function RegistryLandingPage({
@@ -155,54 +108,38 @@ export default async function RegistryLandingPage({
   params: Promise<{ owner: string; repo: string }>
 }) {
   const { owner, repo } = await params
-  const registry = await getRegistry(owner, repo)
 
-  if (!registry) {
+  // 1) Canonical github pair — always wins
+  const ghRegistry = await resolveByGithub(owner, repo)
+  if (ghRegistry) {
+    const landingData = await loadLandingData(ghRegistry)
+    return (
+      <RegistryLanding
+        registry={ghRegistry}
+        basePath={`/${owner}/${repo}`}
+        {...landingData}
+      />
+    )
+  }
+
+  // 2) Handle + slug
+  const handleRegistry = await resolveByHandle(owner)
+  if (!handleRegistry) {
     notFound()
   }
 
-  const registryData = await fetchRegistryData(registry)
-
-  // No usable aggregate index (e.g. shadcn/studio only exposes per-item
-  // namespaced files) → render the landing in degraded mode instead of
-  // bouncing visitors to the registry's own site.
-  const items = Array.isArray(registryData?.items) ? registryData.items : []
-  const categoriesMap = items.length > 0 ? groupItemsByCategory(items) : null
-  const degraded = !categoriesMap || categoriesMap.size === 0
-
-  if (degraded) {
-    console.warn(`[Landing] ${registry.name}: degraded mode (no usable index)`)
+  // Handle alias of a github-backed registry → canonical route
+  const gh = parseGithubRef(handleRegistry.github_url)
+  if (gh) {
+    permanentRedirect(`/${gh.owner}/${gh.repo}/${repo}`)
   }
 
-  const totalItems = categoriesMap
-    ? Array.from(categoriesMap.values()).reduce(
-        (sum, typed) => sum + typed.length,
-        0
-      )
-    : 0
-
-  // Fetch GitHub stats, semantic categories, and affiliates in parallel
-  const [githubStats, semanticCategories, affiliates] = await Promise.all([
-    registry.github_url
-      ? fetchGitHubStatsForUrl(registry.github_url)
-      : Promise.resolve(null),
-    Promise.resolve(extractSemanticCategories(items)),
-    getAffiliates(),
-  ])
-
-  const affiliate = affiliates[registry.url] ?? null
-
+  // 3) Github-less: `repo` is a category-or-item slug under /{handle}
   return (
-    <RegistryLanding
-      registry={registry}
-      categories={degraded ? null : categoriesMap}
-      featuredItems={resolveFeaturedItems(registry, items)}
-      totalItems={totalItems}
-      owner={owner}
-      repo={repo}
-      githubStats={githubStats}
-      semanticCategories={semanticCategories}
-      affiliate={affiliate}
+    <RegistrySlugView
+      registry={handleRegistry}
+      basePath={`/${owner}`}
+      slug={repo}
     />
   )
 }
