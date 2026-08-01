@@ -1,32 +1,26 @@
-import { registryFetch, getRegistryJsonUrl } from "./fetch-utils";
 import { hasOnlyRenderableFiles } from "./file-utils";
-import type { Registry } from "./registry-types";
 import type { DirectoryEntry } from "./types";
 import type { IndexedItem } from "./items-index";
-import { registryBasePath, parseGithubRef } from "./resolve-registry";
+import {
+  registryBasePath,
+  parseGithubRef,
+  fetchRegistryIndex,
+} from "./resolve-registry";
 
 async function fetchItemsForRegistry(
   registry: DirectoryEntry
 ): Promise<IndexedItem[]> {
-  const url = getRegistryJsonUrl(registry);
   // Entries with neither github_url nor namespace have no route on the site
   const basePath = registryBasePath(registry);
-  if (!url || !basePath) return [];
+  if (!basePath) return [];
 
   const gh = parseGithubRef(registry.github_url);
   const avatarUrl = gh
     ? `https://github.com/${gh.owner}.png`
     : (registry.github_profile ?? null);
 
-  const response = await registryFetch(url, {
-    timeout: 10000,
-    next: { revalidate: 86400 },
-  });
-
-  if (!response.ok) return [];
-
-  const data = (await response.json()) as Registry;
-  if (!data.items || data.items.length === 0) return [];
+  const data = await fetchRegistryIndex(registry, 10000);
+  if (!data?.items || data.items.length === 0) return [];
 
   return data.items
     .filter((item) => hasOnlyRenderableFiles(item.files))

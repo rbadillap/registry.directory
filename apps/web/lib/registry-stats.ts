@@ -1,45 +1,26 @@
-import { registryFetch, getRegistryJsonUrl } from "./fetch-utils";
 import { groupItemsByCategory } from "./registry-mappings";
-import type { Registry } from "./registry-types";
+import { fetchRegistryIndex } from "./resolve-registry";
 import type { DirectoryEntry, RegistryStats } from "./types";
 
 async function fetchStatsForRegistry(
   registry: DirectoryEntry
 ): Promise<RegistryStats | null> {
-  const url = getRegistryJsonUrl(registry);
-  if (!url) return null;
+  const data = await fetchRegistryIndex(registry, 10000);
+  if (!data?.items || data.items.length === 0) return null;
 
-  try {
-    const response = await registryFetch(url, {
-      timeout: 5000,
-      next: { revalidate: 86400 },
-    });
+  const grouped = groupItemsByCategory(data.items);
 
-    if (!response.ok) return null;
+  const categories = Array.from(grouped.entries())
+    .map(([slug, items]) => ({ slug, count: items.length }))
+    .sort((a, b) => b.count - a.count);
 
-    const data = (await response.json()) as Registry;
-    if (!data.items || data.items.length === 0) return null;
+  const topItems = data.items.slice(0, 5).map((item) => item.name);
 
-    const grouped = groupItemsByCategory(data.items);
-
-    const categories = Array.from(grouped.entries())
-      .map(([slug, items]) => ({ slug, count: items.length }))
-      .sort((a, b) => b.count - a.count);
-
-    const topItems = data.items.slice(0, 5).map((item) => item.name);
-
-    return {
-      totalItems: data.items.length,
-      categories,
-      topItems,
-    };
-  } catch (error) {
-    console.error(
-      `[registry-stats] Failed to fetch stats for ${registry.name}:`,
-      error
-    );
-    return null;
-  }
+  return {
+    totalItems: data.items.length,
+    categories,
+    topItems,
+  };
 }
 
 export async function fetchAllRegistryStats(
