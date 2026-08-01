@@ -155,6 +155,9 @@ export const ANALYTICS_EVENTS = {
   // Home discovery
   HOME_PREMIUM_TOGGLED: "home.premium.toggled",
   HOME_REGISTRY_VISIT: "home.registry.visit",
+
+  // CLI adoption
+  HOME_CLI_COPIED: "home.cli.copied",
 } as const;
 
 // ============================================================================
@@ -344,6 +347,10 @@ class Analytics {
 
   trackHomeRegistryVisit(properties: HomeRegistryVisitProperties & Partial<BaseEventProperties>): void {
     this.#trackEvent(ANALYTICS_EVENTS.HOME_REGISTRY_VISIT, properties);
+  }
+
+  trackCliCopied(properties: Partial<BaseEventProperties> = {}): void {
+    this.#trackEvent(ANALYTICS_EVENTS.HOME_CLI_COPIED, properties);
   }
 }
 
