@@ -1,15 +1,18 @@
 import { createHash } from "node:crypto"
 import { mkdir, readFile, rename, stat, writeFile } from "node:fs/promises"
-import { tmpdir } from "node:os"
 import { join } from "node:path"
 
 // Registry indexes over 2MB bypass Next's data cache ("items over 2MB can not
 // be cached"), so during static generation every page of a large registry
 // re-downloads its index — 600+ round trips per build for a single registry.
-// This file cache in tmpdir shares one download per index across all build
-// workers. Active only while building; dev and production serving never use it.
+// This file cache shares one download per index across all build workers.
+// Active only while building; dev and production serving never use it.
+//
+// Lives under .next/cache (not tmpdir: turbo's strict env mode strips TMPDIR,
+// splitting the cache across launchers). Vercel persists .next/cache between
+// builds, so production builds warm-start too; the TTL keeps daily data fresh.
 
-const CACHE_DIR = join(tmpdir(), "registry-directory-index-cache")
+const CACHE_DIR = join(process.cwd(), ".next", "cache", "registry-index")
 const MAX_AGE_MS = 60 * 60 * 1000
 
 function isBuildPhase(): boolean {
