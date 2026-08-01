@@ -49,8 +49,8 @@ export const SITE_AUTHOR = {
   url: "https://github.com/rbadillap",
 }
 
-// Inferred from the GitHub handle — confirm this matches the actual X account
-// before relying on it, since twitter:site is what attributes card impressions.
+// Confirmed against the real X account. twitter:site attributes card
+// impressions, so this has to stay in sync if the handle ever changes.
 export const TWITTER_HANDLE = "@rbadillap"
 
 /**
