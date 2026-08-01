@@ -10,7 +10,16 @@ import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from
 import type { IndexedItem } from '@/lib/items-index';
 import { searchItems } from '@/lib/search-utils';
 import { TypeFilterSelect } from './type-filter-select';
-import { typeToSlug } from '@/lib/registry-mappings';
+import { typeToSlug, REGISTRY_TYPE_LABELS } from '@/lib/registry-mappings';
+
+// Slugs sharing a human label (ui/components → "Components") are one
+// facet: the humanization decided in the labels drives the filter too.
+function matchesTypeFacet(slug: string | null, facet: string): boolean {
+  if (!slug) return false;
+  if (slug === facet) return true;
+  const label = REGISTRY_TYPE_LABELS[slug];
+  return Boolean(label) && label === REGISTRY_TYPE_LABELS[facet];
+}
 
 type SortMode = 'popular' | 'stars' | 'recently-active';
 
@@ -88,7 +97,7 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
   const hasType = useCallback(
     (entry: DirectoryEntry, type: string) =>
       type === 'all' ||
-      Boolean(stats[entry.url]?.categories.some((c) => c.slug === type)),
+      Boolean(stats[entry.url]?.categories.some((c) => matchesTypeFacet(c.slug, type))),
     [stats]
   );
 
@@ -160,7 +169,7 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
     if (!deferredSearchTerm) return [];
     const results = searchItems(items, deferredSearchTerm);
     if (typeFilter === 'all') return results;
-    return results.filter((item) => typeToSlug(item.type) === typeFilter);
+    return results.filter((item) => matchesTypeFacet(typeToSlug(item.type), typeFilter));
   }, [items, deferredSearchTerm, typeFilter]);
 
   // Track search performed (debounced via hook)

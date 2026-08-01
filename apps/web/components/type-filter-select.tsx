@@ -33,7 +33,16 @@ export function TypeFilterSelect({ value, onChange, components, stats }: TypeFil
         present.add(category.slug);
       }
     }
-    return REGISTRY_TYPE_ORDER.filter((slug) => present.has(slug));
+    // Dedupe by human label: ui/components both read "Components", so the
+    // facet offers one entry (first slug in canonical order wins).
+    const seenLabels = new Set<string>();
+    return REGISTRY_TYPE_ORDER.filter((slug) => {
+      if (!present.has(slug)) return false;
+      const label = REGISTRY_TYPE_LABELS[slug] ?? slug;
+      if (seenLabels.has(label)) return false;
+      seenLabels.add(label);
+      return true;
+    });
   }, [components, stats]);
 
   const SelectedIcon = value !== 'all' ? (REGISTRY_TYPE_ICONS[value] ?? Shapes) : Shapes;
