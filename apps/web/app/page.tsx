@@ -7,6 +7,7 @@ import { DirectoryTabsSkeleton } from "@/components/directory-tabs-skeleton";
 import { fetchAllRegistryStats } from "@/lib/registry-stats";
 import { fetchAllGitHubStats } from "@/lib/github-stats";
 import { fetchAllRegistryItems } from "@/lib/registry-items";
+import { buildAndPersistCatalog } from "@/lib/catalog";
 import { getAffiliates } from "@/lib/affiliates";
 import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import type { DirectoryEntry } from "@/lib/types";
@@ -94,6 +95,10 @@ export default async function Home() {
     fetchAllGitHubStats(components),
     fetchAllRegistryItems(components),
     getAffiliates(),
+    // Side effect only: writes the /r endpoint's aggregated catalog to
+    // blob during the daily build (no-op in dev). Same trigger point as
+    // the github.json cache above.
+    buildAndPersistCatalog(),
   ]);
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-start pt-24 md:pt-32 pb-12 md:pb-20">
