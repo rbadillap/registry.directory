@@ -142,7 +142,7 @@ export default async function Home() {
       </div>
 
       <p className="text-sm mb-12 md:mb-14 px-4 text-center font-mono text-muted-foreground">
-        The explorer for{" "}
+        The explorer for the{" "}
         <span className="text-foreground">
           <svg
             viewBox="0 0 24 24"
@@ -166,8 +166,8 @@ export default async function Home() {
             ></path>
           </svg>
         </span>
-        <span className="ml-1 font-mono font-bold">shadcn/ui</span>
-        <span className="text-muted-foreground"> registries.</span>
+        <span className="ml-1 font-mono font-bold">shadcn</span>
+        <span className="text-muted-foreground"> registry ecosystem.</span>
       </p>
 
       <Suspense fallback={<DirectoryTabsSkeleton />}>
