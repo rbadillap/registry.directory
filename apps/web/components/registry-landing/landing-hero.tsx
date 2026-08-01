@@ -34,7 +34,7 @@ export function LandingHero({
           />
         )}
         <div className="flex min-w-0 flex-col gap-0.5">
-          <h1 className="text-2xl font-semibold tracking-tight text-foreground md:text-[28px] md:leading-9">
+          <h1 className="text-2xl font-semibold tracking-tight text-balance text-foreground md:text-[28px] md:leading-9">
             {registry.name}
           </h1>
           <p className="truncate font-mono text-xs">
@@ -45,7 +45,7 @@ export function LandingHero({
       </div>
 
       {registry.description && (
-        <p className="max-w-[520px] text-base leading-relaxed text-muted-foreground">
+        <p className="max-w-[520px] text-base leading-relaxed text-pretty text-muted-foreground">
           {registry.description}
         </p>
       )}

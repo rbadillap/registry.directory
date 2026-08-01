@@ -93,8 +93,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-dm-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-schibsted);
+  --font-mono: var(--font-ibm-plex-mono);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -150,5 +150,7 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 0, "calt" 0;
     text-rendering: optimizeLegibility;
+    /* Missing weights/styles must fail visibly, not render browser-faked */
+    font-synthesis: none;
   }
 }
