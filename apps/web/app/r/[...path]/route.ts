@@ -19,9 +19,13 @@ export const dynamic = "force-dynamic"
 
 const DEFAULT_LIMIT = 100
 const MAX_LIMIT = 1000
+// Scoring cost is items × query terms; an unbounded q would let a single
+// request buy arbitrary CPU. 200 chars covers any real component search.
+const MAX_QUERY_LENGTH = 200
 
 const JSON_HEADERS = {
   "Content-Type": "application/json",
+  "X-Content-Type-Options": "nosniff",
   "Access-Control-Allow-Origin": "*",
   // Cached per full URL (query included) at the CDN; the daily rebuild
   // rewrites the blob, so stale answers converge within the hour.
@@ -70,7 +74,7 @@ function publicItem(item: CatalogItem) {
 
 function catalogResponse(catalog: Catalog, request: NextRequest): Response {
   const params = request.nextUrl.searchParams
-  const q = params.get("q")?.trim()
+  const q = params.get("q")?.trim().slice(0, MAX_QUERY_LENGTH)
   const typeParam = params.get("type")
   const hasSearchParams =
     params.has("q") || params.has("type") || params.has("limit") || params.has("offset")
