@@ -68,6 +68,13 @@ function catalogHandle(entry: DirectoryEntry): string | null {
 // A registry whose sampled items all fail to resolve is fully gated (or
 // broken) — listing it would turn every install into our 502. Sampling
 // first/middle/last keeps partially-gated registries in.
+//
+// Exclusion requires DEFINITIVE gating (401/402/403/404/410) on every
+// sample. Transient failures — 429 rate limits, 5xx, timeouts — get the
+// benefit of the doubt: a registry throttling our build burst must not
+// drop out of the catalog (Cult UI, 31-jul-2026).
+const GATED_STATUSES = new Set([401, 402, 403, 404, 410])
+
 async function originResolves(
   base: string,
   names: string[]
@@ -87,11 +94,24 @@ async function originResolves(
         cache: "no-store",
       })
       await res.body?.cancel()
-      return res.ok
+      return res.status
     })
   )
 
-  return results.some((r) => r.status === "fulfilled" && r.value)
+  let allGated = results.length > 0
+  for (const result of results) {
+    if (
+      result.status === "fulfilled" &&
+      result.value >= 200 &&
+      result.value < 300
+    ) {
+      return true
+    }
+    const gated =
+      result.status === "fulfilled" && GATED_STATUSES.has(result.value)
+    if (!gated) allGated = false
+  }
+  return !allGated
 }
 
 export async function buildCatalog(options?: {
