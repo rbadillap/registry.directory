@@ -97,6 +97,26 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
     });
   }, [premiumOnly, activeTab, searchTerm, components, analytics]);
 
+  // P flips the Premium filter, mirroring the theme toggle's D shortcut
+  // (same guards: no modifiers, never while typing).
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (
+        e.key === "p" &&
+        !e.metaKey &&
+        !e.ctrlKey &&
+        !e.altKey &&
+        !(e.target instanceof HTMLInputElement) &&
+        !(e.target instanceof HTMLTextAreaElement) &&
+        !(e.target as HTMLElement)?.isContentEditable
+      ) {
+        handlePremiumToggle();
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [handlePremiumToggle]);
+
   // Sort the (filtered) registries by the active tab. Search filters, sort orders.
   const sortedComponents = useMemo(
     () => sortRegistries(filteredComponents, activeTab as SortMode, githubStats),
