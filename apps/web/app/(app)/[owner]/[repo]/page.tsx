@@ -63,43 +63,47 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   const registries = await loadDirectory()
-  const params: { owner: string; repo: string }[] = []
 
-  for (const registry of registries) {
-    // Canonical github pairs
-    const gh = parseGithubRef(registry.github_url)
-    if (gh) {
-      params.push({ owner: gh.owner, repo: gh.repo })
-      continue
-    }
-
-    // Github-less entries: /{handle}/{category|item} pages. Prerender only
-    // categories + featured items — some of these catalogs are huge (4k+
-    // items, many paywalled) and would double the daily build; the rest
-    // renders on demand via dynamicParams.
-    const handle = entryHandle(registry)
-    if (!handle) continue
-
-    const index = await fetchRegistryIndex(registry, 10000)
-    if (!index) continue
-
-    const categoriesMap = groupItemsByCategory(index.items)
-
-    for (const category of categoriesMap.keys()) {
-      params.push({ owner: handle, repo: category })
-    }
-
-    const byName = new Map(index.items.map((item) => [item.name, item]))
-    for (const name of registry.featured ?? []) {
-      const item = byName.get(name)
-      if (!item || !hasOnlyRenderableFiles(item.files)) {
-        continue
+  const results = await Promise.allSettled(
+    registries.map(async (registry) => {
+      // Canonical github pairs
+      const gh = parseGithubRef(registry.github_url)
+      if (gh) {
+        return [{ owner: gh.owner, repo: gh.repo }]
       }
-      params.push({ owner: handle, repo: name })
-    }
-  }
 
-  return params
+      // Github-less entries: /{handle}/{category|item} pages. Prerender only
+      // categories + featured items, same policy as the github-backed
+      // [slug] route; the rest renders on demand via dynamicParams.
+      const handle = entryHandle(registry)
+      if (!handle) return []
+
+      const index = await fetchRegistryIndex(registry, 10000)
+      if (!index) return []
+
+      const params: { owner: string; repo: string }[] = []
+      const categoriesMap = groupItemsByCategory(index.items)
+
+      for (const category of categoriesMap.keys()) {
+        params.push({ owner: handle, repo: category })
+      }
+
+      const byName = new Map(index.items.map((item) => [item.name, item]))
+      for (const name of registry.featured ?? []) {
+        const item = byName.get(name)
+        if (!item || !hasOnlyRenderableFiles(item.files)) {
+          continue
+        }
+        params.push({ owner: handle, repo: name })
+      }
+
+      return params
+    })
+  )
+
+  return results.flatMap((result) =>
+    result.status === "fulfilled" ? result.value : []
+  )
 }
 
 export default async function RegistryLandingPage({

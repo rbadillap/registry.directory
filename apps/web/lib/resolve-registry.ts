@@ -3,6 +3,7 @@ import { join } from "node:path"
 import type { DirectoryEntry } from "./types"
 import type { Registry } from "./registry-types"
 import { registryFetch, getRegistryJsonUrl } from "./fetch-utils"
+import { readCachedJson, writeCachedJson } from "./build-cache"
 
 export type GithubRef = { owner: string; repo: string }
 
@@ -68,13 +69,18 @@ export async function fetchRegistryIndex(
   const targetUrl = getRegistryJsonUrl(entry)
   if (!targetUrl) return null
 
+  const cached = await readCachedJson<Registry>(targetUrl)
+  if (cached) return cached
+
   try {
     const response = await registryFetch(targetUrl, {
       timeout,
       next: { revalidate: 86400 },
     })
     if (!response.ok) return null
-    return (await response.json()) as Registry
+    const data = (await response.json()) as Registry
+    await writeCachedJson(targetUrl, data)
+    return data
   } catch (error) {
     console.error(`[Registry] Index fetch error for ${entry.name}:`, error)
     return null

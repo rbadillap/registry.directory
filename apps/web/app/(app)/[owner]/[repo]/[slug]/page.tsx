@@ -30,30 +30,43 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   const registries = await loadDirectory()
-  const params: { owner: string; repo: string; slug: string }[] = []
 
-  for (const registry of registries) {
-    const gh = parseGithubRef(registry.github_url)
-    if (!gh) continue
+  const results = await Promise.allSettled(
+    registries.map(async (registry) => {
+      const gh = parseGithubRef(registry.github_url)
+      if (!gh) return []
 
-    const index = await fetchRegistryIndex(registry, 10000)
-    if (!index) continue
+      const index = await fetchRegistryIndex(registry, 10000)
+      if (!index) return []
 
-    const categoriesMap = groupItemsByCategory(index.items)
+      // Prerender only categories + featured items; the item long tail
+      // renders on demand via dynamicParams. Measured over 30 days, humans
+      // visit ~340 distinct item pages while categories, landings and
+      // featured cover ~86% of traffic — prebaking all ~19k item pages
+      // spent the whole build on pages nobody requests before they expire.
+      const params: { owner: string; repo: string; slug: string }[] = []
+      const categoriesMap = groupItemsByCategory(index.items)
 
-    for (const category of categoriesMap.keys()) {
-      params.push({ owner: gh.owner, repo: gh.repo, slug: category })
-    }
-
-    for (const item of index.items) {
-      if (!hasOnlyRenderableFiles(item.files)) {
-        continue
+      for (const category of categoriesMap.keys()) {
+        params.push({ owner: gh.owner, repo: gh.repo, slug: category })
       }
-      params.push({ owner: gh.owner, repo: gh.repo, slug: item.name })
-    }
-  }
 
-  return params
+      const byName = new Map(index.items.map((item) => [item.name, item]))
+      for (const name of registry.featured ?? []) {
+        const item = byName.get(name)
+        if (!item || !hasOnlyRenderableFiles(item.files)) {
+          continue
+        }
+        params.push({ owner: gh.owner, repo: gh.repo, slug: name })
+      }
+
+      return params
+    })
+  )
+
+  return results.flatMap((result) =>
+    result.status === "fulfilled" ? result.value : []
+  )
 }
 
 export default async function SlugPage({
