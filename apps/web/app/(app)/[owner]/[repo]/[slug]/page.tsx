@@ -1,82 +1,17 @@
 import { notFound } from "next/navigation"
-import { readFile } from "node:fs/promises"
-import { join } from "node:path"
 import type { Metadata } from "next"
-import { RegistryViewer } from "@/components/registry-viewer"
-import { DirectoryEntry } from "@/lib/types"
-import type { Registry, RegistryItem } from "@/lib/registry-types"
-import { slugToType, typeToSlug, groupItemsByCategory, SLUG_TO_REGISTRY_TYPE, REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
-import { registryFetch } from "@/lib/fetch-utils"
+import { groupItemsByCategory } from "@/lib/registry-mappings"
 import { hasOnlyRenderableFiles } from "@/lib/file-utils"
-import { getAffiliates } from "@/lib/affiliates"
-
-async function getRegistry(owner: string, repo: string) {
-  const filePath = join(process.cwd(), "public/directory.json")
-  const fileContents = await readFile(filePath, "utf8")
-  const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
-  const registries = data.registries
-
-  const registry = registries.find((r) => {
-    if (!r.github_url) return false
-    const match = r.github_url.match(/github\.com\/([^/]+)\/([^/]+)/)
-    if (!match) return false
-    return match[1] === owner && match[2]?.replace(/\.git$/, '') === repo
-  })
-
-  return registry || null
-}
-
-async function fetchRegistryIndex(registry: DirectoryEntry): Promise<Registry | null> {
-  const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
-
-  try {
-    const response = await registryFetch(targetUrl, {
-      timeout: 5000,
-      next: { revalidate: 86400 }
-    })
-
-    if (!response.ok) return null
-
-    const data = await response.json()
-    return data
-  } catch (error) {
-    console.error(`[SlugView] Index fetch error:`, error)
-    return null
-  }
-}
-
-async function fetchItemData(
-  registry: DirectoryEntry,
-  itemName: string
-): Promise<RegistryItem | null> {
-  let baseUrl: string
-  if (registry.registry_url) {
-    baseUrl = registry.registry_url.replace(/\/[^/]+\.json$/, '')
-  } else {
-    baseUrl = `${registry.url.replace(/\/$/, '')}/r`
-  }
-  const targetUrl = `${baseUrl}/${itemName}.json`
-
-  try {
-    const response = await registryFetch(targetUrl, {
-      timeout: 5000,
-      next: { revalidate: 86400 }
-    })
-
-    if (!response.ok) return null
-
-    const data = await response.json()
-    return data
-  } catch (error) {
-    console.error(`[SlugView] Item fetch error:`, error)
-    return null
-  }
-}
-
-// Check if slug is a category
-function isCategory(slug: string): boolean {
-  return slug in SLUG_TO_REGISTRY_TYPE
-}
+import {
+  loadDirectory,
+  parseGithubRef,
+  resolveByGithub,
+  fetchRegistryIndex,
+} from "@/lib/resolve-registry"
+import {
+  RegistrySlugView,
+  buildSlugMetadata,
+} from "@/components/registry-slug-view"
 
 export async function generateMetadata({
   params,
@@ -84,95 +19,37 @@ export async function generateMetadata({
   params: Promise<{ owner: string; repo: string; slug: string }>
 }): Promise<Metadata> {
   const { owner, repo, slug } = await params
-  const registry = await getRegistry(owner, repo)
+  const registry = await resolveByGithub(owner, repo)
 
   if (!registry) {
     return { title: "Registry Not Found" }
   }
 
-  // Category view
-  if (isCategory(slug)) {
-    const categoryLabel = REGISTRY_TYPE_LABELS[slug] || slug
-    return {
-      title: `${categoryLabel} - ${registry.name}`,
-      description: `Browse ${categoryLabel.toLowerCase()} from ${registry.name}.`,
-      alternates: {
-        canonical: `https://registry.directory/${owner}/${repo}/${slug}`,
-      },
-    }
-  }
-
-  // Item view - use registry index instead of individual fetch to avoid timeout during build
-  const registryIndex = await fetchRegistryIndex(registry)
-  const itemData = registryIndex?.items?.find(item => item.name === slug)
-  const categorySlug = itemData ? typeToSlug(itemData.type) : null
-  const categoryLabel = categorySlug ? (REGISTRY_TYPE_LABELS[categorySlug] || categorySlug) : "Component"
-
-  return {
-    title: `${slug} - ${categoryLabel}`,
-    description: `${itemData?.description || slug}: A ${categoryLabel.toLowerCase()} from ${registry.name}. Preview code and install with one command.`,
-    alternates: {
-      canonical: `https://registry.directory/${owner}/${repo}/${slug}`,
-    },
-    openGraph: {
-      title: `${slug} - ${registry.name}`,
-      description: `${itemData?.description || slug}: A ${categoryLabel.toLowerCase()} from ${registry.name}.`,
-      url: `https://registry.directory/${owner}/${repo}/${slug}`,
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${slug} - ${registry.name}`,
-      description: `${itemData?.description || slug}: A ${categoryLabel.toLowerCase()} from ${registry.name}.`,
-    },
-  }
+  return buildSlugMetadata(registry, `/${owner}/${repo}`, slug)
 }
 
 export async function generateStaticParams() {
-  const filePath = join(process.cwd(), "public/directory.json")
-  const fileContents = await readFile(filePath, "utf8")
-  const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
-  const registries = data.registries
-
+  const registries = await loadDirectory()
   const params: { owner: string; repo: string; slug: string }[] = []
 
   for (const registry of registries) {
-    if (!registry.github_url) continue
+    const gh = parseGithubRef(registry.github_url)
+    if (!gh) continue
 
-    const match = registry.github_url.match(/github\.com\/([^/]+)\/([^/]+)/)
-    if (!match) continue
+    const index = await fetchRegistryIndex(registry, 10000)
+    if (!index) continue
 
-    const owner = match[1]
-    const repo = match[2]?.replace(/\.git$/, '')
+    const categoriesMap = groupItemsByCategory(index.items)
 
-    if (!owner || !repo) continue
+    for (const category of categoriesMap.keys()) {
+      params.push({ owner: gh.owner, repo: gh.repo, slug: category })
+    }
 
-    try {
-      const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
-      const response = await registryFetch(targetUrl, {
-        timeout: 10000,
-        next: { revalidate: 86400 }
-      })
-
-      if (!response.ok) continue
-
-      const registryData = await response.json() as Registry
-      const categoriesMap = groupItemsByCategory(registryData.items)
-
-      // Add category slugs
-      for (const category of categoriesMap.keys()) {
-        params.push({ owner, repo, slug: category })
+    for (const item of index.items) {
+      if (!hasOnlyRenderableFiles(item.files)) {
+        continue
       }
-
-      // Add item slugs
-      for (const item of registryData.items) {
-        if (!hasOnlyRenderableFiles(item.files)) {
-          continue
-        }
-        params.push({ owner, repo, slug: item.name })
-      }
-    } catch (error) {
-      console.error(`[SlugView] Error generating params for ${owner}/${repo}:`, error)
+      params.push({ owner: gh.owner, repo: gh.repo, slug: item.name })
     }
   }
 
@@ -186,75 +63,16 @@ export default async function SlugPage({
 }) {
   const { owner, repo, slug } = await params
 
-  const registry = await getRegistry(owner, repo)
+  const registry = await resolveByGithub(owner, repo)
   if (!registry) {
     notFound()
   }
 
-  const registryIndex = await fetchRegistryIndex(registry)
-  if (!registryIndex) {
-    notFound()
-  }
-
-  const [categoriesMap, affiliates] = await Promise.all([
-    Promise.resolve(groupItemsByCategory(registryIndex.items)),
-    getAffiliates(),
-  ])
-  const affiliate = affiliates[registry.url] ?? null
-
-  // Category view: show list of items in category
-  if (isCategory(slug)) {
-    const registryType = slugToType(slug)
-    if (!registryType) {
-      notFound()
-    }
-
-    const categoryItems = categoriesMap.get(slug)
-    if (!categoryItems || categoryItems.length === 0) {
-      notFound()
-    }
-
-    const filteredRegistry: Registry = {
-      ...registryIndex,
-      items: categoryItems
-    }
-
-    return (
-      <RegistryViewer
-        registry={registry}
-        registryIndex={filteredRegistry}
-        selectedItem={null}
-        currentCategory={slug}
-        affiliate={affiliate}
-      />
-    )
-  }
-
-  // Item view: show specific item
-  const itemData = await fetchItemData(registry, slug)
-  if (!itemData) {
-    notFound()
-  }
-
-  const currentCategory = typeToSlug(itemData.type)
-  if (!currentCategory) {
-    notFound()
-  }
-
-  const categoryItems = categoriesMap.get(currentCategory) || []
-
-  const filteredRegistry: Registry = {
-    ...registryIndex,
-    items: categoryItems
-  }
-
   return (
-    <RegistryViewer
+    <RegistrySlugView
       registry={registry}
-      registryIndex={filteredRegistry}
-      selectedItem={itemData}
-      currentCategory={currentCategory}
-      affiliate={affiliate}
+      basePath={`/${owner}/${repo}`}
+      slug={slug}
     />
   )
 }

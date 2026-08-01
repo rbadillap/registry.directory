@@ -1,24 +1,25 @@
 import { NextRequest } from "next/server"
 import { generateMarkdownForItem } from "@/lib/markdown-generator"
-import { resolveByGithub } from "@/lib/resolve-registry"
+import { resolveByHandle, parseGithubRef, entryHandle } from "@/lib/resolve-registry"
 import { isCategory, fetchItemData } from "@/components/registry-slug-view"
 
-// Force dynamic rendering - don't pre-generate during build
+// Markdown export for handle-based item URLs: /{handle}/{item}.md
+// (github-backed registries use the 3-segment route)
 export const dynamic = 'force-dynamic'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ owner: string; repo: string; slug: string }> }
+  { params }: { params: Promise<{ owner: string; repo: string }> }
 ) {
-  const { owner, repo, slug } = await params
+  const { owner: handle, repo: slug } = await params
 
   // Categories don't have markdown
   if (isCategory(slug)) {
     return new Response("Markdown not available for categories", { status: 404 })
   }
 
-  const registry = await resolveByGithub(owner, repo)
-  if (!registry) {
+  const registry = await resolveByHandle(handle)
+  if (!registry || parseGithubRef(registry.github_url)) {
     return new Response("Registry not found", { status: 404 })
   }
 
@@ -27,7 +28,7 @@ export async function GET(
     return new Response("Item not found", { status: 404 })
   }
 
-  const markdown = generateMarkdownForItem(itemData, registry, `/${owner}/${repo}`)
+  const markdown = generateMarkdownForItem(itemData, registry, `/${entryHandle(registry)}`)
 
   return new Response(markdown, {
     headers: {

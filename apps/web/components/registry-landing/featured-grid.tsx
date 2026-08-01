@@ -4,8 +4,7 @@ import type { RegistryItem } from "@/lib/registry-types"
 
 interface FeaturedGridProps {
   items: RegistryItem[]
-  owner: string
-  repo: string
+  basePath: string
 }
 
 function typeBadge(type: string | undefined): string {
@@ -13,7 +12,7 @@ function typeBadge(type: string | undefined): string {
   return type.replace(/^registry:/, "")
 }
 
-export function FeaturedGrid({ items, owner, repo }: FeaturedGridProps) {
+export function FeaturedGrid({ items, basePath }: FeaturedGridProps) {
   return (
     <section className="space-y-4">
       <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
@@ -23,7 +22,7 @@ export function FeaturedGrid({ items, owner, repo }: FeaturedGridProps) {
         {items.map((item) => (
           <Link
             key={item.name}
-            href={`/${owner}/${repo}/${item.name}`}
+            href={`${basePath}/${item.name}`}
             className="group"
           >
             <div className="flex h-full flex-col gap-2 rounded-lg border border-border bg-surface/40 p-[18px] transition-colors hover:bg-accent">

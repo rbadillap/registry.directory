@@ -5,8 +5,7 @@ import { HeroCtas } from "./hero-ctas"
 
 interface LandingHeroProps {
   registry: DirectoryEntry
-  owner: string
-  repo: string
+  basePath: string
   typesCount: number
   totalItems: number
   githubStats?: { stars: number; lastCommit: string } | null
@@ -15,8 +14,7 @@ interface LandingHeroProps {
 
 export function LandingHero({
   registry,
-  owner,
-  repo,
+  basePath,
   typesCount,
   totalItems,
   githubStats,
@@ -41,9 +39,7 @@ export function LandingHero({
           </h1>
           <p className="truncate font-mono text-xs">
             <span className="text-foreground-faint">registry.directory/</span>
-            <span className="text-muted-foreground">
-              {owner}/{repo}
-            </span>
+            <span className="text-muted-foreground">{basePath.slice(1)}</span>
           </p>
         </div>
       </div>

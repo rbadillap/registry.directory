@@ -9,8 +9,9 @@ export const revalidate = 86400
 
 const BASE_URL = "https://registry.directory"
 
-// Resolve a registry's canonical registry.directory path from its github_url.
-// Falls back to the registry's own site when there's no GitHub repo to map.
+// Resolve a registry's canonical registry.directory path: /{owner}/{repo}
+// from github_url, else /{handle} from the namespace. Falls back to the
+// registry's own site when neither exists.
 function registryLink(registry: DirectoryEntry): string {
   if (registry.github_url) {
     const match = registry.github_url.match(/github\.com\/([^/]+)\/([^/]+)/)
@@ -19,6 +20,9 @@ function registryLink(registry: DirectoryEntry): string {
       const repo = match[2].replace(/\.git$/, "")
       return `${BASE_URL}/${owner}/${repo}`
     }
+  }
+  if (registry.namespace) {
+    return `${BASE_URL}/${registry.namespace.replace(/^@/, "")}`
   }
   return registry.url
 }

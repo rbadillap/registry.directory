@@ -21,6 +21,8 @@ interface RegistryViewerProps {
   selectedItem: RegistryItem | null
   currentCategory: string
   affiliate?: AffiliateConfig | null
+  // Route prefix the viewer lives under: "/{owner}/{repo}" or "/{handle}"
+  basePath: string
 }
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
@@ -45,7 +47,7 @@ function addGlobalsCssFile(item: RegistryItem): RegistryItem {
   }
 }
 
-export function RegistryViewer({ registry, registryIndex, selectedItem: initialItem, currentCategory, affiliate }: RegistryViewerProps) {
+export function RegistryViewer({ registry, registryIndex, selectedItem: initialItem, currentCategory, affiliate, basePath }: RegistryViewerProps) {
   const analytics = useAnalytics()
 
   // Add globals.css files to items with cssVars
@@ -125,7 +127,7 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
 
   return (
     <div className="h-screen bg-background text-foreground flex flex-col">
-      <ViewerHeader registry={registry} currentCategory={currentCategory} selectedItemName={initialItem?.name} affiliate={affiliate} />
+      <ViewerHeader registry={registry} currentCategory={currentCategory} selectedItemName={initialItem?.name} affiliate={affiliate} basePath={basePath} />
 
       {/* Mobile Tab Navigation - only visible on mobile */}
       <MobileTabNavigation
@@ -143,6 +145,7 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
             selectedFile={selectedFile}
             onSelectFile={handleSelectFile}
             currentCategory={currentCategory}
+            basePath={basePath}
           />
         </div>
         <div className={cn("h-full", mobileTab !== 'code' && "hidden")}>
@@ -163,6 +166,7 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
               selectedFile={selectedFile}
               onSelectFile={handleSelectFile}
               currentCategory={currentCategory}
+              basePath={basePath}
             />
           </Panel>
 

@@ -2,7 +2,6 @@
 
 import React, { useState, useMemo, useEffect } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { ScrollArea } from "@workspace/ui/components/scroll-area"
 import {
   ChevronRight,
@@ -32,6 +31,8 @@ interface FileTreeProps {
   selectedFile: RegistryFile | null
   onSelectFile: (item: RegistryItem, file: RegistryFile) => void
   currentCategory?: string
+  // Route prefix ("/{owner}/{repo}" or "/{handle}") for sibling item links
+  basePath: string
 }
 
 type TreeNode = {
@@ -170,19 +171,9 @@ function buildPathTree(items: RegistryItem[]): PathTree {
   return root
 }
 
-export function FileTree({ items, selectedItem, selectedFile, onSelectFile, currentCategory }: FileTreeProps) {
-  const pathname = usePathname()
+export function FileTree({ items, selectedItem, selectedFile, onSelectFile, currentCategory, basePath }: FileTreeProps) {
   const analytics = useAnalytics()
 
-  // Extract base path (/{owner}/{repo}) from current pathname
-  const getBasePath = () => {
-    const segments = pathname.split('/').filter(Boolean)
-    if (segments.length >= 2) {
-      return `/${segments[0]}/${segments[1]}`
-    }
-    return pathname
-  }
-  const basePath = getBasePath()
   const [openFolders, setOpenFolders] = useState<Set<string>>(
     new Set(["components", "components/ui", "lib"]),
   )

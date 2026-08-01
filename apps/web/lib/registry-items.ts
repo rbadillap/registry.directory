@@ -3,26 +3,20 @@ import { hasOnlyRenderableFiles } from "./file-utils";
 import type { Registry } from "./registry-types";
 import type { DirectoryEntry } from "./types";
 import type { IndexedItem } from "./items-index";
-
-function parseGitHubOwnerRepo(
-  githubUrl: string
-): { owner: string; repo: string } | null {
-  const match = githubUrl.match(/github\.com\/([^/]+)\/([^/]+)/);
-  if (!match) return null;
-  const owner = match[1];
-  const repo = match[2]?.replace(/\.git$/, "");
-  if (!owner || !repo) return null;
-  return { owner, repo };
-}
+import { registryBasePath, parseGithubRef } from "./resolve-registry";
 
 async function fetchItemsForRegistry(
   registry: DirectoryEntry
 ): Promise<IndexedItem[]> {
   const url = getRegistryJsonUrl(registry);
-  if (!url || !registry.github_url) return [];
+  // Entries with neither github_url nor namespace have no route on the site
+  const basePath = registryBasePath(registry);
+  if (!url || !basePath) return [];
 
-  const parsed = parseGitHubOwnerRepo(registry.github_url);
-  if (!parsed) return [];
+  const gh = parseGithubRef(registry.github_url);
+  const avatarUrl = gh
+    ? `https://github.com/${gh.owner}.png`
+    : (registry.github_profile ?? null);
 
   const response = await registryFetch(url, {
     timeout: 10000,
@@ -43,8 +37,8 @@ async function fetchItemsForRegistry(
       categories: item.categories || [],
       registry: {
         name: registry.name,
-        owner: parsed.owner,
-        repo: parsed.repo,
+        basePath,
+        avatarUrl,
       },
     }));
 }
@@ -72,7 +66,7 @@ export async function fetchAllRegistryItems(
   // (e.g. style variants like "badge-style-default"). Keep the first occurrence.
   const seen = new Set<string>();
   return allItems.filter((item) => {
-    const key = `${item.registry.owner}/${item.registry.repo}/${item.name}`;
+    const key = `${item.registry.basePath}/${item.name}`;
     if (seen.has(key)) return false;
     seen.add(key);
     return true;

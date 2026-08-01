@@ -2,11 +2,9 @@
 import { ImageResponse } from "next/og"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
-import type { DirectoryEntry } from "@/lib/types"
-import type { Registry } from "@/lib/registry-types"
-import { registryFetch } from "@/lib/fetch-utils"
 import { typeToSlug, SLUG_TO_REGISTRY_TYPE, REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
 import { getInstallCommand } from "@/lib/install-command"
+import { resolveByGithub, fetchRegistryIndex } from "@/lib/resolve-registry"
 
 export const runtime = 'nodejs'
 export const alt = 'registry.directory component preview'
@@ -19,40 +17,6 @@ export const contentType = 'image/png'
 
 function isCategory(slug: string): boolean {
   return slug in SLUG_TO_REGISTRY_TYPE
-}
-
-async function getRegistry(owner: string, repo: string) {
-  const filePath = join(process.cwd(), "public/directory.json")
-  const fileContents = await readFile(filePath, "utf8")
-  const data = JSON.parse(fileContents) as { registries: DirectoryEntry[] }
-  const registries = data.registries
-
-  const registry = registries.find((r) => {
-    if (!r.github_url) return false
-    const match = r.github_url.match(/github\.com\/([^/]+)\/([^/]+)/)
-    if (!match) return false
-    return match[1] === owner && match[2]?.replace(/\.git$/, '') === repo
-  })
-
-  return registry || null
-}
-
-async function fetchRegistryIndex(registry: DirectoryEntry): Promise<Registry | null> {
-  const targetUrl = registry.registry_url || `${registry.url.replace(/\/$/, '')}/r/registry.json`
-
-  try {
-    const response = await registryFetch(targetUrl, {
-      timeout: 10000,
-      next: { revalidate: 86400 }
-    })
-
-    if (!response.ok) return null
-
-    const data = await response.json()
-    return data
-  } catch {
-    return null
-  }
 }
 
 export default async function Image({
@@ -68,8 +32,8 @@ export default async function Image({
     readFile(join(process.cwd(), 'public/fonts/IBMPlexMono-Regular.ttf'))
   ])
 
-  const registry = await getRegistry(owner, repo)
-  const registryIndex = registry ? await fetchRegistryIndex(registry) : null
+  const registry = await resolveByGithub(owner, repo)
+  const registryIndex = registry ? await fetchRegistryIndex(registry, 10000) : null
 
   // Category OG image
   if (isCategory(slug)) {
@@ -180,7 +144,7 @@ export default async function Image({
             <span tw="text-stone-300">npx shadcn@latest add</span>
             <span tw="text-white ml-2">{
               registry
-                ? getInstallCommand({ registry, itemName: slug, owner, repo })
+                ? getInstallCommand({ registry, itemName: slug, basePath: `/${owner}/${repo}` })
                 : slug
             }</span>
           </div>

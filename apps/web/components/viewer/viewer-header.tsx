@@ -15,6 +15,8 @@ interface ViewerHeaderProps {
   currentCategory?: string | null
   selectedItemName?: string | null
   affiliate?: AffiliateConfig | null
+  // Route prefix ("/{owner}/{repo}" or "/{handle}"); derived from github_url when omitted
+  basePath?: string
 }
 
 function parseGitHubUrl(url?: string) {
@@ -39,12 +41,13 @@ function parseGitHubUrl(url?: string) {
   }
 }
 
-export function ViewerHeader({ registry, currentCategory, selectedItemName, affiliate }: ViewerHeaderProps) {
+export function ViewerHeader({ registry, currentCategory, selectedItemName, affiliate, basePath: basePathProp }: ViewerHeaderProps) {
   const analytics = useAnalytics()
   const githubInfo = parseGitHubUrl(registry.github_url)
 
   // Build base path
-  const basePath = githubInfo ? `/${githubInfo.username}/${githubInfo.repo}` : ''
+  const basePath = basePathProp ?? (githubInfo ? `/${githubInfo.username}/${githubInfo.repo}` : '')
+  const avatarUrl = githubInfo?.avatarUrl ?? registry.github_profile ?? null
 
   // Calculate back URL based on context
   const getBackUrl = () => {
@@ -92,31 +95,42 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName, affi
         </Button>
 
         <div className="flex items-center gap-2 md:gap-3 min-w-0 flex-1">
-          {githubInfo && (
+          {avatarUrl && (
             <Avatar className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0">
-              <AvatarImage src={githubInfo.avatarUrl} alt={githubInfo.username} />
+              <AvatarImage src={avatarUrl} alt="" />
               <AvatarFallback className="bg-secondary text-muted-foreground text-xs">
-                {githubInfo.username.charAt(0).toUpperCase()}
+                {registry.name.charAt(0).toUpperCase()}
               </AvatarFallback>
             </Avatar>
           )}
 
           <div className="text-xs md:text-sm font-mono min-w-0 truncate">
-            {githubInfo ? (
+            {githubInfo || basePath ? (
               <>
-                <Link
-                  href={`/${githubInfo.username}/${githubInfo.repo}`}
-                  className="text-muted-foreground hover:text-foreground hover:underline transition-colors"
-                >
-                  {githubInfo.username}
-                </Link>
-                <span className="text-foreground-subtle mx-1 md:mx-1.5">/</span>
-                <Link
-                  href={`/${githubInfo.username}/${githubInfo.repo}`}
-                  className="text-foreground font-semibold hover:underline transition-colors"
-                >
-                  {githubInfo.repo}
-                </Link>
+                {githubInfo ? (
+                  <>
+                    <Link
+                      href={basePath}
+                      className="text-muted-foreground hover:text-foreground hover:underline transition-colors"
+                    >
+                      {githubInfo.username}
+                    </Link>
+                    <span className="text-foreground-subtle mx-1 md:mx-1.5">/</span>
+                    <Link
+                      href={basePath}
+                      className="text-foreground font-semibold hover:underline transition-colors"
+                    >
+                      {githubInfo.repo}
+                    </Link>
+                  </>
+                ) : (
+                  <Link
+                    href={basePath}
+                    className="text-foreground font-semibold hover:underline transition-colors"
+                  >
+                    {basePath.slice(1)}
+                  </Link>
+                )}
                 {currentCategory && (
                   <>
                     <span className="text-foreground-subtle mx-1 md:mx-1.5 hidden md:inline">/</span>

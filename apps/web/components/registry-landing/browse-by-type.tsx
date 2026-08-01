@@ -9,11 +9,10 @@ import type { RegistryItem } from "@/lib/registry-types"
 
 interface BrowseByTypeProps {
   categories: Map<string, RegistryItem[]>
-  owner: string
-  repo: string
+  basePath: string
 }
 
-export function BrowseByType({ categories, owner, repo }: BrowseByTypeProps) {
+export function BrowseByType({ categories, basePath }: BrowseByTypeProps) {
   const sortedSlugs = sortByTypeRelevance(
     Array.from(categories.keys()).filter(
       (slug) => categories.get(slug)!.length > 0
@@ -36,7 +35,7 @@ export function BrowseByType({ categories, owner, repo }: BrowseByTypeProps) {
           return (
             <Link
               key={slug}
-              href={`/${owner}/${repo}/${slug}`}
+              href={`${basePath}/${slug}`}
               className="inline-flex h-9 items-center gap-2 rounded-lg border border-border px-3.5 transition-colors hover:bg-accent"
             >
               <Icon

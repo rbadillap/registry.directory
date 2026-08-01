@@ -10,7 +10,8 @@ export interface IndexedItem {
   categories: string[]
   registry: {
     name: string
-    owner: string
-    repo: string
+    // Route prefix on registry.directory: "/{owner}/{repo}" or "/{handle}"
+    basePath: string
+    avatarUrl: string | null
   }
 }
