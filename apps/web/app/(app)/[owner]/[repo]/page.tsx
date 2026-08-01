@@ -73,9 +73,8 @@ export async function generateStaticParams() {
       }
 
       // Github-less entries: /{handle}/{category|item} pages. Prerender only
-      // categories + featured items — some of these catalogs are huge (4k+
-      // items, many paywalled) and would double the daily build; the rest
-      // renders on demand via dynamicParams.
+      // categories + featured items, same policy as the github-backed
+      // [slug] route; the rest renders on demand via dynamicParams.
       const handle = entryHandle(registry)
       if (!handle) return []
 
