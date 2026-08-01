@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Check, Copy } from "lucide-react"
 import { useAnalytics } from "@/hooks/use-analytics"
 
-const CLI_COMMAND = 'npx shadcn@latest search @registrydirectory -q "button"'
+const CLI_COMMAND = 'npx shadcn search @registrydirectory -q "button"'
 
 // The command IS the tagline: the CLI is the primary way in, the site
 // below the "or" separator is the alternative.
@@ -20,7 +20,7 @@ export function CliHero() {
   }
 
   return (
-    <div className="flex flex-col items-center w-full px-4 mb-12 md:mb-14">
+    <div className="flex flex-col items-center w-full px-4 mb-8">
       <button
         type="button"
         onClick={handleCopy}
@@ -29,7 +29,7 @@ export function CliHero() {
       >
         <span className="overflow-x-auto whitespace-nowrap text-left [scrollbar-width:none]">
           <span className="select-none text-muted-foreground">$ </span>
-          <span className="text-muted-foreground">npx shadcn@latest search </span>
+          <span className="text-muted-foreground">npx shadcn search </span>
           <span className="font-semibold text-foreground">@registrydirectory</span>
           <span className="text-muted-foreground"> -q </span>
           <span className="text-foreground">&quot;button&quot;</span>
