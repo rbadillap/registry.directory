@@ -8,17 +8,16 @@ const DEFAULT_TAB = 'popular';
 const VALID_TABS = ['popular', 'stars', 'recently-active'] as const;
 type TabValue = (typeof VALID_TABS)[number];
 
-const ALL_TYPES = 'all';
-
 function isValidTab(value: string | null): value is TabValue {
   return value !== null && (VALID_TABS as readonly string[]).includes(value);
 }
 
-function isValidType(value: string | null): value is string {
-  return value !== null && REGISTRY_TYPE_ORDER.includes(value);
+function parseTypes(value: string | null): string[] {
+  if (!value) return [];
+  return value.split(',').filter((slug) => REGISTRY_TYPE_ORDER.includes(slug));
 }
 
-function buildUrl(searchTerm: string, activeTab: string, typeFilter: string) {
+function buildUrl(searchTerm: string, activeTab: string, typeFilters: string[]) {
   const url = new URL(window.location.href);
   if (searchTerm) {
     url.searchParams.set('q', searchTerm);
@@ -30,8 +29,8 @@ function buildUrl(searchTerm: string, activeTab: string, typeFilter: string) {
   } else {
     url.searchParams.delete('tab');
   }
-  if (typeFilter !== ALL_TYPES) {
-    url.searchParams.set('type', typeFilter);
+  if (typeFilters.length > 0) {
+    url.searchParams.set('type', typeFilters.join(','));
   } else {
     url.searchParams.delete('type');
   }
@@ -45,12 +44,11 @@ export function useUrlState() {
   const initialQ = searchParams.get('q') ?? '';
   const rawTab = searchParams.get('tab');
   const initialTab = isValidTab(rawTab) ? rawTab : DEFAULT_TAB;
-  const rawType = searchParams.get('type');
-  const initialType = isValidType(rawType) ? rawType : ALL_TYPES;
+  const initialTypes = parseTypes(searchParams.get('type'));
 
   const [searchTerm, setSearchTerm] = useState(initialQ);
   const [activeTab, setActiveTab] = useState<string>(initialTab);
-  const [typeFilter, setTypeFilter] = useState<string>(initialType);
+  const [typeFilters, setTypeFilters] = useState<string[]>(initialTypes);
 
   // Skip first URL sync on mount
   const isInitialMount = useRef(true);
@@ -62,11 +60,11 @@ export function useUrlState() {
 
     clearTimeout(searchTimerRef.current);
     searchTimerRef.current = setTimeout(() => {
-      window.history.replaceState(null, '', buildUrl(searchTerm, activeTab, typeFilter));
+      window.history.replaceState(null, '', buildUrl(searchTerm, activeTab, typeFilters));
     }, 300);
 
     return () => clearTimeout(searchTimerRef.current);
-  }, [searchTerm, activeTab, typeFilter]);
+  }, [searchTerm, activeTab, typeFilters]);
 
   // Sync tab and type facet → URL (immediate, pushState)
   useEffect(() => {
@@ -77,8 +75,8 @@ export function useUrlState() {
 
     // Flush any pending search debounce so pushState captures current search term
     clearTimeout(searchTimerRef.current);
-    window.history.pushState(null, '', buildUrl(searchTerm, activeTab, typeFilter));
-  }, [activeTab, typeFilter]); // eslint-disable-line react-hooks/exhaustive-deps
+    window.history.pushState(null, '', buildUrl(searchTerm, activeTab, typeFilters));
+  }, [activeTab, typeFilters]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Handle browser back/forward
   useEffect(() => {
@@ -87,13 +85,12 @@ export function useUrlState() {
       setSearchTerm(url.searchParams.get('q') ?? '');
       const tab = url.searchParams.get('tab');
       setActiveTab(isValidTab(tab) ? tab : DEFAULT_TAB);
-      const type = url.searchParams.get('type');
-      setTypeFilter(isValidType(type) ? type : ALL_TYPES);
+      setTypeFilters(parseTypes(url.searchParams.get('type')));
     };
 
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  return { searchTerm, setSearchTerm, activeTab, setActiveTab, typeFilter, setTypeFilter };
+  return { searchTerm, setSearchTerm, activeTab, setActiveTab, typeFilters, setTypeFilters };
 }

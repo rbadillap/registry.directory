@@ -9,7 +9,7 @@ import { useUrlState } from '@/hooks/use-url-state';
 import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from '@/lib/types';
 import type { IndexedItem } from '@/lib/items-index';
 import { searchItems } from '@/lib/search-utils';
-import { TypeFilterSelect } from './type-filter-select';
+import { TypeFilterMenu } from './type-filter-menu';
 import { typeToSlug, REGISTRY_TYPE_LABELS } from '@/lib/registry-mappings';
 
 // Slugs sharing a human label (ui/components → "Components") are one
@@ -87,7 +87,7 @@ interface DirectoryTabsProps {
 
 export function DirectoryTabs({ components, stats, githubStats, items, affiliates }: DirectoryTabsProps) {
   const analytics = useAnalytics();
-  const { activeTab, setActiveTab, searchTerm, setSearchTerm, typeFilter, setTypeFilter } = useUrlState();
+  const { activeTab, setActiveTab, searchTerm, setSearchTerm, typeFilters, setTypeFilters } = useUrlState();
   const deferredSearchTerm = useDeferredValue(searchTerm);
 
   const [premiumOnly, setPremiumOnly] = useState(false);
@@ -95,9 +95,13 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
   // A registry passes the type facet when its index has ≥1 item of that
   // type — the per-type counts already arrive in the stats prop.
   const hasType = useCallback(
-    (entry: DirectoryEntry, type: string) =>
-      type === 'all' ||
-      Boolean(stats[entry.url]?.categories.some((c) => matchesTypeFacet(c.slug, type))),
+    (entry: DirectoryEntry, filters: string[]) =>
+      filters.length === 0 ||
+      Boolean(
+        stats[entry.url]?.categories.some((c) =>
+          filters.some((f) => matchesTypeFacet(c.slug, f))
+        )
+      ),
     [stats]
   );
 
@@ -105,28 +109,36 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
     () =>
       filterBySearch(
         (premiumOnly ? components.filter(entry => entry.pro) : components).filter(
-          entry => hasType(entry, typeFilter)
+          entry => hasType(entry, typeFilters)
         ),
         searchTerm
       ),
-    [components, searchTerm, premiumOnly, typeFilter, hasType]
+    [components, searchTerm, premiumOnly, typeFilters, hasType]
   );
 
-  const handleTypeChange = useCallback(
-    (type: string) => {
-      setTypeFilter(type);
+  const handleTypeToggle = useCallback(
+    (slug: string, checked: boolean) => {
+      const next = checked
+        ? [...typeFilters, slug]
+        : typeFilters.filter((t) => t !== slug);
+      setTypeFilters(next);
       analytics.trackTypeFiltered({
-        type,
+        type: slug,
+        enabled: checked,
         active_tab: activeTab as HomeTab,
         has_query: Boolean(searchTerm),
         results_count: filterBySearch(
-          components.filter(entry => hasType(entry, type)),
+          components.filter(entry => hasType(entry, next)),
           searchTerm
         ).length,
       });
     },
-    [setTypeFilter, analytics, activeTab, searchTerm, components, hasType]
+    [typeFilters, setTypeFilters, analytics, activeTab, searchTerm, components, hasType]
   );
+
+  const handleTypeClear = useCallback(() => {
+    setTypeFilters([]);
+  }, [setTypeFilters]);
 
   const handlePremiumToggle = useCallback(() => {
     const enabled = !premiumOnly;
@@ -168,9 +180,11 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
   const filteredItems = useMemo(() => {
     if (!deferredSearchTerm) return [];
     const results = searchItems(items, deferredSearchTerm);
-    if (typeFilter === 'all') return results;
-    return results.filter((item) => matchesTypeFacet(typeToSlug(item.type), typeFilter));
-  }, [items, deferredSearchTerm, typeFilter]);
+    if (typeFilters.length === 0) return results;
+    return results.filter((item) =>
+      typeFilters.some((f) => matchesTypeFacet(typeToSlug(item.type), f))
+    );
+  }, [items, deferredSearchTerm, typeFilters]);
 
   // Track search performed (debounced via hook)
   useEffect(() => {
@@ -248,9 +262,10 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
             </button>
 
             <div className="ml-auto">
-              <TypeFilterSelect
-                value={typeFilter}
-                onChange={handleTypeChange}
+              <TypeFilterMenu
+                selected={typeFilters}
+                onToggle={handleTypeToggle}
+                onClear={handleTypeClear}
                 components={components}
                 stats={stats}
               />

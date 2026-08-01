@@ -130,6 +130,7 @@ export interface HomeRegistryVisitProperties {
 
 export interface TypeFilteredProperties {
   type: string;
+  enabled: boolean;
   active_tab: HomeTab;
   has_query: boolean;
   results_count: number;
