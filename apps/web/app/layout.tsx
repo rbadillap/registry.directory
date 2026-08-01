@@ -5,6 +5,20 @@ import { Analytics } from "@vercel/analytics/next"
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
 import { FeedbackWidget } from "@/components/feedback-widget"
+import { JsonLd } from "@/components/json-ld"
+import {
+  buildOrganizationSchema,
+  buildWebSiteSchema,
+} from "@/lib/structured-data"
+import {
+  SITE_AUTHOR,
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_URL,
+  TWITTER_HANDLE,
+} from "@/lib/seo"
 
 const schibsted = Schibsted_Grotesk({
   variable: "--font-schibsted",
@@ -18,12 +32,52 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://registry.directory"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    template: "%s | registry.directory",
-    default: "registry.directory - The explorer for shadcn/ui registries",
+    // Brand last: the leading slot is worth more spent on what the page is
+    // than on a domain searchers only type once they already know us.
+    template: `%s | ${SITE_NAME}`,
+    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
   },
-  description: "Browse, preview, and install from any shadcn/ui registry. Explore components in an IDE viewer, then copy the install command.",
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [SITE_AUTHOR],
+  creator: SITE_AUTHOR.name,
+  publisher: SITE_NAME,
+  keywords: SITE_KEYWORDS,
+  category: "technology",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: "en_US",
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: TWITTER_HANDLE,
+    creator: TWITTER_HANDLE,
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export const viewport: Viewport = {
@@ -47,6 +101,9 @@ export default function RootLayout({
       <body
         className={`${schibsted.variable} ${ibmPlexMono.variable} font-sans antialiased`}
       >
+        {/* Site-wide identity nodes. Every other route emits page-scoped
+            schema that references these two by @id. */}
+        <JsonLd data={[buildWebSiteSchema(), buildOrganizationSchema()]} />
         <Providers>
           {children}
         </Providers>

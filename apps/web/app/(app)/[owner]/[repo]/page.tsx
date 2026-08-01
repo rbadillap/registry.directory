@@ -16,6 +16,12 @@ import {
   RegistrySlugView,
   buildSlugMetadata,
 } from "@/components/registry-slug-view"
+import { JsonLd } from "@/components/json-ld"
+import {
+  buildBreadcrumbSchema,
+  buildRegistryCollectionSchema,
+} from "@/lib/structured-data"
+import { SITE_NAME, TWITTER_HANDLE, shadcnQualifier } from "@/lib/seo"
 
 export async function generateMetadata({
   params,
@@ -31,20 +37,34 @@ export async function generateMetadata({
     const itemCount = index?.items?.length || 0
     const canonical = `https://registry.directory/${owner}/${repo}`
 
+    // Qualify the bare registry name with what it is and how many pieces it
+    // ships — "acme" alone matches nothing, "acme — 42 shadcn/ui components"
+    // matches the way people actually phrase the search.
+    const qualifier = shadcnQualifier(ghRegistry.name)
+    const title = itemCount
+      ? `${ghRegistry.name} — ${itemCount} ${qualifier}components & blocks`
+      : `${ghRegistry.name} — ${qualifier}registry`
+    const description =
+      ghRegistry.description ||
+      `Browse ${itemCount} shadcn/ui components from ${ghRegistry.name}. Preview the source in an IDE viewer and install with the shadcn CLI.`
+
     return {
-      title: ghRegistry.name,
-      description: ghRegistry.description || `Browse ${itemCount} components from ${ghRegistry.name}. Preview code in our IDE viewer and install with one command.`,
+      title,
+      description,
       alternates: { canonical },
       openGraph: {
-        title: ghRegistry.name,
-        description: ghRegistry.description || `Browse ${itemCount} components from ${ghRegistry.name}.`,
+        title,
+        description,
         url: canonical,
+        siteName: SITE_NAME,
+        locale: 'en_US',
         type: 'website',
       },
       twitter: {
         card: 'summary_large_image',
-        title: ghRegistry.name,
-        description: ghRegistry.description || `Browse ${itemCount} components from ${ghRegistry.name}.`,
+        site: TWITTER_HANDLE,
+        title,
+        description,
       },
     }
   }
@@ -116,13 +136,32 @@ export default async function RegistryLandingPage({
   // 1) Canonical github pair — always wins
   const ghRegistry = await resolveByGithub(owner, repo)
   if (ghRegistry) {
+    const basePath = `/${owner}/${repo}`
     const landingData = await loadLandingData(ghRegistry)
+    const index = await fetchRegistryIndex(ghRegistry)
+    const items = index?.items ?? []
+
     return (
-      <RegistryLanding
-        registry={ghRegistry}
-        basePath={`/${owner}/${repo}`}
-        {...landingData}
-      />
+      <>
+        <JsonLd
+          data={[
+            buildBreadcrumbSchema([
+              { name: ghRegistry.name, path: basePath },
+            ]),
+            buildRegistryCollectionSchema({
+              registry: ghRegistry,
+              basePath,
+              itemNames: items.map((item) => item.name),
+              totalItems: items.length,
+            }),
+          ]}
+        />
+        <RegistryLanding
+          registry={ghRegistry}
+          basePath={basePath}
+          {...landingData}
+        />
+      </>
     )
   }
 

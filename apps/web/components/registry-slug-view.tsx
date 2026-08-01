@@ -9,10 +9,16 @@ import {
   groupItemsByCategory,
   SLUG_TO_REGISTRY_TYPE,
   REGISTRY_TYPE_LABELS,
+  singularType,
 } from "@/lib/registry-mappings"
 import { registryFetch } from "@/lib/fetch-utils"
 import { getAffiliates } from "@/lib/affiliates"
 import { fetchRegistryIndex } from "@/lib/resolve-registry"
+import { JsonLd } from "@/components/json-ld"
+import {
+  buildBreadcrumbSchema,
+  buildRegistryItemSchema,
+} from "@/lib/structured-data"
 
 export function isCategory(slug: string): boolean {
   return slug in SLUG_TO_REGISTRY_TYPE
@@ -56,10 +62,14 @@ export async function buildSlugMetadata(
 
   if (isCategory(slug)) {
     const categoryLabel = REGISTRY_TYPE_LABELS[slug] || slug
+    const title = `shadcn ${categoryLabel.toLowerCase()} — ${registry.name}`
+    const description = `Browse shadcn/ui ${categoryLabel.toLowerCase()} from ${registry.name}. Preview the source and install with the shadcn CLI.`
     return {
-      title: `${categoryLabel} - ${registry.name}`,
-      description: `Browse ${categoryLabel.toLowerCase()} from ${registry.name}.`,
+      title,
+      description,
       alternates: { canonical },
+      openGraph: { title, description, url: canonical, type: "website" },
+      twitter: { card: "summary_large_image", title, description },
     }
   }
 
@@ -71,20 +81,27 @@ export async function buildSlugMetadata(
     ? REGISTRY_TYPE_LABELS[categorySlug] || categorySlug
     : "Component"
 
+  // An item slug on its own ("dashboard-01") matches no query. Pairing it with
+  // the shadcn qualifier and the registry name is what makes the long tail
+  // reachable — these are the bulk of our indexable URLs.
+  const noun = singularType(categoryLabel)
+  const title = `${slug} — shadcn ${noun} · ${registry.name}`
+  const description = `${itemData?.description || slug}: a shadcn/ui ${noun} from ${registry.name}. Preview the source and install it with the shadcn CLI.`
+
   return {
-    title: `${slug} - ${categoryLabel}`,
-    description: `${itemData?.description || slug}: A ${categoryLabel.toLowerCase()} from ${registry.name}. Preview code and install with one command.`,
+    title,
+    description,
     alternates: { canonical },
     openGraph: {
-      title: `${slug} - ${registry.name}`,
-      description: `${itemData?.description || slug}: A ${categoryLabel.toLowerCase()} from ${registry.name}.`,
+      title,
+      description,
       url: canonical,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${slug} - ${registry.name}`,
-      description: `${itemData?.description || slug}: A ${categoryLabel.toLowerCase()} from ${registry.name}.`,
+      title,
+      description,
     },
   }
 }
@@ -128,15 +145,25 @@ export async function RegistrySlugView({
       items: categoryItems,
     }
 
+    const categoryLabel = REGISTRY_TYPE_LABELS[slug] || slug
+
     return (
-      <RegistryViewer
-        registry={registry}
-        registryIndex={filteredRegistry}
-        selectedItem={null}
-        currentCategory={slug}
-        affiliate={affiliate}
-        basePath={basePath}
-      />
+      <>
+        <JsonLd
+          data={buildBreadcrumbSchema([
+            { name: registry.name, path: basePath },
+            { name: categoryLabel, path: `${basePath}/${slug}` },
+          ])}
+        />
+        <RegistryViewer
+          registry={registry}
+          registryIndex={filteredRegistry}
+          selectedItem={null}
+          currentCategory={slug}
+          affiliate={affiliate}
+          basePath={basePath}
+        />
+      </>
     )
   }
 
@@ -158,14 +185,35 @@ export async function RegistrySlugView({
     items: categoryItems,
   }
 
+  const categoryLabel = REGISTRY_TYPE_LABELS[currentCategory] || currentCategory
+
   return (
-    <RegistryViewer
-      registry={registry}
-      registryIndex={filteredRegistry}
-      selectedItem={itemData}
-      currentCategory={currentCategory}
-      affiliate={affiliate}
-      basePath={basePath}
-    />
+    <>
+      <JsonLd
+        data={[
+          buildBreadcrumbSchema([
+            { name: registry.name, path: basePath },
+            { name: categoryLabel, path: `${basePath}/${currentCategory}` },
+            { name: slug, path: `${basePath}/${slug}` },
+          ]),
+          buildRegistryItemSchema({
+            registry,
+            basePath,
+            slug,
+            description: itemData.description,
+            categoryLabel,
+            dependencies: itemData.dependencies,
+          }),
+        ]}
+      />
+      <RegistryViewer
+        registry={registry}
+        registryIndex={filteredRegistry}
+        selectedItem={itemData}
+        currentCategory={currentCategory}
+        affiliate={affiliate}
+        basePath={basePath}
+      />
+    </>
   )
 }
