@@ -128,6 +128,13 @@ export interface HomeRegistryVisitProperties {
   premium_filter_active: boolean;
 }
 
+export interface TypeFilteredProperties {
+  type: string;
+  active_tab: HomeTab;
+  has_query: boolean;
+  results_count: number;
+}
+
 // ============================================================================
 // Event Names
 // ============================================================================
@@ -155,6 +162,7 @@ export const ANALYTICS_EVENTS = {
   // Home discovery
   HOME_PREMIUM_TOGGLED: "home.premium.toggled",
   HOME_REGISTRY_VISIT: "home.registry.visit",
+  HOME_TYPE_FILTERED: "home.type.filtered",
 } as const;
 
 // ============================================================================
@@ -344,6 +352,10 @@ class Analytics {
 
   trackHomeRegistryVisit(properties: HomeRegistryVisitProperties & Partial<BaseEventProperties>): void {
     this.#trackEvent(ANALYTICS_EVENTS.HOME_REGISTRY_VISIT, properties);
+  }
+
+  trackTypeFiltered(properties: TypeFilteredProperties & Partial<BaseEventProperties>): void {
+    this.#trackEvent(ANALYTICS_EVENTS.HOME_TYPE_FILTERED, properties);
   }
 }
 

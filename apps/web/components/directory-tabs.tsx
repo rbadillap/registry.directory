@@ -9,6 +9,8 @@ import { useUrlState } from '@/hooks/use-url-state';
 import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from '@/lib/types';
 import type { IndexedItem } from '@/lib/items-index';
 import { searchItems } from '@/lib/search-utils';
+import { TypeFilterSelect } from './type-filter-select';
+import { typeToSlug } from '@/lib/registry-mappings';
 
 type SortMode = 'popular' | 'stars' | 'recently-active';
 
@@ -76,14 +78,45 @@ interface DirectoryTabsProps {
 
 export function DirectoryTabs({ components, stats, githubStats, items, affiliates }: DirectoryTabsProps) {
   const analytics = useAnalytics();
-  const { activeTab, setActiveTab, searchTerm, setSearchTerm } = useUrlState();
+  const { activeTab, setActiveTab, searchTerm, setSearchTerm, typeFilter, setTypeFilter } = useUrlState();
   const deferredSearchTerm = useDeferredValue(searchTerm);
 
   const [premiumOnly, setPremiumOnly] = useState(false);
 
+  // A registry passes the type facet when its index has ≥1 item of that
+  // type — the per-type counts already arrive in the stats prop.
+  const hasType = useCallback(
+    (entry: DirectoryEntry, type: string) =>
+      type === 'all' ||
+      Boolean(stats[entry.url]?.categories.some((c) => c.slug === type)),
+    [stats]
+  );
+
   const filteredComponents = useMemo(
-    () => filterBySearch(premiumOnly ? components.filter(entry => entry.pro) : components, searchTerm),
-    [components, searchTerm, premiumOnly]
+    () =>
+      filterBySearch(
+        (premiumOnly ? components.filter(entry => entry.pro) : components).filter(
+          entry => hasType(entry, typeFilter)
+        ),
+        searchTerm
+      ),
+    [components, searchTerm, premiumOnly, typeFilter, hasType]
+  );
+
+  const handleTypeChange = useCallback(
+    (type: string) => {
+      setTypeFilter(type);
+      analytics.trackTypeFiltered({
+        type,
+        active_tab: activeTab as HomeTab,
+        has_query: Boolean(searchTerm),
+        results_count: filterBySearch(
+          components.filter(entry => hasType(entry, type)),
+          searchTerm
+        ).length,
+      });
+    },
+    [setTypeFilter, analytics, activeTab, searchTerm, components, hasType]
   );
 
   const handlePremiumToggle = useCallback(() => {
@@ -125,8 +158,10 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
 
   const filteredItems = useMemo(() => {
     if (!deferredSearchTerm) return [];
-    return searchItems(items, deferredSearchTerm);
-  }, [items, deferredSearchTerm]);
+    const results = searchItems(items, deferredSearchTerm);
+    if (typeFilter === 'all') return results;
+    return results.filter((item) => typeToSlug(item.type) === typeFilter);
+  }, [items, deferredSearchTerm, typeFilter]);
 
   // Track search performed (debounced via hook)
   useEffect(() => {
@@ -202,6 +237,15 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
                 Premium only
               </span>
             </button>
+
+            <div className="ml-auto">
+              <TypeFilterSelect
+                value={typeFilter}
+                onChange={handleTypeChange}
+                components={components}
+                stats={stats}
+              />
+            </div>
           </div>
         </div>
 
