@@ -62,6 +62,43 @@ export async function resolveByHandle(
   )
 }
 
+// shadcn dynamic search (jul 2026): a registry may answer the bare GET with
+// a partial page plus a pagination object. Without this loop we would
+// silently index 50 items instead of the full catalog.
+type PaginatedRegistry = Registry & {
+  pagination?: { total: number; offset: number; limit: number; hasMore: boolean }
+}
+
+const MAX_PAGINATION_PAGES = 100
+
+async function fetchRemainingPages(
+  targetUrl: string,
+  first: PaginatedRegistry,
+  timeout: number
+): Promise<Registry> {
+  const items = [...first.items]
+  const pageSize = first.pagination?.limit || items.length || 100
+
+  for (let page = 0; page < MAX_PAGINATION_PAGES; page++) {
+    const url = new URL(targetUrl)
+    url.searchParams.set("limit", String(pageSize))
+    url.searchParams.set("offset", String(items.length))
+
+    const response = await registryFetch(url.toString(), {
+      timeout,
+      next: { revalidate: 86400 },
+    })
+    if (!response.ok) break
+
+    const next = (await response.json()) as PaginatedRegistry
+    if (!next.items?.length) break
+    items.push(...next.items)
+    if (!next.pagination?.hasMore) break
+  }
+
+  return { ...first, items }
+}
+
 export async function fetchRegistryIndex(
   entry: DirectoryEntry,
   timeout = 5000
@@ -78,7 +115,13 @@ export async function fetchRegistryIndex(
       next: { revalidate: 86400 },
     })
     if (!response.ok) return null
-    const data = (await response.json()) as Registry
+    let data = (await response.json()) as PaginatedRegistry
+    if (data.pagination?.hasMore) {
+      console.log(
+        `[Registry] ${entry.name} paginates its index (${data.items.length}/${data.pagination.total}), fetching remaining pages`
+      )
+      data = await fetchRemainingPages(targetUrl, data, timeout)
+    }
     await writeCachedJson(targetUrl, data)
     return data
   } catch (error) {

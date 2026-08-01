@@ -15,7 +15,7 @@ import { join } from "node:path"
 const CACHE_DIR = join(process.cwd(), ".next", "cache", "registry-index")
 const MAX_AGE_MS = 60 * 60 * 1000
 
-function isBuildPhase(): boolean {
+export function isBuildPhase(): boolean {
   return (
     process.env.NEXT_PHASE === "phase-production-build" ||
     process.env.NEXT_PHASE === "phase-export"
