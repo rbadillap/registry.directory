@@ -151,7 +151,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
                 </div>
               </CardHeader>
               <CardContent className="px-3 pb-3 pt-0 bg-background flex-1 flex flex-col justify-between">
-                <CardDescription className="text-[13px] text-foreground-secondary line-clamp-2">
+                <CardDescription className="text-[13px] text-foreground-secondary line-clamp-2 text-pretty">
                   {entry.description}
                 </CardDescription>
                 {(gh || s) && (
@@ -271,7 +271,7 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
                   </CardHeader>
                   <CardContent className="px-3 pb-3 pt-0 bg-background flex-1">
                     {item.description && (
-                      <CardDescription className="text-[13px] text-foreground-secondary line-clamp-2">
+                      <CardDescription className="text-[13px] text-foreground-secondary line-clamp-2 text-pretty">
                         {item.description}
                       </CardDescription>
                     )}
