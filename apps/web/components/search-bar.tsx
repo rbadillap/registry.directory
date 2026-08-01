@@ -25,7 +25,7 @@ export function SearchBar({ value, onChange, placeholder = "Search registries an
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           aria-label={placeholder}
-          className={`w-full pr-10 bg-background border border-input rounded-none text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground outline-none transition-[color,box-shadow] font-mono focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ${large ? "pl-12 py-3.5 text-base" : "pl-10 py-2 text-sm"}`}
+          className={`w-full pr-10 bg-background border border-input rounded-none text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground outline-none transition-[color,box-shadow] font-mono focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ${large ? "pl-12 py-3.5 text-base sm:py-4 sm:text-sm" : "pl-10 py-2 text-sm"}`}
           autoComplete="off"
           spellCheck="false"
         />
