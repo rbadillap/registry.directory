@@ -1,18 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Geist_Mono } from "next/font/google"
+import { Schibsted_Grotesk, IBM_Plex_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
 import { FeedbackWidget } from "@/components/feedback-widget"
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const schibsted = Schibsted_Grotesk({
+  variable: "--font-schibsted",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${dmSans.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${schibsted.variable} ${ibmPlexMono.variable} font-sans antialiased`}
       >
         <Providers>
           {children}
