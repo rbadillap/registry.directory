@@ -5,21 +5,34 @@ import {
   registryBasePath,
   fetchRegistryIndex,
 } from "@/lib/resolve-registry"
+import { fetchAllGitHubStats } from "@/lib/github-stats"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://registry.directory'
   const entries: MetadataRoute.Sitemap = []
 
+  // One timestamp for the whole build. Stamping `new Date()` per entry told
+  // crawlers every URL in the directory changed on every daily rebuild, which
+  // is how a sitemap teaches Google to stop trusting its own lastmod. The
+  // home page genuinely does change each rebuild — the item pages below only
+  // claim a date when their registry gives us one.
+  const builtAt = new Date()
+
   // Homepage
   entries.push({
     url: baseUrl,
-    lastModified: new Date(),
+    lastModified: builtAt,
     changeFrequency: 'weekly',
     priority: 1,
   })
 
   try {
     const registries = await loadDirectory()
+
+    // Real lastmod for registry landings: the upstream repo's last push, read
+    // from the same cached github.json the home page already builds against.
+    // Empty when GITHUB_TOKEN is absent, which just means we omit the hint.
+    const githubStats = await fetchAllGitHubStats(registries)
 
     const perRegistry = await Promise.allSettled(
       registries.map(async (registry): Promise<MetadataRoute.Sitemap> => {
@@ -29,11 +42,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const basePath = registryBasePath(registry)
         if (!basePath) return []
 
+        const lastCommit = registry.github_url
+          ? githubStats[registry.github_url]?.lastCommit
+          : undefined
+
         // Registry overview page
         const urls: MetadataRoute.Sitemap = [
           {
             url: `${baseUrl}${basePath}`,
-            lastModified: new Date(),
+            ...(lastCommit
+              ? { lastModified: new Date(lastCommit) }
+              : {}),
             changeFrequency: 'weekly',
             priority: 0.8,
           },
@@ -47,9 +66,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             continue
           }
 
+          // No per-item date exists upstream, so we inherit the repo's push
+          // date rather than invent one. Absent is better than wrong: a false
+          // lastmod is the fastest way to get the whole file discounted.
           urls.push({
             url: `${baseUrl}${basePath}/${item.name}`,
-            lastModified: new Date(),
+            ...(lastCommit ? { lastModified: new Date(lastCommit) } : {}),
             changeFrequency: 'monthly',
             priority: 0.6,
           })

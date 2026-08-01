@@ -109,6 +109,19 @@ export const REGISTRY_TYPE_LABELS: Record<string, string> = {
 }
 
 /**
+ * Singular form of a REGISTRY_TYPE_LABELS value, for prose that describes one
+ * item ("a shadcn block") rather than a category ("Blocks"). Handles the -ies
+ * plural so "Utilities" becomes "utility"; labels that are already singular
+ * ("Base") pass through untouched.
+ */
+export function singularType(label: string): string {
+  const lower = label.toLowerCase()
+  if (lower.endsWith("ies")) return `${lower.slice(0, -3)}y`
+  if (lower.endsWith("s")) return lower.slice(0, -1)
+  return lower
+}
+
+/**
  * Relevance-based ordering: installable → configuration → reference → other
  */
 export const REGISTRY_TYPE_ORDER: string[] = [

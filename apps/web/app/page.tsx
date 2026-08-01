@@ -13,28 +13,48 @@ import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import type { DirectoryEntry } from "@/lib/types";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { HeroTitle } from "@/components/hero-title";
+import { JsonLd } from "@/components/json-ld";
+import { buildDirectoryListSchema } from "@/lib/structured-data";
+import { registryBasePath } from "@/lib/resolve-registry";
+import {
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_URL,
+  TWITTER_HANDLE,
+} from "@/lib/seo";
 
 // Enable static generation
 export const dynamic = 'force-static'
 
+// The home title leads with the artefact nouns people actually search
+// ("registries, components, blocks") rather than with "explorer", which
+// describes the product but matches no query.
+const HOME_TITLE = `${SITE_NAME} — ${SITE_TAGLINE}`
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://registry.directory"),
-  title: "registry.directory - The explorer for shadcn/ui registries",
-  description:
-    "Browse, preview, and install from any shadcn/ui registry. Explore components in an IDE viewer, then copy the install command.",
+  metadataBase: new URL(SITE_URL),
+  title: HOME_TITLE,
+  description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
   alternates: {
-    canonical: "https://registry.directory",
+    canonical: SITE_URL,
   },
   openGraph: {
-    title: "registry.directory - The explorer for shadcn/ui registries",
-    description: "Browse, preview, and install from any shadcn/ui registry. Explore components in an IDE viewer, then copy the install command.",
-    url: "https://registry.directory",
+    title: HOME_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "registry.directory - The explorer for shadcn/ui registries",
-    description: "Browse, preview, and install from any shadcn/ui registry. Explore components in an IDE viewer, then copy the install command.",
+    site: TWITTER_HANDLE,
+    creator: TWITTER_HANDLE,
+    title: HOME_TITLE,
+    description: SITE_DESCRIPTION,
   },
 };
 
@@ -100,8 +120,19 @@ export default async function Home() {
     // the github.json cache above.
     buildAndPersistCatalog(),
   ]);
+  const directorySchema = buildDirectoryListSchema(
+    components.flatMap((registry) => {
+      const path = registryBasePath(registry);
+      if (!path) return [];
+      return [
+        { name: registry.name, description: registry.description, path },
+      ];
+    })
+  );
+
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-start pt-24 md:pt-32 pb-12 md:pb-20">
+      <JsonLd data={directorySchema} />
       <div className="absolute top-4 right-4">
         <ThemeToggle />
       </div>
