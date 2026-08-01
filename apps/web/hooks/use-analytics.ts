@@ -213,6 +213,10 @@ export function useAnalytics() {
     [analytics, context]
   );
 
+  const trackCliCopied = useCallback(() => {
+    analytics.trackCliCopied(context);
+  }, [analytics, context]);
+
   // Debounced tracking methods for high-frequency events
   const trackSearchUsedDebounced = useMemo(
     () => debounce(trackSearchUsed, 500),
@@ -250,6 +254,9 @@ export function useAnalytics() {
     // Home discovery
     trackPremiumToggled,
     trackHomeRegistryVisit,
+
+    // CLI adoption
+    trackCliCopied,
 
     // Debounced methods
     trackSearchUsed: trackSearchUsedDebounced,

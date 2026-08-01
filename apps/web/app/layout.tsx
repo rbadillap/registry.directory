@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://registry.directory"),
   title: {
     template: "%s | registry.directory",
-    default: "registry.directory - The explorer for shadcn/ui registries",
+    default: "registry.directory - The explorer for the shadcn registry ecosystem",
   },
-  description: "Browse, preview, and install from any shadcn/ui registry. Explore components in an IDE viewer, then copy the install command.",
+  description: "Search and install from every shadcn registry with one CLI namespace — @registrydirectory. Or browse components in the IDE viewer and copy the install command.",
 };
 
 export const viewport: Viewport = {
