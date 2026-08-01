@@ -7,11 +7,13 @@ export const SITE_URL = "https://registry.directory"
 
 export const SITE_NAME = "registry.directory"
 
-export const SITE_TAGLINE =
-  "Discover shadcn/ui registries, components and blocks"
+export const SITE_TAGLINE = "The explorer for the shadcn registry ecosystem"
 
+// Leads with the tagline verbatim, then spends the rest of the ~160 chars a
+// SERP snippet allows on the nouns people search and on what the site lets
+// them do once they arrive.
 export const SITE_DESCRIPTION =
-  "Search the whole shadcn/ui registry ecosystem in one place. Browse components, blocks, themes and templates across every public registry, preview the source in an IDE viewer, then copy the shadcn CLI install command."
+  "The explorer for the shadcn registry ecosystem. Browse components, blocks and themes across every public registry, preview the code, copy the install command."
 
 /**
  * Head terms the directory actually competes for, ordered by intent: the
