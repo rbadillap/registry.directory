@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Star } from "lucide-react"
-import type { LabCollection, LabRegistryCard } from "./collections-data"
+import { CENSUS_META, type LabCollection, type LabRegistryCard } from "./collections-data"
 
 type Variant = "rails" | "bento" | "stack"
 
@@ -68,13 +68,18 @@ function MetaRow({ registry }: { registry: LabRegistryCard }) {
   if (registry.itemCount) parts.push(`${formatCount(registry.itemCount)} items`)
   if (registry.types?.length) parts.push(registry.types.join(" · "))
   return (
-    <div className="flex items-center justify-between gap-2 font-mono text-[11px] text-muted-foreground">
-      <span className="truncate">{parts.join(" · ")}</span>
-      {typeof registry.stars === "number" && (
-        <span className="flex items-center gap-1 shrink-0">
-          <Star className="size-3" aria-hidden="true" />
-          {formatCount(registry.stars)}
-        </span>
+    <div className="flex flex-col gap-1 font-mono text-[11px] text-muted-foreground">
+      <div className="flex items-center justify-between gap-2">
+        <span className="truncate">{parts.join(" · ")}</span>
+        {typeof registry.stars === "number" && (
+          <span className="flex items-center gap-1 shrink-0">
+            <Star className="size-3" aria-hidden="true" />
+            {formatCount(registry.stars)}
+          </span>
+        )}
+      </div>
+      {registry.updated && (
+        <span className="text-muted-foreground/70">{registry.updated}</span>
       )}
     </div>
   )
@@ -266,6 +271,11 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
         <p className="mt-6 text-sm font-mono text-muted-foreground max-w-lg">
           The shadcn registry ecosystem, read as collections. Every group states
           the criterion that formed it.
+        </p>
+        <p className="mt-2 text-[11px] font-mono text-muted-foreground/70">
+          census {CENSUS_META.date} · {CENSUS_META.indexesOk}/
+          {CENSUS_META.indexesTotal} indexes ·{" "}
+          {CENSUS_META.totalItems.toLocaleString("en-US")} items measured
         </p>
         <div className="mt-4 flex items-center gap-4 font-mono text-[11px] text-muted-foreground">
           <span className="flex items-center gap-1.5">

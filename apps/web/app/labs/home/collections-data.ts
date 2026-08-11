@@ -14,6 +14,8 @@ export type LabRegistryCard = {
   stars?: number
   /** offering chips when commercial */
   pro?: string[]
+  /** relative last-commit, precomputed at snapshot time */
+  updated?: string
   /** one-line evidence for membership in this collection */
   evidence?: string
 }
@@ -28,6 +30,14 @@ export type LabCollection = {
   criterion: string
   kind: "computed" | "curated"
   registries: LabRegistryCard[]
+}
+
+/** Provenance for the page header: name the date, the formula's substrate. */
+export const CENSUS_META = {
+  date: "2026-08-11",
+  indexesOk: 67,
+  indexesTotal: 74,
+  totalItems: 24827,
 }
 
 export const COLLECTIONS: LabCollection[] =
@@ -48,6 +58,7 @@ export const COLLECTIONS: LabCollection[] =
           "ui"
         ],
         "stars": 7919,
+        "updated": "updated 3d ago",
         "evidence": "motion×466"
       },
       {
@@ -60,6 +71,7 @@ export const COLLECTIONS: LabCollection[] =
           "hooks"
         ],
         "stars": 4142,
+        "updated": "updated 7mo ago",
         "evidence": "motion×366"
       },
       {
@@ -71,6 +83,7 @@ export const COLLECTIONS: LabCollection[] =
           "ui"
         ],
         "stars": 161,
+        "updated": "updated 3d ago",
         "evidence": "motion×316"
       },
       {
@@ -83,6 +96,7 @@ export const COLLECTIONS: LabCollection[] =
           "components"
         ],
         "stars": 724,
+        "updated": "updated 6d ago",
         "evidence": "motion×310"
       },
       {
@@ -95,6 +109,7 @@ export const COLLECTIONS: LabCollection[] =
           "blocks"
         ],
         "stars": 1307,
+        "updated": "updated 20d ago",
         "evidence": "framer-motion×282"
       },
       {
@@ -106,6 +121,7 @@ export const COLLECTIONS: LabCollection[] =
           "components"
         ],
         "stars": 45285,
+        "updated": "updated 3d ago",
         "pro": [
           "pro blocks",
           "templates",
@@ -133,6 +149,112 @@ export const COLLECTIONS: LabCollection[] =
     ]
   },
   {
+    "slug": "agent-ui",
+    "title": "Interfaces for agents",
+    "standfirst": "Chat surfaces, streaming markdown, tool-call rendering — the component layer of the AI application stack. The dependency census can't see this cluster: chat UI rarely imports the AI SDK. Its identity lives in what the registries say they are.",
+    "criterion": "name ∨ description ∋ { ai, agent, assistant } · from submission data",
+    "kind": "computed",
+    "registries": [
+      {
+        "name": "assistant-ui",
+        "href": "/assistant-ui/assistant-ui",
+        "description": "Radix-style React primitives for AI chat with adapters for AI SDK, LangGraph, Mastra, and custom backends.",
+        "itemCount": 139,
+        "types": [
+          "components",
+          "pages"
+        ],
+        "stars": 11543,
+        "updated": "updated today",
+        "evidence": "\"assistant\" in name"
+      },
+      {
+        "name": "AI Canvas",
+        "href": "/uiNerd16/aicanvas",
+        "description": "Open-source animated React and Tailwind components, blocks, and design systems, installable via the shadcn CLI.",
+        "itemCount": 125,
+        "types": [
+          "ui",
+          "blocks"
+        ],
+        "stars": 46,
+        "updated": "updated 2d ago",
+        "evidence": "\"ai\" in name"
+      },
+      {
+        "name": "AI Elements",
+        "href": "/vercel/ai",
+        "description": "A component library to help you build AI-native applications faster. It provides pre-built components like conversations, messages and more.",
+        "itemCount": 77,
+        "types": [
+          "blocks",
+          "components"
+        ],
+        "stars": 26121,
+        "updated": "updated today",
+        "evidence": "\"ai\" in name"
+      },
+      {
+        "name": "21st.dev Agent Elements",
+        "href": "/21st-dev/agent-elements",
+        "description": "Open-source registry of agent UI primitives — chat shell, tool-call cards (Bash, Edit, Search, Todo, Plan), clarifying questions, input bar, streaming markdown. Built on React 19, Tailwind v4, and the Vercel AI SDK.",
+        "itemCount": 25,
+        "types": [
+          "ui"
+        ],
+        "stars": 90,
+        "updated": "updated 3mo ago",
+        "evidence": "\"agent\" in name"
+      },
+      {
+        "name": "@agents-ui",
+        "href": "/livekit/components-js",
+        "description": "LiveKit components for building voice and video AI agent interfaces: control bars, audio visualizers, track toggles, and session blocks.",
+        "itemCount": 17,
+        "types": [
+          "components",
+          "pages"
+        ],
+        "stars": 458,
+        "updated": "updated today",
+        "evidence": "\"agents\" in name"
+      },
+      {
+        "name": "shadcn/studio",
+        "href": "/shadcnstudio/shadcn-studio",
+        "description": "Accelerate your project development with ready-to-use, and fully customizable shadcn ui Components, Blocks, UI Kits, Boilerplates, Templates and Themes with AI Tools",
+        "itemCount": 694,
+        "types": [
+          "components",
+          "blocks"
+        ],
+        "stars": 1762,
+        "updated": "updated 5mo ago",
+        "pro": [
+          "pro blocks",
+          "templates",
+          "figma",
+          "mcp",
+          "team"
+        ],
+        "evidence": "\"ai\" in description"
+      },
+      {
+        "name": "Coss UI",
+        "href": "/cosscom/coss",
+        "description": "A new, modern UI component library built on top of Base UI. Built for developers and AI.",
+        "itemCount": 568,
+        "types": [
+          "blocks",
+          "ui"
+        ],
+        "stars": 10405,
+        "updated": "updated 7d ago",
+        "evidence": "\"ai\" in description"
+      }
+    ]
+  },
+  {
     "slug": "dashboards",
     "title": "Built for dashboards",
     "standfirst": "Charts, data tables and the plumbing around them — registries that assume your next screen has numbers on it.",
@@ -149,6 +271,7 @@ export const COLLECTIONS: LabCollection[] =
           "ui"
         ],
         "stars": 3274,
+        "updated": "updated 6d ago",
         "pro": [
           "pro blocks",
           "templates",
@@ -184,6 +307,7 @@ export const COLLECTIONS: LabCollection[] =
           "blocks"
         ],
         "stars": 229,
+        "updated": "updated 10d ago",
         "evidence": "recharts×41 · @tanstack/react-table×13"
       },
       {
@@ -196,6 +320,7 @@ export const COLLECTIONS: LabCollection[] =
           "components"
         ],
         "stars": 724,
+        "updated": "updated 6d ago",
         "evidence": "@tanstack/react-table×15 · recharts×4"
       },
       {
@@ -208,6 +333,7 @@ export const COLLECTIONS: LabCollection[] =
           "blocks"
         ],
         "stars": 1762,
+        "updated": "updated 5mo ago",
         "pro": [
           "pro blocks",
           "templates",
@@ -227,6 +353,7 @@ export const COLLECTIONS: LabCollection[] =
           "blocks"
         ],
         "stars": 72,
+        "updated": "updated 7d ago",
         "evidence": "recharts×10 · @tanstack/react-table×4"
       }
     ]
@@ -248,6 +375,7 @@ export const COLLECTIONS: LabCollection[] =
           "styles"
         ],
         "stars": 15782,
+        "updated": "updated today",
         "evidence": "react-aria-components×124 · react-aria×42"
       },
       {
@@ -260,6 +388,7 @@ export const COLLECTIONS: LabCollection[] =
           "ui"
         ],
         "stars": 1947,
+        "updated": "updated 2d ago",
         "evidence": "react-aria-components×145"
       },
       {
@@ -271,6 +400,7 @@ export const COLLECTIONS: LabCollection[] =
           "ui"
         ],
         "stars": 1567,
+        "updated": "updated 8d ago",
         "evidence": "@base-ui/react×54"
       },
       {
@@ -283,6 +413,7 @@ export const COLLECTIONS: LabCollection[] =
           "ui"
         ],
         "stars": 3274,
+        "updated": "updated 6d ago",
         "pro": [
           "pro blocks",
           "templates",
@@ -301,6 +432,7 @@ export const COLLECTIONS: LabCollection[] =
           "blocks"
         ],
         "stars": 72,
+        "updated": "updated 7d ago",
         "evidence": "@base-ui/react×49"
       },
       {
@@ -313,6 +445,7 @@ export const COLLECTIONS: LabCollection[] =
           "ui"
         ],
         "stars": 10405,
+        "updated": "updated 7d ago",
         "evidence": "@base-ui/react×49"
       }
     ]
@@ -351,6 +484,7 @@ export const COLLECTIONS: LabCollection[] =
           "components"
         ],
         "stars": 374,
+        "updated": "updated 10mo ago",
         "pro": [
           "pro blocks",
           "templates",
@@ -368,6 +502,7 @@ export const COLLECTIONS: LabCollection[] =
           "blocks"
         ],
         "stars": 25,
+        "updated": "updated 4d ago",
         "pro": [
           "pro blocks",
           "mcp",
@@ -385,6 +520,7 @@ export const COLLECTIONS: LabCollection[] =
           "ui"
         ],
         "stars": 3274,
+        "updated": "updated 6d ago",
         "pro": [
           "pro blocks",
           "templates",
@@ -412,6 +548,7 @@ export const COLLECTIONS: LabCollection[] =
           "blocks"
         ],
         "stars": 1762,
+        "updated": "updated 5mo ago",
         "pro": [
           "pro blocks",
           "templates",
@@ -463,6 +600,7 @@ export const COLLECTIONS: LabCollection[] =
           "components"
         ],
         "stars": 374,
+        "updated": "updated 10mo ago",
         "pro": [
           "pro blocks",
           "templates",
@@ -480,6 +618,7 @@ export const COLLECTIONS: LabCollection[] =
           "ui"
         ],
         "stars": 3274,
+        "updated": "updated 6d ago",
         "pro": [
           "pro blocks",
           "templates",
@@ -509,7 +648,7 @@ export const COLLECTIONS: LabCollection[] =
     "slug": "weird-wonderful",
     "title": "Weird & wonderful",
     "standfirst": "Hand-picked outliers that stretch what a registry can be. No query produced this shelf — an editor did.",
-    "criterion": "curated · no query · one editor, strong opinions",
+    "criterion": "curated by @rbadillap · no query",
     "kind": "curated",
     "registries": [
       {
@@ -522,6 +661,7 @@ export const COLLECTIONS: LabCollection[] =
           "files"
         ],
         "stars": 1057,
+        "updated": "updated 2d ago",
         "evidence": "TUI components — renders in the terminal, not the browser"
       },
       {
@@ -534,6 +674,7 @@ export const COLLECTIONS: LabCollection[] =
           "components"
         ],
         "stars": 1986,
+        "updated": "updated 3d ago",
         "evidence": "the whole design system is 8-bit"
       },
       {
@@ -545,6 +686,7 @@ export const COLLECTIONS: LabCollection[] =
           "ui"
         ],
         "stars": 1567,
+        "updated": "updated 8d ago",
         "evidence": "neobrutalism as a component library"
       },
       {
@@ -556,6 +698,7 @@ export const COLLECTIONS: LabCollection[] =
           "ui"
         ],
         "stars": 7919,
+        "updated": "updated 3d ago",
         "evidence": "icons that move — every glyph is choreographed"
       },
       {
@@ -567,6 +710,7 @@ export const COLLECTIONS: LabCollection[] =
           "ui"
         ],
         "stars": 161,
+        "updated": "updated 3d ago",
         "evidence": "heroicons, but alive"
       }
     ]
