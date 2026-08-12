@@ -8,14 +8,24 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@workspace/ui/components/avatar"
-import { CENSUS_META, type LabCollection, type LabRegistryCard } from "./collections-data"
+import {
+  CENSUS_META,
+  PULSE,
+  ROTATION,
+  type LabCollection,
+  type LabRegistryCard,
+} from "./collections-data"
+import { JOURNAL, JOURNAL_MARKS } from "./journal-data"
 
-type Variant = "rails" | "bento" | "stack"
+// v0.2 — the layout is settled (stack); the tabs now compare three proposals
+// for giving the portal life: pulse (visible metabolism), rotation (a page
+// that differs every day), journal (the directory keeps its own log).
+type Proposal = "pulse" | "rotation" | "journal"
 
-const VARIANTS: { id: Variant; label: string; key: string }[] = [
-  { id: "rails", label: "Rails", key: "1" },
-  { id: "bento", label: "Bento", key: "2" },
-  { id: "stack", label: "Stack", key: "3" },
+const PROPOSALS: { id: Proposal; label: string; key: string }[] = [
+  { id: "pulse", label: "Pulse", key: "1" },
+  { id: "rotation", label: "Rotation", key: "2" },
+  { id: "journal", label: "Journal", key: "3" },
 ]
 
 function formatCount(n: number): string {
@@ -23,8 +33,8 @@ function formatCount(n: number): string {
 }
 
 // ---------------------------------------------------------------------------
-// Collection header — shared across variants. The criterion line is the
-// signature: the query that produced the group, rendered as a specimen label.
+// Collection header — the criterion line is the signature: the query that
+// produced the group, rendered as a specimen label.
 // ---------------------------------------------------------------------------
 
 function CollectionHeader({
@@ -68,10 +78,18 @@ function CollectionHeader({
 // Cards
 // ---------------------------------------------------------------------------
 
-function MetaRow({ registry }: { registry: LabRegistryCard }) {
+function MetaRow({
+  registry,
+  pulse = false,
+}: {
+  registry: LabRegistryCard
+  pulse?: boolean
+}) {
   const parts: string[] = []
   if (registry.itemCount) parts.push(`${formatCount(registry.itemCount)} items`)
   if (registry.types?.length) parts.push(registry.types.join(" · "))
+  const fresh = pulse && registry.updatedDays !== undefined && registry.updatedDays <= 7
+  const quiet = pulse && registry.updatedDays !== undefined && registry.updatedDays >= 180
   return (
     <div className="flex flex-col gap-1 font-mono text-[11px] text-muted-foreground">
       <div className="flex items-center justify-between gap-2">
@@ -84,7 +102,22 @@ function MetaRow({ registry }: { registry: LabRegistryCard }) {
         )}
       </div>
       {registry.updated && (
-        <span className="text-muted-foreground">{registry.updated}</span>
+        <span className="flex items-center gap-1.5">
+          {fresh && (
+            <span
+              aria-hidden="true"
+              className="size-1.5 rounded-full bg-chart-2 motion-safe:animate-pulse"
+            />
+          )}
+          <span className={fresh ? "text-chart-2" : "text-muted-foreground"}>
+            {registry.updated}
+          </span>
+          {quiet && (
+            <span className="border border-border-subtle px-1 py-px text-[10px] uppercase tracking-wider">
+              quiet
+            </span>
+          )}
+        </span>
       )}
     </div>
   )
@@ -110,10 +143,12 @@ function RegistryCard({
   registry,
   lead = false,
   showEvidence = false,
+  pulse = false,
 }: {
   registry: LabRegistryCard
   lead?: boolean
   showEvidence?: boolean
+  pulse?: boolean
 }) {
   return (
     <Link
@@ -158,78 +193,24 @@ function RegistryCard({
       </div>
       <div className="flex flex-col gap-2">
         <ProChips registry={registry} />
-        <MetaRow registry={registry} />
+        <MetaRow registry={registry} pulse={pulse} />
       </div>
     </Link>
   )
 }
 
 // ---------------------------------------------------------------------------
-// Variant A — Rails: one horizontal scroll row per collection
+// The settled layout — stack: editorial full-width sections, sticky header
+// beside a lead-first card grid.
 // ---------------------------------------------------------------------------
 
-function RailsVariant({ collections }: { collections: LabCollection[] }) {
-  return (
-    <div className="flex flex-col gap-14">
-      {collections.map((collection) => (
-        <section key={collection.slug} aria-label={collection.title}>
-          <div className="px-4 md:px-8">
-            <CollectionHeader collection={collection} />
-          </div>
-          <div className="mt-4 overflow-x-auto pb-2">
-            <div className="flex gap-3 px-4 md:px-8 w-max">
-              {collection.registries.map((registry) => (
-                <div key={registry.href} className="w-[270px] shrink-0">
-                  <RegistryCard registry={registry} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      ))}
-    </div>
-  )
-}
-
-// ---------------------------------------------------------------------------
-// Variant B — Bento: lead card + supporting cards per collection
-// ---------------------------------------------------------------------------
-
-function BentoVariant({ collections }: { collections: LabCollection[] }) {
-  return (
-    <div className="flex flex-col gap-16 px-4 md:px-8 max-w-6xl mx-auto w-full">
-      {collections.map((collection, index) => {
-        const [lead, ...rest] = collection.registries
-        const flipped = index % 2 === 1
-        return (
-          <section key={collection.slug} aria-label={collection.title}>
-            <CollectionHeader collection={collection} />
-            <div className="mt-5 grid grid-cols-1 md:grid-cols-3 md:grid-flow-dense gap-3">
-              {lead && (
-                <div
-                  className={`md:row-span-2 md:row-start-1 ${
-                    flipped ? "md:col-start-3" : "md:col-start-1"
-                  }`}
-                >
-                  <RegistryCard registry={lead} lead showEvidence />
-                </div>
-              )}
-              {rest.slice(0, 4).map((registry) => (
-                <RegistryCard key={registry.href} registry={registry} />
-              ))}
-            </div>
-          </section>
-        )
-      })}
-    </div>
-  )
-}
-
-// ---------------------------------------------------------------------------
-// Variant C — Stack: editorial full-width sections, header beside the cards
-// ---------------------------------------------------------------------------
-
-function StackVariant({ collections }: { collections: LabCollection[] }) {
+function StackVariant({
+  collections,
+  pulse = false,
+}: {
+  collections: LabCollection[]
+  pulse?: boolean
+}) {
   return (
     <div className="flex flex-col">
       {collections.map((collection) => (
@@ -254,6 +235,7 @@ function StackVariant({ collections }: { collections: LabCollection[] }) {
                     registry={registry}
                     lead={index === 0}
                     showEvidence
+                    pulse={pulse}
                   />
                 </div>
               ))}
@@ -266,19 +248,95 @@ function StackVariant({ collections }: { collections: LabCollection[] }) {
 }
 
 // ---------------------------------------------------------------------------
+// Proposal 2 — Rotation: a page that is different every day. The pick is
+// seeded by the date, so the existing daily rebuild rotates it for free.
+// ---------------------------------------------------------------------------
+
+function TodayHero() {
+  return (
+    <section
+      aria-label="Registry of the day"
+      className="border-t border-border-subtle py-12 px-4 md:px-8"
+    >
+      <div className="max-w-6xl mx-auto flex flex-col gap-4">
+        <div className="flex items-baseline gap-3">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+            Registry of the day
+          </h2>
+          <code className="font-mono text-[11px] text-muted-foreground">
+            {ROTATION.date}
+          </code>
+        </div>
+        <RegistryCard registry={ROTATION.today} lead showEvidence />
+        <p className="font-mono text-[11px] text-muted-foreground">
+          tomorrow: {ROTATION.tomorrow} · {ROTATION.coverageNote} · rotated by
+          the daily rebuild, no infrastructure added
+        </p>
+      </div>
+    </section>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// Proposal 3 — Journal: the directory keeps its own log. Admissions, health,
+// census — the organism's memory, visible.
+// ---------------------------------------------------------------------------
+
+function JournalSection() {
+  return (
+    <section
+      aria-label="Journal"
+      className="border-t border-border-subtle py-12 px-4 md:px-8"
+    >
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8">
+        <div className="md:sticky md:top-8 self-start">
+          <header className="flex flex-col gap-1.5">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+              Journal
+            </h2>
+            <p className="text-sm text-muted-foreground max-w-xl text-pretty">
+              The directory keeps its own log — admissions, health probes,
+              census runs. Not a feed: a lab notebook.
+            </p>
+            <code className="mt-1 w-fit text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
+              every line emitted by the system that caused it
+            </code>
+          </header>
+        </div>
+        <ol className="flex flex-col">
+          {JOURNAL.map((entry) => (
+            <li
+              key={`${entry.date}-${entry.kind}-${entry.text.slice(0, 16)}`}
+              className="flex gap-3 border-b border-border-subtle py-3 font-mono text-xs"
+            >
+              <span className="shrink-0 text-muted-foreground">{entry.date}</span>
+              <span aria-hidden="true" className="shrink-0 w-3 text-foreground font-semibold">
+                {JOURNAL_MARKS[entry.kind]}
+              </span>
+              <span className="sr-only">{entry.kind}:</span>
+              <span className="text-foreground/90">{entry.text}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )
+}
+
+// ---------------------------------------------------------------------------
 // Shell
 // ---------------------------------------------------------------------------
 
 export function LabsHome({ collections }: { collections: LabCollection[] }) {
-  const [variant, setVariant] = useState<Variant>("stack")
+  const [proposal, setProposal] = useState<Proposal>("pulse")
 
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
       if (event.metaKey || event.ctrlKey || event.altKey) return
       const target = event.target as HTMLElement
       if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") return
-      const match = VARIANTS.find((v) => v.key === event.key)
-      if (match) setVariant(match.id)
+      const match = PROPOSALS.find((p) => p.key === event.key)
+      if (match) setProposal(match.id)
     }
     window.addEventListener("keydown", onKey)
     return () => window.removeEventListener("keydown", onKey)
@@ -293,7 +351,7 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
               registry.directory
             </h1>
             <code className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground border border-border-subtle px-1.5 py-0.5">
-              labs / collections
+              labs / collections v0.2
             </code>
           </div>
         </div>
@@ -306,6 +364,13 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
           {CENSUS_META.indexesTotal} indexes ·{" "}
           {CENSUS_META.totalItems.toLocaleString("en-US")} items measured
         </p>
+        {proposal === "pulse" && (
+          <p className="mt-1 text-[11px] font-mono text-chart-2">
+            pulse: {PULSE.today} pushed today · {PULSE.thisWeek} this week ·{" "}
+            {PULSE.thisMonth} this month · {PULSE.quiet} quiet 6mo+ · of{" "}
+            {PULSE.measured} measured
+          </p>
+        )}
         {/* Retrieval keeps a first-class, always-visible home: collections
             compete with browsing, never with finding a known name. In this lab
             it opens the live home search; the real page wires it in place. */}
@@ -331,37 +396,36 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
         </div>
       </header>
 
+      {proposal === "rotation" && <TodayHero />}
+      {proposal === "journal" && <JournalSection />}
+
       {collections.length === 0 ? (
         <p className="px-4 md:px-8 font-mono text-sm text-muted-foreground">
           No collections in the snapshot yet.
         </p>
-      ) : variant === "rails" ? (
-        <RailsVariant collections={collections} />
-      ) : variant === "bento" ? (
-        <BentoVariant collections={collections} />
       ) : (
-        <StackVariant collections={collections} />
+        <StackVariant collections={collections} pulse={proposal === "pulse"} />
       )}
 
       <div
         role="group"
-        aria-label="Layout variant"
+        aria-label="Life proposal"
         className="fixed bottom-4 left-1/2 -translate-x-1/2 flex border border-border-subtle bg-background shadow-lg"
       >
-        {VARIANTS.map((v) => (
+        {PROPOSALS.map((p) => (
           <button
-            key={v.id}
+            key={p.id}
             type="button"
-            onClick={() => setVariant(v.id)}
-            aria-pressed={variant === v.id}
+            onClick={() => setProposal(p.id)}
+            aria-pressed={proposal === p.id}
             className={`px-4 py-2 text-xs font-mono transition-[color,background-color,scale] active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-ring ${
-              variant === v.id
+              proposal === p.id
                 ? "bg-foreground text-background"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
-            {v.label}
-            <span className="ml-1.5 opacity-50">{v.key}</span>
+            {p.label}
+            <span className="ml-1.5 opacity-50">{p.key}</span>
           </button>
         ))}
       </div>

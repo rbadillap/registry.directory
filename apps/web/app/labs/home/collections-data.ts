@@ -18,6 +18,8 @@ export type LabRegistryCard = {
   pro?: string[]
   /** relative last-commit, precomputed at snapshot time */
   updated?: string
+  /** days since last commit, for freshness treatment */
+  updatedDays?: number
   /** true when an affiliate relationship exists — always labelled on the card */
   sponsored?: boolean
   /** one-line evidence for membership in this collection */
@@ -44,6 +46,41 @@ export const CENSUS_META = {
   totalItems: 24827,
 }
 
+/** Vital signs across the whole directory — last-commit distribution. */
+export const PULSE = {
+  "measured": 65,
+  "today": 8,
+  "thisWeek": 28,
+  "thisMonth": 45,
+  "quiet": 5
+}
+
+/** Deterministic registry-of-the-day; the daily cron rebuild rotates it. */
+export const ROTATION: {
+  date: string
+  today: LabRegistryCard
+  tomorrow: string
+  coverageNote: string
+} = {
+  "date": "2026-08-12",
+  "today": {
+    "name": "Kibo UI",
+    "href": "/shadcnblocks/kibo",
+    "avatar": "https://github.com/shadcnblocks.png",
+    "description": "A custom registry of composable, accessible and open source components",
+    "itemCount": 41,
+    "types": [
+      "ui",
+      "styles"
+    ],
+    "stars": 3893,
+    "updated": "updated 3mo ago",
+    "updatedDays": 99
+  },
+  "tomorrow": "kokonut/ui",
+  "coverageNote": "rotation reaches all 74 registries in ~2 months"
+}
+
 export const COLLECTIONS: LabCollection[] =
 [
   {
@@ -64,6 +101,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 7919,
         "updated": "updated 3d ago",
+        "updatedDays": 3,
         "evidence": "motion×466"
       },
       {
@@ -78,6 +116,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 4142,
         "updated": "updated 7mo ago",
+        "updatedDays": 223,
         "evidence": "motion×366"
       },
       {
@@ -91,6 +130,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 161,
         "updated": "updated 3d ago",
+        "updatedDays": 3,
         "evidence": "motion×316"
       },
       {
@@ -105,6 +145,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 724,
         "updated": "updated 6d ago",
+        "updatedDays": 6,
         "evidence": "motion×310"
       },
       {
@@ -119,6 +160,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 1307,
         "updated": "updated 20d ago",
+        "updatedDays": 20,
         "evidence": "framer-motion×282"
       }
     ]
@@ -142,6 +184,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 11543,
         "updated": "updated today",
+        "updatedDays": 0,
         "evidence": "\"assistant\" in name"
       },
       {
@@ -156,6 +199,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 46,
         "updated": "updated 2d ago",
+        "updatedDays": 2,
         "evidence": "\"ai\" in name"
       },
       {
@@ -170,6 +214,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 26121,
         "updated": "updated today",
+        "updatedDays": 0,
         "evidence": "\"ai\" in name"
       },
       {
@@ -183,6 +228,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 90,
         "updated": "updated 3mo ago",
+        "updatedDays": 109,
         "evidence": "\"agent\" in name"
       },
       {
@@ -197,6 +243,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 458,
         "updated": "updated today",
+        "updatedDays": 0,
         "evidence": "\"agents\" in name"
       }
     ]
@@ -220,6 +267,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 3274,
         "updated": "updated 6d ago",
+        "updatedDays": 6,
         "pro": [
           "pro blocks",
           "templates",
@@ -257,6 +305,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 229,
         "updated": "updated 10d ago",
+        "updatedDays": 10,
         "evidence": "recharts×41 · @tanstack/react-table×13"
       },
       {
@@ -271,6 +320,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 724,
         "updated": "updated 6d ago",
+        "updatedDays": 6,
         "evidence": "@tanstack/react-table×15 · recharts×4"
       },
       {
@@ -285,6 +335,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 1762,
         "updated": "updated 5mo ago",
+        "updatedDays": 176,
         "pro": [
           "pro blocks",
           "templates",
@@ -316,6 +367,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 15782,
         "updated": "updated today",
+        "updatedDays": 0,
         "evidence": "react-aria-components×124 · react-aria×42"
       },
       {
@@ -330,6 +382,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 1947,
         "updated": "updated 2d ago",
+        "updatedDays": 2,
         "evidence": "react-aria-components×145"
       },
       {
@@ -343,6 +396,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 1567,
         "updated": "updated 8d ago",
+        "updatedDays": 8,
         "evidence": "@base-ui/react×54"
       },
       {
@@ -357,6 +411,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 3274,
         "updated": "updated 6d ago",
+        "updatedDays": 6,
         "pro": [
           "pro blocks",
           "templates",
@@ -377,6 +432,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 72,
         "updated": "updated 7d ago",
+        "updatedDays": 7,
         "evidence": "@base-ui/react×49"
       }
     ]
@@ -417,6 +473,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 374,
         "updated": "updated 10mo ago",
+        "updatedDays": 306,
         "pro": [
           "pro blocks",
           "templates",
@@ -437,6 +494,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 25,
         "updated": "updated 4d ago",
+        "updatedDays": 4,
         "pro": [
           "pro blocks",
           "mcp",
@@ -457,6 +515,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 3274,
         "updated": "updated 6d ago",
+        "updatedDays": 6,
         "pro": [
           "pro blocks",
           "templates",
@@ -486,6 +545,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 1762,
         "updated": "updated 5mo ago",
+        "updatedDays": 176,
         "pro": [
           "pro blocks",
           "templates",
@@ -541,6 +601,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 374,
         "updated": "updated 10mo ago",
+        "updatedDays": 306,
         "pro": [
           "pro blocks",
           "templates",
@@ -561,6 +622,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 3274,
         "updated": "updated 6d ago",
+        "updatedDays": 6,
         "pro": [
           "pro blocks",
           "templates",
@@ -589,6 +651,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 1057,
         "updated": "updated 2d ago",
+        "updatedDays": 2,
         "evidence": "TUI components — renders in the terminal, not the browser"
       },
       {
@@ -603,6 +666,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 1986,
         "updated": "updated 3d ago",
+        "updatedDays": 3,
         "evidence": "the whole design system is 8-bit"
       },
       {
@@ -616,6 +680,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 1567,
         "updated": "updated 8d ago",
+        "updatedDays": 8,
         "evidence": "neobrutalism as a component library"
       },
       {
@@ -629,6 +694,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 7919,
         "updated": "updated 3d ago",
+        "updatedDays": 3,
         "evidence": "icons that move — every glyph is choreographed"
       },
       {
@@ -642,6 +708,7 @@ export const COLLECTIONS: LabCollection[] =
         ],
         "stars": 161,
         "updated": "updated 3d ago",
+        "updatedDays": 3,
         "evidence": "heroicons, but alive"
       }
     ]
