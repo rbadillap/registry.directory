@@ -7,6 +7,8 @@ export type LabRegistryCard = {
   name: string
   /** route path, e.g. "/aceternity" or "/owner/repo" */
   href: string
+  /** GitHub avatar URL when the entry has one */
+  avatar?: string
   description: string
   itemCount?: number
   /** dominant item types, humanized, max 2 */
@@ -54,6 +56,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "pqoqubbw/icons",
         "href": "/pqoqubbw/icons",
+        "avatar": "https://github.com/pqoqubbw.png",
         "description": "An open-source (MIT License) collection of smooth animated icons for your projects. Built with motion and lucide",
         "itemCount": 466,
         "types": [
@@ -66,6 +69,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "Animate UI",
         "href": "/imskyleen/animate-ui",
+        "avatar": "https://github.com/imskyleen.png",
         "description": "Fully animated, open-source component distribution built with React, TypeScript, Tailwind CSS, Motion, and Shadcn CLI.",
         "itemCount": 580,
         "types": [
@@ -79,6 +83,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "heroicons-animated",
         "href": "/Aniket-508/heroicons-animated",
+        "avatar": "https://github.com/Aniket-508.png",
         "description": "An open-source collection of 316 beautifully animated heroicons for your projects.",
         "itemCount": 316,
         "types": [
@@ -91,6 +96,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "Shadcn Space",
         "href": "/shadcnspace/shadcnspace",
+        "avatar": "https://github.com/shadcnspace.png",
         "description": "A curated collection of beautiful shadcn/ui components, templates, and resources. Discover, copy, and ship modern UI faster.",
         "itemCount": 819,
         "types": [
@@ -104,6 +110,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "UI TripleD",
         "href": "/moumen-soliman/uitripled",
+        "avatar": "https://github.com/moumen-soliman.png",
         "description": "Production-ready UI components, motion blocks, and landing page templates powered by shadcn/ui and Framer Motion.",
         "itemCount": 282,
         "types": [
@@ -126,6 +133,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "assistant-ui",
         "href": "/assistant-ui/assistant-ui",
+        "avatar": "https://github.com/assistant-ui.png",
         "description": "Radix-style React primitives for AI chat with adapters for AI SDK, LangGraph, Mastra, and custom backends.",
         "itemCount": 139,
         "types": [
@@ -139,6 +147,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "AI Canvas",
         "href": "/uiNerd16/aicanvas",
+        "avatar": "https://github.com/uiNerd16.png",
         "description": "Open-source animated React and Tailwind components, blocks, and design systems, installable via the shadcn CLI.",
         "itemCount": 125,
         "types": [
@@ -152,6 +161,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "AI Elements",
         "href": "/vercel/ai",
+        "avatar": "https://github.com/vercel.png",
         "description": "A component library to help you build AI-native applications faster. It provides pre-built components like conversations, messages and more.",
         "itemCount": 77,
         "types": [
@@ -165,6 +175,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "21st.dev Agent Elements",
         "href": "/21st-dev/agent-elements",
+        "avatar": "https://github.com/21st-dev.png",
         "description": "Open-source registry of agent UI primitives — chat shell, tool-call cards (Bash, Edit, Search, Todo, Plan), clarifying questions, input bar, streaming markdown. Built on React 19, Tailwind v4, and the Vercel AI SDK.",
         "itemCount": 25,
         "types": [
@@ -177,6 +188,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "@agents-ui",
         "href": "/livekit/components-js",
+        "avatar": "https://github.com/livekit.png",
         "description": "LiveKit components for building voice and video AI agent interfaces: control bars, audio visualizers, track toggles, and session blocks.",
         "itemCount": 17,
         "types": [
@@ -199,6 +211,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "ReUI",
         "href": "/keenthemes/reui",
+        "avatar": "https://github.com/keenthemes.png",
         "description": "UI components and fully functional apps built with React, Next.js and Tailwind",
         "itemCount": 1607,
         "types": [
@@ -235,6 +248,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "Shadcn Dashboard",
         "href": "/shadcndashboard/shadcndashboard",
+        "avatar": "https://github.com/shadcndashboard.png",
         "description": "Build admin panels faster with the complete open source shadcn dashboard kit",
         "itemCount": 448,
         "types": [
@@ -248,6 +262,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "Shadcn Space",
         "href": "/shadcnspace/shadcnspace",
+        "avatar": "https://github.com/shadcnspace.png",
         "description": "A curated collection of beautiful shadcn/ui components, templates, and resources. Discover, copy, and ship modern UI faster.",
         "itemCount": 819,
         "types": [
@@ -261,6 +276,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "shadcn/studio",
         "href": "/shadcnstudio/shadcn-studio",
+        "avatar": "https://github.com/shadcnstudio.png",
         "description": "Accelerate your project development with ready-to-use, and fully customizable shadcn ui Components, Blocks, UI Kits, Boilerplates, Templates and Themes with AI Tools",
         "itemCount": 694,
         "types": [
@@ -291,6 +307,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "React Aria",
         "href": "/adobe/react-spectrum",
+        "avatar": "https://github.com/adobe.png",
         "description": "Customizable Tailwind and Vanilla CSS components with adaptive interactions, top-tier accessibility, and internationalization.",
         "itemCount": 156,
         "types": [
@@ -304,6 +321,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "Intent UI",
         "href": "/intentui/intentui",
+        "avatar": "https://github.com/intentui.png",
         "description": "Accessible React component library to copy, customize, and own your UI.",
         "itemCount": 570,
         "types": [
@@ -317,6 +335,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "RetroUI",
         "href": "/Logging-Studio/RetroUI",
+        "avatar": "https://github.com/Logging-Studio.png",
         "description": "React based component library, inspired by neo-brutalism design system",
         "itemCount": 54,
         "types": [
@@ -329,6 +348,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "ReUI",
         "href": "/keenthemes/reui",
+        "avatar": "https://github.com/keenthemes.png",
         "description": "UI components and fully functional apps built with React, Next.js and Tailwind",
         "itemCount": 1607,
         "types": [
@@ -348,6 +368,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "UIAble",
         "href": "/codedthemes/uiable",
+        "avatar": "https://github.com/codedthemes.png",
         "description": "An open-source shadcn-based UI system designed to help developers build scalable, production-ready applications faster.",
         "itemCount": 747,
         "types": [
@@ -387,6 +408,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "Shadcn Blocks",
         "href": "/shadcnblocks/shadcn-ui-blocks",
+        "avatar": "https://github.com/shadcnblocks.png",
         "description": "A collection of premium blocks for Shadcn UI + Tailwind",
         "itemCount": 3968,
         "types": [
@@ -407,6 +429,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "Beste UI",
         "href": "/beste-co/beste-ui",
+        "avatar": "https://github.com/beste-co.png",
         "description": "Production-ready UI blocks for landing pages, dashboards, and web apps.",
         "itemCount": 1890,
         "types": [
@@ -425,6 +448,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "ReUI",
         "href": "/keenthemes/reui",
+        "avatar": "https://github.com/keenthemes.png",
         "description": "UI components and fully functional apps built with React, Next.js and Tailwind",
         "itemCount": 1607,
         "types": [
@@ -453,6 +477,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "shadcn/studio",
         "href": "/shadcnstudio/shadcn-studio",
+        "avatar": "https://github.com/shadcnstudio.png",
         "description": "Accelerate your project development with ready-to-use, and fully customizable shadcn ui Components, Blocks, UI Kits, Boilerplates, Templates and Themes with AI Tools",
         "itemCount": 694,
         "types": [
@@ -507,6 +532,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "Shadcn Blocks",
         "href": "/shadcnblocks/shadcn-ui-blocks",
+        "avatar": "https://github.com/shadcnblocks.png",
         "description": "A collection of premium blocks for Shadcn UI + Tailwind",
         "itemCount": 3968,
         "types": [
@@ -526,6 +552,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "ReUI",
         "href": "/keenthemes/reui",
+        "avatar": "https://github.com/keenthemes.png",
         "description": "UI components and fully functional apps built with React, Next.js and Tailwind",
         "itemCount": 1607,
         "types": [
@@ -553,6 +580,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "termcn",
         "href": "/shadcn-labs/termcn",
+        "avatar": "https://github.com/shadcn-labs.png",
         "description": "Beautiful terminal UIs, made simple. Ready to use, customizable terminal UI components for React.",
         "itemCount": 342,
         "types": [
@@ -566,6 +594,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "8bitcn",
         "href": "/TheOrcDev/8bitcn-ui",
+        "avatar": "https://github.com/TheOrcDev.png",
         "description": "A set of 8-bit styled components for shadcn/ui. Works with your favorite frameworks. Open Source. Open Code.",
         "itemCount": 121,
         "types": [
@@ -579,6 +608,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "RetroUI",
         "href": "/Logging-Studio/RetroUI",
+        "avatar": "https://github.com/Logging-Studio.png",
         "description": "React based component library, inspired by neo-brutalism design system",
         "itemCount": 54,
         "types": [
@@ -591,6 +621,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "pqoqubbw/icons",
         "href": "/pqoqubbw/icons",
+        "avatar": "https://github.com/pqoqubbw.png",
         "description": "An open-source (MIT License) collection of smooth animated icons for your projects. Built with motion and lucide",
         "itemCount": 466,
         "types": [
@@ -603,6 +634,7 @@ export const COLLECTIONS: LabCollection[] =
       {
         "name": "heroicons-animated",
         "href": "/Aniket-508/heroicons-animated",
+        "avatar": "https://github.com/Aniket-508.png",
         "description": "An open-source collection of 316 beautifully animated heroicons for your projects.",
         "itemCount": 316,
         "types": [

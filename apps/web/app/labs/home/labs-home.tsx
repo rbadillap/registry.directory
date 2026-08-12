@@ -3,6 +3,11 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Star } from "lucide-react"
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@workspace/ui/components/avatar"
 import { CENSUS_META, type LabCollection, type LabRegistryCard } from "./collections-data"
 
 type Variant = "rails" | "bento" | "stack"
@@ -123,13 +128,21 @@ function RegistryCard({
         </span>
       )}
       <div className="flex flex-col gap-1.5">
-        <span
-          className={`font-semibold tracking-tight group-hover:underline underline-offset-4 ${
-            lead ? "text-lg md:text-xl" : "text-sm"
-          }`}
-        >
-          {registry.name}
-        </span>
+        <div className="flex items-center gap-2">
+          <Avatar className={lead ? "size-7" : "size-5"}>
+            <AvatarImage src={registry.avatar} alt="" />
+            <AvatarFallback className="bg-secondary text-muted-foreground text-[10px]">
+              {registry.name.charAt(0).toUpperCase()}
+            </AvatarFallback>
+          </Avatar>
+          <span
+            className={`font-semibold tracking-tight group-hover:underline underline-offset-4 ${
+              lead ? "text-lg md:text-xl" : "text-sm"
+            }`}
+          >
+            {registry.name}
+          </span>
+        </div>
         <p
           className={`text-muted-foreground ${
             lead ? "text-sm line-clamp-3" : "text-xs line-clamp-2"
