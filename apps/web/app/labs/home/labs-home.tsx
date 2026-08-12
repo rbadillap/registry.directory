@@ -336,7 +336,7 @@ function JustShipped({ shipped }: { shipped: ShippedFile | null }) {
             )}
           </div>
           <code className="text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
-            diff(registry.json, {shipped?.baseline ?? "yesterday"})
+            diff(registry.json) · rolling {shipped?.windowDays ?? 1}d window
           </code>
         </header>
         {entries.length > 0 ? (

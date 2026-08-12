@@ -45,7 +45,8 @@ export type ShippedEntry = {
 
 export type ShippedFile = {
   date: string
-  baseline: string | null
+  /** rolling window size in days; absent in pre-window files */
+  windowDays?: number
   note?: string
   entries: ShippedEntry[]
 }
