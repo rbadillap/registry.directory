@@ -85,10 +85,3 @@ export const JOURNAL: JournalEntry[] = [
     "text": "Zyeon UI admitted — 353 items, handle @zyeon"
   }
 ]
-
-export const JOURNAL_MARKS: Record<JournalEntry["kind"], string> = {
-  shipped: "+",
-  admitted: "◆",
-  health: "!",
-  census: "∑",
-}

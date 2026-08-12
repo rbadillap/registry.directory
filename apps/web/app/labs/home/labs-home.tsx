@@ -15,7 +15,7 @@ import {
   type LabCollection,
   type LabRegistryCard,
 } from "./collections-data"
-import { JOURNAL, JOURNAL_MARKS } from "./journal-data"
+import { JOURNAL } from "./journal-data"
 
 // v0.2 — the layout is settled (stack); the tabs now compare three proposals
 // for giving the portal life: pulse (visible metabolism), rotation (a page
@@ -278,9 +278,105 @@ function TodayHero() {
 }
 
 // ---------------------------------------------------------------------------
-// Proposal 3 — Journal: the directory keeps its own log. Admissions, health,
-// census — the organism's memory, visible.
+// Proposal 3 — Journal: what the registries shipped, as a slow ticker. Five
+// rows visible; the list advances one row every few seconds. Discrete steps
+// instead of a continuous crawl — resting rows stay readable. Pauses on
+// hover and while the tab is hidden; static under reduced motion.
 // ---------------------------------------------------------------------------
+
+function timeAgo(dateStr: string): string {
+  // Calendar-day semantics: an entry dated yesterday reads "yesterday" the
+  // moment midnight passes, regardless of elapsed hours.
+  const now = new Date()
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+  const parts = dateStr.split("-").map(Number)
+  const entry = new Date(parts[0] ?? 0, (parts[1] ?? 1) - 1, parts[2] ?? 1)
+  const days = Math.round((today.getTime() - entry.getTime()) / 86400000)
+  if (days <= 0) return "today"
+  if (days === 1) return "yesterday"
+  return `${days}d ago`
+}
+
+const TICKER_ROW_PX = 36
+const TICKER_VISIBLE = 5
+const TICKER_STEP_MS = 4000
+
+function JournalTicker() {
+  const [offset, setOffset] = useState(0)
+  const [animate, setAnimate] = useState(true)
+  const [paused, setPaused] = useState(false)
+  const [reducedMotion, setReducedMotion] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
+    setReducedMotion(mq.matches)
+    const onChange = () => setReducedMotion(mq.matches)
+    mq.addEventListener("change", onChange)
+    return () => mq.removeEventListener("change", onChange)
+  }, [])
+
+  useEffect(() => {
+    if (paused || reducedMotion) return
+    const id = setInterval(() => {
+      if (document.hidden) return
+      setOffset((o) => o + 1)
+    }, TICKER_STEP_MS)
+    return () => clearInterval(id)
+  }, [paused, reducedMotion])
+
+  // Seamless wrap: once the list has slid past its last real row, snap back
+  // to the top without a transition, between two frames.
+  useEffect(() => {
+    if (offset < JOURNAL.length) return
+    const t = setTimeout(() => {
+      setAnimate(false)
+      setOffset(0)
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => setAnimate(true))
+      )
+    }, 750)
+    return () => clearTimeout(t)
+  }, [offset])
+
+  const rows = [...JOURNAL, ...JOURNAL.slice(0, TICKER_VISIBLE)]
+
+  return (
+    <div
+      className="relative overflow-hidden"
+      style={{
+        height: TICKER_ROW_PX * TICKER_VISIBLE,
+        maskImage:
+          "linear-gradient(to bottom, transparent 0, black 24px, black calc(100% - 24px), transparent)",
+        WebkitMaskImage:
+          "linear-gradient(to bottom, transparent 0, black 24px, black calc(100% - 24px), transparent)",
+      }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <ol
+        className={animate ? "transition-transform duration-700" : ""}
+        style={{
+          transform: `translateY(-${offset * TICKER_ROW_PX}px)`,
+          transitionTimingFunction: "cubic-bezier(0.77, 0, 0.175, 1)",
+        }}
+      >
+        {rows.map((entry, index) => (
+          <li
+            key={`${index}-${entry.date}-${entry.text.slice(0, 12)}`}
+            aria-hidden={index >= JOURNAL.length}
+            className="flex items-center gap-3 border-b border-border-subtle font-mono text-xs"
+            style={{ height: TICKER_ROW_PX }}
+          >
+            <span className="w-20 shrink-0 text-muted-foreground">
+              {timeAgo(entry.date)}
+            </span>
+            <span className="truncate text-foreground/90">{entry.text}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  )
+}
 
 function JournalSection() {
   return (
@@ -305,21 +401,7 @@ function JournalSection() {
             </code>
           </header>
         </div>
-        <ol className="flex flex-col">
-          {JOURNAL.map((entry) => (
-            <li
-              key={`${entry.date}-${entry.kind}-${entry.text.slice(0, 16)}`}
-              className="flex gap-3 border-b border-border-subtle py-3 font-mono text-xs"
-            >
-              <span className="shrink-0 text-muted-foreground">{entry.date}</span>
-              <span aria-hidden="true" className="shrink-0 w-3 text-foreground font-semibold">
-                {JOURNAL_MARKS[entry.kind]}
-              </span>
-              <span className="sr-only">{entry.kind}:</span>
-              <span className="text-foreground/90">{entry.text}</span>
-            </li>
-          ))}
-        </ol>
+        <JournalTicker />
       </div>
     </section>
   )
