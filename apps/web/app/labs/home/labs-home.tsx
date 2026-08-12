@@ -35,8 +35,8 @@ function CollectionHeader({
         <h2
           className={
             size === "lg"
-              ? "text-2xl md:text-3xl font-semibold tracking-tight"
-              : "text-xl md:text-2xl font-semibold tracking-tight"
+              ? "text-2xl md:text-3xl font-semibold tracking-tight text-balance"
+              : "text-xl md:text-2xl font-semibold tracking-tight text-balance"
           }
         >
           {collection.title}
@@ -51,7 +51,7 @@ function CollectionHeader({
           {collection.kind === "computed" ? "computed collection" : "curated collection"}
         </span>
       </div>
-      <p className="text-sm text-muted-foreground max-w-xl">{collection.standfirst}</p>
+      <p className="text-sm text-muted-foreground max-w-xl text-pretty">{collection.standfirst}</p>
       <code className="mt-1 w-fit text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
         {collection.criterion}
       </code>
@@ -79,7 +79,7 @@ function MetaRow({ registry }: { registry: LabRegistryCard }) {
         )}
       </div>
       {registry.updated && (
-        <span className="text-muted-foreground/70">{registry.updated}</span>
+        <span className="text-muted-foreground">{registry.updated}</span>
       )}
     </div>
   )
@@ -113,7 +113,7 @@ function RegistryCard({
   return (
     <Link
       href={registry.href}
-      className={`group relative flex h-full flex-col justify-between gap-4 border border-border-subtle bg-background p-4 transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-ring ${
+      className={`group relative flex h-full flex-col justify-between gap-4 border border-border-subtle bg-background p-4 transition-colors hover:border-border focus-visible:outline-2 focus-visible:outline-ring ${
         lead ? "md:p-6" : ""
       }`}
     >
@@ -138,7 +138,7 @@ function RegistryCard({
           {registry.description}
         </p>
         {showEvidence && registry.evidence && (
-          <code className="mt-1 font-mono text-[10px] text-muted-foreground/80">
+          <code className="mt-1 font-mono text-[10px] text-muted-foreground">
             {registry.evidence}
           </code>
         )}
@@ -230,8 +230,19 @@ function StackVariant({ collections }: { collections: LabCollection[] }) {
               <CollectionHeader collection={collection} size="lg" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {collection.registries.slice(0, 6).map((registry) => (
-                <RegistryCard key={registry.href} registry={registry} showEvidence />
+              {/* The first slot carries most of the position effect — give it
+                  the visual weight to match, and let 5 members fill the grid. */}
+              {collection.registries.map((registry, index) => (
+                <div
+                  key={registry.href}
+                  className={index === 0 ? "sm:col-span-2" : undefined}
+                >
+                  <RegistryCard
+                    registry={registry}
+                    lead={index === 0}
+                    showEvidence
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -246,7 +257,7 @@ function StackVariant({ collections }: { collections: LabCollection[] }) {
 // ---------------------------------------------------------------------------
 
 export function LabsHome({ collections }: { collections: LabCollection[] }) {
-  const [variant, setVariant] = useState<Variant>("rails")
+  const [variant, setVariant] = useState<Variant>("stack")
 
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
@@ -265,9 +276,9 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
       <header className="px-4 md:px-8 pt-10 pb-12 max-w-6xl mx-auto w-full">
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-baseline gap-3">
-            <span className="text-lg font-semibold tracking-tight">
+            <h1 className="text-lg font-semibold tracking-tight">
               registry.directory
-            </span>
+            </h1>
             <code className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground border border-border-subtle px-1.5 py-0.5">
               labs / collections
             </code>
@@ -277,17 +288,17 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
           The shadcn registry ecosystem, read as collections. Every group states
           the criterion that formed it.
         </p>
-        <p className="mt-2 text-[11px] font-mono text-muted-foreground/70">
+        <p className="mt-2 text-[11px] font-mono text-muted-foreground">
           census {CENSUS_META.date} · {CENSUS_META.indexesOk}/
           {CENSUS_META.indexesTotal} indexes ·{" "}
           {CENSUS_META.totalItems.toLocaleString("en-US")} items measured
         </p>
         {/* Retrieval keeps a first-class, always-visible home: collections
-            compete with browsing, never with finding a known name. Static
-            mock in this lab — the real one wires to the existing item search. */}
-        <div
-          role="presentation"
-          className="mt-6 flex max-w-lg items-center justify-between gap-3 border border-border-subtle bg-secondary/30 px-3 py-2.5"
+            compete with browsing, never with finding a known name. In this lab
+            it opens the live home search; the real page wires it in place. */}
+        <Link
+          href="/?tab=components"
+          className="mt-6 flex max-w-lg items-center justify-between gap-3 border border-border-subtle bg-secondary/30 px-3 py-2.5 transition-colors hover:border-border focus-visible:outline-2 focus-visible:outline-ring"
         >
           <span className="font-mono text-xs text-muted-foreground">
             Search {CENSUS_META.totalItems.toLocaleString("en-US")} items across{" "}
@@ -296,7 +307,7 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
           <kbd className="font-mono text-[10px] uppercase text-muted-foreground border border-border-subtle px-1.5 py-0.5">
             P
           </kbd>
-        </div>
+        </Link>
         <div className="mt-4 flex items-center gap-4 font-mono text-[11px] text-muted-foreground">
           <span className="flex items-center gap-1.5">
             <span aria-hidden="true" className="size-1.5 rounded-full bg-chart-2" /> computed
@@ -319,7 +330,8 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
         <StackVariant collections={collections} />
       )}
 
-      <nav
+      <div
+        role="group"
         aria-label="Layout variant"
         className="fixed bottom-4 left-1/2 -translate-x-1/2 flex border border-border-subtle bg-background shadow-lg"
       >
@@ -329,7 +341,7 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
             type="button"
             onClick={() => setVariant(v.id)}
             aria-pressed={variant === v.id}
-            className={`px-4 py-2 text-xs font-mono transition-colors focus-visible:outline-2 focus-visible:outline-ring ${
+            className={`px-4 py-2 text-xs font-mono transition-[color,background-color,scale] active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-ring ${
               variant === v.id
                 ? "bg-foreground text-background"
                 : "text-muted-foreground hover:text-foreground"
@@ -339,7 +351,7 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
             <span className="ml-1.5 opacity-50">{v.key}</span>
           </button>
         ))}
-      </nav>
+      </div>
     </main>
   )
 }
