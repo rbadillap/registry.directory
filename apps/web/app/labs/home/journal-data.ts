@@ -9,7 +9,7 @@
 
 export type JournalEntry = {
   date: string
-  kind: "shipped" | "admitted" | "health" | "census"
+  kind: "shipped"
   text: string
 }
 
@@ -45,16 +45,6 @@ export const JOURNAL: JournalEntry[] = [
     "text": "@agents-ui +4 items — agent-audio-visualizer-aura, nextjs-api-token-route, agent-session-view-01, all"
   },
   {
-    "date": "2026-08-11",
-    "kind": "census",
-    "text": "census ran — 67 of 74 indexes answered, 24,827 items measured"
-  },
-  {
-    "date": "2026-08-11",
-    "kind": "health",
-    "text": "jollyui.dev and shadcn-glass-ui stopped resolving (404)"
-  },
-  {
     "date": "2026-08-10",
     "kind": "shipped",
     "text": "shadcn/ui +1 item — font-heading-instrument-serif"
@@ -78,10 +68,5 @@ export const JOURNAL: JournalEntry[] = [
     "date": "2026-08-09",
     "kind": "shipped",
     "text": "beUI +4 items — not-found-magnetic, not-found-spotlight, not-found-stacked, not-found-terminal"
-  },
-  {
-    "date": "2026-08-02",
-    "kind": "admitted",
-    "text": "Zyeon UI admitted — 353 items, handle @zyeon"
   }
 ]
