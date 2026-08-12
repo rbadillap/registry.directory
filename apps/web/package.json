@@ -10,7 +10,8 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "typecheck": "tsc --noEmit",
-    "ingest": "node --env-file=.env.local scripts/ingest.mjs"
+    "ingest": "node --env-file=.env.local scripts/ingest.mjs",
+    "generate": "node --env-file=.env.local scripts/generate.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
