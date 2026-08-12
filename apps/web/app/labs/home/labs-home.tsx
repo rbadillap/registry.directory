@@ -299,7 +299,7 @@ function timeAgo(dateStr: string): string {
 
 const TICKER_ROW_PX = 36
 const TICKER_VISIBLE = 5
-const TICKER_STEP_MS = 4000
+const TICKER_STEP_MS = 2800
 
 function JournalTicker() {
   const [offset, setOffset] = useState(0)
