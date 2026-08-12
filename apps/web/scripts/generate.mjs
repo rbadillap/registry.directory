@@ -281,35 +281,63 @@ function buildCollections(profiles) {
   return collections.filter((c) => c.registries.length >= 4);
 }
 
-// --- shipped: the day-to-day diff --------------------------------------------
+// --- shipped: rolling-window diff -------------------------------------------
+//
+// A 24h diff is honest but thin — the ecosystem ships ~2 registries per
+// window. shipped.json therefore covers a rolling GRACE_DAYS window,
+// recomputed statelessly from the retained snapshots: each snapshot inside
+// the window diffs every registry against its most recent PRIOR appearance,
+// so a registry that failed ingestion one day (rate limits) contributes its
+// additions the day it reappears instead of losing them in the gap. Entries
+// keep the date they were detected — the UI renders today / yesterday / Nd.
 
-function buildShipped(current, previous, directory) {
+const GRACE_DAYS = 3;
+
+function daysBetween(a, b) {
+  return Math.round((new Date(`${a}T00:00Z`) - new Date(`${b}T00:00Z`)) / 86400000);
+}
+
+function buildShipped(snapshots, directory) {
   const byName = new Map(directory.map((d) => [d.name, d]));
+  const current = snapshots[snapshots.length - 1];
   const entries = [];
-  if (!previous) {
-    return {
-      date: current.date,
-      baseline: null,
-      note: "first snapshot — the diff starts with the next ingestion run",
-      entries,
-    };
+
+  const inWindow = snapshots.filter(
+    (s) => daysBetween(current.date, s.date) < GRACE_DAYS
+  );
+
+  for (const snap of [...inWindow].reverse()) {
+    const older = snapshots.filter((s) => s.date < snap.date);
+    for (const [name, raw] of Object.entries(snap.registries)) {
+      if (!raw?.items) continue;
+      const prior = [...older]
+        .reverse()
+        .find((s) => s.registries[name]?.items);
+      if (!prior) continue; // first appearance — a whole catalog is not news
+      const old = new Set(prior.registries[name].items.map((i) => i.name));
+      const added = raw.items.map((i) => i.name).filter((n) => !old.has(n));
+      if (added.length === 0) continue;
+      entries.push({
+        date: snap.date,
+        registry: name,
+        avatar: byName.get(name)?.github_profile ?? null,
+        added,
+      });
+    }
   }
-  for (const [name, raw] of Object.entries(current.registries)) {
-    if (!raw?.items) continue;
-    const before = previous.registries[name];
-    if (!before?.items) continue; // only diff registries present in BOTH
-    const old = new Set(before.items.map((i) => i.name));
-    const added = raw.items.map((i) => i.name).filter((n) => !old.has(n));
-    if (added.length === 0) continue;
-    entries.push({
-      date: current.date,
-      registry: name,
-      avatar: byName.get(name)?.github_profile ?? null,
-      added,
-    });
-  }
-  entries.sort((a, b) => b.added.length - a.added.length);
-  return { date: current.date, baseline: previous.date, entries };
+
+  entries.sort(
+    (a, b) => b.date.localeCompare(a.date) || b.added.length - a.added.length
+  );
+
+  return {
+    date: current.date,
+    windowDays: GRACE_DAYS,
+    ...(entries.length === 0 && snapshots.length < 2
+      ? { note: "first snapshot — the diff starts with the next ingestion run" }
+      : {}),
+    entries,
+  };
 }
 
 // --- main ---------------------------------------------------------------------
@@ -326,9 +354,13 @@ async function main() {
     console.error("no snapshots in blob — run scripts/ingest.mjs first");
     process.exit(1);
   }
-  const current = await readJson(dated[dated.length - 1].url);
-  const previous =
-    dated.length > 1 ? await readJson(dated[dated.length - 2].url) : null;
+  // Enough history to cover the grace window plus prior appearances for
+  // registries that flap in and out of ingestion.
+  const recent = dated.slice(-8);
+  const snapshots = [];
+  for (const blob of recent) snapshots.push(await readJson(blob.url));
+  snapshots.sort((a, b) => a.date.localeCompare(b.date));
+  const current = snapshots[snapshots.length - 1];
 
   const directoryPath = join(process.cwd(), "public/directory.json");
   const { registries: directory } = JSON.parse(
@@ -363,7 +395,7 @@ async function main() {
     },
     collections: buildCollections(profiles),
   };
-  const shipped = buildShipped(current, previous, directory);
+  const shipped = buildShipped(snapshots, directory);
 
   const collectionsBlob = await put(
     "collections.json",
@@ -382,7 +414,7 @@ async function main() {
     contentType: "application/json",
   });
 
-  console.log(`snapshot ${current.date} (baseline: ${shipped.baseline ?? "none"})`);
+  console.log(`snapshot ${current.date} (window: last ${shipped.windowDays} days, ${snapshots.length} snapshots loaded)`);
   console.log(
     `collections.json: ${collections.collections.length} collections — ${collections.collections
       .map((c) => `${c.slug}(${c.registries.length})`)
