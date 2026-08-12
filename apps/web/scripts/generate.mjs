@@ -1,10 +1,10 @@
-// Derivation: pure functions over the snapshots that ingest.mjs persists,
-// emitting one blob per consuming surface — collections.json for the home's
+// Generates the surface files from the snapshots that ingest.mjs persists —
+// one blob per consuming surface: collections.json for the home's
 // groupings, shipped.json for the novedades ticker. Runs on the maintainer's
 // machine right after ingest.mjs; Vercel only ever reads the results.
 //
 // Usage, from apps/web:
-//   node --env-file=.env.local scripts/derive.mjs
+//   node --env-file=.env.local scripts/generate.mjs
 //
 // A collection is a query. Each one carries the criterion it was formed by,
 // and the UI renders that criterion verbatim — computed groups name their
