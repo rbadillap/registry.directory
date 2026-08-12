@@ -9,64 +9,118 @@
 
 export type JournalEntry = {
   date: string
-  kind: "shipped"
-  text: string
+  registry: string
+  avatar: string | null
+  added: string[]
 }
 
 export const JOURNAL: JournalEntry[] = [
   {
     "date": "2026-08-11",
-    "kind": "shipped",
-    "text": "AI Elements +4 items — example-tool, example-v0-clone, example-web-preview, example-workflow"
+    "registry": "AI Elements",
+    "avatar": "https://github.com/vercel.png",
+    "added": [
+      "example-tool",
+      "example-v0-clone",
+      "example-web-preview",
+      "example-workflow"
+    ]
   },
   {
     "date": "2026-08-11",
-    "kind": "shipped",
-    "text": "Clerk +2 items — nextjs-aio-multistep-onboarding, nextjs-custom-flows-multistep-onboarding"
+    "registry": "Clerk",
+    "avatar": "https://github.com/clerk.png",
+    "added": [
+      "nextjs-aio-multistep-onboarding",
+      "nextjs-custom-flows-multistep-onboarding"
+    ]
   },
   {
     "date": "2026-08-11",
-    "kind": "shipped",
-    "text": "React Aria +3 items — hooks-togglebuttongroup, hooks-toolbar, hooks-tooltip"
+    "registry": "React Aria",
+    "avatar": "https://github.com/adobe.png",
+    "added": [
+      "hooks-togglebuttongroup",
+      "hooks-toolbar",
+      "hooks-tooltip"
+    ]
   },
   {
     "date": "2026-08-11",
-    "kind": "shipped",
-    "text": "assistant-ui +4 items — composer-trigger-popover, directive-text, generative-ui-style, generative-ui"
+    "registry": "assistant-ui",
+    "avatar": "https://github.com/assistant-ui.png",
+    "added": [
+      "composer-trigger-popover",
+      "directive-text",
+      "generative-ui-style",
+      "generative-ui"
+    ]
   },
   {
     "date": "2026-08-11",
-    "kind": "shipped",
-    "text": "evex +1 item — x-hot-topic-digest"
+    "registry": "evex",
+    "avatar": "https://github.com/TommyBez.png",
+    "added": [
+      "x-hot-topic-digest"
+    ]
   },
   {
     "date": "2026-08-11",
-    "kind": "shipped",
-    "text": "@agents-ui +4 items — agent-audio-visualizer-aura, nextjs-api-token-route, agent-session-view-01, all"
+    "registry": "@agents-ui",
+    "avatar": "https://github.com/livekit.png",
+    "added": [
+      "agent-audio-visualizer-aura",
+      "nextjs-api-token-route",
+      "agent-session-view-01",
+      "all"
+    ]
   },
   {
     "date": "2026-08-10",
-    "kind": "shipped",
-    "text": "shadcn/ui +1 item — font-heading-instrument-serif"
+    "registry": "shadcn/ui",
+    "avatar": "https://github.com/shadcn.png",
+    "added": [
+      "font-heading-instrument-serif"
+    ]
   },
   {
     "date": "2026-08-10",
-    "kind": "shipped",
-    "text": "useLayouts +3 items — bento-card, magnified-bento, empty-testimonial"
+    "registry": "useLayouts",
+    "avatar": "https://github.com/iurvish.png",
+    "added": [
+      "bento-card",
+      "magnified-bento",
+      "empty-testimonial"
+    ]
   },
   {
     "date": "2026-08-10",
-    "kind": "shipped",
-    "text": "Payload Components +1 item — pricing-enterprise"
+    "registry": "Payload Components",
+    "avatar": "https://github.com/Ducksss.png",
+    "added": [
+      "pricing-enterprise"
+    ]
   },
   {
     "date": "2026-08-09",
-    "kind": "shipped",
-    "text": "Magic UI +4 items — kinetic-text-demo, text-3d-flip-demo, text-3d-flip-demo-2, utils"
+    "registry": "Magic UI",
+    "avatar": "https://github.com/magicuidesign.png",
+    "added": [
+      "kinetic-text-demo",
+      "text-3d-flip-demo",
+      "text-3d-flip-demo-2",
+      "utils"
+    ]
   },
   {
     "date": "2026-08-09",
-    "kind": "shipped",
-    "text": "beUI +4 items — not-found-magnetic, not-found-spotlight, not-found-stacked, not-found-terminal"
+    "registry": "beUI",
+    "avatar": "https://github.com/starc007.png",
+    "added": [
+      "not-found-magnetic",
+      "not-found-spotlight",
+      "not-found-stacked",
+      "not-found-terminal"
+    ]
   }
 ]

@@ -10,26 +10,38 @@ import {
 } from "@workspace/ui/components/avatar"
 import {
   CENSUS_META,
-  PULSE,
-  ROTATION,
   type LabCollection,
   type LabRegistryCard,
 } from "./collections-data"
-import { JOURNAL } from "./journal-data"
+import { JOURNAL, type JournalEntry } from "./journal-data"
 
-// v0.2 — the layout is settled (stack); the tabs now compare three proposals
-// for giving the portal life: pulse (visible metabolism), rotation (a page
-// that differs every day), journal (the directory keeps its own log).
-type Proposal = "pulse" | "rotation" | "journal"
+// v0.3 — layout settled (stack), life settled (the novedades ticker). The
+// tabs now compare three treatments of the ticker itself: two-line rows with
+// avatars, a full-width section with a punchier title, and a crawl that
+// never stops.
+type Proposal = "twoline" | "fullwidth" | "infinite"
 
 const PROPOSALS: { id: Proposal; label: string; key: string }[] = [
-  { id: "pulse", label: "Pulse", key: "1" },
-  { id: "rotation", label: "Rotation", key: "2" },
-  { id: "journal", label: "Journal", key: "3" },
+  { id: "twoline", label: "Two-line", key: "1" },
+  { id: "fullwidth", label: "Full width", key: "2" },
+  { id: "infinite", label: "Infinite", key: "3" },
 ]
 
 function formatCount(n: number): string {
   return n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n)
+}
+
+function timeAgo(dateStr: string): string {
+  // Calendar-day semantics: an entry dated yesterday reads "yesterday" the
+  // moment midnight passes, regardless of elapsed hours.
+  const now = new Date()
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+  const parts = dateStr.split("-").map(Number)
+  const entry = new Date(parts[0] ?? 0, (parts[1] ?? 1) - 1, parts[2] ?? 1)
+  const days = Math.round((today.getTime() - entry.getTime()) / 86400000)
+  if (days <= 0) return "today"
+  if (days === 1) return "yesterday"
+  return `${days}d ago`
 }
 
 // ---------------------------------------------------------------------------
@@ -75,21 +87,13 @@ function CollectionHeader({
 }
 
 // ---------------------------------------------------------------------------
-// Cards
+// Registry cards
 // ---------------------------------------------------------------------------
 
-function MetaRow({
-  registry,
-  pulse = false,
-}: {
-  registry: LabRegistryCard
-  pulse?: boolean
-}) {
+function MetaRow({ registry }: { registry: LabRegistryCard }) {
   const parts: string[] = []
   if (registry.itemCount) parts.push(`${formatCount(registry.itemCount)} items`)
   if (registry.types?.length) parts.push(registry.types.join(" · "))
-  const fresh = pulse && registry.updatedDays !== undefined && registry.updatedDays <= 7
-  const quiet = pulse && registry.updatedDays !== undefined && registry.updatedDays >= 180
   return (
     <div className="flex flex-col gap-1 font-mono text-[11px] text-muted-foreground">
       <div className="flex items-center justify-between gap-2">
@@ -102,22 +106,7 @@ function MetaRow({
         )}
       </div>
       {registry.updated && (
-        <span className="flex items-center gap-1.5">
-          {fresh && (
-            <span
-              aria-hidden="true"
-              className="size-1.5 rounded-full bg-chart-2 motion-safe:animate-pulse"
-            />
-          )}
-          <span className={fresh ? "text-chart-2" : "text-muted-foreground"}>
-            {registry.updated}
-          </span>
-          {quiet && (
-            <span className="border border-border-subtle px-1 py-px text-[10px] uppercase tracking-wider">
-              quiet
-            </span>
-          )}
-        </span>
+        <span className="text-muted-foreground">{registry.updated}</span>
       )}
     </div>
   )
@@ -143,12 +132,10 @@ function RegistryCard({
   registry,
   lead = false,
   showEvidence = false,
-  pulse = false,
 }: {
   registry: LabRegistryCard
   lead?: boolean
   showEvidence?: boolean
-  pulse?: boolean
 }) {
   return (
     <Link
@@ -193,7 +180,7 @@ function RegistryCard({
       </div>
       <div className="flex flex-col gap-2">
         <ProChips registry={registry} />
-        <MetaRow registry={registry} pulse={pulse} />
+        <MetaRow registry={registry} />
       </div>
     </Link>
   )
@@ -204,13 +191,7 @@ function RegistryCard({
 // beside a lead-first card grid.
 // ---------------------------------------------------------------------------
 
-function StackVariant({
-  collections,
-  pulse = false,
-}: {
-  collections: LabCollection[]
-  pulse?: boolean
-}) {
+function StackVariant({ collections }: { collections: LabCollection[] }) {
   return (
     <div className="flex flex-col">
       {collections.map((collection) => (
@@ -235,7 +216,6 @@ function StackVariant({
                     registry={registry}
                     lead={index === 0}
                     showEvidence
-                    pulse={pulse}
                   />
                 </div>
               ))}
@@ -248,60 +228,46 @@ function StackVariant({
 }
 
 // ---------------------------------------------------------------------------
-// Proposal 2 — Rotation: a page that is different every day. The pick is
-// seeded by the date, so the existing daily rebuild rotates it for free.
+// Ticker rows — avatar plus two lines: the registry, then what it shipped.
 // ---------------------------------------------------------------------------
 
-function TodayHero() {
+const TICKER_ROW_PX = 56
+const TICKER_VISIBLE = 5
+const TICKER_STEP_MS = 2800
+const TICKER_MASK =
+  "linear-gradient(to bottom, transparent 0, black 28px, black calc(100% - 28px), transparent)"
+
+function TickerRow({ entry }: { entry: JournalEntry }) {
   return (
-    <section
-      aria-label="Registry of the day"
-      className="border-t border-border-subtle py-12 px-4 md:px-8"
+    <li
+      className="flex items-center gap-3 border-b border-border-subtle"
+      style={{ height: TICKER_ROW_PX }}
     >
-      <div className="max-w-6xl mx-auto flex flex-col gap-4">
-        <div className="flex items-baseline gap-3">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
-            Registry of the day
-          </h2>
-          <code className="font-mono text-[11px] text-muted-foreground">
-            {ROTATION.date}
-          </code>
+      <Avatar className="size-6 shrink-0">
+        <AvatarImage src={entry.avatar ?? undefined} alt="" />
+        <AvatarFallback className="bg-secondary text-muted-foreground text-[10px]">
+          {entry.registry.charAt(0).toUpperCase()}
+        </AvatarFallback>
+      </Avatar>
+      <div className="min-w-0 flex-1">
+        <div className="flex items-baseline justify-between gap-3">
+          <span className="truncate text-sm font-semibold tracking-tight">
+            {entry.registry}
+          </span>
+          <span className="shrink-0 font-mono text-[11px] text-muted-foreground">
+            +{entry.added.length} · {timeAgo(entry.date)}
+          </span>
         </div>
-        <RegistryCard registry={ROTATION.today} lead showEvidence />
-        <p className="font-mono text-[11px] text-muted-foreground">
-          tomorrow: {ROTATION.tomorrow} · {ROTATION.coverageNote} · rotated by
-          the daily rebuild, no infrastructure added
+        <p className="truncate font-mono text-[11px] text-muted-foreground">
+          {entry.added.join(" · ")}
         </p>
       </div>
-    </section>
+    </li>
   )
 }
 
-// ---------------------------------------------------------------------------
-// Proposal 3 — Journal: what the registries shipped, as a slow ticker. Five
-// rows visible; the list advances one row every few seconds. Discrete steps
-// instead of a continuous crawl — resting rows stay readable. Pauses on
-// hover and while the tab is hidden; static under reduced motion.
-// ---------------------------------------------------------------------------
-
-function timeAgo(dateStr: string): string {
-  // Calendar-day semantics: an entry dated yesterday reads "yesterday" the
-  // moment midnight passes, regardless of elapsed hours.
-  const now = new Date()
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
-  const parts = dateStr.split("-").map(Number)
-  const entry = new Date(parts[0] ?? 0, (parts[1] ?? 1) - 1, parts[2] ?? 1)
-  const days = Math.round((today.getTime() - entry.getTime()) / 86400000)
-  if (days <= 0) return "today"
-  if (days === 1) return "yesterday"
-  return `${days}d ago`
-}
-
-const TICKER_ROW_PX = 36
-const TICKER_VISIBLE = 5
-const TICKER_STEP_MS = 2800
-
-function JournalTicker() {
+// Proposal 1 & 2 — discrete steps: the list rests, then advances one row.
+function StepTicker() {
   const [offset, setOffset] = useState(0)
   const [animate, setAnimate] = useState(true)
   const [paused, setPaused] = useState(false)
@@ -324,8 +290,7 @@ function JournalTicker() {
     return () => clearInterval(id)
   }, [paused, reducedMotion])
 
-  // Seamless wrap: once the list has slid past its last real row, snap back
-  // to the top without a transition, between two frames.
+  // Seamless wrap: once past the last real row, snap back between two frames.
   useEffect(() => {
     if (offset < JOURNAL.length) return
     const t = setTimeout(() => {
@@ -345,10 +310,8 @@ function JournalTicker() {
       className="relative overflow-hidden"
       style={{
         height: TICKER_ROW_PX * TICKER_VISIBLE,
-        maskImage:
-          "linear-gradient(to bottom, transparent 0, black 24px, black calc(100% - 24px), transparent)",
-        WebkitMaskImage:
-          "linear-gradient(to bottom, transparent 0, black 24px, black calc(100% - 24px), transparent)",
+        maskImage: TICKER_MASK,
+        WebkitMaskImage: TICKER_MASK,
       }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -361,46 +324,110 @@ function JournalTicker() {
         }}
       >
         {rows.map((entry, index) => (
-          <li
-            key={`${index}-${entry.date}-${entry.text.slice(0, 12)}`}
-            aria-hidden={index >= JOURNAL.length}
-            className="flex items-center gap-3 border-b border-border-subtle font-mono text-xs"
-            style={{ height: TICKER_ROW_PX }}
-          >
-            <span className="w-20 shrink-0 text-muted-foreground">
-              {timeAgo(entry.date)}
-            </span>
-            <span className="truncate text-foreground/90">{entry.text}</span>
-          </li>
+          <TickerRow
+            key={`${index}-${entry.registry}-${entry.date}`}
+            entry={entry}
+          />
         ))}
       </ol>
     </div>
   )
 }
 
-function JournalSection() {
+// Proposal 3 — the crawl never stops: constant motion, linear easing, the
+// list doubled so the end hands off to the beginning without a seam.
+function ContinuousTicker() {
+  const rows = [...JOURNAL, ...JOURNAL]
+  const crawlSeconds = JOURNAL.length * 2.5
+
+  return (
+    <div
+      className="labs-crawl-wrap relative overflow-hidden"
+      style={{
+        height: TICKER_ROW_PX * TICKER_VISIBLE,
+        maskImage: TICKER_MASK,
+        WebkitMaskImage: TICKER_MASK,
+      }}
+    >
+      <style>{`
+        @keyframes labs-crawl {
+          from { transform: translateY(0); }
+          to { transform: translateY(-50%); }
+        }
+        .labs-crawl { animation: labs-crawl ${crawlSeconds}s linear infinite; }
+        .labs-crawl-wrap:hover .labs-crawl { animation-play-state: paused; }
+        @media (prefers-reduced-motion: reduce) {
+          .labs-crawl { animation: none; }
+        }
+      `}</style>
+      <ol className="labs-crawl">
+        {rows.map((entry, index) => (
+          <TickerRow
+            key={`${index}-${entry.registry}-${entry.date}`}
+            entry={entry}
+          />
+        ))}
+      </ol>
+    </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// The novedades section, per proposal.
+// ---------------------------------------------------------------------------
+
+function JournalSection({ proposal }: { proposal: Proposal }) {
+  const totalShipped = JOURNAL.reduce((s, e) => s + e.added.length, 0)
+
+  if (proposal === "twoline") {
+    return (
+      <section
+        aria-label="Journal"
+        className="border-t border-border-subtle py-12 px-4 md:px-8"
+      >
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8">
+          <div className="md:sticky md:top-8 self-start">
+            <header className="flex flex-col gap-1.5">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+                Journal
+              </h2>
+              <p className="text-sm text-muted-foreground max-w-xl text-pretty">
+                What the registries shipped — new items detected by diffing
+                each index against yesterday&apos;s snapshot.
+              </p>
+              <code className="mt-1 w-fit text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
+                diff(registry.json, yesterday) · simulated from the 2026-08-11
+                snapshot
+              </code>
+            </header>
+          </div>
+          <StepTicker />
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section
-      aria-label="Journal"
+      aria-label="Just shipped"
       className="border-t border-border-subtle py-12 px-4 md:px-8"
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8">
-        <div className="md:sticky md:top-8 self-start">
-          <header className="flex flex-col gap-1.5">
+      <div className="max-w-6xl mx-auto flex flex-col gap-5">
+        <header className="flex flex-wrap items-baseline justify-between gap-3">
+          <div className="flex items-baseline gap-4">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
-              Journal
+              Just shipped
             </h2>
-            <p className="text-sm text-muted-foreground max-w-xl text-pretty">
-              What the registries shipped — new items detected by diffing each
-              index against yesterday&apos;s snapshot.
-            </p>
-            <code className="mt-1 w-fit text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
-              diff(registry.json, yesterday) · simulated from the 2026-08-11
-              snapshot
-            </code>
-          </header>
-        </div>
-        <JournalTicker />
+            <span className="font-mono text-[11px] text-muted-foreground">
+              {totalShipped} new items across {JOURNAL.length} registries this
+              week
+            </span>
+          </div>
+          <code className="text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
+            diff(registry.json, yesterday) · simulated
+          </code>
+        </header>
+        {proposal === "infinite" ? <ContinuousTicker /> : <StepTicker />}
       </div>
     </section>
   )
@@ -411,7 +438,7 @@ function JournalSection() {
 // ---------------------------------------------------------------------------
 
 export function LabsHome({ collections }: { collections: LabCollection[] }) {
-  const [proposal, setProposal] = useState<Proposal>("pulse")
+  const [proposal, setProposal] = useState<Proposal>("twoline")
 
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
@@ -434,7 +461,7 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
               registry.directory
             </h1>
             <code className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground border border-border-subtle px-1.5 py-0.5">
-              labs / collections v0.2
+              labs / collections v0.3
             </code>
           </div>
         </div>
@@ -447,13 +474,6 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
           {CENSUS_META.indexesTotal} indexes ·{" "}
           {CENSUS_META.totalItems.toLocaleString("en-US")} items measured
         </p>
-        {proposal === "pulse" && (
-          <p className="mt-1 text-[11px] font-mono text-chart-2">
-            pulse: {PULSE.today} pushed today · {PULSE.thisWeek} this week ·{" "}
-            {PULSE.thisMonth} this month · {PULSE.quiet} quiet 6mo+ · of{" "}
-            {PULSE.measured} measured
-          </p>
-        )}
         {/* Retrieval keeps a first-class, always-visible home: collections
             compete with browsing, never with finding a known name. In this lab
             it opens the live home search; the real page wires it in place. */}
@@ -479,20 +499,19 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
         </div>
       </header>
 
-      {proposal === "rotation" && <TodayHero />}
-      {proposal === "journal" && <JournalSection />}
+      <JournalSection proposal={proposal} />
 
       {collections.length === 0 ? (
         <p className="px-4 md:px-8 font-mono text-sm text-muted-foreground">
           No collections in the snapshot yet.
         </p>
       ) : (
-        <StackVariant collections={collections} pulse={proposal === "pulse"} />
+        <StackVariant collections={collections} />
       )}
 
       <div
         role="group"
-        aria-label="Life proposal"
+        aria-label="Ticker proposal"
         className="fixed bottom-4 left-1/2 -translate-x-1/2 flex border border-border-subtle bg-background shadow-lg"
       >
         {PROPOSALS.map((p) => (
