@@ -113,10 +113,15 @@ function RegistryCard({
   return (
     <Link
       href={registry.href}
-      className={`group flex h-full flex-col justify-between gap-4 border border-border-subtle bg-background p-4 transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-ring ${
+      className={`group relative flex h-full flex-col justify-between gap-4 border border-border-subtle bg-background p-4 transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-ring ${
         lead ? "md:p-6" : ""
       }`}
     >
+      {registry.sponsored && (
+        <span className="absolute top-0 right-0 font-mono text-[9px] uppercase tracking-wider text-muted-foreground bg-secondary border-b border-l border-border-subtle px-1.5 py-0.5">
+          Sponsored
+        </span>
+      )}
       <div className="flex flex-col gap-1.5">
         <span
           className={`font-semibold tracking-tight group-hover:underline underline-offset-4 ${
@@ -277,6 +282,21 @@ export function LabsHome({ collections }: { collections: LabCollection[] }) {
           {CENSUS_META.indexesTotal} indexes ·{" "}
           {CENSUS_META.totalItems.toLocaleString("en-US")} items measured
         </p>
+        {/* Retrieval keeps a first-class, always-visible home: collections
+            compete with browsing, never with finding a known name. Static
+            mock in this lab — the real one wires to the existing item search. */}
+        <div
+          role="presentation"
+          className="mt-6 flex max-w-lg items-center justify-between gap-3 border border-border-subtle bg-secondary/30 px-3 py-2.5"
+        >
+          <span className="font-mono text-xs text-muted-foreground">
+            Search {CENSUS_META.totalItems.toLocaleString("en-US")} items across{" "}
+            {CENSUS_META.indexesOk} registries…
+          </span>
+          <kbd className="font-mono text-[10px] uppercase text-muted-foreground border border-border-subtle px-1.5 py-0.5">
+            P
+          </kbd>
+        </div>
         <div className="mt-4 flex items-center gap-4 font-mono text-[11px] text-muted-foreground">
           <span className="flex items-center gap-1.5">
             <span aria-hidden="true" className="size-1.5 rounded-full bg-chart-2" /> computed

@@ -16,6 +16,8 @@ export type LabRegistryCard = {
   pro?: string[]
   /** relative last-commit, precomputed at snapshot time */
   updated?: string
+  /** true when an affiliate relationship exists — always labelled on the card */
+  sponsored?: boolean
   /** one-line evidence for membership in this collection */
   evidence?: string
 }
@@ -111,40 +113,6 @@ export const COLLECTIONS: LabCollection[] =
         "stars": 1307,
         "updated": "updated 20d ago",
         "evidence": "framer-motion×282"
-      },
-      {
-        "name": "React Bits",
-        "href": "/DavidHDev/react-bits",
-        "description": "An open source collection of animated, interactive & fully customizable React components for building memorable websites.",
-        "itemCount": 660,
-        "types": [
-          "components"
-        ],
-        "stars": 45285,
-        "updated": "updated 3d ago",
-        "pro": [
-          "pro blocks",
-          "templates",
-          "mcp"
-        ],
-        "evidence": "gsap×142 · motion×80"
-      },
-      {
-        "name": "Aceternity UI",
-        "href": "/aceternity",
-        "description": "Professional Next.js, Tailwind CSS and Framer Motion components.",
-        "itemCount": 276,
-        "types": [
-          "blocks",
-          "ui"
-        ],
-        "pro": [
-          "pro blocks",
-          "templates",
-          "mcp",
-          "team"
-        ],
-        "evidence": "motion×166 · framer-motion×1"
       }
     ]
   },
@@ -218,39 +186,6 @@ export const COLLECTIONS: LabCollection[] =
         "stars": 458,
         "updated": "updated today",
         "evidence": "\"agents\" in name"
-      },
-      {
-        "name": "shadcn/studio",
-        "href": "/shadcnstudio/shadcn-studio",
-        "description": "Accelerate your project development with ready-to-use, and fully customizable shadcn ui Components, Blocks, UI Kits, Boilerplates, Templates and Themes with AI Tools",
-        "itemCount": 694,
-        "types": [
-          "components",
-          "blocks"
-        ],
-        "stars": 1762,
-        "updated": "updated 5mo ago",
-        "pro": [
-          "pro blocks",
-          "templates",
-          "figma",
-          "mcp",
-          "team"
-        ],
-        "evidence": "\"ai\" in description"
-      },
-      {
-        "name": "Coss UI",
-        "href": "/cosscom/coss",
-        "description": "A new, modern UI component library built on top of Base UI. Built for developers and AI.",
-        "itemCount": 568,
-        "types": [
-          "blocks",
-          "ui"
-        ],
-        "stars": 10405,
-        "updated": "updated 7d ago",
-        "evidence": "\"ai\" in description"
       }
     ]
   },
@@ -341,20 +276,8 @@ export const COLLECTIONS: LabCollection[] =
           "mcp",
           "team"
         ],
+        "sponsored": true,
         "evidence": "@tanstack/react-table×15"
-      },
-      {
-        "name": "UIAble",
-        "href": "/codedthemes/uiable",
-        "description": "An open-source shadcn-based UI system designed to help developers build scalable, production-ready applications faster.",
-        "itemCount": 747,
-        "types": [
-          "ui",
-          "blocks"
-        ],
-        "stars": 72,
-        "updated": "updated 7d ago",
-        "evidence": "recharts×10 · @tanstack/react-table×4"
       }
     ]
   },
@@ -434,19 +357,6 @@ export const COLLECTIONS: LabCollection[] =
         "stars": 72,
         "updated": "updated 7d ago",
         "evidence": "@base-ui/react×49"
-      },
-      {
-        "name": "Coss UI",
-        "href": "/cosscom/coss",
-        "description": "A new, modern UI component library built on top of Base UI. Built for developers and AI.",
-        "itemCount": 568,
-        "types": [
-          "blocks",
-          "ui"
-        ],
-        "stars": 10405,
-        "updated": "updated 7d ago",
-        "evidence": "@base-ui/react×49"
       }
     ]
   },
@@ -491,6 +401,7 @@ export const COLLECTIONS: LabCollection[] =
           "figma",
           "mcp"
         ],
+        "sponsored": true,
         "evidence": "3,968 items · blocks"
       },
       {
@@ -508,6 +419,7 @@ export const COLLECTIONS: LabCollection[] =
           "mcp",
           "team"
         ],
+        "sponsored": true,
         "evidence": "1,890 items · blocks"
       },
       {
@@ -555,7 +467,8 @@ export const COLLECTIONS: LabCollection[] =
           "figma",
           "mcp",
           "team"
-        ]
+        ],
+        "sponsored": true
       },
       {
         "name": "ShadcnCraft",
@@ -572,7 +485,8 @@ export const COLLECTIONS: LabCollection[] =
           "figma",
           "mcp",
           "team"
-        ]
+        ],
+        "sponsored": true
       },
       {
         "name": "shadcn-ui-blocks.com",
@@ -606,7 +520,8 @@ export const COLLECTIONS: LabCollection[] =
           "templates",
           "figma",
           "mcp"
-        ]
+        ],
+        "sponsored": true
       },
       {
         "name": "ReUI",
@@ -624,22 +539,6 @@ export const COLLECTIONS: LabCollection[] =
           "templates",
           "figma",
           "mcp"
-        ]
-      },
-      {
-        "name": "Shadcn UI Kit",
-        "href": "/shadcnuikit",
-        "description": "Launch your projects faster with admin dashboards, website templates, components, blocks, and pre-built real-world examples.",
-        "itemCount": 875,
-        "types": [
-          "components",
-          "blocks"
-        ],
-        "pro": [
-          "pro blocks",
-          "templates",
-          "mcp",
-          "team"
         ]
       }
     ]
