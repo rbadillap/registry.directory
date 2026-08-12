@@ -295,11 +295,13 @@ function JournalSection() {
               Journal
             </h2>
             <p className="text-sm text-muted-foreground max-w-xl text-pretty">
-              The directory keeps its own log — admissions, health probes,
-              census runs. Not a feed: a lab notebook.
+              What the registries shipped — new items detected by diffing each
+              index against yesterday&apos;s snapshot. The directory&apos;s own
+              events interleave. Not a feed: a lab notebook.
             </p>
             <code className="mt-1 w-fit text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
-              every line emitted by the system that caused it
+              diff(registry.json, yesterday) · simulated from the 2026-08-11
+              snapshot
             </code>
           </header>
         </div>
