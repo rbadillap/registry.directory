@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Star } from "lucide-react"
 import {
@@ -5,21 +8,34 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@workspace/ui/components/avatar"
-import { JustShipped } from "./just-shipped"
+import { WhatsNew } from "./whats-new"
 import type {
   CollectionsFile,
   LabCollection,
   LabRegistryCard,
+  ShippedEntry,
   ShippedFile,
 } from "./types"
 
-// v0.5 — layout settled (stack). Life is now the shipped grid (just-shipped.tsx,
-// a changelog wall; the v0.4 ticker lives in git history). Data settled too:
-// everything on this page comes from collections.json and shipped.json in
-// Vercel Blob, fed by the local pipeline. No hooks left, so no "use client".
+// v0.4 — layout settled (stack), life settled (the shipped ticker, full-width
+// with discrete steps). Data settled too: everything on this page comes from
+// collections.json and shipped.json in Vercel Blob, fed by the local pipeline.
 
 function formatCount(n: number): string {
   return n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n)
+}
+
+function timeAgo(dateStr: string): string {
+  // Calendar-day semantics: an entry dated yesterday reads "yesterday" the
+  // moment midnight passes, regardless of elapsed hours.
+  const now = new Date()
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+  const parts = dateStr.split("-").map(Number)
+  const entry = new Date(parts[0] ?? 0, (parts[1] ?? 1) - 1, parts[2] ?? 1)
+  const days = Math.round((today.getTime() - entry.getTime()) / 86400000)
+  if (days <= 0) return "today"
+  if (days === 1) return "yesterday"
+  return `${days}d ago`
 }
 
 // ---------------------------------------------------------------------------
@@ -188,6 +204,156 @@ function StackSections({ collections }: { collections: LabCollection[] }) {
 }
 
 // ---------------------------------------------------------------------------
+// Just shipped — full-width ticker over shipped.json. Discrete steps: the
+// list rests, then advances one row. Pauses on hover and while the tab is
+// hidden; static under prefers-reduced-motion.
+// ---------------------------------------------------------------------------
+
+const TICKER_ROW_PX = 56
+const TICKER_VISIBLE = 5
+const TICKER_STEP_MS = 2800
+const TICKER_MASK =
+  "linear-gradient(to bottom, transparent 0, black 28px, black calc(100% - 28px), transparent)"
+
+function TickerRow({ entry }: { entry: ShippedEntry }) {
+  return (
+    <li
+      className="flex items-center gap-3 border-b border-border-subtle"
+      style={{ height: TICKER_ROW_PX }}
+    >
+      <Avatar className="size-6 shrink-0">
+        <AvatarImage src={entry.avatar ?? undefined} alt="" />
+        <AvatarFallback className="bg-secondary text-muted-foreground text-[10px]">
+          {entry.registry.charAt(0).toUpperCase()}
+        </AvatarFallback>
+      </Avatar>
+      <div className="min-w-0 flex-1">
+        <div className="flex items-baseline justify-between gap-3">
+          <span className="truncate text-sm font-semibold tracking-tight">
+            {entry.registry}
+          </span>
+          <span className="shrink-0 font-mono text-[11px] text-muted-foreground">
+            +{entry.added.length} · {timeAgo(entry.date)}
+          </span>
+        </div>
+        <p className="truncate font-mono text-[11px] text-muted-foreground">
+          {entry.added.join(" · ")}
+        </p>
+      </div>
+    </li>
+  )
+}
+
+function StepTicker({ entries }: { entries: ShippedEntry[] }) {
+  const [offset, setOffset] = useState(0)
+  const [animate, setAnimate] = useState(true)
+  const [paused, setPaused] = useState(false)
+  const [reducedMotion, setReducedMotion] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
+    setReducedMotion(mq.matches)
+    const onChange = () => setReducedMotion(mq.matches)
+    mq.addEventListener("change", onChange)
+    return () => mq.removeEventListener("change", onChange)
+  }, [])
+
+  const scrollable = entries.length > TICKER_VISIBLE
+
+  useEffect(() => {
+    if (paused || reducedMotion || !scrollable) return
+    const id = setInterval(() => {
+      if (document.hidden) return
+      setOffset((o) => o + 1)
+    }, TICKER_STEP_MS)
+    return () => clearInterval(id)
+  }, [paused, reducedMotion, scrollable])
+
+  // Seamless wrap: once past the last real row, snap back between two frames.
+  useEffect(() => {
+    if (offset < entries.length) return
+    const t = setTimeout(() => {
+      setAnimate(false)
+      setOffset(0)
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => setAnimate(true))
+      )
+    }, 750)
+    return () => clearTimeout(t)
+  }, [offset, entries.length])
+
+  const rows = scrollable
+    ? [...entries, ...entries.slice(0, TICKER_VISIBLE)]
+    : entries
+
+  return (
+    <div
+      className="relative overflow-hidden"
+      style={{
+        height: TICKER_ROW_PX * Math.min(TICKER_VISIBLE, entries.length),
+        maskImage: scrollable ? TICKER_MASK : undefined,
+        WebkitMaskImage: scrollable ? TICKER_MASK : undefined,
+      }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <ol
+        className={animate ? "transition-transform duration-700" : ""}
+        style={{
+          transform: `translateY(-${offset * TICKER_ROW_PX}px)`,
+          transitionTimingFunction: "cubic-bezier(0.77, 0, 0.175, 1)",
+        }}
+      >
+        {rows.map((entry, index) => (
+          <TickerRow
+            key={`${index}-${entry.registry}-${entry.date}`}
+            entry={entry}
+          />
+        ))}
+      </ol>
+    </div>
+  )
+}
+
+function JustShipped({ shipped }: { shipped: ShippedFile | null }) {
+  const entries = shipped?.entries ?? []
+  const totalShipped = entries.reduce((s, e) => s + e.added.length, 0)
+
+  return (
+    <section
+      aria-label="Just shipped"
+      className="border-t border-border-subtle py-12 px-4 md:px-8"
+    >
+      <div className="max-w-6xl mx-auto flex flex-col gap-5">
+        <header className="flex flex-wrap items-baseline justify-between gap-3">
+          <div className="flex items-baseline gap-4">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+              Just shipped
+            </h2>
+            {entries.length > 0 && (
+              <span className="font-mono text-[11px] text-muted-foreground">
+                {totalShipped} new items across {entries.length} registries
+              </span>
+            )}
+          </div>
+          <code className="text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
+            diff(registry.json) · rolling {shipped?.windowDays ?? 1}d window
+          </code>
+        </header>
+        {entries.length > 0 ? (
+          <StepTicker entries={entries} />
+        ) : (
+          <p className="font-mono text-xs text-muted-foreground border-b border-border-subtle pb-4">
+            {shipped?.note ??
+              "Nothing new detected yet — the diff fills in with the next ingestion run."}
+          </p>
+        )}
+      </div>
+    </section>
+  )
+}
+
+// ---------------------------------------------------------------------------
 // Shell
 // ---------------------------------------------------------------------------
 
@@ -210,7 +376,7 @@ export function LabsHome({
               registry.directory
             </h1>
             <code className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground border border-border-subtle px-1.5 py-0.5">
-              labs / collections v0.5
+              labs / collections v0.4
             </code>
           </div>
         </div>
@@ -252,7 +418,9 @@ export function LabsHome({
         </div>
       </header>
 
-      <JustShipped shipped={shipped} collections={data} />
+      <JustShipped shipped={shipped} />
+
+      <WhatsNew shipped={shipped} collections={data} />
 
       {collections.length === 0 ? (
         <p className="px-4 md:px-8 py-12 border-t border-border-subtle font-mono text-sm text-muted-foreground">

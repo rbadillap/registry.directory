@@ -2,9 +2,11 @@ import type { ReactNode } from "react"
 import Link from "next/link"
 import type { CollectionsFile, ShippedEntry, ShippedFile } from "./types"
 
-// Just shipped — a changelog wall over shipped.json: one cell per registry
-// that added items inside the rolling window. Monochrome on purpose: the page
-// reserves color for meaning it already has (computed/curated dots).
+// What's new — a changelog wall over shipped.json: one cell per registry that
+// added items inside the rolling window. Sits directly below the Just shipped
+// ticker: the ticker lists every entry, the wall features the biggest ones.
+// Monochrome on purpose: the page reserves color for meaning it already has
+// (computed/curated dots).
 
 const MONTHS = [
   "Jan",
@@ -229,7 +231,7 @@ function RegistrationMarks() {
 // Section
 // ---------------------------------------------------------------------------
 
-export function JustShipped({
+export function WhatsNew({
   shipped,
   collections,
 }: {
@@ -239,53 +241,46 @@ export function JustShipped({
   const cells = buildCells(shipped, collections)
   const featured = cells[0]
   const rest = cells.slice(1)
-  const entries = shipped?.entries ?? []
-  const totalShipped = entries.reduce((s, e) => s + e.added.length, 0)
+
+  // The ticker above already narrates the empty window; an empty wall adds
+  // nothing, so the whole group stays out of the page.
+  if (!featured) return null
 
   return (
     <section
-      aria-label="Just shipped"
+      aria-label="What's new"
       className="border-t border-border-subtle py-12 px-4 md:px-8"
     >
-      <div className="max-w-6xl mx-auto flex flex-col gap-5">
-        <header className="flex flex-wrap items-baseline justify-between gap-3">
-          <div className="flex items-baseline gap-4">
+      <div className="max-w-6xl mx-auto flex flex-col gap-6">
+        <header className="flex flex-wrap items-end justify-between gap-3">
+          <div className="flex flex-col gap-1.5">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
-              Just shipped
+              {"What's new"}
             </h2>
-            {entries.length > 0 && (
-              <span className="font-mono text-[11px] text-muted-foreground">
-                {totalShipped} new items across {entries.length} registries
-              </span>
-            )}
+            <p className="text-sm text-muted-foreground text-pretty">
+              The latest components shipping across the shadcn ecosystem.
+            </p>
           </div>
           <code className="text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
-            diff(registry.json) · rolling {shipped?.windowDays ?? 1}d window
+            diff(registry.json) · order by added desc
           </code>
         </header>
-        {featured ? (
-          <div className="relative">
-            {/* Hairlines are shared: the frame draws top and left, every cell
-                draws its own right and bottom. Columns follow the cell count
-                so a young window still closes its frame. */}
-            <div
-              className={`grid grid-cols-1 md:grid-cols-2 ${
-                cells.length >= 3 ? "lg:grid-cols-3" : ""
-              } border-t border-l border-border-subtle`}
-            >
-              <FeaturedCell cell={featured} span={cells.length >= 4} />
-              {rest.map((cell) => (
-                <UpdateCellView key={cell.key} cell={cell} />
-              ))}
-            </div>
-            <RegistrationMarks />
+        <div className="relative">
+          {/* Hairlines are shared: the frame draws top and left, every cell
+              draws its own right and bottom. Columns follow the cell count
+              so a young window still closes its frame. */}
+          <div
+            className={`grid grid-cols-1 md:grid-cols-2 ${
+              cells.length >= 3 ? "lg:grid-cols-3" : ""
+            } border-t border-l border-border-subtle`}
+          >
+            <FeaturedCell cell={featured} span={cells.length >= 4} />
+            {rest.map((cell) => (
+              <UpdateCellView key={cell.key} cell={cell} />
+            ))}
           </div>
-        ) : (
-          <p className="font-mono text-xs text-muted-foreground border-b border-border-subtle pb-4">
-            {shipped?.note ??
-              "Nothing new detected yet — the diff fills in with the next ingestion run."}
-          </p>
-        )}
+          <RegistrationMarks />
+        </div>
       </div>
     </section>
   )
