@@ -36,7 +36,11 @@ async function fetchWithRetries(url) {
     try {
       const res = await fetch(url, {
         signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
-        headers: { "user-agent": "registry.directory ingest (daily snapshot)" },
+        // Same identity as lib/fetch-utils.ts — the project presents one UA.
+        headers: {
+          "user-agent":
+            "Mozilla/5.0 (compatible; registry-directory/1.0; +https://registry.directory)",
+        },
         redirect: "follow",
       });
       if (res.ok) return { json: await res.json() };
