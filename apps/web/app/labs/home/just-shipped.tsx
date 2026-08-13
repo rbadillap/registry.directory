@@ -1,11 +1,10 @@
 import type { ReactNode } from "react"
 import Link from "next/link"
-import type { CollectionsFile, ShippedEntry, ShippedFile } from "../home/types"
+import type { CollectionsFile, ShippedEntry, ShippedFile } from "./types"
 
-// A changelog wall over shipped.json: one cell per registry that added items
-// inside the rolling window. Accent is chart-3 — amber in the dark theme the
-// site defaults to, and the only chart token the labs pages had left free
-// (chart-2 and chart-4 already mean computed/curated on labs/home).
+// Just shipped — a changelog wall over shipped.json: one cell per registry
+// that added items inside the rolling window. Monochrome on purpose: the page
+// reserves color for meaning it already has (computed/curated dots).
 
 const MONTHS = [
   "Jan",
@@ -22,16 +21,14 @@ const MONTHS = [
   "Dec",
 ]
 
-// The featured cell spans two rows, so five cells close the frame exactly at
-// both md (2 columns) and lg (3 columns) — no ragged edge, no empty slot.
-const GRID_CELLS = 5
+// The featured cell spans two rows from md up, so seven cells close the frame
+// exactly at both md (2 columns) and lg (3 columns).
+const GRID_MAX = 7
 
 type UpdateCell = {
   key: string
-  /** registry name; "specimen" on filler cells */
   tag: string
-  /** ISO date, or null on a specimen — the only marker of filler */
-  date: string | null
+  date: string
   title: string
   detail: string
   href?: string
@@ -88,51 +85,6 @@ function registryHrefs(collections: CollectionsFile | null): Map<string, string>
   return hrefs
 }
 
-function toCell(entry: ShippedEntry, hrefs: Map<string, string>): UpdateCell {
-  return {
-    key: `${entry.registry}-${entry.date}`,
-    tag: entry.registry,
-    date: entry.date,
-    title: summarize(entry.added),
-    detail: entry.added.join(", "),
-    href: hrefs.get(entry.registry.toLowerCase()),
-  }
-}
-
-// Filler, never presentable as shipping data: no date, no link, tag reads
-// SPECIMEN in muted grey instead of the accent.
-const SPECIMENS: UpdateCell[] = [
-  {
-    key: "specimen-1",
-    tag: "specimen",
-    date: null,
-    title: "sidebar-07 + 2 companion items",
-    detail: "sidebar-07, sidebar-07-inset, sidebar-07-mobile",
-  },
-  {
-    key: "specimen-2",
-    tag: "specimen",
-    date: null,
-    title: "toolbar ships in 3 variants",
-    detail: "toolbar-default, toolbar-compact, toolbar-floating",
-  },
-  {
-    key: "specimen-3",
-    tag: "specimen",
-    date: null,
-    title: "5 new components",
-    detail: "kbd, kbd-group, marquee, spinner-ring, tree-view",
-  },
-  {
-    key: "specimen-4",
-    tag: "specimen",
-    date: null,
-    title: "data-table + 4 companion items",
-    detail:
-      "data-table, data-table-column-header, data-table-faceted-filter, data-table-pagination, data-table-toolbar",
-  },
-]
-
 function buildCells(
   shipped: ShippedFile | null,
   collections: CollectionsFile | null
@@ -141,9 +93,14 @@ function buildCells(
   const entries = [...(shipped?.entries ?? [])].sort(
     (a, b) => b.added.length - a.added.length || b.date.localeCompare(a.date)
   )
-  const real = entries.map((entry) => toCell(entry, hrefs))
-  if (real.length >= GRID_CELLS) return real
-  return [...real, ...SPECIMENS.slice(0, GRID_CELLS - real.length)]
+  return entries.slice(0, GRID_MAX).map((entry: ShippedEntry) => ({
+    key: `${entry.registry}-${entry.date}`,
+    tag: entry.registry,
+    date: entry.date,
+    title: summarize(entry.added),
+    detail: entry.added.join(", "),
+    href: hrefs.get(entry.registry.toLowerCase()),
+  }))
 }
 
 // ---------------------------------------------------------------------------
@@ -152,26 +109,18 @@ function buildCells(
 
 function Tag({ cell }: { cell: UpdateCell }) {
   return (
-    <span
-      className={`shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] ${
-        cell.date === null ? "text-muted-foreground" : "text-chart-3"
-      }`}
-    >
+    <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
       {cell.tag}
     </span>
   )
 }
 
-function ReadLink({ cell, label }: { cell: UpdateCell; label: string }) {
+// The whole cell is the link, so the affordance renders only when one exists.
+function ViewLink({ cell }: { cell: UpdateCell }) {
+  if (!cell.href) return null
   return (
-    <span
-      className={`mt-auto pt-6 font-mono text-[11px] ${
-        cell.href
-          ? "text-chart-3 group-hover:underline underline-offset-4"
-          : "text-muted-foreground"
-      }`}
-    >
-      {label} →
+    <span className="mt-auto pt-6 font-mono text-[11px] text-muted-foreground group-hover:text-foreground group-hover:underline underline-offset-4">
+      View registry →
     </span>
   )
 }
@@ -197,11 +146,13 @@ function CellFrame({
   )
 }
 
-function FeaturedCell({ cell }: { cell: UpdateCell }) {
+function FeaturedCell({ cell, span }: { cell: UpdateCell; span: boolean }) {
   return (
     <CellFrame
       href={cell.href}
-      className="overflow-hidden min-h-[16rem] md:row-span-2 md:min-h-[26rem]"
+      className={`overflow-hidden min-h-[16rem] ${
+        span ? "md:row-span-2 md:min-h-[26rem]" : ""
+      }`}
     >
       {/* Texture, not decoration: the dots sit under the lower half only. */}
       <span
@@ -216,14 +167,8 @@ function FeaturedCell({ cell }: { cell: UpdateCell }) {
         }}
       />
       <div className="relative flex items-start justify-between gap-4">
-        <span className="flex items-center gap-2 font-mono text-[11px] text-muted-foreground">
-          <span
-            aria-hidden="true"
-            className={`size-1.5 rounded-full ${
-              cell.date === null ? "bg-foreground-faint" : "bg-chart-3"
-            }`}
-          />
-          {cell.date === null ? "specimen" : formatDate(cell.date, true)}
+        <span className="font-mono text-[11px] text-muted-foreground">
+          {formatDate(cell.date, true)}
         </span>
         <Tag cell={cell} />
       </div>
@@ -233,7 +178,7 @@ function FeaturedCell({ cell }: { cell: UpdateCell }) {
       <p className="relative mt-3 font-mono text-xs text-muted-foreground line-clamp-4">
         {cell.detail}
       </p>
-      <ReadLink cell={cell} label="Read update" />
+      <ViewLink cell={cell} />
     </CellFrame>
   )
 }
@@ -243,7 +188,7 @@ function UpdateCellView({ cell }: { cell: UpdateCell }) {
     <CellFrame href={cell.href} className="min-h-[13rem]">
       <div className="flex items-start justify-between gap-4">
         <span className="font-mono text-[11px] text-muted-foreground">
-          {cell.date === null ? "specimen" : formatDate(cell.date, false)}
+          {formatDate(cell.date, false)}
         </span>
         <Tag cell={cell} />
       </div>
@@ -253,7 +198,7 @@ function UpdateCellView({ cell }: { cell: UpdateCell }) {
       <p className="mt-2 font-mono text-xs text-muted-foreground line-clamp-3">
         {cell.detail}
       </p>
-      <ReadLink cell={cell} label="Read more" />
+      <ViewLink cell={cell} />
     </CellFrame>
   )
 }
@@ -281,70 +226,67 @@ function RegistrationMarks() {
 }
 
 // ---------------------------------------------------------------------------
-// Page
+// Section
 // ---------------------------------------------------------------------------
 
-export function WhatsNewGrid({
-  collections,
+export function JustShipped({
   shipped,
+  collections,
 }: {
-  collections: CollectionsFile | null
   shipped: ShippedFile | null
+  collections: CollectionsFile | null
 }) {
   const cells = buildCells(shipped, collections)
   const featured = cells[0]
   const rest = cells.slice(1)
-  const padded = cells.some((cell) => cell.date === null)
+  const entries = shipped?.entries ?? []
+  const totalShipped = entries.reduce((s, e) => s + e.added.length, 0)
 
   return (
-    <main className="min-h-screen px-4 md:px-8 py-10 pb-24">
-      <div className="max-w-6xl mx-auto flex flex-col gap-10">
-        <div className="flex items-baseline gap-3">
-          <span className="text-sm font-semibold tracking-tight">
-            registry.directory
-          </span>
-          <code className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground border border-border-subtle px-1.5 py-0.5">
-            {"labs / what's new"}
+    <section
+      aria-label="Just shipped"
+      className="border-t border-border-subtle py-12 px-4 md:px-8"
+    >
+      <div className="max-w-6xl mx-auto flex flex-col gap-5">
+        <header className="flex flex-wrap items-baseline justify-between gap-3">
+          <div className="flex items-baseline gap-4">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+              Just shipped
+            </h2>
+            {entries.length > 0 && (
+              <span className="font-mono text-[11px] text-muted-foreground">
+                {totalShipped} new items across {entries.length} registries
+              </span>
+            )}
+          </div>
+          <code className="text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
+            diff(registry.json) · rolling {shipped?.windowDays ?? 1}d window
           </code>
-        </div>
-
-        <section aria-label="What's new" className="flex flex-col gap-6">
-          <header className="flex flex-wrap items-end justify-between gap-4">
-            <div className="flex flex-col gap-1.5">
-              <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
-                {"What's new"}
-              </h1>
-              <p className="text-sm text-muted-foreground text-pretty">
-                The latest components shipping across the shadcn ecosystem.
-              </p>
-            </div>
-            <Link
-              href="/labs/home"
-              className="font-mono text-xs text-chart-3 hover:underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-ring"
-            >
-              View all →
-            </Link>
-          </header>
-
+        </header>
+        {featured ? (
           <div className="relative">
             {/* Hairlines are shared: the frame draws top and left, every cell
-                draws its own right and bottom. */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border-subtle">
-              {featured && <FeaturedCell cell={featured} />}
+                draws its own right and bottom. Columns follow the cell count
+                so a young window still closes its frame. */}
+            <div
+              className={`grid grid-cols-1 md:grid-cols-2 ${
+                cells.length >= 3 ? "lg:grid-cols-3" : ""
+              } border-t border-l border-border-subtle`}
+            >
+              <FeaturedCell cell={featured} span={cells.length >= 4} />
               {rest.map((cell) => (
                 <UpdateCellView key={cell.key} cell={cell} />
               ))}
             </div>
             <RegistrationMarks />
           </div>
-
-          {padded && (
-            <p className="font-mono text-[11px] text-muted-foreground">
-              Specimen cells pad the grid while the snapshot history is young.
-            </p>
-          )}
-        </section>
+        ) : (
+          <p className="font-mono text-xs text-muted-foreground border-b border-border-subtle pb-4">
+            {shipped?.note ??
+              "Nothing new detected yet — the diff fills in with the next ingestion run."}
+          </p>
+        )}
       </div>
-    </main>
+    </section>
   )
 }
