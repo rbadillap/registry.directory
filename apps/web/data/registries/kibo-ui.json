@@ -1,0 +1,800 @@
+{
+  "key": "kibo-ui",
+  "entry": "Kibo UI",
+  "name": "Kibo UI Registry",
+  "homepage": "https://www.kibo-ui.com/",
+  "indexUrl": "https://kibo-ui.com/r/registry.json",
+  "itemBase": "https://kibo-ui.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "announcement",
+      "type": "registry:ui",
+      "title": "announcement",
+      "description": "A compound badge designed to display an announcement.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/announcement/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-stack",
+      "type": "registry:ui",
+      "title": "avatar-stack",
+      "description": "Avatar Stack is a component that allows you to stack and overlap avatars.",
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/avatar-stack/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "banner",
+      "type": "registry:ui",
+      "title": "banner",
+      "description": "A banner is a full-width component that can be used to show a message and action to the user.",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/banner/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "calendar",
+      "description": "The calendar view displays features on a grid calendar. Specifically it shows the end date of each feature, and groups features by day.",
+      "dependencies": [
+        "date-fns",
+        "jotai",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "command",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/calendar/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "choicebox",
+      "type": "registry:ui",
+      "title": "choicebox",
+      "description": "Choiceboxes are a great way to show radio or checkbox options with a card style.",
+      "dependencies": [
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/choicebox/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "code-block",
+      "description": "Provides syntax highlighting, line numbers, and copy to clipboard functionality for code blocks.",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "@shikijs/transformers",
+        "lucide-react",
+        "react-icons",
+        "shiki"
+      ],
+      "registryDependencies": [
+        "button",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/code-block/index.tsx"
+        },
+        {
+          "path": "server.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/code-block/server.tsx"
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:ui",
+      "title": "color-picker",
+      "description": "Allows users to select a color. Modeled after the color picker in Figma.",
+      "dependencies": [
+        "color",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/color-picker/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "combobox",
+      "description": "Autocomplete input and command palette with a list of suggestions.",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "command",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/combobox/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "comparison",
+      "type": "registry:ui",
+      "title": "comparison",
+      "description": "A slider-based component for comparing two items in an overlay.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/comparison/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contribution-graph",
+      "type": "registry:ui",
+      "title": "contribution-graph",
+      "description": "A GitHub-style contribution graph component that displays activity levels over time.",
+      "dependencies": [
+        "date-fns"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/contribution-graph/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "credit-card",
+      "type": "registry:ui",
+      "title": "credit-card",
+      "description": "Credit card components for displaying and validating credit card information.",
+      "dependencies": [
+        "react-svg-credit-card-payment-icons"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/credit-card/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cursor",
+      "type": "registry:ui",
+      "title": "cursor",
+      "description": "A cursor component, great for realtime interactive applications.",
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/cursor/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "deck",
+      "type": "registry:ui",
+      "title": "deck",
+      "description": "A Tinder-like swipeable card stack component with smooth animations.",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/deck/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-stack",
+      "type": "registry:ui",
+      "title": "dialog-stack",
+      "description": "Composable stacked dialogs, useful for creating a wizard, nested form or multi-step process. It provides a consistent layout and styling for each dialog, and includes navigation component.",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/dialog-stack/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropzone",
+      "type": "registry:ui",
+      "title": "dropzone",
+      "description": "Allows users to drag-and-drop files into a container to upload or process them.",
+      "dependencies": [
+        "lucide-react",
+        "react-dropzone"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/dropzone/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "editor",
+      "type": "registry:ui",
+      "title": "editor",
+      "description": "The Editor component is a powerful and flexible text editor that allows you to create and edit rich text content.",
+      "dependencies": [
+        "@floating-ui/dom",
+        "@tiptap/core",
+        "@tiptap/extension-code-block-lowlight",
+        "@tiptap/extension-list",
+        "@tiptap/extension-subscript",
+        "@tiptap/extension-superscript",
+        "@tiptap/extension-table",
+        "@tiptap/extension-text-style",
+        "@tiptap/extension-typography",
+        "@tiptap/extensions",
+        "@tiptap/pm",
+        "@tiptap/react",
+        "@tiptap/starter-kit",
+        "@tiptap/suggestion",
+        "fuse.js",
+        "lowlight",
+        "lucide-react",
+        "tippy.js"
+      ],
+      "registryDependencies": [
+        "button",
+        "command",
+        "dropdown-menu",
+        "popover",
+        "separator",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/editor/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "gantt",
+      "type": "registry:ui",
+      "title": "gantt",
+      "description": "The Gantt chart is a powerful tool for visualizing project schedules and tracking the progress of tasks. It provides a clear, hierarchical view of tasks, allowing you to easily identify manage project timelines.",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/modifiers",
+        "@uidotdev/usehooks",
+        "date-fns",
+        "jotai",
+        "lodash.throttle",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "context-menu"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/gantt/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glimpse",
+      "type": "registry:ui",
+      "title": "glimpse",
+      "description": "A component that shows a preview of a URL when hovering over a link.",
+      "registryDependencies": [
+        "hover-card"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/glimpse/index.tsx"
+        },
+        {
+          "path": "server.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/glimpse/server.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-crop",
+      "type": "registry:ui",
+      "title": "image-crop",
+      "description": "Helps you crop images to a specific size or aspect ratio.",
+      "dependencies": [
+        "lucide-react",
+        "radix-ui",
+        "react-image-crop"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/image-crop/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-zoom",
+      "type": "registry:ui",
+      "title": "image-zoom",
+      "description": "Image zoom is a component that allows you to zoom in on an image.",
+      "dependencies": [
+        "react-medium-image-zoom"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/image-zoom/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kanban",
+      "type": "registry:ui",
+      "title": "kanban",
+      "description": "A kanban board is a visual tool that helps you manage and visualize your work. It is a board with columns, and each column represents a status, e.g. \"Backlog\", \"In Progress\", \"Done\".",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities",
+        "tunnel-rat"
+      ],
+      "registryDependencies": [
+        "card",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/kanban/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "type": "registry:ui",
+      "title": "list",
+      "description": "List views are a great way to show a list of tasks grouped by status and ranked by priority.",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/modifiers"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/list/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marquee",
+      "type": "registry:ui",
+      "title": "marquee",
+      "description": "Marquees are a great way to show a list of items in a horizontal scrolling motion.",
+      "dependencies": [
+        "react-fast-marquee"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/marquee/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "mini-calendar",
+      "type": "registry:ui",
+      "title": "mini-calendar",
+      "description": "A composable mini calendar component for picking dates close to today.",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "date-fns",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/mini-calendar/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pill",
+      "type": "registry:ui",
+      "title": "pill",
+      "description": "A flexible badge component designed for a variety of use cases.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/pill/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "qr-code",
+      "type": "registry:ui",
+      "title": "qr-code",
+      "description": "QR Code is a component that generates a QR code from a string.",
+      "dependencies": [
+        "culori",
+        "qrcode"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/qr-code/index.tsx"
+        },
+        {
+          "path": "server.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/qr-code/server.tsx"
+        }
+      ]
+    },
+    {
+      "name": "rating",
+      "type": "registry:ui",
+      "title": "rating",
+      "description": "A star rating component with keyboard navigation and hover effects.",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/rating/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "reel",
+      "type": "registry:ui",
+      "title": "reel",
+      "description": "A composable Reel component that looks like Instagram Stories - a full-height, 9:16 aspect ratio container with video playback and progress indicators.",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/reel/index.tsx"
+        },
+        {
+          "path": "reel-controlled.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/reel/reel-controlled.tsx"
+        }
+      ]
+    },
+    {
+      "name": "relative-time",
+      "type": "registry:ui",
+      "title": "relative-time",
+      "description": "A component that displays time in various timezones.",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/relative-time/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sandbox",
+      "type": "registry:ui",
+      "title": "sandbox",
+      "description": "The sandbox component allows you to preview and test components in a sandboxed environment.",
+      "dependencies": [
+        "@codesandbox/sandpack-react"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/sandbox/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snippet",
+      "type": "registry:ui",
+      "title": "snippet",
+      "description": "Snippet is a component that allows you to display and copy code in a tabbed interface.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/snippet/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "spinner",
+      "description": "A spinner is a visual indicator that shows progress or activity.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/spinner/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status",
+      "type": "registry:ui",
+      "title": "status",
+      "description": "Status components are used to display the uptime of a service.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/status/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stories",
+      "type": "registry:ui",
+      "title": "stories",
+      "description": "A composable Stories component - a carousel of individual video cards like you'd see on Facebook.",
+      "registryDependencies": [
+        "avatar",
+        "carousel"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/stories/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "table",
+      "description": "Table views are used to display data in a tabular format. They are useful for displaying large amounts of data in a structured way.",
+      "dependencies": [
+        "@tanstack/react-table",
+        "jotai",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/table/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tags",
+      "type": "registry:ui",
+      "title": "tags",
+      "description": "Tags are a way to apply multiple labels to an item.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "command",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/tags/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theme-switcher",
+      "type": "registry:ui",
+      "title": "theme-switcher",
+      "description": "A component to switch between light, dark and system theme.",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/theme-switcher/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ticker",
+      "type": "registry:ui",
+      "title": "ticker",
+      "description": "A composable finance ticker for displaying symbols, prices and changes.",
+      "registryDependencies": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/ticker/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "type": "registry:ui",
+      "title": "tree",
+      "description": "A composable tree component with animated expand/collapse and customizable nodes.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/tree/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "typography",
+      "type": "registry:style",
+      "title": "typography",
+      "description": "A typography component designed to display text with a consistent style."
+    },
+    {
+      "name": "video-player",
+      "type": "registry:ui",
+      "title": "video-player",
+      "description": "A composable, shadcn/ui styled video player component that uses the media-chrome library.",
+      "dependencies": [
+        "media-chrome"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/kibo-ui/video-player/index.tsx"
+        }
+      ]
+    }
+  ]
+}

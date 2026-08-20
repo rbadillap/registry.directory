@@ -1,0 +1,5372 @@
+{
+  "key": "uitripled",
+  "entry": "UI TripleD",
+  "name": "UI TripleD",
+  "homepage": "https://ui.tripled.work/",
+  "indexUrl": "https://ui.tripled.work/r/registry.json",
+  "itemBase": "https://ui.tripled.work/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "about-us-page-shadcnui",
+      "type": "registry:page",
+      "title": "About Us Page",
+      "description": "Glassmorphism about page showcasing mission, values, and leadership with motion accents.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/page/about/about-us-page.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/about-us-page-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "about-us-section-baseui",
+      "type": "registry:block",
+      "title": "About Us",
+      "description": "About us section with value cards, icons, and animated reveal effects (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/about-us-section-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/about-us-section-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "about-us-section-shadcnui",
+      "type": "registry:block",
+      "title": "About Us",
+      "description": "About us section with value cards, icons, and animated reveal effects",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/about-us-section.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/about-us-section-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-interface-shadcnui",
+      "type": "registry:component",
+      "title": "AI Chat Interface",
+      "description": "Chat input with attachments, model selector, and accessible controls",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/chat/ai-chat-interface.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/ai-chat-interface-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-glow-input-shadcnui",
+      "type": "registry:component",
+      "title": "AI Glow Input",
+      "description": "Input field with dynamic glow that pulses based on typing speed - smart motion feedback",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/ai-glow-input.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/ai-glow-input-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-loading-skeleton-shadcnui",
+      "type": "registry:component",
+      "title": "AI Loading Skeleton",
+      "description": "Loading state with diagonal shimmer gradient and opacity wave",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/ai-loading-skeleton.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/ai-loading-skeleton-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-response-typing-shadcnui",
+      "type": "registry:component",
+      "title": "AI Response Typing Stream",
+      "description": "Character-by-character typing animation with natural pauses and thinking states",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/ai-response-typing.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/ai-response-typing-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-unlock-animation-shadcnui",
+      "type": "registry:ui",
+      "title": "AI Unlock Animation",
+      "description": "Premium unlock animation with particles, ripples, and loading states",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/ai-unlock-animation.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/ai-unlock-animation-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-accordion-shadcnui",
+      "type": "registry:component",
+      "title": "Animated Accordion",
+      "description": "Accordion with smooth expand/collapse and rotate arrow",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/disclosure/animated-accordion.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-accordion-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-card-stack-baseui",
+      "type": "registry:component",
+      "title": "Animated Card Stack",
+      "description": "Stacked cards that expand on hover (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/cards/baseui/animated-card-stack-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-card-stack-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-card-stack-shadcnui",
+      "type": "registry:component",
+      "title": "Animated Card Stack",
+      "description": "Stacked cards that expand on hover",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/cards/shadcnui/animated-card-stack.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-card-stack-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-checkbox-shadcnui",
+      "type": "registry:component",
+      "title": "Animated Checkbox",
+      "description": "Checkbox with checkmark animation",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/forms/animated-checkbox.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-checkbox-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-dialog-shadcnui",
+      "type": "registry:component",
+      "title": "Animated Dialog",
+      "description": "Modal dialog with backdrop fade and spring animation",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/modals/animated-dialog.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-dialog-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-list-shadcnui",
+      "type": "registry:component",
+      "title": "Animated List",
+      "description": "List with staggered item animations",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/lists/animated-list.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-list-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-navbar-shadcnui",
+      "type": "registry:component",
+      "title": "Animated Navbar",
+      "description": "Navigation bar with animated underline indicator",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/navigation/animated-navbar.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-navbar-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-pagination-shadcnui",
+      "type": "registry:component",
+      "title": "Animated Pagination",
+      "description": "Pagination with smooth page transition indicator",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/navigation/animated-pagination.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-pagination-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-profile-menu-shadcnui",
+      "type": "registry:component",
+      "title": "Animated Profile Menu",
+      "description": "Floating profile avatar that reveals quick action cards with smooth motion",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/navigation/animated-profile-menu.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-profile-menu-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-progress-shadcnui",
+      "type": "registry:ui",
+      "title": "Animated Progress Bar",
+      "description": "Progress bar with smooth animation",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/data/progress/animated-progress.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/animated-progress-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-quote-block-shadcnui",
+      "type": "registry:ui",
+      "title": "Animated Quote Block",
+      "description": "Quote that types itself in, pauses, then subtly breathes",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/animated-quote-block.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/animated-quote-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-radio-shadcnui",
+      "type": "registry:component",
+      "title": "Animated Radio",
+      "description": "Radio button group with selection ripple",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/forms/animated-radio.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-radio-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-select-shadcnui",
+      "type": "registry:component",
+      "title": "Animated Select",
+      "description": "Select dropdown with smooth open/close animation",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/forms/animated-select.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-select-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-sidebar-shadcnui",
+      "type": "registry:component",
+      "title": "Animated Sidebar",
+      "description": "Sidebar with slide-in animation and overlay",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/navigation/animated-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-sidebar-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-tabs-shadcnui",
+      "type": "registry:component",
+      "title": "Animated Tabs",
+      "description": "Tabs with sliding indicator animation",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/tabs/animated-tabs.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-tabs-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-tooltip-shadcnui",
+      "type": "registry:component",
+      "title": "Animated Tooltip",
+      "description": "Tooltip with delay and slide animation",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/tooltips/animated-tooltip.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/animated-tooltip-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "auto-revealing-heading-shadcnui",
+      "type": "registry:page",
+      "title": "Auto-Revealing Heading",
+      "description": "Heading that reveals each letter/word with staggered motion on scroll",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/auto-revealing-heading.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/auto-revealing-heading-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-group-shadcnui",
+      "type": "registry:component",
+      "title": "Avatar Group",
+      "description": "Stacked avatar group with hover reveal and tooltips",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/avatars/avatar-group.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/avatar-group-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-grid-block-baseui",
+      "type": "registry:block",
+      "title": "Bento Grid Block",
+      "description": "Layered bento grid with imagery, metrics, and smooth motion reveals (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/bento-grid-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/bento-grid-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-grid-block-shadcnui",
+      "type": "registry:block",
+      "title": "Bento Grid Block",
+      "description": "Layered bento grid with imagery, metrics, and smooth motion reveals",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/bento-grid-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/bento-grid-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog-block-baseui",
+      "type": "registry:block",
+      "title": "Blog Block",
+      "description": "Animated blog posts grid with staggered cards, date/time indicators, and hover effects (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/blog-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/blog-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog-block-shadcnui",
+      "type": "registry:block",
+      "title": "Blog Block",
+      "description": "Animated blog posts grid with staggered cards, date/time indicators, and hover effects",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/blog-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/blog-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog-typography-shadcnui",
+      "type": "registry:component",
+      "title": "Blog Typography",
+      "description": "Beautiful blog post typography with text, links, images, blockquotes, and code examples",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/blog/blog-typography.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/blog-typography-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bottom-modal",
+      "type": "registry:component",
+      "title": "Bottom Modal",
+      "description": "Cute bottom-centered modal with smooth slide-up animation and glassmorphism design",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/modals/bottom-modal.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/bottom-modal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "browse-folder-baseui",
+      "type": "registry:component",
+      "title": "Browse Folder",
+      "description": "Folder browser with animated tabs and content (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/browse-folder-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/browse-folder-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "browse-folder-shadcnui",
+      "type": "registry:component",
+      "title": "Browse Folder",
+      "description": "Folder browser with animated tabs and content",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/browse-folder.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/browse-folder-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cards-slider-shadcnui",
+      "type": "registry:component",
+      "title": "Cards Slider",
+      "description": "Liquid smooth draggable cards slider with shadcn/ui styling and framer-motion animations",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/sliders/cards-slider.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/cards-slider-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cash-flow-chart",
+      "type": "registry:ui",
+      "title": "Accessible Cash Flow Chart",
+      "description": "Interactive cash flow bar chart with keyboard focus, tooltips, and screen reader support",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/data/charts/cash-flow-chart.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/cash-flow-chart-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chat-app-shadcnui",
+      "type": "registry:component",
+      "title": "Chat App",
+      "description": "Fully functional chat interface with animated messages",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/chat/chat-app.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/chat-app-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cinema-ticket-baseui",
+      "type": "registry:component",
+      "title": "Cinema Ticket",
+      "description": "Cinematic theater ticket with rip effect and barcode (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/cinema-ticket-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/cinema-ticket-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cinema-ticket-shadcnui",
+      "type": "registry:component",
+      "title": "Cinema Ticket",
+      "description": "Cinematic theater ticket with rip effect and barcode",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/cinema-ticket.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/cinema-ticket-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command-palette-shadcnui",
+      "type": "registry:component",
+      "title": "Command Palette",
+      "description": "Command palette with search and keyboard navigation",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/search/command-palette.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/command-palette-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "comment-thread-shadcnui",
+      "type": "registry:component",
+      "title": "Comment Thread",
+      "description": "Nested comment thread with rich interactions and animations",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/comments/comment-thread.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/comment-thread-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "conference-ticket-baseui",
+      "type": "registry:component",
+      "title": "Conference Ticket",
+      "description": "Animated conference ticket with glassmorphism effects and holographic details (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/conference-ticket-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/conference-ticket-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "conference-ticket-shadcnui",
+      "type": "registry:component",
+      "title": "Conference Ticket",
+      "description": "Animated conference ticket with glassmorphism effects and holographic details",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/conference-ticket.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/conference-ticket-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contact-block-baseui",
+      "type": "registry:block",
+      "title": "Contact Block",
+      "description": "Contact form with animated contact info cards, working hours, and interactive icons (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/contact-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/contact-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contact-block-shadcnui",
+      "type": "registry:block",
+      "title": "Contact Block",
+      "description": "Contact form with animated contact info cards, working hours, and interactive icons",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/contact-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/contact-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contact-form-section-baseui",
+      "type": "registry:block",
+      "title": "Contact Form",
+      "description": "Contact form section with animated inputs, validation, and form handling (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/contact-form-section-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/contact-form-section-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contact-form-section-shadcnui",
+      "type": "registry:block",
+      "title": "Contact Form",
+      "description": "Contact form section with animated inputs, validation, and form handling",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/contact-form-section.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/contact-form-section-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-bubble-shadcnui",
+      "type": "registry:component",
+      "title": "Context Menu Bubble",
+      "description": "Right-click reveals circular expanding radial menu with icons",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/context-menu-bubble.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/context-menu-bubble-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-shadcnui",
+      "type": "registry:component",
+      "title": "Context Menu",
+      "description": "Right-click context menu with nested items animation",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/navigation/context-menu.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/context-menu-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "course-content-page-shadcnui",
+      "type": "registry:component",
+      "title": "Course Content Page",
+      "description": "Interactive course page with video player, instructor details, curriculum sections, and progress tracking",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/course-content/course-content-page.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/course-content-page-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "credit-card-baseui",
+      "type": "registry:component",
+      "title": "Credit Card",
+      "description": "3D animated credit card with flip animation to show CVV (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/cards/baseui/credit-card-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/credit-card-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "credit-card-shadcnui",
+      "type": "registry:component",
+      "title": "Credit Card",
+      "description": "3D animated credit card with flip animation to show CVV",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/cards/shadcnui/credit-card.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/credit-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-banner-section-baseui",
+      "type": "registry:page",
+      "title": "CTA Banner Section",
+      "description": "Animated call-to-action banner with gradient background and button animations (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/cta-banner-section-baseui.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/cta-banner-section-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-banner-section-shadcnui",
+      "type": "registry:page",
+      "title": "CTA Banner Section",
+      "description": "Animated call-to-action banner with gradient background and button animations",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/cta-banner-section.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/cta-banner-section-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-block-baseui",
+      "type": "registry:block",
+      "title": "CTA Block",
+      "description": "Call-to-action section with gradient overlay, animated buttons, and status indicator (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/cta-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/cta-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-block-shadcnui",
+      "type": "registry:block",
+      "title": "CTA Block",
+      "description": "Call-to-action section with gradient overlay, animated buttons, and status indicator",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/cta-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/cta-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-hero-block-baseui",
+      "type": "registry:block",
+      "title": "CTA Hero Block",
+      "description": "Engaging hero section with email signup, video preview, and social proof (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/cta-hero-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/cta-hero-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-hero-block-shadcnui",
+      "type": "registry:block",
+      "title": "CTA Hero Block",
+      "description": "Engaging hero section with email signup, video preview, and social proof",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/cta-hero-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/cta-hero-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "currency-converter-card-baseui",
+      "type": "registry:component",
+      "title": "Currency Converter Card",
+      "description": "Finance conversion widget with animated inputs, simulated exchange updates, and contextual feedback (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/currency-converter-card-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/currency-converter-card-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "currency-converter-card-shadcnui",
+      "type": "registry:component",
+      "title": "Currency Converter Card",
+      "description": "Finance conversion widget with animated inputs, simulated exchange updates, and contextual feedback",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/currency-converter-card.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/currency-converter-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-baseui",
+      "type": "registry:block",
+      "title": "Dashboard",
+      "description": "Interactive stock portfolio dashboard with status cards, data table, and detailed stock information modal (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/components/stocks-dashboard/dashboard.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/dashboard-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-shadcnui",
+      "type": "registry:block",
+      "title": "Dashboard",
+      "description": "Interactive stock portfolio dashboard with status cards, data table, and detailed stock information modal",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/stocks-dashboard/dashboard.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/dashboard-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "detail-task-card-baseui",
+      "type": "registry:component",
+      "title": "Detail Task Card",
+      "description": "Task management detail panel with animated assignee chips and editor controls (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/cards/baseui/detail-task-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/detail-task-card-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "detail-task-card-shadcnui",
+      "type": "registry:component",
+      "title": "Detail Task Card",
+      "description": "Task management detail panel with animated assignee chips and editor controls",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/cards/shadcnui/detail-task.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/detail-task-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drag-to-confirm-slider-shadcnui",
+      "type": "registry:component",
+      "title": "Drag-to-Confirm Slider",
+      "description": "Slider that activates action only when fully dragged to end",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/drag-to-confirm-slider.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/drag-to-confirm-slider-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "draggable-list-shadcnui",
+      "type": "registry:component",
+      "title": "Draggable List",
+      "description": "Reorderable list with drag and drop spring physics",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/lists/draggable-list.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/draggable-list-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dynamic-spotlight-cta-shadcnui",
+      "type": "registry:page",
+      "title": "Dynamic Spotlight CTA",
+      "description": "Floating spotlight follows cursor to reveal gradient CTA text with premium effects",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/dynamic-spotlight-cta.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/dynamic-spotlight-cta-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dynamic-tag-cloud-shadcnui",
+      "type": "registry:ui",
+      "title": "Dynamic Tag Cloud",
+      "description": "Floating cluster of tags that drift and rearrange when hovered",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/dynamic-tag-cloud.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/dynamic-tag-cloud-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ecommerce-highlight-card-baseui",
+      "type": "registry:component",
+      "title": "Ecommerce Highlight Card",
+      "description": "Product spotlight card with blurred border, bundle selector, and fulfillment details (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/cards/baseui/ecommerce-highlight-card-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/ecommerce-highlight-card-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ecommerce-highlight-card-shadcnui",
+      "type": "registry:component",
+      "title": "Ecommerce Highlight Card",
+      "description": "Product spotlight card with blurred border, bundle selector, and fulfillment details",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/cards/shadcnui/ecommerce-highlight-card.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/ecommerce-highlight-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "elastic-switch-shadcnui",
+      "type": "registry:ui",
+      "title": "Elastic Toggle Switch",
+      "description": "Toggle switch with elastic spring animation",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/micro/toggles/elastic-switch.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/elastic-switch-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "expanding-search-dock-shadcnui",
+      "type": "registry:component",
+      "title": "Expanding Search Dock",
+      "description": "Minimal search icon that expands into full input with blur",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/expanding-search-dock.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/expanding-search-dock-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fade-slide-modal-shadcnui",
+      "type": "registry:component",
+      "title": "Fade & Slide Modal",
+      "description": "Modal with fade backdrop and slide-up animation",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/modal/fade-slide.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/fade-slide-modal-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-accordion-block-baseui",
+      "type": "registry:block",
+      "title": "FAQ Accordion",
+      "description": "Expandable FAQ section with smooth accordion animations (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/faq-accordion-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/faq-accordion-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-accordion-block-shadcnui",
+      "type": "registry:block",
+      "title": "FAQ Accordion",
+      "description": "Expandable FAQ section with smooth accordion animations",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/faq-accordion-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/faq-accordion-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-section-baseui",
+      "type": "registry:page",
+      "title": "FAQ Section",
+      "description": "Animated FAQ section with expandable questions and smooth transitions (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/faq-section-baseui.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/faq-section-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-section-shadcnui",
+      "type": "registry:page",
+      "title": "FAQ Section",
+      "description": "Animated FAQ section with expandable questions and smooth transitions",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/faq-section.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/faq-section-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-cards-block-baseui",
+      "type": "registry:block",
+      "title": "Feature Cards Grid",
+      "description": "Three feature cards with icons, hover effects, and glassmorphism styling (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/feature-cards-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/feature-cards-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-cards-block-shadcnui",
+      "type": "registry:block",
+      "title": "Feature Cards Grid",
+      "description": "Three feature cards with icons, hover effects, and glassmorphism styling",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/feature-cards-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/feature-cards-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-comparison-block-baseui",
+      "type": "registry:block",
+      "title": "Feature Comparison Table",
+      "description": "Interactive pricing comparison table with animated checkmarks and plan highlights (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/feature-comparison-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/feature-comparison-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-comparison-block-shadcnui",
+      "type": "registry:block",
+      "title": "Feature Comparison Table",
+      "description": "Interactive pricing comparison table with animated checkmarks and plan highlights",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/feature-comparison-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/feature-comparison-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-grid-section-baseui",
+      "type": "registry:page",
+      "title": "Feature Grid Section",
+      "description": "Animated feature grid with staggered card animations and icon reveals (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/feature-grid-section-baseui.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/feature-grid-section-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-grid-section-shadcnui",
+      "type": "registry:page",
+      "title": "Feature Grid Section",
+      "description": "Animated feature grid with staggered card animations and icon reveals",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/feature-grid-section.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/feature-grid-section-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "floating-chat-widget-shadcnui",
+      "type": "registry:component",
+      "title": "Floating Chat Widget",
+      "description": "Floating chat widget with AI agent selection dropdown and animations",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/chat/floating-chat-widget.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/floating-chat-widget-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "floating-gradient-shadcnui",
+      "type": "registry:ui",
+      "title": "Floating Gradient",
+      "description": "Animated floating gradient background effect",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/decorative/background/floating-gradient.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/floating-gradient-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "floating-info-panel-shadcnui",
+      "type": "registry:ui",
+      "title": "Floating Info Panel",
+      "description": "Info tooltip that drifts up/down while fading in/out intermittently",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/floating-info-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/floating-info-panel-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "floating-label-input-shadcnui",
+      "type": "registry:component",
+      "title": "Floating Label Input",
+      "description": "Input with animated floating label",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/inputs/floating-label-input.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/floating-label-input-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fluid-modal-transition-shadcnui",
+      "type": "registry:component",
+      "title": "Fluid Modal Transition",
+      "description": "Modal that expands smoothly from clicked trigger element using layoutId",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/fluid-modal-transition.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/fluid-modal-transition-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "folder-animation",
+      "type": "registry:ui",
+      "title": "Folder Animation",
+      "description": "Animated folder card with motion blur effect, perfect for showcasing file operations or loading states",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/folder-animation-carbon.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/folder-animation-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "folder-animation-carbon",
+      "type": "registry:component",
+      "title": "Folder Animation",
+      "description": "Animated folder card with motion blur effect, perfect for showcasing file operations or loading states.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/folder-animation-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/folder-animation-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-block-baseui",
+      "type": "registry:block",
+      "title": "Footer Block",
+      "description": "Comprehensive footer with links, newsletter signup, social icons, and scroll-to-top (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/footer-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/footer-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-block-shadcnui",
+      "type": "registry:block",
+      "title": "Footer Block",
+      "description": "Comprehensive footer with links, newsletter signup, social icons, and scroll-to-top",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/footer-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/footer-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "gallery-grid-block-baseui",
+      "type": "registry:block",
+      "title": "Gallery Grid with Lightbox",
+      "description": "Filterable image gallery with animated lightbox and navigation (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/gallery-grid-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/gallery-grid-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "gallery-grid-block-shadcnui",
+      "type": "registry:block",
+      "title": "Gallery Grid with Lightbox",
+      "description": "Filterable image gallery with animated lightbox and navigation",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/gallery-grid-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/gallery-grid-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-account-settings-card-shadcnui",
+      "type": "registry:component",
+      "title": "Glass Account Settings Card",
+      "description": "Account management card with subscription overview and billing actions in glassmorphic style",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/forms/glass-account-settings.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-account-settings-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-blog-card-baseui",
+      "type": "registry:component",
+      "title": "Glass Blog Card",
+      "description": "Glassmorphism blog card with image zoom, author info, and read action (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/cards/baseui/glass-blog-card-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-blog-card-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-blog-card-shadcnui",
+      "type": "registry:component",
+      "title": "Glass Blog Card",
+      "description": "Glassmorphism blog card with image zoom, author info, and read action",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/cards/shadcnui/glass-blog-card.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-blog-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-checkout-card-baseui",
+      "type": "registry:component",
+      "title": "Glass Checkout Card",
+      "description": "Glassmorphism checkout card with payment method selector and input fields (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/cards/baseui/glass-checkout-card-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-checkout-card-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-checkout-card-shadcnui",
+      "type": "registry:component",
+      "title": "Glass Checkout Card",
+      "description": "Glassmorphism checkout card with payment method selector and input fields",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/cards/shadcnui/glass-checkout-card.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-checkout-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-forgot-password-card-shadcnui",
+      "type": "registry:component",
+      "title": "Glass Forgot Password Card",
+      "description": "Reset-password screen with glassmorphic styling and status messaging",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/forms/glass-forgot-password.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-forgot-password-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-order-summary-baseui",
+      "type": "registry:component",
+      "title": "Glass Order Summary",
+      "description": "Glassmorphism order summary card with item list and checkout button (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/cards/baseui/glass-order-summary-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-order-summary-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-order-summary-shadcnui",
+      "type": "registry:component",
+      "title": "Glass Order Summary",
+      "description": "Glassmorphism order summary card with item list and checkout button",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/cards/shadcnui/glass-order-summary.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-order-summary-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-profile-settings-card-shadcnui",
+      "type": "registry:component",
+      "title": "Glass Profile Settings Card",
+      "description": "Glassmorphic profile settings form with avatar upload, bio, and notification preferences",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/forms/glass-profile-settings.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-profile-settings-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-sign-in-card-shadcnui",
+      "type": "registry:component",
+      "title": "Glass Sign-In Card",
+      "description": "Glassmorphic sign-in panel with social auth buttons and email form",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/forms/glass-sign-in.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-sign-in-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-sign-up-card-shadcnui",
+      "type": "registry:component",
+      "title": "Glass Sign-Up Card",
+      "description": "Glassmorphic sign-up flow with social providers, email fields, and terms checkbox",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/forms/glass-sign-up.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-sign-up-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-verification-code-card-shadcnui",
+      "type": "registry:component",
+      "title": "Glass Verification Code Card",
+      "description": "Verification code entry with glassmorphic inputs, status messaging, and reduced-motion support",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/forms/glass-verification-code.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-verification-code-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-wallet-card-baseui",
+      "type": "registry:component",
+      "title": "Glass Wallet Card",
+      "description": "Glassmorphism crypto wallet card with balance, trend, and action buttons (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/cards/baseui/glass-wallet-card-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-wallet-card-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-wallet-card-shadcnui",
+      "type": "registry:component",
+      "title": "Glass Wallet Card",
+      "description": "Glassmorphism crypto wallet card with balance, trend, and action buttons",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/cards/shadcnui/glass-wallet-card.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glass-wallet-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-cta-block-baseui",
+      "type": "registry:block",
+      "title": "Glassmorphism CTA",
+      "description": "Call-to-action section with glassy card, gradient background, and animated buttons (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/glassmorphism-cta-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-cta-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-cta-block-shadcnui",
+      "type": "registry:block",
+      "title": "Glassmorphism CTA",
+      "description": "Call-to-action section with glassy card, gradient background, and animated buttons",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/glassmorphism-cta-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-cta-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-hero-block-baseui",
+      "type": "registry:block",
+      "title": "Glassmorphism Hero",
+      "description": "Modern hero section with glassmorphism effects, animated background orbs, and CTA buttons (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/glassmorphism-hero-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-hero-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-hero-block-shadcnui",
+      "type": "registry:block",
+      "title": "Glassmorphism Hero",
+      "description": "Modern hero section with glassmorphism effects, animated background orbs, and CTA buttons",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/glassmorphism-hero-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-hero-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-launch-timeline-block-baseui",
+      "type": "registry:block",
+      "title": "Glassmorphism Launch Timeline",
+      "description": "Frictionless launch roadmap with staggered motion, glassmorphism milestones, and paired CTA actions (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/glassmorphism-launch-timeline-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-launch-timeline-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-launch-timeline-block-shadcnui",
+      "type": "registry:block",
+      "title": "Glassmorphism Launch Timeline",
+      "description": "Frictionless launch roadmap with staggered motion, glassmorphism milestones, and paired CTA actions",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/glassmorphism-launch-timeline-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-launch-timeline-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-listen-app-block-baseui",
+      "type": "registry:block",
+      "title": "Glassmorphism Listen App",
+      "description": "Music streaming block with glassmorphism player, curated highlights, and animated controls (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/glassmorphism-listen-app-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-listen-app-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-listen-app-block-shadcnui",
+      "type": "registry:block",
+      "title": "Glassmorphism Listen App",
+      "description": "Music streaming block with glassmorphism player, curated highlights, and animated controls",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/glassmorphism-listen-app-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-listen-app-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-logo-showcase-block-baseui",
+      "type": "registry:block",
+      "title": "Glassmorphism Logo Showcase",
+      "description": "Glassmorphism partner grid with floating motion, brand hints, and collaborative call-to-action (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/glassmorphism-logo-showcase-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-logo-showcase-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-logo-showcase-block-shadcnui",
+      "type": "registry:block",
+      "title": "Glassmorphism Logo Showcase",
+      "description": "Glassmorphism partner grid with floating motion, brand hints, and collaborative call-to-action",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/glassmorphism-logo-showcase-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-logo-showcase-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-minimal-metrics-block-baseui",
+      "type": "registry:block",
+      "title": "Glassmorphism Minimal Metrics",
+      "description": "Focused metric cards with glass surfaces, subtle motion, and concierge insight CTA banner (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/glassmorphism-minimal-metrics-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-minimal-metrics-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-minimal-metrics-block-shadcnui",
+      "type": "registry:block",
+      "title": "Glassmorphism Minimal Metrics",
+      "description": "Focused metric cards with glass surfaces, subtle motion, and concierge insight CTA banner",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/glassmorphism-minimal-metrics-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-minimal-metrics-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-portfolio-block-baseui",
+      "type": "registry:block",
+      "title": "Glassmorphism Portfolio",
+      "description": "Personal portfolio spotlight with profile portrait, narrative highlights, and animated social links (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/glassmorphism-portfolio-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-portfolio-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-portfolio-block-shadcnui",
+      "type": "registry:block",
+      "title": "Glassmorphism Portfolio",
+      "description": "Personal portfolio spotlight with profile portrait, narrative highlights, and animated social links",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/glassmorphism-portfolio-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-portfolio-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-pricing-block-baseui",
+      "type": "registry:block",
+      "title": "Glassmorphism Pricing",
+      "description": "Pricing cards with glassmorphism effects, hover animations, and feature lists (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/glassmorphism-pricing-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-pricing-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-pricing-block-shadcnui",
+      "type": "registry:block",
+      "title": "Glassmorphism Pricing",
+      "description": "Pricing cards with glassmorphism effects, hover animations, and feature lists",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/glassmorphism-pricing-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-pricing-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-product-update-block-baseui",
+      "type": "registry:block",
+      "title": "Glassmorphism Product Updates",
+      "description": "Multi-state changelog cards with glass overlays, status badges, and GitHub integration banner (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/glassmorphism-product-update-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-product-update-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-product-update-block-shadcnui",
+      "type": "registry:block",
+      "title": "Glassmorphism Product Updates",
+      "description": "Multi-state changelog cards with glass overlays, status badges, and GitHub integration banner",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/glassmorphism-product-update-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-product-update-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-statistics-card-baseui",
+      "type": "registry:component",
+      "title": "Glassmorphism Statistics Card",
+      "description": "Interactive statistics card with hover reveal and smooth transitions (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/glassmorphism-statistics-card-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glassmorphism-statistics-card-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-statistics-card-shadcnui",
+      "type": "registry:component",
+      "title": "Glassmorphism Statistics Card",
+      "description": "Interactive statistics card with hover reveal and smooth transitions",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/glassmorphism-statistics-card.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/glassmorphism-statistics-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-testimonials-block-baseui",
+      "type": "registry:block",
+      "title": "Glassmorphism Testimonials",
+      "description": "Customer testimonials with glassmorphism cards, star ratings, and hover effects (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/glassmorphism-testimonials-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-testimonials-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassmorphism-testimonials-block-shadcnui",
+      "type": "registry:block",
+      "title": "Glassmorphism Testimonials",
+      "description": "Customer testimonials with glassmorphism cards, star ratings, and hover effects",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/glassmorphism-testimonials-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glassmorphism-testimonials-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glowy-waves-hero-baseui",
+      "type": "registry:block",
+      "title": "Glowy Waves Hero",
+      "description": "Hero section with glowy waves effect (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/glowy-waves-hero-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glowy-waves-hero-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glowy-waves-hero-shadcnui",
+      "type": "registry:block",
+      "title": "Glowy Waves Hero",
+      "description": "Hero section with glowy waves effect",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/glowy-waves-hero.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/glowy-waves-hero-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "gradient-animation-shadcnui",
+      "type": "registry:ui",
+      "title": "Gradient Animation",
+      "description": "Smoothly transitioning gradient background",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/decorative/backgrounds/gradient-animation.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/gradient-animation-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "heart-favorite-shadcnui",
+      "type": "registry:ui",
+      "title": "Heart Favorite",
+      "description": "Animated heart icon for like/favorite actions",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/micro/icons/heart-favorite.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/heart-favorite-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-block-baseui",
+      "type": "registry:block",
+      "title": "Hero Block",
+      "description": "Personal portfolio hero section with animated avatar, staggered text, social links, and scroll indicator (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/hero-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/hero-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-block-shadcnui",
+      "type": "registry:block",
+      "title": "Hero Block",
+      "description": "Personal portfolio hero section with animated avatar, staggered text, social links, and scroll indicator",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/hero-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/hero-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-section-baseui",
+      "type": "registry:page",
+      "title": "Hero Section",
+      "description": "Hero section with staggered text and button reveal (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/hero-section-baseui.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/hero-section-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-section-shadcnui",
+      "type": "registry:page",
+      "title": "Hero Section",
+      "description": "Hero section with staggered text and button reveal",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/hero-section.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/hero-section-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "holographic-wall-shadcnui",
+      "type": "registry:ui",
+      "title": "Holographic Wall",
+      "description": "Black wall with Pharaonic hieroglyphs and golden cursor light reflection",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/holographic-wall.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/holographic-wall-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-expand-card-baseui",
+      "type": "registry:component",
+      "title": "Hover Expand Card",
+      "description": "Card that lifts and expands on hover (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/cards/baseui/hover-expand-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/hover-expand-card-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-expand-card-shadcnui",
+      "type": "registry:component",
+      "title": "Hover Expand Card",
+      "description": "Card that lifts and expands on hover",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/cards/shadcnui/hover-expand.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/hover-expand-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-slider-card-shadcnui",
+      "type": "registry:component",
+      "title": "Accessible Image Slider Card",
+      "description": "Image carousel card with keyboard support, reduced motion handling, and screen reader-friendly labels",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/cards/image-slider-card.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/image-slider-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "interactive-logs-table-baseui",
+      "type": "registry:block",
+      "title": "Interactive Logs Table",
+      "description": "Observability logs panel with animated filters, search, and expandable rows (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/interactive-logs-table-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/interactive-logs-table-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "interactive-logs-table-shadcnui",
+      "type": "registry:block",
+      "title": "Interactive Logs Table",
+      "description": "Observability logs panel with animated filters, search, and expandable rows",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/interactive-logs-table.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/interactive-logs-table-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "interactive-timeline-shadcnui",
+      "type": "registry:component",
+      "title": "Interactive Timeline",
+      "description": "Vertical timeline where elements animate and connect with lines on scroll",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/interactive-timeline.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/interactive-timeline-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kanban-board-shadcnui",
+      "type": "registry:block",
+      "title": "Kanban Board",
+      "description": "Interactive Kanban board with drag-and-drop, glassmorphism styling, and task management features",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/kanban/kanban-board.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/kanban-board-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "liquid-cursor-shadcnui",
+      "type": "registry:ui",
+      "title": "Liquid Cursor",
+      "description": "A liquid-like cursor effect that mixes colors on movement",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/liquid-cursor.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/liquid-cursor-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "mac-searchbar-shadcnui",
+      "type": "registry:component",
+      "title": "Mac Searchbar",
+      "description": "Mac-style searchbar with animated dropdown, glassmorphism effects, and smooth transitions",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/search/mac-searchbar.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/mac-searchbar-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "magnetic-avatar-group-shadcnui",
+      "type": "registry:component",
+      "title": "Magnetic Avatar Group",
+      "description": "Stacked avatars that spread apart on hover showing tooltips",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/magnetic-avatar-group.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/magnetic-avatar-group-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "messenger-shadcnui",
+      "type": "registry:component",
+      "title": "Messenger",
+      "description": "Glassmorphism messenger workspace with accessible motion and quick replies",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/chat/messenger.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/messenger-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "minimal-resume-baseui",
+      "type": "registry:component",
+      "title": "Minimal Resume",
+      "description": "Vercel-inspired minimal resume with clean typography and grid layout (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/resumes/baseui/minimal-resume-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/minimal-resume-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "minimal-resume-shadcnui",
+      "type": "registry:component",
+      "title": "Minimal Resume",
+      "description": "Vercel-inspired minimal resume with clean typography and grid layout",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/resumes/shadcnui/minimal-resume.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/minimal-resume-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "mood-gradient-button-shadcnui",
+      "type": "registry:ui",
+      "title": "Mood Gradient Button",
+      "description": "Button with background gradient that shifts based on hover angle",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/mood-gradient-button.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/mood-gradient-button-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "multiple-accounts-shadcnui",
+      "type": "registry:component",
+      "title": "Multiple Accounts Switcher",
+      "description": "Glassmorphic account switcher with animated dropdown and accessible listbox controls",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/account-switcher/multiple-accounts.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/multiple-accounts-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "n8n-workflow-block-baseui",
+      "type": "registry:block",
+      "title": "N8N Workflow Block",
+      "description": "Visual workflow automation builder with animated nodes, connections, and real-time execution monitoring (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/n8n-workflow-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/n8n-workflow-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "n8n-workflow-block-shadcnui",
+      "type": "registry:block",
+      "title": "N8N Workflow Block",
+      "description": "Visual workflow automation builder with animated nodes, connections, and real-time execution monitoring",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/n8n-workflow-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/n8n-workflow-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-action-dropdown-baseui",
+      "type": "registry:component",
+      "title": "Native Action Dropdown",
+      "description": "A click-driven action picker whose multi-level submenu opens beside the row and drills in place with an animated breadcrumb at a fixed width. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-action-dropdown-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-action-dropdown-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-action-dropdown-shadcnui",
+      "type": "registry:component",
+      "title": "Native Action Dropdown",
+      "description": "A click-driven action picker whose multi-level submenu opens beside the row, jumps straight to the selected item, and drills in place with an animated breadcrumb at a fixed width.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-action-dropdown-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-action-dropdown-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-avatar-expand-baseui",
+      "type": "registry:component",
+      "title": "Native Avatar Expand",
+      "description": "Avatar component that expands to reveal the name on click with smooth animations. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-avatar-expand-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-avatar-expand-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-avatar-expand-shadcnui",
+      "type": "registry:component",
+      "title": "Native Avatar Expand",
+      "description": "Avatar component that expands to reveal the name on click with smooth animations.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-avatar-expand-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-avatar-expand-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-avatar-with-name-baseui",
+      "type": "registry:component",
+      "title": "Native Avatar With Name",
+      "description": "Avatar component that displays a name tooltip on hover with directional animations. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-avatar-with-name-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-avatar-with-name-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-avatar-with-name-shadcnui",
+      "type": "registry:component",
+      "title": "Native Avatar With Name",
+      "description": "Avatar component that displays a name tooltip on hover with directional animations.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-avatar-with-name-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-avatar-with-name-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-badge",
+      "type": "registry:component",
+      "title": "Native Badge",
+      "description": "Animated badge component with glass, glow, and outline variants for native feel.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-badge-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-badge-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-badge-carbon",
+      "type": "registry:component",
+      "title": "Native Badge",
+      "description": "Animated badge component with glass, glow, and outline variants for native feel.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-badge-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-badge-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-button-baseui",
+      "type": "registry:component",
+      "title": "Native Button",
+      "description": "Glassmorphism-inspired button component based on shadcn/ui with smooth animations and modern styling (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-button-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-button-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-button-shadcnui",
+      "type": "registry:component",
+      "title": "Native Button",
+      "description": "Glassmorphism-inspired button component based on shadcn/ui with smooth animations and modern styling",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-button-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-button-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-counter-up",
+      "type": "registry:component",
+      "title": "Native Counter Up",
+      "description": "Animated number counter with smooth easing and accessibility support.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-counter-up-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-counter-up-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-counter-up-carbon",
+      "type": "registry:component",
+      "title": "Native Counter Up",
+      "description": "Animated number counter with smooth easing and accessibility support.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-counter-up-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-counter-up-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-delete-baseui",
+      "type": "registry:component",
+      "title": "Native Delete",
+      "description": "Delete button that expands to show a confirmation button with smooth animations. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-delete-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-delete-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-delete-shadcnui",
+      "type": "registry:component",
+      "title": "Native Delete",
+      "description": "Delete button that expands to show a confirmation button with smooth animations.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-delete-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-delete-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-dialog-baseui",
+      "type": "registry:component",
+      "title": "Native Dialog",
+      "description": "A glassmorphism-styled dialog component with backdrop blur and smooth animations, inspired by native OS modals. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-dialog-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-dialog-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-dialog-shadcnui",
+      "type": "registry:component",
+      "title": "Native Dialog",
+      "description": "A glassmorphism-styled dialog component with backdrop blur and smooth animations, inspired by native OS modals.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-dialog-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-dialog-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-flip-text",
+      "type": "registry:component",
+      "title": "Native Flip Text",
+      "description": "Text that flips through words with a 3D blur transition.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-flip-text-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-flip-text-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-flip-text-baseui",
+      "type": "registry:component",
+      "title": "Native Flip Text",
+      "description": "Text that flips through words with a 3D blur transition. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-flip-text-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-flip-text-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-flip-text-carbon",
+      "type": "registry:component",
+      "title": "Native Flip Text",
+      "description": "Text that flips through words with a 3D blur transition.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-flip-text-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-flip-text-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-flip-text-shadcnui",
+      "type": "registry:component",
+      "title": "Native Flip Text",
+      "description": "Text that flips through words with a 3D blur transition.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-flip-text-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-flip-text-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-follow-cursor",
+      "type": "registry:component",
+      "title": "Native Follow Cursor",
+      "description": "Label that smoothly follows the cursor with spring physics and customizable variants.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-follow-cursor-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-follow-cursor.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-follow-cursor-carbon",
+      "type": "registry:component",
+      "title": "Native Follow Cursor",
+      "description": "Label that smoothly follows the cursor with spring physics and customizable variants.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-follow-cursor-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-follow-cursor-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-hover-card-baseui",
+      "type": "registry:component",
+      "title": "Native Hover Card",
+      "description": "Avatar card that expands on hover to reveal profile information with smooth animations. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-hover-card-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-hover-card-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-hover-card-shadcnui",
+      "type": "registry:component",
+      "title": "Native Hover Card",
+      "description": "Avatar card that expands on hover to reveal profile information with smooth animations.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-hover-card-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-hover-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-image-checkbox-baseui",
+      "type": "registry:component",
+      "title": "Native Image Checkbox",
+      "description": "Image checkbox component with grayscale filter and checkmark indicator. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-image-checkbox-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-image-checkbox-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-image-checkbox-carbon",
+      "type": "registry:component",
+      "title": "Native Image Checkbox",
+      "description": "Image checkbox component with grayscale filter and checkmark indicator.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-image-checkbox-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-image-checkbox-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-image-checkbox-shadcnui",
+      "type": "registry:component",
+      "title": "Native Image Checkbox",
+      "description": "Image checkbox component with grayscale filter and checkmark indicator.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-image-checkbox-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-image-checkbox-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-likes-counter-baseui",
+      "type": "registry:component",
+      "title": "Native Likes Counter",
+      "description": "An interactive likes counter with avatar stack, popup details, and smooth animations. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-likes-counter-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-likes-counter-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-likes-counter-shadcnui",
+      "type": "registry:component",
+      "title": "Native Likes Counter",
+      "description": "An interactive likes counter with avatar stack, popup details, and smooth animations.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-likes-counter-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-likes-counter-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-liquid-button-baseui",
+      "type": "registry:component",
+      "title": "Native Liquid Button",
+      "description": "Button with animated liquid fill effect, progress tracking, and multiple visual variants for engaging interactions. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-liquid-button-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-liquid-button-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-liquid-button-shadcnui",
+      "type": "registry:component",
+      "title": "Native Liquid Button",
+      "description": "Button with animated liquid fill effect, progress tracking, and multiple visual variants for engaging interactions.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-liquid-button-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-liquid-button-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-magnetic",
+      "type": "registry:component",
+      "title": "Native Magnetic",
+      "description": "Magnetic wrapper that applies a cursor-following effect to any content.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-magnetic-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-magnetic-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-magnetic-baseui",
+      "type": "registry:component",
+      "title": "Native Magnetic",
+      "description": "Magnetic wrapper that applies a cursor-following effect to any content. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-magnetic-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-magnetic-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-magnetic-carbon",
+      "type": "registry:component",
+      "title": "Native Magnetic",
+      "description": "Magnetic wrapper that applies a cursor-following effect to any content.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-magnetic-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-magnetic-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-magnetic-shadcnui",
+      "type": "registry:component",
+      "title": "Native Magnetic",
+      "description": "Magnetic wrapper that applies a cursor-following effect to any content.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-magnetic-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-magnetic-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-marquee-baseui",
+      "type": "registry:component",
+      "title": "Native Marquee",
+      "description": "A smooth, infinite scrolling marquee for logos or text. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-marquee-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-marquee-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-marquee-shadcnui",
+      "type": "registry:component",
+      "title": "Native Marquee",
+      "description": "A smooth, infinite scrolling marquee for logos or text.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-marquee-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-marquee-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-morphing-button-baseui",
+      "type": "registry:component",
+      "title": "Native Morphing Button",
+      "description": "Floating action button that morphs into a menu of actions. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-morphing-button-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-morphing-button-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-morphing-button-carbon",
+      "type": "registry:component",
+      "title": "Native Morphing Button",
+      "description": "Floating action button that morphs into a menu of actions.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-morphing-button-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-morphing-button-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-morphing-button-shadcnui",
+      "type": "registry:component",
+      "title": "Native Morphing Button",
+      "description": "Floating action button that morphs into a menu of actions.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-morphing-button-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-morphing-button-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-nested-list-baseui",
+      "type": "registry:component",
+      "title": "Native Nested List",
+      "description": "A nested list component with smooth expand/collapse animations. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-nested-list-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-nested-list-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-nested-list-shadcnui",
+      "type": "registry:component",
+      "title": "Native Nested List",
+      "description": "A nested list component with smooth expand/collapse animations, perfect for file explorers or navigation menus.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-nested-list-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-nested-list-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-notch-baseui",
+      "type": "registry:component",
+      "title": "Native Notch",
+      "description": "Dynamic Island-inspired notch component with smooth spring animations, draggable physics, and expandable content area (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-notch-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-notch-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-notch-shadcnui",
+      "type": "registry:component",
+      "title": "Native Notch",
+      "description": "Dynamic Island-inspired notch component with smooth spring animations, draggable physics, and expandable content area",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-notch-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-notch-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-notification-bell-baseui",
+      "type": "registry:component",
+      "title": "Native Notification Bell",
+      "description": "Animated notification bell with badge and ringing effect. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-notification-bell-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-notification-bell-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-notification-bell-carbon",
+      "type": "registry:component",
+      "title": "Native Notification Bell",
+      "description": "Animated notification bell with badge and ringing effect.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-notification-bell-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-notification-bell-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-notification-bell-shadcnui",
+      "type": "registry:component",
+      "title": "Native Notification Bell",
+      "description": "Animated notification bell with badge and ringing effect.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-notification-bell-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-notification-bell-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-profile-notch-baseui",
+      "type": "registry:component",
+      "title": "Native Profile Notch",
+      "description": "A dynamic expanding notch component for displaying user profiles with smooth spring animations. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-profile-notch-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-profile-notch-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-profile-notch-shadcnui",
+      "type": "registry:component",
+      "title": "Native Profile Notch",
+      "description": "A dynamic expanding notch component for displaying user profiles with smooth spring animations.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-profile-notch-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-profile-notch-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-start-now-baseui",
+      "type": "registry:component",
+      "title": "Native Start Now",
+      "description": "Animated button with sparkle effects, loading states, and smooth transitions for starting actions. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-start-now-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-start-now-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-start-now-shadcnui",
+      "type": "registry:component",
+      "title": "Native Start Now",
+      "description": "Animated button with sparkle effects, loading states, and smooth transitions for starting actions.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-start-now-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-start-now-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-tabs-baseui",
+      "type": "registry:component",
+      "title": "Native Tabs",
+      "description": "A sleek tabs component with a smooth sliding background indicator using Framer Motion layout animations. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-tabs-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-tabs-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-tabs-carbon",
+      "type": "registry:component",
+      "title": "Native Tabs",
+      "description": "A sleek tabs component with a smooth sliding background indicator using Framer Motion layout animations.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-tabs-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-tabs-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-tabs-shadcnui",
+      "type": "registry:component",
+      "title": "Native Tabs",
+      "description": "A sleek tabs component with a smooth sliding background indicator using Framer Motion layout animations.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-tabs-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-tabs-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-tooltip-baseui",
+      "type": "registry:component",
+      "title": "Native Tooltip",
+      "description": "A glassmorphism-styled tooltip with smooth spring animations using Framer Motion. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-tooltip-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-tooltip-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-tooltip-shadcnui",
+      "type": "registry:component",
+      "title": "Native Tooltip",
+      "description": "A glassmorphism-styled tooltip with smooth spring animations using Framer Motion.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-tooltip-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-tooltip-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-typewriter",
+      "type": "registry:component",
+      "title": "Native Typewriter",
+      "description": "Typewriter effect with speed control, looping, and blinking cursor.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-typewriter-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-typewriter-carbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-typewriter-baseui",
+      "type": "registry:component",
+      "title": "Native Typewriter",
+      "description": "Typewriter effect with speed control, looping, and blinking cursor. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-typewriter-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-typewriter-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-typewriter-shadcnui",
+      "type": "registry:component",
+      "title": "Native Typewriter",
+      "description": "Typewriter effect with speed control, looping, and blinking cursor.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-carbon/src/components/native/native-typewriter-carbon.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-typewriter-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-user-card-baseui",
+      "type": "registry:component",
+      "title": "Native User Card",
+      "description": "Compact user profile card with avatar, name, handle, and action button with spring animations (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-user-card-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-user-card-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-user-card-shadcnui",
+      "type": "registry:component",
+      "title": "Native User Card",
+      "description": "Compact user profile card with avatar, name, handle, and action button with spring animations",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-user-card-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-user-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-verified-badge-baseui",
+      "type": "registry:component",
+      "title": "Native Verified Badge",
+      "description": "Verified badge component with multiple variants, sizes, and styles including outline and shield designs. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/native-verified-badge-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-verified-badge-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-verified-badge-shadcnui",
+      "type": "registry:component",
+      "title": "Native Verified Badge",
+      "description": "Verified badge component with multiple variants, sizes, and styles including outline and shield designs.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/native-verified-badge-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/native-verified-badge-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "new-hero-section-baseui",
+      "type": "registry:block",
+      "title": "New Hero Section",
+      "description": "Modern hero section with gradient background, animated stats, and call-to-action buttons (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/new-hero-section-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/new-hero-section-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "new-hero-section-shadcnui",
+      "type": "registry:block",
+      "title": "New Hero Section",
+      "description": "Modern hero section with gradient background, animated stats, and call-to-action buttons",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/new-hero-section.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/new-hero-section-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "news-feed-shadcnui",
+      "type": "registry:component",
+      "title": "News Feed",
+      "description": "Interactive news feed with categories, search, and animated cards",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/news-feed/news-feed.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/news-feed-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "newsletter-signup-block-baseui",
+      "type": "registry:block",
+      "title": "Newsletter Signup Block",
+      "description": "Animated newsletter subscription form with success state and gradient background (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/newsletter-signup-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/newsletter-signup-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "newsletter-signup-block-shadcnui",
+      "type": "registry:block",
+      "title": "Newsletter Signup Block",
+      "description": "Animated newsletter subscription form with success state and gradient background",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/newsletter-signup-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/newsletter-signup-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notification-center-shadcnui",
+      "type": "registry:component",
+      "title": "Notification Center",
+      "description": "Multi-variant notification stack with accessible announcements, actions, and motion states",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/notifications/notification-center.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/notification-center-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notion-blog-page-baseui",
+      "type": "registry:block",
+      "title": "Notion Blog Page",
+      "description": "Notion-style publishing playbook with rich text, toggles, and supporting visuals (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/notion-blog-page-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/notion-blog-page-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notion-blog-page-shadcnui",
+      "type": "registry:block",
+      "title": "Notion Blog Page",
+      "description": "Notion-style publishing playbook with rich text, toggles, and supporting visuals",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/notion-blog-page.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/notion-blog-page-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "our-services-section-baseui",
+      "type": "registry:block",
+      "title": "Our Services",
+      "description": "Services section with service cards, badges, icons, and hover animations (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/our-services-section-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/our-services-section-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "our-services-section-shadcnui",
+      "type": "registry:block",
+      "title": "Our Services",
+      "description": "Services section with service cards, badges, icons, and hover animations",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/our-services-section.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/our-services-section-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "password-input-shadcnui",
+      "type": "registry:component",
+      "title": "Password Input",
+      "description": "Password input with toggle visibility and strength indicator",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/inputs/password-input.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/password-input-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "preview-details-card-shadcnui",
+      "type": "registry:ui",
+      "title": "Preview Details Card",
+      "description": "Link card that reveals a smooth detail preview box on hover",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/micro/links/preview-details-card.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/preview-details-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-section-baseui",
+      "type": "registry:page",
+      "title": "Pricing Section",
+      "description": "Animated pricing cards with hover effects and feature lists (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/pricing-section-baseui.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/pricing-section-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-section-shadcnui",
+      "type": "registry:page",
+      "title": "Pricing Section",
+      "description": "Animated pricing cards with hover effects and feature lists",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/pricing-section.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/pricing-section-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "professional-resume-baseui",
+      "type": "registry:component",
+      "title": "Professional Resume",
+      "description": "Clean, formal resume template suitable for corporate applications (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/resumes/baseui/professional-resume-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/professional-resume-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "professional-resume-shadcnui",
+      "type": "registry:component",
+      "title": "Professional Resume",
+      "description": "Clean, formal resume template suitable for corporate applications",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/resumes/shadcnui/professional-resume.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/professional-resume-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "profile-page-shadcnui",
+      "type": "registry:page",
+      "title": "Profile Page",
+      "description": "User profile with gradient cover, stats, and posts feed",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/profile/profile-page.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/profile-page-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "project-card-baseui",
+      "type": "registry:component",
+      "title": "Project Card",
+      "description": "Glassmorphism project card with links, tags, and hover effects (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/cards/baseui/project-card-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/project-card-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "project-card-shadcnui",
+      "type": "registry:component",
+      "title": "Project Card",
+      "description": "Glassmorphism project card with links, tags, and hover effects",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/cards/shadcnui/project-card.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/project-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "projects-block-baseui",
+      "type": "registry:component",
+      "title": "Projects Block",
+      "description": "Animated project card with hover effects, image zoom, and link buttons (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/projects-block-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/projects-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "projects-block-shadcnui",
+      "type": "registry:component",
+      "title": "Projects Block",
+      "description": "Animated project card with hover effects, image zoom, and link buttons",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/projects-block.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/projects-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "reactive-background-grid-shadcnui",
+      "type": "registry:ui",
+      "title": "Reactive Background Grid",
+      "description": "Background pattern that reacts to mouse movement and click ripples",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/reactive-background-grid.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/reactive-background-grid-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "resume-card-baseui",
+      "type": "registry:component",
+      "title": "Interactive Resume Card",
+      "description": "Professional resume template with animated sections and interactive elements (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/resumes/baseui/resume-card-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/resume-card-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "resume-card-shadcnui",
+      "type": "registry:component",
+      "title": "Interactive Resume Card",
+      "description": "Professional resume template with animated sections and interactive elements",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/resumes/shadcnui/resume-card.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/resume-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ripple-click-button-shadcnui",
+      "type": "registry:ui",
+      "title": "Ripple Click Effect",
+      "description": "Material design inspired ripple effect on click",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/micro/buttons/ripple-click.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/ripple-click-button-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scale-hover-button-shadcnui",
+      "type": "registry:ui",
+      "title": "Scale Hover Button",
+      "description": "A button that scales up smoothly on hover",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/micro/buttons/scale-hover.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/scale-hover-button-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-progress-tracker-shadcnui",
+      "type": "registry:page",
+      "title": "Scroll Progress Tracker",
+      "description": "Fixed progress bar that follows scroll and glows on section changes",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/scroll-progress-tracker.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/scroll-progress-tracker-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-reveal-baseui",
+      "type": "registry:page",
+      "title": "Scroll Reveal",
+      "description": "Section that animates into view on scroll with intersection observer (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/scroll-reveal-baseui.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/scroll-reveal-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-reveal-shadcnui",
+      "type": "registry:page",
+      "title": "Scroll Reveal",
+      "description": "Section that animates into view on scroll with intersection observer",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/scroll-reveal.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/scroll-reveal-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "services-grid-block-baseui",
+      "type": "registry:block",
+      "title": "Services Grid",
+      "description": "8-column responsive services grid with icons, features, and hover effects (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/services-grid-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/services-grid-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "services-grid-block-shadcnui",
+      "type": "registry:block",
+      "title": "Services Grid",
+      "description": "8-column responsive services grid with icons, features, and hover effects",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/services-grid-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/services-grid-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shimmer-button-shadcnui",
+      "type": "registry:ui",
+      "title": "Shimmer Button",
+      "description": "Button with continuous shimmer effect",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/micro/buttons/shimmer-button.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/shimmer-button-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "simple-calendar-shadcnui",
+      "type": "registry:component",
+      "title": "Simple Calendar",
+      "description": "Calendar picker with date selection animation",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/forms/simple-calendar.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/simple-calendar-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "smart-hover-card-shadcnui",
+      "type": "registry:component",
+      "title": "Smart Hover Card",
+      "description": "Card that detects cursor direction and reveals content from that side",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/smart-hover-card.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/smart-hover-card-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "social-login-button-baseui",
+      "type": "registry:component",
+      "title": "Social Login Button",
+      "description": "A set of animated social login buttons for major platforms (Github, Google, X, etc.) with various effects. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/native/social-login-button-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/social-login-button-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "social-login-button-shadcnui",
+      "type": "registry:component",
+      "title": "Social Login Button",
+      "description": "A set of animated social login buttons for major platforms (Github, Google, X, etc.) with various effects.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/native/social-login-button-shadcnui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/social-login-button-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spotlight-section-shadcnui",
+      "type": "registry:ui",
+      "title": "Spotlight Section",
+      "description": "Container where mouse creates soft radial spotlight following cursor",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/spotlight-section.tsx",
+          "type": "registry:ui",
+          "target": "components/uitripled/spotlight-section-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stacked-card-carousel-shadcnui",
+      "type": "registry:component",
+      "title": "Stacked Card Carousel",
+      "description": "Three stacked cards that shift and tilt dynamically on hover",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/stacked-card-carousel.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/stacked-card-carousel-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "staggered-dropdown-shadcnui",
+      "type": "registry:component",
+      "title": "Staggered Dropdown",
+      "description": "Dropdown menu with staggered item animations",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/dropdown/staggered-items.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/staggered-dropdown-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "staggered-hero-shadcnui",
+      "type": "registry:page",
+      "title": "Staggered Text Hero",
+      "description": "Hero section with staggered text reveal",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/page/hero/staggered-text.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/staggered-hero-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "standard-resume-baseui",
+      "type": "registry:component",
+      "title": "Standard Resume",
+      "description": "A standard, professional resume layout with a sidebar, suitable for most industries. (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/resumes/baseui/standard-resume-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/standard-resume-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "standard-resume-shadcnui",
+      "type": "registry:component",
+      "title": "Standard Resume",
+      "description": "A standard, professional resume layout with a sidebar, suitable for most industries.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/resumes/shadcnui/standard-resume.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/standard-resume-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-counter-block-baseui",
+      "type": "registry:block",
+      "title": "Stats Counter Block",
+      "description": "Animated statistics counters with icons and gradient backgrounds (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/stats-counter-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/stats-counter-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-counter-block-shadcnui",
+      "type": "registry:block",
+      "title": "Stats Counter Block",
+      "description": "Animated statistics counters with icons and gradient backgrounds",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/stats-counter-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/stats-counter-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-section-baseui",
+      "type": "registry:page",
+      "title": "Stats Section",
+      "description": "Animated statistics section with cards and counters (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/stats-section-baseui.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/stats-section-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-section-shadcnui",
+      "type": "registry:page",
+      "title": "Stats Section",
+      "description": "Animated statistics section with cards and counters",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/stats-section.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/stats-section-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stocks-dashboard-shadcnui",
+      "type": "registry:block",
+      "title": "Stocks Dashboard",
+      "description": "Interactive stock portfolio dashboard with status cards, data table, and detailed stock information modal",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/stocks-dashboard/stocks-dashboard.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/stocks-dashboard-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "synced-lyric-captions-shadcnui",
+      "type": "registry:component",
+      "title": "Synced Lyric Captions",
+      "description": "Bottom-to-top timed captions with play/pause controls and optional audio sync for songs or voiceovers.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/motion-core/synced-lyric-captions.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/synced-lyric-captions-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-section-block-baseui",
+      "type": "registry:block",
+      "title": "Team Section Block",
+      "description": "Animated team member cards with avatars, roles, and social links (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/team-section-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/team-section-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-section-block-shadcnui",
+      "type": "registry:block",
+      "title": "Team Section Block",
+      "description": "Animated team member cards with avatars, roles, and social links",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/team-section-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/team-section-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-section-baseui",
+      "type": "registry:page",
+      "title": "Testimonial Section",
+      "description": "Carousel-style testimonial section with smooth transitions (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/testimonial-section-baseui.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/testimonial-section-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-section-shadcnui",
+      "type": "registry:page",
+      "title": "Testimonial Section",
+      "description": "Carousel-style testimonial section with smooth transitions",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/testimonial-section.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/testimonial-section-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-block-baseui",
+      "type": "registry:block",
+      "title": "Testimonials Block",
+      "description": "Animated testimonials grid with staggered cards, star ratings, and hover effects (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/testimonials-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/testimonials-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-block-shadcnui",
+      "type": "registry:block",
+      "title": "Testimonials Block",
+      "description": "Animated testimonials grid with staggered cards, star ratings, and hover effects",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/testimonials-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/testimonials-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theater-ticket-baseui",
+      "type": "registry:component",
+      "title": "Theater Ticket",
+      "description": "Cinematic theater ticket with rip effect and barcode (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/theater-ticket-baseui.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/theater-ticket-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theater-ticket-shadcnui",
+      "type": "registry:component",
+      "title": "Theater Ticket",
+      "description": "Cinematic theater ticket with rip effect and barcode",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/theater-ticket.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/theater-ticket-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "timeline-block-baseui",
+      "type": "registry:block",
+      "title": "Timeline Block",
+      "description": "Vertical timeline with alternating cards and animated progress line (Base UI)",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-baseui/src/components/sections/timeline-block-baseui.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/timeline-block-baseui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "timeline-block-shadcnui",
+      "type": "registry:block",
+      "title": "Timeline Block",
+      "description": "Vertical timeline with alternating cards and animated progress line",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/sections/timeline-block.tsx",
+          "type": "registry:block",
+          "target": "components/uitripled/timeline-block-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-notification-shadcnui",
+      "type": "registry:page",
+      "title": "Toast Notification",
+      "description": "Animated toast notification popup",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/page/notifications/toast-notification.tsx",
+          "type": "registry:page",
+          "target": "components/uitripled/toast-notification-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "volume-component-shadcnui",
+      "type": "registry:component",
+      "title": "Volume Component",
+      "description": "A smooth, draggable volume slider component with framer-motion animations and shadcn styling.",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/sliders/volume-component.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/volume-component-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "weather-dashboard-shadcnui",
+      "type": "registry:component",
+      "title": "Weather Dashboard",
+      "description": "Immersive weather dashboard with hourly charting, weekly outlook, and live air-quality alerts",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/components/weather/weather-dashboard.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/weather-dashboard-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "web-performance-page-shadcnui",
+      "type": "registry:component",
+      "title": "Web Performance Page",
+      "description": "Real-time analysis of web vitals and performance metrics",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/web-performance/web-performance-page.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/web-performance-page-shadcnui.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wizard-form-shadcnui",
+      "type": "registry:component",
+      "title": "Wizard Form",
+      "description": "Multi-step wizard form with animated transitions, validation, and progress tracking",
+      "dependencies": [
+        "framer-motion",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "@uitripled/react-shadcn/src/components/forms/wizard-form.tsx",
+          "type": "registry:component",
+          "target": "components/uitripled/wizard-form-shadcnui.tsx"
+        }
+      ]
+    }
+  ]
+}

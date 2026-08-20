@@ -1,0 +1,318 @@
+{
+  "key": "clerk",
+  "entry": "Clerk",
+  "name": "clerk",
+  "homepage": "https://clerk.com",
+  "indexUrl": "https://clerk.com/r/registry.json",
+  "itemBase": "https://clerk.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "nextjs-clerk-provider",
+      "type": "registry:component",
+      "title": "Clerk Provider (App Router)",
+      "description": "The <ClerkProvider> component is required to integrate Clerk into your React application, providing session and user context to Clerk's hooks and components.",
+      "dependencies": [
+        "@clerk/nextjs",
+        "@clerk/ui"
+      ],
+      "files": [
+        {
+          "path": "nextjs/common/clerk-provider/clerk-provider.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "nextjs-middleware",
+      "type": "registry:file",
+      "title": "Clerk Next.js Middleware",
+      "description": "The clerkMiddleware() helper integrates Clerk authentication into your Next.js application through Middleware. clerkMiddleware() is compatible with both the App and Pages routers.",
+      "dependencies": [
+        "@clerk/nextjs"
+      ],
+      "files": [
+        {
+          "path": "nextjs/common/middleware/middleware.ts",
+          "type": "registry:file",
+          "target": "src/middleware.ts"
+        }
+      ]
+    },
+    {
+      "name": "nextjs-theme-provider",
+      "type": "registry:component",
+      "title": "Theme Provider",
+      "description": "A theme provider component using next-themes for dark mode support.",
+      "dependencies": [
+        "next-themes"
+      ],
+      "files": [
+        {
+          "path": "nextjs/common/theme-provider/theme-provider.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "nextjs-header",
+      "type": "registry:component",
+      "title": "Header Component",
+      "description": "A header component with Clerk authentication buttons and user button.",
+      "dependencies": [
+        "@clerk/nextjs"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "nextjs/common/header/header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "nextjs-layout-with-header",
+      "type": "registry:page",
+      "title": "Layout with Header",
+      "description": "A root layout component with Clerk provider, theme provider, and header.",
+      "dependencies": [
+        "@clerk/nextjs",
+        "@clerk/ui",
+        "next-themes"
+      ],
+      "registryDependencies": [
+        "@clerk/nextjs-clerk-provider",
+        "@clerk/nextjs-theme-provider",
+        "@clerk/nextjs-header"
+      ],
+      "files": [
+        {
+          "path": "nextjs/common/layout-with-header/layout-with-header.tsx",
+          "type": "registry:page",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nextjs-quickstart",
+      "type": "registry:block",
+      "title": "Clerk Next.js Quickstart (App Router)",
+      "description": "A quickstart for Next.js App Router with Clerk authentication.",
+      "dependencies": [
+        "@clerk/nextjs",
+        "@clerk/ui",
+        "next-themes"
+      ],
+      "registryDependencies": [
+        "button",
+        "@clerk/nextjs-clerk-provider",
+        "@clerk/nextjs-middleware",
+        "@clerk/nextjs-theme-provider",
+        "@clerk/nextjs-header",
+        "@clerk/nextjs-layout-with-header"
+      ],
+      "files": [
+        {
+          "path": "nextjs/common/layout-with-header/layout-with-header.tsx",
+          "type": "registry:page",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "nextjs/aio/sign-in-page/page.tsx",
+          "type": "registry:page",
+          "target": "app/sign-in/[[...sign-in]]/page.tsx"
+        },
+        {
+          "path": "nextjs/aio/sign-up-page/page.tsx",
+          "type": "registry:page",
+          "target": "app/sign-up/[[...sign-up]]/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nextjs-quickstart-sign-in-or-up",
+      "type": "registry:block",
+      "title": "Clerk Next.js Quickstart — Sign-in-or-up (App Router)",
+      "description": "A minimal Clerk quickstart for Next.js App Router with a single combined sign-in-or-up page (no separate sign-up route).",
+      "dependencies": [
+        "@clerk/nextjs",
+        "@clerk/ui",
+        "next-themes"
+      ],
+      "registryDependencies": [
+        "button",
+        "@clerk/nextjs-clerk-provider",
+        "@clerk/nextjs-middleware",
+        "@clerk/nextjs-theme-provider",
+        "@clerk/nextjs-header",
+        "@clerk/nextjs-layout-with-header"
+      ],
+      "files": [
+        {
+          "path": "nextjs/common/layout-with-header/layout-with-header.tsx",
+          "type": "registry:page",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "nextjs/aio/quickstart-sign-in-or-up/sign-in.tsx",
+          "type": "registry:page",
+          "target": "app/sign-in/[[...sign-in]]/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nextjs-sign-in-page",
+      "type": "registry:page",
+      "title": "Clerk Next.js Sign In Page (App Router)",
+      "description": "A sign in page for Next.js App Router with Clerk authentication.",
+      "dependencies": [
+        "@clerk/nextjs"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "nextjs/aio/sign-in-page/page.tsx",
+          "type": "registry:page",
+          "target": "app/sign-in/[[...sign-in]]/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nextjs-sign-up-page",
+      "type": "registry:page",
+      "title": "Clerk Next.js Sign Up Page (App Router)",
+      "description": "A sign up page for Next.js App Router with Clerk authentication.",
+      "dependencies": [
+        "@clerk/nextjs",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "nextjs/aio/sign-up-page/page.tsx",
+          "type": "registry:page",
+          "target": "app/sign-up/[[...sign-up]]/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nextjs-waitlist-page",
+      "type": "registry:page",
+      "title": "Clerk Next.js Waitlist Page (App Router)",
+      "description": "A waitlist page for Next.js App Router with Clerk authentication.",
+      "dependencies": [
+        "@clerk/nextjs"
+      ],
+      "files": [
+        {
+          "path": "nextjs/aio/waitlist-page/page.tsx",
+          "type": "registry:page",
+          "target": "app/waitlist/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nextjs-aio-multistep-onboarding",
+      "type": "registry:block",
+      "title": "Multistep Onboarding Flow (AIO)",
+      "description": "A multistep onboarding flow using Clerk's prebuilt <SignIn> component with embedded session tasks.",
+      "dependencies": [
+        "@clerk/nextjs",
+        "@clerk/ui",
+        "motion",
+        "react-use-measure",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "nextjs/aio/multistep-onboarding/welcome-layout.tsx",
+          "type": "registry:page",
+          "target": "app/welcome/layout.tsx"
+        },
+        {
+          "path": "nextjs/aio/multistep-onboarding/welcome-page.tsx",
+          "type": "registry:page",
+          "target": "app/welcome/[[...welcome]]/page.tsx"
+        },
+        {
+          "path": "nextjs/common/multistep-onboarding/layout.tsx",
+          "type": "registry:page",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "nextjs/common/multistep-onboarding/testimonials.tsx",
+          "type": "registry:component",
+          "target": "components/ui/testimonials.tsx"
+        },
+        {
+          "path": "nextjs/common/multistep-onboarding/clerk-provider.tsx",
+          "type": "registry:component",
+          "target": "components/clerk-provider.tsx"
+        },
+        {
+          "path": "nextjs/common/multistep-onboarding/proxy.ts",
+          "type": "registry:file",
+          "target": "src/proxy.ts"
+        }
+      ]
+    },
+    {
+      "name": "nextjs-custom-flows-multistep-onboarding",
+      "type": "registry:block",
+      "title": "Multistep Onboarding Flow",
+      "description": "A custom sign-up and sign-in onboarding flow using Clerk's useSignIn and useSignUp hooks with animated step transitions.",
+      "dependencies": [
+        "@clerk/nextjs",
+        "@clerk/ui",
+        "@tanstack/react-form",
+        "motion",
+        "react-use-measure",
+        "input-otp",
+        "lucide-react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "button",
+        "checkbox",
+        "field",
+        "input",
+        "input-otp",
+        "label",
+        "radio-group"
+      ],
+      "files": [
+        {
+          "path": "nextjs/custom-flows/multistep-onboarding/page.tsx",
+          "type": "registry:page",
+          "target": "app/welcome/[[...welcome]]/page.tsx"
+        },
+        {
+          "path": "nextjs/common/multistep-onboarding/layout.tsx",
+          "type": "registry:page",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "nextjs/common/multistep-onboarding/testimonials.tsx",
+          "type": "registry:component",
+          "target": "components/ui/testimonials.tsx"
+        },
+        {
+          "path": "nextjs/common/multistep-onboarding/clerk-provider.tsx",
+          "type": "registry:component",
+          "target": "components/clerk-provider.tsx"
+        },
+        {
+          "path": "nextjs/common/multistep-onboarding/proxy.ts",
+          "type": "registry:file",
+          "target": "src/proxy.ts"
+        }
+      ]
+    }
+  ]
+}

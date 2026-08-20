@@ -1,0 +1,247 @@
+{
+  "key": "turbopills-ui",
+  "entry": "Turbopills UI",
+  "name": "turbopills-ui",
+  "homepage": "https://www.turbopills.com/products/headless-api",
+  "indexUrl": "https://ui.turbopills.com/r/registry.json",
+  "itemBase": "https://ui.turbopills.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "before-after-card",
+      "type": "registry:block",
+      "title": "Before / After Card",
+      "description": "A before/after image card with a footer badge.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "registry/turbopills/blocks/before-after-card/before-after-card.tsx",
+          "type": "registry:block",
+          "target": "components/turbopills/blocks/before-after-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bmi-card",
+      "type": "registry:block",
+      "title": "BMI Card",
+      "description": "A configurable BMI indicator ring with thresholds and tooltip.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/turbopills/blocks/bmi-card/bmi-card.tsx",
+          "type": "registry:block",
+          "target": "components/turbopills/blocks/bmi-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:component",
+      "title": "Input",
+      "description": "Input field with title, hint, suffix and error message.",
+      "files": [
+        {
+          "path": "registry/turbopills/lib/styles.tsx",
+          "type": "registry:lib",
+          "target": "lib/styles.tsx"
+        },
+        {
+          "path": "registry/turbopills/ui/input.tsx",
+          "type": "registry:component",
+          "target": "components/turbopills/ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "masked-input",
+      "type": "registry:component",
+      "title": "Masked Input",
+      "description": "Masked input with presets (tel/date) and optional calendar picker.",
+      "dependencies": [
+        "@react-input/mask",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "popover",
+        "calendar"
+      ],
+      "files": [
+        {
+          "path": "registry/turbopills/lib/styles.tsx",
+          "type": "registry:lib",
+          "target": "lib/styles.tsx"
+        },
+        {
+          "path": "registry/turbopills/ui/masked-input.tsx",
+          "type": "registry:component",
+          "target": "components/turbopills/ui/masked-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "multiple-choice",
+      "type": "registry:component",
+      "title": "Multiple Choice",
+      "description": "Multiple choice field with optional max selections.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "checkbox",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "registry/turbopills/lib/styles.tsx",
+          "type": "registry:lib",
+          "target": "lib/styles.tsx"
+        },
+        {
+          "path": "registry/turbopills/lib/types.ts",
+          "type": "registry:lib",
+          "target": "lib/types.ts"
+        },
+        {
+          "path": "registry/turbopills/ui/multiple-choice.tsx",
+          "type": "registry:component",
+          "target": "components/turbopills/ui/multiple-choice.tsx"
+        }
+      ]
+    },
+    {
+      "name": "single-choice",
+      "type": "registry:component",
+      "title": "Single Choice",
+      "description": "Single choice field (list or cells) with optional deselect.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "radio-group",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "registry/turbopills/lib/styles.tsx",
+          "type": "registry:lib",
+          "target": "lib/styles.tsx"
+        },
+        {
+          "path": "registry/turbopills/lib/types.ts",
+          "type": "registry:lib",
+          "target": "lib/types.ts"
+        },
+        {
+          "path": "registry/turbopills/ui/single-choice.tsx",
+          "type": "registry:component",
+          "target": "components/turbopills/ui/single-choice.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-cells",
+      "type": "registry:component",
+      "title": "Progress (Cells)",
+      "description": "Segmented progress bar with optional labels/tooltips.",
+      "dependencies": [
+        "@radix-ui/react-progress"
+      ],
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/turbopills/ui/progress/progress.tsx",
+          "type": "registry:component",
+          "target": "components/turbopills/ui/progress/progress.tsx"
+        },
+        {
+          "path": "registry/turbopills/ui/progress/progress-cells.tsx",
+          "type": "registry:component",
+          "target": "components/turbopills/ui/progress/progress-cells.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-stretch",
+      "type": "registry:component",
+      "title": "Progress (Stretch)",
+      "description": "Progress with expanding current step.",
+      "dependencies": [
+        "@radix-ui/react-progress"
+      ],
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/turbopills/ui/progress/progress.tsx",
+          "type": "registry:component",
+          "target": "components/turbopills/ui/progress/progress.tsx"
+        },
+        {
+          "path": "registry/turbopills/ui/progress/progress-stretch.tsx",
+          "type": "registry:component",
+          "target": "components/turbopills/ui/progress/progress-stretch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-numbered",
+      "type": "registry:component",
+      "title": "Progress (Numbered)",
+      "description": "Numbered step progress with collapse/ellipsis.",
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/turbopills/ui/progress/progress.tsx",
+          "type": "registry:component",
+          "target": "components/turbopills/ui/progress/progress.tsx"
+        },
+        {
+          "path": "registry/turbopills/ui/progress/progress-numbered.tsx",
+          "type": "registry:component",
+          "target": "components/turbopills/ui/progress/progress-numbered.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-solid",
+      "type": "registry:component",
+      "title": "Progress (Solid)",
+      "description": "Simple solid progress bar.",
+      "dependencies": [
+        "@radix-ui/react-progress"
+      ],
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/turbopills/ui/progress/progress.tsx",
+          "type": "registry:component",
+          "target": "components/turbopills/ui/progress/progress.tsx"
+        },
+        {
+          "path": "registry/turbopills/ui/progress/progress-solid.tsx",
+          "type": "registry:component",
+          "target": "components/turbopills/ui/progress/progress-solid.tsx"
+        }
+      ]
+    }
+  ]
+}

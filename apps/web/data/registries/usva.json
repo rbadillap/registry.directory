@@ -1,0 +1,1700 @@
+{
+  "key": "usva",
+  "entry": "usva.",
+  "name": "usva",
+  "homepage": "https://usva.build",
+  "indexUrl": "https://usva.build/r/registry.json",
+  "itemBase": "https://usva.build/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "announcement",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "announcement.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/announcement.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/avatar.tsx"
+        },
+        {
+          "path": "avatar-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/avatar-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "badge.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/spinner.json"
+      ],
+      "files": [
+        {
+          "path": "button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "callout",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "callout.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/callout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/badge.json"
+      ],
+      "files": [
+        {
+          "path": "card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/card.tsx"
+        },
+        {
+          "path": "glow-card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/glow-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chip",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "chip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/chip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-snippet",
+      "type": "registry:ui",
+      "dependencies": [
+        "highlight.js",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "tsx-grammar.ts",
+          "type": "registry:ui",
+          "target": "components/ui/tsx-grammar.ts"
+        },
+        {
+          "path": "code-snippet.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-snippet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "color-field",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "color-field.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/color-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/card.json",
+        "https://usva.build/r/overlay-core.json"
+      ],
+      "files": [
+        {
+          "path": "dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/card.json",
+        "https://usva.build/r/overlay-core.json"
+      ],
+      "files": [
+        {
+          "path": "drawer.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/drawer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/overlay-core.json"
+      ],
+      "files": [
+        {
+          "path": "dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hint-popover",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/overlay-core.json"
+      ],
+      "files": [
+        {
+          "path": "hint-popover.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/hint-popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "knob",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "knob-geometry.ts",
+          "type": "registry:ui",
+          "target": "components/ui/knob-geometry.ts"
+        },
+        {
+          "path": "use-knob-value.ts",
+          "type": "registry:ui",
+          "target": "components/ui/use-knob-value.ts"
+        },
+        {
+          "path": "knob.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/knob.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "label.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "list.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "loading-overlay",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/spinner.json"
+      ],
+      "files": [
+        {
+          "path": "loading-overlay.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/loading-overlay.tsx"
+        },
+        {
+          "path": "use-scroll-lock.ts",
+          "type": "registry:ui",
+          "target": "components/ui/use-scroll-lock.ts"
+        }
+      ]
+    },
+    {
+      "name": "log-line",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "log-line.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/log-line.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notification-badge",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "notification-badge.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/notification-badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "overlay-core",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "use-scoped-theme.ts",
+          "type": "registry:ui",
+          "target": "components/ui/use-scoped-theme.ts"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/overlay-core.json"
+      ],
+      "files": [
+        {
+          "path": "popover.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "progress.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "radio.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/radio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/overlay-core.json"
+      ],
+      "files": [
+        {
+          "path": "select.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "skeleton.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/skeleton.tsx"
+        },
+        {
+          "path": "skeleton-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/skeleton-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "slider.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "spinner.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-chip",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "stat-chip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stat-chip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "switch.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "terminal",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/code-snippet.json"
+      ],
+      "files": [
+        {
+          "path": "terminal.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/terminal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/overlay-core.json"
+      ],
+      "files": [
+        {
+          "path": "toast.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-chip",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "toggle-chip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/toggle-chip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/overlay-core.json"
+      ],
+      "files": [
+        {
+          "path": "tooltip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-grid",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "bento-grid.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/bento-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "case-study-hero",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "case-study-hero.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/case-study-hero.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checklist-card",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/card.json",
+        "https://usva.build/r/list.json"
+      ],
+      "files": [
+        {
+          "path": "checklist-card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/checklist-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-banner",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "cta-banner.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/cta-banner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-grid",
+      "type": "registry:ui",
+      "dependencies": [
+        "@dnd-kit/core",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "grid-layout.ts",
+          "type": "registry:ui",
+          "target": "components/ui/grid-layout.ts"
+        },
+        {
+          "path": "dashboard-grid.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dashboard-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "disclosure-row",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "disclosure-row.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/disclosure-row.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "empty-state.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/empty-state.tsx"
+        }
+      ]
+    },
+    {
+      "name": "entity-card",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "entity-card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/entity-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-carousel",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "feature-carousel.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/feature-carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "field-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/field-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "footer.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/footer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-split",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "hero-split.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/hero-split.tsx"
+        }
+      ]
+    },
+    {
+      "name": "mockup-showcase",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "mockup-showcase.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/mockup-showcase.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "page-header.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/page-header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "panel",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/card.json",
+        "https://usva.build/r/spinner.json"
+      ],
+      "files": [
+        {
+          "path": "panel.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/panel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-row",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "progress-row.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/progress-row.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pullquote",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "pullquote.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/pullquote.tsx"
+        }
+      ]
+    },
+    {
+      "name": "roadmap-timeline",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "roadmap-timeline.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/roadmap-timeline.tsx"
+        }
+      ]
+    },
+    {
+      "name": "section-heading",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "section-heading.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/section-heading.tsx"
+        }
+      ]
+    },
+    {
+      "name": "section-label",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "section-label.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/section-label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "segmented-control",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "segmented-control.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/segmented-control.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-bento",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/bento-grid.json"
+      ],
+      "files": [
+        {
+          "path": "stat-bento.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stat-bento.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "stat-card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stat-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "step-chips",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "step-chips.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/step-chips.tsx"
+        }
+      ]
+    },
+    {
+      "name": "step-list",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "step-list.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/step-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stripe-card",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "stripe-card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stripe-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toolbar",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "toolbar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/toolbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sula-core",
+      "type": "registry:ui",
+      "dependencies": [
+        "ogl"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/sula-motion.json"
+      ],
+      "files": [
+        {
+          "path": "geometry.ts",
+          "type": "registry:ui",
+          "target": "components/ui/geometry.ts"
+        },
+        {
+          "path": "pause.ts",
+          "type": "registry:ui",
+          "target": "components/ui/pause.ts"
+        },
+        {
+          "path": "shader.ts",
+          "type": "registry:ui",
+          "target": "components/ui/shader.ts"
+        },
+        {
+          "path": "field.ts",
+          "type": "registry:ui",
+          "target": "components/ui/field.ts"
+        },
+        {
+          "path": "emerge.ts",
+          "type": "registry:ui",
+          "target": "components/ui/emerge.ts"
+        },
+        {
+          "path": "border-shader.ts",
+          "type": "registry:ui",
+          "target": "components/ui/border-shader.ts"
+        },
+        {
+          "path": "border.ts",
+          "type": "registry:ui",
+          "target": "components/ui/border.ts"
+        },
+        {
+          "path": "recovery.ts",
+          "type": "registry:ui",
+          "target": "components/ui/recovery.ts"
+        },
+        {
+          "path": "retune.ts",
+          "type": "registry:ui",
+          "target": "components/ui/retune.ts"
+        }
+      ]
+    },
+    {
+      "name": "sula-fab",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/sula-motion.json",
+        "https://usva.build/r/sula-core.json"
+      ],
+      "files": [
+        {
+          "path": "fab-geometry.ts",
+          "type": "registry:ui",
+          "target": "components/ui/fab-geometry.ts"
+        },
+        {
+          "path": "sula-fab.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sula-fab.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sula-field",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/sula-motion.json",
+        "https://usva.build/r/sula-core.json"
+      ],
+      "files": [
+        {
+          "path": "field-geometry.ts",
+          "type": "registry:ui",
+          "target": "components/ui/field-geometry.ts"
+        },
+        {
+          "path": "drive.ts",
+          "type": "registry:ui",
+          "target": "components/ui/drive.ts"
+        },
+        {
+          "path": "sula-field.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sula-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sula-frame",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/sula-motion.json",
+        "https://usva.build/r/sula-core.json"
+      ],
+      "files": [
+        {
+          "path": "frame-geometry.ts",
+          "type": "registry:ui",
+          "target": "components/ui/frame-geometry.ts"
+        },
+        {
+          "path": "sula-frame.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sula-frame.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sula-loader",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/sula-motion.json",
+        "https://usva.build/r/sula-core.json"
+      ],
+      "files": [
+        {
+          "path": "loader-geometry.ts",
+          "type": "registry:ui",
+          "target": "components/ui/loader-geometry.ts"
+        },
+        {
+          "path": "sula-loader.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sula-loader.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sula-motion",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "springs.ts",
+          "type": "registry:ui",
+          "target": "components/ui/springs.ts"
+        },
+        {
+          "path": "curves.ts",
+          "type": "registry:ui",
+          "target": "components/ui/curves.ts"
+        },
+        {
+          "path": "energy.ts",
+          "type": "registry:ui",
+          "target": "components/ui/energy.ts"
+        }
+      ]
+    },
+    {
+      "name": "sula-nav",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/sula-motion.json",
+        "https://usva.build/r/sula-core.json"
+      ],
+      "files": [
+        {
+          "path": "nav-geometry.ts",
+          "type": "registry:ui",
+          "target": "components/ui/nav-geometry.ts"
+        },
+        {
+          "path": "sula-nav.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sula-nav.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sula-segmented",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/sula-motion.json",
+        "https://usva.build/r/sula-core.json"
+      ],
+      "files": [
+        {
+          "path": "segmented-geometry.ts",
+          "type": "registry:ui",
+          "target": "components/ui/segmented-geometry.ts"
+        },
+        {
+          "path": "sula-segmented.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sula-segmented.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-transition",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "page-transition.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/page-transition.tsx"
+        }
+      ]
+    },
+    {
+      "name": "reveal",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "@usva-ui/tokens"
+      ],
+      "files": [
+        {
+          "path": "reveal.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/reveal.tsx"
+        },
+        {
+          "path": "reveal-config.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/reveal-config.tsx"
+        },
+        {
+          "path": "presets.ts",
+          "type": "registry:ui",
+          "target": "components/ui/presets.ts"
+        }
+      ]
+    },
+    {
+      "name": "atmospheres-core",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "ogl"
+      ],
+      "files": [
+        {
+          "path": "atmospheres-color.ts",
+          "type": "registry:ui",
+          "target": "components/ui/atmospheres-color.ts"
+        },
+        {
+          "path": "atmospheres-ground.ts",
+          "type": "registry:ui",
+          "target": "components/ui/atmospheres-ground.ts"
+        },
+        {
+          "path": "atmospheres-glsl.ts",
+          "type": "registry:ui",
+          "target": "components/ui/atmospheres-glsl.ts"
+        },
+        {
+          "path": "atmospheres-gl.ts",
+          "type": "registry:ui",
+          "target": "components/ui/atmospheres-gl.ts"
+        },
+        {
+          "path": "use-token-colors.ts",
+          "type": "registry:ui",
+          "target": "components/ui/use-token-colors.ts"
+        },
+        {
+          "path": "use-gl-canvas.ts",
+          "type": "registry:ui",
+          "target": "components/ui/use-gl-canvas.ts"
+        }
+      ]
+    },
+    {
+      "name": "hehku",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/atmospheres-core.json"
+      ],
+      "files": [
+        {
+          "path": "filament-curve.ts",
+          "type": "registry:ui",
+          "target": "components/ui/filament-curve.ts"
+        },
+        {
+          "path": "filament-shader.ts",
+          "type": "registry:ui",
+          "target": "components/ui/filament-shader.ts"
+        },
+        {
+          "path": "filament.ts",
+          "type": "registry:ui",
+          "target": "components/ui/filament.ts"
+        },
+        {
+          "path": "hehku.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/hehku.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kajastus",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/atmospheres-core.json"
+      ],
+      "files": [
+        {
+          "path": "kajastus-uniforms.ts",
+          "type": "registry:ui",
+          "target": "components/ui/kajastus-uniforms.ts"
+        },
+        {
+          "path": "kajastus-shader.ts",
+          "type": "registry:ui",
+          "target": "components/ui/kajastus-shader.ts"
+        },
+        {
+          "path": "kajastus.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/kajastus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kuulto",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/atmospheres-core.json"
+      ],
+      "files": [
+        {
+          "path": "kuulto-field.ts",
+          "type": "registry:ui",
+          "target": "components/ui/kuulto-field.ts"
+        },
+        {
+          "path": "kuulto-shader.ts",
+          "type": "registry:ui",
+          "target": "components/ui/kuulto-shader.ts"
+        },
+        {
+          "path": "kuulto-uniforms.ts",
+          "type": "registry:ui",
+          "target": "components/ui/kuulto-uniforms.ts"
+        },
+        {
+          "path": "kuulto.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/kuulto.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kynnos",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/atmospheres-core.json"
+      ],
+      "files": [
+        {
+          "path": "kynnos-field.ts",
+          "type": "registry:ui",
+          "target": "components/ui/kynnos-field.ts"
+        },
+        {
+          "path": "kynnos-shader.ts",
+          "type": "registry:ui",
+          "target": "components/ui/kynnos-shader.ts"
+        },
+        {
+          "path": "kynnos-uniforms.ts",
+          "type": "registry:ui",
+          "target": "components/ui/kynnos-uniforms.ts"
+        },
+        {
+          "path": "kynnos.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/kynnos.tsx"
+        }
+      ]
+    },
+    {
+      "name": "loimu",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/atmospheres-core.json"
+      ],
+      "files": [
+        {
+          "path": "loimu-field.ts",
+          "type": "registry:ui",
+          "target": "components/ui/loimu-field.ts"
+        },
+        {
+          "path": "loimu-shader.ts",
+          "type": "registry:ui",
+          "target": "components/ui/loimu-shader.ts"
+        },
+        {
+          "path": "loimu-uniforms.ts",
+          "type": "registry:ui",
+          "target": "components/ui/loimu-uniforms.ts"
+        },
+        {
+          "path": "loimu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/loimu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "routa",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/atmospheres-core.json"
+      ],
+      "files": [
+        {
+          "path": "routa-field.ts",
+          "type": "registry:ui",
+          "target": "components/ui/routa-field.ts"
+        },
+        {
+          "path": "routa-shader.ts",
+          "type": "registry:ui",
+          "target": "components/ui/routa-shader.ts"
+        },
+        {
+          "path": "routa-uniforms.ts",
+          "type": "registry:ui",
+          "target": "components/ui/routa-uniforms.ts"
+        },
+        {
+          "path": "routa.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/routa.tsx"
+        }
+      ]
+    },
+    {
+      "name": "utu",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/atmospheres-core.json"
+      ],
+      "files": [
+        {
+          "path": "utu-field.ts",
+          "type": "registry:ui",
+          "target": "components/ui/utu-field.ts"
+        },
+        {
+          "path": "utu-shader.ts",
+          "type": "registry:ui",
+          "target": "components/ui/utu-shader.ts"
+        },
+        {
+          "path": "utu-uniforms.ts",
+          "type": "registry:ui",
+          "target": "components/ui/utu-uniforms.ts"
+        },
+        {
+          "path": "utu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/utu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "vare",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "ogl",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://usva.build/r/atmospheres-core.json"
+      ],
+      "files": [
+        {
+          "path": "vare-field.ts",
+          "type": "registry:ui",
+          "target": "components/ui/vare-field.ts"
+        },
+        {
+          "path": "vare-shader.ts",
+          "type": "registry:ui",
+          "target": "components/ui/vare-shader.ts"
+        },
+        {
+          "path": "vare-uniforms.ts",
+          "type": "registry:ui",
+          "target": "components/ui/vare-uniforms.ts"
+        },
+        {
+          "path": "vare.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/vare.tsx"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1773 @@
+{
+  "key": "arnaudvolp",
+  "entry": "Shadcnship",
+  "name": "shadcn-ui-blocks",
+  "homepage": "https://your-registry.com",
+  "indexUrl": "https://shadcnship.com/r/registry.json",
+  "itemBase": "https://shadcnship.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "hero-01",
+      "type": "registry:block",
+      "title": "Hero 01",
+      "description": "Two-column hero section with an announcement badge, headline, subtitle, and primary/secondary CTA buttons. Place it as the first section of your landing page to immediately communicate your product value and drive sign-ups.",
+      "categories": [
+        "hero"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/hero-01/hero.tsx",
+          "type": "registry:component",
+          "target": "components/hero-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-02",
+      "type": "registry:block",
+      "title": "Hero 02",
+      "description": "Centered hero section with a grid background, headline, CTA buttons, and a featured product screenshot. Use it above the fold on app or SaaS landing pages to visually showcase your product and guide visitors toward action.",
+      "categories": [
+        "hero"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/hero-02/hero.tsx",
+          "type": "registry:component",
+          "target": "components/hero-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-03",
+      "type": "registry:block",
+      "title": "Hero 03",
+      "description": "Two-column hero with star rating social proof, key statistics card, and call-to-action buttons. Use it when you need to build immediate trust and highlight traction metrics on SaaS or agency landing pages.",
+      "categories": [
+        "hero"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/hero-03/hero.tsx",
+          "type": "registry:component",
+          "target": "components/hero-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-05",
+      "type": "registry:block",
+      "title": "Hero 05",
+      "description": "Minimal full-screen centered hero with headline, subtitle, and CTA buttons on a clean background. Use it as a distraction-free entry point for products that rely on strong copy rather than visuals.",
+      "categories": [
+        "hero"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/hero-05/hero.tsx",
+          "type": "registry:component",
+          "target": "components/hero-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-01",
+      "type": "registry:block",
+      "title": "Feature 01",
+      "description": "Three-column feature grid displaying product benefits as icon cards with titles and descriptions. Use it to quickly communicate your product's key capabilities anywhere on a SaaS or marketing landing page.",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-01/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-03",
+      "type": "registry:block",
+      "title": "Feature 03",
+      "description": "Two-column image grid showcasing product features with visual screenshots and short descriptions. Use it to let your interface speak for itself while giving context for each feature shown.",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-03/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-04",
+      "type": "registry:block",
+      "title": "Feature 04",
+      "description": "Three-column icon card grid for listing product features with icons, titles, and short descriptions. Use it as a lightweight, fast-loading feature showcase section that stays scannable on any screen size.",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-04/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-05",
+      "type": "registry:block",
+      "title": "Feature 05",
+      "description": "Interactive accordion feature section where clicking each item reveals a corresponding product screenshot. Use it to keep the section compact while letting users explore features at their own pace.",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-05/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-01",
+      "type": "registry:block",
+      "title": "Pricing 01",
+      "description": "Three-column pricing table with a monthly/yearly billing toggle, a highlighted recommended plan, and feature lists. Use it on dedicated pricing pages to help users choose the right plan and increase conversion.",
+      "categories": [
+        "pricing"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "switch",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/pricing-01/pricing.tsx",
+          "type": "registry:component",
+          "target": "components/pricing-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-02",
+      "type": "registry:block",
+      "title": "Pricing 02",
+      "description": "Side-by-side pricing comparison table with feature rows and checkmark/cross indicators. Use it when your plans share many features and you want to make the differences crystal clear for potential buyers.",
+      "categories": [
+        "pricing"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/pricing-02/pricing.tsx",
+          "type": "registry:component",
+          "target": "components/pricing-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-03",
+      "type": "registry:block",
+      "title": "Pricing 03",
+      "description": "Three-column pricing section with a tabbed billing toggle, feature lists with separators, and CTA buttons. Use it as an alternative pricing layout when you want to visually emphasize the most popular plan.",
+      "categories": [
+        "pricing"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "tabs",
+        "badge",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/pricing-03/pricing.tsx",
+          "type": "registry:component",
+          "target": "components/pricing-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-04",
+      "type": "registry:block",
+      "title": "Pricing 04",
+      "description": "Three-column pricing section with a highlighted popular plan featuring a dark gradient background, monthly/yearly billing toggle with a green indicator, and custom price display. Use it for SaaS products that want to visually differentiate the recommended plan.",
+      "categories": [
+        "pricing"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/pricing-04/pricing.tsx",
+          "type": "registry:component",
+          "target": "components/pricing-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-stripe-01",
+      "type": "registry:block",
+      "title": "Pricing Stripe 01",
+      "description": "Connected pricing section that fetches products and prices live from the Stripe API and renders them as cards. Each card shows the plan name, description, amount, and a checkout button that creates a Stripe Checkout session.",
+      "categories": [
+        "pricing"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "stripe"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/pricing-stripe-01/pricing.tsx",
+          "type": "registry:component",
+          "target": "components/pricing-stripe-01.tsx"
+        },
+        {
+          "path": "src/registry/blocks/pricing-stripe-01/stripe.ts",
+          "type": "registry:component",
+          "target": "components/pricing-stripe-01-stripe.ts"
+        },
+        {
+          "path": "src/registry/blocks/pricing-stripe-01/pricing-cards.tsx",
+          "type": "registry:component",
+          "target": "components/pricing-stripe-01-pricing-cards.tsx"
+        },
+        {
+          "path": "src/registry/blocks/pricing-stripe-01/pricing-card.tsx",
+          "type": "registry:component",
+          "target": "components/pricing-stripe-01-pricing-card.tsx"
+        },
+        {
+          "path": "src/registry/blocks/pricing-stripe-01/checkout-button.tsx",
+          "type": "registry:component",
+          "target": "components/pricing-stripe-01-checkout-button.tsx"
+        },
+        {
+          "path": "src/registry/blocks/pricing-stripe-01/actions.ts",
+          "type": "registry:component",
+          "target": "components/pricing-stripe-01-actions.ts"
+        }
+      ]
+    },
+    {
+      "name": "cta-01",
+      "type": "registry:block",
+      "title": "CTA 01",
+      "description": "Horizontal call-to-action section with a heading, description, and primary/secondary CTA buttons. Use it at the end of landing page sections to nudge visitors toward sign-up or purchase at the right moment.",
+      "categories": [
+        "cta"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/cta-01/cta.tsx",
+          "type": "registry:component",
+          "target": "components/cta-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-02",
+      "type": "registry:block",
+      "title": "CTA 02",
+      "description": "CTA card with an app or device mockup image, headline, and action button. Use it to close a landing page with a visually driven conversion prompt that showcases your product in context.",
+      "categories": [
+        "cta"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "https://magicui.design/r/iphone.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/cta-02/cta.tsx",
+          "type": "registry:component",
+          "target": "components/cta-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-03",
+      "type": "registry:block",
+      "title": "CTA 03",
+      "description": "Newsletter subscription CTA with an email input and a submit button. Use it to capture leads directly within your content by embedding a low-friction email signup anywhere on the page.",
+      "categories": [
+        "cta"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/cta-03/cta.tsx",
+          "type": "registry:component",
+          "target": "components/cta-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-04",
+      "type": "registry:block",
+      "title": "CTA 04",
+      "description": "Centered CTA card with a subtle grid background, bold headline, description, and action button. Use it as a section-closing block that re-engages visitors who scrolled past earlier conversion points.",
+      "categories": [
+        "cta"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/cta-04/cta.tsx",
+          "type": "registry:component",
+          "target": "components/cta-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-01",
+      "type": "registry:block",
+      "title": "FAQ 01",
+      "description": "Single-column accordion FAQ section with expandable question and answer items. Use it on landing pages, pricing pages, or support sections to address common objections and reduce incoming support requests.",
+      "categories": [
+        "faq"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/faq-01/faq.tsx",
+          "type": "registry:component",
+          "target": "components/faq-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-02",
+      "type": "registry:block",
+      "title": "FAQ 02",
+      "description": "Two-column accordion FAQ grid for displaying a larger set of questions side by side. Use it when you have ten or more questions and want to keep the FAQ section compact and well-organized.",
+      "categories": [
+        "faq"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/faq-02/faq.tsx",
+          "type": "registry:component",
+          "target": "components/faq-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-01",
+      "type": "registry:block",
+      "title": "Testimonial 01",
+      "description": "Scrolling testimonial section with two animated marquee rows of customer review cards. Use it as a social proof belt on landing pages to continuously surface customer validation without requiring any user interaction.",
+      "categories": [
+        "social-proof"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "avatar",
+        "https://magicui.design/r/marquee.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/testimonial-01/testimonial.tsx",
+          "type": "registry:component",
+          "target": "components/testimonial-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-02",
+      "type": "registry:block",
+      "title": "Testimonial 02",
+      "description": "Masonry grid wall-of-love section displaying multiple customer reviews in a varied layout. Use it on marketing sites where you have rich social proof and want to display it in a visually engaging way.",
+      "categories": [
+        "social-proof"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "avatar",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/testimonial-02/testimonial.tsx",
+          "type": "registry:component",
+          "target": "components/testimonial-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-01",
+      "type": "registry:block",
+      "title": "Stat 01",
+      "description": "Stats section displaying key product or business metrics in individual icon cards with labels. Use it to quantify your impact on landing pages and give visitors concrete, trust-building numbers.",
+      "categories": [
+        "social-proof"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/stat-01/stat.tsx",
+          "type": "registry:component",
+          "target": "components/stat-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-02",
+      "type": "registry:block",
+      "title": "Stat 02",
+      "description": "Horizontal stats section with large numbers and labels separated by dividers. Use it as a compact, eye-catching metrics strip that fits naturally between any two sections on a landing page.",
+      "categories": [
+        "social-proof"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://shadcnship.com/r/background-03.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/stat-02/stat.tsx",
+          "type": "registry:component",
+          "target": "components/stat-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-01",
+      "type": "registry:block",
+      "title": "Logo 01",
+      "description": "Logo cloud section with two infinite scrolling marquee rows showcasing partner or customer logos. Use it immediately after your hero section to build trust through brand association with recognized names.",
+      "categories": [
+        "social-proof"
+      ],
+      "registryDependencies": [
+        "card",
+        "https://magicui.design/r/marquee.json",
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/logo-01/logo.tsx",
+          "type": "registry:component",
+          "target": "components/logo-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contact-01",
+      "type": "registry:block",
+      "title": "Contact 01",
+      "description": "Contact section with a card-wrapped form (name, email, message) alongside company contact information. Use it on contact or about pages to give visitors a direct, professional way to reach your team.",
+      "categories": [
+        "contact"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/contact-01/contact.tsx",
+          "type": "registry:component",
+          "target": "components/contact-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-01",
+      "type": "registry:block",
+      "title": "Footer 01",
+      "description": "Multi-column footer with company branding, grouped navigation links, and social media icons. Use it on every page of your site to provide consistent navigation, important links, and legal information at the bottom.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/footer-01/footer.tsx",
+          "type": "registry:component",
+          "target": "components/footer-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navbar-01",
+      "type": "registry:block",
+      "title": "Navbar 01",
+      "description": "Responsive navbar with dropdown navigation menus on desktop and an accordion-based mobile menu. Use it as your site-wide header to provide clear, accessible navigation across all screen sizes and devices.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "sheet",
+        "navigation-menu",
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/navbar-01/navbar.tsx",
+          "type": "registry:component",
+          "target": "components/navbar-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-01",
+      "type": "registry:block",
+      "title": "Team 01",
+      "description": "Team section displaying members in cards with profile photos, names, job roles, and social links. Use it on about pages to humanize your brand and help visitors connect with the people behind your product.",
+      "categories": [
+        "team"
+      ],
+      "registryDependencies": [
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/team-01/team.tsx",
+          "type": "registry:component",
+          "target": "components/team-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "social-icons",
+      "type": "registry:component",
+      "title": "Social Icons",
+      "description": "Collection of SVG social media brand icons (GitHub, Google, Twitter/X, LinkedIn, and more) as composable React components. Use them in login forms, footers, navbars, or any UI that references external social platforms.",
+      "categories": [
+        "social-icons"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/social-icons/icons.tsx",
+          "type": "registry:component",
+          "target": "components/social-icons.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-01",
+      "type": "registry:block",
+      "title": "Login 01",
+      "description": "Split-screen login page with a gradient background on one side and an email/password form with OAuth buttons on the other. Use it as a drop-in authentication page when you need a polished login experience fast.",
+      "categories": [
+        "auth"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "zod",
+        "react-hook-form",
+        "@hookform/resolvers"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/login-01/login.tsx",
+          "type": "registry:component",
+          "target": "components/login-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog-01",
+      "type": "registry:block",
+      "title": "Blog 01",
+      "description": "Blog section with post cards featuring cover images, category badges, titles, excerpts, and author info. Use it on content sites or product blogs to display articles in a clean, scannable grid layout.",
+      "categories": [
+        "content"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/blog-01/blog.tsx",
+          "type": "registry:component",
+          "target": "components/blog-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "register-01",
+      "type": "registry:block",
+      "title": "Register 01",
+      "description": "Centered registration card with full name, email, and password fields, including client-side validation. Use it as a clean sign-up page for any web application that requires user account creation.",
+      "categories": [
+        "auth"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "zod",
+        "react-hook-form",
+        "@hookform/resolvers"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "card",
+        "form",
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/register-01/register.tsx",
+          "type": "registry:component",
+          "target": "components/register-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "background-01",
+      "type": "registry:block",
+      "title": "Square Grid Background",
+      "description": "Customizable square grid background component with adjustable line color, grid size, and opacity props. Use it as a decorative backdrop for hero sections, cards, or any area that benefits from a subtle geometric texture.",
+      "categories": [
+        "background"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/background-01/background.tsx",
+          "type": "registry:component",
+          "target": "components/background-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "background-02",
+      "type": "registry:block",
+      "title": "Dot Pattern Background",
+      "description": "Customizable dot pattern background with adjustable dot color, size, spacing, and opacity. Use it behind hero sections or feature areas to add visual depth without distracting from your main content.",
+      "categories": [
+        "background"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/background-02/background.tsx",
+          "type": "registry:component",
+          "target": "components/background-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "background-03",
+      "type": "registry:block",
+      "title": "Diagonal Stripes Background",
+      "description": "Customizable diagonal stripes background with adjustable line color, width, spacing, and opacity. Use it to add a subtle textile-like pattern to sections, cards, or full-page backgrounds.",
+      "categories": [
+        "background"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/background-03/background.tsx",
+          "type": "registry:component",
+          "target": "components/background-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "background-04",
+      "type": "registry:block",
+      "title": "Vertical Lines Background",
+      "description": "Customizable vertical lines background with adjustable line count, width, color, and opacity. Use it behind hero or pricing sections to create a structured, architectural visual backdrop.",
+      "categories": [
+        "background"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/background-04/background.tsx",
+          "type": "registry:component",
+          "target": "components/background-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "background-05",
+      "type": "registry:block",
+      "title": "Interactive Grid Background",
+      "description": "Interactive grid background where individual cells highlight on hover with a configurable glow color. Use it behind hero sections or interactive showcases to add a playful, dynamic feel to an otherwise static layout.",
+      "categories": [
+        "background"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/background-05/background.tsx",
+          "type": "registry:component",
+          "target": "components/background-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "changelog-01",
+      "type": "registry:block",
+      "title": "Changelog 01",
+      "description": "Timeline-style changelog listing product updates with version numbers, release dates, and descriptions. Use it on product or documentation sites to communicate release history and build trust with power users.",
+      "categories": [
+        "content"
+      ],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/changelog-01/changelog.tsx",
+          "type": "registry:component",
+          "target": "components/changelog-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "integration-01",
+      "type": "registry:block",
+      "title": "Integration 01",
+      "description": "Dark-themed integration showcase with a curved connection path drawn between tool logos. Use it on landing pages to visually communicate how your product fits into your users' existing toolchain.",
+      "categories": [
+        "content"
+      ],
+      "registryDependencies": [
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/integration-01/integration.tsx",
+          "type": "registry:component",
+          "target": "components/integration-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "banner-01",
+      "type": "registry:block",
+      "title": "Banner 01",
+      "description": "Full-width announcement banner with a short message, an arrow link, and a dismiss button. Use it at the top of any page to surface time-sensitive promotions, feature launches, or important product updates.",
+      "categories": [
+        "cta"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/banner-01/banner.tsx",
+          "type": "registry:component",
+          "target": "components/banner-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "waitlist-01",
+      "type": "registry:block",
+      "title": "Waitlist 01",
+      "description": "Waitlist signup section with an email capture form and social proof avatars showing subscriber count. Use it on coming-soon pages to build an audience before your product launches and validate demand early.",
+      "categories": [
+        "waitlist"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/waitlist-01/waitlist.tsx",
+          "type": "registry:component",
+          "target": "components/waitlist-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "waitlist-02",
+      "type": "registry:block",
+      "title": "Supabase Waitlist",
+      "description": "Waitlist section with a Supabase-connected email form that stores submissions directly to your database. Use it when your backend is Supabase and you want a zero-config waitlist with persistent storage out of the box.",
+      "categories": [
+        "waitlist"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "@supabase/ssr"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "sonner"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/waitlist-02/waitlist.tsx",
+          "type": "registry:component",
+          "target": "components/waitlist-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-06",
+      "type": "registry:block",
+      "title": "Feature 06",
+      "description": "Four-step process section with numbered badges, step titles, descriptions, and an optional screenshot. Use it to explain how your product works, step by step, on landing and onboarding pages.",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-06/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-07",
+      "type": "registry:block",
+      "title": "Feature 07",
+      "description": "Full-width video player section with a poster image and an animated play button overlay. Use it on landing pages to embed a product demo or explainer video where showing beats telling.",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-07/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "comparison-01",
+      "type": "registry:block",
+      "title": "Comparison 01",
+      "description": "Product comparison table with images, specification rows, and checkmark/cross value indicators. Use it on product or pricing pages to help users make confident purchase decisions by clearly highlighting key differences.",
+      "categories": [
+        "pricing"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/comparison-01/comparison.tsx",
+          "type": "registry:component",
+          "target": "components/comparison-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-02",
+      "type": "registry:block",
+      "title": "Dashboard 02",
+      "description": "Sales analytics dashboard with revenue KPI cards, interactive bar charts, and a recent orders table. Use it as a starting point for admin panels, analytics views, or any SaaS backend interface.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "card",
+        "chart",
+        "dropdown-menu",
+        "avatar",
+        "sidebar"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/dashboard-02/dashboard.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-02/dashboard.tsx"
+        },
+        {
+          "path": "src/registry/blocks/dashboard-02/components/index.ts",
+          "type": "registry:component",
+          "target": "components/dashboard-02/components/index.ts"
+        },
+        {
+          "path": "src/registry/blocks/dashboard-02/components/sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-02/components/sidebar.tsx"
+        },
+        {
+          "path": "src/registry/blocks/dashboard-02/components/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-02/components/nav-user.tsx"
+        },
+        {
+          "path": "src/registry/blocks/dashboard-02/components/team-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-02/components/team-switcher.tsx"
+        },
+        {
+          "path": "src/registry/blocks/dashboard-02/components/stat-cards.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-02/components/stat-cards.tsx"
+        },
+        {
+          "path": "src/registry/blocks/dashboard-02/components/analytics-chart.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-02/components/analytics-chart.tsx"
+        },
+        {
+          "path": "src/registry/blocks/dashboard-02/components/projects-table.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-02/components/projects-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-02",
+      "type": "registry:block",
+      "title": "Logo 02",
+      "description": "Client logo grid with clickable industry and technology category filters and featured logo cards. Use it on portfolio or case study pages to showcase logos while allowing visitors to filter by what matters to them.",
+      "categories": [
+        "social-proof"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/logo-02/logo.tsx",
+          "type": "registry:component",
+          "target": "components/logo-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-02",
+      "type": "registry:block",
+      "title": "Supabase Login",
+      "description": "Full-stack split-screen auth page with Supabase email/password login and OAuth provider support. Use it as a complete, ready-to-ship login page when your backend is powered by Supabase Auth.",
+      "categories": [
+        "auth"
+      ],
+      "dependencies": [
+        "@supabase/ssr",
+        "@supabase/supabase-js",
+        "lucide-react",
+        "zod",
+        "react-hook-form",
+        "@hookform/resolvers"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/login-02/login.tsx",
+          "type": "registry:component",
+          "target": "components/login-02.tsx"
+        },
+        {
+          "path": "src/lib/supabase/client.ts",
+          "type": "registry:lib",
+          "target": "lib/supabase/client.ts"
+        },
+        {
+          "path": "src/lib/supabase/server.ts",
+          "type": "registry:lib",
+          "target": "lib/supabase/server.ts"
+        },
+        {
+          "path": "src/app/auth/callback/route.ts",
+          "type": "registry:page",
+          "target": "app/auth/callback/route.ts"
+        },
+        {
+          "path": "src/lib/supabase/proxy.ts",
+          "type": "registry:lib",
+          "target": "lib/supabase/proxy.ts"
+        },
+        {
+          "path": "src/proxy.ts",
+          "type": "registry:file",
+          "target": "~/proxy.ts"
+        }
+      ]
+    },
+    {
+      "name": "data-table-01",
+      "type": "registry:block",
+      "title": "Supabase Data Table",
+      "description": "Paginated data table with global search and sortable columns. Two modes: pass a data array for client-side rendering, or a Supabase table name for server-side pagination. Supports text, date, badge, tags, and status cell types.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "table",
+        "badge",
+        "button",
+        "input",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/data-table-01/data-table.tsx",
+          "type": "registry:component",
+          "target": "components/data-table-01/data-table.tsx"
+        },
+        {
+          "path": "src/registry/blocks/data-table-01/data-table-actions.ts",
+          "type": "registry:component",
+          "target": "components/data-table-01/data-table-actions.ts"
+        },
+        {
+          "path": "src/registry/blocks/data-table-01/lib/utils.ts",
+          "type": "registry:component",
+          "target": "components/data-table-01/lib/utils.ts"
+        },
+        {
+          "path": "src/registry/blocks/data-table-01/components/client.tsx",
+          "type": "registry:component",
+          "target": "components/data-table-01/components/client.tsx"
+        },
+        {
+          "path": "src/registry/blocks/data-table-01/components/cell-renderers.tsx",
+          "type": "registry:component",
+          "target": "components/data-table-01/components/cell-renderers.tsx"
+        },
+        {
+          "path": "src/registry/blocks/data-table-01/components/table.tsx",
+          "type": "registry:component",
+          "target": "components/data-table-01/components/table.tsx"
+        },
+        {
+          "path": "src/registry/blocks/data-table-01/components/searchbar.tsx",
+          "type": "registry:component",
+          "target": "components/data-table-01/components/searchbar.tsx"
+        },
+        {
+          "path": "src/registry/blocks/data-table-01/components/pagination.tsx",
+          "type": "registry:component",
+          "target": "components/data-table-01/components/pagination.tsx"
+        },
+        {
+          "path": "src/registry/blocks/data-table-01/data/demo.ts",
+          "type": "registry:component",
+          "target": "components/data-table-01/data/demo.ts"
+        }
+      ]
+    },
+    {
+      "name": "feature-09",
+      "type": "registry:block",
+      "title": "Feature 09",
+      "description": "An integrations grid with icon cards in a 3x2 layout and social proof ratings",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-09/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-08",
+      "type": "registry:block",
+      "title": "Feature 08",
+      "description": "A bento-style feature grid with a large featured card and icon-based feature cards",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-08/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-04",
+      "type": "registry:block",
+      "title": "Hero 04",
+      "description": "A centered hero with multi-image cards below at varying heights",
+      "categories": [
+        "hero"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/hero-04/hero.tsx",
+          "type": "registry:component",
+          "target": "components/hero-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-03",
+      "type": "registry:block",
+      "title": "Stat 03",
+      "description": "A bento-grid stats section mixing images and metric cards",
+      "categories": [
+        "social-proof"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/stat-03/stat.tsx",
+          "type": "registry:component",
+          "target": "components/stat-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navbar-02",
+      "type": "registry:block",
+      "title": "Navbar 02",
+      "description": "A responsive navbar with mega menu, grouped columns, featured panel, and mobile accordion",
+      "categories": [
+        "navbar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "sheet",
+        "navigation-menu"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/navbar-02/navbar.tsx",
+          "type": "registry:component",
+          "target": "components/navbar-02/navbar.tsx"
+        },
+        {
+          "path": "src/registry/blocks/navbar-02/components.tsx",
+          "type": "registry:component",
+          "target": "components/navbar-02/components.tsx"
+        },
+        {
+          "path": "src/registry/blocks/navbar-02/types.ts",
+          "type": "registry:component",
+          "target": "components/navbar-02/types.ts"
+        }
+      ]
+    },
+    {
+      "name": "cookie-01",
+      "type": "registry:block",
+      "title": "Cookie 01",
+      "description": "A floating cookie consent card with accept button and learn more link",
+      "categories": [
+        "cookie"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/cookie-01/cookie.tsx",
+          "type": "registry:component",
+          "target": "components/cookie-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-11",
+      "type": "registry:block",
+      "title": "Feature 11",
+      "description": "A feature section with a split left-aligned header and two large image cards with text below",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-11/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-03",
+      "type": "registry:block",
+      "title": "Testimonial 03",
+      "description": "A two-column testimonial carousel with prev/next navigation and portrait image cards",
+      "categories": [
+        "social-proof"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/testimonial-03/testimonial.tsx",
+          "type": "registry:component",
+          "target": "components/testimonial-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-12",
+      "type": "registry:block",
+      "title": "Feature 12",
+      "description": "A feature section with a large clickable title list on the left and an image with description on the right that updates on selection",
+      "categories": [
+        "feature"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-12/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-12.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-compare",
+      "type": "registry:block",
+      "title": "Image Compare",
+      "description": "A before/after image slider — drag the divider to compare both sides in real time",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/image-compare/output-showcase.tsx",
+          "type": "registry:component",
+          "target": "components/image-compare.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-06",
+      "type": "registry:block",
+      "title": "Hero 06",
+      "description": "A full-screen centered hero with background image, announcement badge, and CTA buttons",
+      "categories": [
+        "hero"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/hero-06/hero.tsx",
+          "type": "registry:component",
+          "target": "components/hero-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-05",
+      "type": "registry:block",
+      "title": "CTA 05",
+      "description": "A centered CTA with a fanned stack of rotated photos, badge, contrast title, and pill button",
+      "categories": [
+        "cta"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/cta-05/cta.tsx",
+          "type": "registry:component",
+          "target": "components/cta-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-04",
+      "type": "registry:block",
+      "title": "Stat 04",
+      "description": "A stats section with minimal navbar, large headline, and icons orbiting a center avatar",
+      "categories": [
+        "stat"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/stat-04/stat.tsx",
+          "type": "registry:component",
+          "target": "components/stat-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-05",
+      "type": "registry:block",
+      "title": "Stat 05",
+      "description": "A split stats section with badge, title, CTA link, and avatars on the left and an asymmetric grid of metric cards on the right",
+      "categories": [
+        "stat"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/stat-05/stat.tsx",
+          "type": "registry:component",
+          "target": "components/stat-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-06",
+      "type": "registry:block",
+      "title": "Stat 06",
+      "description": "A stats section in a rounded card with intro paragraph, dark hatched metric cards, and an outline pill button",
+      "categories": [
+        "stat"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/stat-06/stat.tsx",
+          "type": "registry:component",
+          "target": "components/stat-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-13",
+      "type": "registry:block",
+      "title": "Feature 13",
+      "description": "A how-it-works section with a 3-card carousel, progress tab bar, and active step details",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-13/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-13.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-14",
+      "type": "registry:block",
+      "title": "Feature 14",
+      "description": "A how-it-works section with centered header and a 2-column grid of image cards",
+      "categories": [
+        "feature"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-14/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-14.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-15",
+      "type": "registry:block",
+      "title": "Feature 15",
+      "description": "A centered feature section with badge, phone mockup on a dot pattern background, and highlighted description",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "https://magicui.design/r/iphone.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-15/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-15.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-16",
+      "type": "registry:block",
+      "title": "Feature 16",
+      "description": "A two-column feature section with labels, titles, learn-more links, and visual cards below",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-16/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-16.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-17",
+      "type": "registry:block",
+      "title": "Feature 17",
+      "description": "An alternating 2-column feature grid with thin borders, text and illustration cells, and category tags",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-17/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-17.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-18",
+      "type": "registry:block",
+      "title": "Feature 18",
+      "description": "A dark case-studies section with gradient title, white cards with category labels and plus buttons, and a view-all link",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-18/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-18.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-04",
+      "type": "registry:block",
+      "title": "Testimonial 04",
+      "description": "A testimonial gallery with a dominant featured landscape card and three narrow portrait brand cards",
+      "categories": [
+        "social-proof"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/testimonial-04/testimonial.tsx",
+          "type": "registry:component",
+          "target": "components/testimonial-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contact-02",
+      "type": "registry:block",
+      "title": "Contact 02",
+      "description": "A pro contact form with split layout, tour select, image slot, and contact info strip",
+      "categories": [
+        "contact"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "react-hook-form",
+        "zod",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "form",
+        "input",
+        "select",
+        "textarea",
+        "sonner"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/contact-02/contact.tsx",
+          "type": "registry:component",
+          "target": "components/contact-02/contact.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-19",
+      "type": "registry:block",
+      "title": "Feature 19",
+      "description": "An editorial split section with large title, two compared image panels, circular arrow button, and footer bar",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-19/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-19.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-20",
+      "type": "registry:block",
+      "title": "Feature 20",
+      "description": "A 3-card feature section with decorative UI mockups (form, call, pricing) and split header",
+      "categories": [
+        "feature"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "button",
+        "checkbox",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-20/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-20.tsx"
+        }
+      ]
+    }
+  ]
+}

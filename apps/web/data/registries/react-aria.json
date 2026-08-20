@@ -1,0 +1,4239 @@
+{
+  "key": "react-aria",
+  "entry": "React Aria",
+  "name": "react-aria",
+  "homepage": "https://react-aria.adobe.com",
+  "indexUrl": "https://react-aria.adobe.com/registry/registry.json",
+  "itemBase": "https://react-aria.adobe.com/registry",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "tailwind",
+      "type": "registry:style",
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-alertdialog.json",
+        "https://react-aria.adobe.com/registry/tailwind-breadcrumbs.json",
+        "https://react-aria.adobe.com/registry/tailwind-button.json",
+        "https://react-aria.adobe.com/registry/tailwind-calendar.json",
+        "https://react-aria.adobe.com/registry/tailwind-checkbox.json",
+        "https://react-aria.adobe.com/registry/tailwind-checkboxgroup.json",
+        "https://react-aria.adobe.com/registry/tailwind-colorarea.json",
+        "https://react-aria.adobe.com/registry/tailwind-colorfield.json",
+        "https://react-aria.adobe.com/registry/tailwind-colorpicker.json",
+        "https://react-aria.adobe.com/registry/tailwind-colorslider.json",
+        "https://react-aria.adobe.com/registry/tailwind-colorswatch.json",
+        "https://react-aria.adobe.com/registry/tailwind-colorswatchpicker.json",
+        "https://react-aria.adobe.com/registry/tailwind-colorthumb.json",
+        "https://react-aria.adobe.com/registry/tailwind-colorwheel.json",
+        "https://react-aria.adobe.com/registry/tailwind-combobox.json",
+        "https://react-aria.adobe.com/registry/tailwind-commandpalette.json",
+        "https://react-aria.adobe.com/registry/tailwind-datefield.json",
+        "https://react-aria.adobe.com/registry/tailwind-datepicker.json",
+        "https://react-aria.adobe.com/registry/tailwind-daterangepicker.json",
+        "https://react-aria.adobe.com/registry/tailwind-dialog.json",
+        "https://react-aria.adobe.com/registry/tailwind-disclosure.json",
+        "https://react-aria.adobe.com/registry/tailwind-disclosuregroup.json",
+        "https://react-aria.adobe.com/registry/tailwind-dropzone.json",
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-fieldbutton.json",
+        "https://react-aria.adobe.com/registry/tailwind-form.json",
+        "https://react-aria.adobe.com/registry/tailwind-gridlist.json",
+        "https://react-aria.adobe.com/registry/tailwind-link.json",
+        "https://react-aria.adobe.com/registry/tailwind-listbox.json",
+        "https://react-aria.adobe.com/registry/tailwind-menu.json",
+        "https://react-aria.adobe.com/registry/tailwind-meter.json",
+        "https://react-aria.adobe.com/registry/tailwind-modal.json",
+        "https://react-aria.adobe.com/registry/tailwind-numberfield.json",
+        "https://react-aria.adobe.com/registry/tailwind-popover.json",
+        "https://react-aria.adobe.com/registry/tailwind-progressbar.json",
+        "https://react-aria.adobe.com/registry/tailwind-radiogroup.json",
+        "https://react-aria.adobe.com/registry/tailwind-rangecalendar.json",
+        "https://react-aria.adobe.com/registry/tailwind-searchfield.json",
+        "https://react-aria.adobe.com/registry/tailwind-select.json",
+        "https://react-aria.adobe.com/registry/tailwind-separator.json",
+        "https://react-aria.adobe.com/registry/tailwind-slider.json",
+        "https://react-aria.adobe.com/registry/tailwind-switch.json",
+        "https://react-aria.adobe.com/registry/tailwind-table.json",
+        "https://react-aria.adobe.com/registry/tailwind-tabs.json",
+        "https://react-aria.adobe.com/registry/tailwind-taggroup.json",
+        "https://react-aria.adobe.com/registry/tailwind-textfield.json",
+        "https://react-aria.adobe.com/registry/tailwind-timefield.json",
+        "https://react-aria.adobe.com/registry/tailwind-toast.json",
+        "https://react-aria.adobe.com/registry/tailwind-togglebutton.json",
+        "https://react-aria.adobe.com/registry/tailwind-togglebuttongroup.json",
+        "https://react-aria.adobe.com/registry/tailwind-tokenfield.json",
+        "https://react-aria.adobe.com/registry/tailwind-toolbar.json",
+        "https://react-aria.adobe.com/registry/tailwind-tooltip.json",
+        "https://react-aria.adobe.com/registry/tailwind-tree.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ]
+    },
+    {
+      "name": "tailwind-alertdialog",
+      "type": "registry:ui",
+      "title": "AlertDialog",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-button.json",
+        "https://react-aria.adobe.com/registry/tailwind-dialog.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/AlertDialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-breadcrumbs",
+      "type": "registry:ui",
+      "title": "Breadcrumbs",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwind-merge",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-link.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Breadcrumbs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-button",
+      "type": "registry:ui",
+      "title": "Button",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-button.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-utils.json",
+        "https://react-aria.adobe.com/registry/tailwind-field.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-checkboxgroup",
+      "type": "registry:ui",
+      "title": "CheckboxGroup",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/CheckboxGroup.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-colorarea",
+      "type": "registry:ui",
+      "title": "ColorArea",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-utils.json",
+        "https://react-aria.adobe.com/registry/tailwind-colorthumb.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorArea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-colorfield",
+      "type": "registry:ui",
+      "title": "ColorField",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorField.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-colorpicker",
+      "type": "registry:ui",
+      "title": "ColorPicker",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-colorswatch.json",
+        "https://react-aria.adobe.com/registry/tailwind-colorarea.json",
+        "https://react-aria.adobe.com/registry/tailwind-colorslider.json",
+        "https://react-aria.adobe.com/registry/tailwind-colorfield.json",
+        "https://react-aria.adobe.com/registry/tailwind-dialog.json",
+        "https://react-aria.adobe.com/registry/tailwind-popover.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorPicker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-colorslider",
+      "type": "registry:ui",
+      "title": "ColorSlider",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json",
+        "https://react-aria.adobe.com/registry/tailwind-colorthumb.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorSlider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-colorswatch",
+      "type": "registry:ui",
+      "title": "ColorSwatch",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorSwatch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-colorswatchpicker",
+      "type": "registry:ui",
+      "title": "ColorSwatchPicker",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-colorswatch.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorSwatchPicker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-colorthumb",
+      "type": "registry:ui",
+      "title": "ColorThumb",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorThumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-colorwheel",
+      "type": "registry:ui",
+      "title": "ColorWheel",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-colorthumb.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorWheel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-combobox",
+      "type": "registry:ui",
+      "title": "ComboBox",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-listbox.json",
+        "https://react-aria.adobe.com/registry/tailwind-popover.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json",
+        "https://react-aria.adobe.com/registry/tailwind-fieldbutton.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ComboBox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-commandpalette",
+      "type": "registry:ui",
+      "title": "CommandPalette",
+      "dependencies": [
+        "react-aria-components",
+        "react",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-menu.json",
+        "https://react-aria.adobe.com/registry/tailwind-searchfield.json",
+        "https://react-aria.adobe.com/registry/tailwind-modal.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/CommandPalette.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-datefield",
+      "type": "registry:ui",
+      "title": "DateField",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DateField.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-datepicker",
+      "type": "registry:ui",
+      "title": "DatePicker",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-calendar.json",
+        "https://react-aria.adobe.com/registry/tailwind-datefield.json",
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-popover.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json",
+        "https://react-aria.adobe.com/registry/tailwind-fieldbutton.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DatePicker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-daterangepicker",
+      "type": "registry:ui",
+      "title": "DateRangePicker",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-datefield.json",
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-popover.json",
+        "https://react-aria.adobe.com/registry/tailwind-rangecalendar.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json",
+        "https://react-aria.adobe.com/registry/tailwind-fieldbutton.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DateRangePicker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-merge",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-disclosure",
+      "type": "registry:ui",
+      "title": "Disclosure",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "lucide-react",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-button.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-disclosuregroup",
+      "type": "registry:ui",
+      "title": "DisclosureGroup",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DisclosureGroup.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-dropzone",
+      "type": "registry:ui",
+      "title": "DropZone",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DropZone.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-field",
+      "type": "registry:ui",
+      "title": "Field",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-merge",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-fieldbutton",
+      "type": "registry:ui",
+      "title": "FieldButton",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/FieldButton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-form",
+      "type": "registry:ui",
+      "title": "Form",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-merge",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-gridlist",
+      "type": "registry:ui",
+      "title": "GridList",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwind-merge",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-checkbox.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/GridList.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-link",
+      "type": "registry:ui",
+      "title": "Link",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Link.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-listbox",
+      "type": "registry:ui",
+      "title": "ListBox",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ListBox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-menu",
+      "type": "registry:ui",
+      "title": "Menu",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-listbox.json",
+        "https://react-aria.adobe.com/registry/tailwind-popover.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-meter",
+      "type": "registry:ui",
+      "title": "Meter",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Meter.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-modal",
+      "type": "registry:ui",
+      "title": "Modal",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Modal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-numberfield",
+      "type": "registry:ui",
+      "title": "NumberField",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/NumberField.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "dependencies": [
+        "react-aria-components",
+        "react",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-progressbar",
+      "type": "registry:ui",
+      "title": "ProgressBar",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ProgressBar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-radiogroup",
+      "type": "registry:ui",
+      "title": "RadioGroup",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/RadioGroup.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-rangecalendar",
+      "type": "registry:ui",
+      "title": "RangeCalendar",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-button.json",
+        "https://react-aria.adobe.com/registry/tailwind-calendar.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/RangeCalendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-searchfield",
+      "type": "registry:ui",
+      "title": "SearchField",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json",
+        "https://react-aria.adobe.com/registry/tailwind-fieldbutton.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/SearchField.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-select",
+      "type": "registry:ui",
+      "title": "Select",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-listbox.json",
+        "https://react-aria.adobe.com/registry/tailwind-popover.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-utils.json",
+        "https://react-aria.adobe.com/registry/tailwind-field.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-table",
+      "type": "registry:ui",
+      "title": "Table",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwind-merge",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-checkbox.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwind-merge",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-taggroup",
+      "type": "registry:ui",
+      "title": "TagGroup",
+      "dependencies": [
+        "lucide-react",
+        "react",
+        "react-aria-components",
+        "tailwind-merge",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TagGroup.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-textfield",
+      "type": "registry:ui",
+      "title": "TextField",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TextField.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-timefield",
+      "type": "registry:ui",
+      "title": "TimeField",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-datefield.json",
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TimeField.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "lucide-react",
+        "react-dom",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-togglebutton",
+      "type": "registry:ui",
+      "title": "ToggleButton",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ToggleButton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-togglebuttongroup",
+      "type": "registry:ui",
+      "title": "ToggleButtonGroup",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ToggleButtonGroup.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-tokenfield",
+      "type": "registry:ui",
+      "title": "TokenField",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-field.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TokenField.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-toolbar",
+      "type": "registry:ui",
+      "title": "Toolbar",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-tree",
+      "type": "registry:ui",
+      "title": "Tree",
+      "dependencies": [
+        "react",
+        "react-aria-components",
+        "lucide-react",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-checkbox.json",
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Tree.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-utils",
+      "type": "registry:lib",
+      "title": "utils",
+      "dependencies": [
+        "react-aria-components",
+        "tailwind-merge",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "lib/react-aria-utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "css",
+      "type": "registry:style",
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-breadcrumbs.json",
+        "https://react-aria.adobe.com/registry/css-button.json",
+        "https://react-aria.adobe.com/registry/css-calendar.json",
+        "https://react-aria.adobe.com/registry/css-checkbox.json",
+        "https://react-aria.adobe.com/registry/css-checkboxgroup.json",
+        "https://react-aria.adobe.com/registry/css-colorarea.json",
+        "https://react-aria.adobe.com/registry/css-colorfield.json",
+        "https://react-aria.adobe.com/registry/css-colorpicker.json",
+        "https://react-aria.adobe.com/registry/css-colorslider.json",
+        "https://react-aria.adobe.com/registry/css-colorswatch.json",
+        "https://react-aria.adobe.com/registry/css-colorswatchpicker.json",
+        "https://react-aria.adobe.com/registry/css-colorthumb.json",
+        "https://react-aria.adobe.com/registry/css-colorwheel.json",
+        "https://react-aria.adobe.com/registry/css-combobox.json",
+        "https://react-aria.adobe.com/registry/css-commandpalette.json",
+        "https://react-aria.adobe.com/registry/css-content.json",
+        "https://react-aria.adobe.com/registry/css-datefield.json",
+        "https://react-aria.adobe.com/registry/css-datepicker.json",
+        "https://react-aria.adobe.com/registry/css-daterangepicker.json",
+        "https://react-aria.adobe.com/registry/css-dialog.json",
+        "https://react-aria.adobe.com/registry/css-disclosure.json",
+        "https://react-aria.adobe.com/registry/css-disclosuregroup.json",
+        "https://react-aria.adobe.com/registry/css-dropzone.json",
+        "https://react-aria.adobe.com/registry/css-form.json",
+        "https://react-aria.adobe.com/registry/css-gridlist.json",
+        "https://react-aria.adobe.com/registry/css-inputgroup.json",
+        "https://react-aria.adobe.com/registry/css-link.json",
+        "https://react-aria.adobe.com/registry/css-listbox.json",
+        "https://react-aria.adobe.com/registry/css-menu.json",
+        "https://react-aria.adobe.com/registry/css-meter.json",
+        "https://react-aria.adobe.com/registry/css-modal.json",
+        "https://react-aria.adobe.com/registry/css-numberfield.json",
+        "https://react-aria.adobe.com/registry/css-popover.json",
+        "https://react-aria.adobe.com/registry/css-progressbar.json",
+        "https://react-aria.adobe.com/registry/css-progresscircle.json",
+        "https://react-aria.adobe.com/registry/css-radiogroup.json",
+        "https://react-aria.adobe.com/registry/css-rangecalendar.json",
+        "https://react-aria.adobe.com/registry/css-searchfield.json",
+        "https://react-aria.adobe.com/registry/css-segmentedcontrol.json",
+        "https://react-aria.adobe.com/registry/css-select.json",
+        "https://react-aria.adobe.com/registry/css-separator.json",
+        "https://react-aria.adobe.com/registry/css-sheet.json",
+        "https://react-aria.adobe.com/registry/css-slider.json",
+        "https://react-aria.adobe.com/registry/css-switch.json",
+        "https://react-aria.adobe.com/registry/css-table.json",
+        "https://react-aria.adobe.com/registry/css-tabs.json",
+        "https://react-aria.adobe.com/registry/css-taggroup.json",
+        "https://react-aria.adobe.com/registry/css-textfield.json",
+        "https://react-aria.adobe.com/registry/css-timefield.json",
+        "https://react-aria.adobe.com/registry/css-toast.json",
+        "https://react-aria.adobe.com/registry/css-togglebutton.json",
+        "https://react-aria.adobe.com/registry/css-togglebuttongroup.json",
+        "https://react-aria.adobe.com/registry/css-tokenfield.json",
+        "https://react-aria.adobe.com/registry/css-toolbar.json",
+        "https://react-aria.adobe.com/registry/css-tooltip.json",
+        "https://react-aria.adobe.com/registry/css-tree.json"
+      ]
+    },
+    {
+      "name": "css-breadcrumbs",
+      "type": "registry:ui",
+      "title": "Breadcrumbs",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Breadcrumbs.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Breadcrumbs.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-button",
+      "type": "registry:ui",
+      "title": "Button",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-progresscircle.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Button.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-content.json",
+        "https://react-aria.adobe.com/registry/css-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Calendar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Calendar.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "dependencies": [
+        "react-aria-components",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Checkbox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Checkbox.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-checkboxgroup",
+      "type": "registry:ui",
+      "title": "CheckboxGroup",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/CheckboxGroup.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/CheckboxGroup.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-colorarea",
+      "type": "registry:ui",
+      "title": "ColorArea",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-colorthumb.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorArea.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ColorArea.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-colorfield",
+      "type": "registry:ui",
+      "title": "ColorField",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorField.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ColorField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/TextField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-colorpicker",
+      "type": "registry:ui",
+      "title": "ColorPicker",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-dialog.json",
+        "https://react-aria.adobe.com/registry/css-colorswatch.json",
+        "https://react-aria.adobe.com/registry/css-colorslider.json",
+        "https://react-aria.adobe.com/registry/css-colorarea.json",
+        "https://react-aria.adobe.com/registry/css-colorfield.json",
+        "https://react-aria.adobe.com/registry/css-popover.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorPicker.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ColorPicker.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-colorslider",
+      "type": "registry:ui",
+      "title": "ColorSlider",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json",
+        "https://react-aria.adobe.com/registry/css-colorthumb.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorSlider.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ColorSlider.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-colorswatch",
+      "type": "registry:ui",
+      "title": "ColorSwatch",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorSwatch.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ColorSwatch.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-colorswatchpicker",
+      "type": "registry:ui",
+      "title": "ColorSwatchPicker",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-colorswatch.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorSwatchPicker.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ColorSwatchPicker.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-colorthumb",
+      "type": "registry:ui",
+      "title": "ColorThumb",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorThumb.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ColorThumb.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-colorwheel",
+      "type": "registry:ui",
+      "title": "ColorWheel",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-colorthumb.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorWheel.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ColorWheel.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-combobox",
+      "type": "registry:ui",
+      "title": "ComboBox",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json",
+        "https://react-aria.adobe.com/registry/css-listbox.json",
+        "https://react-aria.adobe.com/registry/css-popover.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ComboBox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ComboBox.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/TextField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-commandpalette",
+      "type": "registry:ui",
+      "title": "CommandPalette",
+      "dependencies": [
+        "react-aria-components",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-menu.json",
+        "https://react-aria.adobe.com/registry/css-searchfield.json",
+        "https://react-aria.adobe.com/registry/css-modal.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/CommandPalette.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/CommandPalette.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-content",
+      "type": "registry:ui",
+      "title": "Content",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Content.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Content.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-datefield",
+      "type": "registry:ui",
+      "title": "DateField",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DateField.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/DateField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-datepicker",
+      "type": "registry:ui",
+      "title": "DatePicker",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-datefield.json",
+        "https://react-aria.adobe.com/registry/css-form.json",
+        "https://react-aria.adobe.com/registry/css-calendar.json",
+        "https://react-aria.adobe.com/registry/css-popover.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DatePicker.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/DatePicker.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-daterangepicker",
+      "type": "registry:ui",
+      "title": "DateRangePicker",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-datefield.json",
+        "https://react-aria.adobe.com/registry/css-form.json",
+        "https://react-aria.adobe.com/registry/css-popover.json",
+        "https://react-aria.adobe.com/registry/css-rangecalendar.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DateRangePicker.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/DateRangePicker.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Dialog.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Dialog.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-disclosure",
+      "type": "registry:ui",
+      "title": "Disclosure",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-content.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Disclosure.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Disclosure.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-disclosuregroup",
+      "type": "registry:ui",
+      "title": "DisclosureGroup",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DisclosureGroup.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/DisclosureGroup.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-dropzone",
+      "type": "registry:ui",
+      "title": "DropZone",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DropZone.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/DropZone.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-form",
+      "type": "registry:ui",
+      "title": "Form",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-content.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Form.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-gridlist",
+      "type": "registry:ui",
+      "title": "GridList",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-checkbox.json",
+        "https://react-aria.adobe.com/registry/css-progresscircle.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/GridList.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/GridList.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-inputgroup",
+      "type": "registry:ui",
+      "title": "InputGroup",
+      "dependencies": [
+        "react-aria-components",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/InputGroup.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/InputGroup.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-link",
+      "type": "registry:ui",
+      "title": "Link",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Link.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Link.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-listbox",
+      "type": "registry:ui",
+      "title": "ListBox",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-content.json",
+        "https://react-aria.adobe.com/registry/css-progresscircle.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ListBox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ListBox.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-menu",
+      "type": "registry:ui",
+      "title": "Menu",
+      "dependencies": [
+        "lucide-react",
+        "react-aria-components",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-popover.json",
+        "https://react-aria.adobe.com/registry/css-content.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Menu.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-meter",
+      "type": "registry:ui",
+      "title": "Meter",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Meter.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Meter.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-modal",
+      "type": "registry:ui",
+      "title": "Modal",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Modal.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Modal.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-numberfield",
+      "type": "registry:ui",
+      "title": "NumberField",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-button.json",
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/NumberField.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/NumberField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/TextField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "dependencies": [
+        "react-aria-components",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Popover.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Popover.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-progressbar",
+      "type": "registry:ui",
+      "title": "ProgressBar",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ProgressBar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ProgressBar.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-progresscircle",
+      "type": "registry:ui",
+      "title": "ProgressCircle",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ProgressCircle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "css-radiogroup",
+      "type": "registry:ui",
+      "title": "RadioGroup",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/RadioGroup.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/RadioGroup.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-rangecalendar",
+      "type": "registry:ui",
+      "title": "RangeCalendar",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-button.json",
+        "https://react-aria.adobe.com/registry/css-calendar.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/RangeCalendar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/RangeCalendar.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-searchfield",
+      "type": "registry:ui",
+      "title": "SearchField",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/SearchField.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/SearchField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/TextField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-segmentedcontrol",
+      "type": "registry:ui",
+      "title": "SegmentedControl",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/SegmentedControl.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/SegmentedControl.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-select",
+      "type": "registry:ui",
+      "title": "Select",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-button.json",
+        "https://react-aria.adobe.com/registry/css-listbox.json",
+        "https://react-aria.adobe.com/registry/css-popover.json",
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Select.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Select.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "dependencies": [
+        "react-aria-components",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Separator.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Separator.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-dialog.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Sheet.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Sheet.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Slider.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Slider.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "dependencies": [
+        "react-aria-components",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Switch.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Switch.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-table",
+      "type": "registry:ui",
+      "title": "Table",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-checkbox.json",
+        "https://react-aria.adobe.com/registry/css-progresscircle.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Table.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Table.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Tabs.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Tabs.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-taggroup",
+      "type": "registry:ui",
+      "title": "TagGroup",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json",
+        "https://react-aria.adobe.com/registry/css-content.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TagGroup.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/TagGroup.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-textfield",
+      "type": "registry:ui",
+      "title": "TextField",
+      "dependencies": [
+        "react-aria-components",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TextField.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/TextField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-timefield",
+      "type": "registry:ui",
+      "title": "TimeField",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json",
+        "https://react-aria.adobe.com/registry/css-datefield.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TimeField.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/TimeField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react",
+        "react-dom",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Toast.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Toast.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-togglebutton",
+      "type": "registry:ui",
+      "title": "ToggleButton",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ToggleButton.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ToggleButton.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-togglebuttongroup",
+      "type": "registry:ui",
+      "title": "ToggleButtonGroup",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ToggleButtonGroup.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ToggleButtonGroup.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-tokenfield",
+      "type": "registry:ui",
+      "title": "TokenField",
+      "dependencies": [
+        "react-aria-components",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-form.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TokenField.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/TokenField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-toolbar",
+      "type": "registry:ui",
+      "title": "Toolbar",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Toolbar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Toolbar.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Tooltip.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Tooltip.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-tree",
+      "type": "registry:ui",
+      "title": "Tree",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/css-checkbox.json",
+        "https://react-aria.adobe.com/registry/css-progresscircle.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Tree.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Tree.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks",
+      "type": "registry:style",
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/hooks-breadcrumbs.json",
+        "https://react-aria.adobe.com/registry/hooks-button.json",
+        "https://react-aria.adobe.com/registry/hooks-calendar.json",
+        "https://react-aria.adobe.com/registry/hooks-checkbox.json",
+        "https://react-aria.adobe.com/registry/hooks-checkboxgroup.json",
+        "https://react-aria.adobe.com/registry/hooks-colorarea.json",
+        "https://react-aria.adobe.com/registry/hooks-colorfield.json",
+        "https://react-aria.adobe.com/registry/hooks-colorslider.json",
+        "https://react-aria.adobe.com/registry/hooks-colorswatch.json",
+        "https://react-aria.adobe.com/registry/hooks-colorwheel.json",
+        "https://react-aria.adobe.com/registry/hooks-combobox.json",
+        "https://react-aria.adobe.com/registry/hooks-datefield.json",
+        "https://react-aria.adobe.com/registry/hooks-datepicker.json",
+        "https://react-aria.adobe.com/registry/hooks-daterangepicker.json",
+        "https://react-aria.adobe.com/registry/hooks-disclosure.json",
+        "https://react-aria.adobe.com/registry/hooks-dropdownlistbox.json",
+        "https://react-aria.adobe.com/registry/hooks-gridlist.json",
+        "https://react-aria.adobe.com/registry/hooks-link.json",
+        "https://react-aria.adobe.com/registry/hooks-listbox.json",
+        "https://react-aria.adobe.com/registry/hooks-menu.json",
+        "https://react-aria.adobe.com/registry/hooks-meter.json",
+        "https://react-aria.adobe.com/registry/hooks-modal.json",
+        "https://react-aria.adobe.com/registry/hooks-numberfield.json",
+        "https://react-aria.adobe.com/registry/hooks-popover.json",
+        "https://react-aria.adobe.com/registry/hooks-progressbar.json",
+        "https://react-aria.adobe.com/registry/hooks-radiogroup.json",
+        "https://react-aria.adobe.com/registry/hooks-rangecalendar.json",
+        "https://react-aria.adobe.com/registry/hooks-searchfield.json",
+        "https://react-aria.adobe.com/registry/hooks-select.json",
+        "https://react-aria.adobe.com/registry/hooks-separator.json",
+        "https://react-aria.adobe.com/registry/hooks-slider.json",
+        "https://react-aria.adobe.com/registry/hooks-switch.json",
+        "https://react-aria.adobe.com/registry/hooks-table.json",
+        "https://react-aria.adobe.com/registry/hooks-tabs.json",
+        "https://react-aria.adobe.com/registry/hooks-taggroup.json",
+        "https://react-aria.adobe.com/registry/hooks-textfield.json",
+        "https://react-aria.adobe.com/registry/hooks-timefield.json",
+        "https://react-aria.adobe.com/registry/hooks-toast.json",
+        "https://react-aria.adobe.com/registry/hooks-togglebutton.json",
+        "https://react-aria.adobe.com/registry/hooks-togglebuttongroup.json",
+        "https://react-aria.adobe.com/registry/hooks-toolbar.json",
+        "https://react-aria.adobe.com/registry/hooks-tooltip.json"
+      ]
+    },
+    {
+      "name": "hooks-breadcrumbs",
+      "type": "registry:ui",
+      "title": "Breadcrumbs",
+      "dependencies": [
+        "react-aria",
+        "lucide-react",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Breadcrumbs.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Breadcrumbs.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Link.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-button",
+      "type": "registry:ui",
+      "title": "Button",
+      "dependencies": [
+        "react-aria",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Button.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "dependencies": [
+        "@internationalized/date",
+        "lucide-react",
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/hooks-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Calendar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Button.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Calendar.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Checkbox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Checkbox.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-checkboxgroup",
+      "type": "registry:ui",
+      "title": "CheckboxGroup",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/CheckboxGroup.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/CheckboxGroup.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Checkbox.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-colorarea",
+      "type": "registry:ui",
+      "title": "ColorArea",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorArea.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ColorArea.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/ColorThumb.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-colorfield",
+      "type": "registry:ui",
+      "title": "ColorField",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorField.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ColorField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/TextField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-colorslider",
+      "type": "registry:ui",
+      "title": "ColorSlider",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorSlider.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ColorSlider.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/ColorThumb.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-colorswatch",
+      "type": "registry:ui",
+      "title": "ColorSwatch",
+      "dependencies": [
+        "react-aria"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorSwatch.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ColorSwatch.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-colorwheel",
+      "type": "registry:ui",
+      "title": "ColorWheel",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ColorWheel.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ColorWheel.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/ColorThumb.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-combobox",
+      "type": "registry:ui",
+      "title": "ComboBox",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "@react-types/shared",
+        "react-aria-components",
+        "lucide-react",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/hooks-dropdownlistbox.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ComboBox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ComboBox.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/TextField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/ListBox.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Popover.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-datefield",
+      "type": "registry:ui",
+      "title": "DateField",
+      "dependencies": [
+        "@internationalized/date",
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DateField.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/DateField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-datepicker",
+      "type": "registry:ui",
+      "title": "DatePicker",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "@internationalized/date",
+        "react-aria-components",
+        "lucide-react",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/hooks-calendar.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DatePicker.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Calendar.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/DateField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/DatePicker.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Popover.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-daterangepicker",
+      "type": "registry:ui",
+      "title": "DateRangePicker",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "@internationalized/date",
+        "react-aria-components",
+        "lucide-react",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/hooks-rangecalendar.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DateRangePicker.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/DateField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/DateRangePicker.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Popover.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/RangeCalendar.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-disclosure",
+      "type": "registry:ui",
+      "title": "Disclosure",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "lucide-react",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Disclosure.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Disclosure.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Content.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-dropdownlistbox",
+      "type": "registry:ui",
+      "title": "DropdownListBox",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DropdownListBox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hooks-gridlist",
+      "type": "registry:ui",
+      "title": "GridList",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react-aria-components",
+        "@react-types/shared",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/hooks-checkbox.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/GridList.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Checkbox.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/GridList.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-link",
+      "type": "registry:ui",
+      "title": "Link",
+      "dependencies": [
+        "react-aria",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Link.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Link.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-listbox",
+      "type": "registry:ui",
+      "title": "ListBox",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react-aria-components",
+        "@react-types/shared",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ListBox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ListBox.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-menu",
+      "type": "registry:ui",
+      "title": "Menu",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react-aria-components",
+        "@react-types/shared",
+        "lucide-react",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Button.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Menu.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Popover.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-meter",
+      "type": "registry:ui",
+      "title": "Meter",
+      "dependencies": [
+        "react-aria",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Meter.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Meter.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-modal",
+      "type": "registry:ui",
+      "title": "Modal",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react-aria-components",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Modal.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Button.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Dialog.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Modal.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-numberfield",
+      "type": "registry:ui",
+      "title": "NumberField",
+      "dependencies": [
+        "lucide-react",
+        "react-aria-components",
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/NumberField.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Button.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/NumberField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/TextField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react-aria-components",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Popover.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Button.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Dialog.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Popover.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-progressbar",
+      "type": "registry:ui",
+      "title": "ProgressBar",
+      "dependencies": [
+        "react-aria",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ProgressBar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ProgressBar.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-radiogroup",
+      "type": "registry:ui",
+      "title": "RadioGroup",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/RadioGroup.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/RadioGroup.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-rangecalendar",
+      "type": "registry:ui",
+      "title": "RangeCalendar",
+      "dependencies": [
+        "@internationalized/date",
+        "lucide-react",
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/hooks-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/RangeCalendar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Button.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/RangeCalendar.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-searchfield",
+      "type": "registry:ui",
+      "title": "SearchField",
+      "dependencies": [
+        "lucide-react",
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/SearchField.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/SearchField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/TextField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-select",
+      "type": "registry:ui",
+      "title": "Select",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "@react-types/shared",
+        "react-aria-components",
+        "lucide-react",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/hooks-dropdownlistbox.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Select.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Button.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/ListBox.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Popover.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Select.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "dependencies": [
+        "react-aria"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Separator.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Separator.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Slider.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Slider.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Switch.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Switch.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-table",
+      "type": "registry:ui",
+      "title": "Table",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "@react-types/shared",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Table.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Table.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react-aria-components",
+        "@react-types/shared",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Tabs.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Tabs.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-taggroup",
+      "type": "registry:ui",
+      "title": "TagGroup",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react-aria-components",
+        "@react-types/shared",
+        "react",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TagGroup.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/TagGroup.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-textfield",
+      "type": "registry:ui",
+      "title": "TextField",
+      "dependencies": [
+        "react-aria",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TextField.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/TextField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-timefield",
+      "type": "registry:ui",
+      "title": "TimeField",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TimeField.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/DateField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/TimeField.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Form.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "lucide-react",
+        "react"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/hooks-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Toast.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Toast.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Button.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-togglebutton",
+      "type": "registry:ui",
+      "title": "ToggleButton",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ToggleButton.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ToggleButton.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-togglebuttongroup",
+      "type": "registry:ui",
+      "title": "ToggleButtonGroup",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ToggleButtonGroup.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/ToggleButtonGroup.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/ToggleButton.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-toolbar",
+      "type": "registry:ui",
+      "title": "Toolbar",
+      "dependencies": [
+        "react-aria",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Toolbar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Toolbar.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hooks-tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "dependencies": [
+        "react-aria",
+        "react-stately",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Tooltip.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/Button.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/utilities.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/Tooltip.css",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

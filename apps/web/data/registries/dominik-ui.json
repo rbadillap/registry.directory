@@ -1,0 +1,80 @@
+{
+  "key": "dominik-ui",
+  "entry": "Dominik UI",
+  "name": "dominik-portfolio",
+  "homepage": "https://dominikkoch.dev",
+  "indexUrl": "https://dominikkoch.dev/r/registry.json",
+  "itemBase": "https://dominikkoch.dev/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "expandable-tabs",
+      "type": "registry:ui",
+      "title": "Expandable Tabs",
+      "description": "Animated icon tabs with a sliding active pill and an expanding label, built on the shadcn tooltip.",
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "components/ui/expandable-tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/expandable-tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command-tabs",
+      "type": "registry:ui",
+      "title": "Command Tabs",
+      "description": "A copyable command block with attached agent tabs and a sliding active pill — tabs can sit above or below the command.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/command-tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/command-tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "permission-selector",
+      "type": "registry:ui",
+      "title": "Permission Selector",
+      "description": "A composable segmented permission control with an animated sliding pill — read/write levels and deny/neutral/allow toggles.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/ui/permission-selector.tsx",
+          "type": "registry:ui",
+          "target": "@ui/permission-selector.tsx"
+        }
+      ]
+    },
+    {
+      "name": "braille-loader",
+      "type": "registry:ui",
+      "title": "Braille Loader",
+      "description": "An animated braille loading indicator with wave, typewriter, shimmer, and pulse variants.",
+      "files": [
+        {
+          "path": "components/ui/braille-loader.tsx",
+          "type": "registry:ui",
+          "target": "@ui/braille-loader.tsx"
+        },
+        {
+          "path": "lib/text-to-braille.ts",
+          "type": "registry:lib",
+          "target": "@lib/text-to-braille.ts"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,413 @@
+{
+  "key": "paceui",
+  "entry": "PaceUI",
+  "name": "PaceUI",
+  "homepage": "https://paceui.com",
+  "indexUrl": "https://paceui.com/r/registry.json",
+  "itemBase": "https://paceui.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "index",
+      "type": "registry:style",
+      "dependencies": [
+        "tw-animate-css",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "interactive-logs-chart",
+      "type": "registry:block",
+      "title": "Interactive Logs Chart",
+      "description": "An interactive chart visualizing system logs over time with data tooltips and active hover states.",
+      "registryDependencies": [
+        "card",
+        "chart",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/charts/interactive-logs-chart.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "traffic-logs-chart",
+      "type": "registry:block",
+      "title": "Traffic Logs Chart",
+      "description": "A visual representation of web traffic volume and request spikes across different time periods.",
+      "registryDependencies": [
+        "card",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/charts/traffic-logs-chart.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "interactive-sales-chart",
+      "type": "registry:block",
+      "title": "Interactive Sales Chart",
+      "description": "A dynamic chart tracking revenue trends and performance with interactive cursor details and tooltips.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "chart",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/charts/interactive-sales-chart.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "channel-sales-chart",
+      "type": "registry:block",
+      "title": "Channel Sales Chart",
+      "description": "A circular chart illustrating revenue distribution across different marketing acquisition and sales channels.",
+      "registryDependencies": [
+        "card",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/charts/channel-sales-chart.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "live-logs-feed",
+      "type": "registry:block",
+      "title": "Live Log Feed",
+      "description": "A real-time activity stream displaying recent system events and errors in a chronological layout.",
+      "registryDependencies": [
+        "card",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/feeds/live-logs-feed.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "create-user-form",
+      "type": "registry:block",
+      "title": "Create User Form",
+      "description": "Structured account creation form for onboarding new team members, including profile details, role assignment, department selection, and secure password setup.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "form-input",
+        "form-password",
+        "form-select",
+        "form-switch"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/forms/create-user-form.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "usage-logs-meter",
+      "type": "registry:block",
+      "title": "Usage Logs Meter",
+      "description": "A visual gauge displaying current system resource consumption against defined operational quota limits.",
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/meters/usage-logs-meter.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "source-sales-meter",
+      "type": "registry:block",
+      "title": "Source Sales Meter",
+      "description": "A list of progress bars ranking sales performance by acquisition source with percentage indicators.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "dropdown-menu",
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/meters/source-sales-meter.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "upgrade-sales-promo",
+      "type": "registry:block",
+      "title": "Upgrade Sales Promo",
+      "description": "An attention-grabbing card encouraging users to unlock premium analytics features and historical data access.",
+      "registryDependencies": [
+        "badge",
+        "card",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/promos/upgrade-sales-promo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "simple-logs-stat",
+      "type": "registry:block",
+      "title": "Simple Log Stat",
+      "description": "A minimal statistic card displaying total log counts with a clean, numerical layout.",
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/stats/simple-logs-stat.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "rich-sales-stat",
+      "type": "registry:block",
+      "title": "Rich Sales Stat",
+      "description": "A detailed dashboard card highlighting total revenue with trend indicators and percentage growth.",
+      "registryDependencies": [
+        "card",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/stats/rich-sales-stat.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "simple-logs-table",
+      "type": "registry:block",
+      "title": "Simple Log Table",
+      "description": "A clean data table listing system events with timestamp, severity, and message columns.",
+      "registryDependencies": [
+        "badge",
+        "card",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/tables/simple-logs-table.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-sales-table",
+      "type": "registry:block",
+      "title": "Product Sales Table",
+      "description": "A comprehensive data list showing product performance, quantities sold, and total revenue generated.",
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "card",
+        "dropdown-menu",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/tables/product-sales-table.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "simple-users-table",
+      "type": "registry:block",
+      "title": "Users Table",
+      "description": "Structured table layout for managing team members, showing profile details, roles, departments, account status, and recent activity.",
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "card",
+        "dropdown-menu",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/tables/simple-users-table.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "shadcn-day-fan",
+      "type": "registry:block",
+      "title": "Shadcn Day",
+      "description": "Use this component when highlighting special events, milestones, or important dates.",
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/fans/shadcn-day.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "form-input",
+      "type": "registry:component",
+      "title": "Form Input",
+      "description": "A form input component with validation and error handling.",
+      "dependencies": [
+        "@tanstack/react-form"
+      ],
+      "registryDependencies": [
+        "field",
+        "input",
+        "@paceui/form-error"
+      ],
+      "files": [
+        {
+          "path": "components/ui/forms/form-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form-password",
+      "type": "registry:component",
+      "title": "Form Password",
+      "description": "A password input field with visibility toggle and validation.",
+      "registryDependencies": [
+        "button",
+        "@paceui/form-input"
+      ],
+      "files": [
+        {
+          "path": "components/ui/forms/form-password.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form-select",
+      "type": "registry:component",
+      "title": "Form Select",
+      "description": "A select input field with options and validation.",
+      "dependencies": [
+        "@tanstack/react-form"
+      ],
+      "registryDependencies": [
+        "field",
+        "select",
+        "@paceui/form-error"
+      ],
+      "files": [
+        {
+          "path": "components/ui/forms/form-select.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form-switch",
+      "type": "registry:component",
+      "title": "Form Switch",
+      "description": "A switch input field with on/off state and validation.",
+      "dependencies": [
+        "@tanstack/react-form"
+      ],
+      "registryDependencies": [
+        "field",
+        "switch",
+        "@paceui/form-error"
+      ],
+      "files": [
+        {
+          "path": "components/ui/forms/form-switch.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form-textarea",
+      "type": "registry:component",
+      "title": "Form Textarea",
+      "description": "A textarea input field with validation and error handling.",
+      "dependencies": [
+        "@tanstack/react-form"
+      ],
+      "registryDependencies": [
+        "field",
+        "textarea",
+        "@paceui/form-error"
+      ],
+      "files": [
+        {
+          "path": "components/ui/forms/form-textarea.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form-checkbox",
+      "type": "registry:component",
+      "title": "Form Checkbox",
+      "description": "A checkbox input field with validation and error handling.",
+      "dependencies": [
+        "@tanstack/react-form"
+      ],
+      "registryDependencies": [
+        "field",
+        "checkbox",
+        "@paceui/form-error"
+      ],
+      "files": [
+        {
+          "path": "components/ui/forms/form-checkbox.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form-error",
+      "type": "registry:component",
+      "title": "Form Error",
+      "description": "A component for displaying form validation errors.",
+      "dependencies": [
+        "@tanstack/react-form"
+      ],
+      "files": [
+        {
+          "path": "components/ui/forms/form-error.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

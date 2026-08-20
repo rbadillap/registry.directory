@@ -1,0 +1,1203 @@
+{
+  "key": "evex",
+  "entry": "evex",
+  "name": "evex",
+  "homepage": "https://www.evex.sh",
+  "indexUrl": "https://evex.sh/r/registry.json",
+  "itemBase": "https://evex.sh/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "brand-visual-asset-generator",
+      "type": "registry:item",
+      "title": "Brand Visual Asset Generator",
+      "description": "Generate brand-aligned SVG asset packs for SaaS products using Context.dev brand extraction and a Quiver Arrow SVG tool.",
+      "categories": [
+        "marketing"
+      ],
+      "dependencies": [
+        "ai@^7.0.38",
+        "eve@^0.31.3",
+        "zod@4.4.3"
+      ],
+      "files": [
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/connections/context-dev.ts",
+          "type": "registry:file",
+          "target": "~/agent/connections/context-dev.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/skills/brand-visual-assets/references/brief-template.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/brand-visual-assets/references/brief-template.md"
+        },
+        {
+          "path": "agent/skills/brand-visual-assets/references/consistency.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/brand-visual-assets/references/consistency.md"
+        },
+        {
+          "path": "agent/skills/brand-visual-assets/references/default-pack.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/brand-visual-assets/references/default-pack.md"
+        },
+        {
+          "path": "agent/skills/brand-visual-assets/references/quality-bar.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/brand-visual-assets/references/quality-bar.md"
+        },
+        {
+          "path": "agent/skills/brand-visual-assets/references/scorecard.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/brand-visual-assets/references/scorecard.md"
+        },
+        {
+          "path": "agent/skills/brand-visual-assets/references/visual-taste.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/brand-visual-assets/references/visual-taste.md"
+        },
+        {
+          "path": "agent/skills/brand-visual-assets/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/brand-visual-assets/SKILL.md"
+        },
+        {
+          "path": "agent/tools/generate_svg_with_arrow.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/generate_svg_with_arrow.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/generation-failure-no-fabrication.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/generation-failure-no-fabrication.eval.ts"
+        },
+        {
+          "path": "evals/missing-context-asks.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/missing-context-asks.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        },
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        }
+      ]
+    },
+    {
+      "name": "branded-seo-page-builder",
+      "type": "registry:item",
+      "title": "Branded SEO Page Builder",
+      "description": "Generate an on-brand, SEO-optimized HTML page from a domain using Context.dev brand, content, and styleguide data.",
+      "categories": [
+        "marketing"
+      ],
+      "dependencies": [
+        "ai@^7.0.38",
+        "eve@^0.31.3"
+      ],
+      "files": [
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/connections/context-dev.ts",
+          "type": "registry:file",
+          "target": "~/agent/connections/context-dev.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/skills/ai-seo/references/content-patterns.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/ai-seo/references/content-patterns.md"
+        },
+        {
+          "path": "agent/skills/ai-seo/references/content-types.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/ai-seo/references/content-types.md"
+        },
+        {
+          "path": "agent/skills/ai-seo/references/okf.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/ai-seo/references/okf.md"
+        },
+        {
+          "path": "agent/skills/ai-seo/references/platform-ranking-factors.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/ai-seo/references/platform-ranking-factors.md"
+        },
+        {
+          "path": "agent/skills/ai-seo/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/ai-seo/SKILL.md"
+        },
+        {
+          "path": "agent/skills/seo-audit/references/ai-writing-detection.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/seo-audit/references/ai-writing-detection.md"
+        },
+        {
+          "path": "agent/skills/seo-audit/references/international-seo.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/seo-audit/references/international-seo.md"
+        },
+        {
+          "path": "agent/skills/seo-audit/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/seo-audit/SKILL.md"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/missing-domain-asks.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/missing-domain-asks.eval.ts"
+        },
+        {
+          "path": "evals/page-structure-contract.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/page-structure-contract.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        },
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        }
+      ]
+    },
+    {
+      "name": "code-reviewer",
+      "type": "registry:item",
+      "title": "Code Reviewer",
+      "description": "Eve agent for GitHub PR review. Mention it on a PR for inline comments on bugs, not style.",
+      "categories": [
+        "coding"
+      ],
+      "dependencies": [
+        "@upstash/ratelimit@^2.0.8",
+        "@upstash/redis@^1.38.0",
+        "ai@^7.0.38",
+        "eve@^0.31.3",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/channels/github.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/github.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/review-rate-limit.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/review-rate-limit.ts"
+        },
+        {
+          "path": "agent/skills/review-calibration/references/review-checklist.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/review-calibration/references/review-checklist.md"
+        },
+        {
+          "path": "agent/skills/review-calibration/references/severity-scale.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/review-calibration/references/severity-scale.md"
+        },
+        {
+          "path": "agent/skills/review-calibration/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/review-calibration/SKILL.md"
+        },
+        {
+          "path": "agent/tools/submit_pr_review.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/submit_pr_review.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/pr-review-input-contract.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/pr-review-input-contract.eval.ts"
+        },
+        {
+          "path": "evals/pr-review-no-findings.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/pr-review-no-findings.eval.ts"
+        },
+        {
+          "path": "evals/pr-review-with-inline-finding.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/pr-review-with-inline-finding.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        },
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        }
+      ]
+    },
+    {
+      "name": "eve-agent-builder",
+      "type": "registry:item",
+      "title": "Eve Agent Builder",
+      "description": "An Eve coding agent that creates Eve agents, runs their checks, deploys them to Vercel, and verifies the live routes.",
+      "categories": [
+        "coding"
+      ],
+      "dependencies": [
+        "ai@^7.0.38",
+        "eve@^0.31.3",
+        "zod@^4.4.3"
+      ],
+      "files": [
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/connections/vercel.ts",
+          "type": "registry:file",
+          "target": "~/agent/connections/vercel.ts"
+        },
+        {
+          "path": "agent/hooks/record-check-evidence.ts",
+          "type": "registry:file",
+          "target": "~/agent/hooks/record-check-evidence.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/instructions/runtime-status.ts",
+          "type": "registry:file",
+          "target": "~/agent/instructions/runtime-status.ts"
+        },
+        {
+          "path": "agent/lib/delivery-evidence.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/delivery-evidence.ts"
+        },
+        {
+          "path": "agent/lib/vercel-brokered-cli.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/vercel-brokered-cli.ts"
+        },
+        {
+          "path": "agent/sandbox.ts",
+          "type": "registry:file",
+          "target": "~/agent/sandbox.ts"
+        },
+        {
+          "path": "agent/skills/eve/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/eve/SKILL.md"
+        },
+        {
+          "path": "agent/skills/eve-agent-delivery/references/channel-setup.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/eve-agent-delivery/references/channel-setup.md"
+        },
+        {
+          "path": "agent/skills/eve-agent-delivery/references/testing-sequence.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/eve-agent-delivery/references/testing-sequence.md"
+        },
+        {
+          "path": "agent/skills/eve-agent-delivery/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/eve-agent-delivery/SKILL.md"
+        },
+        {
+          "path": "agent/tools/bash.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/bash.ts"
+        },
+        {
+          "path": "agent/tools/run_eve_cli.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/run_eve_cli.ts"
+        },
+        {
+          "path": "agent/tools/run_vercel_cli.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/run_vercel_cli.ts"
+        },
+        {
+          "path": "agent/tools/verify_vercel_preview.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/verify_vercel_preview.ts"
+        },
+        {
+          "path": "evals/bash-denial-routing.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/bash-denial-routing.eval.ts"
+        },
+        {
+          "path": "evals/bash-routing-patterns.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/bash-routing-patterns.eval.ts"
+        },
+        {
+          "path": "evals/deploy-target-clarification.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/deploy-target-clarification.eval.ts"
+        },
+        {
+          "path": "evals/final-report-quality.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/final-report-quality.eval.ts"
+        },
+        {
+          "path": "evals/loads-eve-skill.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/loads-eve-skill.eval.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/missing-credentials-stop.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/missing-credentials-stop.eval.ts"
+        },
+        {
+          "path": "evals/no-deploy-before-local-testing.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/no-deploy-before-local-testing.eval.ts"
+        },
+        {
+          "path": "evals/verification-command-contract.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/verification-command-contract.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        },
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        }
+      ]
+    },
+    {
+      "name": "linear-operations-agent",
+      "type": "registry:item",
+      "title": "Linear Operations Agent",
+      "description": "An Eve agent for Linear operations across Linear, Slack, and scheduled runs.",
+      "categories": [
+        "productivity"
+      ],
+      "dependencies": [
+        "@vercel/connect@^0.2.6",
+        "ai@^7.0.38",
+        "eve@^0.31.3"
+      ],
+      "files": [
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/channels/linear.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/linear.ts"
+        },
+        {
+          "path": "agent/channels/slack.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/slack.ts"
+        },
+        {
+          "path": "agent/connections/linear.ts",
+          "type": "registry:file",
+          "target": "~/agent/connections/linear.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/linear-operations-config.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/linear-operations-config.ts"
+        },
+        {
+          "path": "agent/schedules/cycle-health.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/cycle-health.ts"
+        },
+        {
+          "path": "agent/schedules/daily-triage-digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/daily-triage-digest.ts"
+        },
+        {
+          "path": "agent/schedules/p1-monitoring.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/p1-monitoring.ts"
+        },
+        {
+          "path": "agent/schedules/weekly-backlog-hygiene.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/weekly-backlog-hygiene.ts"
+        },
+        {
+          "path": "agent/schedules/weekly-initiative-updates.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/weekly-initiative-updates.ts"
+        },
+        {
+          "path": "agent/schedules/weekly-project-summary.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/weekly-project-summary.ts"
+        },
+        {
+          "path": "agent/skills/backlog-hygiene/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/backlog-hygiene/SKILL.md"
+        },
+        {
+          "path": "agent/skills/clarification/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/clarification/SKILL.md"
+        },
+        {
+          "path": "agent/skills/cycle-health/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/cycle-health/SKILL.md"
+        },
+        {
+          "path": "agent/skills/decomposition/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/decomposition/SKILL.md"
+        },
+        {
+          "path": "agent/skills/duplicate-detection/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/duplicate-detection/SKILL.md"
+        },
+        {
+          "path": "agent/skills/incident-support/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/incident-support/SKILL.md"
+        },
+        {
+          "path": "agent/skills/initiative-reporting/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/initiative-reporting/SKILL.md"
+        },
+        {
+          "path": "agent/skills/project-reporting/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/project-reporting/SKILL.md"
+        },
+        {
+          "path": "agent/skills/slack-intake/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/slack-intake/SKILL.md"
+        },
+        {
+          "path": "agent/skills/triage/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/triage/SKILL.md"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/triage-proposes-without-writing.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/triage-proposes-without-writing.eval.ts"
+        },
+        {
+          "path": "evals/unconfigured-initiative-no-update.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/unconfigured-initiative-no-update.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        },
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        }
+      ]
+    },
+    {
+      "name": "openui-assistant",
+      "type": "registry:item",
+      "title": "OpenUI Assistant",
+      "description": "An Eve agent that streams OpenUI Lang generative UI using the official openuiChatLibrary, with demo weather, stock, and search tools from the openui-chat example.",
+      "categories": [
+        "general"
+      ],
+      "dependencies": [
+        "@openuidev/react-lang@^0.2.8",
+        "@openuidev/react-ui@^0.12.1",
+        "ai@^7.0.38",
+        "eve@^0.31.3",
+        "just-bash@^3.0.2",
+        "zod@^4.4.3"
+      ],
+      "files": [
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/instructions/openui-prompt.ts",
+          "type": "registry:file",
+          "target": "~/agent/instructions/openui-prompt.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/openui-library.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/openui-library.ts"
+        },
+        {
+          "path": "agent/skills/openui/references/frontend-wiring.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/openui/references/frontend-wiring.md"
+        },
+        {
+          "path": "agent/skills/openui/references/openui-eve-chat.tsx",
+          "type": "registry:file",
+          "target": "~/agent/skills/openui/references/openui-eve-chat.tsx"
+        },
+        {
+          "path": "agent/skills/openui/references/syntax-examples.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/openui/references/syntax-examples.md"
+        },
+        {
+          "path": "agent/skills/openui/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/openui/SKILL.md"
+        },
+        {
+          "path": "agent/tools/get_stock_price.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/get_stock_price.ts"
+        },
+        {
+          "path": "agent/tools/get_weather.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/get_weather.ts"
+        },
+        {
+          "path": "agent/tools/search_web.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/search_web.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/openui-format-contract.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/openui-format-contract.eval.ts"
+        },
+        {
+          "path": "evals/stock-quote-exact-price.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/stock-quote-exact-price.eval.ts"
+        },
+        {
+          "path": "evals/weather-card-uses-tool-data.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/weather-card-uses-tool-data.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        },
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        }
+      ]
+    },
+    {
+      "name": "postgres-data-analyst",
+      "type": "registry:item",
+      "title": "Postgres Data Analyst",
+      "description": "An Eve-native Slack analyst for a single Postgres database. It answers Slack mentions and DMs, inspects schema metadata, and runs bounded read-only SQL through authored tools.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@vercel/connect@^0.2.6",
+        "ai@^7.0.38",
+        "eve@^0.31.3",
+        "pg@^8.21.0",
+        "pgsql-ast-parser@^12.0.1",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/channels/slack.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/slack.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/postgres.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/postgres.ts"
+        },
+        {
+          "path": "agent/lib/sql-policy.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/sql-policy.ts"
+        },
+        {
+          "path": "agent/tools/describe_schema.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/describe_schema.ts"
+        },
+        {
+          "path": "agent/tools/run_sql.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/run_sql.ts"
+        },
+        {
+          "path": "evals/ambiguous-metric-clarification.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/ambiguous-metric-clarification.eval.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/missing-database-url-does-not-invent.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/missing-database-url-does-not-invent.eval.ts"
+        },
+        {
+          "path": "evals/read-only-refusal.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/read-only-refusal.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        },
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        }
+      ]
+    },
+    {
+      "name": "programmatic-seo-agent",
+      "type": "registry:item",
+      "title": "Programmatic SEO Agent",
+      "description": "Weekly scheduled agent that grows a product's organic traffic with programmatic SEO: it checks the product's GitHub repository out into its sandbox, discovers and validates keyword opportunities with DataForSEO, researches each target with the Parallel web search API, generates batches of SEO-optimized pages matching the repo's content conventions, and pushes them as a pull request for human review.",
+      "categories": [
+        "marketing"
+      ],
+      "dependencies": [
+        "ai@^7.0.38",
+        "eve@^0.31.3",
+        "parallel-web@^1.1.0",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/dataforseo.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/dataforseo.ts"
+        },
+        {
+          "path": "agent/lib/pseo-config.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/pseo-config.ts"
+        },
+        {
+          "path": "agent/sandbox.ts",
+          "type": "registry:file",
+          "target": "~/agent/sandbox.ts"
+        },
+        {
+          "path": "agent/schedules/weekly-programmatic-seo.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/weekly-programmatic-seo.ts"
+        },
+        {
+          "path": "agent/skills/programmatic-seo/references/keyword-research.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/programmatic-seo/references/keyword-research.md"
+        },
+        {
+          "path": "agent/skills/programmatic-seo/references/page-quality.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/programmatic-seo/references/page-quality.md"
+        },
+        {
+          "path": "agent/skills/programmatic-seo/references/playbooks.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/programmatic-seo/references/playbooks.md"
+        },
+        {
+          "path": "agent/skills/programmatic-seo/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/programmatic-seo/SKILL.md"
+        },
+        {
+          "path": "agent/tools/discover_keywords.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/discover_keywords.ts"
+        },
+        {
+          "path": "agent/tools/research_keyword.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/research_keyword.ts"
+        },
+        {
+          "path": "agent/tools/validate_keywords.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/validate_keywords.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/low-volume-run-is-skipped.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/low-volume-run-is-skipped.eval.ts"
+        },
+        {
+          "path": "evals/missing-config-does-not-publish.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/missing-config-does-not-publish.eval.ts"
+        },
+        {
+          "path": "evals/no-fabricated-volumes.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/no-fabricated-volumes.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        },
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        }
+      ]
+    },
+    {
+      "name": "supabase-data-analyst",
+      "type": "registry:item",
+      "title": "Supabase Data Analyst",
+      "description": "A Slack-native Eve analyst for a single Supabase project that only runs read-only SQL queries. It exposes just supabase__list_tables and supabase__execute_sql through an MCP client connection to the hosted Supabase MCP server; no write, migration, Edge Function, branch, storage, logs, advisors, account, or docs tools are available.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@vercel/connect@^0.2.6",
+        "ai@^7.0.38",
+        "eve@^0.31.3"
+      ],
+      "files": [
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/channels/slack.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/slack.ts"
+        },
+        {
+          "path": "agent/connections/supabase.ts",
+          "type": "registry:file",
+          "target": "~/agent/connections/supabase.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/supabase-config.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/supabase-config.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/secret-redaction.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/secret-redaction.eval.ts"
+        },
+        {
+          "path": "evals/write-request-refusal.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/write-request-refusal.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        },
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        }
+      ]
+    },
+    {
+      "name": "x-draft-assistant",
+      "type": "registry:item",
+      "title": "X Draft Assistant",
+      "description": "A scheduled Eve agent that scans a configured set of X (Twitter) profiles every day, surfaces hot topics from their recent posts, researches each topic with the [Parallel](https://parallel.ai/) web search API, and creates **three draft candidates** for X in [Typefully](https://typefully.com) so a human can review and publish them.",
+      "categories": [
+        "general"
+      ],
+      "dependencies": [
+        "ai@^7.0.38",
+        "eve@^0.31.3",
+        "parallel-web@^1.1.0",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/hot-topic-config.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/hot-topic-config.ts"
+        },
+        {
+          "path": "agent/lib/typefully-client.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/typefully-client.ts"
+        },
+        {
+          "path": "agent/schedules/daily-x-drafts.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/daily-x-drafts.ts"
+        },
+        {
+          "path": "agent/skills/social/references/platform-limits.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/social/references/platform-limits.md"
+        },
+        {
+          "path": "agent/skills/social/references/post-templates.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/social/references/post-templates.md"
+        },
+        {
+          "path": "agent/skills/social/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/social/SKILL.md"
+        },
+        {
+          "path": "agent/skills/typefully-best-practices/references/exactly-once.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/typefully-best-practices/references/exactly-once.md"
+        },
+        {
+          "path": "agent/skills/typefully-best-practices/references/x-automation.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/typefully-best-practices/references/x-automation.md"
+        },
+        {
+          "path": "agent/skills/typefully-best-practices/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/typefully-best-practices/SKILL.md"
+        },
+        {
+          "path": "agent/tools/create_typefully_tag.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/create_typefully_tag.ts"
+        },
+        {
+          "path": "agent/tools/create_x_drafts.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/create_x_drafts.ts"
+        },
+        {
+          "path": "agent/tools/list_typefully_tags.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/list_typefully_tags.ts"
+        },
+        {
+          "path": "agent/tools/preview_x_draft.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/preview_x_draft.ts"
+        },
+        {
+          "path": "agent/tools/research_hot_topics.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/research_hot_topics.ts"
+        },
+        {
+          "path": "agent/tools/scan_x_profiles.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/scan_x_profiles.ts"
+        },
+        {
+          "path": "evals/create-confirmation.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/create-confirmation.eval.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/failed-create-no-retry.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/failed-create-no-retry.eval.ts"
+        },
+        {
+          "path": "evals/missing-config-does-not-create.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/missing-config-does-not-create.eval.ts"
+        },
+        {
+          "path": "evals/x-draft-assistant.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/x-draft-assistant.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        },
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        }
+      ]
+    },
+    {
+      "name": "x-hot-topic-digest",
+      "type": "registry:item",
+      "title": "X Hot Topic Digest",
+      "description": "A scheduled Eve agent that scans a configured set of X (Twitter) profiles every day, surfaces hot topics from their recent posts, researches each topic with the [Parallel](https://parallel.ai/) web search API, and delivers an HTML digest by email through [Resend](https://resend.com).",
+      "categories": [
+        "research"
+      ],
+      "dependencies": [
+        "ai@^7.0.38",
+        "eve@^0.31.3",
+        "parallel-web@^1.1.0",
+        "resend@^6.14.0",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/hot-topic-config.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/hot-topic-config.ts"
+        },
+        {
+          "path": "agent/schedules/daily-hot-topic-digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/daily-hot-topic-digest.ts"
+        },
+        {
+          "path": "agent/skills/email-best-practices/references/accessibility.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/email-best-practices/references/accessibility.md"
+        },
+        {
+          "path": "agent/skills/email-best-practices/references/sending-reliability.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/email-best-practices/references/sending-reliability.md"
+        },
+        {
+          "path": "agent/skills/email-best-practices/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/email-best-practices/SKILL.md"
+        },
+        {
+          "path": "agent/tools/preview_digest_email.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/preview_digest_email.ts"
+        },
+        {
+          "path": "agent/tools/research_hot_topics.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/research_hot_topics.ts"
+        },
+        {
+          "path": "agent/tools/scan_x_profiles.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/scan_x_profiles.ts"
+        },
+        {
+          "path": "agent/tools/send_digest_email.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/send_digest_email.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/failed-send-not-delivered.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/failed-send-not-delivered.eval.ts"
+        },
+        {
+          "path": "evals/hot-topic-digest.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/hot-topic-digest.eval.ts"
+        },
+        {
+          "path": "evals/missing-config-does-not-send.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/missing-config-does-not-send.eval.ts"
+        },
+        {
+          "path": "evals/send-confirmation.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/send-confirmation.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        },
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        }
+      ]
+    }
+  ]
+}
