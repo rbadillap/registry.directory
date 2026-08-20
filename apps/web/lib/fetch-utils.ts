@@ -1,8 +1,11 @@
 /**
- * Fetch utilities with proper identification for registry.directory
+ * Fetch utilities with proper identification for registry.directory.
+ *
+ * BAD-138 left exactly two callers, both of which resolve a single item
+ * against its origin registry on demand: the /r item proxy and fetchItemData
+ * in components/registry-slug-view.tsx. Registry *indexes* are never fetched
+ * from the app any more — they are read from apps/web/data.
  */
-
-import type { DirectoryEntry } from "./types";
 
 const USER_AGENT = 'Mozilla/5.0 (compatible; registry-directory/1.0; +https://registry.directory)'
 
@@ -39,22 +42,6 @@ export async function registryFetch(
     clearTimeout(timeoutId)
     throw error
   }
-}
-
-/**
- * Resolve the registry.json URL for a directory entry.
- * Used by registry-stats.ts and registry-items.ts.
- */
-export function getRegistryJsonUrl(registry: DirectoryEntry): string | null {
-  if (registry.registry_url) {
-    return registry.registry_url;
-  }
-
-  if (registry.url) {
-    return `${registry.url.replace(/\/$/, "")}/r/registry.json`;
-  }
-
-  return null;
 }
 
 /**

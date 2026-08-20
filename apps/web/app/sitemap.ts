@@ -3,7 +3,7 @@ import { hasOnlyRenderableFiles } from "@/lib/file-utils"
 import {
   loadDirectory,
   registryBasePath,
-  fetchRegistryIndex,
+  loadRegistryIndex,
 } from "@/lib/resolve-registry"
 import { fetchAllGitHubStats } from "@/lib/github-stats"
 
@@ -58,7 +58,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           },
         ]
 
-        const registryData = await fetchRegistryIndex(registry, 10000)
+        const registryData = await loadRegistryIndex(registry)
         if (!registryData) return urls
 
         for (const item of registryData.items) {

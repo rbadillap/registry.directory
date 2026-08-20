@@ -7,7 +7,7 @@ import {
   entryHandle,
   parseGithubRef,
   resolveByHandle,
-  fetchRegistryIndex,
+  loadRegistryIndex,
 } from "@/lib/resolve-registry"
 
 // /{handle} — the universal shortlink. handle = namespace minus "@".
@@ -31,7 +31,7 @@ export async function generateMetadata({
     return {}
   }
 
-  const index = await fetchRegistryIndex(registry)
+  const index = await loadRegistryIndex(registry)
   const itemCount = index?.items?.length || 0
   const canonical = `https://registry.directory/${handle.toLowerCase()}`
 

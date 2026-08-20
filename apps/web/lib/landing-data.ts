@@ -4,7 +4,7 @@ import { groupItemsByCategory } from "./registry-mappings"
 import { hasOnlyRenderableFiles } from "./file-utils"
 import { fetchGitHubStatsForUrl } from "./github-stats"
 import { getAffiliates } from "./affiliates"
-import { fetchRegistryIndex } from "./resolve-registry"
+import { loadRegistryIndex } from "./resolve-registry"
 
 export type SemanticCategory = { name: string; count: number }
 
@@ -67,7 +67,7 @@ export interface LandingData {
 export async function loadLandingData(
   registry: DirectoryEntry
 ): Promise<LandingData> {
-  const registryData = await fetchRegistryIndex(registry)
+  const registryData = await loadRegistryIndex(registry)
 
   const items = Array.isArray(registryData?.items) ? registryData.items : []
   const categoriesMap = items.length > 0 ? groupItemsByCategory(items) : null

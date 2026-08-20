@@ -4,7 +4,7 @@ import type { IndexedItem } from "./items-index";
 import {
   registryBasePath,
   parseGithubRef,
-  fetchRegistryIndex,
+  loadRegistryIndex,
 } from "./resolve-registry";
 
 async function fetchItemsForRegistry(
@@ -19,7 +19,7 @@ async function fetchItemsForRegistry(
     ? `https://github.com/${gh.owner}.png`
     : (registry.github_profile ?? null);
 
-  const data = await fetchRegistryIndex(registry, 10000);
+  const data = await loadRegistryIndex(registry);
   if (!data?.items || data.items.length === 0) return [];
 
   return data.items
@@ -37,10 +37,12 @@ async function fetchItemsForRegistry(
     }));
 }
 
-// TODO: Foundation C currently delivers the items index as a server prop (build-time only).
-// If a second consumer appears (e.g. overview page search, similar component suggestions),
-// migrate to Vercel Blob persistence — same pattern as github-stats.ts.
-// See BREAKTHROUGHS.md #1 for the precedent (Phase 1 no Blob → Phase 2 Blob).
+// The home's cross-registry search index, flattened from the committed views
+// at build time and handed to DirectoryTabs as a server prop. The older plan
+// here was to persist this to Vercel Blob once a second consumer appeared;
+// BAD-138 removed the reason — every consumer can rebuild it from data/ at
+// zero network cost, so blob persistence would only add a second copy that
+// can disagree with the first.
 export async function fetchAllRegistryItems(
   registries: DirectoryEntry[]
 ): Promise<IndexedItem[]> {

@@ -2,8 +2,7 @@ import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import type { DirectoryEntry } from "./types"
 import type { Registry } from "./registry-types"
-import { registryFetch, getRegistryJsonUrl } from "./fetch-utils"
-import { readCachedJson, writeCachedJson } from "./build-cache"
+import { loadRegistryView } from "./registry-data"
 
 export type GithubRef = { owner: string; repo: string }
 
@@ -62,70 +61,32 @@ export async function resolveByHandle(
   )
 }
 
-// shadcn dynamic search (jul 2026): a registry may answer the bare GET with
-// a partial page plus a pagination object. Without this loop we would
-// silently index 50 items instead of the full catalog.
-type PaginatedRegistry = Registry & {
-  pagination?: { total: number; offset: number; limit: number; hasMore: boolean }
-}
-
-const MAX_PAGINATION_PAGES = 100
-
-async function fetchRemainingPages(
-  targetUrl: string,
-  first: PaginatedRegistry,
-  timeout: number
-): Promise<Registry> {
-  const items = [...first.items]
-  const pageSize = first.pagination?.limit || items.length || 100
-
-  for (let page = 0; page < MAX_PAGINATION_PAGES; page++) {
-    const url = new URL(targetUrl)
-    url.searchParams.set("limit", String(pageSize))
-    url.searchParams.set("offset", String(items.length))
-
-    const response = await registryFetch(url.toString(), {
-      timeout,
-      next: { revalidate: 86400 },
-    })
-    if (!response.ok) break
-
-    const next = (await response.json()) as PaginatedRegistry
-    if (!next.items?.length) break
-    items.push(...next.items)
-    if (!next.pagination?.hasMore) break
-  }
-
-  return { ...first, items }
-}
-
-export async function fetchRegistryIndex(
-  entry: DirectoryEntry,
-  timeout = 5000
+/**
+ * A registry's index, read from the view committed at
+ * data/registries/{key}.json. This used to fetch the registry's live
+ * registry.json on every render — up to 3.4 MB per index, re-downloaded by
+ * every page that needed it, which is what made ISR writes the largest line
+ * on the Vercel bill (BAD-138).
+ *
+ * The network work — retries, pagination, rate limits — now happens once, in
+ * scripts/index.mjs, on the maintainer's machine. Here it is a file read.
+ *
+ * Returns null when the entry has no view — either because its origin was
+ * unreachable at index time (the manifest records that as status "missing")
+ * or because directory.json gained an entry that `pnpm index` has not seen
+ * yet (which scripts/views-check.mjs refuses to build against). Callers
+ * already degrade: the landing renders without a catalog, the item index
+ * skips the registry.
+ */
+export async function loadRegistryIndex(
+  entry: DirectoryEntry
 ): Promise<Registry | null> {
-  const targetUrl = getRegistryJsonUrl(entry)
-  if (!targetUrl) return null
+  const view = await loadRegistryView(entry)
+  if (!view) return null
 
-  const cached = await readCachedJson<Registry>(targetUrl)
-  if (cached) return cached
-
-  try {
-    const response = await registryFetch(targetUrl, {
-      timeout,
-      next: { revalidate: 86400 },
-    })
-    if (!response.ok) return null
-    let data = (await response.json()) as PaginatedRegistry
-    if (data.pagination?.hasMore) {
-      console.log(
-        `[Registry] ${entry.name} paginates its index (${data.items.length}/${data.pagination.total}), fetching remaining pages`
-      )
-      data = await fetchRemainingPages(targetUrl, data, timeout)
-    }
-    await writeCachedJson(targetUrl, data)
-    return data
-  } catch (error) {
-    console.error(`[Registry] Index fetch error for ${entry.name}:`, error)
-    return null
+  return {
+    name: view.name,
+    homepage: view.homepage,
+    items: view.items,
   }
 }
