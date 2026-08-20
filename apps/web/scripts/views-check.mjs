@@ -189,6 +189,13 @@ async function main() {
 
   for (const entry of directory) {
     const key = registryKey(entry);
+    // Two entries deriving the same key would share one view: whichever the
+    // runtime resolves second gets the other's catalog.
+    if (expectedKeys.has(key)) {
+      fail(
+        `public/directory.json has two entries that resolve to key ${key} ("${entry.name}") — one view cannot serve both`
+      );
+    }
     expectedKeys.add(key);
     const record = byKey.get(key);
     if (!record) {
@@ -216,6 +223,14 @@ async function main() {
   if (stale.length > 0) {
     fail(
       `${stale.length} manifest record(s) name registries absent from public/directory.json: ${stale.join(", ")}`
+    );
+  }
+  if (
+    manifest.counts?.directory !== undefined &&
+    manifest.counts.directory !== directory.length
+  ) {
+    fail(
+      `manifest counts.directory is ${manifest.counts.directory}, public/directory.json holds ${directory.length}`
     );
   }
   if (unaccounted.length > 0) {

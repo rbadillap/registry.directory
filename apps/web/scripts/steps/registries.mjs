@@ -38,62 +38,65 @@ const MAX_PAGINATION_PAGES = 100;
 // catalog than the origin holds, and a view that under-reports itself is
 // indistinguishable from a registry that deleted half its components.
 //
-// Names are deduplicated as pages arrive, because that is the count that has
-// to reach the total: an origin that serves overlapping windows can hand over
-// `total` raw items that collapse into fewer real ones.
+// Two counts are tracked, and confusing them breaks the walk. `consumed` is
+// how many rows the origin has handed over — that is what `offset` means to
+// it, and what its `total` counts. `items` holds one entry per distinct name,
+// which is what the view can address. A source that repeats a name would make
+// a deduplicated offset walk backwards and re-request pages forever.
 async function fetchRemainingPages(url, first) {
   const items = [];
   const seen = new Set();
+  let consumed = 0;
+
   const take = (page) => {
-    let added = 0;
-    for (const item of page ?? []) {
+    const rows = page ?? [];
+    consumed += rows.length;
+    for (const item of rows) {
       if (!item?.name || seen.has(item.name)) continue;
       seen.add(item.name);
       items.push(item);
-      added += 1;
     }
-    return added;
+    return rows.length;
   };
   take(first.items);
 
-  const pageSize = first.pagination?.limit || items.length || 100;
+  const pageSize = first.pagination?.limit || consumed || 100;
   const expected = first.pagination?.total;
   let complete = false;
 
   for (let page = 0; page < MAX_PAGINATION_PAGES; page++) {
     const paged = new URL(url);
     paged.searchParams.set("limit", String(pageSize));
-    paged.searchParams.set("offset", String(items.length));
+    paged.searchParams.set("offset", String(consumed));
 
     const result = await fetchWithRetries(paged.toString(), { attempts: 3 });
     if (!result.json) {
-      return { error: `${result.error} (page ${page + 2}, ${items.length} items in)` };
+      return { error: `${result.error} (page ${page + 2}, ${consumed} rows in)` };
     }
 
-    const added = take(result.json.items);
+    const rows = take(result.json.items);
     if (result.json.pagination?.hasMore === false) {
       complete = true;
       break;
     }
-    // Still claiming more, but this page moved nothing: the offset is not
-    // advancing and another request would ask the same question forever.
-    if (added === 0) {
-      return {
-        error: `pagination stalled at ${items.length} items with more claimed`,
-      };
+    // Still claiming more, but the page was empty: the cursor cannot advance
+    // and another request would ask the same question forever.
+    if (rows === 0) {
+      return { error: `pagination stalled at ${consumed} rows with more claimed` };
     }
   }
 
   if (!complete) {
     return {
-      error: `pagination did not finish within ${MAX_PAGINATION_PAGES} pages (${items.length} items in)`,
+      error: `pagination did not finish within ${MAX_PAGINATION_PAGES} pages (${consumed} rows in)`,
     };
   }
 
-  // The origin said how many items to expect, counted after collapsing repeats.
-  if (typeof expected === "number" && items.length !== expected) {
+  // Compared against rows, not names: `total` counts what the origin serves,
+  // and an origin is free to serve the same name twice.
+  if (typeof expected === "number" && consumed !== expected) {
     return {
-      error: `pagination returned ${items.length} distinct items, origin declared ${expected}`,
+      error: `pagination consumed ${consumed} rows, origin declared ${expected}`,
     };
   }
 
@@ -153,8 +156,8 @@ function slimItem(item) {
 // first/middle/last keeps partially-gated registries in. Transient failures
 // (429, 5xx, timeouts) get the benefit of the doubt.
 //
-// This probe used to run inside the Vercel build (lib/catalog.ts). It runs
-// here now: the indexer probes, the build reads the conclusion.
+// Probing belongs here rather than in the build: it costs a few requests per
+// registry, and the build only needs the conclusion.
 const GATED_STATUSES = new Set([401, 402, 403, 404, 410]);
 
 async function probeResolvable(base, names) {
@@ -323,14 +326,19 @@ async function failedRead(entry, key, url, error, label) {
   // A reusable view is one that describes the same registry this entry now
   // names. If the directory has since been renamed or repointed, the old file
   // holds a different registry's catalog under a matching key — serving it
-  // would answer today's URL with yesterday's origin, so it is treated as if
-  // there were no view at all.
+  // would answer today's URL with yesterday's origin.
   const sameRegistry =
     previous && previous.entry === entry.name && previous.indexUrl === url;
 
   if (previous && !sameRegistry) {
+    // Deleted, not merely ignored. A "missing" record and a file on disk are
+    // contradictory claims about the same registry, and the guard rejects the
+    // pair; leaving the file would also keep the key alive through the orphan
+    // prune, so nothing would ever clear it.
+    const { unlink } = await import("node:fs/promises");
+    await unlink(viewPath(key)).catch(() => {});
     console.log(
-      `${label(entry)}: ${error} — the view on disk describes ${previous.entry} at ${previous.indexUrl}, not reusing it`,
+      `${label(entry)}: ${error} — removed the view on disk, it describes ${previous.entry} at ${previous.indexUrl}`,
     );
   }
 
@@ -345,7 +353,7 @@ async function failedRead(entry, key, url, error, label) {
       status: "reused",
       error,
       resolvable: previous.resolvable,
-      ...(previous.originEmbedsContent ? { originEmbedsContent: true } : {}),
+      ...(previous.embedsContent ? { embedsContent: true } : {}),
       snapshot: {
         url,
         items: previous.items.map((i) => ({
@@ -425,6 +433,7 @@ async function indexOne(entry, probe, label, attempts) {
     indexUrl: url,
     itemBase: base,
     resolvable,
+    ...(embedsContent ? { embedsContent: true } : {}),
     items,
   };
 

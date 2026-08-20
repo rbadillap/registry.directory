@@ -120,7 +120,7 @@ export interface GitHubStatsEntry {
 
 let githubPromise: Promise<Record<string, GitHubStatsEntry>> | null = null
 
-/** data/github.json, same shape the Vercel Blob cache used to hold. */
+/** data/github.json: stars and last-push date, keyed by github_url. */
 export function loadGitHubData(): Promise<Record<string, GitHubStatsEntry>> {
   githubPromise ??= readFile(join(DATA_DIR, "github.json"), "utf8")
     .then((raw) => JSON.parse(raw) as Record<string, GitHubStatsEntry>)

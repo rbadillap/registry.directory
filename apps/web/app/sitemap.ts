@@ -11,10 +11,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://registry.directory'
   const entries: MetadataRoute.Sitemap = []
 
-  // One timestamp for the whole build. Stamping `new Date()` per entry told
-  // crawlers every URL in the directory changed on every daily rebuild, which
-  // is how a sitemap teaches Google to stop trusting its own lastmod. The
-  // home page genuinely does change each rebuild — the item pages below only
+  // One timestamp for the whole build. Stamping `new Date()` per entry would
+  // tell crawlers every URL in the directory changed on every deploy, which is
+  // how a sitemap teaches Google to stop trusting its own lastmod. The home
+  // page genuinely does change with each deploy — the item pages below only
   // claim a date when their registry gives us one.
   const builtAt = new Date()
 

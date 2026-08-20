@@ -63,13 +63,12 @@ export async function resolveByHandle(
 
 /**
  * A registry's index, read from the view committed at
- * data/registries/{key}.json. This used to fetch the registry's live
- * registry.json on every render — up to 3.4 MB per index, re-downloaded by
- * every page that needed it, which is what made ISR writes the largest line
- * on the Vercel bill.
+ * data/registries/{key}.json.
  *
- * The network work — retries, pagination, rate limits — now happens once, in
- * scripts/index.mjs, run locally. Here it is a file read.
+ * A file read, never a request: an index can reach 3.4 MB, and fetching one
+ * per render is what makes a page expensive to regenerate. All the network
+ * work — retries, pagination, rate limits — happens once in scripts/index.mjs,
+ * run locally.
  *
  * Returns null when the entry has no view — either because its origin was
  * unreachable at index time (the manifest records that as status "missing")
