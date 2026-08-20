@@ -38,11 +38,11 @@ async function fetchItemsForRegistry(
 }
 
 // The home's cross-registry search index, flattened from the committed views
-// at build time and handed to DirectoryTabs as a server prop. The older plan
-// here was to persist this to Vercel Blob once a second consumer appeared;
-// No reason field: every consumer can rebuild it from data/ at
-// zero network cost, so blob persistence would only add a second copy that
-// can disagree with the first.
+// at build time and handed to DirectoryTabs as a server prop.
+//
+// Rebuilt on demand rather than stored: reading data/ costs nothing, and a
+// stored copy is one more thing that can disagree with the views it came
+// from.
 export async function fetchAllRegistryItems(
   registries: DirectoryEntry[]
 ): Promise<IndexedItem[]> {

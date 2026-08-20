@@ -2,8 +2,8 @@ import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import type { DirectoryEntry } from "@/lib/types"
 
-// Read local directory.json at build time and cache for the day, aligned with
-// the daily cron rebuild. No remote fetches, so this can be fully static.
+// Read local directory.json at build time. No remote fetches, so this can be
+// fully static.
 export const dynamic = "force-static"
 export const revalidate = 86400
 
@@ -48,7 +48,7 @@ export async function GET() {
   lines.push("# registry.directory")
   lines.push("")
   lines.push(
-    `> The discovery layer for the shadcn/ui registry ecosystem. Browse, search, and compare components across ${registries.length} public registries, then install them with the shadcn CLI. Static, rebuilt daily.`
+    `> The discovery layer for the shadcn/ui registry ecosystem. Browse, search, and compare components across ${registries.length} public registries, then install them with the shadcn CLI. A static site, rebuilt when the catalog changes.`
   )
   lines.push("")
   lines.push(

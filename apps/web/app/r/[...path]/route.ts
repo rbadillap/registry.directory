@@ -27,8 +27,8 @@ const JSON_HEADERS = {
   "Content-Type": "application/json",
   "X-Content-Type-Options": "nosniff",
   "Access-Control-Allow-Origin": "*",
-  // Cached per full URL (query included) at the CDN; the daily rebuild
-  // rewrites the blob, so stale answers converge within the hour.
+  // Cached per full URL, query included, at the CDN. A deployment ships new
+  // data with a new catalog, so stale answers converge within the hour.
   "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
 } as const
 

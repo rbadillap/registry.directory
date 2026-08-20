@@ -3,10 +3,9 @@ import { loadGitHubData } from "./registry-data";
 
 // Stars and last-push dates for every registry with a github_url.
 //
-// Read from data/github.json, refreshed by `pnpm index`. This module
-// used to call the GitHub API during the build and write the result back to
-// the github.json blob — which meant any build, and even a local dev render,
-// overwrote production's cache. Nothing here writes anything any more.
+// Read from data/github.json, refreshed by `pnpm index`. This module only
+// reads: nothing here calls the GitHub API and nothing here writes, so
+// rendering a page — in a build or in dev — cannot alter what the site serves.
 //
 // The stored shape keeps `fetchedAt` for provenance; callers never see it.
 

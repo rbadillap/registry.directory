@@ -19,6 +19,7 @@ import {
   REGISTRIES_DIR,
   listRegistryFiles,
   loadDirectory,
+  indexUrl,
   registryKey,
 } from "./lib/data-io.mjs";
 
@@ -174,15 +175,48 @@ async function main() {
     fail(`manifest counts.views is ${manifest.counts.views}, data/registries holds ${onDisk.length}`);
   }
 
-  // 3. The manifest accounts for every entry in public/directory.json. An
-  //    unaccounted entry means directory.json moved on and data/ did not —
-  //    the registry would render as an empty catalog with nothing recording
-  //    why. A registry that simply could not be reached is accounted for:
-  //    it carries status "missing" and only earns a note below.
+  // 3. directory.json, the manifest and the views describe the same set of
+  //    registries, one to one. A key that merely exists is not enough: the
+  //    runtime looks a registry up by the name in directory.json, so a record
+  //    filed under the right key but carrying a stale name resolves to null
+  //    and the page renders empty. Recomputing name and index URL from the
+  //    entry is what ties the three files to one another instead of leaving
+  //    each internally consistent and collectively wrong.
   const byKey = new Map(manifest.registries.map((r) => [r.key, r]));
   const unaccounted = [];
-  for (const entry of await loadDirectory()) {
-    if (!byKey.has(registryKey(entry))) unaccounted.push(entry.name);
+  const directory = await loadDirectory();
+  const expectedKeys = new Set();
+
+  for (const entry of directory) {
+    const key = registryKey(entry);
+    expectedKeys.add(key);
+    const record = byKey.get(key);
+    if (!record) {
+      unaccounted.push(entry.name);
+      continue;
+    }
+    if (record.name !== entry.name) {
+      fail(
+        `manifest records "${record.name}" for key ${key}, public/directory.json now calls it "${entry.name}" — re-index so the two agree`
+      );
+    }
+    const url = indexUrl(entry);
+    if (record.url !== url) {
+      fail(
+        `manifest built ${key} from ${record.url}, public/directory.json now points at ${url} — the view holds data from the old origin`
+      );
+    }
+  }
+
+  // A record for a registry the directory no longer lists is the mirror of an
+  // unaccounted entry: data nothing can reach, still counted in the totals.
+  const stale = manifest.registries
+    .filter((r) => !expectedKeys.has(r.key))
+    .map((r) => r.name);
+  if (stale.length > 0) {
+    fail(
+      `${stale.length} manifest record(s) name registries absent from public/directory.json: ${stale.join(", ")}`
+    );
   }
   if (unaccounted.length > 0) {
     fail(

@@ -29,19 +29,36 @@ import {
 // thousands.
 const MAX_PAGINATION_PAGES = 100;
 
-// Walks the remaining pages. Returns { index } when the catalog was read in
-// full, or { error } when a page could not be fetched.
+// Walks the remaining pages. Returns { index } only when the catalog was read
+// in full; every other outcome is { error }.
 //
-// The two outcomes must stay distinct. A page that fails and a page that says
-// "no more items" both stop the loop, but they mean opposite things: one is a
-// complete catalog, the other is a truncated one. Collapsing them writes a
-// short item list under a healthy status, and a view that under-reports its
-// own catalog is indistinguishable from a registry that deleted half its
-// components.
+// Success has exactly one shape: a page said there is no more. Everything else
+// that stops the loop — a failed fetch, an empty page that still claims more,
+// pages that stop adding anything new, the page ceiling — leaves a shorter
+// catalog than the origin holds, and a view that under-reports itself is
+// indistinguishable from a registry that deleted half its components.
+//
+// Names are deduplicated as pages arrive, because that is the count that has
+// to reach the total: an origin that serves overlapping windows can hand over
+// `total` raw items that collapse into fewer real ones.
 async function fetchRemainingPages(url, first) {
-  const items = [...(first.items ?? [])];
+  const items = [];
+  const seen = new Set();
+  const take = (page) => {
+    let added = 0;
+    for (const item of page ?? []) {
+      if (!item?.name || seen.has(item.name)) continue;
+      seen.add(item.name);
+      items.push(item);
+      added += 1;
+    }
+    return added;
+  };
+  take(first.items);
+
   const pageSize = first.pagination?.limit || items.length || 100;
   const expected = first.pagination?.total;
+  let complete = false;
 
   for (let page = 0; page < MAX_PAGINATION_PAGES; page++) {
     const paged = new URL(url);
@@ -52,16 +69,31 @@ async function fetchRemainingPages(url, first) {
     if (!result.json) {
       return { error: `${result.error} (page ${page + 2}, ${items.length} items in)` };
     }
-    if (!result.json.items?.length) break;
-    items.push(...result.json.items);
-    if (!result.json.pagination?.hasMore) break;
+
+    const added = take(result.json.items);
+    if (result.json.pagination?.hasMore === false) {
+      complete = true;
+      break;
+    }
+    // Still claiming more, but this page moved nothing: the offset is not
+    // advancing and another request would ask the same question forever.
+    if (added === 0) {
+      return {
+        error: `pagination stalled at ${items.length} items with more claimed`,
+      };
+    }
   }
 
-  // The origin told us how many items to expect. Coming up short means a page
-  // was silently dropped somewhere, which is the same lie by another route.
-  if (typeof expected === "number" && items.length < expected) {
+  if (!complete) {
     return {
-      error: `pagination ended early: ${items.length} of ${expected} items`,
+      error: `pagination did not finish within ${MAX_PAGINATION_PAGES} pages (${items.length} items in)`,
+    };
+  }
+
+  // The origin said how many items to expect, counted after collapsing repeats.
+  if (typeof expected === "number" && items.length !== expected) {
+    return {
+      error: `pagination returned ${items.length} distinct items, origin declared ${expected}`,
     };
   }
 
@@ -287,7 +319,22 @@ async function retryMissing(records, probe) {
 // worked yesterday.
 async function failedRead(entry, key, url, error, label) {
   const previous = await readJsonFile(viewPath(key));
-  if (previous) {
+
+  // A reusable view is one that describes the same registry this entry now
+  // names. If the directory has since been renamed or repointed, the old file
+  // holds a different registry's catalog under a matching key — serving it
+  // would answer today's URL with yesterday's origin, so it is treated as if
+  // there were no view at all.
+  const sameRegistry =
+    previous && previous.entry === entry.name && previous.indexUrl === url;
+
+  if (previous && !sameRegistry) {
+    console.log(
+      `${label(entry)}: ${error} — the view on disk describes ${previous.entry} at ${previous.indexUrl}, not reusing it`,
+    );
+  }
+
+  if (sameRegistry) {
     console.log(`${label(entry)}: ${error} — reused (${previous.items.length} items)`);
     return {
       key,
@@ -298,6 +345,7 @@ async function failedRead(entry, key, url, error, label) {
       status: "reused",
       error,
       resolvable: previous.resolvable,
+      ...(previous.originEmbedsContent ? { originEmbedsContent: true } : {}),
       snapshot: {
         url,
         items: previous.items.map((i) => ({
@@ -309,7 +357,7 @@ async function failedRead(entry, key, url, error, label) {
     };
   }
 
-  console.log(`${label(entry)}: ${error} — no previous view to reuse`);
+  if (!previous) console.log(`${label(entry)}: ${error} — no previous view to reuse`);
   return { key, entry, name: entry.name, url, items: 0, status: "missing", error };
 }
 
