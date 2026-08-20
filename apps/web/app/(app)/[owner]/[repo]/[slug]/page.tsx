@@ -6,7 +6,7 @@ import {
   loadDirectory,
   parseGithubRef,
   resolveByGithub,
-  fetchRegistryIndex,
+  loadRegistryIndex,
 } from "@/lib/resolve-registry"
 import {
   RegistrySlugView,
@@ -36,7 +36,7 @@ export async function generateStaticParams() {
       const gh = parseGithubRef(registry.github_url)
       if (!gh) return []
 
-      const index = await fetchRegistryIndex(registry, 10000)
+      const index = await loadRegistryIndex(registry)
       if (!index) return []
 
       // Prerender only categories + featured items; the item long tail

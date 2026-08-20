@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import { typeToSlug, SLUG_TO_REGISTRY_TYPE, REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
 import { getInstallCommand } from "@/lib/install-command"
-import { resolveByGithub, fetchRegistryIndex } from "@/lib/resolve-registry"
+import { resolveByGithub, loadRegistryIndex } from "@/lib/resolve-registry"
 
 export const runtime = 'nodejs'
 export const alt = 'registry.directory component preview'
@@ -33,7 +33,7 @@ export default async function Image({
   ])
 
   const registry = await resolveByGithub(owner, repo)
-  const registryIndex = registry ? await fetchRegistryIndex(registry, 10000) : null
+  const registryIndex = registry ? await loadRegistryIndex(registry) : null
 
   // Category OG image
   if (isCategory(slug)) {

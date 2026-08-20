@@ -1,0 +1,1987 @@
+{
+  "key": "payload-components",
+  "entry": "Payload Components",
+  "name": "payload-components",
+  "homepage": "https://www.payload-components.xyz",
+  "indexUrl": "https://www.payload-components.xyz/r/registry.json",
+  "itemBase": "https://www.payload-components.xyz/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "hero-basic",
+      "type": "registry:block",
+      "title": "Hero Basic",
+      "description": "Payload Components proof-of-concept hero block.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/heroFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/heroFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/HeroBasic/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/HeroBasic/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/HeroBasic/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/HeroBasic/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-video",
+      "type": "registry:block",
+      "title": "Hero Video",
+      "description": "Full-bleed video hero with editor-managed media and a reduced-motion poster fallback.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/heroFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/heroFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/HeroVideo/Video.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/HeroVideo/Video.tsx"
+        },
+        {
+          "path": "payload-components/source/blocks/HeroVideo/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/HeroVideo/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/HeroVideo/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/HeroVideo/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-product-tilt",
+      "type": "registry:block",
+      "title": "Hero Product Tilt",
+      "description": "Centered product hero with a static perspective frame and editor-managed media.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/heroFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/heroFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/HeroProductTilt/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/HeroProductTilt/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/HeroProductTilt/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/HeroProductTilt/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-aurora",
+      "type": "registry:block",
+      "title": "Hero Aurora",
+      "description": "Motion-first product hero with an animated aurora field, staggered reveal, parallax panel, and metric ticker.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/heroFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/heroFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/HeroAurora/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/HeroAurora/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/HeroAurora/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/HeroAurora/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-kinetic",
+      "type": "registry:block",
+      "title": "Hero Kinetic",
+      "description": "Motion-first editorial hero with a line-masked type reveal, cinematic plate, and velocity marquee.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/heroFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/heroFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/HeroKinetic/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/HeroKinetic/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/HeroKinetic/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/HeroKinetic/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-grid-basic",
+      "type": "registry:block",
+      "title": "Feature Grid Basic",
+      "description": "Text-first Payload feature grid with optional CTA wiring.",
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/featureFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/featureFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureGridBasic/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureGridBasic/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureGridBasic/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureGridBasic/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-split",
+      "type": "registry:block",
+      "title": "Feature Split",
+      "description": "Two-column Payload feature block: heading and CTA beside a feature list.",
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/featureFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/featureFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureSplit/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureSplit/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureSplit/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureSplit/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-bento",
+      "type": "registry:block",
+      "title": "Feature Bento",
+      "description": "Asymmetric Payload bento grid with a featured lead cell and supporting cells.",
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/featureFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/featureFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureBento/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureBento/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureBento/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureBento/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-steps",
+      "type": "registry:block",
+      "title": "Feature Steps",
+      "description": "Numbered Payload steps block for sequential, how-it-works feature flows.",
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/featureFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/featureFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureSteps/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureSteps/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureSteps/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureSteps/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-accordion",
+      "type": "registry:block",
+      "title": "Feature Accordion",
+      "description": "Synchronized feature accordion with editor-selected icons and optional media.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "accordion",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/featureFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/featureFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/featureIcons.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/featureIcons.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureAccordion/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureAccordion/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureAccordion/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureAccordion/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-cards-media",
+      "type": "registry:block",
+      "title": "Feature Cards Media",
+      "description": "Two-column feature cards with independent media and optional icons.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/featureFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/featureFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/featureIcons.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/featureIcons.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureCardsMedia/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureCardsMedia/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureCardsMedia/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureCardsMedia/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-icon-grid",
+      "type": "registry:block",
+      "title": "Feature Icon Grid",
+      "description": "Dense feature grid with editor-selected icons and a tokenized radial decorator.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/featureFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/featureFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/featureIcons.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/featureIcons.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureIconGrid/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureIconGrid/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FeatureIconGrid/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FeatureIconGrid/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "embed-basic",
+      "type": "registry:block",
+      "title": "Embed Basic",
+      "description": "Responsive, accessible sandboxed iframe block for approved HTTPS embeds.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/EmbedBasic/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/EmbedBasic/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/EmbedBasic/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/EmbedBasic/Component.tsx"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/safeUrls.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/safeUrls.ts"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud-grid",
+      "type": "registry:block",
+      "title": "Logo Cloud Grid",
+      "description": "Centered, wrapping wall of editable logo uploads under a heading.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/logoCloudFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/logoCloudFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/LogoCloudGrid/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/LogoCloudGrid/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/LogoCloudGrid/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/LogoCloudGrid/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud-hover",
+      "type": "registry:block",
+      "title": "Logo Cloud Hover",
+      "description": "Logo wall that dims and blurs on hover to reveal a CTA link.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/logoCloudFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/logoCloudFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/LogoCloudHover/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/LogoCloudHover/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/LogoCloudHover/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/LogoCloudHover/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud-marquee",
+      "type": "registry:block",
+      "title": "Logo Cloud Marquee",
+      "description": "Auto-scrolling marquee of editable logos with progressive-blur edge fades.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/logoCloudFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/logoCloudFields.ts"
+        },
+        {
+          "path": "payload-components/source/components/ui/infinite-slider.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/ui/infinite-slider.tsx"
+        },
+        {
+          "path": "payload-components/source/components/ui/progressive-blur.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/ui/progressive-blur.tsx"
+        },
+        {
+          "path": "payload-components/source/blocks/LogoCloudMarquee/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/LogoCloudMarquee/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/LogoCloudMarquee/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/LogoCloudMarquee/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud-inline",
+      "type": "registry:block",
+      "title": "Logo Cloud Inline",
+      "description": "Compact label-over-logos strip of editable trust logos.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/logoCloudFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/logoCloudFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/LogoCloudInline/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/LogoCloudInline/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/LogoCloudInline/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/LogoCloudInline/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud-inline-wrap",
+      "type": "registry:block",
+      "title": "Logo Cloud Inline Wrap",
+      "description": "Single wrapping row keeping the label inline with editable logos.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/logoCloudFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/logoCloudFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/LogoCloudInlineWrap/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/LogoCloudInlineWrap/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/LogoCloudInlineWrap/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/LogoCloudInlineWrap/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-columns",
+      "type": "registry:block",
+      "title": "Content Columns",
+      "description": "Two-column Payload content block: a heading beside body copy and a CTA.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/contentFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentColumns/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentColumns/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentColumns/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentColumns/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-image-lead",
+      "type": "registry:block",
+      "title": "Content Image Lead",
+      "description": "Payload content block led by a full-width image above a heading, body, and CTA.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/contentFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentImageLead/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentImageLead/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentImageLead/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentImageLead/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-feature-media",
+      "type": "registry:block",
+      "title": "Content Feature Media",
+      "description": "Payload content block: body copy and two icon features beside a framed media panel.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/contentFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/contentIcons.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentIcons.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentFeatureMedia/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentFeatureMedia/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentFeatureMedia/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentFeatureMedia/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-feature-split",
+      "type": "registry:block",
+      "title": "Content Feature Split",
+      "description": "Payload content block: a side media panel beside body copy and two icon features.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/contentFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/contentIcons.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentIcons.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentFeatureSplit/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentFeatureSplit/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentFeatureSplit/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentFeatureSplit/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-showcase",
+      "type": "registry:block",
+      "title": "Content Showcase",
+      "description": "Payload content block: a centered intro, a full-width image, and a four-up feature grid.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/contentFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/contentIcons.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentIcons.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentShowcase/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentShowcase/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentShowcase/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentShowcase/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-quote",
+      "type": "registry:block",
+      "title": "Content Quote",
+      "description": "Payload content block: a media panel beside body copy and a cited pull quote.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/contentFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentQuote/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentQuote/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentQuote/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentQuote/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-community",
+      "type": "registry:block",
+      "title": "Content Community",
+      "description": "Payload content block: a centered heading and body above a wall of community avatars.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/contentFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentCommunity/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentCommunity/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentCommunity/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentCommunity/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "integration-grid",
+      "type": "registry:block",
+      "title": "Integration Grid",
+      "description": "A responsive grid of integration cards with logo, name, description, and a learn-more link.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/integrationFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/integrationFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationGrid/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationGrid/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationGrid/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationGrid/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "integration-cluster",
+      "type": "registry:block",
+      "title": "Integration Cluster",
+      "description": "A centered cluster of integration logos around a featured brand mark, with a heading and CTA.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/integrationFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/integrationFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationCluster/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationCluster/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationCluster/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationCluster/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "integration-split",
+      "type": "registry:block",
+      "title": "Integration Split",
+      "description": "A two-column section pairing a featured-mark logo cluster with a heading, subtext, and CTA.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/integrationFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/integrationFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationSplit/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationSplit/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationSplit/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationSplit/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "integration-connect",
+      "type": "registry:block",
+      "title": "Integration Connect",
+      "description": "Integration logos wired to a central brand mark by connector lines.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/integrationFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/integrationFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationConnect/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationConnect/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationConnect/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationConnect/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "integration-orbit",
+      "type": "registry:block",
+      "title": "Integration Orbit",
+      "description": "Concentric rings of integration logos that orbit a featured brand mark on hover.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/integrationFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/integrationFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationOrbit/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationOrbit/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationOrbit/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationOrbit/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "integration-list",
+      "type": "registry:block",
+      "title": "Integration List",
+      "description": "A vertical list of integration rows with logo, name, description, and an add action.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/integrationFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/integrationFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationList/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationList/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationList/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationList/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "integration-marquee",
+      "type": "registry:block",
+      "title": "Integration Marquee",
+      "description": "Three auto-scrolling rows of integration logos around a featured brand mark.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/integrationFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/integrationFields.ts"
+        },
+        {
+          "path": "payload-components/source/components/ui/infinite-slider.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/ui/infinite-slider.tsx"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationMarquee/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationMarquee/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationMarquee/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationMarquee/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "integration-testimonial",
+      "type": "registry:block",
+      "title": "Integration Testimonial",
+      "description": "A two-column section pairing a customer quote with a grid of integration logo cards.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/integrationFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/integrationFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationTestimonial/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationTestimonial/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/IntegrationTestimonial/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/IntegrationTestimonial/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-split-rows",
+      "type": "registry:block",
+      "title": "Content Split Rows",
+      "description": "Payload content block: an intro above alternating media-and-text rows.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/contentFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentSplitRows/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentSplitRows/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentSplitRows/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentSplitRows/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-rows",
+      "type": "registry:block",
+      "title": "Content Rows",
+      "description": "Payload content block: an intro above a uniform stack of media-and-text rows.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/contentFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentRows/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentRows/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentRows/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentRows/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-image-frame",
+      "type": "registry:block",
+      "title": "Content Image Frame",
+      "description": "Payload content block: a centered intro above a layered, framed screenshot.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/contentFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentImageFrame/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentImageFrame/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentImageFrame/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentImageFrame/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-stats",
+      "type": "registry:block",
+      "title": "Content Stats",
+      "description": "Payload content block: an intro, a grid of icon features, and a stats list.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/contentFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/contentIcons.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentIcons.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentStats/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentStats/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentStats/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentStats/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-list",
+      "type": "registry:block",
+      "title": "Content List",
+      "description": "Payload content block: a serif heading beside a labeled-term list.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/ContentList/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentList/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentList/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentList/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-list-columns",
+      "type": "registry:block",
+      "title": "Content List Columns",
+      "description": "Payload content block: a serif heading above a two-column labeled-term list.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/ContentListColumns/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentListColumns/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentListColumns/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentListColumns/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-list-icons",
+      "type": "registry:block",
+      "title": "Content List Icons",
+      "description": "Payload content block: a serif heading and intro above a multi-column icon list.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/contentIcons.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contentIcons.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentListIcons/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentListIcons/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContentListIcons/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContentListIcons/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "call-to-action-centered",
+      "type": "registry:block",
+      "title": "Call To Action Centered",
+      "description": "Centered Payload call-to-action block: heading, copy, and one or two CTA links.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/callToActionFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/callToActionFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/CallToActionCentered/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/CallToActionCentered/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/CallToActionCentered/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/CallToActionCentered/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "call-to-action-boxed",
+      "type": "registry:block",
+      "title": "Call To Action Boxed",
+      "description": "Boxed Payload call-to-action block: heading, copy, and CTA links inside a nested panel.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/callToActionFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/callToActionFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/CallToActionBoxed/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/CallToActionBoxed/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/CallToActionBoxed/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/CallToActionBoxed/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "call-to-action-signup",
+      "type": "registry:block",
+      "title": "Call To Action Signup",
+      "description": "Email-capture Payload call-to-action block: heading, copy, and a form that posts to a same-origin endpoint.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/callToActionFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/callToActionFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/safeUrls.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/safeUrls.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/CallToActionSignup/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/CallToActionSignup/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/CallToActionSignup/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/CallToActionSignup/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contact-routing-form",
+      "type": "registry:block",
+      "title": "Contact Routing Form",
+      "description": "Validated contact channels beside an accessible same-origin inquiry form.",
+      "registryDependencies": [
+        "badge",
+        "button",
+        "input",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/safeUrls.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/safeUrls.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/contactUrls.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contactUrls.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContactRoutingForm/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContactRoutingForm/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContactRoutingForm/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContactRoutingForm/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-roster",
+      "type": "registry:block",
+      "title": "Team Roster",
+      "description": "Payload team block: department-grouped sections, each a grid of member avatars with name and role.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/teamFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/teamFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TeamRoster/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/TeamRoster/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TeamRoster/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/TeamRoster/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-grid",
+      "type": "registry:block",
+      "title": "Team Grid",
+      "description": "Payload team block: a heading and intro above a responsive grid of member photo cards that reveal role on hover.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/teamFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/teamFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TeamGrid/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/TeamGrid/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TeamGrid/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/TeamGrid/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-accordion",
+      "type": "registry:block",
+      "title": "FAQ Accordion",
+      "description": "Payload FAQ block: a centered accordion of question/answer items with an optional CTA.",
+      "registryDependencies": [
+        "accordion",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/faqFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/faqFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FaqAccordion/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FaqAccordion/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FaqAccordion/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FaqAccordion/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-split",
+      "type": "registry:block",
+      "title": "FAQ Split",
+      "description": "Payload FAQ block: a two-column layout pairing a sticky heading and CTA with an accordion.",
+      "registryDependencies": [
+        "accordion",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/faqFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/faqFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FaqSplit/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FaqSplit/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FaqSplit/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FaqSplit/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-card",
+      "type": "registry:block",
+      "title": "FAQ Card",
+      "description": "Payload FAQ block: a centered accordion wrapped in a card with an optional CTA.",
+      "registryDependencies": [
+        "accordion",
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/faqFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/faqFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FaqCard/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FaqCard/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FaqCard/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FaqCard/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-icons",
+      "type": "registry:block",
+      "title": "FAQ Icons",
+      "description": "Payload FAQ block: an accordion with a per-question icon from a fixed allowlist.",
+      "registryDependencies": [
+        "accordion",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/faqFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/faqFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/faqIcons.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/faqIcons.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FaqIcons/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FaqIcons/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FaqIcons/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FaqIcons/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-grouped",
+      "type": "registry:block",
+      "title": "FAQ Grouped",
+      "description": "Payload FAQ block: titled, icon-tagged category groups of accordions.",
+      "registryDependencies": [
+        "accordion",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/faqFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/faqFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/faqIcons.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/faqIcons.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FaqGrouped/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FaqGrouped/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FaqGrouped/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FaqGrouped/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-grid",
+      "type": "registry:block",
+      "title": "FAQ Grid",
+      "description": "Payload FAQ block: a static two-column grid of question/answer cards.",
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/faqFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/faqFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FaqGrid/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FaqGrid/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FaqGrid/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FaqGrid/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "comparator-table",
+      "type": "registry:block",
+      "title": "Comparator Table",
+      "description": "Tiered feature-comparison table Payload block: plan columns with CTAs over grouped feature rows.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/comparatorFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/comparatorFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ComparatorTable/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ComparatorTable/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ComparatorTable/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ComparatorTable/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "comparator-grid",
+      "type": "registry:block",
+      "title": "Comparator Grid",
+      "description": "Plan-column comparison Payload block: pricing columns in a bordered card over a feature matrix.",
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/comparatorFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/comparatorFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ComparatorGrid/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ComparatorGrid/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ComparatorGrid/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ComparatorGrid/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "comparator-stack",
+      "type": "registry:block",
+      "title": "Comparator Stack",
+      "description": "Stacked plan-card comparison Payload block: one card per plan with its own price, CTA, and feature checklist.",
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/comparatorFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/comparatorFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ComparatorStack/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ComparatorStack/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ComparatorStack/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ComparatorStack/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-quote",
+      "type": "registry:block",
+      "title": "Testimonials Quote",
+      "description": "Payload testimonials block: a single featured quote with a left accent bar, author, optional role, and avatar.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/testimonialFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/testimonialFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TestimonialsQuote/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/TestimonialsQuote/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TestimonialsQuote/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/TestimonialsQuote/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-spotlight",
+      "type": "registry:block",
+      "title": "Testimonials Spotlight",
+      "description": "Payload testimonials block: a single centered testimonial with a quote-mark, large avatar, author, and role.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/testimonialFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/testimonialFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TestimonialsSpotlight/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/TestimonialsSpotlight/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TestimonialsSpotlight/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/TestimonialsSpotlight/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-grid",
+      "type": "registry:block",
+      "title": "Testimonials Grid",
+      "description": "Payload testimonials block: a heading above a responsive grid of quote cards, each with author, optional role, and avatar.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/testimonialFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/testimonialFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TestimonialsGrid/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/TestimonialsGrid/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TestimonialsGrid/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/TestimonialsGrid/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-rating",
+      "type": "registry:block",
+      "title": "Testimonials Rating",
+      "description": "Payload testimonials block: a responsive grid of review cards, each with a star rating, quote, author, optional role, and avatar.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/testimonialFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/testimonialFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TestimonialsRating/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/TestimonialsRating/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TestimonialsRating/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/TestimonialsRating/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-bento",
+      "type": "registry:block",
+      "title": "Testimonials Bento",
+      "description": "Payload testimonials block: an asymmetric bento with one featured quote in a large cell and supporting quotes around it.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/testimonialFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/testimonialFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TestimonialsBento/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/TestimonialsBento/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TestimonialsBento/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/TestimonialsBento/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-wall",
+      "type": "registry:block",
+      "title": "Testimonials Wall",
+      "description": "Payload testimonials block: a heading above a multi-column masonry wall of compact testimonial cards.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/testimonialFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/testimonialFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TestimonialsWall/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/TestimonialsWall/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TestimonialsWall/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/TestimonialsWall/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-proof",
+      "type": "registry:block",
+      "title": "Stats Proof",
+      "description": "Narrative and prominent string metrics paired with semantic customer proof.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/statsFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/statsFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/StatsProof/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/StatsProof/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/StatsProof/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/StatsProof/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-grid",
+      "type": "registry:block",
+      "title": "Stats Grid",
+      "description": "Heading and intro above a responsive grid of large string metrics on rule-topped columns.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/statsFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/statsFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/StatsGrid/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/StatsGrid/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/StatsGrid/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/StatsGrid/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-card",
+      "type": "registry:block",
+      "title": "Stats Card",
+      "description": "A centred heading above one divided panel that splits metrics into equal columns.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/statsFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/statsFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/StatsCard/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/StatsCard/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/StatsCard/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/StatsCard/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-inline",
+      "type": "registry:block",
+      "title": "Stats Inline",
+      "description": "Heading and intro above rule-topped rows where each figure reads as one sentence.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/statsFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/statsFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/StatsInline/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/StatsInline/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/StatsInline/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/StatsInline/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-cards",
+      "type": "registry:block",
+      "title": "Pricing Cards",
+      "description": "Three-up pricing table of editable plan cards with a highlighted plan.",
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/pricingFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/pricingFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/PricingCards/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/PricingCards/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/PricingCards/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/PricingCards/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-cards-muted",
+      "type": "registry:block",
+      "title": "Pricing Cards Muted",
+      "description": "Three-up pricing table on muted card surfaces with a highlighted plan.",
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/pricingFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/pricingFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/PricingCardsMuted/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/PricingCardsMuted/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/PricingCardsMuted/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/PricingCardsMuted/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-cards-cta",
+      "type": "registry:block",
+      "title": "Pricing Cards CTA",
+      "description": "Three-up pricing table with the CTA inside each plan header.",
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/pricingFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/pricingFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/PricingCardsCta/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/PricingCardsCta/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/PricingCardsCta/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/PricingCardsCta/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-split",
+      "type": "registry:block",
+      "title": "Pricing Split",
+      "description": "Two-plan split pricing: a compact entry plan beside an expanded featured plan.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/pricingFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/pricingFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/PricingSplit/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/PricingSplit/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/PricingSplit/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/PricingSplit/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-enterprise",
+      "type": "registry:block",
+      "title": "Pricing Enterprise",
+      "description": "Single wide enterprise pricing panel with an editable trust-logo wall.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/pricingFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/pricingFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/PricingEnterprise/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/PricingEnterprise/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/PricingEnterprise/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/PricingEnterprise/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-columns",
+      "type": "registry:block",
+      "title": "Footer Columns",
+      "description": "A brand block beside labelled columns of navigation links, closed by a copyright rule.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/safeUrls.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/safeUrls.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/footerUrls.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/footerUrls.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/footerFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/footerFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FooterColumns/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FooterColumns/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FooterColumns/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FooterColumns/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-simple",
+      "type": "registry:block",
+      "title": "Footer Simple",
+      "description": "A compact footer keeping the brand and one wrapped row of links on a line, copyright beneath.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/safeUrls.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/safeUrls.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/footerUrls.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/footerUrls.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/footerFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/footerFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FooterSimple/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FooterSimple/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FooterSimple/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FooterSimple/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-centered",
+      "type": "registry:block",
+      "title": "Footer Centered",
+      "description": "A centred brand, tagline, and navigation above a rule carrying copyright and policy links.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/safeUrls.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/safeUrls.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/footerUrls.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/footerUrls.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/footerFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/footerFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FooterCentered/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/FooterCentered/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/FooterCentered/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/FooterCentered/Component.tsx"
+        }
+      ]
+    }
+  ]
+}

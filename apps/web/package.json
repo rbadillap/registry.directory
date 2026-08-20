@@ -5,6 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "index": "node --env-file=.env.local scripts/index.mjs",
+    "views:check": "node scripts/views-check.mjs",
+    "test": "node --test scripts/**/*.test.mjs",
+    "prebuild": "node scripts/views-check.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

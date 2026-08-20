@@ -1,0 +1,77 @@
+{
+  "key": "better-upload",
+  "entry": "Better Upload",
+  "name": "better-upload",
+  "homepage": "https://better-upload.com",
+  "indexUrl": "https://better-upload.com/r/registry.json",
+  "itemBase": "https://better-upload.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "upload-button",
+      "type": "registry:ui",
+      "title": "Upload Button",
+      "dependencies": [
+        "@better-upload/client",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "ui/upload-button.json",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "upload-dropzone",
+      "type": "registry:ui",
+      "title": "Upload Dropzone",
+      "dependencies": [
+        "@better-upload/client",
+        "lucide-react",
+        "react-dropzone"
+      ],
+      "files": [
+        {
+          "path": "ui/upload-dropzone.json",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "upload-progress",
+      "type": "registry:ui",
+      "title": "Upload Progress",
+      "dependencies": [
+        "@better-upload/client",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "ui/upload-progress.json",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "paste-upload-area",
+      "type": "registry:ui",
+      "title": "Paste Upload Area",
+      "dependencies": [
+        "@better-upload/client"
+      ],
+      "files": [
+        {
+          "path": "ui/paste-upload-area.json",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

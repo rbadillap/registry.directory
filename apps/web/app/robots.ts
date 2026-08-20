@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         // Read-only, agent-facing endpoints (/api/markdown, /llms.txt) stay
         // open. Only write/internal endpoints are disallowed.
-        disallow: ['/api/feedback', '/api/rebuild', '/_next/'],
+        disallow: ['/api/feedback', '/_next/'],
       },
     ],
     sitemap: 'https://registry.directory/sitemap.xml',

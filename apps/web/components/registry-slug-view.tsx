@@ -13,7 +13,7 @@ import {
 } from "@/lib/registry-mappings"
 import { registryFetch } from "@/lib/fetch-utils"
 import { getAffiliates } from "@/lib/affiliates"
-import { fetchRegistryIndex } from "@/lib/resolve-registry"
+import { loadRegistryIndex } from "@/lib/resolve-registry"
 import { JsonLd } from "@/components/json-ld"
 import {
   buildBreadcrumbSchema,
@@ -24,6 +24,10 @@ export function isCategory(slug: string): boolean {
   return slug in SLUG_TO_REGISTRY_TYPE
 }
 
+// The only third-party fetch left in the render path. An item view needs
+// files[].content — the component's actual source — and data/ carries
+// metadata and file paths but not content, so rendering one item page reaches
+// its origin registry once. Every other read on this page comes from disk.
 export async function fetchItemData(
   registry: DirectoryEntry,
   itemName: string
@@ -74,7 +78,7 @@ export async function buildSlugMetadata(
   }
 
   // Item view - use registry index instead of individual fetch to avoid timeout during build
-  const registryIndex = await fetchRegistryIndex(registry)
+  const registryIndex = await loadRegistryIndex(registry)
   const itemData = registryIndex?.items?.find((item) => item.name === slug)
   const categorySlug = itemData ? typeToSlug(itemData.type) : null
   const categoryLabel = categorySlug
@@ -117,7 +121,7 @@ export async function RegistrySlugView({
   basePath: string
   slug: string
 }) {
-  const registryIndex = await fetchRegistryIndex(registry)
+  const registryIndex = await loadRegistryIndex(registry)
   if (!registryIndex) {
     notFound()
   }

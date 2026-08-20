@@ -1,0 +1,3468 @@
+{
+  "key": "localmode-ai",
+  "entry": "LocalMode",
+  "name": "localmode",
+  "homepage": "https://localmode.ai",
+  "indexUrl": "https://localmode.ai/r/registry.json",
+  "itemBase": "https://localmode.ai/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "ui/lib/utils",
+      "type": "registry:lib",
+      "title": "cn() utility",
+      "description": "The class-name merge helper (clsx + tailwind-merge) shared by all LocalMode UI components.",
+      "categories": [
+        "internal"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "ui/lib/browser-utils",
+      "type": "registry:lib",
+      "title": "Browser utilities",
+      "description": "Dependency-free browser helpers shared by LocalMode UI components: formatBytes, validateFile, readFileAsDataUrl, downloadBlob, the useObjectUrl hook, and the image/canvas ops getImageDimensions, applyMaskToImage, imageResultToDataUrl, downloadDataUrl plus the pure compositeMaskAlpha kernel. No AI, no @localmode dependency — so the components that use them install and compile in any React app.",
+      "categories": [
+        "internal"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/lib/browser-utils.ts",
+          "type": "registry:lib",
+          "target": "lib/browser-utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "ui/lib/use-environment",
+      "type": "registry:lib",
+      "title": "Environment hooks",
+      "description": "Dependency-free React hooks for browser/device capability detection, storage quota, and online/offline status (useCapabilities, useStorageQuota, useNetworkStatus). Read navigator only — no AI, no @localmode dependency — so the environment-aware components install and compile in any React app.",
+      "categories": [
+        "internal"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/lib/use-environment.ts",
+          "type": "registry:lib",
+          "target": "lib/use-environment.ts"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/device-badge",
+      "type": "registry:component",
+      "title": "Device Badge",
+      "description": "A local-first capability badge. Detects WebGPU / WASM / IndexedDB support via a bundled useCapabilities() hook (copy-owned, reads navigator — no @localmode dependency) and renders a themed status pill. Use it to gate model-download UIs behind device support.",
+      "categories": [
+        "local-first"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/use-environment"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/device-badge/device-badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/artifacts/artifact",
+      "type": "registry:component",
+      "title": "Artifact",
+      "description": "A Claude-style docked side-panel/canvas shell (header, title, description, copy/download/refresh/close toolbar, scrollable content) that renders generated code, docs, SVG, or HTML beside the chat. Presentational — driven by a local model via useGenerateText/useGenerateObject. No server, no sandbox.",
+      "categories": [
+        "artifacts"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/browser-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/artifacts/artifact/artifact.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/artifacts/data-table-artifact",
+      "type": "registry:component",
+      "title": "Data Table Artifact",
+      "description": "A generic sortable data table for local row data — VectorDB results, model catalogs, evaluation rows, or generateObject() arrays. Click a column header to sort entirely client-side. A docked-canvas table, distinct from the inline ScoredResultBarList.",
+      "categories": [
+        "artifacts"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/artifacts/data-table-artifact/data-table-artifact.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/artifacts/chart-artifact",
+      "type": "registry:component",
+      "title": "Chart Artifact",
+      "description": "A dependency-free inline-SVG chart (line / bar / area / scatter / radar / gauge) for local metrics — eval curves (precision/recall/F1 radar), 2D embedding projections (scatter), drift-over-time, latency/tok-s. Driven by useEvaluateModel/useReindex or any local numbers. No charting library, no server.",
+      "categories": [
+        "artifacts"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/artifacts/chart-artifact/chart-artifact.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/artifacts/code-diff-viewer",
+      "type": "registry:component",
+      "title": "Code Diff Viewer",
+      "description": "A unified or side-by-side text/code diff of two local strings (before/after of redacted, translated, or transformed text). Additions/deletions highlighted, computed client-side via a dependency-free LCS line diff. The text analog of BeforeAfterImageViewer. No ML hook, no server.",
+      "categories": [
+        "artifacts"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/artifacts/code-diff-viewer/code-diff-viewer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/audio/waveform-activity-bars",
+      "type": "registry:component",
+      "title": "Waveform Activity Bars",
+      "description": "A pure-CSS row of pulsing vertical bars (sinusoid-derived heights, staggered animation) that doubles as an active audio-processing indicator and an idle empty-state. Supports agent-state modes (connecting/listening/thinking/speaking), record/playback-scrub modes, and a live-volume mode that scales amplitude from a callback — decoupling the visual from the audio source. Ships its keyframe inline so it animates standalone after install.",
+      "categories": [
+        "audio"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/audio/waveform-activity-bars/waveform-activity-bars.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/audio/voice-picker",
+      "type": "registry:component",
+      "title": "Voice Picker",
+      "description": "Language-grouped TTS voice selection from one KokoroVoice[] contract — a compact grouped <select> (VoicePicker) plus rich VoiceCard / VoiceGrid variants with a color-coded gender badge, monospace voice id, a circular play/stop preview button with loading state, a per-group count header, and search/filter. Wire onPreview to useSynthesizeSpeech for local Kokoro samples.",
+      "categories": [
+        "audio"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/audio/waveform-activity-bars"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/audio/voice-picker/voice-picker.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/audio/streaming-speech-panel",
+      "type": "registry:component",
+      "title": "Streaming Speech Panel",
+      "description": "A streaming-TTS status surface: active state (WaveformActivityBars + spinner, synthesizing/playing label, processed-clause count, highlighted now-playing clause box) and finished state (clause-count summary, a generated-locally privacy note, and a Download WAV action). Driven by useStreamSpeech (isSynthesizing/isPlaying/currentClause/clauses); download via downloadBlob.",
+      "categories": [
+        "audio"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/audio/waveform-activity-bars"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/audio/streaming-speech-panel/streaming-speech-panel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/audio/voice-comparison-panel",
+      "type": "registry:component",
+      "title": "Voice Comparison Panel",
+      "description": "A/B voice comparison — two labeled columns, each with a language-grouped voice select (VoicePicker) and a native <audio> player shown once audio is set, a shared comparison textarea, and a Compare button with a loading state. Wire onCompare to two useSynthesizeSpeech runs and pass the resulting Blobs back per column.",
+      "categories": [
+        "audio"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/audio/voice-picker",
+        "@localmode/ui/lib/browser-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/audio/voice-comparison-panel/voice-comparison-panel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/audio/transcribed-note-card",
+      "type": "registry:component",
+      "title": "Transcribed Note Card",
+      "description": "A transcription list item pairing transcript text with inline <audio> playback — relative timestamp (hover -> absolute), transcribed body, and a hover-revealed delete — plus a transcribing… placeholder variant (WaveformActivityBars + label) that morphs into the populated card. The canonical useOperationList-backed STT list pattern; driven by useTranscribe.",
+      "categories": [
+        "audio"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/audio/waveform-activity-bars",
+        "@localmode/ui/lib/browser-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/audio/transcribed-note-card/transcribed-note-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/audio/voice-orb",
+      "type": "registry:component",
+      "title": "Voice Orb",
+      "description": "An animated Canvas 2D voice-agent orb/visualizer that reflects discrete agent states (idle/connecting/listening/thinking/speaking/muted) and pulses with input/output audio volume via getInputVolume()/getOutputVolume() callbacks, with color/glow variants. Visual state is fully decoupled from the audio source — feed volume from a local AnalyserNode. Driven by useLiveTranscribe / useTurnTaker.",
+      "categories": [
+        "audio"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/audio/voice-orb/voice-orb.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/audio/voice-button",
+      "type": "registry:component",
+      "title": "Voice Button",
+      "description": "A press-to-record / release-to-transcribe push-to-talk button with an explicit visual state machine: idle -> recording (pulse rings + live waveform) -> processing (loader) -> success/error. Recording uses getUserMedia/MediaRecorder (useVoiceRecorder); transcription routes to local Whisper (useTranscribe). Controlled — the app advances the state.",
+      "categories": [
+        "audio"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/audio/waveform-activity-bars"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/audio/voice-button/voice-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/audio/mic-selector",
+      "type": "registry:component",
+      "title": "Mic Selector",
+      "description": "A microphone input-device picker with permission handling and live device enumeration — fully offline, using only browser device APIs (getUserMedia for the permission prompt, enumerateDevices for the list, a devicechange listener to stay current). Emits the chosen deviceId for a getUserMedia constraint; pairs with VoiceButton / VoiceOrb / useLiveTranscribe.",
+      "categories": [
+        "audio"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/audio/mic-selector/mic-selector.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/audio/audio-scrub-player",
+      "type": "registry:component",
+      "title": "Audio Scrub Player",
+      "description": "A composable scrubbable audio player for local Blob/object-URL audio (Kokoro TTS output or recordings) — play/pause, a draggable seek bar, and a time/duration readout, managing its own <audio> element and object-URL lifecycle. Ships a standalone, controlled ScrubBar seek sub-primitive (pointer + keyboard). Pairs with useSynthesizeSpeech output.",
+      "categories": [
+        "audio"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/browser-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/audio/audio-scrub-player/audio-scrub-player.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/audio/synced-transcript-viewer",
+      "type": "registry:component",
+      "title": "Synced Transcript Viewer",
+      "description": "A karaoke-style transcript viewer that highlights words in lockstep with audio playback using word-level alignment timestamps — the playback-time -> word-index sync is pure client-side (binary search on timeupdate). Clicking a word seeks the audio to its start. Driven by useTranscribe word-level timestamps over a local audio Blob.",
+      "categories": [
+        "audio"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/browser-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/audio/synced-transcript-viewer/synced-transcript-viewer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/conversation",
+      "type": "registry:component",
+      "title": "Conversation",
+      "description": "Scrollable message-display surface with first-class scroll-anchoring: auto-pins to the newest content while tokens stream, releases on scroll-up with a scroll-to-bottom control, and re-pins on return. Presentational; renders useChat().messages.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/conversation/conversation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/message",
+      "type": "registry:component",
+      "title": "Message",
+      "description": "Role-aware chat message (data-role) rendering string or ContentPart[] — markdown text, image thumbnails with a fullscreen dialog, and file download chips from local bytes — with contained/flat variants and an inter-message Checkpoint savepoint marker. Matches @localmode/react's message model.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "avatar",
+        "button",
+        "dialog",
+        "@localmode/ui/lib/browser-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/message/message.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/localmode/conversation/lib/markdown.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/response",
+      "type": "registry:component",
+      "title": "Response",
+      "description": "Streaming markdown renderer for assistant output: shows a cursor while streaming, tolerates partial/unterminated markdown without layout breakage, supports an optional typewriter reveal, and routes LaTeX/Mermaid blocks to swappable renderers gated behind props (declare katex/mermaid if used).",
+      "categories": [
+        "conversation"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/response/response.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/localmode/conversation/lib/markdown.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/loader",
+      "type": "registry:component",
+      "title": "Loader",
+      "description": "A small family of busy indicators (dots / pulse / typing / spinner) plus a Shimmer skeleton-text variant, shown while a local model warms up or streams its first token.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/loader/loader.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/prompt-input",
+      "type": "registry:component",
+      "title": "Prompt Input",
+      "description": "Form-based, auto-resizing chat composer: Enter submits, Shift+Enter inserts a newline, the submit control swaps to a stop control while streaming, with optional controlled value/onValueChange, a PromptInputProvider, a voice/dictation mic toggle (wire to local Whisper), and a slash-command / + picker.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/input-controls/char-limit-indicator",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/prompt-input/prompt-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/prompt-input-attachments",
+      "type": "registry:component",
+      "title": "Prompt Input Attachments",
+      "description": "Attachment surface for the composer: image/file attach via picker, paste, and drag-and-drop with preview thumbnails, per-item removal, a hovercard preview, media-category auto-detection, and upload-state chips. Produces attachments via a bundled readFileAsDataUrl helper (copy-owned); the shape matches common chat image-content models.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/conversation/prompt-input",
+        "button",
+        "hover-card",
+        "@localmode/ui/lib/browser-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/prompt-input-attachments/prompt-input-attachments.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/suggestions",
+      "type": "registry:component",
+      "title": "Suggestions",
+      "description": "A horizontal row of selectable prompt chips; each Suggestion invokes a callback with its text to seed the composer.",
+      "categories": [
+        "conversation"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/suggestions/suggestions.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/actions",
+      "type": "registry:component",
+      "title": "Actions",
+      "description": "Message-level controls — copy (with copied state), regenerate, read-aloud (wire to local Kokoro TTS), an overflow more-menu, and an on-device FeedbackBar (thumbs up/down, no telemetry).",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "button",
+        "dropdown-menu",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/actions/actions.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/reasoning",
+      "type": "registry:component",
+      "title": "Reasoning",
+      "description": "The model's own thinking tokens (DeepSeek-R1 style) in a collapsible region: auto-expands while streaming with an elapsed timer and auto-collapses on the final answer, plus a compact ThinkingBar one-line status strip. Tier of the thinking taxonomy: ThinkingBar -> Reasoning -> ChainOfThought.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/reasoning/reasoning.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/sources",
+      "type": "registry:component",
+      "title": "Sources",
+      "description": "Retrieval citations from local RAG results: a collapsible container with favicon/title/excerpt chips, a 0-1 relevance score, and an optional Web/Images/News tabbed layout. All metadata is local — no remote unfurl.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "collapsible",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/sources/sources.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/tool",
+      "type": "registry:component",
+      "title": "Tool",
+      "description": "A single tool invocation card with a status taxonomy (pending/running/streaming/completed/error), expandable ToolInput/ToolOutput, a per-tool renderer registry with a Fallback for unregistered tools, and a ToolGroup that collapses consecutive calls behind a stacked-icon summary. Data source: useAgent / wllama/transformers tool calling.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "badge",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/tool/tool.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/task",
+      "type": "registry:component",
+      "title": "Task",
+      "description": "A multi-step agent process as an ordered list of steps (index, tool, status, args, observation) with the final-answer step distinguished. Its data shape aligns with @localmode/react useAgent steps so agent UIs wire up without adapters.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/task/task.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/code-block",
+      "type": "registry:component",
+      "title": "Code Block",
+      "description": "Syntax-highlighted code (lazy Shiki, plain-pre fallback) with a language label and a copy-to-clipboard control.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "shiki",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/code-block/code-block.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/agent-step-timeline",
+      "type": "registry:component",
+      "title": "Agent Step Timeline",
+      "description": "A vertical timeline of ReAct agent steps: collapsible per-step cards (color-coded tool badge, args, observation show-more, index, elapsed-ms), a finish final-answer card, auto-scroll, a Thinking row while running, a finish-reason badge (max_steps/timeout/loop_detected/error), and nested sub-agent/handoff rendering. Data source: useAgent.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/agent-step-timeline/agent-step-timeline.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/source-citation-list",
+      "type": "registry:component",
+      "title": "Source Citation List",
+      "description": "In-message attributed-sources list extending Sources: numbered items, a similarity score with a radial confidence ring, and clamped body text with staggered fade-in, behind a collapsible Show N sources toggle. Data source: useSemanticSearch / useAnswerQuestion / useAskDocument.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/source-citation-list/source-citation-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/structured-output-viewer",
+      "type": "registry:component",
+      "title": "Structured Output Viewer",
+      "description": "A result panel for useGenerateObject extending Response: pretty-printed JSON, an independently-usable inference-stats footer (tokens, duration, attempts), and a navigable typed schema-tree view.",
+      "categories": [
+        "conversation"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/structured-output-viewer/structured-output-viewer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/pipeline-tracker",
+      "type": "registry:component",
+      "title": "Multi-Step Pipeline Tracker",
+      "description": "Progress surfaces for local workflows: a horizontal numbered-step indicator (active/completed/pending), a stage+percentage variant for ingest, a Steps/Plan vertical outline with expandable detail, and an inference-queue surface grouped by priority. Maps to usePipeline onProgress and useInferenceQueue.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "collapsible",
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/pipeline-tracker/pipeline-tracker.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/branch",
+      "type": "registry:component",
+      "title": "Branch",
+      "description": "A message-versioning navigator that pages between regenerated/edited assistant variants for one turn, with prev/next controls and an X of N indicator (hidden at N=1). Wraps an existing Message non-intrusively; pure client state. Data source: useChat.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/branch/branch.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/inline-citation",
+      "type": "registry:component",
+      "title": "Inline Citation",
+      "description": "Inline superscript citation markers in prose that open a hovercard with the cited local chunk (title, excerpt, quoted snippet), with a carousel paging multiple sources for one claim. References locally-stored chunks only — no remote unfurl. Data source: useSemanticSearch.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "hover-card"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/inline-citation/inline-citation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/tool-approval",
+      "type": "registry:component",
+      "title": "Tool Approval",
+      "description": "A human-in-the-loop confirmation card that gates a tool call before execution (pending tool + args with approve/reject), then re-renders read-only as an immutable receipt. Pairs with Tool and feeds the choice back into the agent loop. Data source: useAgent.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/tool-approval/tool-approval.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/chain-of-thought",
+      "type": "registry:component",
+      "title": "Chain of Thought",
+      "description": "A structured step-by-step reasoning timeline (distinct from free-text Reasoning): labeled steps with per-step status and icons, and nested slots for embedded retrieved sources and images, collapsing to one line on completion. Data source: useGenerateText reasoning-mode + local RAG.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/chain-of-thought/chain-of-thought.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/scroll-to-bottom-button",
+      "type": "registry:component",
+      "title": "Scroll To Bottom Button",
+      "description": "A floating scroll-to-bottom affordance tied to a chat container's scroll state — appears when the user scrolls up, scrolls to and pins the latest content. Pairs with a ScrollAnchor pin element. Data source: useChat.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/scroll-to-bottom-button/scroll-to-bottom-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/system-notice-banner",
+      "type": "registry:component",
+      "title": "System Notice Banner",
+      "description": "An in-conversation info/warning banner (not a message bubble) for local-first state changes: offline/online, model switch, capability-unavailable, WebGPU->WASM fallback, cache eviction, or download-required. Data source: useNetworkStatus / useCapabilities.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/system-notice-banner/system-notice-banner.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/conversation/in-message-error",
+      "type": "registry:component",
+      "title": "In-Message Error",
+      "description": "An accessible per-message error/retry block rendered inline on a failed assistant message (not a global toast), with auto-extracted error text, a classified hint (OOM / WebGPU lost / model load), and a retry action. Data source: useChat error state.",
+      "categories": [
+        "conversation"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/conversation/in-message-error/in-message-error.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/data-documents/file-dropzone",
+      "type": "registry:component",
+      "title": "File Dropzone",
+      "description": "A generic, format-agnostic drag-and-drop + click-to-browse upload zone for non-image files (PDF/CSV/JSON/vector exports). Validates each file with a bundled validateFile helper (copy-owned — no @localmode dependency) against an accept MIME list and maxSize, emitting only valid files via onUpload; rejected files go to onReject. Disabled/processing overlay blocks input. Distinct from media-vision's MediaDropzone (no image-preview semantics).",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/browser-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/data-documents/file-dropzone/file-dropzone.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/data-documents/indexed-document-card",
+      "type": "registry:component",
+      "title": "Indexed Document Card",
+      "description": "A card for a single locally-indexed document: truncated filename (native tooltip), chunk count, optional page count and file size, and a hover/focus-revealed delete with loading state. Presentational — page/chunk counts come from the app's ingest state (e.g. useSemanticChunk output length), not a single hook.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/data-documents/indexed-document-card/indexed-document-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/data-documents/format-detection-badge",
+      "type": "registry:component",
+      "title": "Format Detection Badge",
+      "description": "A small badge displaying an auto-detected data format (PINECONE / CHROMA / CSV / JSONL or custom) with a per-format color map, used to confirm a detected source format after parsing. Fully self-contained and presentational — pass a format string and an optional colorMap; unknown formats fall back to neutral and a nullish format shows a pending state. Pairs with useImportExport (parseResult.format); also consumed by the local-first VectorImportFlow as a registry dependency.",
+      "categories": [
+        "data"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/data-documents/format-detection-badge/format-detection-badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/data-documents/category-facet-list",
+      "type": "registry:component",
+      "title": "Category Facet List",
+      "description": "A domain-decoupled, filterable category facet (vertical list or horizontal pills) with per-category count badges, single-select toggle (re-click deselects), an All/clear affordance, and active highlight. Takes categories/counts/selected/onSelect so it serves useSemanticSearch result filtering, zero-shot classification labels, and NER entity-type filters alike.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/data-documents/category-facet-list/category-facet-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/data-documents/chunk-boundary-visualizer",
+      "type": "registry:component",
+      "title": "Chunk Boundary Visualizer",
+      "description": "Visualizes a document split into distinct chunks: alternating accent-background segments each with a monospace C1/C2 badge; in semantic mode, inter-chunk boundary similarity scores (e.g. sim: 0.74) render as faint labels between segments. Takes a decoupled ChunkInfo[] (text, chunkIndex, rightSimilarity) + the active mode, pairing with useSemanticChunk. Display-only — owns no chunking logic.",
+      "categories": [
+        "data"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/data-documents/chunk-boundary-visualizer/chunk-boundary-visualizer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/input-controls/char-limit-indicator",
+      "type": "registry:component",
+      "title": "Char Limit Indicator",
+      "description": "A radial progress ring + n/MAX monospace counter that turns error-colored when over the limit, deriving the percentage internally from charCount + maxLength. Pure SVG, shadcn/CSS-variable themed (not daisyUI). Self-contained — sits beside any length-bounded textarea or PromptInput.",
+      "categories": [
+        "input"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/input-controls/char-limit-indicator/char-limit-indicator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/input-controls/mask-token-input",
+      "type": "registry:component",
+      "title": "Mask Token Input",
+      "description": "A fill-mask / cloze textarea that detects a configurable mask token (default [MASK]), shows an inline highlighted preview of the mask span, a 'detected' vs 'Add [MASK]' validation hint, a randomize/sample button, and a Cmd+Enter submit badge. Presentational — feeds useFillMask.",
+      "categories": [
+        "input"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/input-controls/mask-token-input/mask-token-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/input-controls/segmented-mode-picker",
+      "type": "registry:component",
+      "title": "Segmented Mode Picker",
+      "description": "A pill toggle for 2–4 mutually-exclusive named modes (ring-bordered container, active item tinted + ringed), plus a typed TabBar variant with disabledTabs gating. Fully controlled, generic over the id type. Covers OCR content-type, summary length, translation formality, browse/inspect modes.",
+      "categories": [
+        "input"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/input-controls/segmented-mode-picker/segmented-mode-picker.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/input-controls/language-pair-selector",
+      "type": "registry:component",
+      "title": "Language Pair Selector",
+      "description": "A paired source/target language picker — From/To pill toggles with flag + name + a swap button, or a compact {source} → {target} pair of selects. Fully controlled via sourceCode/targetCode and onSelectSource/onSelectTarget/onSwap. Feeds useTranslate; composes with useDetectLanguage for auto-detect source.",
+      "categories": [
+        "input"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/input-controls/language-pair-selector/language-pair-selector.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/input-controls/text-processing-panel",
+      "type": "registry:component",
+      "title": "Text Processing Panel",
+      "description": "A two-column (stacked on mobile) single-input → single-output NLP shell: labeled textarea + live word count + optional CharLimitIndicator on the left; a result pane (spinner / pre-wrap text / empty slot) with copy-with-feedback on the right; a run/cancel/clear toolbar; and an optional header slot. Layout-only — compatible with useSummarize/useTranslate/useFillMask/useAnswerQuestion/useGenerateText.",
+      "categories": [
+        "input"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/input-controls/char-limit-indicator"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/input-controls/text-processing-panel/text-processing-panel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/input-controls/parameter-slider",
+      "type": "registry:component",
+      "title": "Parameter Slider",
+      "description": "An inline range slider with a live value readout for reversible adjustment of a local generation parameter — temperature, top-k, top-p, maxTokens, nGpuLayers, KV-cache quant. Fully controlled; the emitted value feeds straight into useGenerateText/useChat options. Built on the shadcn/ui Slider primitive.",
+      "categories": [
+        "input"
+      ],
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/input-controls/parameter-slider/parameter-slider.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/input-controls/slash-command-palette",
+      "type": "registry:component",
+      "title": "Slash Command Palette",
+      "description": "A '/'-triggered command palette over a local tool/command list — name, category, description, and icon — to layer onto a PromptInput Tools slot. Purely presentational; the consumer opens it (e.g. when the composer starts with '/') and supplies the query. Built on the shadcn/ui Command (cmdk) primitive.",
+      "categories": [
+        "input"
+      ],
+      "dependencies": [
+        "cmdk",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "command"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/input-controls/slash-command-palette/slash-command-palette.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/input-controls/option-list",
+      "type": "registry:component",
+      "title": "Option List",
+      "description": "An inline multi-choice selection list (shows 5–7 options then paginates) for human-in-the-loop agent inquiries, distinct from quick-reply suggestion chips. The chosen option feeds back into a local agent inquiry loop. Presentational — feeds useAgent.",
+      "categories": [
+        "input"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/input-controls/option-list/option-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/input-controls/prompt-enhance-button",
+      "type": "registry:component",
+      "title": "Prompt Enhance Button",
+      "description": "A one-click 'enhance my prompt' control that hands the user's draft to a local model (via an onEnhance callback wired to useGenerateText) and applies the rewritten prompt — fully offline — with an optional few-shot example editor for interactive prompt tuning. Presentational + callback-driven.",
+      "categories": [
+        "input"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/input-controls/prompt-enhance-button/prompt-enhance-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/input-controls/copy-button",
+      "type": "registry:component",
+      "title": "Copy Button",
+      "description": "A copy-to-clipboard button that shows a 2-second Copied confirmation, disables itself when there is nothing to copy, and treats an unavailable clipboard (insecure context or denied permission) as a silent no-op. Fully controlled via value; presentational. Pairs with any generated-text or result surface.",
+      "categories": [
+        "input"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/input-controls/copy-button/copy-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/input-controls/system-prompt-editor",
+      "type": "registry:component",
+      "title": "System Prompt Editor",
+      "description": "A controlled system-prompt editor (value in, onChange out) with quick-pick presets composed via the OptionList primitive: selecting a preset replaces the textarea value; free-form edits that match no preset deselect all presets. Exports SYSTEM_PROMPT_PRESETS and DEFAULT_SYSTEM_PROMPT. Presentational: persistence and model wiring stay in the consumer. Feeds useChat / useGenerateText systemPrompt.",
+      "categories": [
+        "input"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/input-controls/option-list"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/input-controls/system-prompt-editor/system-prompt-editor.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/model-downloader",
+      "type": "registry:component",
+      "title": "Model Downloader",
+      "description": "The headline local-first card a user sees while a model loads on-device: model name, size, context length, category, a live progress bar, and a clear first-time-downloading vs loading-from-cache distinction (with a ready state). Includes a lower-level DownloadProgress (bar + percentage from a 0–1 fraction or {loaded,total,percent,cached}). Presentational — bind progress to useModelLoader/useModelStatus; it does not own the download. Lifted out of a chat empty-state into a reusable primitive.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/model-downloader/model-downloader.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/model-selector",
+      "type": "registry:component",
+      "title": "Model Selector",
+      "description": "A device-aware model picker: a list grouped by category, backend filter chips (WebGPU/ONNX/WASM/LiteRT) with live counts, per-model vision/tool-calling/cached badges, a download affordance for uncached models, and a delete-from-cache affordance for cached ones. Device-unfit models (e.g. a WebGPU-only model on a non-WebGPU device) are de-emphasized and labeled. Emits onSelect(modelId) and owns no selection state. Bind models to useModelRecommendations and hasWebGPU to useCapabilities.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/model-selector/model-selector.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/capability-gate",
+      "type": "registry:component",
+      "title": "Capability Gate",
+      "description": "A true gate: renders its children only when the device meets a stated requirement (e.g. requires=\"webgpu\"), otherwise a themed fallback slot with guidance. The capability check uses useCapabilities. Local models have hard device requirements (LiteRT Gemma is WebGPU-only), so gating prevents a broken experience. The read-only display sibling is DeviceBadge.",
+      "categories": [
+        "local-first"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/use-environment"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/capability-gate/capability-gate.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/storage-meter",
+      "type": "registry:component",
+      "title": "Storage Meter",
+      "description": "Shows origin/IndexedDB storage usage against quota as a meter, with a warning state past a configurable threshold and a graceful unavailable state (estimates are approximate and blocked in Safari private mode). Bind to useStorageQuota (default) or pass an explicit quota. Complements ContextUsageMeter (the token-budget gauge).",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/browser-utils",
+        "@localmode/ui/lib/use-environment"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/storage-meter/storage-meter.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/network-badge",
+      "type": "registry:component",
+      "title": "Network Badge",
+      "description": "A reactive online/offline indicator (NetworkBadge) sourced from useNetworkStatus, plus an OfflineReady badge that signals the app's required model is cached on-device and can run with no network. Because local models keep working offline, offline is informational, not an error.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/use-environment"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/network-badge/network-badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/cache-badge",
+      "type": "registry:component",
+      "title": "Cache Badge",
+      "description": "Annotates a result as served from the semantic cache, optionally with the hit latency (e.g. \"cached · 12ms\"). Drive cached/latencyMs from a useSemanticCache lookup result. Renders nothing when cached is false, so it is safe to drop next to any result. Self-contained and presentational.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/cache-badge/cache-badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/device-capability-grid",
+      "type": "registry:component",
+      "title": "Device Capability Grid",
+      "description": "The expanded sibling of DeviceBadge: a full device-capability diagnostic card reading useCapabilities — a stats bar (cores/memory/GPU), a status row per feature flag (WebGPU/WASM/SIMD/Threads/IndexedDB/Web Workers), a storage row, and a browser/OS footer, with a spinner while detection runs. Does not replace DeviceBadge.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/use-environment"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/device-capability-grid/device-capability-grid.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/browser-compat-card",
+      "type": "registry:component",
+      "title": "Browser Compat Card",
+      "description": "A per-model runnability report for the current device — the feasibility check you want before a multi-GB download: a pass/fail RAM-headroom bar (model RAM vs device RAM), available storage, threading (cross-origin-isolation) status, estimated speed, and a warnings list, with a canRun boolean gating a success/error header. Ships an independently-usable RAMUsageBar. Extends the spirit of CapabilityGate; data source useCapabilities.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/browser-compat-card/browser-compat-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/provider-fallback-badge",
+      "type": "registry:component",
+      "title": "Provider Fallback Badge",
+      "description": "Surfaces the active AI backend tier — a zero-download built-in (Chrome AI) vs a model-download provider (Transformers.js) — plus a WASM threading variant (Multi-thread when cross-origin isolated / SharedArrayBuffer is available, else Single-thread). A software-side sibling to DeviceBadge; data source useCapabilities (crossOriginIsolated) + provider identifier.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/use-environment"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/provider-fallback-badge/provider-fallback-badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/context-usage-meter",
+      "type": "registry:component",
+      "title": "Context Usage Meter",
+      "description": "A token / context-window budget meter (with composable Context/ContextTrigger/ContextContent/ContextInputUsage/ContextOutputUsage parts) breaking down input/output/reasoning/cache token usage against the model's context-window limit (a hard local GGUF/LiteRT KV-cache constraint), warning near the limit. Fed by usage.tokens from a generate result. Local-only — there is NO cost field. Complements StorageMeter (disk) with a token-budget gauge.",
+      "categories": [
+        "local-first"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/context-usage-meter/context-usage-meter.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/model-catalog-card",
+      "type": "registry:component",
+      "title": "Model Catalog Card",
+      "description": "A rich tile for a single model catalog entry (wllama/webllm/transformers/litert/mediapipe shapes): name, a size badge, description, a metadata chip row (architecture, params, quantization, context), and a conditional capability sub-row (tools/vision/embedding/reranking/reasoning). Fires onClick(id) for selection with a selected ring. Complements (does not replace) ModelSelector; data source useModelRecommendations / model registry.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/model-catalog-card/model-catalog-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/model-loading-panel",
+      "type": "registry:component",
+      "title": "Model Loading Panel",
+      "description": "A full-height \"waiting for model\" splash — the richer blocking sibling of ModelDownloader — combining model metadata (size, context length, category, cached-vs-downloading badge) with a progress bar and a two-path help message (first-download vs cache-load). Composes the lower-level DownloadProgress; binds to useModelLoader/useModelStatus.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/local-first/model-downloader"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/model-loading-panel/model-loading-panel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/model-metadata-card",
+      "type": "registry:component",
+      "title": "Model Metadata Card",
+      "description": "A structured key-value grid of parsed model metadata (GGUFMetadataCard, with a ModelMetadataCard alias) — architecture, parameter count, quantization, context length, embedding dimension, vocab size, head/layer counts, file size, optional author/license — driven by a field-descriptor array that skips absent fields. The GGUF shape originates from @localmode/wllama; the display is a generic metadata grid. Data source useModelStatus / model-loading metadata.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/model-metadata-card/model-metadata-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/model-recommendation-card",
+      "type": "registry:component",
+      "title": "Model Recommendation Card",
+      "description": "A single scored recommendation: a radial score dial (0–100), the model name, a monospace model id, a badge row (provider, size, speed/quality tiers, recommended device webgpu/wasm/cpu with a stable tier→color mapping), a description, and reason chips. Supports an optional onToggleCompare selection affordance. Data source useModelRecommendations.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/model-recommendation-card/model-recommendation-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/model-search-browser",
+      "type": "registry:component",
+      "title": "Model Search Browser",
+      "description": "A cmdk-based searchable model-repo browser: a controlled search input, a sort selector (downloads/likes/last-modified), result rows (repo id, author, compact download/like counts, relative last-modified, capped tag badges), load-more pagination, and a per-repo expandable file list (filename, quantization badge, human-readable size) with per-file select actions — plus loading, empty, and error-with-retry states. Purely presentational: every value arrives via props and every action leaves via a callback, so any backend can feed it (recommended wiring: the HuggingFace Hub API; a private registry or static fixtures work identically).",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "cmdk",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/model-search-browser/model-search-browser.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/model-comparison-panel",
+      "type": "registry:component",
+      "title": "Model Comparison Panel",
+      "description": "A side-by-side comparison of two scored entries with labeled rows (Score, Size, Speed, Quality, Device, Dimensions) where winning rows are accent-highlighted and losing rows dimmed, plus an onClear dismissal. Win-highlighting is derived purely from props (no orchestration state). Data source useModelRecommendations.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/model-comparison-panel/model-comparison-panel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/adaptive-batch-card",
+      "type": "registry:component",
+      "title": "Adaptive Batch Card",
+      "description": "Surfaces useAdaptiveBatchSize output: a prominent computed optimal batch number, a hardware summary (cores/RAM/GPU), the detection source (detected/estimated/override), and a collapsible reasoning string. Ships a compact AdaptiveBatchBadge variant (e.g. \"Batch: 32\") with a click-to-expand device-profile popover. Data source useAdaptiveBatchSize.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/adaptive-batch-card/adaptive-batch-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/vector-storage-observability",
+      "type": "registry:component",
+      "title": "Vector Storage Observability",
+      "description": "VectorDB observability complementing StorageMeter (quota): a compression-stats badge (SQ8 ratio + before/after size, e.g. \"4.0x — 15KB→3.7KB\"), a three-tier storage estimate (Raw Float32 / SQ8 4x / PQ 8–32x with the active tier highlighted), and a GPU-aware search-latency badge (accented when WebGPU-accelerated). Values derive from getCompressionStats() (a core function) + search timing, passed in as props; the nearest shipped hook is useStorageQuota.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/browser-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/vector-storage-observability/vector-storage-observability.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/embedding-drift-banner",
+      "type": "registry:component",
+      "title": "Embedding Drift Banner",
+      "description": "A warning panel shown when the active embedding model is incompatible with vectors already stored (model changed or dimension mismatch): explains stored vs current model ids, shows a reindex progress bar + phase label while re-embedding, and offers Re-embed All / Cancel actions. Data source useReindex + compatibility check.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/embedding-drift-banner/embedding-drift-banner.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/vector-export-panel",
+      "type": "registry:component",
+      "title": "Vector Export Panel",
+      "description": "An export surface for vector data — the counterpart to VectorImportFlow: a record/dimension count line, a row per export format (native JSON with vectors, CSV, JSONL — label, description, vectors-included / text-only indicator, per-format export action emitting onExport(formatId)), a busy state that disables all actions with a spinner on the active format, a zero-records disabled state, and an optional last-export banner (format, records, human-readable size, filename). Works with any backend; data source useImportExport (exportCSV, exportJSONL) plus a native JSON export.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/vector-export-panel/vector-export-panel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/vector-import-flow",
+      "type": "registry:component",
+      "title": "Vector Import Flow",
+      "description": "A guarded vector-import flow for useImportExport: a preview panel (detected-format badge, total / with-vectors / text-only counts, detected dimensions, dimension-mismatch warning, Cancel/Confirm), a phased progress bar (parsing → validating → embedding → importing), a result stats banner (imported/skipped/re-embedded counts, source format, duration), and a record-preview table for row-level sanity checks before a destructive ingest. References the cross-family FormatDetectionBadge and inlines a minimal fallback so it builds independently. Data source useImportExport.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/vector-import-flow/vector-import-flow.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/semantic-cache-status-bar",
+      "type": "registry:component",
+      "title": "Semantic Cache Status Bar",
+      "description": "A compact toolbar row for useSemanticCache complementing CacheBadge: entry count, hit-rate percentage, an icon-only clear-cache button (when entries > 0), and an enable/disable toggle (with a spinner while the embedding model loads). Pairs with a per-message CachedAnnotation (\"Cached (38ms)\"). Distinct from CacheBadge (model-download cache) — this surfaces semantic-cache hits on responses. Data source useSemanticCache.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/semantic-cache-status-bar/semantic-cache-status-bar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/provider-badge",
+      "type": "registry:component",
+      "title": "Provider Badge",
+      "description": "Displays the RESOLVED provider identity - composing ProviderFallbackBadge for the tier and name - alongside the model id that actually served the request. While providerName is null it shows a Resolving provider placeholder, so the badge never claims a provider before one has resolved. Takes generic display props (providerName / tier / modelId / note). Distinct from ProviderFallbackBadge (the tier chip it composes): this adds the resolved provider identity plus the served model id. Data source: a provider-fallback resolver.",
+      "categories": [
+        "local-first"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/local-first/provider-fallback-badge"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/provider-badge/provider-badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/local-first/chrome-ai-download-gate",
+      "type": "registry:component",
+      "title": "Chrome AI Download Gate",
+      "description": "The gate a user sees when a Chrome Built-in AI capability exists but its on-device model has not been fetched yet. Chrome refuses to start the model download outside a user activation, so the button is the only way to trigger it. Renders the download prompt, in-flight progress, the failed-attempt message, and the terminal unsupported / cannot-run-here states; returns null once the model is available. Includes ChromeAIReadyBadge. Presentational — bind availability/progress to a provider-fallback hook and pass its download action as onDownload.",
+      "categories": [
+        "local-first"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/local-first/chrome-ai-download-gate/chrome-ai-download-gate.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/media-vision/media-dropzone",
+      "type": "registry:component",
+      "title": "Media Dropzone",
+      "description": "A drag-and-drop + click-to-browse image upload zone with idle / drag-over / processing states, accept-list + max-size validation via validateFile, an \"add another\" variant, and an onFiles(File[]) callback.",
+      "categories": [
+        "media-vision"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/browser-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/media-vision/media-dropzone/media-dropzone.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/media-vision/bounding-box-overlay",
+      "type": "registry:component",
+      "title": "Bounding Box Overlay",
+      "description": "Color-coded detection boxes (with a companion DetectionLabelLegend) positioned over an image as percentage offsets from its natural dimensions, so placement is display-size independent. Serves object / face / hand / pose output.",
+      "categories": [
+        "media-vision"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/media-vision/bounding-box-overlay/bounding-box-overlay.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/media-vision/before-after-image-viewer",
+      "type": "registry:component",
+      "title": "Before / After Image Viewer",
+      "description": "Compare an original image with a transformed result — a two-panel grid with checkerboard transparency (shipped inline) or a segmented Original / Enhanced toggle. Pairs with useImageToImage / useSegmentImage.",
+      "categories": [
+        "media-vision"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/media-vision/before-after-image-viewer/before-after-image-viewer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/media-vision/image-processing-overlay",
+      "type": "registry:component",
+      "title": "Image Processing Overlay",
+      "description": "A full-bleed overlay over a dimmed source image while vision inference runs — spinner ring + icon + status + optional cancel, plus an animated scan variant (keyframes shipped inline). Renders nothing when idle. Driven by any vision hook's isLoading.",
+      "categories": [
+        "media-vision"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/media-vision/image-processing-overlay/image-processing-overlay.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/media-vision/video-canvas",
+      "type": "registry:component",
+      "title": "Video Canvas",
+      "description": "A mirrored 16:9 webcam surface — a video element with a pixel-aligned transparent canvas overlay for landmark / skeleton drawing, an FPS badge, and a child slot. A shell for the MediaPipe streaming trackers (useDetectHands / useDetectPose / useDetectFace / useRecognizeGesture); the app supplies the stream and draw callback.",
+      "categories": [
+        "media-vision"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/media-vision/video-canvas/video-canvas.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/media-vision/image-result-gallery",
+      "type": "registry:component",
+      "title": "Image Result Gallery",
+      "description": "A responsive grid / list of image result cards sharing one data contract — in-flight overlay, hover metadata, confidence score, multi-select, delete, and staggered fade-in. Composes ConfidenceScoreBadge (Results family) via a registry dependency, with a minimal score-badge fallback inlined so it builds independently. Pairs with useClassifyImageZeroShot / useEmbedImage / useCaptionImage.",
+      "categories": [
+        "media-vision"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/results/confidence-score-badge"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/media-vision/image-result-gallery/image-result-gallery.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/media-vision/use-webcam",
+      "type": "registry:hook",
+      "title": "useWebcam",
+      "description": "A React hook that owns a getUserMedia video stream: start() acquires (or re-acquires after a denial - the retry path), stop() releases every track, and unmount cleanup guarantees the camera light goes off. Runtime permission denial surfaces as a recoverable error (permission / hardware / unknown) rather than a thrown exception. Returns { stream, isActive, error, start, stop, clearError }; exports WebcamError / WebcamErrorKind. Imports only React and browser APIs - zero @localmode. Powers webcam-driven vision surfaces (object detection, live landmark tracking).",
+      "categories": [
+        "media-vision"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/media-vision/use-webcam/use-webcam.ts",
+          "type": "registry:hook",
+          "target": "hooks/use-webcam.ts"
+        }
+      ]
+    },
+    {
+      "name": "ui/results/confidence-score-badge",
+      "type": "registry:component",
+      "title": "Confidence Score Badge",
+      "description": "Maps a 0–1 score to a semantic color tier (configurable thresholds; default high ≥ 0.8 success, medium ≥ 0.5 warning, low muted) and renders the formatted percentage as a flat pill badge or a radial dial (conic-gradient ring wired to CSS variables, not daisyUI). The shared scored-output atom replacing 12 copied score-color helpers; consumed cross-family by media-vision's ImageResultGallery. Pairs with useClassify / useClassifyZeroShot / useSemanticSearch / useAnswerQuestion. Self-contained and presentational; exports resolveTier().",
+      "categories": [
+        "results"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/results/confidence-score-badge/confidence-score-badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/results/scored-result-bar-list",
+      "type": "registry:component",
+      "title": "Scored Result Bar List",
+      "description": "A ranked vertical list of {label, score} pairs — each row shows the label, a confidence percentage (via ConfidenceScoreBadge), and an animated horizontal fill bar proportional to the 0–1 score, with the top row highlighted. Ships skeleton-loading and empty-state slots. One data contract serves useClassify / useClassifyZeroShot / useDetectObjects / useFillMask / useSemanticSearch.",
+      "categories": [
+        "results"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/results/confidence-score-badge"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/results/scored-result-bar-list/scored-result-bar-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/results/top-result-card",
+      "type": "registry:component",
+      "title": "Top Result Card",
+      "description": "A hero card highlighting the single winning classification result — large label, prominent radial confidence dial (via ConfidenceScoreBadge), and a tier-tinted gradient-border glow. Designed to pair above a ScoredResultBarList; serves any single-winner output (sentiment, intent, language detection, gesture, zero-shot). Pairs with useClassifyZeroShot (top result).",
+      "categories": [
+        "results"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/results/confidence-score-badge"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/results/top-result-card/top-result-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/results/cosine-similarity-meter",
+      "type": "registry:component",
+      "title": "Cosine Similarity Meter",
+      "description": "A display card showing a cosine similarity (0–1) as a large numeric value with a human-readable bucket label (Very similar … Unrelated) using configurable thresholds, plus a proportional half-ring SVG arc gauge. Derived from two embeddings (useEmbed / useEmbedImage). Self-contained; exports resolveBucket().",
+      "categories": [
+        "results"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/results/cosine-similarity-meter/cosine-similarity-meter.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/results/editable-label-set",
+      "type": "registry:component",
+      "title": "Editable Label Set",
+      "description": "An editable set of color-cycling removable chips managing a candidate-label list (zero-shot candidate labels or any string-tag collection): hover-reveal remove, inline add input (Enter to commit, Backspace-on-empty to remove last). Fully controlled via labels / onAdd / onRemove, cycling a CSS-variable palette by index. Feeds useClassifyZeroShot candidate labels.",
+      "categories": [
+        "results"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/results/editable-label-set/editable-label-set.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/results/entity-stats-bar",
+      "type": "registry:component",
+      "title": "Entity Stats Bar",
+      "description": "A horizontal stats bar showing the total detected-entity count plus per-type breakdown badges (PER / LOC / ORG / MISC — colored dot + count + label), computing counts internally from a DetectedEntity[] (or a pre-computed counts map) against a color/label registry. Pairs with useExtractEntities. Self-contained; exports countByType().",
+      "categories": [
+        "results"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/results/entity-stats-bar/entity-stats-bar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/results/redacted-text-display",
+      "type": "registry:component",
+      "title": "Redacted Text Display",
+      "description": "An inline-annotated text renderer interleaving plain text with color-coded redaction tokens (e.g. [PER], [LOC]) styled per entity type with native tooltips, including a scanning loading skeleton and an empty placeholder. Takes source text + detected entity spans (start/end) from useExtractEntities; segments internally (overlaps resolved by earliest). Exports segmentText().",
+      "categories": [
+        "results"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/results/redacted-text-display/redacted-text-display.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/results/evaluation-metrics-dashboard",
+      "type": "registry:component",
+      "title": "Evaluation Metrics Dashboard",
+      "description": "A composite evaluation dashboard: a KPI/stat-tile row (value + delta), a grid of metric cards (accuracy / precision / recall / F1), a color-coded N×N confusion matrix (diagonal success-tinted, off-diagonal error-tinted, intensity scaled to max cell, with legend), a radar/spider sub-view, and a threshold-calibration panel. Driven by useEvaluateModel + useCalibrateThreshold. All charts are minimal in-component SVG — no external chart library. Each section is optional.",
+      "categories": [
+        "results"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/results/evaluation-metrics-dashboard/evaluation-metrics-dashboard.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/results/entity-relationship-graph",
+      "type": "registry:component",
+      "title": "Entity Relationship Graph",
+      "description": "An interactive force-directed graph of typed nodes + relationship-labeled edges with drag / zoom / pan / hover / click and SVG/PNG export — for visualizing VectorDB entity relationships, agent-memory connections, embedding clusters, or useExtractEntities (NER) co-occurrences. The layout runs entirely client-side over local data via a lightweight in-component force simulation (no d3-force, no network). Exports layoutGraph().",
+      "categories": [
+        "results"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/results/entity-relationship-graph/entity-relationship-graph.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/results/threshold-calibration-panel",
+      "type": "registry:component",
+      "title": "Threshold Calibration Panel",
+      "description": "A presentational panel for similarity-threshold calibration results: the empirically calibrated threshold shown side-by-side with the model's preset default (or an explicit no-preset state), calibration metadata (percentile, sample size, model ID, distance function), the pairwise similarity-distribution statistics (mean / median / std-dev / min / max / pair count), and a reference list of known-good preset thresholds with the active model highlighted. Loading and empty states carry optional calibrate / cancel affordances. Designed from the ThresholdCalibration result shape; the full-fidelity standalone complement to evaluation-metrics-dashboard's embedded calibration sub-view. Driven by useCalibrateThreshold (pair presetThreshold with getDefaultThreshold and presets with MODEL_THRESHOLD_PRESETS). All in-component SVG-free token styling — no chart library.",
+      "categories": [
+        "results"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/results/threshold-calibration-panel/threshold-calibration-panel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/results/error-alert",
+      "type": "registry:component",
+      "title": "Error Alert",
+      "description": "A compact, dismissible error surface with an optional retry action - a role=alert region showing the message, a Retry button (only when onRetry is provided), and a dismiss control. Presentational: the consumer owns the operation state and decides what retry and dismiss do. The deduped shared alert for operation feedback near a result. Pairs with any hook that surfaces an error string.",
+      "categories": [
+        "results"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/results/error-alert/error-alert.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/results/mode-error-boundary",
+      "type": "registry:component",
+      "title": "Mode Error Boundary",
+      "description": "A React error boundary that isolates a render failure in its subtree: it catches the error, renders a compact recoverable role=alert notice with the message and a Reset button that clears the error and re-renders the children, so one failing surface cannot blank the whole page. A structural copy-owned utility with local prop shapes.",
+      "categories": [
+        "results"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/results/mode-error-boundary/mode-error-boundary.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/security-privacy/password-strength-bar",
+      "type": "registry:component",
+      "title": "Password Strength Bar",
+      "description": "A presentational password/passphrase strength meter — a themed bar + label driven by a caller-computed 0–100 strength score. The app computes strength (pairs with @localmode/core deriveKey/crypto); the component only renders. No turnkey hook.",
+      "categories": [
+        "security"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/security-privacy/password-strength-bar/password-strength-bar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/security-privacy/differential-privacy-controls",
+      "type": "registry:component",
+      "title": "Differential Privacy Controls",
+      "description": "A collapsible DP settings panel (enable toggle, epsilon slider with derived High/Balanced/Low label, privacy-budget bar that warns/errors as budget is consumed) plus a compact \"DP Applied\" provenance badge (epsilon used, embedding dimensionality). Driven by the app's dpEmbeddingMiddleware/dpClassificationMiddleware + DP-budget state; the component only renders. No turnkey hook.",
+      "categories": [
+        "security"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "collapsible",
+        "switch",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/security-privacy/differential-privacy-controls/differential-privacy-controls.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/security-privacy/passphrase-gate",
+      "type": "registry:component",
+      "title": "Passphrase Gate",
+      "description": "A controlled passphrase screen with create and unlock modes: create renders passphrase + confirmation with a minimum-length gate and composes the password-strength-bar from caller-computed strength props; unlock renders a single field with an error surface (e.g. wrong passphrase) and busy state. Submits the passphrase via onSubmit; performs no crypto and retains no passphrase. Pairs with useEncryptedVault.",
+      "categories": [
+        "security"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/security-privacy/password-strength-bar"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/security-privacy/passphrase-gate/passphrase-gate.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/security-privacy/vault-item-card",
+      "type": "registry:component",
+      "title": "Vault Item Card",
+      "description": "A lock-state-aware card for an encrypted note or text document: locked renders a masked body with disabled actions (no plaintext in the DOM); unlocked renders title/timestamp with reveal/hide toggling of caller-supplied decrypted content and a delete action, all via callbacks. Never receives ciphertext or key material. Pairs with useEncryptedVault.",
+      "categories": [
+        "security"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/security-privacy/vault-item-card/vault-item-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/security-privacy/lock-status-badge",
+      "type": "registry:component",
+      "title": "Lock Status Badge",
+      "description": "A compact session-lock indicator accepting a status of locked, unlocked, or no-vault, with distinct iconography per state and an accessible text label (never color alone). Purely presentational — holds no key material. Pairs with the status field of useEncryptedVault.",
+      "categories": [
+        "security"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/security-privacy/lock-status-badge/lock-status-badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/devtools/inference-queue-monitor",
+      "type": "registry:component",
+      "title": "Inference Queue Monitor",
+      "description": "Per-queue inference observability: one card per registered queue showing pending, active, completed, failed, and average latency, with a live pulsing badge + emerald accent on active counts, amber on pending, and destructive on failures. Empty state directs users to registerQueue(). Recommended data source: useDevToolsQueueStats from @localmode/devtools/react — the hook snapshot spreads straight into the queues prop.",
+      "categories": [
+        "devtools"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/devtools/inference-queue-monitor/inference-queue-monitor.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/devtools/event-log-viewer",
+      "type": "registry:component",
+      "title": "Event Log Viewer",
+      "description": "Newest-first devtools event log: relative timestamps (absolute on hover), namespace-colored type badges (vectordb/embedding/model/queue/pipeline/storage), serialized payloads, a case-insensitive substring type filter, a visible cap (default 100) with an overflow line, distinct no-events and no-match empty states, and an optional Clear affordance. Recommended data source: useDevToolsEvents from @localmode/devtools/react.",
+      "categories": [
+        "devtools"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/devtools/event-log-viewer/event-log-viewer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/devtools/pipeline-run-inspector",
+      "type": "registry:component",
+      "title": "Pipeline Run Inspector",
+      "description": "Per-run pipeline observability cards: status badge (running pulses on primary, completed emerald, failed destructive), a completed/total progress bar, the current step while running, total duration on completion, and optional expandable per-step timing rows. The runs record mirrors the @localmode/devtools PipelineSnapshot shape, so useDevToolsPipelineRuns() output feeds it directly; works with any backend.",
+      "categories": [
+        "devtools"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/devtools/pipeline-run-inspector/pipeline-run-inspector.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/devtools/model-cache-table",
+      "type": "registry:component",
+      "title": "Model Cache Table",
+      "description": "Cached-model observability table: model ID (monospace, truncated), status badge (loaded/loading/error), load duration, and relative last-used time per model — with a human-formatted size column only when entries carry sizeBytes and a per-row evict control only when onEvict is provided. Recommended producer: useDevToolsModelCache from @localmode/devtools/react.",
+      "categories": [
+        "devtools"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/localmode/devtools/model-cache-table/model-cache-table.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/chat",
+      "type": "registry:block",
+      "title": "Chat Block",
+      "description": "The flagship on-device chat: a 76-model multi-provider selector (transformers, WebLLM, wllama GGUF, LiteRT) with capability gating, vision attachments, DeepSeek-R1 reasoning display, semantic response caching, agent mode with tools, custom GGUF URLs, system prompt + parameter controls, and slash commands — everything runs in the browser.",
+      "categories": [
+        "blocks",
+        "chat"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "@localmode/webllm",
+        "@localmode/wllama",
+        "@localmode/litert",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/conversation/actions",
+        "@localmode/ui/conversation/agent-step-timeline",
+        "@localmode/ui/conversation/branch",
+        "@localmode/ui/local-first/browser-compat-card",
+        "@localmode/ui/local-first/cache-badge",
+        "@localmode/ui/local-first/capability-gate",
+        "@localmode/ui/local-first/context-usage-meter",
+        "@localmode/ui/conversation/conversation",
+        "@localmode/ui/conversation/message",
+        "@localmode/ui/local-first/model-loading-panel",
+        "@localmode/ui/local-first/model-selector",
+        "@localmode/ui/local-first/network-badge",
+        "@localmode/ui/input-controls/option-list",
+        "@localmode/ui/input-controls/parameter-slider",
+        "@localmode/ui/conversation/prompt-input",
+        "@localmode/ui/conversation/prompt-input-attachments",
+        "@localmode/ui/local-first/provider-fallback-badge",
+        "@localmode/ui/conversation/reasoning",
+        "@localmode/ui/conversation/response",
+        "@localmode/ui/local-first/semantic-cache-status-bar",
+        "@localmode/ui/input-controls/slash-command-palette"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/chat/chat.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/chat/chat.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/devtools-drawer",
+      "type": "registry:block",
+      "title": "DevTools Drawer Block",
+      "description": "A global on-device observability drawer: six tabbed surfaces (inference queues, event log, pipeline runs, model cache, device capabilities, per-collection VectorDB stats) over the @localmode/devtools bridge, plus a lazy framework-agnostic host — devtools code loads only on first open, closing keeps collectors running, power-off fully disables.",
+      "categories": [
+        "blocks",
+        "devtools-drawer"
+      ],
+      "dependencies": [
+        "@localmode/devtools",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/devtools/inference-queue-monitor",
+        "@localmode/ui/devtools/event-log-viewer",
+        "@localmode/ui/devtools/pipeline-run-inspector",
+        "@localmode/ui/devtools/model-cache-table",
+        "@localmode/ui/local-first/device-capability-grid",
+        "@localmode/ui/local-first/vector-storage-observability"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/devtools-drawer/devtools-drawer.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/devtools-drawer/devtools-drawer.tsx"
+        },
+        {
+          "path": "src/app/blocks/devtools-drawer/drawer-host.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/devtools-drawer/drawer-host.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/vision/object-detector",
+      "type": "registry:block",
+      "title": "Object Detector Block",
+      "description": "One-shot DETR (Xenova/detr-resnet-50) object detection on an uploaded image, the bundled sample, or a webcam-captured still — color-coded bounding boxes, a unique-label legend, an N-found count, a ranked scored list, in-flight download progress with cancel, clear-to-reset, and dismiss+retry — plus a live MediaPipe BlazeFace webcam face loop with a numeric face count and captured-still overlay. Fully on-device; models download only behind explicit actions. Split from ui/blocks/vision-lab (Detect tab).",
+      "categories": [
+        "blocks",
+        "vision"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "@localmode/mediapipe",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/browser-utils",
+        "@localmode/ui/media-vision/use-webcam",
+        "@localmode/ui/media-vision/video-canvas",
+        "@localmode/ui/media-vision/bounding-box-overlay",
+        "@localmode/ui/media-vision/image-processing-overlay",
+        "@localmode/ui/media-vision/media-dropzone",
+        "@localmode/ui/local-first/capability-gate",
+        "@localmode/ui/results/scored-result-bar-list"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/vision/object-detector/object-detector.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/vision/object-detector/object-detector.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/vision/live-tracker",
+      "type": "registry:block",
+      "title": "Live Tracker Block",
+      "description": "Real-time MediaPipe streaming trackers on live webcam video — one 4-mode block: Hands (21-point skeleton + handedness), Pose (33-point skeleton + person count), Face (478-point mesh + top-8 expression blendshapes behind a default-on toggle), and Gestures (recognized category with a human-readable label). Live FPS; exactly one tracker/WASM task runs at a time. Ships a justified block-local hot-path canvas util (draw-landmarks.ts — single consumer, imports only @localmode/core topology constants under the blocks carve-out). Fully on-device. Split from ui/blocks/vision-lab (Track tab).",
+      "categories": [
+        "blocks",
+        "vision"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/mediapipe",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/media-vision/use-webcam",
+        "@localmode/ui/media-vision/video-canvas",
+        "@localmode/ui/local-first/capability-gate",
+        "@localmode/ui/input-controls/segmented-mode-picker",
+        "@localmode/ui/results/confidence-score-badge",
+        "@localmode/ui/results/scored-result-bar-list"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/vision/live-tracker/live-tracker.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/vision/live-tracker/live-tracker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/audio/audio-classifier",
+      "type": "registry:block",
+      "title": "Audio Classifier Block",
+      "description": "MediaPipe YAMNet (521 environmental sound categories) top-8 classification of a microphone recording (MediaRecorder; stop -> automatic classification; recording indicator) or an uploaded audio file, rendered as a ranked list with the top prediction highlighted. Ships a justified block-local record->classify hook (use-audio-classifier.ts — imports @localmode/core classifyAudio + @localmode/mediapipe audioClassifier under the blocks carve-out; not promotable as a zero-@localmode registry hook). Fully on-device. Regrouped from ui/blocks/vision-lab (Audio tab) into the audio category.",
+      "categories": [
+        "blocks",
+        "audio"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/mediapipe",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/local-first/capability-gate",
+        "@localmode/ui/results/scored-result-bar-list",
+        "@localmode/ui/audio/waveform-activity-bars",
+        "@localmode/ui/results/error-alert"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/audio/audio-classifier/audio-classifier.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/audio/audio-classifier/audio-classifier.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/text/language-detector",
+      "type": "registry:block",
+      "title": "Language Detector Block",
+      "description": "Debounced (400 ms) automatic language detection across 110 languages (up to five candidates with name + ISO code + confidence) that runs once typed text reaches 10 characters with no button press, plus a two-text cosine-similarity comparison via the on-device MediaPipe text embedder. Fully on-device; models download only when typing crosses the auto-detect threshold or Compare is pressed. Regrouped from ui/blocks/vision-lab (Language tab) into a new standalone text category (roadmap D2 — NOT merged into text-insights).",
+      "categories": [
+        "blocks",
+        "text"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/mediapipe"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/local-first/capability-gate",
+        "@localmode/ui/results/cosine-similarity-meter",
+        "@localmode/ui/results/scored-result-bar-list"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/text/language-detector/language-detector.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/text/language-detector/language-detector.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/image-studio/background-remover",
+      "type": "registry:block",
+      "title": "Background Remover Block",
+      "description": "Remove an image's background entirely on-device: SegFormer (Xenova/segformer-b0-finetuned-ade-512-512, ~15MB) segments the subject, the highest-scoring mask is composited as an alpha channel (promoted applyMaskToImage) to a transparent-background PNG shown on a checkerboard Original/Result comparison, with a processing overlay + cancel, best-mask confidence, Download PNG (promoted downloadDataUrl), clear/reset, and dismissible errors with a retry path. The model loads lazily on the first dropped image; nothing downloads on page load. Split out of the tabbed image-studio Remove BG tool (split-image-privacy).",
+      "categories": [
+        "blocks",
+        "image-studio"
+      ],
+      "dependencies": [
+        "@localmode/react",
+        "@localmode/transformers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/browser-utils",
+        "@localmode/ui/media-vision/media-dropzone",
+        "@localmode/ui/media-vision/before-after-image-viewer",
+        "@localmode/ui/media-vision/image-processing-overlay",
+        "@localmode/ui/results/confidence-score-badge"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/image-studio/background-remover/background-remover.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/image-studio/background-remover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/image-studio/image-enhancer",
+      "type": "registry:block",
+      "title": "Image Enhancer Block",
+      "description": "Upscale and restore photos with Swin2SR super-resolution running fully in the browser — a 2x lightweight default (Xenova/swin2SR-lightweight-x2-64), plus 4x classical (Xenova/swin2SR-classical-sr-x4-64) and a real-world Restore variant (Xenova/swin2SR-realworld-sr-x4-64-bsrgan-psnr), each behind its own lazily-loaded model with persistent per-mode results. Presents the result in an Original/Enhanced toggle with a model/scale/status info panel and an Enhanced Nx badge; Download Enhanced PNG (promoted imageResultToDataUrl/getImageDimensions/downloadDataUrl), upload-new, cancel with a first-run hint, and dismissible validation + inference errors. Nothing downloads until you drop an image. Split out of the tabbed image-studio Enhance tool (split-image-privacy).",
+      "categories": [
+        "blocks",
+        "image-studio"
+      ],
+      "dependencies": [
+        "@localmode/react",
+        "@localmode/transformers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/browser-utils",
+        "@localmode/ui/media-vision/media-dropzone",
+        "@localmode/ui/media-vision/before-after-image-viewer",
+        "@localmode/ui/media-vision/image-processing-overlay"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/image-studio/image-enhancer/image-enhancer.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/image-studio/image-enhancer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/image-studio/image-captioner",
+      "type": "registry:block",
+      "title": "Image Captioner Block",
+      "description": "Generate alt-text captions for images with ViT-GPT2 (Xenova/vit-gpt2-image-captioning, ~230MB) entirely on-device, accumulating results in a gallery (caption as the card label, native per-card delete) with copy-caption-to-clipboard + transient copied feedback, remove-single, Clear All, a captioned-count indicator, and a compact add-another dropzone once results exist. Validates JPEG/PNG/WebP/GIF up to 10MB; the model loads lazily on the first dropped image. Consumes none of the promoted image ops. Split out of the tabbed image-studio Caption tool (split-image-privacy).",
+      "categories": [
+        "blocks",
+        "image-studio"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/media-vision/media-dropzone",
+        "@localmode/ui/media-vision/image-result-gallery"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/image-studio/image-captioner/image-captioner.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/image-studio/image-captioner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/privacy/pii-redactor",
+      "type": "registry:block",
+      "title": "PII Redactor Block",
+      "description": "Detect PII with on-device NER (Xenova/bert-base-NER, BIO prefixes stripped, low-confidence filtered), redact it with reverse-offset [<TYPE>] placeholders honoring per-type toggles plus a core redactPII() regex pass (emails/phones/SSNs/cards), render entity insights (stats bar + relationship graph), copy/export the redacted text, and demonstrate differential privacy over the redacted text's embedding (Xenova/all-MiniLM-L6-v2, ~23MB) via dpEmbeddingMiddleware + a createPrivacyBudget tracker with a DP-applied provenance badge. Models download only behind the explicit Scan action. Ships a block-local redaction.ts (pure entity-mapping/redaction/graph helpers) alongside the component — justified as >130 lines of block-specific logic, too large to inline. Split out of the tabbed privacy-vault Redact tab (split-image-privacy).",
+      "categories": [
+        "blocks",
+        "privacy"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/results/redacted-text-display",
+        "@localmode/ui/results/entity-stats-bar",
+        "@localmode/ui/results/entity-relationship-graph",
+        "@localmode/ui/security-privacy/differential-privacy-controls"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/privacy/pii-redactor/pii-redactor.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/privacy/pii-redactor.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/privacy/encrypted-vault",
+      "type": "registry:block",
+      "title": "Encrypted Vault Block",
+      "description": "A passphrase-locked, end-to-end encrypted item store driven by useEncryptedVault — AES-GCM ciphertext at rest in IndexedDB, the key derived from the passphrase in memory only — with encrypted notes and imported text documents rendered as lock-aware vault-item-cards (decrypt-on-view + delete), a lock-status badge, a manual Lock that clears the in-memory key, a locked state that survives reload, and a tamper-evident hash-chained audit log (createAuditLog) with in-UI chain verification and JSONL export. Web Crypto + IndexedDB only — no models download. The IndexedDB vault name is kept at 'privacy-vault' for storage-key stability across the category rename. Split out of the tabbed privacy-vault Vault tab (split-image-privacy).",
+      "categories": [
+        "blocks",
+        "privacy"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/security-privacy/passphrase-gate",
+        "@localmode/ui/security-privacy/vault-item-card",
+        "@localmode/ui/security-privacy/lock-status-badge",
+        "@localmode/ui/security-privacy/password-strength-bar"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/privacy/encrypted-vault/encrypted-vault.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/privacy/encrypted-vault.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/writing-tools/write",
+      "type": "registry:block",
+      "title": "Write Block",
+      "description": "A draft editor with live length feedback, preset and free-text edit instructions with prompt improvement, and an AI edit reviewed as a before/after diff with explicit Accept/Reject (Accept applies exactly the after text). Resolves the Chrome Prompt API when available (zero download) and automatically falls back to a Llama-3.2-1B Transformers.js instruct model behind an explicit download gate, with a truthful provider badge. No model bytes download until an explicit in-block action.",
+      "categories": [
+        "blocks",
+        "writing-tools"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "@localmode/chrome-ai"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/artifacts/code-diff-viewer",
+        "@localmode/ui/input-controls/char-limit-indicator",
+        "@localmode/ui/input-controls/prompt-enhance-button",
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/local-first/capability-gate",
+        "@localmode/ui/local-first/chrome-ai-download-gate",
+        "@localmode/ui/local-first/provider-badge",
+        "@localmode/ui/results/error-alert"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/writing-tools/write/write.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/writing-tools/write.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/writing-tools/translate",
+      "type": "registry:block",
+      "title": "Translate Block",
+      "description": "Translate across 24 directed offline Opus-MT language pairs (English-centric, every model id verified) with swap-direction that carries the output into the input, per-panel character counts, copy-with-confirmation, and cancel. Resolves the Chrome Translator API when available (zero download) and automatically falls back to the pair's Opus-MT Transformers.js model behind an explicit download gate, with a truthful provider badge. No model bytes download until an explicit in-block action.",
+      "categories": [
+        "blocks",
+        "writing-tools"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "@localmode/chrome-ai"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/input-controls/copy-button",
+        "@localmode/ui/input-controls/language-pair-selector",
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/local-first/chrome-ai-download-gate",
+        "@localmode/ui/local-first/provider-badge",
+        "@localmode/ui/results/error-alert"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/writing-tools/translate/translate.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/writing-tools/translate.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/writing-tools/summarize",
+      "type": "registry:block",
+      "title": "Summarize Block",
+      "description": "Summarize a document with extractive and abstractive modes and short/medium/long length presets, rendered in a split pane with input/summary word counts, a compression-ratio badge and bar, and a reading-time-saved estimate. On the Transformers.js path abstractive is served by DistilBART and extractive by a real on-device sentence-extraction algorithm drawing sentences verbatim from the source; Chrome summary styles are offered only when the Chrome Summarizer API actually serves the block. Resolves Chrome Built-in AI when available and falls back automatically behind an explicit download gate, with a truthful provider badge. No model bytes download until an explicit in-block action.",
+      "categories": [
+        "blocks",
+        "writing-tools"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "@localmode/chrome-ai"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/input-controls/copy-button",
+        "@localmode/ui/input-controls/segmented-mode-picker",
+        "@localmode/ui/input-controls/text-processing-panel",
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/local-first/chrome-ai-download-gate",
+        "@localmode/ui/local-first/provider-badge",
+        "@localmode/ui/results/error-alert"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/writing-tools/summarize/summarize.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/writing-tools/summarize.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/writing-tools/complete",
+      "type": "registry:block",
+      "title": "Complete Block",
+      "description": "Fill-mask word prediction via ModernBERT (top-5) with [MASK] authoring, ranked predictions (token, confidence score, confidence label, score bar) and a substituted full-sentence preview, and click-to-apply-and-iterate. This capability is Transformers.js-only — there is no Chrome AI fill-mask — and the badge says so. No model bytes download until an explicit in-block action.",
+      "categories": [
+        "blocks",
+        "writing-tools"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/input-controls/mask-token-input",
+        "@localmode/ui/results/scored-result-bar-list",
+        "@localmode/ui/results/confidence-score-badge",
+        "@localmode/ui/local-first/provider-badge",
+        "@localmode/ui/results/error-alert"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/writing-tools/complete/complete.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/writing-tools/complete.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/text-insights/sentiment-analyzer",
+      "type": "registry:block",
+      "title": "Sentiment Analyzer Block",
+      "description": "Classify one text or thousands with DistilBERT SST-2 (one item per line, or a .txt/.csv first column) via useSequentialBatch — streaming results in input order with per-item error isolation, a cancel that keeps partial results, determinate progress plus throughput (items/sec, elapsed, ETA), aggregate positive/negative stats over every completed item, and a 100-row windowed result list. The model downloads only behind Run. No model bytes download until an explicit in-block action.",
+      "categories": [
+        "blocks",
+        "text-insights"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/results/confidence-score-badge",
+        "@localmode/ui/results/entity-stats-bar",
+        "@localmode/ui/local-first/model-loading-panel",
+        "@localmode/ui/local-first/cache-badge",
+        "@localmode/ui/results/error-alert",
+        "@localmode/ui/results/mode-error-boundary"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/text-insights/sentiment-analyzer/sentiment-analyzer.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/text-insights/sentiment-analyzer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/text-insights/text-classifier",
+      "type": "registry:block",
+      "title": "Text Classifier Block",
+      "description": "Custom-label zero-shot classification with MobileBERT MNLI over a user-editable label set (add trimmed + case-insensitively deduped, remove, live count) with an email/message textarea and sample loader. Results render a top-result hero (winning label + confidence) above a ranked score list of all candidate labels. Guards empty input and an empty label set; the model downloads only behind Run. No model bytes download until an explicit in-block action.",
+      "categories": [
+        "blocks",
+        "text-insights"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/results/editable-label-set",
+        "@localmode/ui/results/top-result-card",
+        "@localmode/ui/results/scored-result-bar-list",
+        "@localmode/ui/local-first/model-loading-panel",
+        "@localmode/ui/local-first/cache-badge",
+        "@localmode/ui/results/error-alert",
+        "@localmode/ui/results/mode-error-boundary"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/text-insights/text-classifier/text-classifier.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/text-insights/text-classifier.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/text-insights/model-evaluator",
+      "type": "registry:block",
+      "title": "Model Evaluator Block",
+      "description": "Evaluate a selected classifier over a selected labeled dataset via useEvaluateModel, reporting accuracy plus macro precision/recall/F1, run duration, and a color-coded confusion matrix, with completed/total progress and cancel, JSON export, and clear-results. Keeps one justified local file (datasets.ts) holding the labeled evaluation datasets and the radio-card selector, too large to inline without harming readability (design D5). No model bytes download until an explicit in-block action.",
+      "categories": [
+        "blocks",
+        "text-insights"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/results/evaluation-metrics-dashboard",
+        "@localmode/ui/local-first/model-loading-panel",
+        "@localmode/ui/local-first/cache-badge",
+        "@localmode/ui/results/error-alert",
+        "@localmode/ui/results/mode-error-boundary"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/text-insights/model-evaluator/model-evaluator.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/text-insights/model-evaluator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/text-insights/threshold-calibrator",
+      "type": "registry:block",
+      "title": "Threshold Calibrator Block",
+      "description": "Calibrate a similarity threshold from corpus embeddings via useCalibrateThreshold at percentile 90, over a selected embedding model and corpus, rendering the calibrated threshold versus the model's getDefaultThreshold preset, metadata, distribution statistics, and the MODEL_THRESHOLD_PRESETS reference with the selected model highlighted. The provider-prefixed model id is normalized so the panel, preset highlight, and presets reference align. The model downloads only behind Calibrate. No model bytes download until an explicit in-block action.",
+      "categories": [
+        "blocks",
+        "text-insights"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/results/threshold-calibration-panel",
+        "@localmode/ui/local-first/model-loading-panel",
+        "@localmode/ui/local-first/cache-badge",
+        "@localmode/ui/results/error-alert",
+        "@localmode/ui/results/mode-error-boundary"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/text-insights/threshold-calibrator/threshold-calibrator.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/text-insights/threshold-calibrator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/agents/research-agent",
+      "type": "registry:block",
+      "title": "Research Agent Block",
+      "description": "A tool-using ReAct research agent over its OWN on-device WebGPU-only WebLLM model (default Qwen3-1.7B-q4f16_1-MLC): three block-local tools (search over a bundled 8-article knowledge base, note, calculate), a step-by-step reasoning timeline, and a human-in-the-loop tool-approval gate (default on) with pause/approve/deny-feedback and immutable decision receipts. Ships a justified block-local WebLLM catalog slice (model-catalog.ts) and toolset + fixture corpus (tools.ts). Models download only behind an explicit Load action. Split from ui/blocks/agent-structured-data (Research Agent mode).",
+      "categories": [
+        "blocks",
+        "agents"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/webllm",
+        "zod"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/use-environment",
+        "@localmode/ui/local-first/model-selector",
+        "@localmode/ui/local-first/model-downloader",
+        "@localmode/ui/local-first/capability-gate",
+        "@localmode/ui/conversation/agent-step-timeline",
+        "@localmode/ui/conversation/tool",
+        "@localmode/ui/conversation/tool-approval",
+        "@localmode/ui/conversation/task",
+        "@localmode/ui/conversation/chain-of-thought",
+        "@localmode/ui/conversation/reasoning",
+        "@localmode/ui/conversation/pipeline-tracker",
+        "@localmode/ui/conversation/prompt-input",
+        "@localmode/ui/conversation/suggestions",
+        "@localmode/ui/conversation/in-message-error"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/agents/research-agent/research-agent.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/agents/research-agent/research-agent.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/agents/data-extractor",
+      "type": "registry:block",
+      "title": "Data Extractor Block",
+      "description": "Schema-validated structured-data extraction from free text over its OWN on-device WebGPU-only WebLLM model (default Qwen3-1.7B-q4f16_1-MLC): five zod templates (contact, event, review, recipe, job), useGenerateObject json mode with maxRetries 3 retry/self-correction and a visible attempts counter, and an artifacts canvas that docks the validated JSON into a sortable data table + a chart built from the extraction's REAL numeric data (documented empty-chart state otherwise). Ships a justified block-local WebLLM catalog slice (model-catalog.ts) + the five templates + deriveArtifacts (templates.ts). Models download only behind an explicit Load action. Split from ui/blocks/agent-structured-data (Data Extractor mode).",
+      "categories": [
+        "blocks",
+        "agents"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/webllm",
+        "zod"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/use-environment",
+        "@localmode/ui/local-first/model-selector",
+        "@localmode/ui/local-first/model-downloader",
+        "@localmode/ui/local-first/capability-gate",
+        "@localmode/ui/conversation/structured-output-viewer",
+        "@localmode/ui/conversation/in-message-error",
+        "@localmode/ui/artifacts/artifact",
+        "@localmode/ui/artifacts/data-table-artifact",
+        "@localmode/ui/artifacts/chart-artifact"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/agents/data-extractor/data-extractor.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/agents/data-extractor/data-extractor.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/device/device-report",
+      "type": "registry:block",
+      "title": "Device Report Block",
+      "description": "A zero-download device capability report rendered entirely from browser APIs (useCapabilities / useStorageQuota / useAdaptiveBatchSize): hardware cores/memory/GPU name, six feature flags (WebGPU/WASM/SIMD/Threads/IndexedDB/Workers), storage used/quota/available, browser + OS line, a reference 1B-Q4_K_M readiness verdict, and adaptive batch size + reasoning. Composes device-badge, device-capability-grid, browser-compat-card, storage-meter, and adaptive-batch-card. Zero network and zero model bytes on mount. Split from ui/blocks/device-model-lab (device report section).",
+      "categories": [
+        "blocks",
+        "device"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/local-first/device-badge",
+        "@localmode/ui/local-first/device-capability-grid",
+        "@localmode/ui/local-first/browser-compat-card",
+        "@localmode/ui/local-first/storage-meter",
+        "@localmode/ui/local-first/adaptive-batch-card"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/device/device-report/device-report.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/device/device-report/device-report.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/device/model-advisor",
+      "type": "registry:block",
+      "title": "Model Advisor Block",
+      "description": "Ranked on-device model recommendations that compute their OWN device context via useCapabilities and rank useModelRecommendations / getModelRegistry over the in-memory registry with ZERO network: a 21-task grouped selector, ranked model-recommendation-card results with a device-context line + result-count + empty states, two-model comparison via model-comparison-panel (max 2, third replaces the older), and a collapsible custom-model registration form (11 ModelRegistryEntry fields, per-field validation, in-memory notice, registerModel() + refresh). No model download. Split from ui/blocks/device-model-lab (model advisor section).",
+      "categories": [
+        "blocks",
+        "device"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/local-first/model-recommendation-card",
+        "@localmode/ui/local-first/model-comparison-panel"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/device/model-advisor/model-advisor.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/device/model-advisor/model-advisor.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/device/gguf-explorer",
+      "type": "registry:block",
+      "title": "GGUF Explorer Block",
+      "description": "Browse 160,000+ HuggingFace GGUF models and the curated wllama catalog, inspect any file's metadata via a ~4KB HTTP Range read (checkGGUFBrowserCompatFromURL — never a model download), get a browser-compat verdict, and hand a model off to the chat block. Consumes the PROMOTED @localmode/wllama model-discovery utils (searchGGUFModels / listGGUFFiles / HFApiError) instead of a block-local hf-api.ts; keeps a justified block-local chat-handoff emitter (handoff.ts). Cursor pagination, typed search errors + retry, and an explicit Download-to-cache prefetch. No model bytes on load. Split from ui/blocks/device-model-lab (GGUF explorer section).",
+      "categories": [
+        "blocks",
+        "device"
+      ],
+      "dependencies": [
+        "@localmode/wllama",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/local-first/model-search-browser",
+        "@localmode/ui/local-first/model-catalog-card",
+        "@localmode/ui/local-first/model-metadata-card",
+        "@localmode/ui/local-first/browser-compat-card",
+        "@localmode/ui/local-first/capability-gate",
+        "@localmode/ui/local-first/model-downloader"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/device/gguf-explorer/gguf-explorer.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/device/gguf-explorer/gguf-explorer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/knowledge/semantic-search",
+      "type": "registry:block",
+      "title": "Semantic Search Block",
+      "description": "Full text/PDF/OCR ingest into its OWN corpus with off/recursive/semantic chunking and a live chunk-boundary preview, then reranked vector search (over-fetch topK×3 → a real cross-encoder from the transformers ONNX group or the wllama GGUF group; raw + rerank scores preserved, never fabricated) with category facets and preset or corpus-calibrated similarity thresholds — carrying the core-pipeline ⇄ LangChain engine toggle. Over the promoted useKnowledgeBase engine layer; ships justified block-local ingest-panel + search-panel siblings. Nothing downloads until an explicit action. Split from ui/blocks/knowledge-base (Ingest + Search tabs; absorbs pdf-search + ocr-scanner).",
+      "categories": [
+        "blocks",
+        "knowledge"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "@localmode/wllama",
+        "@localmode/langchain",
+        "@localmode/pdfjs",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/lib/browser-utils",
+        "@localmode/ui/local-first/model-downloader",
+        "@localmode/ui/local-first/capability-gate",
+        "@localmode/ui/data-documents/file-dropzone",
+        "@localmode/ui/data-documents/chunk-boundary-visualizer",
+        "@localmode/ui/data-documents/indexed-document-card",
+        "@localmode/ui/data-documents/category-facet-list",
+        "@localmode/ui/media-vision/media-dropzone",
+        "@localmode/ui/input-controls/segmented-mode-picker",
+        "@localmode/ui/input-controls/parameter-slider",
+        "@localmode/ui/input-controls/option-list",
+        "@localmode/ui/conversation/pipeline-tracker",
+        "@localmode/ui/results/cosine-similarity-meter",
+        "@localmode/ui/results/scored-result-bar-list",
+        "@localmode/ui/results/top-result-card"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/knowledge/semantic-search/semantic-search.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/knowledge/semantic-search/semantic-search.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/knowledge/document-qa",
+      "type": "registry:block",
+      "title": "Document QA Block",
+      "description": "Extractive question answering (Xenova/distilbert-base-cased-distilled-squad, grounding corpus context via engine.search topK 1, High/Medium/Low confidence tiers) over its OWN text/PDF corpus, plus Donut (Xenova/donut-base-finetuned-docvqa) document/invoice QA on an uploaded image (~800 MB, gated). CORE engine only — declares no @localmode/langchain or @localmode/wllama. Split from ui/blocks/knowledge-base (Ask tab QA lanes; absorbs qa-bot + invoice-qa).",
+      "categories": [
+        "blocks",
+        "knowledge"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "@localmode/pdfjs",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/local-first/model-downloader",
+        "@localmode/ui/data-documents/file-dropzone",
+        "@localmode/ui/data-documents/indexed-document-card",
+        "@localmode/ui/media-vision/media-dropzone",
+        "@localmode/ui/conversation/pipeline-tracker",
+        "@localmode/ui/results/confidence-score-badge"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/knowledge/document-qa/document-qa.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/knowledge/document-qa/document-qa.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/knowledge/rag-chat",
+      "type": "registry:block",
+      "title": "RAG Chat Block",
+      "description": "Streaming grounded RAG over its OWN text/PDF corpus — token-by-token answers through the engine-owned generator (granite-4.0-350M) with [n] markers upgraded to hover-card inline citations resolved to retrieved sources (PDF page attribution + similarity), wall-clock duration, and cancel — carrying the core-pipeline ⇄ LangChain engine toggle. Split from ui/blocks/knowledge-base (Ask tab RAG lane; absorbs langchain-rag).",
+      "categories": [
+        "blocks",
+        "knowledge"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "@localmode/langchain",
+        "@localmode/pdfjs",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/local-first/model-downloader",
+        "@localmode/ui/data-documents/chunk-boundary-visualizer",
+        "@localmode/ui/data-documents/file-dropzone",
+        "@localmode/ui/data-documents/indexed-document-card",
+        "@localmode/ui/input-controls/segmented-mode-picker",
+        "@localmode/ui/input-controls/parameter-slider",
+        "@localmode/ui/conversation/pipeline-tracker",
+        "@localmode/ui/conversation/sources",
+        "@localmode/ui/conversation/source-citation-list",
+        "@localmode/ui/conversation/inline-citation"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/knowledge/rag-chat/rag-chat.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/knowledge/rag-chat/rag-chat.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/knowledge/vector-data-manager",
+      "type": "registry:block",
+      "title": "Vector Data Manager Block",
+      "description": "Four-format vector import (Pinecone/ChromaDB/CSV/JSONL + native JSON) with auto format-detection, preview, batched cancellable import and a re-embed toggle for text-only rows; native JSON/CSV/JSONL export via vector-export-panel (native export round-trips); embedding-drift banner + cancellable reindex; and storage-quota + vector-storage observability + the device-adaptive batch size — all over its OWN corpus. CORE engine only. Split from ui/blocks/knowledge-base (Data tab; absorbs data-migrator).",
+      "categories": [
+        "blocks",
+        "knowledge"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/local-first/model-downloader",
+        "@localmode/ui/local-first/adaptive-batch-card",
+        "@localmode/ui/local-first/embedding-drift-banner",
+        "@localmode/ui/local-first/storage-meter",
+        "@localmode/ui/local-first/vector-export-panel",
+        "@localmode/ui/local-first/vector-import-flow",
+        "@localmode/ui/local-first/vector-storage-observability",
+        "@localmode/ui/data-documents/format-detection-badge"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/knowledge/vector-data-manager/vector-data-manager.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/knowledge/vector-data-manager/vector-data-manager.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/photo/smart-gallery",
+      "type": "registry:block",
+      "title": "Smart Gallery Block",
+      "description": "Adaptive, device-aware CLIP photo ingest (streamEmbedManyImages at a computeOptimalBatchSize batch size shown on an adaptive-batch-card) with per-item progress, per-batch zero-shot categorization (other/0 fallback), and a grid/list gallery with filename + category + confidence + similar-count — per-photo delete, clear-all, and a cancellable ingest. Own usePhotoLibrary instance; CLIP downloads only behind an explicit Load. Split from ui/blocks/photo-search (Gallery tab).",
+      "categories": [
+        "blocks",
+        "photo"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/local-first/model-selector",
+        "@localmode/ui/local-first/model-downloader",
+        "@localmode/ui/local-first/adaptive-batch-card",
+        "@localmode/ui/media-vision/media-dropzone",
+        "@localmode/ui/media-vision/image-result-gallery"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/photo/smart-gallery/smart-gallery.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/photo/smart-gallery/smart-gallery.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/photo/image-search",
+      "type": "registry:block",
+      "title": "Image Search Block",
+      "description": "Text→image AND image→image search over one shared CLIP vector space — embed a free-text query or a reference image and rank the ingested photo library with a top-K slider (default 20), a visible min-similarity threshold (getDefaultThreshold ?? 0.2), and CLIP-scale score bars. Own usePhotoLibrary instance + its own media-dropzone ingest. Split from ui/blocks/photo-search (Search tab; absorbs cross-modal-search + product-search).",
+      "categories": [
+        "blocks",
+        "photo"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/local-first/model-selector",
+        "@localmode/ui/local-first/model-downloader",
+        "@localmode/ui/input-controls/segmented-mode-picker",
+        "@localmode/ui/input-controls/parameter-slider",
+        "@localmode/ui/media-vision/media-dropzone",
+        "@localmode/ui/media-vision/image-result-gallery",
+        "@localmode/ui/results/scored-result-bar-list"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/photo/image-search/image-search.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/photo/image-search/image-search.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/photo/duplicate-finder",
+      "type": "registry:block",
+      "title": "Duplicate Finder Block",
+      "description": "Union-find near-duplicate detection over cached CLIP image embeddings (no re-embedding) — a tunable threshold slider + Strict/Balanced/Relaxed presets, per-group average similarity via a cosine-similarity-meter, keep-first selection + bulk delete, and a cancellable scan that re-groups (never re-embeds) on threshold change. Own usePhotoLibrary instance + its own media-dropzone ingest. Split from ui/blocks/photo-search (Duplicates tab).",
+      "categories": [
+        "blocks",
+        "photo"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/local-first/model-selector",
+        "@localmode/ui/local-first/model-downloader",
+        "@localmode/ui/media-vision/media-dropzone",
+        "@localmode/ui/media-vision/image-result-gallery",
+        "@localmode/ui/input-controls/parameter-slider",
+        "@localmode/ui/results/cosine-similarity-meter"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/photo/duplicate-finder/duplicate-finder.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/photo/duplicate-finder/duplicate-finder.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/photo/photo-categorizer",
+      "type": "registry:block",
+      "title": "Photo Categorizer Block",
+      "description": "Editable-label-set categorization with Photo/Product presets, on-device library re-categorization with progress + cancel (no re-embedding), and a counted, single-select category-facet-list filter over the ingested photos. Own usePhotoLibrary instance + its own media-dropzone ingest (photos are zero-shot categorized as they embed). Split from ui/blocks/photo-search (Categories tab).",
+      "categories": [
+        "blocks",
+        "photo"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/lib/utils",
+        "@localmode/ui/local-first/model-selector",
+        "@localmode/ui/local-first/model-downloader",
+        "@localmode/ui/media-vision/media-dropzone",
+        "@localmode/ui/media-vision/image-result-gallery",
+        "@localmode/ui/data-documents/category-facet-list",
+        "@localmode/ui/results/editable-label-set"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/photo/photo-categorizer/photo-categorizer.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/photo/photo-categorizer/photo-categorizer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/audio/voice-notes",
+      "type": "registry:block",
+      "title": "Voice Notes Block",
+      "description": "Record (push-to-talk from a selectable mic) or upload audio → Whisper/Moonshine transcription → saved notes with synced word-by-word replay (real Whisper segment timestamps; disabled with a hint for Moonshine), block-local semantic search over the notes (bge-small), a [No speech detected] fallback, cancel-in-flight, and delete-leaves-the-index. Owns its own speech-to-text model selector; every model downloads only behind an explicit action. Ships a justified block-local note index hook (use-note-index.ts — the VectorDB + indexed-id set that WAS a module-scoped singleton in audio-studio/models.ts, now block-local under the blocks carve-out). Fully on-device. Split from ui/blocks/audio-studio (Notes tab).",
+      "categories": [
+        "blocks",
+        "audio"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/audio/voice-button",
+        "@localmode/ui/audio/mic-selector",
+        "@localmode/ui/audio/waveform-activity-bars",
+        "@localmode/ui/audio/transcribed-note-card",
+        "@localmode/ui/audio/synced-transcript-viewer",
+        "@localmode/ui/data-documents/file-dropzone",
+        "@localmode/ui/results/scored-result-bar-list",
+        "@localmode/ui/local-first/model-selector",
+        "@localmode/ui/local-first/model-loading-panel",
+        "@localmode/ui/results/error-alert"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/audio/voice-notes/voice-notes.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/audio/voice-notes/voice-notes.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/audio/live-transcription",
+      "type": "registry:block",
+      "title": "Live Transcription Block",
+      "description": "Open-mic streaming speech-to-text (useLiveTranscribe) with VAD-segmented utterances, plus a listen→plan→speak turn-taking assistant (useTurnTaker: Granite 4.0 350M plans, Kokoro speaks) selectable via a two-mode picker. VAD choice: the zero-download energy VAD (default) or a gated ~2MB Silero ONNX VAD. Stop calls dispose() so the microphone MediaStream is released; barge-in + interrupt supported. Owns its own STT selector, its own adapter-backed inference-device probe for the Granite planner, and holds the Silero provider block-local (the module-scoped Silero singleton in audio-studio/models.ts is eliminated). Fully on-device. Split from ui/blocks/audio-studio (Live tab).",
+      "categories": [
+        "blocks",
+        "audio"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/audio/voice-orb",
+        "@localmode/ui/audio/waveform-activity-bars",
+        "@localmode/ui/input-controls/segmented-mode-picker",
+        "@localmode/ui/local-first/model-selector",
+        "@localmode/ui/local-first/model-loading-panel",
+        "@localmode/ui/results/error-alert"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/audio/live-transcription/live-transcription.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/audio/live-transcription/live-transcription.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/audio/meeting-assistant",
+      "type": "registry:block",
+      "title": "Meeting Assistant Block",
+      "description": "Audio upload OR pasted transcript → Transcribe → Summarize (DistilBART, maxLength 200 / minLength 60) → Extract action items (useGenerateObject on Granite 4.0 350M) with a visible three-step indicator, a cancel that preserves completed steps, action-item priority badges + completion toggles with a live X/Y count, a [No speech detected] short-circuit, and a structured dated .txt export. Owns its own STT selector (Whisper Tiny EN default + Moonshine-Base recommendation hint) and its own adapter-backed inference-device probe for the Granite LM. Fully on-device. Split from ui/blocks/audio-studio (Meeting tab).",
+      "categories": [
+        "blocks",
+        "audio"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/data-documents/file-dropzone",
+        "@localmode/ui/audio/audio-scrub-player",
+        "@localmode/ui/local-first/model-selector",
+        "@localmode/ui/local-first/model-loading-panel",
+        "@localmode/ui/results/error-alert"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/audio/meeting-assistant/meeting-assistant.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/audio/meeting-assistant/meeting-assistant.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/audio/voice-explorer",
+      "type": "registry:block",
+      "title": "Voice Explorer Block",
+      "description": "Browse, search, preview, and A/B-compare all 29 Kokoro voices (grouped by language label; play/stop preview where starting one preview stops the previous; sequential A→B synthesis over shared text with a cancel). Kokoro (~86MB) downloads only on the first preview or comparison. Fully on-device. Split from ui/blocks/audio-studio (Voices tab).",
+      "categories": [
+        "blocks",
+        "audio"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/audio/voice-picker",
+        "@localmode/ui/audio/voice-comparison-panel",
+        "@localmode/ui/audio/audio-scrub-player",
+        "@localmode/ui/local-first/model-loading-panel",
+        "@localmode/ui/results/error-alert"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/audio/voice-explorer/voice-explorer.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/audio/voice-explorer/voice-explorer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ui/blocks/audio/audiobook-reader",
+      "type": "registry:block",
+      "title": "Audiobook Reader Block",
+      "description": "Long-text streaming synthesis (useStreamSpeech) with early playback that begins before synthesis completes, a live clause counter + current-clause display, speed control (0.5x–2.0x), pause/resume/stop transport, a WAV download (audio-{voiceId}-{timestamp}.wav), a one-shot single-take synthesis path, a 10,000-character limit with pre-flight validation, and one-click sample texts. Kokoro downloads only on the first synthesize/stream action. Fully on-device. Split from ui/blocks/audio-studio (Audiobook tab).",
+      "categories": [
+        "blocks",
+        "audio"
+      ],
+      "dependencies": [
+        "@localmode/core",
+        "@localmode/react",
+        "@localmode/transformers"
+      ],
+      "registryDependencies": [
+        "@localmode/ui/audio/voice-picker",
+        "@localmode/ui/audio/streaming-speech-panel",
+        "@localmode/ui/audio/waveform-activity-bars",
+        "@localmode/ui/audio/audio-scrub-player",
+        "@localmode/ui/input-controls/parameter-slider",
+        "@localmode/ui/input-controls/char-limit-indicator",
+        "@localmode/ui/local-first/model-loading-panel",
+        "@localmode/ui/results/error-alert"
+      ],
+      "files": [
+        {
+          "path": "src/app/blocks/audio/audiobook-reader/audiobook-reader.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/audio/audiobook-reader/audiobook-reader.tsx"
+        }
+      ]
+    }
+  ]
+}
