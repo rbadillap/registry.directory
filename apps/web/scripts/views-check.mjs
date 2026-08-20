@@ -151,10 +151,10 @@ async function main() {
     );
   }
 
-  const carried = manifest.registries.filter((r) => r.status === "carried-forward");
-  if (carried.length > 0) {
+  const reusedViews = manifest.registries.filter((r) => r.status === "reused");
+  if (reusedViews.length > 0) {
     notes.push(
-      `${carried.length} view(s) carried forward from an earlier run: ${carried
+      `${reusedViews.length} view(s) reused from an earlier run: ${reusedViews
         .map((m) => m.name)
         .join(", ")}`
     );

@@ -23,7 +23,7 @@ export interface ManifestRegistry {
   url: string
   items: number
   /** "missing" = the indexer could not reach this origin and no view exists. */
-  status: "ok" | "carried-forward" | "missing"
+  status: "ok" | "reused" | "missing"
   /** False when every sampled item was definitively gated at the origin. */
   resolvable: boolean
   /** The origin inlines file content in its index (BAD-139 material). */
@@ -39,7 +39,7 @@ export interface Manifest {
     directory: number
     views: number
     ok: number
-    carriedForward: number
+    reused: number
     missing: number
     items: number
     github: number

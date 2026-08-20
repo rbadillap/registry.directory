@@ -145,7 +145,7 @@ function viewPath(key) {
   return join(REGISTRIES_DIR, `${key}.json`);
 }
 
-export async function indexRegistries({ probe = true, only = null } = {}) {
+export async function indexRegistries({ probe = true, only = null, retry = false } = {}) {
   const directory = await loadDirectory();
 
   // A key collision would let one registry silently shadow another's view.
@@ -183,12 +183,13 @@ export async function indexRegistries({ probe = true, only = null } = {}) {
     CONCURRENCY,
   );
 
-  // Patient second chance. A 429 means "wait", and waiting is exactly what
-  // this machine can afford and a Vercel build cannot: the run pauses for
-  // minutes and retries the throttled origins one at a time. Without it the
-  // first ever run of a registry loses its whole catalog to a rate limit,
-  // and there is no previous view to fall back on.
-  await retryMissing(records, probe);
+  // No waiting in the main pass. An origin that answered 429 or 5xx is very
+  // likely to answer the same thing minutes later — several have been doing
+  // it for days — so the run records the verdict and moves on instead of
+  // spending its wall clock on a cooldown. The retry pass only runs when
+  // asked for explicitly, with --retry, and the summary prints the exact
+  // command to do it.
+  if (retry) await retryMissing(records, probe);
 
   // A partial run knows nothing about the registries it skipped, so it must
   // not prune "orphans" it simply did not look at, and must not write a
@@ -222,6 +223,9 @@ function worthRetrying(record) {
   return record.status === "missing" && !DEFINITIVE_ERROR.test(record.error ?? "");
 }
 
+// Only reached with --retry. Patience is affordable on this machine and
+// impossible in a Vercel build, but it is opt-in: the operator decides when
+// to spend the minutes, and on which origins.
 async function retryMissing(records, probe) {
   for (let round = 1; round <= RETRY_ROUNDS; round++) {
     const stuck = records.filter(worthRetrying);
@@ -267,7 +271,7 @@ async function indexOne(entry, probe, label, attempts) {
     const previous = await readJsonFile(viewPath(key));
     if (previous) {
       console.log(
-        `${label(entry)}: ${result.error} — carried forward (${previous.items.length} items)`,
+        `${label(entry)}: ${result.error} — reused (${previous.items.length} items)`,
       );
       return {
         key,
@@ -275,7 +279,7 @@ async function indexOne(entry, probe, label, attempts) {
         name: entry.name,
         url,
         items: previous.items.length,
-        status: "carried-forward",
+        status: "reused",
         error: result.error,
         resolvable: previous.resolvable,
         snapshot: {

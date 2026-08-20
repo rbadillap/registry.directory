@@ -27,10 +27,14 @@ import { indexRegistries } from "./steps/registries.mjs";
 import { indexGithub } from "./steps/github.mjs";
 import { indexDerived } from "./steps/derived.mjs";
 
-// `pnpm index -- --only=cult-ui,elevenlabs` refreshes just those views and
-// merges them into the existing manifest. Rate-limited origins are the whole
-// reason this exists: recovering one throttled registry should not mean
-// re-fetching the other 74 and earning a fresh round of 429s.
+// Flags:
+//   --only=key,key   refresh just those views and merge them into the existing
+//                    manifest. Recovering one throttled registry should not mean
+//                    re-fetching the other 74 and earning a fresh round of 429s.
+//   --retry          spend minutes cooling down and re-asking the origins that
+//                    answered 429/5xx. Off by default: the main run reports what
+//                    it could not reach and prints the command to come back for
+//                    it, instead of making every run wait on the same few sites.
 function parseOnly() {
   const arg = process.argv.find((a) => a.startsWith("--only="));
   if (!arg) return null;
@@ -45,9 +49,10 @@ function parseOnly() {
 async function main() {
   const started = Date.now();
   const only = parseOnly();
+  const retry = process.argv.includes("--retry");
 
   console.log("→ step 1/4  registry indexes");
-  const records = await indexRegistries({ only });
+  const records = await indexRegistries({ only, retry });
 
   console.log("\n→ step 2/4  github stats");
   // A targeted run is about registry views; leaving github.json untouched
@@ -97,7 +102,7 @@ async function main() {
   entries.sort((a, b) => a.key.localeCompare(b.key));
 
   const ok = entries.filter((r) => r.status === "ok");
-  const carried = entries.filter((r) => r.status === "carried-forward");
+  const reusedViews = entries.filter((r) => r.status === "reused");
   const missing = entries.filter((r) => r.status === "missing");
   const files = await listRegistryFiles();
 
@@ -111,7 +116,7 @@ async function main() {
       directory: entries.length,
       views: files.length,
       ok: ok.length,
-      carriedForward: carried.length,
+      reused: reusedViews.length,
       missing: missing.length,
       items: entries.reduce((sum, r) => sum + r.items, 0),
       github: github.total,
@@ -133,13 +138,34 @@ async function main() {
     `\ndata/ — ${manifest.counts.views} views, ${manifest.counts.items.toLocaleString("en-US")} items, ${formatKB(bytes)} on disk`
   );
   console.log(
-    `ok ${ok.length} · carried forward ${carried.length} · missing ${missing.length} · ${elapsed}s`
+    `ok ${ok.length} · reused ${reusedViews.length} · missing ${missing.length} · ${elapsed}s`
   );
-  if (carried.length > 0) {
-    console.log(`carried forward: ${carried.map((r) => `${r.name} (${r.error})`).join(", ")}`);
+  if (reusedViews.length > 0) {
+    console.log(`reused: ${reusedViews.map((r) => `${r.name} (${r.error})`).join(", ")}`);
   }
   if (missing.length > 0) {
-    console.log(`MISSING: ${missing.map((r) => `${r.name} (${r.error})`).join(", ")}`);
+    console.log(`\nMISSING (${missing.length}):`);
+    for (const r of missing) console.log(`  ${r.key.padEnd(24)} ${r.error} — ${r.name}`);
+
+    // A quarantined origin is worth a second chance only when its answer was
+    // "wait" or "my fault": 429 and 5xx come back, 402/403/404 do not. The
+    // command below names just the retryable ones, so it is safe to paste.
+    const retryable = missing.filter(
+      (r) => !/HTTP (400|401|402|403|404|405|410|451)\b/.test(r.error ?? "")
+    );
+    if (retryable.length > 0) {
+      console.log(
+        `\nto retry the ${retryable.length} throttled one(s) — patient, minutes long:\n` +
+          `  pnpm index --only=${retryable.map((r) => r.key).join(",")} --retry`
+      );
+    }
+    const definitive = missing.filter((r) => !retryable.includes(r));
+    if (definitive.length > 0) {
+      console.log(
+        `\n${definitive.length} answered definitively (gated or gone); retrying will not change it: ` +
+          definitive.map((r) => r.key).join(", ")
+      );
+    }
   }
 }
 
