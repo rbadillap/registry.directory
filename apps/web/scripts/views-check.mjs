@@ -160,7 +160,37 @@ async function main() {
     );
   }
 
+  // 6. Age, reported and never fatal. Committed data does not refresh itself:
+  //    an origin that was down when it was indexed stays down in data/ until
+  //    someone runs the indexer again. Stale data is a legitimate choice — the
+  //    maintainer decides when to re-index — so the guard's job is to make sure
+  //    that choice is never made by forgetting. Old but honest still builds.
+  const age = daysSince(manifest.date);
+  if (age !== null && age >= STALE_AFTER_DAYS) {
+    notes.push(
+      `data/ was generated ${age} days ago (${manifest.date}) — run \`pnpm index\` to refresh it`
+    );
+  }
+
   report(manifest, items);
+}
+
+// Long enough that a normal working rhythm never trips it, short enough that
+// data nobody has looked at in two weeks announces itself.
+const STALE_AFTER_DAYS = 14;
+
+// Calendar days between the manifest's date and today, both read as UTC dates
+// so a run late at night does not read as a day older than it is.
+function daysSince(date) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date ?? "")) return null;
+  const then = Date.parse(`${date}T00:00:00Z`);
+  const today = new Date();
+  const now = Date.UTC(
+    today.getUTCFullYear(),
+    today.getUTCMonth(),
+    today.getUTCDate()
+  );
+  return Math.max(0, Math.round((now - then) / 86_400_000));
 }
 
 function report(manifest, items = 0) {
