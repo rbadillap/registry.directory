@@ -24,15 +24,24 @@ import {
   writeJsonFile,
 } from "../lib/data-io.mjs";
 
-// A registry may answer the bare GET with one page plus a pagination object
-// (shadcn dynamic search, jul 2026). Ported from the runtime fetcher that
-// used to live in lib/resolve-registry.ts — without it we would persist 50
-// items for catalogs that hold thousands.
+// A registry may answer the bare GET with one page plus a pagination object.
+// Without following it we would persist 50 items for catalogs that hold
+// thousands.
 const MAX_PAGINATION_PAGES = 100;
 
+// Walks the remaining pages. Returns { index } when the catalog was read in
+// full, or { error } when a page could not be fetched.
+//
+// The two outcomes must stay distinct. A page that fails and a page that says
+// "no more items" both stop the loop, but they mean opposite things: one is a
+// complete catalog, the other is a truncated one. Collapsing them writes a
+// short item list under a healthy status, and a view that under-reports its
+// own catalog is indistinguishable from a registry that deleted half its
+// components.
 async function fetchRemainingPages(url, first) {
   const items = [...(first.items ?? [])];
   const pageSize = first.pagination?.limit || items.length || 100;
+  const expected = first.pagination?.total;
 
   for (let page = 0; page < MAX_PAGINATION_PAGES; page++) {
     const paged = new URL(url);
@@ -40,16 +49,27 @@ async function fetchRemainingPages(url, first) {
     paged.searchParams.set("offset", String(items.length));
 
     const result = await fetchWithRetries(paged.toString(), { attempts: 3 });
-    if (!result.json?.items?.length) break;
+    if (!result.json) {
+      return { error: `${result.error} (page ${page + 2}, ${items.length} items in)` };
+    }
+    if (!result.json.items?.length) break;
     items.push(...result.json.items);
     if (!result.json.pagination?.hasMore) break;
   }
 
-  return { ...first, items };
+  // The origin told us how many items to expect. Coming up short means a page
+  // was silently dropped somewhere, which is the same lie by another route.
+  if (typeof expected === "number" && items.length < expected) {
+    return {
+      error: `pagination ended early: ${items.length} of ${expected} items`,
+    };
+  }
+
+  return { index: { ...first, items } };
 }
 
 // Only paths, types and targets. Never `content`: data/ carries metadata, the
-// item source stays at the origin (BAD-139 owns that decision).
+// item source stays at the origin.
 function slimFiles(files) {
   if (!Array.isArray(files)) return undefined;
   const slim = [];
@@ -78,7 +98,7 @@ function optionalArray(value) {
 //
 // Dropped because nothing reads them from an index: author, meta, docs,
 // tailwind, css, devDependencies — and files[].content, which is the whole
-// point (see BAD-139).
+// point.
 function slimItem(item) {
   return {
     name: item.name,
@@ -224,7 +244,7 @@ function worthRetrying(record) {
 }
 
 // Only reached with --retry. Patience is affordable on this machine and
-// impossible in a Vercel build, but it is opt-in: the operator decides when
+// impossible in a Vercel build, but it is opt-in: the caller chooses when
 // to spend the minutes, and on which origins.
 async function retryMissing(records, probe) {
   for (let round = 1; round <= RETRY_ROUNDS; round++) {
@@ -261,49 +281,45 @@ async function retryMissing(records, probe) {
 // manifest is built from; `label` is injected so the main pass can number
 // its lines and the retry pass can mark its own. The retry pass asks for
 // fewer attempts because it has already waited out the rate limit.
+// Every way a read can fail lands here: an unreachable origin, or a catalog
+// that could only be read in part. Reuses the view from an earlier run when
+// there is one, so a bad afternoon at one origin cannot empty a page that
+// worked yesterday.
+async function failedRead(entry, key, url, error, label) {
+  const previous = await readJsonFile(viewPath(key));
+  if (previous) {
+    console.log(`${label(entry)}: ${error} — reused (${previous.items.length} items)`);
+    return {
+      key,
+      entry,
+      name: entry.name,
+      url,
+      items: previous.items.length,
+      status: "reused",
+      error,
+      resolvable: previous.resolvable,
+      snapshot: {
+        url,
+        items: previous.items.map((i) => ({
+          name: i.name,
+          type: i.type,
+          ...(i.dependencies ? { dependencies: i.dependencies } : {}),
+        })),
+      },
+    };
+  }
+
+  console.log(`${label(entry)}: ${error} — no previous view to reuse`);
+  return { key, entry, name: entry.name, url, items: 0, status: "missing", error };
+}
+
 async function indexOne(entry, probe, label, attempts) {
   const key = registryKey(entry);
   const url = indexUrl(entry);
   const result = await fetchWithRetries(url, attempts ? { attempts } : {});
 
   if (!result.json) {
-    // Carry forward: a transient failure must never empty a live view.
-    const previous = await readJsonFile(viewPath(key));
-    if (previous) {
-      console.log(
-        `${label(entry)}: ${result.error} — reused (${previous.items.length} items)`,
-      );
-      return {
-        key,
-        entry,
-        name: entry.name,
-        url,
-        items: previous.items.length,
-        status: "reused",
-        error: result.error,
-        resolvable: previous.resolvable,
-        snapshot: {
-          url,
-          items: previous.items.map((i) => ({
-            name: i.name,
-            type: i.type,
-            ...(i.dependencies ? { dependencies: i.dependencies } : {}),
-          })),
-        },
-      };
-    }
-    console.log(
-      `${label(entry)}: ${result.error} — no previous view to carry forward`,
-    );
-    return {
-      key,
-      entry,
-      name: entry.name,
-      url,
-      items: 0,
-      status: "missing",
-      error: result.error,
-    };
+    return failedRead(entry, key, url, result.error, label);
   }
 
   let index = result.json;
@@ -311,16 +327,40 @@ async function indexOne(entry, probe, label, attempts) {
     console.log(
       `  ${entry.name} paginates (${index.items?.length ?? 0}/${index.pagination.total}), fetching remaining pages`,
     );
-    index = await fetchRemainingPages(url, index);
+    const paged = await fetchRemainingPages(url, index);
+    if (paged.error) {
+      // A half-read catalog is worse than an old one: it looks healthy and is
+      // wrong. Fall back to the same path a failed first page takes.
+      return failedRead(entry, key, url, paged.error, label);
+    }
+    index = paged.index;
   }
 
-  const rawItems = (index.items ?? []).filter((item) => item?.name);
+  // A name is how an item is addressed — by a page URL, by /r, by search — so
+  // two items sharing one is one item nobody can reach. Some registries do it
+  // deliberately, registering style variants under a single name. Keeping the
+  // first match is the behaviour the aggregated catalog already had.
+  const rawItems = [];
+  const claimed = new Set();
+  let shadowed = 0;
+  for (const item of index.items ?? []) {
+    if (!item?.name) continue;
+    if (claimed.has(item.name)) {
+      shadowed += 1;
+      continue;
+    }
+    claimed.add(item.name);
+    rawItems.push(item);
+  }
+  if (shadowed > 0) {
+    console.log(`  ${entry.name}: ${shadowed} item(s) share a name with an earlier one, keeping the first`);
+  }
+
   const items = rawItems.map(slimItem);
   const base = itemBaseUrl(entry);
 
-  // Provenance for BAD-139: registries that inline source in their index
-  // are the ones whose category view rendered a per-file tree. Stripping
-  // content moves them to the flat item list every other registry shows.
+  // Provenance: some registries inline source in their index. Recording it
+  // keeps the reason a view holds no file content visible in the manifest.
   const embedsContent = rawItems.some((item) => item.files?.[0]?.content);
   const resolvable = probe
     ? await probeResolvable(

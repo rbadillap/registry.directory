@@ -1,7 +1,7 @@
 /**
  * Fetch utilities with proper identification for registry.directory.
  *
- * BAD-138 left exactly two callers, both of which resolve a single item
+ * Exactly two callers remain, both of which resolve a single item
  * against its origin registry on demand: the /r item proxy and fetchItemData
  * in components/registry-slug-view.tsx. Registry *indexes* are never fetched
  * from the app any more — they are read from apps/web/data.

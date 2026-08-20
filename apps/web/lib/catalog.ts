@@ -5,7 +5,7 @@ import { loadDirectory, parseGithubRef, entryHandle } from "./resolve-registry"
 // Aggregated cross-registry catalog served at /r/registry.json (shadcn
 // dynamic search protocol) and backing the /r/{handle}/{item}.json proxy.
 //
-// BAD-138: assembled from the views committed under data/registries. It used
+// Assembled from the views committed under data/registries. It used
 // to be built during the Vercel build by fetching all 75 origin indexes plus
 // three probe requests each, then written to Vercel Blob and read back at
 // request time. Both halves are gone — the indexer already did that work, and
@@ -15,7 +15,6 @@ import { loadDirectory, parseGithubRef, entryHandle } from "./resolve-registry"
 // catalog fields before the next is opened, so peak memory is a single
 // registry rather than all of them.
 
-const MEMORY_TTL_MS = 60 * 60 * 1000
 const DESCRIPTION_MAX = 300
 
 export interface CatalogItem {
@@ -99,23 +98,23 @@ export async function buildCatalog(): Promise<Catalog> {
   return { generatedAt: new Date().toISOString(), registries, items }
 }
 
-let memory: { catalog: Catalog; at: number } | null = null
+// The files this is assembled from are baked into the deployment, so within
+// one process the answer can never change. Caching the promise — not the
+// result — also collapses concurrent first requests into a single read of the
+// 68 views instead of one per caller.
+let inFlight: Promise<Catalog | null> | null = null
 
 export async function loadCatalog(): Promise<Catalog | null> {
-  if (memory && Date.now() - memory.at < MEMORY_TTL_MS) {
-    return memory.catalog
-  }
+  if (inFlight) return inFlight
 
-  let catalog: Catalog
-  try {
-    catalog = await buildCatalog()
-  } catch (error) {
+  inFlight = buildCatalog().catch((error) => {
     console.error("[catalog] Build failed:", error)
-    return memory?.catalog ?? null
-  }
+    // Not retained: a failed read should not poison the process for good.
+    inFlight = null
+    return null
+  })
 
-  if (!catalog.items.length) return memory?.catalog ?? null
-
-  memory = { catalog, at: Date.now() }
-  return catalog
+  return inFlight
 }
+
+

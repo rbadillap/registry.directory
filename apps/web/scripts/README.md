@@ -1,7 +1,7 @@
 # scripts/
 
-Everything here runs **on the maintainer's machine**, never in a Vercel build
-and never in a Function. That split is the whole point: this is where talking
+Everything here runs **locally**, never in a Vercel build and never in a
+Function. That split is the whole point: this is where talking
 to 75 third-party registries is allowed, because this is where waiting out a
 rate limit is free.
 
@@ -141,9 +141,9 @@ views:check  note: data/ was generated 20 days ago (2026-07-31) — run `pnpm in
 
 Committed data does not refresh itself. An origin that was down when it was
 indexed stays down in `data/` until someone runs the indexer again, and a
-registry admitted last week is invisible until then. Working from stale data is
-a legitimate choice; making it by forgetting is not. The note exists so the
-choice is always a choice.
+registry admitted last week is invisible until then. Working from stale data is a valid
+choice; making it by forgetting is not. The note exists so the choice is
+always a choice.
 
 ```bash
 pnpm views:check    # run it by hand

@@ -110,7 +110,7 @@ async function getTools(): Promise<DirectoryEntry[]> {
 export default async function Home() {
   const components = await getRegistries();
   // Every one of these now reads apps/web/data — no registry is contacted
-  // while this page renders (BAD-138). The /r catalog used to be assembled
+  // while this page renders. The /r catalog used to be assembled
   // and pushed to blob here as a side effect; it is derived from the same
   // data/ files on demand instead.
   const [stats, githubStats, items, affiliates] = await Promise.all([

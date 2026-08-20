@@ -5,11 +5,18 @@ const nextConfig = {
   // separate dirs let a production build run while the dev server is up
   distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
   outputFileTracingIncludes: {
-    // data/ is read by path at request time (registry views for on-demand
-    // item pages, the whole set for the /r catalog). Next's tracer cannot
-    // follow a filename built at runtime, so the files are named explicitly
-    // — without this the deployed functions find an empty data directory.
-    '/**': ['./data/**'],
+    // data/ is read by a path built at request time, which the tracer cannot
+    // follow, so the files are named explicitly — without this the deployed
+    // functions find an empty data directory. Scoped to the routes that
+    // actually read it: everything else ships without the 16 MB.
+    '/[owner]': ['./data/**'],
+    '/[owner]/[repo]': ['./data/**'],
+    '/[owner]/[repo]/[slug]': ['./data/**'],
+    '/api/markdown/[owner]/[repo]': ['./data/**'],
+    '/api/markdown/[owner]/[repo]/[slug]': ['./data/**'],
+    '/r/[...path]': ['./data/**'],
+    '/sitemap.xml': ['./data/**'],
+    '/llms.txt': ['./data/**'],
     '/[owner]/[repo]/opengraph-image': ['./public/fonts/**/*'],
     '/[owner]/[repo]/[slug]/opengraph-image': ['./public/fonts/**/*'],
   },

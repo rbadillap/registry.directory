@@ -40,7 +40,7 @@ async function fetchItemsForRegistry(
 // The home's cross-registry search index, flattened from the committed views
 // at build time and handed to DirectoryTabs as a server prop. The older plan
 // here was to persist this to Vercel Blob once a second consumer appeared;
-// BAD-138 removed the reason — every consumer can rebuild it from data/ at
+// No reason field: every consumer can rebuild it from data/ at
 // zero network cost, so blob persistence would only add a second copy that
 // can disagree with the first.
 export async function fetchAllRegistryItems(

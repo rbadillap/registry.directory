@@ -7,8 +7,8 @@
 // surfaces come third; the manifest is written last, because it describes
 // what the three steps actually produced.
 //
-// This runs on the maintainer's machine, never on Vercel. That is the whole
-// point of BAD-138: patient retries against a rate-limited registry are free
+// This runs locally, never on Vercel. That is the whole point: patient
+// retries against a rate-limited registry are free
 // here and ruinous inside a build.
 
 import { join } from "node:path";
@@ -92,9 +92,11 @@ async function main() {
     ...(r.error ? { error: r.error } : {}),
   });
 
+  const priorManifest = await readJsonFile(join(DATA_DIR, "manifest.json"));
+
   let entries = records.map(toRecord);
   if (only) {
-    const previous = (await readJsonFile(join(DATA_DIR, "manifest.json")))?.registries ?? [];
+    const previous = priorManifest?.registries ?? [];
     const merged = new Map(previous.map((r) => [r.key, r]));
     for (const record of entries) merged.set(record.key, record);
     entries = [...merged.values()];
@@ -111,7 +113,11 @@ async function main() {
     // timestamp on a page changes the output of every run even when no data
     // changed, and a changed output is an ISR write nobody asked for.
     generatedAt: new Date().toISOString(),
-    date: today(),
+    // The date answers "how old is this data as a whole", so only a run that
+    // looked at every registry may advance it. A targeted run refreshes a few
+    // views and leaves the rest untouched: stamping it with today would report
+    // the whole catalog as fresh on the strength of one file.
+    date: only ? (priorManifest?.date ?? today()) : today(),
     counts: {
       directory: entries.length,
       views: files.length,

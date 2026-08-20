@@ -3,7 +3,7 @@ import { loadGitHubData } from "./registry-data";
 
 // Stars and last-push dates for every registry with a github_url.
 //
-// BAD-138: read from data/github.json, refreshed by `pnpm index`. This module
+// Read from data/github.json, refreshed by `pnpm index`. This module
 // used to call the GitHub API during the build and write the result back to
 // the github.json blob — which meant any build, and even a local dev render,
 // overwrote production's cache. Nothing here writes anything any more.

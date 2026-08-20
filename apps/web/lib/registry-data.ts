@@ -3,9 +3,9 @@ import { join } from "node:path"
 import type { DirectoryEntry } from "./types"
 import type { RegistryItem } from "./registry-types"
 
-// The one source of truth (BAD-138). Everything the site renders about a
+// The one source of truth. Everything the site renders about a
 // registry's catalog comes from files committed under apps/web/data, produced
-// by `pnpm index` on the maintainer's machine. No page, route or build step
+// by `pnpm index`, run locally. No page, route or build step
 // reaches out to a third-party registry for an index any more.
 //
 // The mapping from a directory entry to its view file lives in the manifest,
@@ -26,7 +26,7 @@ export interface ManifestRegistry {
   status: "ok" | "reused" | "missing"
   /** False when every sampled item was definitively gated at the origin. */
   resolvable: boolean
-  /** The origin inlines file content in its index (BAD-139 material). */
+  /** The origin inlines file content in its index. */
   originEmbedsContent?: boolean
   /** Why this view is a carry-forward rather than a fresh read. */
   error?: string

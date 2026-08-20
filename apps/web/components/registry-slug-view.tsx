@@ -24,12 +24,10 @@ export function isCategory(slug: string): boolean {
   return slug in SLUG_TO_REGISTRY_TYPE
 }
 
-// BAD-139: this is the last third-party fetch left in the render path. The
-// item view needs files[].content — the component's actual source — and
-// data/ deliberately does not carry it, so a prerendered item page still
-// reaches its origin registry once. Whether the source belongs in data/ is
-// the open product question BAD-139 owns; until it is answered, every other
-// read on this page comes from disk.
+// The only third-party fetch left in the render path. An item view needs
+// files[].content — the component's actual source — and data/ carries
+// metadata and file paths but not content, so rendering one item page reaches
+// its origin registry once. Every other read on this page comes from disk.
 export async function fetchItemData(
   registry: DirectoryEntry,
   itemName: string

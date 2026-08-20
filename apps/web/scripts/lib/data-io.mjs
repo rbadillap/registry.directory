@@ -1,8 +1,8 @@
 // Shared plumbing for the local indexer (scripts/index.mjs and its steps).
 //
-// BAD-138: the site reads one source of truth — the JSON committed under
+// The site reads one source of truth — the JSON committed under
 // apps/web/data. Everything that reaches out to a third-party registry lives
-// in this folder and runs on the maintainer's machine, where a patient retry
+// in this folder and runs locally, where a patient retry
 // against a 429 costs nothing. Vercel never fetches a registry index.
 
 import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
