@@ -13,6 +13,11 @@ The site itself only ever reads files under `apps/web/data/`.
 | `views-check.mjs` | `pnpm views:check` | The prebuild guard. Refuses to build against dishonest data. |
 | `list-pending-submissions.mjs` | `node --env-file=.env.local scripts/list-pending-submissions.mjs` | Lists pending registry submissions from Blob. Unrelated to the data layer. |
 
+Tests run with `pnpm test` (node:test, no dependencies). They cover pagination,
+which no registry in the directory currently exercises — every origin answers
+its whole catalog in one response — and which is therefore the easiest part of
+the indexer for a regression to live in unnoticed.
+
 ---
 
 ## The indexer — `pnpm index`

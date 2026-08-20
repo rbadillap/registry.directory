@@ -43,7 +43,7 @@ const MAX_PAGINATION_PAGES = 100;
 // it, and what its `total` counts. `items` holds one entry per distinct name,
 // which is what the view can address. A source that repeats a name would make
 // a deduplicated offset walk backwards and re-request pages forever.
-async function fetchRemainingPages(url, first) {
+export async function fetchRemainingPages(url, first, fetchPage = fetchWithRetries) {
   const items = [];
   const seen = new Set();
   let consumed = 0;
@@ -69,7 +69,7 @@ async function fetchRemainingPages(url, first) {
     paged.searchParams.set("limit", String(pageSize));
     paged.searchParams.set("offset", String(consumed));
 
-    const result = await fetchWithRetries(paged.toString(), { attempts: 3 });
+    const result = await fetchPage(paged.toString(), { attempts: 3 });
     if (!result.json) {
       return { error: `${result.error} (page ${page + 2}, ${consumed} rows in)` };
     }
