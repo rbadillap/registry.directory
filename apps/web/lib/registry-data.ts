@@ -59,6 +59,8 @@ export interface RegistryView {
   /** Where individual item JSONs live: `${itemBase}/{name}.json`. */
   itemBase: string
   resolvable: boolean
+  /** The origin inlines file content in its index; the view strips it. */
+  embedsContent?: boolean
   items: RegistryItem[]
 }
 

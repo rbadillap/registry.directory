@@ -15,7 +15,7 @@ export const WEB_DIR = join(dirname(fileURLToPath(import.meta.url)), "..", "..")
 export const DATA_DIR = join(WEB_DIR, "data");
 export const REGISTRIES_DIR = join(DATA_DIR, "registries");
 
-// Same identity the app presented when it still fetched indexes itself.
+// One identity for every request this project makes to a registry.
 export const USER_AGENT =
   "Mozilla/5.0 (compatible; registry-directory/1.0; +https://registry.directory)";
 

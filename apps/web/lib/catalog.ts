@@ -5,11 +5,11 @@ import { loadDirectory, parseGithubRef, entryHandle } from "./resolve-registry"
 // Aggregated cross-registry catalog served at /r/registry.json (shadcn
 // dynamic search protocol) and backing the /r/{handle}/{item}.json proxy.
 //
-// Assembled from the views committed under data/registries. It used
-// to be built during the Vercel build by fetching all 75 origin indexes plus
-// three probe requests each, then written to Vercel Blob and read back at
-// request time. Both halves are gone — the indexer already did that work, and
-// a blob that only the build refreshes goes stale the moment builds stop.
+// Assembled at request time from the views committed under data/registries.
+// Neither half of the work costs anything here: the indexer has already
+// fetched and probed every origin, and deriving the catalog from those files
+// keeps it in step with the pages it links to, which a separately stored copy
+// could not guarantee.
 //
 // Assembly is sequential on purpose: one view is parsed and reduced to its
 // catalog fields before the next is opened, so peak memory is a single

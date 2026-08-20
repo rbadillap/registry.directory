@@ -115,6 +115,11 @@ async function main() {
         `data/registries/${record.key}.json says resolvable=${view.resolvable}, manifest says ${record.resolvable}`
       );
     }
+    if (Boolean(view.embedsContent) !== Boolean(record.originEmbedsContent)) {
+      fail(
+        `data/registries/${record.key}.json says embedsContent=${Boolean(view.embedsContent)}, manifest says ${Boolean(record.originEmbedsContent)}`
+      );
+    }
 
     // The item contract the site renders and /r resolves against. A nameless
     // item produces a link to nowhere; a duplicate name makes one of the two

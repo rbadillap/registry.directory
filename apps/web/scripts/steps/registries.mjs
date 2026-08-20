@@ -336,7 +336,13 @@ async function failedRead(entry, key, url, error, label) {
     // pair; leaving the file would also keep the key alive through the orphan
     // prune, so nothing would ever clear it.
     const { unlink } = await import("node:fs/promises");
-    await unlink(viewPath(key)).catch(() => {});
+    // Only a file that is already gone is an acceptable failure. Any other
+    // error means the file is still there while the manifest is about to say
+    // it is not, and claiming a removal that did not happen is the failure
+    // mode this whole layer exists to prevent.
+    await unlink(viewPath(key)).catch((error) => {
+      if (error?.code !== "ENOENT") throw error;
+    });
     console.log(
       `${label(entry)}: ${error} — removed the view on disk, it describes ${previous.entry} at ${previous.indexUrl}`,
     );
@@ -390,6 +396,21 @@ async function indexOne(entry, probe, label, attempts) {
       return failedRead(entry, key, url, paged.error, label);
     }
     index = paged.index;
+  } else {
+    // A single response can also be short of what it declares. Saying "no
+    // more" while handing over fewer rows than `total` is the same shortfall
+    // as a dropped page, and it never reaches the paging walk.
+    const declared = index.pagination?.total;
+    const served = index.items?.length ?? 0;
+    if (typeof declared === "number" && served !== declared) {
+      return failedRead(
+        entry,
+        key,
+        url,
+        `index served ${served} rows and declared ${declared}`,
+        label,
+      );
+    }
   }
 
   // A name is how an item is addressed — by a page URL, by /r, by search — so
