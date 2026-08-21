@@ -85,7 +85,7 @@ export function FeedbackWidget({ inline = false }: { inline?: boolean } = {}) {
         onClick={toggle}
         className={
           inline
-            ? "flex size-9 items-center justify-center rounded-none border border-border-subtle bg-background transition-colors hover:bg-accent"
+            ? "flex size-9 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
             : "fixed bottom-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background shadow-lg transition-colors hover:bg-accent"
         }
         aria-label="Send feedback (Cmd+.)"

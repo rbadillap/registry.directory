@@ -259,7 +259,7 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
             value={searchTerm}
             onChange={setSearchTerm}
             onFocus={loadItemIndex}
-            placeholder="Search registries and components..."
+            placeholder="Search components..."
           />
 
           {browsing ? null : (
