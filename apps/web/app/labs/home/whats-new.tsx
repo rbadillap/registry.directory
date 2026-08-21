@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 import Link from "next/link"
+import { Avatar, AvatarFallback, AvatarImage } from "@workspace/ui/components/avatar"
 import type { ShippedEntry, ShippedFile } from "@/lib/registry-data"
 
 // What's new — a changelog wall over shipped.json: one cell per registry that
@@ -23,15 +24,22 @@ const MONTHS = [
   "Dec",
 ]
 
-// The featured cell spans two rows from md up, so seven cells close the frame
-// exactly at both md (2 columns) and lg (3 columns).
-const GRID_MAX = 7
+// The featured cell takes two columns, so the wall closes its frame only at
+// a count that leaves no gap: eight cells fill three rows of three, and four
+// rows of two. Older entries are drawn on when the window is quiet — they
+// carry their own dates and claim nothing about today.
+const GRID_MAX = 8
 
 type UpdateCell = {
   key: string
-  tag: string
+  /** The registry — what the cell is about. */
+  registry: string
+  avatar: string | null
   date: string
-  title: string
+  /** The date this was measured against, when it is not the day before. */
+  since: string | null
+  count: number
+  summary: string
   detail: string
   href?: string
 }
@@ -76,15 +84,26 @@ function summarize(added: string[]): string {
   return `${added.length} new components`
 }
 
+function dayBefore(iso: string): string {
+  const d = new Date(`${iso}T00:00Z`)
+  d.setUTCDate(d.getUTCDate() - 1)
+  return d.toISOString().slice(0, 10)
+}
+
 function buildCells(shipped: ShippedFile | null): UpdateCell[] {
   const entries = [...(shipped?.entries ?? [])].sort(
     (a, b) => b.added.length - a.added.length || b.date.localeCompare(a.date)
   )
   return entries.slice(0, GRID_MAX).map((entry: ShippedEntry) => ({
     key: `${entry.registry}-${entry.date}`,
-    tag: entry.registry,
+    registry: entry.registry,
+    avatar: entry.avatar,
     date: entry.date,
-    title: summarize(entry.added),
+    // Only worth showing when the gap is wider than a day: otherwise the
+    // cell would imply that six days of work happened in one.
+    since: entry.since && entry.since !== dayBefore(entry.date) ? entry.since : null,
+    count: entry.added.length,
+    summary: summarize(entry.added),
     detail: entry.added.join(", "),
     href: entry.href ?? undefined,
   }))
@@ -94,10 +113,29 @@ function buildCells(shipped: ShippedFile | null): UpdateCell[] {
 // Cells
 // ---------------------------------------------------------------------------
 
-function Tag({ cell }: { cell: UpdateCell }) {
+/** The registry, which is what the cell is about. */
+function Masthead({ cell, size }: { cell: UpdateCell; size: "lead" | "row" }) {
   return (
-    <span className="shrink-0 type-label uppercase tracking-[0.14em] text-muted-foreground">
-      {cell.tag}
+    <div className="flex items-center gap-2.5">
+      <Avatar className={size === "lead" ? "size-9 shrink-0" : "size-6 shrink-0"}>
+        {cell.avatar && <AvatarImage src={cell.avatar} alt="" />}
+        <AvatarFallback className="bg-secondary text-muted-foreground type-label">
+          {cell.registry.charAt(0)}
+        </AvatarFallback>
+      </Avatar>
+      <h3 className={`${size === "lead" ? "type-section" : "type-title"} text-balance`}>
+        {cell.registry}
+      </h3>
+    </div>
+  )
+}
+
+/** When it shipped, and what that measurement covers. */
+function When({ cell, long }: { cell: UpdateCell; long: boolean }) {
+  return (
+    <span className="type-meta text-muted-foreground">
+      {formatDate(cell.date, long)}
+      {cell.since ? ` · since ${formatDate(cell.since, false)}` : ""}
     </span>
   )
 }
@@ -154,15 +192,15 @@ function FeaturedCell({ cell, span }: { cell: UpdateCell; span: boolean }) {
         }}
       />
       <div className="relative flex items-start justify-between gap-4">
-        <span className="type-meta text-muted-foreground">
-          {formatDate(cell.date, true)}
-        </span>
-        <Tag cell={cell} />
+        <When cell={cell} long />
       </div>
-      <h3 className="relative mt-6 text-2xl md:text-3xl font-semibold tracking-tight text-balance">
-        {cell.title}
-      </h3>
-      <p className="relative mt-3 font-mono text-xs text-muted-foreground line-clamp-4">
+      <div className="relative mt-5">
+        <Masthead cell={cell} size="lead" />
+      </div>
+      <p className="relative mt-4 type-card text-foreground-secondary">
+        {cell.count} new component{cell.count === 1 ? "" : "s"} · {cell.summary}
+      </p>
+      <p className="relative mt-2 font-mono text-xs text-muted-foreground line-clamp-3">
         {cell.detail}
       </p>
       <ViewLink cell={cell} />
@@ -174,16 +212,16 @@ function UpdateCellView({ cell }: { cell: UpdateCell }) {
   return (
     <CellFrame href={cell.href} className="min-h-[13rem]">
       <div className="flex items-start justify-between gap-4">
-        <span className="type-meta text-muted-foreground">
-          {formatDate(cell.date, false)}
-        </span>
-        <Tag cell={cell} />
+        <When cell={cell} long={false} />
       </div>
-      <h3 className="mt-5 text-lg font-semibold tracking-tight line-clamp-2">
-        {cell.title}
-      </h3>
-      <p className="mt-2 font-mono text-xs text-muted-foreground line-clamp-3">
-        {cell.detail}
+      <div className="mt-4">
+        <Masthead cell={cell} size="row" />
+      </div>
+      <p className="mt-3 type-meta text-foreground-secondary">
+        {cell.count} new component{cell.count === 1 ? "" : "s"}
+      </p>
+      <p className="mt-1.5 font-mono text-xs text-muted-foreground line-clamp-2">
+        {cell.summary}
       </p>
       <ViewLink cell={cell} />
     </CellFrame>
@@ -240,9 +278,6 @@ export function WhatsNew({ shipped }: { shipped: ShippedFile | null }) {
               The latest components shipping across the shadcn ecosystem.
             </p>
           </div>
-          <code className="type-meta text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
-            The registries that published the most, first
-          </code>
         </header>
         <div className="relative">
           {/* Hairlines are shared: the frame draws top and left, every cell
@@ -253,7 +288,7 @@ export function WhatsNew({ shipped }: { shipped: ShippedFile | null }) {
               cells.length >= 3 ? "lg:grid-cols-3" : ""
             } border-t border-l border-border-subtle`}
           >
-            <FeaturedCell cell={featured} span={cells.length >= 4} />
+            <FeaturedCell cell={featured} span={cells.length >= 3} />
             {rest.map((cell) => (
               <UpdateCellView key={cell.key} cell={cell} />
             ))}

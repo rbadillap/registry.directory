@@ -339,15 +339,7 @@ export function JustShipped({ shipped }: { shipped: ShippedFile | null }) {
             <h2 className="type-section">
               Just shipped
             </h2>
-            {entries.length > 0 && (
-              <span className="type-meta text-muted-foreground">
-                {totalShipped} new items across {entries.length} registries
-              </span>
-            )}
           </div>
-          <code className="type-meta text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
-            Components published in the last {shipped?.windowDays ?? 1} days
-          </code>
         </header>
         {entries.length > 0 ? (
           <StepTicker entries={entries} />
