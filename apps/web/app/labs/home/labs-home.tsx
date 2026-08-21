@@ -211,11 +211,8 @@ const TICKER_MASK =
   "linear-gradient(to bottom, transparent 0, black 28px, black calc(100% - 28px), transparent)"
 
 function TickerRow({ entry }: { entry: ShippedEntry }) {
-  return (
-    <li
-      className="flex items-center gap-3 border-b border-border-subtle"
-      style={{ height: TICKER_ROW_PX }}
-    >
+  const body = (
+    <>
       <Avatar className="size-6 shrink-0">
         <AvatarImage src={entry.avatar ?? undefined} alt="" />
         <AvatarFallback className="bg-secondary text-muted-foreground text-[10px]">
@@ -238,6 +235,24 @@ function TickerRow({ entry }: { entry: ShippedEntry }) {
           {entry.added.length > 4 ? ` · +${entry.added.length - 4} more` : ""}
         </p>
       </div>
+    </>
+  )
+
+  // The whole row is the link, so the reader can go from "this shipped" to
+  // the registry that shipped it without hunting for a target. A registry
+  // with no page of its own stays a plain row rather than a dead one.
+  return (
+    <li className="border-b border-border-subtle" style={{ height: TICKER_ROW_PX }}>
+      {entry.href ? (
+        <Link
+          href={entry.href}
+          className="flex h-full items-center gap-3 px-1 -mx-1 transition-colors hover:bg-secondary/40 focus-visible:outline-2 focus-visible:outline-ring"
+        >
+          {body}
+        </Link>
+      ) : (
+        <div className="flex h-full items-center gap-3">{body}</div>
+      )}
     </li>
   )
 }
