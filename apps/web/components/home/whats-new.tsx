@@ -227,14 +227,18 @@ function UpdateCellView({ cell }: { cell: UpdateCell }) {
   )
 }
 
-// Print registration marks: hollow squares straddling the four corners of the
-// frame. Half of each square hangs outside the grid.
+// Corner marks: hollow squares set into the four corners of the frame.
+//
+// They used to straddle the frame, half of each square hanging outside it,
+// which is where a printer's registration marks belong — outside the trim.
+// Here the trim is the column every other element on the page aligns to, so
+// the only thing breaking that alignment was the ornament. They sit inside.
 function RegistrationMarks() {
   const corners = [
-    "-top-[3.5px] -left-[3.5px]",
-    "-top-[3.5px] -right-[3.5px]",
-    "-bottom-[3.5px] -left-[3.5px]",
-    "-bottom-[3.5px] -right-[3.5px]",
+    "top-0 left-0",
+    "top-0 right-0",
+    "bottom-0 left-0",
+    "bottom-0 right-0",
   ]
   return (
     <>
