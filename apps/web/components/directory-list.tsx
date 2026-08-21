@@ -231,7 +231,7 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
         </span>
       </div>
 
-      <div className="relative">
+      <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5">
           {visibleItems.map((item, index) => {
             const registryKey = item.registry.basePath;
@@ -291,12 +291,13 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
           })}
         </div>
 
-        {/* Fade overlay with "Show more" button */}
+        {/* The control follows the results and never covers them: nothing
+            that announces more should dim what is already being read. */}
         {hasMore && !expanded && (
-          <div className="absolute bottom-0 left-0 right-0 flex items-end justify-center pb-4 pt-32 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none">
+          <div className="flex justify-center pt-6">
             <button
               onClick={() => setExpanded(true)}
-              className="pointer-events-auto text-xs font-mono text-muted-foreground border border-border bg-background/90 backdrop-blur-sm px-4 py-2 hover:border-ring hover:text-foreground transition-all"
+              className="text-xs font-mono text-muted-foreground border border-border px-4 py-2 hover:border-ring hover:text-foreground transition-colors"
             >
               Show {items.length - INITIAL_ITEMS_LIMIT} more
             </button>

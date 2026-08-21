@@ -14,20 +14,44 @@ interface ScoredItem {
  * - "button tailark" → Tailark items matching "button"
  * - Exact name matches score highest, registry name matches lowest
  */
+/**
+ * Lowercased, with the separators component names use — hyphens, underscores,
+ * slashes — read as spaces.
+ *
+ * A person types "alert dialog"; the registry published "alert-dialog". Those
+ * are the same words, and the only thing between them is punctuation nobody
+ * says out loud. Applying this to the query and to the text being searched
+ * means either spelling finds the other.
+ */
+export function normalizeForSearch(text: string): string {
+  return text.toLowerCase().replace(/[-_/]+/g, " ").replace(/\s+/g, " ").trim()
+}
+
+/** The words of a query, separators included as breaks. */
+export function searchTerms(query: string): string[] {
+  return normalizeForSearch(query).split(" ").filter(Boolean)
+}
+
 export function searchItems(
   items: IndexedItem[],
   query: string
 ): IndexedItem[] {
-  const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+  const terms = searchTerms(query);
   if (terms.length === 0) return [];
+
+  // Kept whole as well as split: someone who types a component's full name
+  // should outrank someone whose words merely appear in it.
+  const whole = normalizeForSearch(query);
 
   // 1. Score + filter in one pass
   const scored: ScoredItem[] = [];
 
   for (const item of items) {
-    const name = item.name.toLowerCase();
-    const desc = item.description.toLowerCase();
-    const regName = item.registry.name.toLowerCase();
+    // Normalized on both sides, so a name published as alert-dialog answers
+    // to the words someone actually types.
+    const name = normalizeForSearch(item.name);
+    const desc = normalizeForSearch(item.description);
+    const regName = normalizeForSearch(item.registry.name);
 
     let totalScore = 0;
     let allTermsMatch = true;
@@ -48,7 +72,7 @@ export function searchItems(
         termScore += 10;
       }
 
-      if (item.categories.some((c) => c.toLowerCase().includes(term))) {
+      if (item.categories.some((c) => normalizeForSearch(c).includes(term))) {
         termScore += 10;
       }
 
@@ -62,6 +86,14 @@ export function searchItems(
       }
 
       totalScore += termScore;
+    }
+
+    // A single-word query already scored its exact match inside the loop.
+    // This restores the one that splitting took away: "alert-dialog" becomes
+    // two words, so nothing equals the name any more, and a person who spelled
+    // it out should still outrank one whose words merely appear in it.
+    if (allTermsMatch && terms.length > 1 && name === whole) {
+      totalScore += 100;
     }
 
     if (allTermsMatch) {

@@ -2,6 +2,9 @@
   "extends": "@workspace/typescript-config/nextjs.json",
   "compilerOptions": {
     "baseUrl": ".",
+    // Tests import the module under test by its real filename. Safe here
+    // because tsc only ever type-checks in this project; it never emits.
+    "allowImportingTsExtensions": true,
     "paths": {
       "@/*": [
         "./*"
