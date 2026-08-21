@@ -5,17 +5,20 @@ import { useTheme } from "next-themes"
 import { ScrollArea, ScrollBar } from "@workspace/ui/components/scroll-area"
 import { Button } from "@workspace/ui/components/button"
 import { FileCode, Package, Copy, Check, FileWarning } from "lucide-react"
-import type { RegistryItem } from "@/lib/registry-types"
+import type { RegistryItem, SourceStatus, ViewerFile } from "@/lib/registry-types"
 import { codeToHtml } from "shiki"
 import { getFileName, getExtension, getTargetPath } from "@/lib/path-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { isBinaryExtension } from "@/lib/file-utils"
 
-type RegistryFile = NonNullable<RegistryItem["files"]>[number]
+type RegistryFile = ViewerFile
 
 interface CodeViewerProps {
   file: RegistryFile | null
   selectedItem?: RegistryItem | null
+  /** Whether the file's source has arrived yet. Paths render from the
+   *  committed catalog; contents are fetched separately. */
+  sourceStatus?: SourceStatus
 }
 
 function getLanguageFromPath(path: string): string {
@@ -48,7 +51,7 @@ function getLanguageFromPath(path: string): string {
   return extensionMap[extension] || "text"
 }
 
-export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
+export function CodeViewer({ file, selectedItem, sourceStatus = "ready" }: CodeViewerProps) {
   const analytics = useAnalytics()
   const { resolvedTheme } = useTheme()
   const [highlightedCode, setHighlightedCode] = useState<string>("")
@@ -56,14 +59,18 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
-    if (!file) {
+    // No source yet: the same file is highlighted twice, once empty and once
+    // with its contents, and the empty pass can finish last. Skipping it means
+    // there is only ever one result to keep.
+    if (!file?.content) {
       setHighlightedCode("")
+      setIsLoading(false)
       return
     }
 
+    let current = true
     setIsLoading(true)
     const language = getLanguageFromPath(file.path)
-    const code = file.content || ""
     const isDark = resolvedTheme === "dark"
     const shikiTheme = isDark ? "github-dark" : "github-light"
 
@@ -73,23 +80,41 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
       ? { "#24292e": "transparent" }
       : { "#fff": "transparent", "#ffffff": "transparent" }
 
-    codeToHtml(code, {
+    codeToHtml(file.content, {
       lang: language,
       theme: shikiTheme,
       colorReplacements,
     })
       .then((html: string) => {
+        if (!current) return
         setHighlightedCode(html)
         setIsLoading(false)
       })
       .catch((error: unknown) => {
+        if (!current) return
         console.error("Error highlighting code:", error)
         setHighlightedCode("")
         setIsLoading(false)
       })
+
+    return () => {
+      current = false
+    }
   }, [file, resolvedTheme])
 
   // If there's a selected item but no files
+  // Why there is nothing to show is stated once, in the notice above this
+  // panel. Repeating it here would tell the same news twice, and "this item
+  // has no files" — the claim below — is only true once the source has been
+  // asked for and answered.
+  if (!file && selectedItem && sourceStatus !== "ready") {
+    return (
+      <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
+        <p className="text-xs text-foreground-subtle font-mono">{selectedItem.name}</p>
+      </div>
+    )
+  }
+
   if (!file && selectedItem) {
     return (
       <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
@@ -122,6 +147,19 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
       <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
         <p className="text-sm mb-2">Select a component to view its code</p>
         <p className="text-xs text-foreground-subtle">Click on any item in the sidebar to get started</p>
+      </div>
+    )
+  }
+
+  // The path is known and the source is not, which is a state of its own:
+  // the file exists, and either it is on its way or its origin refused it.
+  // Same rule: the notice above owns the reason.
+  if (!file.content && sourceStatus !== "ready") {
+    return (
+      <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
+        <p className="text-xs text-foreground-subtle font-mono">
+          {getFileName(getTargetPath(file))}
+        </p>
       </div>
     )
   }

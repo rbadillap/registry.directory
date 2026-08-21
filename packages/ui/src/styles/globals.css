@@ -137,6 +137,19 @@
   --color-border-subtle: var(--border-subtle);
 }
 
+/* Long lists: the browser skips layout and paint for rows below the fold.
+   Declared once rather than written on every row — a megacatalogue renders
+   thousands of them, and the class name travels in the HTML each time. */
+@utility list-row-deferred {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 56px;
+}
+
+@utility result-card-deferred {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 190px;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

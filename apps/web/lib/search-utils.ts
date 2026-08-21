@@ -1,9 +1,45 @@
 import type { IndexedItem } from "./items-index";
 
-interface ScoredItem {
-  item: IndexedItem;
+interface ScoredItem<T> {
+  item: T;
   score: number;
   registryKey: string;
+}
+
+/**
+ * An item with the text it is searched by already normalised.
+ *
+ * The catalogue does not change between one keystroke and the next, but the
+ * same names and descriptions were being lowercased and stripped of their
+ * separators on every one of them — tens of thousands of times per letter,
+ * to compare against a query that takes microseconds. Doing it once, when
+ * the index arrives, is the whole difference.
+ */
+interface PreparedItem<T> {
+  item: T;
+  name: string;
+  description: string;
+  registryName: string;
+  categories: string[];
+  registryKey: string;
+}
+
+export type PreparedIndex<T extends IndexedItem = IndexedItem> = ReadonlyArray<
+  PreparedItem<T>
+>;
+
+/** Normalise the text of every item once, for reuse across searches. */
+export function prepareSearchIndex<T extends IndexedItem>(
+  items: readonly T[]
+): PreparedIndex<T> {
+  return items.map((item) => ({
+    item,
+    name: normalizeForSearch(item.name),
+    description: normalizeForSearch(item.description),
+    registryName: normalizeForSearch(item.registry.name),
+    categories: item.categories.map(normalizeForSearch),
+    registryKey: item.registry.basePath,
+  }));
 }
 
 /**
@@ -32,10 +68,22 @@ export function searchTerms(query: string): string[] {
  * - "button tailark" → Tailark items matching "button"
  * - Exact name matches score highest, registry name matches lowest
  */
-export function searchItems(
-  items: IndexedItem[],
+export function searchItems<T extends IndexedItem>(
+  items: readonly T[],
   query: string
-): IndexedItem[] {
+): T[] {
+  return searchPrepared(prepareSearchIndex(items), query);
+}
+
+/**
+ * The same search, over an index whose text was normalised in advance.
+ * Callers that search the same collection more than once should prepare it
+ * with prepareSearchIndex and use this.
+ */
+export function searchPrepared<T extends IndexedItem>(
+  prepared: PreparedIndex<T>,
+  query: string
+): T[] {
   const terms = searchTerms(query);
   if (terms.length === 0) return [];
 
@@ -44,14 +92,12 @@ export function searchItems(
   const whole = normalizeForSearch(query);
 
   // 1. Score + filter in one pass
-  const scored: ScoredItem[] = [];
+  const scored: ScoredItem<T>[] = [];
 
-  for (const item of items) {
-    // Normalized on both sides, so a name published as alert-dialog answers
-    // to the words someone actually types.
-    const name = normalizeForSearch(item.name);
-    const desc = normalizeForSearch(item.description);
-    const regName = normalizeForSearch(item.registry.name);
+  for (const entry of prepared) {
+    // Already normalised on both sides, so a name published as alert-dialog
+    // answers to the words someone actually types.
+    const { name, description: desc, registryName: regName } = entry;
 
     let totalScore = 0;
     let allTermsMatch = true;
@@ -72,7 +118,7 @@ export function searchItems(
         termScore += 10;
       }
 
-      if (item.categories.some((c) => normalizeForSearch(c).includes(term))) {
+      if (entry.categories.some((c) => c.includes(term))) {
         termScore += 10;
       }
 
@@ -98,9 +144,9 @@ export function searchItems(
 
     if (allTermsMatch) {
       scored.push({
-        item,
+        item: entry.item,
         score: totalScore,
-        registryKey: item.registry.basePath,
+        registryKey: entry.registryKey,
       });
     }
   }
@@ -108,7 +154,7 @@ export function searchItems(
   if (scored.length === 0) return [];
 
   // 2. Group by registry, sort each group by score desc
-  const groups = new Map<string, ScoredItem[]>();
+  const groups = new Map<string, ScoredItem<T>[]>();
 
   for (const s of scored) {
     let group = groups.get(s.registryKey);
@@ -130,7 +176,7 @@ export function searchItems(
   );
 
   // 3. Round-robin interleave
-  const result: IndexedItem[] = [];
+  const result: T[] = [];
   let round = 0;
   let added = true;
 

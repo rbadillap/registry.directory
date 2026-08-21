@@ -20,21 +20,24 @@ import {
 } from "lucide-react"
 import { cn } from "@workspace/ui/lib/utils"
 import { normalizeForSearch, searchTerms } from "@/lib/search-utils"
-import type { RegistryItem } from "@/lib/registry-types"
+import type { SourceStatus, ViewerFile, ViewerItem } from "@/lib/registry-types"
 import { getFileName, getTargetPath } from "@/lib/path-utils"
 import { REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
 import { useAnalytics } from "@/hooks/use-analytics"
 
-type RegistryFile = NonNullable<RegistryItem["files"]>[number]
+type RegistryFile = ViewerFile
 
 interface FileTreeProps {
-  items: RegistryItem[]
-  selectedItem: RegistryItem | null
+  items: ViewerItem[]
+  selectedItem: ViewerItem | null
   selectedFile: RegistryFile | null
-  onSelectFile: (item: RegistryItem, file: RegistryFile) => void
+  onSelectFile: (item: ViewerItem, file: ViewerFile) => void
   currentCategory?: string
   // Route prefix ("/{owner}/{repo}" or "/{handle}") for sibling item links
   basePath: string
+  /** Whether the item's files have arrived. An item with no files yet and an
+   *  item with no files at all look the same until this says which it is. */
+  sourceStatus?: SourceStatus
 }
 
 type TreeNode = {
@@ -42,130 +45,63 @@ type TreeNode = {
   path: string  // Full path to this node (e.g., "components", "components/ui")
   type: 'folder' | 'file' | 'block'
   children: Map<string, TreeNode>
-  items: RegistryItem[]  // Items at this level
+  items: ViewerItem[]  // Items at this level
   files?: RegistryFile[]       // Files if this is a file node (for single-file items)
 }
 
 type PathTree = Map<string, TreeNode>
+/**
+ * The folder tree for one component: its files, nested by where each one
+ * installs.
+ *
+ * Only the item view draws a tree. The branch that grouped a category's
+ * items by folder was computed and then thrown away, so it is gone; Git
+ * keeps it if grouping ever becomes a requirement.
+ */
 
-function buildPathTree(items: RegistryItem[]): PathTree {
+function buildPathTree(items: ViewerItem[]): PathTree {
   const root = new Map<string, TreeNode>()
-
-  // Check if we have file content - if so, build tree from individual files
-  const firstItem = items.length > 0 ? items[0] : null
-  const hasContent = Boolean(firstItem?.files?.[0]?.content)
 
   for (const item of items) {
     if (!item.files || item.files.length === 0) continue
 
-    // If we have content (Nivel 3), process each file individually
-    if (hasContent) {
-      for (const file of item.files) {
-        const targetPath = getTargetPath(file)
-        const pathParts = targetPath.split('/')
+    // Reading one component: its files are the tree.
+    for (const file of item.files) {
+      const targetPath = getTargetPath(file)
+      const pathParts = targetPath.split('/')
 
-        let currentLevel = root
-        let currentPath = ''
+      let currentLevel = root
+      let currentPath = ''
 
-        // Create folder nodes for all segments except the last one (file name)
-        for (let i = 0; i < pathParts.length - 1; i++) {
-          const segment = pathParts[i]
-          if (!segment) continue
-          currentPath = currentPath ? `${currentPath}/${segment}` : segment
+      // Create folder nodes for all segments except the last one (file name)
+      for (let i = 0; i < pathParts.length - 1; i++) {
+        const segment = pathParts[i]
+        if (!segment) continue
+        currentPath = currentPath ? `${currentPath}/${segment}` : segment
 
-          if (!currentLevel.has(segment)) {
-            currentLevel.set(segment, {
-              name: segment,
-              path: currentPath,
-              type: 'folder',
-              children: new Map(),
-              items: [],
-            })
-          }
-
-          currentLevel = currentLevel.get(segment)!.children
-        }
-
-        // Add the file at the final location
-        const fileName = pathParts[pathParts.length - 1]
-        if (fileName && !currentLevel.has(fileName)) {
-          currentLevel.set(fileName, {
-            name: fileName,
-            path: targetPath,
-            type: 'file',
+        if (!currentLevel.has(segment)) {
+          currentLevel.set(segment, {
+            name: segment,
+            path: currentPath,
+            type: 'folder',
             children: new Map(),
-            items: [item],
+            items: [],
           })
         }
-      }
-      continue
-    }
 
-    // Original logic for Nivel 2 (no content)
-    const firstFile = item.files[0]
-    if (!firstFile) continue
-
-    // Use target instead of path - this is where the file will be installed
-    const targetPath = getTargetPath(firstFile)
-    const pathParts = targetPath.split('/')
-
-    let currentLevel = root
-    let currentPath = ''
-    let lastFolderNode: TreeNode | undefined = undefined
-
-    // Create folder nodes for all segments except the last one (file name)
-    for (let i = 0; i < pathParts.length - 1; i++) {
-      const segment = pathParts[i]
-      if (!segment) continue
-      currentPath = currentPath ? `${currentPath}/${segment}` : segment
-
-      if (!currentLevel.has(segment)) {
-        currentLevel.set(segment, {
-          name: segment,
-          path: currentPath,
-          type: 'folder',
-          children: new Map(),
-          items: [],
-        })
+        currentLevel = currentLevel.get(segment)!.children
       }
 
-      const node = currentLevel.get(segment)!
-      lastFolderNode = node
-      currentLevel = node.children
-    }
-
-    // Add item to the last folder in the path
-    if (pathParts.length === 1) {
-      // Single-segment path - item is at root level
-      const segment = pathParts[0]
-      if (!segment) continue
-      if (!root.has(segment)) {
-        root.set(segment, {
-          name: segment,
-          path: segment,
-          type: item.type === 'registry:block' ? 'block' : 'file',
+      // Add the file at the final location
+      const fileName = pathParts[pathParts.length - 1]
+      if (fileName && !currentLevel.has(fileName)) {
+        currentLevel.set(fileName, {
+          name: fileName,
+          path: targetPath,
+          type: 'file',
           children: new Map(),
           items: [item],
         })
-      } else {
-        const node = root.get(segment)!
-        if (!node.items.find(i => i.name === item.name)) {
-          node.items.push(item)
-        }
-      }
-    } else if (lastFolderNode) {
-      // Multi-segment path
-      const lastSegment = pathParts[pathParts.length - 2]
-      if (!lastSegment) continue
-
-      if (item.type === 'registry:block' && item.name === lastSegment) {
-        lastFolderNode.type = 'block'
-        lastFolderNode.items = [item]
-        lastFolderNode.children.clear()
-      } else {
-        if (!lastFolderNode.items.find(i => i.name === item.name)) {
-          lastFolderNode.items.push(item)
-        }
       }
     }
   }
@@ -173,7 +109,7 @@ function buildPathTree(items: RegistryItem[]): PathTree {
   return root
 }
 
-export function FileTree({ items, selectedItem, selectedFile, onSelectFile, currentCategory, basePath }: FileTreeProps) {
+export function FileTree({ items, selectedItem, selectedFile, onSelectFile, currentCategory, basePath, sourceStatus = "ready" }: FileTreeProps) {
   const analytics = useAnalytics()
 
   const [openFolders, setOpenFolders] = useState<Set<string>>(
@@ -182,17 +118,22 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   const [openItems, setOpenItems] = useState<Set<string>>(new Set())
   const [searchQuery, setSearchQuery] = useState<string>("")
 
-  // Detect if we're viewing a single item (Nivel 3) or category list (Nivel 2)
+  // Which view this is, stated rather than guessed. A category can hold
+  // exactly one item, so counting them answers a different question.
   const isItemView = selectedItem !== null
 
-  // Detect if items have file content (Nivel 3) or just metadata (Nivel 2)
-  const hasFileContent = useMemo(() => {
-    if (items.length === 0) return false
-    const firstItem = items[0]
-    return Boolean(firstItem?.files?.[0]?.content)
-  }, [items])
+  // Only the item view renders a tree; a category renders a list. Building
+  // one for a category walked every item to group it by folder and then threw
+  // the result away — several thousand items, on every render, for nothing.
+  const pathTree = useMemo(
+    () => (isItemView ? buildPathTree(items) : new Map<string, TreeNode>()),
+    [items, isItemView]
+  )
 
-  const pathTree = useMemo(() => buildPathTree(items), [items])
+  // The shape of the panel and whether it has anything to show are separate
+  // questions: an item always renders as a tree, and that tree is empty while
+  // its files are still on their way.
+  const treeIsEmpty = pathTree.size === 0
 
   // Auto-expand folders when a file is selected
   useEffect(() => {
@@ -279,7 +220,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     }
   }
 
-  const getItemIcon = (type: RegistryItem["type"]) => {
+  const getItemIcon = (type: ViewerItem["type"]) => {
     switch (type) {
       case "registry:ui":
         return LayoutGrid
@@ -302,7 +243,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     }
   }
 
-  const getItemFileName = (item: RegistryItem) => {
+  const getItemFileName = (item: ViewerItem) => {
     const firstFile = item.files?.[0]
     if (!firstFile) return item.name
     const targetPath = getTargetPath(firstFile)
@@ -315,7 +256,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     const hasChildren = node.children.size > 0
     const hasItems = node.items.length > 0
 
-    // Render individual file nodes (Nivel 3 with content)
+    // Reading one component: render its files.
     if (node.type === 'file' && hasItems && node.items[0]) {
       const item = node.items[0]
       const file = item.files?.find(f => getTargetPath(f) === node.path)
@@ -542,8 +483,10 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     )
   }
 
-  // If viewing a single item without files, show empty file tree
-  if (isItemView && !hasFileContent) {
+  // An item whose tree is empty: either its files have not arrived yet, or
+  // the registry never declared any. Saying "no files" before knowing which
+  // is a guess presented as a fact.
+  if (isItemView && treeIsEmpty) {
     return (
       <div className="h-full md:border-r border-border bg-background">
         <div className="p-2 md:p-3 border-b border-border">
@@ -551,15 +494,15 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
         </div>
         <div className="flex items-center justify-center h-[calc(100%-44px)] md:h-[calc(100%-49px)] p-4">
           <p className="text-xs text-foreground-subtle text-center">
-            No files
+            {sourceStatus === "ready" ? "No files" : "—"}
           </p>
         </div>
       </div>
     )
   }
 
-  // Render flat list of items (Nivel 2 - no file content)
-  if (!hasFileContent) {
+  // Browsing a category: its items are the list.
+  if (!isItemView) {
     const categoryLabel = currentCategory ? REGISTRY_TYPE_LABELS[currentCategory] || currentCategory : "Items"
 
     // Every word has to appear somewhere, and hyphens count as spaces on both
@@ -624,7 +567,8 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
               filteredItems
                 .sort((a, b) => a.name.localeCompare(b.name))
                 .map((item) => {
-                  const isSelected = selectedItem?.name === item.name
+                  // Nothing is selected in a category listing — selecting an
+                  // item is what navigates away from it.
                   const Icon = getItemIcon(item.type)
 
                   return (
@@ -634,7 +578,9 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                       className={cn(
                         "flex items-start gap-2 w-full px-2 py-1.5 rounded",
                         "hover:bg-accent transition-colors",
-                        isSelected && "bg-surface-elevated"
+                        // A megacatalogue category is thousands of rows. Only
+                        // the visible ones are worth laying out and painting.
+                        "list-row-deferred",
                       )}
                     >
                       <Icon className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
@@ -667,7 +613,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     )
   }
 
-  // Render file tree (Nivel 3 - with file content)
+  // Reading one component: the tree of its files.
   return (
     <div className="h-full md:border-r border-border bg-background">
       <div className="p-2 md:p-3 border-b border-border">

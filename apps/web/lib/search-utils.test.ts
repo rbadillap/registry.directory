@@ -7,7 +7,13 @@
 
 import { strict as assert } from "node:assert"
 import { describe, it } from "node:test"
-import { normalizeForSearch, searchItems, searchTerms } from "./search-utils.ts"
+import {
+  normalizeForSearch,
+  prepareSearchIndex,
+  searchItems,
+  searchPrepared,
+  searchTerms,
+} from "./search-utils.ts"
 import type { IndexedItem } from "./items-index.ts"
 
 const matches = (query: string, text: string): boolean => {
@@ -130,5 +136,28 @@ describe("searchItems", () => {
 
   it("returns nothing for an empty query", () => {
     assert.deepEqual(searchItems(catalog, "   "), [])
+  })
+})
+
+// Preparing the index once is only safe while it answers exactly as the
+// one-shot form does: same items, same order, same scores.
+describe("a prepared index answers the same as an unprepared one", () => {
+  const catalog = [
+    item("alert-dialog", "A modal dialog that interrupts."),
+    item("alert", "Displays a callout."),
+    item("dialog", "A window overlaid on the page.", "shadcn/studio"),
+    item("use_mobile", "Hook that reports viewport width."),
+    item("sheet", "Extends the dialog component.", "shadcn/studio"),
+  ]
+  const prepared = prepareSearchIndex(catalog)
+
+  for (const query of ["dialog", "alert dialog", "alert-dialog", "use mobile", "sheet", "  "]) {
+    it(`agrees on "${query.trim() || "(empty)"}"`, () => {
+      assert.deepEqual(names(searchPrepared(prepared, query)), names(searchItems(catalog, query)))
+    })
+  }
+
+  it("keeps the round-robin across registries", () => {
+    assert.deepEqual(names(searchPrepared(prepared, "dialog")), names(searchItems(catalog, "dialog")))
   })
 })

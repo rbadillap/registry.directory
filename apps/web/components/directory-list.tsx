@@ -22,6 +22,7 @@ import {
 } from "@workspace/ui/components/avatar";
 import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from "@/lib/types";
 import type { IndexedItem } from "@/lib/items-index";
+import type { ItemIndexStatus } from "@/hooks/use-item-index";
 import { addUtmParams } from "@/lib/utm-utils";
 import { useAnalytics } from "@/hooks/use-analytics";
 import { formatStars, formatRelativeTime } from "@/lib/format-utils";
@@ -43,24 +44,32 @@ interface DirectoryListProps {
   githubStats?: Record<string, Omit<GitHubStats, "fetchedAt">>;
   affiliates?: Record<string, AffiliateConfig>;
   itemResults?: IndexedItem[];
+  /** Whether the item index behind itemResults has arrived yet. */
+  itemsStatus?: ItemIndexStatus;
   onResultClick?: (data: ResultClickData) => void;
   premiumFilterActive?: boolean;
 }
 
-export function DirectoryList({ entries, searchTerm = '', addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], onResultClick, premiumFilterActive = false }: DirectoryListProps) {
+export function DirectoryList({ entries, searchTerm = '', addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], itemsStatus = 'ready', onResultClick, premiumFilterActive = false }: DirectoryListProps) {
   const { trackHomeRegistryVisit } = useAnalytics();
   const showAddCard = !searchTerm && addCardLabel;
   const hasItems = itemResults.length > 0;
   const hasRegistries = entries.length > 0;
 
   if (!hasRegistries && !hasItems && !showAddCard) {
+    // Components are searched against an index that arrives separately.
+    // Until it does, "nothing matches" is not something we know.
+    const message = searchTerm
+      ? itemsStatus === 'loading'
+        ? 'Searching components…'
+        : itemsStatus === 'error'
+          ? 'Components could not be searched right now. Registries above still match.'
+          : `No entries found matching "${searchTerm}"`
+      : 'No entries available';
+
     return (
       <div className="w-full max-w-5xl mx-auto mt-12 px-4 text-center">
-        <p className="text-muted-foreground text-sm font-mono">
-          {searchTerm
-            ? `No entries found matching "${searchTerm}"`
-            : "No entries available"}
-        </p>
+        <p className="text-muted-foreground text-sm font-mono">{message}</p>
       </div>
     );
   }
@@ -244,6 +253,11 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
                 key={`${registryKey}/${item.name}`}
                 href={`${item.registry.basePath}/${item.name}`}
                 onClick={() => onResultClick?.({ result_type: "item", result_name: item.name, result_position: index })}
+                // Expanding a broad search can put thousands of these on the
+                // page. The browser skips layout and paint for the ones below
+                // the fold; the intrinsic size keeps the scrollbar honest, and
+                // auto lets it remember the real height once measured.
+                className="result-card-deferred"
               >
                 <Card className="bg-background border border-border-subtle rounded-none overflow-hidden shadow-none hover:shadow-lg hover:border-border transition-all h-full flex flex-col">
                   <CardHeader className="bg-background pt-3 pb-2 space-y-2">
