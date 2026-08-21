@@ -1,0 +1,904 @@
+{
+  "key": "manifest",
+  "entry": "Manifest UI",
+  "name": "Manifest UI",
+  "homepage": "https://ui.manifest.build",
+  "indexUrl": "https://ui.manifest.build/r/registry.json",
+  "itemBase": "https://ui.manifest.build/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "contact-form",
+      "type": "registry:block",
+      "title": "Contact Form",
+      "description": "A complete contact form with name fields, phone with country selector, email, message textarea, and file attachment.",
+      "categories": [
+        "form"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "registry/form/contact-form.tsx",
+          "type": "registry:block",
+          "target": "components/ui/contact-form.tsx"
+        },
+        {
+          "path": "registry/form/countries.ts",
+          "type": "registry:lib",
+          "target": "components/ui/countries.ts"
+        },
+        {
+          "path": "registry/form/demo/form.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/form.ts"
+        }
+      ]
+    },
+    {
+      "name": "date-time-picker",
+      "type": "registry:block",
+      "title": "Date & Time Picker",
+      "description": "A Calendly-style date and time picker with calendar, available time slots, and timezone display.",
+      "categories": [
+        "form"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "registry/form/date-time-picker.tsx",
+          "type": "registry:block",
+          "target": "components/ui/date-time-picker.tsx"
+        },
+        {
+          "path": "registry/form/demo/form.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/form.ts"
+        }
+      ]
+    },
+    {
+      "name": "issue-report-form",
+      "type": "registry:block",
+      "title": "Issue Report Form",
+      "description": "A compact issue reporting form for team members with categories, impact/urgency levels, and file attachments.",
+      "categories": [
+        "form"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "registry/form/issue-report-form.tsx",
+          "type": "registry:block",
+          "target": "components/ui/issue-report-form.tsx"
+        },
+        {
+          "path": "registry/form/demo/form.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/form.ts"
+        }
+      ]
+    },
+    {
+      "name": "order-confirm",
+      "type": "registry:block",
+      "title": "Order Confirm",
+      "description": "Order confirmation with product image, delivery info, and confirm action.",
+      "categories": [
+        "payment"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://ui.manifest.build/r/manifest-types.json"
+      ],
+      "files": [
+        {
+          "path": "registry/payment/order-confirm.tsx",
+          "type": "registry:block",
+          "target": "components/ui/order-confirm.tsx"
+        },
+        {
+          "path": "registry/payment/demo/payment.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/payment.ts"
+        }
+      ]
+    },
+    {
+      "name": "payment-confirmed",
+      "type": "registry:block",
+      "title": "Payment Confirmed",
+      "description": "Payment confirmation card with product image, price, delivery info, and tracking button. Supports default and compressed variants.",
+      "categories": [
+        "payment"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://ui.manifest.build/r/manifest-types.json"
+      ],
+      "files": [
+        {
+          "path": "registry/payment/payment-confirmed.tsx",
+          "type": "registry:block",
+          "target": "components/ui/payment-confirmed.tsx"
+        },
+        {
+          "path": "registry/payment/demo/payment.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/payment.ts"
+        }
+      ]
+    },
+    {
+      "name": "product-list",
+      "type": "registry:block",
+      "title": "Product List",
+      "description": "Product list with list, grid, carousel, and picker variants.",
+      "categories": [
+        "list"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://ui.manifest.build/r/manifest-types.json"
+      ],
+      "files": [
+        {
+          "path": "registry/list/product-list.tsx",
+          "type": "registry:block",
+          "target": "components/ui/product-list.tsx"
+        },
+        {
+          "path": "registry/list/demo/list.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/list.ts"
+        }
+      ]
+    },
+    {
+      "name": "option-list",
+      "type": "registry:block",
+      "title": "Option List",
+      "description": "Tag-style option selector with single or multiple selection modes.",
+      "categories": [
+        "selection"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://ui.manifest.build/r/manifest-types.json"
+      ],
+      "files": [
+        {
+          "path": "registry/selection/option-list.tsx",
+          "type": "registry:block",
+          "target": "components/ui/option-list.tsx"
+        },
+        {
+          "path": "registry/selection/demo/selection.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/selection.ts"
+        }
+      ]
+    },
+    {
+      "name": "amount-input",
+      "type": "registry:block",
+      "title": "Amount Input",
+      "description": "Amount input with increment/decrement buttons and preset values.",
+      "categories": [
+        "payment"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://ui.manifest.build/r/manifest-types.json"
+      ],
+      "files": [
+        {
+          "path": "registry/payment/amount-input.tsx",
+          "type": "registry:block",
+          "target": "components/ui/amount-input.tsx"
+        },
+        {
+          "path": "registry/payment/demo/payment.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/payment.ts"
+        }
+      ]
+    },
+    {
+      "name": "tag-select",
+      "type": "registry:block",
+      "title": "Tag Select",
+      "description": "Colored tag selector with single or multiple selection and color variants.",
+      "categories": [
+        "selection"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/selection/tag-select.tsx",
+          "type": "registry:block",
+          "target": "components/ui/tag-select.tsx"
+        },
+        {
+          "path": "registry/selection/demo/selection.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/selection.ts"
+        }
+      ]
+    },
+    {
+      "name": "quick-reply",
+      "type": "registry:block",
+      "title": "Quick Reply",
+      "description": "Quick reply buttons for common chat responses.",
+      "categories": [
+        "selection"
+      ],
+      "files": [
+        {
+          "path": "registry/selection/quick-reply.tsx",
+          "type": "registry:block",
+          "target": "components/ui/quick-reply.tsx"
+        },
+        {
+          "path": "registry/selection/demo/selection.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/selection.ts"
+        }
+      ]
+    },
+    {
+      "name": "progress-steps",
+      "type": "registry:block",
+      "title": "Progress Steps",
+      "description": "Progress indicator with horizontal or vertical layout and step statuses.",
+      "categories": [
+        "status"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/status/progress-steps.tsx",
+          "type": "registry:block",
+          "target": "components/ui/progress-steps.tsx"
+        },
+        {
+          "path": "registry/status/demo/status.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/status.ts"
+        }
+      ]
+    },
+    {
+      "name": "status-badge",
+      "type": "registry:block",
+      "title": "Status Badge",
+      "description": "Status badge with multiple states (success, pending, processing, error, shipped, delivered).",
+      "categories": [
+        "status"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/status/status-badge.tsx",
+          "type": "registry:block",
+          "target": "components/ui/status-badge.tsx"
+        },
+        {
+          "path": "registry/status/demo/status.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/status.ts"
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:block",
+      "title": "Stat Card",
+      "description": "Scrollable stat cards with values, trends, and change indicators.",
+      "categories": [
+        "miscellaneous"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/miscellaneous/stat-card.tsx",
+          "type": "registry:block",
+          "target": "components/ui/stat-card.tsx"
+        },
+        {
+          "path": "registry/miscellaneous/demo/miscellaneous.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/miscellaneous.ts"
+        }
+      ]
+    },
+    {
+      "name": "post-card",
+      "type": "registry:block",
+      "title": "Post Card",
+      "description": "Post card with image, title, excerpt, author info and read more button. Supports default, compact, horizontal, and covered variants. Includes post-detail for fullscreen view.",
+      "categories": [
+        "blogging"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "tooltip",
+        "https://ui.manifest.build/r/manifest-types.json"
+      ],
+      "files": [
+        {
+          "path": "registry/blogging/post-card.tsx",
+          "type": "registry:block",
+          "target": "components/ui/post-card.tsx"
+        },
+        {
+          "path": "registry/blogging/post-detail.tsx",
+          "type": "registry:block",
+          "target": "components/ui/post-detail.tsx"
+        },
+        {
+          "path": "registry/blogging/demo/blogging.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/blogging.ts"
+        }
+      ]
+    },
+    {
+      "name": "post-list",
+      "type": "registry:block",
+      "title": "Post List",
+      "description": "Post list with list, grid, carousel, and fullwidth variants. Fullwidth mode shows paginated posts.",
+      "categories": [
+        "blogging"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "tooltip",
+        "https://ui.manifest.build/r/manifest-types.json"
+      ],
+      "files": [
+        {
+          "path": "registry/blogging/post-list.tsx",
+          "type": "registry:block",
+          "target": "components/ui/post-list.tsx"
+        },
+        {
+          "path": "registry/blogging/post-card.tsx",
+          "type": "registry:block",
+          "target": "components/ui/post-card.tsx"
+        },
+        {
+          "path": "registry/blogging/post-detail.tsx",
+          "type": "registry:block",
+          "target": "components/ui/post-detail.tsx"
+        },
+        {
+          "path": "registry/blogging/demo/blogging.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/blogging.ts"
+        }
+      ]
+    },
+    {
+      "name": "post-detail",
+      "type": "registry:block",
+      "title": "Post Detail",
+      "description": "Full post view with cover image, author info, content, tags and related posts section.",
+      "categories": [
+        "blogging"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "tooltip",
+        "https://ui.manifest.build/r/manifest-types.json"
+      ],
+      "files": [
+        {
+          "path": "registry/blogging/post-detail.tsx",
+          "type": "registry:block",
+          "target": "components/ui/post-detail.tsx"
+        },
+        {
+          "path": "registry/blogging/post-card.tsx",
+          "type": "registry:block",
+          "target": "components/ui/post-card.tsx"
+        },
+        {
+          "path": "registry/blogging/demo/blogging.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/blogging.ts"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:block",
+      "title": "Table",
+      "description": "Data table with optional single or multi-select modes for chat interfaces.",
+      "categories": [
+        "list"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "popover",
+        "select",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/list/table.tsx",
+          "type": "registry:block",
+          "target": "components/ui/table.tsx"
+        },
+        {
+          "path": "registry/list/demo/list.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/list.ts"
+        }
+      ]
+    },
+    {
+      "name": "message-bubble",
+      "type": "registry:block",
+      "title": "Message Bubble",
+      "description": "Chat message bubbles with text, image, voice, and reaction variants.",
+      "categories": [
+        "messaging"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/messaging/message-bubble.tsx",
+          "type": "registry:block",
+          "target": "components/ui/message-bubble.tsx"
+        },
+        {
+          "path": "registry/messaging/demo/messaging.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/messaging.ts"
+        }
+      ]
+    },
+    {
+      "name": "chat-conversation",
+      "type": "registry:block",
+      "title": "Chat Conversation",
+      "description": "Full chat conversation component with multiple message types.",
+      "categories": [
+        "messaging"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dropdown-menu",
+        "https://ui.manifest.build/r/manifest-types.json"
+      ],
+      "files": [
+        {
+          "path": "registry/messaging/chat-conversation.tsx",
+          "type": "registry:block",
+          "target": "components/ui/chat-conversation.tsx"
+        },
+        {
+          "path": "registry/messaging/message-bubble.tsx",
+          "type": "registry:block",
+          "target": "components/ui/message-bubble.tsx"
+        },
+        {
+          "path": "registry/messaging/demo/messaging.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/messaging.ts"
+        }
+      ]
+    },
+    {
+      "name": "x-post",
+      "type": "registry:block",
+      "title": "X Post",
+      "description": "X (Twitter) post card with engagement metrics.",
+      "categories": [
+        "social"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/social/x-post.tsx",
+          "type": "registry:block",
+          "target": "components/ui/x-post.tsx"
+        },
+        {
+          "path": "registry/social/demo/social.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/social.ts"
+        }
+      ]
+    },
+    {
+      "name": "instagram-post",
+      "type": "registry:block",
+      "title": "Instagram Post",
+      "description": "Instagram post card with image and engagement.",
+      "categories": [
+        "social"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/social/instagram-post.tsx",
+          "type": "registry:block",
+          "target": "components/ui/instagram-post.tsx"
+        },
+        {
+          "path": "registry/social/demo/social.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/social.ts"
+        }
+      ]
+    },
+    {
+      "name": "linkedin-post",
+      "type": "registry:block",
+      "title": "LinkedIn Post",
+      "description": "LinkedIn post card with professional styling.",
+      "categories": [
+        "social"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/social/linkedin-post.tsx",
+          "type": "registry:block",
+          "target": "components/ui/linkedin-post.tsx"
+        },
+        {
+          "path": "registry/social/demo/social.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/social.ts"
+        }
+      ]
+    },
+    {
+      "name": "youtube-post",
+      "type": "registry:block",
+      "title": "YouTube Post",
+      "description": "YouTube video card with playable embed.",
+      "categories": [
+        "social"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/social/youtube-post.tsx",
+          "type": "registry:block",
+          "target": "components/ui/youtube-post.tsx"
+        },
+        {
+          "path": "registry/social/demo/social.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/social.ts"
+        }
+      ]
+    },
+    {
+      "name": "map-carousel",
+      "type": "registry:block",
+      "title": "Map Carousel",
+      "description": "Interactive map with location markers and a draggable carousel of cards.",
+      "categories": [
+        "map"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "leaflet"
+      ],
+      "registryDependencies": [
+        "button",
+        "checkbox"
+      ],
+      "files": [
+        {
+          "path": "registry/map/map-carousel.tsx",
+          "type": "registry:block",
+          "target": "components/ui/map-carousel.tsx"
+        },
+        {
+          "path": "registry/map/demo/map.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/map.ts"
+        }
+      ]
+    },
+    {
+      "name": "event-card",
+      "type": "registry:block",
+      "title": "Event Card",
+      "description": "Display event information with multiple layouts. Supports events with images, signals, vibe tags, and display-formatted date/time. Entire card is clickable.",
+      "categories": [
+        "events"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.manifest.build/r/manifest-types.json"
+      ],
+      "files": [
+        {
+          "path": "registry/events/event-card.tsx",
+          "type": "registry:block",
+          "target": "components/ui/event-card.tsx"
+        },
+        {
+          "path": "registry/events/demo/events.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/events.ts"
+        }
+      ]
+    },
+    {
+      "name": "event-list",
+      "type": "registry:block",
+      "title": "Event List",
+      "description": "Display events in grid, list, or carousel layouts. Fullscreen mode shows interactive split-screen map with Leaflet and animated filter panel.",
+      "categories": [
+        "events"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "react-leaflet",
+        "leaflet"
+      ],
+      "registryDependencies": [
+        "button",
+        "checkbox",
+        "https://ui.manifest.build/r/event-card.json",
+        "https://ui.manifest.build/r/manifest-types.json",
+        "https://ui.manifest.build/r/event-shared.json"
+      ],
+      "files": [
+        {
+          "path": "registry/events/event-list.tsx",
+          "type": "registry:block",
+          "target": "components/ui/event-list.tsx"
+        },
+        {
+          "path": "registry/events/demo/events.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/events.ts"
+        }
+      ]
+    },
+    {
+      "name": "event-detail",
+      "type": "registry:block",
+      "title": "Event Detail",
+      "description": "Full event detail view with organizer info, interactive map, policies, and ticket purchase. Fullwidth mode only.",
+      "categories": [
+        "events"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "react-leaflet",
+        "leaflet"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://ui.manifest.build/r/manifest-types.json",
+        "https://ui.manifest.build/r/event-shared.json"
+      ],
+      "files": [
+        {
+          "path": "registry/events/event-detail.tsx",
+          "type": "registry:block",
+          "target": "components/ui/event-detail.tsx"
+        },
+        {
+          "path": "registry/events/demo/events.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/events.ts"
+        }
+      ]
+    },
+    {
+      "name": "ticket-tier-select",
+      "type": "registry:block",
+      "title": "Ticket Tier Select",
+      "description": "Ticket tier selection with quantity controls and order summary. Shows price breakdown with fees.",
+      "categories": [
+        "events"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/events/ticket-tier-select.tsx",
+          "type": "registry:block",
+          "target": "components/ui/ticket-tier-select.tsx"
+        },
+        {
+          "path": "registry/events/demo/events.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/events.ts"
+        }
+      ]
+    },
+    {
+      "name": "event-confirmation",
+      "type": "registry:block",
+      "title": "Event Confirmation",
+      "description": "Order confirmation with event details, ticket delivery info, organizer follow, and social sharing.",
+      "categories": [
+        "events"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/events/event-confirmation.tsx",
+          "type": "registry:block",
+          "target": "components/ui/event-confirmation.tsx"
+        },
+        {
+          "path": "registry/events/demo/events.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/events.ts"
+        }
+      ]
+    },
+    {
+      "name": "hero",
+      "type": "registry:block",
+      "title": "Hero",
+      "description": "Landing hero section with optional logos, title, subtitle, CTA buttons, and tech logos footer. Supports image or text logos with separator.",
+      "categories": [
+        "miscellaneous"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/miscellaneous/hero.tsx",
+          "type": "registry:block",
+          "target": "components/ui/hero.tsx"
+        },
+        {
+          "path": "registry/miscellaneous/demo/miscellaneous.ts",
+          "type": "registry:lib",
+          "target": "components/ui/demo/miscellaneous.ts"
+        }
+      ]
+    },
+    {
+      "name": "event-shared",
+      "type": "registry:lib",
+      "title": "Event Shared Utilities",
+      "description": "Shared utilities for event components (Leaflet map helpers, signal badges).",
+      "categories": [
+        "events"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "react-leaflet",
+        "leaflet"
+      ],
+      "registryDependencies": [
+        "https://ui.manifest.build/r/manifest-types.json"
+      ],
+      "files": [
+        {
+          "path": "registry/events/shared.tsx",
+          "type": "registry:lib",
+          "target": "components/ui/shared.tsx"
+        }
+      ]
+    },
+    {
+      "name": "manifest-types",
+      "type": "registry:lib",
+      "title": "Manifest Types",
+      "description": "Shared type definitions for Manifest UI components.",
+      "categories": [
+        "lib"
+      ],
+      "files": [
+        {
+          "path": "registry/shared-types.ts",
+          "type": "registry:lib",
+          "target": "components/ui/types.ts"
+        }
+      ]
+    }
+  ]
+}

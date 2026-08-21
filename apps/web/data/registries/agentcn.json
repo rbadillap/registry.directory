@@ -1,0 +1,467 @@
+{
+  "key": "agentcn",
+  "entry": "agentcn",
+  "name": "agentcn",
+  "homepage": "https://agentcn.vercel.app",
+  "indexUrl": "https://agentcn.vercel.app/r/registry.json",
+  "itemBase": "https://agentcn.vercel.app/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "eve/ai-seo-audit",
+      "type": "registry:block",
+      "title": "AI SEO Audit Agent",
+      "description": "Eve agent that runs a deterministic AI-SEO audit on a page through context.dev — scoring ~30 checks across six categories into a 0–100 total and returning failing checks and an agent-ready fix prompt."
+    },
+    {
+      "name": "eve/browser-agent",
+      "type": "registry:block",
+      "title": "Browser Agent",
+      "description": "Eve agent that drives a real browser with Playwright using a snapshot-and-selector pattern to complete web tasks."
+    },
+    {
+      "name": "eve/chat-with-pdf",
+      "type": "registry:block",
+      "title": "Chat with PDF Agent",
+      "description": "Eve agent that indexes a PDF into a vector store and answers questions over it with page-cited retrieval."
+    },
+    {
+      "name": "eve/chat-with-youtube",
+      "type": "registry:block",
+      "title": "Chat with YouTube Agent",
+      "description": "Eve agent that fetches a video's metadata and transcript, then answers questions with clickable timestamp citations."
+    },
+    {
+      "name": "eve/claw",
+      "type": "registry:block",
+      "title": "Claw Autonomous Assistant",
+      "description": "Eve agent that operates a sandboxed workspace — read/write files and run shell commands — to finish multi-step tasks."
+    },
+    {
+      "name": "eve/company-knowledge",
+      "type": "registry:block",
+      "title": "Company Knowledge Agent",
+      "description": "Eve agent that indexes internal documents into a vector store and answers questions over them, with PII redaction."
+    },
+    {
+      "name": "eve/csv-to-questions",
+      "type": "registry:block",
+      "title": "CSV to Questions Agent",
+      "description": "Eve agent that summarizes a CSV dataset to stay within token limits, then generates focused analytical questions."
+    },
+    {
+      "name": "eve/deep-search",
+      "type": "registry:block",
+      "title": "Deep Search Agent",
+      "description": "Eve agent that researches a question, evaluates its own findings, and iterates until the answer is complete and cited."
+    },
+    {
+      "name": "eve/docs-chatbot",
+      "type": "registry:block",
+      "title": "Docs Chatbot Agent",
+      "description": "Eve agent that answers questions about a library's functions by looking up structured documentation."
+    },
+    {
+      "name": "eve/docs-expert",
+      "type": "registry:block",
+      "title": "Docs Expert Agent",
+      "description": "Eve agent that answers questions about libraries and APIs by searching the live web and citing sources."
+    },
+    {
+      "name": "eve/extract-design-md",
+      "type": "registry:block",
+      "title": "Extract DESIGN.md Agent",
+      "description": "Eve agent that turns a domain into a self-contained DESIGN.md — gathering the styleguide, screenshot, and homepage Markdown from context.dev, then composing the document in a single Claude call with the screenshot as a vision image."
+    },
+    {
+      "name": "eve/feedback-summary",
+      "type": "registry:block",
+      "title": "Customer Feedback Summary Agent",
+      "description": "Eve agent that retrieves, categorizes, and summarizes customer feedback into an executive report with recommendations."
+    },
+    {
+      "name": "eve/flashcards-pdf",
+      "type": "registry:block",
+      "title": "Flash Cards from PDF Agent",
+      "description": "Eve agent that turns a PDF into study flash cards, with optional AI-generated images per concept."
+    },
+    {
+      "name": "eve/github-review",
+      "type": "registry:block",
+      "title": "GitHub PR Code Review Agent",
+      "description": "Eve agent that fetches a GitHub pull request and returns adaptive, file-by-file code review feedback."
+    },
+    {
+      "name": "eve/google-sheets",
+      "type": "registry:block",
+      "title": "Google Sheets Analysis Agent",
+      "description": "Eve agent that reads, analyzes, and edits Google Sheets via the Sheets API."
+    },
+    {
+      "name": "eve/meeting-notes",
+      "type": "registry:block",
+      "title": "Meeting Notes Agent",
+      "description": "Eve agent that turns a raw meeting transcript into a structured summary, decisions, and action items."
+    },
+    {
+      "name": "eve/slack-agent",
+      "type": "registry:block",
+      "title": "Slack Agent",
+      "description": "Eve agent that replies to Slack mentions and DMs, threaded, via the Slack Web API."
+    },
+    {
+      "name": "eve/text-to-sql",
+      "type": "registry:block",
+      "title": "Chat with Database Agent",
+      "description": "Eve agent that introspects a database schema, converts questions to SQL, and runs read-only queries."
+    },
+    {
+      "name": "eve/weather",
+      "type": "registry:block",
+      "title": "Weather Agent",
+      "description": "Eve agent that looks up current weather for a location via the Open-Meteo API."
+    },
+    {
+      "name": "flue/ai-seo-audit",
+      "type": "registry:block",
+      "title": "AI SEO Audit Agent",
+      "description": "Flue agent that runs a deterministic AI-SEO audit on a page through context.dev — scoring ~30 checks across six categories into a 0–100 total and returning failing checks and an agent-ready fix prompt."
+    },
+    {
+      "name": "flue/browser-agent",
+      "type": "registry:block",
+      "title": "Browser Agent",
+      "description": "Flue agent that drives a real browser with Playwright using a snapshot-and-selector pattern to complete web tasks."
+    },
+    {
+      "name": "flue/chat-with-pdf",
+      "type": "registry:block",
+      "title": "Chat with PDF Agent",
+      "description": "Flue agent that indexes a PDF into a vector store and answers questions over it with page-cited retrieval."
+    },
+    {
+      "name": "flue/chat-with-youtube",
+      "type": "registry:block",
+      "title": "Chat with YouTube Agent",
+      "description": "Flue agent that fetches a video's metadata and transcript, then answers questions with clickable timestamp citations."
+    },
+    {
+      "name": "flue/claw",
+      "type": "registry:block",
+      "title": "Claw Autonomous Assistant",
+      "description": "Flue agent that operates a sandboxed workspace — read/write files and run shell commands — to finish multi-step tasks."
+    },
+    {
+      "name": "flue/company-knowledge",
+      "type": "registry:block",
+      "title": "Company Knowledge Agent",
+      "description": "Flue agent that indexes internal documents into a vector store and answers questions over them, with a scheduled re-index workflow and PII redaction."
+    },
+    {
+      "name": "flue/csv-to-questions",
+      "type": "registry:block",
+      "title": "CSV to Questions Agent",
+      "description": "Flue agent that chains a summarizer and a question-generator through a workflow to turn a CSV into analytical questions."
+    },
+    {
+      "name": "flue/deep-search",
+      "type": "registry:block",
+      "title": "Deep Search Agent",
+      "description": "Flue agent that fans research out to searcher and evaluator subagents, iterating through a bounded workflow until the answer is cited and complete."
+    },
+    {
+      "name": "flue/docs-chatbot",
+      "type": "registry:block",
+      "title": "Docs Chatbot Agent",
+      "description": "Flue agent that answers questions about a library's functions by looking up structured documentation."
+    },
+    {
+      "name": "flue/docs-expert",
+      "type": "registry:block",
+      "title": "Docs Expert Agent",
+      "description": "Flue agent that answers questions about libraries and APIs by searching the live web and citing sources."
+    },
+    {
+      "name": "flue/extract-design-md",
+      "type": "registry:block",
+      "title": "Extract DESIGN.md Agent",
+      "description": "Flue workflow that turns a domain into a self-contained DESIGN.md — gathering the styleguide, screenshot, and homepage Markdown from context.dev, then composing the document in a single Claude call with the screenshot as a vision image."
+    },
+    {
+      "name": "flue/feedback-summary",
+      "type": "registry:block",
+      "title": "Customer Feedback Summary Agent",
+      "description": "Flue agent that retrieves, categorizes, and summarizes customer feedback into an executive report with recommendations."
+    },
+    {
+      "name": "flue/flashcards-pdf",
+      "type": "registry:block",
+      "title": "Flash Cards from PDF Agent",
+      "description": "Flue agent that turns a PDF into study flash cards through a workflow, with optional AI-generated images per concept."
+    },
+    {
+      "name": "flue/github-review",
+      "type": "registry:block",
+      "title": "GitHub PR Code Review Agent",
+      "description": "Flue agent that fetches a GitHub pull request and returns adaptive review feedback, with a workflow that emits a typed review."
+    },
+    {
+      "name": "flue/google-sheets",
+      "type": "registry:block",
+      "title": "Google Sheets Analysis Agent",
+      "description": "Flue agent that reads, analyzes, and edits Google Sheets via the Sheets API."
+    },
+    {
+      "name": "flue/meeting-notes",
+      "type": "registry:block",
+      "title": "Meeting Notes Agent",
+      "description": "Flue agent that runs a transcript through a workflow to return a structured summary, decisions, and action items."
+    },
+    {
+      "name": "flue/slack-agent",
+      "type": "registry:block",
+      "title": "Slack Agent",
+      "description": "Flue agent that replies to Slack mentions and DMs, threaded, via the Slack Web API."
+    },
+    {
+      "name": "flue/text-to-sql",
+      "type": "registry:block",
+      "title": "Chat with Database Agent",
+      "description": "Flue agent that introspects a database schema, converts questions to SQL, and runs read-only queries."
+    },
+    {
+      "name": "flue/weather",
+      "type": "registry:block",
+      "title": "Weather Agent",
+      "description": "Flue agent that looks up current weather for a location via the Open-Meteo API."
+    },
+    {
+      "name": "mastra/ai-seo-audit",
+      "type": "registry:block",
+      "title": "AI SEO Audit Agent",
+      "description": "Mastra agent that runs a deterministic AI-SEO audit on a page through context.dev — scoring ~30 checks across six categories into a 0–100 total, returning failing checks and an agent-ready fix prompt."
+    },
+    {
+      "name": "mastra/browser-agent",
+      "type": "registry:block",
+      "title": "Browser Agent",
+      "description": "A browser-operating agent that interacts with live web pages using Playwright-based tools with accessibility-tree ref ids."
+    },
+    {
+      "name": "mastra/chat-with-pdf",
+      "type": "registry:block",
+      "title": "Chat with PDF Agent",
+      "description": "Mastra agent that indexes a PDF into a vector store and answers questions over it with page-cited retrieval and stratified sampling."
+    },
+    {
+      "name": "mastra/chat-with-youtube",
+      "type": "registry:block",
+      "title": "Chat with YouTube Agent",
+      "description": "A helpful assistant that fetches and analyzes YouTube video transcripts to answer questions, generate summaries, and create chapters."
+    },
+    {
+      "name": "mastra/claw",
+      "type": "registry:block",
+      "title": "Claw Autonomous Assistant",
+      "description": "Mastra agent that operates a sandboxed workspace — read/write files and run shell commands — to finish multi-step tasks."
+    },
+    {
+      "name": "mastra/company-knowledge",
+      "type": "registry:block",
+      "title": "Company Knowledge Agent",
+      "description": "Mastra agent that indexes internal documents into a vector store and answers questions over them, with PII redaction."
+    },
+    {
+      "name": "mastra/csv-to-questions",
+      "type": "registry:block",
+      "title": "CSV to Questions Agent",
+      "description": "Mastra agent that summarizes a CSV dataset to stay within token limits, then generates focused analytical questions."
+    },
+    {
+      "name": "mastra/deep-search",
+      "type": "registry:block",
+      "title": "Deep Search Agent",
+      "description": "A multi-agent deep search system that researches questions by clarifying intent, planning queries, evaluating results, and synthesizing answers."
+    },
+    {
+      "name": "mastra/docs-chatbot",
+      "type": "registry:block",
+      "title": "Docs Chatbot Agent",
+      "description": "Mastra agent that answers questions about a library's functions by looking up structured documentation."
+    },
+    {
+      "name": "mastra/docs-expert",
+      "type": "registry:block",
+      "title": "Docs Expert Agent",
+      "description": "Mastra agent that answers questions about libraries and APIs by searching the live web and citing sources."
+    },
+    {
+      "name": "mastra/extract-design-md",
+      "type": "registry:block",
+      "title": "Extract DESIGN.md Agent",
+      "description": "Mastra agent that turns a domain into a self-contained DESIGN.md — gathering the styleguide, screenshot, and homepage Markdown from context.dev, then composing the document in a single Claude call with the screenshot as a vision image."
+    },
+    {
+      "name": "mastra/feedback-summary",
+      "type": "registry:block",
+      "title": "Customer Feedback Summary Agent",
+      "description": "Mastra agent that retrieves, categorizes, and summarizes customer feedback into an executive report with recommendations."
+    },
+    {
+      "name": "mastra/flashcards-pdf",
+      "type": "registry:block",
+      "title": "Flash Cards from PDF Agent",
+      "description": "Mastra agent that turns a PDF into study flash cards, with optional AI-generated images per concept."
+    },
+    {
+      "name": "mastra/github-review",
+      "type": "registry:block",
+      "title": "GitHub PR Code Review Agent",
+      "description": "Mastra agent that fetches a GitHub pull request and returns adaptive, file-by-file code review feedback."
+    },
+    {
+      "name": "mastra/google-sheets",
+      "type": "registry:block",
+      "title": "Google Sheets Analysis Agent",
+      "description": "Mastra agent that reads, analyzes, and edits Google Sheets via the Sheets API."
+    },
+    {
+      "name": "mastra/meeting-notes",
+      "type": "registry:block",
+      "title": "Meeting Notes Agent",
+      "description": "Mastra agent that turns a raw meeting transcript into a structured summary, decisions, and action items."
+    },
+    {
+      "name": "mastra/slack-agent",
+      "type": "registry:block",
+      "title": "Slack Agent",
+      "description": "Mastra agent that replies to Slack mentions and DMs, scoped to the thread, via the Slack Web API."
+    },
+    {
+      "name": "mastra/text-to-sql",
+      "type": "registry:block",
+      "title": "Chat with Database Agent",
+      "description": "Mastra agent that introspects a database schema, converts questions to SQL, and runs read-only queries."
+    },
+    {
+      "name": "mastra/weather",
+      "type": "registry:block",
+      "title": "Weather Agent",
+      "description": "Mastra agent that looks up current weather for a location via the Open-Meteo API."
+    },
+    {
+      "name": "langgraph/ai-seo-audit",
+      "type": "registry:block",
+      "title": "AI SEO Audit Agent",
+      "description": "LangGraph agent that runs a deterministic AI-SEO audit on a page through context.dev — scoring ~30 checks across six categories into a 0–100 total, returning failing checks and an agent-ready fix prompt."
+    },
+    {
+      "name": "langgraph/browser-agent",
+      "type": "registry:block",
+      "title": "Browser Agent",
+      "description": "A browser-operating agent that interacts with live web pages using Playwright-based tools with accessibility-tree ref ids."
+    },
+    {
+      "name": "langgraph/chat-with-pdf",
+      "type": "registry:block",
+      "title": "Chat with PDF Agent",
+      "description": "LangGraph agent that indexes a PDF into a vector store and answers questions over it with page-cited retrieval and stratified sampling."
+    },
+    {
+      "name": "langgraph/chat-with-youtube",
+      "type": "registry:block",
+      "title": "Chat with YouTube Agent",
+      "description": "A helpful assistant that fetches and analyzes YouTube video transcripts to answer questions, generate summaries, and create chapters."
+    },
+    {
+      "name": "langgraph/claw",
+      "type": "registry:block",
+      "title": "Claw Autonomous Assistant",
+      "description": "LangGraph agent that operates a sandboxed workspace — read/write files and run shell commands — to finish multi-step tasks."
+    },
+    {
+      "name": "langgraph/company-knowledge",
+      "type": "registry:block",
+      "title": "Company Knowledge Agent",
+      "description": "LangGraph agent that indexes internal documents into a vector store and answers questions over them, with PII redaction."
+    },
+    {
+      "name": "langgraph/csv-to-questions",
+      "type": "registry:block",
+      "title": "CSV to Questions Agent",
+      "description": "LangGraph agent that summarizes a CSV dataset to stay within token limits, then generates focused analytical questions."
+    },
+    {
+      "name": "langgraph/deep-search",
+      "type": "registry:block",
+      "title": "Deep Search Agent",
+      "description": "A multi-agent deep search system that researches questions by clarifying intent, planning queries, evaluating results, and synthesizing answers."
+    },
+    {
+      "name": "langgraph/docs-chatbot",
+      "type": "registry:block",
+      "title": "Docs Chatbot Agent",
+      "description": "LangGraph agent that answers questions about a library's functions by looking up structured documentation."
+    },
+    {
+      "name": "langgraph/docs-expert",
+      "type": "registry:block",
+      "title": "Docs Expert Agent",
+      "description": "LangGraph agent that answers questions about libraries and APIs by searching the live web and citing sources."
+    },
+    {
+      "name": "langgraph/extract-design-md",
+      "type": "registry:block",
+      "title": "Extract DESIGN.md Agent",
+      "description": "LangGraph agent that turns a domain into a self-contained DESIGN.md — gathering the styleguide, screenshot, and homepage Markdown from context.dev, then composing the document in a single Claude call with the screenshot as a vision image."
+    },
+    {
+      "name": "langgraph/feedback-summary",
+      "type": "registry:block",
+      "title": "Customer Feedback Summary Agent",
+      "description": "LangGraph agent that retrieves, categorizes, and summarizes customer feedback into an executive report with recommendations."
+    },
+    {
+      "name": "langgraph/flashcards-pdf",
+      "type": "registry:block",
+      "title": "Flash Cards from PDF Agent",
+      "description": "LangGraph agent that turns a PDF into study flash cards, with optional AI-generated images per concept."
+    },
+    {
+      "name": "langgraph/github-review",
+      "type": "registry:block",
+      "title": "GitHub PR Code Review Agent",
+      "description": "LangGraph agent that fetches a GitHub pull request and returns adaptive, file-by-file code review feedback."
+    },
+    {
+      "name": "langgraph/google-sheets",
+      "type": "registry:block",
+      "title": "Google Sheets Analysis Agent",
+      "description": "LangGraph agent that reads, analyzes, and edits Google Sheets via the Sheets API."
+    },
+    {
+      "name": "langgraph/meeting-notes",
+      "type": "registry:block",
+      "title": "Meeting Notes Agent",
+      "description": "LangGraph agent that turns a raw meeting transcript into a structured summary, decisions, and action items."
+    },
+    {
+      "name": "langgraph/slack-agent",
+      "type": "registry:block",
+      "title": "Slack Agent",
+      "description": "LangGraph agent that replies to Slack mentions and DMs, scoped to the thread, via the Slack Web API."
+    },
+    {
+      "name": "langgraph/text-to-sql",
+      "type": "registry:block",
+      "title": "Chat with Database Agent",
+      "description": "LangGraph agent that introspects a database schema, converts questions to SQL, and runs read-only queries."
+    },
+    {
+      "name": "langgraph/weather",
+      "type": "registry:block",
+      "title": "Weather Agent",
+      "description": "LangGraph agent that looks up current weather for a location via the Open-Meteo API."
+    }
+  ]
+}

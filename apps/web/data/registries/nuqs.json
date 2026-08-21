@@ -1,0 +1,110 @@
+{
+  "key": "nuqs",
+  "entry": "nuqs",
+  "name": "nuqs",
+  "homepage": "https://nuqs.dev",
+  "indexUrl": "https://nuqs.dev/r/registry.json",
+  "itemBase": "https://nuqs.dev/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "adapter-inertia",
+      "type": "registry:item",
+      "title": "Inertia.js Adapter",
+      "description": "Using nuqs in Inertia.js apps (eg: with a Laravel backend)",
+      "categories": [
+        "adapter"
+      ],
+      "dependencies": [
+        "nuqs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/remote/adapter-inertia.ZX5GXxl__2vN.txt",
+          "type": "registry:file",
+          "target": "~/resources/js/lib/nuqs-inertia-adapter.ts"
+        }
+      ]
+    },
+    {
+      "name": "adapter-onejs",
+      "type": "registry:item",
+      "title": "One.js Adapter",
+      "description": "Using nuqs in One.js applications.",
+      "categories": [
+        "adapter"
+      ],
+      "dependencies": [
+        "one",
+        "nuqs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/items/adapter-onejs.source",
+          "type": "registry:file",
+          "target": "~/app/nuqs-onejs-adapter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "adapter-react-router-v5",
+      "type": "registry:item",
+      "title": "React Router v5 Adapter",
+      "description": "Using nuqs in React Router v5 applications.",
+      "categories": [
+        "adapter"
+      ],
+      "dependencies": [
+        "react-router-dom@^5",
+        "nuqs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/items/adapter-react-router-v5.source",
+          "type": "registry:file",
+          "target": "~/nuqs-adapter.ts"
+        }
+      ]
+    },
+    {
+      "name": "adapter-waku",
+      "type": "registry:item",
+      "title": "Waku Adapter",
+      "description": "Using nuqs in ⛩️ Waku applications.",
+      "categories": [
+        "adapter"
+      ],
+      "dependencies": [
+        "waku@>=0.22.0",
+        "nuqs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/remote/adapter-waku.1-IeDgeBbgPI.txt",
+          "type": "registry:file",
+          "target": "~/app/nuqs-waku-adapter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "next-typed-links",
+      "type": "registry:item",
+      "title": "Typed Links for Next.js",
+      "description": "Type-safe linking for Next.js (using typedRoutes + nuqs)",
+      "categories": [
+        "utility"
+      ],
+      "dependencies": [
+        "next@>=15.5.0",
+        "nuqs"
+      ],
+      "files": [
+        {
+          "path": "src/lib/typed-links.ts",
+          "type": "registry:file",
+          "target": "~/src/lib/typed-links.ts"
+        }
+      ]
+    }
+  ]
+}

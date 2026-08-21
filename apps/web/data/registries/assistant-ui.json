@@ -1,0 +1,2572 @@
+{
+  "key": "assistant-ui",
+  "entry": "assistant-ui",
+  "name": "assistant-ui",
+  "homepage": "https://assistant-ui.com",
+  "indexUrl": "https://r.assistant-ui.com/registry.json",
+  "itemBase": "https://r.assistant-ui.com",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "elements-surfaces",
+      "type": "registry:component",
+      "title": "Elements Surfaces",
+      "description": "Shared design language for the elements family: surface, ink, and motion class recipes plus the shimmer utility.",
+      "dependencies": [
+        "tw-shimmer"
+      ],
+      "files": [
+        {
+          "path": "components/elements/surfaces.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "elements-range",
+      "type": "registry:component",
+      "title": "Elements Range",
+      "description": "Range normalization for the elements family: clamping a caller's counts, indexes, and shares to what the element can render.",
+      "files": [
+        {
+          "path": "components/elements/range.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "elements-loading-state",
+      "type": "registry:component",
+      "title": "Loading state",
+      "description": "A pixel matrix that keeps time while the model has nothing to show yet.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/loading-state.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-thinking-indicator",
+      "type": "registry:component",
+      "title": "Thinking indicator",
+      "description": "A live status line that names what the agent is doing right now, with elapsed time.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/thinking-indicator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-reasoning-panel",
+      "type": "registry:component",
+      "title": "Reasoning panel",
+      "description": "A collapsible trace that streams reasoning steps along a timeline, then settles into a summary.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "components/elements/reasoning-panel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-streaming-text",
+      "type": "registry:component",
+      "title": "Streaming text",
+      "description": "Tokens arrive softly: the newest words land in blue and settle into ink.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/streaming-text.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-typing-indicator",
+      "type": "registry:component",
+      "title": "Typing indicator",
+      "description": "The classic three dots, tuned to read as presence rather than noise.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/typing-indicator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-message-pair",
+      "type": "registry:component",
+      "title": "Message pair",
+      "description": "A user bubble and a streaming assistant reply, with actions that appear on hover.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/message-pair.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-message-branches",
+      "type": "registry:component",
+      "title": "Message branches",
+      "description": "Navigate between regenerated versions of the same answer without losing your place.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/message-branches.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-message-actions",
+      "type": "registry:component",
+      "title": "Message actions",
+      "description": "Copy, rate, and regenerate. Each action confirms itself with a small state change.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/message-actions.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-suggestions",
+      "type": "registry:component",
+      "title": "Follow-up suggestions",
+      "description": "Prompt pills that stagger in after a reply and invite the next turn.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/suggestions.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-error-state",
+      "type": "registry:component",
+      "title": "Error state",
+      "description": "A quiet failure banner with a retry path, not a modal in your face.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/error-state.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-tool-call",
+      "type": "registry:component",
+      "title": "Tool call",
+      "description": "One tool invocation with its request and result tucked behind a disclosure.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "components/elements/tool-call.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-tool-timeline",
+      "type": "registry:component",
+      "title": "Tool timeline",
+      "description": "A whole working session summarized as verbs, targets, and file stats.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "components/elements/tool-timeline.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-terminal-block",
+      "type": "registry:component",
+      "title": "Terminal block",
+      "description": "Command output that streams line by line and ends with an exit status.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/terminal-block.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-code-diff",
+      "type": "registry:component",
+      "title": "Code diff",
+      "description": "A unified diff with tinted additions and removals, sized for chat.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/code-diff.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-web-search",
+      "type": "registry:component",
+      "title": "Web search",
+      "description": "A search query and its results landing one by one as the agent reads.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/web-search.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-sources",
+      "type": "registry:component",
+      "title": "Sources",
+      "description": "Citations collapsed into a pill, expanding into scannable source cards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "components/elements/sources.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-inline-citation",
+      "type": "registry:component",
+      "title": "Inline citation",
+      "description": "Numbered references inside a sentence, each with a hover preview of its source.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/inline-citation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-image-generation",
+      "type": "registry:component",
+      "title": "Image generation",
+      "description": "A dot grid holds the frame while the image resolves out of a blur.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/image-generation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-data-table",
+      "type": "registry:component",
+      "title": "Data table",
+      "description": "A small comparison table the model can answer with directly.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/data-table.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-number-ticker",
+      "type": "registry:component",
+      "title": "Number ticker",
+      "description": "Digits that roll into place as a count updates in real time.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/number-ticker.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-agent-plan",
+      "type": "registry:component",
+      "title": "Agent plan",
+      "description": "A checklist the agent works through, with progress you can glance.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/agent-plan.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-subagent-list",
+      "type": "registry:component",
+      "title": "Subagent list",
+      "description": "Parallel workers with their own progress, models, and completions.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/subagent-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-agent-status",
+      "type": "registry:component",
+      "title": "Agent status",
+      "description": "One pill that always answers: what is it doing, and for how long.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/agent-status.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-approval-card",
+      "type": "registry:component",
+      "title": "Approval card",
+      "description": "Human in the loop: the agent asks before it runs anything with side effects.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/approval-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-recommendation-card",
+      "type": "registry:component",
+      "title": "Recommendation card",
+      "description": "The agent proposes a change with its confidence, and waits for a yes.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/recommendation-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-artifact-card",
+      "type": "registry:component",
+      "title": "Artifact card",
+      "description": "A generated document as a tangible object, written live and versioned.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/artifact-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-composer",
+      "type": "registry:component",
+      "title": "Composer",
+      "description": "The unified input: attachments, commands, mentions, models, voice, and context in one surface.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/composer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-chat-panel",
+      "type": "registry:component",
+      "title": "Chat panel",
+      "description": "The whole family working together: a message, a pause, a streamed reply.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/chat-panel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-empty-state",
+      "type": "registry:component",
+      "title": "Empty state",
+      "description": "The first screen: a greeting, three ways in, and the composer front and center.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/empty-state.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-thread-list",
+      "type": "registry:component",
+      "title": "Thread list",
+      "description": "Conversation history with unread marks and actions that wait for hover.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/thread-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-scroll-anchor",
+      "type": "registry:component",
+      "title": "Scroll anchor",
+      "description": "Streaming never steals your scroll position; a pill offers the way back down.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/scroll-anchor.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-todo-list",
+      "type": "registry:component",
+      "title": "Todo list",
+      "description": "The agent's own working list, rewritten mid-run as it discovers what else is needed.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/todo-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-message-queue",
+      "type": "registry:component",
+      "title": "Message queue",
+      "description": "Turns you typed while a run was in flight, stacked and cancelable until it finishes.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/message-queue.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-message-attachment",
+      "type": "registry:component",
+      "title": "Attachments in a message",
+      "description": "Files as received rather than staged: an image to open, a document with its page count.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/message-attachment.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-reviewable-diff",
+      "type": "registry:component",
+      "title": "Reviewable diff",
+      "description": "The same diff, but each hunk is a decision: keep it, discard it, apply what survived.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-code-diff.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/reviewable-diff.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-file-tree",
+      "type": "registry:component",
+      "title": "File tree",
+      "description": "Everything a run touched, as a tree, with the churn spelled out per file.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/file-tree.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-elicitation-form",
+      "type": "registry:component",
+      "title": "Elicitation form",
+      "description": "A server pausing mid-tool-call to ask you for the fields it still needs.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/elicitation-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-retrieval-chunks",
+      "type": "registry:component",
+      "title": "Retrieval chunks",
+      "description": "The passages a retrieval answer stands on, scored, before the answer itself arrives.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/retrieval-chunks.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-chart",
+      "type": "registry:component",
+      "title": "Chart",
+      "description": "Area, line, and bars, with points landing one at a time as the series streams in.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-trace-waterfall",
+      "type": "registry:component",
+      "title": "Trace waterfall",
+      "description": "Every span in a run on one time axis, nested, so you can see where it actually went.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/trace-waterfall.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-canvas-split",
+      "type": "registry:component",
+      "title": "Canvas",
+      "description": "The thread steps aside and the document takes the room, still being written as you read.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/canvas-split.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-voice-conversation",
+      "type": "registry:component",
+      "title": "Voice conversation",
+      "description": "A live call: the orb tracks your voice, the caption names the turn, the transcript follows.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/voice-conversation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-read-aloud",
+      "type": "registry:component",
+      "title": "Read aloud",
+      "description": "An answer played back, the spoken word lit as it goes, speed under your thumb.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/read-aloud.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-mcp-server-panel",
+      "type": "registry:component",
+      "title": "Server panel",
+      "description": "Which servers are connected, what each one brought, and which is still waiting on you.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/mcp-server-panel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-feedback-dialog",
+      "type": "registry:component",
+      "title": "Feedback dialog",
+      "description": "A thumbs-down that asks why, so the signal arrives with a reason attached.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/feedback-dialog.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-quote-reply",
+      "type": "registry:component",
+      "title": "Quote reply",
+      "description": "Select a phrase in an answer and a toolbar offers to quote, explain, or rewrite it.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/quote-reply.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-edit-message",
+      "type": "registry:component",
+      "title": "Edit a sent message",
+      "description": "Rewrite a turn in place, told up front how many replies the edit throws away.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/edit-message.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-stopped-run",
+      "type": "registry:component",
+      "title": "Stopped run",
+      "description": "You pressed stop. The half-written answer stays, and continuing is one tap away.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/stopped-run.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-message-timing",
+      "type": "registry:component",
+      "title": "Timing footer",
+      "description": "What the turn cost: time to first token, throughput, tokens, money.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/message-timing.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-connection-state",
+      "type": "registry:component",
+      "title": "Connection state",
+      "description": "The socket drops, the run keeps going on the server, and the stream is picked back up.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/connection-state.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-agent-card",
+      "type": "registry:component",
+      "title": "Agent card",
+      "description": "Who you are about to talk to: its skills, its model, and the endpoint behind it.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/agent-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-web-preview",
+      "type": "registry:component",
+      "title": "Web preview",
+      "description": "Chrome for a sandboxed preview: a URL bar, reload, and open-in-new around a frame you isolate.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/web-preview.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-draft-restore",
+      "type": "registry:component",
+      "title": "Draft restore",
+      "description": "Come back to a thread and the sentence you never sent is still waiting.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/draft-restore.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-diagram",
+      "type": "registry:component",
+      "title": "Diagram",
+      "description": "A drawn answer with zoom, reset, and a full-bleed view; you hand it the rendered graphic.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/diagram.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-flow-graph",
+      "type": "registry:component",
+      "title": "Flow graph",
+      "description": "Work as a graph rather than a list: branches that fan out and rejoin.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/flow-graph.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-activity-graph",
+      "type": "registry:component",
+      "title": "Activity graph",
+      "description": "A half-year of runs as a calendar of cells, dense where the work was.",
+      "dependencies": [
+        "heat-graph"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/activity-graph.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-tool-group",
+      "type": "registry:component",
+      "title": "Parallel tools",
+      "description": "Calls that went out together, collapsed to one row until you want the detail.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/tool-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-context-breakdown",
+      "type": "registry:component",
+      "title": "Context breakdown",
+      "description": "Where the window actually went: prompt, tools, files, conversation, and what's left.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/context-breakdown.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-model-picker",
+      "type": "registry:component",
+      "title": "Model picker",
+      "description": "The full list rather than the rail: grouped by family, priced, with what each one can do.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/model-picker.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-reasoning-effort",
+      "type": "registry:component",
+      "title": "Reasoning effort",
+      "description": "How hard to think, and how much of that budget the run actually spent.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/reasoning-effort.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-guardrail-notice",
+      "type": "registry:component",
+      "title": "Guardrail notice",
+      "description": "A refusal in its own shape, with the nearest thing it can do instead.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/guardrail-notice.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-day-separator",
+      "type": "registry:component",
+      "title": "Timestamps",
+      "description": "Chronology in a long thread: days marked, times on hover.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/day-separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-speaker-identity",
+      "type": "registry:component",
+      "title": "Speaker identity",
+      "description": "Who is talking, once a thread holds more than a user and one model.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/speaker-identity.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-regenerate-menu",
+      "type": "registry:component",
+      "title": "Regenerate with",
+      "description": "Fork the same turn to a different model instead of rolling the same dice.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/regenerate-menu.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-confidence-marker",
+      "type": "registry:component",
+      "title": "Confidence",
+      "description": "Which claims came from a source, which were inferred, and which are guesses.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/confidence-marker.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-tool-error",
+      "type": "registry:component",
+      "title": "Tool failure",
+      "description": "One call failed. The error, the attempt count, and a retry that doesn't restart the turn.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/tool-error.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-permission-grant",
+      "type": "registry:component",
+      "title": "Permission grant",
+      "description": "Granting a capability rather than approving one action, with the reach spelled out.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/permission-grant.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-computer-use",
+      "type": "registry:component",
+      "title": "Computer use",
+      "description": "The screen the agent is driving, with a cursor trail and what it is doing right now.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/computer-use.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-code-runner",
+      "type": "registry:component",
+      "title": "Code runner",
+      "description": "A snippet with a run button, and the output it produced attached below it.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/code-runner.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-document-reference",
+      "type": "registry:component",
+      "title": "Document reference",
+      "description": "A document the answer leans on, with the quoted passage and the page to jump to.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/document-reference.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-memory-chips",
+      "type": "registry:component",
+      "title": "Memory",
+      "description": "What it now remembers about you, written during the turn and removable.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/memory-chips.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-research-report",
+      "type": "registry:component",
+      "title": "Research report",
+      "description": "An outline that fills in section by section, each carrying the sources behind it.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/research-report.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-map-answer",
+      "type": "registry:component",
+      "title": "Map",
+      "description": "A location answer: pins, a route between them, and the list they came from.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/map-answer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-math-block",
+      "type": "registry:component",
+      "title": "Math",
+      "description": "Rendered expressions with the working shown, one step at a time.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/math-block.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-spec-sheet",
+      "type": "registry:component",
+      "title": "Spec sheet",
+      "description": "The most common structured answer after a table: one object, labeled.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/spec-sheet.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-comparison-card",
+      "type": "registry:component",
+      "title": "Comparison",
+      "description": "Two options weighed side by side, with the pick named and argued.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/comparison-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-timeline",
+      "type": "registry:component",
+      "title": "Timeline",
+      "description": "Events on a time axis, with what already happened and what is still coming.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/timeline.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-job-progress",
+      "type": "registry:component",
+      "title": "Long job",
+      "description": "Work measured in minutes: weighted stages, an ETA, and a way out.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/job-progress.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-score-breakdown",
+      "type": "registry:component",
+      "title": "Score breakdown",
+      "description": "A verdict with its arithmetic shown: criteria, weights, and what pulled it down.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/score-breakdown.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-cost-meter",
+      "type": "registry:component",
+      "title": "Cost meter",
+      "description": "What the run spent, split by model, against the session total.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/cost-meter.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-quota-banner",
+      "type": "registry:component",
+      "title": "Quota",
+      "description": "How much is left, when it comes back, and the way to get more.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/quota-banner.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-agent-handoff",
+      "type": "registry:component",
+      "title": "Handoff",
+      "description": "Control passing between agents, with the reason and what came along.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/agent-handoff.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-background-inbox",
+      "type": "registry:component",
+      "title": "Background runs",
+      "description": "Work still going somewhere else, and the results waiting to be collected.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/background-inbox.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-checkpoint-history",
+      "type": "registry:component",
+      "title": "Checkpoints",
+      "description": "Points you can fall back to, with what each one would give back.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/checkpoint-history.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-schedule-card",
+      "type": "registry:component",
+      "title": "Schedule",
+      "description": "A run that repeats on its own, with its cadence and how it has been doing.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/schedule-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-prompt-library",
+      "type": "registry:component",
+      "title": "Prompt library",
+      "description": "Prompts you saved, searchable, with their variables shown before you insert one.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/prompt-library.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-command-palette",
+      "type": "registry:component",
+      "title": "Command palette",
+      "description": "Everything the app can do, one keystroke away and grouped by where it acts.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/command-palette.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-shared-conversation",
+      "type": "registry:component",
+      "title": "Shared conversation",
+      "description": "A read-only transcript someone sent you, with a way to pick it up yourself.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/shared-conversation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-conversation-search",
+      "type": "registry:component",
+      "title": "Search in conversation",
+      "description": "Find inside a long thread, with every hit marked down the scrollbar.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/conversation-search.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-thread-search",
+      "type": "registry:component",
+      "title": "Thread search",
+      "description": "History you can actually get back into: pinned first, then grouped by when.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/thread-search.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-launcher-bubble",
+      "type": "registry:component",
+      "title": "Launcher",
+      "description": "The floating entry point, and the panel it opens into.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/launcher-bubble.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-settings-panel",
+      "type": "registry:component",
+      "title": "Settings",
+      "description": "Model, system prompt, temperature, and what the assistant is allowed to do.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/settings-panel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-onboarding",
+      "type": "registry:component",
+      "title": "Onboarding",
+      "description": "First run: three moves that teach what this assistant is actually for.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/onboarding.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-mobile-composer",
+      "type": "registry:component",
+      "title": "Mobile composer",
+      "description": "The bottom sheet: keyboard-aware, quick actions above, thumb-sized targets.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/elements/mobile-composer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shimmer-style",
+      "type": "registry:style",
+      "title": "Shimmer Style",
+      "description": "Keyframes and theme variables for the streaming shimmer animation.",
+      "cssVars": {
+        "theme": {
+          "--animate-shimmer": "shimmer-sweep var(--shimmer-duration, 1000ms) linear infinite both"
+        }
+      }
+    },
+    {
+      "name": "chat/b/ai-sdk-quick-start/json",
+      "type": "registry:page",
+      "title": "AI SDK Quick Start",
+      "description": "Assistant page wired to the AI SDK chat route, with the thread component installed.",
+      "dependencies": [
+        "@assistant-ui/react-ai-sdk"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/ai-sdk-backend.json",
+        "https://r.assistant-ui.com/thread.json"
+      ],
+      "files": [
+        {
+          "path": "app/ai-sdk/assistant.tsx",
+          "type": "registry:page",
+          "target": "app/assistant.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-sdk-backend",
+      "type": "registry:page",
+      "title": "AI SDK Backend",
+      "description": "Next.js route handler that streams chat completions through the AI SDK.",
+      "dependencies": [
+        "ai",
+        "@ai-sdk/openai",
+        "@assistant-ui/react-ai-sdk"
+      ],
+      "files": [
+        {
+          "path": "app/api/chat/route.ts",
+          "type": "registry:page",
+          "target": "app/api/chat/route.ts"
+        }
+      ]
+    },
+    {
+      "name": "ai-sdk-backend-resumable",
+      "type": "registry:page",
+      "title": "AI SDK Resumable Backend",
+      "description": "AI SDK route handlers with resumable stream context, so a run survives a reload.",
+      "dependencies": [
+        "ai",
+        "@ai-sdk/openai",
+        "@assistant-ui/react-ai-sdk",
+        "assistant-stream",
+        "next"
+      ],
+      "files": [
+        {
+          "path": "app/api/chat/route.ts",
+          "type": "registry:page",
+          "target": "app/api/chat/route.ts"
+        },
+        {
+          "path": "app/api/chat/resume/[streamId]/route.ts",
+          "type": "registry:page",
+          "target": "app/api/chat/resume/[streamId]/route.ts"
+        },
+        {
+          "path": "lib/resumable-context.ts",
+          "type": "registry:lib",
+          "target": "lib/resumable-context.ts"
+        }
+      ]
+    },
+    {
+      "name": "eve-chat",
+      "type": "registry:item",
+      "title": "Eve Chat",
+      "description": "Chat page for an Eve agent, rendering the session through an assistant-ui thread.",
+      "dependencies": [
+        "@assistant-ui/eve",
+        "@assistant-ui/react",
+        "lucide-react",
+        "zustand",
+        "class-variance-authority",
+        "@assistant-ui/react-markdown",
+        "remark-gfm",
+        "tw-shimmer",
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "app/page.tsx",
+          "type": "registry:file",
+          "target": "app/page.tsx"
+        },
+        {
+          "path": "components/assistant-ui/thread.tsx",
+          "type": "registry:file",
+          "target": "components/assistant-ui/thread.tsx"
+        },
+        {
+          "path": "components/assistant-ui/attachment.tsx",
+          "type": "registry:file",
+          "target": "components/assistant-ui/attachment.tsx"
+        },
+        {
+          "path": "components/assistant-ui/tooltip-icon-button.tsx",
+          "type": "registry:file",
+          "target": "components/assistant-ui/tooltip-icon-button.tsx"
+        },
+        {
+          "path": "components/assistant-ui/file.tsx",
+          "type": "registry:file",
+          "target": "components/assistant-ui/file.tsx"
+        },
+        {
+          "path": "components/assistant-ui/follow-up-suggestions.tsx",
+          "type": "registry:file",
+          "target": "components/assistant-ui/follow-up-suggestions.tsx"
+        },
+        {
+          "path": "components/assistant-ui/image.tsx",
+          "type": "registry:file",
+          "target": "components/assistant-ui/image.tsx"
+        },
+        {
+          "path": "components/assistant-ui/markdown-text.tsx",
+          "type": "registry:file",
+          "target": "components/assistant-ui/markdown-text.tsx"
+        },
+        {
+          "path": "components/assistant-ui/reasoning.tsx",
+          "type": "registry:file",
+          "target": "components/assistant-ui/reasoning.tsx"
+        },
+        {
+          "path": "components/assistant-ui/tool-fallback.tsx",
+          "type": "registry:file",
+          "target": "components/assistant-ui/tool-fallback.tsx"
+        },
+        {
+          "path": "components/assistant-ui/tool-group.tsx",
+          "type": "registry:file",
+          "target": "components/assistant-ui/tool-group.tsx"
+        },
+        {
+          "path": "components/ui/avatar.tsx",
+          "type": "registry:file",
+          "target": "components/ui/avatar.tsx"
+        },
+        {
+          "path": "components/ui/button.tsx",
+          "type": "registry:file",
+          "target": "components/ui/button.tsx"
+        },
+        {
+          "path": "components/ui/collapsible.tsx",
+          "type": "registry:file",
+          "target": "components/ui/collapsible.tsx"
+        },
+        {
+          "path": "components/ui/dialog.tsx",
+          "type": "registry:file",
+          "target": "components/ui/dialog.tsx"
+        },
+        {
+          "path": "components/ui/skeleton.tsx",
+          "type": "registry:file",
+          "target": "components/ui/skeleton.tsx"
+        },
+        {
+          "path": "components/ui/tooltip.tsx",
+          "type": "registry:file",
+          "target": "components/ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "thread",
+      "type": "registry:component",
+      "title": "Thread",
+      "description": "Chat container with message list, composer, auto scroll, and accessibility built in.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "skeleton",
+        "https://r.assistant-ui.com/attachment.json",
+        "https://r.assistant-ui.com/file.json",
+        "https://r.assistant-ui.com/follow-up-suggestions.json",
+        "https://r.assistant-ui.com/image.json",
+        "https://r.assistant-ui.com/markdown-text.json",
+        "https://r.assistant-ui.com/reasoning.json",
+        "https://r.assistant-ui.com/tooltip-icon-button.json",
+        "https://r.assistant-ui.com/tool-fallback.json",
+        "https://r.assistant-ui.com/tool-group.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/thread.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "voice",
+      "type": "registry:component",
+      "title": "Voice",
+      "description": "Realtime voice session controls with connect, mute, and a status indicator.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://r.assistant-ui.com/tooltip-icon-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/voice.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "markdown-text",
+      "type": "registry:component",
+      "title": "Markdown Text",
+      "description": "Render assistant markdown with headings, lists, links, and code blocks.",
+      "dependencies": [
+        "@assistant-ui/react-markdown",
+        "lucide-react",
+        "remark-gfm"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/tooltip-icon-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/markdown-text.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "reasoning",
+      "type": "registry:component",
+      "title": "Reasoning",
+      "description": "Collapsible panel for assistant reasoning and thinking content.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react",
+        "class-variance-authority",
+        "tw-shimmer"
+      ],
+      "registryDependencies": [
+        "collapsible",
+        "https://r.assistant-ui.com/markdown-text.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/reasoning.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "message-timing",
+      "type": "registry:component",
+      "title": "Message Timing",
+      "description": "Badge with streaming stats: time to first token, total time, and tokens per second.",
+      "dependencies": [
+        "@assistant-ui/react"
+      ],
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/message-timing.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-display",
+      "type": "registry:component",
+      "title": "Context Display",
+      "description": "Token usage against a model's context window as a ring, bar, or text, with a hover popover.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "@assistant-ui/react-ai-sdk"
+      ],
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/context-display.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "thread-list",
+      "type": "registry:component",
+      "title": "Thread List",
+      "description": "Sidebar or dropdown for switching conversations, with search and active selection.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "skeleton",
+        "https://r.assistant-ui.com/tooltip-icon-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/thread-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "mcp-config",
+      "type": "registry:component",
+      "title": "MCP Config Dialog",
+      "description": "Dialog listing MCP connectors and custom servers, with OAuth and bearer auth controls.",
+      "dependencies": [
+        "@assistant-ui/react-mcp",
+        "@assistant-ui/store",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "dialog",
+        "input",
+        "label",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/mcp-config.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:component",
+      "title": "Attachment",
+      "description": "Attach files from the composer and view them inside messages.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react",
+        "zustand"
+      ],
+      "registryDependencies": [
+        "dialog",
+        "tooltip",
+        "avatar",
+        "https://r.assistant-ui.com/tooltip-icon-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/attachment.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "follow-up-suggestions",
+      "type": "registry:component",
+      "title": "Follow Up Suggestions",
+      "description": "Prompt chips rendered from runtime generated follow up suggestions.",
+      "dependencies": [
+        "@assistant-ui/react"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/follow-up-suggestions.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-icon-button",
+      "type": "registry:component",
+      "title": "Tooltip Icon Button",
+      "description": "Icon button with an accessible tooltip label, shared across the assistant UI components.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "tooltip",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/tooltip-icon-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "syntax-highlighter",
+      "type": "registry:component",
+      "title": "Syntax Highlighter",
+      "description": "Code block highlighting powered by react-syntax-highlighter.",
+      "dependencies": [
+        "@assistant-ui/react-syntax-highlighter",
+        "@assistant-ui/react-markdown",
+        "react-syntax-highlighter",
+        "@types/react-syntax-highlighter"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/syntax-highlighter.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "assistant-modal",
+      "type": "registry:component",
+      "title": "Assistant Modal",
+      "description": "Floating chat bubble for support widgets and help desks.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/thread.json",
+        "https://r.assistant-ui.com/tooltip-icon-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/assistant-modal.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "assistant-sidebar",
+      "type": "registry:component",
+      "title": "Assistant Sidebar",
+      "description": "Side panel chat for copilot experiences and inline assistance.",
+      "dependencies": [
+        "@assistant-ui/react"
+      ],
+      "registryDependencies": [
+        "resizable",
+        "https://r.assistant-ui.com/thread.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/assistant-sidebar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tool-fallback",
+      "type": "registry:component",
+      "title": "Tool Fallback",
+      "description": "Default renderer for tool calls that have no dedicated UI.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react",
+        "tw-shimmer"
+      ],
+      "registryDependencies": [
+        "button",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/tool-fallback.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tool-group",
+      "type": "registry:component",
+      "title": "Tool Group",
+      "description": "Collapsible wrapper around consecutive tool calls.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react",
+        "class-variance-authority",
+        "tw-shimmer"
+      ],
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/tool-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shiki-highlighter",
+      "type": "registry:component",
+      "title": "Shiki Highlighter",
+      "description": "Code block highlighting powered by react-shiki.",
+      "dependencies": [
+        "react-shiki",
+        "@assistant-ui/react",
+        "@assistant-ui/react-markdown"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/shiki-highlighter.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "mermaid-diagram",
+      "type": "registry:component",
+      "title": "Mermaid Diagram",
+      "description": "Render Mermaid diagrams in messages, including while they stream.",
+      "dependencies": [
+        "beautiful-mermaid",
+        "lucide-react",
+        "@assistant-ui/react",
+        "@assistant-ui/react-markdown"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/mermaid-diagram.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "diff-viewer",
+      "type": "registry:component",
+      "title": "Diff Viewer",
+      "description": "Render code diffs with highlighted additions and deletions.",
+      "dependencies": [
+        "diff",
+        "parse-diff",
+        "@assistant-ui/react-markdown",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/diff-viewer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "threadlist-sidebar",
+      "type": "registry:component",
+      "title": "Thread List Sidebar",
+      "description": "Sidebar shell that hosts the thread list beside a thread.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "sidebar",
+        "https://r.assistant-ui.com/thread-list.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/threadlist-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/github.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "quote",
+      "type": "registry:component",
+      "title": "Quote",
+      "description": "Select and quote message text with a floating toolbar and a composer preview.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/quote.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sources",
+      "type": "registry:component",
+      "title": "Sources",
+      "description": "Display URL sources with favicon, title, and an external link.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/badge.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/sources.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "image",
+      "type": "registry:component",
+      "title": "Image",
+      "description": "Display image parts with preview, loading states, and a fullscreen dialog.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/image.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "file",
+      "type": "registry:component",
+      "title": "File",
+      "description": "Display file parts with icon, name, size, and a download button.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/file.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "model-selector",
+      "type": "registry:component",
+      "title": "Model Selector",
+      "description": "Model picker with reasoning effort levels, search, and runtime integration.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react",
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "command",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/model-selector.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "logos",
+      "type": "registry:component",
+      "title": "Logos",
+      "description": "Model provider logos as inline SVG components.",
+      "files": [
+        {
+          "path": "components/assistant-ui/logos.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:component",
+      "title": "Select",
+      "description": "Dropdown select styled for the assistant UI, with composable sub components.",
+      "dependencies": [
+        "lucide-react",
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/select.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction Provider",
+      "description": "Direction provider and hook for right to left layouts.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/direction.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:component",
+      "title": "Badge",
+      "description": "Small label for status, categories, and metadata.",
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:component",
+      "title": "Tabs",
+      "description": "Tabs for organizing content into switchable panels.",
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/tabs.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:component",
+      "title": "Accordion",
+      "description": "Stacked headings that reveal or hide content sections.",
+      "dependencies": [
+        "lucide-react",
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/accordion.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dot-matrix",
+      "type": "registry:component",
+      "title": "Dot Matrix",
+      "description": "5x5 dot matrix indicator with state specific blink patterns.",
+      "files": [
+        {
+          "path": "components/assistant-ui/dot-matrix.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "number-roll",
+      "type": "registry:component",
+      "title": "Number Roll",
+      "description": "Animated number that rolls its digits odometer style when the value changes.",
+      "files": [
+        {
+          "path": "components/assistant-ui/number-roll.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "heat-graph",
+      "type": "registry:component",
+      "title": "Heat Graph",
+      "description": "Activity heat map with month and weekday labels.",
+      "dependencies": [
+        "heat-graph"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/heat-graph.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "composer-trigger-popover",
+      "type": "registry:component",
+      "title": "Composer Trigger Popover",
+      "description": "Character triggered picker for @ mentions, / commands, and similar popovers.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/composer-trigger-popover.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "directive-text",
+      "type": "registry:component",
+      "title": "Directive Text",
+      "description": "Render mention directives as inline chips in user messages.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/badge.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/directive-text.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "generative-ui-style",
+      "type": "registry:style",
+      "title": "Generative UI Style",
+      "description": "Theme variables and vocabulary CSS for generative UI output.",
+      "cssVars": {
+        "light": {
+          "--aui-success": "oklch(0.6 0.15 149)",
+          "--aui-warning": "oklch(0.68 0.16 70)"
+        },
+        "dark": {
+          "--aui-success": "oklch(0.72 0.17 149)",
+          "--aui-warning": "oklch(0.8 0.17 75)"
+        }
+      }
+    },
+    {
+      "name": "generative-ui",
+      "type": "registry:component",
+      "title": "Generative UI",
+      "description": "Styled component library for rendering generative UI output.",
+      "dependencies": [
+        "@assistant-ui/react-generative-ui",
+        "react-markdown",
+        "remark-gfm"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/generative-ui-style.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/generative-ui.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

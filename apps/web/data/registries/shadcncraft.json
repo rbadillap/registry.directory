@@ -1,0 +1,438 @@
+{
+  "key": "shadcncraft",
+  "entry": "ShadcnCraft",
+  "name": "shadcncraft",
+  "homepage": "https://shadcncraft.com",
+  "indexUrl": "https://shadcncraft.com/r/registry.json",
+  "itemBase": "https://shadcncraft.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "index",
+      "type": "registry:style",
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "style",
+      "type": "registry:style",
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "avatar-stack",
+      "type": "registry:ui",
+      "title": "Avatar Stack",
+      "description": "A compact, visually appealing component for displaying multiple user avatars in an overlapping stack. Perfect for showing participants in a group chat, team members, or active collaborators. Supports customizable size, max visible avatars, border styling, and optional '+n' indicator for overflow. Renders gracefully from 1 to dozens of users while maintaining a small footprint.",
+      "files": [
+        {
+          "path": "components/shadcncraft/pro-marketing/avatar-stack.tsx",
+          "type": "registry:ui",
+          "target": "@components/shadcncraft/pro-marketing/avatar-stack.tsx"
+        }
+      ]
+    },
+    {
+      "name": "featured-icon",
+      "type": "registry:ui",
+      "title": "Featured Icon",
+      "description": "A component that places an icon inside a styled square or circle frame for extra prominence. This component makes supporting visuals stand out in marketing layouts.",
+      "files": [
+        {
+          "path": "components/shadcncraft/pro-marketing/featured-icon.tsx",
+          "type": "registry:ui",
+          "target": "@components/shadcncraft/pro-marketing/featured-icon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marquee",
+      "type": "registry:ui",
+      "title": "Marquee",
+      "description": "A smooth, endlessly looping scroller ideal for showcasing logos, testimonials, images, or sponsor lists. Features auto-play with customizable speed, pause-on-hover, reverse direction, and seamless loop behavior.",
+      "cssVars": {
+        "theme": {
+          "animate-marquee": "marquee var(--duration) infinite linear",
+          "animate-marquee-vertical": "marquee-vertical var(--duration) linear infinite"
+        }
+      },
+      "files": [
+        {
+          "path": "components/shadcncraft/pro-marketing/marquee.tsx",
+          "type": "registry:ui",
+          "target": "@components/shadcncraft/pro-marketing/marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-heading",
+      "type": "registry:ui",
+      "title": "Page Heading",
+      "description": "A component that acts as the text-focused version of a hero banner. This component combines a pre-heading label, an H1 heading, supporting description text, and call-to-action buttons.",
+      "registryDependencies": [
+        "@shadcncraft/tagline"
+      ],
+      "files": [
+        {
+          "path": "components/shadcncraft/pro-marketing/page-heading.tsx",
+          "type": "registry:ui",
+          "target": "@components/shadcncraft/pro-marketing/page-heading.tsx"
+        }
+      ]
+    },
+    {
+      "name": "placeholder-logo",
+      "type": "registry:ui",
+      "title": "Placeholder Logo",
+      "description": "A component for that can be replaced with your brand's main logo. This component ensures layouts stay consistent before brand assets are applied.",
+      "files": [
+        {
+          "path": "components/shadcncraft/pro-marketing/placeholder-logo.tsx",
+          "type": "registry:ui",
+          "target": "@components/shadcncraft/pro-marketing/placeholder-logo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "profile-card",
+      "type": "registry:ui",
+      "title": "Profile Card",
+      "description": "An extension of the avatar component with more details on the individual. Good for blog posts etc.",
+      "registryDependencies": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "components/shadcncraft/pro-marketing/profile-card.tsx",
+          "type": "registry:ui",
+          "target": "@components/shadcncraft/pro-marketing/profile-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "section-heading",
+      "type": "registry:ui",
+      "title": "Section Heading",
+      "description": "A component that standardizes heading typography and spacing. This component includes a pre-heading label, main heading, and body text in different layout variants.",
+      "registryDependencies": [
+        "@shadcncraft/tagline"
+      ],
+      "files": [
+        {
+          "path": "components/shadcncraft/pro-marketing/section-heading.tsx",
+          "type": "registry:ui",
+          "target": "@components/shadcncraft/pro-marketing/section-heading.tsx"
+        }
+      ]
+    },
+    {
+      "name": "star-rating",
+      "type": "registry:ui",
+      "title": "Star Rating",
+      "description": "A component that displays ratings with stars and an optional label. This component builds trust with visual feedback.",
+      "files": [
+        {
+          "path": "components/shadcncraft/pro-marketing/star-rating.tsx",
+          "type": "registry:ui",
+          "target": "@components/shadcncraft/pro-marketing/star-rating.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tagline",
+      "type": "registry:ui",
+      "title": "Tagline",
+      "description": "A component that displays a tagline with different variants.",
+      "files": [
+        {
+          "path": "components/shadcncraft/pro-marketing/tagline.tsx",
+          "type": "registry:ui",
+          "target": "@components/shadcncraft/pro-marketing/tagline.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Displays a badge or a component that looks like a badge.",
+      "files": [
+        {
+          "path": "components/shadcncraft/pro-application/badge.tsx",
+          "type": "registry:ui",
+          "target": "@components/shadcncraft/pro-application/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-zoom",
+      "type": "registry:ui",
+      "title": "Image Zoom",
+      "description": "Image zoom is a component that allows you to zoom in on an image.",
+      "dependencies": [
+        "react-medium-image-zoom"
+      ],
+      "files": [
+        {
+          "path": "components/shadcncraft/pro-ecommerce/image-zoom.tsx",
+          "type": "registry:ui",
+          "target": "@components/shadcncraft/pro-ecommerce/image-zoom.tsx"
+        }
+      ]
+    },
+    {
+      "name": "banner-10",
+      "type": "registry:block",
+      "title": "Banner 10 – Inline announcement link",
+      "description": "A minimal announcement banner for low-friction updates. Renders as simple inline text with an optional icon and link, plus a close action. Best for subtle product news or secondary announcements that shouldn't compete with primary page content.",
+      "categories": [
+        "banners"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-marketing/banners/banner-10/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-marketing/banners/banner-10/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "benefits-13",
+      "type": "registry:block",
+      "title": "Benefits 13 – Card grid with section header",
+      "description": "A layout with a section header followed by a grid of equal-height cards. Each card includes an icon, title, and short text, arranged in a consistent grid that collapses responsively. Use when you need a structured, repeatable set of items with strong visual separation.",
+      "categories": [
+        "benefits"
+      ],
+      "registryDependencies": [
+        "@shadcncraft/section-heading",
+        "@shadcncraft/featured-icon"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-marketing/benefits/benefits-13/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-marketing/benefits/benefits-13/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contact-11",
+      "type": "registry:block",
+      "title": "Contact 11 – Centered form with supporting sidebar",
+      "description": "A balanced contact layout with a primary, centered form and a secondary sidebar that mirrors or reinforces the same interaction. The main column keeps focus on the form, while the sidebar provides a persistent fallback or alternative entry point. Useful when you want a calm, symmetrical layout with built-in redundancy for conversion.",
+      "categories": [
+        "contact"
+      ],
+      "registryDependencies": [
+        "button",
+        "label",
+        "input",
+        "textarea",
+        "checkbox",
+        "@shadcncraft/section-heading"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-marketing/contact/contact-11/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-marketing/contact/contact-11/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faqs-4",
+      "type": "registry:block",
+      "title": "FAQ 4 – Centered accordion with supporting panel",
+      "description": "A clean, centered FAQ accordion paired with a narrow sidebar version. Uses a strong section header and clear dividers for easy scanning, with an optional support link at the end. Works well for product or marketing pages where FAQs are a secondary section, not the main focus.",
+      "categories": [
+        "faqs"
+      ],
+      "registryDependencies": [
+        "accordion",
+        "@shadcncraft/section-heading"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-marketing/faqs/faqs-4/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-marketing/faqs/faqs-4/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-4",
+      "type": "registry:block",
+      "title": "Footer 4 – Brand-led sitemap footer",
+      "description": "A sitemap footer anchored by a short brand statement and logo, followed by structured link columns and legal links. Gives more context about the company while keeping navigation clear. Works well for marketing sites where brand positioning matters as much as wayfinding.",
+      "categories": [
+        "footers"
+      ],
+      "dependencies": [
+        "react-icons"
+      ],
+      "registryDependencies": [
+        "separator",
+        "@shadcncraft/placeholder-logo"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-marketing/footers/footer-4/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-marketing/footers/footer-4/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "newsletter-signup-5",
+      "type": "registry:block",
+      "title": "Newsletter Signup 5 – Inline callout with contained form",
+      "description": "A horizontal newsletter signup pattern presented inside a soft container to separate it from surrounding content. The headline and description anchor the left side while the inline form sits to the right, creating a clear scan path and compact footprint. Works well as an embedded callout within long pages and collapses cleanly to a stacked layout on smaller screens.",
+      "categories": [
+        "newsletter-signup"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "@shadcncraft/section-heading"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-marketing/newsletter-signup/newsletter-signup-5/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-marketing/newsletter-signup/newsletter-signup-5/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-11",
+      "type": "registry:block",
+      "title": "Testimonial 11 – Editorial quote grid",
+      "description": "A structured testimonial layout that combines a clear section header with a multi-column grid of short quotes. It balances scannability and depth by presenting many voices at once, using consistent cards and subtle hierarchy to reinforce trust without relying on a single standout story.",
+      "categories": [
+        "testimonials"
+      ],
+      "registryDependencies": [
+        "@shadcncraft/section-heading",
+        "@shadcncraft/profile-card"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-marketing/testimonials/testimonials-11/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-marketing/testimonials/testimonials-11/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "top-navigation-5",
+      "type": "registry:block",
+      "title": "Top Navigation 5 – Minimal center-aligned links with inline auth",
+      "description": "A stripped-back, center-aligned top navigation that prioritizes clarity and whitespace. Primary links sit in a single horizontal row with the brand anchored to the left and a lightweight login action on the right. On small screens, the layout collapses into a simple slide-out menu with stacked links and a single secondary action, keeping the structure familiar while reducing visual noise.",
+      "categories": [
+        "top-navigation"
+      ],
+      "registryDependencies": [
+        "button",
+        "@shadcncraft/placeholder-logo",
+        "@shadcncraft/use-click-outside",
+        "@shadcncraft/use-mobile"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-marketing/top-navigation/top-navigation-5/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-marketing/top-navigation/top-navigation-5/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "semantic-tokens",
+      "type": "registry:theme",
+      "cssVars": {
+        "theme": {
+          "color-info": "var(--info)",
+          "color-info-foreground": "var(--info-foreground)",
+          "color-success": "var(--success)",
+          "color-success-foreground": "var(--success-foreground)",
+          "color-warning": "var(--warning)",
+          "color-warning-foreground": "var(--warning-foreground)",
+          "color-border-subtle": "var(--border-subtle)"
+        },
+        "light": {
+          "info": "hsl(201, 98%, 32%)",
+          "info-foreground": "hsl(204, 100%, 97%)",
+          "success": "hsl(155, 90%, 24%)",
+          "success-foreground": "hsl(145, 81%, 96%)",
+          "warning": "hsl(22, 92%, 37%)",
+          "warning-foreground": "hsl(45, 100%, 96%)",
+          "border-subtle": "hsl(0, 0%, 0%, 0.05)"
+        },
+        "dark": {
+          "info": "hsl(199, 97%, 74%)",
+          "info-foreground": "hsl(201, 83%, 14%)",
+          "success": "hsl(148, 63%, 67%)",
+          "success-foreground": "hsl(156, 79%, 11%)",
+          "warning": "hsl(42, 99%, 65%)",
+          "warning-foreground": "hsl(17, 79%, 17%)",
+          "border-subtle": "hsl(0, 0%, 100%, 0.1)"
+        }
+      }
+    },
+    {
+      "name": "design-system",
+      "type": "registry:style",
+      "registryDependencies": [
+        "@shadcncraft/style",
+        "@shadcncraft/semantic-tokens"
+      ]
+    },
+    {
+      "name": "use-carousel",
+      "type": "registry:hook",
+      "dependencies": [
+        "embla-carousel",
+        "embla-carousel-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/bases/radix/hooks/use-carousel.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-click-outside",
+      "type": "registry:hook",
+      "files": [
+        {
+          "path": "src/registry/bases/radix/hooks/use-click-outside.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "files": [
+        {
+          "path": "src/registry/bases/radix/hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    }
+  ]
+}

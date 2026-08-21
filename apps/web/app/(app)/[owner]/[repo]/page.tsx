@@ -10,7 +10,7 @@ import {
   parseGithubRef,
   resolveByGithub,
   resolveByHandle,
-  fetchRegistryIndex,
+  loadRegistryIndex,
 } from "@/lib/resolve-registry"
 import {
   RegistrySlugView,
@@ -33,7 +33,7 @@ export async function generateMetadata({
   // Canonical github pair → registry landing metadata
   const ghRegistry = await resolveByGithub(owner, repo)
   if (ghRegistry) {
-    const index = await fetchRegistryIndex(ghRegistry)
+    const index = await loadRegistryIndex(ghRegistry)
     const itemCount = index?.items?.length || 0
     const canonical = `https://registry.directory/${owner}/${repo}`
 
@@ -98,7 +98,7 @@ export async function generateStaticParams() {
       const handle = entryHandle(registry)
       if (!handle) return []
 
-      const index = await fetchRegistryIndex(registry, 10000)
+      const index = await loadRegistryIndex(registry)
       if (!index) return []
 
       const params: { owner: string; repo: string }[] = []
@@ -138,7 +138,7 @@ export default async function RegistryLandingPage({
   if (ghRegistry) {
     const basePath = `/${owner}/${repo}`
     const landingData = await loadLandingData(ghRegistry)
-    const index = await fetchRegistryIndex(ghRegistry)
+    const index = await loadRegistryIndex(ghRegistry)
     const items = index?.items ?? []
 
     return (

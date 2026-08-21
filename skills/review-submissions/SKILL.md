@@ -77,8 +77,38 @@ These exist because public actions represent the maintainer personally:
 
 ## After the maintainer decides
 
-- **Approved**: add the entry to `apps/web/public/directory.json` (match the existing format and the schema in `apps/web/public/schemas/directory.json`), commit on a branch, open a PR for the maintainer unless instructed otherwise. Then delete the pending blob (`submissions/pending/<id>.json`) so the inbox stays truthful.
+- **Approved**: add the entry to `apps/web/public/directory.json` (match the existing format and the schema in `apps/web/public/schemas/directory.json`), **then index it** (see below), commit both the entry and its view on a branch, open a PR for the maintainer unless instructed otherwise. Then delete the pending blob (`submissions/pending/<id>.json`) so the inbox stays truthful.
 - **Rejected**: delete the pending blob. Any communication to the author is the maintainer's, per the boundaries above.
+
+## Indexing an approved entry
+
+`directory.json` only declares that a registry exists. Its catalog lives in
+`apps/web/data/registries/{key}.json`, which only the local indexer writes —
+nothing fetches a registry at build or request time any more.
+
+An entry with no view fails the prebuild guard, which is the correct behavior:
+it catches `directory.json` and `data/` drifting apart. So an approved entry is
+not finished until it has been indexed:
+
+```bash
+# from apps/web, after adding the entry
+pnpm index --only=<key>
+```
+
+The key is the filename stem the indexer derives from the entry: the GitHub
+owner lowercased, or the namespace without its `@`. Confirm it by reading the
+`key` field the run reports, or `apps/web/data/manifest.json` afterwards.
+
+Commit `apps/web/data/registries/{key}.json` and the updated
+`apps/web/data/manifest.json` alongside the `directory.json` change — the three
+belong in the same commit, because together they are one fact.
+
+If the origin is unreachable during indexing, do not force it: the run reports
+the status and, for a `429`/`5xx`, prints the retry command. A `401/402/403/404`
+at this point contradicts the audit that approved it — report that to the
+maintainer instead of committing a `missing` entry.
+
+See `apps/web/scripts/README.md` for the indexer's full behavior.
 
 ## References for the probe
 

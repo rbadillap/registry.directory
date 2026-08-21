@@ -1,10 +1,13 @@
+import { readFile } from "node:fs/promises"
+import { join } from "node:path"
 import type { Metadata } from "next"
 import { LabsHome } from "./labs-home"
 import type { CollectionsFile, ShippedFile } from "./types"
 
-// Design lab — never linked from the site, never indexed. v0.4: the page
-// reads collections.json and shipped.json from Vercel Blob, both produced
-// by the local pipeline (pnpm ingest && pnpm generate). Nothing is baked in.
+// Design lab — never linked from the site, never indexed. It reads the two
+// derived files from apps/web/data, the same committed source every other
+// page reads. No network, so nothing here can hold the page open for
+// revalidation.
 export const metadata: Metadata = {
   title: "labs / collections",
   robots: { index: false, follow: false },
@@ -12,32 +15,21 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-static"
 
-// Same pattern as lib/github-stats.ts: the public blob URL derives from the
-// token's store id; reads are ISR-aligned with the daily pipeline cadence.
-function blobBaseUrl(): string | null {
-  const token = process.env.BLOB_READ_WRITE_TOKEN
-  const match = token?.match(/vercel_blob_rw_([^_]+)_/)
-  return match ? `https://${match[1]}.public.blob.vercel-storage.com` : null
-}
+const DATA_DIR = join(process.cwd(), "data")
 
-async function readBlobJson<T>(filename: string): Promise<T | null> {
-  const base = blobBaseUrl()
-  if (!base) return null
+async function readDataFile<T>(filename: string): Promise<T | null> {
   try {
-    const response = await fetch(`${base}/${filename}`, {
-      next: { revalidate: 86400 },
-    })
-    if (!response.ok) return null
-    return (await response.json()) as T
+    return JSON.parse(await readFile(join(DATA_DIR, filename), "utf8")) as T
   } catch {
+    // A lab page is worth rendering empty; it is not worth failing a build.
     return null
   }
 }
 
 export default async function LabsHomePage() {
   const [collections, shipped] = await Promise.all([
-    readBlobJson<CollectionsFile>("collections.json"),
-    readBlobJson<ShippedFile>("shipped.json"),
+    readDataFile<CollectionsFile>("collections.json"),
+    readDataFile<ShippedFile>("shipped.json"),
   ])
 
   return <LabsHome data={collections} shipped={shipped} />

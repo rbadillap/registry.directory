@@ -10,11 +10,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@workspace/ui/components/dropdown-menu"
-import type { RegistryItem } from "@/lib/registry-types"
+import type { RegistryItem, ViewerFile } from "@/lib/registry-types"
 import { getTargetPath } from "@/lib/path-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
 
-type RegistryFile = NonNullable<RegistryItem["files"]>[number]
+type RegistryFile = ViewerFile
 
 interface StatusBarProps {
   totalItems: number

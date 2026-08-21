@@ -6,8 +6,6 @@ import { DirectoryTabs } from "@/components/directory-tabs";
 import { DirectoryTabsSkeleton } from "@/components/directory-tabs-skeleton";
 import { fetchAllRegistryStats } from "@/lib/registry-stats";
 import { fetchAllGitHubStats } from "@/lib/github-stats";
-import { fetchAllRegistryItems } from "@/lib/registry-items";
-import { buildAndPersistCatalog } from "@/lib/catalog";
 import { getAffiliates } from "@/lib/affiliates";
 import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import type { DirectoryEntry } from "@/lib/types";
@@ -110,15 +108,12 @@ async function getTools(): Promise<DirectoryEntry[]> {
 
 export default async function Home() {
   const components = await getRegistries();
-  const [stats, githubStats, items, affiliates] = await Promise.all([
+  // Every one of these reads apps/web/data: no registry is contacted while
+  // this page renders, and rendering has no side effects.
+  const [stats, githubStats, affiliates] = await Promise.all([
     fetchAllRegistryStats(components),
     fetchAllGitHubStats(components),
-    fetchAllRegistryItems(components),
     getAffiliates(),
-    // Side effect only: writes the /r endpoint's aggregated catalog to
-    // blob during the daily build (no-op in dev). Same trigger point as
-    // the github.json cache above.
-    buildAndPersistCatalog(),
   ]);
   const directorySchema = buildDirectoryListSchema(
     components.flatMap((registry) => {
@@ -171,7 +166,7 @@ export default async function Home() {
       </p>
 
       <Suspense fallback={<DirectoryTabsSkeleton />}>
-        <DirectoryTabs components={components} stats={stats} githubStats={githubStats} items={items} affiliates={affiliates} />
+        <DirectoryTabs components={components} stats={stats} githubStats={githubStats} affiliates={affiliates} />
       </Suspense>
 
       <AffiliateDisclosure />

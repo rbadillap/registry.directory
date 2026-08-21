@@ -1,14 +1,15 @@
 'use client';
 
-import { useState, useMemo, useDeferredValue, useEffect, useCallback } from 'react';
+import { useState, useMemo, useDeferredValue, useEffect, useCallback, useRef } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
 import { DirectoryList } from './directory-list';
 import { SearchBar } from './search-bar';
 import { useAnalytics, type SearchResultType, type HomeTab } from '@/hooks/use-analytics';
 import { useUrlState } from '@/hooks/use-url-state';
+import { useItemIndex } from '@/hooks/use-item-index';
 import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from '@/lib/types';
 import type { IndexedItem } from '@/lib/items-index';
-import { searchItems } from '@/lib/search-utils';
+import { prepareSearchIndex, searchPrepared } from '@/lib/search-utils';
 import { TypeFilterMenu } from './type-filter-menu';
 import { typeToSlug, REGISTRY_TYPE_LABELS } from '@/lib/registry-mappings';
 
@@ -81,14 +82,24 @@ interface DirectoryTabsProps {
   components: DirectoryEntry[];
   stats: Record<string, RegistryStats>;
   githubStats: GitHubStatsRecord;
-  items: IndexedItem[];
   affiliates: Record<string, AffiliateConfig>;
 }
 
-export function DirectoryTabs({ components, stats, githubStats, items, affiliates }: DirectoryTabsProps) {
+export function DirectoryTabs({ components, stats, githubStats, affiliates }: DirectoryTabsProps) {
   const analytics = useAnalytics();
   const { activeTab, setActiveTab, searchTerm, setSearchTerm, typeFilters, setTypeFilters } = useUrlState();
   const deferredSearchTerm = useDeferredValue(searchTerm);
+
+  // The item index is not in this page: it is fetched when someone is about
+  // to search. Focus is the earliest signal, so the download starts while
+  // the first word is still being typed.
+  const { items, status: indexStatus, load: loadItemIndex } = useItemIndex();
+
+  // A link can arrive with the search already written into the URL, and that
+  // person never focuses the field.
+  useEffect(() => {
+    if (searchTerm) loadItemIndex();
+  }, [searchTerm, loadItemIndex]);
 
   const [premiumOnly, setPremiumOnly] = useState(false);
 
@@ -177,26 +188,49 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
     [filteredComponents, activeTab, githubStats]
   );
 
+  // Normalised once per index, not once per keystroke.
+  const preparedIndex = useMemo(() => prepareSearchIndex(items), [items]);
+
   const filteredItems = useMemo(() => {
     if (!deferredSearchTerm) return [];
-    const results = searchItems(items, deferredSearchTerm);
+    const results = searchPrepared(preparedIndex, deferredSearchTerm);
     if (typeFilters.length === 0) return results;
     return results.filter((item) =>
       typeFilters.some((f) => matchesTypeFacet(typeToSlug(item.type), f))
     );
-  }, [items, deferredSearchTerm, typeFilters]);
+  }, [preparedIndex, deferredSearchTerm, typeFilters]);
 
-  // Track search performed (debounced via hook)
+  // What the event reports about a search, kept current without making the
+  // event depend on it: a tab change or a premium toggle alters these
+  // numbers, and neither of those is a search.
+  const searchContext = useRef({
+    tab: activeTab,
+    registryCount: 0,
+    itemCount: 0,
+    premiumOnly,
+  });
+  searchContext.current = {
+    tab: activeTab,
+    registryCount: sortedComponents.length,
+    itemCount: filteredItems.length,
+    premiumOnly,
+  };
+
+  // One event per search, and only once its counts are true. Reporting
+  // before the index lands would record zero components found for a search
+  // that finds plenty — the index simply had not arrived yet.
   useEffect(() => {
     if (!deferredSearchTerm) return;
+    if (indexStatus !== 'ready') return;
+    const { tab, registryCount, itemCount, premiumOnly: premium } = searchContext.current;
     analytics.trackSearchPerformed({
       search_query: deferredSearchTerm,
-      active_tab: activeTab as SortMode,
-      registry_results_count: sortedComponents.length,
-      item_results_count: filteredItems.length,
-      premium_only: premiumOnly,
+      active_tab: tab as SortMode,
+      registry_results_count: registryCount,
+      item_results_count: itemCount,
+      premium_only: premium,
     });
-  }, [deferredSearchTerm, activeTab, sortedComponents.length, filteredItems.length, premiumOnly, analytics]);
+  }, [deferredSearchTerm, indexStatus, analytics]);
 
   const handleResultClick = useCallback((result: { result_type: SearchResultType; result_name: string; result_position: number }) => {
     if (!searchTerm) return;
@@ -215,6 +249,7 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
             large
             value={searchTerm}
             onChange={setSearchTerm}
+            onFocus={loadItemIndex}
             placeholder="Search registries and components..."
           />
 
@@ -283,6 +318,7 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
             githubStats={githubStats}
             affiliates={affiliates}
             itemResults={filteredItems}
+            itemsStatus={indexStatus}
             onResultClick={handleResultClick}
             premiumFilterActive={premiumOnly}
           />

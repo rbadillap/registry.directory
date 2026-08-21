@@ -1,11 +1,11 @@
 import { groupItemsByCategory } from "./registry-mappings";
-import { fetchRegistryIndex } from "./resolve-registry";
+import { loadRegistryIndex } from "./resolve-registry";
 import type { DirectoryEntry, RegistryStats } from "./types";
 
 async function fetchStatsForRegistry(
   registry: DirectoryEntry
 ): Promise<RegistryStats | null> {
-  const data = await fetchRegistryIndex(registry, 10000);
+  const data = await loadRegistryIndex(registry);
   if (!data?.items || data.items.length === 0) return null;
 
   const grouped = groupItemsByCategory(data.items);

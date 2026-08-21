@@ -8,7 +8,7 @@ import {
   resolveByGithub,
   resolveByHandle,
   parseGithubRef,
-  fetchRegistryIndex,
+  loadRegistryIndex,
 } from "@/lib/resolve-registry"
 
 export const runtime = 'nodejs'
@@ -44,7 +44,7 @@ export default async function Image({
   ])
 
   const registry = await getRegistry(owner, repo)
-  const registryData = registry ? await fetchRegistryIndex(registry) : null
+  const registryData = registry ? await loadRegistryIndex(registry) : null
 
   const itemCount = registryData?.items?.length || 0
   const categoriesMap = registryData?.items ? groupItemsByCategory(registryData.items) : new Map()
