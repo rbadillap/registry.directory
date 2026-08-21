@@ -18,18 +18,18 @@ import {
   Diamond,
 } from "lucide-react"
 import { cn } from "@workspace/ui/lib/utils"
-import type { RegistryItem, RegistryListingItem, SourceStatus } from "@/lib/registry-types"
+import type { SourceStatus, ViewerFile, ViewerItem } from "@/lib/registry-types"
 import { getFileName, getTargetPath } from "@/lib/path-utils"
 import { REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
 import { useAnalytics } from "@/hooks/use-analytics"
 
-type RegistryFile = NonNullable<RegistryItem["files"]>[number]
+type RegistryFile = ViewerFile
 
 interface FileTreeProps {
-  items: RegistryListingItem[]
-  selectedItem: RegistryItem | null
+  items: ViewerItem[]
+  selectedItem: ViewerItem | null
   selectedFile: RegistryFile | null
-  onSelectFile: (item: RegistryListingItem, file: RegistryFile) => void
+  onSelectFile: (item: ViewerItem, file: ViewerFile) => void
   currentCategory?: string
   // Route prefix ("/{owner}/{repo}" or "/{handle}") for sibling item links
   basePath: string
@@ -43,7 +43,7 @@ type TreeNode = {
   path: string  // Full path to this node (e.g., "components", "components/ui")
   type: 'folder' | 'file' | 'block'
   children: Map<string, TreeNode>
-  items: RegistryListingItem[]  // Items at this level
+  items: ViewerItem[]  // Items at this level
   files?: RegistryFile[]       // Files if this is a file node (for single-file items)
 }
 
@@ -57,7 +57,7 @@ type PathTree = Map<string, TreeNode>
  * keeps it if grouping ever becomes a requirement.
  */
 
-function buildPathTree(items: RegistryListingItem[]): PathTree {
+function buildPathTree(items: ViewerItem[]): PathTree {
   const root = new Map<string, TreeNode>()
 
   for (const item of items) {
@@ -120,11 +120,9 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   // exactly one item, so counting them answers a different question.
   const isItemView = selectedItem !== null
 
-  // Only the item view renders a tree. Building one for a category walked
-  // every item to group it by folder and then threw the result away — up to
-  // several thousand items, on every render, for nothing. Whether a category
-  // should be grouped that way is a product question with its own scope; the
-  // branch that does it stays, unused, until that is decided.
+  // Only the item view renders a tree; a category renders a list. Building
+  // one for a category walked every item to group it by folder and then threw
+  // the result away — several thousand items, on every render, for nothing.
   const pathTree = useMemo(
     () => (isItemView ? buildPathTree(items) : new Map<string, TreeNode>()),
     [items, isItemView]
@@ -220,7 +218,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     }
   }
 
-  const getItemIcon = (type: RegistryItem["type"]) => {
+  const getItemIcon = (type: ViewerItem["type"]) => {
     switch (type) {
       case "registry:ui":
         return LayoutGrid
@@ -243,7 +241,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     }
   }
 
-  const getItemFileName = (item: RegistryListingItem) => {
+  const getItemFileName = (item: ViewerItem) => {
     const firstFile = item.files?.[0]
     if (!firstFile) return item.name
     const targetPath = getTargetPath(firstFile)

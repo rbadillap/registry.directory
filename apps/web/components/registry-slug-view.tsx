@@ -50,15 +50,6 @@ function socialImages(registry: DirectoryEntry, slug: string, alt: string) {
 // the words its filter searches. The rest of the record — dependencies, style
 // variables, every file past the first — is never read there, and a category
 // can hold thousands of items.
-type SchemaFile = NonNullable<RegistryItem["files"]>[number]
-
-// Same file, minus its contents. The cast is over a projection that keeps
-// every field the schema's union discriminates on.
-function withoutContent(file: SchemaFile): SchemaFile {
-  const { content: _content, ...meta } = file
-  return meta as SchemaFile
-}
-
 function forListing(item: RegistryItem): RegistryListingItem {
   // Named one by one, on purpose. Removing the fields a listing does not read
   // would leak every field added to RegistryItem later; naming the ones it
@@ -72,7 +63,9 @@ function forListing(item: RegistryItem): RegistryListingItem {
     // Only the first file, and only where it installs: that is what a row
     // shows and what the grouping logic reads. Its contents are the whole
     // reason a category is heavy, and a row never displays them.
-    ...(first ? { files: [withoutContent(first)] } : {}),
+    ...(first
+      ? { files: [{ path: first.path, type: first.type, target: first.target }] }
+      : {}),
   }
 }
 

@@ -5,13 +5,13 @@ import { useTheme } from "next-themes"
 import { ScrollArea, ScrollBar } from "@workspace/ui/components/scroll-area"
 import { Button } from "@workspace/ui/components/button"
 import { FileCode, Package, Copy, Check, FileWarning } from "lucide-react"
-import type { RegistryItem, SourceStatus } from "@/lib/registry-types"
+import type { RegistryItem, SourceStatus, ViewerFile } from "@/lib/registry-types"
 import { codeToHtml } from "shiki"
 import { getFileName, getExtension, getTargetPath } from "@/lib/path-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { isBinaryExtension } from "@/lib/file-utils"
 
-type RegistryFile = NonNullable<RegistryItem["files"]>[number]
+type RegistryFile = ViewerFile
 
 interface CodeViewerProps {
   file: RegistryFile | null

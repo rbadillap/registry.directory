@@ -10,7 +10,7 @@ import { StatusBar } from "./viewer/status-bar"
 import { MobileTabNavigation, type MobileTab } from "./viewer/mobile-tab-navigation"
 import { cn } from "@workspace/ui/lib/utils"
 import type { DirectoryEntry, AffiliateConfig } from "@/lib/types"
-import type { RegistryListing, RegistryListingItem, RegistryItem, SourceStatus } from "@/lib/registry-types"
+import type { RegistryListing, RegistryItem, SourceStatus, ViewerFile, ViewerItem } from "@/lib/registry-types"
 import { generateGlobalsCss } from "@/lib/css-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { getTargetPath } from "@/lib/path-utils"
@@ -31,7 +31,7 @@ interface RegistryViewerProps {
   basePath: string
 }
 
-type RegistryFile = NonNullable<RegistryItem["files"]>[number]
+type RegistryFile = ViewerFile
 
 // "not-found" is the origin answering that this item is not there, which is a
 // different fact from a request that failed: one says the catalog is stale,
@@ -190,7 +190,7 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
   // Only the item view offers files to select, and there the only item on
   // screen is the one already in state — the tree passes the row it drew,
   // which carries no more than a listing needs.
-  const handleSelectFile = (_item: RegistryListingItem, file: RegistryFile) => {
+  const handleSelectFile = (_item: ViewerItem, file: ViewerFile) => {
     setSelectedFile(file)
     // Auto-switch to code tab on mobile when file is selected
     setMobileTab('code')
