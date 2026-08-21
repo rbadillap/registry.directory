@@ -236,9 +236,9 @@ function buildCollections(profiles) {
     },
     {
       slug: "weird-wonderful",
-      title: "Weird & wonderful",
+      title: "Unique by design",
       standfirst:
-        "These registries do something unusual with the format.",
+        "A look you will not find in another registry.",
       kind: "curated",
       registries: CURATED_SHELF.map(([name, reason]) => {
         const p = profiles.get(name);
