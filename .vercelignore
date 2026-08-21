@@ -1,0 +1,17 @@
+# What the CLI uploads when it deploys from here. Without this file it sends
+# almost the whole directory — the local turbo cache alone reached 4.5 GB.
+#
+# Everything under apps/web/data must NOT be listed: the build reads it, and
+# the site renders from it.
+
+.turbo
+**/.turbo
+.next
+**/.next
+.next-dev
+**/.next-dev
+node_modules
+**/node_modules
+.git
+*.log
+.DS_Store
