@@ -18,6 +18,9 @@ import { getTargetPath } from "@/lib/path-utils"
 interface RegistryViewerProps {
   registry: DirectoryEntry
   registryIndex: Registry
+  /** The registry's handle in the aggregated catalog, used to fetch file
+   *  contents from /r/{handle}/{item}.json once a reader opens a file. */
+  handle: string
   selectedItem: RegistryItem | null
   currentCategory: string
   affiliate?: AffiliateConfig | null
@@ -26,6 +29,12 @@ interface RegistryViewerProps {
 }
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
+
+type SourceState =
+  | { status: "idle" }
+  | { status: "loading" }
+  | { status: "ready" }
+  | { status: "error"; message: string }
 
 // Add globals.css file if item has cssVars
 function addGlobalsCssFile(item: RegistryItem): RegistryItem {
@@ -47,7 +56,7 @@ function addGlobalsCssFile(item: RegistryItem): RegistryItem {
   }
 }
 
-export function RegistryViewer({ registry, registryIndex, selectedItem: initialItem, currentCategory, affiliate, basePath }: RegistryViewerProps) {
+export function RegistryViewer({ registry, registryIndex, handle, selectedItem: initialItem, currentCategory, affiliate, basePath }: RegistryViewerProps) {
   const analytics = useAnalytics()
 
   // Add globals.css files to items with cssVars
@@ -60,6 +69,84 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
   const [selectedItem, setSelectedItem] = useState<RegistryItem | null>(processedInitialItem)
   const [selectedFile, setSelectedFile] = useState<RegistryFile | null>(null)
   const [mobileTab, setMobileTab] = useState<MobileTab>(initialTab)
+
+  // The page ships file paths, not file contents: the server renders from the
+  // committed catalog and never reaches a registry, which is what lets these
+  // pages be prerendered. The source arrives here, from the aggregated
+  // endpoint, and only for the item being read.
+  // Starts where the server leaves it: an item whose files have no contents is
+  // waiting for them, and the markup says so. Defaulting to idle made the
+  // first paint claim the item had no files, before anything had looked.
+  const [sourceState, setSourceState] = useState<SourceState>(() =>
+    initialItem && !initialItem.files?.some((file) => file.content)
+      ? { status: "loading" }
+      : { status: "ready" }
+  )
+
+  useEffect(() => {
+    const name = initialItem?.name
+    if (!name) {
+      setSourceState({ status: "idle" })
+      return
+    }
+    if (initialItem?.files?.some((file) => file.content)) {
+      setSourceState({ status: "ready" })
+      return
+    }
+
+    const controller = new AbortController()
+    setSourceState({ status: "loading" })
+
+    fetch(`/r/${handle}/${name}.json`, { signal: controller.signal })
+      .then(async (response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`)
+        return (await response.json()) as RegistryItem
+      })
+      .then((fetched) => {
+        const fetchedFiles = fetched.files ?? []
+        const byPath = new Map(fetchedFiles.map((file) => [file.path, file.content]))
+
+        // Some registries list an item without declaring its files, and the
+        // aggregated endpoint still resolves them. Filling in contents by path
+        // would drop every one of those, so an item that declared nothing
+        // adopts what came back.
+        const merge = (item: RegistryItem): RegistryItem => {
+          if (!item.files?.length) return { ...item, files: fetchedFiles }
+          return {
+            ...item,
+            files: item.files.map((file) => ({
+              ...file,
+              content: file.content ?? byPath.get(file.path),
+            })),
+          }
+        }
+
+        let adopted: RegistryFile | null = null
+        setSelectedItem((current) => {
+          if (!current) return current
+          const merged = merge(current)
+          if (!current.files?.length) adopted = merged.files?.[0] ?? null
+          return merged
+        })
+        setSelectedFile((current) => {
+          if (adopted) return adopted
+          if (!current) return current
+          return { ...current, content: current.content ?? byPath.get(current.path) }
+        })
+        setSourceState({ status: "ready" })
+      })
+      .catch((error: Error) => {
+        // An aborted request is this component moving on, not a failure.
+        if (error.name === "AbortError") return
+        // The origin registry is the one that failed, not this page. Say so
+        // where the source would have been, and leave the rest readable.
+        setSourceState({ status: "error", message: error.message })
+      })
+
+    return () => {
+      controller.abort()
+    }
+  }, [handle, initialItem])
 
   // Set initial selected file when component mounts or item changes
   useEffect(() => {
@@ -146,10 +233,16 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
             onSelectFile={handleSelectFile}
             currentCategory={currentCategory}
             basePath={basePath}
+            sourceStatus={sourceState.status}
           />
         </div>
         <div className={cn("h-full", mobileTab !== 'code' && "hidden")}>
-          <CodeViewer file={selectedFile} selectedItem={selectedItem} />
+          <CodeViewer
+            file={selectedFile}
+            selectedItem={selectedItem}
+            sourceStatus={sourceState.status}
+            sourceError={sourceState.status === "error" ? sourceState.message : undefined}
+          />
         </div>
         <div className={cn("h-full", mobileTab !== 'info' && "hidden")}>
           <InfoPanel item={selectedItem} />
@@ -167,13 +260,19 @@ export function RegistryViewer({ registry, registryIndex, selectedItem: initialI
               onSelectFile={handleSelectFile}
               currentCategory={currentCategory}
               basePath={basePath}
+              sourceStatus={sourceState.status}
             />
           </Panel>
 
           <PanelResizeHandle className="w-px bg-border" />
 
           <Panel defaultSize={45} minSize={35} maxSize={55}>
-            <CodeViewer file={selectedFile} selectedItem={selectedItem} />
+            <CodeViewer
+            file={selectedFile}
+            selectedItem={selectedItem}
+            sourceStatus={sourceState.status}
+            sourceError={sourceState.status === "error" ? sourceState.message : undefined}
+          />
           </Panel>
 
           <PanelResizeHandle className="w-px bg-border" />

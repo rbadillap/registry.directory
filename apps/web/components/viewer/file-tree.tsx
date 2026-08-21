@@ -33,6 +33,9 @@ interface FileTreeProps {
   currentCategory?: string
   // Route prefix ("/{owner}/{repo}" or "/{handle}") for sibling item links
   basePath: string
+  /** Whether the item's files have arrived. An item with no files yet and an
+   *  item with no files at all look the same until this says which it is. */
+  sourceStatus?: "idle" | "loading" | "ready" | "error"
 }
 
 type TreeNode = {
@@ -46,12 +49,14 @@ type TreeNode = {
 
 type PathTree = Map<string, TreeNode>
 
-function buildPathTree(items: RegistryItem[]): PathTree {
+function buildPathTree(items: RegistryItem[], itemMode: boolean): PathTree {
   const root = new Map<string, TreeNode>()
 
-  // Check if we have file content - if so, build tree from individual files
-  const firstItem = items.length > 0 ? items[0] : null
-  const hasContent = Boolean(firstItem?.files?.[0]?.content)
+  // Which view this is, stated rather than guessed. Reading a component shows
+  // its files; browsing a category shows its items — and a category can hold
+  // exactly one item, so counting them answers a different question than the
+  // one being asked. Paths, not contents, decide the shape of the tree.
+  const hasContent = itemMode
 
   for (const item of items) {
     if (!item.files || item.files.length === 0) continue
@@ -171,7 +176,7 @@ function buildPathTree(items: RegistryItem[]): PathTree {
   return root
 }
 
-export function FileTree({ items, selectedItem, selectedFile, onSelectFile, currentCategory, basePath }: FileTreeProps) {
+export function FileTree({ items, selectedItem, selectedFile, onSelectFile, currentCategory, basePath, sourceStatus = "ready" }: FileTreeProps) {
   const analytics = useAnalytics()
 
   const [openFolders, setOpenFolders] = useState<Set<string>>(
@@ -183,14 +188,15 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   // Detect if we're viewing a single item (Nivel 3) or category list (Nivel 2)
   const isItemView = selectedItem !== null
 
-  // Detect if items have file content (Nivel 3) or just metadata (Nivel 2)
-  const hasFileContent = useMemo(() => {
-    if (items.length === 0) return false
-    const firstItem = items[0]
-    return Boolean(firstItem?.files?.[0]?.content)
-  }, [items])
+  const pathTree = useMemo(
+    () => buildPathTree(items, isItemView),
+    [items, isItemView]
+  )
 
-  const pathTree = useMemo(() => buildPathTree(items), [items])
+  // The shape of the panel and whether it has anything to show are separate
+  // questions: an item always renders as a tree, and that tree is empty while
+  // its files are still on their way.
+  const treeIsEmpty = pathTree.size === 0
 
   // Auto-expand folders when a file is selected
   useEffect(() => {
@@ -540,8 +546,10 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     )
   }
 
-  // If viewing a single item without files, show empty file tree
-  if (isItemView && !hasFileContent) {
+  // An item whose tree is empty: either its files have not arrived yet, or
+  // the registry never declared any. Saying "no files" before knowing which
+  // is a guess presented as a fact.
+  if (isItemView && treeIsEmpty) {
     return (
       <div className="h-full md:border-r border-border bg-background">
         <div className="p-2 md:p-3 border-b border-border">
@@ -549,7 +557,11 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
         </div>
         <div className="flex items-center justify-center h-[calc(100%-44px)] md:h-[calc(100%-49px)] p-4">
           <p className="text-xs text-foreground-subtle text-center">
-            No files
+            {sourceStatus === "loading"
+              ? "Loading files…"
+              : sourceStatus === "error"
+                ? "This registry did not return its files"
+                : "No files"}
           </p>
         </div>
       </div>
@@ -557,7 +569,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   }
 
   // Render flat list of items (Nivel 2 - no file content)
-  if (!hasFileContent) {
+  if (!isItemView) {
     const categoryLabel = currentCategory ? REGISTRY_TYPE_LABELS[currentCategory] || currentCategory : "Items"
 
     // Filter items based on search query (match name, title, description)
@@ -605,7 +617,8 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
               filteredItems
                 .sort((a, b) => a.name.localeCompare(b.name))
                 .map((item) => {
-                  const isSelected = selectedItem?.name === item.name
+                  // Nothing is selected in a category listing — selecting an
+                  // item is what navigates away from it.
                   const Icon = getItemIcon(item.type)
 
                   return (
@@ -615,7 +628,6 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                       className={cn(
                         "flex items-start gap-2 w-full px-2 py-1.5 rounded",
                         "hover:bg-accent transition-colors",
-                        isSelected && "bg-surface-elevated"
                       )}
                     >
                       <Icon className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />

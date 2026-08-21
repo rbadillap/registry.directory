@@ -14,6 +14,7 @@ import {
 import { registryFetch } from "@/lib/fetch-utils"
 import { getAffiliates } from "@/lib/affiliates"
 import { loadRegistryIndex, parseGithubRef } from "@/lib/resolve-registry"
+import { loadRegistryView } from "@/lib/registry-data"
 import { JsonLd } from "@/components/json-ld"
 import {
   buildBreadcrumbSchema,
@@ -161,13 +162,13 @@ export async function RegistrySlugView({
   basePath: string
   slug: string
 }) {
-  const registryIndex = await loadRegistryIndex(registry)
-  if (!registryIndex) {
+  const view = await loadRegistryView(registry)
+  if (!view) {
     notFound()
   }
 
   const [categoriesMap, affiliates] = await Promise.all([
-    Promise.resolve(groupItemsByCategory(registryIndex.items)),
+    Promise.resolve(groupItemsByCategory(view.items)),
     getAffiliates(),
   ])
   const affiliate = affiliates[registry.url] ?? null
@@ -185,7 +186,8 @@ export async function RegistrySlugView({
     }
 
     const filteredRegistry: Registry = {
-      ...registryIndex,
+      name: view.name,
+      homepage: view.homepage,
       items: categoryItems,
     }
 
@@ -202,6 +204,7 @@ export async function RegistrySlugView({
         <RegistryViewer
           registry={registry}
           registryIndex={filteredRegistry}
+          handle={view.key}
           selectedItem={null}
           currentCategory={slug}
           affiliate={affiliate}
@@ -211,8 +214,15 @@ export async function RegistrySlugView({
     )
   }
 
-  // Item view: show specific item
-  const itemData = await fetchItemData(registry, slug)
+  // Item view. The item comes from the committed view, not from its origin:
+  // everything rendered on the server — name, description, type, dependencies,
+  // file paths — is metadata, and metadata is what data/ holds. The file
+  // contents arrive later, from /r, once a reader opens a file.
+  //
+  // Fetching here instead would put a third-party request in the render path,
+  // and a page that cannot be rendered without the network cannot be
+  // prerendered.
+  const itemData = view.items.find((item) => item.name === slug)
   if (!itemData) {
     notFound()
   }
@@ -225,7 +235,8 @@ export async function RegistrySlugView({
   const categoryItems = categoriesMap.get(currentCategory) || []
 
   const filteredRegistry: Registry = {
-    ...registryIndex,
+    name: view.name,
+    homepage: view.homepage,
     items: categoryItems,
   }
 
@@ -253,6 +264,7 @@ export async function RegistrySlugView({
       <RegistryViewer
         registry={registry}
         registryIndex={filteredRegistry}
+        handle={view.key}
         selectedItem={itemData}
         currentCategory={currentCategory}
         affiliate={affiliate}

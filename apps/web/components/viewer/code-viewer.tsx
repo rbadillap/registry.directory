@@ -16,6 +16,11 @@ type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 interface CodeViewerProps {
   file: RegistryFile | null
   selectedItem?: RegistryItem | null
+  /** Whether the file's source has arrived yet. Paths render from the
+   *  committed catalog; contents are fetched separately. */
+  sourceStatus?: "idle" | "loading" | "ready" | "error"
+  /** What the origin registry answered when the source could not be read. */
+  sourceError?: string
 }
 
 function getLanguageFromPath(path: string): string {
@@ -48,7 +53,7 @@ function getLanguageFromPath(path: string): string {
   return extensionMap[extension] || "text"
 }
 
-export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
+export function CodeViewer({ file, selectedItem, sourceStatus = "ready", sourceError }: CodeViewerProps) {
   const analytics = useAnalytics()
   const { resolvedTheme } = useTheme()
   const [highlightedCode, setHighlightedCode] = useState<string>("")
@@ -56,14 +61,18 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
-    if (!file) {
+    // No source yet: the same file is highlighted twice, once empty and once
+    // with its contents, and the empty pass can finish last. Skipping it means
+    // there is only ever one result to keep.
+    if (!file?.content) {
       setHighlightedCode("")
+      setIsLoading(false)
       return
     }
 
+    let current = true
     setIsLoading(true)
     const language = getLanguageFromPath(file.path)
-    const code = file.content || ""
     const isDark = resolvedTheme === "dark"
     const shikiTheme = isDark ? "github-dark" : "github-light"
 
@@ -73,23 +82,41 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
       ? { "#24292e": "transparent" }
       : { "#fff": "transparent", "#ffffff": "transparent" }
 
-    codeToHtml(code, {
+    codeToHtml(file.content, {
       lang: language,
       theme: shikiTheme,
       colorReplacements,
     })
       .then((html: string) => {
+        if (!current) return
         setHighlightedCode(html)
         setIsLoading(false)
       })
       .catch((error: unknown) => {
+        if (!current) return
         console.error("Error highlighting code:", error)
         setHighlightedCode("")
         setIsLoading(false)
       })
+
+    return () => {
+      current = false
+    }
   }, [file, resolvedTheme])
 
   // If there's a selected item but no files
+  // No file picked yet while the source is on its way. The item may well have
+  // files — nothing has looked yet — so the "no files" copy below would be a
+  // conclusion drawn before the evidence.
+  if (!file && selectedItem && sourceStatus === "loading") {
+    return (
+      <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
+        <p className="text-sm mb-2">Loading source…</p>
+        <p className="text-xs text-foreground-subtle">{selectedItem.name}</p>
+      </div>
+    )
+  }
+
   if (!file && selectedItem) {
     return (
       <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
@@ -122,6 +149,24 @@ export function CodeViewer({ file, selectedItem }: CodeViewerProps) {
       <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
         <p className="text-sm mb-2">Select a component to view its code</p>
         <p className="text-xs text-foreground-subtle">Click on any item in the sidebar to get started</p>
+      </div>
+    )
+  }
+
+  // The path is known and the source is not, which is a state of its own:
+  // the file exists, and either it is on its way or its origin refused it.
+  if (!file.content && sourceStatus !== "ready") {
+    const failed = sourceStatus === "error"
+    return (
+      <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
+        <p className="text-sm mb-2">
+          {failed ? "This registry did not return the source" : "Loading source…"}
+        </p>
+        <p className="text-xs text-foreground-subtle">
+          {failed
+            ? `${getFileName(getTargetPath(file))}${sourceError ? ` — ${sourceError}` : ""}`
+            : getFileName(getTargetPath(file))}
+        </p>
       </div>
     )
   }
