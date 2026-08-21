@@ -4,6 +4,11 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Star } from "lucide-react"
 import {
+  PRO_OFFERING_LABELS,
+  REGISTRY_TYPE_LABELS,
+  typeToSlug,
+} from "@/lib/registry-mappings"
+import {
   Avatar,
   AvatarFallback,
   AvatarImage,
@@ -69,7 +74,17 @@ function CollectionHeader({ collection }: { collection: Collection }) {
 function MetaRow({ registry }: { registry: CollectionCard }) {
   const parts: string[] = []
   if (registry.itemCount) parts.push(`${formatCount(registry.itemCount)} items`)
-  if (registry.types?.length) parts.push(registry.types.join(" · "))
+  // The indexer sends registry:* keys; the words live here.
+  if (registry.types?.length) {
+    parts.push(
+      registry.types
+        .map((type) => {
+          const slug = typeToSlug(type)
+          return (slug && REGISTRY_TYPE_LABELS[slug]) || type.replace("registry:", "")
+        })
+        .join(" · ")
+    )
+  }
   return (
     <div className="flex flex-col gap-1 font-mono text-[11px] text-muted-foreground">
       <div className="flex items-center justify-between gap-2">
@@ -97,7 +112,7 @@ function ProChips({ registry }: { registry: CollectionCard }) {
           key={chip}
           className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground border border-border-subtle px-1.5 py-0.5"
         >
-          {chip}
+          {PRO_OFFERING_LABELS[chip] ?? chip}
         </span>
       ))}
     </div>
@@ -414,7 +429,7 @@ export function LabsHome({
 
       <JustShipped shipped={shipped} />
 
-      <WhatsNew shipped={shipped} collections={data} />
+      <WhatsNew shipped={shipped} />
 
       {collections.length === 0 ? (
         <p className="px-4 md:px-8 py-12 border-t border-border-subtle font-mono text-sm text-muted-foreground">

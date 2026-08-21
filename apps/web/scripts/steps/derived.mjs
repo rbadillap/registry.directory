@@ -28,26 +28,6 @@ import {
   writeJsonFile,
 } from "../lib/data-io.mjs";
 
-const TYPE_LABELS = {
-  "registry:block": "blocks",
-  "registry:ui": "ui",
-  "registry:component": "components",
-  "registry:hook": "hooks",
-  "registry:lib": "lib",
-  "registry:theme": "themes",
-  "registry:style": "styles",
-  "registry:page": "pages",
-  "registry:file": "files",
-  "registry:item": "items",
-};
-
-const PRO_CHIP_LABELS = {
-  pro_blocks: "pro blocks",
-  templates: "templates",
-  figma_kit: "figma",
-  mcp_agent: "mcp",
-  team_license: "team",
-};
 
 function href(entry) {
   const m = entry.github_url?.match(/github\.com\/([^/]+)\/([^/]+)/);
@@ -103,13 +83,16 @@ function card(profile, evidence) {
   const { entry } = profile;
   const h = href(entry);
   if (!h) return null;
+  // The two commonest types and the offerings, as the schema names them.
+  // Turning either into words is the interface's job: it already owns that
+  // vocabulary, and a second copy here drifts from it without anyone noticing.
   const types = Object.entries(profile.byType)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 2)
-    .map(([t]) => TYPE_LABELS[t] ?? t.replace("registry:", ""));
+    .map(([t]) => t);
   const proFlags = Object.entries(entry.pro ?? {})
     .filter(([, v]) => v === true)
-    .map(([k]) => PRO_CHIP_LABELS[k] ?? k);
+    .map(([k]) => k);
   return {
     name: entry.name,
     href: h,
@@ -309,10 +292,14 @@ function buildShipped(snapshots, directory) {
       const old = new Set(prior.registries[name].items.map((i) => i.name));
       const added = raw.items.map((i) => i.name).filter((n) => !old.has(n));
       if (added.length === 0) continue;
+      // The link travels with the entry. Looking it up in the collections
+      // made a registry's page reachable only while it belonged to one.
+      const directoryEntry = byName.get(name);
       entries.push({
         date: snap.date,
         registry: name,
-        avatar: byName.get(name)?.github_profile ?? null,
+        avatar: directoryEntry?.github_profile ?? null,
+        href: directoryEntry ? href(directoryEntry) : null,
         added,
       });
     }

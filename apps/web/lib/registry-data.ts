@@ -147,10 +147,12 @@ export interface CollectionCard {
   avatar?: string
   description: string
   itemCount?: number
+  /** The two commonest registry:* types, as the schema names them. */
   types?: string[]
   stars?: number
   updated?: string
   updatedDays?: number
+  /** Declared paid offerings, by their schema key. */
   pro?: string[]
   sponsored?: boolean
   /** Why this registry is in this collection — "motion×466". */
@@ -182,6 +184,8 @@ export interface ShippedEntry {
   date: string
   registry: string
   avatar: string | null
+  /** Route on this site, or null for an entry with no page of its own. */
+  href: string | null
   added: string[]
 }
 

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 import Link from "next/link"
-import type { CollectionsFile, ShippedEntry, ShippedFile } from "@/lib/registry-data"
+import type { ShippedEntry, ShippedFile } from "@/lib/registry-data"
 
 // What's new — a changelog wall over shipped.json: one cell per registry that
 // added items inside the rolling window. Sits directly below the Just shipped
@@ -76,22 +76,7 @@ function summarize(added: string[]): string {
   return `${added.length} new components`
 }
 
-function registryHrefs(collections: CollectionsFile | null): Map<string, string> {
-  const hrefs = new Map<string, string>()
-  for (const collection of collections?.collections ?? []) {
-    for (const registry of collection.registries) {
-      const key = registry.name.toLowerCase()
-      if (!hrefs.has(key)) hrefs.set(key, registry.href)
-    }
-  }
-  return hrefs
-}
-
-function buildCells(
-  shipped: ShippedFile | null,
-  collections: CollectionsFile | null
-): UpdateCell[] {
-  const hrefs = registryHrefs(collections)
+function buildCells(shipped: ShippedFile | null): UpdateCell[] {
   const entries = [...(shipped?.entries ?? [])].sort(
     (a, b) => b.added.length - a.added.length || b.date.localeCompare(a.date)
   )
@@ -101,7 +86,7 @@ function buildCells(
     date: entry.date,
     title: summarize(entry.added),
     detail: entry.added.join(", "),
-    href: hrefs.get(entry.registry.toLowerCase()),
+    href: entry.href ?? undefined,
   }))
 }
 
@@ -231,14 +216,8 @@ function RegistrationMarks() {
 // Section
 // ---------------------------------------------------------------------------
 
-export function WhatsNew({
-  shipped,
-  collections,
-}: {
-  shipped: ShippedFile | null
-  collections: CollectionsFile | null
-}) {
-  const cells = buildCells(shipped, collections)
+export function WhatsNew({ shipped }: { shipped: ShippedFile | null }) {
+  const cells = buildCells(shipped)
   const featured = cells[0]
   const rest = cells.slice(1)
 
