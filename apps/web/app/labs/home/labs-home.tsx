@@ -46,7 +46,7 @@ function CollectionHeader({ collection }: { collection: Collection }) {
   return (
     <header className="flex flex-col gap-1.5">
       <div className="flex items-baseline gap-3">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-balance">
+        <h2 className="type-section text-balance">
           {collection.title}
         </h2>
         <span
@@ -60,7 +60,7 @@ function CollectionHeader({ collection }: { collection: Collection }) {
         </span>
       </div>
       <p className="text-sm text-muted-foreground max-w-xl text-pretty">{collection.standfirst}</p>
-      <code className="mt-1 w-fit text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
+      <code className="mt-1 w-fit type-meta text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
         {collection.criterion}
       </code>
     </header>
@@ -86,7 +86,7 @@ function MetaRow({ registry }: { registry: CollectionCard }) {
     )
   }
   return (
-    <div className="flex flex-col gap-1 font-mono text-[11px] text-muted-foreground">
+    <div className="flex flex-col gap-1 type-meta text-muted-foreground">
       <div className="flex items-center justify-between gap-2">
         <span className="truncate">{parts.join(" · ")}</span>
         {typeof registry.stars === "number" && (
@@ -110,7 +110,7 @@ function ProChips({ registry }: { registry: CollectionCard }) {
       {registry.pro.map((chip) => (
         <span
           key={chip}
-          className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground border border-border-subtle px-1.5 py-0.5"
+          className="type-label text-muted-foreground border border-border-subtle px-1.5 py-0.5"
         >
           {PRO_OFFERING_LABELS[chip] ?? chip}
         </span>
@@ -134,7 +134,7 @@ function RegistryCard({
       }`}
     >
       {registry.sponsored && (
-        <span className="absolute top-0 right-0 font-mono text-[9px] uppercase tracking-wider text-muted-foreground bg-secondary border-b border-l border-border-subtle px-1.5 py-0.5">
+        <span className="absolute top-0 right-0 type-label text-muted-foreground bg-secondary border-b border-l border-border-subtle px-1.5 py-0.5">
           Sponsored
         </span>
       )}
@@ -162,7 +162,7 @@ function RegistryCard({
           {registry.description}
         </p>
         {registry.evidence && (
-          <code className="mt-1 font-mono text-[10px] text-muted-foreground">
+          <code className="mt-1 type-label text-muted-foreground">
             {registry.evidence}
           </code>
         )}
@@ -238,14 +238,14 @@ function TickerRow({ entry }: { entry: ShippedEntry }) {
       </Avatar>
       <div className="min-w-0 flex-1">
         <div className="flex items-baseline justify-between gap-3">
-          <span className="truncate text-sm font-semibold tracking-tight">
+          <span className="truncate type-card">
             {entry.registry}
           </span>
-          <span className="shrink-0 font-mono text-[11px] text-muted-foreground">
+          <span className="shrink-0 type-meta text-muted-foreground">
             +{entry.added.length} · {timeAgo(entry.date)}
           </span>
         </div>
-        <p className="truncate font-mono text-[11px] text-muted-foreground">
+        <p className="truncate type-meta text-muted-foreground">
           {entry.added.join(" · ")}
         </p>
       </div>
@@ -336,16 +336,16 @@ export function JustShipped({ shipped }: { shipped: ShippedFile | null }) {
       <div className="max-w-6xl mx-auto flex flex-col gap-5">
         <header className="flex flex-wrap items-baseline justify-between gap-3">
           <div className="flex items-baseline gap-4">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+            <h2 className="type-section">
               Just shipped
             </h2>
             {entries.length > 0 && (
-              <span className="font-mono text-[11px] text-muted-foreground">
+              <span className="type-meta text-muted-foreground">
                 {totalShipped} new items across {entries.length} registries
               </span>
             )}
           </div>
-          <code className="text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
+          <code className="type-meta text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
             Components published in the last {shipped?.windowDays ?? 1} days
           </code>
         </header>
@@ -381,10 +381,10 @@ export function LabsHome({
       <header className="px-4 md:px-8 pt-10 pb-12 max-w-6xl mx-auto w-full">
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-baseline gap-3">
-            <h1 className="text-lg font-semibold tracking-tight">
+            <h1 className="type-title">
               registry.directory
             </h1>
-            <code className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground border border-border-subtle px-1.5 py-0.5">
+            <code className="type-label text-muted-foreground border border-border-subtle px-1.5 py-0.5">
               labs / collections v0.4
             </code>
           </div>
@@ -394,7 +394,7 @@ export function LabsHome({
           the criterion that formed it.
         </p>
         {meta && (
-          <p className="mt-2 text-[11px] font-mono text-muted-foreground">
+          <p className="mt-2 type-meta text-muted-foreground">
             snapshot {meta.date}
             {meta.indexesOk !== undefined &&
               meta.indexesTotal !== undefined &&
@@ -413,11 +413,11 @@ export function LabsHome({
             Search{meta ? ` ${meta.totalItems.toLocaleString("en-US")}` : ""} items
             {meta?.indexesOk ? ` across ${meta.indexesOk} registries` : ""}…
           </span>
-          <kbd className="font-mono text-[10px] uppercase text-muted-foreground border border-border-subtle px-1.5 py-0.5">
+          <kbd className="type-label text-muted-foreground border border-border-subtle px-1.5 py-0.5">
             P
           </kbd>
         </Link>
-        <div className="mt-4 flex items-center gap-4 font-mono text-[11px] text-muted-foreground">
+        <div className="mt-4 flex items-center gap-4 type-meta text-muted-foreground">
           <span className="flex items-center gap-1.5">
             <span aria-hidden="true" className="size-1.5 rounded-full bg-chart-2" /> computed
           </span>

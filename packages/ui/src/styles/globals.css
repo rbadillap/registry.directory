@@ -137,6 +137,51 @@
   --color-border-subtle: var(--border-subtle);
 }
 
+/* Typographic roles.
+   The scale lives here so that changing it is one edit rather than a sweep
+   through every component that happened to pick a size. Components name the
+   role they are playing; what that role looks like is decided in this file.
+
+   Two families, two jobs: the sans carries what is being said, the mono
+   carries what is being measured. */
+@utility type-section {
+  font-size: 1.5rem;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  @media (width >= 48rem) {
+    font-size: 1.875rem;
+  }
+}
+
+@utility type-title {
+  font-size: 1.125rem;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@utility type-card {
+  font-size: 0.875rem;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@utility type-meta {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.45;
+}
+
+@utility type-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 /* Long lists: the browser skips layout and paint for rows below the fold.
    Declared once rather than written on every row — a megacatalogue renders
    thousands of them, and the class name travels in the HTML each time. */

@@ -96,7 +96,7 @@ function buildCells(shipped: ShippedFile | null): UpdateCell[] {
 
 function Tag({ cell }: { cell: UpdateCell }) {
   return (
-    <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+    <span className="shrink-0 type-label uppercase tracking-[0.14em] text-muted-foreground">
       {cell.tag}
     </span>
   )
@@ -106,7 +106,7 @@ function Tag({ cell }: { cell: UpdateCell }) {
 function ViewLink({ cell }: { cell: UpdateCell }) {
   if (!cell.href) return null
   return (
-    <span className="mt-auto pt-6 font-mono text-[11px] text-muted-foreground group-hover:text-foreground group-hover:underline underline-offset-4">
+    <span className="mt-auto pt-6 type-meta text-muted-foreground group-hover:text-foreground group-hover:underline underline-offset-4">
       View registry →
     </span>
   )
@@ -154,7 +154,7 @@ function FeaturedCell({ cell, span }: { cell: UpdateCell; span: boolean }) {
         }}
       />
       <div className="relative flex items-start justify-between gap-4">
-        <span className="font-mono text-[11px] text-muted-foreground">
+        <span className="type-meta text-muted-foreground">
           {formatDate(cell.date, true)}
         </span>
         <Tag cell={cell} />
@@ -174,7 +174,7 @@ function UpdateCellView({ cell }: { cell: UpdateCell }) {
   return (
     <CellFrame href={cell.href} className="min-h-[13rem]">
       <div className="flex items-start justify-between gap-4">
-        <span className="font-mono text-[11px] text-muted-foreground">
+        <span className="type-meta text-muted-foreground">
           {formatDate(cell.date, false)}
         </span>
         <Tag cell={cell} />
@@ -240,7 +240,7 @@ export function WhatsNew({ shipped }: { shipped: ShippedFile | null }) {
               The latest components shipping across the shadcn ecosystem.
             </p>
           </div>
-          <code className="text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
+          <code className="type-meta text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
             The registries that published the most, first
           </code>
         </header>

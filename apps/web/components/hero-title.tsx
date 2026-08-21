@@ -17,7 +17,7 @@ export function HeroTitle() {
   }, [progress, showBadge]);
 
   return (
-    <h1 className="text-base font-medium font-mono relative">
+    <h1 className="type-title font-mono relative">
       <span className="relative inline-flex">
         <span className="text-muted-foreground/30">
           registry<span>.directory</span>
