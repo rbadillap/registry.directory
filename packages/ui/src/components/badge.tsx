@@ -4,20 +4,17 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "../lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2",
   {
     variants: {
       variant: {
-        // Semantic tokens, not fixed neutrals: these were written against a
-        // dark background, so in light mode a badge was either a dark pill on
-        // a pale surface or grey text with no contrast behind it.
         default:
-          "border-transparent bg-foreground text-background hover:bg-foreground/90",
+          "border-transparent bg-neutral-700 text-white hover:bg-neutral-700/80",
         secondary:
-          "border-border bg-surface-elevated text-foreground-secondary hover:bg-accent",
+          "border-neutral-700/50 bg-neutral-900 text-neutral-300 hover:bg-neutral-800",
         destructive:
-          "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border-border text-foreground-secondary",
+          "border-transparent bg-red-700 text-white hover:bg-red-700/80",
+        outline: "border-neutral-700/50 text-neutral-300",
       },
     },
     defaultVariants: {
