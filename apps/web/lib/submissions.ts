@@ -128,16 +128,6 @@ function getBlobFilename(id: string): string {
   return `submissions/pending/${id}.json`;
 }
 
-function getBlobPublicUrl(filename: string): string | null {
-  const blobToken = process.env.BLOB_READ_WRITE_TOKEN;
-  if (!blobToken) return null;
-
-  const storeMatch = blobToken.match(/vercel_blob_rw_([^_]+)_/);
-  if (!storeMatch) return null;
-
-  return `https://${storeMatch[1]}.public.blob.vercel-storage.com/${filename}`;
-}
-
 export interface PendingSubmissionRef {
   submitted_at: string;
 }

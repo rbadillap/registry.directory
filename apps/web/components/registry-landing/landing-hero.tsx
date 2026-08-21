@@ -24,6 +24,12 @@ export function LandingHero({
     <div className="flex min-w-0 flex-col gap-5">
       <div className="flex items-center gap-4">
         {registry.github_profile && (
+          // A registry's avatar is hosted by GitHub, is the same handful of
+          // images across the site, and never renders larger than 56px. Routing
+          // it through next/image would move the bytes onto this project's bill
+          // — transformations, cache writes, cache reads and origin transfer —
+          // to optimise something that is not the largest paint on any page.
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={registry.github_profile}
             alt=""

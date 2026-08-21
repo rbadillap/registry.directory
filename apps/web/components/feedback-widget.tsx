@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@workspace/ui/components/button";
-import { cn } from "@workspace/ui/lib/utils";
 import { Bug, CircleHelp, Lightbulb, MessageSquare, X, type LucideIcon } from "lucide-react";
 import type { FeedbackType } from "@/lib/feedback";
 
@@ -19,10 +18,6 @@ export function FeedbackWidget({ inline = false }: { inline?: boolean } = {}) {
   const [type, setType] = useState<FeedbackType>("confusing");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
-
-  if (process.env.NEXT_PUBLIC_FEEDBACK_ENABLED !== "true") {
-    return null;
-  }
 
   const toggle = useCallback(() => setIsOpen((o) => !o), []);
 
@@ -77,6 +72,13 @@ export function FeedbackWidget({ inline = false }: { inline?: boolean } = {}) {
     } catch {
       setStatus("error");
     }
+  }
+
+  // Every hook above runs on every render. The flag decides what to paint,
+  // not whether to call them: a return placed before them would change the
+  // order React sees the moment the flag ever changed.
+  if (process.env.NEXT_PUBLIC_FEEDBACK_ENABLED !== "true") {
+    return null;
   }
 
   if (!isOpen) {

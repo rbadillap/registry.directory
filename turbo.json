@@ -1,12 +1,13 @@
 {
   "$schema": "https://v2-8-7.turborepo.dev/schema.json",
   "ui": "tui",
+  "globalEnv": ["SUBMISSION_SECRET", "CRON_SECRET"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**"],
-      "env": ["NODE_ENV", "BLOB_READ_WRITE_TOKEN"]
+      "env": ["NODE_ENV", "BLOB_READ_WRITE_TOKEN", "SUBMISSION_SECRET", "CRON_SECRET"]
     },
     "lint": {
       "dependsOn": ["^lint"]
