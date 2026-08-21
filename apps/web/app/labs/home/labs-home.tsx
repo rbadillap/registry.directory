@@ -9,13 +9,7 @@ import {
   AvatarImage,
 } from "@workspace/ui/components/avatar"
 import { WhatsNew } from "./whats-new"
-import type {
-  CollectionsFile,
-  LabCollection,
-  LabRegistryCard,
-  ShippedEntry,
-  ShippedFile,
-} from "./types"
+import type { Collection, CollectionCard, CollectionsFile, ShippedEntry, ShippedFile } from "@/lib/registry-data"
 
 // v0.4 — layout settled (stack), life settled (the shipped ticker, full-width
 // with discrete steps). Data settled too: everything on this page comes from
@@ -43,7 +37,7 @@ function timeAgo(dateStr: string): string {
 // produced the group, rendered as a specimen label.
 // ---------------------------------------------------------------------------
 
-function CollectionHeader({ collection }: { collection: LabCollection }) {
+function CollectionHeader({ collection }: { collection: Collection }) {
   return (
     <header className="flex flex-col gap-1.5">
       <div className="flex items-baseline gap-3">
@@ -72,7 +66,7 @@ function CollectionHeader({ collection }: { collection: LabCollection }) {
 // Registry cards
 // ---------------------------------------------------------------------------
 
-function MetaRow({ registry }: { registry: LabRegistryCard }) {
+function MetaRow({ registry }: { registry: CollectionCard }) {
   const parts: string[] = []
   if (registry.itemCount) parts.push(`${formatCount(registry.itemCount)} items`)
   if (registry.types?.length) parts.push(registry.types.join(" · "))
@@ -94,7 +88,7 @@ function MetaRow({ registry }: { registry: LabRegistryCard }) {
   )
 }
 
-function ProChips({ registry }: { registry: LabRegistryCard }) {
+function ProChips({ registry }: { registry: CollectionCard }) {
   if (!registry.pro?.length) return null
   return (
     <div className="flex flex-wrap gap-1">
@@ -114,7 +108,7 @@ function RegistryCard({
   registry,
   lead = false,
 }: {
-  registry: LabRegistryCard
+  registry: CollectionCard
   lead?: boolean
 }) {
   return (
@@ -171,7 +165,7 @@ function RegistryCard({
 // beside a lead-first card grid.
 // ---------------------------------------------------------------------------
 
-function StackSections({ collections }: { collections: LabCollection[] }) {
+function StackSections({ collections }: { collections: Collection[] }) {
   return (
     <div className="flex flex-col">
       {collections.map((collection) => (

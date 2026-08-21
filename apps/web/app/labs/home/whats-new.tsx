@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 import Link from "next/link"
-import type { CollectionsFile, ShippedEntry, ShippedFile } from "./types"
+import type { CollectionsFile, ShippedEntry, ShippedFile } from "@/lib/registry-data"
 
 // What's new — a changelog wall over shipped.json: one cell per registry that
 // added items inside the rolling window. Sits directly below the Just shipped
