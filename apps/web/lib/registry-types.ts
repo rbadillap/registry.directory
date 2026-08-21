@@ -68,10 +68,10 @@ export interface RegistryListing {
  *
  * Derived from the schema so the two cannot drift apart when it changes.
  */
-export type ViewerFile = Pick<SchemaFile, "path" | "type"> & {
-  target?: string
-  content?: string
-}
+export type ViewerFile = Pick<
+  SchemaFile,
+  "path" | "type" | "target" | "content"
+>
 
 export type ViewerItem = Pick<
   SchemaRegistryItem,
