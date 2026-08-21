@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { ScrollArea } from "@workspace/ui/components/scroll-area"
 import { Badge } from "@workspace/ui/components/badge"
-import { Card, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card"
 import {
   Package,
   FileCode,
@@ -90,10 +89,10 @@ export function InfoPanel({ item }: InfoPanelProps) {
 
       <div className="flex-1 min-h-0">
         <ScrollArea className="h-full">
-          <div className="p-3 md:p-4 space-y-5 md:space-y-6">
-            {/* Main Info Card */}
-            <Card className="bg-surface/50 border-border shadow-none">
-              <CardContent className="p-3 md:pt-5 md:px-6 md:pb-6 space-y-4 md:space-y-5">
+          {/* One continuous surface. Sections are told apart by a rule and by
+              the room around them, not by boxing each one. */}
+          <div className="divide-y divide-border">
+            <section className="px-4 md:px-6 py-5 md:py-6 space-y-5 md:space-y-6">
                 {/* Name and Type */}
                 <div className="flex gap-3 items-start">
                   <div className="flex-1 min-w-0 space-y-1">
@@ -162,19 +161,14 @@ export function InfoPanel({ item }: InfoPanelProps) {
                     </div>
                   </div>
                 )}
-              </CardContent>
-            </Card>
+            </section>
 
-            {/* Dependencies Card */}
             {allDeps.length > 0 && (
-              <Card className="bg-surface/50 border-border shadow-none">
-                <CardHeader className="pb-2 pt-3 md:pt-4 px-3 md:px-4">
-                  <CardTitle className="text-sm flex items-center gap-2">
-                    <Package className="h-3.5 w-3.5" />
-                    Dependencies
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="px-3 md:px-4 pb-4 md:pb-5 space-y-4 md:space-y-5">
+              <section className="px-4 md:px-6 py-5 md:py-6 space-y-5 md:space-y-6">
+                <h2 className="text-sm font-medium flex items-center gap-2">
+                  <Package className="h-3.5 w-3.5 text-muted-foreground" />
+                  Dependencies
+                </h2>
                   {item.dependencies && item.dependencies.length > 0 && (
                     <div className="space-y-2">
                       <div className="text-xs text-muted-foreground uppercase tracking-wider">npm packages</div>
@@ -199,8 +193,7 @@ export function InfoPanel({ item }: InfoPanelProps) {
                       </div>
                     </div>
                   )}
-                </CardContent>
-              </Card>
+              </section>
             )}
           </div>
         </ScrollArea>
