@@ -14,6 +14,24 @@ interface ScoredItem {
  * - "button tailark" → Tailark items matching "button"
  * - Exact name matches score highest, registry name matches lowest
  */
+/**
+ * Lowercased, with the separators component names use — hyphens, underscores,
+ * slashes — read as spaces.
+ *
+ * A person types "alert dialog"; the registry published "alert-dialog". Those
+ * are the same words, and the only thing between them is punctuation nobody
+ * says out loud. Applying this to the query and to the text being searched
+ * means either spelling finds the other.
+ */
+export function normalizeForSearch(text: string): string {
+  return text.toLowerCase().replace(/[-_/]+/g, " ").replace(/\s+/g, " ").trim()
+}
+
+/** The words of a query, separators included as breaks. */
+export function searchTerms(query: string): string[] {
+  return normalizeForSearch(query).split(" ").filter(Boolean)
+}
+
 export function searchItems(
   items: IndexedItem[],
   query: string
