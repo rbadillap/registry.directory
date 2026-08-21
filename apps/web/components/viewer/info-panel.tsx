@@ -121,10 +121,11 @@ export function InfoPanel({ item }: InfoPanelProps) {
                   <div className="space-y-2 pt-4 border-t border-border">
                     <div className="flex items-center gap-2">
                       <FileCode className="h-3.5 w-3.5 text-muted-foreground" />
-                      <span className="text-xs text-muted-foreground uppercase tracking-wider">Files</span>
-                      <Badge variant="secondary" className="ml-auto text-xs h-5">
-                        {item.files.length}
-                      </Badge>
+                      {/* A count is not a label. Setting it in the heading
+                          reads as one line instead of a word and a chip. */}
+                      <span className="text-xs text-muted-foreground uppercase tracking-wider">
+                        Files · {item.files.length}
+                      </span>
                     </div>
                     <div className="space-y-1.5">
                       {item.files.map((file, index) => {

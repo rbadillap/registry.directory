@@ -16,6 +16,7 @@ import {
   Code2,
   LayoutGrid,
   Diamond,
+  Search,
 } from "lucide-react"
 import { cn } from "@workspace/ui/lib/utils"
 import type { RegistryItem } from "@/lib/registry-types"
@@ -571,6 +572,10 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     return (
       <div className="h-full md:border-r border-border bg-background">
         <div className="p-2 md:p-3 border-b border-border">
+          {/* The field was a bare line of label-looking text: it read as a
+              heading rather than as somewhere to type. */}
+          <div className="flex items-center gap-2">
+          <Search className="h-3.5 w-3.5 text-muted-foreground flex-shrink-0" />
           <input
             type="text"
             value={searchQuery}
@@ -589,9 +594,10 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                 })
               }
             }}
-            placeholder={`${categoryLabel} (${items.length})`}
-            className="w-full bg-transparent text-xs font-medium text-muted-foreground uppercase tracking-wider placeholder:text-muted-foreground focus:outline-none focus:text-muted-foreground"
+            placeholder={`Search (${items.length} ${categoryLabel.toLowerCase()})`}
+            className="w-full bg-transparent text-xs font-medium text-foreground uppercase tracking-wider placeholder:text-muted-foreground focus:outline-none"
           />
+          </div>
           {searchQuery && (
             <div className="text-[10px] text-foreground-subtle mt-1">
               {filteredItems.length} of {items.length} items
