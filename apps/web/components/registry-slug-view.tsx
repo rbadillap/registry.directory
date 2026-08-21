@@ -2,7 +2,7 @@ import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import { RegistryViewer } from "@/components/registry-viewer"
 import type { DirectoryEntry } from "@/lib/types"
-import type { Registry, RegistryItem } from "@/lib/registry-types"
+import type { RegistryItem, RegistryListing, RegistryListingItem } from "@/lib/registry-types"
 import {
   slugToType,
   typeToSlug,
@@ -50,7 +50,16 @@ function socialImages(registry: DirectoryEntry, slug: string, alt: string) {
 // the words its filter searches. The rest of the record — dependencies, style
 // variables, every file past the first — is never read there, and a category
 // can hold thousands of items.
-function forListing(item: RegistryItem): RegistryItem {
+type SchemaFile = NonNullable<RegistryItem["files"]>[number]
+
+// Same file, minus its contents. The cast is over a projection that keeps
+// every field the schema's union discriminates on.
+function withoutContent(file: SchemaFile): SchemaFile {
+  const { content: _content, ...meta } = file
+  return meta as SchemaFile
+}
+
+function forListing(item: RegistryItem): RegistryListingItem {
   // Named one by one, on purpose. Removing the fields a listing does not read
   // would leak every field added to RegistryItem later; naming the ones it
   // does read means a new field has to be asked for before it can travel.
@@ -61,11 +70,10 @@ function forListing(item: RegistryItem): RegistryItem {
     ...(item.title ? { title: item.title } : {}),
     ...(item.description ? { description: item.description } : {}),
     // Only the first file, and only where it installs: that is what a row
-    // shows and what the grouping logic reads.
-    ...(first
-      ? { files: [{ path: first.path, type: first.type, target: first.target }] }
-      : {}),
-  } as RegistryItem
+    // shows and what the grouping logic reads. Its contents are the whole
+    // reason a category is heavy, and a row never displays them.
+    ...(first ? { files: [withoutContent(first)] } : {}),
+  }
 }
 
 // Metadata for a category-or-item view living at `${basePath}/${slug}`.
@@ -171,7 +179,7 @@ export async function RegistrySlugView({
       notFound()
     }
 
-    const filteredRegistry: Registry = {
+    const filteredRegistry: RegistryListing = {
       name: view.name,
       homepage: view.homepage,
       items: categoryItems.map(forListing),
@@ -226,7 +234,7 @@ export async function RegistrySlugView({
   // so the count travels and the list does not. A category can run to
   // thousands of items, and every one of its item pages was carrying all of
   // them to render one.
-  const filteredRegistry: Registry = {
+  const filteredRegistry: RegistryListing = {
     name: view.name,
     homepage: view.homepage,
     items: [],

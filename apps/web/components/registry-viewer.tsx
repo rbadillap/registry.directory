@@ -10,14 +10,14 @@ import { StatusBar } from "./viewer/status-bar"
 import { MobileTabNavigation, type MobileTab } from "./viewer/mobile-tab-navigation"
 import { cn } from "@workspace/ui/lib/utils"
 import type { DirectoryEntry, AffiliateConfig } from "@/lib/types"
-import type { Registry, RegistryItem, SourceStatus } from "@/lib/registry-types"
+import type { RegistryListing, RegistryListingItem, RegistryItem, SourceStatus } from "@/lib/registry-types"
 import { generateGlobalsCss } from "@/lib/css-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { getTargetPath } from "@/lib/path-utils"
 
 interface RegistryViewerProps {
   registry: DirectoryEntry
-  registryIndex: Registry
+  registryIndex: RegistryListing
   /** The registry's handle in the aggregated catalog, used to fetch file
    *  contents from /r/{handle}/{item}.json once a reader opens a file. */
   handle: string
@@ -63,8 +63,10 @@ function addGlobalsCssFile(item: RegistryItem): RegistryItem {
 export function RegistryViewer({ registry, registryIndex, handle, categorySize, selectedItem: initialItem, currentCategory, affiliate, basePath }: RegistryViewerProps) {
   const analytics = useAnalytics()
 
-  // Add globals.css files to items with cssVars
-  const items = registryIndex.items.map(addGlobalsCssFile)
+  // The synthesised globals.css belongs to the component being read, not to
+  // the rows of a listing: a row shows a name, and style variables do not
+  // travel with one anyway.
+  const items = registryIndex.items
   const processedInitialItem = initialItem ? addGlobalsCssFile(initialItem) : null
 
   // Determine initial tab: 'code' if there's a file, 'files' otherwise
@@ -185,8 +187,10 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
     setMobileTab(firstFile ? 'code' : 'files')
   }, [initialItem])
 
-  const handleSelectFile = (item: RegistryItem, file: RegistryFile) => {
-    setSelectedItem(item)
+  // Only the item view offers files to select, and there the only item on
+  // screen is the one already in state — the tree passes the row it drew,
+  // which carries no more than a listing needs.
+  const handleSelectFile = (_item: RegistryListingItem, file: RegistryFile) => {
     setSelectedFile(file)
     // Auto-switch to code tab on mobile when file is selected
     setMobileTab('code')

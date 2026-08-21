@@ -3,6 +3,8 @@
  * These types define the structure of /r/registry.json files
  */
 
+import type { RegistryItem as SchemaRegistryItem } from "shadcn/schema"
+
 export type {
   Registry,
   RegistryItem,
@@ -22,3 +24,28 @@ export type SourceStatus =
   | "ready"
   | "not-found"
   | "error"
+
+/**
+ * What a category listing sends about each of its items.
+ *
+ * Deliberately partial: a category can hold thousands of items, and a listing
+ * reads a name, a title, a description for its filter, and where the first
+ * file installs, which is how rows are grouped. Anything else — dependencies,
+ * style variables, the rest of the files — stays on the server. Typed as its
+ * own shape so a reader can see what does not travel.
+ */
+export interface RegistryListingItem {
+  name: string
+  type: SchemaRegistryItem["type"]
+  title?: string
+  description?: string
+  /** The same file shape the schema defines, minus the contents. */
+  files?: SchemaRegistryItem["files"]
+}
+
+/** A registry as a category listing sees it: its identity, and the rows. */
+export interface RegistryListing {
+  name: string
+  homepage?: string
+  items: RegistryListingItem[]
+}

@@ -18,7 +18,7 @@ import {
   Diamond,
 } from "lucide-react"
 import { cn } from "@workspace/ui/lib/utils"
-import type { RegistryItem, SourceStatus } from "@/lib/registry-types"
+import type { RegistryItem, RegistryListingItem, SourceStatus } from "@/lib/registry-types"
 import { getFileName, getTargetPath } from "@/lib/path-utils"
 import { REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
 import { useAnalytics } from "@/hooks/use-analytics"
@@ -26,10 +26,10 @@ import { useAnalytics } from "@/hooks/use-analytics"
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
 interface FileTreeProps {
-  items: RegistryItem[]
+  items: RegistryListingItem[]
   selectedItem: RegistryItem | null
   selectedFile: RegistryFile | null
-  onSelectFile: (item: RegistryItem, file: RegistryFile) => void
+  onSelectFile: (item: RegistryListingItem, file: RegistryFile) => void
   currentCategory?: string
   // Route prefix ("/{owner}/{repo}" or "/{handle}") for sibling item links
   basePath: string
@@ -43,126 +43,63 @@ type TreeNode = {
   path: string  // Full path to this node (e.g., "components", "components/ui")
   type: 'folder' | 'file' | 'block'
   children: Map<string, TreeNode>
-  items: RegistryItem[]  // Items at this level
+  items: RegistryListingItem[]  // Items at this level
   files?: RegistryFile[]       // Files if this is a file node (for single-file items)
 }
 
 type PathTree = Map<string, TreeNode>
+/**
+ * The folder tree for one component: its files, nested by where each one
+ * installs.
+ *
+ * Only the item view draws a tree. The branch that grouped a category's
+ * items by folder was computed and then thrown away, so it is gone; Git
+ * keeps it if grouping ever becomes a requirement.
+ */
 
-function buildPathTree(items: RegistryItem[], itemMode: boolean): PathTree {
+function buildPathTree(items: RegistryListingItem[]): PathTree {
   const root = new Map<string, TreeNode>()
 
   for (const item of items) {
     if (!item.files || item.files.length === 0) continue
 
     // Reading one component: its files are the tree.
-    if (itemMode) {
-      for (const file of item.files) {
-        const targetPath = getTargetPath(file)
-        const pathParts = targetPath.split('/')
+    for (const file of item.files) {
+      const targetPath = getTargetPath(file)
+      const pathParts = targetPath.split('/')
 
-        let currentLevel = root
-        let currentPath = ''
+      let currentLevel = root
+      let currentPath = ''
 
-        // Create folder nodes for all segments except the last one (file name)
-        for (let i = 0; i < pathParts.length - 1; i++) {
-          const segment = pathParts[i]
-          if (!segment) continue
-          currentPath = currentPath ? `${currentPath}/${segment}` : segment
+      // Create folder nodes for all segments except the last one (file name)
+      for (let i = 0; i < pathParts.length - 1; i++) {
+        const segment = pathParts[i]
+        if (!segment) continue
+        currentPath = currentPath ? `${currentPath}/${segment}` : segment
 
-          if (!currentLevel.has(segment)) {
-            currentLevel.set(segment, {
-              name: segment,
-              path: currentPath,
-              type: 'folder',
-              children: new Map(),
-              items: [],
-            })
-          }
-
-          currentLevel = currentLevel.get(segment)!.children
-        }
-
-        // Add the file at the final location
-        const fileName = pathParts[pathParts.length - 1]
-        if (fileName && !currentLevel.has(fileName)) {
-          currentLevel.set(fileName, {
-            name: fileName,
-            path: targetPath,
-            type: 'file',
+        if (!currentLevel.has(segment)) {
+          currentLevel.set(segment, {
+            name: segment,
+            path: currentPath,
+            type: 'folder',
             children: new Map(),
-            items: [item],
+            items: [],
           })
         }
-      }
-      continue
-    }
 
-    // Browsing a category: group its items by their target folder.
-    const firstFile = item.files[0]
-    if (!firstFile) continue
-
-    // Use target instead of path - this is where the file will be installed
-    const targetPath = getTargetPath(firstFile)
-    const pathParts = targetPath.split('/')
-
-    let currentLevel = root
-    let currentPath = ''
-    let lastFolderNode: TreeNode | undefined = undefined
-
-    // Create folder nodes for all segments except the last one (file name)
-    for (let i = 0; i < pathParts.length - 1; i++) {
-      const segment = pathParts[i]
-      if (!segment) continue
-      currentPath = currentPath ? `${currentPath}/${segment}` : segment
-
-      if (!currentLevel.has(segment)) {
-        currentLevel.set(segment, {
-          name: segment,
-          path: currentPath,
-          type: 'folder',
-          children: new Map(),
-          items: [],
-        })
+        currentLevel = currentLevel.get(segment)!.children
       }
 
-      const node = currentLevel.get(segment)!
-      lastFolderNode = node
-      currentLevel = node.children
-    }
-
-    // Add item to the last folder in the path
-    if (pathParts.length === 1) {
-      // Single-segment path - item is at root level
-      const segment = pathParts[0]
-      if (!segment) continue
-      if (!root.has(segment)) {
-        root.set(segment, {
-          name: segment,
-          path: segment,
-          type: item.type === 'registry:block' ? 'block' : 'file',
+      // Add the file at the final location
+      const fileName = pathParts[pathParts.length - 1]
+      if (fileName && !currentLevel.has(fileName)) {
+        currentLevel.set(fileName, {
+          name: fileName,
+          path: targetPath,
+          type: 'file',
           children: new Map(),
           items: [item],
         })
-      } else {
-        const node = root.get(segment)!
-        if (!node.items.find(i => i.name === item.name)) {
-          node.items.push(item)
-        }
-      }
-    } else if (lastFolderNode) {
-      // Multi-segment path
-      const lastSegment = pathParts[pathParts.length - 2]
-      if (!lastSegment) continue
-
-      if (item.type === 'registry:block' && item.name === lastSegment) {
-        lastFolderNode.type = 'block'
-        lastFolderNode.items = [item]
-        lastFolderNode.children.clear()
-      } else {
-        if (!lastFolderNode.items.find(i => i.name === item.name)) {
-          lastFolderNode.items.push(item)
-        }
       }
     }
   }
@@ -189,7 +126,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   // should be grouped that way is a product question with its own scope; the
   // branch that does it stays, unused, until that is decided.
   const pathTree = useMemo(
-    () => (isItemView ? buildPathTree(items, true) : new Map<string, TreeNode>()),
+    () => (isItemView ? buildPathTree(items) : new Map<string, TreeNode>()),
     [items, isItemView]
   )
 
@@ -306,7 +243,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     }
   }
 
-  const getItemFileName = (item: RegistryItem) => {
+  const getItemFileName = (item: RegistryListingItem) => {
     const firstFile = item.files?.[0]
     if (!firstFile) return item.name
     const targetPath = getTargetPath(firstFile)
