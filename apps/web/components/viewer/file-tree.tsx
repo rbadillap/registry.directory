@@ -580,7 +580,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                         "hover:bg-accent transition-colors",
                         // A megacatalogue category is thousands of rows. Only
                         // the visible ones are worth laying out and painting.
-                        "[content-visibility:auto] [contain-intrinsic-size:auto_56px]",
+                        "list-row-deferred",
                       )}
                     >
                       <Icon className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
