@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@workspace/ui/components/button";
-import { Bug, CircleHelp, Lightbulb, MessageSquare, X, type LucideIcon } from "lucide-react";
+import { Bug, CircleHelp, Lightbulb, X, type LucideIcon } from "lucide-react";
 import type { FeedbackType } from "@/lib/feedback";
 
 const FEEDBACK_TYPES: { value: FeedbackType; label: string; icon: LucideIcon }[] = [
@@ -13,34 +13,25 @@ const FEEDBACK_TYPES: { value: FeedbackType; label: string; icon: LucideIcon }[]
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function FeedbackWidget({ inline = false }: { inline?: boolean } = {}) {
-  const [isOpen, setIsOpen] = useState(false);
+export function FeedbackDialog({ onClose }: { onClose: () => void }) {
   const [type, setType] = useState<FeedbackType>("confusing");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
-  const toggle = useCallback(() => setIsOpen((o) => !o), []);
-
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
-      if (e.key === "." && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault();
-        toggle();
-      }
+      if (e.key === "Escape") onClose();
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [toggle]);
+  }, [onClose]);
 
   useEffect(() => {
     if (status === "success") {
-      const timer = setTimeout(() => {
-        setStatus("idle");
-        setIsOpen(false);
-      }, 2000);
+      const timer = setTimeout(onClose, 2000);
       return () => clearTimeout(timer);
     }
-  }, [status]);
+  }, [status, onClose]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -81,85 +72,87 @@ export function FeedbackWidget({ inline = false }: { inline?: boolean } = {}) {
     return null;
   }
 
-  if (!isOpen) {
-    return (
-      <button
-        onClick={toggle}
-        className={
-          inline
-            ? "flex size-9 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
-            : "fixed bottom-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background shadow-lg transition-colors hover:bg-accent"
-        }
-        aria-label="Send feedback (Cmd+.)"
-        title="Send feedback (Cmd+.)"
-      >
-        <MessageSquare className="size-4" />
-      </button>
-    );
-  }
-
   return (
-    <div className="fixed bottom-4 right-4 z-50 w-80 rounded-lg border border-border bg-background shadow-lg">
-      {status === "success" ? (
-        <div className="flex items-center justify-center gap-2 p-6 text-sm text-muted-foreground">
-          Sent!
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-4">
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-foreground">
-              Feedback
-            </span>
-            <button
-              type="button"
-              onClick={toggle}
-              className="text-muted-foreground hover:text-foreground"
-              aria-label="Close"
-            >
-              <X className="size-4" />
-            </button>
-          </div>
-
-          <div className="flex gap-1.5">
-            {FEEDBACK_TYPES.map((ft) => (
-              <Button
-                key={ft.value}
-                type="button"
-                variant={type === ft.value ? "default" : "secondary"}
-                size="sm"
-                onClick={() => setType(ft.value)}
-                className="flex-1"
-              >
-                <ft.icon /> {ft.label}
-              </Button>
-            ))}
-          </div>
-
-          <textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="What's on your mind?"
-            className="min-h-[100px] w-full resize-none rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-            maxLength={2000}
-            autoFocus
-          />
-
-          {status === "error" && (
-            <p className="text-xs text-destructive">
-              Failed to send. Try again.
-            </p>
-          )}
-
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 p-4 backdrop-blur-sm animate-in fade-in-0 duration-200"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Send feedback"
+    >
+      <div
+        className="max-h-[85vh] w-full max-w-lg overflow-y-auto border bg-background p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_8px_24px_rgba(0,0,0,0.3),0_24px_64px_rgba(0,0,0,0.25)] animate-in fade-in-0 zoom-in-95 duration-200 ease-[cubic-bezier(0.2,0,0,1)]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="mb-5 flex items-start justify-between gap-4">
+          <h2 className="type-title">Send feedback</h2>
           <Button
-            type="submit"
-            size="sm"
-            disabled={!message.trim() || status === "submitting"}
-            className="w-full"
+            type="button"
+            variant="ghost"
+            size="icon"
+            className="relative size-7 shrink-0 after:absolute after:-inset-2"
+            onClick={onClose}
+            aria-label="Close"
           >
-            {status === "submitting" ? "Sending..." : "Send"}
+            <X className="size-4" />
           </Button>
-        </form>
-      )}
+        </div>
+
+        {status === "success" ? (
+          <div className="py-6">
+            <p className="type-card text-foreground">Received.</p>
+            <p className="mt-2 text-xs text-muted-foreground text-pretty">
+              Every note is read. Nothing is sent back automatically.
+            </p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+            <div className="flex flex-col gap-1">
+              <span className="type-meta text-muted-foreground">Kind</span>
+              <div className="flex gap-1.5">
+                {FEEDBACK_TYPES.map((ft) => (
+                  <Button
+                    key={ft.value}
+                    type="button"
+                    variant={type === ft.value ? "default" : "secondary"}
+                    size="sm"
+                    onClick={() => setType(ft.value)}
+                    className="flex-1 rounded-none"
+                  >
+                    <ft.icon /> {ft.label}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            <label className="flex flex-col gap-1">
+              <span className="type-meta text-muted-foreground">What happened</span>
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="The part that did not work, or the thing you expected to find."
+                className="min-h-[120px] w-full resize-none border border-input bg-background px-2.5 py-2 font-mono text-xs text-foreground outline-none transition-colors placeholder:text-foreground-faint focus-visible:border-ring"
+                maxLength={2000}
+                autoFocus
+              />
+            </label>
+
+            {status === "error" && (
+              <p className="text-xs text-destructive text-pretty">
+                It could not be sent. Check your connection and try again.
+              </p>
+            )}
+
+            <Button
+              type="submit"
+              className="mt-1 w-full rounded-none"
+              disabled={!message.trim() || status === "submitting"}
+            >
+              {status === "submitting" ? "Sending…" : "Send"}
+            </Button>
+          </form>
+        )}
+      </div>
     </div>
   );
 }

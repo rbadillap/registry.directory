@@ -203,7 +203,7 @@ function buildCollections(profiles) {
       slug: "megacatalogs",
       title: "The megacatalogs",
       standfirst:
-        "Each of these registries has more than a thousand components.",
+        "Each of these registries has +1000 components.",
       kind: "computed",
       registries: [...profiles.values()]
         .filter((p) => p.itemCount >= 1000 && href(p.entry))

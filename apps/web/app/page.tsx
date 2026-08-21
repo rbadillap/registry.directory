@@ -10,8 +10,7 @@ import { loadCollections, loadShipped } from "@/lib/registry-data";
 import { getAffiliates } from "@/lib/affiliates";
 import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import type { DirectoryEntry } from "@/lib/types";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { FeedbackWidget } from "@/components/feedback-widget";
+import { HomeControls } from "@/components/home-controls";
 import { HeroTitle } from "@/components/hero-title";
 import { JsonLd } from "@/components/json-ld";
 import { buildDirectoryListSchema } from "@/lib/structured-data";
@@ -135,8 +134,7 @@ export default async function Home() {
       {/* Both controls belong to the page, not to the corners of the window:
           they sit at the right edge of the column everything else uses. */}
       <div className="w-full max-w-7xl mx-auto px-4 flex justify-end gap-2 -mt-16 md:-mt-20 mb-8">
-        <FeedbackWidget inline />
-        <ThemeToggle />
+        <HomeControls />
       </div>
 
       <div className="flex items-center gap-2 mb-8 md:mb-10">
