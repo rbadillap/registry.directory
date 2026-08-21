@@ -173,9 +173,9 @@ export function StackSections({ collections }: { collections: Collection[] }) {
         <section
           key={collection.slug}
           aria-label={collection.title}
-          className="border-t border-border-subtle py-12 px-4 md:px-8"
+          className="border-t border-border-subtle py-12"
         >
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-8">
             {/* Clears the search bar, which sticks above it on the home. */}
             <div className="md:sticky md:top-[calc(var(--sticky-search-h)_+_1.5rem)] self-start">
               <CollectionHeader collection={collection} />
@@ -336,9 +336,9 @@ export function JustShipped({ shipped }: { shipped: ShippedFile | null }) {
   return (
     <section
       aria-label="Just shipped"
-      className="border-t border-border-subtle py-12 px-4 md:px-8"
+      className="border-t border-border-subtle py-12"
     >
-      <div className="max-w-6xl mx-auto flex flex-col gap-5">
+      <div className="flex flex-col gap-5">
         <header className="flex flex-wrap items-baseline justify-between gap-3">
           <div className="flex items-baseline gap-4">
             <h2 className="type-section">
@@ -374,8 +374,8 @@ export function LabsHome({
   const collections = data?.collections ?? []
 
   return (
-    <main className="min-h-screen pb-24">
-      <header className="px-4 md:px-8 pt-10 pb-12 max-w-6xl mx-auto w-full">
+    <main className="min-h-screen pb-24 w-full max-w-7xl mx-auto px-4">
+      <header className="pt-10 pb-12 w-full">
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-baseline gap-3">
             <h1 className="type-title">
@@ -421,7 +421,7 @@ export function LabsHome({
       <WhatsNew shipped={shipped} />
 
       {collections.length === 0 ? (
-        <p className="px-4 md:px-8 py-12 border-t border-border-subtle font-mono text-sm text-muted-foreground">
+        <p className="py-12 border-t border-border-subtle font-mono text-sm text-muted-foreground">
           Collections unavailable — run `pnpm ingest && pnpm generate` from
           apps/web to fill the blobs this page reads.
         </p>

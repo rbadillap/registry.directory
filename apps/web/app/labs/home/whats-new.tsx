@@ -265,9 +265,9 @@ export function WhatsNew({ shipped }: { shipped: ShippedFile | null }) {
   return (
     <section
       aria-label="This week"
-      className="border-t border-border-subtle py-12 px-4 md:px-8"
+      className="border-t border-border-subtle py-12"
     >
-      <div className="max-w-6xl mx-auto flex flex-col gap-6">
+      <div className="flex flex-col gap-6">
         <header className="flex flex-wrap items-end justify-between gap-3">
           <div className="flex flex-col gap-1.5">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
