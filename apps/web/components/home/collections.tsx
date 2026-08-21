@@ -13,8 +13,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@workspace/ui/components/avatar"
-import { WhatsNew } from "./whats-new"
-import type { Collection, CollectionCard, CollectionsFile, ShippedEntry, ShippedFile } from "@/lib/registry-data"
+import type { Collection, CollectionCard, ShippedEntry, ShippedFile } from "@/lib/registry-data"
 
 // v0.4 — layout settled (stack), life settled (the shipped ticker, full-width
 // with discrete steps). Data settled too: everything on this page comes from
@@ -331,7 +330,6 @@ function StepTicker({ entries }: { entries: ShippedEntry[] }) {
 
 export function JustShipped({ shipped }: { shipped: ShippedFile | null }) {
   const entries = shipped?.entries ?? []
-  const totalShipped = entries.reduce((s, e) => s + e.added.length, 0)
 
   return (
     <section
@@ -363,71 +361,3 @@ export function JustShipped({ shipped }: { shipped: ShippedFile | null }) {
 // Shell
 // ---------------------------------------------------------------------------
 
-export function LabsHome({
-  data,
-  shipped,
-}: {
-  data: CollectionsFile | null
-  shipped: ShippedFile | null
-}) {
-  const meta = data?.meta
-  const collections = data?.collections ?? []
-
-  return (
-    <main className="min-h-screen pb-24 w-full max-w-7xl mx-auto px-4">
-      <header className="pt-10 pb-12 w-full">
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-baseline gap-3">
-            <h1 className="type-title">
-              registry.directory
-            </h1>
-            <code className="type-label text-muted-foreground border border-border-subtle px-1.5 py-0.5">
-              labs / collections v0.4
-            </code>
-          </div>
-        </div>
-        <p className="mt-6 text-sm font-mono text-muted-foreground max-w-lg">
-          The shadcn registry ecosystem, read as collections. Every group states
-          the criterion that formed it.
-        </p>
-        {meta && (
-          <p className="mt-2 type-meta text-muted-foreground">
-            snapshot {meta.date}
-            {meta.indexesOk !== undefined &&
-              meta.indexesTotal !== undefined &&
-              ` · ${meta.indexesOk}/${meta.indexesTotal} indexes`}{" "}
-            · {meta.totalItems.toLocaleString("en-US")} items measured
-          </p>
-        )}
-        {/* Retrieval keeps a first-class, always-visible home: collections
-            compete with browsing, never with finding a known name. In this lab
-            it opens the live home search; the real page wires it in place. */}
-        <Link
-          href="/?tab=components"
-          className="mt-6 flex max-w-lg items-center justify-between gap-3 border border-border-subtle bg-secondary/30 px-3 py-2.5 transition-colors hover:border-border focus-visible:outline-2 focus-visible:outline-ring"
-        >
-          <span className="font-mono text-xs text-muted-foreground">
-            Search{meta ? ` ${meta.totalItems.toLocaleString("en-US")}` : ""} items
-            {meta?.indexesOk ? ` across ${meta.indexesOk} registries` : ""}…
-          </span>
-          <kbd className="type-label text-muted-foreground border border-border-subtle px-1.5 py-0.5">
-            P
-          </kbd>
-        </Link>
-      </header>
-
-      <JustShipped shipped={shipped} />
-
-      <WhatsNew shipped={shipped} />
-
-      {collections.length === 0 ? (
-        <p className="py-12 border-t border-border-subtle font-mono text-sm text-muted-foreground">
-          Collections unavailable — run `pnpm ingest && pnpm generate` from
-          apps/web to fill the blobs this page reads.
-        </p>
-      ) : (
-        <StackSections collections={collections} />
-      )}
-    </main>
-  )
-}

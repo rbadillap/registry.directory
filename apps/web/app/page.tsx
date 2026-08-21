@@ -11,6 +11,7 @@ import { getAffiliates } from "@/lib/affiliates";
 import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import type { DirectoryEntry } from "@/lib/types";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { FeedbackWidget } from "@/components/feedback-widget";
 import { HeroTitle } from "@/components/hero-title";
 import { JsonLd } from "@/components/json-ld";
 import { buildDirectoryListSchema } from "@/lib/structured-data";
@@ -131,7 +132,10 @@ export default async function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-start pt-24 md:pt-32 pb-12 md:pb-20">
       <JsonLd data={directorySchema} />
-      <div className="absolute top-4 right-4">
+      {/* Both controls belong to the page, not to the corners of the window:
+          they sit at the right edge of the column everything else uses. */}
+      <div className="w-full max-w-7xl mx-auto px-4 flex justify-end gap-2 -mt-16 md:-mt-20 mb-8">
+        <FeedbackWidget inline />
         <ThemeToggle />
       </div>
 
