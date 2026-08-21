@@ -9,7 +9,7 @@ import { useUrlState } from '@/hooks/use-url-state';
 import { useItemIndex } from '@/hooks/use-item-index';
 import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from '@/lib/types';
 import type { IndexedItem } from '@/lib/items-index';
-import { searchItems } from '@/lib/search-utils';
+import { prepareSearchIndex, searchPrepared } from '@/lib/search-utils';
 import { TypeFilterMenu } from './type-filter-menu';
 import { typeToSlug, REGISTRY_TYPE_LABELS } from '@/lib/registry-mappings';
 
@@ -188,14 +188,17 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates }: Di
     [filteredComponents, activeTab, githubStats]
   );
 
+  // Normalised once per index, not once per keystroke.
+  const preparedIndex = useMemo(() => prepareSearchIndex(items), [items]);
+
   const filteredItems = useMemo(() => {
     if (!deferredSearchTerm) return [];
-    const results = searchItems(items, deferredSearchTerm);
+    const results = searchPrepared(preparedIndex, deferredSearchTerm);
     if (typeFilters.length === 0) return results;
     return results.filter((item) =>
       typeFilters.some((f) => matchesTypeFacet(typeToSlug(item.type), f))
     );
-  }, [items, deferredSearchTerm, typeFilters]);
+  }, [preparedIndex, deferredSearchTerm, typeFilters]);
 
   // Track search performed (debounced via hook)
   useEffect(() => {

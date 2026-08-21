@@ -1,5 +1,5 @@
 import type { NextRequest } from "next/server"
-import { searchItems } from "@/lib/search-utils"
+import { prepareSearchIndex, searchPrepared, type PreparedIndex } from "@/lib/search-utils"
 import type { IndexedItem } from "@/lib/items-index"
 import { loadCatalog, type Catalog, type CatalogItem } from "@/lib/catalog"
 import { registryFetch } from "@/lib/fetch-utils"
@@ -40,12 +40,15 @@ function jsonResponse(body: unknown, status = 200): Response {
 // exact matches keep their bonus, and carry the catalog item alongside.
 type SearchableItem = IndexedItem & { catalogItem: CatalogItem }
 
-const searchableCache = new WeakMap<Catalog, SearchableItem[]>()
+// Normalising the catalogue is the expensive half of a search, and every
+// request would otherwise redo it for all of the items. The catalogue is
+// immutable within a process, so the prepared form is cached with it.
+const searchableCache = new WeakMap<Catalog, PreparedIndex<SearchableItem>>()
 
-function searchables(catalog: Catalog): SearchableItem[] {
+function searchables(catalog: Catalog): PreparedIndex<SearchableItem> {
   let list = searchableCache.get(catalog)
   if (!list) {
-    list = catalog.items.map((item) => ({
+    const items: SearchableItem[] = catalog.items.map((item) => ({
       name: item.name,
       type: item.type,
       description: item.description,
@@ -57,6 +60,7 @@ function searchables(catalog: Catalog): SearchableItem[] {
       },
       catalogItem: item,
     }))
+    list = prepareSearchIndex(items)
     searchableCache.set(catalog, list)
   }
   return list
@@ -81,9 +85,7 @@ function catalogResponse(catalog: Catalog, request: NextRequest): Response {
 
   let results: CatalogItem[]
   if (q) {
-    results = (searchItems(searchables(catalog), q) as SearchableItem[]).map(
-      (s) => s.catalogItem
-    )
+    results = searchPrepared(searchables(catalog), q).map((s) => s.catalogItem)
   } else {
     results = catalog.items
   }
