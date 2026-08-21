@@ -160,3 +160,11 @@ export function sortByTypeRelevance(slugs: string[]): string[] {
     return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi)
   })
 }
+
+/**
+ * Whether a slug names a category rather than an item. The two share one path
+ * segment, so every surface that resolves `${basePath}/${slug}` has to ask.
+ */
+export function isCategory(slug: string): boolean {
+  return slug in SLUG_TO_REGISTRY_TYPE
+}

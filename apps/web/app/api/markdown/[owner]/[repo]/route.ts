@@ -1,7 +1,7 @@
+import { isCategory } from "@/lib/registry-mappings"
 import { NextRequest } from "next/server"
 import { generateMarkdownForItem } from "@/lib/markdown-generator"
 import { resolveByHandle, parseGithubRef, entryHandle } from "@/lib/resolve-registry"
-import { isCategory } from "@/components/registry-slug-view"
 import { fetchItemData } from "@/lib/registry-item-source"
 
 // Markdown export for handle-based item URLs: /{handle}/{item}.md

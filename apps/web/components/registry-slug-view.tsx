@@ -7,7 +7,7 @@ import {
   slugToType,
   typeToSlug,
   groupItemsByCategory,
-  SLUG_TO_REGISTRY_TYPE,
+  isCategory,
   REGISTRY_TYPE_LABELS,
   singularType,
 } from "@/lib/registry-mappings"
@@ -19,10 +19,6 @@ import {
   buildBreadcrumbSchema,
   buildRegistryItemSchema,
 } from "@/lib/structured-data"
-
-export function isCategory(slug: string): boolean {
-  return slug in SLUG_TO_REGISTRY_TYPE
-}
 
 
 // The preview image lives at a route handler rather than beside the page: the

@@ -13,6 +13,15 @@ import { isBinaryExtension } from "@/lib/file-utils"
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
+// One place where a status becomes words. Two cascades meant two chances to
+// forget a state, which is how "not-found" went missing from both.
+const SOURCE_MESSAGE: Record<Exclude<SourceStatus, "ready">, string> = {
+  idle: "Loading source…",
+  loading: "Loading source…",
+  "not-found": "This registry no longer serves this item",
+  error: "This registry did not return the source",
+}
+
 interface CodeViewerProps {
   file: RegistryFile | null
   selectedItem?: RegistryItem | null
@@ -110,17 +119,9 @@ export function CodeViewer({ file, selectedItem, sourceStatus = "ready", sourceE
   // out: until the source has been asked for and answered, it is a conclusion
   // drawn ahead of the evidence.
   if (!file && selectedItem && sourceStatus !== "ready") {
-    const message =
-      sourceStatus === "loading"
-        ? "Loading source…"
-        : sourceStatus === "not-found"
-          ? "This registry no longer serves this item"
-          : sourceStatus === "error"
-            ? "This registry did not return the source"
-            : "Loading source…"
     return (
       <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
-        <p className="text-sm mb-2">{message}</p>
+        <p className="text-sm mb-2">{SOURCE_MESSAGE[sourceStatus]}</p>
         <p className="text-xs text-foreground-subtle">
           {selectedItem.name}
           {sourceStatus === "error" && sourceError ? ` — ${sourceError}` : ""}
@@ -168,15 +169,9 @@ export function CodeViewer({ file, selectedItem, sourceStatus = "ready", sourceE
   // The path is known and the source is not, which is a state of its own:
   // the file exists, and either it is on its way or its origin refused it.
   if (!file.content && sourceStatus !== "ready") {
-    const message =
-      sourceStatus === "not-found"
-        ? "This registry no longer serves this item"
-        : sourceStatus === "error"
-          ? "This registry did not return the source"
-          : "Loading source…"
     return (
       <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
-        <p className="text-sm mb-2">{message}</p>
+        <p className="text-sm mb-2">{SOURCE_MESSAGE[sourceStatus]}</p>
         <p className="text-xs text-foreground-subtle">
           {getFileName(getTargetPath(file))}
           {sourceStatus === "error" && sourceError ? ` — ${sourceError}` : ""}

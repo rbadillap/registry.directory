@@ -113,28 +113,30 @@ export function RegistryViewer({ registry, registryIndex, handle, selectedItem: 
         const fetchedFiles = fetched.files ?? []
         const byPath = new Map(fetchedFiles.map((file) => [file.path, file.content]))
 
-        // Some registries list an item without declaring its files, and the
-        // aggregated endpoint still resolves them. Filling in contents by path
-        // would drop every one of those, so an item that declared nothing
-        // adopts what came back.
+        // Reconciled from the item the server sent, never from what is on
+        // screen: a component with cssVars carries a synthetic globals.css
+        // that this viewer added, so "does it have files" gets two different
+        // answers depending on which one is asked. Rebuilding from the
+        // original and running it back through addGlobalsCssFile keeps the
+        // synthetic file and the remote ones in the same list.
         //
-        // Both decisions are made here, from `initialItem`, rather than inside
-        // a state updater: an updater that another updater reads is two
-        // queues agreeing by accident.
-        const declaredNoFiles = !initialItem?.files?.length
-        const adopted = declaredNoFiles ? (fetchedFiles[0] ?? null) : null
-
-        setSelectedItem((current) => {
-          if (!current) return current
-          if (!current.files?.length) return { ...current, files: fetchedFiles }
-          return {
-            ...current,
-            files: current.files.map((file) => ({
+        // Some registries list an item without declaring its files, and the
+        // aggregated endpoint still resolves them: filling contents in by path
+        // would drop every one of those.
+        const declared = initialItem?.files ?? []
+        const reconciled = declared.length
+          ? declared.map((file) => ({
               ...file,
               content: file.content ?? byPath.get(file.path),
-            })),
-          }
-        })
+            }))
+          : fetchedFiles
+
+        const merged = initialItem
+          ? addGlobalsCssFile({ ...initialItem, files: reconciled })
+          : null
+        const adopted = declared.length ? null : (merged?.files?.[0] ?? null)
+
+        setSelectedItem((current) => (current && merged ? merged : current))
         setSelectedFile((current) => {
           if (adopted) return adopted
           if (!current) return current

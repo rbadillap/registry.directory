@@ -1,8 +1,8 @@
+import { isCategory } from "@/lib/registry-mappings"
 import { slugFromSegments } from "@/lib/route-utils"
 import { NextRequest } from "next/server"
 import { generateMarkdownForItem } from "@/lib/markdown-generator"
 import { resolveByGithub } from "@/lib/resolve-registry"
-import { isCategory } from "@/components/registry-slug-view"
 import { fetchItemData } from "@/lib/registry-item-source"
 
 // Force dynamic rendering - don't pre-generate during build

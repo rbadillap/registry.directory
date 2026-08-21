@@ -3,7 +3,7 @@ import { slugFromSegments } from "@/lib/route-utils"
 import { ImageResponse } from "next/og"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
-import { typeToSlug, SLUG_TO_REGISTRY_TYPE, REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
+import { typeToSlug, REGISTRY_TYPE_LABELS, isCategory } from "@/lib/registry-mappings"
 import { getInstallCommand } from "@/lib/install-command"
 import { resolveByGithub, loadRegistryIndex } from "@/lib/resolve-registry"
 
@@ -15,10 +15,6 @@ export const runtime = 'nodejs'
 
 const SIZE = { width: 1200, height: 630 }
 
-
-function isCategory(slug: string): boolean {
-  return slug in SLUG_TO_REGISTRY_TYPE
-}
 
 export async function GET(
   _request: Request,
