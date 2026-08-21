@@ -291,9 +291,8 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
           })}
         </div>
 
-        {/* Below the results, not over them. The control used to sit in a
-            gradient laid across the last row, which faded the very results
-            someone was reading to advertise that there were more. */}
+        {/* The control follows the results and never covers them: nothing
+            that announces more should dim what is already being read. */}
         {hasMore && !expanded && (
           <div className="flex justify-center pt-6">
             <button

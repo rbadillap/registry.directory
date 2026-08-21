@@ -589,14 +589,20 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
             onChange={(e) => {
               setSearchQuery(e.target.value)
 
-              // Track search usage with debouncing
+              // Counts what the person sees. Filtering a second time here,
+              // by a different rule, reported zero results for searches that
+              // were showing some.
               if (e.target.value) {
-                const filtered = items.filter(item =>
-                  item.name.toLowerCase().includes(e.target.value.toLowerCase())
-                )
+                const terms = searchTerms(e.target.value)
+                const matched = items.filter((item) => {
+                  const haystack = normalizeForSearch(
+                    [item.name, item.title, item.description].filter(Boolean).join(" ")
+                  )
+                  return terms.every((term) => haystack.includes(term))
+                })
                 analytics.trackSearchUsed({
                   search_query: e.target.value,
-                  results_count: filtered.length,
+                  results_count: matched.length,
                   total_items: items.length,
                 })
               }

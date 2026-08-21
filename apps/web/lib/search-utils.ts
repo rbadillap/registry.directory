@@ -88,8 +88,11 @@ export function searchItems(
       totalScore += termScore;
     }
 
-    // Spelling the name exactly still wins, whichever separators were used.
-    if (allTermsMatch && name === whole) {
+    // A single-word query already scored its exact match inside the loop.
+    // This restores the one that splitting took away: "alert-dialog" becomes
+    // two words, so nothing equals the name any more, and a person who spelled
+    // it out should still outrank one whose words merely appear in it.
+    if (allTermsMatch && terms.length > 1 && name === whole) {
       totalScore += 100;
     }
 

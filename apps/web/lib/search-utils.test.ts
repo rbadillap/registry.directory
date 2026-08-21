@@ -113,6 +113,17 @@ describe("searchItems", () => {
     assert.ok(results.includes("alert-dialog"))
   })
 
+  it("scores a one-word exact match once, not twice", () => {
+    // Both spellings name the same component exactly, so neither should
+    // outrank the other: the bonus that survives a split must not be paid
+    // again by a query that never split.
+    const exact = [item("dialog"), item("alert-dialog")]
+    assert.deepEqual(names(searchItems(exact, "dialog")), ["dialog", "alert-dialog"])
+
+    const ranked = names(searchItems(exact, "alert dialog"))
+    assert.deepEqual(ranked, ["alert-dialog"])
+  })
+
   it("still requires every word to appear", () => {
     assert.deepEqual(searchItems(catalog, "alert stepper"), [])
   })
