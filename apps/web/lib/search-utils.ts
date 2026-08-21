@@ -7,14 +7,6 @@ interface ScoredItem {
 }
 
 /**
- * Search items with multi-term AND matching, relevance scoring, and
- * round-robin interleaving across registries.
- *
- * - "button" → items named "button" from all registries first, then partials
- * - "button tailark" → Tailark items matching "button"
- * - Exact name matches score highest, registry name matches lowest
- */
-/**
  * Lowercased, with the separators component names use — hyphens, underscores,
  * slashes — read as spaces.
  *
@@ -32,6 +24,14 @@ export function searchTerms(query: string): string[] {
   return normalizeForSearch(query).split(" ").filter(Boolean)
 }
 
+/**
+ * Search items with multi-term AND matching, relevance scoring, and
+ * round-robin interleaving across registries.
+ *
+ * - "button" → items named "button" from all registries first, then partials
+ * - "button tailark" → Tailark items matching "button"
+ * - Exact name matches score highest, registry name matches lowest
+ */
 export function searchItems(
   items: IndexedItem[],
   query: string
