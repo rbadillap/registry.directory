@@ -51,24 +51,17 @@ function socialImages(registry: DirectoryEntry, slug: string, alt: string) {
 // variables, every file past the first — is never read there, and a category
 // can hold thousands of items.
 function forListing(item: RegistryItem): RegistryItem {
-  const {
-    dependencies: _dependencies,
-    devDependencies: _devDependencies,
-    registryDependencies: _registryDependencies,
-    cssVars: _cssVars,
-    css: _css,
-    categories: _categories,
-    docs: _docs,
-    meta: _meta,
-    files,
-    ...rest
-  } = item
-
-  const first = files?.[0]
+  // Named one by one, on purpose. Removing the fields a listing does not read
+  // would leak every field added to RegistryItem later; naming the ones it
+  // does read means a new field has to be asked for before it can travel.
+  const first = item.files?.[0]
   return {
-    ...rest,
-    // Only the first file, and only where it installs: the listing groups
-    // items by target folder and shows that one name.
+    name: item.name,
+    type: item.type,
+    ...(item.title ? { title: item.title } : {}),
+    ...(item.description ? { description: item.description } : {}),
+    // Only the first file, and only where it installs: that is what a row
+    // shows and what the grouping logic reads.
     ...(first
       ? { files: [{ path: first.path, type: first.type, target: first.target }] }
       : {}),

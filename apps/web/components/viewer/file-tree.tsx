@@ -183,8 +183,13 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   // exactly one item, so counting them answers a different question.
   const isItemView = selectedItem !== null
 
+  // Only the item view renders a tree. Building one for a category walked
+  // every item to group it by folder and then threw the result away — up to
+  // several thousand items, on every render, for nothing. Whether a category
+  // should be grouped that way is a product question with its own scope; the
+  // branch that does it stays, unused, until that is decided.
   const pathTree = useMemo(
-    () => buildPathTree(items, isItemView),
+    () => (isItemView ? buildPathTree(items, true) : new Map<string, TreeNode>()),
     [items, isItemView]
   )
 
