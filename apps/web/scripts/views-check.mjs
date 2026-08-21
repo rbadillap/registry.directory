@@ -278,6 +278,35 @@ async function main() {
     }
   }
 
+  // 4b. Days the ingestion missed. Each shipped entry records the date it was
+  //     measured against; a gap wider than a day means its additions
+  //     accumulated across days nobody archived. The snapshots for those days
+  //     can never be recovered — nobody else keeps them — so this is a note,
+  //     not a failure. It exists so the gap is seen rather than served.
+  try {
+    const shipped = await parseJson(join(DATA_DIR, "shipped.json"), "data/shipped.json");
+    const dayBefore = (iso) => {
+      const d = new Date(`${iso}T00:00Z`);
+      d.setUTCDate(d.getUTCDate() - 1);
+      return d.toISOString().slice(0, 10);
+    };
+    const spans = (shipped?.entries ?? []).filter(
+      (e) => e.since && e.since !== dayBefore(e.date)
+    );
+    if (spans.length > 0) {
+      const widest = spans.reduce((a, b) =>
+        a.since < b.since ? a : b
+      );
+      notes.push(
+        `${spans.length} shipped entry(ies) span more than one day — the widest ` +
+          `credits ${widest.date} with everything since ${widest.since}. ` +
+          `Days without a snapshot cannot be recovered.`
+      );
+    }
+  } catch {
+    // Absence is already reported above.
+  }
+
   // 5. Recorded gaps, surfaced but never fatal. A registry whose origin is
   //    permanently gone would otherwise block every build forever, and the
   //    removing it from the directory is a separate, deliberate change.
