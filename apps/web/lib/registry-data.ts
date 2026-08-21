@@ -163,8 +163,7 @@ export interface Collection {
   slug: string
   title: string
   standfirst: string
-  /** The rule that selected the members, as the indexer recorded it. */
-  criterion: string
+  /** How the members were selected. Recorded, not shown. */
   kind: "computed" | "curated"
   registries: CollectionCard[]
 }

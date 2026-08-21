@@ -157,8 +157,7 @@ function buildCollections(profiles) {
       slug: "motion",
       title: "Movement as a first language",
       standfirst:
-        "Animation is the point here, not the garnish.",
-      criterion: "The registries whose components lean hardest on a motion library.",
+        "These registries build animation into their components.",
       kind: "computed",
       registries: topByDeps(profiles, MOTION_PKGS, 5),
     },
@@ -166,8 +165,7 @@ function buildCollections(profiles) {
       slug: "agent-ui",
       title: "Interfaces for agents",
       standfirst:
-        "Chat surfaces, streaming text, tool calls.",
-      criterion: "Registries that describe themselves as built for AI and agents.",
+        "Components for chat, streaming text and tool calls.",
       kind: "computed",
       registries: [...profiles.values()]
         .filter((p) => AGENT_REGEX.test(`${p.entry.name} ${p.entry.description}`))
@@ -186,8 +184,7 @@ function buildCollections(profiles) {
       slug: "dashboards",
       title: "Built for dashboards",
       standfirst:
-        "Charts, tables, and the plumbing around them.",
-      criterion: "The registries whose components reach most often for a charting or table library.",
+        "Components for charts, tables and the screens that show data.",
       kind: "computed",
       registries: topByDeps(profiles, DASH_PKGS, 5),
     },
@@ -195,8 +192,7 @@ function buildCollections(profiles) {
       slug: "beyond-radix",
       title: "Beyond Radix",
       standfirst:
-        "Built on Base UI or React Aria instead of Radix.",
-      criterion: "Ranked by how many of their components import one of the two.",
+        "These registries build on Base UI or React Aria, not on Radix.",
       kind: "computed",
       registries: topByDeps(profiles, ALT_PRIMITIVE_PKGS, 5, 5),
     },
@@ -204,8 +200,7 @@ function buildCollections(profiles) {
       slug: "megacatalogs",
       title: "The megacatalogs",
       standfirst:
-        "Thousands of components each.",
-      criterion: "Every registry past a thousand components, biggest first.",
+        "Each of these registries has more than a thousand components.",
       kind: "computed",
       registries: [...profiles.values()]
         .filter((p) => p.itemCount >= 1000 && href(p.entry))
@@ -221,8 +216,7 @@ function buildCollections(profiles) {
       slug: "sells-real",
       title: "Sells something real",
       standfirst:
-        "Templates, Figma kits, MCP servers, team licences.",
-      criterion: "Registries with a paid tier we opened and checked ourselves.",
+        "These registries sell templates, Figma kits, MCP servers and team licences.",
       kind: "computed",
       registries: [...profiles.values()]
         .filter(
@@ -241,8 +235,7 @@ function buildCollections(profiles) {
       slug: "weird-wonderful",
       title: "Weird & wonderful",
       standfirst:
-        "Outliers that stretch what a registry can be.",
-      criterion: "Chosen by hand, one at a time.",
+        "These registries do something unusual with the format.",
       kind: "curated",
       registries: CURATED_SHELF.map(([name, reason]) => {
         const p = profiles.get(name);

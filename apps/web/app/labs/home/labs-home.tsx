@@ -45,24 +45,10 @@ function timeAgo(dateStr: string): string {
 function CollectionHeader({ collection }: { collection: Collection }) {
   return (
     <header className="flex flex-col gap-1.5">
-      <div className="flex items-baseline gap-3">
-        <h2 className="type-section text-balance">
-          {collection.title}
-        </h2>
-        <span
-          aria-hidden="true"
-          className={`mt-1 size-1.5 rounded-full ${
-            collection.kind === "computed" ? "bg-chart-2" : "bg-chart-4"
-          }`}
-        />
-        <span className="sr-only">
-          {collection.kind === "computed" ? "computed collection" : "curated collection"}
-        </span>
-      </div>
-      <p className="text-sm text-muted-foreground max-w-xl text-pretty">{collection.standfirst}</p>
-      <code className="mt-1 w-fit type-meta text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
-        {collection.criterion}
-      </code>
+      <h2 className="type-section text-balance">{collection.title}</h2>
+      <p className="text-sm text-muted-foreground max-w-xl text-pretty">
+        {collection.standfirst}
+      </p>
     </header>
   )
 }
@@ -412,14 +398,6 @@ export function LabsHome({
             P
           </kbd>
         </Link>
-        <div className="mt-4 flex items-center gap-4 type-meta text-muted-foreground">
-          <span className="flex items-center gap-1.5">
-            <span aria-hidden="true" className="size-1.5 rounded-full bg-chart-2" /> computed
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span aria-hidden="true" className="size-1.5 rounded-full bg-chart-4" /> curated
-          </span>
-        </div>
       </header>
 
       <JustShipped shipped={shipped} />
