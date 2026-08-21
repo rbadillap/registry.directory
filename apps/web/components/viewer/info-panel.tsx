@@ -90,10 +90,10 @@ export function InfoPanel({ item }: InfoPanelProps) {
 
       <div className="flex-1 min-h-0">
         <ScrollArea className="h-full">
-          <div className="p-3 md:p-4 space-y-3 md:space-y-4">
+          <div className="p-3 md:p-4 space-y-5 md:space-y-6">
             {/* Main Info Card */}
-            <Card className="bg-surface/50 border-border">
-              <CardContent className="p-3 md:pt-4 md:px-6 md:pb-6 space-y-3 md:space-y-4">
+            <Card className="bg-surface/50 border-border shadow-none">
+              <CardContent className="p-3 md:pt-5 md:px-6 md:pb-6 space-y-4 md:space-y-5">
                 {/* Name and Type */}
                 <div className="flex gap-3 items-start">
                   <div className="flex-1 min-w-0 space-y-1">
@@ -111,7 +111,7 @@ export function InfoPanel({ item }: InfoPanelProps) {
 
                 {/* Description */}
                 {item.description && (
-                  <div className="space-y-1 pt-2 border-t border-border">
+                  <div className="space-y-1.5 pt-4 border-t border-border">
                     <div className="text-xs text-muted-foreground uppercase tracking-wider">Description</div>
                     <p className="text-sm text-muted-foreground">{item.description}</p>
                   </div>
@@ -119,7 +119,7 @@ export function InfoPanel({ item }: InfoPanelProps) {
 
                 {/* Files */}
                 {item.files && item.files.length > 0 && (
-                  <div className="space-y-2 pt-2 border-t border-border">
+                  <div className="space-y-2 pt-4 border-t border-border">
                     <div className="flex items-center gap-2">
                       <FileCode className="h-3.5 w-3.5 text-muted-foreground" />
                       <span className="text-xs text-muted-foreground uppercase tracking-wider">Files</span>
@@ -167,14 +167,14 @@ export function InfoPanel({ item }: InfoPanelProps) {
 
             {/* Dependencies Card */}
             {allDeps.length > 0 && (
-              <Card className="bg-surface/50 border-border">
+              <Card className="bg-surface/50 border-border shadow-none">
                 <CardHeader className="pb-2 pt-3 md:pt-4 px-3 md:px-4">
                   <CardTitle className="text-sm flex items-center gap-2">
                     <Package className="h-3.5 w-3.5" />
                     Dependencies
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="px-3 md:px-4 pb-3 md:pb-4 space-y-2 md:space-y-3">
+                <CardContent className="px-3 md:px-4 pb-4 md:pb-5 space-y-4 md:space-y-5">
                   {item.dependencies && item.dependencies.length > 0 && (
                     <div className="space-y-2">
                       <div className="text-xs text-muted-foreground uppercase tracking-wider">npm packages</div>
