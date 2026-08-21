@@ -121,7 +121,7 @@ function RegistryCard({
     >
       {registry.sponsored && (
         <span className="absolute top-0 right-0 type-label text-muted-foreground bg-secondary border-b border-l border-border-subtle px-1.5 py-0.5">
-          Sponsored
+          Affiliate
         </span>
       )}
       <div className="flex flex-col gap-1.5">
@@ -177,7 +177,7 @@ export function StackSections({ collections }: { collections: Collection[] }) {
         >
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8">
             {/* Clears the search bar, which sticks above it on the home. */}
-            <div className="md:sticky md:top-[calc(var(--sticky-search-h)+1.5rem)] self-start">
+            <div className="md:sticky md:top-[calc(var(--sticky-search-h)_+_1.5rem)] self-start">
               <CollectionHeader collection={collection} />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

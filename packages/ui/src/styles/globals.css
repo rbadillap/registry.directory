@@ -43,6 +43,10 @@
   --sidebar-ring: oklch(0.708 0 0);
   --surface: oklch(0.993 0.003 80);
   --surface-elevated: oklch(0.94 0.005 80);
+  /* How much of the viewport the home's sticky search bar takes: its own
+     vertical padding plus the field. Anything else that sticks on that page
+     offsets from this, so the two can not drift apart. */
+  --sticky-search-h: 4.875rem;
   --foreground-secondary: oklch(0.30 0 0);
   --foreground-subtle: oklch(0.55 0 0);
   --foreground-faint: oklch(0.75 0 0);
@@ -135,13 +139,6 @@
   --color-foreground-subtle: var(--foreground-subtle);
   --color-foreground-faint: var(--foreground-faint);
   --color-border-subtle: var(--border-subtle);
-}
-
-/* How much of the viewport the home's sticky search bar occupies: its own
-   vertical padding plus the field. Anything else that sticks on that page
-   offsets by this, so the two can not drift apart. */
-:root {
-  --sticky-search-h: 4.875rem;
 }
 
 /* Typographic roles.
