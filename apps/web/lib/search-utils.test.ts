@@ -7,7 +7,8 @@
 
 import { strict as assert } from "node:assert"
 import { describe, it } from "node:test"
-import { normalizeForSearch, searchTerms } from "./search-utils.ts"
+import { normalizeForSearch, searchItems, searchTerms } from "./search-utils.ts"
+import type { IndexedItem } from "./items-index.ts"
 
 const matches = (query: string, text: string): boolean => {
   const terms = searchTerms(query)
@@ -60,5 +61,63 @@ describe("a query finds a name spelled the other way", () => {
 
   it("does not match a word the text does not contain", () => {
     assert.equal(matches("alert sheet", "alert-dialog"), false)
+  })
+})
+
+// The helpers being right is not the same as the search using them: the two
+// surfaces drifted apart once already, and only a test that goes through
+// searchItems would have said so.
+const item = (
+  name: string,
+  description = "",
+  registry = "shadcn/ui"
+): IndexedItem => ({
+  name,
+  type: "registry:ui",
+  description,
+  categories: [],
+  registry: { name: registry, basePath: "/shadcn-ui/ui", avatarUrl: null },
+})
+
+const names = (results: IndexedItem[]): string[] => results.map((r) => r.name)
+
+describe("searchItems", () => {
+  const catalog = [
+    item("alert-dialog", "A modal dialog that interrupts."),
+    item("alert", "Displays a callout."),
+    item("dialog", "A window overlaid on the page."),
+    item("use_mobile", "Hook that reports viewport width."),
+    item("sheet", "Extends the dialog component."),
+  ]
+
+  it("finds a hyphenated name from words typed with a space", () => {
+    assert.deepEqual(names(searchItems(catalog, "alert dialog")), ["alert-dialog"])
+  })
+
+  it("finds it however the separators are typed", () => {
+    assert.deepEqual(names(searchItems(catalog, "alert-dialog")), ["alert-dialog"])
+    assert.deepEqual(names(searchItems(catalog, "alert_dialog")), ["alert-dialog"])
+  })
+
+  it("finds an underscored name from words typed with a space", () => {
+    assert.deepEqual(names(searchItems(catalog, "use mobile")), ["use_mobile"])
+  })
+
+  it("does not care in which order the words were typed", () => {
+    assert.deepEqual(names(searchItems(catalog, "dialog alert")), ["alert-dialog"])
+  })
+
+  it("ranks the name that was spelled out above the ones that merely contain it", () => {
+    const results = names(searchItems(catalog, "dialog"))
+    assert.equal(results[0], "dialog", "the exact name comes first")
+    assert.ok(results.includes("alert-dialog"))
+  })
+
+  it("still requires every word to appear", () => {
+    assert.deepEqual(searchItems(catalog, "alert stepper"), [])
+  })
+
+  it("returns nothing for an empty query", () => {
+    assert.deepEqual(searchItems(catalog, "   "), [])
   })
 })

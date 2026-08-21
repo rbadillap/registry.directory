@@ -36,16 +36,22 @@ export function searchItems(
   items: IndexedItem[],
   query: string
 ): IndexedItem[] {
-  const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+  const terms = searchTerms(query);
   if (terms.length === 0) return [];
+
+  // Kept whole as well as split: someone who types a component's full name
+  // should outrank someone whose words merely appear in it.
+  const whole = normalizeForSearch(query);
 
   // 1. Score + filter in one pass
   const scored: ScoredItem[] = [];
 
   for (const item of items) {
-    const name = item.name.toLowerCase();
-    const desc = item.description.toLowerCase();
-    const regName = item.registry.name.toLowerCase();
+    // Normalized on both sides, so a name published as alert-dialog answers
+    // to the words someone actually types.
+    const name = normalizeForSearch(item.name);
+    const desc = normalizeForSearch(item.description);
+    const regName = normalizeForSearch(item.registry.name);
 
     let totalScore = 0;
     let allTermsMatch = true;
@@ -66,7 +72,7 @@ export function searchItems(
         termScore += 10;
       }
 
-      if (item.categories.some((c) => c.toLowerCase().includes(term))) {
+      if (item.categories.some((c) => normalizeForSearch(c).includes(term))) {
         termScore += 10;
       }
 
@@ -80,6 +86,11 @@ export function searchItems(
       }
 
       totalScore += termScore;
+    }
+
+    // Spelling the name exactly still wins, whichever separators were used.
+    if (allTermsMatch && name === whole) {
+      totalScore += 100;
     }
 
     if (allTermsMatch) {
