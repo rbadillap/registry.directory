@@ -241,7 +241,7 @@ export function WhatsNew({ shipped }: { shipped: ShippedFile | null }) {
             </p>
           </div>
           <code className="text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
-            diff(registry.json) · order by added desc
+            The registries that published the most, first
           </code>
         </header>
         <div className="relative">

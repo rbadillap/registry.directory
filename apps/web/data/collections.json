@@ -8,7 +8,7 @@
       "slug": "motion",
       "title": "Movement as a first language",
       "standfirst": "Registries where animation is the point, not the garnish — springs, staggers and scroll choreography ship inside the components.",
-      "criterion": "deps ∩ { motion, framer-motion, gsap } · ranked by mentions",
+      "criterion": "The registries whose components lean hardest on a motion library.",
       "kind": "computed",
       "registries": [
         {
@@ -23,7 +23,7 @@
           "stars": 7974,
           "updated": "updated 13d ago",
           "updatedDays": 13,
-          "evidence": "motion×466"
+          "evidence": "466 components import motion"
         },
         {
           "name": "Animate UI",
@@ -38,7 +38,7 @@
           "stars": 4180,
           "updated": "updated 7mo ago",
           "updatedDays": 233,
-          "evidence": "motion×366"
+          "evidence": "366 components import motion"
         },
         {
           "name": "Shadcn Space",
@@ -53,7 +53,7 @@
           "stars": 734,
           "updated": "updated 16d ago",
           "updatedDays": 16,
-          "evidence": "motion×327"
+          "evidence": "327 components import motion"
         },
         {
           "name": "heroicons-animated",
@@ -67,7 +67,7 @@
           "stars": 170,
           "updated": "updated 12d ago",
           "updatedDays": 12,
-          "evidence": "motion×316"
+          "evidence": "316 components import motion"
         },
         {
           "name": "UI TripleD",
@@ -82,15 +82,15 @@
           "stars": 1312,
           "updated": "updated 1mo ago",
           "updatedDays": 30,
-          "evidence": "framer-motion×282"
+          "evidence": "282 components import framer-motion"
         }
       ]
     },
     {
       "slug": "agent-ui",
       "title": "Interfaces for agents",
-      "standfirst": "Chat surfaces, streaming markdown, tool-call rendering — the component layer of the AI application stack. Chat UI rarely imports the AI SDK, so this cluster's identity lives in what the registries say they are.",
-      "criterion": "name ∨ description ∋ { ai, agent, assistant } · from submission data",
+      "standfirst": "Chat surfaces, streaming markdown, tool-call rendering — the component layer of the AI application stack.",
+      "criterion": "Registries that describe themselves as built for AI and agents.",
       "kind": "computed",
       "registries": [
         {
@@ -106,7 +106,7 @@
           "stars": 11750,
           "updated": "updated today",
           "updatedDays": 0,
-          "evidence": "\"assistant\" in name"
+          "evidence": "Describes itself as \"assistant\""
         },
         {
           "name": "AI Canvas",
@@ -121,7 +121,7 @@
           "stars": 47,
           "updated": "updated 4d ago",
           "updatedDays": 4,
-          "evidence": "\"ai\" in name"
+          "evidence": "Describes itself as \"ai\""
         },
         {
           "name": "AI Elements",
@@ -136,7 +136,7 @@
           "stars": 26324,
           "updated": "updated today",
           "updatedDays": 0,
-          "evidence": "\"ai\" in name"
+          "evidence": "Describes itself as \"ai\""
         },
         {
           "name": "21st.dev Agent Elements",
@@ -150,7 +150,7 @@
           "stars": 94,
           "updated": "updated 3mo ago",
           "updatedDays": 119,
-          "evidence": "\"agent\" in name"
+          "evidence": "Describes itself as \"agent\""
         },
         {
           "name": "@agents-ui",
@@ -165,7 +165,7 @@
           "stars": 460,
           "updated": "updated 2d ago",
           "updatedDays": 2,
-          "evidence": "\"agents\" in name"
+          "evidence": "Describes itself as \"agents\""
         }
       ]
     },
@@ -173,7 +173,7 @@
       "slug": "dashboards",
       "title": "Built for dashboards",
       "standfirst": "Charts, data tables and the plumbing around them — registries that assume your next screen has numbers on it.",
-      "criterion": "deps ∩ { recharts, tanstack-table, d3 } · ranked by mentions",
+      "criterion": "The registries whose components reach most often for a charting or table library.",
       "kind": "computed",
       "registries": [
         {
@@ -195,7 +195,7 @@
             "figma_kit",
             "mcp_agent"
           ],
-          "evidence": "@tanstack/react-table×119 · recharts×71"
+          "evidence": "119 components import @tanstack/react-table · 71 components import recharts"
         },
         {
           "name": "shadcn-ui-blocks.com",
@@ -212,7 +212,7 @@
             "mcp_agent",
             "team_license"
           ],
-          "evidence": "recharts×61"
+          "evidence": "61 components import recharts"
         },
         {
           "name": "Shadcn Dashboard",
@@ -227,7 +227,7 @@
           "stars": 409,
           "updated": "updated 1d ago",
           "updatedDays": 1,
-          "evidence": "recharts×41 · @tanstack/react-table×13"
+          "evidence": "41 components import recharts · 13 components import @tanstack/react-table"
         },
         {
           "name": "Zyeon UI",
@@ -242,7 +242,7 @@
           "stars": 1,
           "updated": "updated 20d ago",
           "updatedDays": 20,
-          "evidence": "recharts×37"
+          "evidence": "37 components import recharts"
         },
         {
           "name": "Shadcn Space",
@@ -257,7 +257,7 @@
           "stars": 734,
           "updated": "updated 16d ago",
           "updatedDays": 16,
-          "evidence": "@tanstack/react-table×15 · recharts×4"
+          "evidence": "15 components import @tanstack/react-table · 4 components import recharts"
         }
       ]
     },
@@ -265,7 +265,7 @@
       "slug": "beyond-radix",
       "title": "Beyond Radix",
       "standfirst": "The ecosystem's default primitive is Radix. These registries bet on Base UI or React Aria instead — a real architectural fork.",
-      "criterion": "deps ∩ { @base-ui/react, react-aria-components } · ranked by mentions",
+      "criterion": "The registries building on Base UI or React Aria instead of Radix.",
       "kind": "computed",
       "registries": [
         {
@@ -281,7 +281,7 @@
           "stars": 15806,
           "updated": "updated 1d ago",
           "updatedDays": 1,
-          "evidence": "react-aria-components×124 · react-aria×42"
+          "evidence": "124 components import react-aria-components · 42 components import react-aria"
         },
         {
           "name": "Intent UI",
@@ -296,7 +296,7 @@
           "stars": 1950,
           "updated": "updated 3d ago",
           "updatedDays": 3,
-          "evidence": "react-aria-components×152"
+          "evidence": "152 components import react-aria-components"
         },
         {
           "name": "ReUI",
@@ -317,7 +317,7 @@
             "figma_kit",
             "mcp_agent"
           ],
-          "evidence": "@base-ui/react×54"
+          "evidence": "54 components import @base-ui/react"
         },
         {
           "name": "RetroUI",
@@ -331,7 +331,7 @@
           "stars": 1573,
           "updated": "updated 18d ago",
           "updatedDays": 18,
-          "evidence": "@base-ui/react×54"
+          "evidence": "54 components import @base-ui/react"
         },
         {
           "name": "UIAble",
@@ -346,7 +346,7 @@
           "stars": 90,
           "updated": "updated 3d ago",
           "updatedDays": 3,
-          "evidence": "@base-ui/react×51"
+          "evidence": "51 components import @base-ui/react"
         }
       ]
     },
@@ -354,7 +354,7 @@
       "slug": "megacatalogs",
       "title": "The megacatalogs",
       "standfirst": "Four-digit item counts. When you need volume and variety more than a single voice.",
-      "criterion": "items ≥ 1,000 · ranked by item count",
+      "criterion": "Every registry past a thousand components, biggest first.",
       "kind": "computed",
       "registries": [
         {
@@ -372,7 +372,7 @@
             "mcp_agent",
             "team_license"
           ],
-          "evidence": "4,002 items · block"
+          "evidence": "4,002 components"
         },
         {
           "name": "Shadcn Blocks",
@@ -394,7 +394,7 @@
             "mcp_agent"
           ],
           "sponsored": true,
-          "evidence": "3,968 items · block"
+          "evidence": "3,968 components"
         },
         {
           "name": "Beste UI",
@@ -414,7 +414,7 @@
             "team_license"
           ],
           "sponsored": true,
-          "evidence": "1,935 items · block"
+          "evidence": "1,935 components"
         },
         {
           "name": "ReUI",
@@ -435,7 +435,7 @@
             "figma_kit",
             "mcp_agent"
           ],
-          "evidence": "1,667 items · block"
+          "evidence": "1,667 components"
         }
       ]
     },
@@ -443,7 +443,7 @@
       "slug": "sells-real",
       "title": "Sells something real",
       "standfirst": "Commercial registries whose paid tier we verified on the live site — templates, Figma kits, MCP servers, team licenses.",
-      "criterion": "pro flags verified · from submission data + live-site audit",
+      "criterion": "Registries with a paid tier we opened and checked ourselves.",
       "kind": "computed",
       "registries": [
         {
@@ -549,8 +549,8 @@
     {
       "slug": "weird-wonderful",
       "title": "Weird & wonderful",
-      "standfirst": "Hand-picked outliers that stretch what a registry can be. No query produced this shelf — an editor did.",
-      "criterion": "curated by @rbadillap · no query",
+      "standfirst": "Hand-picked outliers that stretch what a registry can be.",
+      "criterion": "Chosen by hand, one at a time.",
       "kind": "curated",
       "registries": [
         {

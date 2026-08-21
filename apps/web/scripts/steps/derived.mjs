@@ -121,7 +121,7 @@ function depEvidence(profile, pkgs, max = 2) {
     .filter(([, n]) => n > 0)
     .sort((a, b) => b[1] - a[1])
     .slice(0, max)
-    .map(([p, n]) => `${p}×${n}`)
+    .map(([p, n]) => `${n} components import ${p}`)
     .join(" · ");
 }
 
@@ -158,7 +158,7 @@ function buildCollections(profiles) {
       title: "Movement as a first language",
       standfirst:
         "Registries where animation is the point, not the garnish — springs, staggers and scroll choreography ship inside the components.",
-      criterion: "deps ∩ { motion, framer-motion, gsap } · ranked by mentions",
+      criterion: "The registries whose components lean hardest on a motion library.",
       kind: "computed",
       registries: topByDeps(profiles, MOTION_PKGS, 5),
     },
@@ -166,8 +166,8 @@ function buildCollections(profiles) {
       slug: "agent-ui",
       title: "Interfaces for agents",
       standfirst:
-        "Chat surfaces, streaming markdown, tool-call rendering — the component layer of the AI application stack. Chat UI rarely imports the AI SDK, so this cluster's identity lives in what the registries say they are.",
-      criterion: "name ∨ description ∋ { ai, agent, assistant } · from submission data",
+        "Chat surfaces, streaming markdown, tool-call rendering — the component layer of the AI application stack.",
+      criterion: "Registries that describe themselves as built for AI and agents.",
       kind: "computed",
       registries: [...profiles.values()]
         .filter((p) => AGENT_REGEX.test(`${p.entry.name} ${p.entry.description}`))
@@ -178,7 +178,7 @@ function buildCollections(profiles) {
         .slice(0, 5)
         .map(({ p, inName }) => {
           const m = `${p.entry.name} ${p.entry.description}`.match(AGENT_REGEX);
-          return card(p, `"${m?.[0]?.toLowerCase()}" in ${inName ? "name" : "description"}`);
+          return card(p, `Describes itself as "${m?.[0]?.toLowerCase()}"`);
         })
         .filter(Boolean),
     },
@@ -187,7 +187,7 @@ function buildCollections(profiles) {
       title: "Built for dashboards",
       standfirst:
         "Charts, data tables and the plumbing around them — registries that assume your next screen has numbers on it.",
-      criterion: "deps ∩ { recharts, tanstack-table, d3 } · ranked by mentions",
+      criterion: "The registries whose components reach most often for a charting or table library.",
       kind: "computed",
       registries: topByDeps(profiles, DASH_PKGS, 5),
     },
@@ -196,7 +196,7 @@ function buildCollections(profiles) {
       title: "Beyond Radix",
       standfirst:
         "The ecosystem's default primitive is Radix. These registries bet on Base UI or React Aria instead — a real architectural fork.",
-      criterion: "deps ∩ { @base-ui/react, react-aria-components } · ranked by mentions",
+      criterion: "The registries building on Base UI or React Aria instead of Radix.",
       kind: "computed",
       registries: topByDeps(profiles, ALT_PRIMITIVE_PKGS, 5, 5),
     },
@@ -205,21 +205,15 @@ function buildCollections(profiles) {
       title: "The megacatalogs",
       standfirst:
         "Four-digit item counts. When you need volume and variety more than a single voice.",
-      criterion: "items ≥ 1,000 · ranked by item count",
+      criterion: "Every registry past a thousand components, biggest first.",
       kind: "computed",
       registries: [...profiles.values()]
         .filter((p) => p.itemCount >= 1000 && href(p.entry))
         .sort((a, b) => b.itemCount - a.itemCount)
         .slice(0, 5)
         .map((p) =>
-          card(
-            p,
-            `${p.itemCount.toLocaleString("en-US")} items · ${
-              Object.entries(p.byType)
-                .sort((a, b) => b[1] - a[1])[0]?.[0]
-                ?.replace("registry:", "") ?? ""
-            }`
-          )
+          // The card already lists the types; the evidence is the size.
+          card(p, `${p.itemCount.toLocaleString("en-US")} components`)
         )
         .filter(Boolean),
     },
@@ -228,7 +222,7 @@ function buildCollections(profiles) {
       title: "Sells something real",
       standfirst:
         "Commercial registries whose paid tier we verified on the live site — templates, Figma kits, MCP servers, team licenses.",
-      criterion: "pro flags verified · from submission data + live-site audit",
+      criterion: "Registries with a paid tier we opened and checked ourselves.",
       kind: "computed",
       registries: [...profiles.values()]
         .filter(
@@ -247,8 +241,8 @@ function buildCollections(profiles) {
       slug: "weird-wonderful",
       title: "Weird & wonderful",
       standfirst:
-        "Hand-picked outliers that stretch what a registry can be. No query produced this shelf — an editor did.",
-      criterion: "curated by @rbadillap · no query",
+        "Hand-picked outliers that stretch what a registry can be.",
+      criterion: "Chosen by hand, one at a time.",
       kind: "curated",
       registries: CURATED_SHELF.map(([name, reason]) => {
         const p = profiles.get(name);

@@ -180,7 +180,7 @@ function RegistryCard({
 // beside a lead-first card grid.
 // ---------------------------------------------------------------------------
 
-function StackSections({ collections }: { collections: Collection[] }) {
+export function StackSections({ collections }: { collections: Collection[] }) {
   return (
     <div className="flex flex-col">
       {collections.map((collection) => (
@@ -324,7 +324,7 @@ function StepTicker({ entries }: { entries: ShippedEntry[] }) {
   )
 }
 
-function JustShipped({ shipped }: { shipped: ShippedFile | null }) {
+export function JustShipped({ shipped }: { shipped: ShippedFile | null }) {
   const entries = shipped?.entries ?? []
   const totalShipped = entries.reduce((s, e) => s + e.added.length, 0)
 
@@ -346,7 +346,7 @@ function JustShipped({ shipped }: { shipped: ShippedFile | null }) {
             )}
           </div>
           <code className="text-[11px] font-mono text-muted-foreground border border-border-subtle bg-secondary/40 px-2 py-1">
-            diff(registry.json) · rolling {shipped?.windowDays ?? 1}d window
+            Components published in the last {shipped?.windowDays ?? 1} days
           </code>
         </header>
         {entries.length > 0 ? (
