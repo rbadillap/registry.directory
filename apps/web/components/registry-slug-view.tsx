@@ -11,7 +11,6 @@ import {
   REGISTRY_TYPE_LABELS,
   singularType,
 } from "@/lib/registry-mappings"
-import { registryFetch } from "@/lib/fetch-utils"
 import { getAffiliates } from "@/lib/affiliates"
 import { loadRegistryIndex, parseGithubRef } from "@/lib/resolve-registry"
 import { loadRegistryView } from "@/lib/registry-data"
@@ -25,37 +24,6 @@ export function isCategory(slug: string): boolean {
   return slug in SLUG_TO_REGISTRY_TYPE
 }
 
-// The only third-party fetch left in the render path. An item view needs
-// files[].content — the component's actual source — and data/ carries
-// metadata and file paths but not content, so rendering one item page reaches
-// its origin registry once. Every other read on this page comes from disk.
-export async function fetchItemData(
-  registry: DirectoryEntry,
-  itemName: string
-): Promise<RegistryItem | null> {
-  let baseUrl: string
-  if (registry.registry_url) {
-    baseUrl = registry.registry_url.replace(/\/[^/]+\.json$/, "")
-  } else {
-    baseUrl = `${registry.url.replace(/\/$/, "")}/r`
-  }
-  const targetUrl = `${baseUrl}/${itemName}.json`
-
-  try {
-    const response = await registryFetch(targetUrl, {
-      timeout: 5000,
-      next: { revalidate: 86400 },
-    })
-
-    if (!response.ok) return null
-
-    const data = await response.json()
-    return data
-  } catch (error) {
-    console.error(`[SlugView] Item fetch error:`, error)
-    return null
-  }
-}
 
 // The preview image lives at a route handler rather than beside the page: the
 // item route is a catch-all, so nothing can sit under it, and the URL has to be

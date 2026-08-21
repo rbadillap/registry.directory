@@ -10,7 +10,7 @@ import { StatusBar } from "./viewer/status-bar"
 import { MobileTabNavigation, type MobileTab } from "./viewer/mobile-tab-navigation"
 import { cn } from "@workspace/ui/lib/utils"
 import type { DirectoryEntry, AffiliateConfig } from "@/lib/types"
-import type { Registry, RegistryItem } from "@/lib/registry-types"
+import type { Registry, RegistryItem, SourceStatus } from "@/lib/registry-types"
 import { generateGlobalsCss } from "@/lib/css-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { getTargetPath } from "@/lib/path-utils"
@@ -30,10 +30,11 @@ interface RegistryViewerProps {
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
+// "not-found" is the origin answering that this item is not there, which is a
+// different fact from a request that failed: one says the catalog is stale,
+// the other says the network is.
 type SourceState =
-  | { status: "idle" }
-  | { status: "loading" }
-  | { status: "ready" }
+  | { status: Exclude<SourceStatus, "error"> }
   | { status: "error"; message: string }
 
 // Add globals.css file if item has cssVars
@@ -99,10 +100,16 @@ export function RegistryViewer({ registry, registryIndex, handle, selectedItem: 
 
     fetch(`/r/${handle}/${name}.json`, { signal: controller.signal })
       .then(async (response) => {
+        if (response.status === 404) return null
         if (!response.ok) throw new Error(`HTTP ${response.status}`)
         return (await response.json()) as RegistryItem
       })
       .then((fetched) => {
+        if (!fetched) {
+          setSourceState({ status: "not-found" })
+          return
+        }
+
         const fetchedFiles = fetched.files ?? []
         const byPath = new Map(fetchedFiles.map((file) => [file.path, file.content]))
 
@@ -110,23 +117,23 @@ export function RegistryViewer({ registry, registryIndex, handle, selectedItem: 
         // aggregated endpoint still resolves them. Filling in contents by path
         // would drop every one of those, so an item that declared nothing
         // adopts what came back.
-        const merge = (item: RegistryItem): RegistryItem => {
-          if (!item.files?.length) return { ...item, files: fetchedFiles }
+        //
+        // Both decisions are made here, from `initialItem`, rather than inside
+        // a state updater: an updater that another updater reads is two
+        // queues agreeing by accident.
+        const declaredNoFiles = !initialItem?.files?.length
+        const adopted = declaredNoFiles ? (fetchedFiles[0] ?? null) : null
+
+        setSelectedItem((current) => {
+          if (!current) return current
+          if (!current.files?.length) return { ...current, files: fetchedFiles }
           return {
-            ...item,
-            files: item.files.map((file) => ({
+            ...current,
+            files: current.files.map((file) => ({
               ...file,
               content: file.content ?? byPath.get(file.path),
             })),
           }
-        }
-
-        let adopted: RegistryFile | null = null
-        setSelectedItem((current) => {
-          if (!current) return current
-          const merged = merge(current)
-          if (!current.files?.length) adopted = merged.files?.[0] ?? null
-          return merged
         })
         setSelectedFile((current) => {
           if (adopted) return adopted

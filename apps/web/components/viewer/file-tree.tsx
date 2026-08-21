@@ -18,7 +18,7 @@ import {
   Diamond,
 } from "lucide-react"
 import { cn } from "@workspace/ui/lib/utils"
-import type { RegistryItem } from "@/lib/registry-types"
+import type { RegistryItem, SourceStatus } from "@/lib/registry-types"
 import { getFileName, getTargetPath } from "@/lib/path-utils"
 import { REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
 import { useAnalytics } from "@/hooks/use-analytics"
@@ -35,7 +35,7 @@ interface FileTreeProps {
   basePath: string
   /** Whether the item's files have arrived. An item with no files yet and an
    *  item with no files at all look the same until this says which it is. */
-  sourceStatus?: "idle" | "loading" | "ready" | "error"
+  sourceStatus?: SourceStatus
 }
 
 type TreeNode = {
@@ -52,17 +52,11 @@ type PathTree = Map<string, TreeNode>
 function buildPathTree(items: RegistryItem[], itemMode: boolean): PathTree {
   const root = new Map<string, TreeNode>()
 
-  // Which view this is, stated rather than guessed. Reading a component shows
-  // its files; browsing a category shows its items — and a category can hold
-  // exactly one item, so counting them answers a different question than the
-  // one being asked. Paths, not contents, decide the shape of the tree.
-  const hasContent = itemMode
-
   for (const item of items) {
     if (!item.files || item.files.length === 0) continue
 
-    // If we have content (Nivel 3), process each file individually
-    if (hasContent) {
+    // Reading one component: its files are the tree.
+    if (itemMode) {
       for (const file of item.files) {
         const targetPath = getTargetPath(file)
         const pathParts = targetPath.split('/')
@@ -104,7 +98,7 @@ function buildPathTree(items: RegistryItem[], itemMode: boolean): PathTree {
       continue
     }
 
-    // Original logic for Nivel 2 (no content)
+    // Browsing a category: group its items by their target folder.
     const firstFile = item.files[0]
     if (!firstFile) continue
 
@@ -185,7 +179,8 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   const [openItems, setOpenItems] = useState<Set<string>>(new Set())
   const [searchQuery, setSearchQuery] = useState<string>("")
 
-  // Detect if we're viewing a single item (Nivel 3) or category list (Nivel 2)
+  // Which view this is, stated rather than guessed. A category can hold
+  // exactly one item, so counting them answers a different question.
   const isItemView = selectedItem !== null
 
   const pathTree = useMemo(
@@ -319,7 +314,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     const hasChildren = node.children.size > 0
     const hasItems = node.items.length > 0
 
-    // Render individual file nodes (Nivel 3 with content)
+    // Reading one component: render its files.
     if (node.type === 'file' && hasItems && node.items[0]) {
       const item = node.items[0]
       const file = item.files?.find(f => getTargetPath(f) === node.path)
@@ -559,16 +554,18 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
           <p className="text-xs text-foreground-subtle text-center">
             {sourceStatus === "loading"
               ? "Loading files…"
-              : sourceStatus === "error"
-                ? "This registry did not return its files"
-                : "No files"}
+              : sourceStatus === "not-found"
+                ? "No longer served"
+                : sourceStatus === "error"
+                  ? "Could not be loaded"
+                  : "No files"}
           </p>
         </div>
       </div>
     )
   }
 
-  // Render flat list of items (Nivel 2 - no file content)
+  // Browsing a category: its items are the list.
   if (!isItemView) {
     const categoryLabel = currentCategory ? REGISTRY_TYPE_LABELS[currentCategory] || currentCategory : "Items"
 
@@ -660,7 +657,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
     )
   }
 
-  // Render file tree (Nivel 3 - with file content)
+  // Reading one component: the tree of its files.
   return (
     <div className="h-full md:border-r border-border bg-background">
       <div className="p-2 md:p-3 border-b border-border">

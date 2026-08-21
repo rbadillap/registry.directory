@@ -5,7 +5,7 @@ import { useTheme } from "next-themes"
 import { ScrollArea, ScrollBar } from "@workspace/ui/components/scroll-area"
 import { Button } from "@workspace/ui/components/button"
 import { FileCode, Package, Copy, Check, FileWarning } from "lucide-react"
-import type { RegistryItem } from "@/lib/registry-types"
+import type { RegistryItem, SourceStatus } from "@/lib/registry-types"
 import { codeToHtml } from "shiki"
 import { getFileName, getExtension, getTargetPath } from "@/lib/path-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
@@ -18,7 +18,7 @@ interface CodeViewerProps {
   selectedItem?: RegistryItem | null
   /** Whether the file's source has arrived yet. Paths render from the
    *  committed catalog; contents are fetched separately. */
-  sourceStatus?: "idle" | "loading" | "ready" | "error"
+  sourceStatus?: SourceStatus
   /** What the origin registry answered when the source could not be read. */
   sourceError?: string
 }
@@ -105,14 +105,26 @@ export function CodeViewer({ file, selectedItem, sourceStatus = "ready", sourceE
   }, [file, resolvedTheme])
 
   // If there's a selected item but no files
-  // No file picked yet while the source is on its way. The item may well have
-  // files — nothing has looked yet — so the "no files" copy below would be a
-  // conclusion drawn before the evidence.
-  if (!file && selectedItem && sourceStatus === "loading") {
+  // No file to show, and four different reasons why. "This item has no files"
+  // is the last of them, and only earns the claim once the others are ruled
+  // out: until the source has been asked for and answered, it is a conclusion
+  // drawn ahead of the evidence.
+  if (!file && selectedItem && sourceStatus !== "ready") {
+    const message =
+      sourceStatus === "loading"
+        ? "Loading source…"
+        : sourceStatus === "not-found"
+          ? "This registry no longer serves this item"
+          : sourceStatus === "error"
+            ? "This registry did not return the source"
+            : "Loading source…"
     return (
       <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
-        <p className="text-sm mb-2">Loading source…</p>
-        <p className="text-xs text-foreground-subtle">{selectedItem.name}</p>
+        <p className="text-sm mb-2">{message}</p>
+        <p className="text-xs text-foreground-subtle">
+          {selectedItem.name}
+          {sourceStatus === "error" && sourceError ? ` — ${sourceError}` : ""}
+        </p>
       </div>
     )
   }
@@ -156,16 +168,18 @@ export function CodeViewer({ file, selectedItem, sourceStatus = "ready", sourceE
   // The path is known and the source is not, which is a state of its own:
   // the file exists, and either it is on its way or its origin refused it.
   if (!file.content && sourceStatus !== "ready") {
-    const failed = sourceStatus === "error"
+    const message =
+      sourceStatus === "not-found"
+        ? "This registry no longer serves this item"
+        : sourceStatus === "error"
+          ? "This registry did not return the source"
+          : "Loading source…"
     return (
       <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
-        <p className="text-sm mb-2">
-          {failed ? "This registry did not return the source" : "Loading source…"}
-        </p>
+        <p className="text-sm mb-2">{message}</p>
         <p className="text-xs text-foreground-subtle">
-          {failed
-            ? `${getFileName(getTargetPath(file))}${sourceError ? ` — ${sourceError}` : ""}`
-            : getFileName(getTargetPath(file))}
+          {getFileName(getTargetPath(file))}
+          {sourceStatus === "error" && sourceError ? ` — ${sourceError}` : ""}
         </p>
       </div>
     )
