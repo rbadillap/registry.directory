@@ -46,6 +46,35 @@ function socialImages(registry: DirectoryEntry, slug: string, alt: string) {
   }
 }
 
+// What a category listing renders from each of its items: a row, a link, and
+// the words its filter searches. The rest of the record — dependencies, style
+// variables, every file past the first — is never read there, and a category
+// can hold thousands of items.
+function forListing(item: RegistryItem): RegistryItem {
+  const {
+    dependencies: _dependencies,
+    devDependencies: _devDependencies,
+    registryDependencies: _registryDependencies,
+    cssVars: _cssVars,
+    css: _css,
+    categories: _categories,
+    docs: _docs,
+    meta: _meta,
+    files,
+    ...rest
+  } = item
+
+  const first = files?.[0]
+  return {
+    ...rest,
+    // Only the first file, and only where it installs: the listing groups
+    // items by target folder and shows that one name.
+    ...(first
+      ? { files: [{ path: first.path, type: first.type, target: first.target }] }
+      : {}),
+  } as RegistryItem
+}
+
 // Metadata for a category-or-item view living at `${basePath}/${slug}`.
 export async function buildSlugMetadata(
   registry: DirectoryEntry,
@@ -152,7 +181,7 @@ export async function RegistrySlugView({
     const filteredRegistry: Registry = {
       name: view.name,
       homepage: view.homepage,
-      items: categoryItems,
+      items: categoryItems.map(forListing),
     }
 
     const categoryLabel = REGISTRY_TYPE_LABELS[slug] || slug
@@ -169,6 +198,7 @@ export async function RegistrySlugView({
           registry={registry}
           registryIndex={filteredRegistry}
           handle={view.key}
+          categorySize={categoryItems.length}
           selectedItem={null}
           currentCategory={slug}
           affiliate={affiliate}
@@ -198,10 +228,15 @@ export async function RegistrySlugView({
 
   const categoryItems = categoriesMap.get(currentCategory) || []
 
+  // Reading one component does not need its siblings. The viewer shows the
+  // item's own files and, at the bottom, how many items the category holds —
+  // so the count travels and the list does not. A category can run to
+  // thousands of items, and every one of its item pages was carrying all of
+  // them to render one.
   const filteredRegistry: Registry = {
     name: view.name,
     homepage: view.homepage,
-    items: categoryItems,
+    items: [],
   }
 
   const categoryLabel = REGISTRY_TYPE_LABELS[currentCategory] || currentCategory
@@ -229,6 +264,7 @@ export async function RegistrySlugView({
         registry={registry}
         registryIndex={filteredRegistry}
         handle={view.key}
+        categorySize={categoryItems.length}
         selectedItem={itemData}
         currentCategory={currentCategory}
         affiliate={affiliate}

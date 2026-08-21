@@ -21,6 +21,9 @@ interface RegistryViewerProps {
   /** The registry's handle in the aggregated catalog, used to fetch file
    *  contents from /r/{handle}/{item}.json once a reader opens a file. */
   handle: string
+  /** How many items the category holds. Sent as a number because reading one
+   *  item does not need the other thousands, only their count. */
+  categorySize: number
   selectedItem: RegistryItem | null
   currentCategory: string
   affiliate?: AffiliateConfig | null
@@ -57,7 +60,7 @@ function addGlobalsCssFile(item: RegistryItem): RegistryItem {
   }
 }
 
-export function RegistryViewer({ registry, registryIndex, handle, selectedItem: initialItem, currentCategory, affiliate, basePath }: RegistryViewerProps) {
+export function RegistryViewer({ registry, registryIndex, handle, categorySize, selectedItem: initialItem, currentCategory, affiliate, basePath }: RegistryViewerProps) {
   const analytics = useAnalytics()
 
   // Add globals.css files to items with cssVars
@@ -333,7 +336,7 @@ export function RegistryViewer({ registry, registryIndex, handle, selectedItem: 
       </div>
 
       <StatusBar
-        totalItems={items.length}
+        totalItems={categorySize}
         selectedFile={selectedFile}
         onShare={handleShare}
       />
