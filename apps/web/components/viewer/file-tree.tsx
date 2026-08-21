@@ -16,8 +16,10 @@ import {
   Code2,
   LayoutGrid,
   Diamond,
+  Search,
 } from "lucide-react"
 import { cn } from "@workspace/ui/lib/utils"
+import { normalizeForSearch, searchTerms } from "@/lib/search-utils"
 import type { SourceStatus, ViewerFile, ViewerItem } from "@/lib/registry-types"
 import { getFileName, getTargetPath } from "@/lib/path-utils"
 import { REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
@@ -503,38 +505,55 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
   if (!isItemView) {
     const categoryLabel = currentCategory ? REGISTRY_TYPE_LABELS[currentCategory] || currentCategory : "Items"
 
-    // Filter items based on search query (match name, title, description)
-    const query = searchQuery.toLowerCase()
-    const filteredItems = items.filter(item =>
-      item.name.toLowerCase().includes(query) ||
-      (item.title && item.title.toLowerCase().includes(query)) ||
-      (item.description && item.description.toLowerCase().includes(query))
-    )
+    // Every word has to appear somewhere, and hyphens count as spaces on both
+    // sides: someone looking for "alert dialog" means alert-dialog, and typing
+    // the words in the order the component publishes them is not a skill worth
+    // requiring.
+    const terms = searchTerms(searchQuery)
+    const filteredItems = terms.length === 0
+      ? items
+      : items.filter((item) => {
+          const haystack = normalizeForSearch(
+            [item.name, item.title, item.description].filter(Boolean).join(" ")
+          )
+          return terms.every((term) => haystack.includes(term))
+        })
 
     return (
       <div className="h-full md:border-r border-border bg-background">
         <div className="p-2 md:p-3 border-b border-border">
+          {/* The field was a bare line of label-looking text: it read as a
+              heading rather than as somewhere to type. */}
+          <div className="flex items-center gap-2">
+          <Search className="h-3.5 w-3.5 text-muted-foreground flex-shrink-0" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => {
               setSearchQuery(e.target.value)
 
-              // Track search usage with debouncing
+              // Counts what the person sees. Filtering a second time here,
+              // by a different rule, reported zero results for searches that
+              // were showing some.
               if (e.target.value) {
-                const filtered = items.filter(item =>
-                  item.name.toLowerCase().includes(e.target.value.toLowerCase())
-                )
+                const terms = searchTerms(e.target.value)
+                const matched = items.filter((item) => {
+                  const haystack = normalizeForSearch(
+                    [item.name, item.title, item.description].filter(Boolean).join(" ")
+                  )
+                  return terms.every((term) => haystack.includes(term))
+                })
                 analytics.trackSearchUsed({
                   search_query: e.target.value,
-                  results_count: filtered.length,
+                  results_count: matched.length,
                   total_items: items.length,
                 })
               }
             }}
-            placeholder={`${categoryLabel} (${items.length})`}
-            className="w-full bg-transparent text-xs font-medium text-muted-foreground uppercase tracking-wider placeholder:text-muted-foreground focus:outline-none focus:text-muted-foreground"
+            placeholder={`Search (${items.length} ${categoryLabel.toLowerCase()})`}
+            className="w-full bg-transparent text-xs font-medium text-foreground uppercase tracking-wider placeholder:text-muted-foreground focus:outline-none"
           />
+          </div>
           {searchQuery && (
             <div className="text-[10px] text-foreground-subtle mt-1">
               {filteredItems.length} of {items.length} items
