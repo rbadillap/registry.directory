@@ -6,6 +6,7 @@ import { DirectoryTabs } from "@/components/directory-tabs";
 import { DirectoryTabsSkeleton } from "@/components/directory-tabs-skeleton";
 import { fetchAllRegistryStats } from "@/lib/registry-stats";
 import { fetchAllGitHubStats } from "@/lib/github-stats";
+import { loadCollections, loadShipped } from "@/lib/registry-data";
 import { getAffiliates } from "@/lib/affiliates";
 import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import type { DirectoryEntry } from "@/lib/types";
@@ -110,10 +111,12 @@ export default async function Home() {
   const components = await getRegistries();
   // Every one of these reads apps/web/data: no registry is contacted while
   // this page renders, and rendering has no side effects.
-  const [stats, githubStats, affiliates] = await Promise.all([
+  const [stats, githubStats, affiliates, collections, shipped] = await Promise.all([
     fetchAllRegistryStats(components),
     fetchAllGitHubStats(components),
     getAffiliates(),
+    loadCollections(),
+    loadShipped(),
   ]);
   const directorySchema = buildDirectoryListSchema(
     components.flatMap((registry) => {
@@ -166,7 +169,7 @@ export default async function Home() {
       </p>
 
       <Suspense fallback={<DirectoryTabsSkeleton />}>
-        <DirectoryTabs components={components} stats={stats} githubStats={githubStats} affiliates={affiliates} />
+        <DirectoryTabs components={components} stats={stats} githubStats={githubStats} affiliates={affiliates} collections={collections} shipped={shipped} />
       </Suspense>
 
       <AffiliateDisclosure />
