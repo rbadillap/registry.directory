@@ -13,23 +13,12 @@ import { isBinaryExtension } from "@/lib/file-utils"
 
 type RegistryFile = NonNullable<RegistryItem["files"]>[number]
 
-// One place where a status becomes words. Two cascades meant two chances to
-// forget a state, which is how "not-found" went missing from both.
-const SOURCE_MESSAGE: Record<Exclude<SourceStatus, "ready">, string> = {
-  idle: "Loading source…",
-  loading: "Loading source…",
-  "not-found": "This registry no longer serves this item",
-  error: "This registry did not return the source",
-}
-
 interface CodeViewerProps {
   file: RegistryFile | null
   selectedItem?: RegistryItem | null
   /** Whether the file's source has arrived yet. Paths render from the
    *  committed catalog; contents are fetched separately. */
   sourceStatus?: SourceStatus
-  /** What the origin registry answered when the source could not be read. */
-  sourceError?: string
 }
 
 function getLanguageFromPath(path: string): string {
@@ -62,7 +51,7 @@ function getLanguageFromPath(path: string): string {
   return extensionMap[extension] || "text"
 }
 
-export function CodeViewer({ file, selectedItem, sourceStatus = "ready", sourceError }: CodeViewerProps) {
+export function CodeViewer({ file, selectedItem, sourceStatus = "ready" }: CodeViewerProps) {
   const analytics = useAnalytics()
   const { resolvedTheme } = useTheme()
   const [highlightedCode, setHighlightedCode] = useState<string>("")
@@ -114,18 +103,14 @@ export function CodeViewer({ file, selectedItem, sourceStatus = "ready", sourceE
   }, [file, resolvedTheme])
 
   // If there's a selected item but no files
-  // No file to show, and four different reasons why. "This item has no files"
-  // is the last of them, and only earns the claim once the others are ruled
-  // out: until the source has been asked for and answered, it is a conclusion
-  // drawn ahead of the evidence.
+  // Why there is nothing to show is stated once, in the notice above this
+  // panel. Repeating it here would tell the same news twice, and "this item
+  // has no files" — the claim below — is only true once the source has been
+  // asked for and answered.
   if (!file && selectedItem && sourceStatus !== "ready") {
     return (
       <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
-        <p className="text-sm mb-2">{SOURCE_MESSAGE[sourceStatus]}</p>
-        <p className="text-xs text-foreground-subtle">
-          {selectedItem.name}
-          {sourceStatus === "error" && sourceError ? ` — ${sourceError}` : ""}
-        </p>
+        <p className="text-xs text-foreground-subtle font-mono">{selectedItem.name}</p>
       </div>
     )
   }
@@ -168,13 +153,12 @@ export function CodeViewer({ file, selectedItem, sourceStatus = "ready", sourceE
 
   // The path is known and the source is not, which is a state of its own:
   // the file exists, and either it is on its way or its origin refused it.
+  // Same rule: the notice above owns the reason.
   if (!file.content && sourceStatus !== "ready") {
     return (
       <div className="h-full flex flex-col items-center justify-center text-muted-foreground bg-background p-8">
-        <p className="text-sm mb-2">{SOURCE_MESSAGE[sourceStatus]}</p>
-        <p className="text-xs text-foreground-subtle">
+        <p className="text-xs text-foreground-subtle font-mono">
           {getFileName(getTargetPath(file))}
-          {sourceStatus === "error" && sourceError ? ` — ${sourceError}` : ""}
         </p>
       </div>
     )

@@ -101,7 +101,14 @@ export function RegistryViewer({ registry, registryIndex, handle, selectedItem: 
     fetch(`/r/${handle}/${name}.json`, { signal: controller.signal })
       .then(async (response) => {
         if (response.status === 404) return null
-        if (!response.ok) throw new Error(`HTTP ${response.status}`)
+        if (!response.ok) {
+          // The endpoint's own status describes the endpoint: it answers 502
+          // both for an origin that refused and for one it could not reach.
+          // Its body carries what the origin actually said, which is the part
+          // worth repeating.
+          const body = await response.json().catch(() => null)
+          throw new Error(body?.error ?? `The request failed with ${response.status}.`)
+        }
         return (await response.json()) as RegistryItem
       })
       .then((fetched) => {
@@ -225,25 +232,38 @@ export function RegistryViewer({ registry, registryIndex, handle, selectedItem: 
     <div className="h-screen bg-background text-foreground flex flex-col">
       <ViewerHeader registry={registry} currentCategory={currentCategory} selectedItemName={initialItem?.name} affiliate={affiliate} basePath={basePath} />
 
-      {/* A failure the panels below cannot report. The file being read may have
-          content of its own — a component with style variables always gets a
-          synthesised globals.css — so the panels see a file to show and never
-          reach their own error states. The origin still refused, and that is
-          worth saying somewhere that does not depend on what is selected. */}
-      {(sourceState.status === "error" || sourceState.status === "not-found") && (
+      {/* The one place that speaks for the source request. The panels below
+          show a file or they show nothing, and neither can be trusted to
+          report a failure: a component with style variables always gets a
+          synthesised globals.css, which gives them a file to show and a
+          non-empty tree no matter what the origin answered. Keeping the news
+          here also keeps it from being told three times. */}
+      {sourceState.status !== "ready" && sourceState.status !== "idle" && (
         <div
           role="status"
           className="px-3 py-2 border-b border-border bg-surface-elevated text-xs text-muted-foreground"
         >
-          <span className="font-medium text-foreground">
-            {sourceState.status === "not-found"
-              ? "This registry no longer serves this item"
-              : "This registry did not return the source"}
-          </span>
-          {" — "}
-          {sourceState.status === "error"
-            ? `${registry.name} answered ${sourceState.message}. Anything shown below comes from the directory's own catalog.`
-            : `${registry.name} lists it, but no longer resolves it. Anything shown below comes from the directory's own catalog.`}
+          {sourceState.status === "loading" ? (
+            <>Loading the source for <span className="font-mono">{initialItem?.name}</span>…</>
+          ) : sourceState.status === "not-found" ? (
+            <>
+              <span className="font-medium text-foreground">
+                This item is no longer served
+              </span>
+              {" — "}
+              {registry.name} lists it, but it no longer resolves. What you see
+              below comes from this directory&apos;s own catalog.
+            </>
+          ) : sourceState.status === "error" ? (
+            <>
+              <span className="font-medium text-foreground">
+                The source could not be loaded
+              </span>
+              {" — "}
+              {sourceState.message} What you see below comes from this
+              directory&apos;s own catalog.
+            </>
+          ) : null}
         </div>
       )}
 
@@ -272,7 +292,6 @@ export function RegistryViewer({ registry, registryIndex, handle, selectedItem: 
             file={selectedFile}
             selectedItem={selectedItem}
             sourceStatus={sourceState.status}
-            sourceError={sourceState.status === "error" ? sourceState.message : undefined}
           />
         </div>
         <div className={cn("h-full", mobileTab !== 'info' && "hidden")}>
@@ -302,7 +321,6 @@ export function RegistryViewer({ registry, registryIndex, handle, selectedItem: 
             file={selectedFile}
             selectedItem={selectedItem}
             sourceStatus={sourceState.status}
-            sourceError={sourceState.status === "error" ? sourceState.message : undefined}
           />
           </Panel>
 

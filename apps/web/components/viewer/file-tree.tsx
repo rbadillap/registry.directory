@@ -552,13 +552,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
         </div>
         <div className="flex items-center justify-center h-[calc(100%-44px)] md:h-[calc(100%-49px)] p-4">
           <p className="text-xs text-foreground-subtle text-center">
-            {sourceStatus === "loading"
-              ? "Loading files…"
-              : sourceStatus === "not-found"
-                ? "No longer served"
-                : sourceStatus === "error"
-                  ? "Could not be loaded"
-                  : "No files"}
+            {sourceStatus === "ready" ? "No files" : "—"}
           </p>
         </div>
       </div>
