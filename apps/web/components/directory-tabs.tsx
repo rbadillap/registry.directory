@@ -6,6 +6,7 @@ import { DirectoryList } from './directory-list';
 import { SearchBar } from './search-bar';
 import { useAnalytics, type SearchResultType, type HomeTab } from '@/hooks/use-analytics';
 import { useUrlState } from '@/hooks/use-url-state';
+import { useItemIndex } from '@/hooks/use-item-index';
 import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from '@/lib/types';
 import type { IndexedItem } from '@/lib/items-index';
 import { searchItems } from '@/lib/search-utils';
@@ -81,14 +82,24 @@ interface DirectoryTabsProps {
   components: DirectoryEntry[];
   stats: Record<string, RegistryStats>;
   githubStats: GitHubStatsRecord;
-  items: IndexedItem[];
   affiliates: Record<string, AffiliateConfig>;
 }
 
-export function DirectoryTabs({ components, stats, githubStats, items, affiliates }: DirectoryTabsProps) {
+export function DirectoryTabs({ components, stats, githubStats, affiliates }: DirectoryTabsProps) {
   const analytics = useAnalytics();
   const { activeTab, setActiveTab, searchTerm, setSearchTerm, typeFilters, setTypeFilters } = useUrlState();
   const deferredSearchTerm = useDeferredValue(searchTerm);
+
+  // The item index is not in this page: it is fetched when someone is about
+  // to search. Focus is the earliest signal, so the download starts while
+  // the first word is still being typed.
+  const { items, status: indexStatus, load: loadItemIndex } = useItemIndex();
+
+  // A link can arrive with the search already written into the URL, and that
+  // person never focuses the field.
+  useEffect(() => {
+    if (searchTerm) loadItemIndex();
+  }, [searchTerm, loadItemIndex]);
 
   const [premiumOnly, setPremiumOnly] = useState(false);
 
@@ -215,6 +226,7 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
             large
             value={searchTerm}
             onChange={setSearchTerm}
+            onFocus={loadItemIndex}
             placeholder="Search registries and components..."
           />
 
@@ -283,6 +295,7 @@ export function DirectoryTabs({ components, stats, githubStats, items, affiliate
             githubStats={githubStats}
             affiliates={affiliates}
             itemResults={filteredItems}
+            itemsStatus={indexStatus}
             onResultClick={handleResultClick}
             premiumFilterActive={premiumOnly}
           />
