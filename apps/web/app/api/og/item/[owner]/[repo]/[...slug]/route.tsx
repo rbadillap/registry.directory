@@ -2,7 +2,7 @@
 import { ImageResponse } from "next/og"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
-import { typeToSlug, SLUG_TO_REGISTRY_TYPE, REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
+import { typeToSlug, SLUG_TO_REGISTRY_TYPE, REGISTRY_TYPE_LABELS , slugFromSegments} from "@/lib/registry-mappings"
 import { getInstallCommand } from "@/lib/install-command"
 import { resolveByGithub, loadRegistryIndex } from "@/lib/resolve-registry"
 
@@ -24,7 +24,7 @@ export async function GET(
   { params }: { params: Promise<{ owner: string; repo: string; slug: string[] }> }
 ) {
   const { owner, repo, slug: segments } = await params
-  const slug = segments.join("/")
+  const slug = slugFromSegments(segments)
 
   const [dmSansRegular, dmSansMedium, ibmPlexMono] = await Promise.all([
     readFile(join(process.cwd(), 'public/fonts/DMSans-Regular.ttf')),

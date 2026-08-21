@@ -13,7 +13,7 @@ import {
 } from "@/lib/registry-mappings"
 import { registryFetch } from "@/lib/fetch-utils"
 import { getAffiliates } from "@/lib/affiliates"
-import { loadRegistryIndex } from "@/lib/resolve-registry"
+import { loadRegistryIndex, parseGithubRef } from "@/lib/resolve-registry"
 import { JsonLd } from "@/components/json-ld"
 import {
   buildBreadcrumbSchema,
@@ -57,12 +57,27 @@ export async function fetchItemData(
 }
 
 // The preview image lives at a route handler rather than beside the page: the
-// item route is a catch-all, so nothing can sit under it. Only github-backed
-// paths have one; `basePath` is `/{owner}/{repo}` for those.
-function previewImage(basePath: string, slug: string): string | null {
-  const github = basePath.match(/^\/([^/]+)\/([^/]+)$/)
+// item route is a catch-all, so nothing can sit under it, and the URL has to be
+// emitted rather than inferred from a file's position.
+//
+// Only github-backed registries have one, because the handler resolves its
+// subject the same way the page does.
+function previewImage(registry: DirectoryEntry, slug: string): string | null {
+  const github = parseGithubRef(registry.github_url)
   if (!github) return null
-  return `https://registry.directory/api/og/item/${github[1]}/${github[2]}/${slug}`
+  return `https://registry.directory/api/og/item/${github.owner}/${github.repo}/${slug}`
+}
+
+// The handler renders a card for a category and for an item alike, so both
+// branches of the metadata below advertise one.
+function openGraphImage(registry: DirectoryEntry, slug: string, alt: string) {
+  const url = previewImage(registry, slug)
+  return url ? { images: [{ url, width: 1200, height: 630, alt }] } : {}
+}
+
+function twitterImage(registry: DirectoryEntry, slug: string) {
+  const url = previewImage(registry, slug)
+  return url ? { images: [url] } : {}
 }
 
 // Metadata for a category-or-item view living at `${basePath}/${slug}`.
@@ -81,8 +96,19 @@ export async function buildSlugMetadata(
       title,
       description,
       alternates: { canonical },
-      openGraph: { title, description, url: canonical, type: "website" },
-      twitter: { card: "summary_large_image", title, description },
+      openGraph: {
+        title,
+        description,
+        url: canonical,
+        type: "website",
+        ...openGraphImage(registry, slug, title),
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        ...twitterImage(registry, slug),
+      },
     }
   }
 
@@ -101,9 +127,6 @@ export async function buildSlugMetadata(
   const title = `${slug} — shadcn ${noun} · ${registry.name}`
   const description = `${itemData?.description || slug}: a shadcn/ui ${noun} from ${registry.name}. Preview the source and install it with the shadcn CLI.`
 
-  const image = previewImage(basePath, slug)
-  const images = image ? [{ url: image, width: 1200, height: 630, alt: title }] : undefined
-
   return {
     title,
     description,
@@ -113,13 +136,13 @@ export async function buildSlugMetadata(
       description,
       url: canonical,
       type: "website",
-      ...(images ? { images } : {}),
+      ...openGraphImage(registry, slug, title),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      ...(images ? { images: images.map((i) => i.url) } : {}),
+      ...twitterImage(registry, slug),
     },
   }
 }

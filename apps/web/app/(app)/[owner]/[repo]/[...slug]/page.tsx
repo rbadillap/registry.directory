@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
-import { groupItemsByCategory } from "@/lib/registry-mappings"
+import { groupItemsByCategory , slugFromSegments} from "@/lib/registry-mappings"
 import { hasOnlyRenderableFiles } from "@/lib/file-utils"
 import {
   loadDirectory,
@@ -19,7 +19,7 @@ export async function generateMetadata({
   params: Promise<{ owner: string; repo: string; slug: string[] }>
 }): Promise<Metadata> {
   const { owner, repo, slug } = await params
-  const name = slug.join("/")
+  const name = slugFromSegments(slug)
   const registry = await resolveByGithub(owner, repo)
 
   if (!registry) {
@@ -87,7 +87,7 @@ export default async function SlugPage({
     <RegistrySlugView
       registry={registry}
       basePath={`/${owner}/${repo}`}
-      slug={slug.join("/")}
+      slug={slugFromSegments(slug)}
     />
   )
 }

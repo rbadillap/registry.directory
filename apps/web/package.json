@@ -13,7 +13,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "typecheck": "rm -rf .next/types .next-dev/types && tsc --noEmit"
+    "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",

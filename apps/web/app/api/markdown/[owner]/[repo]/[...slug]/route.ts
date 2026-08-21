@@ -1,3 +1,4 @@
+import { slugFromSegments } from "@/lib/registry-mappings"
 import { NextRequest } from "next/server"
 import { generateMarkdownForItem } from "@/lib/markdown-generator"
 import { resolveByGithub } from "@/lib/resolve-registry"
@@ -12,7 +13,7 @@ export async function GET(
 ) {
   const { owner, repo, slug: segments } = await params
   // An item name may contain slashes; each one arrives as its own segment.
-  const slug = segments.join("/")
+  const slug = slugFromSegments(segments)
 
   // Categories don't have markdown
   if (isCategory(slug)) {

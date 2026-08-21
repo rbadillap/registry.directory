@@ -20,6 +20,7 @@ import {
   listRegistryFiles,
   loadDirectory,
   indexUrl,
+  parseGithubRef,
   registryKey,
 } from "./lib/data-io.mjs";
 
@@ -59,6 +60,7 @@ async function main() {
   //    whose item count matches what the manifest advertises. Records marked
   //    "missing" are the opposite claim — they must have no file at all.
   let items = 0;
+  const viewOf = new Map();
   for (const record of manifest.registries) {
     if (record.status === "missing") {
       const orphan = await readFile(join(REGISTRIES_DIR, `${record.key}.json`), "utf8")
@@ -77,6 +79,7 @@ async function main() {
       `data/registries/${record.key}.json (${record.name})`
     );
     if (!view) continue;
+    viewOf.set(record.key, view);
 
     if (!Array.isArray(view.items)) {
       fail(`data/registries/${record.key}.json has no items array`);
@@ -217,6 +220,24 @@ async function main() {
       fail(
         `manifest built ${key} from ${record.url}, public/directory.json now points at ${url} — the view holds data from the old origin`
       );
+    }
+
+    // An item name may contain slashes, and each one becomes a path segment.
+    // A github-backed registry lives at /{owner}/{repo}, so the extra segments
+    // land in a catch-all and rejoin into the name. A registry reached only by
+    // its handle lives at /{handle}, where the second segment is the item —
+    // and /{handle}/a/b would be read as owner "handle", repo "a". Such an
+    // item would be listed in search and in the sitemap and answer 404, which
+    // is the failure this build is meant to make impossible.
+    if (!parseGithubRef(entry.github_url)) {
+      const nested = (viewOf.get(key)?.items ?? [])
+        .filter((item) => item.name?.includes("/"))
+        .map((item) => item.name);
+      if (nested.length > 0) {
+        fail(
+          `${entry.name} is reachable only by handle, and ${nested.length} of its items have a slash in the name (${nested.slice(0, 3).join(", ")}${nested.length > 3 ? ", …" : ""}) — those URLs cannot resolve`
+        );
+      }
     }
   }
 
