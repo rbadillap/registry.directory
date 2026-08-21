@@ -225,6 +225,28 @@ export function RegistryViewer({ registry, registryIndex, handle, selectedItem: 
     <div className="h-screen bg-background text-foreground flex flex-col">
       <ViewerHeader registry={registry} currentCategory={currentCategory} selectedItemName={initialItem?.name} affiliate={affiliate} basePath={basePath} />
 
+      {/* A failure the panels below cannot report. The file being read may have
+          content of its own — a component with style variables always gets a
+          synthesised globals.css — so the panels see a file to show and never
+          reach their own error states. The origin still refused, and that is
+          worth saying somewhere that does not depend on what is selected. */}
+      {(sourceState.status === "error" || sourceState.status === "not-found") && (
+        <div
+          role="status"
+          className="px-3 py-2 border-b border-border bg-surface-elevated text-xs text-muted-foreground"
+        >
+          <span className="font-medium text-foreground">
+            {sourceState.status === "not-found"
+              ? "This registry no longer serves this item"
+              : "This registry did not return the source"}
+          </span>
+          {" — "}
+          {sourceState.status === "error"
+            ? `${registry.name} answered ${sourceState.message}. Anything shown below comes from the directory's own catalog.`
+            : `${registry.name} lists it, but no longer resolves it. Anything shown below comes from the directory's own catalog.`}
+        </div>
+      )}
+
       {/* Mobile Tab Navigation - only visible on mobile */}
       <MobileTabNavigation
         activeTab={mobileTab}
