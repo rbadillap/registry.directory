@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useDeferredValue, useEffect, useCallback } from 'react';
+import { useState, useMemo, useDeferredValue, useEffect, useCallback, useRef } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
 import { DirectoryList } from './directory-list';
 import { SearchBar } from './search-bar';
@@ -200,17 +200,37 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates }: Di
     );
   }, [preparedIndex, deferredSearchTerm, typeFilters]);
 
-  // Track search performed (debounced via hook)
+  // What the event reports about a search, kept current without making the
+  // event depend on it: a tab change or a premium toggle alters these
+  // numbers, and neither of those is a search.
+  const searchContext = useRef({
+    tab: activeTab,
+    registryCount: 0,
+    itemCount: 0,
+    premiumOnly,
+  });
+  searchContext.current = {
+    tab: activeTab,
+    registryCount: sortedComponents.length,
+    itemCount: filteredItems.length,
+    premiumOnly,
+  };
+
+  // One event per search, and only once its counts are true. Reporting
+  // before the index lands would record zero components found for a search
+  // that finds plenty — the index simply had not arrived yet.
   useEffect(() => {
     if (!deferredSearchTerm) return;
+    if (indexStatus !== 'ready') return;
+    const { tab, registryCount, itemCount, premiumOnly: premium } = searchContext.current;
     analytics.trackSearchPerformed({
       search_query: deferredSearchTerm,
-      active_tab: activeTab as SortMode,
-      registry_results_count: sortedComponents.length,
-      item_results_count: filteredItems.length,
-      premium_only: premiumOnly,
+      active_tab: tab as SortMode,
+      registry_results_count: registryCount,
+      item_results_count: itemCount,
+      premium_only: premium,
     });
-  }, [deferredSearchTerm, activeTab, sortedComponents.length, filteredItems.length, premiumOnly, analytics]);
+  }, [deferredSearchTerm, indexStatus, analytics]);
 
   const handleResultClick = useCallback((result: { result_type: SearchResultType; result_name: string; result_position: number }) => {
     if (!searchTerm) return;
