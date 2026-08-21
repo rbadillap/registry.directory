@@ -70,14 +70,15 @@ function previewImage(registry: DirectoryEntry, slug: string): string | null {
 
 // The handler renders a card for a category and for an item alike, so both
 // branches of the metadata below advertise one.
-function openGraphImage(registry: DirectoryEntry, slug: string, alt: string) {
+// Open Graph wants the dimensions, Twitter wants the bare URL. One lookup,
+// two shapes, so the two can never disagree about whether an image exists.
+function socialImages(registry: DirectoryEntry, slug: string, alt: string) {
   const url = previewImage(registry, slug)
-  return url ? { images: [{ url, width: 1200, height: 630, alt }] } : {}
-}
-
-function twitterImage(registry: DirectoryEntry, slug: string) {
-  const url = previewImage(registry, slug)
-  return url ? { images: [url] } : {}
+  if (!url) return { openGraph: {}, twitter: {} }
+  return {
+    openGraph: { images: [{ url, width: 1200, height: 630, alt }] },
+    twitter: { images: [url] },
+  }
 }
 
 // Metadata for a category-or-item view living at `${basePath}/${slug}`.
@@ -92,6 +93,7 @@ export async function buildSlugMetadata(
     const categoryLabel = REGISTRY_TYPE_LABELS[slug] || slug
     const title = `shadcn ${categoryLabel.toLowerCase()} — ${registry.name}`
     const description = `Browse shadcn/ui ${categoryLabel.toLowerCase()} from ${registry.name}. Preview the source and install with the shadcn CLI.`
+    const social = socialImages(registry, slug, title)
     return {
       title,
       description,
@@ -101,13 +103,13 @@ export async function buildSlugMetadata(
         description,
         url: canonical,
         type: "website",
-        ...openGraphImage(registry, slug, title),
+        ...social.openGraph,
       },
       twitter: {
         card: "summary_large_image",
         title,
         description,
-        ...twitterImage(registry, slug),
+        ...social.twitter,
       },
     }
   }
@@ -127,6 +129,7 @@ export async function buildSlugMetadata(
   const title = `${slug} — shadcn ${noun} · ${registry.name}`
   const description = `${itemData?.description || slug}: a shadcn/ui ${noun} from ${registry.name}. Preview the source and install it with the shadcn CLI.`
 
+  const social = socialImages(registry, slug, title)
   return {
     title,
     description,
@@ -136,13 +139,13 @@ export async function buildSlugMetadata(
       description,
       url: canonical,
       type: "website",
-      ...openGraphImage(registry, slug, title),
+      ...social.openGraph,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      ...twitterImage(registry, slug),
+      ...social.twitter,
     },
   }
 }

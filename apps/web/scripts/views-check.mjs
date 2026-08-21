@@ -60,7 +60,7 @@ async function main() {
   //    whose item count matches what the manifest advertises. Records marked
   //    "missing" are the opposite claim — they must have no file at all.
   let items = 0;
-  const viewOf = new Map();
+  const viewsByKey = new Map();
   for (const record of manifest.registries) {
     if (record.status === "missing") {
       const orphan = await readFile(join(REGISTRIES_DIR, `${record.key}.json`), "utf8")
@@ -79,7 +79,7 @@ async function main() {
       `data/registries/${record.key}.json (${record.name})`
     );
     if (!view) continue;
-    viewOf.set(record.key, view);
+    viewsByKey.set(record.key, view);
 
     if (!Array.isArray(view.items)) {
       fail(`data/registries/${record.key}.json has no items array`);
@@ -230,7 +230,7 @@ async function main() {
     // item would be listed in search and in the sitemap and answer 404, which
     // is the failure this build is meant to make impossible.
     if (!parseGithubRef(entry.github_url)) {
-      const nested = (viewOf.get(key)?.items ?? [])
+      const nested = (viewsByKey.get(key)?.items ?? [])
         .filter((item) => item.name?.includes("/"))
         .map((item) => item.name);
       if (nested.length > 0) {

@@ -1,6 +1,7 @@
+import { slugFromSegments } from "@/lib/route-utils"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
-import { groupItemsByCategory , slugFromSegments} from "@/lib/registry-mappings"
+import { groupItemsByCategory } from "@/lib/registry-mappings"
 import { hasOnlyRenderableFiles } from "@/lib/file-utils"
 import {
   loadDirectory,

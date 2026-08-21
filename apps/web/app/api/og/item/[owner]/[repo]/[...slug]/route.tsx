@@ -1,8 +1,9 @@
 /* eslint-disable react/no-unknown-property */
+import { slugFromSegments } from "@/lib/route-utils"
 import { ImageResponse } from "next/og"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
-import { typeToSlug, SLUG_TO_REGISTRY_TYPE, REGISTRY_TYPE_LABELS , slugFromSegments} from "@/lib/registry-mappings"
+import { typeToSlug, SLUG_TO_REGISTRY_TYPE, REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
 import { getInstallCommand } from "@/lib/install-command"
 import { resolveByGithub, loadRegistryIndex } from "@/lib/resolve-registry"
 

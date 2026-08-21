@@ -1,4 +1,4 @@
-import { slugFromSegments } from "@/lib/registry-mappings"
+import { slugFromSegments } from "@/lib/route-utils"
 import { NextRequest } from "next/server"
 import { generateMarkdownForItem } from "@/lib/markdown-generator"
 import { resolveByGithub } from "@/lib/resolve-registry"
