@@ -157,7 +157,7 @@ function buildCollections(profiles) {
       slug: "motion",
       title: "Movement as a first language",
       standfirst:
-        "Registries where animation is the point, not the garnish — springs, staggers and scroll choreography ship inside the components.",
+        "Animation is the point here, not the garnish.",
       criterion: "The registries whose components lean hardest on a motion library.",
       kind: "computed",
       registries: topByDeps(profiles, MOTION_PKGS, 5),
@@ -166,7 +166,7 @@ function buildCollections(profiles) {
       slug: "agent-ui",
       title: "Interfaces for agents",
       standfirst:
-        "Chat surfaces, streaming markdown, tool-call rendering — the component layer of the AI application stack.",
+        "Chat surfaces, streaming text, tool calls.",
       criterion: "Registries that describe themselves as built for AI and agents.",
       kind: "computed",
       registries: [...profiles.values()]
@@ -186,7 +186,7 @@ function buildCollections(profiles) {
       slug: "dashboards",
       title: "Built for dashboards",
       standfirst:
-        "Charts, data tables and the plumbing around them — registries that assume your next screen has numbers on it.",
+        "Charts, tables, and the plumbing around them.",
       criterion: "The registries whose components reach most often for a charting or table library.",
       kind: "computed",
       registries: topByDeps(profiles, DASH_PKGS, 5),
@@ -195,8 +195,8 @@ function buildCollections(profiles) {
       slug: "beyond-radix",
       title: "Beyond Radix",
       standfirst:
-        "The ecosystem's default primitive is Radix. These registries bet on Base UI or React Aria instead — a real architectural fork.",
-      criterion: "The registries building on Base UI or React Aria instead of Radix.",
+        "Built on Base UI or React Aria instead of Radix.",
+      criterion: "Ranked by how many of their components import one of the two.",
       kind: "computed",
       registries: topByDeps(profiles, ALT_PRIMITIVE_PKGS, 5, 5),
     },
@@ -204,7 +204,7 @@ function buildCollections(profiles) {
       slug: "megacatalogs",
       title: "The megacatalogs",
       standfirst:
-        "Four-digit item counts. When you need volume and variety more than a single voice.",
+        "Thousands of components each.",
       criterion: "Every registry past a thousand components, biggest first.",
       kind: "computed",
       registries: [...profiles.values()]
@@ -221,7 +221,7 @@ function buildCollections(profiles) {
       slug: "sells-real",
       title: "Sells something real",
       standfirst:
-        "Commercial registries whose paid tier we verified on the live site — templates, Figma kits, MCP servers, team licenses.",
+        "Templates, Figma kits, MCP servers, team licences.",
       criterion: "Registries with a paid tier we opened and checked ourselves.",
       kind: "computed",
       registries: [...profiles.values()]
@@ -241,7 +241,7 @@ function buildCollections(profiles) {
       slug: "weird-wonderful",
       title: "Weird & wonderful",
       standfirst:
-        "Hand-picked outliers that stretch what a registry can be.",
+        "Outliers that stretch what a registry can be.",
       criterion: "Chosen by hand, one at a time.",
       kind: "curated",
       registries: CURATED_SHELF.map(([name, reason]) => {
@@ -266,6 +266,9 @@ function buildCollections(profiles) {
 
 const GRACE_DAYS = 3;
 
+// Enough entries for the wall to close its grid even on a quiet window.
+const MIN_ENTRIES = 12;
+
 function daysBetween(a, b) {
   return Math.round((new Date(`${a}T00:00Z`) - new Date(`${b}T00:00Z`)) / 86400000);
 }
@@ -275,13 +278,20 @@ function buildShipped(snapshots, directory) {
   const current = snapshots[snapshots.length - 1];
   const entries = [];
 
+  // The window decides what counts as recent. The wall below it needs a
+  // steady number of entries whatever the window holds, so once the window is
+  // spent the walk keeps going into older snapshots — those entries carry
+  // their own older dates, and are recent for nobody.
   const inWindow = snapshots.filter((s) => daysBetween(current.date, s.date) < GRACE_DAYS);
+  const older = snapshots.filter((s) => !inWindow.includes(s));
+  const walk = [...inWindow].reverse().concat([...older].reverse());
 
-  for (const snap of [...inWindow].reverse()) {
-    const older = snapshots.filter((s) => s.date < snap.date);
+  for (const snap of walk) {
+    if (entries.length >= MIN_ENTRIES && daysBetween(current.date, snap.date) >= GRACE_DAYS) break;
+    const before = snapshots.filter((s) => s.date < snap.date);
     for (const [name, raw] of Object.entries(snap.registries)) {
       if (!raw?.items) continue;
-      const prior = [...older].reverse().find((s) => s.registries[name]?.items);
+      const prior = [...before].reverse().find((s) => s.registries[name]?.items);
       if (!prior) continue; // first appearance — a whole catalog is not news
       const old = new Set(prior.registries[name].items.map((i) => i.name));
       const added = raw.items.map((i) => i.name).filter((n) => !old.has(n));
@@ -291,6 +301,7 @@ function buildShipped(snapshots, directory) {
       const directoryEntry = byName.get(name);
       entries.push({
         date: snap.date,
+        since: prior.date,
         registry: name,
         avatar: directoryEntry?.github_profile ?? null,
         href: directoryEntry ? href(directoryEntry) : null,

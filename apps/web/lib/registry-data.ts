@@ -182,6 +182,12 @@ export interface CollectionsFile {
 /** One registry's additions on one date. */
 export interface ShippedEntry {
   date: string
+  /**
+   * The date this was measured against. Equal to the day before `date` when
+   * ingestion ran daily; further back when a day was missed, which is the
+   * only way to tell six days of additions from one.
+   */
+  since: string
   registry: string
   avatar: string | null
   /** Route on this site, or null for an entry with no page of its own. */
