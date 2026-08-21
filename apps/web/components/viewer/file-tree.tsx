@@ -578,6 +578,9 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                       className={cn(
                         "flex items-start gap-2 w-full px-2 py-1.5 rounded",
                         "hover:bg-accent transition-colors",
+                        // A megacatalogue category is thousands of rows. Only
+                        // the visible ones are worth laying out and painting.
+                        "[content-visibility:auto] [contain-intrinsic-size:auto_56px]",
                       )}
                     >
                       <Icon className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />

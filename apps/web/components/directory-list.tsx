@@ -253,6 +253,11 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
                 key={`${registryKey}/${item.name}`}
                 href={`${item.registry.basePath}/${item.name}`}
                 onClick={() => onResultClick?.({ result_type: "item", result_name: item.name, result_position: index })}
+                // Expanding a broad search can put thousands of these on the
+                // page. The browser skips layout and paint for the ones below
+                // the fold; the intrinsic size keeps the scrollbar honest, and
+                // auto lets it remember the real height once measured.
+                className="[content-visibility:auto] [contain-intrinsic-size:auto_190px]"
               >
                 <Card className="bg-background border border-border-subtle rounded-none overflow-hidden shadow-none hover:shadow-lg hover:border-border transition-all h-full flex flex-col">
                   <CardHeader className="bg-background pt-3 pb-2 space-y-2">
