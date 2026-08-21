@@ -102,13 +102,13 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
           return null;
         })();
 
-        // Standard card (same layout for all, with optional sponsored ribbon for affiliates)
+        // Standard card (same layout for all, with an Affiliate ribbon where a link earns a commission)
         return (
           <div key={encodeURIComponent(entry.url)} className="h-full">
             <Card className="bg-background border border-border-subtle rounded-none overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col relative">
               {affiliate && (
                 <span className="absolute top-0 right-0 type-label text-muted-foreground bg-secondary border-b border-l border-border-subtle px-1.5 py-0.5 z-10">
-                  Sponsored
+                  Affiliate
                 </span>
               )}
               <CardHeader className="flex flex-row items-start justify-between gap-2 bg-background pt-4 pb-2">
@@ -146,7 +146,9 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
                   <a
                     href={affiliate ? affiliate.affiliate_url : addUtmParams(entry.url, "registry_preview")}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    // A link that earns a commission declares it to crawlers
+                    // too, not only in the ribbon a person can read.
+                    rel={affiliate ? "sponsored noopener noreferrer" : "noopener noreferrer"}
                     aria-label={`Visit ${entry.name} website`}
                     className="text-foreground-subtle hover:text-muted-foreground transition-colors"
                     onClick={() => trackHomeRegistryVisit({
