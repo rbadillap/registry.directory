@@ -264,7 +264,7 @@ function buildCollections(profiles) {
 // so a registry that failed ingestion one day contributes its additions the
 // day it reappears instead of losing them in the gap.
 
-const GRACE_DAYS = 3;
+const GRACE_DAYS = 7;
 
 // Enough entries for the wall to close its grid even on a quiet window.
 const MIN_ENTRIES = 12;

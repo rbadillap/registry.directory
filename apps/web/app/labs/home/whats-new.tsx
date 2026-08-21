@@ -135,7 +135,6 @@ function When({ cell, long }: { cell: UpdateCell; long: boolean }) {
   return (
     <span className="type-meta text-muted-foreground">
       {formatDate(cell.date, long)}
-      {cell.since ? ` · since ${formatDate(cell.since, false)}` : ""}
     </span>
   )
 }
@@ -198,7 +197,7 @@ function FeaturedCell({ cell, span }: { cell: UpdateCell; span: boolean }) {
         <Masthead cell={cell} size="lead" />
       </div>
       <p className="relative mt-4 type-card text-foreground-secondary">
-        {cell.count} new component{cell.count === 1 ? "" : "s"} · {cell.summary}
+        {cell.count} new component{cell.count === 1 ? "" : "s"}
       </p>
       <p className="relative mt-2 font-mono text-xs text-muted-foreground line-clamp-3">
         {cell.detail}
@@ -217,11 +216,11 @@ function UpdateCellView({ cell }: { cell: UpdateCell }) {
       <div className="mt-4">
         <Masthead cell={cell} size="row" />
       </div>
-      <p className="mt-3 type-meta text-foreground-secondary">
+      <p className="mt-3 type-card text-foreground-secondary">
         {cell.count} new component{cell.count === 1 ? "" : "s"}
       </p>
       <p className="mt-1.5 font-mono text-xs text-muted-foreground line-clamp-2">
-        {cell.summary}
+        {cell.detail}
       </p>
       <ViewLink cell={cell} />
     </CellFrame>
@@ -265,17 +264,17 @@ export function WhatsNew({ shipped }: { shipped: ShippedFile | null }) {
 
   return (
     <section
-      aria-label="What's new"
+      aria-label="This week"
       className="border-t border-border-subtle py-12 px-4 md:px-8"
     >
       <div className="max-w-6xl mx-auto flex flex-col gap-6">
         <header className="flex flex-wrap items-end justify-between gap-3">
           <div className="flex flex-col gap-1.5">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
-              {"What's new"}
+              {"This week"}
             </h2>
             <p className="text-sm text-muted-foreground text-pretty">
-              The latest components shipping across the shadcn ecosystem.
+              The registries that shipped something in the last seven days.
             </p>
           </div>
         </header>

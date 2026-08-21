@@ -246,7 +246,10 @@ function TickerRow({ entry }: { entry: ShippedEntry }) {
           </span>
         </div>
         <p className="truncate type-meta text-muted-foreground">
-          {entry.added.join(" · ")}
+          {/* A handful of names says what kind of thing shipped. The whole
+              list said nothing and filled the row. */}
+          {entry.added.slice(0, 4).join(" · ")}
+          {entry.added.length > 4 ? ` · +${entry.added.length - 4} more` : ""}
         </p>
       </div>
     </li>
