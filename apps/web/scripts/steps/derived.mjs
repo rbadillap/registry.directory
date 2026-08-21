@@ -269,7 +269,7 @@ function daysBetween(a, b) {
 function buildShipped(snapshots, directory) {
   const byName = new Map(directory.map((d) => [d.name, d]));
   const current = snapshots[snapshots.length - 1];
-  const entries = [];
+  let entries = [];
 
   // The window decides what counts as recent. The wall below it needs a
   // steady number of entries whatever the window holds, so once the window is
@@ -303,6 +303,25 @@ function buildShipped(snapshots, directory) {
     }
   }
 
+  // One row per registry. Within a week, a registry that published on two
+  // days is one piece of news, not two: the additions join, the date is the
+  // most recent of them, and `since` reaches back to the earliest comparison
+  // the merged row now stands for.
+  const merged = new Map();
+  for (const entry of entries) {
+    const seen = merged.get(entry.registry);
+    if (!seen) {
+      merged.set(entry.registry, { ...entry, added: [...entry.added] });
+      continue;
+    }
+    for (const name of entry.added) {
+      if (!seen.added.includes(name)) seen.added.push(name);
+    }
+    if (entry.date > seen.date) seen.date = entry.date;
+    if (entry.since < seen.since) seen.since = entry.since;
+  }
+
+  entries = [...merged.values()];
   entries.sort((a, b) => b.date.localeCompare(a.date) || b.added.length - a.added.length);
 
   return {
