@@ -115,7 +115,10 @@ function depSum(profile, pkgs) {
   return pkgs.reduce((s, p) => s + (profile.depCounts[p] ?? 0), 0);
 }
 
-function depEvidence(profile, pkgs, max = 2) {
+// One package, not two. Two clauses wrap to a second line of small uppercase
+// text on a desktop card and to three on a phone, and the second package
+// never changed anyone's mind about the first.
+function depEvidence(profile, pkgs, max = 1) {
   return pkgs
     .map((p) => [p, profile.depCounts[p] ?? 0])
     .filter(([, n]) => n > 0)

@@ -146,8 +146,11 @@ function RegistryCard({
         >
           {registry.description}
         </p>
+        {/* Mono marks it as metadata; uppercase made a sentence unreadable at
+            this size, and the shelf that is curated by hand writes sentences
+            here. */}
         {registry.evidence && (
-          <code className="mt-1 type-label text-muted-foreground">
+          <code className="mt-1 type-meta text-muted-foreground">
             {registry.evidence}
           </code>
         )}
