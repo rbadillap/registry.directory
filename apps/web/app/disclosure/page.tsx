@@ -31,9 +31,9 @@ export default function DisclosurePage() {
             no additional cost to you.
           </p>
           <p>
-            Affiliate links are always marked with a{" "}
+            Affiliate links are always marked with an{" "}
             <span className="text-[9px] font-mono uppercase tracking-wider text-neutral-500 bg-neutral-900 border border-neutral-700/50 px-1.5 py-0.5">
-              Sponsored
+              Affiliate
             </span>{" "}
             label so you can identify them before clicking.
           </p>

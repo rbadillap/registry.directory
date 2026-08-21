@@ -1759,6 +1759,46 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "font-rajdhani",
+      "type": "registry:font",
+      "title": "Rajdhani",
+      "description": "Rajdhani body font used by The Gridcn."
+    },
+    {
+      "name": "font-orbitron",
+      "type": "registry:font",
+      "title": "Orbitron",
+      "description": "Orbitron display/heading font used by The Gridcn."
+    },
+    {
+      "name": "font-geist-mono",
+      "type": "registry:font",
+      "title": "Geist Mono",
+      "description": "Geist Mono code font used by The Gridcn."
+    },
+    {
+      "name": "radix-vega",
+      "type": "registry:base",
+      "title": "The Gridcn (Radix / Vega)",
+      "description": "The Gridcn on Radix UI with Vega (New York) style, aliases, fonts, and the @thegridcn registry.",
+      "registryDependencies": [
+        "font-rajdhani",
+        "font-orbitron",
+        "font-geist-mono"
+      ]
+    },
+    {
+      "name": "base-vega",
+      "type": "registry:base",
+      "title": "The Gridcn (Base UI / Vega)",
+      "description": "The Gridcn on Base UI with Vega (New York) style, aliases, fonts, and the @thegridcn registry.",
+      "registryDependencies": [
+        "font-rajdhani",
+        "font-orbitron",
+        "font-geist-mono"
+      ]
     }
   ]
 }

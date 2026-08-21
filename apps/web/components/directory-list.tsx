@@ -102,13 +102,13 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
           return null;
         })();
 
-        // Standard card (same layout for all, with optional sponsored ribbon for affiliates)
+        // Standard card (same layout for all, with an Affiliate ribbon where a link earns a commission)
         return (
           <div key={encodeURIComponent(entry.url)} className="h-full">
             <Card className="bg-background border border-border-subtle rounded-none overflow-hidden shadow-none hover:shadow-lg transition-shadow h-full flex flex-col relative">
               {affiliate && (
-                <span className="absolute top-0 right-0 text-[9px] font-mono uppercase tracking-wider text-muted-foreground bg-secondary border-b border-l border-border-subtle px-1.5 py-0.5 z-10">
-                  Sponsored
+                <span className="absolute top-0 right-0 type-label text-muted-foreground bg-secondary border-b border-l border-border-subtle px-1.5 py-0.5 z-10">
+                  Affiliate
                 </span>
               )}
               <CardHeader className="flex flex-row items-start justify-between gap-2 bg-background pt-4 pb-2">
@@ -126,7 +126,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
                     </div>
                   )}
                   <div className="flex-1 min-w-0">
-                    <CardTitle className="text-sm text-foreground truncate">
+                    <CardTitle className="type-card text-foreground truncate">
                       {entry.name}
                     </CardTitle>
                   </div>
@@ -146,7 +146,9 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
                   <a
                     href={affiliate ? affiliate.affiliate_url : addUtmParams(entry.url, "registry_preview")}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    // A link that earns a commission declares it to crawlers
+                    // too, not only in the ribbon a person can read.
+                    rel={affiliate ? "sponsored noopener noreferrer" : "noopener noreferrer"}
                     aria-label={`Visit ${entry.name} website`}
                     className="text-foreground-subtle hover:text-muted-foreground transition-colors"
                     onClick={() => trackHomeRegistryVisit({
@@ -165,7 +167,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
                 </CardDescription>
                 {(gh || s) && (
                   <div className="mt-3 space-y-1">
-                    <div className="flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground">
+                    <div className="flex items-center gap-1.5 type-meta text-muted-foreground">
                       {gh && (
                         <span className="inline-flex items-center gap-1 tabular-nums">
                           <Star className="w-3 h-3 fill-current" aria-hidden="true" />
@@ -182,7 +184,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
                       )}
                     </div>
                     {gh && (
-                      <p className="text-[11px] font-mono text-muted-foreground">
+                      <p className="type-meta text-muted-foreground">
                         updated {formatRelativeTime(gh.lastCommit)}
                       </p>
                     )}
@@ -271,7 +273,7 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
                             {item.registry.name.charAt(0)}
                           </AvatarFallback>
                         </Avatar>
-                        <span className="text-[11px] font-mono text-muted-foreground truncate">
+                        <span className="type-meta text-muted-foreground truncate">
                           {item.registry.name}
                         </span>
                       </div>
@@ -279,7 +281,7 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
                         <TypeIcon className="w-3.5 h-3.5 text-foreground-subtle" aria-hidden="true" />
                       </span>
                     </div>
-                    <CardTitle className="text-sm text-foreground truncate">
+                    <CardTitle className="type-card text-foreground truncate">
                       {item.name}
                     </CardTitle>
                   </CardHeader>
@@ -292,7 +294,7 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
                     {item.categories.length > 0 && (
                       <div className="flex flex-wrap gap-1 mt-2">
                         {item.categories.map(cat => (
-                          <span key={cat} className="text-[11px] font-mono text-muted-foreground bg-secondary px-1.5 py-0.5">
+                          <span key={cat} className="type-meta text-muted-foreground bg-secondary px-1.5 py-0.5">
                             {cat}
                           </span>
                         ))}

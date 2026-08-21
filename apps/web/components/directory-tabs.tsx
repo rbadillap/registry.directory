@@ -7,8 +7,10 @@ import { SearchBar } from './search-bar';
 import { useAnalytics, type SearchResultType, type HomeTab } from '@/hooks/use-analytics';
 import { useUrlState } from '@/hooks/use-url-state';
 import { useItemIndex } from '@/hooks/use-item-index';
+import { JustShipped, StackSections } from '@/components/home/collections';
+import { WhatsNew } from '@/components/home/whats-new';
+import type { CollectionsFile, ShippedFile } from '@/lib/registry-data';
 import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from '@/lib/types';
-import type { IndexedItem } from '@/lib/items-index';
 import { prepareSearchIndex, searchPrepared } from '@/lib/search-utils';
 import { TypeFilterMenu } from './type-filter-menu';
 import { typeToSlug, REGISTRY_TYPE_LABELS } from '@/lib/registry-mappings';
@@ -83,9 +85,11 @@ interface DirectoryTabsProps {
   stats: Record<string, RegistryStats>;
   githubStats: GitHubStatsRecord;
   affiliates: Record<string, AffiliateConfig>;
+  collections: CollectionsFile | null;
+  shipped: ShippedFile | null;
 }
 
-export function DirectoryTabs({ components, stats, githubStats, affiliates }: DirectoryTabsProps) {
+export function DirectoryTabs({ components, stats, githubStats, affiliates, collections, shipped }: DirectoryTabsProps) {
   const analytics = useAnalytics();
   const { activeTab, setActiveTab, searchTerm, setSearchTerm, typeFilters, setTypeFilters } = useUrlState();
   const deferredSearchTerm = useDeferredValue(searchTerm);
@@ -102,6 +106,11 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates }: Di
   }, [searchTerm, loadItemIndex]);
 
   const [premiumOnly, setPremiumOnly] = useState(false);
+
+  // Two faces, one page. Nobody asked for anything yet, so the page offers
+  // collections instead of listing the catalogue at them; the moment someone
+  // types, it becomes the finder it always was.
+  const browsing = searchTerm.trim().length === 0;
 
   // A registry passes the type facet when its index has ≥1 item of that
   // type — the per-type counts already arrive in the stats prop.
@@ -250,9 +259,10 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates }: Di
             value={searchTerm}
             onChange={setSearchTerm}
             onFocus={loadItemIndex}
-            placeholder="Search registries and components..."
+            placeholder="Search components..."
           />
 
+          {browsing ? null : (
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <TabsList>
               <TabsTrigger value="popular">Popular</TabsTrigger>
@@ -306,8 +316,16 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates }: Di
               />
             </div>
           </div>
+          )}
         </div>
 
+        {browsing ? (
+          <>
+            <JustShipped shipped={shipped} />
+            <WhatsNew shipped={shipped} />
+            <StackSections collections={collections?.collections ?? []} />
+          </>
+        ) : (
         <TabsContent value={activeTab}>
           <DirectoryList
             entries={sortedComponents}
@@ -323,6 +341,7 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates }: Di
             premiumFilterActive={premiumOnly}
           />
         </TabsContent>
+        )}
       </Tabs>
     </div>
   );

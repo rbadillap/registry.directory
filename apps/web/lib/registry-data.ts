@@ -132,3 +132,96 @@ export function loadGitHubData(): Promise<Record<string, GitHubStatsEntry>> {
     })
   return githubPromise
 }
+
+// --- derived surfaces --------------------------------------------------------
+//
+// collections.json and shipped.json are written by the same indexer run that
+// writes the views, from the same snapshot history. They are read here rather
+// than described again next to the page that renders them: one producer, one
+// contract, one reader.
+
+/** A registry as a collection presents it: the facts a card shows. */
+export interface CollectionCard {
+  name: string
+  href: string
+  avatar?: string
+  description: string
+  itemCount?: number
+  /** The two commonest registry:* types, as the schema names them. */
+  types?: string[]
+  stars?: number
+  updated?: string
+  updatedDays?: number
+  /** Declared paid offerings, by their schema key. */
+  pro?: string[]
+  sponsored?: boolean
+  /** Why this registry is in this collection — "motion×466". */
+  evidence?: string
+}
+
+export interface Collection {
+  slug: string
+  title: string
+  standfirst: string
+  /** How the members were selected. Recorded, not shown. */
+  kind: "computed" | "curated"
+  registries: CollectionCard[]
+}
+
+export interface CollectionsFile {
+  meta: {
+    date: string
+    indexesOk?: number
+    indexesTotal?: number
+    totalItems: number
+  }
+  collections: Collection[]
+}
+
+/** One registry's additions on one date. */
+export interface ShippedEntry {
+  date: string
+  /**
+   * The date this was measured against. Equal to the day before `date` when
+   * ingestion ran daily; further back when a day was missed, which is the
+   * only way to tell six days of additions from one.
+   */
+  since: string
+  registry: string
+  avatar: string | null
+  /** Route on this site, or null for an entry with no page of its own. */
+  href: string | null
+  added: string[]
+}
+
+export interface ShippedFile {
+  date: string
+  /** Rolling window in days; absent in files written before the window existed. */
+  windowDays?: number
+  note?: string
+  entries: ShippedEntry[]
+}
+
+function loadDerived<T>(filename: string): Promise<T | null> {
+  return readFile(join(DATA_DIR, filename), "utf8")
+    .then((raw) => JSON.parse(raw) as T)
+    .catch(() => {
+      console.log(`[registry-data] data/${filename} unavailable`)
+      return null
+    })
+}
+
+let collectionsPromise: Promise<CollectionsFile | null> | null = null
+let shippedPromise: Promise<ShippedFile | null> | null = null
+
+/** data/collections.json: the curated groupings, each carrying its criterion. */
+export function loadCollections(): Promise<CollectionsFile | null> {
+  collectionsPromise ??= loadDerived<CollectionsFile>("collections.json")
+  return collectionsPromise
+}
+
+/** data/shipped.json: the rolling-window diff behind the what's-new surface. */
+export function loadShipped(): Promise<ShippedFile | null> {
+  shippedPromise ??= loadDerived<ShippedFile>("shipped.json")
+  return shippedPromise
+}

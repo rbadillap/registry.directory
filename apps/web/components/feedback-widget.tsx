@@ -14,7 +14,7 @@ const FEEDBACK_TYPES: { value: FeedbackType; label: string; icon: LucideIcon }[]
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function FeedbackWidget() {
+export function FeedbackWidget({ inline = false }: { inline?: boolean } = {}) {
   const [isOpen, setIsOpen] = useState(false);
   const [type, setType] = useState<FeedbackType>("confusing");
   const [message, setMessage] = useState("");
@@ -83,7 +83,11 @@ export function FeedbackWidget() {
     return (
       <button
         onClick={toggle}
-        className="fixed bottom-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background shadow-lg transition-colors hover:bg-accent"
+        className={
+          inline
+            ? "flex size-9 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+            : "fixed bottom-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background shadow-lg transition-colors hover:bg-accent"
+        }
         aria-label="Send feedback (Cmd+.)"
         title="Send feedback (Cmd+.)"
       >

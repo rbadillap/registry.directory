@@ -37,9 +37,11 @@ export function LandingHero({
           <h1 className="text-2xl font-semibold tracking-tight text-balance text-foreground md:text-[28px] md:leading-9">
             {registry.name}
           </h1>
+          {/* Both halves are meant to be read. The path leads because it
+              names this page; the site is quieter, not invisible. */}
           <p className="truncate font-mono text-xs">
-            <span className="text-foreground-faint">registry.directory/</span>
-            <span className="text-muted-foreground">{basePath.slice(1)}</span>
+            <span className="text-muted-foreground">registry.directory/</span>
+            <span className="text-foreground-secondary">{basePath.slice(1)}</span>
           </p>
         </div>
       </div>

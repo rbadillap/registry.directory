@@ -124,6 +124,18 @@ export function singularType(label: string): string {
 /**
  * Relevance-based ordering: installable → configuration → reference → other
  */
+/**
+ * The paid offerings a registry can declare, in the words a reader uses.
+ * Keys are the schema's, so this is the only place they become English.
+ */
+export const PRO_OFFERING_LABELS: Record<string, string> = {
+  pro_blocks: "pro blocks",
+  templates: "templates",
+  figma_kit: "figma",
+  mcp_agent: "mcp",
+  team_license: "team",
+}
+
 export const REGISTRY_TYPE_ORDER: string[] = [
   "ui", "components", "blocks", "hooks",
   "styles", "themes",

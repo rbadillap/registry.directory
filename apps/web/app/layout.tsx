@@ -4,7 +4,6 @@ import { Analytics } from "@vercel/analytics/next"
 
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
-import { FeedbackWidget } from "@/components/feedback-widget"
 import { JsonLd } from "@/components/json-ld"
 import {
   buildOrganizationSchema,
@@ -107,7 +106,6 @@ export default function RootLayout({
         <Providers>
           {children}
         </Providers>
-        <FeedbackWidget />
         <Analytics />
       </body>
     </html>

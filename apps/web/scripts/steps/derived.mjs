@@ -28,26 +28,6 @@ import {
   writeJsonFile,
 } from "../lib/data-io.mjs";
 
-const TYPE_LABELS = {
-  "registry:block": "blocks",
-  "registry:ui": "ui",
-  "registry:component": "components",
-  "registry:hook": "hooks",
-  "registry:lib": "lib",
-  "registry:theme": "themes",
-  "registry:style": "styles",
-  "registry:page": "pages",
-  "registry:file": "files",
-  "registry:item": "items",
-};
-
-const PRO_CHIP_LABELS = {
-  pro_blocks: "pro blocks",
-  templates: "templates",
-  figma_kit: "figma",
-  mcp_agent: "mcp",
-  team_license: "team",
-};
 
 function href(entry) {
   const m = entry.github_url?.match(/github\.com\/([^/]+)\/([^/]+)/);
@@ -103,13 +83,16 @@ function card(profile, evidence) {
   const { entry } = profile;
   const h = href(entry);
   if (!h) return null;
+  // The two commonest types and the offerings, as the schema names them.
+  // Turning either into words is the interface's job: it already owns that
+  // vocabulary, and a second copy here drifts from it without anyone noticing.
   const types = Object.entries(profile.byType)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 2)
-    .map(([t]) => TYPE_LABELS[t] ?? t.replace("registry:", ""));
+    .map(([t]) => t);
   const proFlags = Object.entries(entry.pro ?? {})
     .filter(([, v]) => v === true)
-    .map(([k]) => PRO_CHIP_LABELS[k] ?? k);
+    .map(([k]) => k);
   return {
     name: entry.name,
     href: h,
@@ -132,13 +115,16 @@ function depSum(profile, pkgs) {
   return pkgs.reduce((s, p) => s + (profile.depCounts[p] ?? 0), 0);
 }
 
-function depEvidence(profile, pkgs, max = 2) {
+// One package, not two. Two clauses wrap to a second line of small uppercase
+// text on a desktop card and to three on a phone, and the second package
+// never changed anyone's mind about the first.
+function depEvidence(profile, pkgs, max = 1) {
   return pkgs
     .map((p) => [p, profile.depCounts[p] ?? 0])
     .filter(([, n]) => n > 0)
     .sort((a, b) => b[1] - a[1])
     .slice(0, max)
-    .map(([p, n]) => `${p}×${n}`)
+    .map(([p, n]) => `${n} components import ${p}`)
     .join(" · ");
 }
 
@@ -174,8 +160,7 @@ function buildCollections(profiles) {
       slug: "motion",
       title: "Movement as a first language",
       standfirst:
-        "Registries where animation is the point, not the garnish — springs, staggers and scroll choreography ship inside the components.",
-      criterion: "deps ∩ { motion, framer-motion, gsap } · ranked by mentions",
+        "These registries build animation into their components.",
       kind: "computed",
       registries: topByDeps(profiles, MOTION_PKGS, 5),
     },
@@ -183,8 +168,7 @@ function buildCollections(profiles) {
       slug: "agent-ui",
       title: "Interfaces for agents",
       standfirst:
-        "Chat surfaces, streaming markdown, tool-call rendering — the component layer of the AI application stack. Chat UI rarely imports the AI SDK, so this cluster's identity lives in what the registries say they are.",
-      criterion: "name ∨ description ∋ { ai, agent, assistant } · from submission data",
+        "Components for chat, streaming text and tool calls.",
       kind: "computed",
       registries: [...profiles.values()]
         .filter((p) => AGENT_REGEX.test(`${p.entry.name} ${p.entry.description}`))
@@ -195,7 +179,7 @@ function buildCollections(profiles) {
         .slice(0, 5)
         .map(({ p, inName }) => {
           const m = `${p.entry.name} ${p.entry.description}`.match(AGENT_REGEX);
-          return card(p, `"${m?.[0]?.toLowerCase()}" in ${inName ? "name" : "description"}`);
+          return card(p, `Describes itself as "${m?.[0]?.toLowerCase()}"`);
         })
         .filter(Boolean),
     },
@@ -203,8 +187,7 @@ function buildCollections(profiles) {
       slug: "dashboards",
       title: "Built for dashboards",
       standfirst:
-        "Charts, data tables and the plumbing around them — registries that assume your next screen has numbers on it.",
-      criterion: "deps ∩ { recharts, tanstack-table, d3 } · ranked by mentions",
+        "Components for charts, tables and the screens that show data.",
       kind: "computed",
       registries: topByDeps(profiles, DASH_PKGS, 5),
     },
@@ -212,8 +195,7 @@ function buildCollections(profiles) {
       slug: "beyond-radix",
       title: "Beyond Radix",
       standfirst:
-        "The ecosystem's default primitive is Radix. These registries bet on Base UI or React Aria instead — a real architectural fork.",
-      criterion: "deps ∩ { @base-ui/react, react-aria-components } · ranked by mentions",
+        "These registries build on Base UI or React Aria, not on Radix.",
       kind: "computed",
       registries: topByDeps(profiles, ALT_PRIMITIVE_PKGS, 5, 5),
     },
@@ -221,22 +203,15 @@ function buildCollections(profiles) {
       slug: "megacatalogs",
       title: "The megacatalogs",
       standfirst:
-        "Four-digit item counts. When you need volume and variety more than a single voice.",
-      criterion: "items ≥ 1,000 · ranked by item count",
+        "Each of these registries has more than a thousand components.",
       kind: "computed",
       registries: [...profiles.values()]
         .filter((p) => p.itemCount >= 1000 && href(p.entry))
         .sort((a, b) => b.itemCount - a.itemCount)
         .slice(0, 5)
         .map((p) =>
-          card(
-            p,
-            `${p.itemCount.toLocaleString("en-US")} items · ${
-              Object.entries(p.byType)
-                .sort((a, b) => b[1] - a[1])[0]?.[0]
-                ?.replace("registry:", "") ?? ""
-            }`
-          )
+          // The card already lists the types; the evidence is the size.
+          card(p, `${p.itemCount.toLocaleString("en-US")} components`)
         )
         .filter(Boolean),
     },
@@ -244,8 +219,7 @@ function buildCollections(profiles) {
       slug: "sells-real",
       title: "Sells something real",
       standfirst:
-        "Commercial registries whose paid tier we verified on the live site — templates, Figma kits, MCP servers, team licenses.",
-      criterion: "pro flags verified · from submission data + live-site audit",
+        "These registries sell templates, Figma kits, MCP servers and team licences.",
       kind: "computed",
       registries: [...profiles.values()]
         .filter(
@@ -264,8 +238,7 @@ function buildCollections(profiles) {
       slug: "weird-wonderful",
       title: "Weird & wonderful",
       standfirst:
-        "Hand-picked outliers that stretch what a registry can be. No query produced this shelf — an editor did.",
-      criterion: "curated by @rbadillap · no query",
+        "These registries do something unusual with the format.",
       kind: "curated",
       registries: CURATED_SHELF.map(([name, reason]) => {
         const p = profiles.get(name);
@@ -287,7 +260,10 @@ function buildCollections(profiles) {
 // so a registry that failed ingestion one day contributes its additions the
 // day it reappears instead of losing them in the gap.
 
-const GRACE_DAYS = 3;
+const GRACE_DAYS = 7;
+
+// Enough entries for the wall to close its grid even on a quiet window.
+const MIN_ENTRIES = 12;
 
 function daysBetween(a, b) {
   return Math.round((new Date(`${a}T00:00Z`) - new Date(`${b}T00:00Z`)) / 86400000);
@@ -296,28 +272,59 @@ function daysBetween(a, b) {
 function buildShipped(snapshots, directory) {
   const byName = new Map(directory.map((d) => [d.name, d]));
   const current = snapshots[snapshots.length - 1];
-  const entries = [];
+  let entries = [];
 
+  // The window decides what counts as recent. The wall below it needs a
+  // steady number of entries whatever the window holds, so once the window is
+  // spent the walk keeps going into older snapshots — those entries carry
+  // their own older dates, and are recent for nobody.
   const inWindow = snapshots.filter((s) => daysBetween(current.date, s.date) < GRACE_DAYS);
+  const older = snapshots.filter((s) => !inWindow.includes(s));
+  const walk = [...inWindow].reverse().concat([...older].reverse());
 
-  for (const snap of [...inWindow].reverse()) {
-    const older = snapshots.filter((s) => s.date < snap.date);
+  for (const snap of walk) {
+    if (entries.length >= MIN_ENTRIES && daysBetween(current.date, snap.date) >= GRACE_DAYS) break;
+    const before = snapshots.filter((s) => s.date < snap.date);
     for (const [name, raw] of Object.entries(snap.registries)) {
       if (!raw?.items) continue;
-      const prior = [...older].reverse().find((s) => s.registries[name]?.items);
+      const prior = [...before].reverse().find((s) => s.registries[name]?.items);
       if (!prior) continue; // first appearance — a whole catalog is not news
       const old = new Set(prior.registries[name].items.map((i) => i.name));
       const added = raw.items.map((i) => i.name).filter((n) => !old.has(n));
       if (added.length === 0) continue;
+      // The link travels with the entry. Looking it up in the collections
+      // made a registry's page reachable only while it belonged to one.
+      const directoryEntry = byName.get(name);
       entries.push({
         date: snap.date,
+        since: prior.date,
         registry: name,
-        avatar: byName.get(name)?.github_profile ?? null,
+        avatar: directoryEntry?.github_profile ?? null,
+        href: directoryEntry ? href(directoryEntry) : null,
         added,
       });
     }
   }
 
+  // One row per registry. Within a week, a registry that published on two
+  // days is one piece of news, not two: the additions join, the date is the
+  // most recent of them, and `since` reaches back to the earliest comparison
+  // the merged row now stands for.
+  const merged = new Map();
+  for (const entry of entries) {
+    const seen = merged.get(entry.registry);
+    if (!seen) {
+      merged.set(entry.registry, { ...entry, added: [...entry.added] });
+      continue;
+    }
+    for (const name of entry.added) {
+      if (!seen.added.includes(name)) seen.added.push(name);
+    }
+    if (entry.date > seen.date) seen.date = entry.date;
+    if (entry.since < seen.since) seen.since = entry.since;
+  }
+
+  entries = [...merged.values()];
   entries.sort((a, b) => b.date.localeCompare(a.date) || b.added.length - a.added.length);
 
   return {

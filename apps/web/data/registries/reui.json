@@ -29277,6 +29277,201 @@
       ]
     },
     {
+      "name": "data-grid-columns-5",
+      "type": "registry:block",
+      "title": "CRM companies grid with a drill-down cascader that adds real columns on demand",
+      "description": "Companies grid whose columns are added at runtime by a Cascader attribute picker: drillable groups, cross-level search, added columns checked, a footer submenu that creates an attribute by type. ReUI Filters, hide, reorder, pin.",
+      "dependencies": [
+        "@tanstack/react-table",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/cascader",
+        "@reui/data-grid",
+        "@reui/filters",
+        "@reui/frame",
+        "alert-dialog",
+        "avatar",
+        "@reui/badge",
+        "button",
+        "@reui/cascader",
+        "@reui/cascader-footer",
+        "@reui/cascader-item",
+        "@reui/cascader-nav",
+        "@reui/cascader-types",
+        "checkbox",
+        "@reui/data-grid",
+        "@reui/data-grid-column-header",
+        "@reui/data-grid-pagination",
+        "@reui/data-grid-scroll-area",
+        "@reui/data-grid-table",
+        "dialog",
+        "dropdown-menu",
+        "field",
+        "@reui/filters",
+        "@reui/filters-query",
+        "@reui/filters-types",
+        "@reui/frame",
+        "input",
+        "input-group",
+        "item",
+        "popover",
+        "progress",
+        "scroll-area",
+        "select",
+        "separator",
+        "sheet",
+        "skeleton",
+        "spinner",
+        "switch",
+        "textarea",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-columns-5/page.tsx"
+        },
+        {
+          "path": "add-column-cascader.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-columns-5/components/add-column-cascader.tsx"
+        },
+        {
+          "path": "columns.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-columns-5/components/columns.tsx"
+        },
+        {
+          "path": "company-create-dialog.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-columns-5/components/company-create-dialog.tsx"
+        },
+        {
+          "path": "company-details-sheet.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-columns-5/components/company-details-sheet.tsx"
+        },
+        {
+          "path": "data-grid-view.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-columns-5/components/data-grid-view.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-columns-5/components/data.tsx"
+        },
+        {
+          "path": "anthropicBlack.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/anthropicBlack.tsx"
+        },
+        {
+          "path": "anthropicWhite.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/anthropicWhite.tsx"
+        },
+        {
+          "path": "convex.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/convex.tsx"
+        },
+        {
+          "path": "cursorDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/cursorDark.tsx"
+        },
+        {
+          "path": "cursorLight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/cursorLight.tsx"
+        },
+        {
+          "path": "hono.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/hono.tsx"
+        },
+        {
+          "path": "mintlify.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/mintlify.tsx"
+        },
+        {
+          "path": "n8n.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/n8n.tsx"
+        },
+        {
+          "path": "neon.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/neon.tsx"
+        },
+        {
+          "path": "openai.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/openai.tsx"
+        },
+        {
+          "path": "openaiDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/openaiDark.tsx"
+        },
+        {
+          "path": "planetscale.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/planetscale.tsx"
+        },
+        {
+          "path": "planetscaleDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/planetscaleDark.tsx"
+        },
+        {
+          "path": "prisma.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/prisma.tsx"
+        },
+        {
+          "path": "prismaDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/prismaDark.tsx"
+        },
+        {
+          "path": "resendIconBlack.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/resendIconBlack.tsx"
+        },
+        {
+          "path": "resendIconWhite.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/resendIconWhite.tsx"
+        },
+        {
+          "path": "slack.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/slack.tsx"
+        },
+        {
+          "path": "stripe.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/stripe.tsx"
+        },
+        {
+          "path": "supabase.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/supabase.tsx"
+        },
+        {
+          "path": "editable-detail-row.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-columns-5/components/editable-detail-row.tsx"
+        }
+      ]
+    },
+    {
       "name": "data-grid-drag-drop-1",
       "type": "registry:block",
       "title": "Sprint backlog data grid with drag handle row reordering and live priority rank",
@@ -29499,43 +29694,28 @@
       "title": "Labels manager data grid with inline create and edit form, color picker, and drag-to-reorder rows",
       "description": "Manage project labels in a DataGrid: inline add and edit form with hex color picker Popover, drag-to-reorder rows, and delete confirmation. Uses ReUI DataGrid plus shadcn Button, Input, Field, AlertDialog, Empty. For label, tag, and taxonomy UIs.",
       "dependencies": [
-        "@dnd-kit/core",
-        "@dnd-kit/sortable",
         "@hookform/resolvers",
-        "@tanstack/react-table",
         "react-hook-form",
         "zod"
       ],
       "registryDependencies": [
-        "@reui/data-grid",
         "@reui/icon-stack",
+        "@reui/sortable",
         "alert-dialog",
         "button",
-        "@reui/data-grid",
-        "@reui/data-grid-scroll-area",
-        "@reui/data-grid-table-dnd-rows",
         "empty",
         "field",
         "@reui/icon-stack",
         "input",
         "item",
-        "popover"
+        "popover",
+        "@reui/sortable"
       ],
       "files": [
         {
           "path": "page.tsx",
           "type": "registry:block",
           "target": "components/blocks/data-grid-editing-1/page.tsx"
-        },
-        {
-          "path": "columns.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/data-grid-editing-1/components/columns.tsx"
-        },
-        {
-          "path": "data-grid-view.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/data-grid-editing-1/components/data-grid-view.tsx"
         },
         {
           "path": "data.ts",
@@ -29551,6 +29731,16 @@
           "path": "label-form.tsx",
           "type": "registry:block",
           "target": "components/blocks/data-grid-editing-1/components/label-form.tsx"
+        },
+        {
+          "path": "label-row.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-editing-1/components/label-row.tsx"
+        },
+        {
+          "path": "labels-view.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-editing-1/components/labels-view.tsx"
         }
       ]
     },
