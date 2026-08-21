@@ -137,6 +137,13 @@
   --color-border-subtle: var(--border-subtle);
 }
 
+/* How much of the viewport the home's sticky search bar occupies: its own
+   vertical padding plus the field. Anything else that sticks on that page
+   offsets by this, so the two can not drift apart. */
+:root {
+  --sticky-search-h: 4.875rem;
+}
+
 /* Typographic roles.
    The scale lives here so that changing it is one edit rather than a sweep
    through every component that happened to pick a size. Components name the
