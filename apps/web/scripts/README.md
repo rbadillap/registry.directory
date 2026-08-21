@@ -157,13 +157,41 @@ pnpm build          # runs it first, automatically
 
 ---
 
-## Daily loop
+## Two rhythms, not one loop
+
+Indexing and deploying are separate acts with separate reasons, and they are
+priced separately. Running them together out of habit is what makes them look
+like one step.
+
+### Indexing — as often as the record deserves
 
 ```bash
-pnpm index                      # refresh data/
+pnpm index
 git add apps/web/data && git commit -m "chore(data): reindex"
-vercel --prod                   # deploy when the data warrants it
 ```
 
-There is no cron. A deploy is an event you trigger, not a schedule: the site
-is rebuilt because the data changed, not because a clock struck six.
+This costs nothing on the platform. It reads the registries from a laptop and
+writes files.
+
+The reason to do it often is the archive: a snapshot is the only record of what
+a registry's catalog held on a given day, and nobody else keeps one. A day
+skipped is a day gone. `shipped.json` also diffs consecutive snapshots, so a gap
+makes one day claim everything that happened since the last one.
+
+### Deploying — as often as the site needs to know
+
+```bash
+vercel --prod
+```
+
+This is what costs. A deployment builds every page again, and it starts with an
+empty ISR cache, so everything the crawlers had already warmed is written a
+second time. Both charges are per deployment, not per day.
+
+Between deployments the site serves the data from the last one. Committed views
+can run ahead of what is published, and nothing about the catalog breaks — what
+ages is how soon the site hears about a change.
+
+There is no cron. A deploy is an event you trigger, not a schedule: the site is
+rebuilt because the data changed enough to be worth publishing, not because a
+clock struck six.
