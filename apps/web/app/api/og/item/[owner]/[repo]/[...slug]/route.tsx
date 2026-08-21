@@ -6,25 +6,25 @@ import { typeToSlug, SLUG_TO_REGISTRY_TYPE, REGISTRY_TYPE_LABELS } from "@/lib/r
 import { getInstallCommand } from "@/lib/install-command"
 import { resolveByGithub, loadRegistryIndex } from "@/lib/resolve-registry"
 
+// A route handler rather than an opengraph-image file convention: the item
+// route is a catch-all, and a catch-all segment consumes everything after it,
+// so no static child can live under it. The URL is emitted by
+// buildSlugMetadata instead of being inferred from the file's position.
 export const runtime = 'nodejs'
-export const alt = 'registry.directory component preview'
-export const size = {
-  width: 1200,
-  height: 630,
-}
-export const contentType = 'image/png'
+
+const SIZE = { width: 1200, height: 630 }
 
 
 function isCategory(slug: string): boolean {
   return slug in SLUG_TO_REGISTRY_TYPE
 }
 
-export default async function Image({
-  params,
-}: {
-  params: Promise<{ owner: string; repo: string; slug: string }>
-}) {
-  const { owner, repo, slug } = await params
+export async function GET(
+  _request: Request,
+  { params }: { params: Promise<{ owner: string; repo: string; slug: string[] }> }
+) {
+  const { owner, repo, slug: segments } = await params
+  const slug = segments.join("/")
 
   const [dmSansRegular, dmSansMedium, ibmPlexMono] = await Promise.all([
     readFile(join(process.cwd(), 'public/fonts/DMSans-Regular.ttf')),
@@ -89,7 +89,7 @@ export default async function Image({
         </div>
       ),
       {
-        ...size,
+        ...SIZE,
         fonts: [
           { name: "DM Sans", data: dmSansRegular, style: "normal", weight: 400 },
           { name: "DM Sans", data: dmSansMedium, style: "normal", weight: 500 },
@@ -164,7 +164,7 @@ export default async function Image({
       </div>
     ),
     {
-      ...size,
+      ...SIZE,
       fonts: [
         { name: "DM Sans", data: dmSansRegular, style: "normal", weight: 400 },
         { name: "DM Sans", data: dmSansMedium, style: "normal", weight: 500 },

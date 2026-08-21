@@ -14,20 +14,22 @@ const nextConfig = {
     // character class and `/robots.txt` matches it on the `r`.
     '/\\[owner\\]': ['./data/**'],
     '/\\[owner\\]/\\[repo\\]': ['./data/**'],
-    '/\\[owner\\]/\\[repo\\]/\\[slug\\]': ['./data/**'],
+    '/\\[owner\\]/\\[repo\\]/\\[...slug\\]': ['./data/**'],
     '/\\[owner\\]/\\[repo\\]/opengraph-image': ['./data/**', './public/fonts/**/*'],
-    '/\\[owner\\]/\\[repo\\]/\\[slug\\]/opengraph-image': ['./data/**', './public/fonts/**/*'],
+    '/api/og/item/\\[owner\\]/\\[repo\\]/\\[...slug\\]': ['./data/**', './public/fonts/**/*'],
     '/api/markdown/\\[owner\\]/\\[repo\\]': ['./data/**'],
-    '/api/markdown/\\[owner\\]/\\[repo\\]/\\[slug\\]': ['./data/**'],
+    '/api/markdown/\\[owner\\]/\\[repo\\]/\\[...slug\\]': ['./data/**'],
     '/r/\\[...path\\]': ['./data/**'],
     '/sitemap.xml': ['./data/**'],
     '/llms.txt': ['./data/**'],
   },
   async rewrites() {
     return [
+      // `:slug*` because an item name may contain slashes, and each one
+      // arrives as its own path segment.
       {
-        source: "/:owner/:repo/:slug.md",
-        destination: "/api/markdown/:owner/:repo/:slug",
+        source: "/:owner/:repo/:slug*.md",
+        destination: "/api/markdown/:owner/:repo/:slug*",
       },
       // Handle-based item URLs (/{handle}/{item}.md) — must come after the
       // 3-segment rule so github-backed paths keep matching it first

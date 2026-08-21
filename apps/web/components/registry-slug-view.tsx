@@ -56,6 +56,15 @@ export async function fetchItemData(
   }
 }
 
+// The preview image lives at a route handler rather than beside the page: the
+// item route is a catch-all, so nothing can sit under it. Only github-backed
+// paths have one; `basePath` is `/{owner}/{repo}` for those.
+function previewImage(basePath: string, slug: string): string | null {
+  const github = basePath.match(/^\/([^/]+)\/([^/]+)$/)
+  if (!github) return null
+  return `https://registry.directory/api/og/item/${github[1]}/${github[2]}/${slug}`
+}
+
 // Metadata for a category-or-item view living at `${basePath}/${slug}`.
 export async function buildSlugMetadata(
   registry: DirectoryEntry,
@@ -92,6 +101,9 @@ export async function buildSlugMetadata(
   const title = `${slug} — shadcn ${noun} · ${registry.name}`
   const description = `${itemData?.description || slug}: a shadcn/ui ${noun} from ${registry.name}. Preview the source and install it with the shadcn CLI.`
 
+  const image = previewImage(basePath, slug)
+  const images = image ? [{ url: image, width: 1200, height: 630, alt: title }] : undefined
+
   return {
     title,
     description,
@@ -101,11 +113,13 @@ export async function buildSlugMetadata(
       description,
       url: canonical,
       type: "website",
+      ...(images ? { images } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      ...(images ? { images: images.map((i) => i.url) } : {}),
     },
   }
 }

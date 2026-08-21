@@ -16,16 +16,17 @@ import {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ owner: string; repo: string; slug: string }>
+  params: Promise<{ owner: string; repo: string; slug: string[] }>
 }): Promise<Metadata> {
   const { owner, repo, slug } = await params
+  const name = slug.join("/")
   const registry = await resolveByGithub(owner, repo)
 
   if (!registry) {
     return { title: "Registry Not Found" }
   }
 
-  return buildSlugMetadata(registry, `/${owner}/${repo}`, slug)
+  return buildSlugMetadata(registry, `/${owner}/${repo}`, name)
 }
 
 export async function generateStaticParams() {
@@ -39,16 +40,16 @@ export async function generateStaticParams() {
       const index = await loadRegistryIndex(registry)
       if (!index) return []
 
-      // Prerender only categories + featured items; the item long tail
-      // renders on demand via dynamicParams. Measured over 30 days, humans
-      // visit ~340 distinct item pages while categories, landings and
-      // featured cover ~86% of traffic — prebaking all ~19k item pages
-      // spent the whole build on pages nobody requests before they expire.
-      const params: { owner: string; repo: string; slug: string }[] = []
+      // Categories and featured items are prerendered; the item long tail
+      // renders on demand. Measured over 30 days, humans visit ~340 distinct
+      // item pages while categories, landings and featured cover ~86% of
+      // traffic, and prebaking every item page meant fetching each one from
+      // its origin during the build.
+      const params: { owner: string; repo: string; slug: string[] }[] = []
       const categoriesMap = groupItemsByCategory(index.items)
 
       for (const category of categoriesMap.keys()) {
-        params.push({ owner: gh.owner, repo: gh.repo, slug: category })
+        params.push({ owner: gh.owner, repo: gh.repo, slug: [category] })
       }
 
       const byName = new Map(index.items.map((item) => [item.name, item]))
@@ -57,7 +58,8 @@ export async function generateStaticParams() {
         if (!item || !hasOnlyRenderableFiles(item.files)) {
           continue
         }
-        params.push({ owner: gh.owner, repo: gh.repo, slug: name })
+        // An item name may contain slashes, and each one is a path segment.
+        params.push({ owner: gh.owner, repo: gh.repo, slug: name.split("/") })
       }
 
       return params
@@ -72,7 +74,7 @@ export async function generateStaticParams() {
 export default async function SlugPage({
   params,
 }: {
-  params: Promise<{ owner: string; repo: string; slug: string }>
+  params: Promise<{ owner: string; repo: string; slug: string[] }>
 }) {
   const { owner, repo, slug } = await params
 
@@ -85,7 +87,7 @@ export default async function SlugPage({
     <RegistrySlugView
       registry={registry}
       basePath={`/${owner}/${repo}`}
-      slug={slug}
+      slug={slug.join("/")}
     />
   )
 }

@@ -8,9 +8,11 @@ export const dynamic = 'force-dynamic'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ owner: string; repo: string; slug: string }> }
+  { params }: { params: Promise<{ owner: string; repo: string; slug: string[] }> }
 ) {
-  const { owner, repo, slug } = await params
+  const { owner, repo, slug: segments } = await params
+  // An item name may contain slashes; each one arrives as its own segment.
+  const slug = segments.join("/")
 
   // Categories don't have markdown
   if (isCategory(slug)) {
