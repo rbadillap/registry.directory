@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { readBodyWithLimit } from "@/lib/body-limit";
 import {
   submissionSchema,
   getSubmission,
@@ -100,6 +101,18 @@ async function namespaceClaimError(
   }
 }
 
+// The 413 documented in public/openapi.json — served identically whether the
+// oversize was declared in Content-Length or discovered while reading.
+function payloadTooLarge(): NextResponse {
+  return NextResponse.json(
+    {
+      error: `Request body too large (max ${MAX_BODY_BYTES} bytes). A submission is a handful of short fields.`,
+      docs: DOCS_URL,
+    },
+    { status: 413 }
+  );
+}
+
 function bearerToken(request: Request): string | undefined {
   const header = request.headers.get("authorization");
   const match = header?.match(/^Bearer\s+(.+)$/i);
@@ -114,20 +127,21 @@ export async function POST(request: Request) {
     );
   }
 
+  // The header check is a fast path only — a chunked request has no
+  // Content-Length, so the real limit is enforced while reading the body.
   const contentLength = Number(request.headers.get("content-length"));
   if (contentLength > MAX_BODY_BYTES) {
-    return NextResponse.json(
-      {
-        error: `Request body too large (max ${MAX_BODY_BYTES} bytes). A submission is a handful of short fields.`,
-        docs: DOCS_URL,
-      },
-      { status: 413 }
-    );
+    return payloadTooLarge();
+  }
+
+  const rawBody = await readBodyWithLimit(request, MAX_BODY_BYTES);
+  if (rawBody === null) {
+    return payloadTooLarge();
   }
 
   let body: unknown;
   try {
-    body = await request.json();
+    body = JSON.parse(rawBody);
   } catch {
     return NextResponse.json(
       {
