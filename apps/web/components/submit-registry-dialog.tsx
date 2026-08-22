@@ -207,6 +207,17 @@ export function SubmitRegistryModal({ onClose }: { onClose: () => void }) {
 
             <div className="mt-6 border-t border-border-subtle pt-4">
               <CopyBlock label="Or hand it to an agent" text={AGENT_PROMPT} />
+              <p className="mt-3 type-meta text-muted-foreground">
+                Or open a{" "}
+                <a
+                  href="https://github.com/rbadillap/registry.directory"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-foreground-secondary underline decoration-border-subtle underline-offset-4 hover:decoration-border"
+                >
+                  pull request
+                </a>
+              </p>
             </div>
           </>
         )}
