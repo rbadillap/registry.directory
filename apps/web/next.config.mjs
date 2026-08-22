@@ -24,18 +24,54 @@ const nextConfig = {
     '/llms.txt': ['./data/**'],
   },
   async rewrites() {
+    return {
+      // beforeFiles because the negotiating sources ARE existing pages — a
+      // plain-array rewrite only runs after the filesystem, so `/` would
+      // always win with HTML.
+      beforeFiles: [
+        // Content negotiation (acceptmarkdown.com): a client that asks for
+        // text/markdown gets the machine view of the same URL. Only the home
+        // and 3+ segment item pages negotiate — 2-segment paths are ambiguous
+        // (github registry pages have no markdown view and must keep serving
+        // HTML), so handle-based items negotiate only via the .md suffix.
+        {
+          source: "/",
+          has: [{ type: "header", key: "accept", value: ".*text/markdown.*" }],
+          destination: "/index.md",
+        },
+        {
+          source: "/:owner/:repo/:slug+",
+          has: [{ type: "header", key: "accept", value: ".*text/markdown.*" }],
+          destination: "/api/markdown/:owner/:repo/:slug+",
+        },
+      ],
+      afterFiles: [
+        // `:slug*` because an item name may contain slashes, and each one
+        // arrives as its own path segment.
+        {
+          source: "/:owner/:repo/:slug*.md",
+          destination: "/api/markdown/:owner/:repo/:slug*",
+        },
+        // Handle-based item URLs (/{handle}/{item}.md) — must come after the
+        // 3-segment rule so github-backed paths keep matching it first
+        {
+          source: "/:owner/:slug.md",
+          destination: "/api/markdown/:owner/:slug",
+        },
+      ],
+    }
+  },
+  async headers() {
     return [
-      // `:slug*` because an item name may contain slashes, and each one
-      // arrives as its own path segment.
+      // The negotiating routes serve different bodies for different Accept
+      // values; Vary keeps intermediary caches from mixing them up.
       {
-        source: "/:owner/:repo/:slug*.md",
-        destination: "/api/markdown/:owner/:repo/:slug*",
+        source: "/",
+        headers: [{ key: "Vary", value: "Accept" }],
       },
-      // Handle-based item URLs (/{handle}/{item}.md) — must come after the
-      // 3-segment rule so github-backed paths keep matching it first
       {
-        source: "/:owner/:slug.md",
-        destination: "/api/markdown/:owner/:slug",
+        source: "/:owner/:repo/:slug+",
+        headers: [{ key: "Vary", value: "Accept" }],
       },
     ]
   },

@@ -4,17 +4,20 @@ import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 
 export const runtime = 'nodejs'
-export const alt = 'registry.directory - Explore your favorite shadcn/ui registry'
+export const alt = '"submit my registry to registry.directory" — the prompt is the interface'
 export const size = {
   width: 1200,
   height: 630,
 }
 export const contentType = 'image/png'
 
+// The card IS the product pitch: the one prompt an agent needs. Anyone who
+// shares the link is distributing the executable instruction.
 export default async function Image() {
-  const [dmSansRegular, dmSansMedium] = await Promise.all([
+  const [dmSansRegular, dmSansMedium, plexMono] = await Promise.all([
     readFile(join(process.cwd(), 'public/fonts/DMSans-Regular.ttf')),
-    readFile(join(process.cwd(), 'public/fonts/DMSans-Medium.ttf'))
+    readFile(join(process.cwd(), 'public/fonts/DMSans-Medium.ttf')),
+    readFile(join(process.cwd(), 'public/fonts/IBMPlexMono-Regular.ttf')),
   ])
 
   return new ImageResponse(
@@ -34,30 +37,27 @@ export default async function Image() {
 
         {/* Main content */}
         <div tw="flex flex-col items-center">
-          <h1
-            tw="flex items-center text-white font-medium text-4xl"
-            style={{ fontFamily: 'DM Sans' }}
+          <p
+            tw="text-4xl text-white"
+            style={{ fontFamily: 'IBM Plex Mono' }}
           >
+            <span tw="text-stone-500 pr-3">&gt;</span>
+            &quot;submit my registry to registry.directory&quot;
+          </p>
+
+          <p tw="text-lg text-slate-300/90 mt-8">
+            Say it to your agent. That&apos;s the whole flow.
+          </p>
+
+          <p tw="flex items-center text-xl mt-10 text-white font-medium">
             registry
-            <span tw="text-stone-400 text-4xl font-medium">.directory</span>
+            <span tw="text-stone-400 font-medium">.directory</span>
             <span
               tw="text-xs text-white rounded-full border bg-rose-700 px-2 py-0.5 flex items-center ml-2"
               style={{ fontWeight: 500, fontFamily: 'DM Sans' }}
             >
               beta
             </span>
-          </h1>
-
-          <p tw="text-xl text-slate-300/90 mt-4">
-            Explore your favorite
-            <span tw="pl-2 flex items-center">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-                <path d="M21.0001 12.4286L12.4287 21" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
-                <path d="M19.2857 3L3 19.2857" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
-              </svg>
-            </span>
-            <span tw="text-white font-medium px-2">shadcn/ui</span>
-            registry
           </p>
         </div>
 
@@ -84,6 +84,12 @@ export default async function Image() {
           data: dmSansMedium,
           style: "normal",
           weight: 500,
+        },
+        {
+          name: "IBM Plex Mono",
+          data: plexMono,
+          style: "normal",
+          weight: 400,
         },
       ],
     }

@@ -17,6 +17,17 @@ import { typeToSlug, REGISTRY_TYPE_LABELS } from '@/lib/registry-mappings';
 
 // Slugs sharing a human label (ui/components → "Components") are one
 // facet: the humanization decided in the labels drives the filter too.
+// The empty search box teaches by example: the first phrase is the job, the
+// rest are the component needs people (and their agents) actually type here.
+// Every example resolves to real results in the catalog.
+const SEARCH_PHRASES = [
+  "Search components...",
+  "animated pricing table",
+  "kanban board",
+  "voice agent orb",
+  "smooth animated icons",
+];
+
 function matchesTypeFacet(slug: string | null, facet: string): boolean {
   if (!slug) return false;
   if (slug === facet) return true;
@@ -260,6 +271,7 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
             onChange={setSearchTerm}
             onFocus={loadItemIndex}
             placeholder="Search components..."
+            phrases={SEARCH_PHRASES}
           />
 
           {browsing ? null : (

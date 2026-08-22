@@ -8,7 +8,7 @@ import { fetchAllRegistryStats } from "@/lib/registry-stats";
 import { fetchAllGitHubStats } from "@/lib/github-stats";
 import { loadCollections, loadShipped } from "@/lib/registry-data";
 import { getAffiliates } from "@/lib/affiliates";
-import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
+import { SiteFooter } from "@/components/site-footer";
 import type { DirectoryEntry } from "@/lib/types";
 import { HomeControls } from "@/components/home-controls";
 import { HeroTitle } from "@/components/hero-title";
@@ -141,7 +141,9 @@ export default async function Home() {
         <HeroTitle />
       </div>
 
-      <p className="text-sm mb-12 md:mb-14 px-4 text-center font-mono text-muted-foreground">
+      {/* Semantically the page's value proposition — an h2 so the document
+          outline states what the site is, styled identically to the old <p>. */}
+      <h2 className="text-sm font-normal mb-12 md:mb-14 px-4 text-center font-mono text-muted-foreground">
         The explorer for the{" "}
         <span className="text-foreground">
           <svg
@@ -168,13 +170,13 @@ export default async function Home() {
         </span>
         <span className="ml-1 font-mono font-bold">shadcn</span>
         <span className="text-muted-foreground"> registry ecosystem.</span>
-      </p>
+      </h2>
 
       <Suspense fallback={<DirectoryTabsSkeleton />}>
         <DirectoryTabs components={components} stats={stats} githubStats={githubStats} affiliates={affiliates} collections={collections} shipped={shipped} />
       </Suspense>
 
-      <AffiliateDisclosure />
+      <SiteFooter />
     </main>
   );
 }

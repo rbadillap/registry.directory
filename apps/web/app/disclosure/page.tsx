@@ -32,7 +32,7 @@ export default function DisclosurePage() {
           </p>
           <p>
             Affiliate links are always marked with an{" "}
-            <span className="text-[9px] font-mono uppercase tracking-wider text-neutral-500 bg-neutral-900 border border-neutral-700/50 px-1.5 py-0.5">
+            <span className="text-[9px] font-mono uppercase tracking-wider text-muted-foreground bg-secondary border border-border px-1.5 py-0.5">
               Affiliate
             </span>{" "}
             label so you can identify them before clicking.
