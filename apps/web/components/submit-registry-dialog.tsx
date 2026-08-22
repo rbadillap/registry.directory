@@ -11,8 +11,6 @@ import {
 } from "@workspace/ui/components/card";
 import { Check, Copy, Plus, X } from "lucide-react";
 
-const DOCS_PATH = "/how-to-submit.md";
-const DOCS_URL = `https://registry.directory${DOCS_PATH}`;
 // The short prompt is the whole protocol: agents discover the contract on
 // their own via llms.txt, /docs, and openapi.json.
 const AGENT_PROMPT = "submit my registry to registry.directory";
@@ -33,7 +31,7 @@ function CopyBlock({ label, text }: { label: string; text: string }) {
   return (
     <div className="space-y-1.5">
       <div className="flex items-center justify-between">
-        <span className="font-mono text-xs text-muted-foreground">{label}</span>
+        <span className="type-meta text-muted-foreground">{label}</span>
         <Button
           type="button"
           variant="ghost"
@@ -107,41 +105,6 @@ function Field({
         className="w-full border border-input bg-background px-2.5 py-2 font-mono text-xs text-foreground outline-none transition-colors placeholder:text-foreground-faint focus-visible:border-ring"
       />
     </label>
-  )
-}
-
-/** Text that is meant to be copied, not followed. */
-function CopyLine({ text }: { text: string }) {
-  const [copied, setCopied] = useState(false)
-
-  async function handleCopy() {
-    try {
-      await navigator.clipboard.writeText(text)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch {
-      // Clipboard unavailable — the text stays selectable.
-    }
-  }
-
-  return (
-    <button
-      type="button"
-      onClick={handleCopy}
-      className="group inline-flex max-w-full items-center gap-1.5 text-left"
-    >
-      <code className="truncate font-mono text-xs text-foreground-secondary underline decoration-border-subtle underline-offset-4 group-hover:decoration-border">
-        {text}
-      </code>
-      <span className="relative size-3 shrink-0 text-muted-foreground">
-        <Copy
-          className={`absolute inset-0 size-3 transition-opacity duration-200 ${copied ? "opacity-0" : "opacity-100"}`}
-        />
-        <Check
-          className={`absolute inset-0 size-3 transition-opacity duration-200 ${copied ? "opacity-100" : "opacity-0"}`}
-        />
-      </span>
-    </button>
   )
 }
 
@@ -243,18 +206,7 @@ export function SubmitRegistryModal({ onClose }: { onClose: () => void }) {
             </form>
 
             <div className="mt-6 border-t border-border-subtle pt-4">
-              <p className="type-meta text-muted-foreground">
-                Or hand it to an agent
-              </p>
-              <div className="mt-2">
-                <CopyBlock label="" text={AGENT_PROMPT} />
-              </div>
-              <p className="mt-4 type-meta text-muted-foreground">
-                The instructions it will follow
-              </p>
-              <div className="mt-1.5">
-                <CopyLine text={DOCS_URL} />
-              </div>
+              <CopyBlock label="Or hand it to an agent" text={AGENT_PROMPT} />
             </div>
           </>
         )}
