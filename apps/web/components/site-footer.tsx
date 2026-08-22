@@ -14,26 +14,26 @@ export function SiteFooter() {
     <footer className="text-center pb-6">
       <nav
         aria-label="Site"
-        className="text-[11px] font-mono text-neutral-600 flex items-center justify-center gap-3"
+        className="text-[11px] font-mono text-muted-foreground flex items-center justify-center gap-3"
       >
         {LINKS.map((link, index) => (
           <Fragment key={link.href}>
             {index > 0 && (
-              <span aria-hidden="true" className="text-neutral-700">
+              <span aria-hidden="true" className="text-muted-foreground/50">
                 ·
               </span>
             )}
             {link.href.startsWith("http") ? (
               <a
                 href={link.href}
-                className="hover:text-neutral-400 transition-colors"
+                className="hover:text-foreground transition-colors"
               >
                 {link.label}
               </a>
             ) : (
               <Link
                 href={link.href}
-                className="hover:text-neutral-400 transition-colors"
+                className="hover:text-foreground transition-colors"
               >
                 {link.label}
               </Link>
