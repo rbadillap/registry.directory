@@ -8,7 +8,6 @@ import { fetchAllRegistryStats } from "@/lib/registry-stats";
 import { fetchAllGitHubStats } from "@/lib/github-stats";
 import { loadCollections, loadShipped } from "@/lib/registry-data";
 import { getAffiliates } from "@/lib/affiliates";
-import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import { SiteFooter } from "@/components/site-footer";
 import type { DirectoryEntry } from "@/lib/types";
 import { HomeControls } from "@/components/home-controls";
@@ -177,7 +176,6 @@ export default async function Home() {
         <DirectoryTabs components={components} stats={stats} githubStats={githubStats} affiliates={affiliates} collections={collections} shipped={shipped} />
       </Suspense>
 
-      <AffiliateDisclosure />
       <SiteFooter />
     </main>
   );
