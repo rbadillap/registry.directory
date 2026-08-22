@@ -1,0 +1,1131 @@
+{
+  "key": "remotionui",
+  "entry": "RemotionUI",
+  "name": "remotionui",
+  "homepage": "https://remotionui.com",
+  "indexUrl": "https://remotionui.com/r/index.json",
+  "itemBase": "https://remotionui.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "timing",
+      "type": "registry:lib",
+      "description": "Frame timing helpers and enter easing"
+    },
+    {
+      "name": "springs",
+      "type": "registry:lib",
+      "description": "Default spring configurations"
+    },
+    {
+      "name": "transition-timing",
+      "type": "registry:lib",
+      "description": "Shared TransitionSeries timing helpers and layered progress curves"
+    },
+    {
+      "name": "ai-composer-utils",
+      "type": "registry:lib",
+      "description": "Shared typewriter, caret, morph, and intro helpers for AI composer scenes"
+    },
+    {
+      "name": "code-syntax",
+      "type": "registry:lib",
+      "description": "Syntax tokenizer, editor palettes, and revealable code line renderer for the code scenes"
+    },
+    {
+      "name": "text-emphasis",
+      "type": "registry:lib",
+      "description": "Word-level phrase matching and marker geometry for scenes that sweep emphasis across text"
+    },
+    {
+      "name": "motion-tokens",
+      "type": "registry:lib",
+      "description": "Named motion duration and stagger tokens"
+    },
+    {
+      "name": "gpu",
+      "type": "registry:lib",
+      "description": "WebGL2 fragment-shader effect factory for GPU primitives"
+    },
+    {
+      "name": "layout",
+      "type": "registry:lib",
+      "description": "Format-agnostic layout helpers"
+    },
+    {
+      "name": "motion-wrapper",
+      "type": "registry:lib",
+      "description": "Inline wrapper for enter/exit animations (avoids AbsoluteFill overlap)"
+    },
+    {
+      "name": "motion-primitive",
+      "type": "registry:lib",
+      "description": "Enter/exit motion contract shared by the animation primitives — opacity leads, exits are shorter, and a bounded Sequence times the exit itself"
+    },
+    {
+      "name": "use-stagger",
+      "type": "registry:hook",
+      "description": "Hook for staggered child delays"
+    },
+    {
+      "name": "fade-in",
+      "type": "registry:ui",
+      "description": "Opacity-only entrance, with an exit that lands on the end of its sequence"
+    },
+    {
+      "name": "fade-out",
+      "type": "registry:ui",
+      "description": "Held exit that accelerates away, timed to the last frame of its sequence by default"
+    },
+    {
+      "name": "slide-up",
+      "type": "registry:ui",
+      "description": "Rise into place, with an optional mask reveal and automatic exit"
+    },
+    {
+      "name": "slide-left",
+      "type": "registry:ui",
+      "description": "Slide in from either side, with an optional mask reveal and automatic exit"
+    },
+    {
+      "name": "scale-in",
+      "type": "registry:ui",
+      "description": "Grow into place from just under full size, with an optional spring and exit"
+    },
+    {
+      "name": "typewriter",
+      "type": "registry:ui",
+      "description": "Typewriter reveal with rhythm, pauses, looping, and a caret that only blinks at rest"
+    },
+    {
+      "name": "counter",
+      "type": "registry:ui",
+      "description": "Animated number with grouping, decimals, odometer digit roll and a reserved width"
+    },
+    {
+      "name": "blur-in",
+      "type": "registry:ui",
+      "description": "Resolve out of a defocus — blur clears before the move lands"
+    },
+    {
+      "name": "spring-in",
+      "type": "registry:ui",
+      "description": "Spring-driven scale and rise, with snappy, smooth and bouncy presets"
+    },
+    {
+      "name": "stagger-children",
+      "type": "registry:ui",
+      "description": "Offset children onto their own sequences, in forward, reverse, centre or edge order, in and out"
+    },
+    {
+      "name": "marker-highlight",
+      "type": "registry:ui",
+      "description": "Highlighter stroke swept word by word across a phrase, with marker, knockout, underline and box variants"
+    },
+    {
+      "name": "progress-bar",
+      "type": "registry:ui",
+      "description": "Inline progress bar with determinate and indeterminate modes, segments and a value readout"
+    },
+    {
+      "name": "rotate-in",
+      "type": "registry:ui",
+      "description": "Swing into place in plane or hinged in depth on the x/y axis"
+    },
+    {
+      "name": "transition-fade",
+      "type": "registry:ui",
+      "description": "Crossfade between scenes, or dip the cut through a colour"
+    },
+    {
+      "name": "transition-slide",
+      "type": "registry:ui",
+      "description": "Slide transition helper for TransitionSeries"
+    },
+    {
+      "name": "lower-third",
+      "type": "registry:block",
+      "description": "Name plate that plays its whole life: wipes out from the frame edge, settles, holds, then retreats the way it came"
+    },
+    {
+      "name": "title-card",
+      "type": "registry:block",
+      "description": "Opening card where each headline line rises out of its own mask and one sweep of light crosses it as it stands"
+    },
+    {
+      "name": "feature-list",
+      "type": "registry:block",
+      "description": "List being ticked off: each row arrives in turn, its rule draws across, and its check strokes in behind it"
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:block",
+      "description": "A number landing: the ring fills while the counter rolls, then the label and the change against the last period settle"
+    },
+    {
+      "name": "quote-card",
+      "type": "registry:block",
+      "description": "Pull quote read aloud: the mark draws, the quote rises line by line, a marker sweeps the phrase, the attribution lands last"
+    },
+    {
+      "name": "end-card",
+      "type": "registry:block",
+      "description": "Outro built in the order a viewer acts on it: title, button assembling under its label, address typing, channels, one pulse"
+    },
+    {
+      "name": "intro",
+      "type": "registry:block",
+      "description": "5-second branded intro: chapter marker, headline, topic rail"
+    },
+    {
+      "name": "showcase",
+      "type": "registry:block",
+      "description": "Full demo reel with TransitionSeries"
+    },
+    {
+      "name": "hero-loop",
+      "type": "registry:block",
+      "description": "12-second seamless-looping website hero composition"
+    },
+    {
+      "name": "caption-utils",
+      "type": "registry:lib",
+      "description": "Caption page grouping and word-active helpers"
+    },
+    {
+      "name": "audio-viz-utils",
+      "type": "registry:lib",
+      "description": "Windowed audio spectrum helpers"
+    },
+    {
+      "name": "map-utils",
+      "type": "registry:lib",
+      "description": "MapLibre and Turf geospatial helpers"
+    },
+    {
+      "name": "path-utils",
+      "type": "registry:lib",
+      "description": "SVG path measuring, sampling, auto-fit and waypoint helpers"
+    },
+    {
+      "name": "caption-highlight",
+      "type": "registry:ui",
+      "description": "TikTok-style word-by-word caption highlight"
+    },
+    {
+      "name": "audiogram-bars",
+      "type": "registry:ui",
+      "description": "Audio-reactive spectrum bar visualization"
+    },
+    {
+      "name": "path-draw",
+      "type": "registry:ui",
+      "description": "SVG stroke reveal with auto-fit framing, multi-path stagger and a drawing head"
+    },
+    {
+      "name": "map-canvas",
+      "type": "registry:ui",
+      "description": "Deterministic MapLibre map mount"
+    },
+    {
+      "name": "map-route",
+      "type": "registry:ui",
+      "description": "Animated GeoJSON route line on a map"
+    },
+    {
+      "name": "map-markers",
+      "type": "registry:ui",
+      "description": "GeoJSON circle and label markers on a map"
+    },
+    {
+      "name": "transition-wipe",
+      "type": "registry:ui",
+      "description": "Wipe transition helper for TransitionSeries"
+    },
+    {
+      "name": "transition-clock-wipe",
+      "type": "registry:ui",
+      "description": "Clock sweep that reads the composition size itself"
+    },
+    {
+      "name": "transition-light-leak",
+      "type": "registry:ui",
+      "description": "Film flare overlay that peaks on the cut and hides the seam under it"
+    },
+    {
+      "name": "blur-reveal",
+      "type": "registry:ui",
+      "description": "Cut where the outgoing scene softens away and the incoming one resolves out of blur"
+    },
+    {
+      "name": "grid-pixelate-wipe",
+      "type": "registry:ui",
+      "description": "Reveal where the next scene arrives one grid cell at a time"
+    },
+    {
+      "name": "frosted-glass-wipe",
+      "type": "registry:ui",
+      "description": "A pane of frosted glass crosses the frame and leaves the next scene behind it"
+    },
+    {
+      "name": "directional-wipe",
+      "type": "registry:ui",
+      "description": "Soft-edged wipe that uncovers the next scene without exposing the background"
+    },
+    {
+      "name": "spatial-push",
+      "type": "registry:ui",
+      "description": "Push where both scenes travel locked edge to edge across the frame"
+    },
+    {
+      "name": "chromatic-aberration-wipe",
+      "type": "registry:ui",
+      "description": "Slide that pulls the colour channels apart at its fastest point and recombines them on landing"
+    },
+    {
+      "name": "zoom-through",
+      "type": "registry:ui",
+      "description": "Camera push-through: one scene drives past the lens, the next lands out of the same move"
+    },
+    {
+      "name": "mesh-gradient-bg",
+      "type": "registry:ui",
+      "description": "Living mesh gradient blob background"
+    },
+    {
+      "name": "dynamic-grid",
+      "type": "registry:ui",
+      "description": "Subtle drifting dot and line grid background"
+    },
+    {
+      "name": "simulated-cursor",
+      "type": "registry:ui",
+      "description": "Frame-timed cursor with press, click ripples, hit targets and labels"
+    },
+    {
+      "name": "confetti-burst",
+      "type": "registry:ui",
+      "description": "Frame-driven confetti burst overlay"
+    },
+    {
+      "name": "device-mockup-zoom",
+      "type": "registry:block",
+      "description": "Cinematic laptop, phone, or browser mockup with staged UI and slow camera pullback"
+    },
+    {
+      "name": "caption-scene",
+      "type": "registry:block",
+      "description": "Lower-third TikTok-style captions synced to audio"
+    },
+    {
+      "name": "audiogram-scene",
+      "type": "registry:block",
+      "description": "Podcast audiogram layout with spectrum bars"
+    },
+    {
+      "name": "logo-reveal",
+      "type": "registry:block",
+      "description": "Logo mark draw-on with wordmark and tagline beats"
+    },
+    {
+      "name": "map-flight",
+      "type": "registry:block",
+      "description": "Animated map flyover with route reveal and markers"
+    },
+    {
+      "name": "auto-fit-title",
+      "type": "registry:block",
+      "description": "Headline sized to the frame it is given, then assembled word by word so any length lands the same way"
+    },
+    {
+      "name": "social-clip",
+      "type": "registry:block",
+      "description": "9:16 social clip with hook, captions, and CTA"
+    },
+    {
+      "name": "media-utils",
+      "type": "registry:lib",
+      "description": "Media item timing and fit helpers"
+    },
+    {
+      "name": "chart-utils",
+      "type": "registry:lib",
+      "description": "Chart scaling and SVG path helpers"
+    },
+    {
+      "name": "text-fit-utils",
+      "type": "registry:lib",
+      "description": "Safe headline fitting helpers"
+    },
+    {
+      "name": "waveform-line",
+      "type": "registry:ui",
+      "description": "Audio waveform line visualization"
+    },
+    {
+      "name": "audio-pulse",
+      "type": "registry:ui",
+      "description": "Audio-reactive pulse rings"
+    },
+    {
+      "name": "karaoke-captions",
+      "type": "registry:ui",
+      "description": "Active-word karaoke caption styling"
+    },
+    {
+      "name": "line-chart-draw",
+      "type": "registry:ui",
+      "description": "SVG line chart that draws itself on"
+    },
+    {
+      "name": "cursor-path",
+      "type": "registry:ui",
+      "description": "Cursor travelling a path with drawn trail and click ripples"
+    },
+    {
+      "name": "media-frame",
+      "type": "registry:block",
+      "description": "One piece of media presented: the frame opens like a shutter under a slow push, then the title masks up and the caption settles"
+    },
+    {
+      "name": "media-sequence",
+      "type": "registry:block",
+      "description": "Edited run of shots pushed on one after another, with a chapter strip that fills through the item playing"
+    },
+    {
+      "name": "split-screen",
+      "type": "registry:block",
+      "description": "Before/after that is actually made: panels meet at the divider, labels land, and the divider can travel across to leave one side whole"
+    },
+    {
+      "name": "b-roll-stack",
+      "type": "registry:block",
+      "description": "Deck of supporting shots dealt one at a time: each rides to the front with its label while the last slides back into the stack"
+    },
+    {
+      "name": "caption-bumper",
+      "type": "registry:block",
+      "description": "Between-beats card that punches its line in word by word, draws a rule under it, and wipes out when its hold is over"
+    },
+    {
+      "name": "animated-bar-chart",
+      "type": "registry:block",
+      "description": "Ranked bar chart scene with a value axis"
+    },
+    {
+      "name": "metric-ticker",
+      "type": "registry:block",
+      "description": "KPI cards that count themselves in"
+    },
+    {
+      "name": "timeline-steps",
+      "type": "registry:block",
+      "description": "Process walked step by step: the rail draws ahead of a travelling head that lands on each step, works it through a closing ring, then checks it off"
+    },
+    {
+      "name": "callout-spotlight",
+      "type": "registry:block",
+      "description": "Spotlight that is aimed: the mask closes from the whole frame onto the target, a ring pings it, then a connector draws out to the callout"
+    },
+    {
+      "name": "zoom-pan-frame",
+      "type": "registry:block",
+      "description": "Camera move on a still driven by focal points, settling before the cut, with an optional label chip"
+    },
+    {
+      "name": "code-reveal",
+      "type": "registry:block",
+      "description": "Editor window that writes a syntax-highlighted file character by character, then focuses the lines that matter"
+    },
+    {
+      "name": "hook-card",
+      "type": "registry:block",
+      "description": "Short-form opener where the hook rises line by line out of its mask and an underline draws under the promise"
+    },
+    {
+      "name": "talking-head-layout",
+      "type": "registry:block",
+      "description": "Talking-head clip frame that opens on the speaker, slides a name plate out from behind it, and plays the spoken lines in a reserved caption zone with the waveform reacting"
+    },
+    {
+      "name": "comment-callout",
+      "type": "registry:block",
+      "description": "Viewer comment answered on screen: it lands from the feed, the ask is marked up, the creator hearts it, and the reply is typed and sent"
+    },
+    {
+      "name": "tutorial-clip",
+      "type": "registry:block",
+      "description": "Tutorial clip composition for demos and explainers"
+    },
+    {
+      "name": "data-story",
+      "type": "registry:block",
+      "description": "Data storytelling composition template"
+    },
+    {
+      "name": "creator-reel",
+      "type": "registry:block",
+      "description": "Vertical creator media composition template"
+    },
+    {
+      "name": "podcast-clip",
+      "type": "registry:block",
+      "description": "Podcast clip composition with audio visuals and captions"
+    },
+    {
+      "name": "blur-focus-in",
+      "type": "registry:ui",
+      "description": "Text fades from heavy blur into sharp focus"
+    },
+    {
+      "name": "staggered-fade-up",
+      "type": "registry:ui",
+      "description": "Words rise with cascading fade-up stagger"
+    },
+    {
+      "name": "masked-slide-reveal",
+      "type": "registry:ui",
+      "description": "Words slide up through a horizontal mask"
+    },
+    {
+      "name": "tracking-in",
+      "type": "registry:ui",
+      "description": "Letter-spacing collapses with spring snap"
+    },
+    {
+      "name": "light-sweep-text",
+      "type": "registry:ui",
+      "description": "Light gradient sweeps across dim text"
+    },
+    {
+      "name": "slot-roll",
+      "type": "registry:ui",
+      "description": "Characters roll like a slot reel into place"
+    },
+    {
+      "name": "matrix-decode",
+      "type": "registry:ui",
+      "description": "Scramble resolves left-to-right into target text"
+    },
+    {
+      "name": "rgb-glitch-text",
+      "type": "registry:ui",
+      "description": "Signal-lock RGB glitch text with channel splits, slices, and scanlines"
+    },
+    {
+      "name": "infinite-marquee",
+      "type": "registry:ui",
+      "description": "Endlessly scrolling horizontal text band"
+    },
+    {
+      "name": "perspective-marquee",
+      "type": "registry:ui",
+      "description": "Marquee tilted in 3D with depth fade"
+    },
+    {
+      "name": "strikethrough-replace",
+      "type": "registry:ui",
+      "description": "Strikes out one phrase and puts another in its place, on a three-beat correction timeline"
+    },
+    {
+      "name": "terminal-simulator",
+      "type": "registry:block",
+      "description": "Terminal window that types a command, streams spinner-to-check build steps with timings, then returns the prompt"
+    },
+    {
+      "name": "code-accordion",
+      "type": "registry:block",
+      "description": "Stepped walkthrough where each section opens, writes its code, is checked off, and closes behind the next"
+    },
+    {
+      "name": "code-diff-wipe",
+      "type": "registry:block",
+      "description": "Diff patch landing line by line: an apply front travels the file, removals collapse, additions open and write in"
+    },
+    {
+      "name": "data-flow-pipes",
+      "type": "registry:block",
+      "description": "Pipeline running end to end: stages come up in order, pipes draw between them, and a stream of payloads hops through, lighting each stage and ticking its tally"
+    },
+    {
+      "name": "drag-drop-flow",
+      "type": "registry:block",
+      "description": "Cursor drags a file out of a media library into a drop zone that arms, catches it, and uploads it to completion"
+    },
+    {
+      "name": "chat-to-preview",
+      "type": "registry:block",
+      "description": "Prompt-to-render loop: the ask types into the composer and sends into the thread, the answer streams back, and the preview assembles from wireframe to rendered scene"
+    },
+    {
+      "name": "hero-device-assemble",
+      "type": "registry:block",
+      "description": "Device layers assemble hero"
+    },
+    {
+      "name": "ecosystem-orbit",
+      "type": "registry:block",
+      "description": "Logo with orbiting satellites"
+    },
+    {
+      "name": "bento-pan",
+      "type": "registry:block",
+      "description": "Camera pan across a bento grid of metric cards"
+    },
+    {
+      "name": "browser-flow",
+      "type": "registry:block",
+      "description": "URL to browser preview flow"
+    },
+    {
+      "name": "ai-generation-canvas",
+      "type": "registry:block",
+      "description": "Prompt-to-dashboard generation with morphing input, skeleton shimmer, and card flips"
+    },
+    {
+      "name": "ai-composer-showcase",
+      "type": "registry:block",
+      "description": "Showcase reel cutting through five AI composer interfaces with title and end cards"
+    },
+    {
+      "name": "live-code-split",
+      "type": "registry:block",
+      "description": "Editor on the left, its rendered output live on the right"
+    },
+    {
+      "name": "deploy-reveal",
+      "type": "registry:block",
+      "description": "Terminal deploy to browser"
+    },
+    {
+      "name": "dashboard-populate",
+      "type": "registry:block",
+      "description": "Dashboard metrics populate"
+    },
+    {
+      "name": "pricing-focus",
+      "type": "registry:block",
+      "description": "Pricing tier focus animation"
+    },
+    {
+      "name": "landing-code-showcase",
+      "type": "registry:block",
+      "description": "Landing with install commands"
+    },
+    {
+      "name": "tool-menu-slide",
+      "type": "registry:block",
+      "description": "Tool menu slide-in"
+    },
+    {
+      "name": "image-expand",
+      "type": "registry:block",
+      "description": "A still opens from a card to full frame, then takes its caption"
+    },
+    {
+      "name": "claude-chat",
+      "type": "registry:block",
+      "description": "Claude composer card with typed prompt and waveform-to-send morph"
+    },
+    {
+      "name": "chat-gpt",
+      "type": "registry:block",
+      "description": "ChatGPT composer pill with greeting, suggestion chips, and voice-to-send morph"
+    },
+    {
+      "name": "v0",
+      "type": "registry:block",
+      "description": "v0 composer with greeting, model chip, project selector, and mic-to-send morph"
+    },
+    {
+      "name": "claude-code",
+      "type": "registry:block",
+      "description": "Claude Code terminal welcome screen with CLI prompt typing"
+    },
+    {
+      "name": "opencode",
+      "type": "registry:block",
+      "description": "OpenCode TUI composer with agent and model status"
+    },
+    {
+      "name": "text-split",
+      "type": "registry:lib",
+      "description": "Split a string into chars, words or lines with staggered per-unit timing"
+    },
+    {
+      "name": "path-morph",
+      "type": "registry:lib",
+      "description": "Cached SVG path morphing with winding alignment and box fitting"
+    },
+    {
+      "name": "displacement-transition",
+      "type": "registry:lib",
+      "description": "Frame maths for displacement-map and shape-mask transitions"
+    },
+    {
+      "name": "displacement-presentation",
+      "type": "registry:lib",
+      "description": "Shared TransitionSeries presentation for warp and shape-mask cuts"
+    },
+    {
+      "name": "sample-media",
+      "type": "registry:lib",
+      "description": "Placeholder stills, captions, and audio for composition defaults"
+    },
+    {
+      "name": "split-text-chars",
+      "type": "registry:ui",
+      "description": "Split text into chars, words or lines and stagger them in"
+    },
+    {
+      "name": "audio-reactive-scale",
+      "type": "registry:ui",
+      "description": "Scales any child by per-frame audio amplitude"
+    },
+    {
+      "name": "srt-caption-track",
+      "type": "registry:ui",
+      "description": "Renders a caption track straight from an SRT or WebVTT file"
+    },
+    {
+      "name": "transition-circle-reveal",
+      "type": "registry:ui",
+      "description": "Circular mask that opens from any point onto the next scene"
+    },
+    {
+      "name": "transition-card-flip",
+      "type": "registry:ui",
+      "description": "Whole-frame 3D flip that hands off on backface culling"
+    },
+    {
+      "name": "transition-blinds",
+      "type": "registry:ui",
+      "description": "Staggered slats sweeping open to reveal the next scene"
+    },
+    {
+      "name": "transition-whip-pan",
+      "type": "registry:ui",
+      "description": "Fast pan with directional motion blur along the travel axis"
+    },
+    {
+      "name": "transition-morph-shape",
+      "type": "registry:ui",
+      "description": "Reveal through a shape that morphs as it grows across the frame"
+    },
+    {
+      "name": "transition-liquid-warp",
+      "type": "registry:ui",
+      "description": "Liquid displacement warp that stirs one scene into the next"
+    },
+    {
+      "name": "skew-in",
+      "type": "registry:ui",
+      "description": "Skew + translate, editorial feel"
+    },
+    {
+      "name": "scramble-text",
+      "type": "registry:ui",
+      "description": "Random-glyph scramble resolving per character"
+    },
+    {
+      "name": "text-mask-video",
+      "type": "registry:ui",
+      "description": "Video or gradient showing through letterforms"
+    },
+    {
+      "name": "handwriting-text",
+      "type": "registry:ui",
+      "description": "Takes a string and strokes it on"
+    },
+    {
+      "name": "stroke-to-fill-text",
+      "type": "registry:ui",
+      "description": "Outline text filling solid"
+    },
+    {
+      "name": "variable-font-morph",
+      "type": "registry:ui",
+      "description": "Animates weight/width axes of a variable font"
+    },
+    {
+      "name": "liquid-text-morph",
+      "type": "registry:ui",
+      "description": "Letterforms morphing between two words"
+    },
+    {
+      "name": "wave-text",
+      "type": "registry:ui",
+      "description": "Per-character sine displacement"
+    },
+    {
+      "name": "neon-flicker-text",
+      "type": "registry:ui",
+      "description": "Neon sign flicker and settle"
+    },
+    {
+      "name": "aurora-bg",
+      "type": "registry:ui",
+      "description": "Drifting light ribbons"
+    },
+    {
+      "name": "particle-field",
+      "type": "registry:ui",
+      "description": "Ambient drifting particles with depth"
+    },
+    {
+      "name": "topographic-lines-bg",
+      "type": "registry:ui",
+      "description": "Contour lines drifting"
+    },
+    {
+      "name": "caustics-bg",
+      "type": "registry:ui",
+      "description": "Underwater light caustics"
+    },
+    {
+      "name": "animated-noise-grain",
+      "type": "registry:ui",
+      "description": "Film grain overlay"
+    },
+    {
+      "name": "light-rays",
+      "type": "registry:ui",
+      "description": "Volumetric god rays drifting across the stage"
+    },
+    {
+      "name": "parallax-layers",
+      "type": "registry:ui",
+      "description": "Depth-offset layers on one driver"
+    },
+    {
+      "name": "shake-emphasis",
+      "type": "registry:ui",
+      "description": "Short impact shake"
+    },
+    {
+      "name": "glow-pulse",
+      "type": "registry:ui",
+      "description": "Rhythmic glow for CTAs and live indicators"
+    },
+    {
+      "name": "motion-trail",
+      "type": "registry:ui",
+      "description": "Echo trails behind a moving element"
+    },
+    {
+      "name": "squash-stretch",
+      "type": "registry:ui",
+      "description": "The animation principle as a primitive"
+    },
+    {
+      "name": "orbit-motion",
+      "type": "registry:ui",
+      "description": "Element orbiting a center point"
+    },
+    {
+      "name": "depth-of-field-blur",
+      "type": "registry:ui",
+      "description": "Rack focus between layers"
+    },
+    {
+      "name": "scanline-crt",
+      "type": "registry:ui",
+      "description": "CRT scanlines and curvature overlay"
+    },
+    {
+      "name": "bar-chart-race",
+      "type": "registry:ui",
+      "description": "Ranked bars reorder over time"
+    },
+    {
+      "name": "donut-chart",
+      "type": "registry:ui",
+      "description": "Multi-segment donut with labels"
+    },
+    {
+      "name": "pie-slice-reveal",
+      "type": "registry:ui",
+      "description": "Slices sweep in sequentially"
+    },
+    {
+      "name": "scatter-plot-pop",
+      "type": "registry:ui",
+      "description": "Points pop in on stagger, optional trend line"
+    },
+    {
+      "name": "bubble-chart-pack",
+      "type": "registry:ui",
+      "description": "Circle-packed values settling into place"
+    },
+    {
+      "name": "gauge-dial",
+      "type": "registry:ui",
+      "description": "Needle sweeps to target"
+    },
+    {
+      "name": "sparkline-row",
+      "type": "registry:ui",
+      "description": "Compact trend lines that read at small sizes"
+    },
+    {
+      "name": "heatmap-grid",
+      "type": "registry:ui",
+      "description": "Cell grid filling by intensity, contribution-graph style"
+    },
+    {
+      "name": "comparison-bars",
+      "type": "registry:ui",
+      "description": "Two-series before/after with delta callout"
+    },
+    {
+      "name": "funnel-chart",
+      "type": "registry:ui",
+      "description": "Stage bars narrowing with drop-off percentages"
+    },
+    {
+      "name": "radar-chart",
+      "type": "registry:ui",
+      "description": "Multi-axis spider chart drawing its polygon"
+    },
+    {
+      "name": "treemap-blocks",
+      "type": "registry:ui",
+      "description": "Nested rectangles sized by value"
+    },
+    {
+      "name": "waterfall-chart",
+      "type": "registry:ui",
+      "description": "Cumulative bridge with positive/negative steps"
+    },
+    {
+      "name": "stacked-area-chart",
+      "type": "registry:ui",
+      "description": "Multiple series stacking as they draw on"
+    },
+    {
+      "name": "candlestick-chart",
+      "type": "registry:ui",
+      "description": "OHLC financial series"
+    },
+    {
+      "name": "gantt-timeline",
+      "type": "registry:ui",
+      "description": "Date-scaled schedule bars"
+    },
+    {
+      "name": "word-pop-captions",
+      "type": "registry:ui",
+      "description": "Narrowed: one word at a time, alone on frame"
+    },
+    {
+      "name": "caption-emoji-beat",
+      "type": "registry:ui",
+      "description": "Emoji punctuation landing on beats"
+    },
+    {
+      "name": "speaker-label-captions",
+      "type": "registry:ui",
+      "description": "Narrowed: multi-speaker caption track with name tags and color coding"
+    },
+    {
+      "name": "transcript-scroll",
+      "type": "registry:ui",
+      "description": "Full readable transcript scrolling with the active line marked"
+    },
+    {
+      "name": "subtitle-translate",
+      "type": "registry:ui",
+      "description": "Dual-language stacked subtitles"
+    },
+    {
+      "name": "waveform-bars-radial",
+      "type": "registry:ui",
+      "description": "Circular bars around a center element"
+    },
+    {
+      "name": "vu-meter",
+      "type": "registry:ui",
+      "description": "Segmented level meter with peak hold"
+    },
+    {
+      "name": "voice-note-bubble",
+      "type": "registry:ui",
+      "description": "Chat-style audio message with waveform and playhead"
+    },
+    {
+      "name": "beat-pulse-grid",
+      "type": "registry:ui",
+      "description": "Grid cells pulsing on detected beats"
+    },
+    {
+      "name": "audio-scrubber",
+      "type": "registry:ui",
+      "description": "Waveform with traveling playhead and time labels"
+    },
+    {
+      "name": "poll-overlay",
+      "type": "registry:block",
+      "description": "Question with bars filling to results"
+    },
+    {
+      "name": "reaction-burst",
+      "type": "registry:block",
+      "description": "Narrowed: hearts/likes rising continuously"
+    },
+    {
+      "name": "countdown-timer",
+      "type": "registry:block",
+      "description": "Numeric or ring countdown to zero"
+    },
+    {
+      "name": "sports-scorebug",
+      "type": "registry:block",
+      "description": "Broadcast score furniture with clock"
+    },
+    {
+      "name": "news-ticker-bar",
+      "type": "registry:block",
+      "description": "Broadcast lower ticker with headlines"
+    },
+    {
+      "name": "form-fill-sequence",
+      "type": "registry:block",
+      "description": "Fields typing and validating in order"
+    },
+    {
+      "name": "notification-stack",
+      "type": "registry:block",
+      "description": "Toasts stacking and dismissing"
+    },
+    {
+      "name": "tab-switch-panel",
+      "type": "registry:block",
+      "description": "Tab bar with cross-fading panels"
+    },
+    {
+      "name": "search-results-populate",
+      "type": "registry:block",
+      "description": "Query typed, results streaming in and ranking"
+    },
+    {
+      "name": "file-tree-reveal",
+      "type": "registry:block",
+      "description": "Directory tree expanding node by node"
+    },
+    {
+      "name": "kanban-move",
+      "type": "registry:block",
+      "description": "Cards moving across columns"
+    },
+    {
+      "name": "commit-graph",
+      "type": "registry:block",
+      "description": "Branch/merge graph drawing itself"
+    },
+    {
+      "name": "comparison-table",
+      "type": "registry:block",
+      "description": "Multi-column feature matrix"
+    },
+    {
+      "name": "pricing-card",
+      "type": "registry:block",
+      "description": "Tier card with price roll and features"
+    },
+    {
+      "name": "faq-accordion",
+      "type": "registry:block",
+      "description": "Narrowed: Q/A text rows expanding"
+    },
+    {
+      "name": "team-grid",
+      "type": "registry:block",
+      "description": "Avatar grid with role labels on stagger"
+    },
+    {
+      "name": "logo-wall",
+      "type": "registry:block",
+      "description": "Client logo grid, grayscale to color"
+    },
+    {
+      "name": "changelog-entry",
+      "type": "registry:block",
+      "description": "Version header with categorized change rows"
+    },
+    {
+      "name": "roadmap-lanes",
+      "type": "registry:block",
+      "description": "Swimlanes of shipped/building/planned"
+    },
+    {
+      "name": "org-chart-build",
+      "type": "registry:block",
+      "description": "Hierarchy assembling top-down"
+    },
+    {
+      "name": "quiz-question",
+      "type": "registry:block",
+      "description": "Question, options, correct-answer reveal"
+    },
+    {
+      "name": "weather-card",
+      "type": "registry:block",
+      "description": "Conditions with animated iconography"
+    },
+    {
+      "name": "calendar-month-fill",
+      "type": "registry:block",
+      "description": "Month grid populating with events"
+    },
+    {
+      "name": "arrow-annotate",
+      "type": "registry:ui",
+      "description": "Hand-drawn arrow pointing at a target"
+    },
+    {
+      "name": "badge-stamp",
+      "type": "registry:ui",
+      "description": "Stamp/seal impact with rotation settle"
+    },
+    {
+      "name": "shape-morph",
+      "type": "registry:ui",
+      "description": "Path interpolation between two shapes"
+    },
+    {
+      "name": "blob-morph",
+      "type": "registry:ui",
+      "description": "Organic blob continuously morphing"
+    },
+    {
+      "name": "dashed-path-travel",
+      "type": "registry:ui",
+      "description": "Narrowed: any element traveling any path with a dashed trail"
+    },
+    {
+      "name": "connector-lines",
+      "type": "registry:ui",
+      "description": "Narrowed: primitive that draws edges between anchored elements"
+    },
+    {
+      "name": "svg-mask-reveal",
+      "type": "registry:ui",
+      "description": "Arbitrary SVG shape as a reveal mask"
+    },
+    {
+      "name": "map-heat-overlay",
+      "type": "registry:ui",
+      "description": "Density overlay fading in over the basemap"
+    },
+    {
+      "name": "globe-arc",
+      "type": "registry:ui",
+      "description": "Arcs between points on a globe"
+    },
+    {
+      "name": "multi-device-lineup",
+      "type": "registry:ui",
+      "description": "Phone + tablet + laptop showing one responsive design"
+    }
+  ]
+}
