@@ -1,0 +1,341 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "registry.directory API",
+    "version": "1.0.0",
+    "summary": "Machine-readable surface of registry.directory, the discovery layer for the shadcn/ui registry ecosystem.",
+    "description": "registry.directory indexes shadcn/ui registries so an agent can find the right component across the whole ecosystem, and accepts new registry submissions with a single HTTP POST.\n\nWhen to use this API: (1) discover which registries exist and where their registry.json lives (`GET /directory.json`); (2) search the cross-registry component index (`GET /items.json`); (3) read a component's metadata, dependencies, and full source as Markdown (`GET /api/markdown/{owner}/{repo}/{slug}`); (4) submit a registry to the directory on behalf of its author (`POST /api/submit`).\n\nSubmission is one unauthenticated POST — no account, no fork, no PR. The full human-readable contract, including prerequisites and the review process, is at https://registry.directory/how-to-submit.md. Installation of components is not this API's job: use the shadcn CLI against the origin registry once you know which registry has what you need.",
+    "contact": {
+      "name": "registry.directory",
+      "url": "https://github.com/rbadillap/registry.directory",
+      "email": "info@ronnybadilla.com"
+    }
+  },
+  "servers": [{ "url": "https://registry.directory" }],
+  "paths": {
+    "/directory.json": {
+      "get": {
+        "operationId": "listRegistries",
+        "summary": "List every registry in the directory",
+        "description": "The full directory: every indexed shadcn/ui registry with its homepage, registry.json URL, GitHub repo, optional shadcn namespace, and declared premium offerings. Static file, rebuilt when the catalog changes. Its canonical JSON Schema is published at https://registry.directory/schemas/directory.json.",
+        "responses": {
+          "200": {
+            "description": "The directory of registries.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["registries"],
+                  "properties": {
+                    "$schema": { "type": "string" },
+                    "registries": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/DirectoryEntry" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/items.json": {
+      "get": {
+        "operationId": "listItems",
+        "summary": "Cross-registry component index",
+        "description": "A flattened index of every renderable item across all indexed registries: name, type, description, categories, and which registry it belongs to. Use it to answer \"which registry has X?\" without fetching each registry.json. Static file, rebuilt on deploy.",
+        "responses": {
+          "200": {
+            "description": "The flattened item index.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["items"],
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/IndexedItem" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/markdown/{owner}/{repo}/{slug}": {
+      "get": {
+        "operationId": "getItemMarkdown",
+        "summary": "A component as Markdown: metadata, dependencies, full source",
+        "description": "Returns one registry item as a single Markdown document: title, description, metadata (type, registry, dependencies), and every file's full content in fenced code blocks. The item's source is fetched live from its origin registry. Alias: any item page URL with `.md` appended (`https://registry.directory/{owner}/{repo}/{slug}.md`) rewrites to this endpoint. For registries without a GitHub repo, the handle form `https://registry.directory/{handle}/{slug}.md` works the same way.",
+        "parameters": [
+          {
+            "name": "owner",
+            "in": "path",
+            "required": true,
+            "description": "GitHub owner of the registry (or the registry's handle for GitHub-less registries).",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "repo",
+            "in": "path",
+            "required": true,
+            "description": "GitHub repository name of the registry.",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "description": "The item's name as listed in the registry index (may contain slashes).",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The item rendered as Markdown.",
+            "content": {
+              "text/markdown": { "schema": { "type": "string" } }
+            }
+          },
+          "404": {
+            "description": "Unknown registry, unknown item, a category slug (categories have no Markdown view), or the origin registry did not resolve.",
+            "content": {
+              "text/plain": { "schema": { "type": "string" } }
+            }
+          }
+        }
+      }
+    },
+    "/api/submit": {
+      "post": {
+        "operationId": "submitRegistry",
+        "summary": "Submit a registry to the directory",
+        "description": "Submit a shadcn/ui registry for listing on registry.directory. One unauthenticated POST creates a pending submission; a maintainer audits it (the registry.json and several items are fetched and must resolve with real content) and a human makes the final call. The 201 response returns a `submission_token` exactly once — keep it: re-POSTing the same `registry_url` with that token as an `Authorization: Bearer` header updates the pending submission. Full contract and prerequisites: https://registry.directory/how-to-submit.md",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/SubmissionRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Submission created and queued for review. `submission_token` is shown only in this response.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/SubmissionAccepted" }
+              }
+            }
+          },
+          "200": {
+            "description": "Pending submission updated (valid bearer token supplied).",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/SubmissionAccepted" }
+              }
+            }
+          },
+          "400": {
+            "description": "Body is not valid JSON, or validation failed (`fields` maps each invalid field to its errors).",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/SubmissionError" } }
+            }
+          },
+          "403": {
+            "description": "A pending submission exists for this registry_url and the bearer token is missing or wrong. The original submission stays intact.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/SubmissionError" } }
+            }
+          },
+          "409": {
+            "description": "This registry is already listed in the directory, or a pending submission exists and updates are not enabled. No action needed.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/SubmissionError" } }
+            }
+          },
+          "413": {
+            "description": "Request body exceeds 10,000 bytes.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/SubmissionError" } }
+            }
+          },
+          "422": {
+            "description": "The `namespace` claim does not match the official shadcn registry index.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/SubmissionError" } }
+            }
+          },
+          "500": {
+            "description": "Storage failure. Try again later.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/SubmissionError" } }
+            }
+          },
+          "503": {
+            "description": "Submission storage not configured. Try again later.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/SubmissionError" } }
+            }
+          }
+        },
+        "security": [{}, { "submissionToken": [] }]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "submissionToken": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Only needed to UPDATE a pending submission. The token is returned once, in the 201 response that created the submission. It never travels in the body."
+      }
+    },
+    "schemas": {
+      "DirectoryEntry": {
+        "type": "object",
+        "description": "One registry in the directory. Canonical JSON Schema: https://registry.directory/schemas/directory.json",
+        "required": ["name", "description", "url"],
+        "properties": {
+          "name": { "type": "string", "description": "Display name of the registry." },
+          "description": { "type": "string", "description": "One sentence describing what the registry provides." },
+          "url": { "type": "string", "format": "uri", "description": "The registry's homepage." },
+          "github_url": { "type": "string", "format": "uri", "description": "GitHub repository URL, when the registry has one." },
+          "github_profile": { "type": "string", "format": "uri", "description": "Avatar URL, typically https://github.com/{owner}.png." },
+          "registry_url": { "type": "string", "format": "uri", "description": "Direct URL to the registry's registry.json index." },
+          "namespace": { "type": "string", "pattern": "^@[a-z0-9][a-z0-9-]*$", "description": "Official shadcn registry handle, e.g. @acme." },
+          "featured": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 1,
+            "maxItems": 6,
+            "description": "Item names the registry showcases."
+          },
+          "pro": { "$ref": "#/components/schemas/ProOfferings" }
+        }
+      },
+      "IndexedItem": {
+        "type": "object",
+        "description": "One component in the cross-registry index.",
+        "required": ["name", "type", "description", "categories", "registry"],
+        "properties": {
+          "name": { "type": "string", "description": "Item name as registered in its registry index." },
+          "type": { "type": "string", "description": "shadcn registry item type, e.g. registry:ui, registry:block." },
+          "description": { "type": "string", "description": "Item description; empty string when the registry declares none." },
+          "categories": { "type": "array", "items": { "type": "string" } },
+          "registry": {
+            "type": "object",
+            "required": ["name", "basePath", "avatarUrl"],
+            "properties": {
+              "name": { "type": "string" },
+              "basePath": { "type": "string", "description": "Path of the registry on registry.directory: /{owner}/{repo} or /{handle}. The item page is {basePath}/{name}." },
+              "avatarUrl": { "type": ["string", "null"], "format": "uri" }
+            }
+          }
+        }
+      },
+      "ProOfferings": {
+        "type": "object",
+        "description": "Premium offerings the registry sells. All five booleans are required when the object is present; omit the object entirely for a plain open-source registry.",
+        "required": ["pro_blocks", "templates", "figma_kit", "mcp_agent", "team_license"],
+        "additionalProperties": false,
+        "properties": {
+          "pro_blocks": { "type": "boolean", "description": "Sells premium blocks or components." },
+          "templates": { "type": "boolean", "description": "Sells full templates or boilerplates." },
+          "figma_kit": { "type": "boolean", "description": "Sells or bundles a Figma kit." },
+          "mcp_agent": { "type": "boolean", "description": "Offers an MCP server or agent integration." },
+          "team_license": { "type": "boolean", "description": "Offers team or organization licensing." }
+        }
+      },
+      "SubmissionRequest": {
+        "type": "object",
+        "description": "A registry submission. The four required fields are enough for a plain open-source registry. Unknown fields are ignored.",
+        "required": ["name", "description", "url", "registry_url"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "description": "Display name of your registry."
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300,
+            "description": "One sentence describing what your registry provides."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://",
+            "description": "Your registry's homepage. Must use https."
+          },
+          "registry_url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://",
+            "description": "Direct URL to your registry.json file (e.g. https://example.com/r/registry.json). This is the unique key for your submission. Must use https."
+          },
+          "github_url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://github\\.com/",
+            "description": "Your registry's GitHub repository URL."
+          },
+          "github_profile": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://",
+            "description": "Avatar URL, typically https://github.com/{owner}.png."
+          },
+          "namespace": {
+            "type": "string",
+            "pattern": "^@[a-z0-9][a-z0-9-]*$",
+            "description": "Your official shadcn registry handle (e.g. @acme). Only claim it if it is yours in the official shadcn registry index — it is verified."
+          },
+          "featured": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "minItems": 1,
+            "maxItems": 6,
+            "description": "Up to 6 item names to showcase. Each must exist in your registry index. Omit instead of sending an empty array."
+          },
+          "pro": { "$ref": "#/components/schemas/ProOfferings" }
+        }
+      },
+      "SubmissionAccepted": {
+        "type": "object",
+        "required": ["success", "id", "status", "message"],
+        "properties": {
+          "success": { "type": "boolean", "const": true },
+          "id": { "type": "string", "description": "Stable submission id derived from registry_url." },
+          "status": { "type": "string", "const": "pending" },
+          "submission_token": {
+            "type": "string",
+            "description": "Only in the 201 response, and only once. Send it as an Authorization: Bearer header to update this submission later."
+          },
+          "update_hint": { "type": "string" },
+          "message": { "type": "string" },
+          "docs": { "type": "string", "format": "uri" }
+        }
+      },
+      "SubmissionError": {
+        "type": "object",
+        "required": ["error"],
+        "properties": {
+          "error": { "type": "string", "description": "Human- and agent-readable explanation of what went wrong and what to do next." },
+          "fields": {
+            "type": "object",
+            "additionalProperties": { "type": "array", "items": { "type": "string" } },
+            "description": "Per-field validation errors (400 and 422 only)."
+          },
+          "docs": { "type": "string", "format": "uri", "description": "Where the relevant contract is documented." }
+        }
+      }
+    }
+  }
+}
