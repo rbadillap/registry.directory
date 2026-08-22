@@ -74,6 +74,13 @@ export function buildOrganizationSchema(): JsonLdNode {
     url: SITE_URL,
     description: SITE_DESCRIPTION,
     logo: absoluteUrl("/icon"),
+    email: "info@ronnybadilla.com",
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "info@ronnybadilla.com",
+      contactType: "customer support",
+      availableLanguage: ["en", "es"],
+    },
     sameAs: ["https://github.com/rbadillap/registry.directory"],
   }
 }

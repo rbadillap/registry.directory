@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Package } from "lucide-react"
+import { Compass } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
 import {
   Empty,
@@ -10,25 +10,27 @@ import {
   EmptyTitle,
 } from "@workspace/ui/components/empty"
 
+// The recovery links double as the agent-facing map: a crawler that lands on
+// a dead path leaves knowing where the site's real surfaces are.
 export default function NotFound() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-background p-6">
       <Empty className="border-0">
         <EmptyHeader>
           <EmptyMedia variant="icon">
-            <Package className="text-muted-foreground" />
+            <Compass className="text-muted-foreground" />
           </EmptyMedia>
-          <EmptyTitle className="text-foreground">Registry Not Found</EmptyTitle>
+          <EmptyTitle className="text-foreground">Page Not Found</EmptyTitle>
           <EmptyDescription className="text-muted-foreground">
-            This registry either does not exist or does not expose a{" "}
+            This page does not exist. Registries live at{" "}
             <code className="text-foreground-secondary bg-secondary px-1.5 py-0.5 rounded">
-              /r/registry.json
-            </code>{" "}
-            file. Every indexed registry is listed at{" "}
-            <a href="/directory.json" className="underline underline-offset-2">
-              /directory.json
-            </a>{" "}
-            and in{" "}
+              /{"{owner}"}/{"{repo}"}
+            </code>
+            ; the machine-readable surfaces are listed at{" "}
+            <Link href="/docs" className="underline underline-offset-2">
+              /docs
+            </Link>{" "}
+            and{" "}
             <a href="/llms.txt" className="underline underline-offset-2">
               /llms.txt
             </a>
@@ -41,7 +43,7 @@ export default function NotFound() {
               <Link href="/">Back to Directory</Link>
             </Button>
             <Button asChild variant="outline" size="sm">
-              <Link href="/docs">API &amp; Docs</Link>
+              <a href="/sitemap.xml">Sitemap</a>
             </Button>
           </div>
         </EmptyContent>

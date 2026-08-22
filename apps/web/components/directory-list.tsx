@@ -234,9 +234,11 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
   return (
     <div className="w-full max-w-7xl mx-auto mt-8 px-2">
       <div className="flex items-center gap-2 mb-4">
-        <h3 className="text-sm font-mono text-muted-foreground">
+        {/* h2, not h3: in the searching state this is the first heading after
+            the page h1, so an h3 would skip a level. */}
+        <h2 className="text-sm font-normal font-mono text-muted-foreground">
           Components found
-        </h3>
+        </h2>
         <span className="text-xs font-mono text-foreground-subtle">
           {items.length} {items.length === 1 ? 'result' : 'results'}
         </span>
