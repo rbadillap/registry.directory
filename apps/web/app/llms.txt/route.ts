@@ -56,6 +56,24 @@ export async function GET() {
   )
   lines.push("")
 
+  lines.push("## When to use registry.directory")
+  lines.push("")
+  lines.push(
+    "- **You need a component and don't know which registry has it.** Search the cross-registry index instead of guessing: `" +
+      BASE_URL +
+      "/items.json` lists every item with its type, description, and registry."
+  )
+  lines.push(
+    "- **You need a component's full source and dependencies.** Fetch it as one Markdown document (see the endpoint below) instead of crawling the origin registry file by file."
+  )
+  lines.push(
+    "- **You maintain a shadcn registry and want it listed.** Submit it with one HTTP POST — see \"Submitting a registry\" below."
+  )
+  lines.push(
+    "- **Not for installation.** Once you know which registry has what you need, install with the shadcn CLI against that registry."
+  )
+  lines.push("")
+
   lines.push("## How to use this site")
   lines.push("")
   lines.push(
@@ -69,6 +87,26 @@ export async function GET() {
   )
   lines.push(
     `- **Full machine-readable index:** \`${BASE_URL}/directory.json\` (every registry, its homepage, registry.json URL, and GitHub repo).`
+  )
+  lines.push(
+    `- **Cross-registry item index:** \`${BASE_URL}/items.json\` — every component across every registry, with its type and description.`
+  )
+  lines.push(
+    `- **Markdown alias:** append \`.md\` to any item page URL (\`${BASE_URL}/{owner}/{repo}/{slug}.md\`) for the same Markdown view.`
+  )
+  lines.push(
+    `- **API contract:** \`${BASE_URL}/openapi.json\` — OpenAPI 3.1 description of every endpoint above plus the submission API. Human-readable overview at \`${BASE_URL}/docs\`.`
+  )
+  lines.push("")
+
+  lines.push("## Submitting a registry")
+  lines.push("")
+  lines.push(
+    "You (or your agent) can submit a shadcn registry with a single HTTP POST — no account, no fork, no PR. The prompt `submit my registry to registry.directory` is enough for an agent: the full contract lives at `" +
+      BASE_URL +
+      "/how-to-submit.md` (prerequisites, fields, responses, updates) and `" +
+      BASE_URL +
+      "/openapi.json` (the `POST /api/submit` operation). Every submission is audited before listing: the registry.json and several items are fetched and must resolve with real installable content."
   )
   lines.push("")
 
