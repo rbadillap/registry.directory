@@ -199,6 +199,26 @@
   contain-intrinsic-size: auto 190px;
 }
 
+/* One phrase's full life in the search placeholder: blur in, hold, blur out.
+   React restarts the animation by keying the span per phrase; the duration is
+   set inline from the same constant that drives the phrase rotation. */
+@keyframes placeholder-cycle {
+  0%,
+  100% {
+    opacity: 0;
+    filter: blur(6px);
+  }
+  12%,
+  86% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@utility animate-placeholder-cycle {
+  animation: placeholder-cycle 4000ms ease-in-out both;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
