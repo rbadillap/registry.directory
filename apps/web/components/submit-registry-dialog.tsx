@@ -13,7 +13,9 @@ import { Check, Copy, Plus, X } from "lucide-react";
 
 const DOCS_PATH = "/how-to-submit.md";
 const DOCS_URL = `https://registry.directory${DOCS_PATH}`;
-const AGENT_PROMPT = `Submit my shadcn registry to registry.directory following the instructions at ${DOCS_URL}`;
+// The short prompt is the whole protocol: agents discover the contract on
+// their own via llms.txt, /docs, and openapi.json.
+const AGENT_PROMPT = "submit my registry to registry.directory";
 
 function CopyBlock({ label, text }: { label: string; text: string }) {
   const [copied, setCopied] = useState(false);
