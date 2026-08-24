@@ -255,6 +255,29 @@
       ]
     },
     {
+      "name": "expandable-control",
+      "type": "registry:component",
+      "title": "Expandable Control",
+      "description": "Click-to-expand button and chip controls that reveal a label or trailing action through spring layout continuity.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/expandable-control.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/expandable-control.tsx"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
       "name": "marquee",
       "type": "registry:component",
       "title": "Marquee",
@@ -449,6 +472,11 @@
           "path": "lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/motion/combobox/use-active-option.ts",
+          "type": "registry:component",
+          "target": "@components/motion/combobox/use-active-option.ts"
         },
         {
           "path": "lib/ease.ts",
@@ -3699,6 +3727,16 @@
           "target": "@lib/ease.ts"
         },
         {
+          "path": "lib/hooks/use-on-open.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-on-open.ts"
+        },
+        {
+          "path": "lib/hooks/use-row-cursor.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-row-cursor.ts"
+        },
+        {
           "path": "lib/hooks/use-touch-capable.ts",
           "type": "registry:hook",
           "target": "@lib/hooks/use-touch-capable.ts"
@@ -3736,6 +3774,16 @@
           "path": "lib/ease.ts",
           "type": "registry:lib",
           "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-on-open.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-on-open.ts"
+        },
+        {
+          "path": "lib/hooks/use-row-cursor.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-row-cursor.ts"
         },
         {
           "path": "lib/utils.ts",

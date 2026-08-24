@@ -836,6 +836,19 @@
       ]
     },
     {
+      "name": "core-copyright-year",
+      "type": "registry:ui",
+      "title": "Copyright Year",
+      "description": "Cached current year for copyright footers",
+      "files": [
+        {
+          "path": "core/ui/copyright-year.tsx",
+          "type": "registry:ui",
+          "target": "@ui/copyright-year.tsx"
+        }
+      ]
+    },
+    {
       "name": "core-logo",
       "type": "registry:ui",
       "title": "Logo",
@@ -5064,7 +5077,8 @@
       "title": "Footer 5",
       "description": "Tailark footer variant 5 block",
       "registryDependencies": [
-        "@tailark/core-logo"
+        "@tailark/core-logo",
+        "@tailark/core-copyright-year"
       ],
       "files": [
         {
@@ -5083,7 +5097,8 @@
         "@tailark/button",
         "@tailark/input",
         "@tailark/label",
-        "@tailark/core-logo"
+        "@tailark/core-logo",
+        "@tailark/core-copyright-year"
       ],
       "files": [
         {
@@ -5099,7 +5114,8 @@
       "title": "Footer 1",
       "description": "Tailark footer variant 1 block",
       "registryDependencies": [
-        "@tailark/core-logo"
+        "@tailark/core-logo",
+        "@tailark/core-copyright-year"
       ],
       "files": [
         {
@@ -5117,7 +5133,8 @@
       "registryDependencies": [
         "@tailark/button",
         "@tailark/card",
-        "@tailark/core-logo"
+        "@tailark/core-logo",
+        "@tailark/core-copyright-year"
       ],
       "files": [
         {
@@ -5133,7 +5150,8 @@
       "title": "Footer 2",
       "description": "Tailark footer variant 2 block",
       "registryDependencies": [
-        "@tailark/core-logo"
+        "@tailark/core-logo",
+        "@tailark/core-copyright-year"
       ],
       "files": [
         {
