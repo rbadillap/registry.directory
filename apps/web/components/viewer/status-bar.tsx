@@ -1,7 +1,9 @@
 "use client"
 
-import { Share2, ChevronUp, Sparkles } from "lucide-react"
+import { useState } from "react"
+import { Share2, ChevronUp, Sparkles, MessageSquare } from "lucide-react"
 import { GitHubIcon } from "@/components/icons/github"
+import { FeedbackDialog } from "@/components/feedback-widget"
 import { Button } from "@workspace/ui/components/button"
 import { Avatar, AvatarImage, AvatarFallback } from "@workspace/ui/components/avatar"
 import {
@@ -31,6 +33,7 @@ Help me understand how to use it. Be ready to explain concepts, give examples, o
 
 export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps) {
   const analytics = useAnalytics()
+  const [feedbackOpen, setFeedbackOpen] = useState(false)
 
   const getMarkdownUrl = () => {
     return `${window.location.origin}${window.location.pathname}.md`
@@ -392,6 +395,18 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
           <span className="hidden md:inline">Share</span>
         </Button>
 
+        {/* Send feedback */}
+        <Button
+          variant="ghost"
+          size="sm"
+          className="h-7 gap-1.5 text-muted-foreground hover:text-foreground text-xs px-2"
+          onClick={() => setFeedbackOpen(true)}
+          title="Send feedback"
+        >
+          <MessageSquare className="h-3.5 w-3.5" />
+          <span className="hidden md:inline">Feedback</span>
+        </Button>
+
         {/* View on GitHub */}
         <Button
           variant="ghost"
@@ -421,6 +436,8 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
           <span className="text-xs text-muted-foreground hidden md:inline">@rbadillap</span>
         </a>
       </div>
+
+      {feedbackOpen && <FeedbackDialog onClose={() => setFeedbackOpen(false)} />}
     </footer>
   )
 }
