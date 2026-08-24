@@ -1,4 +1,4 @@
-![registry.directory](https://registry.directory/opengraph-image)
+![registry.directory](.github/assets/home.png)
 
 # registry.directory
 
