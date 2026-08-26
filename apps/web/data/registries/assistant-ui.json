@@ -1801,6 +1801,11 @@
           "target": "components/assistant-ui/tooltip-icon-button.tsx"
         },
         {
+          "path": "hooks/use-attachment-src.ts",
+          "type": "registry:file",
+          "target": "hooks/use-attachment-src.ts"
+        },
+        {
           "path": "components/assistant-ui/file.tsx",
           "type": "registry:file",
           "target": "components/assistant-ui/file.tsx"
@@ -1819,6 +1824,11 @@
           "path": "components/assistant-ui/markdown-text.tsx",
           "type": "registry:file",
           "target": "components/assistant-ui/markdown-text.tsx"
+        },
+        {
+          "path": "hooks/use-copy-to-clipboard.ts",
+          "type": "registry:file",
+          "target": "hooks/use-copy-to-clipboard.ts"
         },
         {
           "path": "components/assistant-ui/reasoning.tsx",
@@ -1917,6 +1927,18 @@
       ]
     },
     {
+      "name": "use-copy-to-clipboard",
+      "type": "registry:hook",
+      "title": "Use Copy To Clipboard",
+      "description": "Copy text to the clipboard with a temporary copied state.",
+      "files": [
+        {
+          "path": "hooks/use-copy-to-clipboard.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
       "name": "markdown-text",
       "type": "registry:component",
       "title": "Markdown Text",
@@ -1927,7 +1949,8 @@
         "remark-gfm"
       ],
       "registryDependencies": [
-        "https://r.assistant-ui.com/tooltip-icon-button.json"
+        "https://r.assistant-ui.com/tooltip-icon-button.json",
+        "https://r.assistant-ui.com/use-copy-to-clipboard.json"
       ],
       "files": [
         {
@@ -2043,20 +2066,36 @@
       ]
     },
     {
+      "name": "use-attachment-src",
+      "type": "registry:hook",
+      "title": "Use Attachment Src",
+      "description": "Resolve an image attachment to a preview source URL.",
+      "dependencies": [
+        "@assistant-ui/react",
+        "zustand"
+      ],
+      "files": [
+        {
+          "path": "hooks/use-attachment-src.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
       "name": "attachment",
       "type": "registry:component",
       "title": "Attachment",
       "description": "Attach files from the composer and view them inside messages.",
       "dependencies": [
         "@assistant-ui/react",
-        "lucide-react",
-        "zustand"
+        "lucide-react"
       ],
       "registryDependencies": [
         "dialog",
         "tooltip",
         "avatar",
-        "https://r.assistant-ui.com/tooltip-icon-button.json"
+        "https://r.assistant-ui.com/tooltip-icon-button.json",
+        "https://r.assistant-ui.com/use-attachment-src.json"
       ],
       "files": [
         {

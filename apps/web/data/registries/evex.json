@@ -438,6 +438,140 @@
       ]
     },
     {
+      "name": "github-issue-maintainer",
+      "type": "registry:item",
+      "title": "GitHub Issue Maintainer",
+      "description": "Labels GitHub issues, asks for missing repro, and emails a weekly digest.",
+      "categories": [
+        "coding"
+      ],
+      "dependencies": [
+        "@upstash/ratelimit@^2.0.8",
+        "@upstash/redis@^1.38.0",
+        "ai@^7.0.38",
+        "eve@^0.31.3",
+        "resend@^6.14.0",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        },
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/channels/github.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/github.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/github-app.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/github-app.ts"
+        },
+        {
+          "path": "agent/lib/html.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/html.ts"
+        },
+        {
+          "path": "agent/lib/issue-config.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/issue-config.ts"
+        },
+        {
+          "path": "agent/lib/issue-rate-limit.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/issue-rate-limit.ts"
+        },
+        {
+          "path": "agent/lib/taxonomy.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/taxonomy.ts"
+        },
+        {
+          "path": "agent/lib/thin-issue.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/thin-issue.ts"
+        },
+        {
+          "path": "agent/schedules/weekly-issue-digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/weekly-issue-digest.ts"
+        },
+        {
+          "path": "agent/skills/issue-triage/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/issue-triage/SKILL.md"
+        },
+        {
+          "path": "agent/tools/compose_digest_html.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/compose_digest_html.ts"
+        },
+        {
+          "path": "agent/tools/list_open_issues.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/list_open_issues.ts"
+        },
+        {
+          "path": "agent/tools/preview_digest_email.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/preview_digest_email.ts"
+        },
+        {
+          "path": "agent/tools/send_digest_email.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/send_digest_email.ts"
+        },
+        {
+          "path": "agent/tools/triage_issue.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/triage_issue.ts"
+        },
+        {
+          "path": "evals/ask-repro-thin-issue.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/ask-repro-thin-issue.eval.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/ignore-pull-request.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/ignore-pull-request.eval.ts"
+        },
+        {
+          "path": "evals/label-clear-bug.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/label-clear-bug.eval.ts"
+        },
+        {
+          "path": "evals/no-repro-on-feature.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/no-repro-on-feature.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        }
+      ]
+    },
+    {
       "name": "linear-operations-agent",
       "type": "registry:item",
       "title": "Linear Operations Agent",
