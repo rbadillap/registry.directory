@@ -716,6 +716,32 @@
       ]
     },
     {
+      "name": "card-dot-gain-screen",
+      "type": "registry:ui",
+      "title": "Card Dot Gain Screen",
+      "description": "A card backed by a contact-screen halftone that reproduces real dot gain — a nonlinear per-dot growth curve where the deepest tones grow past the point of staying separate circles and physically bridge into plugged solid ink.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/card-dot-gain-screen/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/card-dot-gain-screen.tsx"
+        }
+      ]
+    },
+    {
       "name": "card-number-emboss",
       "type": "registry:ui",
       "title": "Card Number Emboss",
@@ -1677,6 +1703,35 @@
       ]
     },
     {
+      "name": "crack-arrest-hole",
+      "type": "registry:ui",
+      "title": "Crack Arrest Hole",
+      "description": "A press-and-hold STOP/ABORT confirm modeled on the crack-arrest (stop) hole: holding grows a fatigue crack from the edge toward a drilled hole, and reaching the hole halts it — arrest is the confirmation, not a break-through.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)",
+          "color-surface": "var(--surface)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff",
+          "surface": "#fafafa"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f",
+          "surface": "#171717"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/crack-arrest-hole/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/crack-arrest-hole.tsx"
+        }
+      ]
+    },
+    {
       "name": "craze-rule",
       "type": "registry:ui",
       "title": "Craze Rule",
@@ -1991,6 +2046,56 @@
       ]
     },
     {
+      "name": "divider-petscii-vu",
+      "type": "registry:ui",
+      "title": "Divider PETSCII VU",
+      "description": "A full-width section divider printed as a PETSCII / C64 reverse-video VU meter band — every cell has exactly two states, paper or ink, never a density ramp, driven by a real 300ms-integrated amplitude envelope with a fast-attack/slow-decay peak-hold column and an AGC ceiling that keeps the meter legible at any input level.",
+      "files": [
+        {
+          "path": "registry/core/divider-petscii-vu/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/divider-petscii-vu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "divider-telephone-cord-delam",
+      "type": "registry:ui",
+      "title": "Divider Telephone Cord Delam",
+      "description": "A full-width section divider modeled on thin-film delamination buckling — a compressive-stress film debonding from its substrate and popping upward into the real 'telephone cord' morphology: a roughly constant-width ridge that telescopes side to side as its failure front advances and periodically re-forks, never a straight blister.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/divider-telephone-cord-delam/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/divider-telephone-cord-delam.tsx"
+        }
+      ]
+    },
+    {
+      "name": "divider-teletext-mosaic",
+      "type": "registry:ui",
+      "title": "Divider Teletext Mosaic",
+      "description": "A full-width section divider rendered as a real teletext / videotex ALPHAMOSAIC graphics band — each character cell is a 6-bit code across a 2-wide x 3-tall sub-cell 'sextant' grid, the actual broadcast alphamosaic addressing (distinct from this registry's 2x2 quadrant block dividers and 2x4 braille-dot components), painted row by row on a fixed cadence the way a real teletext page arrives off the broadcast signal.",
+      "files": [
+        {
+          "path": "registry/core/divider-teletext-mosaic/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/divider-teletext-mosaic.tsx"
+        }
+      ]
+    },
+    {
       "name": "dock-cursor-magnify",
       "type": "registry:ui",
       "title": "Dock Cursor Magnify",
@@ -2146,6 +2251,30 @@
       ]
     },
     {
+      "name": "empty-state-braille-orbit",
+      "type": "registry:ui",
+      "title": "Empty State Braille Orbit",
+      "description": "A small ambient icon for empty states: an unbroken stroke traced through braille's 2x4 sub-cell dot addressing along a closed 3:2 Lissajous orbit, sampled by arc length so the curve never gaps or clusters.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/empty-state-braille-orbit/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/empty-state-braille-orbit.tsx"
+        }
+      ]
+    },
+    {
       "name": "empty-state-dashed",
       "type": "registry:ui",
       "title": "Empty State Dashed",
@@ -2170,6 +2299,30 @@
           "path": "registry/core/empty-state-dashed/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/empty-state-dashed.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-state-mezzotint",
+      "type": "registry:ui",
+      "title": "Empty State Mezzotint",
+      "description": "A small ambient icon for empty states built on real mezzotint printmaking: the plate is rocked to a dense burr that would print solid black, then worked SUBTRACTIVELY as light is scraped and burnished in — the registry's only subtractive glyph mechanic, where every other component builds density up from empty.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/empty-state-mezzotint/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/empty-state-mezzotint.tsx"
         }
       ]
     },
@@ -2684,6 +2837,27 @@
       ]
     },
     {
+      "name": "gallery-ascii-gradient-orientation",
+      "type": "registry:ui",
+      "title": "Gallery ASCII Gradient Orientation",
+      "description": "A gallery grid where each tile runs its own procedural 3-octave value-noise field and a 3x3 Sobel operator selects glyphs by the field's own gradient ANGLE, bucketed into '-', '/', '|', '\\\\', keeping only the adaptively top-12%-by-magnitude cells each frame so the field reads as a moving edge sketch.",
+      "cssVars": {
+        "theme": {
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-accent": "#006bff"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/gallery-ascii-gradient-orientation/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/gallery-ascii-gradient-orientation.tsx"
+        }
+      ]
+    },
+    {
       "name": "gallery-coverflow-caustic",
       "type": "registry:ui",
       "title": "Gallery Coverflow Caustic",
@@ -2818,6 +2992,19 @@
           "path": "registry/core/git-graph-ascii-lanes/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/git-graph-ascii-lanes.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glaze-crawl-heal",
+      "type": "registry:ui",
+      "title": "Glaze Crawl Heal",
+      "description": "A live status badge drawn as a glaze surface mid-firing: gas bubbles burst through the molten glaze and the melt either flows back over the crater (heals) or, when surface tension has failed, pulls away into a ragged bare patch that never closes (crawling) — three real ceramics behaviours standing in for operational, degraded and down.",
+      "files": [
+        {
+          "path": "registry/core/glaze-crawl-heal/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/glaze-crawl-heal.tsx"
         }
       ]
     },
@@ -3335,6 +3522,32 @@
       ]
     },
     {
+      "name": "kelvin-wake",
+      "type": "registry:ui",
+      "title": "Kelvin Wake",
+      "description": "A real site nav whose active-item indicator is a point source drifting along the link row, trailing a genuine Kelvin ship wake: a V-shaped envelope of transverse and diverging waves held at deep water's constant 19.47° half-angle regardless of how fast the source is currently moving.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/kelvin-wake/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/kelvin-wake.tsx"
+        }
+      ]
+    },
+    {
       "name": "keymap-ascii-heat",
       "type": "registry:ui",
       "title": "Keymap ASCII Heat",
@@ -3441,6 +3654,19 @@
           "path": "registry/core/listbox-sticky-groups/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/listbox-sticky-groups.tsx"
+        }
+      ]
+    },
+    {
+      "name": "loader-ascii-diffuse-fill",
+      "type": "registry:ui",
+      "title": "Loader ASCII Diffuse Fill",
+      "description": "Indeterminate ASCII loader whose texture comes from real Floyd-Steinberg serpentine error diffusion, propagated cell-to-cell every frame, rather than a fixed ordered-dither threshold matrix.",
+      "files": [
+        {
+          "path": "registry/core/loader-ascii-diffuse-fill/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/loader-ascii-diffuse-fill.tsx"
         }
       ]
     },
@@ -4047,6 +4273,19 @@
       ]
     },
     {
+      "name": "nav-blue-noise-scrim",
+      "type": "registry:ui",
+      "title": "Nav Blue Noise Scrim",
+      "description": "Dimming backdrop for a command palette or search overlay, dithered with a temporal blue-noise mask that reshuffles every frame instead of a flat tint.",
+      "files": [
+        {
+          "path": "registry/core/nav-blue-noise-scrim/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/nav-blue-noise-scrim.tsx"
+        }
+      ]
+    },
+    {
       "name": "nav-condense-rail",
       "type": "registry:ui",
       "title": "Nav Condense Rail",
@@ -4071,6 +4310,32 @@
           "path": "registry/core/nav-condense-rail/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/nav-condense-rail.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nav-overstrike-typewriter",
+      "type": "registry:ui",
+      "title": "Nav Overstrike Typewriter",
+      "description": "A real site nav with a typed ruled line beneath its links, shaded by striking two or three characters into the same cell — real typewriter overstrike compositing, not this registry's usual single-glyph density ramp — with the current page reading as the deepest stack.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/nav-overstrike-typewriter/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/nav-overstrike-typewriter.tsx"
         }
       ]
     },
@@ -4679,6 +4944,30 @@
           "path": "registry/core/progress-narrated/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/progress-narrated.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-nlq-overstrike",
+      "type": "registry:ui",
+      "title": "Progress NLQ Overstrike",
+      "description": "Determinate progress meter modeled on real 9-pin dot-matrix \"Near Letter Quality\" printing: the printed region is struck twice, the second pass offset by exactly half a dot pitch so it fills the gaps the first pass left, and the active strike column keeps dwelling in a two-phase cycle even when the value is held.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/progress-nlq-overstrike/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/progress-nlq-overstrike.tsx"
         }
       ]
     },
@@ -5585,6 +5874,30 @@
           "path": "registry/core/select-caustic/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/select-caustic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shearer-advance",
+      "type": "registry:ui",
+      "title": "Shearer Advance",
+      "description": "A \"loading more rows\" strip for an infinite-scroll or virtualised list, built on real longwall coal-mining mechanics: a shearer traverses the face and drops cut material onto the armoured conveyor while hydraulic roof supports advance behind it in sequence, rather than an invented spinner shape.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/shearer-advance/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/shearer-advance.tsx"
         }
       ]
     },
@@ -8158,6 +8471,56 @@
       ]
     },
     {
+      "name": "background-capillary-wick",
+      "type": "registry:ui",
+      "title": "Background Capillary Wick",
+      "description": "A full-bleed ambient background modeling paper chromatography: ink fronts wick along a fixed fibre-vein lattice, decelerating per the Washburn capillary-rise law as they climb, stalling at every junction, and re-igniting a subset of the node's dry outgoing edges before evaporating back to dry to make room for the next front.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/background-capillary-wick/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/background-capillary-wick.tsx"
+        }
+      ]
+    },
+    {
+      "name": "background-engine-turn-guilloche",
+      "type": "registry:ui",
+      "title": "Background Engine Turn Guilloche",
+      "description": "A full-bleed ambient background reproducing engine-turning (guilloché), the rose-engine lathe technique used to engrave the dense woven rosette patterns on banknotes and security documents — three superimposed hypotrochoid passes at close, unequal lathe ratios beat against each other while the ratios drift and each pass spins independently, so the weave never locks into a static pattern.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/background-engine-turn-guilloche/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/background-engine-turn-guilloche.tsx"
+        }
+      ]
+    },
+    {
       "name": "background-gradient-shader",
       "type": "registry:ui",
       "title": "Background Gradient Shader",
@@ -8175,6 +8538,45 @@
           "path": "registry/loud/background-gradient-shader/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/background-gradient-shader.tsx"
+        }
+      ]
+    },
+    {
+      "name": "background-halftone-rosette",
+      "type": "registry:ui",
+      "title": "Background Halftone Rosette",
+      "description": "A full-bleed ambient background of two same-ink halftone dot screens drifting at independent, non-commensurate angles — a real duotone/double-hit moiré rosette, with a coverage gradient keeping the frame edges readable and the visual center where the interference peaks.",
+      "files": [
+        {
+          "path": "registry/loud/background-halftone-rosette/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/background-halftone-rosette.tsx"
+        }
+      ]
+    },
+    {
+      "name": "background-text-branch-canopy",
+      "type": "registry:ui",
+      "title": "Background Text Branch Canopy",
+      "description": "A full-bleed ambient background where an L-system tree grows entirely out of readable text — every limb is one run of words drawn with a single fillText, pivoting on its own foot as it angles from its parent, with the outer canopy senescing and regrowing forever so it never settles into a finished frame.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/background-text-branch-canopy/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/background-text-branch-canopy.tsx"
         }
       ]
     },
@@ -8387,6 +8789,153 @@
           "path": "registry/loud/crease-fall/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/crease-fall.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cursor-sixel-reveal",
+      "type": "registry:ui",
+      "title": "Cursor Sixel Reveal",
+      "description": "A full-bleed ASCII plasma field rendered twice from one shared scalar field — quantized to glyphs everywhere, and as a true raw-pixel grayscale raster inside a soft circular window — literalizing the real sixel/kitty-graphics-protocol-vs-character-fallback split. The window sweeps an idle Lissajous path and eases to the pointer on hover.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/cursor-sixel-reveal/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/cursor-sixel-reveal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cursor-subpixel-fringe",
+      "type": "registry:ui",
+      "title": "Cursor Subpixel Fringe",
+      "description": "A full-bleed field where every grid cell carries three thin vertical luminance slivers standing in for an LCD's physical red/green/blue subpixel stripes. Near the cursor, or the idle sweep target when nothing is pointing, the three slivers of a cell splay apart and diverge in value, as if a renderer were locally re-hinting glyphs to the pixel grid — and the whole field shimmers at rest, not only under the pointer.",
+      "files": [
+        {
+          "path": "registry/loud/cursor-subpixel-fringe/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/cursor-subpixel-fringe.tsx"
+        }
+      ]
+    },
+    {
+      "name": "curtain-austrian-gather",
+      "type": "registry:ui",
+      "title": "Curtain Austrian Gather",
+      "description": "A full-bleed route curtain modeled on a real Austrian (brail) stage drape — sewn-in-fullness fabric hoisted bottom-up on parallel vertical lift lines, so it doesn't slide flat but gathers into a row of scalloped swags whose bellies deepen and breathe on independent phase-offset sines, both at rest and as the drape hoists.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)",
+          "color-ns-accent-hover": "var(--ns-accent-hover)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff",
+          "ns-accent-hover": "#0059d1"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/curtain-austrian-gather/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/curtain-austrian-gather.tsx"
+        }
+      ]
+    },
+    {
+      "name": "curtain-leader-countdown",
+      "type": "registry:ui",
+      "title": "Curtain Leader Countdown",
+      "description": "A full-bleed route curtain modeled on the SMPTE Universal Leader film countdown, compressed to preview-card scale and stated as a departure, not a fidelity claim.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/curtain-leader-countdown/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/curtain-leader-countdown.tsx"
+        }
+      ]
+    },
+    {
+      "name": "curtain-tab-diagonal",
+      "type": "registry:ui",
+      "title": "Curtain Tab Diagonal",
+      "description": "A full-bleed route curtain modeled on a real theatrical tab (tableau/opera-drape) curtain — the rigging where a line of rings runs on the diagonal from a panel's center-meeting bottom corner up to a fixed tie-off roughly a third of the way up the wing side, so hauling it draws that corner UP AND OUT along a curved diagonal while the header stays pinned, gathering the fabric into a swag before the whole tied-back panel retracts offscreen; a different axis of motion from curtain-traveler-draw's horizontal parting on a corded track.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)",
+          "color-ns-accent-hover": "var(--ns-accent-hover)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff",
+          "ns-accent-hover": "#0059d1"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/curtain-tab-diagonal/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/curtain-tab-diagonal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "curtain-traveler-draw",
+      "type": "registry:ui",
+      "title": "Curtain Traveler Draw",
+      "description": "A full-bleed route curtain modeled on a real theatrical traveler/draw curtain — two overlapping SVG drape panels with sewn-in pleats shaded in value against a muted fabric body, breathing at rest and drawing open toward the wings on their own corded track, with catenary sag and a momentum overshoot on the pull.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)",
+          "color-ns-accent-hover": "var(--ns-accent-hover)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff",
+          "ns-accent-hover": "#0059d1"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/curtain-traveler-draw/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/curtain-traveler-draw.tsx"
         }
       ]
     },
@@ -8626,6 +9175,30 @@
       ]
     },
     {
+      "name": "hero-404-quadrant-occlusion",
+      "type": "registry:ui",
+      "title": "Hero 404 Quadrant Occlusion",
+      "description": "A full-bleed 404 hero where the numerals and an orbiting occluding disc are rendered from one shared silhouette at half-cell precision using Unicode quadrant/half-block glyphs (▘▝▖▗▚▞▛▜▙▟█▀▄▌▐), so the disc's curved edge stays crisp instead of stair-stepping at one glyph per cell.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/hero-404-quadrant-occlusion/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/hero-404-quadrant-occlusion.tsx"
+        }
+      ]
+    },
+    {
       "name": "hero-ascii-eclipse",
       "type": "registry:ui",
       "title": "Hero ASCII Eclipse",
@@ -8835,6 +9408,56 @@
       ]
     },
     {
+      "name": "hero-faraday-wave-cell",
+      "type": "registry:ui",
+      "title": "Hero Faraday Wave Cell",
+      "description": "Full-bleed hero background reproducing Faraday's 1831 discovery: a fluid layer vibrated vertically above a critical amplitude breaks into standing surface waves oscillating at half the driving frequency, tessellating into stripe, square and hexagonal cells that keep reorganizing rather than settling.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/hero-faraday-wave-cell/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/hero-faraday-wave-cell.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-glyph-silhouette-pack",
+      "type": "registry:ui",
+      "title": "Hero Glyph Silhouette Pack",
+      "description": "A full-bleed hero where a cloud of monospace glyph particles is packed to fill an arbitrary vector silhouette, breathing and repelling from the pointer at rest, and re-solving on its own into a fresh silhouette on a timer as particles migrate to their new slots.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/hero-glyph-silhouette-pack/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/hero-glyph-silhouette-pack.tsx"
+        }
+      ]
+    },
+    {
       "name": "hero-gravity-well",
       "type": "registry:ui",
       "title": "Hero Gravity Well",
@@ -8972,6 +9595,32 @@
       ]
     },
     {
+      "name": "hero-slice-comb",
+      "type": "registry:ui",
+      "title": "Hero Slice Comb",
+      "description": "A full-bleed hero background: a tri-axial superellipsoid sliced by camera-fixed depth planes and spun continuously beneath them, where uniform-spacing slices pile into a bright rim wherever the surface turns tangent to the camera and spread into a dark, sparse interior wherever it faces the camera head-on.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/hero-slice-comb/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/hero-slice-comb.tsx"
+        }
+      ]
+    },
+    {
       "name": "hero-string-envelope",
       "type": "registry:ui",
       "title": "Hero String Envelope",
@@ -8998,6 +9647,30 @@
       ]
     },
     {
+      "name": "hero-text-ring-funnel",
+      "type": "registry:ui",
+      "title": "Hero Text Ring Funnel",
+      "description": "A full-bleed hero where readable running text is the geometry itself — seven concentric rings of real words, laid out once by rotating and translating the 2D context per character rather than quantizing to a fixed grid, tapering in true single-point perspective and spinning at differential speeds so the growing phase lag between rings reads as depth.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/hero-text-ring-funnel/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/hero-text-ring-funnel.tsx"
+        }
+      ]
+    },
+    {
       "name": "hero-vortex-street",
       "type": "registry:ui",
       "title": "Hero Vortex Street",
@@ -9020,6 +9693,35 @@
           "path": "registry/loud/hero-vortex-street/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/hero-vortex-street.tsx"
+        }
+      ]
+    },
+    {
+      "name": "jominy-quench",
+      "type": "registry:ui",
+      "title": "Jominy Quench",
+      "description": "A hardenability comparison card built on the real ASTM A255 / ISO 642 Jominy end-quench test — a water jet sprays one end of a heated steel bar continuously, a directional quench front creeps up the bar, and hardness falls off with distance from that face along a curve that is each alloy's signature, drawn beside a real numeric table so the comparison never lives only in the picture.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)",
+          "color-surface": "var(--surface)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff",
+          "surface": "#fafafa"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f",
+          "surface": "#171717"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/jominy-quench/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/jominy-quench.tsx"
         }
       ]
     },
@@ -9131,6 +9833,30 @@
           "path": "registry/loud/murmur-shear/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/murmur-shear.tsx"
+        }
+      ]
+    },
+    {
+      "name": "not-found-attribute-clash",
+      "type": "registry:ui",
+      "title": "Not Found Attribute Clash",
+      "description": "A 404 built from the ZX Spectrum's real colour-cell attribute clash: each 8x8 hardware cell could carry only one ink/paper colour pair, so image detail finer than the cell budget visibly bled and blocked. This translates that as a monochrome glyph+weight budget — one glyph and one font-weight per cell — so the numerals' own curved edges snap and bleed at the seams, with a rolling scanline that re-decides a handful of rows per frame like attribute RAM racing the beam.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/not-found-attribute-clash/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/not-found-attribute-clash.tsx"
         }
       ]
     },
@@ -9434,6 +10160,32 @@
       ]
     },
     {
+      "name": "shakeout-crumble",
+      "type": "registry:ui",
+      "title": "Shakeout Crumble",
+      "description": "Destructive-action confirm rendered as a foundry shakeout conveyor: a green-sand mould loses cohesion under vibration and crumbles away to reveal the casting, unforced and looping at rest, with a click-arm-then-confirm gesture layered on top to actually commit.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/shakeout-crumble/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/shakeout-crumble.tsx"
+        }
+      ]
+    },
+    {
       "name": "shear-billow",
       "type": "registry:ui",
       "title": "Shear Billow",
@@ -9508,6 +10260,32 @@
           "path": "registry/loud/slider-chladni-tune/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/slider-chladni-tune.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spark-test-id",
+      "type": "registry:ui",
+      "title": "Spark Test ID",
+      "description": "A file dropzone that identifies a specimen the way a machinist reads unknown steel: an idle grinding-wheel spark shower runs continuously, and the detected file type sets a characteristic spark signature — burst count, fork depth, carrier length.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/spark-test-id/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/spark-test-id.tsx"
         }
       ]
     },

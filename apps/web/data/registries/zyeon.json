@@ -18682,6 +18682,958 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "account-danger-zone",
+      "type": "registry:block",
+      "title": "Danger Zone",
+      "description": "A settings-page danger zone — one row per irreversible action with its consequences itemised before the confirm, a type-the-resource-name gate, grace windows dated from the payload's own clock, and blocked actions that name their blocker instead of rendering a dead button.",
+      "dependencies": [
+        "lucide-react",
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils",
+        "badge",
+        "button",
+        "https://ui.zyeon.ai/r/confirm-dialog.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/account-danger-zone.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/registry/blocks/account-danger-zone.contract.ts",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "webhooks-manager",
+      "type": "registry:block",
+      "title": "Webhooks Manager",
+      "description": "A four-state webhook endpoint manager — an event multi-select editor that refuses unreachable URLs with the reason, reveal-on-demand signing secrets rotated behind a stated overlap window, a test sender that names its blocker, and per-endpoint deliveries with outcome mix and retry.",
+      "dependencies": [
+        "zod",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "button",
+        "badge",
+        "input",
+        "dialog",
+        "https://ui.zyeon.ai/r/confirm-dialog.json",
+        "https://ui.zyeon.ai/r/use-copy-to-clipboard.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/webhooks-manager.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/registry/blocks/webhooks-manager.contract.ts",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "data-export-request",
+      "type": "registry:block",
+      "title": "Data Export Request",
+      "description": "A GDPR-style data export block — scope picker with live size estimates split by largest remainder, a confirmation that states what the archive contains and who can open it, a build read that never dresses a queue position up as progress, and a download link that visibly counts down to its own expiry with past exports that re-request when theirs is gone.",
+      "dependencies": [
+        "zod",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "button",
+        "badge",
+        "alert-dialog"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/data-export-request.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/registry/blocks/data-export-request.contract.ts",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "sso-setup",
+      "type": "registry:block",
+      "title": "SSO Setup",
+      "description": "A four-state SAML/OIDC connection panel: copy-per-field values in both directions, DNS TXT domain proof, claim mapping, a test verdict that names the broken setting, and an enforcement switch that refuses with its reasons and spells out who would be locked out.",
+      "dependencies": [
+        "zod",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "badge",
+        "button",
+        "https://ui.zyeon.ai/r/confirm-dialog.json",
+        "https://ui.zyeon.ai/r/use-copy-to-clipboard.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/sso-setup.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/registry/blocks/sso-setup.contract.ts",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "trust-center",
+      "type": "registry:block",
+      "title": "Trust Center",
+      "description": "A public trust page that measures every audit report against the refresh cycle its own data states, filters subprocessors by processing region with shares apportioned to exactly 100, and turns each gap — no report link, no DPA, no uptime data, no subscribe route — into a sentence with the next step in it.",
+      "dependencies": [
+        "lucide-react",
+        "zod"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "input",
+        "label",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/trust-center.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/registry/blocks/trust-center.contract.ts",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "legal-consent",
+      "type": "registry:block",
+      "title": "Legal Consent",
+      "description": "A versioned terms-and-privacy acceptance panel — the clause-level delta since the version the user last accepted, full text that must actually be scrolled to its end before its checkbox unlocks, separable consents for terms/privacy/marketing, and the record it hands back.",
+      "dependencies": [
+        "zod",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "button",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/legal-consent.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/registry/blocks/legal-consent.contract.ts",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "seat-management",
+      "type": "registry:block",
+      "title": "Seat Management",
+      "description": "A seat ledger crossed with the member roster: who holds a billable, free-viewer, invited or deactivated seat, the assignment count against the plan, the cost of adding or removing a seat previewed before it is committed, an overage warning carrying both of its exits, and a bulk deactivation of idle members that states what it frees before it states what it saves.",
+      "dependencies": [
+        "lucide-react",
+        "zod"
+      ],
+      "registryDependencies": [
+        "alert-dialog",
+        "badge",
+        "button",
+        "input",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/seat-management.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/registry/blocks/seat-management.contract.ts",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "retry-countdown",
+      "type": "registry:ui",
+      "title": "Retry Countdown",
+      "description": "A client-side backoff card that derives every wait from the schedule you pass — the attempt against its cap, a draining ring to the next automatic attempt, a retry-now that skips the wait, the reason the last attempt failed, and a terminal state at the cap that hands over your escape hatch instead of a dead button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/retry-countdown.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "impersonation-banner",
+      "type": "registry:ui",
+      "title": "Impersonation Banner",
+      "description": "The bar support staff sees while acting as a customer — whose account this is, who is inside it, whether the grant may write, a live countdown to the automatic cut-off, and an exit that is never blocked.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/impersonation-banner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "partial-failure-summary",
+      "type": "registry:ui",
+      "title": "Partial Failure Summary",
+      "description": "The receipt for one bulk action that half worked — the counts as a single actionable sentence, failures grouped by cause and expandable to the affected rows, an RFC 4180 failure report, and a retry whose scope follows whether the successes were committed or rolled back.",
+      "dependencies": [
+        "zod",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/partial-failure-summary.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/partial-failure-summary.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "country-picker",
+      "type": "registry:ui",
+      "title": "Country Picker",
+      "description": "A country field whose value is always the ISO 3166-1 alpha-2 code — 243 countries searchable by name, either ISO code or calling code, pinned rows on top, UN M49 region groups, localised names via Intl.DisplayNames, and a flag emoji that falls back to a code chip on platforms that have none.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/country-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tax-id-input",
+      "type": "registry:ui",
+      "title": "Tax ID Input",
+      "description": "A tax identifier field where the country picks the format — local label, printed prefix, mask and that jurisdiction's real checksum (EU VAT, UK VAT, EIN, ABN, GSTIN, CNPJ) — with an optional register-verification state on top.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "button",
+        "badge",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/tax-id-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bank-details-form",
+      "type": "registry:ui",
+      "title": "Bank Details Form",
+      "description": "Payout details whose fields follow the country — IBAN and BIC for SEPA, sort code and account number for the UK, routing and account number for the US — with a real IBAN mod-97 check, the ABA weighted checksum, entered values carried across a country switch, and the account masked to its last four after entry.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "button",
+        "input",
+        "label",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/bank-details-form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "math-formula",
+      "type": "registry:ui",
+      "title": "Math Formula",
+      "description": "A documented LaTeX subset rendered as native MathML with a styled CSS fallback — inline and block display, an accessible sentence derived from the source, copy-as-LaTeX, and an explicit caret-marked refusal for anything outside the subset.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/math-formula.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "api-changelog-diff",
+      "type": "registry:ui",
+      "title": "API Changelog Diff",
+      "description": "An endpoint-level diff between two API versions — routes grouped as removed, changed, deprecated and added, each expandable to the field-level story, with breaking changes counted apart from additive ones and every deprecation shown with its sunset date and whole days remaining.",
+      "dependencies": [
+        "lucide-react",
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils",
+        "badge",
+        "button",
+        "dropdown-menu",
+        "https://ui.zyeon.ai/r/use-controllable-state.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/api-changelog-diff.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/api-changelog-diff.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "composer-attachments",
+      "type": "registry:ui",
+      "title": "Composer Attachments",
+      "description": "An attachment strip for a prompt composer — one list rendered as compact chips on the input's top edge or rich preview cards under it, with per-kind statistics, keyboard removal that hands focus to the neighbour, overflow collapse and four data states.",
+      "dependencies": [
+        "zod",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "button",
+        "https://ui.zyeon.ai/r/file-icon.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/composer-attachments.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/composer-attachments.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "add-to-calendar",
+      "type": "registry:ui",
+      "title": "Add to Calendar",
+      "description": "A split button that hands one event to Google, Outlook, Office 365 or Yahoo and writes a spec-correct .ics in the browser — real IANA zones with a generated VTIMEZONE, exclusive all-day ends, 75-octet folding and a validated RRULE.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/add-to-calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "environment-switcher",
+      "type": "registry:ui",
+      "title": "Environment Switcher",
+      "description": "A four-state environment switcher that keeps the current deploy target visible with its tier tint, region and version, compares versions as real semver so a stale preview says so, states why blocked environments are out of reach, and gates guarded targets behind a confirm that can demand the environment name typed back.",
+      "dependencies": [
+        "zod",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "badge",
+        "button",
+        "https://ui.zyeon.ai/r/confirm-dialog.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/environment-switcher.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/environment-switcher.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "video-chapters",
+      "type": "registry:ui",
+      "title": "Video Chapters",
+      "description": "The chapter list beside a player: chapters supply only a start time, the component derives every boundary, length and share of the runtime, marks the chapter holding the playhead, keeps it scrolled into view with an in-chapter progress sliver, and seeks on click or Enter.",
+      "dependencies": [
+        "zod",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/video-chapters.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/video-chapters.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spin-viewer",
+      "type": "registry:ui",
+      "title": "360 Spin Viewer",
+      "description": "A turntable image sequence scrubbed by horizontal drag, touch and arrow keys — one wrapping frame index, a preload gate that shows its progress before interaction is allowed, dead frames skipped instead of blanking the stage, and auto-spin that yields at the first interaction.",
+      "dependencies": [
+        "zod",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/spin-viewer.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/spin-viewer.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "qr-login",
+      "type": "registry:ui",
+      "title": "QR Login",
+      "description": "A phone-scan sign-in panel whose QR carries the secret while the screen shows only a derived pairing phrase, with expiry computed from expiresAt instead of trusted, scans attributed by device and approximate location so a wrong one can be rejected, and loading/empty/error handled as first-class branches.",
+      "dependencies": [
+        "zod",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "button",
+        "https://ui.zyeon.ai/r/qr-code.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/qr-login.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/qr-login.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "reading-meta",
+      "type": "registry:ui",
+      "title": "Reading Meta",
+      "description": "An article byline strip that derives reading time in-component from the word count at a stated pace, switches from the total to how much is left once reading starts, collapses long author lists into \"and N others\", and renders every date from an ISO string with an explicit locale and time zone.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "badge",
+        "tooltip",
+        "https://ui.zyeon.ai/r/avatar-group.json",
+        "https://ui.zyeon.ai/r/relative-time.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/reading-meta.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "username-availability",
+      "type": "registry:ui",
+      "title": "Username Availability",
+      "description": "A controlled handle field that gates a debounced availability check behind local rules, names the rule that broke, keeps unreachable separate from taken, and shows the normalised handle before submit.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/username-availability.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "release-health",
+      "type": "registry:ui",
+      "title": "Release Health",
+      "description": "A per-release client stability panel that derives adoption from session counts, checks crash-free session and user rates against the payload's own thresholds, reports the change from the previous release by semver precedence, and lists the top crash groups with the arithmetic of what it would take to clear the bar.",
+      "dependencies": [
+        "zod",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/release-health.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/release-health.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "feature-flag-rollout",
+      "type": "registry:ui",
+      "title": "Feature Flag Rollout",
+      "description": "The rollout control for a single feature flag — a MurmurHash3 percentage gate with its estimated reach, ordered first-match-wins targeting rules, a live evaluation preview that names the deciding rule or hash bucket, and the drift between the configured split and what the service reports it is actually serving.",
+      "dependencies": [
+        "lucide-react",
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils",
+        "badge",
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/feature-flag-rollout.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/feature-flag-rollout.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "incident-composer",
+      "type": "registry:block",
+      "title": "Incident Composer",
+      "description": "The write side of a status page — pick the update state, set each affected component's impact, and see exactly what the email, SMS and webhook subscribers receive plus how many destinations they reach, with resolve forcing every component back to operational behind a confirm.",
+      "dependencies": [
+        "zod",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "badge",
+        "button",
+        "dropdown-menu",
+        "https://ui.zyeon.ai/r/confirm-dialog.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/incident-composer.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/registry/blocks/incident-composer.contract.ts",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "chart-project-progress",
+      "type": "registry:ui",
+      "title": "Project Progress",
+      "description": "A four-state rail of projects — one segmented bar per project split into done, in progress, blocked and not started with largest-remainder shares that add to exactly 100, an owner, a due date counted in whole calendar days, a schedule-line tick and a health chip derived from all of it.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-project-progress.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-project-progress.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-sprint-velocity",
+      "type": "registry:ui",
+      "title": "Sprint Velocity",
+      "description": "A four-state sprint velocity chart — commitment against delivered as paired bars, scope pulled in mid-sprint hatched as its own segment, and a rolling-window band projected over the sprints still to come.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-sprint-velocity.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-sprint-velocity.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-workload-balance",
+      "type": "registry:ui",
+      "title": "Workload Balance",
+      "description": "A four-state diverging load chart — every person measured out from their own capacity line, over-allocation running one way and idle headroom the other on one shared scale, with a tolerance band, an aggregate meter that the per-person picture argues against, and a greedy plan naming who to move work from and to.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-workload-balance.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-workload-balance.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-cycle-time-scatter",
+      "type": "registry:ui",
+      "title": "Cycle Time Scatter",
+      "description": "A four-state cycle time scatter that derives its own p50, p85 and p95 by nearest rank, spends its single accent on the focus percentile and the items that broke it, and measures a stated service level against the number the data actually supports.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-cycle-time-scatter.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-cycle-time-scatter.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-aging-wip",
+      "type": "registry:ui",
+      "title": "Aging WIP",
+      "description": "A four-state aging chart for a team board — every item still in progress plotted by column against how many days it has been in flight, read against the percentile bands this board's own finished work actually hit.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-aging-wip.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-aging-wip.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-wip-limits",
+      "type": "registry:ui",
+      "title": "WIP Limits",
+      "description": "A four-state work-in-progress card: every board column read against its own limit, with a breach as an explicit state and a column that was never capped kept out of the verdict entirely.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-wip-limits.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-wip-limits.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-critical-path",
+      "type": "registry:ui",
+      "title": "Critical Path",
+      "description": "A four-state task dependency board that derives the schedule from durations and links alone — a forward and backward pass, total and free float per task, the zero-float route drawn in the one accent colour, and a cyclic plan named rather than walked forever.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-critical-path.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-critical-path.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-roadmap-swimlanes",
+      "type": "registry:ui",
+      "title": "Roadmap Swimlanes",
+      "description": "A four-state roadmap board — epics as bars across coarse time buckets in per-team lanes, deliberately without dates or dependency arrows, leading on how loaded one quarter is and flagging the lanes that are over the capacity they stated.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-roadmap-swimlanes.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-roadmap-swimlanes.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-okr-tree",
+      "type": "registry:ui",
+      "title": "OKR Tree",
+      "description": "A four-state objective tree whose parents are the weighted rollup of their children, with sibling weights that do not sum to 1 either normalised out loud or drawn at the scale they actually describe.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-okr-tree.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-okr-tree.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-review-turnaround",
+      "type": "registry:ui",
+      "title": "Review Turnaround",
+      "description": "A four-state review-turnaround card — one lane per reviewer on one shared time axis, the wait for a first look nested inside the wait to merge, a p90 tail whisker, the pooled team median as a dashed rule, and an oversized headline that retargets to whichever reviewer you pick.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-review-turnaround.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-review-turnaround.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-focus-time",
+      "type": "registry:ui",
+      "title": "Focus Time",
+      "description": "A four-state per-person day timeline that derives focus blocks from the gaps a calendar leaves, splits them into usable time and scraps at a stated minimum, and leads with the fragmentation score that falls out of the split.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-focus-time.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-focus-time.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-blocker-impact",
+      "type": "registry:ui",
+      "title": "Blocker Impact",
+      "description": "A four-state blocker ranking whose bar is a transitive blast radius counted once per task, split into what only that blocker holds versus what is also stuck behind someone else, with the board's held-up share apportioned to exactly 100 percent.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-blocker-impact.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-blocker-impact.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-release-readiness",
+      "type": "registry:ui",
+      "title": "Release Readiness",
+      "description": "A four-state go/no-go board that rolls per-workstream checks, sign-offs and open blockers into one derived verdict, leads with the single number that reaches zero exactly when the release is clear, and refuses to call an unread board.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-release-readiness.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-release-readiness.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-team-availability",
+      "type": "registry:ui",
+      "title": "Team Availability",
+      "description": "A four-state week-by-week coverage card — one oversized coverage number for the week you picked, a rail of week bars against a target line, and a per-person day grid where partial days stay fractions instead of being rounded to whole days off.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-team-availability.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-team-availability.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-milestone-health",
+      "type": "registry:ui",
+      "title": "Milestone Health",
+      "description": "A four-state milestone slip chart — every row runs from the committed baseline to today's forecast on one shared date axis, with earlier forecasts left behind as a faded trail, a recorded RAG status, per-milestone confidence, and the worst open slip printed as the one number the card leads with.",
+      "dependencies": [
+        "zod"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/chart-milestone-health.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/chart-milestone-health.contract.ts",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

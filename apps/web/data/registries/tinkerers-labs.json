@@ -1,0 +1,4532 @@
+{
+  "key": "tinkerers-labs",
+  "entry": "Mischief UI",
+  "name": "@mischief",
+  "homepage": "https://ui.tinkererslabs.com",
+  "indexUrl": "https://ui.tinkererslabs.com/r/registry.json",
+  "itemBase": "https://ui.tinkererslabs.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "magnetic-tabs",
+      "type": "registry:ui",
+      "title": "Magnetic Tabs",
+      "description": "Accessible tabs with a gently responsive label and a clear active surface.",
+      "categories": [
+        "navigation",
+        "tabs",
+        "motion"
+      ],
+      "dependencies": [
+        "@base-ui/react@^1.7.0",
+        "motion@^13.1.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/magnetic-tabs/magnetic-tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "elastic-slider",
+      "type": "registry:ui",
+      "title": "Elastic Slider",
+      "description": "An accessible value slider with restrained physical feedback at its limits.",
+      "categories": [
+        "form",
+        "slider",
+        "motion"
+      ],
+      "dependencies": [
+        "@base-ui/react@^1.7.0",
+        "motion@^13.1.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/elastic-slider/elastic-slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hold-button",
+      "type": "registry:ui",
+      "title": "Hold Button",
+      "description": "A confirmation button that completes after a deliberate pointer hold and remains accessible from a keyboard.",
+      "categories": [
+        "button",
+        "confirmation",
+        "feedback"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/hold-button/hold-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "shift-button",
+      "type": "registry:ui",
+      "title": "Shift Button",
+      "description": "A call-to-action button that trades its leading icon for a directional cue.",
+      "categories": [
+        "button",
+        "call-to-action",
+        "motion"
+      ],
+      "dependencies": [
+        "@base-ui/react@^1.7.0",
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/shift-button/shift-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "impossible-checkbox",
+      "type": "registry:ui",
+      "title": "Impossible Checkbox",
+      "description": "A playful checkbox that a determined bear refuses to leave on.",
+      "categories": [
+        "checkbox",
+        "feedback",
+        "motion",
+        "playful"
+      ],
+      "dependencies": [
+        "motion@^13.1.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/impossible-checkbox/impossible-checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "floating-index",
+      "type": "registry:ui",
+      "title": "Floating Index",
+      "description": "A compact floating outline that tracks reading progress and the active section.",
+      "categories": [
+        "navigation",
+        "scroll",
+        "progress",
+        "motion"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0",
+        "motion@^13.1.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/floating-index/floating-index.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command-palette",
+      "type": "registry:ui",
+      "title": "Command Palette",
+      "description": "A search dialog over anything you can list, opened from a keyboard shortcut.",
+      "categories": [
+        "navigation",
+        "search",
+        "dialog",
+        "command"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/command-palette/command-palette.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-to-top-button",
+      "type": "registry:ui",
+      "title": "Scroll to Top Button",
+      "description": "A floating shortcut that appears after someone moves down a long page or scroll container and returns them to the top.",
+      "categories": [
+        "button",
+        "navigation",
+        "scroll",
+        "floating"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/scroll-to-top-button/scroll-to-top-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "install-command",
+      "type": "registry:ui",
+      "title": "Install Command",
+      "description": "A switchable install line for a library, with the runner and installer kept apart.",
+      "categories": [
+        "docs",
+        "install",
+        "command",
+        "copy"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/install-command/install-command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "copy-for-ai",
+      "type": "registry:ui",
+      "title": "Copy for AI",
+      "description": "Hands a documentation page to an assistant as markdown.",
+      "categories": [
+        "docs",
+        "ai",
+        "markdown",
+        "copy"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/copy-for-ai/copy-for-ai.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table-of-contents",
+      "type": "registry:ui",
+      "title": "Table of Contents",
+      "description": "A page outline that marks the section the reader is in.",
+      "categories": [
+        "docs",
+        "navigation",
+        "scroll"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/table-of-contents/table-of-contents.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:ui",
+      "title": "File Upload",
+      "description": "A file picker and dropzone with validation, a visible queue, and optional progress, cancel, and retry handling.",
+      "categories": [
+        "file",
+        "upload",
+        "dropzone",
+        "form"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/file-upload/file-upload.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "file-thumbnail",
+      "type": "registry:ui",
+      "title": "File Thumbnail",
+      "description": "A compact image preview with automatic browser File support, loading, and failure states.",
+      "categories": [
+        "file",
+        "thumbnail",
+        "preview",
+        "loading"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/file-thumbnail/file-thumbnail.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "conversation",
+      "type": "registry:ui",
+      "title": "Conversation",
+      "description": "A thread scroll container that follows a streaming reply and yields to the reader.",
+      "categories": [
+        "ai",
+        "chat",
+        "scroll",
+        "agent"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/conversation/conversation.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "One turn in a thread, with role, avatar, timestamp, and reachable actions.",
+      "categories": [
+        "ai",
+        "chat",
+        "message",
+        "agent"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/message/message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "prompt-input",
+      "type": "registry:ui",
+      "title": "Prompt Input",
+      "description": "A growing composer that sends on Enter and becomes a stop button while streaming.",
+      "categories": [
+        "ai",
+        "chat",
+        "input",
+        "form",
+        "agent"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/prompt-input/prompt-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "suggestions",
+      "type": "registry:ui",
+      "title": "Suggestions",
+      "description": "A scrollable row of prompts to start or continue a conversation with.",
+      "categories": [
+        "ai",
+        "chat",
+        "prompts",
+        "agent"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/suggestions/suggestions.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "title": "Questionnaire",
+      "description": "Multi-step questions an agent asks before starting, with single, multiple, and freeform answers.",
+      "categories": [
+        "ai",
+        "form",
+        "questions",
+        "agent"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/questionnaire/questionnaire.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ask-ai",
+      "type": "registry:ui",
+      "title": "Ask AI",
+      "description": "A source-aware handoff that opens a prepared prompt in an AI assistant or copies it for another one.",
+      "categories": [
+        "ai",
+        "button",
+        "links",
+        "copy"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ask-ai/ask-ai.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "streaming-text",
+      "type": "registry:ui",
+      "title": "Streaming Text",
+      "description": "Text that arrives a piece at a time from an async source, with sentence-level announcements.",
+      "categories": [
+        "ai",
+        "streaming",
+        "text",
+        "agent"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/streaming-text/streaming-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "thinking-state",
+      "type": "registry:ui",
+      "title": "Thinking State",
+      "description": "A status row for work in progress, with a live elapsed timer and optional reasoning.",
+      "categories": [
+        "ai",
+        "status",
+        "loading",
+        "agent"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/thinking-state/thinking-state.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tool-call",
+      "type": "registry:ui",
+      "title": "Tool Call",
+      "description": "A compact record of one tool invocation with its input and output behind a disclosure.",
+      "categories": [
+        "ai",
+        "tool",
+        "disclosure",
+        "agent"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/tool-call/tool-call.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "agent-checklist",
+      "type": "registry:ui",
+      "title": "Agent Checklist",
+      "description": "A task list whose items change state as work proceeds, announcing only what changed.",
+      "categories": [
+        "ai",
+        "list",
+        "progress",
+        "agent"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/agent-checklist/agent-checklist.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "inline-citations",
+      "type": "registry:ui",
+      "title": "Inline Citations",
+      "description": "Numbered markers inside generated text, each linking to its entry in a source list.",
+      "categories": [
+        "ai",
+        "citations",
+        "sources",
+        "agent"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/inline-citations/inline-citations.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bounding-boxes",
+      "type": "registry:ui",
+      "title": "Bounding Boxes",
+      "description": "Selectable regions drawn over a page image from normalized coordinates.",
+      "categories": [
+        "document",
+        "citations",
+        "ocr",
+        "ai"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/bounding-boxes/bounding-boxes.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "annotation-layer",
+      "type": "registry:ui",
+      "title": "Annotation Layer",
+      "description": "Notes attached to regions of a page, created by dragging.",
+      "categories": [
+        "document",
+        "annotation",
+        "review"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/annotation-layer/annotation-layer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "redaction",
+      "type": "registry:ui",
+      "title": "Redaction",
+      "description": "Mark regions to black out, with a reveal that states it is only a preview.",
+      "categories": [
+        "document",
+        "redaction",
+        "privacy"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/redaction/redaction.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "page-navigator",
+      "type": "registry:ui",
+      "title": "Page Navigator",
+      "description": "A rail of page thumbnails for moving through a long document.",
+      "categories": [
+        "document",
+        "navigation",
+        "pages"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/page-navigator/page-navigator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "file-tree",
+      "type": "registry:ui",
+      "title": "File Tree",
+      "description": "An expandable tree of folders and files with full keyboard navigation.",
+      "categories": [
+        "document",
+        "tree",
+        "files",
+        "navigation"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/file-tree/file-tree.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "document-splits",
+      "type": "registry:ui",
+      "title": "Document Splits",
+      "description": "Mark where one scanned batch becomes several documents.",
+      "categories": [
+        "document",
+        "split",
+        "pages"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/document-splits/document-splits.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "schema-builder",
+      "type": "registry:ui",
+      "title": "Schema Builder",
+      "description": "Build the shape you want extracted from a document, with nesting.",
+      "categories": [
+        "document",
+        "schema",
+        "form",
+        "ai"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/schema-builder/schema-builder.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "signature-pad",
+      "type": "registry:ui",
+      "title": "Signature Pad",
+      "description": "Sign with a pointer on a canvas, or type a name instead.",
+      "categories": [
+        "document",
+        "signature",
+        "canvas",
+        "form"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/signature-pad/signature-pad.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "csv-viewer",
+      "type": "registry:ui",
+      "title": "CSV Viewer",
+      "description": "A sortable table for delimited data with a sticky header and a row cap.",
+      "categories": [
+        "document",
+        "csv",
+        "table",
+        "data"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0",
+        "papaparse@^5.6.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/csv-viewer/csv-viewer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "json-viewer",
+      "type": "registry:ui",
+      "title": "JSON Viewer",
+      "description": "A collapsible tree for a JSON payload, navigable from the keyboard, where every row can hand you its path.",
+      "categories": [
+        "document",
+        "viewer",
+        "tree",
+        "data",
+        "ai"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/json-viewer/json-viewer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "docx-viewer",
+      "type": "registry:ui",
+      "title": "DOCX Viewer",
+      "description": "Renders a Word document as elements built through a tag and attribute allowlist.",
+      "categories": [
+        "document",
+        "docx",
+        "word",
+        "viewer"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0",
+        "mammoth@^1.12.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/docx-viewer/docx-viewer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pdf-viewer",
+      "type": "registry:ui",
+      "title": "PDF Viewer",
+      "description": "Page-by-page PDF rendering on a canvas, with paging and zoom, over any loader.",
+      "categories": [
+        "document",
+        "pdf",
+        "viewer",
+        "canvas"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0",
+        "pdfjs-dist@^6.2.108"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/pdf-viewer/pdf-viewer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "markdown-blocks",
+      "type": "registry:ui",
+      "title": "Markdown Blocks",
+      "description": "Extracted document regions rendered as markdown, each one selectable.",
+      "categories": [
+        "document",
+        "markdown",
+        "layout",
+        "ai"
+      ],
+      "dependencies": [
+        "react-markdown@^10.1.0",
+        "remark-gfm@^4.0.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/markdown-blocks/markdown-blocks.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "signature-footer",
+      "type": "registry:block",
+      "title": "Signature Footer",
+      "description": "A composed site footer that ends with an oversized, low-contrast wordmark.",
+      "categories": [
+        "layout",
+        "footer",
+        "branding"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/footer-columns.json",
+        "https://ui.tinkererslabs.com/r/footer-row.json",
+        "https://ui.tinkererslabs.com/r/footer-wordmark.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/signature-footer/signature-footer.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "image-gallery",
+      "type": "registry:block",
+      "title": "Image Gallery",
+      "description": "A responsive image collection with grid and masonry layouts and an accessible lightbox.",
+      "categories": [
+        "gallery",
+        "images",
+        "dialog",
+        "layout"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/image-grid.json",
+        "https://ui.tinkererslabs.com/r/lightbox.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/image-gallery/image-gallery.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code Block",
+      "description": "A code panel with copy, optional line numbers, highlighted lines, and a collapse for anything long.",
+      "categories": [
+        "code",
+        "docs",
+        "clipboard"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/code-block/code-block.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "diff-view",
+      "type": "registry:ui",
+      "title": "Diff View",
+      "description": "A proposed change shown as a unified or side-by-side diff, with optional accept and reject controls.",
+      "categories": [
+        "ai",
+        "code",
+        "diff",
+        "agent"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/diff-view/diff-view.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "terminal-output",
+      "type": "registry:ui",
+      "title": "Terminal Output",
+      "description": "Streaming command output with stderr called out, an exit code, and scroll that follows without trapping you.",
+      "categories": [
+        "ai",
+        "code",
+        "terminal",
+        "agent"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/terminal-output/terminal-output.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "response-actions",
+      "type": "registry:ui",
+      "title": "Response Actions",
+      "description": "The row under an answer: copy it, ask again, and rate it.",
+      "categories": [
+        "ai",
+        "chat",
+        "agent",
+        "feedback"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/response-actions/response-actions.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "theme-toggle",
+      "type": "registry:ui",
+      "title": "Theme Toggle",
+      "description": "A light and dark switch that survives a reload, follows the system when asked, and stays in step across tabs.",
+      "categories": [
+        "theme",
+        "dark-mode",
+        "control"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/theme-toggle/theme-toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "A list of disclosures built on native details elements.",
+      "categories": [
+        "disclosure",
+        "faq",
+        "control"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/accordion/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "component-preview",
+      "type": "registry:ui",
+      "title": "Component Preview",
+      "description": "A framed example with a tab for the source beside it.",
+      "categories": [
+        "docs",
+        "preview",
+        "tabs"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/component-preview/component-preview.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "A keyboard chord rendered with the right glyphs for the reader's platform.",
+      "categories": [
+        "docs",
+        "keyboard",
+        "hint"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/kbd/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "voice-input",
+      "type": "registry:ui",
+      "title": "Voice Input",
+      "description": "A microphone that draws what it is hearing, so a live one is told apart from a dead one at a glance.",
+      "categories": [
+        "ai",
+        "agent",
+        "chat",
+        "input",
+        "canvas",
+        "media"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/voice-input/voice-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "audio-player",
+      "type": "registry:ui",
+      "title": "Audio Player",
+      "description": "A recording with its waveform, its position and its transcript, every line seekable.",
+      "categories": [
+        "ai",
+        "agent",
+        "media",
+        "audio",
+        "canvas",
+        "player"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/audio-player/audio-player.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bar-visualizer",
+      "type": "registry:ui",
+      "title": "Bar Visualizer",
+      "description": "Frequency bars for audio on its way out, with the state said as well as drawn.",
+      "categories": [
+        "ai",
+        "agent",
+        "media",
+        "audio",
+        "canvas",
+        "feedback"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/bar-visualizer/bar-visualizer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "mic-selector",
+      "type": "registry:ui",
+      "title": "Mic Selector",
+      "description": "Picks the microphone, then proves the choice with a live level meter.",
+      "categories": [
+        "ai",
+        "agent",
+        "media",
+        "audio",
+        "control",
+        "form"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/mic-selector/mic-selector.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chain-of-thought",
+      "type": "registry:ui",
+      "title": "Chain of Thought",
+      "description": "The steps an assistant took before answering, open while it works and folded away after.",
+      "categories": [
+        "ai",
+        "agent",
+        "chat",
+        "reasoning",
+        "feedback"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/chain-of-thought/chain-of-thought.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "web-preview",
+      "type": "registry:ui",
+      "title": "Web Preview",
+      "description": "A sandboxed frame for whatever the agent just built, with the widths to check it at.",
+      "categories": [
+        "ai",
+        "agent",
+        "code",
+        "preview",
+        "iframe"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/web-preview/web-preview.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "video-player",
+      "type": "registry:ui",
+      "title": "Video Player",
+      "description": "Video with real captions, a keyboard-operable scrubber, and controls that survive full screen.",
+      "categories": [
+        "ai",
+        "agent",
+        "media",
+        "video",
+        "player"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/video-player/video-player.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "reviewable-diff",
+      "type": "registry:block",
+      "title": "Reviewable Diff",
+      "description": "A proposed change staged a hunk at a time, so a good patch with one bad hunk is not all or nothing.",
+      "categories": [
+        "ai",
+        "agent",
+        "code",
+        "diff",
+        "review"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/diff-view.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/reviewable-diff/reviewable-diff.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "subagent-tree",
+      "type": "registry:ui",
+      "title": "Subagent Tree",
+      "description": "Several agents working at once, nested under whoever handed the work down.",
+      "categories": [
+        "ai",
+        "agent",
+        "status",
+        "tree",
+        "feedback"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/subagent-tree/subagent-tree.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stopped-run",
+      "type": "registry:ui",
+      "title": "Stopped Run",
+      "description": "What the thread says after an answer ended early, keeping what it had already written.",
+      "categories": [
+        "ai",
+        "agent",
+        "chat",
+        "feedback",
+        "error"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/stopped-run/stopped-run.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "memory-chips",
+      "type": "registry:ui",
+      "title": "Memory Chips",
+      "description": "Everything an assistant remembers about someone, each one removable on its own.",
+      "categories": [
+        "ai",
+        "agent",
+        "privacy",
+        "settings",
+        "chat"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/memory-chips/memory-chips.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "orb",
+      "type": "registry:ui",
+      "title": "Orb",
+      "description": "A sphere that carries what an assistant is doing, settled when idle and moving with the voice when there is one.",
+      "categories": [
+        "ai",
+        "agent",
+        "canvas",
+        "voice",
+        "status"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/orb/orb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "matrix",
+      "type": "registry:ui",
+      "title": "Matrix",
+      "description": "A grid of cells lit from the bottom by a level, which reads as a piece of hardware rather than as a chart.",
+      "categories": [
+        "ai",
+        "agent",
+        "canvas",
+        "audio",
+        "meter"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/matrix/matrix.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "response",
+      "type": "registry:ui",
+      "title": "Response",
+      "description": "An assistant's answer as markdown, including while it is still half-written and briefly invalid.",
+      "categories": [
+        "ai",
+        "agent",
+        "chat",
+        "markdown",
+        "streaming"
+      ],
+      "dependencies": [
+        "react-markdown@^10.1.0",
+        "remark-gfm@^4.0.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/response/response.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "transcript-viewer",
+      "type": "registry:ui",
+      "title": "Transcript Viewer",
+      "description": "A recording as text, where every line is also the way back to the moment it was said.",
+      "categories": [
+        "ai",
+        "agent",
+        "audio",
+        "transcript",
+        "viewer"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/transcript-viewer/transcript-viewer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stop-generating",
+      "type": "registry:ui",
+      "title": "Stop Generating",
+      "description": "The control that interrupts a running answer.",
+      "categories": [
+        "ai",
+        "agent",
+        "streaming"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/stop-generating/stop-generating.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "token-meter",
+      "type": "registry:ui",
+      "title": "Token Meter",
+      "description": "How much of the context window is gone, split by what spent it.",
+      "categories": [
+        "ai",
+        "agent",
+        "usage",
+        "meter"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/token-meter/token-meter.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "model-picker",
+      "type": "registry:ui",
+      "title": "Model Picker",
+      "description": "A model chooser with room for what each one is good at.",
+      "categories": [
+        "ai",
+        "agent",
+        "listbox",
+        "select"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/model-picker/model-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "source-card",
+      "type": "registry:ui",
+      "title": "Source Card",
+      "description": "One retrieved passage: where it came from, what it said, and how well it matched.",
+      "categories": [
+        "ai",
+        "agent",
+        "rag",
+        "citation"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/source-card/source-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:ui",
+      "title": "Empty State",
+      "description": "What to show when there is nothing yet.",
+      "categories": [
+        "empty",
+        "block",
+        "layout"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/empty-state/empty-state.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "footer-columns",
+      "type": "registry:ui",
+      "title": "Footer Columns",
+      "description": "Labelled columns of links, with the column count and the link rendering left to you.",
+      "categories": [
+        "footer",
+        "links",
+        "layout"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/footer-columns/footer-columns.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "footer-row",
+      "type": "registry:ui",
+      "title": "Footer Row",
+      "description": "A wrapping row of links under its own label, set apart by a dashed rule.",
+      "categories": [
+        "footer",
+        "links",
+        "layout"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/footer-row/footer-row.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "footer-wordmark",
+      "type": "registry:ui",
+      "title": "Footer Wordmark",
+      "description": "The oversized brand word that closes a page, drawn as texture rather than content.",
+      "categories": [
+        "footer",
+        "brand",
+        "type"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/footer-wordmark/footer-wordmark.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty-row",
+      "type": "registry:ui",
+      "title": "Empty Row",
+      "description": "One line saying a list came back empty, for a table, a list, or a popover.",
+      "categories": [
+        "empty",
+        "table",
+        "list"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/empty-row/empty-row.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "not-found",
+      "type": "registry:ui",
+      "title": "Not Found",
+      "description": "The page-scale empty state: a status, a heading you can read across a room, and somewhere to go.",
+      "categories": [
+        "empty",
+        "page",
+        "404"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/not-found/not-found.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "image-grid",
+      "type": "registry:ui",
+      "title": "Image Grid",
+      "description": "Thumbnails in even cells or masonry columns, with nothing but React behind them.",
+      "categories": [
+        "media",
+        "gallery",
+        "layout"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/image-grid/image-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "lightbox",
+      "type": "registry:ui",
+      "title": "Lightbox",
+      "description": "One image at a time, full bleed, with the rest of the set a key away.",
+      "categories": [
+        "media",
+        "gallery",
+        "dialog"
+      ],
+      "dependencies": [
+        "@base-ui/react@^1.7.0",
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/lightbox/lightbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "The smallest way to say something is happening, for a control that is working.",
+      "categories": [
+        "feedback",
+        "loading"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/spinner/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "shimmering-text",
+      "type": "registry:ui",
+      "title": "Shimmering Text",
+      "description": "Words with a light moving across them, for the wait between asking and the first token.",
+      "categories": [
+        "feedback",
+        "loading",
+        "text",
+        "streaming"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/shimmering-text/shimmering-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "A placeholder the shape of what is coming, so the page does not jump when it arrives.",
+      "categories": [
+        "feedback",
+        "loading",
+        "layout"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/skeleton/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "status-pill",
+      "type": "registry:ui",
+      "title": "Status Pill",
+      "description": "A dot and a few words: operational, degraded, closed.",
+      "categories": [
+        "feedback",
+        "status"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/status-pill/status-pill.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:ui",
+      "title": "Copy Button",
+      "description": "Copies a value and says whether it worked, including when the clipboard refuses.",
+      "categories": [
+        "clipboard",
+        "control"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/copy-button/copy-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "secret-field",
+      "type": "registry:ui",
+      "title": "Secret Field",
+      "description": "An API key or token: hidden until asked for, copied whole either way.",
+      "categories": [
+        "security",
+        "clipboard",
+        "control"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/secret-field/secret-field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Page numbers with gaps where the run is broken, as buttons or as your own links.",
+      "categories": [
+        "navigation",
+        "list"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/pagination/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "side-panel",
+      "type": "registry:ui",
+      "title": "Side Panel",
+      "description": "A pane that comes in from the side: an inspector, a filter set, a row's detail.",
+      "categories": [
+        "overlay",
+        "layout",
+        "dialog"
+      ],
+      "dependencies": [
+        "@base-ui/react@^1.7.0",
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/side-panel/side-panel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "render-surface",
+      "type": "registry:ui",
+      "title": "Render Surface",
+      "description": "A canvas that sizes itself, sleeps when it is off screen, and holds still when motion is reduced.",
+      "categories": [
+        "scene",
+        "canvas",
+        "motion",
+        "primitive"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/render-surface/render-surface.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "aurora-field",
+      "type": "registry:ui",
+      "title": "Aurora Field",
+      "description": "A drifting gradient backdrop built from the colours already in your theme.",
+      "categories": [
+        "scene",
+        "background",
+        "gradient",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/aurora-field/aurora-field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "grain-overlay",
+      "type": "registry:ui",
+      "title": "Grain Overlay",
+      "description": "Film grain for any panel, which also hides the banding in a wide gradient.",
+      "categories": [
+        "scene",
+        "texture",
+        "overlay"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/grain-overlay/grain-overlay.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spotlight-card",
+      "type": "registry:ui",
+      "title": "Spotlight Card",
+      "description": "A card that catches a light following the pointer, across a whole grid at once.",
+      "categories": [
+        "scene",
+        "card",
+        "pointer",
+        "hover"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/spotlight-card/spotlight-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "constellation-field",
+      "type": "registry:ui",
+      "title": "Constellation Field",
+      "description": "Drifting points joined by lines, brightening around the pointer.",
+      "categories": [
+        "scene",
+        "background",
+        "particles",
+        "pointer"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/constellation-field/constellation-field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "burst",
+      "type": "registry:ui",
+      "title": "Burst",
+      "description": "A short burst of pieces for the moment something finally completes.",
+      "categories": [
+        "scene",
+        "feedback",
+        "celebration",
+        "canvas"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/burst/burst.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "shader-surface",
+      "type": "registry:ui",
+      "title": "Shader Surface",
+      "description": "Four shader backdrops, each taking its two colours from your theme.",
+      "categories": [
+        "scene",
+        "background",
+        "shader",
+        "webgl"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/shader-surface/shader-surface.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "displacement-image",
+      "type": "registry:ui",
+      "title": "Displacement Image",
+      "description": "Two images crossing by pushing their pixels through the same noise.",
+      "categories": [
+        "scene",
+        "media",
+        "transition",
+        "webgl"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/displacement-image/displacement-image.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scene-hero",
+      "type": "registry:ui",
+      "title": "Scene Hero",
+      "description": "A lit three-dimensional object behind a headline, steered by the pointer.",
+      "categories": [
+        "scene",
+        "hero",
+        "3d",
+        "webgl"
+      ],
+      "dependencies": [
+        "three@^0.185.1"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/scene-hero/scene-hero.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-scene",
+      "type": "registry:ui",
+      "title": "Scroll Scene",
+      "description": "Turns the scrolling of a tall element into a number, without rendering the page to do it.",
+      "categories": [
+        "scene",
+        "scroll",
+        "motion",
+        "progress"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/scroll-scene/scroll-scene.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "reveal",
+      "type": "registry:ui",
+      "title": "Reveal",
+      "description": "Moves its children in when they arrive on screen, and never decides whether they are there.",
+      "categories": [
+        "motion",
+        "scroll",
+        "entrance"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/reveal/reveal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "split-text",
+      "type": "registry:ui",
+      "title": "Split Text",
+      "description": "A heading animated one character, word, or line at a time, announced as one sentence.",
+      "categories": [
+        "motion",
+        "text",
+        "typography",
+        "entrance"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/split-text/split-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marquee",
+      "type": "registry:ui",
+      "title": "Marquee",
+      "description": "A row that runs on its own, seamlessly, and turns back into an ordinary scrolling row for anyone who asked for less motion.",
+      "categories": [
+        "motion",
+        "scroll",
+        "marquee",
+        "layout"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/marquee/marquee.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "number-ticker",
+      "type": "registry:ui",
+      "title": "Number Ticker",
+      "description": "Counts to a number rather than replacing it, in any currency or format.",
+      "categories": [
+        "motion",
+        "number",
+        "statistic"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/number-ticker/number-ticker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tilt-card",
+      "type": "registry:ui",
+      "title": "Tilt Card",
+      "description": "A card that leans toward the pointer as though it were a physical object.",
+      "categories": [
+        "scene",
+        "card",
+        "pointer",
+        "3d"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/tilt-card/tilt-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "connection-beam",
+      "type": "registry:ui",
+      "title": "Connection Beam",
+      "description": "A line between two elements with something travelling along it, measured from the elements rather than given as coordinates.",
+      "categories": [
+        "scene",
+        "canvas",
+        "diagram",
+        "agent",
+        "background"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/connection-beam/connection-beam.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "cursor-trail",
+      "type": "registry:ui",
+      "title": "Cursor Trail",
+      "description": "A fading mark behind the pointer, drawn only inside its own box.",
+      "categories": [
+        "scene",
+        "pointer",
+        "canvas"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/cursor-trail/cursor-trail.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "metaballs",
+      "type": "registry:ui",
+      "title": "Metaballs",
+      "description": "Blobs that merge as they meet, taking their two colours from your theme.",
+      "categories": [
+        "scene",
+        "background",
+        "shader",
+        "webgl"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/metaballs/metaballs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dither-image",
+      "type": "registry:ui",
+      "title": "Dither Image",
+      "description": "A photograph reduced to two theme colours through an ordered dither.",
+      "categories": [
+        "scene",
+        "media",
+        "shader",
+        "webgl"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/dither-image/dither-image.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ascii-image",
+      "type": "registry:ui",
+      "title": "ASCII Image",
+      "description": "A photograph redrawn as characters, painted once and then left alone.",
+      "categories": [
+        "scene",
+        "media",
+        "ascii",
+        "canvas"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ascii-image/ascii-image.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "wireframe-globe",
+      "type": "registry:ui",
+      "title": "Wireframe Globe",
+      "description": "A wireframe world with places marked on it, and the same places written out underneath.",
+      "categories": [
+        "scene",
+        "3d",
+        "globe",
+        "data"
+      ],
+      "dependencies": [
+        "three@^0.185.1"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/wireframe-globe/wireframe-globe.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "presence-field",
+      "type": "registry:ui",
+      "title": "Presence Field",
+      "description": "An ambient backdrop that carries what an assistant is doing, and settles rather than snaps.",
+      "categories": [
+        "ai",
+        "agent",
+        "scene",
+        "status"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/presence-field/presence-field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stream-glow",
+      "type": "registry:ui",
+      "title": "Stream Glow",
+      "description": "An edge that breathes along a region while tokens land in it.",
+      "categories": [
+        "ai",
+        "agent",
+        "streaming",
+        "feedback"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/stream-glow/stream-glow.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scrub-bar",
+      "type": "registry:ui",
+      "title": "Scrub Bar",
+      "description": "The seek control on its own: a slider that happens to be a timeline, announced in minutes and seconds.",
+      "categories": [
+        "control",
+        "slider",
+        "audio",
+        "media",
+        "input"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/scrub-bar/scrub-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "otp-input",
+      "type": "registry:ui",
+      "title": "OTP Input",
+      "description": "A one time code, one box per character, where pasting the whole code works.",
+      "categories": [
+        "form",
+        "input",
+        "auth",
+        "otp"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/otp-input/otp-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tag-input",
+      "type": "registry:ui",
+      "title": "Tag Input",
+      "description": "An input that turns what you typed into a removable tag.",
+      "categories": [
+        "form",
+        "input",
+        "tags",
+        "control"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/tag-input/tag-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sortable-list",
+      "type": "registry:ui",
+      "title": "Sortable List",
+      "description": "A list reordered by dragging a handle, or from the keyboard without one.",
+      "categories": [
+        "list",
+        "drag",
+        "reorder",
+        "control"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/sortable-list/sortable-list.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "resizable-panels",
+      "type": "registry:ui",
+      "title": "Resizable Panels",
+      "description": "Two panels and a divider that can be dragged or driven from the keyboard.",
+      "categories": [
+        "layout",
+        "panel",
+        "resize"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/resizable-panels/resizable-panels.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stepper",
+      "type": "registry:ui",
+      "title": "Stepper",
+      "description": "Where someone is in something with a beginning and an end.",
+      "categories": [
+        "navigation",
+        "progress",
+        "form",
+        "wizard"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/stepper/stepper.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-stack",
+      "type": "registry:ui",
+      "title": "Avatar Stack",
+      "description": "Overlapping faces with a count for the rest, and the names underneath.",
+      "categories": [
+        "people",
+        "avatar",
+        "layout"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/avatar-stack/avatar-stack.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "timeline",
+      "type": "registry:ui",
+      "title": "Timeline",
+      "description": "Things that happened, in the order they happened, with each state said aloud.",
+      "categories": [
+        "timeline",
+        "history",
+        "layout",
+        "status"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/timeline/timeline.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data Table",
+      "description": "Typed rows with custom cells, column widths you set or the reader drags, sorting that is one property to switch on, and keyed selection.",
+      "categories": [
+        "table",
+        "data",
+        "sort",
+        "selection",
+        "layout"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/data-table/data-table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion-demo",
+      "type": "registry:example",
+      "title": "Accordion Demo",
+      "description": "A worked example of Accordion: A list of disclosures built on native details elements, so find-in-page and the browser do the work.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/accordion.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/accordion-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "agent-checklist-demo",
+      "type": "registry:example",
+      "title": "Agent Checklist Demo",
+      "description": "A worked example of Agent Checklist: A task list whose items change state as work proceeds, announcing what changed instead of re-reading the whole list.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/agent-checklist.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/agent-checklist-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/restart-button.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/use-scripted-timeline.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "annotation-layer-demo",
+      "type": "registry:example",
+      "title": "Annotation Layer Demo",
+      "description": "A worked example of Annotation Layer: Notes attached to regions of a page. Drag to add one, select to read it, and the coordinates stay relative to the page rather than the screen.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/annotation-layer.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/annotation-layer-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/document-fixtures.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "ascii-image-demo",
+      "type": "registry:example",
+      "title": "ASCII Image Demo",
+      "description": "A worked example of ASCII Image: A photograph redrawn as characters. The grid is worked out once and kept, so each frame is a single copy rather than thousands of letters measured again.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/ascii-image.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/ascii-image-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "ask-ai-demo",
+      "type": "registry:example",
+      "title": "Ask AI Demo",
+      "description": "A worked example of Ask AI: Hand someone a prepared, source-aware prompt in the AI assistant they already use, or let them copy it for another one.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/ask-ai.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/ask-ai-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "audio-player-demo",
+      "type": "registry:example",
+      "title": "Audio Player Demo",
+      "description": "A worked example of Audio Player: A recording with its shape, its position and its words, so a voice note can be read as well as heard.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/audio-player.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/audio-player-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/audio-fixtures.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "aurora-field-demo",
+      "type": "registry:example",
+      "title": "Aurora Field Demo",
+      "description": "A worked example of Aurora Field: A drifting gradient backdrop for a hero or an empty state, built from the colours already in your theme rather than from a palette it brought with it.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/aurora-field.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/aurora-field-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "avatar-stack-demo",
+      "type": "registry:example",
+      "title": "Avatar Stack Demo",
+      "description": "A worked example of Avatar Stack: Overlapping faces with a count for the rest, and the names underneath as a real list.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/avatar-stack.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/avatar-stack-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "bar-visualizer-demo",
+      "type": "registry:example",
+      "title": "Bar Visualizer Demo",
+      "description": "A worked example of Bar Visualizer: Frequency bars for audio on its way out, the counterpart to the trace a microphone draws on the way in.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/bar-visualizer.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/bar-visualizer-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/audio-fixtures.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "bounding-boxes-demo",
+      "type": "registry:example",
+      "title": "Bounding Boxes Demo",
+      "description": "A worked example of Bounding Boxes: Selectable regions drawn over a page image from normalized coordinates, for showing an agent exactly where an answer came from.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/bounding-boxes.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/bounding-boxes-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/document-fixtures.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "burst-demo",
+      "type": "registry:example",
+      "title": "Burst Demo",
+      "description": "A worked example of Burst: A short burst of pieces for the moment something finally completes. It draws nothing until it is fired and stops as soon as the last piece falls out of the box.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/burst.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/burst-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "chain-of-thought-demo",
+      "type": "registry:example",
+      "title": "Chain of Thought Demo",
+      "description": "A worked example of Chain of Thought: The steps an assistant took before answering, open while it is working and folded away once it is done.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/chain-of-thought.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/chain-of-thought-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "code-block-demo",
+      "type": "registry:example",
+      "title": "Code Block Demo",
+      "description": "A worked example of Code Block: A code panel with copy, optional line numbers, highlighted lines, and a collapse for anything long.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/code-block.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/code-block-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "command-palette-demo",
+      "type": "registry:example",
+      "title": "Command Palette Demo",
+      "description": "A worked example of Command Palette: A search dialog over anything you can list, opened from a keyboard shortcut, with ranked matches and hidden keywords.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/command-palette.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/command-palette-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "component-preview-demo",
+      "type": "registry:example",
+      "title": "Component Preview Demo",
+      "description": "A worked example of Component Preview: A framed example with a tab for the source beside it, and the live one still running when you switch back.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/component-preview.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/component-preview-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "connection-beam-demo",
+      "type": "registry:example",
+      "title": "Connection Beam Demo",
+      "description": "A worked example of Connection Beam: A line between two elements with something travelling along it, measured from the elements rather than given as coordinates.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/connection-beam.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/connection-beam-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "constellation-field-demo",
+      "type": "registry:example",
+      "title": "Constellation Field Demo",
+      "description": "A worked example of Constellation Field: Drifting points joined by lines when they come close, brightening and swelling around the pointer.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/constellation-field.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/constellation-field-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "conversation-demo",
+      "type": "registry:example",
+      "title": "Conversation Demo",
+      "description": "A worked example of Conversation: The scroll container a thread lives in. It follows a streaming reply to the bottom, and stops the moment the reader scrolls up to read something older.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/conversation.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/conversation-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "copy-button-demo",
+      "type": "registry:example",
+      "title": "Copy Button Demo",
+      "description": "A worked example of Copy Button: Copies a value and says whether it worked, including when the clipboard refuses.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/copy-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/copy-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "copy-for-ai-demo",
+      "type": "registry:example",
+      "title": "Copy for AI Demo",
+      "description": "A worked example of Copy for AI: Hands the page to an assistant as markdown, by clipboard, by link, or by opening it somewhere that can read it.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/copy-for-ai.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/copy-for-ai-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "csv-viewer-demo",
+      "type": "registry:example",
+      "title": "CSV Viewer Demo",
+      "description": "A worked example of CSV Viewer: A real table for delimited data, with sortable columns, a sticky header, and a row cap so a large file cannot lock the page.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/csv-viewer.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/csv-viewer-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/document-fixtures.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "cursor-trail-demo",
+      "type": "registry:example",
+      "title": "Cursor Trail Demo",
+      "description": "A worked example of Cursor Trail: A fading mark behind the pointer, drawn only inside its own box and only while the pointer is in it.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/cursor-trail.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/cursor-trail-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "data-table-demo",
+      "type": "registry:example",
+      "title": "Data Table Demo",
+      "description": "A worked example of Data Table: Typed rows with cells you write, column widths you set or the reader drags, sorting that is one property to switch on, and selection kept in keys rather than positions.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/data-table.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/data-table-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "diff-view-demo",
+      "type": "registry:example",
+      "title": "Diff View Demo",
+      "description": "A worked example of Diff View: A proposed change shown as a unified or side-by-side diff, with optional accept and reject controls.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/diff-view.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/diff-view-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/restart-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "displacement-image-demo",
+      "type": "registry:example",
+      "title": "Displacement Image Demo",
+      "description": "A worked example of Displacement Image: Two images crossing by pushing their pixels through the same noise in opposite directions, with the first image also present as ordinary markup for anything that cannot run it.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/displacement-image.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/displacement-image-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dither-image-demo",
+      "type": "registry:example",
+      "title": "Dither Image Demo",
+      "description": "A worked example of Dither Image: A photograph reduced to two theme colours through an ordered dither, the way a newspaper reduced one to ink and paper.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/dither-image.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/dither-image-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "document-splits-demo",
+      "type": "registry:example",
+      "title": "Document Splits Demo",
+      "description": "A worked example of Document Splits: Mark where one scanned batch becomes several documents. Splits are toggled between pages and the segments update as you go.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/document-splits.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/document-splits-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/document-fixtures.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "docx-viewer-demo",
+      "type": "registry:example",
+      "title": "DOCX Viewer Demo",
+      "description": "A worked example of DOCX Viewer: Renders a Word document as elements built through an allowlist, so a file you did not write cannot bring its own scripts or links.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/docx-viewer.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/docx-viewer-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/document-fixtures.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "elastic-slider-demo",
+      "type": "registry:example",
+      "title": "Elastic Slider Demo",
+      "description": "A worked example of Elastic Slider: A precise slider with a small amount of give at either end. The current value stays visible and the control works without a pointer.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/elastic-slider.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/elastic-slider-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-row-demo",
+      "type": "registry:example",
+      "title": "Empty Row Demo",
+      "description": "A worked example of Empty Row: One line saying a list came back empty, for a table, a list, or a popover.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/empty-row.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/empty-row-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-state-demo",
+      "type": "registry:example",
+      "title": "Empty State Demo",
+      "description": "A worked example of Empty State: What to show when there is nothing yet: what this place is for, and the way to fill it.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/empty-state.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/empty-state-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "file-thumbnail-demo",
+      "type": "registry:example",
+      "title": "File Thumbnail Demo",
+      "description": "A worked example of File Thumbnail: A compact image preview for attachments, upload queues, and file lists. Browser image files work without any setup.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/file-thumbnail.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/file-thumbnail-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "file-tree-demo",
+      "type": "registry:example",
+      "title": "File Tree Demo",
+      "description": "A worked example of File Tree: An expandable tree of folders and files with full keyboard navigation and correct tree semantics.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/file-tree.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/file-tree-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "file-upload-demo",
+      "type": "registry:example",
+      "title": "File Upload Demo",
+      "description": "A worked example of File Upload: A file picker and dropzone with clear validation and a visible queue. Connect your upload function when you need progress, cancel, and retry.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/file-upload.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/file-upload-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "floating-index-demo",
+      "type": "registry:example",
+      "title": "Floating Index Demo",
+      "description": "A worked example of Floating Index: A compact outline for long pages. It keeps the active section and reading progress visible without becoming another permanent sidebar.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/floating-index.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/floating-index-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "footer-columns-demo",
+      "type": "registry:example",
+      "title": "Footer Columns Demo",
+      "description": "A worked example of Footer Columns: Labelled columns of links, with the column count and the link rendering left to you.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/footer-columns.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/footer-columns-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "footer-row-demo",
+      "type": "registry:example",
+      "title": "Footer Row Demo",
+      "description": "A worked example of Footer Row: A wrapping row of links under its own label, set apart by a dashed rule.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/footer-row.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/footer-row-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "footer-wordmark-demo",
+      "type": "registry:example",
+      "title": "Footer Wordmark Demo",
+      "description": "A worked example of Footer Wordmark: The oversized brand word that closes a page, drawn as texture rather than content.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/footer-wordmark.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/footer-wordmark-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "grain-overlay-demo",
+      "type": "registry:example",
+      "title": "Grain Overlay Demo",
+      "description": "A worked example of Grain Overlay: Film grain for any positioned box, which incidentally fixes the banding a wide gradient shows on a good monitor.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/grain-overlay.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/grain-overlay-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hold-button-demo",
+      "type": "registry:example",
+      "title": "Hold Button Demo",
+      "description": "A worked example of Hold Button: A confirmation button for actions that deserve a second thought. Release early to cancel, or activate once with a keyboard.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/hold-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/hold-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "image-gallery-demo",
+      "type": "registry:example",
+      "title": "Image Gallery Demo",
+      "description": "A worked example of Image Gallery: A responsive image collection with equal and masonry layouts, plus a lightbox that handles focus, keyboard navigation, and scroll locking.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/image-gallery.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/image-gallery-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "image-grid-demo",
+      "type": "registry:example",
+      "title": "Image Grid Demo",
+      "description": "A worked example of Image Grid: Thumbnails in even cells or masonry columns, with nothing but React behind them.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/image-grid.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/image-grid-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/image-gallery-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "impossible-checkbox-demo",
+      "type": "registry:example",
+      "title": "Impossible Checkbox Demo",
+      "description": "A worked example of Impossible Checkbox: A checkbox with one stubborn rule: the bear will not let you leave it on. Best kept for demos, Easter eggs, and harmless preferences.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/impossible-checkbox.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/impossible-checkbox-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "inline-citations-demo",
+      "type": "registry:example",
+      "title": "Inline Citations Demo",
+      "description": "A worked example of Inline Citations: Numbered markers placed inside generated text, each linking to its entry in a source list underneath.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/inline-citations.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/inline-citations-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "install-command-demo",
+      "type": "registry:example",
+      "title": "Install Command Demo",
+      "description": "A worked example of Install Command: The install line for a library, switchable between package managers, with the runner and the installer kept apart.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/install-command.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/install-command-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "json-viewer-demo",
+      "type": "registry:example",
+      "title": "JSON Viewer Demo",
+      "description": "A worked example of JSON Viewer: A collapsible tree for a JSON payload, navigable from the keyboard, where every row can hand you its path.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/json-viewer.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/json-viewer-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kbd-demo",
+      "type": "registry:example",
+      "title": "Kbd Demo",
+      "description": "A worked example of Kbd: A keyboard chord rendered with the right glyphs for the reader's platform, and spoken in words.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/kbd.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/kbd-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "lightbox-demo",
+      "type": "registry:example",
+      "title": "Lightbox Demo",
+      "description": "A worked example of Lightbox: One image at a time, full bleed, with the rest of the set a key away.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/lightbox.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/lightbox-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/image-gallery-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "magnetic-tabs-demo",
+      "type": "registry:example",
+      "title": "Magnetic Tabs Demo",
+      "description": "A worked example of Magnetic Tabs: Familiar tabs with a gentle pull toward the pointer. Selection stays clear and keyboard navigation remains immediate.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/magnetic-tabs.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/magnetic-tabs-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "markdown-blocks-demo",
+      "type": "registry:example",
+      "title": "Markdown Blocks Demo",
+      "description": "A worked example of Markdown Blocks: Extracted document regions rendered as markdown, each one selectable so it can be tied back to where it came from.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/markdown-blocks.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/markdown-blocks-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "marquee-demo",
+      "type": "registry:example",
+      "title": "Marquee Demo",
+      "description": "A worked example of Marquee: A row that runs on its own, seamlessly, and turns back into an ordinary scrolling row for anyone who asked for less motion.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/marquee.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/marquee-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "matrix-demo",
+      "type": "registry:example",
+      "title": "Matrix Demo",
+      "description": "A worked example of Matrix: A grid of cells lit from the bottom by a level, which reads as a piece of hardware rather than as a chart.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/matrix.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/matrix-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "memory-chips-demo",
+      "type": "registry:example",
+      "title": "Memory Chips Demo",
+      "description": "A worked example of Memory Chips: Everything an assistant has been told to remember about someone, each one removable on its own.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/memory-chips.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/memory-chips-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "message-demo",
+      "type": "registry:example",
+      "title": "Message Demo",
+      "description": "A worked example of Message: One turn in a thread, with a role, an optional avatar and timestamp, and actions that stay reachable without a pointer.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/message.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/message-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "metaballs-demo",
+      "type": "registry:example",
+      "title": "Metaballs Demo",
+      "description": "A worked example of Metaballs: Blobs that swell into one another as they meet, taking their two colours from your theme.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/metaballs.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/metaballs-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "mic-selector-demo",
+      "type": "registry:example",
+      "title": "Mic Selector Demo",
+      "description": "A worked example of Mic Selector: Chooses which microphone to use, then settles the question by lighting a meter from the one you chose.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/mic-selector.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/mic-selector-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "model-picker-demo",
+      "type": "registry:example",
+      "title": "Model Picker Demo",
+      "description": "A worked example of Model Picker: A model chooser that has room for what each one is good at, and full keyboard control.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/model-picker.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/model-picker-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "not-found-demo",
+      "type": "registry:example",
+      "title": "Not Found Demo",
+      "description": "A worked example of Not Found: The page-scale empty state: a status, a heading you can read across a room, and somewhere to go.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/not-found.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/not-found-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "number-ticker-demo",
+      "type": "registry:example",
+      "title": "Number Ticker Demo",
+      "description": "A worked example of Number Ticker: Counts to a number rather than replacing it, in whatever currency or format you asked for.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/number-ticker.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/number-ticker-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "orb-demo",
+      "type": "registry:example",
+      "title": "Orb Demo",
+      "description": "A worked example of Orb: A sphere that carries what an assistant is doing, settled when idle and moving with the voice when there is one.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/orb.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/orb-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "otp-input-demo",
+      "type": "registry:example",
+      "title": "OTP Input Demo",
+      "description": "A worked example of OTP Input: A one time code, one box per character, where pasting the whole code into any box fills the rest.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/otp-input.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/otp-input-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "page-navigator-demo",
+      "type": "registry:example",
+      "title": "Page Navigator Demo",
+      "description": "A worked example of Page Navigator: A rail of page thumbnails for moving through a long document, with arrow-key navigation and a clear active page.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/page-navigator.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/page-navigator-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/document-fixtures.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "pagination-demo",
+      "type": "registry:example",
+      "title": "Pagination Demo",
+      "description": "A worked example of Pagination: Page numbers with gaps where the run is broken, as buttons or as your own links.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/pagination.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/pagination-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "pdf-viewer-demo",
+      "type": "registry:example",
+      "title": "PDF Viewer Demo",
+      "description": "A worked example of PDF Viewer: Page-by-page PDF rendering on a canvas, with paging and zoom, over any loader you give it.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/pdf-viewer.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/pdf-viewer-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/document-fixtures.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "presence-field-demo",
+      "type": "registry:example",
+      "title": "Presence Field Demo",
+      "description": "A worked example of Presence Field: An ambient backdrop that carries what the assistant is doing. It changes colour and pace with the state, and settles into each one rather than snapping to it.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/presence-field.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/presence-field-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "prompt-input-demo",
+      "type": "registry:example",
+      "title": "Prompt Input Demo",
+      "description": "A worked example of Prompt Input: The composer. Grows with the message, sends on Enter, keeps Shift+Enter for a new line, and turns into a stop button while a reply streams.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/prompt-input.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/prompt-input-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire-demo",
+      "type": "registry:example",
+      "title": "Questionnaire Demo",
+      "description": "A worked example of Questionnaire: The questions an agent asks before it starts. One at a time, with single or multiple answers, an open answer alongside them, and required ones it will not move past.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/questionnaire.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/questionnaire-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "redaction-demo",
+      "type": "registry:example",
+      "title": "Redaction Demo",
+      "description": "A worked example of Redaction: Mark regions to black out before a document leaves the building, with a reveal that says plainly it is only a preview.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/redaction.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/redaction-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/document-fixtures.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "render-surface-demo",
+      "type": "registry:example",
+      "title": "Render Surface Demo",
+      "description": "A worked example of Render Surface: The canvas the other scenes are drawn on. It stays the size of its box, sleeps when nobody is looking at it, and holds still when motion is reduced.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/render-surface-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "resizable-panels-demo",
+      "type": "registry:example",
+      "title": "Resizable Panels Demo",
+      "description": "A worked example of Resizable Panels: Two panels and something to drag between them, where the divider is a real separator that also works from the keyboard.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/resizable-panels.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/resizable-panels-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "response-actions-demo",
+      "type": "registry:example",
+      "title": "Response Actions Demo",
+      "description": "A worked example of Response Actions: The row under an answer: copy it, ask again, and rate it. Drops into the actions slot on Message.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/response-actions.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/response-actions-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "response-demo",
+      "type": "registry:example",
+      "title": "Response Demo",
+      "description": "A worked example of Response: An assistant's answer as markdown, including while it is still half-written and briefly invalid.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/response.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/response-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "reveal-demo",
+      "type": "registry:example",
+      "title": "Reveal Demo",
+      "description": "A worked example of Reveal: Moves its children in when they arrive on screen. It changes how something arrives and never whether it is there.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/reveal.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/reveal-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "reviewable-diff-demo",
+      "type": "registry:example",
+      "title": "Reviewable Diff Demo",
+      "description": "A worked example of Reviewable Diff: A proposed change reviewed a hunk at a time: take three of the seven, leave the rest, apply what you took.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/reviewable-diff.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/reviewable-diff-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scene-hero-demo",
+      "type": "registry:example",
+      "title": "Scene Hero Demo",
+      "description": "A worked example of Scene Hero: A lit three-dimensional object behind a headline, steered by the pointer and coloured by the theme. The one component here that asks for three.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/scene-hero.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/scene-hero-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "schema-builder-demo",
+      "type": "registry:example",
+      "title": "Schema Builder Demo",
+      "description": "A worked example of Schema Builder: Build the shape you want extracted from a document. Fields carry a name, type, description, and requirement, and object and array fields nest.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/schema-builder.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/schema-builder-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scroll-scene-demo",
+      "type": "registry:example",
+      "title": "Scroll Scene Demo",
+      "description": "A worked example of Scroll Scene: Turns the scrolling of a tall element into a number between nought and one, published to a custom property and to a callback, without rendering the page to do it.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/scroll-scene.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/scroll-scene-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scroll-to-top-button-demo",
+      "type": "registry:example",
+      "title": "Scroll to Top Button Demo",
+      "description": "A worked example of Scroll to Top Button: A floating way back after someone has moved down a long page or scroll area. It stays hidden near the top.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/scroll-to-top-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/scroll-to-top-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scrub-bar-demo",
+      "type": "registry:example",
+      "title": "Scrub Bar Demo",
+      "description": "A worked example of Scrub Bar: The seek control on its own: a slider that happens to be a timeline, announced in minutes and seconds.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/scrub-bar.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/scrub-bar-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "secret-field-demo",
+      "type": "registry:example",
+      "title": "Secret Field Demo",
+      "description": "A worked example of Secret Field: An API key or token: hidden until asked for, copied whole either way.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/secret-field.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/secret-field-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "shader-surface-demo",
+      "type": "registry:example",
+      "title": "Shader Surface Demo",
+      "description": "A worked example of Shader Surface: Four shader backdrops -- caustics, metal, plasma and ripple -- each taking its two colours from your theme, so the same surface arrives dark in a dark application and light in a light one.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/shader-surface.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/shader-surface-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "shift-button-demo",
+      "type": "registry:example",
+      "title": "Shift Button Demo",
+      "description": "A worked example of Shift Button: A call to action that trades its leading icon for a directional cue when someone approaches it.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/shift-button.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/shift-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "shimmering-text-demo",
+      "type": "registry:example",
+      "title": "Shimmering Text Demo",
+      "description": "A worked example of Shimmering Text: Words with a light moving across them, for the wait between asking and the first token.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/shimmering-text.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/shimmering-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "side-panel-demo",
+      "type": "registry:example",
+      "title": "Side Panel Demo",
+      "description": "A worked example of Side Panel: A pane that comes in from the side: an inspector, a filter set, a row's detail.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/side-panel.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/side-panel-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "signature-footer-demo",
+      "type": "registry:example",
+      "title": "Signature Footer Demo",
+      "description": "A worked example of Signature Footer: A complete closing section with room for the useful links first and one oversized wordmark at the end.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/signature-footer.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/signature-footer-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "signature-pad-demo",
+      "type": "registry:example",
+      "title": "Signature Pad Demo",
+      "description": "A worked example of Signature Pad: Sign with a pointer on a canvas, or type a name instead. Returns a PNG data URL or the typed text.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/signature-pad.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/signature-pad-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-demo",
+      "type": "registry:example",
+      "title": "Skeleton Demo",
+      "description": "A worked example of Skeleton: A placeholder the shape of what is coming, so the page does not jump when it arrives.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/skeleton.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/skeleton-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sortable-list-demo",
+      "type": "registry:example",
+      "title": "Sortable List Demo",
+      "description": "A worked example of Sortable List: A list reordered by dragging a handle, or from the keyboard without one, where every move is announced.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/sortable-list.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/sortable-list-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "source-card-demo",
+      "type": "registry:example",
+      "title": "Source Card Demo",
+      "description": "A worked example of Source Card: One retrieved passage: where it came from, what it said, and how well it matched.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/source-card.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/source-card-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-demo",
+      "type": "registry:example",
+      "title": "Spinner Demo",
+      "description": "A worked example of Spinner: The smallest way to say something is happening, for a control that is working.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/spinner.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/spinner-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "split-text-demo",
+      "type": "registry:example",
+      "title": "Split Text Demo",
+      "description": "A worked example of Split Text: A heading animated one character, word, or line at a time, and still announced as one sentence rather than as a pile of single letters.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/split-text.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/split-text-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spotlight-card-demo",
+      "type": "registry:example",
+      "title": "Spotlight Card Demo",
+      "description": "A worked example of Spotlight Card: A card that catches a light following the pointer, and can light every card in its grid from the same pointer at once.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/spotlight-card.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/spotlight-card-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "status-pill-demo",
+      "type": "registry:example",
+      "title": "Status Pill Demo",
+      "description": "A worked example of Status Pill: A dot and a few words: operational, degraded, closed.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/status-pill.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/status-pill-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "stepper-demo",
+      "type": "registry:example",
+      "title": "Stepper Demo",
+      "description": "A worked example of Stepper: Where someone is in something with a beginning and an end, said in words as well as drawn.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/stepper.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/stepper-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "stop-generating-demo",
+      "type": "registry:example",
+      "title": "Stop Generating Demo",
+      "description": "A worked example of Stop Generating: The control that interrupts a running answer, with the time it has been going and Escape wired up.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/stop-generating.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/stop-generating-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/restart-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "stopped-run-demo",
+      "type": "registry:example",
+      "title": "Stopped Run Demo",
+      "description": "A worked example of Stopped Run: What the thread says after an answer ended early, with whatever it had already written kept above the line.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/stopped-run.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/stopped-run-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "stream-glow-demo",
+      "type": "registry:example",
+      "title": "Stream Glow Demo",
+      "description": "A worked example of Stream Glow: An edge that breathes along a region while tokens land in it, and stops the moment they do.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/stream-glow.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/stream-glow-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "streaming-text-demo",
+      "type": "registry:example",
+      "title": "Streaming Text Demo",
+      "description": "A worked example of Streaming Text: Text that arrives a piece at a time from an async source, with a cursor while it runs and sentence-level announcements for screen readers.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/streaming-text.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/streaming-text-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/restart-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "subagent-tree-demo",
+      "type": "registry:example",
+      "title": "Subagent Tree Demo",
+      "description": "A worked example of Subagent Tree: Several agents working at once, nested under whoever handed the work down, each with its own state and elapsed time.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/subagent-tree.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/subagent-tree-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "suggestions-demo",
+      "type": "registry:example",
+      "title": "Suggestions Demo",
+      "description": "A worked example of Suggestions: A row of prompts to start or continue with, for the moment someone does not know what to ask.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/suggestions.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/suggestions-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "table-of-contents-demo",
+      "type": "registry:example",
+      "title": "Table of Contents Demo",
+      "description": "A worked example of Table of Contents: An outline of the page that keeps up with the reader, marking the section they are in as they scroll.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/table-of-contents.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/table-of-contents-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tag-input-demo",
+      "type": "registry:example",
+      "title": "Tag Input Demo",
+      "description": "A worked example of Tag Input: An input that turns what you typed into a removable tag, and gives the last one back when you press backspace on an empty field.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/tag-input.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/tag-input-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "terminal-output-demo",
+      "type": "registry:example",
+      "title": "Terminal Output Demo",
+      "description": "A worked example of Terminal Output: Streaming command output with stderr called out, an exit code, and scroll that follows without trapping you.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/terminal-output.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/terminal-output-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/restart-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "theme-toggle-demo",
+      "type": "registry:example",
+      "title": "Theme Toggle Demo",
+      "description": "A worked example of Theme Toggle: A light and dark switch that survives a reload, follows the system when asked, and stays in step across tabs.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/theme-toggle.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/theme-toggle-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "thinking-state-demo",
+      "type": "registry:example",
+      "title": "Thinking State Demo",
+      "description": "A worked example of Thinking State: A status row for work in progress, with a live elapsed timer and optional reasoning behind a disclosure.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/thinking-state.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/thinking-state-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/restart-button.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/use-scripted-timeline.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tilt-card-demo",
+      "type": "registry:example",
+      "title": "Tilt Card Demo",
+      "description": "A worked example of Tilt Card: A card that leans toward the pointer as though it were a physical object lying on the page.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/tilt-card.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/tilt-card-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "timeline-demo",
+      "type": "registry:example",
+      "title": "Timeline Demo",
+      "description": "A worked example of Timeline: Things that happened, in the order they happened, with the state of each one said aloud rather than left in a coloured dot.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/timeline.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/timeline-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "token-meter-demo",
+      "type": "registry:example",
+      "title": "Token Meter Demo",
+      "description": "A worked example of Token Meter: How much of the context window is gone, split by what spent it, and a warning before it runs out.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/token-meter.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/token-meter-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tool-call-demo",
+      "type": "registry:example",
+      "title": "Tool Call Demo",
+      "description": "A worked example of Tool Call: A compact record of one tool invocation: name, status, duration, and the input and output behind a disclosure.",
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/tool-call.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/tool-call-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/restart-button.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/use-scripted-timeline.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "transcript-viewer-demo",
+      "type": "registry:example",
+      "title": "Transcript Viewer Demo",
+      "description": "A worked example of Transcript Viewer: A recording as text, where every line is also the way back to the moment it was said.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/transcript-viewer.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/transcript-viewer-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "video-player-demo",
+      "type": "registry:example",
+      "title": "Video Player Demo",
+      "description": "A worked example of Video Player: Video with captions that can be turned on, a real scrubber, and controls that survive full screen.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/video-player.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/video-player-demo.tsx",
+          "type": "registry:example"
+        },
+        {
+          "path": "components/demos/audio-fixtures.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "voice-input-demo",
+      "type": "registry:example",
+      "title": "Voice Input Demo",
+      "description": "A worked example of Voice Input: A microphone that draws what it is hearing, so a live one is told apart from a dead one at a glance.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/voice-input.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/voice-input-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "web-preview-demo",
+      "type": "registry:example",
+      "title": "Web Preview Demo",
+      "description": "A worked example of Web Preview: A sandboxed frame for whatever the assistant just built, with the widths to check it at.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/web-preview.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/web-preview-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "wireframe-globe-demo",
+      "type": "registry:example",
+      "title": "Wireframe Globe Demo",
+      "description": "A worked example of Wireframe Globe: A wireframe world with places marked on it, arcs between them, and the same places written out underneath as text.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/wireframe-globe.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/wireframe-globe-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    }
+  ]
+}
