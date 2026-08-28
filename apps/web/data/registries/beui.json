@@ -392,7 +392,7 @@
       "name": "input",
       "type": "registry:component",
       "title": "Input",
-      "description": "Text input with label, left/right icons, error shake and success check draw.",
+      "description": "Text input with label, left/right icons, optional stable error row, error shake and success check draw.",
       "dependencies": [
         "clsx",
         "motion",
@@ -717,6 +717,40 @@
           "path": "components/motion/animated-sidebar.tsx",
           "type": "registry:component",
           "target": "@components/motion/animated-sidebar.tsx"
+        },
+        {
+          "path": "components/motion/shared-layout-bg.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/shared-layout-bg.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "file-tree",
+      "type": "registry:component",
+      "title": "File Tree",
+      "description": "Composable file and folder primitives with springing branches, a gliding selection, and complete keyboard navigation.",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/file-tree.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/file-tree.tsx"
         },
         {
           "path": "components/motion/shared-layout-bg.tsx",

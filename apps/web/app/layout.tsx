@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Schibsted_Grotesk, IBM_Plex_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
@@ -107,6 +108,7 @@ export default function RootLayout({
           {children}
         </Providers>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
