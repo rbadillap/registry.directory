@@ -287,6 +287,96 @@
       ]
     },
     {
+      "name": "docs-knowledge-assistant",
+      "type": "registry:item",
+      "title": "Docs Knowledge Assistant",
+      "description": "Answers from your repo docs and cites the file.",
+      "categories": [
+        "support"
+      ],
+      "dependencies": [
+        "eve@^0.31.3",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        },
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/channels/github.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/github.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/docs-paths.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/docs-paths.ts"
+        },
+        {
+          "path": "agent/skills/docs-qa/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/docs-qa/SKILL.md"
+        },
+        {
+          "path": "agent/tools/open_docs_issue.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/open_docs_issue.ts"
+        },
+        {
+          "path": "agent/tools/read_doc.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/read_doc.ts"
+        },
+        {
+          "path": "agent/tools/search_docs.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/search_docs.ts"
+        },
+        {
+          "path": "agent/tools/write_file.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/write_file.ts"
+        },
+        {
+          "path": "evals/answer-cite-readme.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/answer-cite-readme.eval.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/ignore-pr-review.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/ignore-pr-review.eval.ts"
+        },
+        {
+          "path": "evals/say-not-in-docs.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/say-not-in-docs.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        }
+      ]
+    },
+    {
       "name": "eve-agent-builder",
       "type": "registry:item",
       "title": "Eve Agent Builder",
@@ -434,6 +524,93 @@
           "path": ".env.example",
           "type": "registry:file",
           "target": "~/.env.example"
+        }
+      ]
+    },
+    {
+      "name": "github-ci-explainer",
+      "type": "registry:item",
+      "title": "GitHub CI Explainer",
+      "description": "Explains failed GitHub Actions checks from the log.",
+      "categories": [
+        "coding"
+      ],
+      "dependencies": [
+        "@upstash/ratelimit@^2.0.8",
+        "@upstash/redis@^1.38.0",
+        "eve@^0.31.3",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        },
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/channels/github.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/github.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/ci-rate-limit.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/ci-rate-limit.ts"
+        },
+        {
+          "path": "agent/lib/check-run-flow.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/check-run-flow.ts"
+        },
+        {
+          "path": "agent/lib/fetch-check-failure.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/fetch-check-failure.ts"
+        },
+        {
+          "path": "agent/lib/failure-context.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/failure-context.ts"
+        },
+        {
+          "path": "agent/lib/parse-ci-log.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/parse-ci-log.ts"
+        },
+        {
+          "path": "agent/tools/explain_ci_failure.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/explain_ci_failure.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/failed-check-explains.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/failed-check-explains.eval.ts"
+        },
+        {
+          "path": "evals/ignore-successful-check.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/ignore-successful-check.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
         }
       ]
     },

@@ -2046,6 +2046,30 @@
       ]
     },
     {
+      "name": "divider-mosaic-split",
+      "type": "registry:ui",
+      "title": "Divider Mosaic Split",
+      "description": "A full-width section divider rendered in real NAPLPS 'separated mosaic' mode — the same 2-wide x 3-tall sextant sub-cell grid this registry's divider-teletext-mosaic already ships in contiguous mode, but every lit sub-cell block is drawn inset by a genuine luminance gap on all sides, so the band reads as a field of small floating tiles rather than a solid mosaic shape, painted by a left-to-right column-group write sweep.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/divider-mosaic-split/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/divider-mosaic-split.tsx"
+        }
+      ]
+    },
+    {
       "name": "divider-petscii-vu",
       "type": "registry:ui",
       "title": "Divider PETSCII VU",
@@ -2247,6 +2271,37 @@
           "path": "registry/core/due-slip/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/due-slip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "eink-waveform-ghost",
+      "type": "registry:ui",
+      "title": "E-ink Waveform Ghost",
+      "description": "An empty-state panel rendered as an idle e-ink display — a coarse grid of cells continuously replays real electrophoretic drive waveforms on a scattered, ever-changing subset of itself, each replay briefly shooting through to full black or full white before settling, while the whole panel periodically runs a synchronized full-refresh flash to clear ghosting.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)",
+          "color-ns-accent-hover": "var(--ns-accent-hover)",
+          "color-surface": "var(--surface)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff",
+          "ns-accent-hover": "#0059d1",
+          "surface": "#fafafa"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f",
+          "surface": "#171717"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/eink-waveform-ghost/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/eink-waveform-ghost.tsx"
         }
       ]
     },
@@ -3009,6 +3064,27 @@
       ]
     },
     {
+      "name": "gravure-cell-wipe",
+      "type": "registry:ui",
+      "title": "Gravure Cell Wipe",
+      "description": "A divider / background texture strip printed as a rotogravure cylinder: a static, seeded matrix of engraved cell depths sits under a doctor-blade band that sweeps and wraps every 20s, wiping the flooded land clean and leaving each cell's ink alpha at its depth-derived steady state, with a decaying brightness flash trailing every fresh pass.",
+      "cssVars": {
+        "theme": {
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-accent": "#006bff"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/gravure-cell-wipe/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/gravure-cell-wipe.tsx"
+        }
+      ]
+    },
+    {
       "name": "grazing-light",
       "type": "registry:ui",
       "title": "Grazing Light",
@@ -3573,6 +3649,30 @@
           "path": "registry/core/keymap-ascii-heat/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/keymap-ascii-heat.tsx"
+        }
+      ]
+    },
+    {
+      "name": "lcd-response-smear",
+      "type": "registry:ui",
+      "title": "LCD Response Smear",
+      "description": "An ambient panel-diagnostics status card whose canvas strip simulates LCD pixel response time compensation: a sweeping fill boundary crosses a row of simulated cells, each newly-lit cell overshooting its target luminance before settling and each newly-darkened cell undershooting (lagging) before catching up — the asymmetric rise/fall overdrive behavior real display reviews call the \"inverse ghost\".",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/lcd-response-smear/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/lcd-response-smear.tsx"
         }
       ]
     },
@@ -4143,6 +4243,19 @@
       ]
     },
     {
+      "name": "meter-matrix-scan",
+      "type": "registry:ui",
+      "title": "Meter Matrix Scan",
+      "description": "A level meter rendered as a genuinely row-multiplexed LED dot-matrix panel — five rows addressed round-robin off a real 240Hz-per-row clock, and each LED's brightness is a literal 8-step PWM duty-cycle quantization rather than a smooth analog fill. The row-address concept shows as a calm, low-amplitude brightness gradient a couple of rows wide, drifting slowly down the panel and back — legible on a second look, never a strobe.",
+      "files": [
+        {
+          "path": "registry/core/meter-matrix-scan/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/meter-matrix-scan.tsx"
+        }
+      ]
+    },
+    {
       "name": "meter-quota-meniscus",
       "type": "registry:ui",
       "title": "Meter Quota Meniscus",
@@ -4550,6 +4663,32 @@
       ]
     },
     {
+      "name": "overflow-chip-mux",
+      "type": "registry:ui",
+      "title": "Overflow Chip Mux",
+      "description": "The list/tag overflow indicator, replaced with real NES PPU sprite multiplexing — instead of collapsing extra items into a static \"+N\" pill, only 8 chip slots (the hardware's real 8-sprites-per-scanline limit) are ever visible at once, round-robining which contending item occupies each slot on a throttled cadence, exactly how 8-bit console flicker actually worked.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/overflow-chip-mux/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/overflow-chip-mux.tsx"
+        }
+      ]
+    },
+    {
       "name": "pagination-dog-ear",
       "type": "registry:ui",
       "title": "Pagination Dog Ear",
@@ -4679,6 +4818,32 @@
           "path": "registry/core/pecked-ring/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/pecked-ring.tsx"
+        }
+      ]
+    },
+    {
+      "name": "peen-coverage",
+      "type": "registry:ui",
+      "title": "Peen Coverage",
+      "description": "A card whose backing texture is a genuine shot-peening coverage process — a stream of uniform-random impacts stamping soft circular dimples into a coverage bitmap, saturating toward and past nominal 100% before fading back to a fresh unpeened pass and starting over.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/peen-coverage/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/peen-coverage.tsx"
         }
       ]
     },
@@ -5488,6 +5653,45 @@
       ]
     },
     {
+      "name": "riso-drum-pass",
+      "type": "registry:ui",
+      "title": "Riso Drum Pass",
+      "description": "A loader / background ambient texture reproducing a risograph duplication run — three sequential drum passes reading the same shared stencil field, each a rotation sweeping the sheet top-to-bottom, cumulatively drifting a few pixels out of register against the pass before it, with per-rotation drum-pressure banding baked into each row as it prints.",
+      "files": [
+        {
+          "path": "registry/core/riso-drum-pass/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/riso-drum-pass.tsx"
+        }
+      ]
+    },
+    {
+      "name": "roller-occlusion",
+      "type": "registry:ui",
+      "title": "Roller Occlusion",
+      "description": "A determinate-feel loader ambient drawn as a real peristaltic pump: a three-roller rotor spins above a horizontal tube, each roller pinching the lumen fully flat as it passes and driving a visible fluid slug ahead of it while the tube wall rebounds viscoelastically in its wake — quasi-continuous flow, never a percentage bar.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/core/roller-occlusion/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/roller-occlusion.tsx"
+        }
+      ]
+    },
+    {
       "name": "router-tier-cascade",
       "type": "registry:ui",
       "title": "Router Tier Cascade",
@@ -5617,6 +5821,19 @@
           "path": "registry/core/schedule-ascii-freebusy/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/schedule-ascii-freebusy.tsx"
+        }
+      ]
+    },
+    {
+      "name": "screen-flood-stroke",
+      "type": "registry:ui",
+      "title": "Screen Flood Stroke",
+      "description": "A card-scale loader modelled on the real screen-printing flood/print stroke cycle — a squeegee alternates a light flood pass that spreads ink across the mesh and a firm print pass that forces it through, printing one fading impression per cycle.",
+      "files": [
+        {
+          "path": "registry/core/screen-flood-stroke/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/screen-flood-stroke.tsx"
         }
       ]
     },
@@ -8581,6 +8798,32 @@
       ]
     },
     {
+      "name": "bed-fluidize",
+      "type": "registry:ui",
+      "title": "Bed Fluidize",
+      "description": "A full-bleed ambient background modeling a gas-fluidized particle bed: voids nucleate at the distributor plate, grow with height (the Darton bubble-growth relation), coalesce when they touch, and burst at the surface with a ballistic spray of ejected particles, while the surrounding bed circulates downward in each bubble's wake — a standing boil with no saturated end state.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/bed-fluidize/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/bed-fluidize.tsx"
+        }
+      ]
+    },
+    {
       "name": "blade-stop",
       "type": "registry:ui",
       "title": "Blade Stop",
@@ -9040,6 +9283,27 @@
       ]
     },
     {
+      "name": "film-gate-weave",
+      "type": "registry:ui",
+      "title": "Film Gate Weave",
+      "description": "A full-bleed ambient background modeling projector gate weave and bounce: a rigid, never-displaced aperture mask against an academy-leader test-pattern frame that drifts on two non-resonant sinusoids and snaps on a real critically-damped-ish spring every claw-pull interval, never sitting flush with the fixed edge.",
+      "cssVars": {
+        "theme": {
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-accent": "#006bff"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/film-gate-weave/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/film-gate-weave.tsx"
+        }
+      ]
+    },
+    {
       "name": "flyback-tear",
       "type": "registry:ui",
       "title": "Flyback Tear",
@@ -9331,6 +9595,27 @@
           "path": "registry/loud/hero-ascii-tunnel/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/hero-ascii-tunnel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-beam-glyph",
+      "type": "registry:ui",
+      "title": "Hero Beam Glyph",
+      "description": "A full-bleed hero wordmark drawn as a genuine stroke-based vector font, the way an XY vector CRT (Asteroids/Tempest/Vectrex-class arcade hardware, oscilloscope character generators) actually traced text — brightness at every point comes from simulated inverse beam speed, so corners and stroke endpoints glow while long straight runs stay dim, retraced 36 times a second with a short phosphor trail and a low-frequency deflection-coil jitter that never lets two frames land pixel-identical.",
+      "cssVars": {
+        "theme": {
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-accent": "#006bff"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/hero-beam-glyph/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/hero-beam-glyph.tsx"
         }
       ]
     },
@@ -9918,6 +10203,19 @@
       ]
     },
     {
+      "name": "offset-fountain-split",
+      "type": "registry:ui",
+      "title": "Offset Fountain Split",
+      "description": "A full-bleed ambient background modeling a web-offset press ink train — ink splits and smears across six rollers from fountain to form, driven by 24 independently drifting fountain-key zones so the field's ribbed banding never converges flat.",
+      "files": [
+        {
+          "path": "registry/loud/offset-fountain-split/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/offset-fountain-split.tsx"
+        }
+      ]
+    },
+    {
       "name": "ping-shadow",
       "type": "registry:ui",
       "title": "Ping Shadow",
@@ -10027,6 +10325,27 @@
           "path": "registry/loud/ring-graze/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/ring-graze.tsx"
+        }
+      ]
+    },
+    {
+      "name": "rolling-shutter-skew",
+      "type": "registry:ui",
+      "title": "Rolling Shutter Skew",
+      "description": "A full-bleed ambient background modeling CMOS rolling shutter: a vertical rule grid bends into a shifting parallelogram because each virtual sensor row captures the simulated pan at a slightly later instant than the row above it, the readout period accumulating into more displacement toward the bottom of the frame.",
+      "cssVars": {
+        "theme": {
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-accent": "#006bff"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/rolling-shutter-skew/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/rolling-shutter-skew.tsx"
         }
       ]
     },
@@ -10574,6 +10893,32 @@
           "path": "registry/loud/transition-panel-crumble/component.tsx",
           "type": "registry:ui",
           "target": "components/ui/transition-panel-crumble.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tray-weep",
+      "type": "registry:ui",
+      "title": "Tray Weep",
+      "description": "A full-bleed section-divider band built on a bubble-cap distillation column tray — a stack of trays froths continuously as vapor bubbles up through submerged caps, liquid creeps toward a weir and spills to the tray below, and any cap running short on vapor visibly weeps liquid back down through itself instead of bubbling.",
+      "cssVars": {
+        "theme": {
+          "color-ns-muted": "var(--ns-muted)",
+          "color-ns-accent": "var(--ns-accent)"
+        },
+        "light": {
+          "ns-muted": "#4d4d4d",
+          "ns-accent": "#006bff"
+        },
+        "dark": {
+          "ns-muted": "#8f8f8f"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/loud/tray-weep/component.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tray-weep.tsx"
         }
       ]
     },
