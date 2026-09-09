@@ -16,6 +16,7 @@
 // Usage, standalone, from apps/web:
 //   node --env-file=.env.local scripts/steps/derived.mjs
 
+import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 import { list } from "@vercel/blob";
 import {
@@ -44,11 +45,46 @@ function relativeUpdated(days) {
   return `updated ${Math.floor(days / 365)}y ago`;
 }
 
+// --- admission dates, from git ---------------------------------------------
+//
+// Nothing in data/ records when a registry joined the directory, and the
+// indexer runs inside the repo, so the commit that first introduced an
+// entry's url into public/directory.json is the admission date. A squash
+// merge pins it to the merge, which is when the entry went live. An entry in
+// the working tree that no commit knows yet counts as admitted today.
+
+function admissionDates(directory) {
+  const today = new Date().toISOString().slice(0, 10);
+  const dates = new Map();
+  for (const entry of directory) {
+    let out = "";
+    try {
+      out = execFileSync(
+        "git",
+        ["log", "--format=%as", "--diff-filter=AM", `-S${entry.url}`, "--", "public/directory.json"],
+        { cwd: WEB_DIR, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }
+      );
+    } catch {
+      // No git, or not a repo: every entry reads as admitted today, and the
+      // collection below degrades to the tail of directory.json.
+    }
+    const first = out.trim().split("\n").filter(Boolean).pop();
+    dates.set(entry.name, first || today);
+  }
+  return dates;
+}
+
+function formatAdmitted(iso) {
+  const [y, m, d] = iso.split("-").map(Number);
+  const date = new Date(y, m - 1, d);
+  return `added ${date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`;
+}
+
 // --- registry profiles, from the local views ---------------------------------
 
-function buildProfiles(views, directory, ghStats, affiliateUrls) {
+function buildProfiles(views, directory, ghStats, affiliateUrls, admitted) {
   const profiles = new Map();
-  for (const entry of directory) {
+  for (const [order, entry] of directory.entries()) {
     const view = views.get(entry.name);
     if (!view?.items?.length) continue;
 
@@ -74,6 +110,10 @@ function buildProfiles(views, directory, ghStats, affiliateUrls) {
       stars: gh?.stars,
       updatedDays,
       sponsored: affiliateUrls.has(entry.url) || undefined,
+      addedAt: admitted.get(entry.name),
+      // Position in directory.json: within one admission commit, the entry
+      // appended last is the newest.
+      order,
     });
   }
   return profiles;
@@ -137,6 +177,15 @@ function topByDeps(profiles, pkgs, take, minMentions = 10) {
     .filter(Boolean);
 }
 
+function recentlyAdded(profiles, take) {
+  return [...profiles.values()]
+    .filter((p) => p.addedAt && href(p.entry))
+    .sort((a, b) => b.addedAt.localeCompare(a.addedAt) || b.order - a.order)
+    .slice(0, take)
+    .map((p) => card(p, formatAdmitted(p.addedAt)))
+    .filter(Boolean);
+}
+
 const MOTION_PKGS = ["motion", "framer-motion", "gsap"];
 const DASH_PKGS = ["recharts", "@tanstack/react-table", "d3"];
 const ALT_PRIMITIVE_PKGS = [
@@ -156,6 +205,14 @@ const CURATED_SHELF = [
 
 function buildCollections(profiles) {
   const collections = [
+    {
+      slug: "recently-added",
+      title: "Recently added",
+      standfirst:
+        "The latest registries to join the directory. Every item probed, every URL resolving.",
+      kind: "computed",
+      registries: recentlyAdded(profiles, 5),
+    },
     {
       slug: "motion",
       title: "Movement as a first language",
@@ -378,7 +435,7 @@ export async function indexDerived(views) {
   const affiliatesFile = await readJsonFile(join(WEB_DIR, "public/affiliates.json"));
   const affiliateUrls = new Set((affiliatesFile?.affiliates ?? []).map((a) => a.url));
 
-  const profiles = buildProfiles(loaded, directory, ghStats, affiliateUrls);
+  const profiles = buildProfiles(loaded, directory, ghStats, affiliateUrls, admissionDates(directory));
 
   const collections = {
     meta: {
