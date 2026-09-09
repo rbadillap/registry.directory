@@ -316,6 +316,40 @@
       ]
     },
     {
+      "name": "adaptive-stepper",
+      "type": "registry:component",
+      "title": "Adaptive Stepper",
+      "description": "Composable numeric stepper whose fixed footprint adapts at its minimum and maximum while the value rolls between steps.",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/adaptive-stepper.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/adaptive-stepper.tsx"
+        },
+        {
+          "path": "components/motion/liquid.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/liquid.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
       "name": "marquee",
       "type": "registry:component",
       "title": "Marquee",
@@ -520,6 +554,65 @@
           "path": "lib/ease.ts",
           "type": "registry:lib",
           "target": "@lib/ease.ts"
+        }
+      ]
+    },
+    {
+      "name": "multi-select",
+      "type": "registry:component",
+      "title": "Multi Select",
+      "description": "Composable multi-select primitives with searchable options, removable animated tokens, and a morphing collision-aware panel.",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/multi-select/index.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/multi-select/index.tsx"
+        },
+        {
+          "path": "components/motion/multi-select/context.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/multi-select/context.tsx"
+        },
+        {
+          "path": "components/motion/multi-select/trigger.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/multi-select/trigger.tsx"
+        },
+        {
+          "path": "components/motion/multi-select/content.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/multi-select/content.tsx"
+        },
+        {
+          "path": "components/motion/multi-select/list.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/multi-select/list.tsx"
+        },
+        {
+          "path": "components/motion/combobox/use-active-option.ts",
+          "type": "registry:component",
+          "target": "@components/motion/combobox/use-active-option.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/motion/popover-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/popover-position.ts"
         }
       ]
     },
@@ -1201,6 +1294,34 @@
           "path": "components/motion/action-swap.tsx",
           "type": "registry:component",
           "target": "@components/motion/action-swap.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "digit-swap",
+      "type": "registry:component",
+      "title": "Number Animation Digit Swap",
+      "description": "Fixed-slot digits and mask glyphs that roll on change with controllable direction, stagger, replay, and suffix emphasis.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/digit-swap.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/digit-swap.tsx"
         },
         {
           "path": "lib/ease.ts",
@@ -3489,6 +3610,40 @@
           "path": "lib/hooks/use-hover-capable.ts",
           "type": "registry:hook",
           "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "card-folder",
+      "type": "registry:block",
+      "title": "Card Folder",
+      "description": "A landscape card tucked into a stitched purse pocket that lifts forward as the purse compresses into its bottom seam, with controlled open and card-detail visibility plus a separate overflow action.",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/card-folder.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/card-folder.tsx"
+        },
+        {
+          "path": "components/motion/digit-swap.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/digit-swap.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
         },
         {
           "path": "lib/utils.ts",

@@ -17,7 +17,7 @@
       ],
       "dependencies": [
         "ai@^7.0.38",
-        "eve@^0.31.3",
+        "eve@^0.47.5",
         "zod@4.4.3"
       ],
       "files": [
@@ -113,7 +113,7 @@
       ],
       "dependencies": [
         "ai@^7.0.38",
-        "eve@^0.31.3"
+        "eve@^0.47.5"
       ],
       "files": [
         {
@@ -210,7 +210,7 @@
         "@upstash/ratelimit@^2.0.8",
         "@upstash/redis@^1.38.0",
         "ai@^7.0.38",
-        "eve@^0.31.3",
+        "eve@^0.47.5",
         "zod@4.3.6"
       ],
       "files": [
@@ -287,6 +287,172 @@
       ]
     },
     {
+      "name": "competitor-intel-monitor",
+      "type": "registry:item",
+      "title": "Competitor Intel Monitor",
+      "description": "Scheduled competitor URL monitor that diffs pages and delivers scored Slack or email digests.",
+      "categories": [
+        "research"
+      ],
+      "dependencies": [
+        "eve@^0.47.5",
+        "resend@^6.14.0",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        },
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/digest.ts"
+        },
+        {
+          "path": "agent/lib/deliver-digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/deliver-digest.ts"
+        },
+        {
+          "path": "agent/lib/fetch-page.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/fetch-page.ts"
+        },
+        {
+          "path": "agent/lib/page-diff.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/page-diff.ts"
+        },
+        {
+          "path": "agent/lib/robots.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/robots.ts"
+        },
+        {
+          "path": "agent/lib/snapshot-store.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/snapshot-store.ts"
+        },
+        {
+          "path": "agent/lib/thresholds.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/thresholds.ts"
+        },
+        {
+          "path": "agent/lib/watch-config.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/watch-config.ts"
+        },
+        {
+          "path": "agent/schedules/watch-competitor-pages.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/watch-competitor-pages.ts"
+        },
+        {
+          "path": "agent/skills/competitor-intel-watch/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/competitor-intel-watch/SKILL.md"
+        },
+        {
+          "path": "agent/skills/email-best-practices/references/accessibility.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/email-best-practices/references/accessibility.md"
+        },
+        {
+          "path": "agent/skills/email-best-practices/references/sending-reliability.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/email-best-practices/references/sending-reliability.md"
+        },
+        {
+          "path": "agent/skills/email-best-practices/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/email-best-practices/SKILL.md"
+        },
+        {
+          "path": "agent/tools/diff_page_snapshot.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/diff_page_snapshot.ts"
+        },
+        {
+          "path": "agent/tools/fetch_competitor_page.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/fetch_competitor_page.ts"
+        },
+        {
+          "path": "agent/tools/load_watch_config.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/load_watch_config.ts"
+        },
+        {
+          "path": "agent/tools/preview_digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/preview_digest.ts"
+        },
+        {
+          "path": "agent/tools/send_digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/send_digest.ts"
+        },
+        {
+          "path": "evals/digest-preview.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/digest-preview.eval.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/failed-send-not-delivered.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/failed-send-not-delivered.eval.ts"
+        },
+        {
+          "path": "evals/missing-config-does-not-send.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/missing-config-does-not-send.eval.ts"
+        },
+        {
+          "path": "evals/robots-blocks-fetch.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/robots-blocks-fetch.eval.ts"
+        },
+        {
+          "path": "evals/schedule-watch.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/schedule-watch.eval.ts"
+        },
+        {
+          "path": "evals/send-confirmation.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/send-confirmation.eval.ts"
+        },
+        {
+          "path": "evals/threshold-gating.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/threshold-gating.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        }
+      ]
+    },
+    {
       "name": "docs-knowledge-assistant",
       "type": "registry:item",
       "title": "Docs Knowledge Assistant",
@@ -295,7 +461,7 @@
         "support"
       ],
       "dependencies": [
-        "eve@^0.31.3",
+        "eve@^0.47.5",
         "zod@4.3.6"
       ],
       "files": [
@@ -377,6 +543,232 @@
       ]
     },
     {
+      "name": "email-triage-assistant",
+      "type": "registry:item",
+      "title": "Email Triage Assistant",
+      "description": "Inbox triage that classifies threads and writes draft replies without sending.",
+      "categories": [
+        "support"
+      ],
+      "dependencies": [
+        "@vercel/connect@^0.2.6",
+        "eve@^0.47.5",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        },
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/channels/inbox-push.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/inbox-push.ts"
+        },
+        {
+          "path": "agent/channels/slack.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/slack.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/delivery-claims.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/delivery-claims.ts"
+        },
+        {
+          "path": "agent/lib/email-config.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/email-config.ts"
+        },
+        {
+          "path": "agent/lib/http.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/http.ts"
+        },
+        {
+          "path": "agent/lib/mime.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/mime.ts"
+        },
+        {
+          "path": "agent/lib/push-auth.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/push-auth.ts"
+        },
+        {
+          "path": "agent/lib/oauth.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/oauth.ts"
+        },
+        {
+          "path": "agent/lib/providers/gmail.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/gmail.ts"
+        },
+        {
+          "path": "agent/lib/providers/graph.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/graph.ts"
+        },
+        {
+          "path": "agent/lib/providers/imap-session.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/imap-session.ts"
+        },
+        {
+          "path": "agent/lib/providers/imap.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/imap.ts"
+        },
+        {
+          "path": "agent/lib/providers/index.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/index.ts"
+        },
+        {
+          "path": "agent/lib/providers/types.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/types.ts"
+        },
+        {
+          "path": "agent/lib/push-events.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/push-events.ts"
+        },
+        {
+          "path": "agent/lib/rfc822.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/rfc822.ts"
+        },
+        {
+          "path": "agent/lib/send-guard.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/send-guard.ts"
+        },
+        {
+          "path": "agent/lib/slack-notify.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/slack-notify.ts"
+        },
+        {
+          "path": "agent/lib/tone-profile.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/tone-profile.ts"
+        },
+        {
+          "path": "agent/lib/triage-buckets.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/triage-buckets.ts"
+        },
+        {
+          "path": "agent/lib/webhook-auth.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/webhook-auth.ts"
+        },
+        {
+          "path": "agent/schedules/inbox-triage.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/inbox-triage.ts"
+        },
+        {
+          "path": "agent/skills/inbox-triage/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/inbox-triage/SKILL.md"
+        },
+        {
+          "path": "agent/tools/apply_triage_bucket.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/apply_triage_bucket.ts"
+        },
+        {
+          "path": "agent/tools/create_draft_reply.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/create_draft_reply.ts"
+        },
+        {
+          "path": "agent/tools/ingest_push_event.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/ingest_push_event.ts"
+        },
+        {
+          "path": "agent/tools/list_inbox_threads.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/list_inbox_threads.ts"
+        },
+        {
+          "path": "agent/tools/load_inbox_config.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/load_inbox_config.ts"
+        },
+        {
+          "path": "agent/tools/notify_slack_drafts_ready.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/notify_slack_drafts_ready.ts"
+        },
+        {
+          "path": "agent/tools/read_thread.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/read_thread.ts"
+        },
+        {
+          "path": "agent/tools/sample_sent_style.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/sample_sent_style.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/mailbox-mutations-require-approval.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/mailbox-mutations-require-approval.eval.ts"
+        },
+        {
+          "path": "evals/never-send.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/never-send.eval.ts"
+        },
+        {
+          "path": "evals/schedule-or-push.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/schedule-or-push.eval.ts"
+        },
+        {
+          "path": "evals/scheduled-run.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/scheduled-run.eval.ts"
+        },
+        {
+          "path": "evals/triage-buckets.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/triage-buckets.eval.ts"
+        },
+        {
+          "path": "evals/untrusted-mailbox.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/untrusted-mailbox.eval.ts"
+        }
+      ]
+    },
+    {
       "name": "eve-agent-builder",
       "type": "registry:item",
       "title": "Eve Agent Builder",
@@ -386,7 +778,7 @@
       ],
       "dependencies": [
         "ai@^7.0.38",
-        "eve@^0.31.3",
+        "eve@^0.47.5",
         "zod@^4.4.3"
       ],
       "files": [
@@ -538,7 +930,7 @@
       "dependencies": [
         "@upstash/ratelimit@^2.0.8",
         "@upstash/redis@^1.38.0",
-        "eve@^0.31.3",
+        "eve@^0.47.5",
         "zod@4.3.6"
       ],
       "files": [
@@ -626,7 +1018,7 @@
         "@upstash/ratelimit@^2.0.8",
         "@upstash/redis@^1.38.0",
         "ai@^7.0.38",
-        "eve@^0.31.3",
+        "eve@^0.47.5",
         "resend@^6.14.0",
         "zod@4.3.6"
       ],
@@ -749,6 +1141,101 @@
       ]
     },
     {
+      "name": "knowledge-base-gardener",
+      "type": "registry:item",
+      "title": "Knowledge Base Gardener",
+      "description": "Finds stale product docs and drafts updates with file cites.",
+      "categories": [
+        "support"
+      ],
+      "dependencies": [
+        "eve@^0.47.5",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        },
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/delivery-claims.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/delivery-claims.ts"
+        },
+        {
+          "path": "agent/lib/draft-write-paths.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/draft-write-paths.ts"
+        },
+        {
+          "path": "agent/lib/product-docs-paths.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/product-docs-paths.ts"
+        },
+        {
+          "path": "agent/skills/knowledge-base-garden/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/knowledge-base-garden/SKILL.md"
+        },
+        {
+          "path": "agent/tools/ask_question.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/ask_question.ts"
+        },
+        {
+          "path": "agent/tools/draft_doc_update.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/draft_doc_update.ts"
+        },
+        {
+          "path": "agent/tools/read_product_doc.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/read_product_doc.ts"
+        },
+        {
+          "path": "agent/tools/search_product_docs.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/search_product_docs.ts"
+        },
+        {
+          "path": "agent/tools/write_file.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/write_file.ts"
+        },
+        {
+          "path": "evals/draft-cite-stale.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/draft-cite-stale.eval.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/never-publish-or-github.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/never-publish-or-github.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        }
+      ]
+    },
+    {
       "name": "linear-operations-agent",
       "type": "registry:item",
       "title": "Linear Operations Agent",
@@ -759,7 +1246,7 @@
       "dependencies": [
         "@vercel/connect@^0.2.6",
         "ai@^7.0.38",
-        "eve@^0.31.3"
+        "eve@^0.47.5"
       ],
       "files": [
         {
@@ -900,6 +1387,118 @@
       ]
     },
     {
+      "name": "meeting-action-extractor",
+      "type": "registry:item",
+      "title": "Meeting Action Extractor",
+      "description": "Extracts owners and deadlines from a meeting transcript and drafts Linear follow-ups for approval.",
+      "categories": [
+        "productivity",
+        "project-management"
+      ],
+      "dependencies": [
+        "@vercel/connect@^0.2.6",
+        "eve@^0.47.5",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        },
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/connections/linear.ts",
+          "type": "registry:file",
+          "target": "~/agent/connections/linear.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/delivery-claims.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/delivery-claims.ts"
+        },
+        {
+          "path": "agent/lib/linear-connection.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/linear-connection.ts"
+        },
+        {
+          "path": "agent/lib/linear-issue-drafts.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/linear-issue-drafts.ts"
+        },
+        {
+          "path": "agent/lib/meeting-actions.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/meeting-actions.ts"
+        },
+        {
+          "path": "agent/lib/meeting-transcript-paths.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/meeting-transcript-paths.ts"
+        },
+        {
+          "path": "agent/skills/meeting-action-extract/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/meeting-action-extract/SKILL.md"
+        },
+        {
+          "path": "agent/tools/create_linear_issues.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/create_linear_issues.ts"
+        },
+        {
+          "path": "agent/tools/draft_linear_issues.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/draft_linear_issues.ts"
+        },
+        {
+          "path": "agent/tools/extract_meeting_actions.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/extract_meeting_actions.ts"
+        },
+        {
+          "path": "agent/tools/read_meeting_transcript.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/read_meeting_transcript.ts"
+        },
+        {
+          "path": "agent/tools/search_meeting_transcripts.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/search_meeting_transcripts.ts"
+        },
+        {
+          "path": "evals/draft-requires-approval.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/draft-requires-approval.eval.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/extract-from-transcript.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/extract-from-transcript.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        }
+      ]
+    },
+    {
       "name": "openui-assistant",
       "type": "registry:item",
       "title": "OpenUI Assistant",
@@ -911,8 +1510,8 @@
         "@openuidev/react-lang@^0.2.8",
         "@openuidev/react-ui@^0.12.1",
         "ai@^7.0.38",
-        "eve@^0.31.3",
-        "just-bash@^3.0.2",
+        "eve@^0.47.5",
+        "just-bash@^3.1.0",
         "zod@^4.4.3"
       ],
       "files": [
@@ -1014,7 +1613,7 @@
       "dependencies": [
         "@vercel/connect@^0.2.6",
         "ai@^7.0.38",
-        "eve@^0.31.3",
+        "eve@^0.47.5",
         "pg@^8.21.0",
         "pgsql-ast-parser@^12.0.1",
         "zod@4.3.6"
@@ -1097,7 +1696,7 @@
       ],
       "dependencies": [
         "ai@^7.0.38",
-        "eve@^0.31.3",
+        "eve@^0.47.5",
         "parallel-web@^1.1.0",
         "zod@4.3.6"
       ],
@@ -1210,7 +1809,7 @@
       "dependencies": [
         "@vercel/connect@^0.2.6",
         "ai@^7.0.38",
-        "eve@^0.31.3"
+        "eve@^0.47.5"
       ],
       "files": [
         {
@@ -1266,6 +1865,101 @@
       ]
     },
     {
+      "name": "support-reply-draft",
+      "type": "registry:item",
+      "title": "Support Reply Draft",
+      "description": "Drafts a customer reply from product docs and cites the file.",
+      "categories": [
+        "support"
+      ],
+      "dependencies": [
+        "eve@^0.47.5",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        },
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/delivery-claims.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/delivery-claims.ts"
+        },
+        {
+          "path": "agent/lib/product-docs-paths.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/product-docs-paths.ts"
+        },
+        {
+          "path": "agent/skills/support-reply/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/support-reply/SKILL.md"
+        },
+        {
+          "path": "agent/tools/ask_question.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/ask_question.ts"
+        },
+        {
+          "path": "agent/tools/draft_support_reply.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/draft_support_reply.ts"
+        },
+        {
+          "path": "agent/tools/read_product_doc.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/read_product_doc.ts"
+        },
+        {
+          "path": "agent/tools/search_product_docs.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/search_product_docs.ts"
+        },
+        {
+          "path": "agent/tools/write_file.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/write_file.ts"
+        },
+        {
+          "path": "evals/draft-cite-help.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/draft-cite-help.eval.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/never-send-or-github.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/never-send-or-github.eval.ts"
+        },
+        {
+          "path": "evals/say-not-in-docs.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/say-not-in-docs.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        }
+      ]
+    },
+    {
       "name": "x-draft-assistant",
       "type": "registry:item",
       "title": "X Draft Assistant",
@@ -1275,7 +1969,7 @@
       ],
       "dependencies": [
         "ai@^7.0.38",
-        "eve@^0.31.3",
+        "eve@^0.47.5",
         "parallel-web@^1.1.0",
         "zod@4.3.6"
       ],
@@ -1412,7 +2106,7 @@
       ],
       "dependencies": [
         "ai@^7.0.38",
-        "eve@^0.31.3",
+        "eve@^0.47.5",
         "parallel-web@^1.1.0",
         "resend@^6.14.0",
         "zod@4.3.6"

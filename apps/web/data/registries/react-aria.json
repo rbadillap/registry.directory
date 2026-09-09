@@ -43,6 +43,7 @@
         "https://react-aria.adobe.com/registry/tailwind-menu.json",
         "https://react-aria.adobe.com/registry/tailwind-meter.json",
         "https://react-aria.adobe.com/registry/tailwind-modal.json",
+        "https://react-aria.adobe.com/registry/tailwind-navigationtree.json",
         "https://react-aria.adobe.com/registry/tailwind-numberfield.json",
         "https://react-aria.adobe.com/registry/tailwind-popover.json",
         "https://react-aria.adobe.com/registry/tailwind-progressbar.json",
@@ -762,6 +763,28 @@
       ]
     },
     {
+      "name": "tailwind-navigationtree",
+      "type": "registry:ui",
+      "title": "NavigationTree",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react",
+        "react",
+        "tailwind-variants",
+        "tailwindcss-react-aria-components",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "https://react-aria.adobe.com/registry/tailwind-utils.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/NavigationTree.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "tailwind-numberfield",
       "type": "registry:ui",
       "title": "NumberField",
@@ -1287,6 +1310,7 @@
         "https://react-aria.adobe.com/registry/css-menu.json",
         "https://react-aria.adobe.com/registry/css-meter.json",
         "https://react-aria.adobe.com/registry/css-modal.json",
+        "https://react-aria.adobe.com/registry/css-navigationtree.json",
         "https://react-aria.adobe.com/registry/css-numberfield.json",
         "https://react-aria.adobe.com/registry/css-popover.json",
         "https://react-aria.adobe.com/registry/css-progressbar.json",
@@ -2071,6 +2095,7 @@
       ],
       "registryDependencies": [
         "https://react-aria.adobe.com/registry/css-popover.json",
+        "https://react-aria.adobe.com/registry/css-progresscircle.json",
         "https://react-aria.adobe.com/registry/css-content.json"
       ],
       "files": [
@@ -2131,6 +2156,30 @@
         },
         {
           "path": "components/ui/Modal.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/theme.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "css-navigationtree",
+      "type": "registry:ui",
+      "title": "NavigationTree",
+      "dependencies": [
+        "react-aria-components",
+        "lucide-react",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/NavigationTree.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/NavigationTree.css",
           "type": "registry:component"
         },
         {

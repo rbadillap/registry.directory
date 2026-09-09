@@ -93,7 +93,7 @@
       "name": "total-sales-card",
       "type": "registry:block",
       "title": "Card 05 - Total Sales Card",
-      "description": "Show total sales with revenue insights and growth percentages in a dashboard-friendly card. Helps teams monitor business performance in just one card.",
+      "description": "Highlight total sales revenue with a growth percentage badge and a decorative background illustration. Ideal for ecommerce dashboards that need an eye-catching summary metric.",
       "dependencies": [
         "@iconify/react"
       ],
@@ -112,7 +112,7 @@
       "name": "latest-products-card",
       "type": "registry:block",
       "title": "Card 06 - Latest Products Card",
-      "description": "List newly added products with important details in a compact and organized layout. Useful for inventory management, admin panels, and ecommerce applications.",
+      "description": "List recently added products with thumbnail, name, buyer count, and price inside a scrollable card. Useful for ecommerce dashboards tracking new product activity.",
       "dependencies": [
         "lucide-react"
       ],
@@ -132,13 +132,9 @@
       "name": "integrations-showcase-card",
       "type": "registry:block",
       "title": "Card 07 - Integrations Showcase Card",
-      "description": "List connected integrations in a hairline-divided grid with a count badge and a hover reveal arrow per row. Useful for settings pages, onboarding flows, and integration marketplaces.",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "description": "Showcase connected third-party integrations like Figma, Claude, and cloud storage with an icon and description grid. Great for settings pages and integration marketplaces.",
       "registryDependencies": [
-        "card",
-        "badge"
+        "card"
       ],
       "files": [
         {
@@ -152,7 +148,7 @@
       "name": "contributor-groups-card",
       "type": "registry:block",
       "title": "Card 08 - Contributor Groups Card",
-      "description": "Group your community into contributors, affiliates, and infrastructure partners, each with a short description and its logo set. Useful for landing pages, about sections, and community pages.",
+      "description": "Group contributors, affiliates, and infrastructure partners with tooltip-labeled icons and a call-to-action button. Suited for about pages, changelogs, and partner directories.",
       "registryDependencies": [
         "card",
         "button",
@@ -170,7 +166,7 @@
       "name": "revenue-growth-card",
       "type": "registry:block",
       "title": "Card 09 - Revenue Growth Card",
-      "description": "Visualize revenue trends with a small chart and summary statistics in a focused analytics card. Designed for finance dashboards, SaaS reporting, and business intelligence.",
+      "description": "Show a headline revenue growth percentage with a month-over-month comparison in a compact card. Fits finance and sales dashboards that need a quick trend indicator.",
       "dependencies": [
         "lucide-react"
       ],
@@ -190,7 +186,7 @@
       "name": "product-carousel-card",
       "type": "registry:block",
       "title": "Card 10 - Product Carousel Card",
-      "description": "Browse featured products inside a swipeable carousel without leaving the dashboard. Works well for showcasing collections, recommendations, or promotional items.",
+      "description": "Auto-playing product image carousel with progress dots and a call-to-action overlay. Great for ecommerce dashboards promoting featured products or premium plans.",
       "dependencies": [
         "swiper"
       ],
@@ -209,14 +205,14 @@
       "name": "ai-assistant-card",
       "type": "registry:block",
       "title": "Card 11 - AI Assistant Card",
-      "description": "Provide quick access to AI-powered suggestions, summaries, or assistant actions from a single card. Suitable for productivity apps, admin panels, and modern AI products.",
+      "description": "An Ask AI panel with provider tabs for Claude, ChatGPT, and Gemini, quick feature shortcuts, and a chat input. Ideal for AI-powered dashboards and copilots.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
         "card",
-        "button",
-        "input"
+        "input",
+        "button"
       ],
       "files": [
         {
@@ -230,7 +226,7 @@
       "name": "upcoming-events-card",
       "type": "registry:block",
       "title": "Card 12 - Upcoming Events Card",
-      "description": "Keep users informed about scheduled events with dates, times, and status details. Useful for calendars, event management platforms, and team workspaces.",
+      "description": "List upcoming events with date, time, and type badges in a clean bordered card. Suitable for education platforms, school portals, and event calendars.",
       "dependencies": [
         "lucide-react"
       ],
@@ -250,7 +246,7 @@
       "name": "upcoming-appointments-card",
       "type": "registry:block",
       "title": "Card 13 - Upcoming Appointments Card",
-      "description": "Display upcoming appointments in an easy-to-read card with time, customer, and attendee details. Fits healthcare, booking systems, and CRM dashboards.",
+      "description": "Display a patient appointment schedule with avatars, doctor names, times, and type badges. Built for healthcare portals and clinic dashboards.",
       "dependencies": [
         "lucide-react"
       ],
@@ -270,7 +266,7 @@
       "name": "doctor-performance-card",
       "type": "registry:block",
       "title": "Card 14 - Doctor Performance Card",
-      "description": "Monitor doctors' availability, appointments, and rating metrics through a dedicated analytics card. Designed for healthcare dashboards and hospital management systems.",
+      "description": "Track doctor performance with avatar, specialty, patient count, rating, and availability status in a bordered list card. Suitable for healthcare and clinic dashboards.",
       "dependencies": [
         "lucide-react"
       ],
@@ -911,6 +907,245 @@
       ]
     },
     {
+      "name": "ai-ops-overview",
+      "type": "registry:block",
+      "title": "AI Ops 01 - Token Routing Console",
+      "description": "A token routing console for LLM control planes — model priority and budget guardrail stats, a per-model token usage & spend routing list with priority ranks and enable toggles, and a weekly per-model token worklog table with a bordered grid, usage bars, a date-picker & prev/next week navigation, and pagination. Ideal for AI product and LLM control-plane dashboards.",
+      "dependencies": [
+        "lucide-react",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "button",
+        "separator",
+        "select",
+        "switch",
+        "dropdown-menu",
+        "popover",
+        "calendar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-ops-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/header.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/header.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/stat-cards.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/stat-cards.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/model-token-list.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/model-token-list.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/worklog-table.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/worklog-table.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/model-logo.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/model-logo.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/types.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/types.ts"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/utils.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-01/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "hospital-ai-ops",
+      "type": "registry:block",
+      "title": "AI Ops 02 - Hospital AI Control Center",
+      "description": "An AI care operations dashboard for hospitals, medical centers, and social care teams — with a status banner, triage & risk stat cards, a care escalation timeline, a patient risk trend chart, and a related-operations kanban board. Ideal for hospital management, clinic, and health-system admin panels.",
+      "dependencies": [
+        "lucide-react",
+        "recharts",
+        "date-fns",
+        "@dnd-kit/core",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "button",
+        "input",
+        "select",
+        "avatar",
+        "chart",
+        "dialog",
+        "label",
+        "textarea",
+        "calendar",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-ops-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/banner.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/banner.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/stat-cards.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/stat-cards.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/care-escalation-path.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/care-escalation-path.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/patient-risk-trend.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/patient-risk-trend.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/related-operations-kanban.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/related-operations-kanban.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/kanban-column.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/kanban-column.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/task-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/task-card.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/task-dialog.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/task-dialog.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/types.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/types.ts"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/users.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/users.ts"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/utils.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-02/utils.ts"
+        },
+        {
+          "path": "src/common/divider/index.tsx",
+          "type": "registry:component",
+          "target": "common/divider/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agent-ai-ops",
+      "type": "registry:block",
+      "title": "AI Ops 03 - Agent Usage & API Console",
+      "description": "An agent fleet usage console — with an account header, a usage summary card with Tokens/Spend/Requests tabs, a daily usage chart, a top-models-by-usage breakdown, a GitHub-style activity heatmap with streak stats, and an API keys management table. Ideal for AI agent billing, LLM usage tracking, and API key administration dashboards.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "button",
+        "input",
+        "select",
+        "tabs",
+        "chart",
+        "tooltip",
+        "table",
+        "avatar",
+        "dialog",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-ops-03/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/account-header.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/account-header.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/usage-summary-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/usage-summary-card.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/top-models-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/top-models-card.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/activity-heatmap-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/activity-heatmap-card.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/api-keys-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/api-keys-card.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/types.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/types.ts"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/utils.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-ops/ai-ops-03/utils.ts"
+        }
+      ]
+    },
+    {
       "name": "login-block-1",
       "type": "registry:block",
       "title": "Login Form 01 - Standard Card Layout",
@@ -1063,6 +1298,88 @@
       ]
     },
     {
+      "name": "login-block-6",
+      "type": "registry:block",
+      "title": "Login Form 06 - Interactive Particle Field",
+      "description": "A split-screen login layout with an interactive canvas particle field that drifts ambiently and reacts to cursor movement on one side and the form on the other.",
+      "dependencies": [
+        "three",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input-group",
+        "checkbox",
+        "label",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/login/login-06/page.tsx",
+          "type": "registry:page",
+          "target": "app/login-06/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/login/login-06/login.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/login/login-06/login.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/login/login-06/particle-field.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/login/login-06/particle-field.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/login/login-06/pixel-snow.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/login/login-06/pixel-snow.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/login/login-06/pixel-snow.css",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/login/login-06/pixel-snow.css"
+        }
+      ]
+    },
+    {
+      "name": "login-block-7",
+      "type": "registry:block",
+      "title": "Login Form 07 - Diagonal Marquee Carousel",
+      "description": "A two-column login layout with the sign-in form on the left and an infinitely scrolling, diagonally slanted image marquee filling the right panel.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input-group",
+        "checkbox",
+        "label",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/login/login-07/page.tsx",
+          "type": "registry:page",
+          "target": "app/login-07/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/login/login-07/login.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/login/login-07/login.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/login/login-07/diagonal-marquee-carousel.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/login/login-07/diagonal-marquee-carousel.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/animations/marquee.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/animations/marquee.tsx"
+        }
+      ]
+    },
+    {
       "name": "signup-01",
       "type": "registry:block",
       "title": "Signup Form 01 - Essential Centered Card",
@@ -1203,6 +1520,88 @@
           "path": "src/components/shadcn-dashboard/blocks/signup/signup-05/color-bends.tsx",
           "type": "registry:component",
           "target": "components/shadcn-dashboard/blocks/signup/signup-05/color-bends.tsx"
+        }
+      ]
+    },
+    {
+      "name": "signup-06",
+      "type": "registry:block",
+      "title": "Signup Form 06 - Interactive Particle Field",
+      "description": "A split-screen registration layout with an interactive canvas particle field that drifts ambiently and reacts to cursor movement on one side and the signup form on the other.",
+      "dependencies": [
+        "three",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input-group",
+        "checkbox",
+        "label",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/signup/signup-06/page.tsx",
+          "type": "registry:page",
+          "target": "app/signup-06/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/signup/signup-06/signup.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/signup/signup-06/signup.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/signup/signup-06/particle-field.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/signup/signup-06/particle-field.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/signup/signup-06/pixel-snow.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/signup/signup-06/pixel-snow.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/signup/signup-06/pixel-snow.css",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/signup/signup-06/pixel-snow.css"
+        }
+      ]
+    },
+    {
+      "name": "signup-07",
+      "type": "registry:block",
+      "title": "Signup Form 07 - Diagonal Marquee Carousel",
+      "description": "A two-column signup layout with the registration form on the left and an infinitely scrolling, diagonally slanted image marquee filling the right panel.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input-group",
+        "checkbox",
+        "label",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/signup/signup-07/page.tsx",
+          "type": "registry:page",
+          "target": "app/signup-07/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/signup/signup-07/signup.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/signup/signup-07/signup.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/signup/signup-07/diagonal-marquee-carousel.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/signup/signup-07/diagonal-marquee-carousel.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/animations/marquee.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/animations/marquee.tsx"
         }
       ]
     },
@@ -1351,6 +1750,78 @@
       ]
     },
     {
+      "name": "otp-06",
+      "type": "registry:block",
+      "title": "OTP Form 06 - Interactive Particle Field",
+      "description": "A split-screen verification layout with an interactive canvas particle field that drifts ambiently and reacts to cursor movement on one side and the OTP form on the other.",
+      "dependencies": [
+        "three"
+      ],
+      "registryDependencies": [
+        "button",
+        "input-otp"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/otp/otp-06/page.tsx",
+          "type": "registry:page",
+          "target": "app/otp-06/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/otp/otp-06/otp.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/otp/otp-06/otp.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/otp/otp-06/particle-field.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/otp/otp-06/particle-field.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/otp/otp-06/pixel-snow.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/otp/otp-06/pixel-snow.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/otp/otp-06/pixel-snow.css",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/otp/otp-06/pixel-snow.css"
+        }
+      ]
+    },
+    {
+      "name": "otp-07",
+      "type": "registry:block",
+      "title": "OTP Form 07 - Diagonal Marquee Carousel",
+      "description": "A two-column verification layout with the OTP form on the left and an infinitely scrolling, diagonally slanted image marquee filling the right panel.",
+      "registryDependencies": [
+        "button",
+        "input-otp"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/otp/otp-07/page.tsx",
+          "type": "registry:page",
+          "target": "app/otp-07/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/otp/otp-07/otp.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/otp/otp-07/otp.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/otp/otp-07/diagonal-marquee-carousel.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/otp/otp-07/diagonal-marquee-carousel.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/animations/marquee.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/animations/marquee.tsx"
+        }
+      ]
+    },
+    {
       "name": "forgot-password-01",
       "type": "registry:block",
       "title": "Forgot Password Form 01 - Clean Recovery Card",
@@ -1495,6 +1966,84 @@
       ]
     },
     {
+      "name": "forgot-password-06",
+      "type": "registry:block",
+      "title": "Forgot Password Form 06 - Interactive Particle Field",
+      "description": "A split-screen password reset layout with an interactive canvas particle field that drifts ambiently and reacts to cursor movement on one side and the recovery form on the other.",
+      "dependencies": [
+        "three",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input-group",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/forgot-password/forgot-password-06/page.tsx",
+          "type": "registry:page",
+          "target": "app/forgot-password-06/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/forgot-password/forgot-password-06/forgot-password.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/forgot-password/forgot-password-06/forgot-password.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/forgot-password/forgot-password-06/particle-field.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/forgot-password/forgot-password-06/particle-field.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/forgot-password/forgot-password-06/pixel-snow.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/forgot-password/forgot-password-06/pixel-snow.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/forgot-password/forgot-password-06/pixel-snow.css",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/forgot-password/forgot-password-06/pixel-snow.css"
+        }
+      ]
+    },
+    {
+      "name": "forgot-password-07",
+      "type": "registry:block",
+      "title": "Forgot Password Form 07 - Diagonal Marquee Carousel",
+      "description": "A two-column password recovery layout with the reset form on the left and an infinitely scrolling, diagonally slanted image marquee filling the right panel.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input-group",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/forgot-password/forgot-password-07/page.tsx",
+          "type": "registry:page",
+          "target": "app/forgot-password-07/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/forgot-password/forgot-password-07/forgot-password.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/forgot-password/forgot-password-07/forgot-password.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/forgot-password/forgot-password-07/diagonal-marquee-carousel.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/forgot-password/forgot-password-07/diagonal-marquee-carousel.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/animations/marquee.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/animations/marquee.tsx"
+        }
+      ]
+    },
+    {
       "name": "multi-step-form-01",
       "type": "registry:block",
       "title": "Multi Step Form 01 - Appointment Booking Wizard",
@@ -1535,8 +2084,7 @@
         "zod",
         "@hookform/resolvers",
         "lucide-react",
-        "motion",
-        "sonner"
+        "motion"
       ],
       "registryDependencies": [
         "field",
@@ -1551,7 +2099,8 @@
         "switch",
         "label",
         "separator",
-        "badge"
+        "badge",
+        "toast"
       ],
       "files": [
         {
@@ -1642,6 +2191,64 @@
           "path": "src/components/shadcn-dashboard/blocks/multi-step-form/multi-step-form-04/multistepForm.tsx",
           "type": "registry:component",
           "target": "components/shadcn-dashboard/blocks/multi-step-form/multi-step-form-04/multistepForm.tsx"
+        }
+      ]
+    },
+    {
+      "name": "multi-step-form-05",
+      "type": "registry:block",
+      "title": "Multi Step Form 05 - Onboarding Form",
+      "description": "An animated multi-step onboarding form with a circular progress indicator, role-selection cards, and a success screen. Perfect for user onboarding, sign-up flows, and intake wizards that need a polished, guided experience.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "input",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/multi-step-form/multi-step-form-05/page.tsx",
+          "type": "registry:page",
+          "target": "app/multi-step-form-05/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/multi-step-form/multi-step-form-05/onboarding-form.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/multi-step-form/multi-step-form-05/onboarding-form.tsx"
+        }
+      ]
+    },
+    {
+      "name": "multi-step-form-06",
+      "type": "registry:block",
+      "title": "Multi Step Form 06 - Survey Form",
+      "description": "An animated multi-step survey form with radio-group option cards, a live animated score counter, and an email capture step. Ideal for feedback collection, NPS surveys, and user research flows that demand a sleek, engaging experience.",
+      "dependencies": [
+        "motion",
+        "@number-flow/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "input",
+        "label",
+        "radio-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/multi-step-form/multi-step-form-06/page.tsx",
+          "type": "registry:page",
+          "target": "app/multi-step-form-06/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/multi-step-form/multi-step-form-06/survey-form.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/multi-step-form/multi-step-form-06/survey-form.tsx"
         }
       ]
     },
@@ -1911,29 +2518,32 @@
       ]
     },
     {
-      "name": "table-03",
+      "name": "table-01",
       "type": "registry:block",
-      "title": "Table 01 - Projects and Orders Table",
-      "description": "Manage projects, assigned managers, order values, and progress from a sortable table with status indicators and quick actions. Useful for project tracking, operations dashboards, and team management.",
+      "title": "Table 01 - Top Selling Products Table",
+      "description": "Track best selling products with ratings, pricing, demand status, and built in add, edit, and delete actions. Great for inventory management, product administration, and ecommerce dashboards.",
       "dependencies": [
-        "lucide-react",
-        "simplebar-react"
+        "lucide-react"
       ],
       "registryDependencies": [
         "card",
+        "checkbox",
+        "select",
+        "dropdown-menu",
         "table",
+        "badge",
         "button"
       ],
       "files": [
         {
-          "path": "src/components/shadcn-dashboard/blocks/tables/table-03/page.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-01/page.tsx",
           "type": "registry:page",
-          "target": "app/table-03/page.tsx"
+          "target": "app/table-01/page.tsx"
         },
         {
-          "path": "src/components/shadcn-dashboard/blocks/tables/table-03/table-03.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-01/table-01.tsx",
           "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/tables/table-03/table-03.tsx"
+          "target": "components/shadcn-dashboard/blocks/tables/table-01/table-01.tsx"
         }
       ]
     },
@@ -1964,32 +2574,29 @@
       ]
     },
     {
-      "name": "table-01",
+      "name": "table-03",
       "type": "registry:block",
-      "title": "Table 03 - Top Selling Products Table",
-      "description": "Track best selling products with ratings, pricing, demand status, and built in add, edit, and delete actions. Great for inventory management, product administration, and ecommerce dashboards.",
+      "title": "Table 03 - Projects and Orders Table",
+      "description": "Manage projects, assigned managers, order values, and progress from a sortable table with status indicators and quick actions. Useful for project tracking, operations dashboards, and team management.",
       "dependencies": [
-        "lucide-react"
+        "lucide-react",
+        "simplebar-react"
       ],
       "registryDependencies": [
         "card",
-        "checkbox",
-        "select",
-        "dropdown-menu",
         "table",
-        "badge",
         "button"
       ],
       "files": [
         {
-          "path": "src/components/shadcn-dashboard/blocks/tables/table-01/page.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-03/page.tsx",
           "type": "registry:page",
-          "target": "app/table-01/page.tsx"
+          "target": "app/table-03/page.tsx"
         },
         {
-          "path": "src/components/shadcn-dashboard/blocks/tables/table-01/table-01.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-03/table-03.tsx",
           "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/tables/table-01/table-01.tsx"
+          "target": "components/shadcn-dashboard/blocks/tables/table-03/table-03.tsx"
         }
       ]
     },
@@ -2307,40 +2914,7 @@
     {
       "name": "forms-02",
       "type": "registry:block",
-      "title": "Form 02 - Multi-Step Form",
-      "description": "Guide users through an animated multi-step signup flow covering account details, profile info, and a final review. Ideal for onboarding wizards, guided registrations, and progressive data collection.",
-      "dependencies": [
-        "motion",
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "button",
-        "card",
-        "field",
-        "input",
-        "select",
-        "textarea",
-        "progress",
-        "badge",
-        "separator"
-      ],
-      "files": [
-        {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-02/page.tsx",
-          "type": "registry:page",
-          "target": "app/forms-02/page.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-02/multi-step-form.tsx",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/forms/forms-02/multi-step-form.tsx"
-        }
-      ]
-    },
-    {
-      "name": "forms-03",
-      "type": "registry:block",
-      "title": "Form 03 - Advanced Settings Sidebar Layout",
+      "title": "Form 02 - Advanced Settings Sidebar Layout",
       "description": "Organize account settings with sidebar navigation for faster access to preferences. Great for managing profile information, notifications, security, and appearance settings.",
       "dependencies": [
         "lucide-react"
@@ -2358,21 +2932,21 @@
       ],
       "files": [
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-03/page.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-02/page.tsx",
           "type": "registry:page",
-          "target": "app/forms-03/page.tsx"
+          "target": "app/forms-02/page.tsx"
         },
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-03/settings-form.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-02/settings-form.tsx",
           "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/forms/forms-03/settings-form.tsx"
+          "target": "components/shadcn-dashboard/blocks/forms/forms-02/settings-form.tsx"
         }
       ]
     },
     {
-      "name": "forms-04",
+      "name": "forms-03",
       "type": "registry:block",
-      "title": "Form 04 - E-commerce Checkout Form",
+      "title": "Form 03 - E-commerce Checkout Form",
       "description": "Complete online purchases with a streamlined checkout process from shipping to payment. Suitable for ecommerce stores that require secure and user-friendly order completion.",
       "dependencies": [
         "lucide-react"
@@ -2390,21 +2964,21 @@
       ],
       "files": [
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-04/page.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-03/page.tsx",
           "type": "registry:page",
-          "target": "app/forms-04/page.tsx"
+          "target": "app/forms-03/page.tsx"
         },
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-04/checkout-form.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-03/checkout-form.tsx",
           "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/forms/forms-04/checkout-form.tsx"
+          "target": "components/shadcn-dashboard/blocks/forms/forms-03/checkout-form.tsx"
         }
       ]
     },
     {
-      "name": "forms-05",
+      "name": "forms-04",
       "type": "registry:block",
-      "title": "Form 05 - Student Registration Form",
+      "title": "Form 04 - Student Registration Form",
       "description": "Register students using a structured enrollment form with guardian and subject details. Useful for schools, educational platforms, and online course registration systems.",
       "dependencies": [
         "react-hook-form",
@@ -2425,21 +2999,21 @@
       ],
       "files": [
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-05/page.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-04/page.tsx",
           "type": "registry:page",
-          "target": "app/forms-05/page.tsx"
+          "target": "app/forms-04/page.tsx"
         },
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-05/registration-form.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-04/registration-form.tsx",
           "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/forms/forms-05/registration-form.tsx"
+          "target": "components/shadcn-dashboard/blocks/forms/forms-04/registration-form.tsx"
         }
       ]
     },
     {
-      "name": "forms-06",
+      "name": "forms-05",
       "type": "registry:block",
-      "title": "Form 06 - Employee Registration Form",
+      "title": "Form 05 - Employee Registration Form",
       "description": "Capture employee information with dedicated sections for personal details and job preferences. Fits HR portals, recruitment systems, and staff onboarding applications.",
       "dependencies": [
         "react-hook-form",
@@ -2457,21 +3031,21 @@
       ],
       "files": [
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-06/page.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-05/page.tsx",
           "type": "registry:page",
-          "target": "app/forms-06/page.tsx"
+          "target": "app/forms-05/page.tsx"
         },
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-06/employee-registration-from.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-05/employee-registration-from.tsx",
           "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/forms/forms-06/employee-registration-from.tsx"
+          "target": "components/shadcn-dashboard/blocks/forms/forms-05/employee-registration-from.tsx"
         }
       ]
     },
     {
-      "name": "forms-07",
+      "name": "forms-06",
       "type": "registry:block",
-      "title": "Form 07 - Repeater Form",
+      "title": "Form 06 - Repeater Form",
       "description": "Collect multiple entries dynamically without creating separate forms for each record. Useful for surveys, inventory management, expense reports, and custom data collection.",
       "dependencies": [
         "react-hook-form",
@@ -2488,26 +3062,25 @@
       ],
       "files": [
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-07/page.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-06/page.tsx",
           "type": "registry:page",
-          "target": "app/forms-07/page.tsx"
+          "target": "app/forms-06/page.tsx"
         },
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-07/ecommerce-repeater-form.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-06/ecommerce-repeater-form.tsx",
           "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/forms/forms-07/ecommerce-repeater-form.tsx"
+          "target": "components/shadcn-dashboard/blocks/forms/forms-06/ecommerce-repeater-form.tsx"
         }
       ]
     },
     {
-      "name": "forms-08",
+      "name": "forms-07",
       "type": "registry:block",
-      "title": "Form 08 - Form with Tab",
+      "title": "Form 07 - Form with Tab",
       "description": "Separate complex forms into organized tabs for a cleaner and more manageable experience. Perfect for lengthy forms with multiple categories, settings, or configuration options.",
       "dependencies": [
         "lucide-react",
-        "date-fns",
-        "@base-ui/react"
+        "date-fns"
       ],
       "registryDependencies": [
         "card",
@@ -2525,29 +3098,28 @@
       ],
       "files": [
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-08/page.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-07/page.tsx",
           "type": "registry:page",
-          "target": "app/forms-08/page.tsx"
+          "target": "app/forms-07/page.tsx"
         },
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-08/form-with-tab.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-07/form-with-tab.tsx",
           "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/forms/forms-08/form-with-tab.tsx"
+          "target": "components/shadcn-dashboard/blocks/forms/forms-07/form-with-tab.tsx"
         }
       ]
     },
     {
-      "name": "forms-09",
+      "name": "forms-08",
       "type": "registry:block",
-      "title": "Form 09 - Subscription Plan Builder",
+      "title": "Form 08 - Subscription Plan Builder",
       "description": "A SaaS checkout-style form for picking a plan, toggling add-ons, applying a promo code, and previewing a live order summary. Perfect for billing, checkout, and subscription onboarding flows.",
       "dependencies": [
         "react-hook-form",
         "zod",
         "@hookform/resolvers",
         "lucide-react",
-        "date-fns",
-        "sonner"
+        "date-fns"
       ],
       "registryDependencies": [
         "card",
@@ -2563,32 +3135,31 @@
         "popover",
         "calendar",
         "separator",
-        "sonner"
+        "toast"
       ],
       "files": [
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-09/page.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-08/page.tsx",
           "type": "registry:page",
-          "target": "app/forms-09/page.tsx"
+          "target": "app/forms-08/page.tsx"
         },
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-09/subscription-plan-form.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-08/subscription-plan-form.tsx",
           "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/forms/forms-09/subscription-plan-form.tsx"
+          "target": "components/shadcn-dashboard/blocks/forms/forms-08/subscription-plan-form.tsx"
         }
       ]
     },
     {
-      "name": "forms-10",
+      "name": "forms-09",
       "type": "registry:block",
-      "title": "Form 10 - Agent API Keys",
+      "title": "Form 09 - Agent API Keys",
       "description": "An AI agent credential manager with a sidebar quick-copy snippet, a card grid of agent keys with a dropdown-menu of reveal/copy/rotate/revoke actions, and a create-key dialog. Perfect for AI agent platforms, developer consoles, and API key management.",
       "dependencies": [
         "react-hook-form",
         "zod",
         "@hookform/resolvers",
-        "lucide-react",
-        "sonner"
+        "lucide-react"
       ],
       "registryDependencies": [
         "field",
@@ -2602,76 +3173,18 @@
         "dropdown-menu",
         "dialog",
         "alert-dialog",
-        "sonner"
+        "toast"
       ],
       "files": [
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-10/page.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-09/page.tsx",
           "type": "registry:page",
-          "target": "app/forms-10/page.tsx"
+          "target": "app/forms-09/page.tsx"
         },
         {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-10/agent-keys-form.tsx",
+          "path": "src/components/shadcn-dashboard/blocks/forms/forms-09/agent-keys-form.tsx",
           "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/forms/forms-10/agent-keys-form.tsx"
-        }
-      ]
-    },
-    {
-      "name": "forms-11",
-      "type": "registry:block",
-      "title": "Form 11 - Onboarding Form",
-      "description": "An animated multi-step onboarding form with a circular progress indicator, role-selection cards, and a success screen. Perfect for user onboarding, sign-up flows, and intake wizards that need a polished, guided experience.",
-      "dependencies": [
-        "motion/react",
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "button",
-        "card",
-        "input",
-        "textarea"
-      ],
-      "files": [
-        {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-11/page.tsx",
-          "type": "registry:page",
-          "target": "app/forms-11/page.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-11/onboarding-form.tsx",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/forms/forms-11/onboarding-form.tsx"
-        }
-      ]
-    },
-    {
-      "name": "forms-12",
-      "type": "registry:block",
-      "title": "Form 12 - Survey Form",
-      "description": "An animated multi-step survey form with radio-group option cards, a live animated score counter, and an email capture step. Ideal for feedback collection, NPS surveys, and user research flows that demand a sleek, engaging experience.",
-      "dependencies": [
-        "motion/react",
-        "@number-flow/react",
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "button",
-        "card",
-        "input",
-        "label",
-        "radio-group"
-      ],
-      "files": [
-        {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-12/page.tsx",
-          "type": "registry:page",
-          "target": "app/forms-12/page.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/forms/forms-12/survey-form.tsx",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/forms/forms-12/survey-form.tsx"
+          "target": "components/shadcn-dashboard/blocks/forms/forms-09/agent-keys-form.tsx"
         }
       ]
     },
@@ -3015,6 +3528,41 @@
           "path": "src/components/shadcn-dashboard/blocks/datatable/datatable-12/datatable.tsx",
           "type": "registry:component",
           "target": "components/shadcn-dashboard/blocks/datatable/datatable-12/datatable.tsx"
+        }
+      ]
+    },
+    {
+      "name": "datatable-13",
+      "type": "registry:block",
+      "title": "Datatable 13 - Advanced User Table",
+      "description": "A feature-rich user management table with search, status filtering, sorting, row selection, and pagination. Useful for admin panels, user directories, and customer management dashboards.",
+      "dependencies": [
+        "@tanstack/react-table",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "card",
+        "checkbox",
+        "dropdown-menu",
+        "input-group",
+        "label",
+        "popover",
+        "select",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/datatable/datatable-13/page.tsx",
+          "type": "registry:page",
+          "target": "app/datatable-13/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/datatable/datatable-13/datatable.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/datatable/datatable-13/datatable.tsx"
         }
       ]
     },
@@ -3489,15 +4037,15 @@
       "title": "Empty State 06 - Usage Reports Empty State",
       "description": "Let users scope a report by team, project, and date range, then trigger generation from a split action button before any reports have been produced yet.",
       "dependencies": [
-        "lucide-react",
-        "sonner"
+        "lucide-react"
       ],
       "registryDependencies": [
         "card",
         "empty",
         "button",
         "button-group",
-        "dropdown-menu"
+        "dropdown-menu",
+        "toast"
       ],
       "files": [
         {
@@ -3564,8 +4112,7 @@
       "title": "Account Setting 01 - API Keys & Billing Settings",
       "description": "Manage API keys, usage limits, billing information, and third-party integrations from a single account settings layout. Perfect for SaaS dashboards that need secure developer account management.",
       "dependencies": [
-        "lucide-react",
-        "sonner"
+        "lucide-react"
       ],
       "registryDependencies": [
         "card",
@@ -3579,7 +4126,7 @@
         "item",
         "dropdown-menu",
         "dialog",
-        "sonner",
+        "toast",
         "tabs"
       ],
       "files": [
@@ -3596,8 +4143,7 @@
       "title": "Account Setting 02 - Profile & Security Settings",
       "description": "Update personal information, manage passwords, and configure account security with a clean settings interface. Designed for applications that require simple profile management and stronger account protection.",
       "dependencies": [
-        "lucide-react",
-        "sonner"
+        "lucide-react"
       ],
       "registryDependencies": [
         "card",
@@ -3609,7 +4155,7 @@
         "avatar",
         "switch",
         "separator",
-        "sonner"
+        "toast"
       ],
       "files": [
         {
@@ -3814,21 +4360,6 @@
           "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-01/RecentOrdersCode.tsx",
           "type": "registry:component",
           "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-01/RecentOrdersCode.tsx"
-        },
-        {
-          "path": "src/common/divider/index.tsx",
-          "type": "registry:component",
-          "target": "common/divider/index.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/LyraStyleProvider.tsx",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/dashboardshell/LyraStyleProvider.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/style.css",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/dashboardshell/style.css"
         }
       ]
     },
@@ -3917,21 +4448,6 @@
           "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-02/ProductCarouselCode.tsx",
           "type": "registry:component",
           "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-02/ProductCarouselCode.tsx"
-        },
-        {
-          "path": "src/common/divider/index.tsx",
-          "type": "registry:component",
-          "target": "common/divider/index.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/LyraStyleProvider.tsx",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/dashboardshell/LyraStyleProvider.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/style.css",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/dashboardshell/style.css"
         }
       ]
     },
@@ -4018,16 +4534,6 @@
           "path": "src/common/divider/index.tsx",
           "type": "registry:component",
           "target": "common/divider/index.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/LyraStyleProvider.tsx",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/dashboardshell/LyraStyleProvider.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/style.css",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/dashboardshell/style.css"
         }
       ]
     },
@@ -4098,16 +4604,6 @@
           "path": "src/common/divider/index.tsx",
           "type": "registry:component",
           "target": "common/divider/index.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/LyraStyleProvider.tsx",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/dashboardshell/LyraStyleProvider.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/style.css",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/dashboardshell/style.css"
         }
       ]
     },
@@ -4118,8 +4614,7 @@
       "description": "A school and education management dashboard shell with a header, metric cards, attendance overview, grade distribution, fees paid, fees pending, staff salary, recent enrollments, and upcoming events sections. Designed for school management systems and education platforms.",
       "dependencies": [
         "lucide-react",
-        "recharts",
-        "simplebar-react"
+        "recharts"
       ],
       "registryDependencies": [
         "card",
@@ -4191,21 +4686,6 @@
           "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-05/subject-performance.tsx",
           "type": "registry:component",
           "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-05/subject-performance.tsx"
-        },
-        {
-          "path": "src/common/divider/index.tsx",
-          "type": "registry:component",
-          "target": "common/divider/index.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/LyraStyleProvider.tsx",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/dashboardshell/LyraStyleProvider.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/style.css",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/dashboardshell/style.css"
         }
       ]
     },
@@ -4312,21 +4792,162 @@
           "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-06/health-metric-cards.tsx",
           "type": "registry:component",
           "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-06/health-metric-cards.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-shell-07",
+      "type": "registry:block",
+      "title": "Dashboard Shell 07 - Restaurant POS Analytics Dashboard",
+      "description": "A restaurant POS analytics dashboard shell with a POS header, KPI stat cards, weekly revenue overview, order type distribution, top selling items, recent payments, customer ratings, and a live kitchen order queue table.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "button",
+        "dropdown-menu",
+        "chart",
+        "select",
+        "avatar",
+        "table",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard-shell-07/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/pos-header.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/pos-header.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/stat-cards.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/stat-cards.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/revenue-overview.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/revenue-overview.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/order-type.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/order-type.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/top-selling-items.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/top-selling-items.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/recent-payments.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/recent-payments.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/customer-ratings.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/customer-ratings.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/recent-orders.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-07/recent-orders.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-shell-08",
+      "type": "registry:block",
+      "title": "Dashboard Shell 08 - Logistics & Supply Chain Command",
+      "description": "A logistics and supply chain dashboard shell with a fleet command header, KPI metric grid, freight volume & SLA trend chart, carrier cost breakdown, shipment status radial chart, warehouse capacity chart, active fleet driver roster, vehicle allocation overview, and a live freight shipments data table.",
+      "dependencies": [
+        "lucide-react",
+        "recharts",
+        "simplebar-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "button",
+        "select",
+        "chart",
+        "table",
+        "dropdown-menu",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard-shell-08/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/HeaderBlockCode.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/HeaderBlockCode.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/MetricGridCode.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/MetricGridCode.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/TrendChartCode.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/TrendChartCode.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/OperationsCostsCardCode.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/OperationsCostsCardCode.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/FleetStatusCardCode.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/FleetStatusCardCode.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/WarehouseCapacityCardCode.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/WarehouseCapacityCardCode.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/DriverListCardCode.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/DriverListCardCode.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/VehicleOverviewCardCode.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/VehicleOverviewCardCode.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/DataTableCode.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/dashboardshell/dashboard-shell-08/DataTableCode.tsx"
         },
         {
           "path": "src/common/divider/index.tsx",
           "type": "registry:component",
           "target": "common/divider/index.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/LyraStyleProvider.tsx",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/dashboardshell/LyraStyleProvider.tsx"
-        },
-        {
-          "path": "src/components/shadcn-dashboard/blocks/dashboardshell/style.css",
-          "type": "registry:component",
-          "target": "components/shadcn-dashboard/blocks/dashboardshell/style.css"
         }
       ]
     },
@@ -6436,8 +7057,7 @@
       "title": "Checkbox-07 - Checkbox with custom icons",
       "description": "Checkbox component",
       "dependencies": [
-        "lucide-react",
-        "@base-ui/react"
+        "lucide-react"
       ],
       "registryDependencies": [
         "checkbox"
@@ -6473,8 +7093,7 @@
       "title": "Checkbox-09 - Checkbox with tree",
       "description": "Checkbox component",
       "dependencies": [
-        "lucide-react",
-        "@base-ui/react"
+        "lucide-react"
       ],
       "registryDependencies": [
         "checkbox",
@@ -8171,12 +8790,9 @@
       "type": "registry:component",
       "title": "Sonner-01 - Upload Toast",
       "description": "Upload toast sonner component",
-      "dependencies": [
-        "sonner"
-      ],
       "registryDependencies": [
         "button",
-        "sonner"
+        "toast"
       ],
       "files": [
         {
@@ -8191,12 +8807,9 @@
       "type": "registry:component",
       "title": "Sonner-02 - Warning Toast",
       "description": "Warning toast sonner component",
-      "dependencies": [
-        "sonner"
-      ],
       "registryDependencies": [
         "button",
-        "sonner"
+        "toast"
       ],
       "files": [
         {
@@ -8211,12 +8824,9 @@
       "type": "registry:component",
       "title": "Sonner-03 - Success Toast",
       "description": "Success toast sonner component",
-      "dependencies": [
-        "sonner"
-      ],
       "registryDependencies": [
         "button",
-        "sonner"
+        "toast"
       ],
       "files": [
         {
@@ -8232,12 +8842,11 @@
       "title": "Sonner-04 - Custom PR Merge",
       "description": "A premium custom toast notification for Pull Request merge flows with approval avatars.",
       "dependencies": [
-        "lucide-react",
-        "sonner"
+        "lucide-react"
       ],
       "registryDependencies": [
         "button",
-        "sonner",
+        "toast",
         "separator",
         "avatar"
       ],
@@ -8255,12 +8864,11 @@
       "title": "Sonner-05 - Custom Sync Status",
       "description": "A clean, minimal toast notification showing active repository sync status.",
       "dependencies": [
-        "lucide-react",
-        "sonner"
+        "lucide-react"
       ],
       "registryDependencies": [
         "button",
-        "sonner",
+        "toast",
         "separator"
       ],
       "files": [
@@ -8278,12 +8886,11 @@
       "description": "Animated payout toast that transitions from an amber pending state to a teal success state with a smooth ocean-wave ripple emanating from the icon.",
       "dependencies": [
         "lucide-react",
-        "motion",
-        "sonner"
+        "motion"
       ],
       "registryDependencies": [
         "button",
-        "sonner",
+        "toast",
         "spinner"
       ],
       "files": [
@@ -8301,12 +8908,11 @@
       "description": "Animated payout toast that transitions from an amber pending state to a red-500 failed state with a smooth ripple wave and slide-in text animation.",
       "dependencies": [
         "lucide-react",
-        "motion",
-        "sonner"
+        "motion"
       ],
       "registryDependencies": [
         "button",
-        "sonner",
+        "toast",
         "spinner"
       ],
       "files": [

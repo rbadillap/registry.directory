@@ -1,0 +1,774 @@
+{
+  "key": "n3wth",
+  "entry": "n3wth kit",
+  "name": "n3wth",
+  "homepage": "https://kit.n3wth.com",
+  "indexUrl": "https://kit.n3wth.com/r/registry.json",
+  "itemBase": "https://kit.n3wth.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "n3wth",
+      "type": "registry:style",
+      "description": "Flat, minimal, iOS-inspired design system for n3wth projects.",
+      "cssVars": {
+        "theme": {
+          "font-sans": "Inter, system-ui, -apple-system, sans-serif",
+          "radius": "0.625rem"
+        },
+        "light": {
+          "background": "0 0% 100%",
+          "foreground": "0 0% 3.9%",
+          "primary": "0 0% 9%",
+          "primary-foreground": "0 0% 98%",
+          "muted": "0 0% 96.1%",
+          "muted-foreground": "0 0% 45.1%",
+          "accent": "0 0% 96.1%",
+          "accent-foreground": "0 0% 9%",
+          "border": "0 0% 89.8%",
+          "ring": "0 0% 3.9%"
+        },
+        "dark": {
+          "background": "0 0% 0%",
+          "foreground": "0 0% 98%",
+          "primary": "0 0% 98%",
+          "primary-foreground": "0 0% 9%",
+          "muted": "0 0% 14.9%",
+          "muted-foreground": "0 0% 63.9%",
+          "accent": "0 0% 14.9%",
+          "accent-foreground": "0 0% 98%",
+          "border": "0 0% 14.9%",
+          "ring": "0 0% 83.1%"
+        }
+      }
+    },
+    {
+      "name": "cn",
+      "type": "registry:lib",
+      "description": "Tailwind CSS class merge utility",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/cn/cn.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Multi-variant button with responsive sizes, loading state, and asChild support.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/button/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Inline badge with semantic color variants (sage, coral, mint, gold).",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/badge/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Text input with glass variant, icon slots, and error state.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/input/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "registry:ui",
+      "title": "Icon",
+      "description": "Icon wrapper around iconoir-react with named icon map and size presets.",
+      "dependencies": [
+        "iconoir-react"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/icon/icon.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Toggle switch with controlled/uncontrolled modes and size variants.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/switch/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Circular avatar with image, fallback initials, and size presets.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/avatar/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Horizontal or vertical visual separator.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/separator/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Animated progress bar with value label and semantic color states.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/progress/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Form label with required indicator and disabled state.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/label/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Textarea with resize control and error state.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/textarea/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Skeleton loading placeholder with text, circular, and rectangular variants.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/skeleton/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code Block",
+      "description": "Lightweight syntax-highlighting code block with line numbers.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/code-block/code-block.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "noise-overlay",
+      "type": "registry:ui",
+      "title": "Noise Overlay",
+      "description": "SVG noise texture overlay for visual grain effect.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/noise-overlay/noise-overlay.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-indicator",
+      "type": "registry:ui",
+      "title": "Scroll Indicator",
+      "description": "Animated scroll-down indicator with label and position presets.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/scroll-indicator/scroll-indicator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hamburger-icon",
+      "type": "registry:ui",
+      "title": "Hamburger Icon",
+      "description": "Animated hamburger-to-X SVG icon for mobile menu toggles.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/hamburger-icon/hamburger-icon.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "animated-text",
+      "type": "registry:ui",
+      "title": "Animated Text",
+      "description": "CSS-animated text with fade-up, fade-in, slide-up, and blur-in effects.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/animated-text/animated-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "shape",
+      "type": "registry:ui",
+      "title": "Shape",
+      "description": "Decorative SVG shape with pattern fills and responsive sizing.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/shape/shape.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/new-york/shape/patterns.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "character",
+      "type": "registry:ui",
+      "title": "Character",
+      "description": "Expressive SVG character face with expressions and accessories.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/character/character.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "speech-bubble",
+      "type": "registry:ui",
+      "title": "Speech Bubble",
+      "description": "Speech or thought bubble with directional tail.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/speech-bubble/speech-bubble.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Portal-based tooltip with auto-positioning and arrow.",
+      "dependencies": [
+        "react-dom"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/tooltip/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Card container with default, glass, and interactive variants.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/card/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "nav-link",
+      "type": "registry:ui",
+      "title": "Nav Link",
+      "description": "Navigation link with default, underline, and pill variants.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/nav-link/nav-link.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command-box",
+      "type": "registry:ui",
+      "title": "Command Box",
+      "description": "Copyable command display box with clipboard support.",
+      "registryDependencies": [
+        "cn",
+        "icon"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/command-box/command-box.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "theme-toggle",
+      "type": "registry:ui",
+      "title": "Theme Toggle",
+      "description": "Dark/light theme toggle button with sun/moon icons.",
+      "registryDependencies": [
+        "cn",
+        "icon"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/theme-toggle/theme-toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "mobile-drawer",
+      "type": "registry:ui",
+      "title": "Mobile Drawer",
+      "description": "Slide-in drawer for mobile navigation with focus trap.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/mobile-drawer/mobile-drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "error-boundary",
+      "type": "registry:ui",
+      "title": "Error Boundary",
+      "description": "React error boundary with fallback UI and retry.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/error-boundary/error-boundary.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "composite-shape",
+      "type": "registry:ui",
+      "title": "Composite Shape",
+      "description": "Multi-layer shape compositions with preset configurations.",
+      "registryDependencies": [
+        "cn",
+        "shape"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/composite-shape/composite-shape.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/new-york/composite-shape/presets.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "modal",
+      "type": "registry:ui",
+      "title": "Modal",
+      "description": "Accessible modal dialog with portal, focus trap, and compound sub-components.",
+      "dependencies": [
+        "react-dom"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/modal/modal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Accessible tabs with underline and pill variants and animated indicator.",
+      "registryDependencies": [
+        "cn",
+        "use-reduced-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/tabs/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Toast notification with variant styling and auto-dismiss.",
+      "registryDependencies": [
+        "cn",
+        "icon"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/toast/toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown",
+      "type": "registry:ui",
+      "title": "Dropdown",
+      "description": "Accessible dropdown select with single/multi-select and search.",
+      "dependencies": [
+        "react-dom"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/dropdown/dropdown.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Accessible accordion with single/multiple modes and animated content.",
+      "registryDependencies": [
+        "cn",
+        "use-reduced-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/accordion/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "nav",
+      "type": "registry:block",
+      "title": "Nav",
+      "description": "Responsive navigation bar with desktop links, mobile drawer, and theme toggle.",
+      "registryDependencies": [
+        "cn",
+        "nav-link",
+        "theme-toggle",
+        "mobile-drawer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/nav/nav.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "footer",
+      "type": "registry:block",
+      "title": "Footer",
+      "description": "Site footer with link columns, social icons, and copyright.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/footer/footer.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "hero",
+      "type": "registry:block",
+      "title": "Hero",
+      "description": "Hero section with badge, title, description, and CTA buttons.",
+      "registryDependencies": [
+        "cn",
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/hero/hero.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "section",
+      "type": "registry:block",
+      "title": "Section",
+      "description": "Layout section wrapper with size, spacing, and container options.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/section/section.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "use-theme",
+      "type": "registry:hook",
+      "description": "Theme toggle with localStorage persistence and system preference detection.",
+      "files": [
+        {
+          "path": "registry/hooks/use-theme/use-theme.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-media-query",
+      "type": "registry:hook",
+      "description": "SSR-safe media query matching with breakpoint helpers.",
+      "files": [
+        {
+          "path": "registry/hooks/use-media-query/use-media-query.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-reduced-motion",
+      "type": "registry:hook",
+      "description": "Detects prefers-reduced-motion and provides animation config defaults.",
+      "files": [
+        {
+          "path": "registry/hooks/use-reduced-motion/use-reduced-motion.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-keyboard-shortcuts",
+      "type": "registry:hook",
+      "description": "Declarative keyboard shortcut handler with modifier key support.",
+      "files": [
+        {
+          "path": "registry/hooks/use-keyboard-shortcuts/use-keyboard-shortcuts.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-toast",
+      "type": "registry:hook",
+      "description": "Toast notification system with context provider and variant helpers.",
+      "registryDependencies": [
+        "toast"
+      ],
+      "files": [
+        {
+          "path": "registry/hooks/use-toast/use-toast.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-count-up",
+      "type": "registry:hook",
+      "description": "Animated number counter with scroll-trigger support.",
+      "dependencies": [
+        "gsap"
+      ],
+      "files": [
+        {
+          "path": "registry/hooks/use-count-up/use-count-up.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-scroll-reveal",
+      "type": "registry:hook",
+      "description": "Scroll-triggered entrance animations with directional options.",
+      "dependencies": [
+        "gsap"
+      ],
+      "files": [
+        {
+          "path": "registry/hooks/use-scroll-reveal/use-scroll-reveal.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-stagger-list",
+      "type": "registry:hook",
+      "description": "Staggered list item cascade animations.",
+      "dependencies": [
+        "gsap"
+      ],
+      "files": [
+        {
+          "path": "registry/hooks/use-stagger-list/use-stagger-list.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-page-transition",
+      "type": "registry:hook",
+      "description": "Page entrance/exit fade-and-slide animations.",
+      "dependencies": [
+        "gsap"
+      ],
+      "files": [
+        {
+          "path": "registry/hooks/use-page-transition/use-page-transition.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-text-reveal",
+      "type": "registry:hook",
+      "description": "Character-by-character text reveal with scroll trigger.",
+      "dependencies": [
+        "gsap"
+      ],
+      "files": [
+        {
+          "path": "registry/hooks/use-text-reveal/use-text-reveal.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-button-pulse",
+      "type": "registry:hook",
+      "description": "Subtle hover/press scale animations for buttons.",
+      "dependencies": [
+        "gsap"
+      ],
+      "files": [
+        {
+          "path": "registry/hooks/use-button-pulse/use-button-pulse.ts",
+          "type": "registry:hook"
+        }
+      ]
+    }
+  ]
+}
