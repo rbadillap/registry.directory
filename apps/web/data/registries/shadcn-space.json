@@ -4476,6 +4476,54 @@
       ]
     },
     {
+      "name": "navbar-12",
+      "type": "registry:block",
+      "title": "Navbar 12 - Ecommerce Mega Menu Navbar",
+      "description": "An ecommerce navbar with a compact icon-only utility row for cart, wishlist, and account, plus a horizontal category bar where each link opens a multi-column mega menu.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "sheet",
+        "button",
+        "accordion",
+        "navigation-menu",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/navbar-12/page.tsx",
+          "type": "registry:page",
+          "target": "app/navbar-12/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/navbar-12/navbar.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/navbar-12/navbar.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/navbar-12/navbar-12-data.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/navbar-12/navbar-12-data.ts"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/navbar-12/mega-menu-panel.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/navbar-12/mega-menu-panel.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/navbar-12/mobile-nav-sheet.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/navbar-12/mobile-nav-sheet.tsx"
+        },
+        {
+          "path": "src/assets/logo/logo.tsx",
+          "type": "registry:component",
+          "target": "assets/logo/logo.tsx"
+        }
+      ]
+    },
+    {
       "name": "widget-01",
       "type": "registry:block",
       "title": "Widget 01 - Analytics Overview Widget",
@@ -8598,6 +8646,91 @@
       ]
     },
     {
+      "name": "newsletter-03",
+      "type": "registry:block",
+      "title": "Newsletter 03 - Community Circle Subscribe",
+      "description": "An animated newsletter section framed by floating community avatars, pairing an inviting headline with a simple email signup and social proof to grow subscriptions.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "input",
+        "button",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/newsletter-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/newsletter-03/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/newsletter-03/newsletter.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/newsletter-03/newsletter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "newsletter-04",
+      "type": "registry:block",
+      "title": "Newsletter 04 - Minimal Split Subscribe",
+      "description": "A clean, minimal newsletter section pairing a headline and short note on the left with a compact email signup form on the right, set against an animated backdrop of falling light beams that spark on collision, wrapped in subtle micro-animations.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "input",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/newsletter-04/page.tsx",
+          "type": "registry:page",
+          "target": "app/newsletter-04/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/newsletter-04/newsletter.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/newsletter-04/newsletter.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/animations/BackgroundBeamsWithCollision.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animations/BackgroundBeamsWithCollision.tsx"
+        }
+      ]
+    },
+    {
+      "name": "newsletter-05",
+      "type": "registry:block",
+      "title": "Newsletter 05 - Split Panel Subscribe",
+      "description": "A split-layout newsletter section pairing a headline, short note, inline signup form, and reader social proof with a decorative dotted panel where a mail icon floats among orbiting notification icons and rotating rings for a subtle micro-animated feel.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "input",
+        "button",
+        "badge",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/newsletter-05/page.tsx",
+          "type": "registry:page",
+          "target": "app/newsletter-05/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/newsletter-05/newsletter.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/newsletter-05/newsletter.tsx"
+        }
+      ]
+    },
+    {
       "name": "dashboard-shell-01",
       "type": "registry:block",
       "title": "Dashboard Shell 01 - Analytics Dashboard Shell",
@@ -9018,6 +9151,341 @@
           "path": "src/assets/logo/logo.tsx",
           "type": "registry:component",
           "target": "assets/logo/logo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-shell-05",
+      "type": "registry:block",
+      "title": "Dashboard Shell 05 - Analytics Dashboard Shell",
+      "description": "A comprehensive analytics dashboard layout featuring a greeting report banner, key insights with revenue data, website visit charts, customer segmentation pie chart, product action cards, campaign performance tracking, and a top-selling products data table, ideal for data-driven business operations.",
+      "dependencies": [
+        "lucide-react",
+        "@iconify/react"
+      ],
+      "registryDependencies": [
+        "sidebar",
+        "scroll-area",
+        "card",
+        "button",
+        "badge",
+        "chart",
+        "collapsible",
+        "dropdown-menu",
+        "separator",
+        "checkbox",
+        "progress",
+        "table",
+        "select",
+        "input-group",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard-shell-05/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/app-sidebar.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/nav-main.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/nav-main.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/nav-project.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/nav-project.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/team-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/team-switcher.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/site-header.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/notification-dropdown.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/notification-dropdown.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/user-dropdown.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/user-dropdown.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/report-banner.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/report-banner.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/key-insights.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/key-insights.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/website-visits.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/website-visits.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/current-visits.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/current-visits.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/product-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/product-card.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/product-action-cards.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/product-action-cards.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/campaign-performance.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/campaign-performance.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-05/traffic-data.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-05/traffic-data.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-shell-06",
+      "type": "registry:block",
+      "title": "Dashboard Shell 06 - Insights Dashboard Shell",
+      "description": "A comprehensive analytics dashboard layout featuring key statistics, a revenue update chart, monthly earnings and yearly breakup widgets, weekly stats, sales downloads, recent transactions, a top-selling projects data table, and a sales-by-country widget, ideal for data-driven business operations.",
+      "dependencies": [
+        "lucide-react",
+        "@iconify/react",
+        "recharts",
+        "motion"
+      ],
+      "registryDependencies": [
+        "sidebar",
+        "scroll-area",
+        "card",
+        "button",
+        "badge",
+        "chart",
+        "collapsible",
+        "dropdown-menu",
+        "separator",
+        "checkbox",
+        "progress",
+        "table",
+        "select",
+        "input-group",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard-shell-06/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/app-sidebar.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/nav-main.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/nav-main.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/nav-project.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/nav-project.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/team-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/team-switcher.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/site-header.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/notification-dropdown.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/notification-dropdown.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/user-dropdown.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/user-dropdown.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/statistics.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/statistics.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/revenue-update.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/revenue-update.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/monthly-earnings.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/monthly-earnings.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/yearly-breakup.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/yearly-breakup.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/weekly-stats.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/weekly-stats.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/sales-downloads.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/sales-downloads.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/recent-transactions.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/recent-transactions.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/top-projects-table.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/top-projects-table.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-06/salesbycountrywidget.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-06/salesbycountrywidget.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-shell-07",
+      "type": "registry:block",
+      "title": "Dashboard Shell 07 - CRM Dashboard Shell",
+      "description": "A CRM-focused dashboard layout featuring customer and lead action cards, a revenue overview chart, a revenue sources breakdown, a sales funnel widget, lead sources, weekly sales, a top campaigns data table, and a recent events timeline, ideal for sales and customer relationship tracking.",
+      "dependencies": [
+        "lucide-react",
+        "@iconify/react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "sidebar",
+        "scroll-area",
+        "card",
+        "button",
+        "badge",
+        "chart",
+        "collapsible",
+        "dropdown-menu",
+        "separator",
+        "checkbox",
+        "progress",
+        "table",
+        "input",
+        "input-group",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard-shell-07/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/app-sidebar.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/nav-main.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/nav-main.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/nav-project.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/nav-project.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/team-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/team-switcher.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/site-header.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/notification-dropdown.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/notification-dropdown.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/user-dropdown.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/user-dropdown.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/ecommerce-action.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/ecommerce-action.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/sales-overview.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/sales-overview.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/earning-report-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/earning-report-chart.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/annual-profit.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/annual-profit.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/campaign-performance.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/campaign-performance.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/weekly-sales.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/weekly-sales.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/top-projects-table.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/top-projects-table.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-07/activity-timeline.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-07/activity-timeline.tsx"
         }
       ]
     },
@@ -13915,6 +14383,260 @@
           "path": "src/components/shadcn-space/animations/marquee.tsx",
           "type": "registry:component",
           "target": "components/shadcn-space/animations/marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-01",
+      "type": "registry:block",
+      "title": "AI Chat 01 - Chat",
+      "description": "A complete AI chat conversation block with a centered welcome and suggested prompts, a scrollable message thread with assistant and user bubbles, and a composer with attachments and a model picker.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "textarea",
+        "dropdown-menu",
+        "scroll-area",
+        "message",
+        "bubble",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-chat-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-01/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-01/message-thread.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-01/message-thread.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-01/composer.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-01/composer.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-01/composer.css",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-01/composer.css"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-01/use-speech-recognition.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-01/use-speech-recognition.ts"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-01/data.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-01/data.ts"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-01/types.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-01/types.ts"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-02",
+      "type": "registry:block",
+      "title": "AI Chat 02 - Composer",
+      "description": "A standalone AI chat composer with file attachments (drag, drop, and paste), a model picker with effort levels and a thinking toggle, speech-to-text dictation, and a temporary-chat switch.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "textarea",
+        "dropdown-menu",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-chat-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-02/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-02/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-02/composer.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-02/composer.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-02/use-speech-recognition.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-02/use-speech-recognition.ts"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-03",
+      "type": "registry:block",
+      "title": "AI Chat 03 - Chat Shell",
+      "description": "The frame around an AI chat: a collapsible sidebar with pinned and recent chats, rename and delete actions, a command-palette style search dialog, a workspace and account menu, and a topbar.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "sheet",
+        "separator",
+        "dropdown-menu",
+        "alert-dialog",
+        "dialog",
+        "radio-group",
+        "input",
+        "scroll-area",
+        "tooltip",
+        "avatar",
+        "command"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-chat-03/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-03/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-03/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-03/sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-03/sidebar.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-03/topbar.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-03/topbar.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-03/search-dialog.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-03/search-dialog.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-03/share-dialog.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-03/share-dialog.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-03/data.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-03/data.ts"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-03/types.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-03/types.ts"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-04",
+      "type": "registry:block",
+      "title": "AI Chat 04 - Assistant Panel",
+      "description": "A docked AI assistant panel that sits alongside your app content at desktop sizes and slides in as a sheet below the lg breakpoint: a header with chat history, new chat, and close actions, a welcome state with suggested prompts, a message thread, and a full composer with model and effort picker.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "textarea",
+        "dropdown-menu",
+        "switch",
+        "scroll-area",
+        "sheet",
+        "sidebar",
+        "collapsible",
+        "avatar",
+        "message",
+        "bubble"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-04/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-chat-04/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-04/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-04/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-04/panel.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-04/panel.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-04/composer.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-04/composer.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-04/use-speech-recognition.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-04/use-speech-recognition.ts"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-04/host-shell.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-04/host-shell.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-04/data.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-04/data.ts"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-04/types.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-04/types.ts"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-05",
+      "type": "registry:block",
+      "title": "AI Chat 05 - Share Dialog",
+      "description": "The sharing flow for an AI chat: a dialog with visibility options (private, team, or public link) and a copy-link row, ready to drop into any chat block.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "dialog",
+        "label",
+        "radio-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-05/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-chat-05/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/ai-chat-05/dialog.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/ai-chat-05/dialog.tsx"
         }
       ]
     },

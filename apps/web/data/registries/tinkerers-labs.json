@@ -197,6 +197,27 @@
       ]
     },
     {
+      "name": "save-bar",
+      "type": "registry:ui",
+      "title": "Save Bar",
+      "description": "A bar that exists only while a form has unsaved changes. It says so, saves, confirms, and leaves.",
+      "categories": [
+        "form",
+        "button",
+        "feedback",
+        "floating"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/save-bar/save-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "install-command",
       "type": "registry:ui",
       "title": "Install Command",
@@ -2012,6 +2033,29 @@
       ]
     },
     {
+      "name": "lattice-field",
+      "type": "registry:ui",
+      "title": "Lattice Field",
+      "description": "A grid of dots that parts around the pointer and falls apart when pressed, then climbs back into line.",
+      "categories": [
+        "scene",
+        "background",
+        "particles",
+        "pointer",
+        "webgl"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.tinkererslabs.com/r/render-surface.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/lattice-field/lattice-field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "burst",
       "type": "registry:ui",
       "title": "Burst",
@@ -2471,6 +2515,31 @@
       ]
     },
     {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "A searchable select that holds one choice or several.",
+      "categories": [
+        "form",
+        "input",
+        "select",
+        "combobox",
+        "multiselect"
+      ],
+      "dependencies": [
+        "lucide-react@^1.31.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/combobox/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "sortable-list",
       "type": "registry:ui",
       "title": "Sortable List",
@@ -2833,6 +2902,21 @@
         },
         {
           "path": "components/demos/demo-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "combobox-demo",
+      "type": "registry:example",
+      "title": "Combobox Demo",
+      "description": "A worked example of Combobox: A field that narrows a list as you type, and holds one choice or several as removable chips.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/combobox.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/combobox-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -3408,6 +3492,21 @@
       ]
     },
     {
+      "name": "lattice-field-demo",
+      "type": "registry:example",
+      "title": "Lattice Field Demo",
+      "description": "A worked example of Lattice Field: A grid of dots that parts around the pointer and falls apart when pressed, then climbs back into line.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/lattice-field.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/lattice-field-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "lightbox-demo",
       "type": "registry:example",
       "title": "Lightbox Demo",
@@ -3831,6 +3930,21 @@
       "files": [
         {
           "path": "components/demos/reviewable-diff-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "save-bar-demo",
+      "type": "registry:example",
+      "title": "Save Bar Demo",
+      "description": "A worked example of Save Bar: A bar that exists only while a form has unsaved changes. It says so, saves, confirms, and leaves.",
+      "registryDependencies": [
+        "https://ui.tinkererslabs.com/r/save-bar.json"
+      ],
+      "files": [
+        {
+          "path": "components/demos/save-bar-demo.tsx",
           "type": "registry:example"
         }
       ]

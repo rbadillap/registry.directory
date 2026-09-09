@@ -8,6 +8,22 @@
   "resolvable": true,
   "items": [
     {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utils",
+      "description": "The cn class name helper that every assistant-ui component imports from @/lib/utils.",
+      "dependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "lib/utils.ts"
+        }
+      ]
+    },
+    {
       "name": "elements-surfaces",
       "type": "registry:component",
       "title": "Elements Surfaces",
@@ -90,7 +106,6 @@
       "title": "Streaming text",
       "description": "Tokens arrive softly: the newest words land in blue and settle into ink.",
       "registryDependencies": [
-        "https://r.assistant-ui.com/elements-surfaces.json",
         "https://r.assistant-ui.com/elements-range.json"
       ],
       "files": [
@@ -577,6 +592,25 @@
       "files": [
         {
           "path": "components/assistant-ui/elements/scroll-anchor.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-conversation-map",
+      "type": "registry:component",
+      "title": "Conversation map",
+      "description": "A rail of the whole thread: one tick per turn, the turn being read marked and the ones on screen deepened, and a hover preview of what it says.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/elements/conversation-map.tsx",
           "type": "registry:component"
         }
       ]
@@ -1876,6 +1910,11 @@
           "target": "components/ui/skeleton.tsx"
         },
         {
+          "path": "components/ui/textarea.tsx",
+          "type": "registry:file",
+          "target": "components/ui/textarea.tsx"
+        },
+        {
           "path": "components/ui/tooltip.tsx",
           "type": "registry:file",
           "target": "components/ui/tooltip.tsx"
@@ -2013,6 +2052,24 @@
       ]
     },
     {
+      "name": "conversation-map",
+      "type": "registry:component",
+      "title": "Conversation Map",
+      "description": "Runtime-backed thread rail: a tick per turn, the turn being read marked and the ones on screen deepened, a hover preview, and a click that scrolls there.",
+      "dependencies": [
+        "@assistant-ui/react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-conversation-map.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/elements/conversation-map.aui.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "elements-reasoning",
       "type": "registry:component",
       "title": "Reasoning Panel",
@@ -2060,8 +2117,7 @@
         "@assistant-ui/ai-sdk"
       ],
       "registryDependencies": [
-        "https://r.assistant-ui.com/elements-context-display.json",
-        "tooltip"
+        "https://r.assistant-ui.com/elements-context-display.json"
       ],
       "files": [
         {
@@ -2105,9 +2161,9 @@
         "https://r.assistant-ui.com/badge.json",
         "button",
         "dialog",
-        "input",
         "label",
-        "separator"
+        "separator",
+        "input"
       ],
       "files": [
         {
@@ -2258,7 +2314,8 @@
       ],
       "registryDependencies": [
         "button",
-        "collapsible"
+        "collapsible",
+        "textarea"
       ],
       "files": [
         {

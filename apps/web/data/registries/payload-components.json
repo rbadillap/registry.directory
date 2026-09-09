@@ -34,6 +34,32 @@
       ]
     },
     {
+      "name": "hero-split",
+      "type": "registry:block",
+      "title": "Hero Split",
+      "description": "Two-column Payload hero block with an editor-placed visual.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/heroFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/heroFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/HeroSplit/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/HeroSplit/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/HeroSplit/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/HeroSplit/Component.tsx"
+        }
+      ]
+    },
+    {
       "name": "hero-video",
       "type": "registry:block",
       "title": "Hero Video",
@@ -1125,6 +1151,29 @@
       ]
     },
     {
+      "name": "call-to-action-split",
+      "type": "registry:block",
+      "title": "Call To Action Split",
+      "description": "Split Payload call-to-action block: heading and copy on one side, CTA links and assurance on the other.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/callToActionFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/callToActionFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/CallToActionSplit/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/CallToActionSplit/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/CallToActionSplit/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/CallToActionSplit/Component.tsx"
+        }
+      ]
+    },
+    {
       "name": "call-to-action-signup",
       "type": "registry:block",
       "title": "Call To Action Signup",
@@ -1181,6 +1230,11 @@
           "target": "~/src/blocks/shared/contactUrls.ts"
         },
         {
+          "path": "payload-components/source/blocks/shared/contactFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contactFields.ts"
+        },
+        {
           "path": "payload-components/source/blocks/ContactRoutingForm/config.ts",
           "type": "registry:file",
           "target": "~/src/blocks/ContactRoutingForm/config.ts"
@@ -1189,6 +1243,42 @@
           "path": "payload-components/source/blocks/ContactRoutingForm/Component.tsx",
           "type": "registry:file",
           "target": "~/src/blocks/ContactRoutingForm/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contact-channels",
+      "type": "registry:block",
+      "title": "Contact Channels",
+      "description": "Form-free Payload contact block: a grid of validated email, phone, and URL channels.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/safeUrls.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/safeUrls.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/contactUrls.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contactUrls.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/contactFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/contactFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContactChannels/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContactChannels/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContactChannels/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContactChannels/Component.tsx"
         }
       ]
     },
@@ -1241,6 +1331,32 @@
           "path": "payload-components/source/blocks/TeamGrid/Component.tsx",
           "type": "registry:file",
           "target": "~/src/blocks/TeamGrid/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-bios",
+      "type": "registry:block",
+      "title": "Team Bios",
+      "description": "Bio-forward Payload team block: two-up member cards with avatar, role, and biography.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/teamFields.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/teamFields.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TeamBios/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/TeamBios/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/TeamBios/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/TeamBios/Component.tsx"
         }
       ]
     },
@@ -1885,6 +2001,48 @@
       ]
     },
     {
+      "name": "collection-query",
+      "type": "registry:block",
+      "title": "Collection Query",
+      "description": "A Pages block that queries the starter Posts collection by category or manual selection and renders grid, list, or featured cards.",
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "payload-components/source/blocks/shared/PostCard.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/PostCard.tsx"
+        },
+        {
+          "path": "payload-components/source/blocks/CollectionQuery/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/CollectionQuery/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/CollectionQuery/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/CollectionQuery/Component.tsx"
+        },
+        {
+          "path": "payload-components/source/blocks/CollectionQuery/Browser.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/CollectionQuery/Browser.tsx"
+        },
+        {
+          "path": "payload-components/source/blocks/CollectionQuery/query.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/CollectionQuery/query.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/CollectionQuery/navigation.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/CollectionQuery/navigation.ts"
+        }
+      ]
+    },
+    {
       "name": "footer-columns",
       "type": "registry:block",
       "title": "Footer Columns",
@@ -1980,6 +2138,73 @@
           "path": "payload-components/source/blocks/FooterCentered/Component.tsx",
           "type": "registry:file",
           "target": "~/src/blocks/FooterCentered/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contact-form-basic",
+      "type": "registry:block",
+      "title": "Contact Form Basic",
+      "description": "An accessible contact form with name, email, organization, and message fields, inline validation, and confirmed submission feedback.",
+      "files": [
+        {
+          "path": "payload-components/source/blocks/ContactFormBasic/config.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContactFormBasic/config.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/ContactFormBasic/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContactFormBasic/Component.tsx"
+        },
+        {
+          "path": "payload-components/source/blocks/ContactFormBasic/form.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/ContactFormBasic/form.ts"
+        },
+        {
+          "path": "payload-components/source/blocks/shared/safeUrls.ts",
+          "type": "registry:file",
+          "target": "~/src/blocks/shared/safeUrls.ts"
+        }
+      ]
+    },
+    {
+      "name": "post-hero",
+      "type": "registry:component",
+      "title": "Post Hero",
+      "description": "An editorial article header with title, summary, categories, byline, date, and an optional image slot.",
+      "files": [
+        {
+          "path": "payload-components/source/components/PostHero/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/PostHero/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "author-card",
+      "type": "registry:component",
+      "title": "Author Card",
+      "description": "An article author profile with optional avatar, role, biography, and profile link.",
+      "files": [
+        {
+          "path": "payload-components/source/components/AuthorCard/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/AuthorCard/Component.tsx"
+        }
+      ]
+    },
+    {
+      "name": "newsletter-callout",
+      "type": "registry:component",
+      "title": "Newsletter Callout",
+      "description": "A newsletter signup callout with a consumer-owned form endpoint.",
+      "files": [
+        {
+          "path": "payload-components/source/components/NewsletterCallout/Component.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/NewsletterCallout/Component.tsx"
         }
       ]
     }

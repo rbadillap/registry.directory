@@ -8,6 +8,1149 @@
   "resolvable": true,
   "items": [
     {
+      "name": "ai-chat-1",
+      "type": "registry:block",
+      "title": "AI copilot chat surface with streaming transcript and recent chats",
+      "description": "Full page AI copilot chat surface with a streaming transcript, a tabbed header thread switcher over pinned and recent chats, a starter view of prompt and thread shortcuts, model switching, and a docked composer with removable context chips.",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/alert",
+        "@reui/badge",
+        "@reui/code-block",
+        "@reui/frame",
+        "@reui/alert",
+        "attachment",
+        "avatar",
+        "@reui/badge",
+        "bubble",
+        "button",
+        "@reui/code-block",
+        "@reui/code-block-highlight",
+        "collapsible",
+        "dropdown-menu",
+        "field",
+        "@reui/frame",
+        "input-group",
+        "kbd",
+        "marker",
+        "message",
+        "message-scroller",
+        "popover",
+        "progress",
+        "scroll-area",
+        "spinner",
+        "tabs",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-1/page.tsx"
+        },
+        {
+          "path": "ai-chat.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-1/components/ai-chat.tsx"
+        },
+        {
+          "path": "chat-thread.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-1/components/chat-thread.tsx"
+        },
+        {
+          "path": "composer.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-1/components/composer.tsx"
+        },
+        {
+          "path": "githubDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/githubDark.tsx"
+        },
+        {
+          "path": "githubLight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/githubLight.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-1/components/data.ts"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-10",
+      "type": "registry:block",
+      "title": "AI chat welcome screen with scoped sources and structured answers",
+      "description": "Launch surface for a source grounded copilot: a greeting, a framed ask box whose header toggles which files the chat may read, and three starter asks. Replies come back as structured documents, with sortable tables, Shiki highlighted code artifacts and proportional comparison bars beside the prose. A file switched off is named as a gap rather than guessed around.",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/code-block",
+        "@reui/frame",
+        "attachment",
+        "@reui/badge",
+        "bubble",
+        "button",
+        "@reui/code-block",
+        "dropdown-menu",
+        "field",
+        "@reui/frame",
+        "input-group",
+        "item",
+        "kbd",
+        "marker",
+        "message",
+        "message-scroller",
+        "popover",
+        "progress",
+        "spinner",
+        "table",
+        "tabs",
+        "toggle-group",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-10/page.tsx"
+        },
+        {
+          "path": "ai-chat.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-10/components/ai-chat.tsx"
+        },
+        {
+          "path": "chat-header.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-10/components/chat-header.tsx"
+        },
+        {
+          "path": "chat-thread.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-10/components/chat-thread.tsx"
+        },
+        {
+          "path": "composer.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-10/components/composer.tsx"
+        },
+        {
+          "path": "context-chips.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-10/components/context-chips.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-10/components/data.tsx"
+        },
+        {
+          "path": "anthropicBlack.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/anthropicBlack.tsx"
+        },
+        {
+          "path": "anthropicWhite.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/anthropicWhite.tsx"
+        },
+        {
+          "path": "gemini.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/gemini.tsx"
+        },
+        {
+          "path": "mistralAiLogo.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/mistralAiLogo.tsx"
+        },
+        {
+          "path": "openai.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/openai.tsx"
+        },
+        {
+          "path": "openaiDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/openaiDark.tsx"
+        },
+        {
+          "path": "message-parts.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-10/components/message-parts.tsx"
+        },
+        {
+          "path": "reui-mark.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-10/components/reui-mark.tsx"
+        },
+        {
+          "path": "welcome.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-10/components/welcome.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-11",
+      "type": "registry:block",
+      "title": "AI chat stage with framed answer receipts on a live dot field",
+      "description": "A self contained chat surface floating on an animated dot field. Asks stay bubbles while every reply renders as a framed receipt carrying the run behind it, a tool trace, a metric row or a code patch, with model, latency and token cost in the chrome bar. Streaming, stop, retry, thread switching and a scoped source picker are all live.",
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/frame",
+        "@reui/badge",
+        "bubble",
+        "button",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "@reui/frame",
+        "input-group",
+        "item",
+        "kbd",
+        "marker",
+        "message",
+        "message-scroller",
+        "spinner",
+        "toggle-group",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-11/page.tsx"
+        },
+        {
+          "path": "ai-chat.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-11/components/ai-chat.tsx"
+        },
+        {
+          "path": "answer-slab.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-11/components/answer-slab.tsx"
+        },
+        {
+          "path": "chat-thread.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-11/components/chat-thread.tsx"
+        },
+        {
+          "path": "composer.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-11/components/composer.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-11/components/data.tsx"
+        },
+        {
+          "path": "anthropicBlack.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/anthropicBlack.tsx"
+        },
+        {
+          "path": "anthropicWhite.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/anthropicWhite.tsx"
+        },
+        {
+          "path": "gemini.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/gemini.tsx"
+        },
+        {
+          "path": "openai.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/openai.tsx"
+        },
+        {
+          "path": "openaiDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/openaiDark.tsx"
+        },
+        {
+          "path": "stage-header.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-11/components/stage-header.tsx"
+        },
+        {
+          "path": "wave-dots.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-11/components/wave-dots.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-12",
+      "type": "registry:block",
+      "title": "Ask AI docs support panel that shows the knowledge base being read",
+      "description": "A support assistant docked to a documentation page as a hideable right sidebar, answering only from the product knowledge base and showing its work while it does. Every question runs a visible retrieval: the search, then each matched article ticking from queued to read, then the write, and the finished answer folds that reading into a receipt naming how many articles were read and how many survived into the answer. Answers arrive as prose with numbered steps and a caveat, carry helpful and not helpful voting, and when the documentation genuinely does not cover a question the assistant says so and opens a support ticket instead of guessing.",
+      "registryDependencies": [
+        "@reui/icon-stack",
+        "bubble",
+        "button",
+        "collapsible",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "@reui/icon-stack",
+        "input-group",
+        "item",
+        "kbd",
+        "marker",
+        "message-scroller",
+        "sidebar",
+        "skeleton",
+        "spinner",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-12/page.tsx"
+        },
+        {
+          "path": "ai-chat.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-12/components/ai-chat.tsx"
+        },
+        {
+          "path": "answer-parts.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-12/components/answer-parts.tsx"
+        },
+        {
+          "path": "ask-empty.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-12/components/ask-empty.tsx"
+        },
+        {
+          "path": "ask-panel.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-12/components/ask-panel.tsx"
+        },
+        {
+          "path": "ask-thread.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-12/components/ask-thread.tsx"
+        },
+        {
+          "path": "composer.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-12/components/composer.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-12/components/data.tsx"
+        },
+        {
+          "path": "docs-page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-12/components/docs-page.tsx"
+        },
+        {
+          "path": "retrieval-trace.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-12/components/retrieval-trace.tsx"
+        },
+        {
+          "path": "reveal.ts",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-12/components/reveal.ts"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-2",
+      "type": "registry:block",
+      "title": "Docked AI assistant chat panel beside a page with insert into draft",
+      "description": "Sticky right side AI copilot beside a page: streaming thread, grouped Message bubbles, markdown code block, model picker, quick replies, and an Insert action that writes the reply into the document. Sheet on mobile.",
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/code-block",
+        "@reui/icon-stack",
+        "@reui/icon-tile",
+        "avatar",
+        "@reui/badge",
+        "bubble",
+        "button",
+        "@reui/code-block",
+        "@reui/code-block-highlight",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "@reui/icon-stack",
+        "@reui/icon-tile",
+        "input-group",
+        "kbd",
+        "marker",
+        "message",
+        "message-scroller",
+        "scroll-area",
+        "sheet",
+        "skeleton",
+        "spinner",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-2/page.tsx"
+        },
+        {
+          "path": "ai-chat.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-2/components/ai-chat.tsx"
+        },
+        {
+          "path": "assistant-panel.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-2/components/assistant-panel.tsx"
+        },
+        {
+          "path": "chat-thread.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-2/components/chat-thread.tsx"
+        },
+        {
+          "path": "composer.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-2/components/composer.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-2/components/data.ts"
+        },
+        {
+          "path": "release-doc.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-2/components/release-doc.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-3",
+      "type": "registry:block",
+      "title": "AI chat welcome screen with prompt starters and a docked composer",
+      "description": "AI assistant welcome screen and zero state: an Empty greeting with live workspace stats, one rail of start and resume rows that fill the composer and attach context, an InputGroup composer with Attachment chips, and a streaming reply with Stop. A new chat page with prompt suggestions and recent conversations.",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/code-block",
+        "@reui/icon-tile",
+        "attachment",
+        "@reui/badge",
+        "bubble",
+        "button",
+        "card",
+        "@reui/code-block",
+        "collapsible",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "@reui/icon-tile",
+        "input-group",
+        "kbd",
+        "marker",
+        "message",
+        "message-scroller",
+        "questionnaire",
+        "scroll-area",
+        "spinner",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-3/page.tsx"
+        },
+        {
+          "path": "ai-chat.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-3/components/ai-chat.tsx"
+        },
+        {
+          "path": "chat-questionnaire.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-3/components/chat-questionnaire.tsx"
+        },
+        {
+          "path": "chat-thread.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-3/components/chat-thread.tsx"
+        },
+        {
+          "path": "composer.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-3/components/composer.tsx"
+        },
+        {
+          "path": "context-chips.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-3/components/context-chips.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-3/components/data.tsx"
+        },
+        {
+          "path": "welcome.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-3/components/welcome.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-4",
+      "type": "registry:block",
+      "title": "Floating right chat sidebar that pushes the page and replies to a quoted sentence",
+      "description": "Reveal and hide a floating AI panel beside any page: select a sentence in an answer to reply to that line, a keyboard suggestion palette, a workspace Personalize toggle, thread switcher, model and mode picker, and a designed thinking indicator.",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/icon-stack",
+        "attachment",
+        "avatar",
+        "@reui/badge",
+        "bubble",
+        "button",
+        "card",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "@reui/icon-stack",
+        "input-group",
+        "kbd",
+        "marker",
+        "message",
+        "message-scroller",
+        "popover",
+        "sidebar",
+        "skeleton",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-4/page.tsx"
+        },
+        {
+          "path": "ai-chat.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-4/components/ai-chat.tsx"
+        },
+        {
+          "path": "chat-empty.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-4/components/chat-empty.tsx"
+        },
+        {
+          "path": "chat-panel.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-4/components/chat-panel.tsx"
+        },
+        {
+          "path": "chat-thread.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-4/components/chat-thread.tsx"
+        },
+        {
+          "path": "composer.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-4/components/composer.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-4/components/data.ts"
+        },
+        {
+          "path": "page-body.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-4/components/page-body.tsx"
+        },
+        {
+          "path": "quote-pill.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-4/components/quote-pill.tsx"
+        },
+        {
+          "path": "reveal.ts",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-4/components/reveal.ts"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-5",
+      "type": "registry:block",
+      "title": "AI chat welcome screen where connected work apps set the answer scope",
+      "description": "A centered new chat screen whose composer sits in a ReUI Frame: the panel is the box you type into and the frame footer is a live integrations strip of Google Drive, Slack, Calendar, Dropbox, OneDrive, Box, Zoom and Loom. Switching a logo on or off changes what the assistant may read, four job modes rewrite the prompt, and sending returns a receipt per source with a Connect action on anything that was skipped.",
+      "registryDependencies": [
+        "@reui/frame",
+        "attachment",
+        "button",
+        "combobox",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "@reui/frame",
+        "input-group",
+        "item",
+        "kbd",
+        "radio-group",
+        "select",
+        "spinner",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-5/page.tsx"
+        },
+        {
+          "path": "ai-chat.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-5/components/ai-chat.tsx"
+        },
+        {
+          "path": "composer.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-5/components/composer.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-5/components/data.tsx"
+        },
+        {
+          "path": "clickup.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/clickup.tsx"
+        },
+        {
+          "path": "discord.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/discord.tsx"
+        },
+        {
+          "path": "dropbox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/dropbox.tsx"
+        },
+        {
+          "path": "googleCalendar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/googleCalendar.tsx"
+        },
+        {
+          "path": "googleDrive.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/googleDrive.tsx"
+        },
+        {
+          "path": "googleMeet.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/googleMeet.tsx"
+        },
+        {
+          "path": "loom.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/loom.tsx"
+        },
+        {
+          "path": "slack.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/slack.tsx"
+        },
+        {
+          "path": "zoom.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/zoom.tsx"
+        },
+        {
+          "path": "integrations.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-5/components/integrations.tsx"
+        },
+        {
+          "path": "mode-chips.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-5/components/mode-chips.tsx"
+        },
+        {
+          "path": "run-panel.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-5/components/run-panel.tsx"
+        },
+        {
+          "path": "welcome.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-5/components/welcome.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-6",
+      "type": "registry:block",
+      "title": "Agentic side panel where the answers carry the controls",
+      "description": "A docked AI panel that runs a task end to end: confirm which workspace sources and attached files the agent may read, edit and run an ordered plan step by step, retry a step that fails, answer the question the agent raises mid run to drop a branch from its own plan, then assign the finished work as a ticket with the files the run produced. Model picker, live run status in the header, and a rewind whenever the context changes.",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/code-block",
+        "@reui/icon-stack",
+        "attachment",
+        "avatar",
+        "@reui/badge",
+        "bubble",
+        "button",
+        "card",
+        "checkbox",
+        "@reui/code-block",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "@reui/icon-stack",
+        "input-group",
+        "item",
+        "kbd",
+        "marker",
+        "message",
+        "message-scroller",
+        "questionnaire",
+        "select",
+        "sidebar",
+        "skeleton",
+        "spinner",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/page.tsx"
+        },
+        {
+          "path": "agent.ts",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/agent.ts"
+        },
+        {
+          "path": "ai-chat.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/ai-chat.tsx"
+        },
+        {
+          "path": "brief-card.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/brief-card.tsx"
+        },
+        {
+          "path": "chat-empty.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/chat-empty.tsx"
+        },
+        {
+          "path": "chat-panel.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/chat-panel.tsx"
+        },
+        {
+          "path": "chat-thread.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/chat-thread.tsx"
+        },
+        {
+          "path": "composer.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/composer.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/data.ts"
+        },
+        {
+          "path": "fork-card.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/fork-card.tsx"
+        },
+        {
+          "path": "handoff-card.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/handoff-card.tsx"
+        },
+        {
+          "path": "model-menu.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/model-menu.tsx"
+        },
+        {
+          "path": "page-body.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/page-body.tsx"
+        },
+        {
+          "path": "plan-card.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/plan-card.tsx"
+        },
+        {
+          "path": "reveal.ts",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/reveal.ts"
+        },
+        {
+          "path": "widget-chrome.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-6/components/widget-chrome.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-7",
+      "type": "registry:block",
+      "title": "Split pane model comparison running one prompt against two AI models",
+      "description": "Side by side compare view: two resizable panes answer one docked prompt and stream at different speeds, with sortable data tables in the replies, a scroll lock that reads both answers at the same depth, and per answer copy and rating actions. Select a line to ask both models about it, regenerate or swap either pane, attach extra files, and watch a mirrored scoreboard for latency, output rate and cost settle into a verdict with an A or B vote.",
+      "registryDependencies": [
+        "@reui/alert",
+        "@reui/badge",
+        "@reui/code-block",
+        "@reui/alert",
+        "attachment",
+        "@reui/badge",
+        "bubble",
+        "button",
+        "@reui/code-block",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "input-group",
+        "item",
+        "kbd",
+        "marker",
+        "message",
+        "message-scroller",
+        "resizable",
+        "scroll-area",
+        "select",
+        "spinner",
+        "table",
+        "tabs",
+        "toggle-group",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-7/page.tsx"
+        },
+        {
+          "path": "ai-chat.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-7/components/ai-chat.tsx"
+        },
+        {
+          "path": "clock.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-7/components/clock.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-7/components/data.ts"
+        },
+        {
+          "path": "dot.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-7/components/dot.tsx"
+        },
+        {
+          "path": "model-pane.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-7/components/model-pane.tsx"
+        },
+        {
+          "path": "pane-thread.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-7/components/pane-thread.tsx"
+        },
+        {
+          "path": "pane-view.ts",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-7/components/pane-view.ts"
+        },
+        {
+          "path": "prompt-bar.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-7/components/prompt-bar.tsx"
+        },
+        {
+          "path": "quote-pill.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-7/components/quote-pill.tsx"
+        },
+        {
+          "path": "scroll-sync.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-7/components/scroll-sync.tsx"
+        },
+        {
+          "path": "verdict-strip.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-7/components/verdict-strip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-8",
+      "type": "registry:block",
+      "title": "Docked voice first assistant panel that answers in a different shape each time",
+      "description": "A floating assistant panel beside any page, driven by voice as readily as typing. Hold the mic and the take lands as a playable turn with a scrubbable transport and its transcription, then the answer arrives in whichever shape the question deserves: a move plan behind an approval gate, a set of times to choose between, a roster of who is free, a figure summary, a callout that carries its own next action, a trace of the steps taken, or prose with the documents it quoted. Also carries a thread switcher, meeting attachments, citation chips you can turn off, and a widen toggle.",
+      "registryDependencies": [
+        "@reui/alert",
+        "@reui/badge",
+        "@reui/icon-stack",
+        "@reui/alert",
+        "attachment",
+        "avatar",
+        "@reui/badge",
+        "bubble",
+        "button",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "@reui/icon-stack",
+        "input-group",
+        "item",
+        "kbd",
+        "marker",
+        "message-scroller",
+        "popover",
+        "sidebar",
+        "skeleton",
+        "slider",
+        "spinner",
+        "toggle-group",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-8/page.tsx"
+        },
+        {
+          "path": "ai-chat.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-8/components/ai-chat.tsx"
+        },
+        {
+          "path": "answer-parts.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-8/components/answer-parts.tsx"
+        },
+        {
+          "path": "chat-empty.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-8/components/chat-empty.tsx"
+        },
+        {
+          "path": "chat-panel.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-8/components/chat-panel.tsx"
+        },
+        {
+          "path": "chat-thread.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-8/components/chat-thread.tsx"
+        },
+        {
+          "path": "composer.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-8/components/composer.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-8/components/data.tsx"
+        },
+        {
+          "path": "page-body.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-8/components/page-body.tsx"
+        },
+        {
+          "path": "plan-turn.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-8/components/plan-turn.tsx"
+        },
+        {
+          "path": "reveal.ts",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-8/components/reveal.ts"
+        },
+        {
+          "path": "slot-picker.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-8/components/slot-picker.tsx"
+        },
+        {
+          "path": "voice-note.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-8/components/voice-note.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-9",
+      "type": "registry:block",
+      "title": "Branching AI chat thread with reply versions, cited sources and code artifacts",
+      "description": "A standalone conversation under one minimal header: a tabbed thread switcher over pinned and recency lists, a favorite toggle and a fold for earlier turns, above replies that arrive as small documents with sections, bullets and code artifacts in markdown, yaml, json, typescript and sql, each one folding its working away behind a thought row and listing the sources its inline citations point back to, over a thread held as a tree so a regenerate or an edit adds a version on the fork rail instead of overwriting the turn.",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/code-block",
+        "@reui/icon-stack",
+        "attachment",
+        "@reui/badge",
+        "bubble",
+        "button",
+        "@reui/code-block",
+        "collapsible",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "@reui/icon-stack",
+        "input-group",
+        "kbd",
+        "marker",
+        "message",
+        "message-scroller",
+        "popover",
+        "spinner",
+        "tabs",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-9/page.tsx"
+        },
+        {
+          "path": "activity-steps.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-9/components/activity-steps.tsx"
+        },
+        {
+          "path": "ai-chat.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-9/components/ai-chat.tsx"
+        },
+        {
+          "path": "chat-thread.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-9/components/chat-thread.tsx"
+        },
+        {
+          "path": "composer.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-9/components/composer.tsx"
+        },
+        {
+          "path": "anthropicBlack.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/anthropicBlack.tsx"
+        },
+        {
+          "path": "anthropicWhite.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/anthropicWhite.tsx"
+        },
+        {
+          "path": "gemini.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/gemini.tsx"
+        },
+        {
+          "path": "mistralAiLogo.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/mistralAiLogo.tsx"
+        },
+        {
+          "path": "openai.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/openai.tsx"
+        },
+        {
+          "path": "openaiDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/openaiDark.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-9/components/data.ts"
+        },
+        {
+          "path": "message-parts.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-9/components/message-parts.tsx"
+        },
+        {
+          "path": "reply-detail.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-9/components/reply-detail.tsx"
+        },
+        {
+          "path": "thread-header.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-9/components/thread-header.tsx"
+        },
+        {
+          "path": "thread-tree.ts",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-9/components/thread-tree.ts"
+        },
+        {
+          "path": "turn-actions.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/ai-chat-9/components/turn-actions.tsx"
+        }
+      ]
+    },
+    {
       "name": "alert",
       "type": "registry:ui",
       "title": "Alert",
@@ -7157,7 +8300,8 @@
       "title": "Copy button with feedback",
       "description": "Copy button with feedback",
       "registryDependencies": [
-        "button"
+        "button",
+        "@reui/use-copy-to-clipboard"
       ],
       "files": [
         {
@@ -7174,7 +8318,8 @@
       "description": "Icon-only copy button with feedback",
       "registryDependencies": [
         "button",
-        "tooltip"
+        "tooltip",
+        "@reui/use-copy-to-clipboard"
       ],
       "files": [
         {
@@ -13235,6 +14380,125 @@
           "path": "c-data-grid-30.tsx",
           "type": "registry:block",
           "target": "components/examples/c-data-grid-30.tsx"
+        }
+      ]
+    },
+    {
+      "name": "c-data-grid-31",
+      "type": "registry:block",
+      "title": "Data grid with spreadsheet editing",
+      "description": "Data grid with spreadsheet editing",
+      "dependencies": [
+        "@tanstack/react-table",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "alert-dialog",
+        "avatar",
+        "@reui/badge",
+        "button",
+        "calendar",
+        "card",
+        "combobox",
+        "context-menu",
+        "@reui/data-grid",
+        "@reui/data-grid-cell-selection",
+        "@reui/data-grid-column-header",
+        "@reui/data-grid-pagination",
+        "@reui/data-grid-scroll-area",
+        "@reui/data-grid-table",
+        "popover",
+        "select",
+        "toast"
+      ],
+      "files": [
+        {
+          "path": "c-data-grid-31.tsx",
+          "type": "registry:block",
+          "target": "components/examples/c-data-grid-31.tsx"
+        }
+      ]
+    },
+    {
+      "name": "c-data-grid-32",
+      "type": "registry:block",
+      "title": "Data grid with column virtualization",
+      "description": "Data grid with column virtualization",
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "@reui/data-grid",
+        "@reui/data-grid-column-header",
+        "@reui/data-grid-scroll-area",
+        "@reui/data-grid-table-virtual"
+      ],
+      "files": [
+        {
+          "path": "c-data-grid-32.tsx",
+          "type": "registry:block",
+          "target": "components/examples/c-data-grid-32.tsx"
+        }
+      ]
+    },
+    {
+      "name": "c-data-grid-33",
+      "type": "registry:block",
+      "title": "Data grid with localized labels",
+      "description": "Data grid with localized labels",
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "@reui/badge",
+        "card",
+        "@reui/data-grid",
+        "@reui/data-grid-column-header",
+        "@reui/data-grid-i18n",
+        "@reui/data-grid-pagination",
+        "@reui/data-grid-scroll-area",
+        "@reui/data-grid-table",
+        "toggle-group"
+      ],
+      "files": [
+        {
+          "path": "c-data-grid-33.tsx",
+          "type": "registry:block",
+          "target": "components/examples/c-data-grid-33.tsx"
+        }
+      ]
+    },
+    {
+      "name": "c-data-grid-34",
+      "type": "registry:block",
+      "title": "Data grid with server side pagination",
+      "description": "Data grid with server side pagination, sorting, search and status filter",
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "@reui/badge",
+        "button",
+        "card",
+        "@reui/data-grid",
+        "@reui/data-grid-column-header",
+        "@reui/data-grid-pagination",
+        "@reui/data-grid-scroll-area",
+        "@reui/data-grid-table",
+        "input",
+        "select",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "c-data-grid-34.tsx",
+          "type": "registry:block",
+          "target": "components/examples/c-data-grid-34.tsx"
         }
       ]
     },
@@ -28969,6 +30233,7 @@
         "@reui/badge",
         "button",
         "checkbox",
+        "@reui/data-grid-i18n",
         "@reui/data-grid-table",
         "dropdown-menu",
         "input",
@@ -28979,6 +30244,11 @@
         "spinner"
       ],
       "files": [
+        {
+          "path": "data-grid-cell-selection.tsx",
+          "type": "registry:ui",
+          "target": "components/reui/data-grid/data-grid-cell-selection.tsx"
+        },
         {
           "path": "data-grid-column-filter.tsx",
           "type": "registry:ui",
@@ -28993,6 +30263,11 @@
           "path": "data-grid-column-visibility.tsx",
           "type": "registry:ui",
           "target": "components/reui/data-grid/data-grid-column-visibility.tsx"
+        },
+        {
+          "path": "data-grid-i18n.tsx",
+          "type": "registry:ui",
+          "target": "components/reui/data-grid/data-grid-i18n.tsx"
         },
         {
           "path": "data-grid-pagination.tsx",
@@ -29635,6 +30910,25 @@
           "path": "data.tsx",
           "type": "registry:block",
           "target": "components/blocks/data-grid-base-7/components/data.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-cell-selection",
+      "type": "registry:ui",
+      "title": "Data Grid Cell Selection",
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "button",
+        "@reui/data-grid"
+      ],
+      "files": [
+        {
+          "path": "data-grid-cell-selection.tsx",
+          "type": "registry:ui",
+          "target": "components/reui/data-grid/data-grid-cell-selection.tsx"
         }
       ]
     },
@@ -30552,6 +31846,101 @@
           "path": "data.tsx",
           "type": "registry:block",
           "target": "components/blocks/data-grid-editing-4/components/data.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-editing-5",
+      "type": "registry:block",
+      "title": "Spreadsheet Task Grid With Cell Range Editing, Custom Cell Controls, and Undo",
+      "description": "Virtualized spreadsheet task grid with cell ranges, clipboard paste, drag-to-fill, in-cell selects and date pickers, and an undo stack instead of a save bar. Built on ReUI DataGrid, Frame and Cascader. For launch runbooks and Airtable style tables.",
+      "dependencies": [
+        "@tanstack/react-table",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/cascader",
+        "@reui/data-grid",
+        "@reui/filters",
+        "@reui/frame",
+        "alert-dialog",
+        "avatar",
+        "@reui/badge",
+        "button",
+        "calendar",
+        "@reui/cascader",
+        "@reui/cascader-footer",
+        "@reui/cascader-item",
+        "@reui/cascader-nav",
+        "@reui/cascader-types",
+        "checkbox",
+        "combobox",
+        "context-menu",
+        "@reui/data-grid",
+        "@reui/data-grid-cell-selection",
+        "@reui/data-grid-column-header",
+        "@reui/data-grid-scroll-area",
+        "@reui/data-grid-table-virtual",
+        "dialog",
+        "empty",
+        "field",
+        "@reui/filters",
+        "@reui/filters-query",
+        "@reui/filters-types",
+        "@reui/frame",
+        "input",
+        "input-group",
+        "popover",
+        "scroll-area",
+        "select",
+        "separator",
+        "sheet",
+        "skeleton",
+        "switch",
+        "textarea",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-editing-5/page.tsx"
+        },
+        {
+          "path": "add-field-cascader.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-editing-5/components/add-field-cascader.tsx"
+        },
+        {
+          "path": "columns.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-editing-5/components/columns.tsx"
+        },
+        {
+          "path": "data-grid-view.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-editing-5/components/data-grid-view.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-editing-5/components/data.tsx"
+        },
+        {
+          "path": "task-cells.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-editing-5/components/task-cells.tsx"
+        },
+        {
+          "path": "task-create-dialog.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-editing-5/components/task-create-dialog.tsx"
+        },
+        {
+          "path": "task-detail-sheet.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-editing-5/components/task-detail-sheet.tsx"
         }
       ]
     },
@@ -31678,6 +33067,18 @@
       ]
     },
     {
+      "name": "data-grid-i18n",
+      "type": "registry:ui",
+      "title": "Data Grid I18n",
+      "files": [
+        {
+          "path": "data-grid-i18n.tsx",
+          "type": "registry:ui",
+          "target": "components/reui/data-grid/data-grid-i18n.tsx"
+        }
+      ]
+    },
+    {
       "name": "data-grid-pagination",
       "type": "registry:ui",
       "title": "Data Grid Pagination",
@@ -31721,6 +33122,7 @@
         "@tanstack/react-table"
       ],
       "registryDependencies": [
+        "button",
         "checkbox",
         "@reui/data-grid",
         "spinner"

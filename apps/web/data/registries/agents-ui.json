@@ -380,6 +380,47 @@
       ]
     },
     {
+      "name": "agent-popup-01",
+      "type": "registry:block",
+      "title": "Agent Popup",
+      "description": "A floating chat-bubble trigger that expands into a compact agent session popup, suitable for embedding on any page.",
+      "categories": [
+        "agents",
+        "blocks"
+      ],
+      "dependencies": [
+        "@livekit/components-react@^2.0.0",
+        "livekit-client@^2.0.0",
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "button",
+        "@agents-ui/agent-session-provider",
+        "@agents-ui/start-audio-button",
+        "@agents-ui/agent-session-view-01"
+      ],
+      "files": [
+        {
+          "path": "components/agents-ui/blocks/agent-popup-01/components/agent-popup-block.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/agents-ui/blocks/agent-popup-01/components/trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/agents-ui/blocks/agent-popup-01/components/popup-view.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/agents-ui/blocks/agent-popup-01/index.ts",
+          "type": "registry:item"
+        }
+      ]
+    },
+    {
       "name": "all",
       "type": "registry:item",
       "title": "All",
@@ -399,7 +440,8 @@
         "@agents-ui/agent-chat-indicator",
         "@agents-ui/agent-chat-transcript",
         "@agents-ui/react-shader-toy",
-        "@agents-ui/agent-session-view-01"
+        "@agents-ui/agent-session-view-01",
+        "@agents-ui/agent-popup-01"
       ]
     }
   ]

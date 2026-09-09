@@ -67,6 +67,31 @@
       ]
     },
     {
+      "name": "data-board",
+      "type": "registry:block",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities",
+        "lucide-react",
+        "react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "input",
+        "select",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "./items/blocks/data-board/component.tsx",
+          "type": "registry:block",
+          "target": "./components/block/shuip/data-board.tsx"
+        }
+      ]
+    },
+    {
       "name": "data-table",
       "type": "registry:block",
       "dependencies": [
