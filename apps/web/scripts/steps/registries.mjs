@@ -129,7 +129,9 @@ function optionalArray(value) {
 // dependencies feed the info panel and the collection queries,
 // registryDependencies feed the info panel, cssVars feed the synthetic
 // globals.css the viewer builds for theme items, files[].path gates which
-// items get a page at all.
+// items get a page at all, and font is what makes a registry:font item valid
+// at all — the schema requires it, and the CLI refuses to parse a catalog
+// page that lists a font without it (the /r endpoint serves these views).
 //
 // Dropped because nothing reads them from an index: author, meta, docs,
 // tailwind, css, devDependencies — and files[].content, which is the whole
@@ -146,6 +148,13 @@ function slimItem(item) {
     cssVars:
       item.cssVars && Object.keys(item.cssVars).length > 0
         ? item.cssVars
+        : undefined,
+    font:
+      item.type === "registry:font" &&
+      item.font &&
+      typeof item.font === "object" &&
+      !Array.isArray(item.font)
+        ? item.font
         : undefined,
     files: slimFiles(item.files),
   };

@@ -11,6 +11,7 @@ export type {
   Registry,
   RegistryItem,
   RegistryBaseItem,
+  RegistryFontItem,
 } from "shadcn/schema"
 
 export { registrySchema, registryItemSchema } from "shadcn/schema"

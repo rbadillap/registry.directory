@@ -35,8 +35,9 @@ pnpm index --retry            add a patient retry pass      (minutes longer)
 ```
 apps/web/data/
   registries/{key}.json   one slim view per registry: items with name, type,
-                          description, categories, dependencies, cssVars and
-                          file PATHS. Never file content.
+                          description, categories, dependencies, cssVars,
+                          font (registry:font only) and file PATHS. Never
+                          file content.
   github.json             stars and last-push date per github_url
   collections.json        the home's groupings, each carrying its own criterion
   shipped.json            day-to-day diff of item names (the novedades ticker)

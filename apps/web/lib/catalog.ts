@@ -1,4 +1,5 @@
 import type { DirectoryEntry } from "./types"
+import type { RegistryFontItem } from "./registry-types"
 import { loadRegistryView } from "./registry-data"
 import { loadDirectory, parseGithubRef, entryHandle } from "./resolve-registry"
 
@@ -29,7 +30,16 @@ export interface CatalogItem {
   categories: string[]
   registryName: string
   handle: string
+  // Only on registry:font items. The schema makes it mandatory for that
+  // type, so it has to travel with the catalog entry, not just the item.
+  font?: RegistryFontItem["font"]
 }
+
+// Not listed in /r. The CLI's schema admits both types, but marks them
+// "internal use only" and the published JSON schema rejects them: they are
+// a registry's own demos and scaffolding, not something to install through
+// an aggregator.
+const INTERNAL_TYPES = new Set(["registry:example", "registry:internal"])
 
 export interface CatalogRegistry {
   name: string
@@ -55,6 +65,7 @@ export async function buildCatalog(): Promise<Catalog> {
 
   const registries: Record<string, CatalogRegistry> = {}
   const items: CatalogItem[] = []
+  const skipped = { internal: 0, fontWithoutMetadata: 0 }
 
   for (const entry of entries) {
     const handle = catalogHandle(entry)
@@ -79,20 +90,38 @@ export async function buildCatalog(): Promise<Catalog> {
     for (const item of view.items) {
       if (seen.has(item.name)) continue
       seen.add(item.name)
+
+      const type = item.type || "registry:item"
+      if (INTERNAL_TYPES.has(type)) {
+        skipped.internal++
+        continue
+      }
+
+      // A font the origin lists without its metadata is not installable
+      // through anyone, and one such entry makes the CLI reject the whole
+      // catalog page it appears on. Leave it out rather than break the page.
+      const font = item.type === "registry:font" ? item.font : undefined
+      if (item.type === "registry:font" && !font) {
+        skipped.fontWithoutMetadata++
+        continue
+      }
+
       items.push({
         name: item.name,
         namespaced: `${handle}/${item.name}`,
-        type: item.type || "registry:item",
+        type,
         description: (item.description || "").slice(0, DESCRIPTION_MAX),
         categories: item.categories || [],
         registryName: entry.name,
         handle,
+        ...(font ? { font } : {}),
       })
     }
   }
 
   console.log(
-    `[catalog] Built ${items.length} items from ${Object.keys(registries).length} registries`
+    `[catalog] Built ${items.length} items from ${Object.keys(registries).length} registries ` +
+      `(skipped ${skipped.internal} internal, ${skipped.fontWithoutMetadata} fonts without metadata)`
   )
 
   return { generatedAt: new Date().toISOString(), registries, items }

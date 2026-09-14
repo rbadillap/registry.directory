@@ -73,6 +73,9 @@ function publicItem(item: CatalogItem) {
     description: item.description
       ? `[${item.registryName}] ${item.description}`
       : `[${item.registryName}]`,
+    // registry:font is the one type whose catalog entry must carry more
+    // than name/type/description: without `font` the entry fails the schema.
+    ...(item.font ? { font: item.font } : {}),
   }
 }
 
