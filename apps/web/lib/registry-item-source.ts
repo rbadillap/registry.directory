@@ -1,6 +1,7 @@
 import type { DirectoryEntry } from "./types"
 import type { RegistryItem } from "./registry-types"
 import { registryFetch } from "./fetch-utils"
+import { loadRegistryView } from "./registry-data"
 
 /**
  * An item's full record, source included, read from its origin registry.
@@ -14,13 +15,12 @@ export async function fetchItemData(
   registry: DirectoryEntry,
   itemName: string
 ): Promise<RegistryItem | null> {
-  let baseUrl: string
-  if (registry.registry_url) {
-    baseUrl = registry.registry_url.replace(/\/[^/]+\.json$/, "")
-  } else {
-    baseUrl = `${registry.url.replace(/\/$/, "")}/r`
-  }
-  const targetUrl = `${baseUrl}/${itemName}.json`
+  // The indexer already found where this registry's items live and wrote it
+  // into the view; deriving it again here would disagree with /r for any
+  // origin whose items are not next to its index.
+  const view = await loadRegistryView(registry)
+  if (!view?.itemBase) return null
+  const targetUrl = `${view.itemBase}/${itemName}.json`
 
   try {
     const response = await registryFetch(targetUrl, {

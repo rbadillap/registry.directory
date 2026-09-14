@@ -56,6 +56,10 @@ Snapshots are append-only: a run never overwrites a day already archived.
 
 1. **registries** — fetch all 75 indexes, write one view each, probe whether
    the origin still resolves individual items (`resolvable` in the manifest).
+   The probe also settles *where* items live (`itemBase` in the view): the
+   convention — next to the index — is tried first, then the other layouts
+   in `itemBaseCandidates` (`scripts/lib/data-io.mjs`). Everything that
+   fetches an item afterwards reads `itemBase` from the view.
 2. **github** — refresh stars and last-push dates. Skipped on a partial run.
 3. **derived** — compute `collections.json` from the views just written, and
    `shipped.json` by diffing recent snapshots.
