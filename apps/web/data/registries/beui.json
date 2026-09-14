@@ -1772,6 +1772,44 @@
       ]
     },
     {
+      "name": "range-slider-inline",
+      "type": "registry:component",
+      "title": "Range Slider Inline Slider",
+      "description": "An inset fill and inline label and value. Ten evenly spaced stops span the track; markers under text stay hidden but remain interactive, and the thumb parts around either label as it passes.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/range-slider-inline.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/range-slider-inline.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-slider.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-slider.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
       "name": "range-slider",
       "type": "registry:component",
       "title": "Range Slider Range Slider",
@@ -4290,10 +4328,74 @@
       ]
     },
     {
+      "name": "prediction-market-card",
+      "type": "registry:block",
+      "title": "Prediction Market Market Cards",
+      "description": "Compact market listings with consistent outcome rows, animated odds CTAs, payout multipliers and bookmarks. Odds CTAs use green/red backgrounds and roll into Yes/No labels on hover or keyboard focus. Use Update odds to preview animated price changes.",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/prediction-market-card.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/prediction-market-card.tsx"
+        },
+        {
+          "path": "components/motion/action-swap.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/action-swap.tsx"
+        },
+        {
+          "path": "components/motion/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-gesture.ts"
+        },
+        {
+          "path": "lib/hooks/use-tap-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-tap-gesture.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
       "name": "prediction-market",
       "type": "registry:block",
-      "title": "Prediction Market",
-      "description": "Prediction market trade ticket with buy/sell modes, outcome prices, rolling amount entry, quick add chips and trade states.",
+      "title": "Prediction Market Trade Ticket",
+      "description": "Buy and sell outcomes with rolling amount entry, quick add chips and trade states.",
       "dependencies": [
         "clsx",
         "lucide-react",

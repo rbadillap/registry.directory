@@ -13,7 +13,7 @@ import {
   USER_AGENT,
   fetchWithRetries,
   indexUrl,
-  itemBaseUrl,
+  itemBaseCandidates,
   listRegistryFiles,
   loadDirectory,
   mapPool,
@@ -129,7 +129,9 @@ function optionalArray(value) {
 // dependencies feed the info panel and the collection queries,
 // registryDependencies feed the info panel, cssVars feed the synthetic
 // globals.css the viewer builds for theme items, files[].path gates which
-// items get a page at all.
+// items get a page at all, and font is what makes a registry:font item valid
+// at all — the schema requires it, and the CLI refuses to parse a catalog
+// page that lists a font without it (the /r endpoint serves these views).
 //
 // Dropped because nothing reads them from an index: author, meta, docs,
 // tailwind, css, devDependencies — and files[].content, which is the whole
@@ -147,6 +149,13 @@ function slimItem(item) {
       item.cssVars && Object.keys(item.cssVars).length > 0
         ? item.cssVars
         : undefined,
+    font:
+      item.type === "registry:font" &&
+      item.font &&
+      typeof item.font === "object" &&
+      !Array.isArray(item.font)
+        ? item.font
+        : undefined,
     files: slimFiles(item.files),
   };
 }
@@ -160,8 +169,22 @@ function slimItem(item) {
 // registry, and the build only needs the conclusion.
 const GATED_STATUSES = new Set([401, 402, 403, 404, 410]);
 
-async function probeResolvable(base, names) {
-  const samples = [
+async function fetchStatus(url) {
+  try {
+    const res = await fetch(url, {
+      signal: AbortSignal.timeout(10_000),
+      headers: { "user-agent": USER_AGENT },
+      redirect: "follow",
+    });
+    await res.body?.cancel();
+    return res.status;
+  } catch {
+    return 0;
+  }
+}
+
+function sampleNames(names) {
+  return [
     ...new Set(
       [
         names[0],
@@ -170,30 +193,32 @@ async function probeResolvable(base, names) {
       ].filter(Boolean),
     ),
   ];
-  if (samples.length === 0) return true;
+}
 
-  const statuses = await Promise.all(
-    samples.map(async (name) => {
-      try {
-        const res = await fetch(`${base}/${name}.json`, {
-          signal: AbortSignal.timeout(10_000),
-          headers: { "user-agent": USER_AGENT },
-          redirect: "follow",
-        });
-        await res.body?.cancel();
-        return res.status;
-      } catch {
-        return 0;
-      }
-    }),
-  );
+// Walks the candidate bases in order and settles on the first one where a
+// sampled item answers 2xx. When none does, the primary base is kept and the
+// verdict is read from its statuses alone: all definitive failures means
+// gated or broken, anything transient keeps the benefit of the doubt.
+//
+// Exported for the tests; `status` is the network, replaceable by a stub.
+export async function resolveItemBase(candidates, names, status = fetchStatus) {
+  const [primary] = candidates;
+  const samples = sampleNames(names);
+  if (samples.length === 0) return { itemBase: primary, resolvable: true };
 
-  let allGated = true;
-  for (const status of statuses) {
-    if (status >= 200 && status < 300) return true;
-    if (!GATED_STATUSES.has(status)) allGated = false;
+  let primaryStatuses = null;
+  for (const base of candidates) {
+    const statuses = await Promise.all(
+      samples.map((name) => status(`${base}/${name}.json`)),
+    );
+    if (base === primary) primaryStatuses = statuses;
+    if (statuses.some((s) => s >= 200 && s < 300)) {
+      return { itemBase: base, resolvable: true };
+    }
   }
-  return !allGated;
+
+  const allGated = primaryStatuses.every((s) => GATED_STATUSES.has(s));
+  return { itemBase: primary, resolvable: !allGated };
 }
 
 function viewPath(key) {
@@ -434,17 +459,20 @@ async function indexOne(entry, probe, label, attempts) {
   }
 
   const items = rawItems.map(slimItem);
-  const base = itemBaseUrl(entry);
+  const candidates = itemBaseCandidates(entry);
 
   // Provenance: some registries inline source in their index. Recording it
   // keeps the reason a view holds no file content visible in the manifest.
   const embedsContent = rawItems.some((item) => item.files?.[0]?.content);
-  const resolvable = probe
-    ? await probeResolvable(
-        base,
+  const { itemBase: base, resolvable } = probe
+    ? await resolveItemBase(
+        candidates,
         items.map((i) => i.name),
       )
-    : true;
+    : { itemBase: candidates[0], resolvable: true };
+  if (base !== candidates[0]) {
+    console.log(`  ${entry.name}: items resolve at ${base}, not next to the index`);
+  }
 
   const view = {
     key,

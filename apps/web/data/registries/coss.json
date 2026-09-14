@@ -11078,15 +11078,45 @@
     },
     {
       "name": "font-sans",
-      "type": "registry:font"
+      "type": "registry:font",
+      "font": {
+        "family": "'Inter', sans-serif",
+        "import": "Inter",
+        "provider": "google",
+        "subsets": [
+          "latin"
+        ],
+        "variable": "--font-sans",
+        "dependency": "@fontsource-variable/inter"
+      }
     },
     {
       "name": "font-heading",
-      "type": "registry:font"
+      "type": "registry:font",
+      "font": {
+        "family": "'Inter', sans-serif",
+        "import": "Inter",
+        "provider": "google",
+        "subsets": [
+          "latin"
+        ],
+        "variable": "--font-heading",
+        "dependency": "@fontsource-variable/inter"
+      }
     },
     {
       "name": "font-mono",
-      "type": "registry:font"
+      "type": "registry:font",
+      "font": {
+        "family": "'Geist Mono', monospace",
+        "import": "Geist_Mono",
+        "provider": "google",
+        "subsets": [
+          "latin"
+        ],
+        "variable": "--font-mono",
+        "dependency": "geist"
+      }
     },
     {
       "name": "segmented-control",

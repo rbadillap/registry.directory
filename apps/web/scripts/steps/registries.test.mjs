@@ -130,3 +130,75 @@ describe("fetchRemainingPages", () => {
     assert.equal(result.index.items.length, 2);
   });
 });
+
+// Where a registry's items live is settled once, here, and written into the
+// view. The convention (items next to the index) is tried first; the other
+// layouts only matter when it fails, and a transient failure on the
+// convention must not be mistaken for a gated origin.
+import { resolveItemBase } from "./registries.mjs";
+import { itemBaseCandidates } from "../lib/data-io.mjs";
+
+const NAMES = ["a", "b", "c"];
+const statusMap = (table) => async (url) => table[url] ?? 404;
+
+describe("itemBaseCandidates", () => {
+  it("puts the convention first and dedupes", () => {
+    const entry = {
+      url: "https://x.test/",
+      registry_url: "https://x.test/r/registry.json",
+    };
+    assert.deepEqual(itemBaseCandidates(entry), [
+      "https://x.test/r",
+      "https://x.test",
+    ]);
+  });
+
+  it("offers /r when the index is served at the origin root", () => {
+    const entry = {
+      url: "https://x.test",
+      registry_url: "https://x.test/registry.json",
+    };
+    assert.deepEqual(itemBaseCandidates(entry), [
+      "https://x.test",
+      "https://x.test/r",
+    ]);
+  });
+});
+
+describe("resolveItemBase", () => {
+  it("keeps the convention when it answers", async () => {
+    const r = await resolveItemBase(
+      ["https://x.test/r", "https://x.test"],
+      NAMES,
+      statusMap({ "https://x.test/r/a.json": 200 }),
+    );
+    assert.deepEqual(r, { itemBase: "https://x.test/r", resolvable: true });
+  });
+
+  it("moves to the next candidate when the convention 404s", async () => {
+    const r = await resolveItemBase(
+      ["https://x.test", "https://x.test/r"],
+      NAMES,
+      statusMap({ "https://x.test/r/b.json": 200 }),
+    );
+    assert.deepEqual(r, { itemBase: "https://x.test/r", resolvable: true });
+  });
+
+  it("reports gated when every candidate fails definitively", async () => {
+    const r = await resolveItemBase(
+      ["https://x.test/r", "https://x.test"],
+      NAMES,
+      statusMap({}),
+    );
+    assert.deepEqual(r, { itemBase: "https://x.test/r", resolvable: false });
+  });
+
+  it("gives a throttled convention the benefit of the doubt", async () => {
+    const r = await resolveItemBase(
+      ["https://x.test/r", "https://x.test"],
+      NAMES,
+      statusMap({ "https://x.test/r/a.json": 429 }),
+    );
+    assert.deepEqual(r, { itemBase: "https://x.test/r", resolvable: true });
+  });
+});

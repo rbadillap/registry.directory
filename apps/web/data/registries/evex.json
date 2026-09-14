@@ -295,6 +295,7 @@
         "research"
       ],
       "dependencies": [
+        "@vercel/connect@^0.2.6",
         "eve@^0.47.5",
         "resend@^6.14.0",
         "zod@4.3.6"
@@ -309,6 +310,11 @@
           "path": "agent/agent.ts",
           "type": "registry:file",
           "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/channels/slack.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/slack.ts"
         },
         {
           "path": "agent/instructions.md",
@@ -339,6 +345,11 @@
           "path": "agent/lib/robots.ts",
           "type": "registry:file",
           "target": "~/agent/lib/robots.ts"
+        },
+        {
+          "path": "agent/lib/slack-post.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/slack-post.ts"
         },
         {
           "path": "agent/lib/snapshot-store.ts",
@@ -444,6 +455,183 @@
           "path": "evals/threshold-gating.eval.ts",
           "type": "registry:file",
           "target": "~/evals/threshold-gating.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        }
+      ]
+    },
+    {
+      "name": "crm-hygiene-agent",
+      "type": "registry:item",
+      "title": "CRM Hygiene Agent",
+      "description": "Scheduled CRM hygiene via Connect that proposes dedupe, normalize, and enrich batches for human approval before any write.",
+      "categories": [
+        "productivity"
+      ],
+      "dependencies": [
+        "@vercel/connect@^0.2.6",
+        "eve@^0.47.5",
+        "resend@^6.14.0",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        },
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/channels/slack.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/slack.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/audit-log.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/audit-log.ts"
+        },
+        {
+          "path": "agent/lib/crm-config.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/crm-config.ts"
+        },
+        {
+          "path": "agent/lib/deliver-digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/deliver-digest.ts"
+        },
+        {
+          "path": "agent/lib/digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/digest.ts"
+        },
+        {
+          "path": "agent/lib/hygiene.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/hygiene.ts"
+        },
+        {
+          "path": "agent/lib/oauth.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/oauth.ts"
+        },
+        {
+          "path": "agent/lib/providers/http.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/http.ts"
+        },
+        {
+          "path": "agent/lib/providers/hubspot.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/hubspot.ts"
+        },
+        {
+          "path": "agent/lib/providers/index.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/index.ts"
+        },
+        {
+          "path": "agent/lib/providers/pipedrive.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/pipedrive.ts"
+        },
+        {
+          "path": "agent/lib/providers/salesforce.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/salesforce.ts"
+        },
+        {
+          "path": "agent/lib/providers/types.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/types.ts"
+        },
+        {
+          "path": "agent/lib/slack-post.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/slack-post.ts"
+        },
+        {
+          "path": "agent/lib/write-guard.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/write-guard.ts"
+        },
+        {
+          "path": "agent/schedules/crm-hygiene-scan.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/crm-hygiene-scan.ts"
+        },
+        {
+          "path": "agent/skills/crm-hygiene/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/crm-hygiene/SKILL.md"
+        },
+        {
+          "path": "agent/tools/apply_hygiene_writes.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/apply_hygiene_writes.ts"
+        },
+        {
+          "path": "agent/tools/deliver_hygiene_digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/deliver_hygiene_digest.ts"
+        },
+        {
+          "path": "agent/tools/load_crm_config.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/load_crm_config.ts"
+        },
+        {
+          "path": "agent/tools/preview_hygiene_digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/preview_hygiene_digest.ts"
+        },
+        {
+          "path": "agent/tools/propose_hygiene_batch.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/propose_hygiene_batch.ts"
+        },
+        {
+          "path": "agent/tools/scan_crm_records.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/scan_crm_records.ts"
+        },
+        {
+          "path": "evals/digest-preview.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/digest-preview.eval.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/never-write-without-confirm.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/never-write-without-confirm.eval.ts"
+        },
+        {
+          "path": "evals/schedule-scan.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/schedule-scan.eval.ts"
+        },
+        {
+          "path": "evals/writes-require-approval.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/writes-require-approval.eval.ts"
         },
         {
           "path": "README.md",
@@ -1141,6 +1329,423 @@
       ]
     },
     {
+      "name": "inbound-lead-qualifier",
+      "type": "registry:item",
+      "title": "Inbound Lead Qualifier",
+      "description": "Inbound lead qualifier via signed intake or Connect CRM/Typeform that scores ICP fit, drafts approved CRM notes, and Slack-notifies hot leads only.",
+      "categories": [
+        "productivity"
+      ],
+      "dependencies": [
+        "@vercel/connect@^0.2.6",
+        "eve@^0.47.5",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        },
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/channels/lead-push.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/lead-push.ts"
+        },
+        {
+          "path": "agent/channels/slack.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/slack.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/cursor-store.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/cursor-store.ts"
+        },
+        {
+          "path": "agent/lib/enrich.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/enrich.ts"
+        },
+        {
+          "path": "agent/lib/hmac.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/hmac.ts"
+        },
+        {
+          "path": "agent/lib/lead-config.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/lead-config.ts"
+        },
+        {
+          "path": "agent/lib/lead-events.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/lead-events.ts"
+        },
+        {
+          "path": "agent/lib/note-copy.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/note-copy.ts"
+        },
+        {
+          "path": "agent/lib/oauth.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/oauth.ts"
+        },
+        {
+          "path": "agent/lib/providers/http.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/http.ts"
+        },
+        {
+          "path": "agent/lib/providers/hubspot.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/hubspot.ts"
+        },
+        {
+          "path": "agent/lib/providers/index.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/index.ts"
+        },
+        {
+          "path": "agent/lib/providers/pipedrive.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/pipedrive.ts"
+        },
+        {
+          "path": "agent/lib/providers/salesforce.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/salesforce.ts"
+        },
+        {
+          "path": "agent/lib/providers/typeform.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/typeform.ts"
+        },
+        {
+          "path": "agent/lib/providers/types.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/types.ts"
+        },
+        {
+          "path": "agent/lib/push-auth.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/push-auth.ts"
+        },
+        {
+          "path": "agent/lib/push-inbox.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/push-inbox.ts"
+        },
+        {
+          "path": "agent/lib/score.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/score.ts"
+        },
+        {
+          "path": "agent/lib/send-guard.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/send-guard.ts"
+        },
+        {
+          "path": "agent/lib/slack-post.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/slack-post.ts"
+        },
+        {
+          "path": "agent/lib/untrusted.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/untrusted.ts"
+        },
+        {
+          "path": "agent/lib/webhook-auth.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/webhook-auth.ts"
+        },
+        {
+          "path": "agent/lib/write-guard.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/write-guard.ts"
+        },
+        {
+          "path": "agent/schedules/inbound-lead-scan.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/inbound-lead-scan.ts"
+        },
+        {
+          "path": "agent/skills/inbound-lead/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/inbound-lead/SKILL.md"
+        },
+        {
+          "path": "agent/tools/draft_crm_note.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/draft_crm_note.ts"
+        },
+        {
+          "path": "agent/tools/enrich_lead.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/enrich_lead.ts"
+        },
+        {
+          "path": "agent/tools/ingest_lead_event.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/ingest_lead_event.ts"
+        },
+        {
+          "path": "agent/tools/load_lead_config.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/load_lead_config.ts"
+        },
+        {
+          "path": "agent/tools/notify_slack_hot_lead.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/notify_slack_hot_lead.ts"
+        },
+        {
+          "path": "agent/tools/score_icp.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/score_icp.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/hot-slack-gate.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/hot-slack-gate.eval.ts"
+        },
+        {
+          "path": "evals/never-write-without-confirm.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/never-write-without-confirm.eval.ts"
+        },
+        {
+          "path": "evals/schedule-or-push.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/schedule-or-push.eval.ts"
+        },
+        {
+          "path": "evals/untrusted-lead-fields.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/untrusted-lead-fields.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        }
+      ]
+    },
+    {
+      "name": "invoice-chase-drafter",
+      "type": "registry:item",
+      "title": "Invoice Chase Drafter",
+      "description": "Weekday AR chase via Connect that drafts mailbox reminders from QuickBooks or Xero and posts an idempotent Slack digest after a paid re-check.",
+      "categories": [
+        "productivity"
+      ],
+      "dependencies": [
+        "@vercel/connect@^0.2.6",
+        "eve@^0.47.5",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        },
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/channels/slack.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/slack.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/aging.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/aging.ts"
+        },
+        {
+          "path": "agent/lib/chase-config.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/chase-config.ts"
+        },
+        {
+          "path": "agent/lib/deliver-digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/deliver-digest.ts"
+        },
+        {
+          "path": "agent/lib/delivery-store.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/delivery-store.ts"
+        },
+        {
+          "path": "agent/lib/digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/digest.ts"
+        },
+        {
+          "path": "agent/lib/http.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/http.ts"
+        },
+        {
+          "path": "agent/lib/invoices.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/invoices.ts"
+        },
+        {
+          "path": "agent/lib/oauth.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/oauth.ts"
+        },
+        {
+          "path": "agent/lib/providers/ar.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/ar.ts"
+        },
+        {
+          "path": "agent/lib/providers/gmail.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/gmail.ts"
+        },
+        {
+          "path": "agent/lib/providers/graph.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/graph.ts"
+        },
+        {
+          "path": "agent/lib/providers/mailbox.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/mailbox.ts"
+        },
+        {
+          "path": "agent/lib/providers/quickbooks.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/quickbooks.ts"
+        },
+        {
+          "path": "agent/lib/providers/types.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/types.ts"
+        },
+        {
+          "path": "agent/lib/providers/xero.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/xero.ts"
+        },
+        {
+          "path": "agent/lib/rfc822.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/rfc822.ts"
+        },
+        {
+          "path": "agent/lib/send-guard.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/send-guard.ts"
+        },
+        {
+          "path": "agent/lib/slack-post.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/slack-post.ts"
+        },
+        {
+          "path": "agent/schedules/chase-open-invoices.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/chase-open-invoices.ts"
+        },
+        {
+          "path": "agent/skills/invoice-chase/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/invoice-chase/SKILL.md"
+        },
+        {
+          "path": "agent/tools/create_reminder_draft.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/create_reminder_draft.ts"
+        },
+        {
+          "path": "agent/tools/deliver_ar_digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/deliver_ar_digest.ts"
+        },
+        {
+          "path": "agent/tools/list_open_invoices.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/list_open_invoices.ts"
+        },
+        {
+          "path": "agent/tools/load_chase_config.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/load_chase_config.ts"
+        },
+        {
+          "path": "agent/tools/preview_ar_digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/preview_ar_digest.ts"
+        },
+        {
+          "path": "agent/tools/recheck_paid_invoices.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/recheck_paid_invoices.ts"
+        },
+        {
+          "path": "evals/drafts-require-approval.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/drafts-require-approval.eval.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/never-send.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/never-send.eval.ts"
+        },
+        {
+          "path": "evals/paid-recheck.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/paid-recheck.eval.ts"
+        },
+        {
+          "path": "evals/weekday-cron.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/weekday-cron.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
+        }
+      ]
+    },
+    {
       "name": "knowledge-base-gardener",
       "type": "registry:item",
       "title": "Knowledge Base Gardener",
@@ -1795,6 +2400,247 @@
           "path": ".env.example",
           "type": "registry:file",
           "target": "~/.env.example"
+        }
+      ]
+    },
+    {
+      "name": "rfp-response-drafter",
+      "type": "registry:item",
+      "title": "RFP Response Drafter",
+      "description": "RFP response drafter via Google Drive Connect and sandbox files that cites every claim, Slack-routes SME gaps, and write-backs approved Drive or mailbox drafts without portal submit.",
+      "categories": [
+        "productivity"
+      ],
+      "dependencies": [
+        "@vercel/connect@^0.2.6",
+        "eve@^0.47.5",
+        "zod@4.3.6"
+      ],
+      "files": [
+        {
+          "path": ".env.example",
+          "type": "registry:file",
+          "target": "~/.env.example"
+        },
+        {
+          "path": "agent/agent.ts",
+          "type": "registry:file",
+          "target": "~/agent/agent.ts"
+        },
+        {
+          "path": "agent/channels/slack.ts",
+          "type": "registry:file",
+          "target": "~/agent/channels/slack.ts"
+        },
+        {
+          "path": "agent/instructions.md",
+          "type": "registry:file",
+          "target": "~/agent/instructions.md"
+        },
+        {
+          "path": "agent/lib/aging.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/aging.ts"
+        },
+        {
+          "path": "agent/lib/cite-gate.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/cite-gate.ts"
+        },
+        {
+          "path": "agent/lib/deadline-store.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/deadline-store.ts"
+        },
+        {
+          "path": "agent/lib/deliver-digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/deliver-digest.ts"
+        },
+        {
+          "path": "agent/lib/delivery-store.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/delivery-store.ts"
+        },
+        {
+          "path": "agent/lib/digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/digest.ts"
+        },
+        {
+          "path": "agent/lib/ingest.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/ingest.ts"
+        },
+        {
+          "path": "agent/lib/materialize.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/materialize.ts"
+        },
+        {
+          "path": "agent/lib/draft-copy.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/draft-copy.ts"
+        },
+        {
+          "path": "agent/lib/http.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/http.ts"
+        },
+        {
+          "path": "agent/lib/oauth.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/oauth.ts"
+        },
+        {
+          "path": "agent/lib/providers/drive.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/drive.ts"
+        },
+        {
+          "path": "agent/lib/providers/gmail.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/gmail.ts"
+        },
+        {
+          "path": "agent/lib/providers/graph.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/graph.ts"
+        },
+        {
+          "path": "agent/lib/providers/mailbox.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/mailbox.ts"
+        },
+        {
+          "path": "agent/lib/providers/types.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/providers/types.ts"
+        },
+        {
+          "path": "agent/lib/resend-email.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/resend-email.ts"
+        },
+        {
+          "path": "agent/lib/rfc822.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/rfc822.ts"
+        },
+        {
+          "path": "agent/lib/rfp-config.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/rfp-config.ts"
+        },
+        {
+          "path": "agent/lib/sandbox-paths.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/sandbox-paths.ts"
+        },
+        {
+          "path": "agent/lib/slack-post.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/slack-post.ts"
+        },
+        {
+          "path": "agent/lib/sme-store.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/sme-store.ts"
+        },
+        {
+          "path": "agent/lib/write-back.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/write-back.ts"
+        },
+        {
+          "path": "agent/lib/write-guard.ts",
+          "type": "registry:file",
+          "target": "~/agent/lib/write-guard.ts"
+        },
+        {
+          "path": "agent/schedules/rfp-deadline-digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/schedules/rfp-deadline-digest.ts"
+        },
+        {
+          "path": "agent/skills/rfp-response/SKILL.md",
+          "type": "registry:file",
+          "target": "~/agent/skills/rfp-response/SKILL.md"
+        },
+        {
+          "path": "agent/tools/ask_sme_questions.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/ask_sme_questions.ts"
+        },
+        {
+          "path": "agent/tools/deliver_deadline_digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/deliver_deadline_digest.ts"
+        },
+        {
+          "path": "agent/tools/draft_cited_sections.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/draft_cited_sections.ts"
+        },
+        {
+          "path": "agent/tools/ingest_rfp_sources.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/ingest_rfp_sources.ts"
+        },
+        {
+          "path": "agent/tools/load_open_rfps.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/load_open_rfps.ts"
+        },
+        {
+          "path": "agent/tools/load_rfp_config.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/load_rfp_config.ts"
+        },
+        {
+          "path": "agent/tools/record_sme_reply.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/record_sme_reply.ts"
+        },
+        {
+          "path": "agent/tools/preview_deadline_digest.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/preview_deadline_digest.ts"
+        },
+        {
+          "path": "agent/tools/write_approved_draft.ts",
+          "type": "registry:file",
+          "target": "~/agent/tools/write_approved_draft.ts"
+        },
+        {
+          "path": "evals/approval-before-write.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/approval-before-write.eval.ts"
+        },
+        {
+          "path": "evals/cite-gate.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/cite-gate.eval.ts"
+        },
+        {
+          "path": "evals/evals.config.ts",
+          "type": "registry:file",
+          "target": "~/evals/evals.config.ts"
+        },
+        {
+          "path": "evals/never-portal-submit.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/never-portal-submit.eval.ts"
+        },
+        {
+          "path": "evals/slack-sme-pause.eval.ts",
+          "type": "registry:file",
+          "target": "~/evals/slack-sme-pause.eval.ts"
+        },
+        {
+          "path": "README.md",
+          "type": "registry:file",
+          "target": "~/agent/README.md"
         }
       ]
     },

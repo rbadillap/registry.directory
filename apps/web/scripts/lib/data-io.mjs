@@ -58,10 +58,23 @@ export function indexUrl(entry) {
   return `${entry.url.replace(/\/$/, "")}/r/registry.json`;
 }
 
-/** Mirrors itemBaseUrl in lib/catalog.ts: where `${base}/{name}.json` lives. */
+/** The shadcn convention: items live next to the index, `${base}/{name}.json`. */
 export function itemBaseUrl(entry) {
   if (entry.registry_url) return entry.registry_url.replace(/\/[^/]+\.json$/, "");
   return `${entry.url.replace(/\/$/, "")}/r`;
+}
+
+// Where items might live, most likely first. The convention is a single
+// template shared by the index and the items, and every registry but one
+// follows it. The rest of the list covers a registry that serves its index at
+// one path and its items under /r — the indexer probes each in turn and the
+// view records the one that answers, so nothing downstream has to guess.
+// Grow this list when a new layout shows up; never a per-entry field.
+export function itemBaseCandidates(entry) {
+  const primary = itemBaseUrl(entry);
+  const index = new URL(indexUrl(entry));
+  const homepage = entry.url.replace(/\/$/, "");
+  return [...new Set([primary, `${index.origin}/r`, `${homepage}/r`, index.origin])];
 }
 
 /**

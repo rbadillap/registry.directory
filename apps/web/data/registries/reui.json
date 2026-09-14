@@ -8,6 +8,261 @@
   "resolvable": true,
   "items": [
     {
+      "name": "agent-activity-1",
+      "type": "registry:block",
+      "title": "Agent run console that stops at approval steps for an inline Approve, Revise or Deny",
+      "description": "Human in the loop task view: queue badges on steps that will need you, an answer field for agent questions, and a declined approval skipping its gated steps. ReUI Frame, Badge, shadcn Marker, Progress, InputGroup. For approval flow, run log.",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/frame",
+        "@reui/badge",
+        "button",
+        "dropdown-menu",
+        "@reui/frame",
+        "input-group",
+        "marker",
+        "progress",
+        "spinner",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-1/page.tsx"
+        },
+        {
+          "path": "agent-activity.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-1/components/agent-activity.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-1/components/data.ts"
+        },
+        {
+          "path": "icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-1/components/icons.tsx"
+        },
+        {
+          "path": "run-rows.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-1/components/run-rows.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agent-activity-2",
+      "type": "registry:block",
+      "title": "Live agent run feed with Summary, Detailed and Raw monospace log views",
+      "description": "Narrates an agent run as it works: steps name the file, command, query or issue they touched, Stop strikes the rest as cancelled, transcript copy and download. Built on ReUI Badge, shadcn Card, Marker, DropdownMenu. For activity log, tool timeline.",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "avatar",
+        "@reui/badge",
+        "button",
+        "card",
+        "dropdown-menu",
+        "marker",
+        "spinner",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-2/page.tsx"
+        },
+        {
+          "path": "agent-activity.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-2/components/agent-activity.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-2/components/data.ts"
+        },
+        {
+          "path": "icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-2/components/icons.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agent-activity-3",
+      "type": "registry:block",
+      "title": "Research timeline from search query via cited sources and repo files to a confidence rated answer",
+      "description": "Shows how an AI agent reached its reply: steps land live, hover copy and open actions per row, publisher logos. ReUI Timeline, Badge; shadcn Card, Item, Spinner, Tooltip. For deep research, citations panel, grounded AI answers.",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/timeline",
+        "@reui/badge",
+        "button",
+        "card",
+        "item",
+        "marker",
+        "skeleton",
+        "spinner",
+        "@reui/timeline",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-3/page.tsx"
+        },
+        {
+          "path": "agent-activity.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-3/components/agent-activity.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-3/components/data.tsx"
+        },
+        {
+          "path": "githubDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/githubDark.tsx"
+        },
+        {
+          "path": "githubLight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/githubLight.tsx"
+        },
+        {
+          "path": "stripe.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/stripe.tsx"
+        },
+        {
+          "path": "supabase.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/supabase.tsx"
+        },
+        {
+          "path": "vercel.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/vercel.tsx"
+        },
+        {
+          "path": "vercelDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/vercelDark.tsx"
+        },
+        {
+          "path": "icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-3/components/icons.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agent-activity-4",
+      "type": "registry:block",
+      "title": "MCP call table attributing each tool call to its server, with the refused scope and a Grant",
+      "description": "Agent run permission review for a chat transcript: rows stream in over skeletons, a Denied only filter and a Dropped badge on a lost server. Built on ReUI Badge, shadcn Table, ToggleGroup, Empty. For MCP audit log, tool permissions, scope approval.",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/badge",
+        "button",
+        "empty",
+        "skeleton",
+        "spinner",
+        "table",
+        "toggle-group"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-4/page.tsx"
+        },
+        {
+          "path": "agent-activity.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-4/components/agent-activity.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-4/components/data.ts"
+        },
+        {
+          "path": "icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-4/components/icons.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agent-activity-5",
+      "type": "registry:block",
+      "title": "Agent run outcome report with a done, failed or skipped badge per item and a scoped retry",
+      "description": "Wrap-up card for a finished agent task: the command, record or reason behind each row, a Grant button for a missing scope, and Keep what succeeded with undo. Built on ReUI Frame, Badge, shadcn Item, ButtonGroup. For run summary, task results.",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/frame",
+        "@reui/badge",
+        "button",
+        "button-group",
+        "dropdown-menu",
+        "@reui/frame",
+        "item",
+        "skeleton",
+        "spinner",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-5/page.tsx"
+        },
+        {
+          "path": "agent-activity.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-5/components/agent-activity.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-5/components/data.ts"
+        },
+        {
+          "path": "icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-5/components/icons.tsx"
+        },
+        {
+          "path": "outcome-ledger.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/agent-activity-5/components/outcome-ledger.tsx"
+        }
+      ]
+    },
+    {
       "name": "ai-chat-1",
       "type": "registry:block",
       "title": "AI copilot chat surface with streaming transcript and recent chats",
@@ -1369,7 +1624,7 @@
     {
       "name": "app-shell-11",
       "type": "registry:block",
-      "title": "Operations app shell with four toggleable regions and a resizable bottom workbench sheet",
+      "title": "Operations sidebar app shell with four toggleable regions and a resizable bottom workbench sheet",
       "description": "Dense operations console: collapsible nav, resizable split panes, an expandable bottom workbench sheet, and a right calendar and agenda rail. ReUI Badge, Frame, Rating with shadcn Sidebar, Resizable, Tabs, Calendar. Admin shell, SaaS dashboard.",
       "dependencies": [
         "next-themes",
@@ -1694,7 +1949,7 @@
     {
       "name": "app-shell-14",
       "type": "registry:block",
-      "title": "Mini icon-rail app shell with per-section secondary nav and a tabbed workspace toolbar",
+      "title": "Mini icon-rail sidebar app shell with per-section secondary nav and a tabbed workspace toolbar",
       "description": "Three-region workspace shell: icon rail, a toggleable secondary nav that swaps per section, and a toolbar with List, Kanban, Calendar, Dashboard tabs plus Sort, View, Filter, Search. ReUI Badge, shadcn Sidebar, Tabs, DropdownMenu, Avatar.",
       "dependencies": [
         "next-themes"
@@ -2563,7 +2818,7 @@
     {
       "name": "app-shell-4",
       "type": "registry:block",
-      "title": "Mail inbox app shell with icon folder rail, wide message list, and selected-message action header",
+      "title": "Mail inbox app shell with icon-rail folder sidebar, wide message list, and selected-message action header",
       "description": "Mail and inbox shell: folder icon rail plus a wide 440px message list with live search, filter tabs, rich preview rows, and a selected-message action header (reply, star, delete). ReUI Badge, shadcn Sidebar, Tabs, Avatar, DropdownMenu.",
       "dependencies": [
         "next-themes"
@@ -2850,7 +3105,7 @@
     {
       "name": "app-shell-7",
       "type": "registry:block",
-      "title": "Breadcrumb-switcher app shell with org/app/environment dropdowns and a live system monitor popover",
+      "title": "Breadcrumb-switcher sidebar app shell with org/app/environment dropdowns and a live system monitor popover",
       "description": "Header-first shell with a breadcrumb of org, app, and environment switcher dropdowns, a live system monitor popover with resource sparklines, command-palette search, and collapsible nested sidebar nav. ReUI Badge, Kbd, shadcn Sidebar, DropdownMenu.",
       "dependencies": [
         "next-themes"
@@ -2936,7 +3191,7 @@
     {
       "name": "app-shell-8",
       "type": "registry:block",
-      "title": "Inset icon-rail app shell with per-section secondary nav, org/app/env switchers, and notifications",
+      "title": "Inset icon-rail sidebar app shell with per-section secondary nav, org/app/env switchers, and notifications",
       "description": "Two-level dashboard shell: icon rail plus a per-section secondary nav with live-metric/storage footers, org/app/env switchers, command-K search, and notifications drawer. ReUI Badge, Rating; shadcn Sidebar, Sheet, Dialog. Inventory, ops admin.",
       "dependencies": [
         "next-themes"
@@ -35994,6 +36249,467 @@
           "path": "filters-types.tsx",
           "type": "registry:ui",
           "target": "components/reui/filters/filters-types.tsx"
+        }
+      ]
+    },
+    {
+      "name": "flow-1",
+      "type": "registry:block",
+      "title": "Automation workflow canvas with step cards showing owner, duration and last run status",
+      "description": "Build trigger, condition and action flows on React Flow. Add, duplicate or delete steps from a node toolbar or right click menu, edit them in an inspector. ReUI IconTile, Badge, shadcn ContextMenu, AlertDialog. For no-code automation, lead routing.",
+      "dependencies": [
+        "@xyflow/react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/alert",
+        "@reui/badge",
+        "@reui/icon-tile",
+        "@reui/alert",
+        "alert-dialog",
+        "avatar",
+        "@reui/badge",
+        "button",
+        "button-group",
+        "context-menu",
+        "dropdown-menu",
+        "field",
+        "@reui/icon-tile",
+        "input",
+        "item",
+        "select",
+        "sheet",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-1/page.tsx"
+        },
+        {
+          "path": "canvas-toolbar.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-1/components/canvas-toolbar.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-1/components/data.tsx"
+        },
+        {
+          "path": "delete-confirmation.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-1/components/delete-confirmation.tsx"
+        },
+        {
+          "path": "flow-canvas.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-1/components/flow-canvas.tsx"
+        },
+        {
+          "path": "flow-edge.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-1/components/flow-edge.tsx"
+        },
+        {
+          "path": "step-actions.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-1/components/step-actions.tsx"
+        },
+        {
+          "path": "step-node.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-1/components/step-node.tsx"
+        },
+        {
+          "path": "workflow-builder.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-1/components/workflow-builder.tsx"
+        },
+        {
+          "path": "workflow-menu.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-1/components/workflow-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "flow-2",
+      "type": "registry:block",
+      "title": "AI agent flow tree with auto layout, named branch paths and add step buttons on every connector",
+      "description": "LLM agent editor: cards show the app called and a last test run strip with tokens or latency, a docked inspector edits each step, copy as JSON. React Flow, ReUI IconTile, Badge, shadcn Item, Select, AlertDialog. For agent builder, AI workflow.",
+      "dependencies": [
+        "@dagrejs/dagre",
+        "@xyflow/react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/icon-tile",
+        "alert-dialog",
+        "avatar",
+        "@reui/badge",
+        "button",
+        "button-group",
+        "dropdown-menu",
+        "field",
+        "@reui/icon-tile",
+        "input",
+        "item",
+        "select",
+        "sheet",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-2/page.tsx"
+        },
+        {
+          "path": "agent-builder.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-2/components/agent-builder.tsx"
+        },
+        {
+          "path": "agent-menu.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-2/components/agent-menu.tsx"
+        },
+        {
+          "path": "canvas-toolbar.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-2/components/canvas-toolbar.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-2/components/data.tsx"
+        },
+        {
+          "path": "claudeAiIcon.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/claudeAiIcon.tsx"
+        },
+        {
+          "path": "clickup.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/clickup.tsx"
+        },
+        {
+          "path": "neon.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/neon.tsx"
+        },
+        {
+          "path": "resendIconBlack.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/resendIconBlack.tsx"
+        },
+        {
+          "path": "resendIconWhite.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/resendIconWhite.tsx"
+        },
+        {
+          "path": "slack.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/slack.tsx"
+        },
+        {
+          "path": "stripe.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/stripe.tsx"
+        },
+        {
+          "path": "delete-confirmation.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-2/components/delete-confirmation.tsx"
+        },
+        {
+          "path": "flow-canvas.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-2/components/flow-canvas.tsx"
+        },
+        {
+          "path": "flow-layout.ts",
+          "type": "registry:block",
+          "target": "components/blocks/flow-2/components/flow-layout.ts"
+        },
+        {
+          "path": "node-actions.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-2/components/node-actions.tsx"
+        },
+        {
+          "path": "tree-edge.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-2/components/tree-edge.tsx"
+        },
+        {
+          "path": "tree-node.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-2/components/tree-node.tsx"
+        }
+      ]
+    },
+    {
+      "name": "flow-3",
+      "type": "registry:block",
+      "title": "Data pipeline run canvas with dependency-ordered replay and a human approval gate",
+      "description": "ETL DAG run monitor: 6 run states, connection, test and model attachments, and retry or focus for the failed task. React Flow, ReUI IconTile, Badge, shadcn Tabs, ContextMenu, Progress. For orchestration dashboard, scheduled job status.",
+      "dependencies": [
+        "@xyflow/react"
+      ],
+      "registryDependencies": [
+        "@reui/alert",
+        "@reui/badge",
+        "@reui/icon-tile",
+        "@reui/alert",
+        "alert-dialog",
+        "@reui/badge",
+        "button",
+        "button-group",
+        "card",
+        "context-menu",
+        "dropdown-menu",
+        "field",
+        "@reui/icon-tile",
+        "input",
+        "item",
+        "progress",
+        "select",
+        "sheet",
+        "spinner",
+        "switch",
+        "tabs",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/page.tsx"
+        },
+        {
+          "path": "canvas-toolbar.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/components/canvas-toolbar.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/components/data.tsx"
+        },
+        {
+          "path": "googleCloud.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/googleCloud.tsx"
+        },
+        {
+          "path": "paypal.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/paypal.tsx"
+        },
+        {
+          "path": "prisma.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/prisma.tsx"
+        },
+        {
+          "path": "prismaDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/prismaDark.tsx"
+        },
+        {
+          "path": "redis.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/redis.tsx"
+        },
+        {
+          "path": "slack.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/slack.tsx"
+        },
+        {
+          "path": "stripe.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/stripe.tsx"
+        },
+        {
+          "path": "delete-confirmation.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/components/delete-confirmation.tsx"
+        },
+        {
+          "path": "flow-canvas.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/components/flow-canvas.tsx"
+        },
+        {
+          "path": "flow-edge.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/components/flow-edge.tsx"
+        },
+        {
+          "path": "frame.ts",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/components/frame.ts"
+        },
+        {
+          "path": "gate-node.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/components/gate-node.tsx"
+        },
+        {
+          "path": "mark-node.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/components/mark-node.tsx"
+        },
+        {
+          "path": "node-inspector.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/components/node-inspector.tsx"
+        },
+        {
+          "path": "pipeline-run.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/components/pipeline-run.tsx"
+        },
+        {
+          "path": "resource-node.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/components/resource-node.tsx"
+        },
+        {
+          "path": "run-actions.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/components/run-actions.tsx"
+        },
+        {
+          "path": "run-controls.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-3/components/run-controls.tsx"
+        }
+      ]
+    },
+    {
+      "name": "flow-4",
+      "type": "registry:block",
+      "title": "Growth impact map linking initiatives to a north star metric, with correlation scored metric links",
+      "description": "Ties work to results: initiative cards with progress and status, metric cards with a goal and per period value and change, an inspector to relink edges. React Flow, ReUI Frame, IconTile, Badge, shadcn Tabs, ToggleGroup. For KPI driver tree, OKR map.",
+      "dependencies": [
+        "@dagrejs/dagre",
+        "@xyflow/react"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/frame",
+        "@reui/icon-tile",
+        "alert-dialog",
+        "@reui/badge",
+        "button",
+        "button-group",
+        "card",
+        "context-menu",
+        "dropdown-menu",
+        "field",
+        "@reui/frame",
+        "@reui/icon-tile",
+        "input",
+        "progress",
+        "select",
+        "sheet",
+        "tabs",
+        "toggle-group",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/page.tsx"
+        },
+        {
+          "path": "canvas-toolbar.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/components/canvas-toolbar.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/components/data.tsx"
+        },
+        {
+          "path": "githubDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/githubDark.tsx"
+        },
+        {
+          "path": "githubLight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/githubLight.tsx"
+        },
+        {
+          "path": "stripe.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/stripe.tsx"
+        },
+        {
+          "path": "delete-confirmation.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/components/delete-confirmation.tsx"
+        },
+        {
+          "path": "flow-canvas.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/components/flow-canvas.tsx"
+        },
+        {
+          "path": "flow-layout.ts",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/components/flow-layout.ts"
+        },
+        {
+          "path": "impact-edge.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/components/impact-edge.tsx"
+        },
+        {
+          "path": "impact-map.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/components/impact-map.tsx"
+        },
+        {
+          "path": "initiative-node.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/components/initiative-node.tsx"
+        },
+        {
+          "path": "map-actions.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/components/map-actions.tsx"
+        },
+        {
+          "path": "map-controls.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/components/map-controls.tsx"
+        },
+        {
+          "path": "metric-node.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/components/metric-node.tsx"
+        },
+        {
+          "path": "node-actions.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/components/node-actions.tsx"
+        },
+        {
+          "path": "node-inspector.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/flow-4/components/node-inspector.tsx"
         }
       ]
     },

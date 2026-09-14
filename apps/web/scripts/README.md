@@ -35,8 +35,9 @@ pnpm index --retry            add a patient retry pass      (minutes longer)
 ```
 apps/web/data/
   registries/{key}.json   one slim view per registry: items with name, type,
-                          description, categories, dependencies, cssVars and
-                          file PATHS. Never file content.
+                          description, categories, dependencies, cssVars,
+                          font (registry:font only) and file PATHS. Never
+                          file content.
   github.json             stars and last-push date per github_url
   collections.json        the home's groupings, each carrying its own criterion
   shipped.json            day-to-day diff of item names (the novedades ticker)
@@ -55,6 +56,10 @@ Snapshots are append-only: a run never overwrites a day already archived.
 
 1. **registries** — fetch all 75 indexes, write one view each, probe whether
    the origin still resolves individual items (`resolvable` in the manifest).
+   The probe also settles *where* items live (`itemBase` in the view): the
+   convention — next to the index — is tried first, then the other layouts
+   in `itemBaseCandidates` (`scripts/lib/data-io.mjs`). Everything that
+   fetches an item afterwards reads `itemBase` from the view.
 2. **github** — refresh stars and last-push dates. Skipped on a partial run.
 3. **derived** — compute `collections.json` from the views just written, and
    `shipped.json` by diffing recent snapshots.
