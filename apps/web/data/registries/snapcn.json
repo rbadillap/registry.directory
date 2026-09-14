@@ -1113,6 +1113,106 @@
           "target": "components/snap-cn/stretch-word.tsx"
         }
       ]
+    },
+    {
+      "name": "word-gather",
+      "type": "registry:component",
+      "title": "Word Gather",
+      "description": "A sentence that arrives one word at a time, out of order, and gathers. The first word holds the middle of the frame on its own; then the rest drop in around it — not in reading order and not where they belong — each landing near its slot in the accent colour and sliding the last of the way home, turning to ink as it settles. The line makes room for them as they come, and when the last one is down the whole block eases back to its real size. The layout is solved here rather than left to the browser, because a word has to be transformed from somewhere else to its slot and knowing where its slot is means having laid the line out yourself — which also means the line break cannot move while the block's scale is changing under it.",
+      "dependencies": [
+        "remotion",
+        "@remotion/google-fonts"
+      ],
+      "registryDependencies": [
+        "https://snapcn.dev/r/snap-cn-ui.json"
+      ],
+      "files": [
+        {
+          "path": "registry/snap-cn/word-gather/index.tsx",
+          "type": "registry:component",
+          "target": "components/snap-cn/word-gather.tsx"
+        }
+      ]
+    },
+    {
+      "name": "word-wheel",
+      "type": "registry:component",
+      "title": "Word Wheel",
+      "description": "A column of words that spins like a reel and stops on one of them. A fixed lead-in holds the left of the line and the word that finishes the sentence lives in a slot beside it — one row of a taller column whose other words are visible above and below, smaller and grey, fading out toward the top and bottom of the frame. The reel rolls, decelerates over a second and three quarters and comes to rest with one word at full size and in ink. Every number in it was recovered frame by frame from a recording: the 34px row pitch that every baseline including the oversized one sits on, the 1.665x the selected word grows by, and the deceleration itself — which ships as a measured table rather than a curve, because the closest cubic-bezier is five pixels out at its worst and a fifth of a row is a visibly different frame.",
+      "dependencies": [
+        "remotion",
+        "@remotion/google-fonts"
+      ],
+      "registryDependencies": [
+        "https://snapcn.dev/r/snap-cn-ui.json"
+      ],
+      "files": [
+        {
+          "path": "registry/snap-cn/word-wheel/index.tsx",
+          "type": "registry:component",
+          "target": "components/snap-cn/word-wheel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "channel-thread",
+      "type": "registry:component",
+      "title": "Channel Thread",
+      "description": "A work chat filling itself in, the way the channel actually reads: an avatar, a name in bold, a quiet timestamp and the messages as plain lines under them. Messages land one at a time, a second message from the same person joins the group without repeating the name, and when somebody new starts typing three dots hold their line until the words arrive. The transcript never creeps — it sits perfectly still between arrivals and then scrolls, once, by exactly the room the new line needs, and only when the newest line would fall past the anchor. Every vertical number came off a recording and closes on it: carry the layout's arithmetic across the whole scene and it predicts the last frame's baselines to within a pixel.",
+      "dependencies": [
+        "remotion",
+        "@remotion/google-fonts"
+      ],
+      "registryDependencies": [
+        "https://snapcn.dev/r/snap-cn-ui.json"
+      ],
+      "files": [
+        {
+          "path": "registry/snap-cn/channel-thread/index.tsx",
+          "type": "registry:component",
+          "target": "components/snap-cn/channel-thread.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-collapse",
+      "type": "registry:component",
+      "title": "Logo Collapse",
+      "description": "A stack of shots flicked through, collapsing into your mark, and the wordmark landing beside it. One card holds the middle of the frame and cuts to the next shot, each smaller and each held for less time than the last, so the sequence winds itself up instead of running at a constant clip. Nothing cross-fades and nothing tweens between shots — the reference holds each card at a fixed size for its whole beat and then cuts, which reads as a stack of prints being dealt rather than as a zoom. At the end of the run the card cuts to a plain tile with the mark on it, the mark overshoots its resting size by a third and settles in three frames, the tile goes, and the mark steps aside twice to make room for the word.",
+      "dependencies": [
+        "remotion",
+        "@remotion/google-fonts"
+      ],
+      "registryDependencies": [
+        "https://snapcn.dev/r/snap-cn-ui.json"
+      ],
+      "files": [
+        {
+          "path": "registry/snap-cn/logo-collapse/index.tsx",
+          "type": "registry:component",
+          "target": "components/snap-cn/logo-collapse.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-rail",
+      "type": "registry:component",
+      "title": "Card Rail",
+      "description": "A rail of cards flicked sideways across a tilted plane. The cards do not crawl past on a loop — they are flicked: the rail leaves at speed, decelerates for well over a second and comes to rest about a card further along, the way a carousel behaves under a thumb rather than under a timer. The plane is not flat to the camera either. Measured on a recording's card edges, the horizontal scale grows 0.000825 per pixel of height about the frame's own centre line, so the foot of a card is a fifth wider than its head while horizontals stay horizontal and the type stays upright — which is why a row of plain rectangles reads as a surface receding into the frame rather than as a filmstrip.",
+      "dependencies": [
+        "remotion",
+        "@remotion/google-fonts"
+      ],
+      "registryDependencies": [
+        "https://snapcn.dev/r/snap-cn-ui.json"
+      ],
+      "files": [
+        {
+          "path": "registry/snap-cn/card-rail/index.tsx",
+          "type": "registry:component",
+          "target": "components/snap-cn/card-rail.tsx"
+        }
+      ]
     }
   ]
 }
