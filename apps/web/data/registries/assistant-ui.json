@@ -34,7 +34,7 @@
       "files": [
         {
           "path": "components/assistant-ui/elements/surfaces.tsx",
-          "type": "registry:lib"
+          "type": "registry:component"
         }
       ]
     },
@@ -46,7 +46,22 @@
       "files": [
         {
           "path": "components/assistant-ui/utils/range.ts",
-          "type": "registry:lib"
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-task",
+      "type": "registry:component",
+      "title": "Elements Task",
+      "description": "Shared task state, labels, timing, and elapsed time for task elements.",
+      "dependencies": [
+        "@assistant-ui/react"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/utils/task.ts",
+          "type": "registry:component"
         }
       ]
     },
@@ -447,6 +462,24 @@
       "files": [
         {
           "path": "components/assistant-ui/elements/agent-status.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-task-card",
+      "type": "registry:component",
+      "title": "Task card",
+      "description": "A delegated task with its state, timing, result, and transcript in one card.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/elements/task-card.tsx",
           "type": "registry:component"
         }
       ]
@@ -1999,6 +2032,66 @@
       ]
     },
     {
+      "name": "voice-conversation",
+      "type": "registry:component",
+      "title": "Voice conversation",
+      "description": "The live call screen bound to the thread's voice session: orb, caption, transcript, mute, and end call.",
+      "dependencies": [
+        "@assistant-ui/react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-voice-conversation.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/elements/voice-conversation.aui.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "task-card",
+      "type": "registry:component",
+      "title": "Task card",
+      "description": "A runtime task card with nested transcripts, timing, results, and grouped task lanes.",
+      "dependencies": [
+        "@assistant-ui/react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-task-card.json",
+        "https://r.assistant-ui.com/elements-task.json",
+        "https://r.assistant-ui.com/markdown-text.json",
+        "https://r.assistant-ui.com/tool-fallback.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/elements/task-card.aui.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "agent-status",
+      "type": "registry:component",
+      "title": "Agent status",
+      "description": "A runtime task summary chip with an optional tray for every task in the thread.",
+      "dependencies": [
+        "@assistant-ui/react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-agent-status.json",
+        "https://r.assistant-ui.com/elements-task-card.json",
+        "https://r.assistant-ui.com/elements-task.json",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/elements/agent-status.aui.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "use-copy-to-clipboard",
       "type": "registry:hook",
       "title": "Use Copy To Clipboard",
@@ -2267,13 +2360,14 @@
       "name": "assistant-modal",
       "type": "registry:component",
       "title": "Assistant Modal",
-      "description": "Floating chat bubble for support widgets and help desks.",
+      "description": "Floating chat bubble for support widgets and help desks, with a thread list and a resizable window.",
       "dependencies": [
         "@assistant-ui/react",
         "lucide-react"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/thread.json",
+        "https://r.assistant-ui.com/thread-list.json",
         "https://r.assistant-ui.com/tooltip-icon-button.json"
       ],
       "files": [

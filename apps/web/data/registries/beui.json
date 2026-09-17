@@ -955,9 +955,9 @@
           "target": "@components/motion/tooltip.tsx"
         },
         {
-          "path": "lib/ease.ts",
-          "type": "registry:lib",
-          "target": "@lib/ease.ts"
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
         },
         {
           "path": "lib/hooks/use-dismiss.ts",
@@ -978,6 +978,11 @@
           "path": "lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
         },
         {
           "path": "lib/touch.ts",
@@ -2388,6 +2393,300 @@
       ]
     },
     {
+      "name": "heat-calendar",
+      "type": "registry:component",
+      "title": "Heat Calendar",
+      "description": "Composable activity calendar with Grid, Legend, and Tooltip parts, controlled range selection, and UTC calendar dates. Supply weekly intensities to visualize activity and total a selected span.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/heat-calendar.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/heat-calendar.tsx"
+        },
+        {
+          "path": "components/charts/heat-calendar/context.ts",
+          "type": "registry:component",
+          "target": "@components/charts/heat-calendar/context.ts"
+        },
+        {
+          "path": "components/charts/heat-calendar/grid.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/heat-calendar/grid.tsx"
+        },
+        {
+          "path": "components/charts/heat-calendar/legend.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/heat-calendar/legend.tsx"
+        },
+        {
+          "path": "components/charts/heat-calendar/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/heat-calendar/tooltip.tsx"
+        },
+        {
+          "path": "components/charts/heat-calendar/types.ts",
+          "type": "registry:component",
+          "target": "@components/charts/heat-calendar/types.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/charts/heat-calendar/utils.ts",
+          "type": "registry:component",
+          "target": "@components/charts/heat-calendar/utils.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/motion/number-ticker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/number-ticker.tsx"
+        },
+        {
+          "path": "components/motion/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-gesture.ts"
+        },
+        {
+          "path": "lib/hooks/use-tap-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-tap-gesture.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
+      "name": "returns-calendar",
+      "type": "registry:component",
+      "title": "Returns Calendar",
+      "description": "Composable monthly returns calendar with Grid and Tooltip parts, controlled month or year selections, and compounded totals. Supply your own years and monthly percentages.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/returns-calendar.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/returns-calendar.tsx"
+        },
+        {
+          "path": "components/charts/returns-calendar/context.ts",
+          "type": "registry:component",
+          "target": "@components/charts/returns-calendar/context.ts"
+        },
+        {
+          "path": "components/charts/returns-calendar/grid.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/returns-calendar/grid.tsx"
+        },
+        {
+          "path": "components/charts/returns-calendar/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/returns-calendar/tooltip.tsx"
+        },
+        {
+          "path": "components/charts/returns-calendar/types.ts",
+          "type": "registry:component",
+          "target": "@components/charts/returns-calendar/types.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/charts/returns-calendar/utils.ts",
+          "type": "registry:component",
+          "target": "@components/charts/returns-calendar/utils.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/motion/number-ticker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/number-ticker.tsx"
+        },
+        {
+          "path": "components/motion/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-gesture.ts"
+        },
+        {
+          "path": "lib/hooks/use-tap-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-tap-gesture.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
+      "name": "price-target-fan",
+      "type": "registry:component",
+      "title": "Price Target Fan",
+      "description": "Composable price target chart with Header, Plot, SVG, Axes, History, Targets, Now, Cursor, and Tooltip parts. Supply dated price history and targets; scrub with a pointer or keyboard and customize the active readout.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/price-target-fan.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/price-target-fan.tsx"
+        },
+        {
+          "path": "components/charts/price-target-fan/context.ts",
+          "type": "registry:component",
+          "target": "@components/charts/price-target-fan/context.ts"
+        },
+        {
+          "path": "components/charts/price-target-fan/header.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/price-target-fan/header.tsx"
+        },
+        {
+          "path": "components/charts/price-target-fan/plot.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/price-target-fan/plot.tsx"
+        },
+        {
+          "path": "components/charts/price-target-fan/series.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/price-target-fan/series.tsx"
+        },
+        {
+          "path": "components/charts/price-target-fan/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/price-target-fan/tooltip.tsx"
+        },
+        {
+          "path": "components/charts/price-target-fan/types.ts",
+          "type": "registry:component",
+          "target": "@components/charts/price-target-fan/types.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/charts/price-target-fan/utils.ts",
+          "type": "registry:component",
+          "target": "@components/charts/price-target-fan/utils.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "components/motion/number-ticker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/number-ticker.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/motion/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-gesture.ts"
+        },
+        {
+          "path": "lib/hooks/use-tap-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-tap-gesture.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
       "name": "message-bubble",
       "type": "registry:component",
       "title": "Message Bubble",
@@ -3743,6 +4042,11 @@
           "target": "@lib/utils.ts"
         },
         {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
           "path": "lib/touch.ts",
           "type": "registry:lib",
           "target": "@lib/touch.ts"
@@ -3854,6 +4158,11 @@
           "path": "components/motion/select.tsx",
           "type": "registry:component",
           "target": "@components/motion/select.tsx"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
         },
         {
           "path": "lib/hooks/use-dismiss.ts",
@@ -4000,6 +4309,11 @@
           "path": "components/motion/command-palette.tsx",
           "type": "registry:component",
           "target": "@components/motion/command-palette.tsx"
+        },
+        {
+          "path": "lib/command-search.ts",
+          "type": "registry:lib",
+          "target": "@lib/command-search.ts"
         },
         {
           "path": "lib/ease.ts",
@@ -4277,6 +4591,11 @@
           "target": "@lib/utils.ts"
         },
         {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
           "path": "lib/hooks/use-dismiss.ts",
           "type": "registry:hook",
           "target": "@lib/hooks/use-dismiss.ts"
@@ -4368,6 +4687,11 @@
           "path": "lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
         },
         {
           "path": "lib/hooks/use-dismiss.ts",

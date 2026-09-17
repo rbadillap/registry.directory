@@ -1,0 +1,661 @@
+{
+  "key": "motion-primitives",
+  "entry": "Motion Primitives",
+  "name": "motion-primitives",
+  "homepage": "https://motion-primitives.com",
+  "indexUrl": "https://motion-primitives.com/c/registry.json",
+  "itemBase": "https://motion-primitives.com/c",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "A collapsible content component with smooth animations for showing and hiding content.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/accordion.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "animated-background",
+      "type": "registry:ui",
+      "title": "Animated Background",
+      "description": "A component that provides animated background effects for UI elements.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/animated-background.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "animated-group",
+      "type": "registry:ui",
+      "title": "Animated Group",
+      "description": "A container component that applies coordinated animations to a group of child elements.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/animated-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "animated-number",
+      "type": "registry:ui",
+      "title": "Animated Number",
+      "description": "A component that animates number changes with smooth transitions.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/animated-number.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "border-trail",
+      "type": "registry:ui",
+      "title": "Border Trail",
+      "description": "An effect that creates animated border trails around elements on interaction.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/border-trail.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "A component for cycling through elements with smooth transitions.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/carousel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cursor",
+      "type": "registry:ui",
+      "title": "Cursor",
+      "description": "A custom cursor component with animated effects and interactions.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/cursor.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "A modal dialog component with smooth entrance and exit animations.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/dialog.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "hooks/usePreventScroll.tsx",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "disclosure",
+      "type": "registry:ui",
+      "title": "Disclosure",
+      "description": "A component that shows and hides content with animated transitions.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/disclosure.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "in-view",
+      "type": "registry:ui",
+      "title": "In View",
+      "description": "A component that triggers animations when elements enter the viewport.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/in-view.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "infinite-slider",
+      "type": "registry:ui",
+      "title": "Infinite Slider",
+      "description": "A slider component that loops infinitely through its content.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion",
+        "react-use-measure"
+      ],
+      "files": [
+        {
+          "path": "components/core/infinite-slider.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "transition-panel",
+      "type": "registry:ui",
+      "title": "Transition Panel",
+      "description": "A panel component with smooth transitions between different states.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/transition-panel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "text-effect",
+      "type": "registry:ui",
+      "title": "Text Effect",
+      "description": "A component that applies animated effects to text content.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/text-effect.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "text-loop",
+      "type": "registry:ui",
+      "title": "Text Loop",
+      "description": "A component that cycles through different text phrases with animations.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/text-loop.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "text-morph",
+      "type": "registry:ui",
+      "title": "Text Morph",
+      "description": "A component that morphs between different text strings with smooth transitions.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/text-morph.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "text-roll",
+      "type": "registry:ui",
+      "title": "Text Roll",
+      "description": "A component that animates text with a rolling effect.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/text-roll.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "text-scramble",
+      "type": "registry:ui",
+      "title": "Text Scramble",
+      "description": "A component that creates a scrambling text effect during transitions.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/text-scramble.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "text-shimmer",
+      "type": "registry:ui",
+      "title": "Text Shimmer",
+      "description": "A component that applies a shimmering effect to text.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/text-shimmer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "text-shimmer-wave",
+      "type": "registry:ui",
+      "title": "Text Shimmer Wave",
+      "description": "A component that creates a wave-like shimmer effect on text.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/text-shimmer-wave.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "magnetic",
+      "type": "registry:ui",
+      "title": "Magnetic",
+      "description": "A component that creates a magnetic attraction effect on hover.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/magnetic.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "morphing-dialog",
+      "type": "registry:ui",
+      "title": "Morphing Dialog",
+      "description": "A dialog that morphs from its trigger element with smooth transitions.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/morphing-dialog.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "hooks/useClickOutside.tsx",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "morphing-popover",
+      "type": "registry:ui",
+      "title": "Morphing Popover",
+      "description": "A popover component that morphs from its trigger with fluid animations.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/morphing-popover.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "hooks/useClickOutside.tsx",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "dock",
+      "type": "registry:ui",
+      "title": "Dock",
+      "description": "A macOS-style dock component with scaling and movement effects.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/dock.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "glow-effect",
+      "type": "registry:ui",
+      "title": "Glow Effect",
+      "description": "A component that creates a glowing effect on elements based on cursor movement.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/glow-effect.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "image-comparison",
+      "type": "registry:ui",
+      "title": "Image Comparison",
+      "description": "A component for comparing two images with an interactive slider.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/image-comparison.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "toolbar-dynamic",
+      "type": "registry:ui",
+      "title": "Toolbar Dynamic",
+      "description": "A toolbar component with dynamic appearance based on user interaction.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/toolbar-dynamic.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "hooks/useClickOutside.tsx",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "toolbar-expandable",
+      "type": "registry:ui",
+      "title": "Toolbar Expandable",
+      "description": "An expandable toolbar that reveals additional options with animations.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion",
+        "react-use-measure"
+      ],
+      "files": [
+        {
+          "path": "components/core/toolbar-expandable.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "hooks/useClickOutside.tsx",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "progressive-blur",
+      "type": "registry:ui",
+      "title": "Progressive Blur",
+      "description": "A component that applies progressive blur effects to elements.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/progressive-blur.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "scroll-progress",
+      "type": "registry:ui",
+      "title": "Scroll Progress",
+      "description": "A component that visualizes scroll progress with animated indicators.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/scroll-progress.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sliding-number",
+      "type": "registry:ui",
+      "title": "Sliding Number",
+      "description": "A component that transitions between numbers with a sliding animation.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion",
+        "react-use-measure"
+      ],
+      "files": [
+        {
+          "path": "components/core/sliding-number.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "spotlight",
+      "type": "registry:ui",
+      "title": "Spotlight",
+      "description": "A component that creates a spotlight effect following cursor movement.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/spotlight.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "spinning-text",
+      "type": "registry:ui",
+      "title": "Spinning Text",
+      "description": "A component that animates text with a spinning rotation effect.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/spinning-text.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tilt",
+      "type": "registry:ui",
+      "title": "Tilt",
+      "description": "A component that applies 3D tilt effects to elements based on cursor position.",
+      "categories": [
+        "ui",
+        "motion-primitives"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/core/tilt.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
