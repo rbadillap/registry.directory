@@ -1,0 +1,993 @@
+{
+  "key": "data-table-filters",
+  "entry": "data-table-filters",
+  "name": "data-table-filters",
+  "homepage": "https://data-table.openstatus.dev",
+  "indexUrl": "https://data-table.openstatus.dev/r/registry.json",
+  "itemBase": "https://data-table.openstatus.dev/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "data-table",
+      "type": "registry:block",
+      "title": "Data Table with Filters",
+      "description": "Data table with search, checkbox, slider, date range filters, sorting, infinite scroll, virtualization, and in-memory state management.",
+      "dependencies": [
+        "@tanstack/react-table@^9.2.3",
+        "@tanstack/react-query@^5.101.4",
+        "@tanstack/react-virtual@^3.11.2",
+        "lucide-react@^0.469.0",
+        "zod@^4.3.6",
+        "date-fns@^4.1.0",
+        "clsx@^2.1.1",
+        "tailwind-merge@^2.6.0",
+        "class-variance-authority@^0.7.1",
+        "@radix-ui/react-slider@^1.2.2",
+        "@radix-ui/react-visually-hidden@^1.1.1",
+        "@radix-ui/react-slot@^1.1.1",
+        "@dnd-kit/core@^6.3.1",
+        "@dnd-kit/modifiers@^9.0.0",
+        "@dnd-kit/sortable@^10.0.0",
+        "@dnd-kit/utilities@^3.2.2",
+        "@radix-ui/react-accordion@^1.2.2"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "input-group",
+        "kbd",
+        "table",
+        "checkbox",
+        "tooltip",
+        "dropdown-menu",
+        "separator",
+        "label",
+        "command",
+        "popover",
+        "skeleton",
+        "drawer",
+        "calendar",
+        "select"
+      ],
+      "cssVars": {
+        "theme": {
+          "--color-success": "var(--success)",
+          "--color-warning": "var(--warning)",
+          "--color-error": "var(--error)",
+          "--color-info": "var(--info)",
+          "--animate-accordion-down": "accordion-down 0.2s ease-out",
+          "--animate-accordion-up": "accordion-up 0.2s ease-out"
+        },
+        "light": {
+          "success": "oklch(0.97 0 0)",
+          "warning": "oklch(0.705 0.187 47.602)",
+          "error": "oklch(0.637 0.208 25.326)",
+          "info": "oklch(0.685 0.148 237.321)"
+        },
+        "dark": {
+          "success": "oklch(0.269 0 0)",
+          "warning": "oklch(0.705 0.187 47.602)",
+          "error": "oklch(0.637 0.208 25.326)",
+          "info": "oklch(0.685 0.148 237.321)"
+        }
+      },
+      "files": [
+        {
+          "path": "src/components/data-table/types.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/utils.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/ui-compat.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-provider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-store-sync.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-infinite.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-floating-bar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-column-header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-toolbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-view-options.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-reset-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-filter-checkbox.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-filter-input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-filter-slider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-filter-timerange.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-filter-reset-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-filter-controls.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-filter-controls-drawer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-filter-rail.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/custom/table.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/custom/accordion.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/custom/sortable.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/custom/slider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/custom/date-picker-with-range.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/providers/controls.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/lib/store/context.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/adapter/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/adapter/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/schema/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/schema/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/schema/field.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/schema/serialization.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/parser/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/parser/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/parser/text-parser.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/provider/DataTableStoreProvider.tsx",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/hooks/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/hooks/useFilterState.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/hooks/useFilterActions.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/hooks/useFilterField.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/hooks/useReactTableSync.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/adapters/memory/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/format.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/delimiters.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/is-array.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/compose-refs.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table/filterfns.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table/features.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/constants/local-storage.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/data-table/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/actions/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/actions/validate.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/data-table/faceted.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/react-table.d.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/constants/date-preset.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/hooks/use-debounce.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "src/hooks/use-hot-key.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "src/hooks/use-media-query.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "src/hooks/use-local-storage.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "src/lib/data-table/interval.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "data-table-filter-command",
+      "type": "registry:block",
+      "title": "Data Table Filter Command Palette",
+      "description": "Command palette for power-user filter input with history and keyboard shortcuts.",
+      "dependencies": [
+        "date-fns@^4.1.0",
+        "lucide-react@^0.469.0"
+      ],
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json",
+        "command",
+        "kbd",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/data-table/data-table-filter-command/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-filter-command/utils.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "data-table-cell",
+      "type": "registry:block",
+      "title": "Data Table Cell Renderers",
+      "description": "Cell renderer system with 12 types: text, code, badge, boolean, star, number, status-code, level-indicator, timestamp, heatmap, bar, and gauge.",
+      "dependencies": [
+        "lucide-react@^0.469.0",
+        "date-fns@^4.1.0",
+        "@date-fns/utc@^2.1.0",
+        "sonner@^1.7.2"
+      ],
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json",
+        "tooltip",
+        "hover-card"
+      ],
+      "files": [
+        {
+          "path": "src/components/data-table/data-table-cell/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-cell/data-table-cell-text.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-cell/data-table-cell-code.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-cell/data-table-cell-badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-cell/data-table-cell-boolean.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-cell/data-table-cell-star.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-cell/data-table-cell-number.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-cell/data-table-cell-status-code.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-cell/data-table-cell-level-indicator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-cell/data-table-cell-timestamp.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-cell/data-table-cell-heatmap.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-cell/data-table-cell-bar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-cell/data-table-cell-gauge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/lib/colors.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/request/status-code.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/components/custom/text-with-tooltip.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-infinite/hover-card-timestamp.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/hooks/use-copy-to-clipboard.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "data-table-sheet",
+      "type": "registry:block",
+      "title": "Data Table Sheet Detail Panel",
+      "description": "Row detail side panel with cell renderers, keyboard navigation, and copy-to-clipboard.",
+      "dependencies": [
+        "@radix-ui/react-dialog@^1.1.4",
+        "class-variance-authority@^0.7.1",
+        "date-fns@^4.1.0",
+        "lucide-react@^0.469.0"
+      ],
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json",
+        "https://data-table.openstatus.dev/r/data-table-cell.json",
+        "button",
+        "dropdown-menu",
+        "kbd",
+        "separator",
+        "skeleton",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/data-table/data-table-sheet/data-table-sheet-details.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-sheet/data-table-sheet-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-sheet/data-table-sheet-row-action.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-sheet/data-table-sheet-skeleton.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/custom/sheet.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "data-table-nuqs",
+      "type": "registry:block",
+      "title": "Data Table nuqs Store Adapter",
+      "description": "URL-based state management adapter using nuqs for shareable, bookmarkable filter state.",
+      "dependencies": [
+        "nuqs@^2.3.0"
+      ],
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json"
+      ],
+      "files": [
+        {
+          "path": "src/lib/store/adapters/nuqs/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/adapters/nuqs/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/adapters/nuqs/server.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/adapters/nuqs/parser-bridge.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "data-table-zustand",
+      "type": "registry:block",
+      "title": "Data Table zustand Store Adapter",
+      "description": "Client-side state management adapter using zustand for app-level filter persistence.",
+      "dependencies": [
+        "zustand@^5.0.9"
+      ],
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json"
+      ],
+      "files": [
+        {
+          "path": "src/lib/store/adapters/zustand/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/adapters/zustand/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/store/adapters/zustand/slice.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "data-table-schema",
+      "type": "registry:block",
+      "title": "Data Table Schema System",
+      "description": "Declarative table definitions with col.* factories, presets, and generators for columns, filters, and sheet fields.",
+      "dependencies": [
+        "@tanstack/react-table@^9.2.3",
+        "@tanstack/react-query@^5.101.4"
+      ],
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json",
+        "https://data-table.openstatus.dev/r/data-table-cell.json",
+        "https://data-table.openstatus.dev/r/data-table-sheet.json",
+        "https://data-table.openstatus.dev/r/data-table-filter-command.json"
+      ],
+      "files": [
+        {
+          "path": "src/lib/table-schema/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/col.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/presets.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/validate.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/serialize.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/manifest.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/renderers.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/snapshot.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/infer.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/to-typescript.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/filters/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/filters/normalize.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/filters/evaluate.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/filters/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/generators/columns.tsx",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/generators/filter-fields.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/generators/filter-schema.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/table-schema/generators/sheet-fields.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/components/data-table/data-table-auto.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/hooks/use-table-manifest.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "data-table-drizzle",
+      "type": "registry:block",
+      "title": "Data Table Drizzle ORM Helpers",
+      "description": "Server-side filtering, faceted search, cursor pagination, and sorting helpers for Drizzle ORM.",
+      "dependencies": [
+        "drizzle-orm@^0.45.2",
+        "date-fns@^4.1.0"
+      ],
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json",
+        "https://data-table.openstatus.dev/r/data-table-schema.json"
+      ],
+      "files": [
+        {
+          "path": "src/lib/drizzle/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/drizzle/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/drizzle/handler.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/drizzle/facets.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/drizzle/filters.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/drizzle/pagination.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/drizzle/sorting.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "data-table-query",
+      "type": "registry:block",
+      "title": "Data Table Query Layer",
+      "description": "React Query infinite query integration with a pluggable transport (base URL, headers, credentials, response parsing), cursor and offset pagination strategies, and faceted search helpers.",
+      "dependencies": [
+        "@tanstack/react-query@^5.101.4",
+        "@tanstack/react-table@^9.2.3",
+        "superjson@^2.2.2"
+      ],
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json"
+      ],
+      "files": [
+        {
+          "path": "src/lib/data-table/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/data-table/create-query-options.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/data-table/transport.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/data-table/contract.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/data-table/conformance.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "data-table-filter-command-ai",
+      "type": "registry:block",
+      "title": "Data Table AI Filter Command Palette",
+      "description": "AI-powered command palette that translates natural language queries into structured table filters. Provider-agnostic — works with any LLM via Vercel AI SDK.",
+      "dependencies": [
+        "ai@^6.0.137",
+        "@ai-sdk/react@^3.0.139",
+        "zod@^4.3.6",
+        "date-fns@^4.1.0",
+        "lucide-react@^0.469.0",
+        "sonner@^1.7.2"
+      ],
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json",
+        "https://data-table.openstatus.dev/r/data-table-filter-command.json",
+        "https://data-table.openstatus.dev/r/data-table-schema.json",
+        "command",
+        "kbd",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/data-table/data-table-filter-command-ai/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-filter-command-ai/text-shimmer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-filter-command-ai/use-ai-filters.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "src/lib/ai/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/ai/context.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/ai/prompt.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/ai/output-schema.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/ai/diff-partial.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/ai/parse-response.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/ai/detect.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/ai/create-ai-filter-handler.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "data-table-mcp",
+      "type": "registry:block",
+      "title": "Data Table MCP Server",
+      "description": "Expose your data table as an MCP endpoint for AI agents. Auto-generates tool schema from BYOS field definitions. Stateless, serverless-compatible.",
+      "dependencies": [
+        "@modelcontextprotocol/sdk@^1.30.0",
+        "zod@^4.3.6"
+      ],
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json"
+      ],
+      "files": [
+        {
+          "path": "src/lib/mcp/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/mcp/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/mcp/server.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/mcp/schema-to-zod.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/mcp/deserialize.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "data-table-actions",
+      "type": "registry:block",
+      "title": "Data Table Row Actions",
+      "description": "Row, bulk, and filter-scoped actions declared next to their Drizzle handlers and rendered from JSON: the list endpoint advertises what can be done to each row, the UI renders buttons, one POST applies it in a transaction.",
+      "dependencies": [
+        "@tanstack/react-query@^5.101.4",
+        "drizzle-orm@^0.45.2",
+        "zod@^4.3.6",
+        "lucide-react@^0.469.0",
+        "sonner@^1.7.2"
+      ],
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json",
+        "https://data-table.openstatus.dev/r/data-table-drizzle.json",
+        "https://data-table.openstatus.dev/r/data-table-query.json",
+        "button",
+        "dropdown-menu",
+        "alert-dialog"
+      ],
+      "files": [
+        {
+          "path": "src/lib/actions/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/actions/define-actions.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/lib/drizzle/actions.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/components/data-table/data-table-actions/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-actions/provider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-actions/confirm-dialog.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-actions/bar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-actions/column.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-actions/utils.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "data-table-remote",
+      "type": "registry:block",
+      "title": "Data Table Remote",
+      "description": "A headless data table that renders from an API endpoint: point it at a table manifest and a list endpoint and it derives columns, filters, sheet fields, row identity and capability-aware degradation with no per-column code.",
+      "dependencies": [
+        "@tanstack/react-query@^5.101.4",
+        "@tanstack/react-table@^9.2.3",
+        "nuqs@^2.3.0"
+      ],
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json",
+        "https://data-table.openstatus.dev/r/data-table-schema.json",
+        "https://data-table.openstatus.dev/r/data-table-query.json",
+        "https://data-table.openstatus.dev/r/data-table-nuqs.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/data-table/data-table-remote/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-remote/data-table-remote.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "data-table-chart",
+      "type": "registry:block",
+      "title": "Timeline Chart",
+      "description": "Stacked timeline bar chart above the table: one bar per time bucket, one series per level, drag to select a range and zoom the table's time filter to it. Ships the bucketing helper that turns rows into chart data with the same semantics as the Drizzle handler.",
+      "dependencies": [
+        "date-fns@^4.1.0",
+        "lucide-react@^0.469.0"
+      ],
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json",
+        "chart",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/data-table/data-table-chart/timeline-chart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/data-table/data-table-chart/timeline-chart-utils.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/lib/data-table/chart-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "data-table-example-infinite",
+      "type": "registry:block",
+      "title": "Example: infinite table",
+      "description": "A complete /example route to see the table running before wiring your own data: a table schema, a mock API that filters, computes facets and cursor-paginates in memory with the same semantics as the Drizzle handler, and the infinite table with a timeline chart, URL state, command palette and row sheet. Delete app/example when you have your own.",
+      "registryDependencies": [
+        "https://data-table.openstatus.dev/r/data-table.json",
+        "https://data-table.openstatus.dev/r/data-table-schema.json",
+        "https://data-table.openstatus.dev/r/data-table-query.json",
+        "https://data-table.openstatus.dev/r/data-table-nuqs.json",
+        "https://data-table.openstatus.dev/r/data-table-sheet.json",
+        "https://data-table.openstatus.dev/r/data-table-cell.json",
+        "https://data-table.openstatus.dev/r/data-table-filter-command.json",
+        "https://data-table.openstatus.dev/r/data-table-chart.json"
+      ],
+      "files": [
+        {
+          "path": "src/examples/infinite/layout.tsx",
+          "type": "registry:page",
+          "target": "app/example/layout.tsx"
+        },
+        {
+          "path": "src/examples/infinite/page.tsx",
+          "type": "registry:page",
+          "target": "app/example/page.tsx"
+        },
+        {
+          "path": "src/examples/infinite/client.tsx",
+          "type": "registry:file",
+          "target": "app/example/client.tsx"
+        },
+        {
+          "path": "src/examples/infinite/schema.ts",
+          "type": "registry:file",
+          "target": "app/example/schema.ts"
+        },
+        {
+          "path": "src/examples/infinite/table-schema.ts",
+          "type": "registry:file",
+          "target": "app/example/table-schema.ts"
+        },
+        {
+          "path": "src/examples/infinite/data.ts",
+          "type": "registry:file",
+          "target": "app/example/data.ts"
+        },
+        {
+          "path": "src/examples/infinite/query-options.ts",
+          "type": "registry:file",
+          "target": "app/example/query-options.ts"
+        },
+        {
+          "path": "src/examples/infinite/api/route.ts",
+          "type": "registry:page",
+          "target": "app/example/api/route.ts"
+        }
+      ]
+    }
+  ]
+}

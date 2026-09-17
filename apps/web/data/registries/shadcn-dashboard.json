@@ -2,7 +2,7 @@
   "key": "shadcn-dashboard",
   "entry": "Shadcn Dashboard",
   "name": "Shadcn Dashboard",
-  "homepage": "https://shadcndashboard.dev",
+  "homepage": "http://localhost:3000",
   "indexUrl": "https://shadcndashboard.dev/r/registry.json",
   "itemBase": "https://shadcndashboard.dev/r",
   "resolvable": true,
@@ -842,6 +842,438 @@
       ]
     },
     {
+      "name": "freight-volume-sla-chart",
+      "type": "registry:block",
+      "title": "Chart 27 - Freight Volume & SLA Performance Chart",
+      "description": "Track freight volume and SLA compliance with a dual-axis area chart, period selector, and animated stat totals. Ideal for logistics and supply chain dashboards.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "select",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/freight-volume-sla-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/freight-volume-sla-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "warehouse-capacity-chart",
+      "type": "registry:block",
+      "title": "Chart 28 - Warehouse Storage Capacity Chart",
+      "description": "Visualize warehouse hub storage utilization with a segmented block bar chart, average utilization banner, and a 2-column regional hub breakdown list. Ideal for logistics and supply chain dashboards.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/warehouse-capacity-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/warehouse-capacity-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "vehicle-overview-chart",
+      "type": "registry:block",
+      "title": "Chart 29 - Vehicle Telemetry Overview Chart",
+      "description": "Fleet vehicle distribution overview with a multi-segmented allocation bar and a breakdown list of vehicle types with usage duration and percentage share. Ideal for logistics and fleet management dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/vehicle-overview-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/vehicle-overview-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "revenue-trend-mask-chart",
+      "type": "registry:block",
+      "title": "Chart 30 - Revenue Trend Mask Chart",
+      "description": "Stacked area chart of daily sales split by channel with a cursor-following highlight mask and a selectable date range. Great for revenue and sales trend dashboards.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "chart",
+        "select",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/revenue-trend-mask-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/revenue-trend-mask-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "order-channel-distribution-chart",
+      "type": "registry:block",
+      "title": "Chart 31 - Order Channel Distribution Chart",
+      "description": "Interactive donut chart breaking down orders by sales channel with patterned segments, hover highlighting, and a percentage legend. Great for POS and sales channel dashboards.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "chart",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/order-channel-distribution-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/order-channel-distribution-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "customer-ratings-chart",
+      "type": "registry:block",
+      "title": "Chart 32 - Customer Ratings Chart",
+      "description": "Guest satisfaction card with a star rating summary, a trend badge, and a daily review-volume bar chart highlighting the peak day. Ideal for feedback and CSAT dashboards.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "chart",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/customer-ratings-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/customer-ratings-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "customer-growth-chart",
+      "type": "registry:block",
+      "title": "Chart 33 - Customer Growth Chart",
+      "description": "Track weekly customer growth with a headline count, a growth-percentage badge, a compact area chart, and a week-over-week comparison list. Ideal for ecommerce and CRM dashboards.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/customer-growth-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/customer-growth-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "products-category-chart",
+      "type": "registry:block",
+      "title": "Chart 34 - Products Category Chart",
+      "description": "Compare product distribution across years with a headline count, growth badge, donut chart, and a footer profit note. Ideal for ecommerce and inventory dashboards.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/products-category-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/products-category-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "total-sales-comparison-chart",
+      "type": "registry:block",
+      "title": "Chart 35 - Total Sales Comparison Chart",
+      "description": "Compare online vs offline total sales across months with a year selector, headline total, and a growth-percentage badge in a combined bar and line chart. Ideal for ecommerce and retail dashboards.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "select",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/total-sales-comparison-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/total-sales-comparison-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "payments-breakdown-chart",
+      "type": "registry:block",
+      "title": "Chart 36 - Payments Breakdown Chart",
+      "description": "Track payment volume across the week with a headline count, growth badge, stacked bar chart, and a Paypal vs Credit/Debit Card legend split. Ideal for ecommerce and finance dashboards.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/payments-breakdown-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/payments-breakdown-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "annual-profit-chart",
+      "type": "registry:block",
+      "title": "Chart 37 - Annual Profit Chart",
+      "description": "Track annual profit with a conversion rate banner, area chart trend, and a breakdown of cart, wishlist, and checkout metrics. Ideal for ecommerce and sales dashboards.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "dropdown-menu",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/annual-profit-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/annual-profit-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sales-report-chart",
+      "type": "registry:block",
+      "title": "Chart 38 - Sales Report Chart",
+      "description": "Toggle between profit and expenses views with a tabbed header, sales-this-year and last-year summary stats, and an area chart or bar chart trend. Ideal for finance and sales dashboards.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/sales-report-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/sales-report-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "weekly-sales-chart",
+      "type": "registry:block",
+      "title": "Chart 39 - Weekly Sales Chart",
+      "description": "Track weekly sales with a dropdown period selector, a headline total with a growth-percentage badge, and a rounded bar chart with a highlighted day and custom tooltip. Ideal for ecommerce and sales dashboards.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/weekly-sales-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/weekly-sales-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "revenue-updates-chart",
+      "type": "registry:block",
+      "title": "Chart 40 - Revenue Updates Chart",
+      "description": "Revenue updates chart with a year selector, a stacked earnings/expense bar chart, and a summary panel with total earnings, this month's earnings and expense, and a view report button. Ideal for finance and admin dashboards.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "button",
+        "select",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/revenue-updates-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/revenue-updates-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "monthly-earnings-chart",
+      "type": "registry:block",
+      "title": "Chart 41 - Monthly Earnings Chart",
+      "description": "Compact monthly earnings card with a headline value, growth-percentage badge, and a sparkline area chart. Ideal for dashboard overview widgets.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/monthly-earnings-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/monthly-earnings-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "yearly-breakup-chart",
+      "type": "registry:block",
+      "title": "Chart 42 - Yearly Breakup Chart",
+      "description": "Yearly revenue breakup card with a headline value, growth-percentage badge, year legend, and a donut pie chart. Ideal for finance and admin dashboards.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/yearly-breakup-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/yearly-breakup-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "weekly-stats-chart",
+      "type": "registry:block",
+      "title": "Chart 43 - Weekly Stats Chart",
+      "description": "Weekly stats card with an average sales area chart and a ranked list of top sales, best seller, and most commented entries with icons and record badges. Ideal for sales and ecommerce dashboards.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/weekly-stats-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/weekly-stats-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sales-locations-chart",
+      "type": "registry:block",
+      "title": "Chart 44 - Sales Locations Chart",
+      "description": "Sales from locations chart comparing USA and India monthly sales with a stacked bar chart, legend, and tooltip. Ideal for sales and ecommerce dashboards.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/sales-locations-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/sales-locations-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sales-overview-summary-chart",
+      "type": "registry:block",
+      "title": "Chart 45 - Sales Overview Summary Chart",
+      "description": "Sales overview chart with a headline total, growth-percentage badge, an earning/profit/expense legend, and a single-hue stacked bar chart. Ideal for sales and finance dashboards.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/sales-overview-summary-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/sales-overview-summary-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "earning-report-chart",
+      "type": "registry:block",
+      "title": "Chart 46 - Earning Report Chart",
+      "description": "Earning reports donut chart with a centered total label, plus a customer segment breakdown showing share, earnings, and growth-percentage badges. Ideal for finance and sales dashboards.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/charts/earning-report-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/charts/earning-report-chart.tsx"
+        }
+      ]
+    },
+    {
       "name": "greeting-banner",
       "type": "registry:block",
       "title": "Card 17 - Greeting Banner",
@@ -903,6 +1335,340 @@
           "path": "src/components/shadcn-dashboard/blocks/cards/analytics-banner.tsx",
           "type": "registry:component",
           "target": "components/shadcn-dashboard/blocks/cards/analytics-banner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logistics-banner",
+      "type": "registry:block",
+      "title": "Card 20 - Logistics Banner",
+      "description": "Logistics & supply chain command banner with fleet SLA badge and region dropdown selection. Suitable for logistics, fleet management, and supply chain dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "select",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/logistics-banner.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/logistics-banner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pos-banner",
+      "type": "registry:block",
+      "title": "Card 21 - POS Banner",
+      "description": "Restaurant POS terminal banner with shift status badge, live kitchen connection indicator, and sync status. Suitable for point-of-sale and restaurant dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/pos-banner.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/pos-banner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "driver-list-card",
+      "type": "registry:block",
+      "title": "Card 22 - Driver List Card",
+      "description": "Scrollable active fleet drivers list with avatar, vehicle, status badge, and rating in a bordered card. Suitable for logistics and fleet management dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/driver-list-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/driver-list-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pos-stat-cards",
+      "type": "registry:block",
+      "title": "Card 23 - POS Stat Cards",
+      "description": "Restaurant POS analytics grid with a top taste picks highlight card and gross sales, orders, table occupancy, and average check stat cards with trend badges. Suitable for POS and restaurant dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/pos-stat-cards.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/pos-stat-cards.tsx"
+        }
+      ]
+    },
+    {
+      "name": "top-selling-items-card",
+      "type": "registry:block",
+      "title": "Card 24 - Top Selling Items Card",
+      "description": "Top selling dishes list with item image, category, revenue, and order count, plus a dropdown menu for menu actions. Suitable for POS and restaurant dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/top-selling-items-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/top-selling-items-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "recent-payments-card",
+      "type": "registry:block",
+      "title": "Card 25 - Recent Payments Card",
+      "description": "POS payment transactions list with payment method icon, order reference, terminal, and amount trend indicator, plus a dropdown menu for settlement actions. Suitable for POS and restaurant dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/recent-payments-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/recent-payments-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sales-growth-summary-card",
+      "type": "registry:block",
+      "title": "Card 26 - Sales Growth Summary Card",
+      "description": "Celebrate a sales milestone with a personalized greeting, growth percentage, and a quick breakdown of orders, deliveries, and revenue. Ideal for ecommerce and sales dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/sales-growth-summary-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/sales-growth-summary-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "latest-deal-card",
+      "type": "registry:block",
+      "title": "Card 27 - Latest Deal Card",
+      "description": "Track a deal's progress toward its target with a progress bar, coupons-used count, and a stack of recent purchaser avatars. Ideal for ecommerce and promotions dashboards.",
+      "registryDependencies": [
+        "card",
+        "badge",
+        "progress",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/latest-deal-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/latest-deal-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "course-widget-card",
+      "type": "registry:block",
+      "title": "Card 28 - Course Widget Card",
+      "description": "Promote a course or webinar with a cover image, title, description, and a stack of enrolled participant avatars. Ideal for education platforms and community dashboards.",
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/course-widget-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/course-widget-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "selling-products-card",
+      "type": "registry:block",
+      "title": "Card 29 - Best Selling Products Card",
+      "description": "Highlight best-selling products with a decorative background illustration and a per-product price and sales-percentage progress bar. Ideal for ecommerce and marketplace dashboards.",
+      "registryDependencies": [
+        "card",
+        "badge",
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/selling-products-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/selling-products-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "activity-timeline-card",
+      "type": "registry:block",
+      "title": "Card 30 - Activity Timeline Card",
+      "description": "Display a chronological log of daily activities with timestamps, a connected dot timeline, and optional linked references. Ideal for admin, sales, and finance dashboards.",
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/activity-timeline-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/activity-timeline-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "user-greeting-card",
+      "type": "registry:block",
+      "title": "Card 31 - User Greeting Card",
+      "description": "Personalized welcome banner with a greeting, subtitle, quick stat breakdown, and a decorative background illustration. Ideal for dashboard homepages and CRM overviews.",
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/user-greeting-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/user-greeting-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "small-stat-cards",
+      "type": "registry:block",
+      "title": "Card 32 - Small Stat Cards",
+      "description": "A row of three compact stat cards showing refunds, sales, and earnings with an icon, value, and trend percentage badge. Ideal for dashboard overview sections.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/small-stat-cards.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/small-stat-cards.tsx"
+        }
+      ]
+    },
+    {
+      "name": "upcoming-schedules-card",
+      "type": "registry:block",
+      "title": "Card 33 - Upcoming Schedules Card",
+      "description": "Upcoming corporate events card with tabbed filtering (All, Delivered, Shipping), a dropdown menu, and event entries showing freight name, ID, HQ, and destination address. Ideal for logistics and shipping dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "dropdown-menu",
+        "tabs",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/upcoming-schedules-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/upcoming-schedules-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "recent-transactions-card",
+      "type": "registry:block",
+      "title": "Card 34 - Recent Transactions Card",
+      "description": "Recent transactions list card with payment method icons, descriptions, transaction amounts, a dropdown menu, and a view full report button. Ideal for finance and admin dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "dropdown-menu",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/recent-transactions-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/recent-transactions-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "analytics-statistics-card",
+      "type": "registry:block",
+      "title": "Card 35 - Analytics Statistics Card",
+      "description": "Analytics dashboard statistics layout with a main earnings/expense summary card featuring a background illustration, plus weekly sales and purchase orders stat cards with growth badges and report buttons. Ideal for admin and finance dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "button",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/analytics-statistics-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/analytics-statistics-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sales-by-country-card",
+      "type": "registry:block",
+      "title": "Card 36 - Sales by Country Card",
+      "description": "Sales by country list card with flag icons, revenue figures, country names, a dropdown menu, and growth-percentage badges. Ideal for sales and finance dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "dropdown-menu",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/cards/sales-by-country-card.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/cards/sales-by-country-card.tsx"
         }
       ]
     },
@@ -2882,6 +3648,147 @@
           "path": "src/components/shadcn-dashboard/blocks/tables/table-13/table-13.tsx",
           "type": "registry:component",
           "target": "components/shadcn-dashboard/blocks/tables/table-13/table-13.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-14",
+      "type": "registry:block",
+      "title": "Table 14 - Live POS Kitchen & Order Queue Table",
+      "description": "Real-time restaurant order queue table with order & location, server, item images with names, KDS status badge, and amount & time in a scrollable card. Built for POS and restaurant dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "table",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-14/page.tsx",
+          "type": "registry:page",
+          "target": "app/table-14/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-14/table-14.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/tables/table-14/table-14.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-15",
+      "type": "registry:block",
+      "title": "Table 15 - Active Freight Shipments Table",
+      "description": "Freight shipment tracking table with tracking ID, route, carrier, status badge, ETA, and a row action dropdown menu, in a scrollable card. Built for logistics and supply chain dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "table",
+        "badge",
+        "button",
+        "dropdown-menu",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-15/page.tsx",
+          "type": "registry:page",
+          "target": "app/table-15/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-15/table-15.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/tables/table-15/table-15.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-16",
+      "type": "registry:block",
+      "title": "Table 16 - Latest Reviews Table",
+      "description": "Customer reviews table with product thumbnail, customer details, star rating, review text, status badge, search, and a row action dropdown menu. Built for ecommerce and product feedback dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "table",
+        "badge",
+        "input",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-16/page.tsx",
+          "type": "registry:page",
+          "target": "app/table-16/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-16/table-16.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/tables/table-16/table-16.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-17",
+      "type": "registry:block",
+      "title": "Table 17 - Product Payments Table",
+      "description": "Product order table with thumbnail, payment progress bar, payment status, order status badge, and a row action dropdown menu, inside a scrollable card. Built for ecommerce and order management dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "table",
+        "badge",
+        "progress",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-17/page.tsx",
+          "type": "registry:page",
+          "target": "app/table-17/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-17/table-17.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/tables/table-17/table-17.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-18",
+      "type": "registry:block",
+      "title": "Table 18 - Top Projects Table",
+      "description": "Top projects table with row checkboxes, icon thumbnail, budget, manager avatar, a progress bar per project, a search input in the header, and a row action dropdown menu. Built for project management and agency dashboards.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "table",
+        "checkbox",
+        "progress",
+        "input-group",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-18/page.tsx",
+          "type": "registry:page",
+          "target": "app/table-18/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/tables/table-18/table-18.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/tables/table-18/table-18.tsx"
         }
       ]
     },
@@ -4948,6 +5855,260 @@
           "path": "src/common/divider/index.tsx",
           "type": "registry:component",
           "target": "common/divider/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-01",
+      "type": "registry:block",
+      "title": "AI Chat 01 - Chat",
+      "description": "A complete AI chat conversation block with a centered welcome and suggested prompts, a scrollable message thread with assistant and user bubbles, and a composer with attachments and a model picker.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "textarea",
+        "dropdown-menu",
+        "scroll-area",
+        "message",
+        "bubble",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-chat-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/message-thread.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/message-thread.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/composer.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/composer.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/composer.css",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/composer.css"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/use-speech-recognition.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/use-speech-recognition.ts"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/data.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/data.ts"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/types.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-01/types.ts"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-02",
+      "type": "registry:block",
+      "title": "AI Chat 02 - Composer",
+      "description": "A standalone AI chat composer with file attachments (drag, drop, and paste), a model picker with effort levels and a thinking toggle, speech-to-text dictation, and a temporary-chat switch.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "textarea",
+        "dropdown-menu",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-chat-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-02/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-02/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-02/composer.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-02/composer.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-02/use-speech-recognition.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-02/use-speech-recognition.ts"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-03",
+      "type": "registry:block",
+      "title": "AI Chat 03 - Chat Shell",
+      "description": "The frame around an AI chat: a collapsible sidebar with pinned and recent chats, rename and delete actions, a command-palette style search dialog, a workspace and account menu, and a topbar.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "sheet",
+        "separator",
+        "dropdown-menu",
+        "alert-dialog",
+        "dialog",
+        "radio-group",
+        "input",
+        "scroll-area",
+        "tooltip",
+        "avatar",
+        "command"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-chat-03/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/sidebar.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/topbar.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/topbar.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/search-dialog.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/search-dialog.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/share-dialog.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/share-dialog.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/data.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/data.ts"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/types.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-03/types.ts"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-04",
+      "type": "registry:block",
+      "title": "AI Chat 04 - Assistant Panel",
+      "description": "A docked AI assistant panel that sits alongside your app content at desktop sizes and slides in as a sheet below the lg breakpoint: a header with chat history, new chat, and close actions, a welcome state with suggested prompts, a message thread, and a full composer with model and effort picker.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "textarea",
+        "dropdown-menu",
+        "switch",
+        "scroll-area",
+        "sheet",
+        "sidebar",
+        "collapsible",
+        "avatar",
+        "message",
+        "bubble"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-chat-04/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/panel.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/panel.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/composer.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/composer.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/use-speech-recognition.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/use-speech-recognition.ts"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/host-shell.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/host-shell.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/data.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/data.ts"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/types.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-04/types.ts"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-05",
+      "type": "registry:block",
+      "title": "AI Chat 05 - Share Dialog",
+      "description": "The sharing flow for an AI chat: a dialog with visibility options (private, team, or public link) and a copy-link row, ready to drop into any chat block.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "dialog",
+        "label",
+        "radio-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-05/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-chat-05/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-05/dialog.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-05/dialog.tsx"
         }
       ]
     },
