@@ -1,0 +1,4794 @@
+{
+  "key": "000h-cojeev",
+  "entry": "000h by Cojeev",
+  "name": "cojeev",
+  "homepage": "https://000h.cojeev.com",
+  "indexUrl": "https://000h.cojeev.com/r/registry.json",
+  "itemBase": "https://000h.cojeev.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "cojeev",
+      "type": "registry:base",
+      "title": "Cojeev",
+      "description": "Cojeev tokens, fonts, reset, and Tailwind v4 theme bridge.",
+      "dependencies": [
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge",
+        "tw-animate-css",
+        "motion"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-v-pink": "var(--v-pink)",
+          "color-v-olive": "var(--v-olive)",
+          "color-v-blue": "var(--v-blue)",
+          "color-v-yellow": "var(--v-yellow)",
+          "color-v-canvas": "var(--v-canvas)",
+          "color-v-paper": "var(--v-paper)",
+          "color-v-beige": "var(--v-beige)",
+          "color-v-beige-2": "var(--v-beige-2)",
+          "color-v-cream-pill": "var(--v-cream-pill)",
+          "color-v-ink": "var(--v-ink)",
+          "color-v-structure": "var(--v-structure)",
+          "color-on-structure": "var(--on-structure)",
+          "color-structure-quiet": "var(--structure-quiet)",
+          "color-structure-line": "var(--structure-line)",
+          "color-structure-text": "var(--structure-text)",
+          "color-v-ink-soft": "var(--v-ink-soft)",
+          "color-v-on-ink": "var(--v-on-ink)",
+          "color-v-text": "var(--v-text)",
+          "color-v-text-2": "var(--v-text-2)",
+          "color-v-text-3": "var(--v-text-3)",
+          "color-v-skel-face": "var(--v-skel-face)",
+          "color-v-skel-sheen": "var(--v-skel-sheen)",
+          "color-v-skel-edge": "var(--v-skel-edge)",
+          "color-v-disabled-ink": "var(--v-disabled-ink)",
+          "color-v-disabled-face": "var(--v-disabled-face)",
+          "color-v-disabled-edge": "var(--v-disabled-edge)",
+          "color-v-danger": "var(--v-danger)",
+          "color-v-danger-ink": "var(--v-danger-ink)",
+          "color-v-danger-fill": "var(--v-danger-fill)",
+          "color-v-olive-ink": "var(--v-olive-ink)",
+          "color-v-accent-ink": "var(--v-accent-ink)",
+          "color-v-brand": "var(--v-brand)",
+          "color-v-border": "var(--v-border)",
+          "color-v-edge": "var(--v-edge)",
+          "color-switch-knob": "var(--switch-knob)",
+          "color-switch-knob-on": "var(--switch-knob-on)",
+          "color-surface-quiet": "var(--surface-quiet)",
+          "color-surface-work": "var(--surface-work)",
+          "color-surface-automation": "var(--surface-automation)",
+          "color-surface-memory": "var(--surface-memory)",
+          "color-surface-library": "var(--surface-library)",
+          "color-surface-ai": "var(--surface-ai)",
+          "color-surface-alert": "var(--surface-alert)",
+          "color-sel-bg": "var(--sel-bg)",
+          "color-sel-edge": "var(--sel-edge)",
+          "color-sel-ink": "var(--sel-ink)",
+          "color-status-ok-bg": "var(--status-ok-bg)",
+          "color-status-ok-ink": "var(--status-ok-ink)",
+          "color-status-warn-bg": "var(--status-warn-bg)",
+          "color-status-warn-ink": "var(--status-warn-ink)",
+          "color-status-danger-bg": "var(--status-danger-bg)",
+          "color-status-danger-ink": "var(--status-danger-ink)",
+          "color-status-info-bg": "var(--status-info-bg)",
+          "color-status-info-ink": "var(--status-info-ink)",
+          "color-status-pending-bg": "var(--status-pending-bg)",
+          "color-status-pending-ink": "var(--status-pending-ink)",
+          "color-v-scrim": "var(--v-scrim)",
+          "color-v-disabled-fill": "var(--v-disabled-fill)",
+          "color-v-pink-deep": "var(--v-pink-deep)",
+          "color-v-olive-deep": "var(--v-olive-deep)",
+          "color-v-blue-deep": "var(--v-blue-deep)",
+          "color-v-yellow-deep": "var(--v-yellow-deep)",
+          "color-v-pink-soft": "var(--v-pink-soft)",
+          "color-v-olive-soft": "var(--v-olive-soft)",
+          "color-v-blue-soft": "var(--v-blue-soft)",
+          "color-v-yellow-soft": "var(--v-yellow-soft)",
+          "color-v-danger-soft": "var(--v-danger-soft)",
+          "color-background": "var(--background)",
+          "color-foreground": "var(--foreground)",
+          "color-card": "var(--card)",
+          "color-card-foreground": "var(--card-foreground)",
+          "color-card-2": "var(--card-2)",
+          "color-popover": "var(--popover)",
+          "color-popover-foreground": "var(--popover-foreground)",
+          "color-primary": "var(--primary)",
+          "color-primary-foreground": "var(--primary-foreground)",
+          "color-secondary": "var(--secondary)",
+          "color-secondary-foreground": "var(--secondary-foreground)",
+          "color-accent": "var(--accent)",
+          "color-accent-foreground": "var(--accent-foreground)",
+          "color-muted": "var(--muted)",
+          "color-muted-foreground": "var(--muted-foreground)",
+          "color-border": "var(--border)",
+          "color-input": "var(--input)",
+          "color-ring": "var(--ring)",
+          "color-destructive": "var(--destructive)",
+          "color-destructive-foreground": "var(--destructive-foreground)",
+          "color-chart-1": "var(--chart-1)",
+          "color-chart-2": "var(--chart-2)",
+          "color-chart-3": "var(--chart-3)",
+          "color-chart-4": "var(--chart-4)",
+          "color-chart-5": "var(--chart-5)",
+          "color-sidebar": "var(--sidebar)",
+          "color-sidebar-foreground": "var(--sidebar-foreground)",
+          "color-sidebar-muted": "var(--sidebar-muted)",
+          "color-sidebar-primary": "var(--sidebar-primary)",
+          "color-cat-work": "var(--cat-work)",
+          "color-cat-automations": "var(--cat-automations)",
+          "color-cat-memory": "var(--cat-memory)",
+          "color-cat-library": "var(--cat-library)",
+          "color-cat-ai-apps": "var(--cat-ai-apps)",
+          "color-cat-free-models": "var(--cat-free-models)",
+          "color-cat-settings": "var(--cat-settings)",
+          "color-cat-needs-you": "var(--cat-needs-you)",
+          "color-cat-runs": "var(--cat-runs)",
+          "color-status-ok": "var(--status-ok)",
+          "color-status-warn": "var(--status-warn)",
+          "color-status-danger": "var(--status-danger)",
+          "color-status-info": "var(--status-info)",
+          "color-status-pending": "var(--status-pending)",
+          "color-status-off": "var(--status-off)",
+          "text-v-hero": "var(--fs-hero)",
+          "text-v-display": "var(--fs-display)",
+          "text-v-section": "var(--fs-section)",
+          "text-v-title": "var(--fs-title)",
+          "text-v-lead": "var(--fs-lead)",
+          "text-v-body": "var(--fs-body)",
+          "text-v-control": "var(--fs-control)",
+          "text-v-meta": "var(--fs-meta)",
+          "text-v-caps": "var(--fs-caps)",
+          "spacing-s-1": "var(--s-1)",
+          "spacing-s-2": "var(--s-2)",
+          "spacing-s-3": "var(--s-3)",
+          "spacing-s-4": "var(--s-4)",
+          "spacing-s-5": "var(--s-5)",
+          "spacing-s-6": "var(--s-6)",
+          "spacing-s-8": "var(--s-8)",
+          "spacing-s-10": "var(--s-10)",
+          "spacing-s-12": "var(--s-12)",
+          "spacing-s-16": "var(--s-16)",
+          "spacing-shell-inset": "var(--shell-inset)",
+          "spacing-sidebar-w": "var(--sidebar-w)",
+          "spacing-sidebar-w-mini": "var(--sidebar-w-mini)",
+          "spacing-sidebar-gap": "var(--sidebar-gap)",
+          "spacing-rail-w": "var(--rail-w)",
+          "spacing-rail-gap": "var(--rail-gap)",
+          "spacing-topbar-h": "var(--topbar-h)",
+          "spacing-content-max": "var(--content-max)",
+          "spacing-card-pad": "var(--card-pad)",
+          "radius-v-xs": "var(--r-xs)",
+          "radius-v-sm": "var(--r-sm)",
+          "radius-v-md": "var(--r-md)",
+          "radius-v-card-sm": "var(--r-card-sm)",
+          "radius-v-card": "var(--r-card)",
+          "radius-v-panel": "var(--r-panel)",
+          "radius-v-sheet": "var(--r-sheet)",
+          "radius-v-frame": "var(--r-frame)",
+          "radius-v-pill": "var(--r-pill)",
+          "spacing-disk-sm": "var(--disk-sm)",
+          "spacing-disk-md": "var(--disk-md)",
+          "spacing-disk-lg": "var(--disk-lg)",
+          "spacing-icon-sm": "var(--icon-sm)",
+          "spacing-icon-md": "var(--icon-md)",
+          "spacing-icon-lg": "var(--icon-lg)",
+          "spacing-icon-stroke": "var(--icon-stroke)",
+          "spacing-ctl-sm": "var(--ctl-sm)",
+          "spacing-ctl-md": "var(--ctl-md)",
+          "spacing-ctl-lg": "var(--ctl-lg)",
+          "color-pulse-c": "var(--pulse-c)",
+          "color-c": "var(--c)",
+          "color-hue": "var(--hue)",
+          "color-hue-deep": "var(--hue-deep)",
+          "color-hue-ink": "var(--hue-ink)",
+          "color-wm": "var(--wm)",
+          "color-skel": "var(--skel)",
+          "color-sw": "var(--sw)",
+          "color-dot": "var(--dot)",
+          "color-disk-bg": "var(--disk-bg)",
+          "color-mfill": "var(--mfill)",
+          "color-mstroke": "var(--mstroke)",
+          "color-glide-bg": "var(--glide-bg)",
+          "color-glide-fg": "var(--glide-fg)",
+          "color-v-on-accent": "var(--v-on-accent)",
+          "color-ink-fixed": "var(--ink-fixed)",
+          "color-cream-fixed": "var(--cream-fixed)",
+          "color-mask-ink": "var(--mask-ink)",
+          "color-unavail-ink": "var(--unavail-ink)",
+          "color-alert-ink": "var(--alert-ink)",
+          "color-btn-disabled-ink": "var(--btn-disabled-ink)",
+          "color-nav-group-ink": "var(--nav-group-ink)",
+          "color-muted-foreground-ink": "var(--muted-foreground-ink)",
+          "color-muted-foreground-tinted": "var(--muted-foreground-tinted)",
+          "color-danger-deep": "var(--danger-deep)",
+          "color-legacy-on-brand": "var(--legacy-on-brand)",
+          "color-legacy-accent-5": "var(--legacy-accent-5)",
+          "color-legacy-success": "var(--legacy-success)",
+          "color-legacy-warning": "var(--legacy-warning)",
+          "color-legacy-info": "var(--legacy-info)",
+          "color-legacy-danger-fill": "var(--legacy-danger-fill)",
+          "color-legacy-success-fill": "var(--legacy-success-fill)",
+          "color-rail-sel": "var(--rail-sel)",
+          "color-rail-hover": "var(--rail-hover)",
+          "color-surface-page": "var(--surface-page)",
+          "color-surface-card": "var(--surface-card)",
+          "color-surface-raised": "var(--surface-raised)",
+          "color-surface-sunken": "var(--surface-sunken)",
+          "color-surface-inverse": "var(--surface-inverse)",
+          "color-text-primary": "var(--text-primary)",
+          "color-text-secondary": "var(--text-secondary)",
+          "color-text-muted": "var(--text-muted)",
+          "color-border-strong": "var(--border-strong)",
+          "color-border-subtle": "var(--border-subtle)",
+          "color-brand": "var(--brand)",
+          "color-action": "var(--action)",
+          "color-accent-1": "var(--accent-1)",
+          "color-accent-2": "var(--accent-2)",
+          "color-accent-3": "var(--accent-3)",
+          "color-accent-4": "var(--accent-4)",
+          "color-accent-1-soft": "var(--accent-1-soft)",
+          "color-accent-2-soft": "var(--accent-2-soft)",
+          "color-accent-3-soft": "var(--accent-3-soft)",
+          "color-accent-4-soft": "var(--accent-4-soft)",
+          "color-danger": "var(--danger)",
+          "color-success-soft": "var(--success-soft)",
+          "color-warning-soft": "var(--warning-soft)",
+          "color-danger-soft": "var(--danger-soft)",
+          "color-info-soft": "var(--info-soft)",
+          "color-ring-offset": "var(--ring-offset)",
+          "spacing-card-padding": "var(--card-padding)",
+          "spacing-topbar-height": "var(--topbar-height)",
+          "font-cojeev-text": "var(--font-text)",
+          "font-cojeev-display": "var(--font-display)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/cojeev/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "lib/utils.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/appearance-tokens.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/appearance-tokens.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/assembly-geometry.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/assembly-geometry.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/bento-layout.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/bento-layout.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/bloom-engine.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/bloom-engine.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/chart-geometry.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/chart-geometry.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/control-appearance.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/control-appearance.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/glyph-mesh.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/glyph-mesh.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/icon-data.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/icon-data.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/living-shader.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/living-shader.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/lucide-icon-data.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/lucide-icon-data.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/marquee-motion.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/marquee-motion.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/number-motion.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/number-motion.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/pointer-geometry.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/pointer-geometry.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-additions-math.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-additions-math.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-additions-portal.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-additions-portal.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-effect-geometry.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-effect-geometry.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-field-paint.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-field-paint.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-gallery-geometry.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-gallery-geometry.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-gallery-motion.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-gallery-motion.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-layouts.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-layouts.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-ref.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-ref.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-text-math.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-text-math.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-text-motion.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-text-motion.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/sculpture-flow.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/sculpture-flow.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/sculpture-geometry.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/sculpture-geometry.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/sculpture-particles.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/sculpture-particles.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/sculpture-raster.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/sculpture-raster.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/sculpture-stage-geometry.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/sculpture-stage-geometry.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/shape-data.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/shape-data.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/signature-shapes.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/signature-shapes.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/stack-outline.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/stack-outline.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/subtle-backgrounds.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/subtle-backgrounds.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/text-lines.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/text-lines.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/text-relay.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/text-relay.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/text-ribbon-path.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/text-ribbon-path.ts"
+        },
+        {
+          "path": "registry/cojeev/lib/use-chart-motion.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev/use-chart-motion.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/body.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/body.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/category.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/category.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/choreography.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/choreography.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/clock.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/clock.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/flow-motion.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/flow-motion.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/flow-press.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/flow-press.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/flow.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/flow.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/geometry.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/geometry.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/morph-paint.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/morph-paint.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/progress-geometry.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/progress-geometry.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/refs.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/refs.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/scroll-thumb.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/scroll-thumb.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/settings.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/settings.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/shapes.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/shapes.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/slider-geometry.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/slider-geometry.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/theme-transition.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/theme-transition.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/use-depth.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/use-depth.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/use-disclosure-height.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/use-disclosure-height.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/use-flow.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/use-flow.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/use-guidance-motion.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/use-guidance-motion.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/use-morph.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/use-morph.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/use-motion-visibility.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/use-motion-visibility.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/use-organic-value.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/use-organic-value.ts"
+        },
+        {
+          "path": "registry/cojeev/motion/use-reduced-motion.ts",
+          "type": "registry:lib",
+          "target": "lib/cojeev-motion/use-reduced-motion.ts"
+        },
+        {
+          "path": "registry/cojeev/styles/fonts.css",
+          "type": "registry:file",
+          "target": "styles/cojeev-fonts.css"
+        },
+        {
+          "path": "registry/cojeev/scripts/materialize-fonts.mjs",
+          "type": "registry:file",
+          "target": "scripts/cojeev-materialize-fonts.mjs"
+        },
+        {
+          "path": "registry/cojeev/styles/tokens.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/tokens.css"
+        },
+        {
+          "path": "registry/cojeev/styles/theme.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/theme.css"
+        },
+        {
+          "path": "registry/cojeev/styles/base.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/base.css"
+        },
+        {
+          "path": "registry/cojeev/styles/morph.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/morph.css"
+        },
+        {
+          "path": "registry/cojeev/styles/flow-press.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/flow-press.css"
+        },
+        {
+          "path": "reference/cojeev-handoff-v4/fonts/DMSans-OFL.txt",
+          "type": "registry:file",
+          "target": "styles/fonts/DMSans-OFL.txt"
+        },
+        {
+          "path": "reference/cojeev-handoff-v4/fonts/BricolageGrotesque-OFL.txt",
+          "type": "registry:file",
+          "target": "styles/fonts/BricolageGrotesque-OFL.txt"
+        },
+        {
+          "path": "registry/cojeev/NOTICES.txt",
+          "type": "registry:file",
+          "target": "lib/cojeev/NOTICES.txt"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Organizes related sections into expandable panels so readers can open the details they need.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-accordion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/accordion.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/accordion.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/accordion.css"
+        }
+      ]
+    },
+    {
+      "name": "accordion-gallery",
+      "type": "registry:ui",
+      "title": "Accordion Gallery",
+      "description": "A selected image panel opens to reveal its label, story and action.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/accordion-gallery.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/accordion-gallery.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/accordion-gallery.css"
+        }
+      ]
+    },
+    {
+      "name": "action-dock",
+      "type": "registry:ui",
+      "title": "Action dock",
+      "description": "A reusable action dock composed from Cojeev base components.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/organism-composition.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/action-dock.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "activity-feed",
+      "type": "registry:ui",
+      "title": "Activity feed",
+      "description": "An ordered, date-grouped history with a quiet connecting margin, readable actors and timestamps, and updates that keep your place.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/animated-icon.json",
+        "https://000h.cojeev.com/r/avatar.json",
+        "https://000h.cojeev.com/r/badge.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/empty.json",
+        "https://000h.cojeev.com/r/item.json",
+        "https://000h.cojeev.com/r/presence.json",
+        "https://000h.cojeev.com/r/typography.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/activity-feed.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/activity-feed.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/activity-feed.css"
+        }
+      ]
+    },
+    {
+      "name": "adjuster",
+      "type": "registry:ui",
+      "title": "Motion Adjuster",
+      "description": "Provides live controls for the shared motion settings and editable body profiles used across the library.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/code-block.json",
+        "https://000h.cojeev.com/r/label.json",
+        "https://000h.cojeev.com/r/slider.json",
+        "https://000h.cojeev.com/r/switch.json",
+        "https://000h.cojeev.com/r/tabs.json",
+        "https://000h.cojeev.com/r/typography.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/adjuster.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/adjuster.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/adjuster.css"
+        }
+      ]
+    },
+    {
+      "name": "agent-chat",
+      "type": "registry:ui",
+      "title": "Agent chat",
+      "description": "A composable agent conversation with a bounded thread, draft composer, attachments, progress, explicit permissions and choice prompts.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/agent-state.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/message.json",
+        "https://000h.cojeev.com/r/message-scroller.json",
+        "https://000h.cojeev.com/r/attachment.json",
+        "https://000h.cojeev.com/r/questionnaire.json",
+        "https://000h.cojeev.com/r/avatar.json",
+        "https://000h.cojeev.com/r/bubble.json",
+        "https://000h.cojeev.com/r/input.json",
+        "https://000h.cojeev.com/r/presence.json",
+        "https://000h.cojeev.com/r/input-group.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/agent-chat.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/agent-chat.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/agent-chat.css"
+        }
+      ]
+    },
+    {
+      "name": "agent-state",
+      "type": "registry:ui",
+      "title": "Agent state",
+      "description": "A sculpted, living status field that changes contour and color as an agent thinks, works, asks for input, or finishes.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/agent-state.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/agent-state.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/agent-state.css"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "An authored note, attached-action banner or folded dispatch that makes the message and its next step clear.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/alert.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/alert.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/alert.css"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Pauses a workflow for a focused confirmation before a consequential action proceeds.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-alert-dialog"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/alert-dialog.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/alert-dialog.css"
+        }
+      ]
+    },
+    {
+      "name": "ambient-background",
+      "type": "registry:ui",
+      "title": "Ambient background",
+      "description": "Adds a quiet animated composition around content, with decorative shapes kept behind a readable surface.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/shape.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/ambient-background.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/ambient-background.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/ambient-background.css"
+        }
+      ]
+    },
+    {
+      "name": "animated-icon",
+      "type": "registry:ui",
+      "title": "Animated icon",
+      "description": "Replayable micro-interactions for the full Cojeev icon library, with semantic motion families and optional visual treatments.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/animated-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/animated-icon.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/animated-icon.css"
+        }
+      ]
+    },
+    {
+      "name": "animated-number",
+      "type": "registry:ui",
+      "title": "Animated number",
+      "description": "A smooth, interruptible number transition for totals, metrics and small moments of progress.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/animated-number.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/animated-number.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/animated-number.css"
+        }
+      ]
+    },
+    {
+      "name": "appearance",
+      "type": "registry:ui",
+      "title": "Appearance",
+      "description": "Choose from six coordinated palettes and adjust reading contrast across the application.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/scroll-area.json",
+        "https://000h.cojeev.com/r/label.json",
+        "https://000h.cojeev.com/r/slider.json",
+        "https://000h.cojeev.com/r/select.json",
+        "https://000h.cojeev.com/r/popover.json",
+        "https://000h.cojeev.com/r/shape.json",
+        "https://000h.cojeev.com/r/animated-icon.json",
+        "https://000h.cojeev.com/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/appearance.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "area-chart",
+      "type": "registry:ui",
+      "title": "Area chart",
+      "description": "Layered area charts with shared series colors, responsive bounds and a keyboard data inspector.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/chart.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/area-chart.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/chart-cartesian.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/chart-cartesian.tsx"
+        }
+      ]
+    },
+    {
+      "name": "article-headings",
+      "type": "registry:ui",
+      "title": "Article Headings",
+      "description": "Semantic article headings resolve through a brief, grapheme-safe noise frontier.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/article-headings.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/article-headings.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/article-headings.css"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "Keeps a media container at a chosen width-to-height ratio as its available width changes.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/aspect-ratio.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/aspect-ratio.css"
+        }
+      ]
+    },
+    {
+      "name": "assembly-part",
+      "type": "registry:ui",
+      "title": "Assembly part",
+      "description": "A persistent native component moving between a floating organism and its measured layout.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/assembly-part.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/assembly-part.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/assembly-part.css"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "Presents a file name, type, metadata, and nearby actions as a compact attachment row.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/attachment.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/attachment.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/attachment.css"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Portraits, identity rows and participant groups that keep the person recognizable—with artwork, initials and independent shape choices.",
+      "dependencies": [
+        "@radix-ui/react-avatar",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/avatar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/avatar.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/avatar.css"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Stamp a review state, attach a filing tag or count a collection. Three compact treatments with one clear meaning in text.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/badge.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/badge.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/badge.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart",
+      "type": "registry:ui",
+      "title": "Bar chart",
+      "description": "Compare series with grouped, stacked or horizontal bars and a shared interactive tooltip.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/chart.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/bar-chart.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/chart-cartesian.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/chart-cartesian.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-builder",
+      "type": "registry:ui",
+      "title": "Bento Builder",
+      "description": "An editable Bento canvas with complete partitions, content swapping, snapped neighbor resizing, history and usable layout export.",
+      "dependencies": [
+        "react-dom"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/bento-grid.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/input.json",
+        "https://000h.cojeev.com/r/native-select.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/bento-builder.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/bento-builder.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/bento-builder.css"
+        }
+      ]
+    },
+    {
+      "name": "bento-grid",
+      "type": "registry:ui",
+      "title": "Bento Grid",
+      "description": "A complete canvas of rounded cards or organically interlocking pieces. Compose a layout, then install just the lightweight renderer.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/bento-grid.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/bento-grid.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/bento-grid.css"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Find your place with a complete trail, a pocket-sized ancestor menu or a connected directory path.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/breadcrumb.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/breadcrumb.css"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "Groups conversational content and timestamps into visually distinct message bubbles.",
+      "dependencies": [
+        "motion",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/bubble.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/bubble.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/bubble.css"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Triggers an action with native button behavior and an optional busy indicator.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/spinner.json",
+        "https://000h.cojeev.com/r/presence.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/button.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/button.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Places related actions together and can track one selected button value.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/button-group.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/button-group.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/button-group.css"
+        }
+      ]
+    },
+    {
+      "name": "buy-me-coffee",
+      "type": "registry:ui",
+      "title": "Buy Me Coffee",
+      "description": "A support poster reveals an inviting cup illustration and a real caller destination.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/buy-me-coffee.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/buy-me-coffee.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/buy-me-coffee.css"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Choose one appointment day, a continuous date range, or separate days in an accessible month grid.",
+      "dependencies": [
+        "motion",
+        "react-day-picker",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/calendar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/calendar.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/calendar.css"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Groups related content, metadata, and actions into a distinct surface.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/card.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/card.css"
+        }
+      ]
+    },
+    {
+      "name": "caret-swap",
+      "type": "registry:ui",
+      "title": "Caret Swap",
+      "description": "A colored caret block consumes a phrase before typing its replacement in whole graphemes.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/caret-swap.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/caret-swap.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/caret-swap.css"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Browse a peeking shelf, a full reading spread or a miniature index of ideas, with native scrolling and a shared organic scrollbar.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/carousel.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/carousel.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/carousel.css"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Compose an understandable chart from a frame, labelled series, inspectable plot and accessible values.",
+      "dependencies": [
+        "motion",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/card.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/label.json",
+        "https://000h.cojeev.com/r/select.json",
+        "https://000h.cojeev.com/r/presence.json",
+        "https://000h.cojeev.com/r/chart-tooltip.json",
+        "https://000h.cojeev.com/r/table.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/chart.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/chart.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/chart.css"
+        }
+      ]
+    },
+    {
+      "name": "chart-tooltip",
+      "type": "registry:ui",
+      "title": "Dynamic chart tooltip",
+      "description": "Compare a point, read its known subtotal or rank its series. Values update in place and keep their series colours.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/chart-tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Captures an independent checked, unchecked, or indeterminate choice.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-checkbox",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/checkbox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/selector.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/selector.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/checkbox.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/checkbox.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        },
+        {
+          "path": "registry/cojeev/styles/choice-foundations.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/choice-foundations.css"
+        }
+      ]
+    },
+    {
+      "name": "click-spark",
+      "type": "registry:ui",
+      "title": "Click Spark",
+      "description": "A finite spray of accent marks responds to a real activation.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/click-spark.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-field.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-field.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/click-spark.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/click-spark.css"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code block",
+      "description": "Displays a code snippet with an optional caption, language label, wrapping, and copy feedback.",
+      "dependencies": [
+        "prismjs@1.30.0"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/typography.json",
+        "https://000h.cojeev.com/r/scroll-area.json",
+        "https://000h.cojeev.com/r/animated-icon.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/pattern-background.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/code-block.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/code-block.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/code-block.css"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Shows or hides one optional section without leaving the surrounding layout.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-collapsible"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/collapsible.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/collapsible.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/collapsible.css"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Filters a list of options through text input and stores one selected value.",
+      "dependencies": [
+        "class-variance-authority",
+        "cmdk",
+        "@radix-ui/react-popover"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/scroll-area.json",
+        "https://000h.cojeev.com/r/input.json",
+        "https://000h.cojeev.com/r/animated-icon.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/command.json",
+        "https://000h.cojeev.com/r/item-adornment.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/combobox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/combobox.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/combobox.css"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Builds a searchable command list that users can navigate and activate from the keyboard.",
+      "dependencies": [
+        "class-variance-authority",
+        "cmdk"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/scroll-area.json",
+        "https://000h.cojeev.com/r/dialog.json",
+        "https://000h.cojeev.com/r/item-adornment.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/command.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/command.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/command.css"
+        }
+      ]
+    },
+    {
+      "name": "compact-dashboard",
+      "type": "registry:ui",
+      "title": "Compact dashboard",
+      "description": "Historical compatibility alias for WorkSidePanel; use the dedicated panel composition in new work.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/organism-composition.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/compact-dashboard.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Reveals contextual actions for a target through a context-menu interaction.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-context-menu"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/scroll-area.json",
+        "https://000h.cojeev.com/r/item-adornment.json",
+        "https://000h.cojeev.com/r/animated-icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/context-menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/context-menu.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/context-menu.css"
+        }
+      ]
+    },
+    {
+      "name": "contour-field",
+      "type": "registry:ui",
+      "title": "Contour field",
+      "description": "Original topographic lines on the inherited paper surface, with a bounded GPU renderer.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/contour-field.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/contour-field.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/contour-field.css"
+        }
+      ]
+    },
+    {
+      "name": "contours-background",
+      "type": "registry:ui",
+      "title": "Contours background",
+      "description": "Nested organic contour lines with generous space between islands.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/pattern-background.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/contours-background.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "conversation-panel",
+      "type": "registry:ui",
+      "title": "Conversation panel",
+      "description": "A reusable conversation panel composed from Cojeev base components.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/organism-composition.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/conversation-panel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data Table",
+      "description": "Displays records with client-side filtering, sortable columns, and paginated rows.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/table.json",
+        "https://000h.cojeev.com/r/pagination.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/data-table.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/data-table.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/data-table.css"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "Choose one day, a range, or multiple dates from a labelled field and calendar popover.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/calendar.json",
+        "https://000h.cojeev.com/r/popover.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/date-picker.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/date-picker.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/date-picker.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "depth-background",
+      "type": "registry:ui",
+      "title": "Depth background",
+      "description": "Layered pollen, contours and orbital shapes with perspective, native-scroll depth and pointer response.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/depth-background.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/depth-background.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/depth-background.css"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "A decision slip, focused editor or illustrated exhibit. Give one task your attention without losing your place.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-dialog"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/dialog.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/dialog.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/dialog.css"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction",
+      "description": "Sets a text direction for a subtree and shares it with direction-aware primitives.",
+      "dependencies": [
+        "@radix-ui/react-direction"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/direction.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/direction.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/direction.css"
+        }
+      ]
+    },
+    {
+      "name": "dither-dissolve",
+      "type": "registry:ui",
+      "title": "Dither Dissolve",
+      "description": "Caller scenes exchange beneath a deterministic ordered dither cover.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/dither-dissolve.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/dither-dissolve.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/dither-dissolve.css"
+        }
+      ]
+    },
+    {
+      "name": "dither-sculpture",
+      "type": "registry:ui",
+      "title": "Dither sculpture",
+      "description": "Depth-tested sculptural forms printed as ordered dots, halftone, error diffusion or stipple.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/glyph-sculpture.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/dither-sculpture.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dock",
+      "type": "registry:ui",
+      "title": "Dock",
+      "description": "A compact workspace launcher with a magnifying glass bar, raised shelf and labelled vertical rail.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/dock.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/dock.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/dock.css"
+        }
+      ]
+    },
+    {
+      "name": "dots-background",
+      "type": "registry:ui",
+      "title": "Dots background",
+      "description": "An evenly spaced field of fine points for quiet, familiar structure.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/pattern-background.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/dots-background.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Presents dialog content in a drawer surface while keeping the current page underneath.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-dialog"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/drawer.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/drawer.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/drawer.css"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Opens a compact menu of actions or stateful choices from a visible trigger.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-dropdown-menu"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/scroll-area.json",
+        "https://000h.cojeev.com/r/item-adornment.json",
+        "https://000h.cojeev.com/r/animated-icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/dropdown-menu.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/dropdown-menu.css"
+        }
+      ]
+    },
+    {
+      "name": "dropzone",
+      "type": "registry:ui",
+      "title": "Dropzone",
+      "description": "Collects local files through drag and drop or a native file picker and reports the selection.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/shape.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/presence.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/dropzone.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/dropzone.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/dropzone.css"
+        }
+      ]
+    },
+    {
+      "name": "elastic-mesh",
+      "type": "registry:ui",
+      "title": "Elastic Mesh",
+      "description": "A triangulated printed sheet stretches toward the pointer and springs home.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/elastic-mesh.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-field.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-field.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/elastic-mesh.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/elastic-mesh.css"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "Explains an empty collection or unavailable result and creates space for a useful next step.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/empty.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/empty.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/empty.css"
+        }
+      ]
+    },
+    {
+      "name": "falling-text",
+      "type": "registry:ui",
+      "title": "Falling Text",
+      "description": "Measured word rectangles fall, collide and settle inside a bounded stage.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/falling-text.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/falling-text.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/falling-text.css"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Connects a form control with its label, description, and validation message.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/field.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/field.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/field.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "float-layer",
+      "type": "registry:ui",
+      "title": "Float layer",
+      "description": "An entrance, scroll depth and gentle idle movement for a real component or a group of elements.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/float-layer.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/float-layer.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/float-layer.css"
+        }
+      ]
+    },
+    {
+      "name": "flow-sculpture",
+      "type": "registry:ui",
+      "title": "Flow sculpture",
+      "description": "A rendered form responds to pointer strokes through a fluid distortion field.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/glass-sculpture.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/flow-sculpture.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "focus-session",
+      "type": "registry:ui",
+      "title": "Focus session",
+      "description": "A local focus timer composed from Cojeev cards, progress, badges and native controls.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/organism-composition.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/focus-session.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folds-background",
+      "type": "registry:ui",
+      "title": "Folds background",
+      "description": "Quiet faceted planes inspired by folded paper, without busy linework.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/pattern-background.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/folds-background.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ghost-cursor",
+      "type": "registry:ui",
+      "title": "Ghost Cursor",
+      "description": "A translucent ink impression follows a local pointer with soft inertia.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/ghost-cursor.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-field.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-field.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/ghost-cursor.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/ghost-cursor.css"
+        }
+      ]
+    },
+    {
+      "name": "glass-sculpture",
+      "type": "registry:ui",
+      "title": "Glass sculpture",
+      "description": "Translucent geometry bends an original patterned studio through a softly lit glass surface.",
+      "dependencies": [
+        "three@0.185.1"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/glyph-sculpture.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/glass-sculpture.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/sculpture-stage.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/sculpture-stage.tsx"
+        },
+        {
+          "path": "registry/cojeev/lib/sculpture-renderer.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/sculpture-renderer.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/glass-sculpture.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/glass-sculpture.css"
+        }
+      ]
+    },
+    {
+      "name": "glyph-sculpture",
+      "type": "registry:ui",
+      "title": "Glyph sculpture",
+      "description": "A real 3D surface drawn with glyphs, optional contour marks and your own local geometry.",
+      "dependencies": [
+        "three@0.185.1"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/glyph-sculpture.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/sculpture-loaders.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/sculpture-loaders.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/glyph-sculpture.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/glyph-sculpture.css"
+        }
+      ]
+    },
+    {
+      "name": "grain-dissolve",
+      "type": "registry:ui",
+      "title": "Grain Dissolve",
+      "description": "Caller scenes dissolve through a grainy pigment field with a soft focus exchange.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/grain-dissolve.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/grain-dissolve.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/grain-dissolve.css"
+        }
+      ]
+    },
+    {
+      "name": "grid-background",
+      "type": "registry:ui",
+      "title": "Grid background",
+      "description": "Hairline rules that give canvases and working surfaces a gentle rhythm.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/pattern-background.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/grid-background.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "guided-pointer",
+      "type": "registry:ui",
+      "title": "Guided pointer",
+      "description": "An illustrated pointer moves between story waypoints, with a small arrival or hold cue.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/guided-pointer.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/guided-pointer.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/guided-pointer.css"
+        }
+      ]
+    },
+    {
+      "name": "hero-button",
+      "type": "registry:ui",
+      "title": "Hero button",
+      "description": "Twelve tactile calls to action: living ink, paper, keys, tickets and small moments of motion around one native button.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/hero-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/hero-button.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/hero-button.css"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "A person, an excerpt or a small visual study—three considered previews, close to the thing you are exploring.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-hover-card"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/hover-card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/hover-card.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/hover-card.css"
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "registry:ui",
+      "title": "Icon library",
+      "description": "1,722 icon names with Cojeev micro-interactions, outline, duotone and organic treatments, built on Lucide geometry.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/icon.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/icon.css"
+        }
+      ]
+    },
+    {
+      "name": "image-masking",
+      "type": "registry:ui",
+      "title": "Image Masking",
+      "description": "Caller images are framed by original Cojeev silhouettes using CSS masks or SVG clip paths.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/image-masking.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/image-masking.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/image-masking.css"
+        }
+      ]
+    },
+    {
+      "name": "image-trail",
+      "type": "registry:ui",
+      "title": "Image Trail",
+      "description": "Distance-triggered image impressions follow the pointer and fade away.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/image-trail.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-field.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-field.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/image-trail.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/image-trail.css"
+        }
+      ]
+    },
+    {
+      "name": "infinite-spiral",
+      "type": "registry:ui",
+      "title": "Infinite Spiral",
+      "description": "Helical image cards recycle through depth with explicit previous, next and pause controls.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/infinite-spiral.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/infinite-spiral.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/infinite-spiral.css"
+        }
+      ]
+    },
+    {
+      "name": "ink-sculpture",
+      "type": "registry:ui",
+      "title": "Ink sculpture",
+      "description": "Hatched and engraved marks follow the light and relief of a 3D form.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/glyph-sculpture.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/ink-sculpture.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Collects a single-line value through a native input with optional composed affixes and clearing controls.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/input.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/input.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/input.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Combines a text control with adjacent prefixes, suffixes, or actions in one input surface.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/input.json",
+        "https://000h.cojeev.com/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/input-group.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/input-group.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/input-group.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "Presents a single code input as a sequence of visible character slots.",
+      "dependencies": [
+        "class-variance-authority",
+        "input-otp"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/input-otp.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/input-otp.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/input-otp.css"
+        }
+      ]
+    },
+    {
+      "name": "invite-card",
+      "type": "registry:ui",
+      "title": "Invite card",
+      "description": "An event invitation with participant avatars and a reversible local RSVP, composed from Cojeev primitives.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/organism-composition.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/invite-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "A notebook ledger, an illustrated collection or an actionable detail. Three readable arrangements for the things you want to keep together.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/item.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/item.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/item.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "item-adornment",
+      "type": "registry:ui",
+      "title": "Item adornment",
+      "description": "Coloured organic shapes for list items, with deterministic automatic selection and custom icon or no-icon options.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/shape.json",
+        "https://000h.cojeev.com/r/animated-icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/item-adornment.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/item-adornment.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/item-adornment.css"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Formats a key or key combination as a recognizable keyboard instruction.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/kbd.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/kbd.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/kbd.css"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Provides a native form label plus compact stat-label primitives for named values.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/label.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/label.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/label.css"
+        }
+      ]
+    },
+    {
+      "name": "line-chart",
+      "type": "registry:ui",
+      "title": "Line chart",
+      "description": "Track changes using linear, smooth or step lines with accessible point inspection.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/chart.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/line-chart.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/chart-cartesian.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/chart-cartesian.tsx"
+        }
+      ]
+    },
+    {
+      "name": "linear-modal",
+      "type": "registry:ui",
+      "title": "Linear Modal",
+      "description": "Follow a card, image and title into a full detail, then back. Card, Centered and browsable Gallery preserve the reference's shared-layout journey.",
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/scroll-area.json",
+        "https://000h.cojeev.com/r/dialog.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/linear-modal.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/linear-modal.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/linear-modal.css"
+        }
+      ]
+    },
+    {
+      "name": "living-link",
+      "type": "registry:ui",
+      "title": "Living link",
+      "description": "A native link with a drawn ink contour, directional underline reveals, or an organic pigment wash.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/living-link.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/living-link.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/living-link.css"
+        }
+      ]
+    },
+    {
+      "name": "magic-rings",
+      "type": "registry:ui",
+      "title": "Magic Rings",
+      "description": "Open concentric rings expand in Cojeev colors and respond to pointer position.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/magic-rings.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-field.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-field.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/magic-rings.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/magic-rings.css"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "Separates or annotates a sequence with a short event, status, or time label.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/marker.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/marker.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/marker.css"
+        }
+      ]
+    },
+    {
+      "name": "marquee",
+      "type": "registry:ui",
+      "title": "Marquee",
+      "description": "A measured moving list with optional perspective and a rhythm that follows scrolling.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/typography.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/marquee.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/marquee.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/marquee.css"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "Groups application commands into a horizontal row of keyboard-navigable menus.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-menubar"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/scroll-area.json",
+        "https://000h.cojeev.com/r/item-adornment.json",
+        "https://000h.cojeev.com/r/animated-icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/menubar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/menubar.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/menubar.css"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "Structures a conversational or activity entry with a main content area and supporting description.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/message.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/message.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/message.css"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message Scroller",
+      "description": "Keeps a conversation near its latest content while allowing readers to scroll back without being pulled down.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/message-scroller.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/message-scroller.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/message-scroller.css"
+        }
+      ]
+    },
+    {
+      "name": "meta-balls",
+      "type": "registry:ui",
+      "title": "Meta Balls",
+      "description": "Moving scalar-field bodies merge and separate through liquid contours.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/meta-balls.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-field.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-field.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/meta-balls.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/meta-balls.css"
+        }
+      ]
+    },
+    {
+      "name": "milestone-path",
+      "type": "registry:ui",
+      "title": "Milestone path",
+      "description": "Follow caller-owned progress as a connected Journey, a scrollable Sequence or a compact checkpoint Review.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/animated-icon.json",
+        "https://000h.cojeev.com/r/badge.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/empty.json",
+        "https://000h.cojeev.com/r/stepper.json",
+        "https://000h.cojeev.com/r/typography.json",
+        "https://000h.cojeev.com/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/milestone-path.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/milestone-path.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/milestone-path.css"
+        }
+      ]
+    },
+    {
+      "name": "motion-drawer",
+      "type": "registry:ui",
+      "title": "Motion Drawer",
+      "description": "A reference-faithful edge drawer, floating quick panel, layered workspace and bottom action tray.",
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-direction",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/motion-drawer.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/motion-drawer.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/motion-drawer.css"
+        }
+      ]
+    },
+    {
+      "name": "multi-select",
+      "type": "registry:ui",
+      "title": "Multi-select",
+      "description": "Searchable multiple choices with removable selections, form values and clear validation.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/scroll-area.json",
+        "https://000h.cojeev.com/r/badge.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/checkbox.json",
+        "https://000h.cojeev.com/r/item-adornment.json",
+        "https://000h.cojeev.com/r/animated-icon.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/input.json",
+        "https://000h.cojeev.com/r/label.json",
+        "https://000h.cojeev.com/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/multi-select.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/multi-select.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/multi-select.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "Uses the browser’s native select control to choose from a compact list of options.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/native-select.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/native-select.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/native-select.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "Organizes destination links and optional expandable navigation panels.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-navigation-menu",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/scroll-area.json",
+        "https://000h.cojeev.com/r/presence.json",
+        "https://000h.cojeev.com/r/item-adornment.json",
+        "https://000h.cojeev.com/r/animated-icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/navigation-menu.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/navigation-menu.css"
+        }
+      ]
+    },
+    {
+      "name": "number-input",
+      "type": "registry:ui",
+      "title": "Number input",
+      "description": "A number field with readable formatting, a native editing caret and expressive stepping.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/animated-number.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/number-input.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/number-input.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/number-input.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "option-wheel",
+      "type": "registry:ui",
+      "title": "Option Wheel",
+      "description": "A paper dial, aligned reel or compact readout for choosing one direction with pointer, wheel or keyboard.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/option-wheel.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/option-wheel.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/option-wheel.css"
+        }
+      ]
+    },
+    {
+      "name": "orbit-images",
+      "type": "registry:ui",
+      "title": "Orbit Images",
+      "description": "An orbit of supplied images frames stationary content.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/orbit-images.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/orbit-images.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/orbit-images.css"
+        }
+      ]
+    },
+    {
+      "name": "organism-assembly",
+      "type": "registry:ui",
+      "title": "Organism assembly",
+      "description": "An interactive studio that gathers floating shapes into six reusable compositions.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/organism-composition.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/organism-assembly.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/organism-assembly.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/organism-assembly.css"
+        }
+      ]
+    },
+    {
+      "name": "organism-composition",
+      "type": "registry:ui",
+      "title": "Organism composition",
+      "description": "Six useful compositions made from persistent Cojeev base components, with organic assembly and native controls.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/card.json",
+        "https://000h.cojeev.com/r/avatar.json",
+        "https://000h.cojeev.com/r/badge.json",
+        "https://000h.cojeev.com/r/bubble.json",
+        "https://000h.cojeev.com/r/input-group.json",
+        "https://000h.cojeev.com/r/message-scroller.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/animated-icon.json",
+        "https://000h.cojeev.com/r/item.json",
+        "https://000h.cojeev.com/r/progress.json",
+        "https://000h.cojeev.com/r/typography.json",
+        "https://000h.cojeev.com/r/shape.json",
+        "https://000h.cojeev.com/r/presence.json",
+        "https://000h.cojeev.com/r/assembly-part.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/organism-composition.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/assembly-particles.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/assembly-particles.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/organism-composition.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/organism-composition.css"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Lets users move between numbered pages and see their current position.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/pagination.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/pagination.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/pagination.css"
+        }
+      ]
+    },
+    {
+      "name": "particle-sculpture",
+      "type": "registry:ui",
+      "title": "Particle sculpture",
+      "description": "A cloud sampled from a real surface yields to the pointer and springs back into form.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/glass-sculpture.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/particle-sculpture.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "particle-text",
+      "type": "registry:ui",
+      "title": "Particle Text",
+      "description": "Particles sampled from real glyph pixels gather into a readable phrase and repel the local pointer.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/particle-text.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/particle-text.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/particle-text.css"
+        }
+      ]
+    },
+    {
+      "name": "pattern-background",
+      "type": "registry:ui",
+      "title": "Pattern background",
+      "description": "Eight distinct, lightweight backgrounds behind content, with a plain option and adjustable spacing, color and strength.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/pattern-background.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/pattern-background.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/pattern-background.css"
+        }
+      ]
+    },
+    {
+      "name": "pebbles-background",
+      "type": "registry:ui",
+      "title": "Pebbles background",
+      "description": "Sparse, softly irregular pebble outlines distributed across the surface.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/pattern-background.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/pebbles-background.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart",
+      "type": "registry:ui",
+      "title": "Pie chart",
+      "description": "Show proportions using themed pie and donut layouts, with readable totals and segment inspection.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/chart.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/pie-chart.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/chart-circular.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/chart-circular.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pigment-field",
+      "type": "registry:ui",
+      "title": "Pigment field",
+      "description": "An original GPU pigment wash using the current Cojeev palette.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/pigment-field.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/pigment-field.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/pigment-field.css"
+        }
+      ]
+    },
+    {
+      "name": "pixel-swap",
+      "type": "registry:ui",
+      "title": "Pixel Swap",
+      "description": "A staggered tile mask exchanges two compositions without duplicating their interactive content.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/pixel-swap.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/pixel-swap.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/pixel-swap.css"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Places a dismissible panel next to a trigger for a small contextual task or set of controls.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-popover"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/popover.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/popover.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/popover.css"
+        }
+      ]
+    },
+    {
+      "name": "portal-field",
+      "type": "registry:ui",
+      "title": "Portal Field",
+      "description": "An organically warped luminous halo with a soft chromatic fringe behind real content.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/portal-field.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/portal-field.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/portal-field.css"
+        }
+      ]
+    },
+    {
+      "name": "presence",
+      "type": "registry:ui",
+      "title": "Presence",
+      "description": "MotionPresence keeps keyed children mounted for their exits. MotionSurface adds coordinated lifecycle states to an existing primitive.",
+      "dependencies": [
+        "motion",
+        "@radix-ui/react-slot"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/presence.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/presence.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/presence.css"
+        }
+      ]
+    },
+    {
+      "name": "preview",
+      "type": "registry:ui",
+      "title": "Component preview",
+      "description": "Pairs a live component example with a code view and a copy action.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/code-block.json",
+        "https://000h.cojeev.com/r/animated-icon.json",
+        "https://000h.cojeev.com/r/tabs.json",
+        "https://000h.cojeev.com/r/typography.json",
+        "https://000h.cojeev.com/r/pattern-background.json",
+        "https://000h.cojeev.com/r/pigment-field.json",
+        "https://000h.cojeev.com/r/depth-background.json",
+        "https://000h.cojeev.com/r/ambient-background.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/preview.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/preview-backgrounds.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/preview-backgrounds.tsx"
+        },
+        {
+          "path": "registry/cojeev/lib/preview-background-picker.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/preview-background-picker.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/preview.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/preview.css"
+        }
+      ]
+    },
+    {
+      "name": "profile-card",
+      "type": "registry:ui",
+      "title": "Profile card",
+      "description": "A reusable profile card composed from Cojeev base components.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/organism-composition.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/profile-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "One measured amount, explained as an inline task, a small report or connected milestones—with independent organic track geometry.",
+      "dependencies": [
+        "motion",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/progress.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/progress.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/progress.css"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "title": "Questionnaire",
+      "description": "A little guided brief: open questions, a focused journey or a two-column worksheet with living choice marks and honest completion progress.",
+      "dependencies": [
+        "class-variance-authority",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/label.json",
+        "https://000h.cojeev.com/r/progress.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/questionnaire.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/selector.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/selector.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/questionnaire.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/questionnaire.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart",
+      "type": "registry:ui",
+      "title": "Radar chart",
+      "description": "Compare several dimensions with a shared radar scale and contextual series highlighting.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/chart.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/radar-chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radial-chart",
+      "type": "registry:ui",
+      "title": "Radial chart",
+      "description": "Show progress against a shared maximum using full rings or semicircles.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/chart.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/radial-chart.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/chart-circular.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/chart-circular.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio group",
+      "description": "Lets users select one option from a labeled set of mutually exclusive choices.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-radio-group",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/radio-group.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/selector.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/selector.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/radio-group.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/radio-group.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        },
+        {
+          "path": "registry/cojeev/styles/choice-foundations.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/choice-foundations.css"
+        }
+      ]
+    },
+    {
+      "name": "reading-trail",
+      "type": "registry:ui",
+      "title": "Reading trail",
+      "description": "Keep your place with a connected spine, an expandable bookmark or a descriptive chapter overview—all following actual reading progress.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/collapsible.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/reading-trail.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/reading-trail.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/reading-trail.css"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Divides a region into panels whose relative sizes can be adjusted with a separator.",
+      "dependencies": [
+        "class-variance-authority",
+        "react-resizable-panels"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/resizable.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/resizable.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/resizable.css"
+        }
+      ]
+    },
+    {
+      "name": "ripple-distortion",
+      "type": "registry:ui",
+      "title": "Ripple Distortion",
+      "description": "Pointer impulses send expanding waves through a textured print.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/ripple-distortion.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-field.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-field.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/ripple-distortion.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/ripple-distortion.css"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Contains overflowing content in a bounded viewport with styled scrollbars.",
+      "dependencies": [
+        "motion",
+        "class-variance-authority",
+        "@radix-ui/react-scroll-area"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/scroll-area.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/scroll-area.css"
+        }
+      ]
+    },
+    {
+      "name": "scroll-expand",
+      "type": "registry:ui",
+      "title": "Scroll Expand",
+      "description": "A framed composition opens as native scroll or controlled progress advances.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/scroll-expand.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/scroll-expand.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/scroll-expand.css"
+        }
+      ]
+    },
+    {
+      "name": "scroll-organism",
+      "type": "registry:ui",
+      "title": "Scroll organism",
+      "description": "A softly stretching companion driven by native document scrolling.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/shape.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/scroll-organism.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/scroll-organism.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/scroll-organism.css"
+        }
+      ]
+    },
+    {
+      "name": "scroll-reveal",
+      "type": "registry:ui",
+      "title": "Scroll Reveal",
+      "description": "Native scroll progress resolves word opacity and blur while leveling the phrase.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/scroll-reveal.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/scroll-reveal.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/scroll-reveal.css"
+        }
+      ]
+    },
+    {
+      "name": "sculpture-orbit",
+      "type": "registry:ui",
+      "title": "Sculpture orbit",
+      "description": "A shared sculpture viewer with pointer rotation, touch-friendly navigation and complete keyboard controls.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/slider.json",
+        "https://000h.cojeev.com/r/label.json",
+        "https://000h.cojeev.com/r/typography.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/sculpture-orbit.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/sculpture-orbit.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/sculpture-orbit.css"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Opens a list of options from a trigger and stores one selected value.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-select"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/scroll-area.json",
+        "https://000h.cojeev.com/r/item-adornment.json",
+        "https://000h.cojeev.com/r/animated-icon.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/select.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/select.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/select.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "semantic-bloom",
+      "type": "registry:ui",
+      "title": "Semantic bloom",
+      "description": "A living wordmark whose particles wander, connect and gather into a liquid organism. Adapted from ThreeUI with Cojeev colors and motion controls.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/semantic-bloom.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/semantic-bloom.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/semantic-bloom.css"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Divides adjacent content with a horizontal or vertical rule.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/separator.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/separator.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/separator.css"
+        }
+      ]
+    },
+    {
+      "name": "shape",
+      "type": "registry:ui",
+      "title": "Shape studio",
+      "description": "One shape studio: twelve compatible living contours, layered artwork and the complete original mask inventory. Compose it here, then take the SVG or React code.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/shape.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/shape.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/shape.css"
+        }
+      ]
+    },
+    {
+      "name": "shape-artwork",
+      "type": "registry:ui",
+      "title": "Shape artwork",
+      "description": "An original SVG silhouette with a cast shadow and a rotated rear outline. The same vector layers power its live preview and standalone SVG export.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/shape-artwork.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/shape-artwork.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/shape-artwork.css"
+        }
+      ]
+    },
+    {
+      "name": "shape-scene",
+      "type": "registry:ui",
+      "title": "Shape scene",
+      "description": "A tactile 3D composition made from Cojeev shapes, with a static fallback and motion preferences built in.",
+      "dependencies": [
+        "three@0.185.1"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/shape.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/shape-scene.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/sculpture-material.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/sculpture-material.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/shape-scene.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/shape-scene.css"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Opens a side surface for focused secondary content while the current page remains in place.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-direction"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/sheet.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/sheet.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/sheet.css"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "A paper folio, a readable compact index and a motion drawer. Three calm ways to keep the same workspace within reach.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/icon.json",
+        "https://000h.cojeev.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/sidebar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/sidebar.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/sidebar.css"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Give unavailable content a useful outline: a reading page, a person or a board of ideas, with three quiet-safe paint effects.",
+      "dependencies": [
+        "class-variance-authority",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/skeleton.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/skeleton.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/skeleton.css"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Adjusts one or more numeric values by moving labeled thumbs along a track.",
+      "dependencies": [
+        "motion",
+        "class-variance-authority",
+        "@radix-ui/react-slider"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/slider.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/slider.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/slider.css"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Loading",
+      "description": "Three indeterminate signals: a morphing Bloom, gathering Orbit or handing-off Relay. The original small seed stays the default.",
+      "dependencies": [
+        "class-variance-authority",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/spinner.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/spinner.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/spinner.css"
+        }
+      ]
+    },
+    {
+      "name": "sprouts-background",
+      "type": "registry:ui",
+      "title": "Sprouts background",
+      "description": "Small paired leaves and seed-like marks with plenty of open space.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/pattern-background.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/sprouts-background.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stepper",
+      "type": "registry:ui",
+      "title": "Stepper",
+      "description": "Move a real draft through connected stages, a descriptive checkpoint ledger or a focused current-step workspace.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/animated-icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/stepper.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/stepper.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/stepper.css"
+        }
+      ]
+    },
+    {
+      "name": "strands",
+      "type": "registry:ui",
+      "title": "Strands",
+      "description": "A bundle of colored ribbons moves through a bounded sine field.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/strands.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-field.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-field.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/strands.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/strands.css"
+        }
+      ]
+    },
+    {
+      "name": "sunwash-background",
+      "type": "registry:ui",
+      "title": "Sunwash background",
+      "description": "Broad, soft pools of color that leave the content in focus.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/pattern-background.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/sunwash-background.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "swapy",
+      "type": "registry:ui",
+      "title": "Swapy",
+      "description": "Cards swap positions through a drag handle or keyboard controls and retain their order in React state.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/swapy.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/swapy.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/swapy.css"
+        }
+      ]
+    },
+    {
+      "name": "swarm-cursor",
+      "type": "registry:ui",
+      "title": "Swarm Cursor",
+      "description": "A local flock of colored seeds follows the pointer and scatters on activation.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/swarm-cursor.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/lib/reference-field.tsx",
+          "type": "registry:lib",
+          "target": "lib/cojeev/reference-field.tsx"
+        },
+        {
+          "path": "registry/cojeev/styles/swarm-cursor.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/swarm-cursor.css"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Turns a named binary setting on or off.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-switch"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/switch.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/switch.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/switch.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        },
+        {
+          "path": "registry/cojeev/styles/choice-foundations.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/choice-foundations.css"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Tables",
+      "description": "Scan a compact ledger, explore detailed records or compare them side by side. One Tables guide for native parts and the composed DataTable.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/table.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/table.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/table.css"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Switches between related content panels while keeping the available views visible.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-tabs"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/presence.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/tabs.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/tabs.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/tabs.css"
+        }
+      ]
+    },
+    {
+      "name": "target-cursor",
+      "type": "registry:ui",
+      "title": "Target Cursor",
+      "description": "Local corner brackets follow real controls on hover and keyboard focus.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/target-cursor.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/target-cursor.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/target-cursor.css"
+        }
+      ]
+    },
+    {
+      "name": "text-reveal",
+      "type": "registry:ui",
+      "title": "Text reveal",
+      "description": "Readable word, grapheme, phrase or measured-line arrivals with soft focus, fold and organic scale choices.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/text-reveal.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/text-reveal.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/text-reveal.css"
+        }
+      ]
+    },
+    {
+      "name": "text-ribbon",
+      "type": "registry:ui",
+      "title": "Text ribbon",
+      "description": "A measured phrase follows six original SVG paths, with direct manipulation and gentle changes of pace.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/text-ribbon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/text-ribbon.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/text-ribbon.css"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Collects multiline text and offers composer and character-count parts for longer input.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/textarea.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/textarea.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/textarea.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "theme-toggle",
+      "type": "registry:ui",
+      "title": "Theme toggle",
+      "description": "A controlled light/dark switch with a morphing sun and moon and a smooth organic page reveal.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/theme-toggle.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/theme-toggle.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/theme-toggle.css"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Reports a brief outcome in a notification area without moving the user away from the current task.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-toast"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/toast.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/toast.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/toast.css"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "A small action with a lasting state: a toolbar tool, a paper bookmark or a descriptive preference. Native targets stay put while the painted surface responds.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-toggle"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/toggle.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/toggle.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/toggle.css"
+        },
+        {
+          "path": "registry/cojeev/styles/control-appearance.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/control-appearance.css"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Groups pressable choices that can allow one or several selected values.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-toggle-group"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/toggle.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/toggle-group.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/toggle-group.css"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Precise ink callouts, useful keyboard hints and small paper annotations. Short explanations that appear where attention already is.",
+      "dependencies": [
+        "class-variance-authority",
+        "@radix-ui/react-tooltip"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/tooltip.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/tooltip.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/tooltip.css"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "type": "registry:ui",
+      "title": "Tree",
+      "description": "A controlled branch ledger for supplied hierarchical data, with separate disclosure, selection and trailing actions.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/button.json",
+        "https://000h.cojeev.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/tree.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/tree.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/tree.css"
+        }
+      ]
+    },
+    {
+      "name": "typography",
+      "type": "registry:ui",
+      "title": "Typography",
+      "description": "Provides text roles for headings, body copy, metadata, values, and identifiers.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/typography.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/typography.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/typography.css"
+        }
+      ]
+    },
+    {
+      "name": "typography-vortex",
+      "type": "registry:ui",
+      "title": "Typography Vortex",
+      "description": "Nested rotating glyph rings with a local dissolution lens and a finite suction pulse.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/typography-vortex.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/typography-vortex.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/typography-vortex.css"
+        }
+      ]
+    },
+    {
+      "name": "variable-proximity",
+      "type": "registry:ui",
+      "title": "Variable Proximity",
+      "description": "Pointer distance changes the real variable-font weight of individual graphemes.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/variable-proximity.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/variable-proximity.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/variable-proximity.css"
+        }
+      ]
+    },
+    {
+      "name": "warp-text",
+      "type": "registry:ui",
+      "title": "Warp Text",
+      "description": "Rendered text deforms through a slowly changing noise displacement.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/warp-text.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/warp-text.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/warp-text.css"
+        }
+      ]
+    },
+    {
+      "name": "wave-wipe",
+      "type": "registry:ui",
+      "title": "Wave Wipe",
+      "description": "An organic wave rises across caller content to reveal the next scene.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/wave-wipe.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/wave-wipe.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/wave-wipe.css"
+        }
+      ]
+    },
+    {
+      "name": "weave-background",
+      "type": "registry:ui",
+      "title": "Weave background",
+      "description": "Interlaced thread-like strokes with visible over-and-under crossings.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/pattern-background.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/weave-background.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "word-relay",
+      "type": "registry:ui",
+      "title": "Word relay",
+      "description": "Exchanges phrases, words or letters inside a stable wrapping footprint, with interruptible motion and explicit navigation.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/word-relay.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/word-relay.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/word-relay.css"
+        }
+      ]
+    },
+    {
+      "name": "word-stream",
+      "type": "registry:ui",
+      "title": "Word Stream",
+      "description": "Phrases build word by word, drift left and run out before the final phrase holds.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/word-stream.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/word-stream.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/word-stream.css"
+        }
+      ]
+    },
+    {
+      "name": "work-side-panel",
+      "type": "registry:ui",
+      "title": "Work side panel",
+      "description": "A reusable work side panel composed from Cojeev base components.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json",
+        "https://000h.cojeev.com/r/organism-composition.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/work-side-panel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "writing-caret",
+      "type": "registry:ui",
+      "title": "Writing caret",
+      "description": "A quiet writing mark with a short, deliberate blink sequence.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/writing-caret.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/writing-caret.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/writing-caret.css"
+        }
+      ]
+    },
+    {
+      "name": "zoom-words",
+      "type": "registry:ui",
+      "title": "Zoom Words",
+      "description": "An enlarged camera follows measured centers along a growing word line.",
+      "registryDependencies": [
+        "https://000h.cojeev.com/r/cojeev.json"
+      ],
+      "files": [
+        {
+          "path": "registry/cojeev/ui/zoom-words.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cojeev/styles/zoom-words.css",
+          "type": "registry:file",
+          "target": "styles/cojeev/zoom-words.css"
+        }
+      ]
+    }
+  ]
+}

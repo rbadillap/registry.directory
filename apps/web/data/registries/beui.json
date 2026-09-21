@@ -378,6 +378,7 @@
       "description": "Pill, segment or underline tabs with a spring layoutId indicator.",
       "dependencies": [
         "clsx",
+        "lucide-react",
         "motion",
         "tailwind-merge"
       ],
@@ -2379,6 +2380,278 @@
           "path": "components/motion/loader.tsx",
           "type": "registry:component",
           "target": "@components/motion/loader.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "funnel-chart",
+      "type": "registry:component",
+      "title": "Funnel Chart",
+      "description": "Vertical and horizontal funnels with curved stages and animated number tooltips.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/funnel-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/funnel-chart.tsx"
+        },
+        {
+          "path": "components/charts/funnel-chart/model.ts",
+          "type": "registry:component",
+          "target": "@components/charts/funnel-chart/model.ts"
+        },
+        {
+          "path": "components/motion/number-ticker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/number-ticker.tsx"
+        },
+        {
+          "path": "components/motion/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-gesture.ts"
+        },
+        {
+          "path": "lib/hooks/use-tap-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-tap-gesture.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
+      "name": "liquidity-heatmap",
+      "type": "registry:component",
+      "title": "Liquidity Heatmap",
+      "description": "Animated liquidity bands across price and time, with a price trace and depth tooltips.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/liquidity-heatmap.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/liquidity-heatmap.tsx"
+        },
+        {
+          "path": "components/charts/liquidity-heatmap/model.ts",
+          "type": "registry:component",
+          "target": "@components/charts/liquidity-heatmap/model.ts"
+        },
+        {
+          "path": "components/motion/number-ticker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/number-ticker.tsx"
+        },
+        {
+          "path": "components/motion/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-gesture.ts"
+        },
+        {
+          "path": "lib/hooks/use-tap-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-tap-gesture.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
+      "name": "bump-chart",
+      "type": "registry:component",
+      "title": "Bump Chart",
+      "description": "Animated rankings with curved paths, interactive rank dots, and tooltips.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/bump-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bump-chart.tsx"
+        },
+        {
+          "path": "components/charts/bump-chart/context.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bump-chart/context.tsx"
+        },
+        {
+          "path": "components/charts/bump-chart/legend.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bump-chart/legend.tsx"
+        },
+        {
+          "path": "components/charts/bump-chart/model.ts",
+          "type": "registry:component",
+          "target": "@components/charts/bump-chart/model.ts"
+        },
+        {
+          "path": "components/charts/bump-chart/plot.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bump-chart/plot.tsx"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "components/charts/bump-chart/point.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bump-chart/point.tsx"
+        },
+        {
+          "path": "components/charts/bump-chart/series.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bump-chart/series.tsx"
+        },
+        {
+          "path": "components/charts/bump-chart/use-geometry.ts",
+          "type": "registry:component",
+          "target": "@components/charts/bump-chart/use-geometry.ts"
+        },
+        {
+          "path": "components/motion/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-gesture.ts"
+        },
+        {
+          "path": "lib/hooks/use-tap-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-tap-gesture.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
+      "name": "order-book",
+      "type": "registry:component",
+      "title": "Order Book",
+      "description": "Animated order book with bid and ask depth, spread, and volume balance.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/order-book.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/order-book.tsx"
+        },
+        {
+          "path": "components/charts/order-book/depth-row.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/order-book/depth-row.tsx"
+        },
+        {
+          "path": "components/charts/order-book/model.ts",
+          "type": "registry:component",
+          "target": "@components/charts/order-book/model.ts"
         },
         {
           "path": "lib/ease.ts",

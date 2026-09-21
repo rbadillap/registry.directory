@@ -1323,7 +1323,7 @@
       "name": "andromeda",
       "type": "registry:block",
       "title": "Andromeda Legacy design system",
-      "description": "Every Andromeda Legacy component (42 files). Installs the foundation tokens automatically. Requires AI Canvas Premium to install.",
+      "description": "Every Andromeda Legacy component (42 files). Installs the foundation tokens automatically. Free account required to install; source is free to read.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10",
         "@radix-ui/react-slot@^1.2.4",
@@ -2474,7 +2474,7 @@
       "name": "andromeda-mission-control",
       "type": "registry:block",
       "title": "Mission Control (Andromeda Legacy)",
-      "description": "Mission Control composition from Andromeda Legacy (sci-fi dashboard). Pulls in the 14 Andromeda Legacy components it uses, plus tokens. Requires AI Canvas Premium to install.",
+      "description": "Mission Control composition from Andromeda Legacy (Dashboard template). Pulls in the 14 Andromeda Legacy components it uses, plus tokens. Requires AI Canvas Premium to install.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10",
         "framer-motion@^12.38.0"
@@ -2567,7 +2567,7 @@
       "name": "andromeda-service-order",
       "type": "registry:block",
       "title": "Service Order (Andromeda Legacy)",
-      "description": "Service Order composition from Andromeda Legacy (telecom dashboard). Pulls in the 16 Andromeda Legacy components it uses, plus tokens. Requires AI Canvas Premium to install.",
+      "description": "Service Order composition from Andromeda Legacy (CRM template). Pulls in the 16 Andromeda Legacy components it uses, plus tokens. Requires AI Canvas Premium to install.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10",
         "framer-motion@^12.38.0"
@@ -2637,7 +2637,7 @@
       "name": "andromeda-resource-planning",
       "type": "registry:block",
       "title": "Resource Planning (Andromeda Legacy)",
-      "description": "Resource Planning composition from Andromeda Legacy (operations dashboard). Pulls in the 15 Andromeda Legacy components it uses, plus tokens. Requires AI Canvas Premium to install.",
+      "description": "Resource Planning composition from Andromeda Legacy (Scheduling template). Pulls in the 15 Andromeda Legacy components it uses, plus tokens. Requires AI Canvas Premium to install.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10",
         "framer-motion@^12.38.0",
@@ -2711,7 +2711,7 @@
       "name": "andromeda-signal-room",
       "type": "registry:block",
       "title": "Signal Room (Andromeda Legacy)",
-      "description": "Signal Room composition from Andromeda Legacy (audio dashboard). Pulls in the 21 Andromeda Legacy components it uses, plus tokens. Requires AI Canvas Premium to install.",
+      "description": "Signal Room composition from Andromeda Legacy (Media template). Pulls in the 21 Andromeda Legacy components it uses, plus tokens. Requires AI Canvas Premium to install.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10",
         "framer-motion@^12.38.0"
@@ -2861,7 +2861,7 @@
       "name": "andromeda-pro",
       "type": "registry:block",
       "title": "Andromeda Pro design system",
-      "description": "Every Andromeda Pro component (48 files). Installs the foundation tokens automatically. Requires AI Canvas Premium to install.",
+      "description": "Every Andromeda Pro component (50 files). Installs the foundation tokens automatically. Requires AI Canvas Premium to install.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10",
         "@radix-ui/react-slot@^1.2.4",
@@ -3035,6 +3035,11 @@
           "target": "components/aicanvas/andromeda-pro/components/SegmentedControl.tsx"
         },
         {
+          "path": "components/aicanvas/andromeda-pro/components/Sidebar.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/Sidebar.tsx"
+        },
+        {
           "path": "components/aicanvas/andromeda-pro/components/Slider.tsx",
           "type": "registry:lib",
           "target": "components/aicanvas/andromeda-pro/components/Slider.tsx"
@@ -3048,6 +3053,11 @@
           "path": "components/aicanvas/andromeda-pro/components/StatTile.tsx",
           "type": "registry:lib",
           "target": "components/aicanvas/andromeda-pro/components/StatTile.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/components/StrengthMeter.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/StrengthMeter.tsx"
         },
         {
           "path": "components/aicanvas/andromeda-pro/components/Table.tsx",
@@ -3909,6 +3919,35 @@
       ]
     },
     {
+      "name": "andromeda-pro-sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar (Andromeda Pro)",
+      "description": "Andromeda Pro Sidebar component. Install just this piece. Tokens and any sibling components are pulled in automatically. Requires AI Canvas Premium to install.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10",
+        "framer-motion@^12.38.0"
+      ],
+      "registryDependencies": [
+        "https://aicanvas.me/r/andromeda-pro-corner-markers.json",
+        "https://aicanvas.me/r/andromeda-pro-icon-button.json",
+        "https://aicanvas.me/r/andromeda-pro-nav-item.json",
+        "https://aicanvas.me/r/andromeda-pro-tokens.json",
+        "https://aicanvas.me/r/andromeda-pro-tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "components/aicanvas/andromeda-pro/components/Sidebar.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/Sidebar.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/components/lib/motion.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/lib/motion.ts"
+        }
+      ]
+    },
+    {
       "name": "andromeda-pro-slider",
       "type": "registry:ui",
       "title": "Slider (Andromeda Pro)",
@@ -3983,6 +4022,22 @@
           "path": "components/aicanvas/andromeda-pro/components/lib/motion.ts",
           "type": "registry:lib",
           "target": "components/aicanvas/andromeda-pro/components/lib/motion.ts"
+        }
+      ]
+    },
+    {
+      "name": "andromeda-pro-strength-meter",
+      "type": "registry:ui",
+      "title": "Strength Meter (Andromeda Pro)",
+      "description": "Andromeda Pro Strength Meter component. Install just this piece. Tokens and any sibling components are pulled in automatically. Requires AI Canvas Premium to install.",
+      "registryDependencies": [
+        "https://aicanvas.me/r/andromeda-pro-tokens.json"
+      ],
+      "files": [
+        {
+          "path": "components/aicanvas/andromeda-pro/components/StrengthMeter.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/StrengthMeter.tsx"
         }
       ]
     },
@@ -4258,210 +4313,31 @@
       ]
     },
     {
-      "name": "andromeda-pro-mission-control",
+      "name": "andromeda-pro-city-operations",
       "type": "registry:block",
-      "title": "Mission Control (Andromeda Pro)",
-      "description": "Mission Control composition from Andromeda Pro (sci-fi dashboard). Pulls in the 16 Andromeda Pro components it uses, plus tokens. Requires AI Canvas Premium to install.",
-      "dependencies": [
-        "@phosphor-icons/react@^2.1.10",
-        "framer-motion@^12.38.0"
-      ],
-      "registryDependencies": [
-        "https://aicanvas.me/r/andromeda-pro-tokens.json",
-        "https://aicanvas.me/r/andromeda-pro-badge.json",
-        "https://aicanvas.me/r/andromeda-pro-button.json",
-        "https://aicanvas.me/r/andromeda-pro-card.json",
-        "https://aicanvas.me/r/andromeda-pro-corner-markers.json",
-        "https://aicanvas.me/r/andromeda-pro-data-table.json",
-        "https://aicanvas.me/r/andromeda-pro-drawer.json",
-        "https://aicanvas.me/r/andromeda-pro-icon-button.json",
-        "https://aicanvas.me/r/andromeda-pro-nav-item.json",
-        "https://aicanvas.me/r/andromeda-pro-planet.json",
-        "https://aicanvas.me/r/andromeda-pro-progress-bar.json",
-        "https://aicanvas.me/r/andromeda-pro-radar-chart.json",
-        "https://aicanvas.me/r/andromeda-pro-stat-tile.json",
-        "https://aicanvas.me/r/andromeda-pro-user-card.json"
-      ],
-      "files": [
-        {
-          "path": "components/aicanvas/andromeda-pro/components/lib/motion.ts",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/components/lib/motion.ts"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/components/lib/responsive.ts",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/components/lib/responsive.ts"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/_shared/TemplateMobileChrome.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/_shared/TemplateMobileChrome.tsx"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/_shared/sample-pictures.ts",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/_shared/sample-pictures.ts"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/_shared/useScrollEdges.ts",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/_shared/useScrollEdges.ts"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/mission-control/CommsLog.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/mission-control/CommsLog.tsx"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/mission-control/Header.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/mission-control/Header.tsx"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/mission-control/NextDestination.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/mission-control/NextDestination.tsx"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/mission-control/Sidebar.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/mission-control/Sidebar.tsx"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/mission-control/SystemStatus.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/mission-control/SystemStatus.tsx"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/mission-control/TelemetryRow.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/mission-control/TelemetryRow.tsx"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/mission-control/VehiclesTable.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/mission-control/VehiclesTable.tsx"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/mission-control/data.ts",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/mission-control/data.ts"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/mission-control/index.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/mission-control/index.tsx"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/mission-control/sections/OverviewSection.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/mission-control/sections/OverviewSection.tsx"
-        }
-      ]
-    },
-    {
-      "name": "andromeda-pro-service-order",
-      "type": "registry:block",
-      "title": "Service Order (Andromeda Pro)",
-      "description": "Service Order composition from Andromeda Pro (telecom dashboard). Pulls in the 18 Andromeda Pro components it uses, plus tokens. Requires AI Canvas Premium to install.",
-      "dependencies": [
-        "@phosphor-icons/react@^2.1.10",
-        "framer-motion@^12.38.0"
-      ],
-      "registryDependencies": [
-        "https://aicanvas.me/r/andromeda-pro-tokens.json",
-        "https://aicanvas.me/r/andromeda-pro-badge.json",
-        "https://aicanvas.me/r/andromeda-pro-button.json",
-        "https://aicanvas.me/r/andromeda-pro-card.json",
-        "https://aicanvas.me/r/andromeda-pro-corner-markers.json",
-        "https://aicanvas.me/r/andromeda-pro-data-table.json",
-        "https://aicanvas.me/r/andromeda-pro-drawer.json",
-        "https://aicanvas.me/r/andromeda-pro-heat-grid.json",
-        "https://aicanvas.me/r/andromeda-pro-icon-button.json",
-        "https://aicanvas.me/r/andromeda-pro-nav-item.json",
-        "https://aicanvas.me/r/andromeda-pro-panel-header.json",
-        "https://aicanvas.me/r/andromeda-pro-panel-menu.json",
-        "https://aicanvas.me/r/andromeda-pro-tag.json",
-        "https://aicanvas.me/r/andromeda-pro-tooltip.json",
-        "https://aicanvas.me/r/andromeda-pro-top-bar.json",
-        "https://aicanvas.me/r/andromeda-pro-user-card.json",
-        "https://aicanvas.me/r/andromeda-pro-user-menu.json"
-      ],
-      "files": [
-        {
-          "path": "components/aicanvas/andromeda-pro/components/lib/motion.ts",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/components/lib/motion.ts"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/components/lib/responsive.ts",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/components/lib/responsive.ts"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/_shared/TemplateMobileChrome.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/_shared/TemplateMobileChrome.tsx"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/_shared/sample-pictures.ts",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/_shared/sample-pictures.ts"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/service-order/ItemsPanel.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/service-order/ItemsPanel.tsx"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/service-order/OrderMetadataPanel.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/service-order/OrderMetadataPanel.tsx"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/service-order/SlaPanel.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/service-order/SlaPanel.tsx"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/service-order/data.ts",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/service-order/data.ts"
-        },
-        {
-          "path": "components/aicanvas/andromeda-pro/examples/service-order/index.tsx",
-          "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/service-order/index.tsx"
-        }
-      ]
-    },
-    {
-      "name": "andromeda-pro-resource-planning",
-      "type": "registry:block",
-      "title": "Resource Planning (Andromeda Pro)",
-      "description": "Resource Planning composition from Andromeda Pro (operations dashboard). Pulls in the 19 Andromeda Pro components it uses, plus tokens. Requires AI Canvas Premium to install.",
+      "title": "City Operations (Andromeda Pro)",
+      "description": "City Operations composition from Andromeda Pro (Dashboard template). Pulls in the 19 Andromeda Pro components it uses, plus tokens. Requires AI Canvas Premium to install.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10",
         "framer-motion@^12.38.0",
-        "recharts@^3.8.1"
+        "maplibre-gl@^5.24.0"
       ],
       "registryDependencies": [
         "https://aicanvas.me/r/andromeda-pro-tokens.json",
+        "https://aicanvas.me/r/andromeda-pro-badge.json",
         "https://aicanvas.me/r/andromeda-pro-button.json",
         "https://aicanvas.me/r/andromeda-pro-card.json",
         "https://aicanvas.me/r/andromeda-pro-checkbox.json",
         "https://aicanvas.me/r/andromeda-pro-corner-markers.json",
-        "https://aicanvas.me/r/andromeda-pro-data-table.json",
-        "https://aicanvas.me/r/andromeda-pro-date-range-picker.json",
         "https://aicanvas.me/r/andromeda-pro-drawer.json",
         "https://aicanvas.me/r/andromeda-pro-icon-button.json",
         "https://aicanvas.me/r/andromeda-pro-nav-item.json",
         "https://aicanvas.me/r/andromeda-pro-panel-header.json",
-        "https://aicanvas.me/r/andromeda-pro-panel-menu.json",
         "https://aicanvas.me/r/andromeda-pro-search-field.json",
-        "https://aicanvas.me/r/andromeda-pro-toggle.json",
-        "https://aicanvas.me/r/andromeda-pro-top-bar.json",
+        "https://aicanvas.me/r/andromeda-pro-segmented-control.json",
+        "https://aicanvas.me/r/andromeda-pro-sidebar.json",
+        "https://aicanvas.me/r/andromeda-pro-stat-tile.json",
+        "https://aicanvas.me/r/andromeda-pro-table.json",
         "https://aicanvas.me/r/andromeda-pro-trend-chart.json",
         "https://aicanvas.me/r/andromeda-pro-user-card.json",
         "https://aicanvas.me/r/andromeda-pro-user-menu.json"
@@ -4488,34 +4364,49 @@
           "target": "components/aicanvas/andromeda-pro/examples/_shared/sample-pictures.ts"
         },
         {
-          "path": "components/aicanvas/andromeda-pro/examples/resource-planning/AllocationChart.tsx",
+          "path": "components/aicanvas/andromeda-pro/examples/city-operations/AlertsPanel.tsx",
           "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/resource-planning/AllocationChart.tsx"
+          "target": "components/aicanvas/andromeda-pro/examples/city-operations/AlertsPanel.tsx"
         },
         {
-          "path": "components/aicanvas/andromeda-pro/examples/resource-planning/CapacityPanel.tsx",
+          "path": "components/aicanvas/andromeda-pro/examples/city-operations/ChartsRow.tsx",
           "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/resource-planning/CapacityPanel.tsx"
+          "target": "components/aicanvas/andromeda-pro/examples/city-operations/ChartsRow.tsx"
         },
         {
-          "path": "components/aicanvas/andromeda-pro/examples/resource-planning/RequestsPanel.tsx",
+          "path": "components/aicanvas/andromeda-pro/examples/city-operations/KpiRow.tsx",
           "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/resource-planning/RequestsPanel.tsx"
+          "target": "components/aicanvas/andromeda-pro/examples/city-operations/KpiRow.tsx"
         },
         {
-          "path": "components/aicanvas/andromeda-pro/examples/resource-planning/RequestsTable.tsx",
+          "path": "components/aicanvas/andromeda-pro/examples/city-operations/OperationsMap.tsx",
           "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/resource-planning/RequestsTable.tsx"
+          "target": "components/aicanvas/andromeda-pro/examples/city-operations/OperationsMap.tsx"
         },
         {
-          "path": "components/aicanvas/andromeda-pro/examples/resource-planning/data.ts",
+          "path": "components/aicanvas/andromeda-pro/examples/city-operations/Sidebar.tsx",
           "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/resource-planning/data.ts"
+          "target": "components/aicanvas/andromeda-pro/examples/city-operations/Sidebar.tsx"
         },
         {
-          "path": "components/aicanvas/andromeda-pro/examples/resource-planning/index.tsx",
+          "path": "components/aicanvas/andromeda-pro/examples/city-operations/TopBar.tsx",
           "type": "registry:lib",
-          "target": "components/aicanvas/andromeda-pro/examples/resource-planning/index.tsx"
+          "target": "components/aicanvas/andromeda-pro/examples/city-operations/TopBar.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/city-operations/data.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/city-operations/data.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/city-operations/index.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/city-operations/index.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/city-operations/mapStyle.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/city-operations/mapStyle.ts"
         }
       ]
     },
@@ -4523,7 +4414,7 @@
       "name": "andromeda-pro-signal-room",
       "type": "registry:block",
       "title": "Signal Room (Andromeda Pro)",
-      "description": "Signal Room composition from Andromeda Pro (audio dashboard). Pulls in the 21 Andromeda Pro components it uses, plus tokens. Requires AI Canvas Premium to install.",
+      "description": "Signal Room composition from Andromeda Pro (Media template). Pulls in the 21 Andromeda Pro components it uses, plus tokens. Requires AI Canvas Premium to install.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10",
         "framer-motion@^12.38.0"
@@ -4626,16 +4517,348 @@
       ]
     },
     {
+      "name": "andromeda-pro-mission-control",
+      "type": "registry:block",
+      "title": "Mission Control (Andromeda Pro)",
+      "description": "Mission Control composition from Andromeda Pro (Dashboard template). Pulls in the 16 Andromeda Pro components it uses, plus tokens. Requires AI Canvas Premium to install.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10",
+        "framer-motion@^12.38.0"
+      ],
+      "registryDependencies": [
+        "https://aicanvas.me/r/andromeda-pro-tokens.json",
+        "https://aicanvas.me/r/andromeda-pro-badge.json",
+        "https://aicanvas.me/r/andromeda-pro-button.json",
+        "https://aicanvas.me/r/andromeda-pro-card.json",
+        "https://aicanvas.me/r/andromeda-pro-corner-markers.json",
+        "https://aicanvas.me/r/andromeda-pro-data-table.json",
+        "https://aicanvas.me/r/andromeda-pro-drawer.json",
+        "https://aicanvas.me/r/andromeda-pro-icon-button.json",
+        "https://aicanvas.me/r/andromeda-pro-nav-item.json",
+        "https://aicanvas.me/r/andromeda-pro-planet.json",
+        "https://aicanvas.me/r/andromeda-pro-progress-bar.json",
+        "https://aicanvas.me/r/andromeda-pro-radar-chart.json",
+        "https://aicanvas.me/r/andromeda-pro-stat-tile.json",
+        "https://aicanvas.me/r/andromeda-pro-user-card.json"
+      ],
+      "files": [
+        {
+          "path": "components/aicanvas/andromeda-pro/components/lib/motion.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/lib/motion.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/components/lib/responsive.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/lib/responsive.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/_shared/TemplateMobileChrome.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/_shared/TemplateMobileChrome.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/_shared/sample-pictures.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/_shared/sample-pictures.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/_shared/useScrollEdges.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/_shared/useScrollEdges.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/mission-control/CommsLog.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/mission-control/CommsLog.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/mission-control/Header.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/mission-control/Header.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/mission-control/NextDestination.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/mission-control/NextDestination.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/mission-control/Sidebar.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/mission-control/Sidebar.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/mission-control/SystemStatus.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/mission-control/SystemStatus.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/mission-control/TelemetryRow.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/mission-control/TelemetryRow.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/mission-control/VehiclesTable.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/mission-control/VehiclesTable.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/mission-control/data.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/mission-control/data.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/mission-control/index.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/mission-control/index.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/mission-control/sections/OverviewSection.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/mission-control/sections/OverviewSection.tsx"
+        }
+      ]
+    },
+    {
+      "name": "andromeda-pro-service-order",
+      "type": "registry:block",
+      "title": "Service Order (Andromeda Pro)",
+      "description": "Service Order composition from Andromeda Pro (CRM template). Pulls in the 18 Andromeda Pro components it uses, plus tokens. Requires AI Canvas Premium to install.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10",
+        "framer-motion@^12.38.0"
+      ],
+      "registryDependencies": [
+        "https://aicanvas.me/r/andromeda-pro-tokens.json",
+        "https://aicanvas.me/r/andromeda-pro-badge.json",
+        "https://aicanvas.me/r/andromeda-pro-button.json",
+        "https://aicanvas.me/r/andromeda-pro-card.json",
+        "https://aicanvas.me/r/andromeda-pro-corner-markers.json",
+        "https://aicanvas.me/r/andromeda-pro-data-table.json",
+        "https://aicanvas.me/r/andromeda-pro-drawer.json",
+        "https://aicanvas.me/r/andromeda-pro-heat-grid.json",
+        "https://aicanvas.me/r/andromeda-pro-icon-button.json",
+        "https://aicanvas.me/r/andromeda-pro-nav-item.json",
+        "https://aicanvas.me/r/andromeda-pro-panel-header.json",
+        "https://aicanvas.me/r/andromeda-pro-panel-menu.json",
+        "https://aicanvas.me/r/andromeda-pro-tag.json",
+        "https://aicanvas.me/r/andromeda-pro-tooltip.json",
+        "https://aicanvas.me/r/andromeda-pro-top-bar.json",
+        "https://aicanvas.me/r/andromeda-pro-user-card.json",
+        "https://aicanvas.me/r/andromeda-pro-user-menu.json"
+      ],
+      "files": [
+        {
+          "path": "components/aicanvas/andromeda-pro/components/lib/motion.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/lib/motion.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/components/lib/responsive.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/lib/responsive.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/_shared/TemplateMobileChrome.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/_shared/TemplateMobileChrome.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/_shared/sample-pictures.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/_shared/sample-pictures.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/service-order/ItemsPanel.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/service-order/ItemsPanel.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/service-order/OrderMetadataPanel.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/service-order/OrderMetadataPanel.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/service-order/SlaPanel.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/service-order/SlaPanel.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/service-order/data.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/service-order/data.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/service-order/index.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/service-order/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "andromeda-pro-resource-planning",
+      "type": "registry:block",
+      "title": "Resource Planning (Andromeda Pro)",
+      "description": "Resource Planning composition from Andromeda Pro (Scheduling template). Pulls in the 19 Andromeda Pro components it uses, plus tokens. Requires AI Canvas Premium to install.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10",
+        "framer-motion@^12.38.0",
+        "recharts@^3.8.1"
+      ],
+      "registryDependencies": [
+        "https://aicanvas.me/r/andromeda-pro-tokens.json",
+        "https://aicanvas.me/r/andromeda-pro-button.json",
+        "https://aicanvas.me/r/andromeda-pro-card.json",
+        "https://aicanvas.me/r/andromeda-pro-checkbox.json",
+        "https://aicanvas.me/r/andromeda-pro-corner-markers.json",
+        "https://aicanvas.me/r/andromeda-pro-data-table.json",
+        "https://aicanvas.me/r/andromeda-pro-date-range-picker.json",
+        "https://aicanvas.me/r/andromeda-pro-drawer.json",
+        "https://aicanvas.me/r/andromeda-pro-icon-button.json",
+        "https://aicanvas.me/r/andromeda-pro-nav-item.json",
+        "https://aicanvas.me/r/andromeda-pro-panel-header.json",
+        "https://aicanvas.me/r/andromeda-pro-panel-menu.json",
+        "https://aicanvas.me/r/andromeda-pro-search-field.json",
+        "https://aicanvas.me/r/andromeda-pro-toggle.json",
+        "https://aicanvas.me/r/andromeda-pro-top-bar.json",
+        "https://aicanvas.me/r/andromeda-pro-trend-chart.json",
+        "https://aicanvas.me/r/andromeda-pro-user-card.json",
+        "https://aicanvas.me/r/andromeda-pro-user-menu.json"
+      ],
+      "files": [
+        {
+          "path": "components/aicanvas/andromeda-pro/components/lib/motion.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/lib/motion.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/components/lib/responsive.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/lib/responsive.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/_shared/TemplateMobileChrome.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/_shared/TemplateMobileChrome.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/_shared/sample-pictures.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/_shared/sample-pictures.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/resource-planning/AllocationChart.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/resource-planning/AllocationChart.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/resource-planning/CapacityPanel.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/resource-planning/CapacityPanel.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/resource-planning/RequestsPanel.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/resource-planning/RequestsPanel.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/resource-planning/RequestsTable.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/resource-planning/RequestsTable.tsx"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/resource-planning/data.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/resource-planning/data.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/resource-planning/index.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/resource-planning/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "andromeda-pro-sign-in",
+      "type": "registry:block",
+      "title": "Sign In (Andromeda Pro)",
+      "description": "Sign In composition from Andromeda Pro (Authentication template). Pulls in the 4 Andromeda Pro components it uses, plus tokens. Requires AI Canvas Premium to install.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10",
+        "framer-motion@^12.38.0"
+      ],
+      "registryDependencies": [
+        "https://aicanvas.me/r/andromeda-pro-tokens.json",
+        "https://aicanvas.me/r/andromeda-pro-button.json",
+        "https://aicanvas.me/r/andromeda-pro-card.json",
+        "https://aicanvas.me/r/andromeda-pro-input.json"
+      ],
+      "files": [
+        {
+          "path": "components/aicanvas/andromeda-pro/components/lib/motion.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/lib/motion.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/components/lib/responsive.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/lib/responsive.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/_shared/sample-pictures.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/_shared/sample-pictures.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/sign-in/index.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/sign-in/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "andromeda-pro-sign-up",
+      "type": "registry:block",
+      "title": "Sign Up (Andromeda Pro)",
+      "description": "Sign Up composition from Andromeda Pro (Authentication template). Pulls in the 6 Andromeda Pro components it uses, plus tokens. Requires AI Canvas Premium to install.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "https://aicanvas.me/r/andromeda-pro-tokens.json",
+        "https://aicanvas.me/r/andromeda-pro-button.json",
+        "https://aicanvas.me/r/andromeda-pro-card.json",
+        "https://aicanvas.me/r/andromeda-pro-input.json",
+        "https://aicanvas.me/r/andromeda-pro-nodes.json",
+        "https://aicanvas.me/r/andromeda-pro-strength-meter.json"
+      ],
+      "files": [
+        {
+          "path": "components/aicanvas/andromeda-pro/components/lib/responsive.ts",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/components/lib/responsive.ts"
+        },
+        {
+          "path": "components/aicanvas/andromeda-pro/examples/sign-up/index.tsx",
+          "type": "registry:lib",
+          "target": "components/aicanvas/andromeda-pro/examples/sign-up/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "andromeda-pro-all",
       "type": "registry:block",
       "title": "Andromeda Pro: full system",
       "description": "Every Andromeda Pro component, token, and template, plus the Andromeda Pro brain, in one install. Requires AI Canvas Premium to install.",
       "registryDependencies": [
         "https://aicanvas.me/r/andromeda-pro.json",
+        "https://aicanvas.me/r/andromeda-pro-city-operations.json",
+        "https://aicanvas.me/r/andromeda-pro-signal-room.json",
         "https://aicanvas.me/r/andromeda-pro-mission-control.json",
         "https://aicanvas.me/r/andromeda-pro-service-order.json",
         "https://aicanvas.me/r/andromeda-pro-resource-planning.json",
-        "https://aicanvas.me/r/andromeda-pro-signal-room.json",
+        "https://aicanvas.me/r/andromeda-pro-sign-in.json",
+        "https://aicanvas.me/r/andromeda-pro-sign-up.json",
         "https://aicanvas.me/r/andromeda-pro-brain.json"
       ]
     }

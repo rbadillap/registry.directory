@@ -1157,6 +1157,16 @@
       ]
     },
     {
+      "name": "image-generation-loader",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "ui/image-generation-loader.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "comet-card",
       "type": "registry:ui",
       "files": [
@@ -2719,6 +2729,21 @@
       ]
     },
     {
+      "name": "logo-cloud-multiple-rows",
+      "type": "registry:block",
+      "description": "A four-row logo cloud with mixed filled and empty tiles that scroll in opposite directions.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "block/logo-cloud-multiple-rows.tsx",
+          "type": "registry:block",
+          "target": "block/logo-cloud-multiple-rows.tsx"
+        }
+      ]
+    },
+    {
       "name": "features-grid-with-large-skeletons",
       "type": "registry:block",
       "description": "A grid of 3 with micro-interactions and animations. Title and descriptions are flex row aligned on desktop screens and column on mobile screens. There are skeleton items with perspective designs, adding depth into the design. Cards have title, description, badge, and tags.",
@@ -3009,6 +3034,37 @@
           "path": "block/testimonials-with-centered-highlight.tsx",
           "type": "registry:block",
           "target": "block/testimonials-with-centered-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-photo-carousel",
+      "type": "registry:block",
+      "description": "Full-bleed portrait testimonial carousel with hover-expand quotes",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "files": [
+        {
+          "path": "block/testimonials-photo-carousel.tsx",
+          "type": "registry:block",
+          "target": "block/testimonials-photo-carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-photo-carousel-tall",
+      "type": "registry:block",
+      "description": "Equal-width portrait testimonial carousel where the active card grows in height",
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react"
+      ],
+      "files": [
+        {
+          "path": "block/testimonials-photo-carousel-tall.tsx",
+          "type": "registry:block",
+          "target": "block/testimonials-photo-carousel-tall.tsx"
         }
       ]
     },
@@ -3619,6 +3675,21 @@
           "path": "block/pricing-with-header-and-icons.tsx",
           "type": "registry:block",
           "target": "block/pricing-with-header-and-icons.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-with-icons",
+      "type": "registry:block",
+      "description": "Three-tier pricing cards with colorful icons on each limit row",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "files": [
+        {
+          "path": "block/pricing-with-icons.tsx",
+          "type": "registry:block",
+          "target": "block/pricing-with-icons.tsx"
         }
       ]
     },
