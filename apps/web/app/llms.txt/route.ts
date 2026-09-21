@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import type { DirectoryEntry } from "@/lib/types"
+import { registryBasePath } from "@/lib/registry-path"
 
 // Read local directory.json at build time. No remote fetches, so this can be
 // fully static.
@@ -9,22 +10,11 @@ export const revalidate = 86400
 
 const BASE_URL = "https://registry.directory"
 
-// Resolve a registry's canonical registry.directory path: /{owner}/{repo}
-// from github_url, else /{handle} from the namespace. Falls back to the
-// registry's own site when neither exists.
+// A registry's canonical registry.directory URL; its own site when it has
+// no route here.
 function registryLink(registry: DirectoryEntry): string {
-  if (registry.github_url) {
-    const match = registry.github_url.match(/github\.com\/([^/]+)\/([^/]+)/)
-    if (match && match[1] && match[2]) {
-      const owner = match[1]
-      const repo = match[2].replace(/\.git$/, "")
-      return `${BASE_URL}/${owner}/${repo}`
-    }
-  }
-  if (registry.namespace) {
-    return `${BASE_URL}/${registry.namespace.replace(/^@/, "")}`
-  }
-  return registry.url
+  const path = registryBasePath(registry)
+  return path ? `${BASE_URL}${path}` : registry.url
 }
 
 function oneLine(text: string | undefined, max = 160): string {

@@ -12,11 +12,12 @@
 // a deliberate choice, and a guard that expires on a calendar would block a
 // hotfix for a reason unrelated to the fix.
 
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import {
   DATA_DIR,
   REGISTRIES_DIR,
+  WEB_DIR,
   listRegistryFiles,
   loadDirectory,
   indexUrl,
@@ -191,6 +192,13 @@ async function main() {
   //    entry is what ties the three files to one another instead of leaving
   //    each internally consistent and collectively wrong.
   const byKey = new Map(manifest.registries.map((r) => [r.key, r]));
+  // Top-level routes the app owns (about, docs, r, …), read from app/ so the
+  // list cannot go stale. Route groups and dynamic segments are not URLs.
+  const ownRoutes = new Set(
+    (await readdir(join(WEB_DIR, "app"), { withFileTypes: true }))
+      .filter((d) => d.isDirectory() && !/^[([]/.test(d.name))
+      .map((d) => d.name.toLowerCase())
+  );
   const unaccounted = [];
   const directory = await loadDirectory();
   const expectedKeys = new Set();
@@ -230,6 +238,13 @@ async function main() {
     // item would be listed in search and in the sitemap and answer 404, which
     // is the failure this build is meant to make impossible.
     if (!parseGithubRef(entry.github_url)) {
+      // Its handle is its key, and a static route always wins over /{handle}:
+      // the registry would be listed everywhere and open someone else's page.
+      if (ownRoutes.has(key)) {
+        fail(
+          `${entry.name} is reachable only by handle, and its handle "${key}" is a route the site already owns (/${key}) — give it a distinct namespace or name`
+        );
+      }
       const nested = (viewsByKey.get(key)?.items ?? [])
         .filter((item) => item.name?.includes("/"))
         .map((item) => item.name);

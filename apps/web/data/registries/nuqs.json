@@ -105,6 +105,25 @@
           "target": "~/src/lib/typed-links.ts"
         }
       ]
+    },
+    {
+      "name": "parser-uuid",
+      "type": "registry:item",
+      "title": "UUID",
+      "description": "Parse and validate UUID strings (versions 1-8) from the query string.",
+      "categories": [
+        "parser"
+      ],
+      "dependencies": [
+        "nuqs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/items/parser-uuid.ts",
+          "type": "registry:file",
+          "target": "~/lib/parsers/uuid.ts"
+        }
+      ]
     }
   ]
 }

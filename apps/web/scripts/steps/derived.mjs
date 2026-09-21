@@ -34,7 +34,9 @@ function href(entry) {
   const m = entry.github_url?.match(/github\.com\/([^/]+)\/([^/]+)/);
   if (m) return `/${m[1]}/${m[2].replace(/\.git$/, "")}`;
   if (entry.namespace) return `/${entry.namespace.replace(/^@/, "")}`;
-  return null;
+  // Neither repo nor namespace: the handle is the name slug, which is what
+  // registryKey() returns for such an entry (see lib/registry-path.ts).
+  return `/${registryKey(entry)}`;
 }
 
 function relativeUpdated(days) {

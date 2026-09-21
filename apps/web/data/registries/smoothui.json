@@ -31,6 +31,16 @@
       "title": "Data",
       "files": [
         {
+          "path": "app-icons.ts",
+          "type": "registry:lib",
+          "target": "lib/smoothui-data/app-icons.ts"
+        },
+        {
+          "path": "cast.ts",
+          "type": "registry:lib",
+          "target": "lib/smoothui-data/cast.ts"
+        },
+        {
           "path": "component-meta.ts",
           "type": "registry:lib",
           "target": "lib/smoothui-data/component-meta.ts"
@@ -39,6 +49,21 @@
           "path": "index.ts",
           "type": "registry:lib",
           "target": "lib/smoothui-data/index.ts"
+        },
+        {
+          "path": "people.ts",
+          "type": "registry:lib",
+          "target": "lib/smoothui-data/people.ts"
+        },
+        {
+          "path": "products.ts",
+          "type": "registry:lib",
+          "target": "lib/smoothui-data/products.ts"
+        },
+        {
+          "path": "scenes.ts",
+          "type": "registry:lib",
+          "target": "lib/smoothui-data/scenes.ts"
         },
         {
           "path": "smoothui-schema.ts",
@@ -968,7 +993,8 @@
         "motion"
       ],
       "registryDependencies": [
-        "https://smoothui.dev/r/ai-core.json"
+        "https://smoothui.dev/r/ai-core.json",
+        "https://smoothui.dev/r/orb.json"
       ],
       "files": [
         {
@@ -1151,6 +1177,42 @@
       ]
     },
     {
+      "name": "animated-list",
+      "type": "registry:ui",
+      "title": "Animated List",
+      "description": "A list that animates additions, removals and reordering, with an optional auto-feed mode.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/animated-list/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-number-input",
+      "type": "registry:ui",
+      "title": "Animated Number Input",
+      "description": "A numeric field with rolling digits, keyboard stepping and horizontal scrub-to-change.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/animated-number-input/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "animated-o-t-p-input",
       "type": "registry:ui",
       "title": "Animated O T P Input",
@@ -1296,6 +1358,9 @@
         "motion",
         "lucide-react"
       ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/data.json"
+      ],
       "files": [
         {
           "path": "index.tsx",
@@ -1319,6 +1384,82 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/apple-invites/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "arcade-pixel",
+      "type": "registry:ui",
+      "title": "Arcade Pixel",
+      "description": "An ArcadePixel component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/arcade-pixel/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ascii-render",
+      "type": "registry:ui",
+      "title": "Ascii Render",
+      "description": "An AsciiRender component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/ascii-render/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aurora-curtain",
+      "type": "registry:ui",
+      "title": "Aurora Curtain",
+      "description": "An AuroraCurtain background component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/aurora-curtain/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "auth-form",
+      "type": "registry:ui",
+      "title": "Auth Form",
+      "description": "A presentation-only sign-in / sign-up form that reveals fields progressively and stays fully accessible.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json",
+        "https://smoothui.dev/r/lib.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/auth-form/index.tsx"
         }
       ]
     },
@@ -1427,6 +1568,25 @@
       ]
     },
     {
+      "name": "border-beam",
+      "type": "registry:ui",
+      "title": "Border Beam",
+      "description": "A BorderBeam component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/border-beam/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "bottom-up-letters",
       "type": "registry:ui",
       "title": "Bottom Up Letters",
@@ -1463,6 +1623,22 @@
       ]
     },
     {
+      "name": "breakpoint-indicator",
+      "type": "registry:ui",
+      "title": "Breakpoint Indicator",
+      "description": "A BreakpointIndicator component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/breakpoint-indicator/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "button-copy",
       "type": "registry:ui",
       "title": "Button Copy",
@@ -1476,6 +1652,25 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/button-copy/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-swipe-deck",
+      "type": "registry:ui",
+      "title": "Card Swipe Deck",
+      "description": "A CardSwipeDeck component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/card-swipe-deck/index.tsx"
         }
       ]
     },
@@ -1531,6 +1726,27 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/clip-corners-button/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code Block",
+      "description": "A CodeBlock component for SmoothUI.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/code-block/index.tsx"
         }
       ]
     },
@@ -1597,6 +1813,46 @@
       ]
     },
     {
+      "name": "country-dialog",
+      "type": "registry:ui",
+      "title": "Country Dialog",
+      "description": "A CountryDialog component for SmoothUI.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/country-dialog/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "coverflow-carousel",
+      "type": "registry:ui",
+      "title": "Coverflow Carousel",
+      "description": "A CoverflowCarousel component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/coverflow-carousel/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "cursor-follow",
       "type": "registry:ui",
       "title": "Cursor Follow",
@@ -1617,6 +1873,22 @@
           "path": "use-cursor-position.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/cursor-follow/use-cursor-position.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cursor-image-trail",
+      "type": "registry:ui",
+      "title": "Cursor Image Trail",
+      "description": "A CursorImageTrail component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/cursor-image-trail/index.tsx"
         }
       ]
     },
@@ -1655,6 +1927,57 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/dialog/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dither-chart",
+      "type": "registry:ui",
+      "title": "Dither Chart",
+      "description": "A DitherChart component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/dither-chart/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dither-image",
+      "type": "registry:ui",
+      "title": "Dither Image",
+      "description": "A DitherImage component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/dither-image/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dock",
+      "type": "registry:ui",
+      "title": "Dock",
+      "description": "A Dock component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/dock/index.tsx"
         }
       ]
     },
@@ -1698,6 +2021,25 @@
       ]
     },
     {
+      "name": "drawing-cursor",
+      "type": "registry:ui",
+      "title": "Drawing Cursor",
+      "description": "A DrawingCursor component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/drawing-cursor/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "dropdown-menu",
       "type": "registry:ui",
       "title": "Dropdown Menu",
@@ -1714,6 +2056,22 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/dropdown-menu/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "duration-picker",
+      "type": "registry:ui",
+      "title": "Duration Picker",
+      "description": "A DurationPicker component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/duration-picker/index.tsx"
         }
       ]
     },
@@ -1735,6 +2093,42 @@
       ]
     },
     {
+      "name": "emboss-surface",
+      "type": "registry:ui",
+      "title": "Emboss Surface",
+      "description": "An EmbossSurface component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/emboss-surface/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "emoji-reaction",
+      "type": "registry:ui",
+      "title": "Emoji Reaction",
+      "description": "A reaction bar with particle bursts, a rolling odometer count, and a hover/focus emoji picker.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/emoji-reaction/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "expandable-cards",
       "type": "registry:ui",
       "title": "Expandable Cards",
@@ -1748,6 +2142,25 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/expandable-cards/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "expandable-navbar",
+      "type": "registry:ui",
+      "title": "Expandable Navbar",
+      "description": "An ExpandableNavbar component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/expandable-navbar/index.tsx"
         }
       ]
     },
@@ -1787,6 +2200,27 @@
       ]
     },
     {
+      "name": "favicon-search",
+      "type": "registry:ui",
+      "title": "Favicon Search",
+      "description": "A keyboard-driven search field that shows each result's favicon, with a combobox listbox and highlighted matches.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/lib.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/favicon-search/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "figma-comment",
       "type": "registry:ui",
       "title": "Figma Comment",
@@ -1812,6 +2246,45 @@
       ]
     },
     {
+      "name": "file-tree",
+      "type": "registry:ui",
+      "title": "File Tree",
+      "description": "A FileTree component for SmoothUI.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/file-tree/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "floating-navbar",
+      "type": "registry:ui",
+      "title": "Floating Navbar",
+      "description": "A FloatingNavbar component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/floating-navbar/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "focus-blur-resolve",
       "type": "registry:ui",
       "title": "Focus Blur Resolve",
@@ -1824,6 +2297,22 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/focus-blur-resolve/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "folder-reveal",
+      "type": "registry:ui",
+      "title": "Folder Reveal",
+      "description": "A FolderReveal component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/folder-reveal/index.tsx"
         }
       ]
     },
@@ -1865,6 +2354,22 @@
       ]
     },
     {
+      "name": "glass-card",
+      "type": "registry:ui",
+      "title": "Glass Card",
+      "description": "A GlassCard component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/glass-card/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "glow-hover-card",
       "type": "registry:ui",
       "title": "Glow Hover Card",
@@ -1880,6 +2385,19 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/glow-hover-card/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "gooey-filter",
+      "type": "registry:ui",
+      "title": "Gooey Filter",
+      "description": "A GooeyFilter component for SmoothUI.",
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/gooey-filter/index.tsx"
         }
       ]
     },
@@ -1905,6 +2423,38 @@
       ]
     },
     {
+      "name": "gravity-letters",
+      "type": "registry:ui",
+      "title": "Gravity Letters",
+      "description": "A GravityLetters component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/gravity-letters/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "gravity-stars",
+      "type": "registry:ui",
+      "title": "Gravity Stars",
+      "description": "A GravityStars particle background component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/gravity-stars/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "grid-loader",
       "type": "registry:ui",
       "title": "Grid Loader",
@@ -1917,6 +2467,84 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/grid-loader/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "holographic-foil",
+      "type": "registry:ui",
+      "title": "Holographic Foil",
+      "description": "A HolographicFoil component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/holographic-foil/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-expand",
+      "type": "registry:ui",
+      "title": "Hover Expand",
+      "description": "A HoverExpand component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/hover-expand/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-image-list",
+      "type": "registry:ui",
+      "title": "Hover Image List",
+      "description": "A HoverImageList component for SmoothUI.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/hover-image-list/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-generation-panel",
+      "type": "registry:ui",
+      "title": "Image Generation Panel",
+      "description": "A text-to-image generation console — prompt and settings up top, a full-width 2x2 batch resolving from low-res mosaic to sharp below.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/ai-core.json",
+        "https://smoothui.dev/r/ai-loader.json",
+        "https://smoothui.dev/r/ai-prompt-input.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/image-generation-panel/index.tsx"
         }
       ]
     },
@@ -1952,6 +2580,26 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/infinite-slider/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "inline-testimonials",
+      "type": "registry:ui",
+      "title": "Inline Testimonials",
+      "description": "Testimonial quotes woven into a paragraph that expand inline on hover or focus.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/inline-testimonials/index.tsx"
         }
       ]
     },
@@ -2012,6 +2660,22 @@
       ]
     },
     {
+      "name": "kinetic-type-scroll",
+      "type": "registry:ui",
+      "title": "Kinetic Type Scroll",
+      "description": "A KineticTypeScroll text animation component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/kinetic-type-scroll/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "line-by-line-slide",
       "type": "registry:ui",
       "title": "Line By Line Slide",
@@ -2024,6 +2688,38 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/line-by-line-slide/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "liquid-metal",
+      "type": "registry:ui",
+      "title": "Liquid Metal",
+      "description": "A LiquidMetal component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/liquid-metal/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "mac-terminal",
+      "type": "registry:ui",
+      "title": "Mac Terminal",
+      "description": "A MacTerminal component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/mac-terminal/index.tsx"
         }
       ]
     },
@@ -2042,6 +2738,22 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/magnetic-button/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "magnetic-field",
+      "type": "registry:ui",
+      "title": "Magnetic Field",
+      "description": "A MagneticField component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/magnetic-field/index.tsx"
         }
       ]
     },
@@ -2078,6 +2790,22 @@
       ]
     },
     {
+      "name": "morph-icon",
+      "type": "registry:ui",
+      "title": "Morph Icon",
+      "description": "A MorphIcon component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/morph-icon/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "morph-surface",
       "type": "registry:ui",
       "title": "Morph Surface",
@@ -2100,6 +2828,42 @@
           "path": "use-click-outside.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/morph-surface/use-click-outside.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motion-loader",
+      "type": "registry:ui",
+      "title": "Motion Loader",
+      "description": "A MotionLoader component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/motion-loader/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "music-toggle",
+      "type": "registry:ui",
+      "title": "Music Toggle",
+      "description": "A play/pause control shaped like a spinning record, with a live waveform and seekable progress ring.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/music-toggle/index.tsx"
         }
       ]
     },
@@ -2139,6 +2903,41 @@
       ]
     },
     {
+      "name": "orb",
+      "type": "registry:ui",
+      "title": "Orb",
+      "description": "An Orb component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/orb/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbital-image-wheel",
+      "type": "registry:ui",
+      "title": "Orbital Image Wheel",
+      "description": "An OrbitalImageWheel component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/orbital-image-wheel/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "organic-merge-transition",
       "type": "registry:ui",
       "title": "Organic Merge Transition",
@@ -2151,6 +2950,22 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/organic-merge-transition/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-preloader",
+      "type": "registry:ui",
+      "title": "Page Preloader",
+      "description": "A page-preloader curtain that plays once and then uncovers the page.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/page-preloader/index.tsx"
         }
       ]
     },
@@ -2172,6 +2987,22 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/pagination/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "parallax-layers",
+      "type": "registry:ui",
+      "title": "Parallax Layers",
+      "description": "Multi-layer depth parallax for hero sections, with optional pointer-driven parallax.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/parallax-layers/index.tsx"
         }
       ]
     },
@@ -2208,6 +3039,22 @@
       ]
     },
     {
+      "name": "perspective-text-3d",
+      "type": "registry:ui",
+      "title": "Perspective Text 3d",
+      "description": "A PerspectiveText3D text animation component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/perspective-text-3d/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "photo-stack",
       "type": "registry:ui",
       "title": "Photo Stack",
@@ -2237,6 +3084,64 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/phototab/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pinned-list",
+      "type": "registry:ui",
+      "title": "Pinned List",
+      "description": "A list where selected items pin to the top and animate out of the flow into a pinned section.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/pinned-list/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pixel-brush-canvas",
+      "type": "registry:ui",
+      "title": "Pixel Brush Canvas",
+      "description": "A PixelBrushCanvas component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/pixel-brush-canvas/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pixel-flow-field",
+      "type": "registry:ui",
+      "title": "Pixel Flow Field",
+      "description": "A PixelFlowField background component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/pixel-flow-field/index.tsx"
         }
       ]
     },
@@ -2306,6 +3211,22 @@
       ]
     },
     {
+      "name": "progressive-blur",
+      "type": "registry:ui",
+      "title": "Progressive Blur",
+      "description": "A ProgressiveBlur component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/progressive-blur/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "radial-circles-transition",
       "type": "registry:ui",
       "title": "Radial Circles Transition",
@@ -2339,6 +3260,22 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/radio-group/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ransom-note",
+      "type": "registry:ui",
+      "title": "Ransom Note",
+      "description": "A RansomNote component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/ransom-note/index.tsx"
         }
       ]
     },
@@ -2397,6 +3334,22 @@
       ]
     },
     {
+      "name": "rolling-text",
+      "type": "registry:ui",
+      "title": "Rolling Text",
+      "description": "A RollingText text animation component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/rolling-text/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "scale-down-fade",
       "type": "registry:ui",
       "title": "Scale Down Fade",
@@ -2422,6 +3375,41 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/scramble-hover/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-image-reveal",
+      "type": "registry:ui",
+      "title": "Scroll Image Reveal",
+      "description": "An image revealed by an animated mask as it scrolls into view, with a counter-parallax on the image.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/scroll-image-reveal/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-progress",
+      "type": "registry:ui",
+      "title": "Scroll Progress",
+      "description": "A reading-progress indicator with bar, ring, number and segmented variants.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/scroll-progress/index.tsx"
         }
       ]
     },
@@ -2858,6 +3846,27 @@
       ]
     },
     {
+      "name": "social-hover-card",
+      "type": "registry:ui",
+      "title": "Social Hover Card",
+      "description": "A profile hover card: avatar/handle trigger that expands into a preview with stats, bio and a follow action.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/social-hover-card/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "social-selector",
       "type": "registry:ui",
       "title": "Social Selector",
@@ -2906,6 +3915,19 @@
       ]
     },
     {
+      "name": "squircle",
+      "type": "registry:ui",
+      "title": "Squircle",
+      "description": "A Squircle component for SmoothUI.",
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/squircle/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "stagger-from-center",
       "type": "registry:ui",
       "title": "Stagger From Center",
@@ -2938,6 +3960,59 @@
       ]
     },
     {
+      "name": "svg-clip-mask",
+      "type": "registry:ui",
+      "title": "Svg Clip Mask",
+      "description": "Reveals any children through a custom SVG shape mask that can morph on a loop, on scroll, or on hover.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/svg-clip-mask/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "svg-draw-on-scroll",
+      "type": "registry:ui",
+      "title": "Svg Draw On Scroll",
+      "description": "An SVG path that draws itself as you scroll, optionally with a marker riding the tip.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/svg-draw-on-scroll/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "swap-panel",
+      "type": "registry:ui",
+      "title": "Swap Panel",
+      "description": "A SwapPanel component for SmoothUI.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/swap-panel/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "switchboard-card",
       "type": "registry:ui",
       "title": "Switchboard Card",
@@ -2950,6 +4025,74 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/switchboard-card/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "text-morph",
+      "type": "registry:ui",
+      "title": "Text Morph",
+      "description": "A TextMorph text animation component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/text-morph/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theme-toggle",
+      "type": "registry:ui",
+      "title": "Theme Toggle",
+      "description": "A light/dark/system theme switch with sun-moon, pill, switch and orb visual treatments.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/theme-toggle/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tilt-card",
+      "type": "registry:ui",
+      "title": "Tilt Card",
+      "description": "A TiltCard component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/tilt-card/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "time-machine-stack",
+      "type": "registry:ui",
+      "title": "Time Machine Stack",
+      "description": "A TimeMachineStack component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/time-machine-stack/index.tsx"
         }
       ]
     },
@@ -3004,6 +4147,25 @@
       ]
     },
     {
+      "name": "unlock-face-id",
+      "type": "registry:ui",
+      "title": "Unlock Face Id",
+      "description": "An UnlockFaceId component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/unlock-face-id/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "user-account-avatar",
       "type": "registry:ui",
       "title": "User Account Avatar",
@@ -3021,6 +4183,85 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/user-account-avatar/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "vector-editor-toolbar",
+      "type": "registry:ui",
+      "title": "Vector Editor Toolbar",
+      "description": "A Figma-style floating vector toolbar with tool selection, nested flyouts and a contextual properties bar.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/vector-editor-toolbar/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "video-ambient",
+      "type": "registry:ui",
+      "title": "Video Ambient",
+      "description": "A video with a two-pass Ambilight-style glow sampled live from its own frames, with a CORS-safe static fallback.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/video-ambient/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "video-modal",
+      "type": "registry:ui",
+      "title": "Video Modal",
+      "description": "A video thumbnail that morphs into a full accessible player inside a modal, with a custom keyboard-operable control bar.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/video-modal/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wallet-card",
+      "type": "registry:ui",
+      "title": "Wallet Card",
+      "description": "A WalletCard component for SmoothUI.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/wallet-card/index.tsx"
         }
       ]
     },
@@ -3094,7 +4335,8 @@
         "https://smoothui.dev/r/ai-suggestions.json",
         "https://smoothui.dev/r/ai-task-list.json",
         "https://smoothui.dev/r/ai-tool-call.json",
-        "https://smoothui.dev/r/siri-orb.json"
+        "https://smoothui.dev/r/siri-orb.json",
+        "https://smoothui.dev/r/data.json"
       ],
       "files": [
         {

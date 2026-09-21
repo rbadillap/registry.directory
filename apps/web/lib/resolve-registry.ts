@@ -4,30 +4,16 @@ import type { DirectoryEntry } from "./types"
 import type { Registry } from "./registry-types"
 import { loadRegistryView } from "./registry-data"
 
-export type GithubRef = { owner: string; repo: string }
+import { entryHandle, parseGithubRef } from "./registry-path"
 
-export function parseGithubRef(githubUrl?: string): GithubRef | null {
-  if (!githubUrl) return null
-  const match = githubUrl.match(/github\.com\/([^/]+)\/([^/]+)/)
-  if (!match?.[1] || !match[2]) return null
-  return { owner: match[1], repo: match[2].replace(/\.git$/, "") }
-}
-
-// "@efferd" → "efferd"; null when the entry has no namespace.
-export function entryHandle(entry: DirectoryEntry): string | null {
-  if (!entry.namespace) return null
-  return entry.namespace.replace(/^@/, "")
-}
-
-// Canonical route prefix for an entry: github pair wins, handle is the
-// fallback for namespaced entries without a repo, null when neither exists.
-export function registryBasePath(entry: DirectoryEntry): string | null {
-  const gh = parseGithubRef(entry.github_url)
-  if (gh) return `/${gh.owner}/${gh.repo}`
-  const handle = entryHandle(entry)
-  if (handle) return `/${handle}`
-  return null
-}
+// The route rules live in registry-path.ts (pure, client-safe); re-exported
+// so server callers keep one import.
+export {
+  entryHandle,
+  parseGithubRef,
+  registryBasePath,
+  type GithubRef,
+} from "./registry-path"
 
 export async function loadDirectory(): Promise<DirectoryEntry[]> {
   const filePath = join(process.cwd(), "public/directory.json")
