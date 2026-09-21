@@ -24,6 +24,7 @@ import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from
 import type { IndexedItem } from "@/lib/items-index";
 import type { ItemIndexStatus } from "@/hooks/use-item-index";
 import { addUtmParams } from "@/lib/utm-utils";
+import { registryBasePath } from "@/lib/registry-path";
 import { useAnalytics } from "@/hooks/use-analytics";
 import { formatStars, formatRelativeTime } from "@/lib/format-utils";
 import { REGISTRY_TYPE_LABELS, REGISTRY_TYPE_ICONS } from "@/lib/registry-mappings";
@@ -86,21 +87,8 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
         const s = stats?.[entry.url];
         const affiliate = affiliates?.[entry.url];
 
-        // Build viewer route for Components tab: github pair first, then the
-        // /{handle} shortlink for namespaced entries without a repo
-        const viewerHref = (() => {
-          if (!showViewButton) return null;
-          const match = entry.github_url?.match(/github\.com\/([^/]+)\/([^/]+)/);
-          if (match) {
-            const owner = match[1];
-            const repo = match[2]?.replace(/\.git$/, '');
-            return `/${owner}/${repo}`;
-          }
-          if (entry.namespace) {
-            return `/${entry.namespace.replace(/^@/, '')}`;
-          }
-          return null;
-        })();
+        // Viewer route for the Components tab
+        const viewerHref = showViewButton ? registryBasePath(entry) : null;
 
         // Standard card (same layout for all, with an Affiliate ribbon where a link earns a commission)
         return (
