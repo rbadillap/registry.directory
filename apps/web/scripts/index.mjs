@@ -14,6 +14,7 @@
 import { join } from "node:path";
 import {
   DATA_DIR,
+  DEFINITIVE_ERROR,
   REGISTRIES_DIR,
   formatKB,
   listRegistryFiles,
@@ -88,6 +89,14 @@ async function main() {
     items: r.items,
     status: r.status,
     resolvable: r.resolvable ?? true,
+    // Items the origin refused, by verdict. Absent means none: a zero would
+    // put a field on every record to say nothing.
+    ...(r.gated ? { gated: r.gated } : {}),
+    ...(r.gone ? { gone: r.gone } : {}),
+    // Items never asked because the origin throttled the probe. They are
+    // listed in /r like any unmarked item; this is what tells that apart
+    // from "asked, and served".
+    ...(r.unprobed ? { unprobed: r.unprobed } : {}),
     ...(r.embedsContent ? { originEmbedsContent: true } : {}),
     ...(r.error ? { error: r.error } : {}),
   });
@@ -125,6 +134,10 @@ async function main() {
       reused: reusedViews.length,
       missing: missing.length,
       items: entries.reduce((sum, r) => sum + r.items, 0),
+      // Listed in the views, refused by their origin. /r leaves them out.
+      gated: entries.reduce((sum, r) => sum + (r.gated ?? 0), 0),
+      gone: entries.reduce((sum, r) => sum + (r.gone ?? 0), 0),
+      unprobed: entries.reduce((sum, r) => sum + (r.unprobed ?? 0), 0),
       github: github.total,
       collections: derived.collections,
     },
@@ -146,6 +159,20 @@ async function main() {
   console.log(
     `ok ${ok.length} · reused ${reusedViews.length} · missing ${missing.length} · ${elapsed}s`
   );
+  const { gated, gone, unprobed } = manifest.counts;
+  if (gated + gone > 0) {
+    console.log(
+      `origins refuse ${(gated + gone).toLocaleString("en-US")} of them (${gated.toLocaleString("en-US")} gated, ${gone.toLocaleString("en-US")} gone) — /r lists the rest`
+    );
+  }
+  const throttled = entries.filter((r) => r.unprobed);
+  if (throttled.length > 0) {
+    console.log(
+      `${unprobed.toLocaleString("en-US")} item(s) left unprobed, their origin throttled the run: ${throttled
+        .map((r) => `${r.name} (${r.unprobed})`)
+        .join(", ")}`
+    );
+  }
   if (reusedViews.length > 0) {
     console.log(`reused: ${reusedViews.map((r) => `${r.name} (${r.error})`).join(", ")}`);
   }
@@ -156,9 +183,7 @@ async function main() {
     // A quarantined origin is worth a second chance only when its answer was
     // "wait" or "my fault": 429 and 5xx come back, 402/403/404 do not. The
     // command below names just the retryable ones, so it is safe to paste.
-    const retryable = missing.filter(
-      (r) => !/HTTP (400|401|402|403|404|405|410|451)\b/.test(r.error ?? "")
-    );
+    const retryable = missing.filter((r) => !DEFINITIVE_ERROR.test(r.error ?? ""));
     if (retryable.length > 0) {
       console.log(
         `\nto retry the ${retryable.length} throttled one(s) — patient, minutes long:\n` +

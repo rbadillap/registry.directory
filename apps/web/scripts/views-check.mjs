@@ -119,6 +119,30 @@ async function main() {
         `data/registries/${record.key}.json says resolvable=${view.resolvable}, manifest says ${record.resolvable}`
       );
     }
+    // The verdicts /r filters on. A value outside the two the indexer writes
+    // would be skipped by the catalog as if it were "unavailable" for a reason
+    // nobody named; a count that disagrees with the file means one of the two
+    // was edited by hand.
+    const unavailable = { gated: 0, gone: 0 };
+    let unknownVerdicts = 0;
+    for (const item of view.items ?? []) {
+      if (item?.unavailable === undefined) continue;
+      if (item.unavailable in unavailable) unavailable[item.unavailable] += 1;
+      else unknownVerdicts += 1;
+    }
+    if (unknownVerdicts > 0) {
+      fail(
+        `data/registries/${record.key}.json has ${unknownVerdicts} item(s) with an unavailable value other than "gated" or "gone"`
+      );
+    }
+    for (const verdict of ["gated", "gone"]) {
+      if (unavailable[verdict] !== (record[verdict] ?? 0)) {
+        fail(
+          `data/registries/${record.key}.json holds ${unavailable[verdict]} ${verdict} item(s), manifest claims ${record[verdict] ?? 0}`
+        );
+      }
+    }
+
     if (Boolean(view.embedsContent) !== Boolean(record.originEmbedsContent)) {
       fail(
         `data/registries/${record.key}.json says embedsContent=${Boolean(view.embedsContent)}, manifest says ${Boolean(record.originEmbedsContent)}`
@@ -168,6 +192,12 @@ async function main() {
 
   if (manifest.counts?.items !== undefined && manifest.counts.items !== items) {
     fail(`manifest counts.items is ${manifest.counts.items}, the views hold ${items}`);
+  }
+  for (const verdict of ["gated", "gone", "unprobed"]) {
+    const total = manifest.registries.reduce((sum, r) => sum + (r[verdict] ?? 0), 0);
+    if (manifest.counts?.[verdict] !== undefined && manifest.counts[verdict] !== total) {
+      fail(`manifest counts.${verdict} is ${manifest.counts[verdict]}, the records sum to ${total}`);
+    }
   }
 
   // 2. No view on disk that the manifest does not account for. An orphan is
@@ -325,6 +355,15 @@ async function main() {
   // 5. Recorded gaps, surfaced but never fatal. A registry whose origin is
   //    permanently gone would otherwise block every build forever, and the
   //    removing it from the directory is a separate, deliberate change.
+  const throttled = manifest.registries.filter((r) => r.unprobed);
+  if (throttled.length > 0) {
+    notes.push(
+      `${throttled.length} origin(s) throttled the item probe, so some of their items are listed in /r unverified: ${throttled
+        .map((r) => `${r.name} (${r.unprobed} unprobed)`)
+        .join(", ")}`
+    );
+  }
+
   const missing = manifest.registries.filter((r) => r.status === "missing");
   if (missing.length > 0) {
     notes.push(
@@ -392,8 +431,11 @@ function report(manifest, items = 0) {
   if (!manifest) process.exit(1);
 
   const views = manifest.registries.filter((r) => r.status !== "missing").length;
+  const refused = (manifest.counts?.gated ?? 0) + (manifest.counts?.gone ?? 0);
   console.log(
-    `views:check ok — ${views} views, ${items.toLocaleString("en-US")} items, generated ${manifest.date}`
+    `views:check ok — ${views} views, ${items.toLocaleString("en-US")} items` +
+      `${refused > 0 ? ` (${refused.toLocaleString("en-US")} refused by their origin, left out of /r)` : ""}` +
+      `, generated ${manifest.date}`
   );
 }
 

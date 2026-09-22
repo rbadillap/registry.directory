@@ -112,7 +112,9 @@ function catalogResponse(catalog: Catalog, request: NextRequest): Response {
 
   return jsonResponse({
     $schema: "https://ui.shadcn.com/schema/registry.json",
-    name: "registry.directory",
+    // The official index compares this, lowercased and without the "@", to
+    // the namespace it lists us under; "registry.directory" did not match.
+    name: "registrydirectory",
     homepage: "https://registry.directory",
     items: page.map(publicItem),
     pagination: {

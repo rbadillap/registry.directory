@@ -90,7 +90,17 @@ export async function fetchWithRetries(url, { attempts = ATTEMPTS } = {}) {
         headers: { "user-agent": USER_AGENT },
         redirect: "follow",
       });
-      if (res.ok) return { json: await res.json() };
+      if (res.ok) {
+        try {
+          return { json: await res.json() };
+        } catch {
+          // A 200 that is not JSON is a definitive answer, not a hiccup: the
+          // origin redirected the registry path to a web page, or the host
+          // now serves something else there. Retrying re-reads the same page.
+          const contentType = res.headers.get("content-type") ?? "no content-type";
+          return { error: `not JSON (${contentType})` };
+        }
+      }
       lastError = `HTTP ${res.status}`;
       const wait = res.status === 429 ? 15_000 * attempt : 2_000 * attempt;
       if (attempt < attempts) await sleep(wait);
@@ -101,6 +111,14 @@ export async function fetchWithRetries(url, { attempts = ATTEMPTS } = {}) {
   }
   return { error: `${lastError} (after ${attempts} attempts)` };
 }
+
+// An index error that a second attempt will not change. 404 means the index
+// moved, 401/402/403 mean the catalog is paywalled or private, and a page
+// that is not JSON is served on purpose. Retrying these spends minutes to be
+// told the same thing; only "wait" (429), server faults (5xx) and network
+// errors earn a second chance. Shared by the retry pass, the summary and the
+// reused-view probe so the three can not disagree about what "definitive" is.
+export const DEFINITIVE_ERROR = /^(HTTP (400|401|402|403|404|405|410|451)\b|not JSON)/;
 
 export function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
