@@ -141,10 +141,10 @@ function slimItem(item) {
   return {
     name: item.name,
     type: item.type,
-    // "gated" or "gone", only when the origin answered definitively that it
-    // will not serve this item to an anonymous request. Written by
+    // Absent when the origin served the item to the probe. "gated" or "gone"
+    // when it refused, "unverified" when it could not be asked. Written by
     // applyVerdicts after the probe; the slot keeps it next to the type.
-    unavailable: undefined,
+    resolution: undefined,
     title: item.title || undefined,
     description: item.description || undefined,
     categories: optionalArray(item.categories),
@@ -262,10 +262,10 @@ export async function resolveItemBase(candidates, names, status = fetchStatus) {
 // The probe never waits out a rate limit — same rule as the main run. An
 // origin that asks for a longer breather than the cap, or keeps answering
 // 429 after the retries, has said all it will say today: the rest of its
-// items are left unprobed (and therefore listed), and the manifest records
-// how many, so a view where nothing is marked can be told from a view
-// nobody could ask. Without this, one origin with an hourly quota and four
-// thousand items turns a half-hour run into a day.
+// items are left unprobed. Without this, one origin with an hourly quota
+// and four thousand items turns a five-minute run into a day. An unprobed
+// item is marked "unverified" unless an earlier run already reached it
+// (applyVerdicts), and /r lists only what was verified.
 const ITEM_PROBE_CONCURRENCY = 4;
 const ITEM_PROBE_ATTEMPTS = 3;
 const ITEM_PROBE_MAX_WAIT_MS = 30_000;
@@ -337,45 +337,49 @@ export async function probeItems(
   return { verdicts, unprobed };
 }
 
-// Writes the probe's verdicts onto the items: a fresh verdict replaces
-// whatever the item carried, a fresh answer with no verdict clears it, and an
-// item the origin never got asked keeps the verdict it earned in an earlier
-// run — the same reasoning as a reused view: yesterday's answer beats no
-// answer, and the next run that reaches the item will correct it. `previous`
+// Writes the probe's verdicts onto the items. A fresh verdict replaces
+// whatever the item carried, and a fresh answer with no verdict clears it.
+// An item the origin never got asked keeps what it earned in an earlier run
+// — the same reasoning as a reused view: yesterday's answer beats no answer,
+// and the next run that reaches the item corrects it — and is marked
+// "unverified" when there is nothing to keep. /r lists only unmarked items,
+// so a throttled origin is listed exactly as far as it has been verified,
+// and the set of unverified items only shrinks from run to run. `previous`
 // is the view on disk from the last run, or null. Exported for the tests.
 export function applyVerdicts(items, { verdicts, unprobed }, previous) {
   const carried = new Map(
     (previous?.items ?? [])
-      .filter((item) => item.unavailable)
-      .map((item) => [item.name, item.unavailable]),
+      .filter((item) => item.resolution)
+      .map((item) => [item.name, item.resolution]),
   );
   const skipped = new Set(unprobed);
   return items.map((item) => {
-    const verdict = verdicts.get(item.name) ?? (skipped.has(item.name) ? carried.get(item.name) : undefined);
+    const resolution =
+      verdicts.get(item.name) ??
+      (skipped.has(item.name) ? (carried.get(item.name) ?? "unverified") : undefined);
     // Overwriting in place keeps the slot slimItem reserved next to `type`;
-    // an item without a verdict must not carry the key at all.
-    if (verdict) return { ...item, unavailable: verdict };
-    const { unavailable: _stale, ...rest } = item;
+    // an item the origin served must not carry the key at all.
+    if (resolution) return { ...item, resolution };
+    const { resolution: _served, ...rest } = item;
     return rest;
   });
 }
 
-// How many of a view's items carry each verdict — the numbers the manifest
-// records and the guard checks against the file.
-export function countUnavailable(items) {
-  const counts = { gated: 0, gone: 0 };
+// How many of a view's items carry each resolution — the numbers the
+// manifest records and the guard checks against the file.
+export function countResolutions(items) {
+  const counts = { gated: 0, gone: 0, unverified: 0 };
   for (const item of items) {
-    if (item.unavailable === "gated") counts.gated += 1;
-    if (item.unavailable === "gone") counts.gone += 1;
+    if (item.resolution in counts) counts[item.resolution] += 1;
   }
   return counts;
 }
 
-function describeUnavailable({ gated, gone }, unprobed = 0) {
+function describeResolutions({ gated, gone, unverified }) {
   const parts = [];
   if (gated > 0) parts.push(`${gated} gated`);
   if (gone > 0) parts.push(`${gone} gone`);
-  if (unprobed > 0) parts.push(`${unprobed} unprobed, origin throttled`);
+  if (unverified > 0) parts.push(`${unverified} unverified, origin throttled`);
   return parts.length > 0 ? ` (${parts.join(", ")})` : "";
 }
 
@@ -536,19 +540,17 @@ async function failedRead(entry, key, url, error, label, probe) {
     // left alone: probing a throttled host item by item earns nothing but
     // more 429s, and yesterday's verdicts are the best information there is.
     let items = previous.items;
-    let unprobed = 0;
     if (probe && previous.resolvable && DEFINITIVE_ERROR.test(error)) {
       const probed = await probeItems(
         previous.itemBase,
         items.map((i) => i.name),
       );
-      unprobed = probed.unprobed.length;
       items = applyVerdicts(items, probed, previous);
       await writeJsonFile(viewPath(key), { ...previous, items });
     }
-    const unavailable = countUnavailable(items);
+    const resolutions = countResolutions(items);
     console.log(
-      `${label(entry)}: ${error} — reused (${items.length} items${describeUnavailable(unavailable, unprobed)})`,
+      `${label(entry)}: ${error} — reused (${items.length} items${describeResolutions(resolutions)})`,
     );
     return {
       key,
@@ -559,8 +561,7 @@ async function failedRead(entry, key, url, error, label, probe) {
       status: "reused",
       error,
       resolvable: previous.resolvable,
-      ...unavailable,
-      unprobed,
+      ...resolutions,
       ...(previous.embedsContent ? { embedsContent: true } : {}),
       snapshot: {
         url,
@@ -656,14 +657,13 @@ async function indexOne(entry, probe, label, attempts) {
     probe && resolvable
       ? await probeItems(base, names)
       : { verdicts: new Map(), unprobed: [] };
-  const unprobed = probed.unprobed.length;
   // Earlier verdicts are carried only for items this run could not ask, and
   // only from a view of the same registry: a renamed or repointed entry must
   // not inherit another origin's paywall.
   const previous = await readJsonFile(viewPath(key));
   const sameRegistry = previous && previous.entry === entry.name && previous.indexUrl === url;
   const items = applyVerdicts(rawItems.map(slimItem), probed, sameRegistry ? previous : null);
-  const unavailable = countUnavailable(items);
+  const resolutions = countResolutions(items);
 
   const view = {
     key,
@@ -679,7 +679,7 @@ async function indexOne(entry, probe, label, attempts) {
 
   const changed = await writeJsonFile(viewPath(key), view);
   console.log(
-    `${label(entry)}: ${items.length} items${resolvable ? describeUnavailable(unavailable, unprobed) : " (origin does not resolve)"}${changed ? "" : " (unchanged)"}`,
+    `${label(entry)}: ${items.length} items${resolvable ? describeResolutions(resolutions) : " (origin does not resolve)"}${changed ? "" : " (unchanged)"}`,
   );
 
   return {
@@ -690,8 +690,7 @@ async function indexOne(entry, probe, label, attempts) {
     items: items.length,
     status: "ok",
     resolvable,
-    ...unavailable,
-    unprobed,
+    ...resolutions,
     embedsContent: embedsContent || undefined,
     snapshot: {
       url,

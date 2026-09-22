@@ -36,8 +36,8 @@ pnpm index --retry            add a patient retry pass      (minutes longer)
 apps/web/data/
   registries/{key}.json   one slim view per registry: items with name, type,
                           description, categories, dependencies, cssVars,
-                          font (registry:font only), file PATHS and — when
-                          the origin refuses the item — `unavailable`.
+                          font (registry:font only), file PATHS and — unless
+                          the origin served the item — `resolution`.
                           Never file content.
   github.json             stars and last-push date per github_url
   collections.json        the home's groupings, each carrying its own criterion
@@ -62,7 +62,8 @@ Snapshots are append-only: a run never overwrites a day already archived.
    in `itemBaseCandidates` (`scripts/lib/data-io.mjs`). Everything that
    fetches an item afterwards reads `itemBase` from the view. Then every
    item of a resolvable registry is asked for once, and the ones the origin
-   refuses are marked (`unavailable` on the item — see below).
+   refuses or the probe could not reach are marked (`resolution` on the
+   item — see below).
 2. **github** — refresh stars and last-push dates. Skipped on a partial run.
 3. **derived** — compute `collections.json` from the views just written, and
    `shipped.json` by diffing recent snapshots.
@@ -92,24 +93,26 @@ the origin refuses is a search result that installs as our 502. The official
 shadcn registry index samples our catalog daily and scores each of those
 against `@registrydirectory`, not against the origin.
 
-One request per item, body discarded. The view records only a definitive
-refusal, on the item itself:
+One request per item, body discarded. An item the origin served carries no
+mark. Everything else is written on the item itself:
 
-| `unavailable` | the origin answered | what it means |
+| `resolution` | the origin answered | what it means |
 | --- | --- | --- |
 | `"gated"` | 401, 402, 403 | the item exists behind a paywall or a login |
 | `"gone"` | 404, 410, or a 2xx web page where the JSON should be | the index lists an item the origin no longer serves |
+| `"unverified"` | nothing — the probe never got to ask | the origin throttled the run before reaching this item |
 
-Anything else — 429, 5xx, a timeout — is retried briefly and then left
-**unmarked**: a rate limit is a request to wait, not an answer about the item,
-and the view must not record a bad afternoon as a paywall. An unmarked item is
-listed.
+A transient answer — 429, 5xx, a timeout — is retried briefly and then leaves
+the item **as it was**: a rate limit is a request to wait, not an answer about
+the item, and the view must not record a bad afternoon as a paywall.
 
-The catalog (`lib/catalog.ts`) leaves marked items out of `/r`. The site keeps
-showing them: a paywalled block is still a block worth finding, it just cannot
-be installed through an aggregator. The manifest carries the counts (`gated`,
-`gone`, per registry and in `counts`) and the guard checks them against the
-files.
+**`/r` lists only unmarked items** (`lib/catalog.ts`): what the indexer
+verified the origin serves. A refused item would be a search result that
+installs as our 502; an unverified one is a promise nobody has checked. The
+site keeps showing all of them: a paywalled block is still a block worth
+finding, it just cannot be installed through an aggregator. The manifest
+carries the counts (`gated`, `gone`, `unverified`, per registry and in
+`counts`) and the guard checks them against the files.
 
 A registry whose sample says the origin serves nothing (`resolvable: false`)
 is not probed item by item — it is already out of `/r`, and a thousand more
@@ -125,21 +128,22 @@ but more 429s.
 
 **The probe never waits out a rate limit** — same rule as the main run. An
 origin that answers 429 with a `Retry-After` beyond 30 seconds, or keeps
-answering 429 after the retries, has said all it will say today: the rest of
-its items are left unprobed, and therefore listed, and the manifest records
-how many (`unprobed`, per registry and in `counts`). That number is what tells
-a view where nothing is marked from a view nobody could ask. Shadcn Blocks is
-the standing example: an hourly quota per IP and four thousand items, so a
-single run can verify only a few dozen.
+answering 429 after the retries, has said all it will say today: the items
+it never got asked are marked `unverified` and stay out of `/r`. Shadcn
+Blocks is the standing example: an hourly quota per IP and four thousand
+items, so a single run verifies a few dozen.
 
 Two things make a throttled origin converge over runs instead of re-asking
 the same items forever. The probe starts at a random item each run, so a
 quota is spent on different items every time. And an item the run could not
-ask **keeps the verdict it earned in an earlier run** — the same reasoning
-as a reused view: yesterday's answer beats no answer, and the next run that
-reaches the item corrects it. A fresh answer always replaces an old verdict,
-and an item the origin now serves loses its mark. `pnpm index --only=<key>`
-is the cheap way to spend another quota on one origin.
+ask **keeps what it earned in an earlier run** — a refusal, or the
+unverified mark — the same reasoning as a reused view: yesterday's answer
+beats no answer, and the next run that reaches the item corrects it. A
+fresh answer always replaces an old mark, and an item the origin serves loses
+it. So the unverified set of an origin only shrinks, and `/r` lists it
+exactly as far as it has been verified. `pnpm index --only=<key>` is the
+cheap way to spend another quota on one origin; the run summary prints the
+command for the origins that need it.
 
 Cost: about one request per item in the directory, four in flight per origin.
 That is the price of a verdict per item rather than per registry, and it is

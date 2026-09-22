@@ -207,7 +207,7 @@ describe("resolveItemBase", () => {
 // definitive answer: a paywall and a rate limit both return "not 200", and
 // recording the second as the first would strike a working item from the
 // catalog for the length of a bad afternoon.
-import { countUnavailable, probeItems } from "./registries.mjs";
+import { countResolutions, probeItems } from "./registries.mjs";
 
 const BASE = "https://x.test/r";
 // Stubs the network: each answer is { status, contentType? }. A list plays
@@ -348,31 +348,69 @@ import { applyVerdicts } from "./registries.mjs";
 
 describe("applyVerdicts", () => {
   const previous = {
-    items: [{ name: "a", unavailable: "gated" }, { name: "b", unavailable: "gone" }, { name: "c" }],
+    items: [
+      { name: "a", resolution: "gated" },
+      { name: "b", resolution: "gone" },
+      { name: "c" },
+      { name: "e", resolution: "unverified" },
+    ],
   };
-  const fresh = [{ name: "a" }, { name: "b" }, { name: "c" }, { name: "d" }];
+  const fresh = [{ name: "a" }, { name: "b" }, { name: "c" }, { name: "d" }, { name: "e" }];
 
   it("writes fresh verdicts and clears the ones a fresh answer contradicts", () => {
     const items = applyVerdicts(fresh, { verdicts: new Map([["c", "gated"]]), unprobed: [] }, previous);
-    assert.deepEqual(items, [{ name: "a" }, { name: "b" }, { name: "c", unavailable: "gated" }, { name: "d" }]);
+    assert.deepEqual(items, [
+      { name: "a" },
+      { name: "b" },
+      { name: "c", resolution: "gated" },
+      { name: "d" },
+      { name: "e" },
+    ]);
   });
 
-  it("carries the earlier verdict of an item this run could not ask", () => {
-    const items = applyVerdicts(fresh, { verdicts: new Map(), unprobed: ["a", "d"] }, previous);
-    assert.deepEqual(items, [{ name: "a", unavailable: "gated" }, { name: "b" }, { name: "c" }, { name: "d" }]);
+  it("carries the earlier finding of an item this run could not ask, and marks the rest unverified", () => {
+    const items = applyVerdicts(fresh, { verdicts: new Map(), unprobed: ["a", "d", "e"] }, previous);
+    assert.deepEqual(items, [
+      { name: "a", resolution: "gated" },
+      { name: "b" },
+      { name: "c" },
+      { name: "d", resolution: "unverified" },
+      { name: "e", resolution: "unverified" },
+    ]);
   });
 
-  it("carries nothing without a previous view", () => {
+  it("marks every unasked item unverified without a previous view", () => {
     const items = applyVerdicts(fresh, { verdicts: new Map(), unprobed: ["a"] }, null);
-    assert.deepEqual(items, fresh);
+    assert.deepEqual(items, [
+      { name: "a", resolution: "unverified" },
+      { name: "b" },
+      { name: "c" },
+      { name: "d" },
+      { name: "e" },
+    ]);
+  });
+
+  it("keeps the slot next to the type", () => {
+    const items = applyVerdicts(
+      [{ name: "a", type: "registry:ui", resolution: undefined, title: "A" }],
+      { verdicts: new Map([["a", "gated"]]), unprobed: [] },
+      null,
+    );
+    assert.deepEqual(Object.keys(items[0]), ["name", "type", "resolution", "title"]);
   });
 });
 
-describe("countUnavailable", () => {
-  it("counts each verdict and ignores items without one", () => {
+describe("countResolutions", () => {
+  it("counts each resolution and ignores served items", () => {
     assert.deepEqual(
-      countUnavailable([{ unavailable: "gated" }, { unavailable: "gone" }, {}, { unavailable: "gated" }]),
-      { gated: 2, gone: 1 },
+      countResolutions([
+        { resolution: "gated" },
+        { resolution: "gone" },
+        {},
+        { resolution: "gated" },
+        { resolution: "unverified" },
+      ]),
+      { gated: 2, gone: 1, unverified: 1 },
     );
   });
 });

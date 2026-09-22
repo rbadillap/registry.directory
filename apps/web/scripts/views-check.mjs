@@ -119,26 +119,26 @@ async function main() {
         `data/registries/${record.key}.json says resolvable=${view.resolvable}, manifest says ${record.resolvable}`
       );
     }
-    // The verdicts /r filters on. A value outside the two the indexer writes
-    // would be skipped by the catalog as if it were "unavailable" for a reason
-    // nobody named; a count that disagrees with the file means one of the two
-    // was edited by hand.
-    const unavailable = { gated: 0, gone: 0 };
-    let unknownVerdicts = 0;
+    // The resolutions /r filters on. A value outside the three the indexer
+    // writes would be left out of the catalog for a reason nobody named; a
+    // count that disagrees with the file means one of the two was edited by
+    // hand.
+    const resolutions = { gated: 0, gone: 0, unverified: 0 };
+    let unknownResolutions = 0;
     for (const item of view.items ?? []) {
-      if (item?.unavailable === undefined) continue;
-      if (item.unavailable in unavailable) unavailable[item.unavailable] += 1;
-      else unknownVerdicts += 1;
+      if (item?.resolution === undefined) continue;
+      if (item.resolution in resolutions) resolutions[item.resolution] += 1;
+      else unknownResolutions += 1;
     }
-    if (unknownVerdicts > 0) {
+    if (unknownResolutions > 0) {
       fail(
-        `data/registries/${record.key}.json has ${unknownVerdicts} item(s) with an unavailable value other than "gated" or "gone"`
+        `data/registries/${record.key}.json has ${unknownResolutions} item(s) with a resolution other than "gated", "gone" or "unverified"`
       );
     }
-    for (const verdict of ["gated", "gone"]) {
-      if (unavailable[verdict] !== (record[verdict] ?? 0)) {
+    for (const resolution of Object.keys(resolutions)) {
+      if (resolutions[resolution] !== (record[resolution] ?? 0)) {
         fail(
-          `data/registries/${record.key}.json holds ${unavailable[verdict]} ${verdict} item(s), manifest claims ${record[verdict] ?? 0}`
+          `data/registries/${record.key}.json holds ${resolutions[resolution]} ${resolution} item(s), manifest claims ${record[resolution] ?? 0}`
         );
       }
     }
@@ -193,10 +193,10 @@ async function main() {
   if (manifest.counts?.items !== undefined && manifest.counts.items !== items) {
     fail(`manifest counts.items is ${manifest.counts.items}, the views hold ${items}`);
   }
-  for (const verdict of ["gated", "gone", "unprobed"]) {
-    const total = manifest.registries.reduce((sum, r) => sum + (r[verdict] ?? 0), 0);
-    if (manifest.counts?.[verdict] !== undefined && manifest.counts[verdict] !== total) {
-      fail(`manifest counts.${verdict} is ${manifest.counts[verdict]}, the records sum to ${total}`);
+  for (const resolution of ["gated", "gone", "unverified"]) {
+    const total = manifest.registries.reduce((sum, r) => sum + (r[resolution] ?? 0), 0);
+    if (manifest.counts?.[resolution] !== undefined && manifest.counts[resolution] !== total) {
+      fail(`manifest counts.${resolution} is ${manifest.counts[resolution]}, the records sum to ${total}`);
     }
   }
 
@@ -355,11 +355,11 @@ async function main() {
   // 5. Recorded gaps, surfaced but never fatal. A registry whose origin is
   //    permanently gone would otherwise block every build forever, and the
   //    removing it from the directory is a separate, deliberate change.
-  const throttled = manifest.registries.filter((r) => r.unprobed);
+  const throttled = manifest.registries.filter((r) => r.unverified);
   if (throttled.length > 0) {
     notes.push(
-      `${throttled.length} origin(s) throttled the item probe, so some of their items are listed in /r unverified: ${throttled
-        .map((r) => `${r.name} (${r.unprobed} unprobed)`)
+      `${throttled.length} origin(s) throttled the item probe; their unverified items stay out of /r until a run reaches them: ${throttled
+        .map((r) => `${r.name} (${r.unverified})`)
         .join(", ")}`
     );
   }
@@ -431,10 +431,11 @@ function report(manifest, items = 0) {
   if (!manifest) process.exit(1);
 
   const views = manifest.registries.filter((r) => r.status !== "missing").length;
-  const refused = (manifest.counts?.gated ?? 0) + (manifest.counts?.gone ?? 0);
+  const { gated = 0, gone = 0, unverified = 0 } = manifest.counts ?? {};
+  const withheld = gated + gone + unverified;
   console.log(
     `views:check ok — ${views} views, ${items.toLocaleString("en-US")} items` +
-      `${refused > 0 ? ` (${refused.toLocaleString("en-US")} refused by their origin, left out of /r)` : ""}` +
+      `${withheld > 0 ? ` (${withheld.toLocaleString("en-US")} left out of /r: ${gated.toLocaleString("en-US")} gated, ${gone.toLocaleString("en-US")} gone, ${unverified.toLocaleString("en-US")} unverified)` : ""}` +
       `, generated ${manifest.date}`
   );
 }

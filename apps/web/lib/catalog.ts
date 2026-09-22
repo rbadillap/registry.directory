@@ -65,7 +65,7 @@ export async function buildCatalog(): Promise<Catalog> {
 
   const registries: Record<string, CatalogRegistry> = {}
   const items: CatalogItem[] = []
-  const skipped = { internal: 0, fontWithoutMetadata: 0, unavailable: 0 }
+  const skipped = { internal: 0, fontWithoutMetadata: 0, withheld: 0 }
 
   for (const entry of entries) {
     const handle = catalogHandle(entry)
@@ -97,13 +97,14 @@ export async function buildCatalog(): Promise<Catalog> {
         continue
       }
 
-      // The origin refused this item when the indexer asked for it — a
-      // paywall, a login, or a 404 behind a stale index. Listed, it would be
-      // a search result that installs as our 502, and the official registry
-      // index samples this catalog daily and scores each one against us.
-      // The site still shows the item; only the CLI-facing catalog omits it.
-      if (item.unavailable) {
-        skipped.unavailable++
+      // Only what the indexer verified the origin serves. A refused item — a
+      // paywall, a login, a 404 behind a stale index — would be a search
+      // result that installs as our 502, and the official registry index
+      // samples this catalog daily and scores each one against us; an item
+      // no run could ask yet is a promise nobody has checked. The site still
+      // shows all of them; only the CLI-facing catalog withholds them.
+      if (item.resolution) {
+        skipped.withheld++
         continue
       }
 
@@ -131,7 +132,7 @@ export async function buildCatalog(): Promise<Catalog> {
 
   console.log(
     `[catalog] Built ${items.length} items from ${Object.keys(registries).length} registries ` +
-      `(skipped ${skipped.unavailable} refused by their origin, ${skipped.internal} internal, ${skipped.fontWithoutMetadata} fonts without metadata)`
+      `(withheld ${skipped.withheld} refused or unverified, skipped ${skipped.internal} internal, ${skipped.fontWithoutMetadata} fonts without metadata)`
   )
 
   return { generatedAt: new Date().toISOString(), registries, items }

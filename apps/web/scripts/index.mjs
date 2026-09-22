@@ -89,14 +89,13 @@ async function main() {
     items: r.items,
     status: r.status,
     resolvable: r.resolvable ?? true,
-    // Items the origin refused, by verdict. Absent means none: a zero would
-    // put a field on every record to say nothing.
+    // Items /r leaves out, by resolution: refused by the origin (gated,
+    // gone) or never asked because it throttled the probe (unverified).
+    // Absent means none: a zero would put a field on every record to say
+    // nothing.
     ...(r.gated ? { gated: r.gated } : {}),
     ...(r.gone ? { gone: r.gone } : {}),
-    // Items never asked because the origin throttled the probe. They are
-    // listed in /r like any unmarked item; this is what tells that apart
-    // from "asked, and served".
-    ...(r.unprobed ? { unprobed: r.unprobed } : {}),
+    ...(r.unverified ? { unverified: r.unverified } : {}),
     ...(r.embedsContent ? { originEmbedsContent: true } : {}),
     ...(r.error ? { error: r.error } : {}),
   });
@@ -134,10 +133,11 @@ async function main() {
       reused: reusedViews.length,
       missing: missing.length,
       items: entries.reduce((sum, r) => sum + r.items, 0),
-      // Listed in the views, refused by their origin. /r leaves them out.
+      // Listed in the views, left out of /r: refused by their origin, or
+      // not yet verified because it throttled the probe.
       gated: entries.reduce((sum, r) => sum + (r.gated ?? 0), 0),
       gone: entries.reduce((sum, r) => sum + (r.gone ?? 0), 0),
-      unprobed: entries.reduce((sum, r) => sum + (r.unprobed ?? 0), 0),
+      unverified: entries.reduce((sum, r) => sum + (r.unverified ?? 0), 0),
       github: github.total,
       collections: derived.collections,
     },
@@ -159,20 +159,23 @@ async function main() {
   console.log(
     `ok ${ok.length} · reused ${reusedViews.length} · missing ${missing.length} · ${elapsed}s`
   );
-  const { gated, gone, unprobed } = manifest.counts;
+  const { gated, gone, unverified } = manifest.counts;
   if (gated + gone > 0) {
     console.log(
-      `origins refuse ${(gated + gone).toLocaleString("en-US")} of them (${gated.toLocaleString("en-US")} gated, ${gone.toLocaleString("en-US")} gone) — /r lists the rest`
+      `origins refuse ${(gated + gone).toLocaleString("en-US")} of them (${gated.toLocaleString("en-US")} gated, ${gone.toLocaleString("en-US")} gone)`
     );
   }
-  const throttled = entries.filter((r) => r.unprobed);
+  const throttled = entries.filter((r) => r.unverified);
   if (throttled.length > 0) {
     console.log(
-      `${unprobed.toLocaleString("en-US")} item(s) left unprobed, their origin throttled the run: ${throttled
-        .map((r) => `${r.name} (${r.unprobed})`)
-        .join(", ")}`
+      `${unverified.toLocaleString("en-US")} item(s) still unverified, their origin throttled the probe: ${throttled
+        .map((r) => `${r.name} (${r.unverified})`)
+        .join(", ")} — run \`pnpm index --only=${throttled.map((r) => r.key).join(",")}\` to verify more`
     );
   }
+  console.log(
+    `/r lists ${(manifest.counts.items - gated - gone - unverified).toLocaleString("en-US")} items`
+  );
   if (reusedViews.length > 0) {
     console.log(`reused: ${reusedViews.map((r) => `${r.name} (${r.error})`).join(", ")}`);
   }

@@ -30,8 +30,8 @@ export interface ManifestRegistry {
   gated?: number
   /** Items the origin answers 404/410, or with a web page. Absent when none. */
   gone?: number
-  /** Items never probed because the origin throttled the run; listed unverified. */
-  unprobed?: number
+  /** Items no run has reached yet because the origin throttles the probe. */
+  unverified?: number
   /** The origin inlines file content in its index. */
   originEmbedsContent?: boolean
   /** Why this view is a carry-forward rather than a fresh read. */
@@ -51,7 +51,7 @@ export interface Manifest {
     /** Absent in manifests written before the item probe existed. */
     gated?: number
     gone?: number
-    unprobed?: number
+    unverified?: number
     github: number
     collections: number
   }
@@ -59,15 +59,17 @@ export interface Manifest {
 }
 
 /**
- * Why the origin will not serve an item to an anonymous request, as the
- * indexer's per-item probe found it. "gated": behind a paywall or a login
- * (401/402/403). "gone": listed in the index, not served (404/410, or a web
- * page where the JSON should be). Never set for a transient failure.
+ * What the indexer's per-item probe found when it asked the origin for the
+ * item. Absent: served — the item resolves. "gated": behind a paywall or a
+ * login (401/402/403). "gone": listed in the index, not served (404/410, or
+ * a web page where the JSON should be). "unverified": no run has reached it
+ * yet, because the origin throttles the probe. Never set for a transient
+ * failure. /r lists only items with no resolution.
  */
-export type ItemUnavailability = "gated" | "gone"
+export type ItemResolution = "gated" | "gone" | "unverified"
 
-/** An item as the view lists it: the schema's fields, plus the probe's verdict. */
-export type RegistryViewItem = RegistryItem & { unavailable?: ItemUnavailability }
+/** An item as the view lists it: the schema's fields, plus the probe's finding. */
+export type RegistryViewItem = RegistryItem & { resolution?: ItemResolution }
 
 export interface RegistryView {
   key: string
