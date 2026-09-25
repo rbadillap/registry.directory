@@ -18,7 +18,7 @@
 
 import { execFileSync } from "node:child_process";
 import { join } from "node:path";
-import { list } from "@vercel/blob";
+import { get, list } from "@vercel/blob";
 import {
   DATA_DIR,
   REGISTRIES_DIR,
@@ -397,7 +397,7 @@ function buildShipped(snapshots, directory) {
 }
 
 async function loadSnapshots() {
-  if (!process.env.BLOB_READ_WRITE_TOKEN) return [];
+  if (!process.env.BLOB_STORE_ID) return [];
 
   const { blobs } = await list({ prefix: "snapshots/" });
   const dated = blobs
@@ -409,9 +409,9 @@ async function loadSnapshots() {
 
   const snapshots = [];
   for (const blob of dated) {
-    const res = await fetch(blob.url, { cache: "no-store" });
-    if (!res.ok) continue;
-    snapshots.push(await res.json());
+    const result = await get(blob.pathname, { access: "private" });
+    if (result?.statusCode !== 200) continue;
+    snapshots.push(await new Response(result.stream).json());
   }
   return snapshots.sort((a, b) => a.date.localeCompare(b.date));
 }

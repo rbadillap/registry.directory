@@ -193,10 +193,11 @@ snapshot claiming to be the whole ecosystem.
 
 ### Requirements
 
-`apps/web/.env.schema` declares `BLOB_READ_WRITE_TOKEN` (snapshot archive,
-shipped history) and `GITHUB_TOKEN` (stars, last push) as references to
-1Password. `pnpm index` runs through `varlock run`, which resolves them after
-Touch ID; nothing is written to `.env.local`.
+`apps/web/.env.schema` declares `GITHUB_TOKEN` (stars, last push) as a
+reference to 1Password, and the Blob store's id with a development OIDC token
+(snapshot archive, shipped history) that the Vercel CLI issues on each run.
+`pnpm index` runs through `varlock run`, which resolves them after Touch ID;
+nothing is written to `.env.local`.
 
 ---
 

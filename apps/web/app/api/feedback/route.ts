@@ -14,7 +14,7 @@ function payloadTooLarge(): NextResponse {
 }
 
 export async function POST(request: Request) {
-  if (!process.env.BLOB_READ_WRITE_TOKEN) {
+  if (!process.env.BLOB_STORE_ID) {
     return NextResponse.json(
       { error: "Feedback storage not configured" },
       { status: 503 }

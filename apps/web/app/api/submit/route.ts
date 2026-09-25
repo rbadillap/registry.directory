@@ -120,7 +120,7 @@ function bearerToken(request: Request): string | undefined {
 }
 
 export async function POST(request: Request) {
-  if (!process.env.BLOB_READ_WRITE_TOKEN) {
+  if (!process.env.BLOB_STORE_ID) {
     return NextResponse.json(
       { error: "Submission storage not configured. Try again later." },
       { status: 503 }

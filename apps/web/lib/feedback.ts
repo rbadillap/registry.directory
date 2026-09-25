@@ -1,4 +1,4 @@
-import { put } from "@vercel/blob";
+import { get, put } from "@vercel/blob";
 import { z } from "zod";
 
 export const feedbackTypes = ["bug", "confusing", "idea"] as const;
@@ -30,24 +30,15 @@ function getBlobFilename(date: Date): string {
   return `feedback/${yyyy}-${mm}-${dd}.json`;
 }
 
-function getBlobPublicUrl(filename: string): string | null {
-  const blobToken = process.env.BLOB_READ_WRITE_TOKEN;
-  if (!blobToken) return null;
-
-  const storeMatch = blobToken.match(/vercel_blob_rw_([^_]+)_/);
-  if (!storeMatch) return null;
-
-  return `https://${storeMatch[1]}.public.blob.vercel-storage.com/${filename}`;
-}
-
+// The store is private: reads go through the SDK, authenticated like writes
+// (Vercel OIDC paired with BLOB_STORE_ID).
 async function readFeedbackBlob(filename: string): Promise<FeedbackEntry[]> {
-  const url = getBlobPublicUrl(filename);
-  if (!url) return [];
+  if (!process.env.BLOB_STORE_ID) return [];
 
   try {
-    const response = await fetch(url, { cache: "no-store" });
-    if (!response.ok) return [];
-    return (await response.json()) as FeedbackEntry[];
+    const result = await get(filename, { access: "private", useCache: false });
+    if (result?.statusCode !== 200) return [];
+    return (await new Response(result.stream).json()) as FeedbackEntry[];
   } catch {
     return [];
   }
@@ -57,12 +48,10 @@ async function writeFeedbackBlob(
   filename: string,
   entries: FeedbackEntry[]
 ): Promise<void> {
-  const blobToken = process.env.BLOB_READ_WRITE_TOKEN;
-  if (!blobToken) return;
+  if (!process.env.BLOB_STORE_ID) return;
 
   await put(filename, JSON.stringify(entries, null, 2), {
-    access: "public",
-    token: blobToken,
+    access: "private",
     addRandomSuffix: false,
     allowOverwrite: true,
   });

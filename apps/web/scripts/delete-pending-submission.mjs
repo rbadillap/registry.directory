@@ -7,8 +7,8 @@
 import { createHash } from "node:crypto";
 import { del, list } from "@vercel/blob";
 
-if (!process.env.BLOB_READ_WRITE_TOKEN) {
-  console.error("BLOB_READ_WRITE_TOKEN is not set. Run through Varlock: pnpm exec varlock run -- node <script>");
+if (!process.env.BLOB_STORE_ID) {
+  console.error("BLOB_STORE_ID is not set. Run through Varlock: pnpm exec varlock run -- node <script>");
   process.exit(1);
 }
 
