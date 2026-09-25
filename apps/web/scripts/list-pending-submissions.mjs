@@ -1,9 +1,9 @@
 // Lists pending registry submissions stored in Vercel Blob.
-// Usage (from apps/web):  node --env-file=.env.local scripts/list-pending-submissions.mjs
+// Usage (from apps/web):  pnpm exec varlock run -- node scripts/list-pending-submissions.mjs
 import { list } from "@vercel/blob";
 
 if (!process.env.BLOB_READ_WRITE_TOKEN) {
-  console.error("BLOB_READ_WRITE_TOKEN is not set. Run with --env-file=.env.local");
+  console.error("BLOB_READ_WRITE_TOKEN is not set. Run through Varlock: pnpm exec varlock run -- node <script>");
   process.exit(1);
 }
 

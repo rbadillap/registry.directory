@@ -14,7 +14,7 @@
 // indexer never rewrites a snapshot).
 //
 // Usage, standalone, from apps/web:
-//   node --env-file=.env.local scripts/steps/derived.mjs
+//   pnpm exec varlock run -- node scripts/steps/derived.mjs
 
 import { execFileSync } from "node:child_process";
 import { join } from "node:path";

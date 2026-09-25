@@ -62,6 +62,9 @@ importers:
       shiki:
         specifier: ^1.0.0
         version: 1.29.2
+      varlock:
+        specifier: ^1.20.0
+        version: 1.20.0
       zod:
         specifier: ^3.24.2
         version: 3.24.2
@@ -75,6 +78,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.7)
+      '@varlock/1password-plugin':
+        specifier: ^2.0.4
+        version: 2.0.4(varlock@1.20.0)
       '@workspace/eslint-config':
         specifier: workspace:^
         version: link:../../packages/eslint-config
@@ -2028,6 +2034,30 @@ packages:
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
     deprecated: Potential CWE-502 - Update to 1.3.1 or higher
 
+  '@varlock/1password-plugin@2.0.4':
+    resolution: {integrity: sha512-/+oM5v4NnN6KBxeJAAVCZt9UvHgLq1LxvLEgTM/CnuCjPBXQtvFCaB1qoYU/FgabebsIsHonjLV9HAorKQYLgA==}
+    engines: {node: '>=22'}
+    peerDependencies:
+      varlock: ^1.17.1
+
+  '@varlock/native-helper-darwin@1.20.0':
+    resolution: {integrity: sha512-+AidNOGpJ63+CifPsg0wCPLaCwOunoHCazWIPekTnujzk4HTVB1iowLsWBOaAfLq6TDeSKSis2gk7M9oSlcKNA==}
+    os: [darwin]
+
+  '@varlock/native-helper-linux-arm64@1.20.0':
+    resolution: {integrity: sha512-W7dxyWkEuzFf+qOKNHqs5j0QOy0vW/zXrusS9i0Zt4l4oP6u0hwWqS8xV2ww6KiG2SrV+Dvrn/23fh4kTE/cCA==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@varlock/native-helper-linux-x64@1.20.0':
+    resolution: {integrity: sha512-6N6w87D4ByujoVRz0hxFH/VXNOmr9rXnp+WDdzxHa2FZirmy31wW3LoiPjIXrmriNZ9p2C5JseECEDBKsnwQcg==}
+    cpu: [x64]
+    os: [linux]
+
+  '@varlock/native-helper-win32-x64@1.20.0':
+    resolution: {integrity: sha512-mDH00lx2h+dWmbARTnfmRu321SuZigKslUdX7dAn0/7+psShiFCx6QEWLjjyZgDPSCGVNbIM3JArC40vCTXJjw==}
+    os: [win32, linux]
+
   '@vercel/analytics@1.6.1':
     resolution: {integrity: sha512-oH9He/bEM+6oKlv3chWuOOcp8Y6fo6/PSro8hEkgCW3pu9/OiCXiUpRUogDh3Fs3LH2sosDrx8CxeOLBEE+afg==}
     peerDependencies:
@@ -2222,6 +2252,7 @@ packages:
   basic-ftp@5.0.5:
     resolution: {integrity: sha512-4Bcg1P8xhUuqcii/S0Z9wiHIrQVPMermM1any+MX5GeGD7faD3/msQUDGLol9wOcz4/jbg/WJnGqoJF6LiBdtg==}
     engines: {node: '>=10.0.0'}
+    deprecated: Security vulnerability fixed in 5.2.1, please upgrade
 
   bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
@@ -4633,6 +4664,11 @@ packages:
     resolution: {integrity: sha512-hVDIBwsRruT73PbK7uP5ebUt+ezEtCmzZz3F59BSr2F6OVFnJ/6h8liuvdLrQ88Xmnk6/+xGGuq+pG9WwTuy3A==}
     engines: {node: ^20.17.0 || >=22.9.0}
 
+  varlock@1.20.0:
+    resolution: {integrity: sha512-MA5idJKpaQ36d90OxY4gWwWzdVKle6YUq3OI58o/j5ImCz3m8DFmonGbvixyFRhmm7sQeGcNyo8hBHc3kVLNqw==}
+    engines: {bun: '>=1.3.3', node: '>=22.3.0'}
+    hasBin: true
+
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
@@ -6640,6 +6676,22 @@ snapshots:
       eslint-visitor-keys: 4.2.0
 
   '@ungap/structured-clone@1.3.0': {}
+
+  '@varlock/1password-plugin@2.0.4(varlock@1.20.0)':
+    dependencies:
+      varlock: 1.20.0
+
+  '@varlock/native-helper-darwin@1.20.0':
+    optional: true
+
+  '@varlock/native-helper-linux-arm64@1.20.0':
+    optional: true
+
+  '@varlock/native-helper-linux-x64@1.20.0':
+    optional: true
+
+  '@varlock/native-helper-win32-x64@1.20.0':
+    optional: true
 
   '@vercel/analytics@1.6.1(next@15.5.9(@babel/core@7.28.6)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)':
     optionalDependencies:
@@ -9533,6 +9585,13 @@ snapshots:
   validate-npm-package-name@5.0.1: {}
 
   validate-npm-package-name@7.0.2: {}
+
+  varlock@1.20.0:
+    optionalDependencies:
+      '@varlock/native-helper-darwin': 1.20.0
+      '@varlock/native-helper-linux-arm64': 1.20.0
+      '@varlock/native-helper-linux-x64': 1.20.0
+      '@varlock/native-helper-win32-x64': 1.20.0
 
   vary@1.1.2: {}
 

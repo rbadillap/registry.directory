@@ -23,7 +23,7 @@ Check both sources; either may have items the other doesn't:
 
 ```bash
 # API submissions (Vercel Blob), run from apps/web:
-node --env-file=.env.local scripts/list-pending-submissions.mjs
+pnpm exec varlock run -- node scripts/list-pending-submissions.mjs
 
 # Manual submissions (GitHub PRs that touch directory.json):
 gh pr list --state open --json number,title,author,createdAt,files \

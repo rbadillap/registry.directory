@@ -3,7 +3,7 @@
 // serves individual items, and archive the raw slim snapshot to Vercel Blob.
 //
 // Usage, standalone, from apps/web:
-//   node --env-file=.env.local scripts/steps/registries.mjs
+//   pnpm exec varlock run -- node scripts/steps/registries.mjs
 
 import { join } from "node:path";
 import { head, put } from "@vercel/blob";

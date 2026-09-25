@@ -1,14 +1,14 @@
 // Deletes one pending registry submission from Vercel Blob — the manual step
 // after a review decision, and the cleanup step for test submissions.
 // Usage (from apps/web):
-//   node --env-file=.env.local scripts/delete-pending-submission.mjs <registry_url | id>
+//   pnpm exec varlock run -- node scripts/delete-pending-submission.mjs <registry_url | id>
 // Pass either the submission's registry_url (the id is derived the same way
 // the API derives it) or the id itself as shown by list-pending-submissions.
 import { createHash } from "node:crypto";
 import { del, list } from "@vercel/blob";
 
 if (!process.env.BLOB_READ_WRITE_TOKEN) {
-  console.error("BLOB_READ_WRITE_TOKEN is not set. Run with --env-file=.env.local");
+  console.error("BLOB_READ_WRITE_TOKEN is not set. Run through Varlock: pnpm exec varlock run -- node <script>");
   process.exit(1);
 }
 
