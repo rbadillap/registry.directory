@@ -3,7 +3,7 @@
 // serves individual items, and archive the raw slim snapshot to Vercel Blob.
 //
 // Usage, standalone, from apps/web:
-//   node --env-file=.env.local scripts/steps/registries.mjs
+//   pnpm exec varlock run -- node scripts/steps/registries.mjs
 
 import { join } from "node:path";
 import { head, put } from "@vercel/blob";
@@ -718,8 +718,8 @@ async function pruneOrphans(records) {
 // catalogs evolve — nobody else archives registry indexes. It is append-only:
 // a run never rewrites a day that already exists.
 async function archiveSnapshot(records, total) {
-  if (!process.env.BLOB_READ_WRITE_TOKEN) {
-    console.log("snapshot: BLOB_READ_WRITE_TOKEN missing — skipped");
+  if (!process.env.BLOB_STORE_ID) {
+    console.log("snapshot: BLOB_STORE_ID missing — skipped");
     return;
   }
 
@@ -752,13 +752,13 @@ async function archiveSnapshot(records, total) {
   // makes the common case quiet — this is what makes it true.
   try {
     const blob = await put(pathname, body, {
-      access: "public",
+      access: "private",
       addRandomSuffix: false,
       allowOverwrite: false,
       contentType: "application/json",
     });
     console.log(
-      `snapshot ${date}: archived ${(body.length / 1024).toFixed(0)} KB → ${blob.url}`,
+      `snapshot ${date}: archived ${(body.length / 1024).toFixed(0)} KB → ${blob.pathname}`,
     );
   } catch (error) {
     // Losing today's snapshot is a gap in the archive, not a broken data

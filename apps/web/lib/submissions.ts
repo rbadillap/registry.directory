@@ -1,5 +1,5 @@
 import { createHash, createHmac, timingSafeEqual } from "node:crypto";
-import { list, put } from "@vercel/blob";
+import { get, list, put } from "@vercel/blob";
 import { z } from "zod";
 
 const DOCS_URL = "https://registry.directory/how-to-submit.md";
@@ -133,27 +133,24 @@ export interface PendingSubmissionRef {
 }
 
 // Existence MUST be checked against the Blob API (authoritative), not the
-// public CDN URL: reads through the CDN right after a write can miss the
-// blob, which would let an update slip past the token gate as a "create".
+// CDN: reads through the cache right after a write can miss the blob, which
+// would let an update slip past the token gate as a "create".
 export async function getSubmission(
   registryUrl: string
 ): Promise<PendingSubmissionRef | null> {
-  const token = process.env.BLOB_READ_WRITE_TOKEN;
-  if (!token) return null;
+  if (!process.env.BLOB_STORE_ID) return null;
 
   const pathname = getBlobFilename(submissionId(registryUrl));
   try {
-    const { blobs } = await list({ prefix: pathname, token, limit: 1 });
+    const { blobs } = await list({ prefix: pathname, limit: 1 });
     const blob = blobs.find((b) => b.pathname === pathname);
     if (!blob) return null;
 
-    // Cache-busting query so the CDN can't serve a stale copy; if the copy
-    // still isn't readable, the blob's uploadedAt approximates submitted_at.
-    const response = await fetch(`${blob.url}?v=${Date.now()}`, {
-      cache: "no-store",
-    });
-    if (response.ok) {
-      return (await response.json()) as SubmissionEntry;
+    // Read from origin, skipping the cache; if the copy still isn't
+    // readable, the blob's uploadedAt approximates submitted_at.
+    const result = await get(pathname, { access: "private", useCache: false });
+    if (result?.statusCode === 200) {
+      return (await new Response(result.stream).json()) as SubmissionEntry;
     }
     return { submitted_at: new Date(blob.uploadedAt).toISOString() };
   } catch {
@@ -178,12 +175,11 @@ export async function saveSubmission(
   };
 
   await put(getBlobFilename(id), JSON.stringify(entry, null, 2), {
-    access: "public",
-    token: process.env.BLOB_READ_WRITE_TOKEN,
+    access: "private",
     addRandomSuffix: false,
     allowOverwrite: true,
     // Shortest allowed CDN cache — narrows the stale-read window for any
-    // consumer that reads the public URL.
+    // consumer that reads through the cache.
     cacheControlMaxAge: 60,
   });
 

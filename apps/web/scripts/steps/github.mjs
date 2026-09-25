@@ -6,7 +6,7 @@
 // only changes where it reads from, not what it parses.
 //
 // Usage, standalone, from apps/web:
-//   node --env-file=.env.local scripts/steps/github.mjs
+//   pnpm exec varlock run -- node scripts/steps/github.mjs
 
 import { join } from "node:path";
 import {

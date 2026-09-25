@@ -11,7 +11,7 @@ The site itself only ever reads files under `apps/web/data/`.
 | --- | --- | --- |
 | `index.mjs` | `pnpm index` | The indexer. Produces everything the site reads. |
 | `views-check.mjs` | `pnpm views:check` | The prebuild guard. Refuses to build against dishonest data. |
-| `list-pending-submissions.mjs` | `node --env-file=.env.local scripts/list-pending-submissions.mjs` | Lists pending registry submissions from Blob. Unrelated to the data layer. |
+| `list-pending-submissions.mjs` | `pnpm exec varlock run -- node scripts/list-pending-submissions.mjs` | Lists pending registry submissions from Blob. Unrelated to the data layer. |
 
 Tests run with `pnpm test` (node:test, no dependencies). They cover pagination,
 which no registry in the directory currently exercises — every origin answers
@@ -193,8 +193,11 @@ snapshot claiming to be the whole ecosystem.
 
 ### Requirements
 
-`apps/web/.env.local` with `BLOB_READ_WRITE_TOKEN` (snapshot archive, shipped
-history) and `GITHUB_TOKEN` (stars, last push). The file is gitignored.
+`apps/web/.env.schema` declares `GITHUB_TOKEN` (stars, last push) as a
+reference to 1Password, and the Blob store's id with a development OIDC token
+(snapshot archive, shipped history) that the Vercel CLI issues on each run.
+`pnpm index` runs through `varlock run`, which resolves them after Touch ID;
+nothing is written to `.env.local`.
 
 ---
 
