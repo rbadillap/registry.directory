@@ -9,6 +9,7 @@ import { join } from "node:path";
 import { head, put } from "@vercel/blob";
 import {
   CONCURRENCY,
+  DEFINITIVE_ERROR,
   REGISTRIES_DIR,
   USER_AGENT,
   fetchWithRetries,
@@ -140,6 +141,10 @@ function slimItem(item) {
   return {
     name: item.name,
     type: item.type,
+    // Absent when the origin served the item to the probe. "gated" or "gone"
+    // when it refused, "unverified" when it could not be asked. Written by
+    // applyVerdicts after the probe; the slot keeps it next to the type.
+    resolution: undefined,
     title: item.title || undefined,
     description: item.description || undefined,
     categories: optionalArray(item.categories),
@@ -169,7 +174,10 @@ function slimItem(item) {
 // registry, and the build only needs the conclusion.
 const GATED_STATUSES = new Set([401, 402, 403, 404, 410]);
 
-async function fetchStatus(url) {
+// One request, no body. What matters is the status the origin puts on an
+// item, and whether what it serves is JSON at all; the content itself stays
+// at the origin. `retryAfterMs` is only set when the origin asked to wait.
+async function fetchAnswer(url) {
   try {
     const res = await fetch(url, {
       signal: AbortSignal.timeout(10_000),
@@ -177,10 +185,19 @@ async function fetchStatus(url) {
       redirect: "follow",
     });
     await res.body?.cancel();
-    return res.status;
+    const retryAfter = Number(res.headers.get("retry-after"));
+    return {
+      status: res.status,
+      contentType: res.headers.get("content-type") ?? "",
+      retryAfterMs: Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : undefined,
+    };
   } catch {
-    return 0;
+    return { status: 0, contentType: "" };
   }
+}
+
+async function fetchStatus(url) {
+  return (await fetchAnswer(url)).status;
 }
 
 function sampleNames(names) {
@@ -219,6 +236,151 @@ export async function resolveItemBase(candidates, names, status = fetchStatus) {
 
   const allGated = primaryStatuses.every((s) => GATED_STATUSES.has(s));
   return { itemBase: primary, resolvable: !allGated };
+}
+
+// Every item of a resolvable registry is asked for once, and the ones the
+// origin refuses are marked in the view. The registry-level sample above
+// settles where items live and whether the origin serves anything at all;
+// this settles, item by item, what /r may list. Listing an item the origin
+// will not serve turns the install into our 502, and the official index
+// samples our catalog daily and counts each of those as a failure of ours.
+//
+// Two verdicts, both definitive:
+//   gated — 401, 402 or 403: the item exists behind a paywall or a login
+//   gone  — 404 or 410, or a 2xx that serves a web page instead of JSON:
+//           the index lists an item the origin no longer serves
+//
+// Everything else — 429, 5xx, a timeout — keeps the benefit of the doubt
+// after a short retry: a rate limit is a request to wait, not an answer
+// about the item, and the manifest should not record a bad afternoon as a
+// paywall.
+//
+// Four requests in flight per origin. The indexer already runs several
+// registries at once, and an origin that answers 429 to a burst is the
+// reason the retry waits instead of hammering.
+//
+// The probe never waits out a rate limit — same rule as the main run. An
+// origin that asks for a longer breather than the cap, or keeps answering
+// 429 after the retries, has said all it will say today: the rest of its
+// items are left unprobed. Without this, one origin with an hourly quota
+// and four thousand items turns a five-minute run into a day. An unprobed
+// item is marked "unverified" unless an earlier run already reached it
+// (applyVerdicts), and /r lists only what was verified.
+const ITEM_PROBE_CONCURRENCY = 4;
+const ITEM_PROBE_ATTEMPTS = 3;
+const ITEM_PROBE_MAX_WAIT_MS = 30_000;
+const ITEM_PROBE_THROTTLE_GIVEUPS = 3;
+
+function verdictFor({ status, contentType }) {
+  if (status === 401 || status === 402 || status === 403) return "gated";
+  if (status === 404 || status === 410) return "gone";
+  if (status >= 200 && status < 300 && /text\/html/i.test(contentType)) return "gone";
+  return undefined;
+}
+
+function isTransient(status) {
+  return status === 0 || status === 408 || status === 429 || status >= 500;
+}
+
+// Returns { verdicts, unprobed }: a Map of item name → verdict holding only
+// the items the origin refused, and the names never asked because the origin
+// throttled the probe. Exported for the tests; `answer` is the network,
+// `wait` the clock and `start` the first item asked, all replaceable.
+//
+// The order starts at a random item. An origin with a quota answers the
+// first few hundred requests of every run and refuses the rest, so a probe
+// that always began at the top would verify the same few hundred forever;
+// started somewhere else each run, the verdicts accumulate across runs
+// (applyVerdicts keeps the ones an unprobed item earned earlier).
+export async function probeItems(
+  itemBase,
+  names,
+  { answer = fetchAnswer, wait = sleep, start = Math.floor(Math.random() * Math.max(names.length, 1)) } = {},
+) {
+  const verdicts = new Map();
+  const unprobed = [];
+  let throttled = false;
+  let giveUps = 0;
+  const rotated = [...names.slice(start), ...names.slice(0, start)];
+  await mapPool(
+    rotated,
+    async (name) => {
+      if (throttled) {
+        unprobed.push(name);
+        return;
+      }
+      const url = `${itemBase}/${name}.json`;
+      for (let attempt = 1; attempt <= ITEM_PROBE_ATTEMPTS; attempt++) {
+        const answered = await answer(url);
+        if (!isTransient(answered.status)) {
+          const verdict = verdictFor(answered);
+          if (verdict) verdicts.set(name, verdict);
+          return;
+        }
+        if (answered.status === 429 && (answered.retryAfterMs ?? 0) > ITEM_PROBE_MAX_WAIT_MS) {
+          throttled = true;
+          break;
+        }
+        if (attempt < ITEM_PROBE_ATTEMPTS) {
+          const backoff = answered.status === 429 ? 5_000 * attempt : 1_000 * attempt;
+          await wait(Math.min(answered.retryAfterMs ?? backoff, ITEM_PROBE_MAX_WAIT_MS));
+        } else if (answered.status === 429 && ++giveUps >= ITEM_PROBE_THROTTLE_GIVEUPS) {
+          throttled = true;
+        }
+      }
+      // Still transient after the retries, or the answer that ended the probe:
+      // no verdict, the item stays listed. It was asked, so it is not counted
+      // as unprobed — that number means "never asked", not "asked and unsure".
+    },
+    ITEM_PROBE_CONCURRENCY,
+  );
+  return { verdicts, unprobed };
+}
+
+// Writes the probe's verdicts onto the items. A fresh verdict replaces
+// whatever the item carried, and a fresh answer with no verdict clears it.
+// An item the origin never got asked keeps what it earned in an earlier run
+// — the same reasoning as a reused view: yesterday's answer beats no answer,
+// and the next run that reaches the item corrects it — and is marked
+// "unverified" when there is nothing to keep. /r lists only unmarked items,
+// so a throttled origin is listed exactly as far as it has been verified,
+// and the set of unverified items only shrinks from run to run. `previous`
+// is the view on disk from the last run, or null. Exported for the tests.
+export function applyVerdicts(items, { verdicts, unprobed }, previous) {
+  const carried = new Map(
+    (previous?.items ?? [])
+      .filter((item) => item.resolution)
+      .map((item) => [item.name, item.resolution]),
+  );
+  const skipped = new Set(unprobed);
+  return items.map((item) => {
+    const resolution =
+      verdicts.get(item.name) ??
+      (skipped.has(item.name) ? (carried.get(item.name) ?? "unverified") : undefined);
+    // Overwriting in place keeps the slot slimItem reserved next to `type`;
+    // an item the origin served must not carry the key at all.
+    if (resolution) return { ...item, resolution };
+    const { resolution: _served, ...rest } = item;
+    return rest;
+  });
+}
+
+// How many of a view's items carry each resolution — the numbers the
+// manifest records and the guard checks against the file.
+export function countResolutions(items) {
+  const counts = { gated: 0, gone: 0, unverified: 0 };
+  for (const item of items) {
+    if (item.resolution in counts) counts[item.resolution] += 1;
+  }
+  return counts;
+}
+
+function describeResolutions({ gated, gone, unverified }) {
+  const parts = [];
+  if (gated > 0) parts.push(`${gated} gated`);
+  if (gone > 0) parts.push(`${gone} gone`);
+  if (unverified > 0) parts.push(`${unverified} unverified, origin throttled`);
+  return parts.length > 0 ? ` (${parts.join(", ")})` : "";
 }
 
 function viewPath(key) {
@@ -292,13 +454,9 @@ const RETRY_ROUNDS = 2;
 const RETRY_COOLDOWN_MS = 120_000;
 const RETRY_ATTEMPTS = 2;
 
-// A definitive answer is an answer. 404 means the index moved, 402/403/401
-// mean the catalog is paywalled or private — retrying those just spends
-// minutes to be told the same thing, and the manifest records the verdict
-// either way. Only "wait" (429), server faults (5xx) and network errors earn
-// a second chance.
-const DEFINITIVE_ERROR = /HTTP (400|401|402|403|404|405|410|451)\b/;
-
+// A definitive answer is an answer, and the manifest records it either way.
+// Only "wait" (429), server faults (5xx) and network errors earn a second
+// chance; DEFINITIVE_ERROR (scripts/lib/data-io.mjs) names the rest.
 function worthRetrying(record) {
   return record.status === "missing" && !DEFINITIVE_ERROR.test(record.error ?? "");
 }
@@ -345,7 +503,7 @@ async function retryMissing(records, probe) {
 // that could only be read in part. Reuses the view from an earlier run when
 // there is one, so a bad afternoon at one origin cannot empty a page that
 // worked yesterday.
-async function failedRead(entry, key, url, error, label) {
+async function failedRead(entry, key, url, error, label, probe) {
   const previous = await readJsonFile(viewPath(key));
 
   // A reusable view is one that describes the same registry this entry now
@@ -374,20 +532,40 @@ async function failedRead(entry, key, url, error, label) {
   }
 
   if (sameRegistry) {
-    console.log(`${label(entry)}: ${error} — reused (${previous.items.length} items)`);
+    // The catalog is carried forward, the verdicts are not — when the origin
+    // answered definitively. An index that moved (404) or turned into a web
+    // page usually took its items with it, and a reused view that still lists
+    // them as installable would keep /r promising what the origin no longer
+    // serves. An origin that asked us to wait, or could not be reached, is
+    // left alone: probing a throttled host item by item earns nothing but
+    // more 429s, and yesterday's verdicts are the best information there is.
+    let items = previous.items;
+    if (probe && previous.resolvable && DEFINITIVE_ERROR.test(error)) {
+      const probed = await probeItems(
+        previous.itemBase,
+        items.map((i) => i.name),
+      );
+      items = applyVerdicts(items, probed, previous);
+      await writeJsonFile(viewPath(key), { ...previous, items });
+    }
+    const resolutions = countResolutions(items);
+    console.log(
+      `${label(entry)}: ${error} — reused (${items.length} items${describeResolutions(resolutions)})`,
+    );
     return {
       key,
       entry,
       name: entry.name,
       url,
-      items: previous.items.length,
+      items: items.length,
       status: "reused",
       error,
       resolvable: previous.resolvable,
+      ...resolutions,
       ...(previous.embedsContent ? { embedsContent: true } : {}),
       snapshot: {
         url,
-        items: previous.items.map((i) => ({
+        items: items.map((i) => ({
           name: i.name,
           type: i.type,
           ...(i.dependencies ? { dependencies: i.dependencies } : {}),
@@ -406,7 +584,7 @@ async function indexOne(entry, probe, label, attempts) {
   const result = await fetchWithRetries(url, attempts ? { attempts } : {});
 
   if (!result.json) {
-    return failedRead(entry, key, url, result.error, label);
+    return failedRead(entry, key, url, result.error, label, probe);
   }
 
   let index = result.json;
@@ -418,7 +596,7 @@ async function indexOne(entry, probe, label, attempts) {
     if (paged.error) {
       // A half-read catalog is worse than an old one: it looks healthy and is
       // wrong. Fall back to the same path a failed first page takes.
-      return failedRead(entry, key, url, paged.error, label);
+      return failedRead(entry, key, url, paged.error, label, probe);
     }
     index = paged.index;
   } else {
@@ -434,6 +612,7 @@ async function indexOne(entry, probe, label, attempts) {
         url,
         `index served ${served} rows and declared ${declared}`,
         label,
+        probe,
       );
     }
   }
@@ -458,21 +637,33 @@ async function indexOne(entry, probe, label, attempts) {
     console.log(`  ${entry.name}: ${shadowed} item(s) share a name with an earlier one, keeping the first`);
   }
 
-  const items = rawItems.map(slimItem);
+  const names = rawItems.map((item) => item.name);
   const candidates = itemBaseCandidates(entry);
 
   // Provenance: some registries inline source in their index. Recording it
   // keeps the reason a view holds no file content visible in the manifest.
   const embedsContent = rawItems.some((item) => item.files?.[0]?.content);
   const { itemBase: base, resolvable } = probe
-    ? await resolveItemBase(
-        candidates,
-        items.map((i) => i.name),
-      )
+    ? await resolveItemBase(candidates, names)
     : { itemBase: candidates[0], resolvable: true };
   if (base !== candidates[0]) {
     console.log(`  ${entry.name}: items resolve at ${base}, not next to the index`);
   }
+
+  // Item by item, only where the sample said the origin serves something: a
+  // fully gated registry is already out of /r, and asking it a thousand more
+  // times would only confirm the sample.
+  const probed =
+    probe && resolvable
+      ? await probeItems(base, names)
+      : { verdicts: new Map(), unprobed: [] };
+  // Earlier verdicts are carried only for items this run could not ask, and
+  // only from a view of the same registry: a renamed or repointed entry must
+  // not inherit another origin's paywall.
+  const previous = await readJsonFile(viewPath(key));
+  const sameRegistry = previous && previous.entry === entry.name && previous.indexUrl === url;
+  const items = applyVerdicts(rawItems.map(slimItem), probed, sameRegistry ? previous : null);
+  const resolutions = countResolutions(items);
 
   const view = {
     key,
@@ -488,7 +679,7 @@ async function indexOne(entry, probe, label, attempts) {
 
   const changed = await writeJsonFile(viewPath(key), view);
   console.log(
-    `${label(entry)}: ${items.length} items${resolvable ? "" : " (origin does not resolve)"}${changed ? "" : " (unchanged)"}`,
+    `${label(entry)}: ${items.length} items${resolvable ? describeResolutions(resolutions) : " (origin does not resolve)"}${changed ? "" : " (unchanged)"}`,
   );
 
   return {
@@ -499,6 +690,7 @@ async function indexOne(entry, probe, label, attempts) {
     items: items.length,
     status: "ok",
     resolvable,
+    ...resolutions,
     embedsContent: embedsContent || undefined,
     snapshot: {
       url,

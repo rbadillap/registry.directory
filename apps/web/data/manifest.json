@@ -1,13 +1,16 @@
 {
-  "generatedAt": "2026-09-21T15:22:41.426Z",
-  "date": "2026-09-21",
+  "generatedAt": "2026-09-22T20:23:39.332Z",
+  "date": "2026-09-22",
   "counts": {
     "directory": 86,
     "views": 83,
-    "ok": 81,
-    "reused": 2,
+    "ok": 80,
+    "reused": 3,
     "missing": 3,
-    "items": 31890,
+    "items": 31987,
+    "gated": 3625,
+    "gone": 2113,
+    "unverified": 4815,
     "github": 78,
     "collections": 8
   },
@@ -40,9 +43,10 @@
       "key": "aceternity",
       "name": "Aceternity UI",
       "url": "https://ui.aceternity.com/registry/registry.json",
-      "items": 282,
+      "items": 283,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "gated": 165
     },
     {
       "key": "agentcn",
@@ -204,7 +208,9 @@
       "url": "https://efferd.com/r/registry.json",
       "items": 231,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "gated": 117,
+      "gone": 1
     },
     {
       "key": "eldoraui",
@@ -244,8 +250,10 @@
       "name": "HextaUI",
       "url": "https://hextaui.com/r/registry.json",
       "items": 139,
-      "status": "ok",
-      "resolvable": true
+      "status": "reused",
+      "resolvable": true,
+      "gone": 139,
+      "error": "HTTP 404 (after 5 attempts)"
     },
     {
       "key": "intentui",
@@ -316,7 +324,7 @@
       "key": "marvkr",
       "name": "Better Design",
       "url": "https://better-design.com/registry/registry.json",
-      "items": 85,
+      "items": 88,
       "status": "ok",
       "resolvable": true
     },
@@ -334,7 +342,8 @@
       "url": "https://www.motionmenu.ca/r/registry.json",
       "items": 598,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "unverified": 320
     },
     {
       "key": "motion-primitives",
@@ -351,7 +360,8 @@
       "items": 49,
       "status": "reused",
       "resolvable": true,
-      "error": "Unexpected token '<', \"<!doctype \"... is not valid JSON (after 5 attempts)"
+      "gone": 49,
+      "error": "not JSON (text/html)"
     },
     {
       "key": "nikolas-sapa",
@@ -375,7 +385,8 @@
       "url": "https://paceui.com/r/registry.json",
       "items": 23,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "gated": 16
     },
     {
       "key": "payload-components",
@@ -422,7 +433,7 @@
       "key": "react-bits",
       "name": "React Bits",
       "url": "https://reactbits.dev/r/registry.json",
-      "items": 820,
+      "items": 824,
       "status": "ok",
       "resolvable": true
     },
@@ -446,9 +457,10 @@
       "key": "reui",
       "name": "ReUI",
       "url": "https://reui.io/r/registry.json",
-      "items": 1773,
+      "items": 1774,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "gated": 1769
     },
     {
       "key": "shadcn",
@@ -464,15 +476,17 @@
       "url": "https://shadcndashboard.dev/r/registry.json",
       "items": 508,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "gated": 165
     },
     {
       "key": "shadcn-space",
       "name": "Shadcn Space",
       "url": "https://shadcnspace.com/r/registry.json",
-      "items": 893,
+      "items": 941,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "gated": 440
     },
     {
       "key": "shadcn-studio",
@@ -496,7 +510,8 @@
       "url": "https://shadcnblocks.com/r/registry.json",
       "items": 4171,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "unverified": 3870
     },
     {
       "key": "shadcncraft",
@@ -504,7 +519,8 @@
       "url": "https://shadcncraft.com/r/registry.json",
       "items": 300,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "gated": 274
     },
     {
       "key": "shadcnstore",
@@ -512,7 +528,8 @@
       "url": "https://shadcnstore.com/r/registry.json",
       "items": 274,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "gated": 214
     },
     {
       "key": "shadcnui-blocks",
@@ -528,7 +545,8 @@
       "url": "https://shadcnuikit.com/r/registry.json",
       "items": 932,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "gone": 383
     },
     {
       "key": "smoothui",
@@ -545,7 +563,8 @@
       "url": "https://snapcn.dev/r/registry.json",
       "items": 93,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "gated": 48
     },
     {
       "key": "statico",
@@ -575,9 +594,10 @@
       "key": "tailark",
       "name": "Tailark",
       "url": "https://tailark.com/r/registry.json",
-      "items": 474,
+      "items": 476,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "gated": 387
     },
     {
       "key": "tailwind-admin",
@@ -655,7 +675,7 @@
       "key": "uselayouts",
       "name": "useLayouts",
       "url": "https://uselayouts.com/r/registry.json",
-      "items": 26,
+      "items": 64,
       "status": "ok",
       "resolvable": true
     },
@@ -674,6 +694,7 @@
       "items": 1541,
       "status": "reused",
       "resolvable": true,
+      "gone": 1541,
       "error": "HTTP 404 (after 5 attempts)"
     },
     {
@@ -706,7 +727,9 @@
       "url": "https://ui.zyeon.ai/r/registry.json",
       "items": 1014,
       "status": "ok",
-      "resolvable": true
+      "resolvable": true,
+      "gated": 30,
+      "unverified": 625
     }
   ]
 }

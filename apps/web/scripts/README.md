@@ -36,8 +36,9 @@ pnpm index --retry            add a patient retry pass      (minutes longer)
 apps/web/data/
   registries/{key}.json   one slim view per registry: items with name, type,
                           description, categories, dependencies, cssVars,
-                          font (registry:font only) and file PATHS. Never
-                          file content.
+                          font (registry:font only), file PATHS and — unless
+                          the origin served the item — `resolution`.
+                          Never file content.
   github.json             stars and last-push date per github_url
   collections.json        the home's groupings, each carrying its own criterion
   shipped.json            day-to-day diff of item names (the novedades ticker)
@@ -59,7 +60,10 @@ Snapshots are append-only: a run never overwrites a day already archived.
    The probe also settles *where* items live (`itemBase` in the view): the
    convention — next to the index — is tried first, then the other layouts
    in `itemBaseCandidates` (`scripts/lib/data-io.mjs`). Everything that
-   fetches an item afterwards reads `itemBase` from the view.
+   fetches an item afterwards reads `itemBase` from the view. Then every
+   item of a resolvable registry is asked for once, and the ones the origin
+   refuses or the probe could not reach are marked (`resolution` on the
+   item — see below).
 2. **github** — refresh stars and last-push dates. Skipped on a partial run.
 3. **derived** — compute `collections.json` from the views just written, and
    `shipped.json` by diffing recent snapshots.
@@ -79,6 +83,72 @@ registry and not its components:
 `reused` is why a bad afternoon at one origin cannot empty a page that used to
 work. `missing` only happens to a registry that has never been indexed
 successfully.
+
+### The item probe: what `/r` may list
+
+The registry-level sample above answers "does this origin serve anything?".
+The item probe answers, for each item, "will the origin serve *this one* to an
+anonymous request?" — because `/r` proxies installs to the origin, and an item
+the origin refuses is a search result that installs as our 502. The official
+shadcn registry index samples our catalog daily and scores each of those
+against `@registrydirectory`, not against the origin.
+
+One request per item, body discarded. An item the origin served carries no
+mark. Everything else is written on the item itself:
+
+| `resolution` | the origin answered | what it means |
+| --- | --- | --- |
+| `"gated"` | 401, 402, 403 | the item exists behind a paywall or a login |
+| `"gone"` | 404, 410, or a 2xx web page where the JSON should be | the index lists an item the origin no longer serves |
+| `"unverified"` | nothing — the probe never got to ask | the origin throttled the run before reaching this item |
+
+A transient answer — 429, 5xx, a timeout — is retried briefly and then leaves
+the item **as it was**: a rate limit is a request to wait, not an answer about
+the item, and the view must not record a bad afternoon as a paywall.
+
+**`/r` lists only unmarked items** (`lib/catalog.ts`): what the indexer
+verified the origin serves. A refused item would be a search result that
+installs as our 502; an unverified one is a promise nobody has checked. The
+site keeps showing all of them: a paywalled block is still a block worth
+finding, it just cannot be installed through an aggregator. The manifest
+carries the counts (`gated`, `gone`, `unverified`, per registry and in
+`counts`) and the guard checks them against the files.
+
+A registry whose sample says the origin serves nothing (`resolvable: false`)
+is not probed item by item — it is already out of `/r`, and a thousand more
+requests would only confirm the sample.
+
+**Reused views are re-probed when the index failed definitively** (404, a
+paywall, a page that is not JSON): an index that moved usually took its items
+with it, and a carried-forward view that still lists them as installable keeps
+`/r` promising what the origin stopped serving. An index that answered 429 or
+5xx, or could not be reached, is left alone — yesterday's verdicts are the best
+information there is, and probing a throttled host item by item earns nothing
+but more 429s.
+
+**The probe never waits out a rate limit** — same rule as the main run. An
+origin that answers 429 with a `Retry-After` beyond 30 seconds, or keeps
+answering 429 after the retries, has said all it will say today: the items
+it never got asked are marked `unverified` and stay out of `/r`. Shadcn
+Blocks is the standing example: an hourly quota per IP and four thousand
+items, so a single run verifies a few dozen.
+
+Two things make a throttled origin converge over runs instead of re-asking
+the same items forever. The probe starts at a random item each run, so a
+quota is spent on different items every time. And an item the run could not
+ask **keeps what it earned in an earlier run** — a refusal, or the
+unverified mark — the same reasoning as a reused view: yesterday's answer
+beats no answer, and the next run that reaches the item corrects it. A
+fresh answer always replaces an old mark, and an item the origin serves loses
+it. So the unverified set of an origin only shrinks, and `/r` lists it
+exactly as far as it has been verified. `pnpm index --only=<key>` is the
+cheap way to spend another quota on one origin; the run summary prints the
+command for the origins that need it.
+
+Cost: about one request per item in the directory, four in flight per origin.
+That is the price of a verdict per item rather than per registry, and it is
+paid here, on a laptop, never on Vercel. A full run takes about 30 minutes
+now, up from 3.
 
 ### Quarantine: why the main run never waits
 
@@ -101,9 +171,10 @@ to retry the 4 throttled one(s) — patient, minutes long:
 ```
 
 The split is deliberate. `429` and `5xx` mean "wait" or "my fault" — worth
-retrying. `401/402/403/404/410` are definitive answers: paywalled, private, or
-gone. Retrying those spends minutes to be told the same thing, so they are
-left out of the suggested command.
+retrying. `401/402/403/404/410`, and a 200 that is not JSON, are definitive
+answers: paywalled, private, gone, or a web page. Retrying those spends
+minutes to be told the same thing, so they are left out of the suggested
+command (`DEFINITIVE_ERROR` in `scripts/lib/data-io.mjs` is the one list).
 
 `--retry` adds two rounds with a 120s cooldown, hitting the throttled origins
 one at a time (retrying them in parallel is what earns a 429 in the first

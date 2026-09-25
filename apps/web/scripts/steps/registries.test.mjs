@@ -202,3 +202,215 @@ describe("resolveItemBase", () => {
     assert.deepEqual(r, { itemBase: "https://x.test/r", resolvable: true });
   });
 });
+
+// Item by item, what /r may list. The verdict must come only from a
+// definitive answer: a paywall and a rate limit both return "not 200", and
+// recording the second as the first would strike a working item from the
+// catalog for the length of a bad afternoon.
+import { countResolutions, probeItems } from "./registries.mjs";
+
+const BASE = "https://x.test/r";
+// Stubs the network: each answer is { status, contentType? }. A list plays
+// its answers in order and repeats the last one, so a retry can be observed.
+function network(table) {
+  const calls = {};
+  const answer = async (url) => {
+    const name = url.slice(BASE.length + 1, -".json".length);
+    const script = [].concat(table[name] ?? { status: 200, contentType: "application/json" });
+    const n = (calls[name] = (calls[name] ?? 0) + 1);
+    return script[Math.min(n, script.length) - 1];
+  };
+  return { answer, calls };
+}
+const noWait = async () => {};
+// Tests ask in catalog order; the random start only matters against a quota.
+const inOrder = { wait: noWait, start: 0 };
+
+describe("probeItems", () => {
+  it("marks paywalled and missing items, and leaves the rest alone", async () => {
+    const { answer } = network({
+      paid: { status: 402 },
+      login: { status: 401 },
+      forbidden: { status: 403 },
+      moved: { status: 404 },
+      retired: { status: 410 },
+    });
+    const { verdicts, unprobed } = await probeItems(
+      BASE,
+      ["free", "paid", "login", "forbidden", "moved", "retired"],
+      { answer, ...inOrder },
+    );
+    assert.deepEqual(unprobed, []);
+    assert.deepEqual(
+      [...verdicts],
+      [
+        ["paid", "gated"],
+        ["login", "gated"],
+        ["forbidden", "gated"],
+        ["moved", "gone"],
+        ["retired", "gone"],
+      ],
+    );
+  });
+
+  it("treats a web page where the JSON should be as gone", async () => {
+    // A registry that redirected /r to its marketing site answers 200 to
+    // every item name, and the CLI would fail to parse each one.
+    const { answer } = network({
+      landing: { status: 200, contentType: "text/html; charset=utf-8" },
+    });
+    const { verdicts } = await probeItems(BASE, ["landing"], { answer, ...inOrder });
+    assert.deepEqual([...verdicts], [["landing", "gone"]]);
+  });
+
+  it("gives a throttled or broken origin the benefit of the doubt", async () => {
+    const { answer, calls } = network({
+      throttled: { status: 429 },
+      down: { status: 503 },
+      unreachable: { status: 0 },
+    });
+    const { verdicts, unprobed } = await probeItems(BASE, ["throttled", "down", "unreachable"], {
+      answer,
+      ...inOrder,
+    });
+    assert.equal(verdicts.size, 0, "no verdict without a definitive answer");
+    assert.deepEqual(unprobed, [], "every item was asked");
+    assert.equal(calls.throttled, 3, "a transient answer is asked again before giving up");
+  });
+
+  it("takes the definitive answer a retry produces", async () => {
+    const { answer, calls } = network({
+      flaky: [{ status: 429 }, { status: 402 }],
+      recovered: [{ status: 500 }, { status: 200, contentType: "application/json" }],
+    });
+    const { verdicts } = await probeItems(BASE, ["flaky", "recovered"], { answer, ...inOrder });
+    assert.deepEqual([...verdicts], [["flaky", "gated"]]);
+    assert.equal(calls.recovered, 2, "stops asking once the origin answers");
+  });
+
+  it("waits as long as the origin asks, when that is within the cap", async () => {
+    const waits = [];
+    const { answer } = network({
+      patient: [{ status: 429, retryAfterMs: 3_000 }, { status: 200, contentType: "application/json" }],
+      silent: [{ status: 429 }, { status: 200, contentType: "application/json" }],
+    });
+    await probeItems(BASE, ["patient", "silent"], { answer, start: 0, wait: async (ms) => waits.push(ms) });
+    assert.deepEqual(waits.sort((a, b) => a - b), [3_000, 5_000]);
+  });
+
+  it("stops asking an origin that tells it to come back in an hour", async () => {
+    // Four in flight: the first four are asked, the origin's answer to the
+    // first of them ends the probe, and the rest are never requested.
+    const names = Array.from({ length: 20 }, (_, i) => `item-${i}`);
+    const { answer, calls } = network(
+      Object.fromEntries(names.map((n) => [n, { status: 429, retryAfterMs: 3_600_000 }])),
+    );
+    const { verdicts, unprobed } = await probeItems(BASE, names, { answer, ...inOrder });
+    assert.equal(verdicts.size, 0);
+    assert.ok(Object.keys(calls).length <= 4, `asked ${Object.keys(calls).length} items, expected at most the four in flight`);
+    assert.equal(unprobed.length + Object.keys(calls).length, 20, "every item is either asked or listed as unprobed");
+  });
+
+  it("stops asking an origin that keeps answering 429 without a date", async () => {
+    const names = Array.from({ length: 20 }, (_, i) => `item-${i}`);
+    const { answer, calls } = network(Object.fromEntries(names.map((n) => [n, { status: 429 }])));
+    const { unprobed } = await probeItems(BASE, names, { answer, ...inOrder });
+    const asked = Object.keys(calls).length;
+    assert.ok(asked < 20, "gave up before asking for every item");
+    assert.equal(unprobed.length + asked, 20);
+  });
+
+  it("keeps the verdicts it got before the origin throttled", async () => {
+    // Concurrency is four, so the whole table is asked before any answer
+    // lands; what matters is that the paywall verdict survives the cut.
+    const { verdicts } = await probeItems(BASE, ["paid", "late"], {
+      answer: network({ paid: { status: 402 }, late: { status: 429, retryAfterMs: 3_600_000 } }).answer,
+      ...inOrder,
+    });
+    assert.deepEqual([...verdicts], [["paid", "gated"]]);
+  });
+
+  it("starts where it is told and wraps around", async () => {
+    const asked = [];
+    const { answer } = network({});
+    await probeItems(BASE, ["a", "b", "c"], {
+      answer: (url) => (asked.push(url.slice(BASE.length + 1, -".json".length)), answer(url)),
+      ...inOrder,
+      start: 1,
+    });
+    assert.deepEqual(asked, ["b", "c", "a"]);
+  });
+});
+
+// A verdict is a fact about one item at one moment. Fresh answers replace
+// old ones; an item the origin could not be asked keeps what it earned.
+import { applyVerdicts } from "./registries.mjs";
+
+describe("applyVerdicts", () => {
+  const previous = {
+    items: [
+      { name: "a", resolution: "gated" },
+      { name: "b", resolution: "gone" },
+      { name: "c" },
+      { name: "e", resolution: "unverified" },
+    ],
+  };
+  const fresh = [{ name: "a" }, { name: "b" }, { name: "c" }, { name: "d" }, { name: "e" }];
+
+  it("writes fresh verdicts and clears the ones a fresh answer contradicts", () => {
+    const items = applyVerdicts(fresh, { verdicts: new Map([["c", "gated"]]), unprobed: [] }, previous);
+    assert.deepEqual(items, [
+      { name: "a" },
+      { name: "b" },
+      { name: "c", resolution: "gated" },
+      { name: "d" },
+      { name: "e" },
+    ]);
+  });
+
+  it("carries the earlier finding of an item this run could not ask, and marks the rest unverified", () => {
+    const items = applyVerdicts(fresh, { verdicts: new Map(), unprobed: ["a", "d", "e"] }, previous);
+    assert.deepEqual(items, [
+      { name: "a", resolution: "gated" },
+      { name: "b" },
+      { name: "c" },
+      { name: "d", resolution: "unverified" },
+      { name: "e", resolution: "unverified" },
+    ]);
+  });
+
+  it("marks every unasked item unverified without a previous view", () => {
+    const items = applyVerdicts(fresh, { verdicts: new Map(), unprobed: ["a"] }, null);
+    assert.deepEqual(items, [
+      { name: "a", resolution: "unverified" },
+      { name: "b" },
+      { name: "c" },
+      { name: "d" },
+      { name: "e" },
+    ]);
+  });
+
+  it("keeps the slot next to the type", () => {
+    const items = applyVerdicts(
+      [{ name: "a", type: "registry:ui", resolution: undefined, title: "A" }],
+      { verdicts: new Map([["a", "gated"]]), unprobed: [] },
+      null,
+    );
+    assert.deepEqual(Object.keys(items[0]), ["name", "type", "resolution", "title"]);
+  });
+});
+
+describe("countResolutions", () => {
+  it("counts each resolution and ignores served items", () => {
+    assert.deepEqual(
+      countResolutions([
+        { resolution: "gated" },
+        { resolution: "gone" },
+        {},
+        { resolution: "gated" },
+        { resolution: "unverified" },
+      ]),
+      { gated: 2, gone: 1, unverified: 1 },
+    );
+  });
+});

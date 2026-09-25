@@ -26,6 +26,12 @@ export interface ManifestRegistry {
   status: "ok" | "reused" | "missing"
   /** False when every sampled item was definitively gated at the origin. */
   resolvable: boolean
+  /** Items the origin refuses with 401/402/403. Absent when none. */
+  gated?: number
+  /** Items the origin answers 404/410, or with a web page. Absent when none. */
+  gone?: number
+  /** Items no run has reached yet because the origin throttles the probe. */
+  unverified?: number
   /** The origin inlines file content in its index. */
   originEmbedsContent?: boolean
   /** Why this view is a carry-forward rather than a fresh read. */
@@ -42,11 +48,28 @@ export interface Manifest {
     reused: number
     missing: number
     items: number
+    /** Absent in manifests written before the item probe existed. */
+    gated?: number
+    gone?: number
+    unverified?: number
     github: number
     collections: number
   }
   registries: ManifestRegistry[]
 }
+
+/**
+ * What the indexer's per-item probe found when it asked the origin for the
+ * item. Absent: served — the item resolves. "gated": behind a paywall or a
+ * login (401/402/403). "gone": listed in the index, not served (404/410, or
+ * a web page where the JSON should be). "unverified": no run has reached it
+ * yet, because the origin throttles the probe. Never set for a transient
+ * failure. /r lists only items with no resolution.
+ */
+export type ItemResolution = "gated" | "gone" | "unverified"
+
+/** An item as the view lists it: the schema's fields, plus the probe's finding. */
+export type RegistryViewItem = RegistryItem & { resolution?: ItemResolution }
 
 export interface RegistryView {
   key: string
@@ -61,7 +84,7 @@ export interface RegistryView {
   resolvable: boolean
   /** The origin inlines file content in its index; the view strips it. */
   embedsContent?: boolean
-  items: RegistryItem[]
+  items: RegistryViewItem[]
 }
 
 // The manifest is ~75 short records and every render path needs it, so it is

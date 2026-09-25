@@ -14,6 +14,7 @@
 import { join } from "node:path";
 import {
   DATA_DIR,
+  DEFINITIVE_ERROR,
   REGISTRIES_DIR,
   formatKB,
   listRegistryFiles,
@@ -88,6 +89,13 @@ async function main() {
     items: r.items,
     status: r.status,
     resolvable: r.resolvable ?? true,
+    // Items /r leaves out, by resolution: refused by the origin (gated,
+    // gone) or never asked because it throttled the probe (unverified).
+    // Absent means none: a zero would put a field on every record to say
+    // nothing.
+    ...(r.gated ? { gated: r.gated } : {}),
+    ...(r.gone ? { gone: r.gone } : {}),
+    ...(r.unverified ? { unverified: r.unverified } : {}),
     ...(r.embedsContent ? { originEmbedsContent: true } : {}),
     ...(r.error ? { error: r.error } : {}),
   });
@@ -125,6 +133,11 @@ async function main() {
       reused: reusedViews.length,
       missing: missing.length,
       items: entries.reduce((sum, r) => sum + r.items, 0),
+      // Listed in the views, left out of /r: refused by their origin, or
+      // not yet verified because it throttled the probe.
+      gated: entries.reduce((sum, r) => sum + (r.gated ?? 0), 0),
+      gone: entries.reduce((sum, r) => sum + (r.gone ?? 0), 0),
+      unverified: entries.reduce((sum, r) => sum + (r.unverified ?? 0), 0),
       github: github.total,
       collections: derived.collections,
     },
@@ -146,6 +159,23 @@ async function main() {
   console.log(
     `ok ${ok.length} · reused ${reusedViews.length} · missing ${missing.length} · ${elapsed}s`
   );
+  const { gated, gone, unverified } = manifest.counts;
+  if (gated + gone > 0) {
+    console.log(
+      `origins refuse ${(gated + gone).toLocaleString("en-US")} of them (${gated.toLocaleString("en-US")} gated, ${gone.toLocaleString("en-US")} gone)`
+    );
+  }
+  const throttled = entries.filter((r) => r.unverified);
+  if (throttled.length > 0) {
+    console.log(
+      `${unverified.toLocaleString("en-US")} item(s) still unverified, their origin throttled the probe: ${throttled
+        .map((r) => `${r.name} (${r.unverified})`)
+        .join(", ")} — run \`pnpm index --only=${throttled.map((r) => r.key).join(",")}\` to verify more`
+    );
+  }
+  console.log(
+    `/r lists ${(manifest.counts.items - gated - gone - unverified).toLocaleString("en-US")} items`
+  );
   if (reusedViews.length > 0) {
     console.log(`reused: ${reusedViews.map((r) => `${r.name} (${r.error})`).join(", ")}`);
   }
@@ -156,9 +186,7 @@ async function main() {
     // A quarantined origin is worth a second chance only when its answer was
     // "wait" or "my fault": 429 and 5xx come back, 402/403/404 do not. The
     // command below names just the retryable ones, so it is safe to paste.
-    const retryable = missing.filter(
-      (r) => !/HTTP (400|401|402|403|404|405|410|451)\b/.test(r.error ?? "")
-    );
+    const retryable = missing.filter((r) => !DEFINITIVE_ERROR.test(r.error ?? ""));
     if (retryable.length > 0) {
       console.log(
         `\nto retry the ${retryable.length} throttled one(s) — patient, minutes long:\n` +
