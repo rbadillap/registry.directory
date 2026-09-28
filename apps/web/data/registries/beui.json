@@ -8,6 +8,78 @@
   "resolvable": true,
   "items": [
     {
+      "name": "color-selector",
+      "type": "registry:component",
+      "title": "Animated Color Selector",
+      "description": "Composable color swatches with a spring-gliding selection ring, press feedback, native radio keyboard navigation, and controlled or uncontrolled state.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/color-selector.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/color-selector.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:component",
+      "title": "Animated Breadcrumb",
+      "description": "Composable breadcrumb navigation with soft path transitions, a hoverable overflow dropdown for long trails, custom separators, and router-link support.",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/breadcrumb.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/breadcrumb.tsx"
+        },
+        {
+          "path": "components/motion/popover-morph.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/popover-morph.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/motion/popover-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/popover-position.ts"
+        }
+      ]
+    },
+    {
       "name": "tilt-card",
       "type": "registry:component",
       "title": "Tilt Card",
@@ -943,8 +1015,9 @@
       "name": "tooltip",
       "type": "registry:component",
       "title": "Tooltip",
-      "description": "Hover or focus tooltip with blur enter/exit and spring spawn.",
+      "description": "Hover or focus tooltip with a subtle scale and fade, collision-aware placement, and optional cursor tracking.",
       "dependencies": [
+        "@floating-ui/dom",
         "clsx",
         "motion",
         "tailwind-merge"
@@ -954,6 +1027,16 @@
           "path": "components/motion/tooltip.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
         },
         {
           "path": "components/motion/tooltip-surface.tsx",
@@ -2394,11 +2477,116 @@
       ]
     },
     {
+      "name": "composition-chart",
+      "type": "registry:component",
+      "title": "Composition Chart",
+      "description": "Stacked bar and area shares with period tooltips and a compact interactive legend.",
+      "dependencies": [
+        "@floating-ui/dom",
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/composition-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/composition-chart.tsx"
+        },
+        {
+          "path": "components/charts/composition-chart/context.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/composition-chart/context.tsx"
+        },
+        {
+          "path": "components/charts/composition-chart/legend.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/composition-chart/legend.tsx"
+        },
+        {
+          "path": "components/charts/composition-chart/model.ts",
+          "type": "registry:component",
+          "target": "@components/charts/composition-chart/model.ts"
+        },
+        {
+          "path": "components/charts/composition-chart/plot.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/composition-chart/plot.tsx"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "components/charts/composition-chart/tooltip-content.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/composition-chart/tooltip-content.tsx"
+        },
+        {
+          "path": "components/motion/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/motion/number-ticker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/number-ticker.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-gesture.ts"
+        },
+        {
+          "path": "lib/hooks/use-tap-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-tap-gesture.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
       "name": "funnel-chart",
       "type": "registry:component",
       "title": "Funnel Chart",
       "description": "Vertical and horizontal funnels with curved stages and animated number tooltips.",
       "dependencies": [
+        "@floating-ui/dom",
         "clsx",
         "motion",
         "tailwind-merge"
@@ -2435,6 +2623,16 @@
           "target": "@lib/utils.ts"
         },
         {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
+        },
+        {
           "path": "components/motion/tooltip-surface.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip-surface.tsx"
@@ -2467,6 +2665,7 @@
       "title": "Liquidity Heatmap",
       "description": "Animated liquidity bands across price and time, with a price trace and depth tooltips.",
       "dependencies": [
+        "@floating-ui/dom",
         "clsx",
         "motion",
         "tailwind-merge"
@@ -2503,6 +2702,16 @@
           "target": "@lib/utils.ts"
         },
         {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
+        },
+        {
           "path": "components/motion/tooltip-surface.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip-surface.tsx"
@@ -2535,6 +2744,7 @@
       "title": "Bump Chart",
       "description": "Animated rankings with curved paths, interactive rank dots, and tooltips.",
       "dependencies": [
+        "@floating-ui/dom",
         "clsx",
         "motion",
         "tailwind-merge"
@@ -2599,6 +2809,16 @@
           "path": "lib/ease.ts",
           "type": "registry:lib",
           "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
         },
         {
           "path": "components/motion/tooltip-surface.tsx",
@@ -2671,6 +2891,7 @@
       "title": "Heat Calendar",
       "description": "Composable activity calendar with Grid, Legend, and Tooltip parts, controlled range selection, and UTC calendar dates. Supply weekly intensities to visualize activity and total a selected span.",
       "dependencies": [
+        "@floating-ui/dom",
         "clsx",
         "motion",
         "tailwind-merge"
@@ -2737,6 +2958,16 @@
           "target": "@components/motion/tooltip.tsx"
         },
         {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
+        },
+        {
           "path": "components/motion/tooltip-surface.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip-surface.tsx"
@@ -2769,6 +3000,7 @@
       "title": "Returns Calendar",
       "description": "Composable monthly returns calendar with Grid and Tooltip parts, controlled month or year selections, and compounded totals. Supply your own years and monthly percentages.",
       "dependencies": [
+        "@floating-ui/dom",
         "clsx",
         "motion",
         "tailwind-merge"
@@ -2830,6 +3062,16 @@
           "target": "@components/motion/tooltip.tsx"
         },
         {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
+        },
+        {
           "path": "components/motion/tooltip-surface.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip-surface.tsx"
@@ -2862,6 +3104,7 @@
       "title": "Price Target Fan",
       "description": "Composable price target chart with Header, Plot, SVG, Axes, History, Targets, Now, Cursor, and Tooltip parts. Supply dated price history and targets; scrub with a pointer or keyboard and customize the active readout.",
       "dependencies": [
+        "@floating-ui/dom",
         "clsx",
         "motion",
         "tailwind-merge"
@@ -2931,6 +3174,16 @@
           "path": "components/motion/tooltip.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
         },
         {
           "path": "components/motion/tooltip-surface.tsx",
@@ -4268,6 +4521,7 @@
       "title": "Fixtures Knockout Wheel",
       "description": "The tournament drawn radially. The champion holds the hub, each round is a ring further out, and the teams themselves form the rim. Nodes spring in ring by ring, and hovering one isolates that team while the rest recede. Teams show a flag, a logo or their initials, and a deeper draw grows another ring.",
       "dependencies": [
+        "@floating-ui/dom",
         "clsx",
         "lucide-react",
         "motion",
@@ -4313,6 +4567,16 @@
           "path": "lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
         },
         {
           "path": "components/motion/tooltip-surface.tsx",
@@ -4361,6 +4625,7 @@
       "title": "Availability Scheduler",
       "description": "Weekly availability editor where each day springs between available and unavailable, time ranges add and remove with blur-slide motion, times pick from a scrollable dropdown, and a copy menu clones hours to other days.",
       "dependencies": [
+        "@floating-ui/dom",
         "clsx",
         "lucide-react",
         "motion",
@@ -4431,6 +4696,16 @@
           "path": "components/motion/select.tsx",
           "type": "registry:component",
           "target": "@components/motion/select.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
         },
         {
           "path": "components/motion/tooltip-surface.tsx",
@@ -4832,6 +5107,7 @@
       "title": "File Upload Attachment Upload",
       "description": "A mixed attachment workspace with a dropzone, staggered file and image rows, animated upload, success, failure, retry and removal feedback, shared-layout image previews, and an audio waveform.",
       "dependencies": [
+        "@floating-ui/dom",
         "clsx",
         "lucide-react",
         "motion",
@@ -4862,6 +5138,16 @@
           "path": "lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
         },
         {
           "path": "components/motion/tooltip-surface.tsx",
@@ -4925,6 +5211,7 @@
       "title": "Prediction Market Market Cards",
       "description": "Compact market listings with consistent outcome rows, animated odds CTAs, payout multipliers and bookmarks. Odds CTAs use green/red backgrounds and roll into Yes/No labels on hover or keyboard focus. Use Update odds to preview animated price changes.",
       "dependencies": [
+        "@floating-ui/dom",
         "clsx",
         "lucide-react",
         "motion",
@@ -4960,6 +5247,16 @@
           "path": "lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
         },
         {
           "path": "components/motion/tooltip-surface.tsx",
