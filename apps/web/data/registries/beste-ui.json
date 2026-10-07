@@ -2,7 +2,7 @@
   "key": "beste-ui",
   "entry": "Beste UI",
   "name": "beste-ui",
-  "homepage": "https://ui.beste.co",
+  "homepage": "https://beste.dev",
   "indexUrl": "https://ui.beste.co/r/registry.json",
   "itemBase": "https://ui.beste.co/r",
   "resolvable": false,
@@ -2184,6 +2184,37 @@
       ]
     },
     {
+      "name": "about84",
+      "type": "registry:block",
+      "title": "Studio Process With Offset Photo Pair",
+      "description": "An about section for a photography and retouching studio laid out as two equal columns. The left column holds the eyebrow, heading and description above the first photo stage, while the right column starts with the second stage and ends with a short note and two buttons, so the two stages sit offset from each other. The first stage relights one photograph across a whole day and the second is a magnifier for inspecting retouched detail, each with a title and a short paragraph. Both stages are borderless and share one aspect ratio.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/about84/about84.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/about84.tsx"
+        },
+        {
+          "path": "registry-components/image-loupe/image-loupe.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/image-loupe.tsx"
+        },
+        {
+          "path": "registry-components/photo-relight/photo-relight.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/photo-relight.tsx"
+        }
+      ]
+    },
+    {
       "name": "agency10",
       "type": "registry:block",
       "title": "Case Study Hero",
@@ -4247,6 +4278,49 @@
           "path": "registry-components/button22/button22.tsx",
           "type": "registry:component",
           "target": "components/beste/component/button22.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento16",
+      "type": "registry:block",
+      "title": "Isometric Scene Bento",
+      "description": "An asymmetric bento grid of cards whose media areas are live isometric scenes. One large lead cell sits beside two stacked cells, and a closing row of two wide cells places the scene next to its text. Every cell takes its scene, title and one sentence from the items prop.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/bento16/bento16.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/bento16.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric201/isometric201.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric201.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric203/isometric203.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric203.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric206/isometric206.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric206.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric217/isometric217.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric217.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric220/isometric220.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric220.tsx"
         }
       ]
     },
@@ -13848,6 +13922,146 @@
       ]
     },
     {
+      "name": "cta106",
+      "type": "registry:block",
+      "title": "Effect Panel Call to Action",
+      "description": "A rounded panel inside the container with a live gradient effect as its background. The heading sits at the lower left in white, with one sentence and two buttons at the lower right. The effect is a swappable background slot, filled with a dark mesh gradient in the demo.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/cta106/cta106.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/cta106.tsx"
+        },
+        {
+          "path": "registry-components/mesh-gradient/mesh-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/mesh-gradient.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta107",
+      "type": "registry:block",
+      "title": "Isometric Scene Call to Action",
+      "description": "A wide borderless panel that splits into text and artwork. The left half holds an eyebrow, a heading, one sentence and two buttons; the right half shows an animated isometric scene standing on a patterned ground plane that dissolves into the panel toward the text. On small screens the text sits above the scene.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/cta107/cta107.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/cta107.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric205/isometric205.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric205.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta108",
+      "type": "registry:block",
+      "title": "Uptime Proof Call to Action",
+      "description": "A tall borderless band filled with a live ridgeline plot that dissolves into the page at the bottom. One glass card floats in the middle of the band and holds an eyebrow, a heading, one sentence and two buttons. At the foot of the card a 30 day uptime strip with hover details serves as proof.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/cta108/cta108.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/cta108.tsx"
+        },
+        {
+          "path": "registry-components/ridgelines/ridgelines.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/ridgelines.tsx"
+        },
+        {
+          "path": "registry-components/status-uptime/status-uptime.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/status-uptime.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta109",
+      "type": "registry:block",
+      "title": "Growing Grove Call to Action",
+      "description": "A wide borderless panel with a centered eyebrow, heading, one sentence and two buttons above a grove of three ink trees. Each tree grows from a single point at its own pace, with its own shape, fullness and blossom color, and all three stand on the same ground line along the bottom of the panel. The trees take their ink from the theme, so the panel reads in light and dark.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/cta109/cta109.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/cta109.tsx"
+        },
+        {
+          "path": "registry-components/growing-tree/growing-tree.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/growing-tree.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta110",
+      "type": "registry:block",
+      "title": "Pool Water Band With Glass Booking Card",
+      "description": "One wide borderless band filled with sunlit pool water over a tiled floor that fades into the page at the bottom. A glass card floats on the left of the band and holds the eyebrow, heading, one short paragraph, a compact price widget with its label, and two buttons. On small screens the card fills the band width.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/cta110/cta110.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/cta110.tsx"
+        },
+        {
+          "path": "registry-components/pool-caustics/pool-caustics.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/pool-caustics.tsx"
+        },
+        {
+          "path": "registry-components/price-tag/price-tag.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/price-tag.tsx"
+        }
+      ]
+    },
+    {
       "name": "dashboard1",
       "type": "registry:block",
       "title": "Admin Shell",
@@ -14504,6 +14718,66 @@
           "path": "registry-components/user-menu/user-menu.tsx",
           "type": "registry:component",
           "target": "components/beste/component/user-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dashboard14",
+      "type": "registry:block",
+      "title": "Service Reliability Overview",
+      "description": "A status dashboard with a top bar and two scroll areas: the main column stacks four readout figures, a list of services with daily uptime strips, a response time chart beside a week over week comparison, and a deploy heatmap. A side column holds the incident and deploy activity feed, and drops under the main column on small screens.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu",
+        "avatar",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "registry/dashboard14/dashboard14.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/dashboard14.tsx"
+        },
+        {
+          "path": "registry-components/user-menu/user-menu.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/user-menu.tsx"
+        },
+        {
+          "path": "registry-components/readout-stat/readout-stat.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/readout-stat.tsx"
+        },
+        {
+          "path": "registry-components/readout-compare/readout-compare.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/readout-compare.tsx"
+        },
+        {
+          "path": "registry-components/status-uptime/status-uptime.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/status-uptime.tsx"
+        },
+        {
+          "path": "registry-components/area-chart/area-chart.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/area-chart.tsx"
+        },
+        {
+          "path": "registry-components/heatmap-calendar/heatmap-calendar.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/heatmap-calendar.tsx"
+        },
+        {
+          "path": "registry-components/activity-feed/activity-feed.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/activity-feed.tsx"
         }
       ]
     },
@@ -16372,6 +16646,57 @@
           "path": "registry-components/button1/button1.tsx",
           "type": "registry:component",
           "target": "components/beste/component/button1.tsx"
+        }
+      ]
+    },
+    {
+      "name": "education105",
+      "type": "registry:block",
+      "title": "Course Bento With Tall Curriculum Cell",
+      "description": "A header with one button on the right sits above a bento grid for a course platform. One tall cell holds a course progress ring, and two wide cells beside it hold a learning streak and a graded project card. Each cell sits on its own gradient background with glass cards. Every cell pairs its piece with a title and a sentence, and the grid stacks on phones.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/education105/education105.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/education105.tsx"
+        },
+        {
+          "path": "registry-pieces/education3/education3.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/education3.tsx"
+        },
+        {
+          "path": "registry-pieces/education9/education9.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/education9.tsx"
+        },
+        {
+          "path": "registry-pieces/education14/education14.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/education14.tsx"
+        },
+        {
+          "path": "registry-components/fluid-gradient/fluid-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/fluid-gradient.tsx"
+        },
+        {
+          "path": "registry-components/mesh-gradient/mesh-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/mesh-gradient.tsx"
+        },
+        {
+          "path": "registry-components/wave-gradient/wave-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/wave-gradient.tsx"
         }
       ]
     },
@@ -20502,6 +20827,37 @@
           "path": "registry-components/text1/text1.tsx",
           "type": "registry:component",
           "target": "components/beste/component/text1.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq98",
+      "type": "registry:block",
+      "title": "FAQ Beside a Living Stage",
+      "description": "An FAQ in two columns. The left column holds the header, one borderless stage of fixed height where a reaction-diffusion pattern grows in theme colors behind a glass prompt card, and a contact line; on desktop it stays pinned while the page scrolls. The right column is a borderless accordion whose questions are separate muted panels, so opening an answer only lengthens that column and never moves the stage.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/faq98/faq98.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/faq98.tsx"
+        },
+        {
+          "path": "registry-pieces/ai1/ai1.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/ai1.tsx"
+        },
+        {
+          "path": "registry-components/reaction-diffusion/reaction-diffusion.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/reaction-diffusion.tsx"
         }
       ]
     },
@@ -26519,6 +26875,352 @@
       ]
     },
     {
+      "name": "feature325",
+      "type": "registry:block",
+      "title": "Scene Stage With Feature Tabs",
+      "description": "A vertical list of features beside a large stage that shows one live isometric scene. Selecting a feature opens its description and fades the stage to that feature's scene. The list is a keyboard accessible tab list with arrow, Home and End keys.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/feature325/feature325.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/feature325.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric204/isometric204.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric204.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric207/isometric207.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric207.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric215/isometric215.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric215.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric248/isometric248.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric248.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature326",
+      "type": "registry:block",
+      "title": "Alternating Live Product Rows",
+      "description": "A left-aligned header over feature rows that alternate sides. Each row pairs a wide stage holding a live product piece with a title, a description and a short checked list of points under a hairline.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/feature326/feature326.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/feature326.tsx"
+        },
+        {
+          "path": "registry-pieces/ai52/ai52.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/ai52.tsx"
+        },
+        {
+          "path": "registry-pieces/chat34/chat34.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/chat34.tsx"
+        },
+        {
+          "path": "registry-pieces/dashboard19/dashboard19.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/dashboard19.tsx"
+        },
+        {
+          "path": "registry-components/mesh-gradient/mesh-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/mesh-gradient.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature327",
+      "type": "registry:block",
+      "title": "Live Customization Playground",
+      "description": "A centered header over one framed panel: a live product card on a gradient stage beside a column of controls. A radius slider, a size slider, a solid or glass surface switch and a price slider change the card in real time, and a reset button returns it to the defaults.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/feature327/feature327.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/feature327.tsx"
+        },
+        {
+          "path": "registry-components/inspector-group/inspector-group.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-group.tsx"
+        },
+        {
+          "path": "registry-components/inspector-slider/inspector-slider.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-slider.tsx"
+        },
+        {
+          "path": "registry-components/inspector-segmented/inspector-segmented.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-segmented.tsx"
+        },
+        {
+          "path": "registry-components/blob-gradient/blob-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/blob-gradient.tsx"
+        },
+        {
+          "path": "registry-components/card4/card4.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/card4.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature328",
+      "type": "registry:block",
+      "title": "Team Calendar Gradient Bento",
+      "description": "A left-aligned header over a four cell bento. One wide cell pairs its text with a glass product piece, and three equal cells beneath place a piece above a title and a sentence. Each cell has its own soft gradient that dissolves into the page behind the text.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/feature328/feature328.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/feature328.tsx"
+        },
+        {
+          "path": "registry-pieces/calendar10/calendar10.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/calendar10.tsx"
+        },
+        {
+          "path": "registry-pieces/calendar31/calendar31.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/calendar31.tsx"
+        },
+        {
+          "path": "registry-pieces/notification1/notification1.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/notification1.tsx"
+        },
+        {
+          "path": "registry-pieces/notification3/notification3.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/notification3.tsx"
+        },
+        {
+          "path": "registry-components/blob-gradient/blob-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/blob-gradient.tsx"
+        },
+        {
+          "path": "registry-components/fluid-gradient/fluid-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/fluid-gradient.tsx"
+        },
+        {
+          "path": "registry-components/mesh-gradient/mesh-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/mesh-gradient.tsx"
+        },
+        {
+          "path": "registry-components/wave-gradient/wave-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/wave-gradient.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature329",
+      "type": "registry:block",
+      "title": "Developer Workflow Mosaic",
+      "description": "A feature section with four borderless stages in a wide, narrow, narrow, wide mosaic, all the same height. Each stage has its own live background, two dithered 3D forms and two magnetic fields in different colors and densities, and holds one developer widget on glass: a deploy command, a file tree, an error budget gauge and a keyboard shortcut that responds to real key presses. A title and a short description sit under every stage.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/feature329/feature329.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/feature329.tsx"
+        },
+        {
+          "path": "registry-pieces/code16/code16.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/code16.tsx"
+        },
+        {
+          "path": "registry-pieces/monitoring5/monitoring5.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/monitoring5.tsx"
+        },
+        {
+          "path": "registry-components/dither-form/dither-form.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/dither-form.tsx"
+        },
+        {
+          "path": "registry-components/kbd-combo/kbd-combo.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/kbd-combo.tsx"
+        },
+        {
+          "path": "registry-components/magnetic-field/magnetic-field.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/magnetic-field.tsx"
+        },
+        {
+          "path": "registry-components/tree-view/tree-view.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/tree-view.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature330",
+      "type": "registry:block",
+      "title": "Times Of Day Sky Stages",
+      "description": "A header split into heading and description above four tall, narrow stages of equal height, one per time of day. Each stage is a live sky with its own palette, sun position and cloud cover, from a pale morning to a night sky, and holds one small glass piece or widget in its center. The title and sentence sit under each stage on the page color, and on desktop every second column drops to form a stagger.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/feature330/feature330.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/feature330.tsx"
+        },
+        {
+          "path": "registry-pieces/health1/health1.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/health1.tsx"
+        },
+        {
+          "path": "registry-pieces/media1/media1.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/media1.tsx"
+        },
+        {
+          "path": "registry-components/aurora-sky/aurora-sky.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/aurora-sky.tsx"
+        },
+        {
+          "path": "registry-components/cloud-sky/cloud-sky.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/cloud-sky.tsx"
+        },
+        {
+          "path": "registry-components/meter-ring/meter-ring.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/meter-ring.tsx"
+        },
+        {
+          "path": "registry-components/time-countdown/time-countdown.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/time-countdown.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature331",
+      "type": "registry:block",
+      "title": "Staggered Stage Strip",
+      "description": "A feature section with a left-aligned header above a strip of three borderless stages of equal fixed height. On desktop the strip zigzags: the outer columns put the stage above its caption and the middle column puts the caption above its stage, each caption in an area of fixed height so the stages stay aligned. Every stage carries its own whirlpool gradient, a different palette, arm count and center per stage, fading into the page behind one glass product card.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/feature331/feature331.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/feature331.tsx"
+        },
+        {
+          "path": "registry-pieces/ai17/ai17.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/ai17.tsx"
+        },
+        {
+          "path": "registry-pieces/chat34/chat34.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/chat34.tsx"
+        },
+        {
+          "path": "registry-pieces/search26/search26.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/search26.tsx"
+        },
+        {
+          "path": "registry-components/vortex-gradient/vortex-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/vortex-gradient.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature332",
+      "type": "registry:block",
+      "title": "Room Types Strip With Material Backgrounds",
+      "description": "A left aligned header above a horizontal strip of four tall, narrow borderless stages of equal height. Each stage is filled with its own animated background, pleated fabric or tile mosaic in a different pastel palette, that fades into the page toward the bottom, where a title and one sentence sit in a fixed caption area. On small screens the strip scrolls sideways with snap points.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/feature332/feature332.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/feature332.tsx"
+        },
+        {
+          "path": "registry-components/fold-gradient/fold-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/fold-gradient.tsx"
+        },
+        {
+          "path": "registry-components/mosaic-gradient/mosaic-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/mosaic-gradient.tsx"
+        }
+      ]
+    },
+    {
       "name": "fitness5",
       "type": "registry:block",
       "title": "Class Schedule Hero",
@@ -28350,6 +29052,29 @@
       ]
     },
     {
+      "name": "footer128",
+      "type": "registry:block",
+      "title": "Wordmark Effect Band Footer",
+      "description": "A site footer with the brand, a short description and a contact email on the left and three link columns on the right, all on theme tokens. Below them a rounded band with a live wave effect carries a closing line and a large wordmark that scales with the band width. A copyright line and legal links close the footer, and the effect is a swappable background slot.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/footer128/footer128.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/footer128.tsx"
+        },
+        {
+          "path": "registry-components/wave-gradient/wave-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/wave-gradient.tsx"
+        }
+      ]
+    },
+    {
       "name": "gallery1",
       "type": "registry:block",
       "title": "Masonry Caption Gallery",
@@ -29314,6 +30039,47 @@
           "path": "registry-components/text1/text1.tsx",
           "type": "registry:component",
           "target": "components/beste/component/text1.tsx"
+        }
+      ]
+    },
+    {
+      "name": "health20",
+      "type": "registry:block",
+      "title": "Clinic Visit Split With Card Cluster",
+      "description": "A split section for a clinic or care app. One side carries the heading, three ruled benefit lines and two buttons. The other is a muted stage where an appointment card, a video visit card and a prescription card step sideways and tuck under each other, stacking in a single column on phones.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/health20/health20.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/health20.tsx"
+        },
+        {
+          "path": "registry-pieces/health21/health21.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/health21.tsx"
+        },
+        {
+          "path": "registry-pieces/health28/health28.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/health28.tsx"
+        },
+        {
+          "path": "registry-pieces/health30/health30.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/health30.tsx"
+        },
+        {
+          "path": "registry-components/mesh-gradient/mesh-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/mesh-gradient.tsx"
         }
       ]
     },
@@ -36066,6 +36832,359 @@
       ]
     },
     {
+      "name": "hero277",
+      "type": "registry:block",
+      "title": "Tabbed Live Product Demo Hero",
+      "description": "A centered hero with eyebrow, heading, description and two buttons above one borderless stage of fixed height. A frosted tab bar floating inside the stage switches between live product pieces, each on its own gradient background with glass cards and a caption underneath, so the demo is the real interface rather than a screenshot.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/hero277/hero277.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/hero277.tsx"
+        },
+        {
+          "path": "registry-pieces/ai17/ai17.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/ai17.tsx"
+        },
+        {
+          "path": "registry-pieces/ai45/ai45.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/ai45.tsx"
+        },
+        {
+          "path": "registry-pieces/ai46/ai46.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/ai46.tsx"
+        },
+        {
+          "path": "registry-components/fluid-gradient/fluid-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/fluid-gradient.tsx"
+        },
+        {
+          "path": "registry-components/mesh-gradient/mesh-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/mesh-gradient.tsx"
+        },
+        {
+          "path": "registry-components/wave-gradient/wave-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/wave-gradient.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero278",
+      "type": "registry:block",
+      "title": "Analytics Hero With Glass Card Cluster",
+      "description": "A hero with the eyebrow and heading on the left and the description with two buttons on the right, above one borderless stage of fixed height on a gradient background that fades into the page. Three glass product cards sit on the stage as an overlapping cluster on desktop, a main card in the center with two smaller ones tucked behind its upper left and lower right corners. On smaller screens only the main card is shown, centered.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/hero278/hero278.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/hero278.tsx"
+        },
+        {
+          "path": "registry-pieces/chart7/chart7.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/chart7.tsx"
+        },
+        {
+          "path": "registry-pieces/stats15/stats15.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/stats15.tsx"
+        },
+        {
+          "path": "registry-pieces/stats16/stats16.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/stats16.tsx"
+        },
+        {
+          "path": "registry-components/mesh-gradient/mesh-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/mesh-gradient.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero279",
+      "type": "registry:block",
+      "title": "Install Snippet Split Hero",
+      "description": "A split hero for a developer product. The left column holds an eyebrow, a heading, one paragraph and two buttons; the right column is a tall borderless stage over a live contour map. Two glass panels sit on the stage, staggered left then right: a package manager install snippet with a copy button and the JSON response of the first deploy. On small screens the stage drops under the text.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/hero279/hero279.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/hero279.tsx"
+        },
+        {
+          "path": "registry-components/contour-terrain/contour-terrain.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/contour-terrain.tsx"
+        },
+        {
+          "path": "registry-components/snippet-install/snippet-install.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/snippet-install.tsx"
+        },
+        {
+          "path": "registry-components/tree-json/tree-json.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/tree-json.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero280",
+      "type": "registry:block",
+      "title": "Split Hero With Marble Stage",
+      "description": "A split hero with the eyebrow, heading, description and two buttons set on the page beside a tall borderless stage of polished marble that follows the theme and fades into the page at its foot. Two glass money pieces sit on the stone, a payment card and a smaller transaction row that overlaps its lower edge, nudged to opposite sides. On mobile the text comes first and the stage follows at a shorter fixed height.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/hero280/hero280.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/hero280.tsx"
+        },
+        {
+          "path": "registry-pieces/money4/money4.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/money4.tsx"
+        },
+        {
+          "path": "registry-pieces/receipt3/receipt3.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/receipt3.tsx"
+        },
+        {
+          "path": "registry-components/marble-slab/marble-slab.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/marble-slab.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero281",
+      "type": "registry:block",
+      "title": "Calm Hero With Floating Session Player",
+      "description": "A hero built as one borderless stage filled with a live sea and sky effect. On desktop the effect dissolves toward the left, where the eyebrow, heading, description and two buttons sit on the page color, and a glass session player with a waveform floats over the water on the right. On small screens the player sits on the effect at the top and the text follows below, where the effect has faded out.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/hero281/hero281.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/hero281.tsx"
+        },
+        {
+          "path": "registry-components/ocean-horizon/ocean-horizon.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/ocean-horizon.tsx"
+        },
+        {
+          "path": "registry-components/player-waveform/player-waveform.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/player-waveform.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero282",
+      "type": "registry:block",
+      "title": "Retouching Hero With Before And After Stage",
+      "description": "A hero for a photography and retouching studio. The eyebrow and a large heading run across the top, and below them a borderless before and after photo stage takes two thirds of the width while the description and two buttons sit in a narrow rail aligned to the bottom edge of the stage. Visitors drag, click or use the keyboard to move the divider between the raw and the retouched photograph. On smaller screens the rail stacks under the stage.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/hero282/hero282.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/hero282.tsx"
+        },
+        {
+          "path": "registry-components/loupe-compare/loupe-compare.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/loupe-compare.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero283",
+      "type": "registry:block",
+      "title": "Paper Landscape Hero With Impact Cards",
+      "description": "A hero built on one tall borderless stage that holds a layered paper-cut landscape whose paper follows the theme. On desktop the eyebrow, heading, description and two buttons sit in the upper left of the stage, where a diagonal fade dissolves the hills into the stage color, while two matching glass cards, a figure with bars and a ring, rest over the hills in the lower right. On smaller screens the copy sits on the page above a shorter stage with one or two cards along its bottom edge.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/hero283/hero283.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/hero283.tsx"
+        },
+        {
+          "path": "registry-pieces/stats15/stats15.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/stats15.tsx"
+        },
+        {
+          "path": "registry-pieces/stats16/stats16.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/stats16.tsx"
+        },
+        {
+          "path": "registry-components/paper-landscape/paper-landscape.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/paper-landscape.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero284",
+      "type": "registry:block",
+      "title": "Split Hero With Floating Prompt Composer",
+      "description": "A split hero for an AI research product: eyebrow, heading, description and a button on the left, and one borderless stage of fixed height on the right. The stage carries a live ink drawing that follows the theme and fades into the page, with a frosted glass prompt composer floating on it. The composer is a working mention field where typing @ cites a source, with a hint and a submit button in a row of fixed height, so the panel never changes size.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/hero284/hero284.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/hero284.tsx"
+        },
+        {
+          "path": "registry-components/ink-flow/ink-flow.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/ink-flow.tsx"
+        },
+        {
+          "path": "registry-components/mention-input/mention-input.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/mention-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero285",
+      "type": "registry:block",
+      "title": "Studio Hero With Notched Poster Stage",
+      "description": "A hero built on one large borderless artwork stage of fixed height that holds a living geometric poster. On large screens the eyebrow, heading, description and two buttons sit in a page-colored panel cut into the lower left corner of the stage, so the copy reads on the page background while the artwork wraps around it. On smaller screens the copy comes first and the stage follows below it.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/hero285/hero285.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/hero285.tsx"
+        },
+        {
+          "path": "registry-components/bauhaus-composition/bauhaus-composition.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/bauhaus-composition.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero286",
+      "type": "registry:block",
+      "title": "Sunlit Wall Hero With Glass Booking Cards",
+      "description": "A split hero for a hotel or booking product. The eyebrow, heading, description and two buttons sit on the left; on the right a tall borderless stage shows afternoon light falling through blinds onto a wall and fading into the page. Two glass cards float on the stage, a hotel result above and a date range picker below, offset to opposite sides on desktop. On smaller screens the stage moves under the text and the cards stack in the center.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/hero286/hero286.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/hero286.tsx"
+        },
+        {
+          "path": "registry-pieces/calendar5/calendar5.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/calendar5.tsx"
+        },
+        {
+          "path": "registry-pieces/travel11/travel11.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/travel11.tsx"
+        },
+        {
+          "path": "registry-components/sun-blinds/sun-blinds.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/sun-blinds.tsx"
+        }
+      ]
+    },
+    {
       "name": "legal1",
       "type": "registry:block",
       "title": "Cookie Consent Banner",
@@ -37717,6 +38836,35 @@
           "path": "registry-components/button22/button22.tsx",
           "type": "registry:component",
           "target": "components/beste/component/button22.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logos20",
+      "type": "registry:block",
+      "title": "Client Wordmarks Over A Line Field",
+      "description": "A client section with the eyebrow, heading and description above one wide borderless stage of fixed height filled with a live field of rippling parallel lines. A frosted glass panel floats along the bottom of the stage and carries the client names as plain text wordmarks in two marquee rows that run in opposite directions. The names are props, so no logo files are needed.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/logos20/logos20.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/logos20.tsx"
+        },
+        {
+          "path": "registry-components/marquee1/marquee1.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/marquee1.tsx"
+        },
+        {
+          "path": "registry-components/op-art/op-art.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/op-art.tsx"
         }
       ]
     },
@@ -41398,6 +42546,32 @@
           "path": "registry-components/button1/button1.tsx",
           "type": "registry:component",
           "target": "components/beste/component/button1.tsx"
+        }
+      ]
+    },
+    {
+      "name": "podcast55",
+      "type": "registry:block",
+      "title": "Featured Episode Player",
+      "description": "A show header with subscribe buttons over one wide episode card: date, hosts, title, a show notes sentence, and a waveform player with play, seek, and elapsed time. Three more episodes sit underneath as cards, and pressing one loads it into the player and starts it. Each episode takes an audio file that the player plays and seeks; without one the player runs on its own clock.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/podcast55/podcast55.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/podcast55.tsx"
+        },
+        {
+          "path": "registry-components/player-waveform/player-waveform.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/player-waveform.tsx"
         }
       ]
     },
@@ -45822,6 +46996,115 @@
       ]
     },
     {
+      "name": "pricing84",
+      "type": "registry:block",
+      "title": "Usage Pricing Calculator",
+      "description": "A two-column calculator: seat and volume sliders, a billing period switch, and add-on toggles on the left, and a summary card on the right whose rolling price and line items follow every change. The base price, per-seat and per-unit rates, included amounts, yearly discount, and currency are all props.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "registry/pricing84/pricing84.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/pricing84.tsx"
+        },
+        {
+          "path": "registry-components/inspector-slider/inspector-slider.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-slider.tsx"
+        },
+        {
+          "path": "registry-components/inspector-segmented/inspector-segmented.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-segmented.tsx"
+        },
+        {
+          "path": "registry-components/inspector-switch/inspector-switch.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-switch.tsx"
+        },
+        {
+          "path": "registry-components/inspector-note/inspector-note.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-note.tsx"
+        },
+        {
+          "path": "registry-components/price-tag/price-tag.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/price-tag.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing85",
+      "type": "registry:block",
+      "title": "Plans Over an Effect Band",
+      "description": "A pricing section whose centered header sits on a rounded band with a live sky effect. Three solid plan cards climb onto the lower part of the band, so the effect shows above and between them while prices stay on a plain card surface. The featured plan is taller with a primary border, and the effect is a swappable background slot.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/pricing85/pricing85.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/pricing85.tsx"
+        },
+        {
+          "path": "registry-components/horizon-gradient/horizon-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/horizon-gradient.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing86",
+      "type": "registry:block",
+      "title": "Plan Cards Under Prism Light",
+      "description": "A pricing section with the header on the left and a monthly and yearly switch on the right, above three borderless plan cards of equal fixed height. Each card carries its own variation of a prism gradient across its top that dissolves into the card surface before the plan name. Prices roll when the billing period changes, and the struck-through monthly price with the yearly note has its own reserved line, so nothing shifts. The button is pinned to the foot of every card.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/pricing86/pricing86.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/pricing86.tsx"
+        },
+        {
+          "path": "registry-components/price-tag/price-tag.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/price-tag.tsx"
+        },
+        {
+          "path": "registry-components/price-toggle/price-toggle.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/price-toggle.tsx"
+        },
+        {
+          "path": "registry-components/prism-gradient/prism-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/prism-gradient.tsx"
+        }
+      ]
+    },
+    {
       "name": "product1",
       "type": "registry:block",
       "title": "Centered Product Showcase",
@@ -47683,6 +48966,75 @@
       ]
     },
     {
+      "name": "settings68",
+      "type": "registry:block",
+      "title": "Workspace Settings With Collapsible Groups",
+      "description": "A settings page with the heading, save and discard buttons held in a sticky left column and three collapsible groups of rows on the right: text inputs, selects, a segmented choice, switches, a masked API key with copy, a warning note and a destructive action. Rows are data, edits live in local state, and a counter beside the save button shows how many are unsaved.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "tooltip",
+        "select",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "registry/settings68/settings68.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/settings68.tsx"
+        },
+        {
+          "path": "registry-components/inspector-group/inspector-group.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-group.tsx"
+        },
+        {
+          "path": "registry-components/inspector-input/inspector-input.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-input.tsx"
+        },
+        {
+          "path": "registry-components/inspector-select/inspector-select.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-select.tsx"
+        },
+        {
+          "path": "registry-components/inspector-segmented/inspector-segmented.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-segmented.tsx"
+        },
+        {
+          "path": "registry-components/inspector-switch/inspector-switch.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-switch.tsx"
+        },
+        {
+          "path": "registry-components/inspector-secret/inspector-secret.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-secret.tsx"
+        },
+        {
+          "path": "registry-components/inspector-note/inspector-note.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-note.tsx"
+        },
+        {
+          "path": "registry-components/inspector-action/inspector-action.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/inspector-action.tsx"
+        },
+        {
+          "path": "registry-components/light-leak/light-leak.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/light-leak.tsx"
+        }
+      ]
+    },
+    {
       "name": "showcase1",
       "type": "registry:block",
       "title": "Interactive Hotspot Image",
@@ -48891,6 +50243,47 @@
           "path": "registry-components/text1/text1.tsx",
           "type": "registry:component",
           "target": "components/beste/component/text1.tsx"
+        }
+      ]
+    },
+    {
+      "name": "showcase54",
+      "type": "registry:block",
+      "title": "Studio Work Mosaic With Live Photo Stages",
+      "description": "A work showcase for a photography studio with the header on the left and one button on the right, above a borderless mosaic of 4 project stages. One tall stage fills the left column, and the right column stacks a wide stage over two smaller ones, each with a title and a short description underneath. Every stage holds a different photo effect: a liquid slideshow, a camera iris opening on a photograph, a photo settling out of dust and a sketch turning into a photograph. On smaller screens the stages stack in one column.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/showcase54/showcase54.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/showcase54.tsx"
+        },
+        {
+          "path": "registry-components/aperture-reveal/aperture-reveal.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/aperture-reveal.tsx"
+        },
+        {
+          "path": "registry-components/liquid-slides/liquid-slides.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/liquid-slides.tsx"
+        },
+        {
+          "path": "registry-components/photo-dust/photo-dust.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/photo-dust.tsx"
+        },
+        {
+          "path": "registry-components/sketch-to-photo/sketch-to-photo.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/sketch-to-photo.tsx"
         }
       ]
     },
@@ -51435,6 +52828,110 @@
       ]
     },
     {
+      "name": "stats79",
+      "type": "registry:block",
+      "title": "Large Figures Beside a Chart Stage",
+      "description": "A left-aligned header over a two-part layout. One side is a column of three large figures, each with a one-line label set directly on the page. The other side is a tall fixed-height stage with a gradient background holding two glass chart pieces stacked with a slight offset. On mobile the figures come first, then the stage.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/stats79/stats79.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/stats79.tsx"
+        },
+        {
+          "path": "registry-pieces/chart5/chart5.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/chart5.tsx"
+        },
+        {
+          "path": "registry-pieces/chart7/chart7.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/chart7.tsx"
+        },
+        {
+          "path": "registry-components/mesh-gradient/mesh-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/mesh-gradient.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats80",
+      "type": "registry:block",
+      "title": "Figure Stages in an Alternating Mosaic",
+      "description": "A left-aligned header over four borderless stages of equal height laid out as a mosaic, wide then narrow on the first row and narrow then wide on the second. Each stage shows one figure as a live widget on a glass panel (a rolling counter with a sparkline, a segmented ring, a stacked budget bar and a before and after comparison) over its own variation of a conic gradient that follows the theme and dissolves into the page behind the caption. On mobile the stages stack in one column.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/stats80/stats80.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/stats80.tsx"
+        },
+        {
+          "path": "registry-components/conic-gradient/conic-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/conic-gradient.tsx"
+        },
+        {
+          "path": "registry-components/meter-ring/meter-ring.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/meter-ring.tsx"
+        },
+        {
+          "path": "registry-components/meter-stack/meter-stack.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/meter-stack.tsx"
+        },
+        {
+          "path": "registry-components/readout-compare/readout-compare.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/readout-compare.tsx"
+        },
+        {
+          "path": "registry-components/readout-stat/readout-stat.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/readout-stat.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats81",
+      "type": "registry:block",
+      "title": "Field Triptych With Rolling Figures",
+      "description": "A left-aligned header above a triptych of three tall, narrow, borderless stages of equal height that show the same wheat field at three times of day, each with its own sky, light and wind. Under the triptych a row of three figures lines up with the panes; every figure rolls into place and carries a label, a change chip, a sparkline and a caption. On phones the three panes stay side by side and the figures stack below them.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/stats81/stats81.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/stats81.tsx"
+        },
+        {
+          "path": "registry-components/readout-stat/readout-stat.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/readout-stat.tsx"
+        },
+        {
+          "path": "registry-components/wheat-field/wheat-field.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/wheat-field.tsx"
+        }
+      ]
+    },
+    {
       "name": "terminal1",
       "type": "registry:block",
       "title": "CLI Installation Typewriter",
@@ -52416,6 +53913,105 @@
       ]
     },
     {
+      "name": "testimonial55",
+      "type": "registry:block",
+      "title": "Customer Stories With Result Cards",
+      "description": "A left-aligned header over three customer stories of equal height. Each card has its own soft gradient that dissolves toward the bottom, a small glass piece at the top showing the result the customer got, and the quote, name and role underneath. Long quotes are clamped so the cards always match.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/testimonial55/testimonial55.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/testimonial55.tsx"
+        },
+        {
+          "path": "registry-pieces/chart5/chart5.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/chart5.tsx"
+        },
+        {
+          "path": "registry-pieces/socialproof25/socialproof25.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/socialproof25.tsx"
+        },
+        {
+          "path": "registry-pieces/stats2/stats2.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/stats2.tsx"
+        },
+        {
+          "path": "registry-components/fluid-gradient/fluid-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/fluid-gradient.tsx"
+        },
+        {
+          "path": "registry-components/mesh-gradient/mesh-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/mesh-gradient.tsx"
+        },
+        {
+          "path": "registry-components/wave-gradient/wave-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/wave-gradient.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial56",
+      "type": "registry:block",
+      "title": "Single Quote Over A Pond",
+      "description": "A centered header above one borderless stage of fixed height that shows a single large quote at a time. A live pond fills the top of the stage and dissolves into the page color, where the rating, the quote, the name and the role sit. A glass bar of names floats on the water to switch between people; each person has their own pond, and the ponds and quotes crossfade on a switch while the stage never changes height.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/testimonial56/testimonial56.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/testimonial56.tsx"
+        },
+        {
+          "path": "registry-components/koi-pond/koi-pond.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/koi-pond.tsx"
+        },
+        {
+          "path": "registry-components/reaction-rating/reaction-rating.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/reaction-rating.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial57",
+      "type": "registry:block",
+      "title": "Large Quote Beside An Engraved Portrait",
+      "description": "A single client testimonial in two columns. A tall borderless stage of fixed height on the left holds the client's portrait recut as a live line engraving, and the quote is set large on the page background on the right, with the eyebrow above it and the person's name and role pinned to the bottom of the column so they line up with the foot of the stage. On smaller screens the stage comes first and the quote follows.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/testimonial57/testimonial57.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/testimonial57.tsx"
+        },
+        {
+          "path": "registry-components/line-engraving/line-engraving.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/line-engraving.tsx"
+        }
+      ]
+    },
+    {
       "name": "travel1",
       "type": "registry:block",
       "title": "Featured Trip Hero",
@@ -52885,6 +54481,52 @@
           "path": "registry-components/button21/button21.tsx",
           "type": "registry:component",
           "target": "components/beste/component/button21.tsx"
+        }
+      ]
+    },
+    {
+      "name": "travel43",
+      "type": "registry:block",
+      "title": "Trip Planner Stage With Supporting Cards",
+      "description": "A centered header with two buttons sits above a wide muted stage holding one enlarged live flight card. Beneath it, a row of three supporting cards each pairs a smaller trip piece with a title and a sentence. The row collapses to a single column on phones.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/travel43/travel43.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/travel43.tsx"
+        },
+        {
+          "path": "registry-pieces/travel10/travel10.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/travel10.tsx"
+        },
+        {
+          "path": "registry-pieces/travel23/travel23.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/travel23.tsx"
+        },
+        {
+          "path": "registry-pieces/travel24/travel24.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/travel24.tsx"
+        },
+        {
+          "path": "registry-pieces/travel31/travel31.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/travel31.tsx"
+        },
+        {
+          "path": "registry-components/mesh-gradient/mesh-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/mesh-gradient.tsx"
         }
       ]
     },
@@ -53986,6 +55628,44 @@
           "path": "registry-components/text1/text1.tsx",
           "type": "registry:component",
           "target": "components/beste/component/text1.tsx"
+        }
+      ]
+    },
+    {
+      "name": "usecase63",
+      "type": "registry:block",
+      "title": "Studio Disciplines As A Poster Wall",
+      "description": "A what we make section with the heading on the left and a description on the right, above a row of four tall, narrow artwork stages hung like posters, every second one set lower on desktop. Each stage has the same fixed height and holds a different live artwork: a drawn line figure, a halftone print, a mirrored pattern and a sun print. The title and one sentence for each discipline sit under its stage, so caption length never changes a stage.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/usecase63/usecase63.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/usecase63.tsx"
+        },
+        {
+          "path": "registry-components/cyanotype/cyanotype.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/cyanotype.tsx"
+        },
+        {
+          "path": "registry-components/halftone/halftone.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/halftone.tsx"
+        },
+        {
+          "path": "registry-components/harmonograph/harmonograph.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/harmonograph.tsx"
+        },
+        {
+          "path": "registry-components/kaleidoscope/kaleidoscope.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/kaleidoscope.tsx"
         }
       ]
     },
@@ -55597,6 +57277,88 @@
           "path": "registry-components/text1/text1.tsx",
           "type": "registry:component",
           "target": "components/beste/component/text1.tsx"
+        }
+      ]
+    },
+    {
+      "name": "workflow60",
+      "type": "registry:block",
+      "title": "Alternating Scene Steps",
+      "description": "A centered header over a sequence of steps that alternate sides. Each step pairs a live isometric scene on a solid card with a title and description. The steps carry no numbers; their order is the process.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/workflow60/workflow60.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/workflow60.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric214/isometric214.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric214.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric229/isometric229.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric229.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric243/isometric243.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric243.tsx"
+        },
+        {
+          "path": "registry-pieces/isometric249/isometric249.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/isometric249.tsx"
+        }
+      ]
+    },
+    {
+      "name": "workflow61",
+      "type": "registry:block",
+      "title": "Three Step Live Product Strip",
+      "description": "A header with two buttons on the right over one continuous strip split into three stages, each playing a live product piece for one step of the process. Step titles and descriptions sit below on a single shared hairline, and the strip stacks into separate stages on small screens.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/workflow61/workflow61.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/workflow61.tsx"
+        },
+        {
+          "path": "registry-pieces/ai51/ai51.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/ai51.tsx"
+        },
+        {
+          "path": "registry-pieces/chat35/chat35.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/chat35.tsx"
+        },
+        {
+          "path": "registry-pieces/chat38/chat38.tsx",
+          "type": "registry:component",
+          "target": "components/beste/piece/chat38.tsx"
+        },
+        {
+          "path": "registry-components/mesh-gradient/mesh-gradient.tsx",
+          "type": "registry:component",
+          "target": "components/beste/component/mesh-gradient.tsx"
         }
       ]
     }

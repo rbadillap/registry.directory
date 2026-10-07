@@ -2373,6 +2373,9 @@
       "dependencies": [
         "cn"
       ],
+      "registryDependencies": [
+        "@uiable/tooltip"
+      ],
       "files": [
         {
           "path": "src/components/uiable/layout/block-list.tsx",
@@ -2388,6 +2391,11 @@
           "path": "src/components-grid.ts",
           "type": "registry:component",
           "target": "src/components-grid.ts"
+        },
+        {
+          "path": "src/components/new-dot.tsx",
+          "type": "registry:component",
+          "target": "@components/new-dot.tsx"
         }
       ]
     },
@@ -5127,9 +5135,6 @@
       "categories": [
         "changelog"
       ],
-      "dependencies": [
-        "lucide-react"
-      ],
       "registryDependencies": [
         "@uiable/separator"
       ],
@@ -6309,7 +6314,7 @@
         "layout"
       ],
       "registryDependencies": [
-        "@uiable/badge"
+        "@uiable/tooltip"
       ],
       "files": [
         {
@@ -6326,6 +6331,11 @@
           "path": "src/components-grid.ts",
           "type": "registry:component",
           "target": "src/components-grid.ts"
+        },
+        {
+          "path": "src/components/new-dot.tsx",
+          "type": "registry:component",
+          "target": "@components/new-dot.tsx"
         }
       ]
     },
@@ -6627,6 +6637,11 @@
           "path": "src/components/uiable/layout/dashboard-list.tsx",
           "type": "registry:component",
           "target": "@components/uiable/layout/dashboard-list.tsx"
+        },
+        {
+          "path": "src/category-counts.json",
+          "type": "registry:file",
+          "target": "src/category-counts.json"
         },
         {
           "path": "src/components-grid.ts",
@@ -11133,12 +11148,11 @@
         "layout"
       ],
       "dependencies": [
-        "iconsax-reactjs"
+        "lucide-react"
       ],
       "registryDependencies": [
         "@uiable/badge",
         "@uiable/button",
-        "@uiable/card",
         "@uiable/dropdown-menu",
         "@uiable/scroll-area"
       ],
@@ -12327,7 +12341,7 @@
         "layout"
       ],
       "dependencies": [
-        "iconsax-reactjs"
+        "lucide-react"
       ],
       "registryDependencies": [
         "@uiable/input"
@@ -14354,6 +14368,11 @@
           "target": "@components/uiable/layout/template-list.tsx"
         },
         {
+          "path": "src/category-counts.json",
+          "type": "registry:file",
+          "target": "src/category-counts.json"
+        },
+        {
           "path": "src/components-grid.ts",
           "type": "registry:component",
           "target": "src/components-grid.ts"
@@ -15469,7 +15488,7 @@
       ],
       "dependencies": [
         "cn",
-        "iconsax-reactjs"
+        "lucide-react"
       ],
       "registryDependencies": [
         "@uiable/avatar",
@@ -15540,6 +15559,11 @@
           "path": "src/branding.json",
           "type": "registry:file",
           "target": "src/branding.json"
+        },
+        {
+          "path": "src/category-counts.json",
+          "type": "registry:file",
+          "target": "src/category-counts.json"
         },
         {
           "path": "src/components-grid.ts",
@@ -16186,14 +16210,9 @@
           "target": "@components/uiable/blocks/bento/bento-7/bento-7.tsx"
         },
         {
-          "path": "src/components/uiable/blocks/landing/components/Particles.css",
-          "type": "registry:file",
-          "target": "@components/uiable/blocks/landing/components/Particles.css"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/Particles.tsx",
+          "path": "src/components/animation/Particles.tsx",
           "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/Particles.tsx"
+          "target": "@components/animation/Particles.tsx"
         }
       ]
     },
@@ -16286,8 +16305,10 @@
         "recharts"
       ],
       "registryDependencies": [
+        "@uiable/button",
         "@uiable/card",
-        "@uiable/chart"
+        "@uiable/chart",
+        "@uiable/dropdown-menu"
       ],
       "files": [
         {
@@ -16341,9 +16362,9 @@
           "target": "@components/uiable/blocks/code-verification/code-verification-4/code-verification-4.tsx"
         },
         {
-          "path": "src/components/uiable/blocks/landing/components/LightLogo.tsx",
+          "path": "src/images/landings/LightLogo.tsx",
           "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/LightLogo.tsx"
+          "target": "src/images/landings/LightLogo.tsx"
         }
       ]
     },
@@ -16369,9 +16390,9 @@
           "target": "@components/uiable/blocks/code-verification/code-verification-5/code-verification-5.tsx"
         },
         {
-          "path": "src/components/uiable/blocks/landing/components/LightLogo.tsx",
+          "path": "src/images/landings/LightLogo.tsx",
           "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/LightLogo.tsx"
+          "target": "src/images/landings/LightLogo.tsx"
         }
       ]
     },
@@ -16659,24 +16680,19 @@
           "target": "@components/uiable/blocks/contact/contact-18/contact-18.tsx"
         },
         {
-          "path": "src/components/uiable/blocks/landing/components/Particles.css",
-          "type": "registry:file",
-          "target": "@components/uiable/blocks/landing/components/Particles.css"
+          "path": "src/components/animation/Particles.tsx",
+          "type": "registry:component",
+          "target": "@components/animation/Particles.tsx"
         },
         {
-          "path": "src/components/uiable/blocks/landing/components/Particles.tsx",
+          "path": "src/components/animation/SeoAnimatedParticles.tsx",
           "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/Particles.tsx"
+          "target": "@components/animation/SeoAnimatedParticles.tsx"
         },
         {
-          "path": "src/components/uiable/blocks/landing/components/SeoAnimatedParticles.tsx",
+          "path": "src/components/animation/SeoBackgroundEffects.tsx",
           "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/SeoAnimatedParticles.tsx"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/SeoBackgroundEffects.tsx",
-          "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/SeoBackgroundEffects.tsx"
+          "target": "@components/animation/SeoBackgroundEffects.tsx"
         }
       ]
     },
@@ -16887,12 +16903,18 @@
         "content"
       ],
       "dependencies": [
+        "@tabler/icons-react",
+        "cn",
         "framer-motion",
         "lucide-react"
       ],
       "registryDependencies": [
-        "@uiable/badge",
-        "@uiable/card"
+        "@uiable/button",
+        "@uiable/input",
+        "@uiable/label",
+        "@uiable/separator",
+        "@uiable/textarea",
+        "@uiable/toggle-group"
       ],
       "files": [
         {
@@ -16905,8 +16927,8 @@
     {
       "name": "block-cta",
       "type": "registry:block",
-      "title": "Cta",
-      "description": "Cta variant for block.",
+      "title": "CTA",
+      "description": "CTA variant for block.",
       "categories": [
         "landing"
       ],
@@ -16931,8 +16953,8 @@
     {
       "name": "block-cta-1",
       "type": "registry:block",
-      "title": "Cta 1",
-      "description": "Cta 1 variant for block.",
+      "title": "CTA 1",
+      "description": "CTA 1 variant for block.",
       "categories": [
         "cta"
       ],
@@ -16955,8 +16977,8 @@
     {
       "name": "block-cta-2",
       "type": "registry:block",
-      "title": "Cta 2",
-      "description": "Cta 2 variant for block.",
+      "title": "CTA 2",
+      "description": "CTA 2 variant for block.",
       "categories": [
         "cta"
       ],
@@ -16979,8 +17001,8 @@
     {
       "name": "block-cta-3",
       "type": "registry:block",
-      "title": "Cta 3",
-      "description": "Cta 3 variant for block.",
+      "title": "CTA 3",
+      "description": "CTA 3 variant for block.",
       "categories": [
         "cta"
       ],
@@ -17002,8 +17024,8 @@
     {
       "name": "block-cta-6",
       "type": "registry:block",
-      "title": "Cta 6",
-      "description": "Cta 6 variant for block.",
+      "title": "CTA 6",
+      "description": "CTA 6 variant for block.",
       "categories": [
         "cta"
       ],
@@ -17021,8 +17043,8 @@
     {
       "name": "block-cta-9",
       "type": "registry:block",
-      "title": "Cta 9",
-      "description": "Cta 9 variant for block.",
+      "title": "CTA 9",
+      "description": "CTA 9 variant for block.",
       "categories": [
         "cta"
       ],
@@ -17037,8 +17059,8 @@
     {
       "name": "block-cta-12",
       "type": "registry:block",
-      "title": "Cta 12",
-      "description": "Cta 12 variant for block.",
+      "title": "CTA 12",
+      "description": "CTA 12 variant for block.",
       "categories": [
         "cta"
       ],
@@ -17060,8 +17082,8 @@
     {
       "name": "block-cta-14",
       "type": "registry:block",
-      "title": "Cta 14",
-      "description": "Cta 14 variant for block.",
+      "title": "CTA 14",
+      "description": "CTA 14 variant for block.",
       "categories": [
         "cta"
       ],
@@ -17078,16 +17100,16 @@
       ]
     },
     {
-      "name": "block-Dashboard",
+      "name": "block-dashboard-1",
       "type": "registry:block",
-      "title": "Dashboard",
-      "description": "Dashboard variant for block.",
+      "title": "Dashboard 1",
+      "description": "Dashboard 1 variant for block.",
       "categories": [
         "dashboard-layout"
       ],
       "dependencies": [
-        "iconsax-reactjs",
-        "lucide-react"
+        "lucide-react",
+        "next-themes"
       ],
       "registryDependencies": [
         "@uiable/avatar",
@@ -17102,14 +17124,94 @@
       ],
       "files": [
         {
-          "path": "src/components/uiable/blocks/layout/dashboard-layout/Dashboard.tsx",
+          "path": "src/components/uiable/blocks/layout/dashboard-layout/dashboard-1.tsx",
           "type": "registry:component",
-          "target": "@components/uiable/blocks/layout/dashboard-layout/Dashboard.tsx"
+          "target": "@components/uiable/blocks/layout/dashboard-layout/dashboard-1.tsx"
         },
         {
           "path": "src/branding.json",
           "type": "registry:file",
           "target": "src/branding.json"
+        },
+        {
+          "path": "src/components/uiable/blocks/layout/dashboard-layout/data/dashboard-1.data.ts",
+          "type": "registry:component",
+          "target": "@components/uiable/blocks/layout/dashboard-layout/data/dashboard-1.data.ts"
+        }
+      ]
+    },
+    {
+      "name": "block-dashboard-2",
+      "type": "registry:block",
+      "title": "Dashboard 2",
+      "description": "Dashboard 2 variant for block.",
+      "categories": [
+        "dashboard-layout"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@uiable/button",
+        "@uiable/collapsible",
+        "@uiable/dropdown-menu",
+        "@uiable/input",
+        "@uiable/logo",
+        "@uiable/notification-dropdown",
+        "@uiable/search-bar",
+        "@uiable/sheet",
+        "@uiable/user-profile"
+      ],
+      "files": [
+        {
+          "path": "src/components/uiable/blocks/layout/dashboard-layout/dashboard-2.tsx",
+          "type": "registry:component",
+          "target": "@components/uiable/blocks/layout/dashboard-layout/dashboard-2.tsx"
+        },
+        {
+          "path": "src/components/uiable/blocks/layout/dashboard-layout/data/dashboard-2.data.ts",
+          "type": "registry:component",
+          "target": "@components/uiable/blocks/layout/dashboard-layout/data/dashboard-2.data.ts"
+        }
+      ]
+    },
+    {
+      "name": "block-dashboard-3",
+      "type": "registry:block",
+      "title": "Dashboard 3",
+      "description": "Dashboard 3 variant for block.",
+      "categories": [
+        "dashboard-layout"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "next-themes"
+      ],
+      "registryDependencies": [
+        "@uiable/button",
+        "@uiable/collapsible",
+        "@uiable/logo",
+        "@uiable/notification-dropdown",
+        "@uiable/search-bar",
+        "@uiable/sheet",
+        "@uiable/tooltip",
+        "@uiable/user-profile"
+      ],
+      "files": [
+        {
+          "path": "src/components/uiable/blocks/layout/dashboard-layout/dashboard-3.tsx",
+          "type": "registry:component",
+          "target": "@components/uiable/blocks/layout/dashboard-layout/dashboard-3.tsx"
+        },
+        {
+          "path": "src/branding.json",
+          "type": "registry:file",
+          "target": "src/branding.json"
+        },
+        {
+          "path": "src/components/uiable/blocks/layout/dashboard-layout/data/dashboard-3.data.ts",
+          "type": "registry:component",
+          "target": "@components/uiable/blocks/layout/dashboard-layout/data/dashboard-3.data.ts"
         }
       ]
     },
@@ -17144,8 +17246,8 @@
     {
       "name": "block-e-commerce-2",
       "type": "registry:block",
-      "title": "E Commerce 2",
-      "description": "E Commerce 2 variant for block.",
+      "title": "E-commerce 2",
+      "description": "E-commerce 2 variant for block.",
       "categories": [
         "e-commerce"
       ],
@@ -17163,8 +17265,8 @@
     {
       "name": "block-e-commerce-3",
       "type": "registry:block",
-      "title": "E Commerce 3",
-      "description": "E Commerce 3 variant for block.",
+      "title": "E-commerce 3",
+      "description": "E-commerce 3 variant for block.",
       "categories": [
         "e-commerce"
       ],
@@ -17182,8 +17284,8 @@
     {
       "name": "block-e-commerce-5",
       "type": "registry:block",
-      "title": "E Commerce 5",
-      "description": "E Commerce 5 variant for block.",
+      "title": "E-commerce 5",
+      "description": "E-commerce 5 variant for block.",
       "categories": [
         "e-commerce"
       ],
@@ -17201,8 +17303,8 @@
     {
       "name": "block-e-commerce-7",
       "type": "registry:block",
-      "title": "E Commerce 7",
-      "description": "E Commerce 7 variant for block.",
+      "title": "E-commerce 7",
+      "description": "E-commerce 7 variant for block.",
       "categories": [
         "e-commerce"
       ],
@@ -17223,8 +17325,8 @@
     {
       "name": "block-e-commerce-8",
       "type": "registry:block",
-      "title": "E Commerce 8",
-      "description": "E Commerce 8 variant for block.",
+      "title": "E-commerce 8",
+      "description": "E-commerce 8 variant for block.",
       "categories": [
         "e-commerce"
       ],
@@ -17245,8 +17347,8 @@
     {
       "name": "block-e-commerce-9",
       "type": "registry:block",
-      "title": "E Commerce 9",
-      "description": "E Commerce 9 variant for block.",
+      "title": "E-commerce 9",
+      "description": "E-commerce 9 variant for block.",
       "categories": [
         "e-commerce"
       ],
@@ -17264,8 +17366,8 @@
     {
       "name": "block-e-commerce-10",
       "type": "registry:block",
-      "title": "E Commerce 10",
-      "description": "E Commerce 10 variant for block.",
+      "title": "E-commerce 10",
+      "description": "E-commerce 10 variant for block.",
       "categories": [
         "e-commerce"
       ],
@@ -17283,8 +17385,8 @@
     {
       "name": "block-e-commerce-19",
       "type": "registry:block",
-      "title": "E Commerce 19",
-      "description": "E Commerce 19 variant for block.",
+      "title": "E-commerce 19",
+      "description": "E-commerce 19 variant for block.",
       "categories": [
         "e-commerce"
       ],
@@ -17308,8 +17410,8 @@
     {
       "name": "block-e-commerce-21",
       "type": "registry:block",
-      "title": "E Commerce 21",
-      "description": "E Commerce 21 variant for block.",
+      "title": "E-commerce 21",
+      "description": "E-commerce 21 variant for block.",
       "categories": [
         "e-commerce"
       ],
@@ -17710,6 +17812,11 @@
           "path": "src/components/uiable/blocks/feature/feature-27/feature-27.tsx",
           "type": "registry:component",
           "target": "@components/uiable/blocks/feature/feature-27/feature-27.tsx"
+        },
+        {
+          "path": "src/components/uiable/blocks/landing/components/PortfolioSpotlightCard.tsx",
+          "type": "registry:component",
+          "target": "@components/uiable/blocks/landing/components/PortfolioSpotlightCard.tsx"
         }
       ]
     },
@@ -17758,9 +17865,9 @@
           "target": "@components/uiable/blocks/feature/feature-32/feature-32.tsx"
         },
         {
-          "path": "src/components/uiable/blocks/landing/components/SaasSpotlightCard.tsx",
+          "path": "src/components/animation/SaasSpotlightCard.tsx",
           "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/SaasSpotlightCard.tsx"
+          "target": "@components/animation/SaasSpotlightCard.tsx"
         }
       ]
     },
@@ -17909,6 +18016,9 @@
       "categories": [
         "footer"
       ],
+      "dependencies": [
+        "lucide-react"
+      ],
       "files": [
         {
           "path": "src/components/uiable/blocks/footer/footer-19/footer-19.tsx",
@@ -17959,9 +18069,9 @@
           "target": "@components/uiable/blocks/forgot-password/forgot-password-3/forgot-password-3.tsx"
         },
         {
-          "path": "src/components/uiable/blocks/landing/components/LightLogo.tsx",
+          "path": "src/images/landings/LightLogo.tsx",
           "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/LightLogo.tsx"
+          "target": "src/images/landings/LightLogo.tsx"
         }
       ]
     },
@@ -18285,21 +18395,6 @@
           "path": "src/components/uiable/blocks/hero/hero-16/hero-16.tsx",
           "type": "registry:component",
           "target": "@components/uiable/blocks/hero/hero-16/hero-16.tsx"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/HeroBackground.tsx",
-          "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/HeroBackground.tsx"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/MoltenMetal.css",
-          "type": "registry:file",
-          "target": "@components/uiable/blocks/landing/components/MoltenMetal.css"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/MoltenMetal.jsx",
-          "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/MoltenMetal.jsx"
         }
       ]
     },
@@ -18320,21 +18415,6 @@
           "path": "src/components/uiable/blocks/hero/hero-17/hero-17.tsx",
           "type": "registry:component",
           "target": "@components/uiable/blocks/hero/hero-17/hero-17.tsx"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/HeroBackground.tsx",
-          "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/HeroBackground.tsx"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/MoltenMetal.css",
-          "type": "registry:file",
-          "target": "@components/uiable/blocks/landing/components/MoltenMetal.css"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/MoltenMetal.jsx",
-          "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/MoltenMetal.jsx"
         }
       ]
     },
@@ -18355,21 +18435,6 @@
           "path": "src/components/uiable/blocks/hero/hero-19/hero-19.tsx",
           "type": "registry:component",
           "target": "@components/uiable/blocks/hero/hero-19/hero-19.tsx"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/HeroBackground.tsx",
-          "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/HeroBackground.tsx"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/MoltenMetal.css",
-          "type": "registry:file",
-          "target": "@components/uiable/blocks/landing/components/MoltenMetal.css"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/MoltenMetal.jsx",
-          "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/MoltenMetal.jsx"
         }
       ]
     },
@@ -18410,21 +18475,6 @@
           "path": "src/components/uiable/blocks/hero/hero-24/hero-24.tsx",
           "type": "registry:component",
           "target": "@components/uiable/blocks/hero/hero-24/hero-24.tsx"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/HeroBackground.tsx",
-          "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/HeroBackground.tsx"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/MoltenMetal.css",
-          "type": "registry:file",
-          "target": "@components/uiable/blocks/landing/components/MoltenMetal.css"
-        },
-        {
-          "path": "src/components/uiable/blocks/landing/components/MoltenMetal.jsx",
-          "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/MoltenMetal.jsx"
         }
       ]
     },
@@ -18571,9 +18621,9 @@
           "target": "@components/uiable/blocks/navbar/navbar-8/navbar-8.tsx"
         },
         {
-          "path": "src/components/uiable/blocks/landing/components/AiDarkLogo.tsx",
+          "path": "src/images/landings/AiDarkLogo.tsx",
           "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/AiDarkLogo.tsx"
+          "target": "src/images/landings/AiDarkLogo.tsx"
         }
       ]
     },
@@ -18596,9 +18646,9 @@
           "target": "@components/uiable/blocks/navbar/navbar-10/navbar-10.tsx"
         },
         {
-          "path": "src/components/uiable/blocks/landing/components/LightLogo.tsx",
+          "path": "src/images/landings/LightLogo.tsx",
           "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/LightLogo.tsx"
+          "target": "src/images/landings/LightLogo.tsx"
         }
       ]
     },
@@ -19039,9 +19089,9 @@
           "target": "@components/uiable/blocks/sign-up/sign-up-6/sign-up-6.tsx"
         },
         {
-          "path": "src/components/uiable/blocks/landing/components/LightLogo.tsx",
+          "path": "src/images/landings/LightLogo.tsx",
           "type": "registry:component",
-          "target": "@components/uiable/blocks/landing/components/LightLogo.tsx"
+          "target": "src/images/landings/LightLogo.tsx"
         }
       ]
     },
@@ -19273,6 +19323,11 @@
           "path": "src/components/uiable/blocks/landing/components/SectionHeader.tsx",
           "type": "registry:component",
           "target": "@components/uiable/blocks/landing/components/SectionHeader.tsx"
+        },
+        {
+          "path": "src/data/templates.ts",
+          "type": "registry:component",
+          "target": "src/data/templates.ts"
         }
       ]
     },
@@ -19763,6 +19818,7 @@
       "registryDependencies": [
         "@uiable/button",
         "@uiable/card",
+        "@uiable/dropdown-menu",
         "@uiable/tabs"
       ],
       "files": [

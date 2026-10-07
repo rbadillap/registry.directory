@@ -823,6 +823,46 @@
       ]
     },
     {
+      "name": "check-cycle",
+      "type": "registry:component",
+      "title": "Check Cycle",
+      "description": "Rotating words beside a checkbox: a sentence that finishes itself several ways. \"Create your own\" sits left of a ticked shadcn-style checkbox and the word to its right rolls up out of a slot — Intros, Demos, Launches, Changelogs, Tutorials, And more — then the line steps back a little and rests. Every number came off a recording, frame by frame: the two words in the slot move as one strip on the in-out cubic over exactly half a second, a roll every twenty frames. The type moves by fractions of a pixel instead of the whole-pixel steps a browser snaps text to.",
+      "dependencies": [
+        "remotion",
+        "@remotion/google-fonts"
+      ],
+      "registryDependencies": [
+        "https://snapcn.dev/r/snap-cn-ui.json"
+      ],
+      "files": [
+        {
+          "path": "registry/snap-cn/check-cycle/index.tsx",
+          "type": "registry:component",
+          "target": "components/snap-cn/check-cycle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "capture-reveal",
+      "type": "registry:component",
+      "title": "Capture Reveal",
+      "description": "Screenshot capture animation: a toast counts \"Capturing selection…\" up to 100% over a browser window, the window drops away and shrinks, the toast pops to \"Copied to clipboard.\" and a two-line headline rises out from behind the window while the cursor glides up. Every curve was measured off a recording frame by frame: the window's drop and shrink share one cubic-bezier, the toast pops on another, the headline rises without scaling or blurring, and type moves by fractions of a pixel.",
+      "dependencies": [
+        "remotion",
+        "@remotion/google-fonts"
+      ],
+      "registryDependencies": [
+        "https://snapcn.dev/r/snap-cn-ui.json"
+      ],
+      "files": [
+        {
+          "path": "registry/snap-cn/capture-reveal/index.tsx",
+          "type": "registry:component",
+          "target": "components/snap-cn/capture-reveal.tsx"
+        }
+      ]
+    },
+    {
       "name": "channel-thread",
       "type": "registry:component",
       "title": "Channel Thread",

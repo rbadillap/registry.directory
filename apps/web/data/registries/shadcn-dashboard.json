@@ -4611,6 +4611,44 @@
       ]
     },
     {
+      "name": "datatable-14",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Datatable 14 - Ticket Queue Table",
+      "description": "A support ticket queue table with search, status filtering, drag-and-drop column reordering, and pagination. Useful for support inboxes, ticketing systems, and operations dashboards.",
+      "dependencies": [
+        "@tanstack/react-table",
+        "@dnd-kit/core",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "checkbox",
+        "input-group",
+        "label",
+        "popover",
+        "progress",
+        "select",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/datatable/datatable-14/page.tsx",
+          "type": "registry:page",
+          "target": "app/datatable-14/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/datatable/datatable-14/datatable.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/datatable/datatable-14/datatable.tsx"
+        }
+      ]
+    },
+    {
       "name": "sidebar-01",
       "type": "registry:block",
       "title": "Sidebar 01 - Classic Admin Sidebar",
@@ -6274,6 +6312,211 @@
           "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-05/dialog.tsx",
           "type": "registry:component",
           "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-05/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-chat-06",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "AI Chat 06 - Chat Console",
+      "description": "A new-thread landing screen with a mode switcher, suggestion list, a recent-threads history popover, and a full message-thread chat view with a composer that has Think/Search toggles and a model picker.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "textarea",
+        "dropdown-menu",
+        "tooltip",
+        "popover",
+        "scroll-area",
+        "message",
+        "bubble"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/page.tsx",
+          "type": "registry:page",
+          "target": "app/ai-chat-06/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/chat-header.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/chat-header.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/welcome-screen.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/welcome-screen.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/message-thread.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/message-thread.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/history-popover.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/history-popover.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/composer.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/composer.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/use-speech-recognition.ts",
+          "type": "registry:hook",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/use-speech-recognition.ts"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/data.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/data.ts"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/types.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/ai-chat/ai-chat-06/types.ts"
+        }
+      ]
+    },
+    {
+      "name": "user-profile-01",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "User Profile 01 - Access & Security",
+      "description": "A member profile panel with tabs for Access, Authentication, Sessions, Activity, and Danger zone, including role/team pickers, permission badges, active sessions, an audit timeline, and an edit-profile dialog.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "card",
+        "dialog",
+        "field",
+        "input",
+        "select",
+        "toast"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/user-profile-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-01/user-profile-access-security.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-01/user-profile-access-security.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-01/header.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-01/header.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-01/tabs.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-01/tabs.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-01/access-section.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-01/access-section.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-01/authentication-section.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-01/authentication-section.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-01/sessions-section.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-01/sessions-section.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-01/activity-section.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-01/activity-section.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-01/danger-zone-section.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-01/danger-zone-section.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-01/data.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-01/data.ts"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-01/types.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-01/types.ts"
+        }
+      ]
+    },
+    {
+      "name": "user-profile-02",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "User Profile 02- Invitations",
+      "description": "An invitations manager with search, status filtering, and pagination, built as grouped rows instead of a data table. Each invite shows role, inviter, sent date, an expiry countdown, and a status badge, with row actions to resend, copy the invite link, or revoke, plus an invite-people dialog.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "card",
+        "dialog",
+        "dropdown-menu",
+        "field",
+        "input",
+        "pagination",
+        "select",
+        "toast"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/user-profile-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-02/user-profile-invitations.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-02/user-profile-invitations.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-02/toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-02/toolbar.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-02/invitation-row.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-02/invitation-row.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-02/data.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-02/data.ts"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/blocks/user-profile/user-profile-02/types.ts",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/blocks/user-profile/user-profile-02/types.ts"
         }
       ]
     },
@@ -12117,6 +12360,531 @@
           "path": "src/components/shadcn-dashboard/label/label-06.tsx",
           "type": "registry:component",
           "target": "components/shadcn-dashboard/label/label-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animation-01",
+      "type": "registry:component",
+      "title": "Animation 01 - Book Page Curl",
+      "description": "A single book with a realistic page-curl: drag the cover with mouse or touch and it peels from the bottom corner along a live fold line, flipping open to reveal the first page.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/animation/animation-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/animation/animation-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachment-01",
+      "type": "registry:component",
+      "title": "Attachment 01 - Code File",
+      "description": "Code file attachment with a tinted icon tile and a remove action, suited to a pending attachment in a chat composer",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "attachment"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/attachment/attachment-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/attachment/attachment-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachment-02",
+      "type": "registry:component",
+      "title": "Attachment 02 - Image Card",
+      "description": "Image attachment card with a wide photo preview on top, file name and dimensions below, and a remove action over the image",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "attachment"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/attachment/attachment-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/attachment/attachment-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachment-03",
+      "type": "registry:component",
+      "title": "Attachment 03 - Spreadsheet",
+      "description": "Spreadsheet file attachment with sheet count and file size, a remove action, and a mini table preview inside the card",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "attachment"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/attachment/attachment-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/attachment/attachment-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachment-04",
+      "type": "registry:component",
+      "title": "Attachment 04 - Idle",
+      "description": "File attachment in the idle state, with the primitive's built-in dashed border, a ready-to-upload message, and an upload action",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "attachment"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/attachment/attachment-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/attachment/attachment-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachment-05",
+      "type": "registry:component",
+      "title": "Attachment 05 - Uploading",
+      "description": "File attachment in the uploading state, with a spinner in place of the file icon, a shimmering title, and a cancel action",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "attachment",
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/attachment/attachment-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/attachment/attachment-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachment-06",
+      "type": "registry:component",
+      "title": "Attachment 06 - Error",
+      "description": "File attachment in the error state, with an alert icon, a failure message, and a retry action, using the primitive's built-in destructive styling",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "attachment"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/attachment/attachment-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/attachment/attachment-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachment-07",
+      "type": "registry:component",
+      "title": "Attachment 07 - Uploaded",
+      "description": "File attachment in the done state, with a checkmark icon, the final file size, and a remove action",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "attachment"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/attachment/attachment-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/attachment/attachment-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachment-08",
+      "type": "registry:component",
+      "title": "Attachment 08 - Group",
+      "description": "Horizontally scrolling row of mixed attachments, an image thumbnail alongside spreadsheet, document, and archive file cards, each with a remove action",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "attachment"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/attachment/attachment-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/attachment/attachment-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachment-09",
+      "type": "registry:component",
+      "title": "Attachment 09 - With Trigger",
+      "description": "File attachment whose whole surface opens a preview dialog via AttachmentTrigger, with a remove action that stays independently clickable above it",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "attachment",
+        "dialog"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/attachment/attachment-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/attachment/attachment-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bubble-01",
+      "type": "registry:component",
+      "title": "Bubble 01 - Variants",
+      "description": "All seven Bubble color variants stacked for comparison: default, secondary, muted, tinted, outline, ghost, and destructive",
+      "registryDependencies": [
+        "bubble"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/bubble/bubble-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/bubble/bubble-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bubble-02",
+      "type": "registry:component",
+      "title": "Bubble 02 - Alignment",
+      "description": "Two-sided chat exchange showing align start for received messages and align end for sent replies",
+      "registryDependencies": [
+        "bubble"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/bubble/bubble-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/bubble/bubble-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bubble-03",
+      "type": "registry:component",
+      "title": "Bubble 03 - Bubble Group",
+      "description": "A back-and-forth exchange where a burst of three consecutive sent messages is wrapped in BubbleGroup, with a reaction on the last one",
+      "registryDependencies": [
+        "bubble"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/bubble/bubble-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/bubble/bubble-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bubble-04",
+      "type": "registry:component",
+      "title": "Bubble 04 - Links & Buttons",
+      "description": "Interactive bubbles rendered as a real button and a real link via BubbleContent's render prop, for quick actions and reference links in a chat",
+      "registryDependencies": [
+        "bubble"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/bubble/bubble-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/bubble/bubble-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bubble-05",
+      "type": "registry:component",
+      "title": "Bubble 05 - Reactions",
+      "description": "BubbleReactions anchored bottom-start, bottom-end with an overflow count, and top-start, plus a real quick-action button on a destructive message",
+      "registryDependencies": [
+        "bubble",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/bubble/bubble-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/bubble/bubble-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bubble-06",
+      "type": "registry:component",
+      "title": "Bubble 06 - Show More",
+      "description": "Long bubble content truncated to a character preview, expanding to the full message behind a Collapsible Show more and Show less trigger",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "bubble",
+        "button",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/bubble/bubble-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/bubble/bubble-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bubble-07",
+      "type": "registry:component",
+      "title": "Bubble 07 - Tooltip",
+      "description": "Sent message with a read-receipt icon inside BubbleReactions, using Tooltip to reveal when the message was seen",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "bubble",
+        "button",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/bubble/bubble-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/bubble/bubble-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bubble-08",
+      "type": "registry:component",
+      "title": "Bubble 08 - Popover",
+      "description": "Destructive bubble with an info icon inside BubbleReactions, using Popover to surface the underlying error details on demand",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "bubble",
+        "button",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/bubble/bubble-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/bubble/bubble-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dots-01",
+      "type": "registry:component",
+      "title": "Dots 01 - Flower",
+      "description": "Flower shaped dot with chevron eyes that blink and look around",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dots/dots-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dots/dots-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dots-02",
+      "type": "registry:component",
+      "title": "Dots 02 - Eared Blob",
+      "description": "Blob with little ears and round eyes that blink and look around",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dots/dots-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dots/dots-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dots-03",
+      "type": "registry:component",
+      "title": "Dots 03 - Scalloped",
+      "description": "Scalloped dot with caret eyes that blink and look around",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dots/dots-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dots/dots-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dots-04",
+      "type": "registry:component",
+      "title": "Dots 04 - Teardrop",
+      "description": "Teardrop dot with tall oval eyes that blink and look around",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dots/dots-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dots/dots-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dots-05",
+      "type": "registry:component",
+      "title": "Dots 05 - Diamond",
+      "description": "Rounded diamond dot with tiny eyes that blink and look around",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dots/dots-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dots/dots-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dots-06",
+      "type": "registry:component",
+      "title": "Dots 06 - Triangle",
+      "description": "Rounded triangle dot with plus sign eyes that blink and look around",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dots/dots-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dots/dots-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dots-07",
+      "type": "registry:component",
+      "title": "Dots 07 - Clover",
+      "description": "Four lobed clover dot with smiling eyes that blink and look around",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dots/dots-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dots/dots-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dots-08",
+      "type": "registry:component",
+      "title": "Dots 08 - Squircle",
+      "description": "Rounded square dot with wide set tiny eyes that blink and look around",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dots/dots-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dots/dots-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dots-09",
+      "type": "registry:component",
+      "title": "Dots 09 - Hexagon",
+      "description": "Rounded hexagon dot with chevron eyes that blink and look around",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dots/dots-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dots/dots-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dots-10",
+      "type": "registry:component",
+      "title": "Dots 10 - Circle",
+      "description": "Round dot with dash eyes that blink and look around",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dots/dots-10.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dots/dots-10.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dots-11",
+      "type": "registry:component",
+      "title": "Dots 11 - Cloud",
+      "description": "Cloud dot with tall oval eyes that blink and look around",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dots/dots-11.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dots/dots-11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dots-12",
+      "type": "registry:component",
+      "title": "Dots 12 - Pebble",
+      "description": "Pebble shaped dot with round eyes that blink and look around",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dots/dots-12.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dots/dots-12.tsx"
         }
       ]
     }

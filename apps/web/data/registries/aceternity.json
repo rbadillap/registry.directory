@@ -4112,6 +4112,23 @@
       ]
     },
     {
+      "name": "hero-with-fluid-gradient-and-planner",
+      "type": "registry:block",
+      "resolution": "gated",
+      "description": "Hero with a drifting fluid gradient, navbar, mode toggle, trip prompt input, and a partner logo marquee",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "block/hero-with-fluid-gradient-and-planner.tsx",
+          "type": "registry:block",
+          "target": "block/hero-with-fluid-gradient-and-planner.tsx"
+        }
+      ]
+    },
+    {
       "name": "feature-grid-with-minimal-illustrations",
       "type": "registry:block",
       "resolution": "gated",
@@ -4172,6 +4189,23 @@
           "path": "block/about-us-section-with-cards.tsx",
           "type": "registry:block",
           "target": "block/about-us-section-with-cards.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ribbon-gradient-shader",
+      "type": "registry:block",
+      "resolution": "gated",
+      "description": "Hero with an animated WebGL ribbon gradient sweeping behind a grouped issue table",
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react"
+      ],
+      "files": [
+        {
+          "path": "block/ribbon-gradient-shader.tsx",
+          "type": "registry:block",
+          "target": "block/ribbon-gradient-shader.tsx"
         }
       ]
     },
@@ -4306,6 +4340,85 @@
           "path": "page/meeting-notes-landing-page/components/app-window.tsx",
           "type": "registry:component",
           "target": "components/meeting-notes-landing-page/app-window.tsx"
+        }
+      ]
+    },
+    {
+      "name": "inference-landing-page",
+      "type": "registry:block",
+      "resolution": "gated",
+      "description": "Dark landing page for Kestrel, a global AI inference platform, with a dashboard hero, feature tabs, a draggable workflow canvas, a live network map, a code demo, a model catalog, pricing, a dithered CTA and footer",
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react",
+        "class-variance-authority",
+        "liveline"
+      ],
+      "files": [
+        {
+          "path": "page/inference-landing-page/page.tsx",
+          "type": "registry:page",
+          "target": "app/inference-landing-page/page.tsx"
+        },
+        {
+          "path": "page/inference-landing-page/components/hero.tsx",
+          "type": "registry:component",
+          "target": "components/inference-landing-page/hero.tsx"
+        },
+        {
+          "path": "page/inference-landing-page/components/features.tsx",
+          "type": "registry:component",
+          "target": "components/inference-landing-page/features.tsx"
+        },
+        {
+          "path": "page/inference-landing-page/components/workflows.tsx",
+          "type": "registry:component",
+          "target": "components/inference-landing-page/workflows.tsx"
+        },
+        {
+          "path": "page/inference-landing-page/components/network.tsx",
+          "type": "registry:component",
+          "target": "components/inference-landing-page/network.tsx"
+        },
+        {
+          "path": "page/inference-landing-page/components/developers.tsx",
+          "type": "registry:component",
+          "target": "components/inference-landing-page/developers.tsx"
+        },
+        {
+          "path": "page/inference-landing-page/components/catalog.tsx",
+          "type": "registry:component",
+          "target": "components/inference-landing-page/catalog.tsx"
+        },
+        {
+          "path": "page/inference-landing-page/components/pricing.tsx",
+          "type": "registry:component",
+          "target": "components/inference-landing-page/pricing.tsx"
+        },
+        {
+          "path": "page/inference-landing-page/components/cta.tsx",
+          "type": "registry:component",
+          "target": "components/inference-landing-page/cta.tsx"
+        },
+        {
+          "path": "page/inference-landing-page/components/footer.tsx",
+          "type": "registry:component",
+          "target": "components/inference-landing-page/footer.tsx"
+        },
+        {
+          "path": "page/inference-landing-page/components/ui.tsx",
+          "type": "registry:component",
+          "target": "components/inference-landing-page/ui.tsx"
+        },
+        {
+          "path": "page/inference-landing-page/components/dashboard.tsx",
+          "type": "registry:component",
+          "target": "components/inference-landing-page/dashboard.tsx"
+        },
+        {
+          "path": "page/inference-landing-page/components/ai-logos.tsx",
+          "type": "registry:component",
+          "target": "components/inference-landing-page/ai-logos.tsx"
         }
       ]
     }

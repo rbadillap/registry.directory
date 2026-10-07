@@ -8,6 +8,262 @@
   "resolvable": true,
   "items": [
     {
+      "name": "alert",
+      "type": "registry:component",
+      "title": "Animated Alert",
+      "description": "Composable feedback with smooth transitions.",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/alert.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/alert.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/presence-gate.tsx",
+          "type": "registry:lib",
+          "target": "@lib/presence-gate.tsx"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:component",
+      "title": "Animated Collapsible",
+      "description": "Expandable content with a smooth reveal.",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/collapsible.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/collapsible.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:component",
+      "title": "Aspect Ratio",
+      "description": "Responsive media with smooth aspect ratio transitions.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/aspect-ratio.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/aspect-ratio.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "arc-picker",
+      "type": "registry:component",
+      "title": "Arc Picker",
+      "description": "Radial text picker with top, bottom, left or right curves, smooth wheel movement and live selection on each scroll step. One persistent bracket frame grows and squeezes around each label. Supports drag momentum, keyboard input, disabled choices, controlled or uncontrolled values, forms and reduced motion.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/arc-picker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/arc-picker.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "sortable-stack",
+      "type": "registry:component",
+      "title": "Sortable List",
+      "description": "Composable sortable list with group, item, drag handle, content and undo parts, plus a shared state hook. Spring layout, keyboard reordering, accessible position announcements, and controlled or uncontrolled items.",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/sortable-list.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/sortable-list.tsx"
+        },
+        {
+          "path": "components/motion/sortable-stack.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/sortable-stack.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "morphing-lightbox",
+      "type": "registry:component",
+      "title": "Image Viewer Morphing",
+      "description": "A thumbnail-connected image viewer with composable gallery, thumbnail, content, caption and navigation parts, plus a shared state hook. Expand into the full-size image and return to the thumbnail on close, with swipe navigation, zoom and pan.",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/morphing-lightbox.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/morphing-lightbox.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-modal-scope.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-modal-scope.ts"
+        },
+        {
+          "path": "lib/presence-gate.tsx",
+          "type": "registry:lib",
+          "target": "@lib/presence-gate.tsx"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "date-range-picker",
+      "type": "registry:component",
+      "title": "Date Range Picker",
+      "description": "Composable date range picker with root, trigger, popover content, calendar, header, grid, summary, footer, clear and preset parts, plus a shared state hook. Compact inline and dropdown compositions, direct month and year selection, and full keyboard navigation.",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/date-range-picker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/date-range-picker.tsx"
+        },
+        {
+          "path": "components/motion/date-range-picker/context.ts",
+          "type": "registry:component",
+          "target": "@components/motion/date-range-picker/context.ts"
+        },
+        {
+          "path": "components/motion/date-range-picker/date-utils.ts",
+          "type": "registry:component",
+          "target": "@components/motion/date-range-picker/date-utils.ts"
+        },
+        {
+          "path": "components/motion/date-range-picker/types.ts",
+          "type": "registry:component",
+          "target": "@components/motion/date-range-picker/types.ts"
+        },
+        {
+          "path": "components/motion/date-range-picker/use-date-range-picker.ts",
+          "type": "registry:component",
+          "target": "@components/motion/date-range-picker/use-date-range-picker.ts"
+        },
+        {
+          "path": "components/motion/popover-morph.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/popover-morph.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "components/motion/popover-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/popover-position.ts"
+        }
+      ]
+    },
+    {
       "name": "color-selector",
       "type": "registry:component",
       "title": "Animated Color Selector",
@@ -2477,6 +2733,318 @@
       ]
     },
     {
+      "name": "treemap",
+      "type": "registry:component",
+      "title": "Treemap",
+      "description": "Proportional tiles that morph with your data, with value and share tooltips.",
+      "dependencies": [
+        "@floating-ui/dom",
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/treemap.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/treemap.tsx"
+        },
+        {
+          "path": "components/charts/treemap/context.ts",
+          "type": "registry:component",
+          "target": "@components/charts/treemap/context.ts"
+        },
+        {
+          "path": "components/charts/treemap/legend.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/treemap/legend.tsx"
+        },
+        {
+          "path": "components/charts/treemap/model.ts",
+          "type": "registry:component",
+          "target": "@components/charts/treemap/model.ts"
+        },
+        {
+          "path": "components/charts/treemap/plot.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/treemap/plot.tsx"
+        },
+        {
+          "path": "components/charts/treemap/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/treemap/tooltip.tsx"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "lib/hooks/use-row-cursor.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-row-cursor.ts"
+        },
+        {
+          "path": "components/charts/treemap/tile.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/treemap/tile.tsx"
+        },
+        {
+          "path": "components/motion/number-ticker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/number-ticker.tsx"
+        },
+        {
+          "path": "components/motion/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-gesture.ts"
+        },
+        {
+          "path": "lib/hooks/use-tap-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-tap-gesture.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
+      "name": "volume-profile",
+      "type": "registry:component",
+      "title": "Volume Profile",
+      "description": "Animated volume by price, with point of control and value area highlights.",
+      "dependencies": [
+        "@floating-ui/dom",
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/volume-profile.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/volume-profile.tsx"
+        },
+        {
+          "path": "components/charts/volume-profile/context.ts",
+          "type": "registry:component",
+          "target": "@components/charts/volume-profile/context.ts"
+        },
+        {
+          "path": "components/charts/volume-profile/model.ts",
+          "type": "registry:component",
+          "target": "@components/charts/volume-profile/model.ts"
+        },
+        {
+          "path": "components/charts/volume-profile/plot.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/volume-profile/plot.tsx"
+        },
+        {
+          "path": "components/charts/volume-profile/summary.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/volume-profile/summary.tsx"
+        },
+        {
+          "path": "components/charts/volume-profile/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/volume-profile/tooltip.tsx"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/motion/number-ticker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/number-ticker.tsx"
+        },
+        {
+          "path": "components/motion/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-gesture.ts"
+        },
+        {
+          "path": "lib/hooks/use-tap-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-tap-gesture.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
+      "name": "status-bar",
+      "type": "registry:component",
+      "title": "Status Bar",
+      "description": "Animated status history with rounded bars and period tooltips.",
+      "dependencies": [
+        "@floating-ui/dom",
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/status-bar.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/status-bar.tsx"
+        },
+        {
+          "path": "components/charts/status-bar/context.ts",
+          "type": "registry:component",
+          "target": "@components/charts/status-bar/context.ts"
+        },
+        {
+          "path": "components/charts/status-bar/legend.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/status-bar/legend.tsx"
+        },
+        {
+          "path": "components/charts/status-bar/plot.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/status-bar/plot.tsx"
+        },
+        {
+          "path": "components/charts/status-bar/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/status-bar/tooltip.tsx"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/motion/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-gesture.ts"
+        },
+        {
+          "path": "lib/hooks/use-tap-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-tap-gesture.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
       "name": "composition-chart",
       "type": "registry:component",
       "title": "Composition Chart",
@@ -3209,6 +3777,39 @@
           "path": "lib/touch.ts",
           "type": "registry:lib",
           "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
+      "name": "voice-orb",
+      "type": "registry:component",
+      "title": "Voice Orb",
+      "description": "Breathing liquid voice visualization with flowing highlights, custom pigments and a soft, voice-reactive silhouette. Accepts a normalized level, MotionValue or caller-owned audio analyser, pauses offscreen and supports reduced motion.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/agents/voice-orb.tsx",
+          "type": "registry:component",
+          "target": "@components/agents/voice-orb.tsx"
+        },
+        {
+          "path": "components/agents/voice-orb/renderer.ts",
+          "type": "registry:component",
+          "target": "@components/agents/voice-orb/renderer.ts"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
         }
       ]
     },
