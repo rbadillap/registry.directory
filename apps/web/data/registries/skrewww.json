@@ -1,0 +1,2255 @@
+{
+  "key": "skrewww",
+  "entry": "Skrewww",
+  "name": "skrewww",
+  "homepage": "https://skrewww.com",
+  "indexUrl": "https://skrewww.com/r/registry.json",
+  "itemBase": "https://skrewww.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "foundation",
+      "type": "registry:file",
+      "title": "Skrewww Foundation",
+      "description": "Universal Primitive/Semantic/Brand tokens, component-tier defaults required by distributed components, Shape/Surface mode overrides, and the shared .sr-only accessibility utility. Installed once; every other @skrewww/* component depends on it.",
+      "files": [
+        {
+          "path": "styles/tokens.css",
+          "type": "registry:file",
+          "target": "~/styles/skrewww-foundation.css"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Button is a primary interactive trigger for user actions — submit, confirm, navigate, or initiate a process.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Button.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Button.tsx"
+        },
+        {
+          "path": "components/ui/button.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/button.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/icons.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/icons.tsx"
+        },
+        {
+          "path": "components/ui/button-group-context.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/button-group-context.ts"
+        },
+        {
+          "path": "components/ui/internal/link-utils.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/link-utils.ts"
+        },
+        {
+          "path": "components/ui/router-navigation.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/router-navigation.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Card is a general-purpose content container grouping related information with a clear visual boundary.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Card.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Card.tsx"
+        },
+        {
+          "path": "components/ui/card.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/card.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "text-input",
+      "type": "registry:ui",
+      "title": "Text Input",
+      "description": "Text Input is a single-line text entry for short, free-form data such as names, emails, or search terms.",
+      "registryDependencies": [
+        "@skrewww/form-field",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TextInput.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/TextInput.tsx"
+        },
+        {
+          "path": "components/ui/text-input.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/text-input.module.css"
+        },
+        {
+          "path": "components/ui/TextInputControl.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/TextInputControl.tsx"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "form-field",
+      "type": "registry:ui",
+      "title": "Form Field",
+      "description": "Form Field is a shared field wrapper for label, description, required indicator, and validation placement — not a visual input.",
+      "registryDependencies": [
+        "@skrewww/validation-message",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/FormField.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/FormField.tsx"
+        },
+        {
+          "path": "components/ui/form-field.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/form-field.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "validation-message",
+      "type": "registry:ui",
+      "title": "Validation Message",
+      "description": "Validation Message is inline typed feedback paired with a field — error, warning, success, or info — with icon and text.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ValidationMessage.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/ValidationMessage.tsx"
+        },
+        {
+          "path": "components/ui/validation-message.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/validation-message.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Spinner is an indeterminate loading indicator for operations without a meaningful completion percentage.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Spinner.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Spinner.tsx"
+        },
+        {
+          "path": "components/ui/spinner.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/spinner.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "divider",
+      "type": "registry:ui",
+      "title": "Divider",
+      "description": "Divider is a thin separator line between content sections — horizontal or vertical, semantic or decorative.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Divider.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Divider.tsx"
+        },
+        {
+          "path": "components/ui/divider.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/divider.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "link",
+      "type": "registry:ui",
+      "title": "Link",
+      "description": "Link is semantic navigational text styled as inline or standalone links — not for primary actions.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Link.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Link.tsx"
+        },
+        {
+          "path": "components/ui/link.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/link.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/link-utils.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/link-utils.ts"
+        },
+        {
+          "path": "components/ui/router-navigation.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/router-navigation.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Checkbox is a native checkbox for independent or multi-select choices, including indeterminate group states.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Checkbox.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Checkbox.tsx"
+        },
+        {
+          "path": "components/ui/checkbox.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/checkbox.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "progress-bar",
+      "type": "registry:ui",
+      "title": "Progress Bar",
+      "description": "React progress bar for uploads and background tasks, with measured value/max progress, an indeterminate mode, a visible label, and optional percentage text.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ProgressBar.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/ProgressBar.tsx"
+        },
+        {
+          "path": "components/ui/progress-bar.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/progress-bar.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Skeleton is temporary placeholder shapes that preserve layout while known content is loading.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Skeleton.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Skeleton.tsx"
+        },
+        {
+          "path": "components/ui/skeleton.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/skeleton.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "radio",
+      "type": "registry:ui",
+      "title": "Radio",
+      "description": "Radio is a native radio button for a single option inside a mutually exclusive group.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Radio.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Radio.tsx"
+        },
+        {
+          "path": "components/ui/radio.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/radio.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Switch is a boolean settings control for immediate on/off changes — not a substitute for Checkbox in forms.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Switch.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Switch.tsx"
+        },
+        {
+          "path": "components/ui/switch.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/switch.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Textarea is a multi-line native textarea for longer free-text content, composed with FormField for label and validation.",
+      "registryDependencies": [
+        "@skrewww/form-field",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Textarea.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Textarea.tsx"
+        },
+        {
+          "path": "components/ui/textarea.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/textarea.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/text-input.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/text-input.module.css"
+        },
+        {
+          "path": "public/right-bottom-icon.svg",
+          "type": "registry:file",
+          "target": "~/public/right-bottom-icon.svg"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Pagination is a paged navigation control with Previous/Next boundaries, numbered pages, and optional ellipsis.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Pagination.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Pagination.tsx"
+        },
+        {
+          "path": "components/ui/pagination.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/pagination.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/link-utils.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/link-utils.ts"
+        },
+        {
+          "path": "components/ui/router-navigation.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/router-navigation.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Avatar is a circular visual identity for a user or entity with image, initials, or icon fallback.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Avatar.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Avatar.tsx"
+        },
+        {
+          "path": "components/ui/avatar.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/avatar.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Breadcrumb is an ordered hierarchical trail showing location with navigable ancestors and a current-page indicator.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/link",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Breadcrumb.tsx"
+        },
+        {
+          "path": "components/ui/breadcrumb.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/breadcrumb.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Radio Group is an accessible grouping layer for mutually exclusive radio options with legend, helper text, and errors.",
+      "registryDependencies": [
+        "@skrewww/radio",
+        "@skrewww/validation-message",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/RadioGroup.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/RadioGroup.tsx"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Slider is a single-value control for selecting a number within min/max by dragging or keyboard-adjusting a thumb along a track.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Slider.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Slider.tsx"
+        },
+        {
+          "path": "components/ui/slider.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/slider.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        }
+      ]
+    },
+    {
+      "name": "stepper",
+      "type": "registry:ui",
+      "title": "Stepper",
+      "description": "Stepper shows progress through a fixed, known-length, ordered sequence of named steps — a compound Stepper + Step API built against the verified live Navigation/Step Item component set.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Stepper.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Stepper.tsx"
+        },
+        {
+          "path": "components/ui/stepper.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/stepper.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Table is a native HTML table foundation with captions, headers, body rows, footers, cell alignment, responsive overflow, RTL support, print-friendly scrolling, and composition patterns for empty/loading/error — not the interactive Data Table pattern (no sorting, selection, or pagination).",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Table.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Table.tsx"
+        },
+        {
+          "path": "components/ui/table.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/table.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Badge is a compact non-interactive label for status, classification, or numeric counts at a glance.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Badge.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Badge.tsx"
+        },
+        {
+          "path": "components/ui/badge.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/badge.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/feedback-types.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/feedback-types.ts"
+        }
+      ]
+    },
+    {
+      "name": "tag",
+      "type": "registry:ui",
+      "title": "Tag",
+      "description": "Tag is a compact classification label for categories, filters, or user-applied values — distinct from read-only Badge status metadata.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Tag.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Tag.tsx"
+        },
+        {
+          "path": "components/ui/tag.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/tag.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "list-item",
+      "type": "registry:ui",
+      "title": "List Item",
+      "description": "List Item is a single row inside a collection — avatar, title, description, metadata, and optional trailing content.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ListItem.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/ListItem.tsx"
+        },
+        {
+          "path": "components/ui/list-item.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/list-item.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/link-utils.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/link-utils.ts"
+        },
+        {
+          "path": "components/ui/router-navigation.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/router-navigation.tsx"
+        }
+      ]
+    },
+    {
+      "name": "timeline",
+      "type": "registry:ui",
+      "title": "Timeline",
+      "description": "Timeline is a vertical, chronological event list built on Content/Timeline Item rows — Default outlined-ring or Highlighted solid-dot markers, connector suppression purely positional.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Timeline.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Timeline.tsx"
+        },
+        {
+          "path": "components/ui/timeline.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/timeline.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/TimelineItemRow.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/TimelineItemRow.tsx"
+        },
+        {
+          "path": "components/ui/internal/timeline-item-row.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/timeline-item-row.module.css"
+        }
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:ui",
+      "title": "Empty State",
+      "description": "Empty State is a zero-content placeholder with title, description, and optional recovery actions for collections, search, or first-use flows.",
+      "registryDependencies": [
+        "@skrewww/button",
+        "@skrewww/link",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/EmptyState.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/EmptyState.tsx"
+        },
+        {
+          "path": "components/ui/empty-state.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/empty-state.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Alert is a persistent inline feedback block for contextual status tied to page content — not auto-dismissing.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Alert.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Alert.tsx"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/FeedbackSurface.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/FeedbackSurface.tsx"
+        },
+        {
+          "path": "components/ui/internal/feedback-surface.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/feedback-surface.module.css"
+        },
+        {
+          "path": "components/ui/internal/feedback-icons.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/feedback-icons.tsx"
+        },
+        {
+          "path": "components/ui/internal/feedback-types.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/feedback-types.ts"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Toast is a transient floating notification for confirming actions or reporting short-lived events.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ToastProvider.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/ToastProvider.tsx"
+        },
+        {
+          "path": "components/ui/toast.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/toast.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/FeedbackSurface.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/FeedbackSurface.tsx"
+        },
+        {
+          "path": "components/ui/internal/feedback-surface.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/feedback-surface.module.css"
+        },
+        {
+          "path": "components/ui/internal/feedback-icons.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/feedback-icons.tsx"
+        },
+        {
+          "path": "components/ui/internal/feedback-types.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/feedback-types.ts"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Button Group joins related independent Buttons with shared outer chrome and a 2px divider gap — layout only; each Button keeps its own behavior.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ButtonGroup.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/ButtonGroup.tsx"
+        },
+        {
+          "path": "components/ui/button-group.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/button-group.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/button-group-context.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/button-group-context.ts"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Toggle Group is exclusive segmented selection (radiogroup) with joined chrome — Segmented Control is this presentation, not a separate component.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ToggleGroup.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/ToggleGroup.tsx"
+        },
+        {
+          "path": "components/ui/toggle-group.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/toggle-group.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "components/ui/internal/toggle-group-keyboard.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/toggle-group-keyboard.ts"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Accordion is a set of stacked collapsible sections for progressive disclosure, built from Accordion Item building blocks.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Accordion.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Accordion.tsx"
+        },
+        {
+          "path": "components/ui/accordion.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/accordion.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Tabs is a navigation pattern that switches between related in-context views using tablist/tab/tabpanel semantics and roving focus.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Tabs.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Tabs.tsx"
+        },
+        {
+          "path": "components/ui/tabs.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/tabs.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "components/ui/internal/tab-keyboard.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/tab-keyboard.ts"
+        }
+      ]
+    },
+    {
+      "name": "search-field",
+      "type": "registry:ui",
+      "title": "Search Field",
+      "description": "Search Field is a search-specific text field with leading magnifying-glass icon and optional clear action — built on shared text-input control behavior.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/form-field",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/SearchField.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/SearchField.tsx"
+        },
+        {
+          "path": "components/ui/search-field.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/search-field.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "components/ui/TextInputControl.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/TextInputControl.tsx"
+        },
+        {
+          "path": "components/ui/text-input.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/text-input.module.css"
+        }
+      ]
+    },
+    {
+      "name": "credit-card-field",
+      "type": "registry:ui",
+      "title": "Credit Card Field",
+      "description": "Credit Card Field is a compound UI control for card number, expiry, and CVC in one shell — visual pattern only, not a payment processor or PCI vault.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/validation-message",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/CreditCardField.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/CreditCardField.tsx"
+        },
+        {
+          "path": "components/ui/credit-card-field.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/credit-card-field.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "lib/credit-card-field-format.ts",
+          "type": "registry:lib",
+          "target": "~/lib/credit-card-field-format.ts"
+        }
+      ]
+    },
+    {
+      "name": "number-input",
+      "type": "registry:ui",
+      "title": "Number Input",
+      "description": "Number Input is direct numeric entry with optional steppers and min/max/step — not currency, quantity business logic, or a Slider.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/form-field",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/NumberInput.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/NumberInput.tsx"
+        },
+        {
+          "path": "components/ui/number-input.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/number-input.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "components/ui/TextInputControl.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/TextInputControl.tsx"
+        },
+        {
+          "path": "components/ui/text-input.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/text-input.module.css"
+        },
+        {
+          "path": "lib/number-input-value.ts",
+          "type": "registry:lib",
+          "target": "~/lib/number-input-value.ts"
+        }
+      ]
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:ui",
+      "title": "File Upload",
+      "description": "File Upload is a native file input with drag-and-drop dropzone, advisory validation, selected-file list, and multipart form submission — selection only, not network upload.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/form-field",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/FileUpload.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/FileUpload.tsx"
+        },
+        {
+          "path": "components/ui/file-upload.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/file-upload.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/file-upload-file-list.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/file-upload-file-list.ts"
+        },
+        {
+          "path": "components/ui/internal/file-upload-validation.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/file-upload-validation.ts"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Popover is a non-modal floating panel for supplementary or lightly interactive content anchored to a trigger.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Popover.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Popover.tsx"
+        },
+        {
+          "path": "components/ui/popover.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/popover.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "components/ui/internal/Portal.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/Portal.tsx"
+        },
+        {
+          "path": "components/ui/internal/useIsClient.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useIsClient.ts"
+        },
+        {
+          "path": "components/ui/internal/OverlayScopeContext.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/OverlayScopeContext.tsx"
+        },
+        {
+          "path": "components/ui/internal/useOverlayEscape.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useOverlayEscape.ts"
+        },
+        {
+          "path": "components/ui/internal/overlay-stack.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/overlay-stack.ts"
+        },
+        {
+          "path": "components/ui/internal/useLatestRef.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useLatestRef.ts"
+        },
+        {
+          "path": "components/ui/internal/useOutsidePointer.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useOutsidePointer.ts"
+        },
+        {
+          "path": "components/ui/internal/popover-position.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/popover-position.ts"
+        },
+        {
+          "path": "components/ui/internal/focus-utils.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/focus-utils.ts"
+        },
+        {
+          "path": "components/ui/internal/useFloatingPosition.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useFloatingPosition.ts"
+        },
+        {
+          "path": "components/ui/internal/assign-ref.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/assign-ref.ts"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Tooltip is a brief supplementary label for a trigger, shown on keyboard focus or pointer hover.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Tooltip.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Tooltip.tsx"
+        },
+        {
+          "path": "components/ui/tooltip.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/tooltip.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/tooltip-position.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/tooltip-position.ts"
+        },
+        {
+          "path": "components/ui/internal/assign-ref.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/assign-ref.ts"
+        },
+        {
+          "path": "components/ui/internal/useIsClient.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useIsClient.ts"
+        },
+        {
+          "path": "components/ui/internal/useTooltipController.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useTooltipController.ts"
+        },
+        {
+          "path": "components/ui/internal/useOverlayEscape.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useOverlayEscape.ts"
+        },
+        {
+          "path": "components/ui/internal/overlay-stack.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/overlay-stack.ts"
+        },
+        {
+          "path": "components/ui/internal/useLatestRef.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useLatestRef.ts"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Dialog is a modal overlay that interrupts workflow for focused attention, information, or a decision.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Dialog.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Dialog.tsx"
+        },
+        {
+          "path": "components/ui/dialog.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/dialog.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "components/ui/internal/Portal.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/Portal.tsx"
+        },
+        {
+          "path": "components/ui/internal/useIsClient.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useIsClient.ts"
+        },
+        {
+          "path": "components/ui/internal/OverlayScopeContext.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/OverlayScopeContext.tsx"
+        },
+        {
+          "path": "components/ui/internal/useBackgroundInert.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useBackgroundInert.ts"
+        },
+        {
+          "path": "components/ui/internal/useBodyScrollLock.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useBodyScrollLock.ts"
+        },
+        {
+          "path": "components/ui/internal/useOverlayEscape.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useOverlayEscape.ts"
+        },
+        {
+          "path": "components/ui/internal/overlay-stack.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/overlay-stack.ts"
+        },
+        {
+          "path": "components/ui/internal/useLatestRef.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useLatestRef.ts"
+        },
+        {
+          "path": "components/ui/internal/useFocusTrap.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useFocusTrap.ts"
+        },
+        {
+          "path": "components/ui/internal/focus-utils.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/focus-utils.ts"
+        },
+        {
+          "path": "components/ui/internal/assign-ref.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/assign-ref.ts"
+        },
+        {
+          "path": "components/ui/internal/overlay-types.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/overlay-types.ts"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Drawer is an edge-anchored modal panel for supplementary settings, filters, or secondary forms.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Drawer.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Drawer.tsx"
+        },
+        {
+          "path": "components/ui/drawer.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/drawer.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "components/ui/internal/Portal.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/Portal.tsx"
+        },
+        {
+          "path": "components/ui/internal/useIsClient.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useIsClient.ts"
+        },
+        {
+          "path": "components/ui/internal/OverlayScopeContext.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/OverlayScopeContext.tsx"
+        },
+        {
+          "path": "components/ui/internal/useBackgroundInert.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useBackgroundInert.ts"
+        },
+        {
+          "path": "components/ui/internal/useBodyScrollLock.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useBodyScrollLock.ts"
+        },
+        {
+          "path": "components/ui/internal/useOverlayEscape.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useOverlayEscape.ts"
+        },
+        {
+          "path": "components/ui/internal/overlay-stack.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/overlay-stack.ts"
+        },
+        {
+          "path": "components/ui/internal/useLatestRef.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useLatestRef.ts"
+        },
+        {
+          "path": "components/ui/internal/useFocusTrap.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useFocusTrap.ts"
+        },
+        {
+          "path": "components/ui/internal/focus-utils.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/focus-utils.ts"
+        },
+        {
+          "path": "components/ui/internal/assign-ref.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/assign-ref.ts"
+        },
+        {
+          "path": "components/ui/internal/overlay-types.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/overlay-types.ts"
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "type": "registry:ui",
+      "title": "Menu",
+      "description": "Menu is a compact command surface for contextual actions — distinct from Select (form values) and Popover (supplementary content).",
+      "registryDependencies": [
+        "@skrewww/popover",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Menu.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Menu.tsx"
+        },
+        {
+          "path": "components/ui/menu.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/menu.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/menu-typeahead.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/menu-typeahead.ts"
+        }
+      ]
+    },
+    {
+      "name": "split-button",
+      "type": "registry:ui",
+      "title": "Split Button",
+      "description": "Split Button joins one primary Button action with a related Menu trigger using shared outer chrome — composition only; Button and Menu keep their own APIs.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/SplitButton.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/SplitButton.tsx"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/button-group-context.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/button-group-context.ts"
+        },
+        {
+          "path": "components/ui/button-group.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/button-group.module.css"
+        }
+      ]
+    },
+    {
+      "name": "calendar-day",
+      "type": "registry:ui",
+      "title": "Calendar Day",
+      "description": "Calendar Day is a single selectable day cell inside a month calendar grid.",
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/CalendarDay.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/CalendarDay.tsx"
+        },
+        {
+          "path": "components/ui/calendar-day.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/calendar-day.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/calendar-date.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/calendar-date.ts"
+        }
+      ]
+    },
+    {
+      "name": "calendar-grid",
+      "type": "registry:ui",
+      "title": "Calendar Grid",
+      "description": "Calendar Grid is a composed month-view calendar with single-date or range selection and grid keyboard navigation.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/calendar-day",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/CalendarGrid.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/CalendarGrid.tsx"
+        },
+        {
+          "path": "components/ui/calendar-grid.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/calendar-grid.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "components/ui/CalendarMonthCell.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/CalendarMonthCell.tsx"
+        },
+        {
+          "path": "components/ui/CalendarYearCell.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/CalendarYearCell.tsx"
+        },
+        {
+          "path": "components/ui/calendar-period-cell.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/calendar-period-cell.module.css"
+        },
+        {
+          "path": "components/ui/internal/assign-ref.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/assign-ref.ts"
+        },
+        {
+          "path": "components/ui/internal/calendar-date.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/calendar-date.ts"
+        },
+        {
+          "path": "components/ui/internal/calendar-math.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/calendar-math.ts"
+        },
+        {
+          "path": "components/ui/internal/useCalendarKeyboard.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useCalendarKeyboard.ts"
+        },
+        {
+          "path": "components/ui/internal/useCalendarCellGridKeyboard.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/useCalendarCellGridKeyboard.ts"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Select is a combobox-style single-select with a Popover listbox trigger and hidden native select for form submission.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/form-field",
+        "@skrewww/popover",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Select.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Select.tsx"
+        },
+        {
+          "path": "components/ui/select.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/select.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "components/ui/text-input.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/text-input.module.css"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Combobox is an editable searchable single-select with a filterable listbox — distinct from non-searchable Select and query-only Search Field.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/form-field",
+        "@skrewww/popover",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Combobox.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/Combobox.tsx"
+        },
+        {
+          "path": "components/ui/combobox.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/combobox.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "components/ui/text-input.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/text-input.module.css"
+        },
+        {
+          "path": "components/ui/internal/combobox-filter.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/combobox-filter.ts"
+        },
+        {
+          "path": "components/ui/internal/combobox-list-status.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/combobox-list-status.ts"
+        },
+        {
+          "path": "components/ui/internal/combobox-keyboard.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/combobox-keyboard.ts"
+        },
+        {
+          "path": "components/ui/internal/combobox-scroll.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/combobox-scroll.ts"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "Date Picker is a date-only field with editable D MMM YYYY text entry (en-GB) and calendar popover for single-date selection.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/calendar-grid",
+        "@skrewww/popover",
+        "@skrewww/form-field",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DatePicker.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/DatePicker.tsx"
+        },
+        {
+          "path": "components/ui/date-picker.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/date-picker.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "components/ui/TextInputControl.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/TextInputControl.tsx"
+        },
+        {
+          "path": "components/ui/text-input.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/text-input.module.css"
+        },
+        {
+          "path": "components/ui/internal/calendar-date.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/calendar-date.ts"
+        }
+      ]
+    },
+    {
+      "name": "phone-number-field",
+      "type": "registry:ui",
+      "title": "Phone Number Field",
+      "description": "Phone Number Field pairs a country/dial-code selector with a phone number input — UI pattern only, not SMS verification or carrier lookup.",
+      "registryDependencies": [
+        "@skrewww/select",
+        "@skrewww/validation-message",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/PhoneNumberField.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/PhoneNumberField.tsx"
+        },
+        {
+          "path": "components/ui/phone-number-field.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/phone-number-field.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "components/ui/TextInputControl.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/TextInputControl.tsx"
+        },
+        {
+          "path": "components/ui/text-input.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/text-input.module.css"
+        },
+        {
+          "path": "lib/phone-number-field-countries.ts",
+          "type": "registry:lib",
+          "target": "~/lib/phone-number-field-countries.ts"
+        }
+      ]
+    },
+    {
+      "name": "tree-view",
+      "type": "registry:ui",
+      "title": "Tree View",
+      "description": "Tree View is a hierarchical, keyboard-navigable tree — file explorers, nested category browsers, org charts. Composes Content/Tree Item rows with roving-tabindex keyboard navigation and depth-based indentation.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TreeView.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/TreeView.tsx"
+        },
+        {
+          "path": "components/ui/tree-view.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/tree-view.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "components/ui/internal/TreeItem.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/TreeItem.tsx"
+        },
+        {
+          "path": "components/ui/internal/tree-item.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/tree-item.module.css"
+        },
+        {
+          "path": "components/ui/internal/tree-flatten.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/tree-flatten.ts"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data Table",
+      "description": "Data Table is an interactive data-table pattern composing Table with header sorting and external Pagination — no columns-config prop; the consumer writes their own Table/TableHead/TableBody markup and drops in DataTableSortHeader for sortable columns.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/table",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/DataTableSortHeader.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/DataTableSortHeader.tsx"
+        },
+        {
+          "path": "components/ui/data-table-sort-header.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/data-table-sort-header.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "lib/use-controllable.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-controllable.ts"
+        },
+        {
+          "path": "lib/use-data-table-sort.ts",
+          "type": "registry:lib",
+          "target": "~/lib/use-data-table-sort.ts"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart",
+      "type": "registry:ui",
+      "title": "Bar Chart",
+      "description": "Bar Chart compares categories with vertical or horizontal bars — a single series by default, or several series grouped, stacked, or stacked to 100%. Static and non-tabbable, with the data also exposed as a hidden table.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/BarChart.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/BarChart.tsx"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/ChartFrame.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/ChartFrame.tsx"
+        },
+        {
+          "path": "components/ui/internal/ChartLegend.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/ChartLegend.tsx"
+        },
+        {
+          "path": "components/ui/internal/ChartTooltip.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/ChartTooltip.tsx"
+        },
+        {
+          "path": "components/ui/internal/cartesian-parts.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/cartesian-parts.tsx"
+        },
+        {
+          "path": "components/ui/internal/chart-data.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/chart-data.ts"
+        },
+        {
+          "path": "components/ui/internal/chart-format.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/chart-format.ts"
+        },
+        {
+          "path": "components/ui/internal/chart.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/chart.module.css"
+        }
+      ]
+    },
+    {
+      "name": "line-chart",
+      "type": "registry:ui",
+      "title": "Line Chart",
+      "description": "Line Chart shows a trend across ordered categories — a single series by default, or several series as separate lines. Static and non-tabbable, with an optional sparkline mode and the data also exposed as a hidden table.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/LineChart.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/LineChart.tsx"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/ChartFrame.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/ChartFrame.tsx"
+        },
+        {
+          "path": "components/ui/internal/ChartLegend.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/ChartLegend.tsx"
+        },
+        {
+          "path": "components/ui/internal/ChartTooltip.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/ChartTooltip.tsx"
+        },
+        {
+          "path": "components/ui/internal/cartesian-parts.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/cartesian-parts.tsx"
+        },
+        {
+          "path": "components/ui/internal/chart-data.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/chart-data.ts"
+        },
+        {
+          "path": "components/ui/internal/chart-format.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/chart-format.ts"
+        },
+        {
+          "path": "components/ui/internal/chart.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/chart.module.css"
+        }
+      ]
+    },
+    {
+      "name": "area-chart",
+      "type": "registry:ui",
+      "title": "Area Chart",
+      "description": "Area Chart shows magnitude over ordered categories with a filled area under each line — a single series by default, or several series overlapped, stacked, or stacked to 100%. Static and non-tabbable, with the data also exposed as a hidden table.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/AreaChart.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/AreaChart.tsx"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        },
+        {
+          "path": "components/ui/internal/ChartFrame.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/ChartFrame.tsx"
+        },
+        {
+          "path": "components/ui/internal/ChartLegend.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/ChartLegend.tsx"
+        },
+        {
+          "path": "components/ui/internal/ChartTooltip.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/ChartTooltip.tsx"
+        },
+        {
+          "path": "components/ui/internal/cartesian-parts.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/cartesian-parts.tsx"
+        },
+        {
+          "path": "components/ui/internal/chart-data.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/chart-data.ts"
+        },
+        {
+          "path": "components/ui/internal/chart-format.ts",
+          "type": "registry:lib",
+          "target": "~/components/ui/internal/chart-format.ts"
+        },
+        {
+          "path": "components/ui/internal/chart.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/internal/chart.module.css"
+        }
+      ]
+    },
+    {
+      "name": "chart-card",
+      "type": "registry:ui",
+      "title": "Chart Card",
+      "description": "Chart Card is a Card composed for a chart: an optional title/description/actions header, and a body that owns loading/empty/error presentation around a chart the consumer supplies as children.",
+      "registryDependencies": [
+        "@skrewww/card",
+        "@skrewww/empty-state",
+        "@skrewww/alert",
+        "@skrewww/skeleton",
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ChartCard.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/ChartCard.tsx"
+        },
+        {
+          "path": "components/ui/chart-card.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/chart-card.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "chart-metric",
+      "type": "registry:ui",
+      "title": "Chart Metric",
+      "description": "Chart Metric is a labeled value with an optional directional delta, for use above a chart or standalone — the delta's direction drives only its icon, never a color.",
+      "dependencies": [
+        "@phosphor-icons/react"
+      ],
+      "registryDependencies": [
+        "@skrewww/foundation"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ChartMetric.tsx",
+          "type": "registry:ui",
+          "target": "~/components/ui/ChartMetric.tsx"
+        },
+        {
+          "path": "components/ui/chart-metric.module.css",
+          "type": "registry:ui",
+          "target": "~/components/ui/chart-metric.module.css"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    }
+  ]
+}
