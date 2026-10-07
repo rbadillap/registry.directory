@@ -1,0 +1,655 @@
+{
+  "key": "swiftui-flx",
+  "entry": "swiftui-flx",
+  "name": "swiftui-flx",
+  "homepage": "https://swiftui.flexnative.com",
+  "indexUrl": "https://swiftui.flexnative.com/r/registry.json",
+  "itemBase": "https://swiftui.flexnative.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "foundation",
+      "type": "registry:file",
+      "title": "Foundation",
+      "description": "Tokens and the default theme every component reads from.",
+      "files": [
+        {
+          "path": "registry/design-system/Tokens/FLXSpacing.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Tokens/FLXSpacing.swift"
+        },
+        {
+          "path": "registry/design-system/Tokens/FLXRadius.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Tokens/FLXRadius.swift"
+        },
+        {
+          "path": "registry/design-system/Tokens/FLXBorderWidth.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Tokens/FLXBorderWidth.swift"
+        },
+        {
+          "path": "registry/design-system/Tokens/FLXOpacity.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Tokens/FLXOpacity.swift"
+        },
+        {
+          "path": "registry/design-system/Tokens/FLXTypography.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Tokens/FLXTypography.swift"
+        },
+        {
+          "path": "registry/design-system/Tokens/FLXColors.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Tokens/FLXColors.swift"
+        },
+        {
+          "path": "registry/design-system/Theme/Color+Dynamic.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Theme/Color+Dynamic.swift"
+        },
+        {
+          "path": "registry/design-system/Theme/FLXTheme.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Theme/FLXTheme.swift"
+        },
+        {
+          "path": "registry/design-system/Theme/FLXThemeEnvironment.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Theme/FLXThemeEnvironment.swift"
+        },
+        {
+          "path": "registry/design-system/Theme/Presets/FLXTheme+Default.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Theme/Presets/FLXTheme+Default.swift"
+        }
+      ]
+    },
+    {
+      "name": "preset-sienna",
+      "type": "registry:file",
+      "title": "Sienna Preset",
+      "description": "Cream paper, burnt-earth ink, and a larger base radius.",
+      "files": [
+        {
+          "path": "registry/design-system/Theme/Presets/FLXTheme+Sienna.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Theme/Presets/FLXTheme+Sienna.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-button",
+      "type": "registry:file",
+      "title": "Button",
+      "description": "Triggers an action or event, such as submitting a form.",
+      "files": [
+        {
+          "path": "registry/components/button/FLXButtonStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXButton/FLXButtonStyle.swift"
+        },
+        {
+          "path": "registry/components/button/FLXButton.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXButton/FLXButton.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-button",
+      "type": "registry:file",
+      "title": "Button",
+      "description": "Triggers an action or event, such as submitting a form.",
+      "files": [
+        {
+          "path": "registry/components/button/FLXButtonStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXButton/FLXButtonStyle.swift"
+        },
+        {
+          "path": "registry/components/button/FLXButton.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXButton/FLXButton.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-card",
+      "type": "registry:file",
+      "title": "Card",
+      "description": "A card is a container that can be used to display content in a styled way.",
+      "files": [
+        {
+          "path": "registry/components/card/FLXCardStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXCard/FLXCardStyle.swift"
+        },
+        {
+          "path": "registry/components/card/FLXCard.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXCard/FLXCard.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-card",
+      "type": "registry:file",
+      "title": "Card",
+      "description": "A card is a container that can be used to display content in a styled way.",
+      "files": [
+        {
+          "path": "registry/components/card/FLXCardStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXCard/FLXCardStyle.swift"
+        },
+        {
+          "path": "registry/components/card/FLXCard.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXCard/FLXCard.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-avatar",
+      "type": "registry:file",
+      "title": "Avatar",
+      "description": "Displays a user's profile picture, with initials as a fallback.",
+      "files": [
+        {
+          "path": "registry/components/avatar/FLXAvatarStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXAvatar/FLXAvatarStyle.swift"
+        },
+        {
+          "path": "registry/components/avatar/FLXAvatar.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXAvatar/FLXAvatar.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-avatar",
+      "type": "registry:file",
+      "title": "Avatar",
+      "description": "Displays a user's profile picture, with initials as a fallback.",
+      "files": [
+        {
+          "path": "registry/components/avatar/FLXAvatarStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXAvatar/FLXAvatarStyle.swift"
+        },
+        {
+          "path": "registry/components/avatar/FLXAvatar.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXAvatar/FLXAvatar.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-badge",
+      "type": "registry:file",
+      "title": "Badge",
+      "description": "Displays a small label for status, category, or count.",
+      "files": [
+        {
+          "path": "registry/components/badge/FLXBadgeStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXBadge/FLXBadgeStyle.swift"
+        },
+        {
+          "path": "registry/components/badge/FLXBadge.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXBadge/FLXBadge.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-badge",
+      "type": "registry:file",
+      "title": "Badge",
+      "description": "Displays a small label for status, category, or count.",
+      "files": [
+        {
+          "path": "registry/components/badge/FLXBadgeStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXBadge/FLXBadgeStyle.swift"
+        },
+        {
+          "path": "registry/components/badge/FLXBadge.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXBadge/FLXBadge.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-item",
+      "type": "registry:file",
+      "title": "Item",
+      "description": "Displays a row of content, such as a list entry, notification, or settings row.",
+      "files": [
+        {
+          "path": "registry/components/item/FLXItemStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXItem/FLXItemStyle.swift"
+        },
+        {
+          "path": "registry/components/item/FLXItem.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXItem/FLXItem.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-item",
+      "type": "registry:file",
+      "title": "Item",
+      "description": "Displays a row of content, such as a list entry, notification, or settings row.",
+      "files": [
+        {
+          "path": "registry/components/item/FLXItemStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXItem/FLXItemStyle.swift"
+        },
+        {
+          "path": "registry/components/item/FLXItem.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXItem/FLXItem.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-menu",
+      "type": "registry:file",
+      "title": "Menu",
+      "description": "Displays a list of actions or options revealed from a button or custom trigger.",
+      "registryDependencies": [
+        "https://swiftui.flexnative.com/r/ios-button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/components/menu/FLXMenu.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXMenu/FLXMenu.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-picker",
+      "type": "registry:file",
+      "title": "Picker",
+      "description": "Displays a dropdown for selecting one value from a set of options.",
+      "files": [
+        {
+          "path": "registry/components/picker/FLXPicker.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXPicker/FLXPicker.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-progress-view",
+      "type": "registry:file",
+      "title": "Progress View",
+      "description": "Displays progress toward completion of a task, as a bar or a spinner.",
+      "files": [
+        {
+          "path": "registry/components/progress-view/FLXProgressViewStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXProgressView/FLXProgressViewStyle.swift"
+        },
+        {
+          "path": "registry/components/progress-view/FLXProgressView.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXProgressView/FLXProgressView.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-progress-view",
+      "type": "registry:file",
+      "title": "Progress View",
+      "description": "Displays progress toward completion of a task, as a bar or a spinner.",
+      "files": [
+        {
+          "path": "registry/components/progress-view/FLXProgressViewStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXProgressView/FLXProgressViewStyle.swift"
+        },
+        {
+          "path": "registry/components/progress-view/FLXProgressView.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXProgressView/FLXProgressView.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-sheet",
+      "type": "registry:file",
+      "title": "Sheet",
+      "description": "Presents content in a sheet over the current view, driven by an item binding.",
+      "files": [
+        {
+          "path": "registry/components/sheet/FLXSheet.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXSheet/FLXSheet.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-sheet",
+      "type": "registry:file",
+      "title": "Sheet",
+      "description": "Presents content in a sheet over the current view, driven by an item binding.",
+      "files": [
+        {
+          "path": "registry/components/sheet/FLXSheet.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXSheet/FLXSheet.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-slider",
+      "type": "registry:file",
+      "title": "Slider",
+      "description": "Displays a control for selecting a value from a bounded range.",
+      "files": [
+        {
+          "path": "registry/components/slider/FLXSlider.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXSlider/FLXSlider.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-slider",
+      "type": "registry:file",
+      "title": "Slider",
+      "description": "Displays a control for selecting a value from a bounded range.",
+      "files": [
+        {
+          "path": "registry/components/slider/FLXSlider.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXSlider/FLXSlider.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-toggle",
+      "type": "registry:file",
+      "title": "Toggle",
+      "description": "Displays a switch for an on/off value.",
+      "files": [
+        {
+          "path": "registry/components/toggle/FLXToggleStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXToggle/FLXToggleStyle.swift"
+        },
+        {
+          "path": "registry/components/toggle/FLXToggleStyle+iOS.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXToggle/FLXToggleStyle+iOS.swift"
+        },
+        {
+          "path": "registry/components/toggle/FLXToggle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXToggle/FLXToggle.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-toggle",
+      "type": "registry:file",
+      "title": "Toggle",
+      "description": "Displays a checkbox for an on/off value.",
+      "files": [
+        {
+          "path": "registry/components/toggle/FLXToggleStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXToggle/FLXToggleStyle.swift"
+        },
+        {
+          "path": "registry/components/toggle/FLXToggleStyle+macOS.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXToggle/FLXToggleStyle+macOS.swift"
+        },
+        {
+          "path": "registry/components/toggle/FLXToggle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXToggle/FLXToggle.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-collapsible",
+      "type": "registry:file",
+      "title": "Collapsible",
+      "description": "Displays content that can be expanded and collapsed.",
+      "files": [
+        {
+          "path": "registry/components/collapsible/FLXCollapsibleStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXCollapsible/FLXCollapsibleStyle.swift"
+        },
+        {
+          "path": "registry/components/collapsible/FLXCollapsible.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXCollapsible/FLXCollapsible.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-collapsible",
+      "type": "registry:file",
+      "title": "Collapsible",
+      "description": "Displays content that can be expanded and collapsed.",
+      "files": [
+        {
+          "path": "registry/components/collapsible/FLXCollapsibleStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXCollapsible/FLXCollapsibleStyle.swift"
+        },
+        {
+          "path": "registry/components/collapsible/FLXCollapsible.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXCollapsible/FLXCollapsible.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-secure-field",
+      "type": "registry:file",
+      "title": "Secure Field",
+      "description": "Displays an obscured text input for passwords and other sensitive text.",
+      "files": [
+        {
+          "path": "registry/components/secure-field/FLXSecureField.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXSecureField/FLXSecureField.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-secure-field",
+      "type": "registry:file",
+      "title": "Secure Field",
+      "description": "Displays an obscured text input for passwords and other sensitive text.",
+      "files": [
+        {
+          "path": "registry/components/secure-field/FLXSecureField.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXSecureField/FLXSecureField.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-text-editor",
+      "type": "registry:file",
+      "title": "Text Editor",
+      "description": "Displays a multi-line text input for long-form content.",
+      "files": [
+        {
+          "path": "registry/components/text-editor/FLXTextEditor.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXTextEditor/FLXTextEditor.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-text-editor",
+      "type": "registry:file",
+      "title": "Text Editor",
+      "description": "Displays a multi-line text input for long-form content.",
+      "files": [
+        {
+          "path": "registry/components/text-editor/FLXTextEditor.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXTextEditor/FLXTextEditor.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-text-field",
+      "type": "registry:file",
+      "title": "Text Field",
+      "description": "Displays a single-line text input.",
+      "files": [
+        {
+          "path": "registry/components/text-field/FLXTextField.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXTextField/FLXTextField.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-text-field",
+      "type": "registry:file",
+      "title": "Text Field",
+      "description": "Displays a single-line text input.",
+      "files": [
+        {
+          "path": "registry/components/text-field/FLXTextField.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXTextField/FLXTextField.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-text-field-group",
+      "type": "registry:file",
+      "title": "Text Field Group",
+      "description": "Wraps a text field in a shared box with optional leading and trailing addons.",
+      "registryDependencies": [
+        "https://swiftui.flexnative.com/r/ios-text-field.json",
+        "https://swiftui.flexnative.com/r/ios-secure-field.json"
+      ],
+      "files": [
+        {
+          "path": "registry/components/text-field-group/FLXTextFieldGroupStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXTextFieldGroup/FLXTextFieldGroupStyle.swift"
+        },
+        {
+          "path": "registry/components/text-field-group/FLXTextFieldGroup.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXTextFieldGroup/FLXTextFieldGroup.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-text-field-group",
+      "type": "registry:file",
+      "title": "Text Field Group",
+      "description": "Wraps a text field in a shared box with optional leading and trailing addons.",
+      "registryDependencies": [
+        "https://swiftui.flexnative.com/r/mac-text-field.json",
+        "https://swiftui.flexnative.com/r/mac-secure-field.json"
+      ],
+      "files": [
+        {
+          "path": "registry/components/text-field-group/FLXTextFieldGroupStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXTextFieldGroup/FLXTextFieldGroupStyle.swift"
+        },
+        {
+          "path": "registry/components/text-field-group/FLXTextFieldGroup.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXTextFieldGroup/FLXTextFieldGroup.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-field-label",
+      "type": "registry:file",
+      "title": "Field Label",
+      "description": "Pairs a caption with a form control.",
+      "files": [
+        {
+          "path": "registry/components/field-label/FLXFieldLabelStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXFieldLabel/FLXFieldLabelStyle.swift"
+        },
+        {
+          "path": "registry/components/field-label/FLXFieldLabel.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXFieldLabel/FLXFieldLabel.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-field-label",
+      "type": "registry:file",
+      "title": "Field Label",
+      "description": "Pairs a caption with a form control.",
+      "files": [
+        {
+          "path": "registry/components/field-label/FLXFieldLabelStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXFieldLabel/FLXFieldLabelStyle.swift"
+        },
+        {
+          "path": "registry/components/field-label/FLXFieldLabel.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXFieldLabel/FLXFieldLabel.swift"
+        }
+      ]
+    },
+    {
+      "name": "ios-form-field",
+      "type": "registry:file",
+      "title": "Form Field",
+      "description": "Groups a label, control, description, and error message for a form field.",
+      "files": [
+        {
+          "path": "registry/components/form-field/FLXFormFieldStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXFormField/FLXFormFieldStyle.swift"
+        },
+        {
+          "path": "registry/components/form-field/FLXFormField.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXFormField/FLXFormField.swift"
+        }
+      ]
+    },
+    {
+      "name": "mac-form-field",
+      "type": "registry:file",
+      "title": "Form Field",
+      "description": "Groups a label, control, description, and error message for a form field.",
+      "files": [
+        {
+          "path": "registry/components/form-field/FLXFormFieldStyle.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXFormField/FLXFormFieldStyle.swift"
+        },
+        {
+          "path": "registry/components/form-field/FLXFormField.swift",
+          "type": "registry:file",
+          "target": "~/DesignSystem/Components/FLXFormField/FLXFormField.swift"
+        }
+      ]
+    }
+  ]
+}
