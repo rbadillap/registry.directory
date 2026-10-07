@@ -1,0 +1,1211 @@
+{
+  "key": "pastaui",
+  "entry": "Pasta UI",
+  "name": "pastaui",
+  "homepage": "https://pastaui.com",
+  "indexUrl": "https://pastaui.com/r/registry.json",
+  "itemBase": "https://pastaui.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "pastaui-styles",
+      "type": "registry:item",
+      "title": "Pasta UI Styles",
+      "description": "Shared card shadow, surface shadow and heading/label utilities used across Pasta UI components.",
+      "cssVars": {
+        "theme": {
+          "shadow-card": "var(--card-shadow)",
+          "shadow-linear-surface": "var(--linear-surface-shadow)"
+        },
+        "light": {
+          "card-outline": "lch(0 0 0 / 8.8%)",
+          "card-shadow": "0 0 0 0.5px var(--card-outline), 0 3px 6px -2px lch(0 0 0 / 2%), 0 1px 1px 0 lch(0 0 0 / 4%)",
+          "linear-surface-shadow": "0 3px 6px -2px lch(0 0 0 / 2%), 0 1px 1px 0 lch(0 0 0 / 4%)"
+        },
+        "dark": {
+          "card-outline": "lch(100 0 0 / 8.8%)"
+        }
+      }
+    },
+    {
+      "name": "agent-activity",
+      "type": "registry:component",
+      "title": "Agent Activity",
+      "description": "A chronological stream for reasoning, searches, terminal work, and tool execution.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/agent-activity.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/agent-activity.tsx"
+        },
+        {
+          "path": "src/components/ai/timeline-status.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/timeline-status.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agent-status",
+      "type": "registry:component",
+      "title": "Agent Status",
+      "description": "A compact task summary with the current activity and an optional task tray.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/agent-status.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/agent-status.tsx"
+        }
+      ]
+    },
+    {
+      "name": "approval-card",
+      "type": "registry:component",
+      "title": "Approval Card",
+      "description": "A human-in-the-loop decision surface for questions, review steps, and consequential actions.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/approval-card.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/approval-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachments",
+      "type": "registry:component",
+      "title": "Attachments",
+      "description": "File and image attachments with progress, failure recovery, metadata, and removal actions.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/attachments.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/attachments.tsx"
+        }
+      ]
+    },
+    {
+      "name": "audio-player",
+      "type": "registry:component",
+      "title": "Audio Player",
+      "description": "A controlled playback surface for speech, generated audio, and recorded tool output.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json",
+        "slider"
+      ],
+      "cssVars": {
+        "light": {
+          "audio-surface": "var(--muted)",
+          "audio-track": "var(--border)",
+          "audio-progress": "var(--muted-foreground)",
+          "audio-shadow": "oklch(0 0 0 / 12%)"
+        },
+        "dark": {
+          "audio-surface": "oklch(0.08 0 0)",
+          "audio-track": "oklch(0.26 0 0)",
+          "audio-progress": "oklch(0.62 0 0)",
+          "audio-shadow": "oklch(0 0 0 / 35%)"
+        }
+      },
+      "files": [
+        {
+          "path": "src/components/ai/audio-player.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/audio-player.tsx"
+        }
+      ]
+    },
+    {
+      "name": "background-inbox",
+      "type": "registry:component",
+      "title": "Background Inbox",
+      "description": "Work still running elsewhere and completed results waiting to be collected.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/background-inbox.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/background-inbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "background-runs",
+      "type": "registry:component",
+      "title": "Background Runs",
+      "description": "Ongoing and completed agent jobs collected in one actionable inbox.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/background-runs.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/background-runs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "citations",
+      "type": "registry:component",
+      "title": "Citations",
+      "description": "A compact source summary that expands into grounded references with useful context.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "collapsible",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/citations.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/citations.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:component",
+      "title": "Code Block",
+      "description": "A muted code surface with line numbers, focused rows, filename metadata, and copy feedback.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0",
+        "prism-react-renderer@^2.4.1"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "cssVars": {
+        "light": {
+          "syntax-comment": "oklch(0.556 0 0)",
+          "syntax-keyword": "oklch(0.49 0.2 292)",
+          "syntax-string": "oklch(0.45 0.13 153)",
+          "syntax-function": "oklch(0.48 0.15 255)",
+          "syntax-number": "oklch(0.53 0.16 55)",
+          "syntax-property": "oklch(0.48 0.14 20)",
+          "syntax-punctuation": "oklch(0.4 0 0)"
+        },
+        "dark": {
+          "syntax-comment": "oklch(0.708 0 0)",
+          "syntax-keyword": "oklch(0.75 0.16 292)",
+          "syntax-string": "oklch(0.76 0.13 153)",
+          "syntax-function": "oklch(0.76 0.12 255)",
+          "syntax-number": "oklch(0.78 0.13 65)",
+          "syntax-property": "oklch(0.75 0.12 20)",
+          "syntax-punctuation": "oklch(0.78 0 0)"
+        }
+      },
+      "files": [
+        {
+          "path": "src/components/ai/code-block.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/code-block.tsx"
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:component",
+      "title": "Color Picker",
+      "description": "A Tailwind palette picker with search, hex and opacity inputs, and optional linear, radial, and conic gradients with draggable stops.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/color-picker.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/color-picker.tsx"
+        },
+        {
+          "path": "src/components/ai/color-palette.ts",
+          "type": "registry:component",
+          "target": "@components/ai/color-palette.ts"
+        }
+      ]
+    },
+    {
+      "name": "commit",
+      "type": "registry:component",
+      "title": "Commit",
+      "description": "An expandable changed-file summary with folder groups, line counts, and a diff action.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/commit.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/commit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "connection-state",
+      "type": "registry:component",
+      "title": "Connection State",
+      "description": "Clear connected, reconnecting, resumed, and offline states for resumable agent streams.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/connection-state.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/connection-state.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-breakdown",
+      "type": "registry:component",
+      "title": "Context Breakdown",
+      "description": "Where an agent context window went, with token attribution and remaining capacity.",
+      "dependencies": [
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/context-breakdown.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/context-breakdown.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cost-meter",
+      "type": "registry:component",
+      "title": "Cost Meter",
+      "description": "Run cost split by model or task and compared against an optional session budget.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/cost-meter.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/cost-meter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:component",
+      "title": "Data Table",
+      "description": "A virtualized, sortable table with resizable columns, a sticky header, and left or right pinned columns for scanning dozens of fields at once.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/data-table.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/data-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "document-reference",
+      "type": "registry:component",
+      "title": "Document Reference",
+      "description": "A source card that preserves document identity, location, metadata, and the cited excerpt.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/document-reference.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/document-reference.tsx"
+        }
+      ]
+    },
+    {
+      "name": "edit-message",
+      "type": "registry:component",
+      "title": "Edit Message",
+      "description": "An in-place message editor with cancel and save actions.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/edit-message.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/edit-message.tsx"
+        }
+      ]
+    },
+    {
+      "name": "email-composer",
+      "type": "registry:component",
+      "title": "Email Composer",
+      "description": "A minimal email draft with inline fields, a spacious message, and copy, expand, and send actions.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/email-composer.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/email-composer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "environment-variables",
+      "type": "registry:component",
+      "title": "Environment Variables",
+      "description": "A secret-aware configuration surface with masked values and explicit reveal or copy actions.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/environment-variables.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/environment-variables.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feedback-dialog",
+      "type": "registry:component",
+      "title": "Feedback Dialog",
+      "description": "A low-friction reason and note form for turning negative feedback into signal.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/feedback-dialog.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/feedback-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "file-diff",
+      "type": "registry:component",
+      "title": "File Diff",
+      "description": "A compact code-change surface with old and new line numbers plus live change counts.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/file-diff.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/file-diff.tsx"
+        }
+      ]
+    },
+    {
+      "name": "file-tree",
+      "type": "registry:component",
+      "title": "File Tree",
+      "description": "A compact repository tree with selection, nesting, expansion, and change status.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/file-tree.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/file-tree.tsx"
+        }
+      ]
+    },
+    {
+      "name": "follow-up",
+      "type": "registry:component",
+      "title": "Follow Up",
+      "description": "Compact follow-up prompts that continue the conversation with one click.",
+      "dependencies": [
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/follow-up.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/follow-up.tsx"
+        }
+      ]
+    },
+    {
+      "name": "follow-up-suggestions",
+      "type": "registry:component",
+      "title": "Follow-up Suggestions",
+      "description": "Contextual next-step prompts that invite a useful continuation after an answer.",
+      "dependencies": [
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "https://pastaui.com/r/pastaui-styles.json",
+        "kbd",
+        "toggle-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/follow-up-suggestions.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/follow-up-suggestions.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-generation-loader",
+      "type": "registry:component",
+      "title": "Image Generation Loader",
+      "description": "A streaming image surface with live progress, a playable Snake diversion, and an in-place completed result.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/image-generation-loader.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/image-generation-loader.tsx"
+        },
+        {
+          "path": "src/components/ai/image-generation-canvas.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/image-generation-canvas.tsx"
+        },
+        {
+          "path": "src/components/ai/image-generation-snake.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/image-generation-snake.tsx"
+        }
+      ]
+    },
+    {
+      "name": "inline-citation",
+      "type": "registry:component",
+      "title": "Inline Citation",
+      "description": "A numbered reference inside prose with an inspectable source preview.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/inline-citation.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/inline-citation.tsx"
+        }
+      ]
+    },
+    {
+      "name": "job-progress",
+      "type": "registry:component",
+      "title": "Job Progress",
+      "description": "A weighted multi-stage progress surface for work measured in minutes rather than seconds.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/job-progress.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/job-progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "link-preview",
+      "type": "registry:component",
+      "title": "Link Preview",
+      "description": "A horizontal link preview with an image, seller details, and optional product pricing and ratings.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/link-preview.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/link-preview.tsx"
+        }
+      ]
+    },
+    {
+      "name": "memory",
+      "type": "registry:component",
+      "title": "Memory",
+      "description": "Visible, removable facts an agent retains about the user or ongoing work.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/memory.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/memory.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message-bubble",
+      "type": "registry:component",
+      "title": "Message Bubble",
+      "description": "A focused conversational surface with distinct user, assistant, and system treatments.",
+      "dependencies": [
+        "cn@^0.3.0"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/message-bubble.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/message-bubble.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message-queue",
+      "type": "registry:component",
+      "title": "Message Queue",
+      "description": "Pending user turns that remain visible, removable, and immediately sendable while an agent is busy.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0",
+        "motion@^13.4.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/message-queue.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/message-queue.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:component",
+      "title": "Message Scroller",
+      "description": "A compact conversation minimap that navigates user turns while keeping the full thread visible.",
+      "dependencies": [
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/message-bubble.json",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/message-scroller.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/message-scroller.tsx"
+        }
+      ]
+    },
+    {
+      "name": "model-picker",
+      "type": "registry:component",
+      "title": "Model Picker",
+      "description": "A compact model menu with descriptions, plan badges, effort controls, and additional models.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/model-picker.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/model-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "permission-grant",
+      "type": "registry:component",
+      "title": "Permission Grant",
+      "description": "A capability-level consent surface that explains reach and duration before access is granted.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/permission-grant.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/permission-grant.tsx"
+        }
+      ]
+    },
+    {
+      "name": "plan-approval-card",
+      "type": "registry:component",
+      "title": "Plan Approval Card",
+      "description": "A proposed plan with clear steps and controls to edit, cancel, or start the work.",
+      "dependencies": [
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/plan-approval-card.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/plan-approval-card.tsx"
+        },
+        {
+          "path": "src/components/ai/plan-research-card.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/plan-research-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "prompt-input",
+      "type": "registry:component",
+      "title": "Prompt Input",
+      "description": "An auto-growing agent composer with attachment, model, submit, and stop controls.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/model-picker.json",
+        "https://pastaui.com/r/pastaui-styles.json",
+        "popover",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/prompt-input.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/prompt-input.tsx"
+        },
+        {
+          "path": "src/components/ai/model-options.ts",
+          "type": "registry:component",
+          "target": "@components/ai/model-options.ts"
+        },
+        {
+          "path": "src/components/ai/prompt-tools-menu.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/prompt-tools-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "quota-banner",
+      "type": "registry:component",
+      "title": "Quota Banner",
+      "description": "Usage remaining, reset timing, and an upgrade path without hiding the limit.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/quota-banner.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/quota-banner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "reasoning-effort",
+      "type": "registry:component",
+      "title": "Reasoning Effort",
+      "description": "A compact dropdown for choosing how much reasoning power a response should use.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0",
+        "motion@^13.4.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json",
+        "popover",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/reasoning-effort.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/reasoning-effort.tsx"
+        }
+      ]
+    },
+    {
+      "name": "reasoning-text",
+      "type": "registry:component",
+      "title": "Reasoning Text",
+      "description": "A timed reasoning stream that follows the latest thought, then folds into an inspectable duration summary.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/reasoning-text.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/reasoning-text.tsx"
+        },
+        {
+          "path": "src/components/ai/reasoning-text.module.css",
+          "type": "registry:component",
+          "target": "@components/ai/reasoning-text.module.css"
+        }
+      ]
+    },
+    {
+      "name": "research-report",
+      "type": "registry:component",
+      "title": "Research Report",
+      "description": "A structured, citation-ready report for research agents and deep-search results.",
+      "dependencies": [
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/research-report.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/research-report.tsx"
+        }
+      ]
+    },
+    {
+      "name": "retrieval-chunks",
+      "type": "registry:component",
+      "title": "Retrieval Chunks",
+      "description": "Ranked source passages that make retrieval-augmented answers inspectable.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/retrieval-chunks.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/retrieval-chunks.tsx"
+        }
+      ]
+    },
+    {
+      "name": "schedule-card",
+      "type": "registry:component",
+      "title": "Schedule Card",
+      "description": "A recurring agent job with human-readable timing, next run, and pause controls.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/schedule-card.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/schedule-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "search-results-tabs",
+      "type": "registry:component",
+      "title": "Search Results Tabs",
+      "description": "Ranked search results with site icons, titles, source URLs, and plain text category tabs.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0",
+        "motion@^13.4.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/search-results-tabs.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/search-results-tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "task-card",
+      "type": "registry:component",
+      "title": "Task Card",
+      "description": "One delegated task with state, timing, assigned agent, and returned result.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/task-card.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/task-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "thinking-shimmer",
+      "type": "registry:component",
+      "title": "Thinking Shimmer",
+      "description": "A quiet live status that keeps the agent current action readable while work continues.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/thinking-shimmer.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/thinking-shimmer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "todo-list",
+      "type": "registry:component",
+      "title": "Todo List",
+      "description": "A live agent plan with completion counts, task states, and expandable detail.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "collapsible",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/todo-list.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/todo-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tool-approval",
+      "type": "registry:component",
+      "title": "Tool Approval",
+      "description": "A permission gate that shows scope and command detail before an agent tool runs.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/tool-approval.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/tool-approval.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tool-error",
+      "type": "registry:component",
+      "title": "Tool Error",
+      "description": "A recoverable connection failure with a clear explanation and compact recovery actions.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/tool-error.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/tool-error.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tool-group",
+      "type": "registry:component",
+      "title": "Tool Group",
+      "description": "Consecutive tool calls collapsed into one readable execution group.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0",
+        "motion@^13.4.0",
+        "prism-react-renderer@^2.4.1"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/tool-group.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/tool-group.tsx"
+        },
+        {
+          "path": "src/components/ai/tool-group-output.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/tool-group-output.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tool-result",
+      "type": "registry:component",
+      "title": "Tool Result",
+      "description": "An execution disclosure for running, successful, or failed tools with optional raw output.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "collapsible",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/tool-result.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/tool-result.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tool-timeline",
+      "type": "registry:component",
+      "title": "Tool Timeline",
+      "description": "A compact narrative of the verbs, targets, state, and timing in an agent run.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/tool-timeline.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/tool-timeline.tsx"
+        },
+        {
+          "path": "src/components/ai/timeline-status.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/timeline-status.tsx"
+        }
+      ]
+    },
+    {
+      "name": "video-player",
+      "type": "registry:component",
+      "title": "Video Player",
+      "description": "A compact video result with controllable playback, seek position, and metadata.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/video-player.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/video-player.tsx"
+        }
+      ]
+    },
+    {
+      "name": "voice-input",
+      "type": "registry:component",
+      "title": "Voice Input",
+      "description": "A tactile recording control with a recessed waveform, red playhead, and pause control.",
+      "dependencies": [
+        "@solar-icons/react@^2.2.0",
+        "cn@^0.3.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://pastaui.com/r/pastaui-styles.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ai/voice-input.tsx",
+          "type": "registry:component",
+          "target": "@components/ai/voice-input.tsx"
+        }
+      ]
+    }
+  ]
+}
