@@ -1181,6 +1181,101 @@
       "name": "globe-points-3d",
       "type": "registry:block",
       "description": "Lit sphere with instanced city markers and arcs rising between them, turning slowly under a rim light"
+    },
+    {
+      "name": "ae-motion",
+      "type": "registry:lib",
+      "description": "After Effects mechanics as pure functions: graph-editor keyframe easing, loopIn/loopOut, deterministic wiggle and noise, repeater powers and parented transforms"
+    },
+    {
+      "name": "bezier-path",
+      "type": "registry:lib",
+      "description": "Paths as cubic segments: parse any SVG d, measure, slice by arc length, resample and rebuild"
+    },
+    {
+      "name": "curve-fit",
+      "type": "registry:lib",
+      "description": "Fit cubic béziers through a polyline (Schneider) with corner detection, so dense-point operators emit real curves"
+    },
+    {
+      "name": "shape-ops",
+      "type": "registry:lib",
+      "description": "AE shape-layer operators — trim, repeater, offset, wiggle, zig-zag, pucker & bloat — run as an ordered stack"
+    },
+    {
+      "name": "ae-import",
+      "type": "registry:lib",
+      "description": "Runtime for `remotion-ui import-ae`: After Effects shape, solid, null and precomp layers with parenting, time remap and lottie-web's stacking rules, drawn as SVG from ae-motion data"
+    },
+    {
+      "name": "text-selectors",
+      "type": "registry:lib",
+      "description": "AE text range and wiggly selectors: per-unit selection with shapes, ease high/low, random order and combine modes"
+    },
+    {
+      "name": "glyph-layout",
+      "type": "registry:lib",
+      "description": "Measured per-glyph layout with kerning-preserving prefixes, word-safe wrapping and fit-to-width"
+    },
+    {
+      "name": "mograph",
+      "type": "registry:lib",
+      "description": "Cinema 4D MoGraph maths: cloner layouts, spherical/linear/noise falloff fields and stacked effectors"
+    },
+    {
+      "name": "shape-layer",
+      "type": "registry:ui",
+      "description": "After Effects shape layer with an ordered operator stack — trim paths, repeater, offset paths, wiggle paths, zig-zag and pucker & bloat — evaluated per frame as pure geometry"
+    },
+    {
+      "name": "text-animator",
+      "type": "registry:ui",
+      "description": "After Effects text animator: range and wiggly selectors drive per-character, per-word or per-line position, scale, rotation, opacity, blur, tracking and fill over measured layout"
+    },
+    {
+      "name": "effector-field",
+      "type": "registry:ui",
+      "description": "Cinema 4D MoGraph cloner and effectors: clone any element into a grid, radial or linear arrangement and let animatable spherical, linear or noise falloff fields drive each clone"
+    },
+    {
+      "name": "rig",
+      "type": "registry:lib",
+      "description": "Rig maths: law-of-cosines two-bone IK with bend, stretch and soft IK (no knee pop at full reach), and constant-length rubber-hose arcs"
+    },
+    {
+      "name": "pen-plot",
+      "type": "registry:lib",
+      "description": "Pen-plotter motion planning: SVG strokes to a pen position per frame, with cosine-ramped speed, full stops in cusps, lifts, and anticipating pen-up moves"
+    },
+    {
+      "name": "follow",
+      "type": "registry:lib",
+      "description": "Overlapping action: a chain of damped springs following a leader track, simulated deterministically from frame 0 and memoised"
+    },
+    {
+      "name": "slit-geometry",
+      "type": "registry:lib",
+      "description": "Slit-scan strips (bands at any angle or radial rings) with per-strip delays grouped into a bounded number of child renders"
+    },
+    {
+      "name": "slit-scan",
+      "type": "registry:ui",
+      "description": "Slit-scan time displacement: each strip of any child — rows, columns, rings or a gradient map — shows that child at a different moment, deterministically"
+    },
+    {
+      "name": "ik-rig",
+      "type": "registry:ui",
+      "description": "A lit, shadowed two-bone IK arm that reaches for any target or plots SVG strokes with a pen, laying ink exactly where the solved hand is; soft IK, fixed bend, animatable base"
+    },
+    {
+      "name": "track-matte",
+      "type": "registry:ui",
+      "description": "After Effects track mattes: reveal any child through any other with alpha, inverted alpha, luma or inverted luma"
+    },
+    {
+      "name": "follow-through",
+      "type": "registry:ui",
+      "description": "Overlapping action along a chain: every element follows one leader track with its own delay, drag, overshoot and settle"
     }
   ]
 }

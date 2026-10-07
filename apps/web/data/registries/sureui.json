@@ -1,0 +1,606 @@
+{
+  "key": "sureui",
+  "entry": "SureUI",
+  "name": "sureui",
+  "homepage": "https://sureui.com",
+  "indexUrl": "https://sureui.com/r/registry.json",
+  "itemBase": "https://sureui.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "confirm-button",
+      "type": "registry:ui",
+      "title": "Confirm Button",
+      "description": "A Button that confirms on a click, a second click or a press and hold. Supports inline undo and a pending state for an async onConfirm.",
+      "categories": [
+        "confirmation",
+        "button"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sureui/confirmation.ts",
+          "type": "registry:lib",
+          "target": "@ui/sureui/confirmation.ts"
+        },
+        {
+          "path": "components/ui/sureui/confirm-button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/confirm-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "confirm-menu-item",
+      "type": "registry:ui",
+      "title": "Confirm Menu Item",
+      "description": "A DropdownMenu or ContextMenu item that confirms on a click, a second click or a press and hold. The menu stays open while the item is armed, held, pending or showing Undo, and closes once the action commits.",
+      "categories": [
+        "confirmation",
+        "menu"
+      ],
+      "registryDependencies": [
+        "dropdown-menu",
+        "context-menu"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sureui/confirmation.ts",
+          "type": "registry:lib",
+          "target": "@ui/sureui/confirmation.ts"
+        },
+        {
+          "path": "components/ui/sureui/confirm-menu-item.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/confirm-menu-item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "confirm-switch",
+      "type": "registry:ui",
+      "title": "Confirm Switch",
+      "description": "A Switch that moves right away and can be taken back: flipping it again during the undo window undoes it, and onConfirm(checked) runs when the window ends.",
+      "categories": [
+        "confirmation",
+        "switch"
+      ],
+      "registryDependencies": [
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sureui/confirmation.ts",
+          "type": "registry:lib",
+          "target": "@ui/sureui/confirmation.ts"
+        },
+        {
+          "path": "components/ui/sureui/confirm-switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/confirm-switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "type-to-confirm",
+      "type": "registry:ui",
+      "title": "Type to Confirm",
+      "description": "An inline form that calls onConfirm only after the exact phrase is typed and every acknowledgement is checked. Supports inline undo and a pending state for an async onConfirm.",
+      "categories": [
+        "confirmation",
+        "form"
+      ],
+      "registryDependencies": [
+        "button",
+        "checkbox",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sureui/confirmation.ts",
+          "type": "registry:lib",
+          "target": "@ui/sureui/confirmation.ts"
+        },
+        {
+          "path": "components/ui/sureui/confirm-button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/confirm-button.tsx"
+        },
+        {
+          "path": "components/ui/sureui/type-to-confirm.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/type-to-confirm.tsx"
+        }
+      ]
+    },
+    {
+      "name": "confirm-dialog",
+      "type": "registry:ui",
+      "title": "Confirm Dialog",
+      "description": "An alert dialog with a ConfirmButton or TypeToConfirm as its confirm action, which closes only after an async onConfirm settles. Includes useConfirm, which returns an awaitable confirm() and a dialog element you render yourself.",
+      "categories": [
+        "confirmation",
+        "dialog"
+      ],
+      "registryDependencies": [
+        "alert-dialog",
+        "button",
+        "checkbox",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sureui/confirmation.ts",
+          "type": "registry:lib",
+          "target": "@ui/sureui/confirmation.ts"
+        },
+        {
+          "path": "components/ui/sureui/confirm-button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/confirm-button.tsx"
+        },
+        {
+          "path": "components/ui/sureui/type-to-confirm.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/type-to-confirm.tsx"
+        },
+        {
+          "path": "components/ui/sureui/confirm-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/confirm-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "confirm-popover",
+      "type": "registry:ui",
+      "title": "Confirm Popover",
+      "description": "A popover anchored to any trigger, with one line about the consequence and a ConfirmButton, for actions that need a sentence but not a dialog. It stays open while an async onConfirm is pending.",
+      "categories": [
+        "confirmation",
+        "popover"
+      ],
+      "registryDependencies": [
+        "popover",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sureui/confirmation.ts",
+          "type": "registry:lib",
+          "target": "@ui/sureui/confirmation.ts"
+        },
+        {
+          "path": "components/ui/sureui/confirm-button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/confirm-button.tsx"
+        },
+        {
+          "path": "components/ui/sureui/confirm-popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/confirm-popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "consequences",
+      "type": "registry:ui",
+      "title": "Consequences",
+      "description": "A list of what a confirmation will remove, with counts and names that collapse to \"and N more\". Pass it to TypeToConfirm or ConfirmDialog through their consequences prop.",
+      "categories": [
+        "confirmation",
+        "list"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sureui/consequences.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/consequences.tsx"
+        }
+      ]
+    },
+    {
+      "name": "undo-toast",
+      "type": "registry:lib",
+      "title": "Undo Toast",
+      "description": "undoToast(message) shows a Sonner toast with an Undo button. It resolves true when the toast closes and false if Undo is clicked, so run the action only on true.",
+      "categories": [
+        "confirmation",
+        "toast"
+      ],
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "button",
+        "sonner"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sureui/confirmation.ts",
+          "type": "registry:lib",
+          "target": "@ui/sureui/confirmation.ts"
+        },
+        {
+          "path": "components/ui/sureui/undo-toast.tsx",
+          "type": "registry:lib",
+          "target": "@ui/sureui/undo-toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "undoable",
+      "type": "registry:ui",
+      "title": "Undoable",
+      "description": "Wraps a list item or table row. Removing it collapses the row in place to a label and an Undo button at the same height, then runs onConfirm when the undo window ends.",
+      "categories": [
+        "confirmation",
+        "list",
+        "table"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sureui/confirmation.ts",
+          "type": "registry:lib",
+          "target": "@ui/sureui/confirmation.ts"
+        },
+        {
+          "path": "components/ui/sureui/undoable.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/undoable.tsx"
+        }
+      ]
+    },
+    {
+      "name": "unsaved-changes",
+      "type": "registry:ui",
+      "title": "Unsaved Changes",
+      "description": "useUnsavedChanges asks before unsaved changes are lost: the browser's prompt on reload or close, an awaitable confirmLeave() for leaving a page, and Keep editing, Discard changes and an optional Save in a Dialog, Sheet or Drawer's footer before it closes.",
+      "categories": [
+        "confirmation",
+        "form"
+      ],
+      "registryDependencies": [
+        "alert-dialog",
+        "button",
+        "checkbox",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sureui/confirmation.ts",
+          "type": "registry:lib",
+          "target": "@ui/sureui/confirmation.ts"
+        },
+        {
+          "path": "components/ui/sureui/confirm-button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/confirm-button.tsx"
+        },
+        {
+          "path": "components/ui/sureui/type-to-confirm.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/type-to-confirm.tsx"
+        },
+        {
+          "path": "components/ui/sureui/confirm-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/confirm-dialog.tsx"
+        },
+        {
+          "path": "components/ui/sureui/unsaved-changes.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/unsaved-changes.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tool-approval",
+      "type": "registry:ui",
+      "title": "Tool Approval",
+      "description": "Approve or deny an AI SDK tool call, or a batch of them, with a gesture that matches its risk: undo for low, click again for medium, hold for high and a typed phrase for critical. Pass addToolApprovalResponse from useChat as onRespond.",
+      "categories": [
+        "confirmation",
+        "ai"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "checkbox",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sureui/confirmation.ts",
+          "type": "registry:lib",
+          "target": "@ui/sureui/confirmation.ts"
+        },
+        {
+          "path": "components/ui/sureui/confirm-button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/confirm-button.tsx"
+        },
+        {
+          "path": "components/ui/sureui/type-to-confirm.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/type-to-confirm.tsx"
+        },
+        {
+          "path": "components/ui/sureui/tool-approval.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sureui/tool-approval.tsx"
+        }
+      ]
+    },
+    {
+      "name": "danger-zone-01",
+      "type": "registry:block",
+      "title": "Danger Zone",
+      "description": "A project settings danger zone: pause deployments with an undo window, transfer the project in a dialog that shows what changes, and delete it in a dialog that asks for the project name.",
+      "categories": [
+        "block",
+        "settings"
+      ],
+      "registryDependencies": [
+        "@sureui/confirm-button",
+        "@sureui/confirm-dialog",
+        "@sureui/consequences",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/danger-zone-01/danger-zone.tsx",
+          "type": "registry:component",
+          "target": "@components/danger-zone.tsx"
+        }
+      ]
+    },
+    {
+      "name": "api-keys-01",
+      "type": "registry:block",
+      "title": "API Keys",
+      "description": "A list of API keys with the last time each was used, hold to revoke, and a Create key dialog that shows the new secret once with a copy button.",
+      "categories": [
+        "block",
+        "settings"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@sureui/confirm-button",
+        "button",
+        "card",
+        "dialog",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/api-keys-01/api-keys.tsx",
+          "type": "registry:component",
+          "target": "@components/api-keys.tsx"
+        },
+        {
+          "path": "components/blocks/api-keys-01/create-key-dialog.tsx",
+          "type": "registry:component",
+          "target": "@components/create-key-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "delete-account-01",
+      "type": "registry:block",
+      "title": "Delete Account",
+      "description": "An account deletion screen with an export link first, a list of what gets deleted, and a form that unlocks after you type your email and check each acknowledgement.",
+      "categories": [
+        "block",
+        "settings"
+      ],
+      "registryDependencies": [
+        "@sureui/consequences",
+        "@sureui/type-to-confirm",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/delete-account-01/delete-account.tsx",
+          "type": "registry:component",
+          "target": "@components/delete-account.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-members-01",
+      "type": "registry:block",
+      "title": "Team Members",
+      "description": "A team members list whose row menu removes someone after a second click, and makes someone the owner after a dialog explains what changes.",
+      "categories": [
+        "block",
+        "settings"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@sureui/confirm-dialog",
+        "@sureui/confirm-menu-item",
+        "avatar",
+        "button",
+        "card",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/team-members-01/team-members.tsx",
+          "type": "registry:component",
+          "target": "@components/team-members.tsx"
+        }
+      ]
+    },
+    {
+      "name": "file-manager-01",
+      "type": "registry:block",
+      "title": "File Manager",
+      "description": "A file list where selected files move to trash with an undo toast, a Trash tab restores them one at a time, and an Empty trash dialog lists what goes and asks you to type a phrase.",
+      "categories": [
+        "block",
+        "files"
+      ],
+      "registryDependencies": [
+        "@sureui/confirm-dialog",
+        "@sureui/consequences",
+        "@sureui/undo-toast",
+        "button",
+        "card",
+        "checkbox",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/file-manager-01/file-manager.tsx",
+          "type": "registry:component",
+          "target": "@components/file-manager.tsx"
+        }
+      ]
+    },
+    {
+      "name": "inbox-01",
+      "type": "registry:block",
+      "title": "Inbox",
+      "description": "A message list where archive and delete collapse the row in place with an Undo, and a reading pane whose toolbar archives on a second click and deletes on a hold.",
+      "categories": [
+        "block",
+        "mail"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@sureui/confirm-button",
+        "@sureui/undoable",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/inbox-01/inbox.tsx",
+          "type": "registry:component",
+          "target": "@components/inbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agent-approval-01",
+      "type": "registry:block",
+      "title": "Agent Approval",
+      "description": "An agent turn with four tool calls waiting for approval, from a low-risk message that approves with undo to a critical delete that asks for the project name. Each call shows its tool, risk and arguments, then its result once it runs.",
+      "categories": [
+        "block",
+        "ai"
+      ],
+      "registryDependencies": [
+        "@sureui/tool-approval",
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/agent-approval-01/agent-approval.tsx",
+          "type": "registry:component",
+          "target": "@components/agent-approval.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bulk-actions-01",
+      "type": "registry:block",
+      "title": "Bulk Actions",
+      "description": "An issue list with row checkboxes whose delete asks for more as the count grows: an undo window for one or two, a second click for a few, and the typed count for more.",
+      "categories": [
+        "block",
+        "tables"
+      ],
+      "registryDependencies": [
+        "@sureui/confirm-button",
+        "@sureui/confirm-dialog",
+        "button",
+        "card",
+        "checkbox"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/bulk-actions-01/bulk-actions.tsx",
+          "type": "registry:component",
+          "target": "@components/bulk-actions.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings-save-bar-01",
+      "type": "registry:block",
+      "title": "Settings Save Bar",
+      "description": "A team settings form where any edit brings up a save bar. Discard asks for a second click, and leaving the page with unsaved changes asks whether to save, discard or keep editing.",
+      "categories": [
+        "block",
+        "settings"
+      ],
+      "registryDependencies": [
+        "@sureui/confirm-button",
+        "@sureui/unsaved-changes",
+        "button",
+        "card",
+        "input",
+        "label",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/settings-save-bar-01/settings-save-bar.tsx",
+          "type": "registry:component",
+          "target": "@components/settings-save-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cancel-subscription-01",
+      "type": "registry:block",
+      "title": "Cancel Subscription",
+      "description": "A plan card whose cancel dialog lists what goes away and when, offers a cheaper plan instead, and cancels on a second click.",
+      "categories": [
+        "block",
+        "billing"
+      ],
+      "registryDependencies": [
+        "@sureui/confirm-dialog",
+        "@sureui/consequences",
+        "badge",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/cancel-subscription-01/cancel-subscription.tsx",
+          "type": "registry:component",
+          "target": "@components/cancel-subscription.tsx"
+        }
+      ]
+    }
+  ]
+}

@@ -29,7 +29,7 @@
       "title": "Elements Surfaces",
       "description": "Shared design language for the elements family: surface, ink, and motion class recipes plus the shimmer utility.",
       "dependencies": [
-        "tw-shimmer"
+        "tw-shimmer@^0.4.13"
       ],
       "files": [
         {
@@ -51,12 +51,24 @@
       ]
     },
     {
+      "name": "elements-href",
+      "type": "registry:component",
+      "title": "Elements Href",
+      "description": "Link safety for the elements family: reducing a model's or a tool's URL to a target a browser can follow without running script.",
+      "files": [
+        {
+          "path": "components/assistant-ui/utils/href.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "elements-task",
       "type": "registry:component",
       "title": "Elements Task",
       "description": "Shared task state, labels, timing, and elapsed time for task elements.",
       "dependencies": [
-        "@assistant-ui/react"
+        "@assistant-ui/react@^0.15.25"
       ],
       "files": [
         {
@@ -282,7 +294,8 @@
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-surfaces.json",
-        "https://r.assistant-ui.com/elements-range.json"
+        "https://r.assistant-ui.com/elements-range.json",
+        "https://r.assistant-ui.com/use-copy-to-clipboard.json"
       ],
       "files": [
         {
@@ -335,6 +348,7 @@
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-href.json",
         "collapsible"
       ],
       "files": [
@@ -353,11 +367,28 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "https://r.assistant-ui.com/elements-surfaces.json"
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-href.json"
       ],
       "files": [
         {
           "path": "components/assistant-ui/elements/inline-citation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-link-preview",
+      "type": "registry:component",
+      "title": "Link preview",
+      "description": "A returned URL unfurled into a card with enough context to decide whether to open it.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-href.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/elements/link-preview.tsx",
           "type": "registry:component"
         }
       ]
@@ -381,12 +412,35 @@
       ]
     },
     {
+      "name": "elements-image-gallery",
+      "type": "registry:component",
+      "title": "Image gallery",
+      "description": "A compact grid of returned images that opens each one in a shared lightbox.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-href.json",
+        "https://r.assistant-ui.com/elements-range.json",
+        "dialog"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/elements/image-gallery.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "elements-data-table",
       "type": "registry:component",
       "title": "Data table",
-      "description": "A small comparison table the model can answer with directly.",
+      "description": "A tool's rows and columns with formatting, sorting, and a card layout in narrow columns.",
       "registryDependencies": [
-        "https://r.assistant-ui.com/elements-surfaces.json"
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-href.json",
+        "https://r.assistant-ui.com/elements-range.json"
       ],
       "files": [
         {
@@ -498,6 +552,41 @@
       "files": [
         {
           "path": "components/assistant-ui/elements/approval-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-option-list",
+      "type": "registry:component",
+      "title": "Option list",
+      "description": "The agent asks a question with a few answers; the pick returns to it and stays as a receipt.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/elements/option-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-question-flow",
+      "type": "registry:component",
+      "title": "Question flow",
+      "description": "A few short questions asked one at a time, answered together and kept as a receipt.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-option-list.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/elements/question-flow.tsx",
           "type": "registry:component"
         }
       ]
@@ -657,7 +746,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://r.assistant-ui.com/elements-surfaces.json"
+        "https://r.assistant-ui.com/elements-surfaces.json",
+        "https://r.assistant-ui.com/elements-range.json"
       ],
       "files": [
         {
@@ -789,6 +879,24 @@
       "files": [
         {
           "path": "components/assistant-ui/elements/chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-media-player",
+      "type": "registry:component",
+      "title": "Media player",
+      "description": "Audio and video a tool returned, played inline without leaving the thread.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/elements/media-player.tsx",
           "type": "registry:component"
         }
       ]
@@ -1082,7 +1190,7 @@
       "title": "Activity graph",
       "description": "A half-year of runs as a calendar of cells, dense where the work was.",
       "dependencies": [
-        "heat-graph"
+        "heat-graph@^0.0.23"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-surfaces.json"
@@ -1384,6 +1492,24 @@
       "files": [
         {
           "path": "components/assistant-ui/elements/map-answer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-geo-map",
+      "type": "registry:component",
+      "title": "Geo map",
+      "description": "Places and routes on a real tiled map, with an accessible list of every place.",
+      "dependencies": [
+        "leaflet"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-surfaces.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/elements/geo-map.tsx",
           "type": "registry:component"
         }
       ]
@@ -1768,7 +1894,7 @@
       "title": "AI SDK Quick Start",
       "description": "Assistant page wired to the AI SDK chat route, with the thread component installed.",
       "dependencies": [
-        "@assistant-ui/ai-sdk"
+        "@assistant-ui/ai-sdk@^0.0.11"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/ai-sdk-backend.json",
@@ -1790,7 +1916,7 @@
       "dependencies": [
         "ai",
         "@ai-sdk/openai",
-        "@assistant-ui/ai-sdk"
+        "@assistant-ui/ai-sdk@^0.0.11"
       ],
       "files": [
         {
@@ -1808,8 +1934,8 @@
       "dependencies": [
         "ai",
         "@ai-sdk/openai",
-        "@assistant-ui/ai-sdk",
-        "assistant-stream",
+        "@assistant-ui/ai-sdk@^0.0.11",
+        "assistant-stream@^0.3.48",
         "next"
       ],
       "files": [
@@ -1836,14 +1962,14 @@
       "title": "Eve Chat",
       "description": "Chat page for an Eve agent, rendering the session through an assistant-ui thread.",
       "dependencies": [
-        "@assistant-ui/eve",
-        "@assistant-ui/react",
+        "@assistant-ui/eve@^0.0.22",
+        "@assistant-ui/react@^0.15.25",
         "lucide-react",
         "zustand",
         "class-variance-authority",
-        "@assistant-ui/react-markdown",
+        "tw-shimmer@^0.4.13",
+        "@assistant-ui/react-markdown@^0.14.19",
         "remark-gfm",
-        "tw-shimmer",
         "radix-ui"
       ],
       "files": [
@@ -1878,6 +2004,16 @@
           "target": "components/assistant-ui/elements/file.tsx"
         },
         {
+          "path": "components/assistant-ui/elements/media-player.tsx",
+          "type": "registry:file",
+          "target": "components/assistant-ui/elements/media-player.tsx"
+        },
+        {
+          "path": "components/assistant-ui/elements/surfaces.tsx",
+          "type": "registry:file",
+          "target": "components/assistant-ui/elements/surfaces.tsx"
+        },
+        {
           "path": "components/assistant-ui/elements/follow-up-suggestions.aui.tsx",
           "type": "registry:file",
           "target": "components/assistant-ui/elements/follow-up-suggestions.aui.tsx"
@@ -1886,6 +2022,11 @@
           "path": "components/assistant-ui/elements/image.tsx",
           "type": "registry:file",
           "target": "components/assistant-ui/elements/image.tsx"
+        },
+        {
+          "path": "components/assistant-ui/utils/href.ts",
+          "type": "registry:file",
+          "target": "components/assistant-ui/utils/href.ts"
         },
         {
           "path": "components/assistant-ui/elements/markdown-text.tsx",
@@ -1960,7 +2101,7 @@
       "title": "Thread",
       "description": "Chat container with message list, composer, auto scroll, and accessibility built in.",
       "dependencies": [
-        "@assistant-ui/react",
+        "@assistant-ui/react@^0.15.25",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -2016,7 +2157,7 @@
       "title": "Voice",
       "description": "Realtime voice session controls with connect, mute, and a status indicator.",
       "dependencies": [
-        "@assistant-ui/react",
+        "@assistant-ui/react@^0.15.25",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -2037,7 +2178,7 @@
       "title": "Voice conversation",
       "description": "The live call screen bound to the thread's voice session: orb, caption, transcript, mute, and end call.",
       "dependencies": [
-        "@assistant-ui/react"
+        "@assistant-ui/react@^0.15.25"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-voice-conversation.json"
@@ -2055,7 +2196,7 @@
       "title": "Task card",
       "description": "A runtime task card with nested transcripts, timing, results, and grouped task lanes.",
       "dependencies": [
-        "@assistant-ui/react"
+        "@assistant-ui/react@^0.15.25"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-task-card.json",
@@ -2076,7 +2217,7 @@
       "title": "Agent status",
       "description": "A runtime task summary chip with an optional tray for every task in the thread.",
       "dependencies": [
-        "@assistant-ui/react"
+        "@assistant-ui/react@^0.15.25"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-agent-status.json",
@@ -2109,8 +2250,8 @@
       "title": "Markdown Text",
       "description": "Render assistant markdown with headings, lists, links, and code blocks.",
       "dependencies": [
-        "@assistant-ui/react",
-        "@assistant-ui/react-markdown",
+        "@assistant-ui/react@^0.15.25",
+        "@assistant-ui/react-markdown@^0.14.19",
         "lucide-react",
         "remark-gfm"
       ],
@@ -2131,7 +2272,7 @@
       "title": "Reasoning",
       "description": "Collapsible panel for assistant reasoning and thinking content.",
       "dependencies": [
-        "@assistant-ui/react"
+        "@assistant-ui/react@^0.15.25"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-reasoning.json",
@@ -2150,7 +2291,7 @@
       "title": "Conversation Map",
       "description": "Runtime-backed thread rail: a tick per turn, the turn being read marked and the ones on screen deepened, a hover preview, and a click that scrolls there.",
       "dependencies": [
-        "@assistant-ui/react"
+        "@assistant-ui/react@^0.15.25"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-conversation-map.json"
@@ -2170,7 +2311,7 @@
       "dependencies": [
         "lucide-react",
         "class-variance-authority",
-        "tw-shimmer"
+        "tw-shimmer@^0.4.13"
       ],
       "registryDependencies": [
         "collapsible"
@@ -2188,7 +2329,7 @@
       "title": "Message Timing",
       "description": "Badge with streaming stats: time to first token, total time, and tokens per second.",
       "dependencies": [
-        "@assistant-ui/react"
+        "@assistant-ui/react@^0.15.25"
       ],
       "registryDependencies": [
         "tooltip"
@@ -2206,8 +2347,8 @@
       "title": "Context Display",
       "description": "Token usage against a model's context window as a ring, bar, or text, with a hover popover.",
       "dependencies": [
-        "@assistant-ui/react",
-        "@assistant-ui/ai-sdk"
+        "@assistant-ui/react@^0.15.25",
+        "@assistant-ui/ai-sdk@^0.0.11"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-context-display.json"
@@ -2225,7 +2366,7 @@
       "title": "Thread List",
       "description": "Sidebar or dropdown for switching conversations, with search and active selection.",
       "dependencies": [
-        "@assistant-ui/react",
+        "@assistant-ui/react@^0.15.25",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -2246,8 +2387,8 @@
       "title": "MCP Config Dialog",
       "description": "Dialog listing MCP connectors and custom servers, with OAuth and bearer auth controls.",
       "dependencies": [
-        "@assistant-ui/react-mcp",
-        "@assistant-ui/store",
+        "@assistant-ui/react-mcp@^0.1.21",
+        "@assistant-ui/store@^0.3.17",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -2271,7 +2412,7 @@
       "title": "Use Attachment Src",
       "description": "Resolve an image attachment to a preview source URL.",
       "dependencies": [
-        "@assistant-ui/react",
+        "@assistant-ui/react@^0.15.25",
         "zustand"
       ],
       "files": [
@@ -2287,7 +2428,7 @@
       "title": "Attachment",
       "description": "Attach files from the composer and view them inside messages.",
       "dependencies": [
-        "@assistant-ui/react",
+        "@assistant-ui/react@^0.15.25",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -2310,7 +2451,7 @@
       "title": "Follow Up Suggestions",
       "description": "Prompt chips rendered from runtime generated follow up suggestions.",
       "dependencies": [
-        "@assistant-ui/react"
+        "@assistant-ui/react@^0.15.25"
       ],
       "files": [
         {
@@ -2344,8 +2485,8 @@
       "title": "Syntax Highlighter",
       "description": "Code block highlighting powered by react-syntax-highlighter.",
       "dependencies": [
-        "@assistant-ui/react-syntax-highlighter",
-        "@assistant-ui/react-markdown",
+        "@assistant-ui/react-syntax-highlighter@^0.14.7",
+        "@assistant-ui/react-markdown@^0.14.19",
         "react-syntax-highlighter",
         "@types/react-syntax-highlighter"
       ],
@@ -2362,7 +2503,7 @@
       "title": "Assistant Modal",
       "description": "Floating chat bubble for support widgets and help desks, with a thread list and a resizable window.",
       "dependencies": [
-        "@assistant-ui/react",
+        "@assistant-ui/react@^0.15.25",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -2383,7 +2524,7 @@
       "title": "Assistant Sidebar",
       "description": "Side panel chat for copilot experiences and inline assistance.",
       "dependencies": [
-        "@assistant-ui/react"
+        "@assistant-ui/react@^0.15.25"
       ],
       "registryDependencies": [
         "resizable",
@@ -2402,9 +2543,9 @@
       "title": "Tool Fallback",
       "description": "Default renderer for tool calls that have no dedicated UI.",
       "dependencies": [
-        "@assistant-ui/react",
+        "@assistant-ui/react@^0.15.25",
         "lucide-react",
-        "tw-shimmer"
+        "tw-shimmer@^0.4.13"
       ],
       "registryDependencies": [
         "button",
@@ -2424,10 +2565,10 @@
       "title": "Tool Group",
       "description": "Collapsible wrapper around consecutive tool calls.",
       "dependencies": [
-        "@assistant-ui/react",
+        "@assistant-ui/react@^0.15.25",
         "lucide-react",
         "class-variance-authority",
-        "tw-shimmer"
+        "tw-shimmer@^0.4.13"
       ],
       "registryDependencies": [
         "collapsible"
@@ -2446,8 +2587,8 @@
       "description": "Code block highlighting powered by react-shiki.",
       "dependencies": [
         "react-shiki",
-        "@assistant-ui/react",
-        "@assistant-ui/react-markdown"
+        "@assistant-ui/react@^0.15.25",
+        "@assistant-ui/react-markdown@^0.14.19"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-shiki-highlighter.json"
@@ -2480,8 +2621,8 @@
       "title": "Mermaid Diagram",
       "description": "Render Mermaid diagrams in messages, including while they stream.",
       "dependencies": [
-        "@assistant-ui/react",
-        "@assistant-ui/react-markdown"
+        "@assistant-ui/react@^0.15.25",
+        "@assistant-ui/react-markdown@^0.14.19"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-mermaid-diagram.json"
@@ -2517,8 +2658,12 @@
       "dependencies": [
         "diff",
         "parse-diff",
-        "@assistant-ui/react-markdown",
-        "class-variance-authority"
+        "@assistant-ui/react-markdown@^0.14.19",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/use-copy-to-clipboard.json"
       ],
       "files": [
         {
@@ -2556,7 +2701,7 @@
       "title": "Quote",
       "description": "Select and quote message text with a floating toolbar and a composer preview.",
       "dependencies": [
-        "@assistant-ui/react",
+        "@assistant-ui/react@^0.15.25",
         "lucide-react"
       ],
       "files": [
@@ -2572,11 +2717,12 @@
       "title": "Sources",
       "description": "Display URL sources with favicon, title, and an external link.",
       "dependencies": [
-        "@assistant-ui/react",
+        "@assistant-ui/react@^0.15.25",
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://r.assistant-ui.com/badge.json"
+        "https://r.assistant-ui.com/badge.json",
+        "https://r.assistant-ui.com/elements-href.json"
       ],
       "files": [
         {
@@ -2591,9 +2737,12 @@
       "title": "Image",
       "description": "Display image parts with preview, loading states, and a fullscreen dialog.",
       "dependencies": [
-        "@assistant-ui/react",
+        "@assistant-ui/react@^0.15.25",
         "lucide-react",
         "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-href.json"
       ],
       "files": [
         {
@@ -2606,11 +2755,14 @@
       "name": "file",
       "type": "registry:component",
       "title": "File",
-      "description": "Display file parts with icon, name, size, and a download button.",
+      "description": "Display file parts with icon, name, size, and a download button, playing audio and video inline.",
       "dependencies": [
-        "@assistant-ui/react",
+        "@assistant-ui/react@^0.15.25",
         "lucide-react",
         "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-media-player.json"
       ],
       "files": [
         {
@@ -2625,7 +2777,7 @@
       "title": "Model Selector",
       "description": "Model picker with reasoning effort levels, search, and runtime integration.",
       "dependencies": [
-        "@assistant-ui/react"
+        "@assistant-ui/react@^0.15.25"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-model-selector.json"
@@ -2779,7 +2931,7 @@
       "title": "Heat Graph",
       "description": "Activity heat map with month and weekday labels.",
       "dependencies": [
-        "heat-graph"
+        "heat-graph@^0.0.23"
       ],
       "files": [
         {
@@ -2794,7 +2946,7 @@
       "title": "Composer Trigger Popover",
       "description": "Character triggered picker for @ mentions, / commands, and similar popovers.",
       "dependencies": [
-        "@assistant-ui/react",
+        "@assistant-ui/react@^0.15.25",
         "lucide-react"
       ],
       "files": [
@@ -2810,7 +2962,7 @@
       "title": "Directive Text",
       "description": "Render mention directives as inline chips in user messages.",
       "dependencies": [
-        "@assistant-ui/react"
+        "@assistant-ui/react@^0.15.25"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-directive-text.json"
@@ -2859,7 +3011,7 @@
       "title": "Generative UI",
       "description": "Styled component library for rendering generative UI output.",
       "dependencies": [
-        "@assistant-ui/react-generative-ui",
+        "@assistant-ui/react-generative-ui@^0.0.24",
         "react-markdown",
         "remark-gfm"
       ],

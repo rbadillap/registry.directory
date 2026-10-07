@@ -19,7 +19,17 @@
       ],
       "dependencies": [
         "@fontsource/inter"
-      ]
+      ],
+      "font": {
+        "family": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+        "provider": "google",
+        "import": "Inter",
+        "variable": "--font-sans",
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource/inter"
+      }
     },
     {
       "name": "font-geist",
@@ -33,7 +43,17 @@
       ],
       "dependencies": [
         "@fontsource/geist"
-      ]
+      ],
+      "font": {
+        "family": "Geist, ui-sans-serif, system-ui, sans-serif",
+        "provider": "google",
+        "import": "Geist",
+        "variable": "--font-display",
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource/geist"
+      }
     },
     {
       "name": "wensity-base",
@@ -80,7 +100,7 @@
     {
       "name": "voice-aurora-wave",
       "type": "registry:block",
-      "title": "Voice Aurora Wave",
+      "title": "Voice Reactive Orb",
       "description": "A breathing voice orb that swells with speech and settles between turns, never jittery and always organic to look at.",
       "categories": [
         "Agentic AI Interfaces",
@@ -95,8 +115,8 @@
     {
       "name": "model-context-switcher",
       "type": "registry:block",
-      "title": "Model Context Switcher",
-      "description": "A Radix dropdown that scales out from its trigger and glides the selection pill across to meet whichever model you pick.",
+      "title": "AI Model Selector",
+      "description": "An AI model selector dropdown that scales out from its trigger and glides the selection pill to whichever model you pick.",
       "categories": [
         "Agentic AI Interfaces",
         "wensity",
@@ -105,7 +125,7 @@
       "dependencies": [
         "framer-motion",
         "@tabler/icons-react",
-        "@radix-ui/react-dropdown-menu"
+        "@base-ui/react"
       ]
     },
     {
@@ -123,7 +143,7 @@
       "name": "morphing-shape-background",
       "type": "registry:block",
       "title": "Morphing Shape Background",
-      "description": "Lava-lamp blobs that drift behind your hero at 120fps with no SVG morphing.",
+      "description": "Lava lamp background for React heroes: soft gradient shapes that drift and melt.",
       "categories": [
         "Cinematic Interactions",
         "wensity",
@@ -159,24 +179,20 @@
       ]
     },
     {
-      "name": "gooey-navigation-menu",
+      "name": "blob-animation",
       "type": "registry:block",
-      "title": "Gooey Navigation Menu",
-      "description": "A liquid FAB whose child actions stretch out of the trigger like molten metal.",
+      "title": "Blob Animation",
+      "description": "Blob animation in CSS: a morphing gradient blob, soft glow, outline, or image mask.",
       "categories": [
-        "Elite Micro-Interactions",
+        "Cinematic Interactions",
         "wensity",
         "free"
-      ],
-      "dependencies": [
-        "framer-motion",
-        "@tabler/icons-react"
       ]
     },
     {
       "name": "multi-select-token-pills",
       "type": "registry:block",
-      "title": "Multi-Select Token Pills",
+      "title": "Multi-Select Tag Input",
       "description": "A tag input where pills pop in as you add them and slide out on remove, closing the gap without snapping the layout.",
       "categories": [
         "Elite Micro-Interactions",
@@ -243,6 +259,17 @@
       ]
     },
     {
+      "name": "progressive-image-loading",
+      "type": "registry:block",
+      "title": "Progressive Image Loading",
+      "description": "Images that develop from a blur, color, or shimmer placeholder, without layout shift.",
+      "categories": [
+        "Elite Micro-Interactions",
+        "wensity",
+        "free"
+      ]
+    },
+    {
       "name": "github-activity-grid",
       "type": "registry:block",
       "title": "GitHub-Style Activity Grid",
@@ -254,6 +281,21 @@
       ],
       "dependencies": [
         "framer-motion"
+      ]
+    },
+    {
+      "name": "gooey-navigation-menu",
+      "type": "registry:block",
+      "title": "Gooey Navigation Menu",
+      "description": "A liquid FAB whose child actions stretch out of the trigger like molten metal.",
+      "categories": [
+        "Morph & Gooey",
+        "wensity",
+        "free"
+      ],
+      "dependencies": [
+        "framer-motion",
+        "@tabler/icons-react"
       ]
     },
     {
@@ -362,7 +404,7 @@
     {
       "name": "canvas-text",
       "type": "registry:block",
-      "title": "Canvas Text",
+      "title": "Particle Text",
       "description": "Loading-ring canvas particles that slowly resolve into solid letterforms.",
       "categories": [
         "Text Animations",
@@ -374,7 +416,7 @@
       "name": "line-fill-text",
       "type": "registry:block",
       "title": "Line Fill Text",
-      "description": "Alpha-cascade ribbons clipped neatly inside the letterforms themselves.",
+      "description": "Bold type filled with flowing curved linework that bends round the cursor.",
       "categories": [
         "Text Animations",
         "wensity",
@@ -418,7 +460,7 @@
       "name": "text-scribble",
       "type": "registry:block",
       "title": "Text Scribble",
-      "description": "Hand-drawn scribble, underline, and strike marks that draw themselves onto text.",
+      "description": "Hand-drawn scribble, squiggly underline, strike, circle, and box marks for text.",
       "categories": [
         "Text Animations",
         "wensity",
@@ -455,6 +497,17 @@
       "type": "registry:block",
       "title": "Text Ripple",
       "description": "A 3D character ripple with a traveling color crest, CSS-only and GPU-light.",
+      "categories": [
+        "Text Animations",
+        "wensity",
+        "free"
+      ]
+    },
+    {
+      "name": "underline-animation",
+      "type": "registry:block",
+      "title": "Underline Animation",
+      "description": "CSS hover underlines for links: slide, center, fill, wavy, and gradient.",
       "categories": [
         "Text Animations",
         "wensity",
@@ -987,7 +1040,7 @@
       "name": "calendar",
       "type": "registry:block",
       "title": "Calendar",
-      "description": "Date grids for single, range, and multi-date selection, with month navigation and event-ready day rendering.",
+      "description": "Date grids for single, range, and multi-date selection, with month navigation, booked dates, and event dots on days.",
       "categories": [
         "UI Primitives",
         "wensity",
@@ -1247,7 +1300,7 @@
       "name": "typography",
       "type": "registry:block",
       "title": "Typography",
-      "description": "Type primitives for headings, prose blocks, lead and muted text, inline code, and consistently styled lists.",
+      "description": "Type primitives for six heading levels, prose blocks, lead and muted text, inline code, and consistently styled lists.",
       "categories": [
         "UI Primitives",
         "wensity",
