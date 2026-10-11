@@ -1,0 +1,2589 @@
+{
+  "key": "dprvda",
+  "entry": "Beamline UI",
+  "name": "beamline",
+  "homepage": "https://beamline.io",
+  "indexUrl": "https://beamline.io/registry/registry.json",
+  "itemBase": "https://beamline.io/registry",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "setup",
+      "type": "registry:style",
+      "title": "Beamline",
+      "description": "Beamline's foundation: the runtime, the tokens and the source theme every element builds on."
+    },
+    {
+      "name": "look-prism",
+      "type": "registry:theme",
+      "title": "Prism look",
+      "description": "Beamline's Prism look and its typefaces (geist, geist-mono, instrument-serif)."
+    },
+    {
+      "name": "look-metal",
+      "type": "registry:theme",
+      "title": "Metal look",
+      "description": "Beamline's Metal look and its typefaces (archivo, geist, geist-mono, inter)."
+    },
+    {
+      "name": "account-security",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Security",
+      "description": "A person's account security on one page: how protected they are at a glance with the next step to take, password change with strength and rules, two-step sign-in set up by scanning a code, confirming one and saving recovery codes, passkeys added from the device and renamed in place, and every signed-in device with sign out one by one or everywhere else at once. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "admin-users",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Admin users",
+      "description": "Your staff's view of every account: headline counts that follow the filters, a virtualised users table with search, status and plan filters and sorting, bulk suspend (with a reason), reactivate, reset two-step sign-in, export and delete with Undo; a row opens the person in a side panel with their facts, workspaces and recent activity, and Sign in as them. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "agent-runs",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Agent runs monitor",
+      "description": "Every run of your agents in one place: success rate, run time, tokens and spend; the last runs as a strip of status blocks; a live table where running rows count up their time and cost; and a run's detail with its trace (thinking, each tool call with input and output, the answer or the error) and Retry or Cancel. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "agent-workspace",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "AI agent workspace",
+      "description": "Threads, a conversation with streamed reasoning, cited answers and a plan that waits for approval then runs step by step, and an artifacts panel with changes, sources and files; it renders the run you give it and calls back for every decision. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "analytics-dashboard",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Analytics dashboard",
+      "description": "A SaaS overview in the app shell, fed by your metrics hook: range and segment filters drive KPIs, new and expansion revenue, channels, plan mix, uptime and the activity feed, with loading placeholders and a failed state with retry. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "api-keys",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "API keys & webhooks",
+      "description": "The developer page of a SaaS: API keys with environment, scopes, last use and expiry, created through a form whose secret is shown once (copy it before you can leave), rotated with an overlap or revoked; and webhook endpoints with their recent deliveries as a status strip, opened in a side panel to switch on or off, send a test event, read each delivery's request and response, and resend it. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "artifact-workbench",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Artifact workbench",
+      "description": "Where the things an assistant makes are checked before they leave: every document, piece of code, small app and data result from a conversation, each version with what was asked for it, a live preview (the app runs in a sandbox, at desktop or phone width), the source, the changes from any earlier version, a failed version with Ask to fix, and Export in the format the work needs, with the file it made. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "audit-log",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Audit log",
+      "description": "Who did what, to what, when and from where, for a whole workspace: newest first and grouped by day, people with avatars and keys or systems with toned marks, sensitive actions flagged; filter by words, area, person and dates; open an entry for exactly what changed (before → after) and its request id; new entries wait above the list until shown; older pages load on demand; export the filtered log as CSV or JSON. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "auth",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Auth page",
+      "description": "The whole sign-in / sign-up route: product mark, a quiet dotted field with a light that follows the mouse, an optional notice, the SignIn and SignupForm cards switching in place with focus following, and legal links. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "billing",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Billing & invoices",
+      "description": "The billing page of a subscription: the plan with its seats and renewal, cancel and resume in place, the card on file with a checked update form, metered usage against the plan, the next invoice line by line, and the invoice history with status, PDF download and Pay now on a failed one; a failed payment leads the page with the one action that fixes it. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "changelog-feed",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Changelog feed",
+      "description": "An in-app What's new page: release notes grouped by month with tags, versions, pictures and details, a tag filter with counts, entries since your last visit marked as new, and a copyable link to each. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "contact-profile",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Contact profile",
+      "description": "One customer on one page: who they are and how to reach them (fields edit in place), their lifecycle stage and owner, the deals they are in with what is open, and the activity timeline with a composer to log a note, call, meeting or email, all optimistic. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "conversation-history",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Conversation history",
+      "description": "Past conversations with an assistant, ready to pick up again: the list by day with bookmarks and unsent drafts, a search through every message that groups hits by conversation and lands on the exact message, a link to a conversation or to one message that reopens it there, an interrupted answer with Continue, and a composer whose draft stays with its conversation when you open another. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "crm",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "CRM pipeline",
+      "description": "A pipeline screen: KPIs and stage mix derived from a virtualised deals grid with inline edit, bulk moves and delete with undo; a row opens the deal in a side sheet with stage stepper, fields and notes. Every change goes to your onDealsChange. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "empty-states",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Empty states",
+      "description": "The five empty moments every product has, written and wired: first use with a first step, no results with the filters to clear, an error with retry and a copyable error id, no permission with a request for access, and offline with reconnecting. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "file-manager",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "File manager",
+      "description": "Files and folders in one screen: the views (My files, Shared, Recent, Starred, Trash) with storage at the foot, a folder tree beside the files, breadcrumb, search across folders, grid or list, Upload as the one primary action, and a file's preview, details, people and Share in a side panel; rename, trash, restore, star and share are optimistic. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "helpdesk-inbox",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Helpdesk inbox",
+      "description": "A support team's inbox: views with counts, a virtualised ticket queue with search, priority filters and live SLA clocks, and the open ticket with its conversation, reply composer, status, priority, assignee and the requester's details with internal notes. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "image-studio",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "AI image studio",
+      "description": "Write a prompt, pick a shape, a style and how many, and watch the variations generate side by side; each one opens full screen and can be upscaled or used as the start of more like it. Every batch stays in a history you can step back to, with its prompt and settings. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "integrations",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Integrations",
+      "description": "A directory of the apps a product connects to: search and categories with counts, connected apps first with their state (Connected, Needs attention), a card per app with its mark, one line and one button that connects in place (waiting on the app's sign-in, then connected) or opens it; an app's side panel holds the connected account, sync history, its settings that save as they change, Sync now and Disconnect; no match offers Request an integration. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "invoices",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Invoices",
+      "description": "Accounts receivable in one screen: what is outstanding, overdue and paid, the invoices by status in a virtualised grid with bulk reminders, and each invoice opened as the document itself with its history and the one action its status calls for (send, record payment, download), all optimistic. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "knowledge-base",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Knowledge base manager",
+      "description": "What your assistant knows and whether it is fresh: sources with live sync status (syncing with progress, out of date, failed with the reason and Retry), the chunks each source became, and a test bench where you ask a question and see the cited answer beside the chunks it was built from. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "market-screener",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Market screener",
+      "description": "The whole market at a glance and a way to narrow it down: a sector heatmap, today's top movers with the market's breadth, ready-made screens (gainers, losers, most active, your watchlist) and a live table to search, sort and star markets into the watchlist. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "meeting-review",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Meeting and call review",
+      "description": "Everything a recorded call left behind on one screen: the recording with its transcript by speaker, an AI summary that streams in, action items with owners and due dates that each jump to the moment they were said, chapters, and who talked how much. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "model-playground",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Model playground",
+      "description": "Try one prompt on up to three models side by side: pick each model with its price and speed in view, set the system prompt, temperature and length once for all, run, and watch the answers write themselves while time to first token, speed, tokens and cost count up under each; when they finish, the fastest and the cheapest are marked. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "notification-preferences",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Notification preferences",
+      "description": "What reaches a person and where: events grouped by area down the side, channels (email, push, Slack, in-app) across the top, a switch per pair that saves on its own and steps back if refused, a column switch for a whole channel, channels that still need connecting, alerts that cannot be turned off, a digest, quiet hours and a pause for everything. In a narrow room each event carries its channels as a row of toggles. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "onboarding-checklist",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Onboarding checklist",
+      "description": "The first screen after sign-up: a welcome with how far set-up has come, a checklist of the few steps that make the product useful (each with why, how long it takes and one button that starts it), the next step opened and offered as the page's one primary action, done steps drawing their check and gathering at the end, steps that can be skipped and brought back, and a finished state with Hide this list; under it, guides to read or watch. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "order-history",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Order history and fills",
+      "description": "Every order the account placed and every fill it got, for a period: totals for volume, fees, fill rate and maker share; orders with their status and how much filled; each fill with its price, fee and maker or taker; an order opens with its fills and what happened when; and the view exports as CSV. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "orders-admin",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Orders admin",
+      "description": "A shop's order desk: today's orders and revenue, quick filters for what needs doing (to fulfil, unpaid, returns), a virtualised orders grid, and the chosen order beside it with its items, fulfilment steps, shipping and payment; fulfil with a carrier and tracking number, or refund chosen items, both optimistic. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Page header",
+      "description": "The top of a record or project page: breadcrumb, title with status, description and meta, a primary action with secondary actions that fold into a More menu when the width runs out, and tabs underneath; on long pages it can condense into a compact bar pinned to the top as you scroll. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "plan-comparison",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Plan comparison",
+      "description": "Plans side by side against every feature: prices that roll between monthly and yearly, the current and recommended plan marked, a header that stays in view while the features scroll, differences only, and included, not included and not specified told apart. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "portfolio",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Portfolio overview",
+      "description": "What an account holds and how it is doing: the total that rolls as prices tick with today's change, value over time against a benchmark, allocation by asset or sector, daily profit and loss, and every holding with its value, cost, unrealised P&L and weight. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "product-analytics",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Product analytics",
+      "description": "How people use the product: a funnel whose steps are the selector, where the people lost at a step went (saved as a cohort in one action), retention by sign-up cohort as a heat table, and the tracked events with their trends. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "project-board",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Project board",
+      "description": "A team's sprint as a board: the sprint's goal, points done and days left, filters by person and label, the work as cards in columns with work-in-progress limits, moves that are applied at once and refused with the reason, and a card opened beside the board with its details, estimate and discussion. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "projects",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Projects",
+      "description": "A team's projects: the portfolio by health (on track, at risk, off track) with progress, lead, team and due date, filtered and searched; a project opens in place to its overview — health and the latest status update, milestones, task mix, team and the update history — where posting the weekly update is the one primary action. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "report-builder",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Report builder",
+      "description": "Build a chart from your metrics without code: choose metrics, how to group them over time, an optional breakdown, filters, the range and the chart, see the chart and its numbers update as you choose, then save it as a named report (optimistic, with unsaved-changes and a refused save kept). (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "roles-permissions",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Roles & permissions",
+      "description": "What each role may do, as one matrix: permissions grouped by area down the side, roles across the top with their head counts, a check per cell; a group's box sets the whole area. Edits gather in a draft whose changed cells are marked and counted in a save bar, risky grants are flagged, and custom roles can be created from an existing one or deleted with their people moved. In a narrow room it shows one role at a time. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "sales-dashboard",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Sales dashboard",
+      "description": "A sales leader's week in one screen: closed won against quota and pace, pipeline coverage and win rate, the quarter's run toward target with the forecast ahead of it, pipeline by stage, a rep leaderboard that scopes every figure to one rep, and the forecast call submitted to your API. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "settings",
+      "type": "registry:block",
+      "title": "Settings",
+      "description": "Profile and workspace settings with one draft and real save handler. Personal mode omits workspace data; optional profile fields share validation, persistence, error recovery and focus return. Existing members, billing, notifications and API sections remain available.",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "sign-in",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Sign in",
+      "description": "The sign-in card: email and password, a one-time code or a magic link, passkeys and single sign-on, with validation, progress, errors and a signed-in state; every step runs on your handlers. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "signup-form",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Sign up form",
+      "description": "The account creation card: single sign-on, name, work email and a password with strength and Caps Lock hints, terms consent, inline validation, your request's progress and errors, an emailed-code check and a finished state. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "social-scheduler",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Social media scheduler",
+      "description": "Plan posts across your social accounts: a week calendar where every post sits at its time in its account's colour and moves by drag, a queue of what goes out next with results for what already went, and a composer that writes once for several accounts, counts each one's character limit, previews the post as it will look and suggests the times your audience is around. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "status-dashboard",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Status dashboard",
+      "description": "An operations view of service health: the overall state in one line, every service with its status, uptime, latency now and 90 days of history, latency percentiles against the SLO, the live incident with its updates and a composer to post the next one, and past incidents. Declare incident when all is well, Post update when something is not. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "step-form",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Step form",
+      "description": "The finished frame for any multi-step form you compose — onboarding, intake brief, questionnaire, booking, application: a wide card with progress, the step's title and your fields, one accent Continue; a side panel with the steps and the answers so far (each with Edit); an automatic review step, sending and done. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "support-chat",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "AI support chat",
+      "description": "The customer's side of AI support: an assistant that answers from your help centre with numbered citations, a thumbs up or down on every answer (a down asks why and offers a person), a handoff that queues, counts down the line and morphs the header into the person who joins, and a rating when the case ends. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "support-console",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "AI support console",
+      "description": "The support team's side of AI support: a queue sorted by what is due first (who the assistant is still handling, who asked for a person, who waits), the conversation with the assistant's turns marked, a suggested reply that streams in with its sources and goes into the composer in one press, the customer's context and case summary, and the day's resolution rate, CSAT and first response. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "system-page",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "System pages",
+      "description": "The four pages a product shows when the normal one cannot: page not found (search and the likely places), something broke (try again, an error id to quote, the status page), down for maintenance (when it is back, counting down, and Email me when it's back), and offline (retrying by itself with growing pauses, the changes waiting to sync, and Back online when it returns). One block, a kind each, on a quiet field of split light. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "team-calendar",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Team calendar",
+      "description": "A team's schedule: the people and shared calendars to show (each its colour), a month to jump by, who is out this week, and the week, day or month of events — drag to move or resize, drag across empty time to schedule, an event opened with its details and Cancel; every change optimistic and refused with the reason. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "team-chat",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Team chat",
+      "description": "A team's messages in one screen: channels and direct messages with unread counts and mentions, who is online, the conversation with reactions, receipts and who is typing, threads that open beside it, and every place you were mentioned in one list. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "team-members",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Team & members",
+      "description": "The people page of a workspace: seats used against the plan, members and pending invitations in one list with search and a role filter, role changes that apply at once and step back if your API refuses, invitations by pasted email list, and removal with Undo that only reaches your API once the Undo window closes. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "trading-terminal",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Trading terminal",
+      "description": "A perpetuals terminal on your feed and your account: ticker tape, market header with funding, candles, book / trades / depth, order ticket, account figures, positions and open orders. The terminal renders and calls the account; it never fills an order itself. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "voice-agent",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Voice agent",
+      "description": "A voice agent in three layouts on one session: a support panel that mixes typing and talking, a call screen with the agent's orb and one call button, and a workspace with an empty state, the live transcript and the conversation bar. One adapter connects any provider. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "workspace-switcher",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Workspace switcher",
+      "description": "Moving between workspaces and making a new one: a switcher for the top of your sidebar (the current workspace's mark, name and plan; a searchable list with roles and unread counts; Create workspace) and a Choose a workspace page for after sign-in with waiting invitations to join or decline; both open the same three-step create dialog (name with its address checked as you type, a colour for its mark, teammates to invite) that ends in the new workspace. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Accordion",
+      "description": "Topics that open in place, one at a time or several: FAQs and settings sections; each header is a button (with an optional fact at its end), and the panel's height follows its content and can be reversed mid-way. (Beamline complete system)",
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "activity-heatmap",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Activity heatmap",
+      "description": "A calendar of daily counts, one cell per day on a sequential ramp: weeks across, weekdays down, month and weekday labels, a legend scale, hatched days that were never recorded, and a keyboard grid that reads each day's date and value. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:component",
+      "title": "Alert",
+      "description": "A message that stays until it is dealt with: what happened, what to do, an action; danger and warning are announced; dismissing folds its height away.",
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:component",
+      "title": "Alert Dialog",
+      "description": "A blocking confirmation that must be answered: the scrim does not dismiss it, focus starts on the safe choice, and an async action keeps it open until the work finishes.",
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "allocation-editor",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Allocation editor",
+      "description": "Parts of a fixed whole edited as transfers: an ordered strip whose boundaries drag or step between neighbours and a roster of exact amounts where typing names the part that gives or takes; locks, limits and your rules refuse with words, nothing is redistributed out of sight, and Save waits for your handler. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "announcement-bar",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Announcement bar",
+      "description": "A banner across the top for news and offers: messages take turns, a countdown ticks, and dismissing folds it away and can remember it. (Beamline complete system)",
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "answer-compare",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Answer compare",
+      "description": "Two answers to the same prompt side by side, and a person's verdict: A is better, a tie, B is better, or both are bad, with the reasons that decided it. Answers stream in their own columns with time, tokens and cost under each; in a blind test the models stay hidden behind A and B until the verdict, then turn over to show who wrote what. Narrow rooms switch between the two instead of squeezing them. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "app-shell",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "App shell",
+      "description": "The frame for every app screen: collapsible sidebar with grouped navigation, top bar and page. (Beamline complete system)",
+      "categories": [
+        "dashboard"
+      ]
+    },
+    {
+      "name": "approval-card",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Approval card",
+      "description": "The agent stops and asks before it acts: what it wants to do, exactly what that changes, any choices it needs, and Approve or Reject; both run your callbacks with progress, a refusal says why with Retry, and a settled card folds to one line of record. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "area-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Area chart",
+      "description": "Amounts over time as filled areas: overlapping, stacked or as shares of 100%, five fills, two strokes, five curves, a range handle; gaps for missing values, a legend that toggles series and a table view of every number. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Aspect ratio",
+      "description": "Holds media, video and embeds at a fixed width-to-height ratio while the layout resizes. (Beamline complete system)",
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Attachment",
+      "description": "A file tile: preview or typed glyph with the type named, name, size, upload progress, error with retry, and a keyboard-reachable remove. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "audio-player",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Audio player",
+      "description": "One audio element and its controls: play with a loading state, a scrub bar with time, skip, speed and a playlist whose rows play into the same player. Use the ready layouts or compose the parts. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    },
+    {
+      "name": "availability-rule-editor",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Availability rule editor",
+      "description": "When someone (or something) can be booked: hours for each day of the week, one or more ranges a day, a day turned off, a day's hours copied to the others in one step, the time zone they are in, and exceptions for particular dates (a holiday off, a Saturday on). A week strip draws the hours at a glance, a sentence says them back, and overlapping or reversed ranges are said in words where they are. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:component",
+      "title": "Avatar",
+      "description": "A person or account in a small space: a photo, or initials on the hue their name always gets; presence dot; circle for people, square for companies.",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "avatar-group",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Avatar group",
+      "description": "A team in a small space: overlapping faces that name themselves on hover or focus, and “+N” naming the rest. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:component",
+      "title": "Badge",
+      "description": "A short status, category or count label: six tones, an icon or a status dot, two sizes.",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "bar-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Bar chart",
+      "description": "Amounts by category as bars: columns or rows, grouped, stacked or as shares, reference lines, five looks (rounded, cells, trace, isometric, monospace), a header readout and a highlighted bar, on one data API; a missing value is a stub in its slot, never a zero bar. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "bar-list",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Bar list",
+      "description": "Ranked horizontal bars, label and value over a meter, one line per row when there is room — top pages, sources, customers. (Beamline complete system)",
+      "categories": [
+        "dashboard"
+      ]
+    },
+    {
+      "name": "bar-visualizer",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Bar visualizer",
+      "description": "A row of bars that says what a voice agent is doing: a sweep while connecting, the person's voice while listening, a slow breath while thinking, the agent's voice while talking. Bars move only while there is something to show. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    },
+    {
+      "name": "bezel",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Bezel",
+      "description": "A double-bezel frame: an outer shell with a hairline, a small gap, and an inset panel with its own edge, so a preview, chart or media reads as set into the surface. (Beamline complete system)",
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "bottom-sheet",
+      "type": "registry:component",
+      "title": "Bottom sheet",
+      "description": "A phone panel that rests at a peek and follows the finger to full height; a flick down closes it, and the handle works from the keyboard.",
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Breadcrumb",
+      "description": "Where a page sits and the way back up; it shows as many levels as its room holds and folds the ones nearest the top into a menu. (Beamline complete system)",
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:component",
+      "title": "Button",
+      "description": "The action control: five weights and a brand fill, a buy/sell tone, sm/md/lg and a 44 px touch size, icon-only, a loading state that keeps its size and focus, and a label that changes in place.",
+      "categories": [
+        "actions"
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Calendar",
+      "description": "Month grids for picking a day or a range: a real grid with arrows by day and week, Page keys by month, closed days, today's dot, and a range span that follows the pointer. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "call-grid",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Call grid",
+      "description": "The people on a video call, laid out for the room they are given: tiles as large as the space allows at the camera's shape, or the person talking (or a shared screen, or whoever you pin) large with everyone else in a strip; a ring that follows whoever is speaking, muted microphones, raised hands and weak connections said in words, a face when the camera is off, and the rest folded into \"+N\" when there are more people than room. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Card",
+      "description": "A record or a small group of related content and actions: optional media, avatar, title, status, action, meta, free content and a Details toggle; plain or double-bezel frame. (Beamline complete system)",
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "card-field",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Card field",
+      "description": "A payment card in one field: the number groups as it is typed and names its network, the expiry and security code follow on their own as each part completes, the number is checked (length and checksum) and the expiry must be in the future; when it is complete and you move on, the number folds to its last four digits. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Carousel",
+      "description": "A row of slides that snap into place: swipe on touch, drag or the arrows with a mouse, ← → when focused, or the dots; optional autoplay that pauses and has a pause button. (Beamline complete system)",
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "category-bar",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Category bar",
+      "description": "One bar split into labelled ranges with an optional marker that names its range. (Beamline complete system)",
+      "categories": [
+        "dashboard"
+      ]
+    },
+    {
+      "name": "chat-thread",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Chat thread",
+      "description": "People talking to people: messages grouped by person and day, reactions, delivery and read receipts that glide to the newest message read, who is typing, and a composer with files; it scrolls on the same scroller as the agent conversation. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Checkbox",
+      "description": "A yes/no choice with an optional label and help, including the mixed state for select-all; the check draws itself in. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "chip-group",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Chip group",
+      "description": "Quick filters as chips: a chosen chip fills and grows a check, counts show what each would return, and extra chips fold behind “+N”. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "citations",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Citations",
+      "description": "Inline numbered citations that preview their source on hover or focus, plus a numbered source list; streamed answers flow in at an even pace with the list waiting for the end. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Code block",
+      "description": "Code to read and copy: highlighted in the system's colours, numbered, marked lines, long files folded behind “Show all”. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Collapsible",
+      "description": "One region that opens and closes in place from its trigger, its height animating to the content. (Beamline complete system)",
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "color-palette",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Color Palette",
+      "description": "A wheel of preset colours to pick from: twelve hues around the ring, their tints inward, white at the middle; the chosen swatch lifts and carries a check. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Colour picker",
+      "description": "A swatch that opens a picker: saturation-brightness plane, hue strip, HEX/RGB/HSL/OKLCH value to type or copy, the screen eyedropper where available, saved colours and the contrast on its background. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:component",
+      "title": "Combobox",
+      "description": "One value from a long list found by typing (time zones, countries, customers): ranked matches with the match emphasised, keywords, optional group headings, clearable; the field keeps focus, and below 640 px the list opens as a bottom sheet with its own search.",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "command-menu",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Command menu",
+      "description": "Search-first list of every action: ranked matching, groups, keycap shortcuts and nested pages; inline as CommandPalette or in a ⌘K dialog as CommandMenu. (Beamline complete system)",
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "comment-thread",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Comment thread",
+      "description": "A discussion attached to something: replies, reactions, @mentions, editing and deleting your own, resolve that folds the thread. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "composed-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Composed chart",
+      "description": "Different measures on one time axis: bars, lines and areas per series, a left and a right value axis with their own formats, and reference lines. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "confirm-morph",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Confirm morph",
+      "description": "A destructive action that asks in place: the button morphs into its question, then into working, then into the result with Undo or Retry, without a dialog. (Beamline complete system)",
+      "categories": [
+        "actions"
+      ]
+    },
+    {
+      "name": "context-cards",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Context cards",
+      "description": "The knowledge an agent retrieved before it answered: one card per chunk with what it is about, the text it read with the search words marked, how relevant it was and where it came from, filterable by source; optionally each chunk can be left out of the next answer. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Context menu",
+      "description": "Actions for an object on right-click, long-press, Shift+F10 or the menu key, opened at the pointer, with the same rows as the dropdown menu. (Beamline complete system)",
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "conversation",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Conversation",
+      "description": "The scrolling column of a conversation: follows new content while you are at the bottom, stops when you scroll up to read, and offers a way back; shared by the agent conversation and the people chat. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "conversation-bar",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Conversation bar",
+      "description": "The control bar of a voice call with an agent: one button to call and hang up, the agent's state as bars, a call timer, mute, and typing when talking is not an option. Works with any provider through one adapter, or with a session shared by the rest of the screen. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    },
+    {
+      "name": "cookie-consent",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Cookie consent",
+      "description": "Asks once which cookies a visitor allows, with Reject all and Accept all given equal weight; Customise grows the notice in place into each category with its switch, purpose and the cookies behind it; the choice is remembered (and asked again when your policy changes), and a browser's Global Privacy Control keeps marketing off. (Beamline complete system)",
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:component",
+      "title": "Copy button",
+      "description": "Copies a value and confirms in place: the icon becomes a check and the label says Copied; a refused copy says so instead of pretending.",
+      "categories": [
+        "actions"
+      ]
+    },
+    {
+      "name": "credit",
+      "type": "registry:component",
+      "title": "Credit",
+      "description": "\"Designed with Beamline\" for a site's footer: the Beamline mark and a quiet line, or a small badge. With your referral code, a team's first purchase through it earns you 30% as Beamline credit.",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "data-grid",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Data grid",
+      "description": "Virtualised grid for thousands of rows: multi-sort, search and value filters, resizable and pinnable columns, range selection, inline edit, footer aggregates, keyboard cell navigation. (Beamline complete system)",
+      "categories": [
+        "data"
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Date picker",
+      "description": "One date in a form: a field that opens the month grid under it with focus inside, picks and closes; Today and Clear below, optional clear button. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "date-range-picker",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Date range picker",
+      "description": "A reporting range: presets on one side and two months on the other (one on a phone); the trigger names the preset in use, and the footer counts the days. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "depth-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Depth chart",
+      "description": "Cumulative bid and ask depth as stepped areas around the mid, with hover readout. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "description-list",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Description list",
+      "description": "The details of one record as label and value pairs: beside each other or stacked, in as many columns as the room holds; a copy button arrives on the row you point at, long values fold behind Show more, a value that changes lights once, and a value never recorded is hatched, never blank or zero. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:component",
+      "title": "Dialog",
+      "description": "A focused task over the page (create, invite, rename) with a title, body and footer; focus moves in, is trapped and returns on close.",
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "diff-table",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Diff table",
+      "description": "Proposed edits to a table before they happen: new rows green, removals struck through, changed cells old → new; each change can be left out and Apply runs the rest. (Beamline complete system)",
+      "categories": [
+        "data"
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Direction",
+      "description": "Sets left-to-right or right-to-left for everything inside: text and logical spacing flip, and Radix parts read the direction for keys and placement. (Beamline complete system)",
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:component",
+      "title": "Dropdown menu",
+      "description": "A list of actions behind a trigger, with shortcuts, check items, headings and submenus; one highlight glides under the pointer and jumps with the keyboard.",
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Empty state",
+      "description": "What a place will hold and the first step to fill it, instead of a blank; a compact size for panels and filtered tables. (Beamline complete system)",
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "event-calendar",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Event calendar",
+      "description": "A schedule of events by day, week or month: events that overlap sit side by side, drag one to another time or day or pull its bottom edge to change its length (or grab it with Space and use the arrows), drag across empty time to make a new one; a line marks now, and a narrow room shows three days or a month of dots with the chosen day's list. (Beamline complete system)",
+      "categories": [
+        "data"
+      ]
+    },
+    {
+      "name": "expandable-card",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Expandable card",
+      "description": "A dense card that grows in place when asked: the frame resizes and the clamped preview opens into the full text. (Beamline complete system)",
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "file-diff",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "File diff",
+      "description": "A change to one file as a unified diff: line numbers, tinted lines, only the changed words marked, long unchanged stretches folded; give rows or just before and after. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "file-dropzone",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "File drop zone",
+      "description": "A generous target for files: drop or choose, each checked against type, size and count with the reason when turned away; uploads show progress and can be cancelled or retried. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "filter-toolbar",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Filter toolbar",
+      "description": "The filters on a list kept in view: chips that remove themselves, Add filter with fields and their values, Clear all, and room for search or view controls. (Beamline complete system)",
+      "categories": [
+        "data"
+      ]
+    },
+    {
+      "name": "flowchart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Flowchart",
+      "description": "A workflow as steps on a dotted canvas: a trigger, conditions that branch into paths side by side, actions and waits, read top to bottom; during a run each step shows its status, and the whole flow is one keyboard stop walked with the arrows. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Form",
+      "description": "Validation wiring for react-hook-form (and zod) on the system's own fields: each field already links its label, help and error, so FormField hands over the value and the message. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "funding-countdown",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Funding countdown",
+      "description": "Perpetual funding rate with who pays, and a live countdown ring to the next funding. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "funnel-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Funnel chart",
+      "description": "People or deals moving through ordered steps, each step a bar narrowing from the first: the part lost between two steps stays beside the next as a fading ghost with its count, the step's conversion and the conversion from the start read between them, a previous period shows as a mark on each bar with its change, and a step never measured is hatched rather than read as zero. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "gantt-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Gantt chart",
+      "description": "A plan as bars on a timeline: tasks grouped down the side, each bar from its start to its end with its progress, milestones as diamonds, arrows from each task to the ones waiting on it (red, with the reason, when a task starts before what it waits on ends), a line at today and a day, week or month scale; drag a bar or its end, or grab it with Space and walk it with the arrows. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "gauge",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Gauge",
+      "description": "One value against a known range: a semicircle, a 270° dial or a full ring, filled or with a needle, coloured bands with their names (healthy, busy, saturated), an optional target tick, the value large in the middle, and a meter that assistive technology reads. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "geo-map",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Geo map",
+      "description": "Values by country as a choropleth on the system's own world outline (no map service): classes from a sequential or diverging ramp with a legend you can point at to light one class, sized points for places, a ranked list beside it that previews and pins a country, a click that zooms to it, and countries never measured hatched; the outline loads only when a map is on screen. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "glow",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Glow",
+      "description": "Ambient light around one element that says something is happening: an aurora under a working composer, or a ring of light round a live card. (Beamline complete system)",
+      "categories": [
+        "effects"
+      ]
+    },
+    {
+      "name": "halftone-dots",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Halftone Dots",
+      "description": "A picture rebuilt as a field of dots whose size follows brightness; a new picture morphs the dots, a click ripples through, the pointer pushes dots aside. (Beamline complete system)",
+      "categories": [
+        "effects"
+      ]
+    },
+    {
+      "name": "hold-to-confirm",
+      "type": "registry:component",
+      "title": "Hold to confirm",
+      "description": "Confirms a costly action by holding instead of clicking: a fill sweeps across while held and drains if let go early; pointer, touch, Space and Enter all hold.",
+      "categories": [
+        "actions"
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Hover card",
+      "description": "A preview of a person, link or record on hover or keyboard focus, without leaving the page; HoverCardProfile is the standard person preview. (Beamline complete system)",
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "image-compare",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Image compare",
+      "description": "Two images in one frame with a divider: drag anywhere, or arrow keys on the handle; horizontal or vertical, with captions. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "image-cropper",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Image cropper",
+      "description": "Frame a picture before it is saved: a fixed window (square, round for avatars, wide for covers, or free with handles) over the picture, which you drag, zoom with the slider, wheel or a pinch, and turn a quarter at a time; it always covers the window, thirds lines show while you move it, and the arrow keys, + and − and R do the same from the keyboard. cropImage turns the result into a file. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "image-generation",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Image generation",
+      "description": "The frame an AI image is generated into: a field of brand-hued pixels breathes with the progress while the model works, then the image arrives — sharpening from coarse blocks, sweeping in or fading — and a refusal says why. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "import-mapping",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Import mapping",
+      "description": "Map the columns of a file to the fields of one record type, see what every value becomes, then run the import and get an outcome for each row: suggestions are hints until accepted, ambiguous dates are named, and only failed rows are retried. (Beamline complete system)",
+      "categories": [
+        "data"
+      ]
+    },
+    {
+      "name": "inbox-list",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Inbox list",
+      "description": "Conversations waiting for a person, triaged in place: sender, subject and the first words, time, unread weight, star, labels and attachments, grouped by day; tick several for Archive, Mark read and Delete in a bar that grows over the header, or act on one from its row (hover, keyboard or a swipe on touch). Archived rows close up with Undo in their place. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "inline-edit",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Inline edit",
+      "description": "Text that becomes a field in the same place: Enter (or ⌘Enter when multiline) saves, Escape cancels, leaving saves; saving shows progress and a refusal keeps the edit with the reason. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:component",
+      "title": "Input",
+      "description": "A single-line text field with its label, help and error wired for assistive tech, three sizes and adornments.",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "input-dissolve",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Input Dissolve",
+      "description": "A one-line field whose text breaks into specks and drifts off once it is sent, last letter first; the field is empty and ready again. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "insight-cards",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Insight cards",
+      "description": "Findings from an agent, one per page: the sentence, the series it is about with their change, a chart to scrub that names each point, and a follow-up question. (Beamline complete system)",
+      "categories": [
+        "dashboard"
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:component",
+      "title": "Item",
+      "description": "The generic list row: media, title, description, meta and trailing actions; becomes a link or button when interactive.",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "json-diff-viewer",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "JSON diff viewer",
+      "description": "Two versions of a JSON value compared as one tree: added keys marked +, removed ones struck through with −, changed values read old → new, unchanged keys folded into a count you can open; array items are matched by their id (not their place) so a reorder is not a hundred changes, a summary counts each kind, and the next and previous change are one key away; only the rows in view are drawn. (Beamline complete system)",
+      "categories": [
+        "data"
+      ]
+    },
+    {
+      "name": "json-viewer",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "JSON viewer",
+      "description": "A JSON value as a tree you can read and walk: branches open and close (one level, or all at once), closed ones preview what they hold, every value reads by its type, search marks and opens its way to each match, any row copies its path or its value, and values that change light once; only the rows in view are drawn. (Beamline complete system)",
+      "categories": [
+        "data"
+      ]
+    },
+    {
+      "name": "kanban-board",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Kanban board",
+      "description": "Work as cards in columns by stage: drag a card (or lift it with Space and walk it with the arrows) to another column or place, the cards around it make room as it travels; columns keep work-in-progress limits that warn or refuse, fold into a narrow rail, and swipe one by one in a narrow room. (Beamline complete system)",
+      "categories": [
+        "data"
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Kbd",
+      "description": "Keyboard keys as keycaps, for combinations and sequences (G then A); `mod` resolves to ⌘ or Ctrl per platform, symbols are spoken as words. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:component",
+      "title": "Label",
+      "description": "The text label tied to a form control, with a required marker that screen readers announce.",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "light-band",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Light band",
+      "description": "A band of split light in the dark behind a section, blue at one end and amber at the other with a bright core: Prism's light at a chosen place, a hero, the plan you sell or the closing call to action. Drawn live by default: it turns slowly in depth like a ribbon and its spectrum flows, more while the page moves; it moves at its own depth as its section passes, and a pulse of light runs along it while the page scrolls. Without WebGL, on a light page or under reduced motion it is the painted band. Draws only on screen. (Beamline complete system)",
+      "categories": [
+        "effects"
+      ]
+    },
+    {
+      "name": "lightbox",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Lightbox",
+      "description": "A full-screen image viewer: a thumbnail grows into it and shrinks back, arrows and ←/→ step through the set, Esc or a downward drag closes it. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "line-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Line chart",
+      "description": "Values over time as lines: curves, point markers, dashed series for forecasts, reference lines for limits and targets, an optional zero baseline and a range handle; missing values break the line. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "liquid-gooey",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Liquid gooey",
+      "description": "Liquid surfaces that merge like goo when they touch — split plus-menus, gooey switches, file chips. (Beamline complete system)",
+      "categories": [
+        "effects"
+      ]
+    },
+    {
+      "name": "live-cursors",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Live cursors",
+      "description": "Who else is working on this, and where: over any shared surface, each person's pointer in the colour their name always gets, with a name flag, gliding between the positions your realtime service sends; their selections outlined in the same colour, a short message beside the pointer when they type one (press / for your own), quieter when they go idle and fading when they leave. Positions are fractions of the surface, so every screen size agrees. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "live-waveform",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Live waveform",
+      "description": "Loudness drawn as it happens: a scrolling history of the microphone (or any live source) or its spectrum, a calm processing state while words are finished, and a number readout under reduced motion. Draws only while there is sound to draw and it is on screen. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    },
+    {
+      "name": "log-viewer",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Log viewer",
+      "description": "Log lines as they stream: it follows the newest line until you scroll up, then counts what arrived and brings you back in one click; filter by level with counts, search with every match marked and stepped through, wrap long lines, open a line's fields; only the lines in view are drawn, so a hundred thousand stay smooth. (Beamline complete system)",
+      "categories": [
+        "data"
+      ]
+    },
+    {
+      "name": "logo-carousel",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Logo Carousel",
+      "description": "A wall of logos shown a few at a time: every few seconds the slots turn left to right, each logo leaving upward as the next rises in. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Marker",
+      "description": "A labelled point in a stream: a status event with an icon between messages, or a label such as \"Today\" between two hairlines. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "market-heatmap",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Market heatmap",
+      "description": "Treemap of markets sized by weight and coloured by change, grouped by sector, with hatched no-data tiles. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "matrix",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Matrix",
+      "description": "A dot-matrix display: animated frame sets (loading, pulse, wave, syncing), text and digits in a 5×7 font, or a VU meter of levels or a live source. One canvas; the loop runs only while something moves and it is on screen. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    },
+    {
+      "name": "mention-input",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Mention input",
+      "description": "A composer where @people and #channels become single tokens with suggestions at the caret; the value keeps the text and where each mention sits. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Menu bar",
+      "description": "A desktop-style File / Edit / View bar for editor-like apps; each menu takes the same rows as the dropdown menu, and pointing moves between open menus. (Beamline complete system)",
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Message",
+      "description": "One turn in a conversation with an agent: the person's words in a quiet bubble, the agent's answer on the page with its orb mark, trace, tool calls and actions, or what went wrong with the way forward. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "metric-card",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Metric card",
+      "description": "A KPI that fills its tile: label, a value that rolls to each new number, the change with arrow, sign and tone, what it compares with and the value it was, a trend line and context; a wide tile sets the trend beside the figures. Unmeasured values are hatched, never zero. (Beamline complete system)",
+      "categories": [
+        "dashboard"
+      ]
+    },
+    {
+      "name": "mic-selector",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Microphone selector",
+      "description": "Choose the microphone, test it with a live level and mute it, with every permission and device state spelled out: not yet allowed, blocked (and how to unblock), no microphone, unplugged. Shares its microphone with the rest of the screen. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    },
+    {
+      "name": "model-picker",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Model picker",
+      "description": "Choose the AI model for a request by what it can do and what it costs: a trigger with the model's name opens a searchable list grouped by provider, with capability filters, and every row shows its context window, speed and price tier; the model under the pointer or the arrow keys explains itself beside the list. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "multi-select",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Multi-select",
+      "description": "Several values from a known list as removable chips in the field; the list has a search field (for long lists), checkable rows and a count with Clear. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Navigation menu",
+      "description": "A site or docs header whose sections open into one panel that resizes and slides between them; NavigationMenuCard is the standard link row. (Beamline complete system)",
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "notification-center",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Notification centre",
+      "description": "Updates that wait to be read: a bell with the unread count opens All / Unread, new and earlier groups, and per item mark read or dismiss. (Beamline complete system)",
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "number-field",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Number field",
+      "description": "A bounded number with − and +: arrows and Page keys step, typing is read in the locale and clamped on leaving, limits can be explained, and the label can scrub. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "options-chain",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Options chain",
+      "description": "Calls and puts for one expiry around a centre column of strikes: bid, ask, implied volatility, delta, volume and open interest, the money shaded in, a spot line that moves through the strikes as the price ticks, and quotes that flash as they change; clicking a bid sells and an ask buys, and the chosen legs add up to a net debit or credit. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "orb",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Orb",
+      "description": "The agent's presence: a thin ring of light around a lens in the brand's hue that holds still at rest, sends an arc round while thinking and widens with the voice; from a 16px agent mark to a 240px voice screen. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    },
+    {
+      "name": "order-book",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Order book",
+      "description": "Asks, spread and bids with cumulative depth bars, grouping, change flashes and keyboard price picking. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "order-ticket",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Order ticket",
+      "description": "Buy/sell order entry with limit, market and stop types, % of balance, inline validation and a live cost summary. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "otp-input",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "OTP input",
+      "description": "A verification code in separate boxes backed by one real field, so paste, SMS autofill and Backspace work; optional groups like 123–456. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Pagination",
+      "description": "Moves through pages of a known length: first, last and the current page's neighbours, with an optional “41–60 of 468”. It answers to its own room: narrow, “Page 6 of 24”; wide, one more neighbour on each side. (Beamline complete system)",
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "password-field",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Password field",
+      "description": "A password field with a reveal control, and a strength meter when a password is being created. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "phone-input",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Phone input",
+      "description": "A phone number with its country: searchable picker with country and dialling codes, “+44…” switches the country, the number groups as typed, and the value is E.164. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "pie-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Pie chart",
+      "description": "A few shares of a whole as a pie or donut, with spaced slices, percent labels, a centre readout and a list of every slice with value and share; hovering or focusing a row lifts its slice, clicking pins it. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "pivot-table",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Pivot table",
+      "description": "Records summed up by the fields people choose: rows grouped by one or more fields that fold open level by level, columns split by another, one or more measures (sum, count, average, min, max) in every cell, subtotals on every group and totals at the end; fields move between Rows, Columns and Values from a menu on each chip, the table rearranges with rows sliding to their new places, cells can be shaded by their size, and a cell with no records stays blank while one whose values were never measured is hatched. (Beamline complete system)",
+      "categories": [
+        "data"
+      ]
+    },
+    {
+      "name": "plan",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Plan",
+      "description": "An agent's plan: numbered steps with live status, progress, and Approve / Edit / Reject when it needs sign-off; approving shows progress, and a refusal says why and keeps waiting. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "pnl-calendar",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "P&L calendar",
+      "description": "A trader's month at a glance: every trading day's profit or loss in its cell, shaded deeper the bigger it was in the gain or loss colour and marked ▲ or ▼, week totals down the side, and the month's total, win days and best and worst day on top; days the account did not trade stay plain and days that were never recorded are hatched. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Popover",
+      "description": "A small surface anchored to a trigger for a short form, a filter or an explanation; focus moves in and returns on close. (Beamline complete system)",
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "positions-table",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Positions table",
+      "description": "Open positions with live unrealised PnL, liquidation warnings and close actions. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "price-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Price chart",
+      "description": "Candles, line or area price chart with volume, OHLC legend and reference lines, built for live ticks. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "price-ticker",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Price ticker",
+      "description": "Symbol, last price with a directional flash, 24h change and stats. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "product-tour",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Product tour",
+      "description": "A short guided tour over the real interface: a spotlight that glides from one element to the next while the rest of the screen dims, and a card beside each element that says what it does, with its step and progress, Back, Next and Skip; focus moves into the card and comes back where it was, Escape ends the tour, arrows step through it, and a quieter beacon variant marks one new thing without dimming anything. (Beamline complete system)",
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Progress",
+      "description": "How much of a known task is done, or a moving bar when the length is unknown, with an optional label and value. (Beamline complete system)",
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "prompt-bar",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Prompt bar",
+      "description": "The agent composer: a field that grows, @ to add a source, / for a command, a model picker, files and dictation, and one button that sends with progress and becomes Stop while the answer arrives; a refused send keeps the draft and says why. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "prompt-suggestions",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Prompt suggestions",
+      "description": "Ready-made prompts a person can start from or follow up with: chips, cards or a list; a picked one lifts off and flies into the composer as its text, while follow-ups that are still being written hold their place and arrive one after another. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "qr-code",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "QR Code",
+      "description": "A scannable code set as gradient dots with rounded finder rings and an optional centre mark; a new value ripples out from the centre. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "query-builder",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Query builder",
+      "description": "Conditions people build by hand to pick out records: each rule is a field, an operator that fits the field (contains, between, in the last N days, is any of) and a value in the right control; rules join with and or or, groups nest them, the joining word toggles in place, an unfinished rule says so instead of counting, the query reads back as a sentence, and the number of matches rolls as it changes. (Beamline complete system)",
+      "categories": [
+        "data"
+      ]
+    },
+    {
+      "name": "radar-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Radar chart",
+      "description": "A few series compared across the same five to eight dimensions as polygons on a polygon or circle grid; hover or arrow keys pick a dimension and read every series' value there. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "radial-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Radial chart",
+      "description": "Progress of a few measures toward their targets as concentric rings, full or half circle, with a centre readout and a list of each ring's value, target and percent. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "radio-cards",
+      "type": "registry:component",
+      "title": "Radio cards",
+      "description": "One choice among rich options as cards with optional media, icon, detail and a figure; one selection ring follows the stable choice.",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Radio group",
+      "description": "One choice from a short visible set, each option with an optional description, vertical or in a row. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "rating",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Rating",
+      "description": "A score on a small scale: stars that fill as you point (halves too) and light one after another when chosen, with the word for the score beside them; read-only it shows an average to the tenth with its count, and nothing rated yet is hatched; or a 0–10 scale with its two ends named for likelihood questions. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "reasoning",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Reasoning",
+      "description": "The agent's trace, fed by your stream: a shimmering label and the seconds so far while it works, then \"Thought for N seconds\"; steps that check off, prose thoughts, search sources or tool calls, open while running and folded when done. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "recommendation-card",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Recommendation card",
+      "description": "One suggestion from the agent that the person may take or leave: what it suggests, why, the expected effect and how sure it is (a meter and a word, hatched when it cannot tell), with the alternatives it weighed one click away; Accept runs your callback with progress and the card settles to one line. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "recurrence-editor",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Recurrence editor",
+      "description": "How something repeats, set in plain controls and said back in a sentence: every N days, weeks, months or years; which weekdays; in a month, on a date or on the second Tuesday (or the last Friday); ending never, on a date or after a number of times. The next dates are listed so the rule can be checked against a calendar, months without the chosen date are said, and the rule comes out as a value and an iCalendar RRULE. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "resizable-panels",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Resizable panels",
+      "description": "Panes that trade space across draggable dividers; each divider is a focusable separator with arrow keys, limits, folding for collapsible panes and double-click to restore. (Beamline complete system)",
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "response",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Response",
+      "description": "An assistant's answer as streamed markdown in the system's reading type: bursty tokens flow in at an even pace, each new word fades in through a short brand-hue colour trail, code is highlighted in the system's colours, and tables and quotes are set cleanly. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "rich-text-editor",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Rich text editor",
+      "description": "A Notion-grade writing surface: slash menu for every block, a formatting toolbar on selection, drag-to-move blocks, nesting, markdown shortcuts, paste from the web or as markdown; outputs HTML, Markdown and JSON. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "ridgeline",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Ridgeline",
+      "description": "Distributions per group as overlapping density ridges (response time by region, order size by plan): an overlap control, median and p95 readouts per row, hover or focus a ridge to bring it forward with its markers, and hatched rows for groups that were not measured. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "run-trace",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Run trace",
+      "description": "One agent run as a waterfall: every step (model calls, tools, retrieval, checks, sub-agents) nested under the step that started it, each a bar on a shared time axis, with retries as separate attempts on the same bar, tokens and cost per step and for the run; while it runs the bars grow live, and choosing a step shows its timing, attempts, input and output beside the trace. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "sankey-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Sankey chart",
+      "description": "Flows between stages as bands whose width is the amount: sources to pages to outcomes, budgets to teams; hovering or focusing a node lights its flows and reads its totals in and out. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "scatter-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Scatter chart",
+      "description": "Two measures of many items against each other, one point per item, or a bubble chart when a third measure sizes the points: groups by colour and shape with a legend that turns them off, optional quadrants with their names and a trend line, the nearest point read on hover or walked with the arrow keys, and items missing a value counted as not measured instead of placed at zero. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Scroll area",
+      "description": "A native scroll region with thin overlay thumbs and edge fades that show only where more content waits; thumbs can be dragged or clicked. (Beamline complete system)",
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "scrub-bar",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Scrub bar",
+      "description": "A seekable timeline for audio or video: elapsed and total time, what has loaded, chapter marks, a time preview under the pointer, and the full keyboard of a media slider. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    },
+    {
+      "name": "search-field",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Search field",
+      "description": "The search entry point: magnifier, clear button, Escape to clear, a shortcut hint and an optional live border beam. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "segmented-control",
+      "type": "registry:component",
+      "title": "Segmented control",
+      "description": "Two to five views or ranges of the same content (1D / 1W / 1M, List / Board): a radio group whose raised thumb slides to the choice.",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:component",
+      "title": "Select",
+      "description": "One choice from a short known list, in the same frame as every text field: label, help, error, option groups and details.",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "selection-actions",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Selection actions",
+      "description": "Select a passage and hand it to the agent: a bar over the selection with quick actions, your own instruction and More; while the agent works it says so, and its suggestion comes back to Replace, Copy or Discard, with the passage kept marked. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Separator",
+      "description": "A hairline between groups, horizontal or vertical; hidden from screen readers unless it carries meaning. (Beamline complete system)",
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "share-dialog",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Share dialog",
+      "description": "Share a document, board or project: invite people by name or email with the access they get, change or remove anyone's access in place, and set who the link opens for, with Copy link; inviting turns the dialog into the invitation (role, notify, a note) and back. (Beamline complete system)",
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Sheet",
+      "description": "A panel that slides in from an edge with the page still visible behind it: header and footer stay put while the body scrolls. (Beamline complete system)",
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "shortcut-recorder",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Shortcut recorder",
+      "description": "Lets people set their own shortcut: press the keys, see them as keycaps; a clash or a browser-kept shortcut asks first. ShortcutCheatsheet lists every shortcut, searchable. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Sidebar",
+      "description": "The app's main navigation: sections, items with counts and one level of sub-pages, an icon rail with tooltips (⌘B, the trigger or the edge), and a sheet on phones. (Beamline complete system)",
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "signature-pad",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Signature pad",
+      "description": "A pad for a drawn signature whose ink follows a stylus's pressure (and thins with speed under a mouse or finger); undo, replay, PNG or SVG export, and typing instead for keyboards and screen readers. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Skeleton",
+      "description": "Holds the shape of content while it loads, then crossfades into it, so nothing jumps. (Beamline complete system)",
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Slider",
+      "description": "A value or range on a known scale: the thumb grows under the finger and shows its value while dragged or focused; marks, end icons and a value readout. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "slope-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Slope chart",
+      "description": "Change between two points in time per item, by value or by rank: labels on both sides that never collide, rising and falling told by the end marker (▲ ▼) and the signed change as well as colour, and hover or focus to pick one item out. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "slot-text",
+      "type": "registry:component",
+      "title": "Slot text",
+      "description": "Text and numbers that roll into their new value on reels, digit by digit from the right; other characters fade. Read as plain text by assistive tech.",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "sound",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Sound",
+      "description": "Interface sounds named by interaction class (tap, select, toggle, open/close, tick, success, error) through one provider; off by default. (Beamline complete system)",
+      "categories": [
+        "effects"
+      ]
+    },
+    {
+      "name": "sparkline",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Sparkline",
+      "description": "A compact trend beside its value: point along it or focus it and use ← → to read each point; nulls are gaps. TrendLine is the bare line. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "speech-input",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Speech input",
+      "description": "A text field you can speak into: the mic dictates through any speech-to-text provider, the phrase being heard shows apart from the finished words, and every failure (blocked, no microphone, connection lost and back) says what to do. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:component",
+      "title": "Spinner",
+      "description": "A ring that spins while work runs and closes into a drawn check or cross when it ends.",
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "split-button",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Split button",
+      "description": "One obvious action joined to a menu of close alternatives; both halves are real buttons and the menu uses the shared menu rows. (Beamline complete system)",
+      "categories": [
+        "actions"
+      ]
+    },
+    {
+      "name": "stepper",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Stepper",
+      "description": "Where someone is in a multi-step flow: done steps carry a check, the current one a ring, and the line between marks fills as steps complete. (Beamline complete system)",
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "streamgraph",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Streamgraph",
+      "description": "Stacked flows over time around a centre baseline, with silhouette, wiggle, expand (shares) and zero offsets: a legend that turns layers on and off, a tooltip that follows the pointer or the arrow keys, and hatched periods where a layer was not measured. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "swap-form",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Swap form",
+      "description": "Exchange one token for another: type what you pay (or Max), pick each token from a searchable list with balances, and the form quotes what you receive with the rate, price impact, minimum after slippage and fees; the quote refreshes as it ages, the two sides trade places with one press, Review shows exactly what will happen, and the swap reports its progress, result or reason. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "swipe-actions",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Swipe actions",
+      "description": "Row actions behind a swipe on touch screens and a two-finger swipe on a trackpad, and at the row's end for pointer and keyboard (a ⋯ menu in a narrow row, icon buttons in a wide one); a full swipe runs the edge action. (Beamline complete system)",
+      "categories": [
+        "actions"
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:component",
+      "title": "Switch",
+      "description": "A setting that applies at once: a thumb that slides on a spring and stretches under the finger, with an optional label before or after.",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:component",
+      "title": "Table",
+      "description": "A plain, styled HTML table for small static data: header, body, footer, caption, numeric cells, three densities and a sticky header.",
+      "categories": [
+        "data"
+      ]
+    },
+    {
+      "name": "table-of-contents",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Table of contents",
+      "description": "The sections of a long page beside it, with the one being read marked as you scroll: the marker travels down the rail between sections, the rail fills with how far you have read, a click glides to the section and hands it focus; the quiet variant is a column of ticks that opens into names when pointed at, and a narrow room folds it into one “On this page” line. (Beamline complete system)",
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:component",
+      "title": "Tabs",
+      "description": "Switches between panels of one object; one indicator slides to the active tab, counts sit beside labels, and the tabs a row has no room for fold into More.",
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "tag-input",
+      "type": "registry:component",
+      "title": "Tag input",
+      "description": "Short free-form values as tags: Enter, comma or Tab adds, a pasted list adds them all, Backspace twice removes the last; duplicates and invalid values are said, not dropped silently.",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "task-rows",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Task rows",
+      "description": "Background work an agent is doing, one row per task: status as a glyph and a word, what it produced, how long it has run or took, a progress bar while running and its sub-steps when opened; a failure opens with its reason and Retry, live tasks can be cancelled, and changes are announced politely. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "text-morph",
+      "type": "registry:component",
+      "title": "Text morph",
+      "description": "A short label that becomes its next state letter by letter: shared letters glide into place, new ones arrive, old ones leave.",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "text-reveal",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Text reveal",
+      "description": "A headline whose words rise into place once, the first time it scrolls into view; never repeats. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "text-shimmer",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Text shimmer",
+      "description": "Ongoing work said in words (“Thinking…”) with a calm band of light passing across them; stops when inactive. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Textarea",
+      "description": "Multi-line plain text that grows with what is typed up to a limit, with an optional character count. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "theme-switch",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Theme switch",
+      "description": "The light/dark control: the page changes in one of four transitions starting from the button (reveal, eclipse, split, rise), and the icon turns between sun and moon. (Beamline complete system)",
+      "categories": [
+        "actions"
+      ]
+    },
+    {
+      "name": "ticker-tape",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Ticker tape",
+      "description": "A continuously scrolling row of symbols with price, change and mini trend; anyone can hold it: hover, keyboard focus or a tap. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "time-picker",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Time picker",
+      "description": "A time of day as hour and minute segments, typed or stepped, 12- or 24-hour; the clock opens a list of times at the step. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "timeline",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Timeline",
+      "description": "What happened, newest first and grouped by day: people with avatars, systems with toned icons, relative times with the exact time on hover, details in place. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:component",
+      "title": "Toast",
+      "description": "Short results of an action stacked at an edge: point at the stack to fan it out and pause the timers; undo or retry in place; Alt+T, Escape and a swipe for the keyboard and touch.",
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Toggle group",
+      "description": "Pressable toggles where one or several can be on: alignment, bold and italic, view options; bare for toolbars or framed. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "tool-call",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Tool call",
+      "description": "One tool call in an agent's run: status, what it did and a short result on one quiet row that opens to the exact input and output; stops for permission when needed, with progress and the reason if allowing fails. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:component",
+      "title": "Tooltip",
+      "description": "Short supporting text for a control: opens after a moment on hover and at once on keyboard focus; inside a toolbar group the next one opens instantly.",
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "tracker",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Tracker",
+      "description": "A row of status blocks for uptime, job runs or daily checks, with tooltips and a legend. (Beamline complete system)",
+      "categories": [
+        "dashboard"
+      ]
+    },
+    {
+      "name": "trades-tape",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Trades tape",
+      "description": "Recent trades, newest first, with side glyphs, large-print marking and one-time arrival flashes. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "transcript-viewer",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Transcript viewer",
+      "description": "A recording and its words together: the spoken word lights up as it plays and the transcript follows it, any word or paragraph time plays from there, speakers become paragraphs with marks on the scrub bar. Takes word timings from speech-to-text or character alignment from text-to-speech. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    },
+    {
+      "name": "tree-select",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Tree select",
+      "description": "A field that picks from a tree: departments and teams, categories and subcategories, folders, regions and cities; the list opens as an indented tree whose branches fold, search keeps the path to every match and opens it, one value shows its whole path in the field, and several values tick whole branches at once (a branch half chosen shows a dash) and fold a fully chosen branch into one chip. (Beamline complete system)",
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "tree-view",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Tree view",
+      "description": "Nested folders and records with the full tree keyboard model (arrows, Home/End, *, type to jump), depth guides, counts and animated opening. (Beamline complete system)",
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "treemap",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Treemap",
+      "description": "Nested rectangles sized by value (spend by team, then service), squarified so tiles stay close to square: labels that fit or hide, hover and focus highlight, drill in with a click or Enter and out with Escape, Backspace or the breadcrumb, hatched chips for parts that were not measured, and a table of the current level. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "ui-root",
+      "type": "registry:component",
+      "title": "UI root",
+      "description": "Makes a region of any app a Beamline root: theme, brand and direction for everything inside, and a matching layer at page level where its menus, dialogs and tooltips open.",
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "usage-meter",
+      "type": "registry:component",
+      "title": "Usage meter",
+      "description": "An allowance and what fills it: one bar split by source, the room left, a warning near the limit and the overflow in its own red well past a notch at the limit.",
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "user-menu",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "User menu",
+      "description": "The account menu behind the avatar: who is signed in, status, theme, account pages and sign out with progress; a bottom sheet on phones. (Beamline complete system)",
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "video",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Video player",
+      "description": "A video player on the native <video> element: title bar with an external link and close, centre play with ±10 s, scrub, time, volume, speed, captions drawn in the system's type, picture-in-picture and fullscreen; full keyboard control, and loading, buffering, ended and error states. (Beamline complete system)",
+      "categories": [
+        "display"
+      ]
+    },
+    {
+      "name": "voice-button",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Voice button",
+      "description": "The control that starts and stops talking: click to toggle or hold to talk (pointer, Space, Enter or a global shortcut), with a live level while recording, a loader while words are finished, and a check or a retry when it ends. The state comes from your operation, never from a timer. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    },
+    {
+      "name": "voice-picker",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Voice picker",
+      "description": "Choose a text-to-speech voice from a searchable list (name, accent, tone, use) and hear it first: each voice has its own orb, previews play one at a time and the orb speaks while its sample plays. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    },
+    {
+      "name": "waffle-chart",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Waffle chart",
+      "description": "Units of a whole as a grid of cells by category (seats used of a plan, tickets by channel): a 10×10 grid by default, hatched cells for units whose category was not recorded, the remainder left empty, and a list of categories with counts and shares that highlights its cells on hover or focus. (Beamline complete system)",
+      "categories": [
+        "charts"
+      ]
+    },
+    {
+      "name": "watchlist",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Watchlist",
+      "description": "A selectable, sortable list of markets with mini trends, prices, changes and stars. (Beamline complete system)",
+      "categories": [
+        "trading"
+      ]
+    },
+    {
+      "name": "waveform",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Waveform",
+      "description": "The shape of a recording: one bar per slice of loudness, fitted to any width, with the played part in the accent, unmeasured slices hatched and a loading state. Peaks can be decoded from the file in the browser. (Beamline complete system)",
+      "categories": [
+        "voice"
+      ]
+    }
+  ]
+}
