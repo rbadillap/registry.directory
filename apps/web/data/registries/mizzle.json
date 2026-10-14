@@ -1,0 +1,4227 @@
+{
+  "key": "mizzle",
+  "entry": "mizzle",
+  "name": "mizzle",
+  "homepage": "https://mizzle.saddy.me",
+  "indexUrl": "https://mizzle.saddy.me/r/registry.json",
+  "itemBase": "https://mizzle.saddy.me/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "confirmation",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Confirmation",
+      "description": "The agent asking for a yes before it does something: run a command, start a plan, touch a file. One line says what and why, two buttons answer, and once answered it settles into a quiet record of the decision.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/text-swap"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/confirmation.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "image-generation",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Image Generation",
+      "description": "A placeholder that becomes the picture. A grid of soft tiles moves in a pattern of your choosing while the image is made, takes on its colours the moment it arrives, and swells from the middle until the tiles close into the photograph.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/shimmer",
+        "@mizzle/text-swap",
+        "@mizzle/use-latest",
+        "@mizzle/use-reduced-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/image-generation.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "loader",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Loader",
+      "description": "Sixteen dots in a square that swell and light up in a pattern: a scan, a wave, a twinkle, an orbit, a pulse, a spiral, rain or rising bars. Round, soft-cornered or square, in the text colour or a palette of your own, and small enough to sit beside a line of text.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-reduced-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/loader.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Marker",
+      "description": "A line in a conversation that is not a message: what the agent is doing, what it did, or a labelled break.",
+      "categories": [
+        "ai"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@mizzle/shimmer",
+        "@mizzle/text-swap"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/marker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Message Scroller",
+      "description": "A transcript that only moves when the reader asks it to. A new prompt rises to the top with the end of the last answer still in view, the reply streams into the space below it, and scrolling away is respected until you jump back.",
+      "categories": [
+        "ai"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/message-scroller.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "orb",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Orb",
+      "description": "An orb of fine dots that shows what an agent is doing. The same dots rearrange for each step it goes through: listening, thinking, searching, connecting, composing, imagining, shaping and speaking, each with a movement that means something. It works at 20 pixels beside a line of text and at any size on its own.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-latest",
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/orb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "outline",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Outline",
+      "description": "The questions asked so far, as a rail of marks at the edge of the transcript. The mark for the turn you are reading is longer; rest on the rail and the questions fan out beside their marks; pick one and the transcript glides back to it.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/message-scroller"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/outline.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "plan",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Plan",
+      "description": "A plan the agent proposes before it acts: a title, a line on what it changes, the scope in a few words, and numbered steps that arrive one by one with the files each one touches. Start it and the steps tick off as the work runs; ask for changes and say what should change without leaving the card.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/loader",
+        "@mizzle/shimmer",
+        "@mizzle/button",
+        "@mizzle/text-swap",
+        "@mizzle/use-content-height"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/plan.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "prompt-input",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Prompt Input",
+      "description": "Where a prompt is written. It takes files from a picker, a drop or a paste, records voice notes with a glow that swells with your voice, opens a menu for / commands and @ mentions as you type them, picks a model, and turns its send button into a stop button while the answer streams.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/loader",
+        "@mizzle/glow",
+        "@mizzle/menu",
+        "@mizzle/use-content-height",
+        "@mizzle/use-latest",
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/prompt-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Questionnaire",
+      "description": "An agent asking before it acts, one question at a time, in the same tinted bubble as the rest of the conversation. Pick with a click or the number key shown at the end of each row, and a single answer moves on by itself; a strip of steps shows how far along you are, the card glides to the height of each question as one dissolves into the next, and once sent it keeps a record of what was said.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/text-swap",
+        "@mizzle/use-content-height"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/questionnaire.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "reasoning",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Reasoning",
+      "description": "The model thinking out loud, kept to a small window. While it thinks the latest lines scroll up in steps under a shimmering label; when it is done it folds away into how long it took, and opens again to read in full.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/loader",
+        "@mizzle/shimmer",
+        "@mizzle/text-swap"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/reasoning.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "response",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Response",
+      "description": "An answer as it streams. Each word comes out of a slight blur as it arrives, numbered citations become source chips you can hover, and the actions underneath copy, rate and retry.",
+      "categories": [
+        "ai"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@mizzle/sources"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/response.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "shimmer",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Shimmer",
+      "description": "A band of light that passes over text while something is working. It is made from the text’s own colour, so it suits any text and anything inside it, icons included.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-merged-ref",
+        "@mizzle/use-reduced-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/shimmer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sources",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Sources",
+      "description": "Where an answer came from. A row of site icons, a count and the first domains, opening into the full list: numbered to match the citations in the text, each with its site, title and a line of what it said.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/message",
+        "@mizzle/use-content-height"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/sources.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "suggestions",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Suggestions",
+      "description": "Prompts to try next, as pills or as a list of follow-ups. They arrive one after another so the eye reads them in order.",
+      "categories": [
+        "ai"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/suggestions.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tasks",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Tasks",
+      "description": "The to-do list an agent is working through. A ring fills as tasks finish, the one in progress shimmers over the file it is touching, a finished one keeps what it changed at its side, and folded it is a single line naming what is happening now. It sits best in a tray rising out of the prompt input.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/shimmer",
+        "@mizzle/number-roll",
+        "@mizzle/text-swap",
+        "@mizzle/use-content-height"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/tasks.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tool-call",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Tool Call",
+      "description": "What an agent did, one row per step. A step shimmers while it runs and draws a tick when it finishes; rows with output open to show it, and a group folds the whole run into one line.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/loader",
+        "@mizzle/shimmer",
+        "@mizzle/use-content-height"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/tool-call.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "turn",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Turn",
+      "description": "One exchange: what you asked, then what the agent did and said. The prompt is a bubble on the right with its attachments above it and copy and edit on hover; the reply is a column the other pieces stack into, in the order they happened.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/message"
+      ],
+      "files": [
+        {
+          "path": "registry/components/ai/turn.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chat-divider",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Chat Divider",
+      "description": "The quiet structure of a conversation: a line for each day, a line where the unread messages start, and a small note when someone joins or leaves.",
+      "categories": [
+        "chat"
+      ],
+      "files": [
+        {
+          "path": "registry/components/chat/chat-divider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "composer",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Composer",
+      "description": "Where a message is written. It grows with what you type, Enter sends, and the microphone turns into a send button as soon as there is something to send.",
+      "categories": [
+        "chat"
+      ],
+      "files": [
+        {
+          "path": "registry/components/chat/composer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-status",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Message Status",
+      "description": "Where a sent message has got to: sending, sent, delivered, read, or not delivered. The clock fades into a tick, a second tick joins it, and read takes on colour.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/text-swap"
+      ],
+      "files": [
+        {
+          "path": "registry/components/chat/message-status.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Message",
+      "description": "One message in a conversation: who sent it, the bubble, and what is said underneath. Messages from the same person run together, replies quote what they answer, and reactions sit on the bubble’s edge.",
+      "categories": [
+        "chat"
+      ],
+      "files": [
+        {
+          "path": "registry/components/chat/message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "poll",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Poll",
+      "description": "A question with a few answers, sent as a message. Tap one and the bars fill to each answer’s share, the percentages roll into place and the people who chose it appear beside it. Let people pick several, close it when the time is up, and it settles into the final count.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/message",
+        "@mizzle/number-roll",
+        "@mizzle/text-swap"
+      ],
+      "files": [
+        {
+          "path": "registry/components/chat/poll.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "reaction-picker",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Reaction Picker",
+      "description": "A row of emoji to react with. Each one lifts and grows a little under the pointer, and the ones you have already used are marked.",
+      "categories": [
+        "chat"
+      ],
+      "files": [
+        {
+          "path": "registry/components/chat/reaction-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "typing-indicator",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Typing Indicator",
+      "description": "Someone is writing. Three dots that rise and settle in turn inside a bubble, or a small pill that names who is typing.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/message",
+        "@mizzle/text-swap"
+      ],
+      "files": [
+        {
+          "path": "registry/components/chat/typing-indicator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "voice-note",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Voice Note",
+      "description": "A recorded message in a chat bubble. The waveform fills as it plays, and the play button turns into pause in one movement. Pair it with Voice Recorder and it shows the shape of what was actually said.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/message",
+        "@mizzle/use-latest"
+      ],
+      "files": [
+        {
+          "path": "registry/components/chat/voice-note.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "voice-recorder",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Voice Recorder",
+      "description": "A record button that grows into a voice note as you speak. A warm glow drifts round its edge and swells with your voice, the bars build up beside it, and stopping hands back the audio with its real waveform.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/glow",
+        "@mizzle/use-latest"
+      ],
+      "files": [
+        {
+          "path": "registry/components/chat/voice-recorder.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-column-menu",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Data Grid Column Menu",
+      "description": "The menu behind each Data Grid header: sort either way or as a second key, pin to the start or the end, reset the width and hide the column. The header's own label is the trigger.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "@mizzle/data-grid-icons",
+        "@mizzle/menu",
+        "@mizzle/data-grid-features"
+      ],
+      "files": [
+        {
+          "path": "registry/components/data/data-grid-column-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-filter",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Data Grid Filter",
+      "description": "The Data Grid's filter bar. A popover picks a column and its value, and each filter becomes a chip whose operator and value can be changed on their own. Text, number, date, option and multi-option columns each get their own editor.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@mizzle/data-grid-icons",
+        "@mizzle/input",
+        "@mizzle/button",
+        "@mizzle/menu",
+        "@mizzle/use-data-grid-filters",
+        "@mizzle/use-debounced-callback",
+        "@mizzle/data-grid-filters"
+      ],
+      "files": [
+        {
+          "path": "registry/components/data/data-grid-filter.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-footer",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Data Grid Footer",
+      "description": "The strip under the Data Grid: which rows are showing, how many are selected, the count, sum, average, minimum and maximum of the selected cells, and paging with a rows-per-page select.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "@mizzle/data-grid-icons",
+        "@mizzle/select",
+        "@mizzle/button",
+        "@mizzle/data-grid-features"
+      ],
+      "files": [
+        {
+          "path": "registry/components/data/data-grid-footer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-icons",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Data Grid Icons",
+      "description": "The stroke icons the Data Grid's parts share, drawn on a 16px grid in the current text colour.",
+      "categories": [
+        "data"
+      ],
+      "files": [
+        {
+          "path": "registry/components/data/data-grid-icons.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-row-controls",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Data Grid Row Controls",
+      "description": "The controls that go in a Data Grid's own columns: a select-all and a per-row checkbox with shift-click ranges, a disclosure arrow for rows with sub-rows, and a row menu with your actions, copy and pinning.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "@mizzle/data-grid-icons",
+        "@mizzle/checkbox",
+        "@mizzle/menu",
+        "@mizzle/data-grid-export",
+        "@mizzle/data-grid-features"
+      ],
+      "files": [
+        {
+          "path": "registry/components/data/data-grid-row-controls.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-selection-bar",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Data Grid Selection Bar",
+      "description": "A toolbar that rises over the foot of the Data Grid while rows are selected, with export, pin, an optional delete and a way to clear the selection.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "@mizzle/data-grid-icons",
+        "@mizzle/toolbar",
+        "@mizzle/data-grid-export",
+        "@mizzle/data-grid-features"
+      ],
+      "files": [
+        {
+          "path": "registry/components/data/data-grid-selection-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-toolbar",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Data Grid Toolbar",
+      "description": "The strip above the Data Grid: a title and row count, a search field that opens from an icon, the column visibility menu, and a menu for CSV export, print and resetting the layout.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "@mizzle/data-grid-icons",
+        "@mizzle/button",
+        "@mizzle/menu",
+        "@mizzle/use-merged-ref",
+        "@mizzle/data-grid-export",
+        "@mizzle/data-grid-features"
+      ],
+      "files": [
+        {
+          "path": "registry/components/data/data-grid-toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-grid",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Data Grid",
+      "description": "A spreadsheet-style table on TanStack Table, assembled from the data pieces: toolbar with search and column picker, typed filters, the grid, a selection bar and a pager. Sort, pin, resize, reorder and hide columns from each header; select rows or drag out a range of cells and copy it; edit in place and save or discard the batch. Only the rows on screen are in the page, so three hundred rows cost the same as thirty.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@tanstack/react-table",
+        "@tanstack/react-virtual"
+      ],
+      "registryDependencies": [
+        "@mizzle/data-grid-column-menu",
+        "@mizzle/data-grid-icons",
+        "@mizzle/use-merged-ref",
+        "@mizzle/data-grid-export",
+        "@mizzle/data-grid-features"
+      ],
+      "files": [
+        {
+          "path": "registry/components/data/data-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dissolve",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Dissolve",
+      "description": "Make an element crumble into ash and drift off as smoke. A ragged edge crosses it, and everything the edge passes turns into fine grey dust, made from the element’s own text and icons, that lifts away on a slow swirl and thins out to nothing.",
+      "categories": [
+        "effects"
+      ],
+      "files": [
+        {
+          "path": "registry/components/effects/dissolve.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dither",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Dither",
+      "description": "Light drawn in two colours. A slow field of light, or a photograph, rendered the way a one-bit screen would: every dot is ink or nothing, and the shades are made by how thickly the ink is scattered. The pointer is a lamp.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-merged-ref",
+        "@mizzle/bayer"
+      ],
+      "files": [
+        {
+          "path": "registry/components/effects/dither.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "glow",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Glow",
+      "description": "Soft coloured light that drifts around the inside edge of an element. It follows any rounded shape, brightens and quickens with a level you give it, such as a voice or typing, and spins up and coasts to a stop instead of switching.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-latest",
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/effects/glow.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pixel-field",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Pixel Field",
+      "description": "A field of pixels that blooms under the pointer. Inside a card or a button, small squares spread out from where the pointer came in, keep twinkling, and draw back to where it left. Costs nothing when nobody is touching it.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/effects/pixel-field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pixel-transition",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Pixel Transition",
+      "description": "Swap what is shown through a wall of pixels. Blocks cover the old content in dither order, the way old computers dissolved between screens, the content changes behind them, and they clear the same way. No JavaScript animation.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-latest",
+        "@mizzle/use-merged-ref",
+        "@mizzle/bayer"
+      ],
+      "files": [
+        {
+          "path": "registry/components/effects/pixel-transition.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progressive-blur",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Progressive Blur",
+      "description": "A blur that gets stronger towards an edge, and a scroll area that wears one at each end: the ends blur and dissolve only while there is more to scroll that way. CSS only, on any background.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/effects/progressive-blur.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Checkbox",
+      "description": "A box that ticks. The check draws itself in, and a parent checkbox shows a dash when only some of its children are on.",
+      "categories": [
+        "forms"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/forms/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "A label, a control, a hint and an error, wired together. The label names the control, the hint describes it, and the error appears under it with a short settle when something is wrong.",
+      "categories": [
+        "forms"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/forms/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Form",
+      "description": "The form that holds the fields. It validates with the browser’s own rules, shows errors where they belong, takes errors back from your server, and hands you the values as an object.",
+      "categories": [
+        "forms"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/forms/form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A text input and a textarea that grows as you write. Quiet at rest, lifted on focus, red when wrong.",
+      "categories": [
+        "forms"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/forms/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "number-field",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Number Field",
+      "description": "A number you can type, step with the buttons, or nudge with the arrow keys, kept inside its limits.",
+      "categories": [
+        "forms"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@mizzle/input"
+      ],
+      "files": [
+        {
+          "path": "registry/components/forms/number-field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Radio Group",
+      "description": "Pick one of a few. The chosen ring fills and a dot grows from its centre.",
+      "categories": [
+        "forms"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/forms/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Select",
+      "description": "Choose one option from a list. The trigger looks like an input; when there is room the list opens over it with the chosen option sitting where the trigger was, like a native menu on a Mac, and otherwise just below it.",
+      "categories": [
+        "forms"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@mizzle/input"
+      ],
+      "files": [
+        {
+          "path": "registry/components/forms/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Switch",
+      "description": "An on and off that takes effect at once. The thumb slides across and stretches a little while you hold it.",
+      "categories": [
+        "forms"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/forms/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "auth-diagram",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Authentication",
+      "description": "Three ways to sign in on the left, one check in the middle, your app on the right. Each turn a different method sends a signal, the lock becomes a tick that draws itself, and the app opens.",
+      "categories": [
+        "illustrations"
+      ],
+      "registryDependencies": [
+        "@mizzle/diagram",
+        "@mizzle/diagram-glyphs"
+      ],
+      "files": [
+        {
+          "path": "registry/components/illustrations/auth-diagram.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "diagram-glyphs",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Diagram Glyphs",
+      "description": "Sixteen marks drawn by hand for Diagram tiles on a 24 unit grid, in a line style and a solid style: app, database, mail, card, chart, key, phone, shield, bank, receipt, coin, check, cloud, user and bolt.",
+      "categories": [
+        "illustrations"
+      ],
+      "registryDependencies": [
+        "@mizzle/diagram"
+      ],
+      "files": [
+        {
+          "path": "registry/components/illustrations/diagram-glyphs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "diagram",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Diagram",
+      "description": "The parts the illustrations are made from: tiles, routes with ports, and a signal that travels them, all on one clock. Lay out your own in a few lines, with the glyph set or any icons you already use.",
+      "categories": [
+        "illustrations"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-entrance",
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/illustrations/diagram.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "integrations-diagram",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Integrations",
+      "description": "Your app in the middle and four services around it, joined by routes with small ports. An event comes in along one route, the app lights up, and the answer goes out along the others. Put your own marks on the tiles.",
+      "categories": [
+        "illustrations"
+      ],
+      "registryDependencies": [
+        "@mizzle/diagram",
+        "@mizzle/diagram-glyphs"
+      ],
+      "files": [
+        {
+          "path": "registry/components/illustrations/integrations-diagram.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "payments-diagram",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Payments",
+      "description": "A card is charged, the payment clears, and three things follow: the money goes to the bank, a receipt goes out and your app is told. The coin turns into a tick while it all happens.",
+      "categories": [
+        "illustrations"
+      ],
+      "registryDependencies": [
+        "@mizzle/diagram",
+        "@mizzle/diagram-glyphs"
+      ],
+      "files": [
+        {
+          "path": "registry/components/illustrations/payments-diagram.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pixel-reveal",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Pixel Reveal",
+      "description": "An image that resolves out of big pixels. It arrives as a handful of coloured blocks and sharpens in steps, each one halving the blocks, until it is the picture. A real image sits underneath the whole time.",
+      "categories": [
+        "media"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-entrance",
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/media/pixel-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "video-hero",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Video Hero",
+      "description": "A banner for a show or a launch: the episode plays behind the words, blurred to a glow that fades to black at the sides. On top sit a title, a line about it, one clear button that opens the player, and the ways to follow along.",
+      "categories": [
+        "media"
+      ],
+      "registryDependencies": [
+        "@mizzle/video-player"
+      ],
+      "files": [
+        {
+          "path": "registry/components/media/video-hero.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "video-player",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Video Player",
+      "description": "A silent, looping preview that opens into a near full screen player. The player has the title and a link along the top, one row of controls along the bottom, a line you can scrub, and every key you would expect. It all gets out of the way while you watch.",
+      "categories": [
+        "media"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/media/video-player.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Accordion",
+      "description": "Rows that open to show more. One thing moves: the panel’s height, on one short clock both ways, so rows trading places leave everything below them still and nothing creeps into place at the end. The plus turns into a minus on the same clock. Built on Base UI, animated in CSS.",
+      "categories": [
+        "primitives"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@mizzle/card"
+      ],
+      "files": [
+        {
+          "path": "registry/components/primitives/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Button",
+      "description": "A button that feels like an object: light on its surface, a shadow that deepens under the pointer and closes up when pressed, a quick press and a slow release. Busy and done states swap in softly without the button changing width. Built on Base UI, animated in CSS.",
+      "categories": [
+        "primitives"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/primitives/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Card",
+      "description": "A soft tray around a raised surface, with concentric corners. As a link its surface lifts on hover and sinks on press, and its media breathes; it does not jump at the pointer.",
+      "categories": [
+        "primitives"
+      ],
+      "files": [
+        {
+          "path": "registry/components/primitives/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Dialog",
+      "description": "A dialog built like the card: what you read sits on a raised surface, what you press sits under it on the tray. It comes towards you in 250ms and is gone in 150. Built on Base UI, animated in CSS.",
+      "categories": [
+        "primitives"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/primitives/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "link",
+      "type": "registry:ui",
+      "title": "Link",
+      "description": "A text link whose underline is drawn on the text: it draws in from the left, leaves to the right, and follows the words when they wrap. Four treatments, hover and keyboard alike, no JavaScript.",
+      "categories": [
+        "primitives"
+      ],
+      "files": [
+        {
+          "path": "registry/components/primitives/link.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Menu",
+      "description": "A menu of actions that grows out of the button that opened it and is gone the moment you choose. Items, ticks, choices, groups and key hints. Built on Base UI, animated in CSS.",
+      "categories": [
+        "primitives"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/primitives/menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Tabs",
+      "description": "Tabs whose selected chip tightens under a press, stretches towards the tab you pick, then gathers itself, with panels that drift in from the same side. A raised chip in a tray, or a sliding underline. Built on Base UI, animated in CSS.",
+      "categories": [
+        "primitives"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/primitives/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Toast",
+      "description": "A short message that rises in from just below where it rests, out of a slight blur, and leaves the same small way. Newer toasts stack in front and older ones tuck in behind, a little smaller and dimmer; hover the stack to spread it out. When a toast changes, its words and icon morph in place. A pill variant puts the whole message on one dark line, and a single manager makes each new message take the place of the last. Built on Base UI, animated in CSS.",
+      "categories": [
+        "primitives"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/use-outgoing"
+      ],
+      "files": [
+        {
+          "path": "registry/components/primitives/toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toolbar",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Toolbar",
+      "description": "A row of controls that act on one thing: buttons, toggles, a choice of one, a link or an input. Arrow keys move between them, and where you pick one of a few the highlight glides between them.",
+      "categories": [
+        "primitives"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/primitives/toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Tooltip",
+      "description": "A small label for a control. Give a row of controls one tooltip between them and it stays open as you move along: the label glides to the next control, changes width to fit, and the words dissolve from one to the next. Built on Base UI, animated in CSS.",
+      "categories": [
+        "primitives"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/primitives/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "reveal",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Reveal",
+      "description": "Anything that arrives as it scrolls into view: a card, a paragraph, a section. It fades, rises a little and sharpens into focus; groups go one after another from a single trigger, and nothing inside is touched. No JavaScript animation.",
+      "categories": [
+        "scroll"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-entrance",
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/scroll/reveal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dot-matrix",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Dot Matrix",
+      "description": "Text on a dot matrix, five dots wide and seven tall, like a departure board. Unlit dots stay faintly visible, and when the text changes the dots that differ flip in a wave from the left. No JavaScript animation.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-entrance",
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/text/dot-matrix.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "highlight",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Highlight",
+      "description": "A mark made over a word or a phrase: a highlighter that wraps with the text, or a pen stroke under, around or round a word. Each is drawn when it comes into view. No JavaScript animation.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-entrance",
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/text/highlight.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "letter-swap",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Letter Swap",
+      "description": "On hover each letter slides out and a copy slides in, one after another, optionally into a different word. Pure CSS: the stagger plays forward on enter and back on leave, and can be interrupted anywhere.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/split-text"
+      ],
+      "files": [
+        {
+          "path": "registry/components/text/letter-swap.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "number-roll",
+      "type": "registry:ui",
+      "title": "Number Roll",
+      "description": "A number whose digits roll to their new value. Each digit is a reel behind a soft-edged window: it rolls the way the number moved, streaks while it is fast, and digits fold in and out when the number changes length.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-entrance",
+        "@mizzle/use-merged-ref",
+        "@mizzle/use-reduced-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/components/text/number-roll.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scramble-text",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Scramble Text",
+      "description": "Text that resolves out of noise. A sweep crosses the string at a steady rate; characters behind it are final, characters ahead of it churn. Decoding, not glitching.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-merged-ref",
+        "@mizzle/use-reduced-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/components/text/scramble-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "signature",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Signature",
+      "description": "Draws a signature, or any hand-drawn SVG, stroke by stroke at a steady pen speed, lifting between strokes. Pen centrelines are stroked; filled outlines are revealed as ink along their own path.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-entrance",
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/text/signature.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "split-text",
+      "type": "registry:ui",
+      "title": "Split Text",
+      "description": "Splits a string into words and characters you can style one by one. Words still wrap, spaces stay real, screen readers hear the sentence, and every piece knows its index, word and measured line.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/text/split-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-reveal",
+      "type": "registry:ui",
+      "title": "Text Reveal",
+      "description": "Text that arrives piece by piece: characters, words or lines. Each one fades, lifts a little and sharpens from a slight blur, so it reads as settling into focus. Pure CSS, no animation library.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/split-text",
+        "@mizzle/use-entrance",
+        "@mizzle/use-merged-ref"
+      ],
+      "files": [
+        {
+          "path": "registry/components/text/text-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-swap",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Text Swap",
+      "description": "Change a word without it blinking. The old word lifts away and blurs out as the new one rises in, and the space between them stretches to fit, so nothing beside it jumps.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-outgoing"
+      ],
+      "files": [
+        {
+          "path": "registry/components/text/text-swap.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "typewriter",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Typewriter",
+      "description": "Types a list of phrases one after another, without the harshness: letters fade in and sharpen instead of popping, the rhythm is a little uneven like a person’s, and a finished phrase fades out as one instead of being backspaced.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-reduced-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/components/text/typewriter.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "delete-button",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Delete Button",
+      "description": "A delete button you press and hold. A fill sweeps across it while the bin’s lid lifts; let go early and it drains back, hold to the end and it deletes. Holding is the confirmation, so there is no dialog.",
+      "categories": [
+        "widgets"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-merged-ref",
+        "@mizzle/use-outgoing"
+      ],
+      "files": [
+        {
+          "path": "registry/components/widgets/delete-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dynamic-island",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Dynamic Island",
+      "description": "A black pill that changes shape to fit what it is showing. Give it a view key and some content: it springs to the new size, overshooting a touch when it grows, and cross-fades what is inside. No animation library.",
+      "categories": [
+        "widgets"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-latest",
+        "@mizzle/use-merged-ref",
+        "@mizzle/use-outgoing"
+      ],
+      "files": [
+        {
+          "path": "registry/components/widgets/dynamic-island.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "expandable-tabs",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Expandable Tabs",
+      "description": "An icon bar whose active tab says its name, and whose page grows out of the bar. The label, the highlight and the shell move as one, on one clock. No animation library.",
+      "categories": [
+        "widgets"
+      ],
+      "registryDependencies": [
+        "@mizzle/use-latest",
+        "@mizzle/use-merged-ref",
+        "@mizzle/use-outgoing"
+      ],
+      "files": [
+        {
+          "path": "registry/components/widgets/expandable-tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "panel-menu",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Panel Menu",
+      "description": "A menu built from stacked glass panels. Closed, it is a single bar. Open, the label flips, a tall body wipes down beneath it, and the link and language rows settle in after. Built on Base UI, animated in CSS.",
+      "categories": [
+        "widgets"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/widgets/panel-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "prediction-market",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Prediction Market",
+      "description": "An order ticket for a yes or no market. Pick an outcome and a side, type an amount, and the shares, the payout and the return roll to their new values. Built from the card, the tabs, the button and the rolling numbers.",
+      "categories": [
+        "widgets"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/card",
+        "@mizzle/tabs",
+        "@mizzle/number-roll"
+      ],
+      "files": [
+        {
+          "path": "registry/components/widgets/prediction-market.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tick-slider",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Tick Slider",
+      "description": "A scroll progress indicator you can scrub. A slim red needle runs along a tray of hairline ticks as the page scrolls, and dragging the needle scrolls the page. Built on Base UI, animated in CSS.",
+      "categories": [
+        "widgets"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/components/widgets/tick-slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "agent-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Agent Demo",
+      "description": "Example usage of AI.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/confirmation",
+        "@mizzle/image-generation",
+        "@mizzle/marker",
+        "@mizzle/message-scroller",
+        "@mizzle/orb",
+        "@mizzle/outline",
+        "@mizzle/plan",
+        "@mizzle/prompt-input",
+        "@mizzle/questionnaire",
+        "@mizzle/reasoning",
+        "@mizzle/response",
+        "@mizzle/sources",
+        "@mizzle/suggestions",
+        "@mizzle/tasks",
+        "@mizzle/tool-call",
+        "@mizzle/turn",
+        "@mizzle/voice-note",
+        "@mizzle/text-swap"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/agent-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "confirmation-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Confirmation Demo",
+      "description": "Example usage of Confirmation.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/confirmation",
+        "@mizzle/prompt-input"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/confirmation-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "image-generation-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Image Generation Demo",
+      "description": "Example usage of Image Generation.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/image-generation"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/image-generation-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "image-generation-loading-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Image Generation Loading Demo",
+      "description": "Example usage of Image Generation.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/image-generation"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/image-generation-loading-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "image-generation-progress-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Image Generation Progress Demo",
+      "description": "Example usage of Image Generation.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/image-generation"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/image-generation-progress-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "loader-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Loader Demo",
+      "description": "Example usage of Loader.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/loader"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/loader-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "loader-shapes-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Loader Shapes Demo",
+      "description": "Example usage of Loader.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/loader"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/loader-shapes-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "loader-sizes-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Loader Sizes Demo",
+      "description": "Example usage of Loader.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/loader",
+        "@mizzle/button"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/loader-sizes-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "marker-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Marker Demo",
+      "description": "Example usage of Marker.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/loader",
+        "@mizzle/marker"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/marker-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Message Scroller Demo",
+      "description": "Example usage of Message Scroller.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/message-scroller",
+        "@mizzle/prompt-input",
+        "@mizzle/response",
+        "@mizzle/turn"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/message-scroller-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "orb-colors-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Orb Colors Demo",
+      "description": "Example usage of Orb.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/orb"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/orb-colors-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "orb-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Orb Demo",
+      "description": "Example usage of Orb.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/orb",
+        "@mizzle/shimmer",
+        "@mizzle/text-swap"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/orb-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "orb-status-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Orb Status Demo",
+      "description": "Example usage of Orb.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/orb",
+        "@mizzle/shimmer"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/orb-status-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "outline-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Outline Demo",
+      "description": "Example usage of Outline.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/message-scroller",
+        "@mizzle/outline",
+        "@mizzle/response",
+        "@mizzle/turn"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/outline-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "plan-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Plan Demo",
+      "description": "Example usage of Plan.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/plan",
+        "@mizzle/turn"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/plan-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "prompt-input-compact-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Prompt Input Compact Demo",
+      "description": "Example usage of Prompt Input.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/prompt-input",
+        "@mizzle/suggestions"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/prompt-input-compact-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "prompt-input-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Prompt Input Demo",
+      "description": "Example usage of Prompt Input.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/prompt-input",
+        "@mizzle/text-swap"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/prompt-input-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Questionnaire Demo",
+      "description": "Example usage of Questionnaire.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/questionnaire"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/questionnaire-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "reasoning-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Reasoning Demo",
+      "description": "Example usage of Reasoning.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/reasoning",
+        "@mizzle/response",
+        "@mizzle/turn"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/reasoning-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "reasoning-finished-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Reasoning Finished Demo",
+      "description": "Example usage of Reasoning.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/reasoning"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/reasoning-finished-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "response-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Response Demo",
+      "description": "Example usage of Response.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/response",
+        "@mizzle/sources",
+        "@mizzle/turn"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/response-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "shimmer-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Shimmer Demo",
+      "description": "Example usage of Shimmer.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/shimmer",
+        "@mizzle/text-swap"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/shimmer-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "sources-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Sources Demo",
+      "description": "Example usage of Sources.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/response",
+        "@mizzle/sources",
+        "@mizzle/turn"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/sources-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "suggestions-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Suggestions Demo",
+      "description": "Example usage of Suggestions.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/suggestions",
+        "@mizzle/turn"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/suggestions-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "suggestions-list-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Suggestions List Demo",
+      "description": "Example usage of Suggestions.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/response",
+        "@mizzle/suggestions",
+        "@mizzle/turn"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/suggestions-list-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "tasks-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Tasks Demo",
+      "description": "Example usage of Tasks.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/prompt-input",
+        "@mizzle/tasks"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/tasks-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "tool-call-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Tool Call Demo",
+      "description": "Example usage of Tool Call.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/response",
+        "@mizzle/tool-call",
+        "@mizzle/turn"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/tool-call-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "tool-call-states-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Tool Call States Demo",
+      "description": "Example usage of Tool Call.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/tool-call"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/tool-call-states-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "turn-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Turn Demo",
+      "description": "Example usage of Turn.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "@mizzle/prompt-input",
+        "@mizzle/reasoning",
+        "@mizzle/response",
+        "@mizzle/tool-call",
+        "@mizzle/turn"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/ai/turn-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "chat-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Chat Demo",
+      "description": "Example usage of Chat.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/message-scroller",
+        "@mizzle/chat-divider",
+        "@mizzle/composer",
+        "@mizzle/message",
+        "@mizzle/message-status",
+        "@mizzle/poll",
+        "@mizzle/reaction-picker",
+        "@mizzle/typing-indicator",
+        "@mizzle/voice-note",
+        "@mizzle/voice-recorder"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/chat/chat-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "chat-divider-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Chat Divider Demo",
+      "description": "Example usage of Chat Divider.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/chat-divider",
+        "@mizzle/message"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/chat/chat-divider-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "composer-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Composer Demo",
+      "description": "Example usage of Composer.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/composer",
+        "@mizzle/message",
+        "@mizzle/message-status",
+        "@mizzle/voice-note",
+        "@mizzle/voice-recorder"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/chat/composer-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "message-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Message Demo",
+      "description": "Example usage of Message.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/message",
+        "@mizzle/message-status",
+        "@mizzle/reaction-picker",
+        "@mizzle/typing-indicator"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/chat/message-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "message-status-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Message Status Demo",
+      "description": "Example usage of Message Status.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/message",
+        "@mizzle/message-status"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/chat/message-status-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "poll-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Poll Demo",
+      "description": "Example usage of Poll.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/message",
+        "@mizzle/poll"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/chat/poll-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "poll-multiple-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Poll Multiple Demo",
+      "description": "Example usage of Poll.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/poll"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/chat/poll-multiple-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "reaction-picker-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Reaction Picker Demo",
+      "description": "Example usage of Reaction Picker.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/message",
+        "@mizzle/reaction-picker"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/chat/reaction-picker-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "typing-indicator-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Typing Indicator Demo",
+      "description": "Example usage of Typing Indicator.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/message",
+        "@mizzle/typing-indicator"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/chat/typing-indicator-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "voice-note-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Voice Note Demo",
+      "description": "Example usage of Voice Note.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/message",
+        "@mizzle/message-status",
+        "@mizzle/voice-note"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/chat/voice-note-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "voice-recorder-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Voice Recorder Demo",
+      "description": "Example usage of Voice Recorder.",
+      "categories": [
+        "chat"
+      ],
+      "registryDependencies": [
+        "@mizzle/voice-note",
+        "@mizzle/voice-recorder"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/chat/voice-recorder-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-basic-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Data Grid Basic Demo",
+      "description": "Example usage of Data Grid.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "@mizzle/data-grid",
+        "@mizzle/data-grid-features"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/data/data-grid-basic-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Data Grid Demo",
+      "description": "Example usage of Data Grid.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "@mizzle/data-grid",
+        "@mizzle/data-grid-filter",
+        "@mizzle/data-grid-footer",
+        "@mizzle/data-grid-row-controls",
+        "@mizzle/data-grid-selection-bar",
+        "@mizzle/data-grid-toolbar",
+        "@mizzle/button",
+        "@mizzle/card",
+        "@mizzle/use-data-grid-filters",
+        "@mizzle/data-grid-features",
+        "@mizzle/data-grid-filters"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/data/data-grid-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "dissolve-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Dissolve Demo",
+      "description": "Example usage of Dissolve.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/dissolve",
+        "@mizzle/button"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/effects/dissolve-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "dither-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Dither Demo",
+      "description": "Example usage of Dither.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/dither"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/effects/dither-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "dither-image-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Dither Image Demo",
+      "description": "Example usage of Dither.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/dither"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/effects/dither-image-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "glow-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Glow Demo",
+      "description": "Example usage of Glow.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/glow"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/effects/glow-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "glow-palettes-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Glow Palettes Demo",
+      "description": "Example usage of Glow.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/glow"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/effects/glow-palettes-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "pixel-field-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Pixel Field Demo",
+      "description": "Example usage of Pixel Field.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/pixel-field"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/effects/pixel-field-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "pixel-transition-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Pixel Transition Demo",
+      "description": "Example usage of Pixel Transition.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/pixel-transition",
+        "@mizzle/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/effects/pixel-transition-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "pixel-transition-patterns-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Pixel Transition Patterns Demo",
+      "description": "Example usage of Pixel Transition.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/pixel-transition",
+        "@mizzle/button"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/effects/pixel-transition-patterns-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "progressive-blur-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Progressive Blur Demo",
+      "description": "Example usage of Progressive Blur.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/progressive-blur"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/effects/progressive-blur-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "progressive-blur-image-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Progressive Blur Image Demo",
+      "description": "Example usage of Progressive Blur.",
+      "categories": [
+        "effects"
+      ],
+      "registryDependencies": [
+        "@mizzle/progressive-blur"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/effects/progressive-blur-image-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Checkbox Demo",
+      "description": "Example usage of Checkbox.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "@mizzle/checkbox",
+        "@mizzle/field"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/forms/checkbox-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "field-demo",
+      "type": "registry:block",
+      "title": "Field Demo",
+      "description": "Example usage of Field.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "@mizzle/field",
+        "@mizzle/input"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/forms/field-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "form-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Form Demo",
+      "description": "Example usage of Form.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "@mizzle/checkbox",
+        "@mizzle/field",
+        "@mizzle/form",
+        "@mizzle/input",
+        "@mizzle/number-field",
+        "@mizzle/select",
+        "@mizzle/button"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/forms/form-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "input-demo",
+      "type": "registry:block",
+      "title": "Input Demo",
+      "description": "Example usage of Input.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "@mizzle/field",
+        "@mizzle/input"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/forms/input-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "number-field-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Number Field Demo",
+      "description": "Example usage of Number Field.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "@mizzle/field",
+        "@mizzle/number-field"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/forms/number-field-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Radio Group Demo",
+      "description": "Example usage of Radio Group.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "@mizzle/field",
+        "@mizzle/radio-group"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/forms/radio-group-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "select-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Select Demo",
+      "description": "Example usage of Select.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "@mizzle/field",
+        "@mizzle/select"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/forms/select-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "switch-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Switch Demo",
+      "description": "Example usage of Switch.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "@mizzle/field",
+        "@mizzle/switch"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/forms/switch-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "auth-diagram-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Auth Diagram Demo",
+      "description": "Example usage of Authentication.",
+      "categories": [
+        "illustrations"
+      ],
+      "registryDependencies": [
+        "@mizzle/auth-diagram"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/illustrations/auth-diagram-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "diagram-cards-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Diagram Cards Demo",
+      "description": "Example usage of Diagram.",
+      "categories": [
+        "illustrations"
+      ],
+      "registryDependencies": [
+        "@mizzle/auth-diagram",
+        "@mizzle/integrations-diagram",
+        "@mizzle/payments-diagram",
+        "@mizzle/card"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/illustrations/diagram-cards-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "diagram-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Diagram Demo",
+      "description": "Example usage of Diagram.",
+      "categories": [
+        "illustrations"
+      ],
+      "registryDependencies": [
+        "@mizzle/diagram",
+        "@mizzle/diagram-glyphs"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/illustrations/diagram-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "diagram-glyphs-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Diagram Glyphs Demo",
+      "description": "Example usage of Diagram.",
+      "categories": [
+        "illustrations"
+      ],
+      "registryDependencies": [
+        "@mizzle/diagram",
+        "@mizzle/diagram-glyphs"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/illustrations/diagram-glyphs-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "integrations-diagram-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Integrations Diagram Demo",
+      "description": "Example usage of Integrations.",
+      "categories": [
+        "illustrations"
+      ],
+      "registryDependencies": [
+        "@mizzle/integrations-diagram"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/illustrations/integrations-diagram-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "payments-diagram-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Payments Diagram Demo",
+      "description": "Example usage of Payments.",
+      "categories": [
+        "illustrations"
+      ],
+      "registryDependencies": [
+        "@mizzle/payments-diagram"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/illustrations/payments-diagram-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "pixel-reveal-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Pixel Reveal Demo",
+      "description": "Example usage of Pixel Reveal.",
+      "categories": [
+        "media"
+      ],
+      "registryDependencies": [
+        "@mizzle/pixel-reveal",
+        "@mizzle/button"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/media/pixel-reveal-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "pixel-reveal-hover-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Pixel Reveal Hover Demo",
+      "description": "Example usage of Pixel Reveal.",
+      "categories": [
+        "media"
+      ],
+      "registryDependencies": [
+        "@mizzle/pixel-reveal"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/media/pixel-reveal-hover-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "video-hero-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Video Hero Demo",
+      "description": "Example usage of Video Hero.",
+      "categories": [
+        "media"
+      ],
+      "registryDependencies": [
+        "@mizzle/video-hero"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/media/video-hero-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "video-player-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Video Player Demo",
+      "description": "Example usage of Video Player.",
+      "categories": [
+        "media"
+      ],
+      "registryDependencies": [
+        "@mizzle/video-player"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/media/video-player-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "accordion-card-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Accordion Card Demo",
+      "description": "Example usage of Accordion.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/accordion-card-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "accordion-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Accordion Demo",
+      "description": "Example usage of Accordion.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/accordion-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "button-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Button Demo",
+      "description": "Example usage of Button.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/button"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/button-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "button-status-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Button Status Demo",
+      "description": "Example usage of Button.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/button"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/button-status-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "card-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Card Demo",
+      "description": "Example usage of Card.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/card"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/card-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "dialog-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Dialog Demo",
+      "description": "Example usage of Dialog.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/dialog-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "dialog-nested-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Dialog Nested Demo",
+      "description": "Example usage of Dialog.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/dialog-nested-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "link-demo",
+      "type": "registry:block",
+      "title": "Link Demo",
+      "description": "Example usage of Link.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/link"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/link-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "link-inline-demo",
+      "type": "registry:block",
+      "title": "Link Inline Demo",
+      "description": "Example usage of Link.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/link"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/link-inline-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "menu-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Menu Demo",
+      "description": "Example usage of Menu.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/menu"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/menu-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "menu-options-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Menu Options Demo",
+      "description": "Example usage of Menu.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/menu"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/menu-options-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "tabs-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Tabs Demo",
+      "description": "Example usage of Tabs.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/tabs-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "tabs-line-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Tabs Line Demo",
+      "description": "Example usage of Tabs.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/tabs-line-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "toast-anchored-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Toast Anchored Demo",
+      "description": "Example usage of Toast.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/toast"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/toast-anchored-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "toast-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Toast Demo",
+      "description": "Example usage of Toast.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/toast"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/toast-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "toast-pill-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Toast Pill Demo",
+      "description": "Example usage of Toast.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/toast"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/toast-pill-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "toast-position-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Toast Position Demo",
+      "description": "Example usage of Toast.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/toast"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/toast-position-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "toast-promise-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Toast Promise Demo",
+      "description": "Example usage of Toast.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/toast"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/toast-promise-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "toast-status-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Toast Status Demo",
+      "description": "Example usage of Toast.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/toast"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/toast-status-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "toast-upsert-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Toast Upsert Demo",
+      "description": "Example usage of Toast.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/toast"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/toast-upsert-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "toolbar-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Toolbar Demo",
+      "description": "Example usage of Toolbar.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/toolbar"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/toolbar-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "toolbar-share-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Toolbar Share Demo",
+      "description": "Example usage of Toolbar.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/toolbar"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/toolbar-share-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "toolbar-sort-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Toolbar Sort Demo",
+      "description": "Example usage of Toolbar.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/toolbar"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/toolbar-sort-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "toolbar-tools-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Toolbar Tools Demo",
+      "description": "Example usage of Toolbar.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/toolbar"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/toolbar-tools-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Tooltip Demo",
+      "description": "Example usage of Tooltip.",
+      "categories": [
+        "primitives"
+      ],
+      "registryDependencies": [
+        "@mizzle/toolbar",
+        "@mizzle/tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/primitives/tooltip-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "reveal-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Reveal Demo",
+      "description": "Example usage of Reveal.",
+      "categories": [
+        "scroll"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/card",
+        "@mizzle/reveal"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/scroll/reveal-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "reveal-effects-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Reveal Effects Demo",
+      "description": "Example usage of Reveal.",
+      "categories": [
+        "scroll"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/reveal"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/scroll/reveal-effects-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "reveal-scroll-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Reveal Scroll Demo",
+      "description": "Example usage of Reveal.",
+      "categories": [
+        "scroll"
+      ],
+      "registryDependencies": [
+        "@mizzle/progressive-blur",
+        "@mizzle/reveal"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/scroll/reveal-scroll-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "dot-matrix-charset-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Dot Matrix Charset Demo",
+      "description": "Example usage of Dot Matrix.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/dot-matrix"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/text/dot-matrix-charset-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "dot-matrix-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Dot Matrix Demo",
+      "description": "Example usage of Dot Matrix.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/dot-matrix"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/text/dot-matrix-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "highlight-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Highlight Demo",
+      "description": "Example usage of Highlight.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/highlight"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/text/highlight-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "letter-swap-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Letter Swap Demo",
+      "description": "Example usage of Letter Swap.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/letter-swap"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/text/letter-swap-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "number-roll-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Number Roll Demo",
+      "description": "Example usage of Number Roll.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/button",
+        "@mizzle/number-roll"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/text/number-roll-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "number-roll-spin-demo",
+      "type": "registry:block",
+      "title": "Number Roll Spin Demo",
+      "description": "Example usage of Number Roll.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/number-roll"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/text/number-roll-spin-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "scramble-text-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Scramble Text Demo",
+      "description": "Example usage of Scramble Text.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/scramble-text"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/text/scramble-text-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "signature-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Signature Demo",
+      "description": "Example usage of Signature.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/signature"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/text/signature-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "split-text-demo",
+      "type": "registry:block",
+      "title": "Split Text Demo",
+      "description": "Example usage of Split Text.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/split-text"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/text/split-text-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "text-reveal-demo",
+      "type": "registry:block",
+      "title": "Text Reveal Demo",
+      "description": "Example usage of Text Reveal.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/text-reveal"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/text/text-reveal-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "text-reveal-effects-demo",
+      "type": "registry:block",
+      "title": "Text Reveal Effects Demo",
+      "description": "Example usage of Text Reveal.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/text-reveal"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/text/text-reveal-effects-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "text-swap-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Text Swap Demo",
+      "description": "Example usage of Text Swap.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/text-swap"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/text/text-swap-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "typewriter-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Typewriter Demo",
+      "description": "Example usage of Typewriter.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "@mizzle/typewriter"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/text/typewriter-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "delete-button-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Delete Button Demo",
+      "description": "Example usage of Delete Button.",
+      "categories": [
+        "widgets"
+      ],
+      "registryDependencies": [
+        "@mizzle/delete-button"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/widgets/delete-button-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "dynamic-island-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Dynamic Island Demo",
+      "description": "Example usage of Dynamic Island.",
+      "categories": [
+        "widgets"
+      ],
+      "registryDependencies": [
+        "@mizzle/tabs",
+        "@mizzle/number-roll",
+        "@mizzle/dynamic-island"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/widgets/dynamic-island-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "expandable-tabs-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Expandable Tabs Demo",
+      "description": "Example usage of Expandable Tabs.",
+      "categories": [
+        "widgets"
+      ],
+      "registryDependencies": [
+        "@mizzle/number-roll",
+        "@mizzle/expandable-tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/widgets/expandable-tabs-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "panel-menu-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Panel Menu Demo",
+      "description": "Example usage of Panel Menu.",
+      "categories": [
+        "widgets"
+      ],
+      "registryDependencies": [
+        "@mizzle/panel-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/widgets/panel-menu-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "prediction-market-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Prediction Market Demo",
+      "description": "Example usage of Prediction Market.",
+      "categories": [
+        "widgets"
+      ],
+      "registryDependencies": [
+        "@mizzle/prediction-market"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/widgets/prediction-market-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "tick-slider-demo",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Tick Slider Demo",
+      "description": "Example usage of Tick Slider.",
+      "categories": [
+        "widgets"
+      ],
+      "registryDependencies": [
+        "@mizzle/tick-slider",
+        "@mizzle/use-scroll-progress"
+      ],
+      "files": [
+        {
+          "path": "registry/demos/widgets/tick-slider-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "use-content-height",
+      "type": "registry:hook",
+      "resolution": "gated",
+      "title": "Use Content Height",
+      "description": "The live height of an element's content, for a container that animates its height to fit as the content opens, closes or grows. Includes a settled flag so a section that starts open does not animate in.",
+      "files": [
+        {
+          "path": "registry/hooks/use-content-height.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-data-grid-filters",
+      "type": "registry:hook",
+      "resolution": "gated",
+      "title": "Use Data Grid Filters",
+      "description": "Holds the Data Grid's filters and the actions that change them, keeping each operator in step with how many values it has. Works out every column's options, counts and number range from the rows, or takes them from a server. Renders nothing, so the same state can drive a table, a query or a URL.",
+      "registryDependencies": [
+        "@mizzle/data-grid-filters"
+      ],
+      "files": [
+        {
+          "path": "registry/hooks/use-data-grid-filters.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-debounced-callback",
+      "type": "registry:hook",
+      "resolution": "gated",
+      "title": "Use Debounced Callback",
+      "description": "Wraps a callback so it runs once the calls stop for a given time, always with the newest arguments and the newest callback. A call still waiting when the component unmounts runs then, so the last keystroke before a popover closes is not lost.",
+      "registryDependencies": [
+        "@mizzle/use-latest"
+      ],
+      "files": [
+        {
+          "path": "registry/hooks/use-debounced-callback.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-entrance",
+      "type": "registry:hook",
+      "title": "Use Entrance",
+      "description": "Decides when a CSS entrance plays: a frame after mount, or when the element scrolls into view. Returns a boolean to put on a data attribute; includes a small useInView.",
+      "files": [
+        {
+          "path": "registry/hooks/use-entrance.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-latest",
+      "type": "registry:hook",
+      "resolution": "gated",
+      "title": "Use Latest",
+      "description": "A ref that always holds the newest value of a prop or callback, updated after each render. Lets an effect or a subscription call the latest callback without re-running whenever its identity changes.",
+      "files": [
+        {
+          "path": "registry/hooks/use-latest.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-merged-ref",
+      "type": "registry:hook",
+      "title": "Use Merged Ref",
+      "description": "Points several refs at one element, so a component can keep its own ref and still honour the one passed to it. Supports object refs, callback refs and React 19 ref cleanups.",
+      "files": [
+        {
+          "path": "registry/hooks/use-merged-ref.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-outgoing",
+      "type": "registry:hook",
+      "resolution": "gated",
+      "title": "Use Outgoing",
+      "description": "Keeps the content that was just replaced for the length of its exit, so it can fade out in CSS while the new content fades in. Give it a key and what is shown under that key; it returns the previous pair until the duration has passed.",
+      "files": [
+        {
+          "path": "registry/hooks/use-outgoing.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-reduced-motion",
+      "type": "registry:hook",
+      "title": "Use Reduced Motion",
+      "description": "Whether the visitor has asked for reduced motion, as a boolean that is safe to read while rendering: false on the server and during hydration, then the real setting, and it updates if the setting changes.",
+      "files": [
+        {
+          "path": "registry/hooks/use-reduced-motion.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-scroll-progress",
+      "type": "registry:hook",
+      "resolution": "gated",
+      "title": "Use Scroll Progress",
+      "description": "How far the page, or a scroll container, has been scrolled, from 0 to 1, kept current as it scrolls or resizes, with a setter that scrolls it to a fraction. Vertical by default. Pairs content with a progress indicator or a scrubber.",
+      "files": [
+        {
+          "path": "registry/hooks/use-scroll-progress.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "bayer",
+      "type": "registry:lib",
+      "resolution": "gated",
+      "title": "Bayer",
+      "description": "The 8 by 8 Bayer matrix behind ordered dithering, as a threshold from 0 to 1 for any pixel. Compare a brightness with it to decide whether that pixel is on.",
+      "files": [
+        {
+          "path": "registry/utils/bayer.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-export",
+      "type": "registry:lib",
+      "resolution": "gated",
+      "title": "Data Grid Export",
+      "description": "Gets data out of the Data Grid as the user sees it: CSV with spreadsheet-safe quoting, tab-separated text for the clipboard, and a print window that holds every row instead of the few a virtual list has mounted.",
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "@mizzle/data-grid-features"
+      ],
+      "files": [
+        {
+          "path": "registry/utils/data-grid-export.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-features",
+      "type": "registry:lib",
+      "resolution": "gated",
+      "title": "Data Grid Features",
+      "description": "The TanStack Table features the Data Grid is built on, registered once, with the table, column and row types every part of the grid is written against and the per-column meta the grid reads.",
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "files": [
+        {
+          "path": "registry/utils/data-grid-features.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "data-grid-filters",
+      "type": "registry:lib",
+      "resolution": "gated",
+      "title": "Data Grid Filters",
+      "description": "The logic under the Data Grid's filter bar: the five data types a column can be filtered as, the operators each one takes and how they negate and widen, the function that tests a value against a filter, and the bridge that hands the filters to TanStack Table.",
+      "files": [
+        {
+          "path": "registry/utils/data-grid-filters.ts",
+          "type": "registry:lib"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2972 @@
+{
+  "key": "amitshrivastavaa",
+  "entry": "Creance",
+  "name": "creance",
+  "homepage": "https://creance.pages.dev",
+  "indexUrl": "https://creance.pages.dev/r/registry.json",
+  "itemBase": "https://creance.pages.dev/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Agents are rounded squares; people are circles.",
+      "categories": [
+        "atom",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "avatar/Avatar.css",
+          "type": "registry:file",
+          "target": "@components/creance/avatar/Avatar.css"
+        },
+        {
+          "path": "avatar/Avatar.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/avatar/Avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "A status as tone, icon and word.",
+      "categories": [
+        "atom",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "badge/Badge.css",
+          "type": "registry:file",
+          "target": "@components/creance/badge/Badge.css"
+        },
+        {
+          "path": "badge/Badge.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/badge/Badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "A glass capsule. Blue is for the one primary action; red text marks refusal.",
+      "categories": [
+        "atom",
+        "actions"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "button/Button.css",
+          "type": "registry:file",
+          "target": "@components/creance/button/Button.css"
+        },
+        {
+          "path": "button/Button.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/button/Button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "A native checkbox with its label.",
+      "categories": [
+        "atom",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "checkbox/Checkbox.css",
+          "type": "registry:file",
+          "target": "@components/creance/checkbox/Checkbox.css"
+        },
+        {
+          "path": "checkbox/Checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/checkbox/Checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code",
+      "type": "registry:ui",
+      "title": "Code",
+      "description": "Inline code, or a scrollable block.",
+      "categories": [
+        "atom",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "code/Code.css",
+          "type": "registry:file",
+          "target": "@components/creance/code/Code.css"
+        },
+        {
+          "path": "code/Code.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/code/Code.tsx"
+        }
+      ]
+    },
+    {
+      "name": "error-message",
+      "type": "registry:ui",
+      "title": "ErrorMessage",
+      "description": "What went wrong and what to do next.",
+      "categories": [
+        "atom",
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "error-message/ErrorMessage.css",
+          "type": "registry:file",
+          "target": "@components/creance/error-message/ErrorMessage.css"
+        },
+        {
+          "path": "error-message/ErrorMessage.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/error-message/ErrorMessage.tsx"
+        }
+      ]
+    },
+    {
+      "name": "gauge",
+      "type": "registry:ui",
+      "title": "Gauge",
+      "description": "A ring that fills to a percentage. Red only past a limit you set.",
+      "categories": [
+        "atom",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "gauge/Gauge.css",
+          "type": "registry:file",
+          "target": "@components/creance/gauge/Gauge.css"
+        },
+        {
+          "path": "gauge/Gauge.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/gauge/Gauge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "icon-button",
+      "type": "registry:ui",
+      "title": "IconButton",
+      "description": "A button with only an icon. Its label is required and shows as a tooltip.",
+      "categories": [
+        "atom",
+        "actions"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "icon-button/IconButton.css",
+          "type": "registry:file",
+          "target": "@components/creance/icon-button/IconButton.css"
+        },
+        {
+          "path": "icon-button/IconButton.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/icon-button/IconButton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A text field.",
+      "categories": [
+        "atom",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "input/Input.css",
+          "type": "registry:file",
+          "target": "@components/creance/input/Input.css"
+        },
+        {
+          "path": "input/Input.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/input/Input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "A keyboard key.",
+      "categories": [
+        "atom",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "kbd/Kbd.css",
+          "type": "registry:file",
+          "target": "@components/creance/kbd/Kbd.css"
+        },
+        {
+          "path": "kbd/Kbd.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/kbd/Kbd.tsx"
+        }
+      ]
+    },
+    {
+      "name": "loading-dots",
+      "type": "registry:ui",
+      "title": "LoadingDots",
+      "description": "Three dots beside what is happening.",
+      "categories": [
+        "atom",
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "loading-dots/LoadingDots.css",
+          "type": "registry:file",
+          "target": "@components/creance/loading-dots/LoadingDots.css"
+        },
+        {
+          "path": "loading-dots/LoadingDots.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/loading-dots/LoadingDots.tsx"
+        }
+      ]
+    },
+    {
+      "name": "middle-truncate",
+      "type": "registry:ui",
+      "title": "MiddleTruncate",
+      "description": "Shortens the middle of a path or ID and keeps both ends.",
+      "categories": [
+        "atom",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "middle-truncate/MiddleTruncate.css",
+          "type": "registry:file",
+          "target": "@components/creance/middle-truncate/MiddleTruncate.css"
+        },
+        {
+          "path": "middle-truncate/MiddleTruncate.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/middle-truncate/MiddleTruncate.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-bar",
+      "type": "registry:ui",
+      "title": "ProgressBar",
+      "description": "Progress toward a known total.",
+      "categories": [
+        "atom",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "progress-bar/ProgressBar.css",
+          "type": "registry:file",
+          "target": "@components/creance/progress-bar/ProgressBar.css"
+        },
+        {
+          "path": "progress-bar/ProgressBar.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/progress-bar/ProgressBar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio",
+      "type": "registry:ui",
+      "title": "Radio",
+      "description": "A native radio with its label.",
+      "categories": [
+        "atom",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/checkbox.json",
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "radio/Radio.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/radio/Radio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "The native select, styled. The operating system draws the menu.",
+      "categories": [
+        "atom",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "select/Select.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/select/Select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "A hairline between groups.",
+      "categories": [
+        "atom",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "separator/Separator.css",
+          "type": "registry:file",
+          "target": "@components/creance/separator/Separator.css"
+        },
+        {
+          "path": "separator/Separator.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/separator/Separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "A placeholder while content loads.",
+      "categories": [
+        "atom",
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "skeleton/Skeleton.css",
+          "type": "registry:file",
+          "target": "@components/creance/skeleton/Skeleton.css"
+        },
+        {
+          "path": "skeleton/Skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/skeleton/Skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sparkline",
+      "type": "registry:ui",
+      "title": "Sparkline",
+      "description": "A trend with no axes, for a table cell or a stat card.",
+      "categories": [
+        "atom",
+        "charts"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "sparkline/Sparkline.css",
+          "type": "registry:file",
+          "target": "@components/creance/sparkline/Sparkline.css"
+        },
+        {
+          "path": "sparkline/Sparkline.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/sparkline/Sparkline.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Something is happening, with no known end.",
+      "categories": [
+        "atom",
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "spinner/Spinner.css",
+          "type": "registry:file",
+          "target": "@components/creance/spinner/Spinner.css"
+        },
+        {
+          "path": "spinner/Spinner.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/spinner/Spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-dot",
+      "type": "registry:ui",
+      "title": "StatusDot",
+      "description": "A small mark and a word. Each status has its own shape as well as tone.",
+      "categories": [
+        "atom",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "status-dot/StatusDot.css",
+          "type": "registry:file",
+          "target": "@components/creance/status-dot/StatusDot.css"
+        },
+        {
+          "path": "status-dot/StatusDot.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/status-dot/StatusDot.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "An on/off setting that applies immediately.",
+      "categories": [
+        "atom",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/checkbox.json",
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "switch/Switch.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/switch/Switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "A multi-line text field.",
+      "categories": [
+        "atom",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "textarea/Textarea.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/textarea/Textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "A button that stays on or off.",
+      "categories": [
+        "atom",
+        "actions"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "toggle/Toggle.css",
+          "type": "registry:file",
+          "target": "@components/creance/toggle/Toggle.css"
+        },
+        {
+          "path": "toggle/Toggle.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/toggle/Toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Extra text on hover and keyboard focus.",
+      "categories": [
+        "atom",
+        "overlays"
+      ],
+      "dependencies": [
+        "@radix-ui/react-tooltip@^1.3.0"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "tooltip/Tooltip.css",
+          "type": "registry:file",
+          "target": "@components/creance/tooltip/Tooltip.css"
+        },
+        {
+          "path": "tooltip/Tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/tooltip/Tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "A message in the page: what happened and what to do.",
+      "categories": [
+        "molecule",
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "alert/Alert.css",
+          "type": "registry:file",
+          "target": "@components/creance/alert/Alert.css"
+        },
+        {
+          "path": "alert/Alert.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/alert/Alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "banner",
+      "type": "registry:ui",
+      "title": "Banner",
+      "description": "A full-width notice in three tones.",
+      "categories": [
+        "molecule",
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/icon-button.json"
+      ],
+      "files": [
+        {
+          "path": "banner/Banner.css",
+          "type": "registry:file",
+          "target": "@components/creance/banner/Banner.css"
+        },
+        {
+          "path": "banner/Banner.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/banner/Banner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart",
+      "type": "registry:ui",
+      "title": "BarChart",
+      "description": "Amounts across categories. More than one series stacks.",
+      "categories": [
+        "molecule",
+        "charts"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/creance-chart.json"
+      ],
+      "files": [
+        {
+          "path": "bar-chart/BarChart.css",
+          "type": "registry:file",
+          "target": "@components/creance/bar-chart/BarChart.css"
+        },
+        {
+          "path": "bar-chart/BarChart.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/bar-chart/BarChart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-list",
+      "type": "registry:ui",
+      "title": "BarList",
+      "description": "A ranking: a name, a bar and a value on every row.",
+      "categories": [
+        "molecule",
+        "charts"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/creance-chart.json"
+      ],
+      "files": [
+        {
+          "path": "bar-list/BarList.css",
+          "type": "registry:file",
+          "target": "@components/creance/bar-list/BarList.css"
+        },
+        {
+          "path": "bar-list/BarList.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/bar-list/BarList.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumbs",
+      "type": "registry:ui",
+      "title": "Breadcrumbs",
+      "description": "Where you are. Long trails fold the middle.",
+      "categories": [
+        "molecule",
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "breadcrumbs/Breadcrumbs.css",
+          "type": "registry:file",
+          "target": "@components/creance/breadcrumbs/Breadcrumbs.css"
+        },
+        {
+          "path": "breadcrumbs/Breadcrumbs.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/breadcrumbs/Breadcrumbs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "browser-frame",
+      "type": "registry:ui",
+      "title": "BrowserFrame",
+      "description": "A browser window drawn around a preview.",
+      "categories": [
+        "molecule",
+        "media"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "browser-frame/BrowserFrame.css",
+          "type": "registry:file",
+          "target": "@components/creance/browser-frame/BrowserFrame.css"
+        },
+        {
+          "path": "browser-frame/BrowserFrame.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/browser-frame/BrowserFrame.tsx"
+        }
+      ]
+    },
+    {
+      "name": "budget-meter",
+      "type": "registry:ui",
+      "title": "BudgetMeter",
+      "description": "Spend against a limit. It warns at 80% and flags going over.",
+      "categories": [
+        "molecule",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/progress-bar.json"
+      ],
+      "files": [
+        {
+          "path": "budget-meter/BudgetMeter.css",
+          "type": "registry:file",
+          "target": "@components/creance/budget-meter/BudgetMeter.css"
+        },
+        {
+          "path": "budget-meter/BudgetMeter.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/budget-meter/BudgetMeter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "A day or a range. Arrow keys move by day, Page Up and Down by month.",
+      "categories": [
+        "molecule",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "calendar/Calendar.css",
+          "type": "registry:file",
+          "target": "@components/creance/calendar/Calendar.css"
+        },
+        {
+          "path": "calendar/Calendar.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/calendar/Calendar.tsx"
+        },
+        {
+          "path": "calendar/dates.ts",
+          "type": "registry:ui",
+          "target": "@components/creance/calendar/dates.ts"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A glass tile for grouping related content.",
+      "categories": [
+        "molecule",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "card/Card.css",
+          "type": "registry:file",
+          "target": "@components/creance/card/Card.css"
+        },
+        {
+          "path": "card/Card.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/card/Card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "choicebox",
+      "type": "registry:ui",
+      "title": "Choicebox",
+      "description": "Card-sized options for a choice that needs a sentence each.",
+      "categories": [
+        "molecule",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "choicebox/Choicebox.css",
+          "type": "registry:file",
+          "target": "@components/creance/choicebox/Choicebox.css"
+        },
+        {
+          "path": "choicebox/Choicebox.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/choicebox/Choicebox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "clearable-input",
+      "type": "registry:ui",
+      "title": "ClearableInput",
+      "description": "A text field with a clear button that puts focus back in the field.",
+      "categories": [
+        "molecule",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "clearable-input/ClearableInput.css",
+          "type": "registry:file",
+          "target": "@components/creance/clearable-input/ClearableInput.css"
+        },
+        {
+          "path": "clearable-input/ClearableInput.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/clearable-input/ClearableInput.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapse",
+      "type": "registry:ui",
+      "title": "Collapse",
+      "description": "Sections that open and close.",
+      "categories": [
+        "molecule",
+        "navigation"
+      ],
+      "dependencies": [
+        "@radix-ui/react-accordion@^1.2.21"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "collapse/Collapse.css",
+          "type": "registry:file",
+          "target": "@components/creance/collapse/Collapse.css"
+        },
+        {
+          "path": "collapse/Collapse.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/collapse/Collapse.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Type to filter and pick one. Arrow keys move, Enter picks, Escape closes.",
+      "categories": [
+        "molecule",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "combobox/Combobox.css",
+          "type": "registry:file",
+          "target": "@components/creance/combobox/Combobox.css"
+        },
+        {
+          "path": "combobox/Combobox.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/combobox/Combobox.tsx"
+        },
+        {
+          "path": "combobox/useListbox.ts",
+          "type": "registry:ui",
+          "target": "@components/creance/combobox/useListbox.ts"
+        }
+      ]
+    },
+    {
+      "name": "command-menu",
+      "type": "registry:ui",
+      "title": "CommandMenu",
+      "description": "Search everything and act from the keyboard. Press ⌘K or Ctrl+K to see it in use: the search on this site is a CommandMenu.",
+      "categories": [
+        "molecule",
+        "navigation"
+      ],
+      "dependencies": [
+        "@radix-ui/react-dialog@^1.2.0"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/combobox.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/dialog.json",
+        "https://creance.pages.dev/r/kbd.json",
+        "https://creance.pages.dev/r/menu.json"
+      ],
+      "files": [
+        {
+          "path": "command-menu/CommandMenu.css",
+          "type": "registry:file",
+          "target": "@components/creance/command-menu/CommandMenu.css"
+        },
+        {
+          "path": "command-menu/CommandMenu.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/command-menu/CommandMenu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "confidence-meter",
+      "type": "registry:ui",
+      "title": "ConfidenceMeter",
+      "description": "How sure the agent is: a range in words with reasons, never a percentage.",
+      "categories": [
+        "molecule",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "confidence-meter/ConfidenceMeter.css",
+          "type": "registry:file",
+          "target": "@components/creance/confidence-meter/ConfidenceMeter.css"
+        },
+        {
+          "path": "confidence-meter/ConfidenceMeter.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/confidence-meter/ConfidenceMeter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-card",
+      "type": "registry:ui",
+      "title": "ContextCard",
+      "description": "A preview on hover or keyboard focus. Focus never moves into it.",
+      "categories": [
+        "molecule",
+        "overlays"
+      ],
+      "dependencies": [
+        "@radix-ui/react-popover@^1.2.0"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/menu.json"
+      ],
+      "files": [
+        {
+          "path": "context-card/ContextCard.css",
+          "type": "registry:file",
+          "target": "@components/creance/context-card/ContextCard.css"
+        },
+        {
+          "path": "context-card/ContextCard.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/context-card/ContextCard.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "ContextMenu",
+      "description": "Opens on right-click, long-press, or Shift+F10.",
+      "categories": [
+        "molecule",
+        "navigation"
+      ],
+      "dependencies": [
+        "@radix-ui/react-context-menu@^2.3.8"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/menu.json"
+      ],
+      "files": [
+        {
+          "path": "context-menu/ContextMenu.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/context-menu/ContextMenu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:ui",
+      "title": "CopyButton",
+      "description": "Copies text, shows a check for two seconds, and tells screen readers.",
+      "categories": [
+        "molecule",
+        "actions"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/icon-button.json"
+      ],
+      "files": [
+        {
+          "path": "copy-button/CopyButton.css",
+          "type": "registry:file",
+          "target": "@components/creance/copy-button/CopyButton.css"
+        },
+        {
+          "path": "copy-button/CopyButton.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/copy-button/CopyButton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "description",
+      "type": "registry:ui",
+      "title": "Description",
+      "description": "Terms and their values.",
+      "categories": [
+        "molecule",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "description/Description.css",
+          "type": "registry:file",
+          "target": "@components/creance/description/Description.css"
+        },
+        {
+          "path": "description/Description.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/description/Description.tsx"
+        }
+      ]
+    },
+    {
+      "name": "destructive-action-modal",
+      "type": "registry:ui",
+      "title": "DestructiveActionModal",
+      "description": "For actions that cannot be undone. The red button stays off until the name is typed.",
+      "categories": [
+        "molecule",
+        "overlays"
+      ],
+      "dependencies": [
+        "@radix-ui/react-dialog@^1.2.0"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/dialog.json",
+        "https://creance.pages.dev/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "destructive-action-modal/DestructiveActionModal.css",
+          "type": "registry:file",
+          "target": "@components/creance/destructive-action-modal/DestructiveActionModal.css"
+        },
+        {
+          "path": "destructive-action-modal/DestructiveActionModal.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/destructive-action-modal/DestructiveActionModal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "A question over a dimmed page. It traps focus and returns it when closed.",
+      "categories": [
+        "molecule",
+        "overlays"
+      ],
+      "dependencies": [
+        "@radix-ui/react-dialog@^1.2.0"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "dialog/Dialog.css",
+          "type": "registry:file",
+          "target": "@components/creance/dialog/Dialog.css"
+        },
+        {
+          "path": "dialog/Dialog.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/dialog/Dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "diff-line",
+      "type": "registry:ui",
+      "title": "DiffLine",
+      "description": "One line of a diff, with line numbers and screen-reader text.",
+      "categories": [
+        "molecule",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "diff-line/DiffLine.css",
+          "type": "registry:file",
+          "target": "@components/creance/diff-line/DiffLine.css"
+        },
+        {
+          "path": "diff-line/DiffLine.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/diff-line/DiffLine.tsx"
+        }
+      ]
+    },
+    {
+      "name": "donut-chart",
+      "type": "registry:ui",
+      "title": "DonutChart",
+      "description": "Parts of a whole, with each slice’s value and share in the legend.",
+      "categories": [
+        "molecule",
+        "charts"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/creance-chart.json"
+      ],
+      "files": [
+        {
+          "path": "donut-chart/DonutChart.css",
+          "type": "registry:file",
+          "target": "@components/creance/donut-chart/DonutChart.css"
+        },
+        {
+          "path": "donut-chart/DonutChart.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/donut-chart/DonutChart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dots-menu",
+      "type": "registry:ui",
+      "title": "DotsMenu",
+      "description": "A \"…\" button with secondary actions for one row.",
+      "categories": [
+        "molecule",
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/icon-button.json",
+        "https://creance.pages.dev/r/menu.json"
+      ],
+      "files": [
+        {
+          "path": "dots-menu/DotsMenu.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/dots-menu/DotsMenu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:ui",
+      "title": "EmptyState",
+      "description": "An empty list as an invitation to act.",
+      "categories": [
+        "molecule",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "empty-state/EmptyState.css",
+          "type": "registry:file",
+          "target": "@components/creance/empty-state/EmptyState.css"
+        },
+        {
+          "path": "empty-state/EmptyState.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/empty-state/EmptyState.tsx"
+        }
+      ]
+    },
+    {
+      "name": "entity",
+      "type": "registry:ui",
+      "title": "Entity",
+      "description": "An agent or a person as a row.",
+      "categories": [
+        "molecule",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/avatar.json",
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "entity/Entity.css",
+          "type": "registry:file",
+          "target": "@components/creance/entity/Entity.css"
+        },
+        {
+          "path": "entity/Entity.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/entity/Entity.tsx"
+        }
+      ]
+    },
+    {
+      "name": "error-card",
+      "type": "registry:ui",
+      "title": "ErrorCard",
+      "description": "A failure that needs a decision: what broke, the error, and what you can do.",
+      "categories": [
+        "molecule",
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "error-card/ErrorCard.css",
+          "type": "registry:file",
+          "target": "@components/creance/error-card/ErrorCard.css"
+        },
+        {
+          "path": "error-card/ErrorCard.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/error-card/ErrorCard.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feedback",
+      "type": "registry:ui",
+      "title": "Feedback",
+      "description": "Thumbs up or down, then an optional comment.",
+      "categories": [
+        "molecule",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "feedback/Feedback.css",
+          "type": "registry:file",
+          "target": "@components/creance/feedback/Feedback.css"
+        },
+        {
+          "path": "feedback/Feedback.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/feedback/Feedback.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "A label, a control, and the hint or error that describes it, wired for screen readers.",
+      "categories": [
+        "molecule",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "field/Field.css",
+          "type": "registry:file",
+          "target": "@components/creance/field/Field.css"
+        },
+        {
+          "path": "field/Field.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/field/Field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "file-tree",
+      "type": "registry:ui",
+      "title": "FileTree",
+      "description": "Files and folders with change markers. Arrow keys walk the tree.",
+      "categories": [
+        "molecule",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "file-tree/FileTree.css",
+          "type": "registry:file",
+          "target": "@components/creance/file-tree/FileTree.css"
+        },
+        {
+          "path": "file-tree/FileTree.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/file-tree/FileTree.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer",
+      "type": "registry:ui",
+      "title": "Footer",
+      "description": "The end of a page: brand, groups of links, and a line for copyright.",
+      "categories": [
+        "molecule",
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "footer/Footer.css",
+          "type": "registry:file",
+          "target": "@components/creance/footer/Footer.css"
+        },
+        {
+          "path": "footer/Footer.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/footer/Footer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "json-view",
+      "type": "registry:ui",
+      "title": "JsonView",
+      "description": "JSON as a tree you can fold.",
+      "categories": [
+        "molecule",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/copy-button.json",
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "json-view/JsonView.css",
+          "type": "registry:file",
+          "target": "@components/creance/json-view/JsonView.css"
+        },
+        {
+          "path": "json-view/JsonView.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/json-view/JsonView.tsx"
+        }
+      ]
+    },
+    {
+      "name": "keyboard-hint",
+      "type": "registry:ui",
+      "title": "KeyboardHint",
+      "description": "A shortcut and what it does.",
+      "categories": [
+        "molecule",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/kbd.json"
+      ],
+      "files": [
+        {
+          "path": "keyboard-hint/KeyboardHint.css",
+          "type": "registry:file",
+          "target": "@components/creance/keyboard-hint/KeyboardHint.css"
+        },
+        {
+          "path": "keyboard-hint/KeyboardHint.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/keyboard-hint/KeyboardHint.tsx"
+        }
+      ]
+    },
+    {
+      "name": "line-chart",
+      "type": "registry:ui",
+      "title": "LineChart",
+      "description": "A trend over time. Point at it, or focus it and press the arrow keys.",
+      "categories": [
+        "molecule",
+        "charts"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/creance-chart.json"
+      ],
+      "files": [
+        {
+          "path": "line-chart/LineChart.css",
+          "type": "registry:file",
+          "target": "@components/creance/line-chart/LineChart.css"
+        },
+        {
+          "path": "line-chart/LineChart.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/line-chart/LineChart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "load-more-button",
+      "type": "registry:ui",
+      "title": "LoadMoreButton",
+      "description": "A full-width button under a list that says when it is loading.",
+      "categories": [
+        "molecule",
+        "actions"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/spinner.json"
+      ],
+      "files": [
+        {
+          "path": "load-more-button/LoadMoreButton.css",
+          "type": "registry:file",
+          "target": "@components/creance/load-more-button/LoadMoreButton.css"
+        },
+        {
+          "path": "load-more-button/LoadMoreButton.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/load-more-button/LoadMoreButton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "type": "registry:ui",
+      "title": "Menu",
+      "description": "Actions behind a button. Put destructive ones last, after a separator.",
+      "categories": [
+        "molecule",
+        "navigation"
+      ],
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu@^2.1.25"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "menu/Menu.css",
+          "type": "registry:file",
+          "target": "@components/creance/menu/Menu.css"
+        },
+        {
+          "path": "menu/Menu.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/menu/Menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "One turn. Yours sit right in a tile; the agent’s are plain text under its name.",
+      "categories": [
+        "molecule",
+        "chat"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/loading-dots.json"
+      ],
+      "files": [
+        {
+          "path": "message/Message.css",
+          "type": "registry:file",
+          "target": "@components/creance/message/Message.css"
+        },
+        {
+          "path": "message/Message.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/message/Message.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message-list",
+      "type": "registry:ui",
+      "title": "MessageList",
+      "description": "A scrolling column that follows new messages until you scroll up.",
+      "categories": [
+        "molecule",
+        "chat"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "message-list/MessageList.css",
+          "type": "registry:file",
+          "target": "@components/creance/message-list/MessageList.css"
+        },
+        {
+          "path": "message-list/MessageList.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/message-list/MessageList.tsx"
+        }
+      ]
+    },
+    {
+      "name": "model-picker",
+      "type": "registry:ui",
+      "title": "ModelPicker",
+      "description": "Chooses which model answers.",
+      "categories": [
+        "molecule",
+        "chat"
+      ],
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu@^2.1.25"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/menu.json"
+      ],
+      "files": [
+        {
+          "path": "model-picker/ModelPicker.css",
+          "type": "registry:file",
+          "target": "@components/creance/model-picker/ModelPicker.css"
+        },
+        {
+          "path": "model-picker/ModelPicker.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/model-picker/ModelPicker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "multi-select",
+      "type": "registry:ui",
+      "title": "MultiSelect",
+      "description": "Pick several. Picks become chips; Backspace removes the last one.",
+      "categories": [
+        "molecule",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/combobox.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "multi-select/MultiSelect.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/multi-select/MultiSelect.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navbar",
+      "type": "registry:ui",
+      "title": "Navbar",
+      "description": "The bar across the top. When it gets narrow, the links move into a menu.",
+      "categories": [
+        "molecule",
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "navbar/Navbar.css",
+          "type": "registry:file",
+          "target": "@components/creance/navbar/Navbar.css"
+        },
+        {
+          "path": "navbar/Navbar.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/navbar/Navbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Page numbers, or a compact previous and next.",
+      "categories": [
+        "molecule",
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "pagination/Pagination.css",
+          "type": "registry:file",
+          "target": "@components/creance/pagination/Pagination.css"
+        },
+        {
+          "path": "pagination/Pagination.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/pagination/Pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "phone-frame",
+      "type": "registry:ui",
+      "title": "PhoneFrame",
+      "description": "A phone drawn around content, to show a component at phone size.",
+      "categories": [
+        "molecule",
+        "media"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "phone-frame/PhoneFrame.css",
+          "type": "registry:file",
+          "target": "@components/creance/phone-frame/PhoneFrame.css"
+        },
+        {
+          "path": "phone-frame/PhoneFrame.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/phone-frame/PhoneFrame.tsx"
+        }
+      ]
+    },
+    {
+      "name": "project-banner",
+      "type": "registry:ui",
+      "title": "ProjectBanner",
+      "description": "A project-wide notice with one action.",
+      "categories": [
+        "molecule",
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/progress-bar.json"
+      ],
+      "files": [
+        {
+          "path": "project-banner/ProjectBanner.css",
+          "type": "registry:file",
+          "target": "@components/creance/project-banner/ProjectBanner.css"
+        },
+        {
+          "path": "project-banner/ProjectBanner.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/project-banner/ProjectBanner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "prompt-input",
+      "type": "registry:ui",
+      "title": "PromptInput",
+      "description": "Where you write to an agent. Enter sends; Send becomes Stop while it works.",
+      "categories": [
+        "molecule",
+        "chat"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "prompt-input/PromptInput.css",
+          "type": "registry:file",
+          "target": "@components/creance/prompt-input/PromptInput.css"
+        },
+        {
+          "path": "prompt-input/PromptInput.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/prompt-input/PromptInput.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "RadioGroup",
+      "description": "One choice from a short list.",
+      "categories": [
+        "molecule",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/radio.json"
+      ],
+      "files": [
+        {
+          "path": "radio-group/RadioGroup.css",
+          "type": "registry:file",
+          "target": "@components/creance/radio-group/RadioGroup.css"
+        },
+        {
+          "path": "radio-group/RadioGroup.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/radio-group/RadioGroup.tsx"
+        }
+      ]
+    },
+    {
+      "name": "reasoning",
+      "type": "registry:ui",
+      "title": "Reasoning",
+      "description": "The agent’s thinking, folded away behind how long it took.",
+      "categories": [
+        "molecule",
+        "chat"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "reasoning/Reasoning.css",
+          "type": "registry:file",
+          "target": "@components/creance/reasoning/Reasoning.css"
+        },
+        {
+          "path": "reasoning/Reasoning.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/reasoning/Reasoning.tsx"
+        }
+      ]
+    },
+    {
+      "name": "relative-time-card",
+      "type": "registry:ui",
+      "title": "RelativeTimeCard",
+      "description": "\"2 hours ago\", with the exact local and UTC time on hover or focus.",
+      "categories": [
+        "molecule",
+        "overlays"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/context-card.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/description.json"
+      ],
+      "files": [
+        {
+          "path": "relative-time-card/RelativeTimeCard.css",
+          "type": "registry:file",
+          "target": "@components/creance/relative-time-card/RelativeTimeCard.css"
+        },
+        {
+          "path": "relative-time-card/RelativeTimeCard.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/relative-time-card/RelativeTimeCard.tsx"
+        }
+      ]
+    },
+    {
+      "name": "risk-label",
+      "type": "registry:ui",
+      "title": "RiskLabel",
+      "description": "How risky an action is, in words.",
+      "categories": [
+        "molecule",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "risk-label/RiskLabel.css",
+          "type": "registry:file",
+          "target": "@components/creance/risk-label/RiskLabel.css"
+        },
+        {
+          "path": "risk-label/RiskLabel.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/risk-label/RiskLabel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroller",
+      "type": "registry:ui",
+      "title": "Scroller",
+      "description": "A horizontal strip that fades where there is more.",
+      "categories": [
+        "molecule",
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "scroller/Scroller.css",
+          "type": "registry:file",
+          "target": "@components/creance/scroller/Scroller.css"
+        },
+        {
+          "path": "scroller/Scroller.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/scroller/Scroller.tsx"
+        }
+      ]
+    },
+    {
+      "name": "search-input",
+      "type": "registry:ui",
+      "title": "SearchInput",
+      "description": "A search field with a shortcut hint, a spinner and a clear button.",
+      "categories": [
+        "molecule",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/clearable-input.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/kbd.json",
+        "https://creance.pages.dev/r/spinner.json"
+      ],
+      "files": [
+        {
+          "path": "search-input/SearchInput.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/search-input/SearchInput.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "A panel that slides in from an edge.",
+      "categories": [
+        "molecule",
+        "overlays"
+      ],
+      "dependencies": [
+        "@radix-ui/react-dialog@^1.2.0"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/dialog.json",
+        "https://creance.pages.dev/r/icon-button.json"
+      ],
+      "files": [
+        {
+          "path": "sheet/Sheet.css",
+          "type": "registry:file",
+          "target": "@components/creance/sheet/Sheet.css"
+        },
+        {
+          "path": "sheet/Sheet.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/sheet/Sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "show-more",
+      "type": "registry:ui",
+      "title": "ShowMore",
+      "description": "Long content cut to a few lines, with a button to show the rest.",
+      "categories": [
+        "molecule",
+        "actions"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "show-more/ShowMore.css",
+          "type": "registry:file",
+          "target": "@components/creance/show-more/ShowMore.css"
+        },
+        {
+          "path": "show-more/ShowMore.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/show-more/ShowMore.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Links down the side, in groups. Collapses to icons that keep their names.",
+      "categories": [
+        "molecule",
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/icon-button.json",
+        "https://creance.pages.dev/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "sidebar/Sidebar.css",
+          "type": "registry:file",
+          "target": "@components/creance/sidebar/Sidebar.css"
+        },
+        {
+          "path": "sidebar/Sidebar.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/sidebar/Sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "One value, a range, or steps, read out in words.",
+      "categories": [
+        "molecule",
+        "forms"
+      ],
+      "dependencies": [
+        "@radix-ui/react-slider@^1.5.0"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "slider/Slider.css",
+          "type": "registry:file",
+          "target": "@components/creance/slider/Slider.css"
+        },
+        {
+          "path": "slider/Slider.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/slider/Slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snippet",
+      "type": "registry:ui",
+      "title": "Snippet",
+      "description": "Shell commands with a copy button. The prompt sign is never copied.",
+      "categories": [
+        "molecule",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/copy-button.json",
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "snippet/Snippet.css",
+          "type": "registry:file",
+          "target": "@components/creance/snippet/Snippet.css"
+        },
+        {
+          "path": "snippet/Snippet.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/snippet/Snippet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sources",
+      "type": "registry:ui",
+      "title": "Sources",
+      "description": "What an answer is based on, with numbered markers in the text.",
+      "categories": [
+        "molecule",
+        "chat"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "sources/Sources.css",
+          "type": "registry:file",
+          "target": "@components/creance/sources/Sources.css"
+        },
+        {
+          "path": "sources/Sources.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/sources/Sources.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-button",
+      "type": "registry:ui",
+      "title": "SplitButton",
+      "description": "The common action, with alternatives in a menu.",
+      "categories": [
+        "molecule",
+        "actions"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/menu.json"
+      ],
+      "files": [
+        {
+          "path": "split-button/SplitButton.css",
+          "type": "registry:file",
+          "target": "@components/creance/split-button/SplitButton.css"
+        },
+        {
+          "path": "split-button/SplitButton.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/split-button/SplitButton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:ui",
+      "title": "StatCard",
+      "description": "One number, what it is, and how it moved.",
+      "categories": [
+        "molecule",
+        "charts"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "stat-card/StatCard.css",
+          "type": "registry:file",
+          "target": "@components/creance/stat-card/StatCard.css"
+        },
+        {
+          "path": "stat-card/StatCard.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/stat-card/StatCard.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-badge",
+      "type": "registry:ui",
+      "title": "StatusBadge",
+      "description": "A status with a running clock.",
+      "categories": [
+        "molecule",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/badge.json",
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "status-badge/StatusBadge.css",
+          "type": "registry:file",
+          "target": "@components/creance/status-badge/StatusBadge.css"
+        },
+        {
+          "path": "status-badge/StatusBadge.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/status-badge/StatusBadge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "steps",
+      "type": "registry:ui",
+      "title": "Steps",
+      "description": "Where someone is in a fixed sequence. Each status has a shape and a spoken label.",
+      "categories": [
+        "molecule",
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "steps/Steps.css",
+          "type": "registry:file",
+          "target": "@components/creance/steps/Steps.css"
+        },
+        {
+          "path": "steps/Steps.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/steps/Steps.tsx"
+        }
+      ]
+    },
+    {
+      "name": "suggestions",
+      "type": "registry:ui",
+      "title": "Suggestions",
+      "description": "Starting points above the input. Choosing one sends it.",
+      "categories": [
+        "molecule",
+        "chat"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "suggestions/Suggestions.css",
+          "type": "registry:file",
+          "target": "@components/creance/suggestions/Suggestions.css"
+        },
+        {
+          "path": "suggestions/Suggestions.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/suggestions/Suggestions.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Sortable columns, row selection with Shift-click ranges, and bulk actions.",
+      "categories": [
+        "molecule",
+        "data-display"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "table/Table.css",
+          "type": "registry:file",
+          "target": "@components/creance/table/Table.css"
+        },
+        {
+          "path": "table/Table.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/table/Table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "A segmented control and its panels. Arrow keys move between tabs.",
+      "categories": [
+        "molecule",
+        "navigation"
+      ],
+      "dependencies": [
+        "@radix-ui/react-tabs@^1.1.22"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "tabs/Tabs.css",
+          "type": "registry:file",
+          "target": "@components/creance/tabs/Tabs.css"
+        },
+        {
+          "path": "tabs/Tabs.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/tabs/Tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "text-with-copy",
+      "type": "registry:ui",
+      "title": "TextWithCopy",
+      "description": "Text with a copy button beside it.",
+      "categories": [
+        "molecule",
+        "actions"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/copy-button.json",
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "text-with-copy/TextWithCopy.css",
+          "type": "registry:file",
+          "target": "@components/creance/text-with-copy/TextWithCopy.css"
+        },
+        {
+          "path": "text-with-copy/TextWithCopy.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/text-with-copy/TextWithCopy.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theme-switcher",
+      "type": "registry:ui",
+      "title": "ThemeSwitcher",
+      "description": "Light, dark or match the system. This one really switches this page, starting from its current theme.",
+      "categories": [
+        "molecule",
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "theme-switcher/ThemeSwitcher.css",
+          "type": "registry:file",
+          "target": "@components/creance/theme-switcher/ThemeSwitcher.css"
+        },
+        {
+          "path": "theme-switcher/ThemeSwitcher.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/theme-switcher/ThemeSwitcher.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "A short message that rises from the bottom. Call toast() from anywhere.",
+      "categories": [
+        "molecule",
+        "overlays"
+      ],
+      "dependencies": [
+        "@radix-ui/react-toast@^1.2.24"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "toast/Toast.css",
+          "type": "registry:file",
+          "target": "@components/creance/toast/Toast.css"
+        },
+        {
+          "path": "toast/Toast.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/toast/Toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "ToggleGroup",
+      "description": "A segmented control: pick one, or any.",
+      "categories": [
+        "molecule",
+        "actions"
+      ],
+      "dependencies": [
+        "@radix-ui/react-toggle-group@^1.1.20"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/toggle.json"
+      ],
+      "files": [
+        {
+          "path": "toggle-group/ToggleGroup.css",
+          "type": "registry:file",
+          "target": "@components/creance/toggle-group/ToggleGroup.css"
+        },
+        {
+          "path": "toggle-group/ToggleGroup.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/toggle-group/ToggleGroup.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tool-call-header",
+      "type": "registry:ui",
+      "title": "ToolCallHeader",
+      "description": "Names a tool call and shows its state and attempt.",
+      "categories": [
+        "molecule",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/badge.json",
+        "https://creance.pages.dev/r/code.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/status-badge.json"
+      ],
+      "files": [
+        {
+          "path": "tool-call-header/ToolCallHeader.css",
+          "type": "registry:file",
+          "target": "@components/creance/tool-call-header/ToolCallHeader.css"
+        },
+        {
+          "path": "tool-call-header/ToolCallHeader.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/tool-call-header/ToolCallHeader.tsx"
+        }
+      ]
+    },
+    {
+      "name": "video",
+      "type": "registry:ui",
+      "title": "Video",
+      "description": "A player with glass controls. It starts muted and never autoplays.",
+      "categories": [
+        "molecule",
+        "media"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "video/Video.css",
+          "type": "registry:file",
+          "target": "@components/creance/video/Video.css"
+        },
+        {
+          "path": "video/Video.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/video/Video.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agent-handoff-banner",
+      "type": "registry:ui",
+      "title": "AgentHandoffBanner",
+      "description": "The point where the agent hands control back: outcome, summary, next actions.",
+      "categories": [
+        "organism",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/avatar.json",
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "agent-handoff-banner/AgentHandoffBanner.css",
+          "type": "registry:file",
+          "target": "@components/creance/agent-handoff-banner/AgentHandoffBanner.css"
+        },
+        {
+          "path": "agent-handoff-banner/AgentHandoffBanner.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/agent-handoff-banner/AgentHandoffBanner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "approval-prompt",
+      "type": "registry:ui",
+      "title": "ApprovalPrompt",
+      "description": "One specific action to allow or deny. A, Shift+A and D work while focus is inside it.",
+      "categories": [
+        "organism",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/badge.json",
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/code.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/keyboard-hint.json",
+        "https://creance.pages.dev/r/risk-label.json"
+      ],
+      "files": [
+        {
+          "path": "approval-prompt/ApprovalPrompt.css",
+          "type": "registry:file",
+          "target": "@components/creance/approval-prompt/ApprovalPrompt.css"
+        },
+        {
+          "path": "approval-prompt/ApprovalPrompt.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/approval-prompt/ApprovalPrompt.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chat",
+      "type": "registry:ui",
+      "title": "Chat",
+      "description": "A whole conversation with an agent: messages, suggestions and the input. Type something to try it.",
+      "categories": [
+        "organism",
+        "chat"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/message.json",
+        "https://creance.pages.dev/r/message-list.json",
+        "https://creance.pages.dev/r/prompt-input.json",
+        "https://creance.pages.dev/r/reasoning.json",
+        "https://creance.pages.dev/r/sources.json",
+        "https://creance.pages.dev/r/suggestions.json"
+      ],
+      "files": [
+        {
+          "path": "chat/Chat.css",
+          "type": "registry:file",
+          "target": "@components/creance/chat/Chat.css"
+        },
+        {
+          "path": "chat/Chat.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/chat/Chat.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkpoint-rewind",
+      "type": "registry:ui",
+      "title": "CheckpointRewind",
+      "description": "Pick a point to roll back to and see what it undoes before confirming.",
+      "categories": [
+        "organism",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "checkpoint-rewind/CheckpointRewind.css",
+          "type": "registry:file",
+          "target": "@components/creance/checkpoint-rewind/CheckpointRewind.css"
+        },
+        {
+          "path": "checkpoint-rewind/CheckpointRewind.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/checkpoint-rewind/CheckpointRewind.tsx"
+        }
+      ]
+    },
+    {
+      "name": "diff-review",
+      "type": "registry:ui",
+      "title": "DiffReview",
+      "description": "A decision per hunk before anything lands. J and K move, Y and N decide.",
+      "categories": [
+        "organism",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/badge.json",
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/code.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/diff-line.json",
+        "https://creance.pages.dev/r/keyboard-hint.json"
+      ],
+      "files": [
+        {
+          "path": "diff-review/DiffReview.css",
+          "type": "registry:file",
+          "target": "@components/creance/diff-review/DiffReview.css"
+        },
+        {
+          "path": "diff-review/DiffReview.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/diff-review/DiffReview.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fleet-sky",
+      "type": "registry:ui",
+      "title": "FleetSky",
+      "description": "Many agents at once, as birds on lines back to you. The one that needs you flies in on a taut line.",
+      "categories": [
+        "organism",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/badge.json",
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "fleet-sky/FleetSky.css",
+          "type": "registry:file",
+          "target": "@components/creance/fleet-sky/FleetSky.css"
+        },
+        {
+          "path": "fleet-sky/FleetSky.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/fleet-sky/FleetSky.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kill-switch",
+      "type": "registry:ui",
+      "title": "KillSwitch",
+      "description": "Hold for a second to stop the agent. Letting go early does nothing. Space or Enter held does the same.",
+      "categories": [
+        "organism",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "kill-switch/KillSwitch.css",
+          "type": "registry:file",
+          "target": "@components/creance/kill-switch/KillSwitch.css"
+        },
+        {
+          "path": "kill-switch/KillSwitch.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/kill-switch/KillSwitch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "needs-you-inbox",
+      "type": "registry:ui",
+      "title": "NeedsYouInbox",
+      "description": "Everything blocked on a person, across agents, most urgent first.",
+      "categories": [
+        "organism",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/avatar.json",
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "needs-you-inbox/NeedsYouInbox.css",
+          "type": "registry:file",
+          "target": "@components/creance/needs-you-inbox/NeedsYouInbox.css"
+        },
+        {
+          "path": "needs-you-inbox/NeedsYouInbox.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/needs-you-inbox/NeedsYouInbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "permission-ledger",
+      "type": "registry:ui",
+      "title": "PermissionLedger",
+      "description": "Everything you said \"Always allow\" to, how often it has been used, and a way to take it back.",
+      "categories": [
+        "organism",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/table.json"
+      ],
+      "files": [
+        {
+          "path": "permission-ledger/PermissionLedger.css",
+          "type": "registry:file",
+          "target": "@components/creance/permission-ledger/PermissionLedger.css"
+        },
+        {
+          "path": "permission-ledger/PermissionLedger.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/permission-ledger/PermissionLedger.tsx"
+        }
+      ]
+    },
+    {
+      "name": "plan-editor",
+      "type": "registry:ui",
+      "title": "PlanEditor",
+      "description": "Reorder, edit, remove and add steps before anything runs. Alt+Up and Alt+Down move a step.",
+      "categories": [
+        "organism",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/icon-button.json",
+        "https://creance.pages.dev/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "plan-editor/PlanEditor.css",
+          "type": "registry:file",
+          "target": "@components/creance/plan-editor/PlanEditor.css"
+        },
+        {
+          "path": "plan-editor/PlanEditor.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/plan-editor/PlanEditor.tsx"
+        }
+      ]
+    },
+    {
+      "name": "question-card",
+      "type": "registry:ui",
+      "title": "QuestionCard",
+      "description": "When the agent needs information rather than permission.",
+      "categories": [
+        "organism",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "question-card/QuestionCard.css",
+          "type": "registry:file",
+          "target": "@components/creance/question-card/QuestionCard.css"
+        },
+        {
+          "path": "question-card/QuestionCard.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/question-card/QuestionCard.tsx"
+        }
+      ]
+    },
+    {
+      "name": "run-timeline",
+      "type": "registry:ui",
+      "title": "RunTimeline",
+      "description": "The run's steps and tool calls. It follows the newest step until you scroll up.",
+      "categories": [
+        "organism",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/code.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/status-badge.json",
+        "https://creance.pages.dev/r/tool-call-header.json"
+      ],
+      "files": [
+        {
+          "path": "run-timeline/RunTimeline.css",
+          "type": "registry:file",
+          "target": "@components/creance/run-timeline/RunTimeline.css"
+        },
+        {
+          "path": "run-timeline/RunTimeline.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/run-timeline/RunTimeline.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tool-call-card",
+      "type": "registry:ui",
+      "title": "ToolCallCard",
+      "description": "One tool call's whole life: input, result, errors and retries.",
+      "categories": [
+        "organism",
+        "agent"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/code.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/spinner.json",
+        "https://creance.pages.dev/r/tool-call-header.json"
+      ],
+      "files": [
+        {
+          "path": "tool-call-card/ToolCallCard.css",
+          "type": "registry:file",
+          "target": "@components/creance/tool-call-card/ToolCallCard.css"
+        },
+        {
+          "path": "tool-call-card/ToolCallCard.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/tool-call-card/ToolCallCard.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agent-run-layout",
+      "type": "registry:ui",
+      "title": "AgentRunLayout",
+      "description": "The run screen. It takes organisms as slots, so your app decides what goes where.",
+      "categories": [
+        "template",
+        "agent"
+      ],
+      "dependencies": [
+        "@radix-ui/react-dialog@^1.2.0"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/avatar.json",
+        "https://creance.pages.dev/r/badge.json",
+        "https://creance.pages.dev/r/budget-meter.json",
+        "https://creance.pages.dev/r/button.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/icon-button.json",
+        "https://creance.pages.dev/r/status-badge.json"
+      ],
+      "files": [
+        {
+          "path": "agent-run-layout/AgentRunLayout.css",
+          "type": "registry:file",
+          "target": "@components/creance/agent-run-layout/AgentRunLayout.css"
+        },
+        {
+          "path": "agent-run-layout/AgentRunLayout.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/agent-run-layout/AgentRunLayout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "app-shell",
+      "type": "registry:ui",
+      "title": "AppShell",
+      "description": "The frame of an app: sidebar, header, content and an optional aside.",
+      "categories": [
+        "template",
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/icon-button.json",
+        "https://creance.pages.dev/r/sheet.json"
+      ],
+      "files": [
+        {
+          "path": "app-shell/AppShell.css",
+          "type": "registry:file",
+          "target": "@components/creance/app-shell/AppShell.css"
+        },
+        {
+          "path": "app-shell/AppShell.tsx",
+          "type": "registry:ui",
+          "target": "@components/creance/app-shell/AppShell.tsx"
+        }
+      ]
+    },
+    {
+      "name": "creance-base",
+      "type": "registry:lib",
+      "title": "Creance base",
+      "description": "Shared helpers, base styles and the design tokens every Creance component uses.",
+      "files": [
+        {
+          "path": "creance-base/LiveRegion.tsx",
+          "type": "registry:lib",
+          "target": "@lib/creance/LiveRegion.tsx"
+        },
+        {
+          "path": "creance-base/VisuallyHidden.tsx",
+          "type": "registry:lib",
+          "target": "@lib/creance/VisuallyHidden.tsx"
+        },
+        {
+          "path": "creance-base/base.css",
+          "type": "registry:file",
+          "target": "@lib/creance/base.css"
+        },
+        {
+          "path": "creance-base/cx.ts",
+          "type": "registry:lib",
+          "target": "@lib/creance/cx.ts"
+        },
+        {
+          "path": "creance-base/deprecate.ts",
+          "type": "registry:lib",
+          "target": "@lib/creance/deprecate.ts"
+        },
+        {
+          "path": "creance-base/formatDuration.ts",
+          "type": "registry:lib",
+          "target": "@lib/creance/formatDuration.ts"
+        },
+        {
+          "path": "creance-base/icons.tsx",
+          "type": "registry:lib",
+          "target": "@lib/creance/icons.tsx"
+        },
+        {
+          "path": "creance-base/useNow.ts",
+          "type": "registry:lib",
+          "target": "@lib/creance/useNow.ts"
+        },
+        {
+          "path": "creance-base/tokens.css",
+          "type": "registry:file",
+          "target": "@lib/creance/tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "creance-chart",
+      "type": "registry:lib",
+      "title": "Creance chart helpers",
+      "description": "Shared layout and styles for the chart components.",
+      "registryDependencies": [
+        "https://creance.pages.dev/r/creance-base.json"
+      ],
+      "files": [
+        {
+          "path": "creance-chart/chart.tsx",
+          "type": "registry:lib",
+          "target": "@lib/creance/chart.tsx"
+        },
+        {
+          "path": "creance-chart/chart.css",
+          "type": "registry:file",
+          "target": "@lib/creance/chart.css"
+        }
+      ]
+    },
+    {
+      "name": "agent-run",
+      "type": "registry:lib",
+      "title": "Agent run",
+      "description": "The agent event model, useAgentRun and its selectors: turn events from any agent into run state for the agent components.",
+      "registryDependencies": [
+        "https://creance.pages.dev/r/agent-handoff-banner.json",
+        "https://creance.pages.dev/r/approval-prompt.json",
+        "https://creance.pages.dev/r/creance-base.json",
+        "https://creance.pages.dev/r/diff-review.json",
+        "https://creance.pages.dev/r/fleet-sky.json",
+        "https://creance.pages.dev/r/needs-you-inbox.json",
+        "https://creance.pages.dev/r/risk-label.json",
+        "https://creance.pages.dev/r/run-timeline.json",
+        "https://creance.pages.dev/r/tool-call-header.json"
+      ],
+      "files": [
+        {
+          "path": "agent-run/events.ts",
+          "type": "registry:lib",
+          "target": "@lib/creance/events.ts"
+        },
+        {
+          "path": "agent-run/run/index.ts",
+          "type": "registry:lib",
+          "target": "@lib/creance/run/index.ts"
+        },
+        {
+          "path": "agent-run/run/reduceRun.ts",
+          "type": "registry:lib",
+          "target": "@lib/creance/run/reduceRun.ts"
+        },
+        {
+          "path": "agent-run/run/selectors.ts",
+          "type": "registry:lib",
+          "target": "@lib/creance/run/selectors.ts"
+        },
+        {
+          "path": "agent-run/run/useAgentRun.ts",
+          "type": "registry:lib",
+          "target": "@lib/creance/run/useAgentRun.ts"
+        }
+      ]
+    }
+  ]
+}
