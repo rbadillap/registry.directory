@@ -1,10 +1,7 @@
 import { MetadataRoute } from 'next'
 import { hasOnlyRenderableFiles } from "@/lib/file-utils"
-import {
-  loadDirectory,
-  registryBasePath,
-  loadRegistryIndex,
-} from "@/lib/resolve-registry"
+import { loadDirectory, registryBasePath } from "@/lib/resolve-registry"
+import { loadRegistryView } from "@/lib/registry-data"
 import { fetchAllGitHubStats } from "@/lib/github-stats"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -58,10 +55,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           },
         ]
 
-        const registryData = await loadRegistryIndex(registry)
-        if (!registryData) return urls
+        const view = await loadRegistryView(registry)
+        if (!view) return urls
 
-        for (const item of registryData.items) {
+        // Only items someone can install: the set /r serves. A registry the
+        // indexer found unresolvable, and an item it marked gated, gone or
+        // unverified, keep their pages, but the sitemap does not send
+        // crawlers to render thousands of them.
+        if (!view.resolvable) return urls
+
+        for (const item of view.items) {
+          if (item.resolution) continue
           if (!hasOnlyRenderableFiles(item.files)) {
             continue
           }
