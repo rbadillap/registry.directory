@@ -4,6 +4,7 @@ import { NextRequest } from "next/server"
 import { generateMarkdownForItem } from "@/lib/markdown-generator"
 import { resolveByGithub } from "@/lib/resolve-registry"
 import { fetchItemData } from "@/lib/registry-item-source"
+import { UNTIL_NEXT_DEPLOY } from "@/lib/cdn-cache"
 
 // Force dynamic rendering - don't pre-generate during build
 export const dynamic = 'force-dynamic'
@@ -36,7 +37,7 @@ export async function GET(
   return new Response(markdown, {
     headers: {
       'Content-Type': 'text/markdown; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+      'Cache-Control': `max-age=3600, ${UNTIL_NEXT_DEPLOY}`,
     }
   })
 }
