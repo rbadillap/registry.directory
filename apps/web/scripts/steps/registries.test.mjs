@@ -139,7 +139,10 @@ import { resolveItemBase } from "./registries.mjs";
 import { itemBaseCandidates } from "../lib/data-io.mjs";
 
 const NAMES = ["a", "b", "c"];
-const statusMap = (table) => async (url) => table[url] ?? 404;
+const statusMap = (table) => async (url) => {
+  const a = table[url] ?? 404;
+  return typeof a === "number" ? { status: a, contentType: "application/json" } : a;
+};
 
 describe("itemBaseCandidates", () => {
   it("puts the convention first and dedupes", () => {
@@ -193,6 +196,36 @@ describe("resolveItemBase", () => {
     assert.deepEqual(r, { itemBase: "https://x.test/r", resolvable: false });
   });
 
+  it("does not move to an origin root that answers every path with a page", async () => {
+    const page = { status: 200, contentType: "text/html" };
+    const r = await resolveItemBase(
+      ["https://x.test/r", "https://x.test"],
+      NAMES,
+      statusMap({
+        "https://x.test/r/a.json": 401,
+        "https://x.test/r/b.json": 401,
+        "https://x.test/r/c.json": 401,
+        "https://x.test/a.json": page,
+        "https://x.test/b.json": page,
+        "https://x.test/c.json": page,
+      }),
+    );
+    assert.equal(r.itemBase, "https://x.test/r");
+  });
+
+  it("asks for a full walk when every sample hits a paywall", async () => {
+    const r = await resolveItemBase(
+      ["https://x.test/r", "https://x.test"],
+      NAMES,
+      statusMap({
+        "https://x.test/r/a.json": 401,
+        "https://x.test/r/b.json": 402,
+        "https://x.test/r/c.json": 403,
+      }),
+    );
+    assert.deepEqual(r, { itemBase: "https://x.test/r", resolvable: false, paywalled: true });
+  });
+
   it("gives a throttled convention the benefit of the doubt", async () => {
     const r = await resolveItemBase(
       ["https://x.test/r", "https://x.test"],
@@ -235,12 +268,13 @@ describe("probeItems", () => {
       moved: { status: 404 },
       retired: { status: 410 },
     });
-    const { verdicts, unprobed } = await probeItems(
+    const { verdicts, unprobed, served } = await probeItems(
       BASE,
       ["free", "paid", "login", "forbidden", "moved", "retired"],
       { answer, ...inOrder },
     );
     assert.deepEqual(unprobed, []);
+    assert.equal(served, 1);
     assert.deepEqual(
       [...verdicts],
       [
@@ -269,13 +303,14 @@ describe("probeItems", () => {
       down: { status: 503 },
       unreachable: { status: 0 },
     });
-    const { verdicts, unprobed } = await probeItems(BASE, ["throttled", "down", "unreachable"], {
+    const { verdicts, unprobed, served } = await probeItems(BASE, ["throttled", "down", "unreachable"], {
       answer,
       ...inOrder,
     });
     assert.equal(verdicts.size, 0, "no verdict without a definitive answer");
     assert.deepEqual(unprobed, [], "every item was asked");
     assert.equal(calls.throttled, 3, "a transient answer is asked again before giving up");
+    assert.equal(served, 0, "an item that never answered was not served");
   });
 
   it("takes the definitive answer a retry produces", async () => {

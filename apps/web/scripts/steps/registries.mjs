@@ -196,10 +196,6 @@ async function fetchAnswer(url) {
   }
 }
 
-async function fetchStatus(url) {
-  return (await fetchAnswer(url)).status;
-}
-
 function sampleNames(names) {
   return [
     ...new Set(
@@ -213,29 +209,35 @@ function sampleNames(names) {
 }
 
 // Walks the candidate bases in order and settles on the first one where a
-// sampled item answers 2xx. When none does, the primary base is kept and the
-// verdict is read from its statuses alone: all definitive failures means
-// gated or broken, anything transient keeps the benefit of the doubt.
+// sampled item is served: a 2xx that is not a web page. An origin root with a
+// catch-all answers 200 to every path, so a bare status would pick it over a
+// convention whose samples happened to be paid. When none serves, the primary
+// base is kept and the verdict is read from its statuses alone: all definitive
+// failures means gated or broken, anything transient keeps the benefit of the
+// doubt. Three samples that all hit a paywall prove only that those three are
+// paid: a registry that mixes free and paid items can land every sample on
+// the paid side, so `paywalled` asks the caller to settle it item by item.
 //
-// Exported for the tests; `status` is the network, replaceable by a stub.
-export async function resolveItemBase(candidates, names, status = fetchStatus) {
+// Exported for the tests; `answer` is the network, replaceable by a stub.
+export async function resolveItemBase(candidates, names, answer = fetchAnswer) {
   const [primary] = candidates;
   const samples = sampleNames(names);
   if (samples.length === 0) return { itemBase: primary, resolvable: true };
 
   let primaryStatuses = null;
   for (const base of candidates) {
-    const statuses = await Promise.all(
-      samples.map((name) => status(`${base}/${name}.json`)),
+    const answers = await Promise.all(
+      samples.map((name) => answer(`${base}/${name}.json`)),
     );
-    if (base === primary) primaryStatuses = statuses;
-    if (statuses.some((s) => s >= 200 && s < 300)) {
+    if (base === primary) primaryStatuses = answers.map((a) => a.status);
+    if (answers.some((a) => a.status >= 200 && a.status < 300 && !verdictFor(a))) {
       return { itemBase: base, resolvable: true };
     }
   }
 
   const allGated = primaryStatuses.every((s) => GATED_STATUSES.has(s));
-  return { itemBase: primary, resolvable: !allGated };
+  const paywalled = primaryStatuses.every((s) => s === 401 || s === 402 || s === 403);
+  return { itemBase: primary, resolvable: !allGated, ...(paywalled ? { paywalled } : {}) };
 }
 
 // Every item of a resolvable registry is asked for once, and the ones the
@@ -282,9 +284,9 @@ function isTransient(status) {
   return status === 0 || status === 408 || status === 429 || status >= 500;
 }
 
-// Returns { verdicts, unprobed }: a Map of item name → verdict holding only
-// the items the origin refused, and the names never asked because the origin
-// throttled the probe. Exported for the tests; `answer` is the network,
+// Returns { verdicts, unprobed, served }: a Map of item name → verdict holding
+// only the items the origin refused, the names never asked because the origin
+// throttled the probe, and how many items came back as JSON. Exported for the tests; `answer` is the network,
 // `wait` the clock and `start` the first item asked, all replaceable.
 //
 // The order starts at a random item. An origin with a quota answers the
@@ -299,6 +301,7 @@ export async function probeItems(
 ) {
   const verdicts = new Map();
   const unprobed = [];
+  let served = 0;
   let throttled = false;
   let giveUps = 0;
   const rotated = [...names.slice(start), ...names.slice(0, start)];
@@ -315,6 +318,7 @@ export async function probeItems(
         if (!isTransient(answered.status)) {
           const verdict = verdictFor(answered);
           if (verdict) verdicts.set(name, verdict);
+          else if (answered.status >= 200 && answered.status < 300) served += 1;
           return;
         }
         if (answered.status === 429 && (answered.retryAfterMs ?? 0) > ITEM_PROBE_MAX_WAIT_MS) {
@@ -334,7 +338,7 @@ export async function probeItems(
     },
     ITEM_PROBE_CONCURRENCY,
   );
-  return { verdicts, unprobed };
+  return { verdicts, unprobed, served };
 }
 
 // Writes the probe's verdicts onto the items. A fresh verdict replaces
@@ -643,20 +647,22 @@ async function indexOne(entry, probe, label, attempts) {
   // Provenance: some registries inline source in their index. Recording it
   // keeps the reason a view holds no file content visible in the manifest.
   const embedsContent = rawItems.some((item) => item.files?.[0]?.content);
-  const { itemBase: base, resolvable } = probe
+  const { itemBase: base, resolvable: sampled, paywalled } = probe
     ? await resolveItemBase(candidates, names)
     : { itemBase: candidates[0], resolvable: true };
   if (base !== candidates[0]) {
     console.log(`  ${entry.name}: items resolve at ${base}, not next to the index`);
   }
 
-  // Item by item, only where the sample said the origin serves something: a
-  // fully gated registry is already out of /r, and asking it a thousand more
-  // times would only confirm the sample.
+  // Item by item, where the sample said the origin serves something or only
+  // met a paywall. A registry whose samples were all paid stays out of /r
+  // unless the walk finds an item it serves, so a fully paid one, or one that
+  // throttles the walk before anything comes back, is held exactly as before.
   const probed =
-    probe && resolvable
+    probe && (sampled || paywalled)
       ? await probeItems(base, names)
-      : { verdicts: new Map(), unprobed: [] };
+      : { verdicts: new Map(), unprobed: [], served: 0 };
+  const resolvable = sampled || probed.served > 0;
   // Earlier verdicts are carried only for items this run could not ask, and
   // only from a view of the same registry: a renamed or repointed entry must
   // not inherit another origin's paywall.
