@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import type { Metadata } from "next"
+import type { Metadata, ResolvingMetadata } from "next"
 import { RegistryViewer } from "@/components/registry-viewer"
 import type { DirectoryEntry } from "@/lib/types"
 import type { RegistryItem, RegistryListing, RegistryListingItem } from "@/lib/registry-types"
@@ -33,8 +33,7 @@ function previewImage(registry: DirectoryEntry, slug: string): string | null {
   return `https://registry.directory/api/og/item/${github.owner}/${github.repo}/${slug}`
 }
 
-// The handler renders a card for a category and for an item alike, so both
-// branches of the metadata below advertise one.
+// Only category pages advertise one; item pages inherit their registry's card.
 // Open Graph wants the dimensions, Twitter wants the bare URL. One lookup,
 // two shapes, so the two can never disagree about whether an image exists.
 function socialImages(registry: DirectoryEntry, slug: string, alt: string) {
@@ -70,10 +69,12 @@ function forListing(item: RegistryItem): RegistryListingItem {
 }
 
 // Metadata for a category-or-item view living at `${basePath}/${slug}`.
+// `parent` is the registry page's resolved metadata, where its card lives.
 export async function buildSlugMetadata(
   registry: DirectoryEntry,
   basePath: string,
-  slug: string
+  slug: string,
+  parent?: ResolvingMetadata
 ): Promise<Metadata> {
   const canonical = `https://registry.directory${basePath}/${slug}`
 
@@ -117,7 +118,19 @@ export async function buildSlugMetadata(
   const title = `${slug} — shadcn ${noun} · ${registry.name}`
   const description = `${itemData?.description || slug}: a shadcn/ui ${noun} from ${registry.name}. Preview the source and install it with the shadcn CLI.`
 
-  const social = socialImages(registry, slug, title)
+  // No image of its own: an item page shows its registry's card, so crawling
+  // the long tail does not render one picture per item. Declaring openGraph
+  // here replaces the registry page's object whole, image included, so the
+  // image is carried over from it explicitly.
+  const inherited = parent ? await parent : null
+  const registryImages = {
+    openGraph: inherited?.openGraph?.images
+      ? { images: inherited.openGraph.images }
+      : {},
+    twitter: inherited?.twitter?.images
+      ? { images: inherited.twitter.images }
+      : {},
+  }
   return {
     title,
     description,
@@ -127,13 +140,13 @@ export async function buildSlugMetadata(
       description,
       url: canonical,
       type: "website",
-      ...social.openGraph,
+      ...registryImages.openGraph,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      ...social.twitter,
+      ...registryImages.twitter,
     },
   }
 }
