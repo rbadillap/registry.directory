@@ -30,16 +30,17 @@ const JSON_HEADERS = {
   "Access-Control-Allow-Origin": "*",
 } as const
 
-// Cached per full URL, query included, at the CDN. An answer and a 404 hold
-// until the next deployment; a 5xx is a failure the next request may not
-// repeat, so it is kept only briefly.
-function jsonResponse(body: unknown, status = 200): Response {
+// Cached per full URL, query included, at the CDN. What the catalog decides
+// holds until the next deployment; a 5xx, or anything an origin answered
+// besides the item, may not repeat, so the caller can keep it only briefly.
+function jsonResponse(
+  body: unknown,
+  status = 200,
+  cacheControl = status >= 500 ? BRIEFLY : UNTIL_NEXT_DEPLOY
+): Response {
   return new Response(JSON.stringify(body), {
     status,
-    headers: {
-      ...JSON_HEADERS,
-      "Cache-Control": status >= 500 ? BRIEFLY : UNTIL_NEXT_DEPLOY,
-    },
+    headers: { ...JSON_HEADERS, "Cache-Control": cacheControl },
   })
 }
 
@@ -160,12 +161,16 @@ async function itemResponse(catalog: Catalog, namespaced: string): Promise<Respo
     })
 
     if (!response.ok) {
+      // A 404 here is the origin's, not the catalog's: an index that moved
+      // or a deploy caught mid-flight. Kept briefly, so a passing one does
+      // not withhold the item until the next deployment.
       const status = response.status === 404 ? 404 : 502
       return jsonResponse(
         {
           error: `Origin registry "${item.registryName}" responded ${response.status} for "${item.name}".`,
         },
-        status
+        status,
+        BRIEFLY
       )
     }
 
