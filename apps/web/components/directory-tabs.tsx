@@ -8,7 +8,6 @@ import { useAnalytics, type SearchResultType, type HomeTab } from '@/hooks/use-a
 import { useUrlState } from '@/hooks/use-url-state';
 import { useItemIndex } from '@/hooks/use-item-index';
 import { JustShipped, StackSections } from '@/components/home/collections';
-import { WhatsNew } from '@/components/home/whats-new';
 import type { CollectionsFile, ShippedFile } from '@/lib/registry-data';
 import type { DirectoryEntry, GitHubStats, RegistryStats, AffiliateConfig } from '@/lib/types';
 import { prepareSearchIndex, searchPrepared } from '@/lib/search-utils';
@@ -334,7 +333,6 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
         {browsing ? (
           <>
             <JustShipped shipped={shipped} />
-            <WhatsNew shipped={shipped} />
             <StackSections collections={collections?.collections ?? []} />
           </>
         ) : (

@@ -208,12 +208,23 @@ const CURATED_SHELF = [
 function buildCollections(profiles) {
   const collections = [
     {
-      slug: "recently-added",
-      title: "Recently added",
+      slug: "sells-real",
+      title: "Sells something real",
       standfirst:
-        "The latest registries to join the directory. Every item probed, every URL resolving.",
+        "These registries sell templates, Figma kits, MCP servers and team licences.",
       kind: "computed",
-      registries: recentlyAdded(profiles, 5),
+      registries: [...profiles.values()]
+        .filter(
+          (p) => Object.values(p.entry.pro ?? {}).some((v) => v === true) && href(p.entry)
+        )
+        .sort(
+          (a, b) =>
+            Object.values(b.entry.pro ?? {}).filter(Boolean).length -
+            Object.values(a.entry.pro ?? {}).filter(Boolean).length
+        )
+        .slice(0, 5)
+        .map((p) => card(p, undefined))
+        .filter(Boolean),
     },
     {
       slug: "motion",
@@ -275,23 +286,12 @@ function buildCollections(profiles) {
         .filter(Boolean),
     },
     {
-      slug: "sells-real",
-      title: "Sells something real",
+      slug: "recently-added",
+      title: "Recently added",
       standfirst:
-        "These registries sell templates, Figma kits, MCP servers and team licences.",
+        "The latest registries to join the directory. Every item probed, every URL resolving.",
       kind: "computed",
-      registries: [...profiles.values()]
-        .filter(
-          (p) => Object.values(p.entry.pro ?? {}).some((v) => v === true) && href(p.entry)
-        )
-        .sort(
-          (a, b) =>
-            Object.values(b.entry.pro ?? {}).filter(Boolean).length -
-            Object.values(a.entry.pro ?? {}).filter(Boolean).length
-        )
-        .slice(0, 5)
-        .map((p) => card(p, undefined))
-        .filter(Boolean),
+      registries: recentlyAdded(profiles, 5),
     },
     {
       slug: "weird-wonderful",
