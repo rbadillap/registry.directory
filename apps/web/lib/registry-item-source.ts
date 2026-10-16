@@ -25,7 +25,9 @@ export async function fetchItemData(
   try {
     const response = await registryFetch(targetUrl, {
       timeout: 5000,
-      next: { revalidate: 86400 },
+      // The markdown routes hold the answer at the CDN until the next
+      // deployment; a data-cache copy would only be rewritten daily.
+      cache: "no-store",
     })
 
     if (!response.ok) return null

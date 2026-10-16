@@ -3,6 +3,7 @@ import { prepareSearchIndex, searchPrepared, type PreparedIndex } from "@/lib/se
 import type { IndexedItem } from "@/lib/items-index"
 import { loadCatalog, type Catalog, type CatalogItem } from "@/lib/catalog"
 import { registryFetch } from "@/lib/fetch-utils"
+import { BRIEFLY, UNTIL_NEXT_DEPLOY } from "@/lib/cdn-cache"
 
 // Aggregated shadcn registry endpoint (dynamic search protocol):
 //
@@ -27,13 +28,20 @@ const JSON_HEADERS = {
   "Content-Type": "application/json",
   "X-Content-Type-Options": "nosniff",
   "Access-Control-Allow-Origin": "*",
-  // Cached per full URL, query included, at the CDN. A deployment ships new
-  // data with a new catalog, so stale answers converge within the hour.
-  "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
 } as const
 
-function jsonResponse(body: unknown, status = 200): Response {
-  return new Response(JSON.stringify(body), { status, headers: JSON_HEADERS })
+// Cached per full URL, query included, at the CDN. What the catalog decides
+// holds until the next deployment; a 5xx, or anything an origin answered
+// besides the item, may not repeat, so the caller can keep it only briefly.
+function jsonResponse(
+  body: unknown,
+  status = 200,
+  cacheControl = status >= 500 ? BRIEFLY : UNTIL_NEXT_DEPLOY
+): Response {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { ...JSON_HEADERS, "Cache-Control": cacheControl },
+  })
 }
 
 // searchItems scores IndexedItem.name — feed it the ORIGINAL item name so
@@ -147,16 +155,22 @@ async function itemResponse(catalog: Catalog, namespaced: string): Promise<Respo
   try {
     const response = await registryFetch(originUrl, {
       timeout: 10000,
-      next: { revalidate: 86400 },
+      // The CDN holds the answer until the next deployment; a second copy
+      // in the data cache would only be rewritten every day it is asked for.
+      cache: "no-store",
     })
 
     if (!response.ok) {
+      // A 404 here is the origin's, not the catalog's: an index that moved
+      // or a deploy caught mid-flight. Kept briefly, so a passing one does
+      // not withhold the item until the next deployment.
       const status = response.status === 404 ? 404 : 502
       return jsonResponse(
         {
           error: `Origin registry "${item.registryName}" responded ${response.status} for "${item.name}".`,
         },
-        status
+        status,
+        BRIEFLY
       )
     }
 

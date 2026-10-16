@@ -1,6 +1,6 @@
 import { slugFromSegments } from "@/lib/route-utils"
 import { notFound } from "next/navigation"
-import type { Metadata } from "next"
+import type { Metadata, ResolvingMetadata } from "next"
 import { groupItemsByCategory } from "@/lib/registry-mappings"
 import { hasOnlyRenderableFiles } from "@/lib/file-utils"
 import {
@@ -14,11 +14,14 @@ import {
   buildSlugMetadata,
 } from "@/components/registry-slug-view"
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ owner: string; repo: string; slug: string[] }>
-}): Promise<Metadata> {
+export async function generateMetadata(
+  {
+    params,
+  }: {
+    params: Promise<{ owner: string; repo: string; slug: string[] }>
+  },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const { owner, repo, slug } = await params
   const name = slugFromSegments(slug)
   const registry = await resolveByGithub(owner, repo)
@@ -27,7 +30,7 @@ export async function generateMetadata({
     return { title: "Registry Not Found" }
   }
 
-  return buildSlugMetadata(registry, `/${owner}/${repo}`, name)
+  return buildSlugMetadata(registry, `/${owner}/${repo}`, name, parent)
 }
 
 export async function generateStaticParams() {

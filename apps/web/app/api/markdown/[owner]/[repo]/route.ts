@@ -3,6 +3,7 @@ import { NextRequest } from "next/server"
 import { generateMarkdownForItem } from "@/lib/markdown-generator"
 import { resolveByHandle, parseGithubRef, entryHandle } from "@/lib/resolve-registry"
 import { fetchItemData } from "@/lib/registry-item-source"
+import { UNTIL_NEXT_DEPLOY } from "@/lib/cdn-cache"
 
 // Markdown export for handle-based item URLs: /{handle}/{item}.md
 // (github-backed registries use the 3-segment route)
@@ -34,7 +35,7 @@ export async function GET(
   return new Response(markdown, {
     headers: {
       'Content-Type': 'text/markdown; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+      'Cache-Control': `max-age=3600, ${UNTIL_NEXT_DEPLOY}`,
     }
   })
 }

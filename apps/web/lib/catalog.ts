@@ -1,6 +1,6 @@
 import type { DirectoryEntry } from "./types"
 import type { RegistryFontItem } from "./registry-types"
-import { loadRegistryView } from "./registry-data"
+import { loadRegistryView, type RegistryViewItem } from "./registry-data"
 import { loadDirectory, parseGithubRef, entryHandle } from "./resolve-registry"
 
 // Aggregated cross-registry catalog served at /r/registry.json (shadcn
@@ -60,6 +60,29 @@ function catalogHandle(entry: DirectoryEntry): string | null {
   return gh ? gh.owner.toLowerCase() : null
 }
 
+// Why an item of a resolvable registry stays out of /r, or null when it is
+// listed. The sitemap asks the same question, so the two cannot drift apart.
+export function withheldFromCatalog(
+  item: RegistryViewItem
+): "internal" | "withheld" | "fontWithoutMetadata" | null {
+  if (INTERNAL_TYPES.has(item.type || "registry:item")) return "internal"
+
+  // Only what the indexer verified the origin serves. A refused item — a
+  // paywall, a login, a 404 behind a stale index — would be a search
+  // result that installs as our 502, and the official registry index
+  // samples this catalog daily and scores each one against us; an item
+  // no run could ask yet is a promise nobody has checked. The site still
+  // shows all of them; only the CLI-facing catalog withholds them.
+  if (item.resolution) return "withheld"
+
+  // A font the origin lists without its metadata is not installable
+  // through anyone, and one such entry makes the CLI reject the whole
+  // catalog page it appears on. Leave it out rather than break the page.
+  if (item.type === "registry:font" && !item.font) return "fontWithoutMetadata"
+
+  return null
+}
+
 export async function buildCatalog(): Promise<Catalog> {
   const entries = await loadDirectory()
 
@@ -91,32 +114,14 @@ export async function buildCatalog(): Promise<Catalog> {
       if (seen.has(item.name)) continue
       seen.add(item.name)
 
+      const withheld = withheldFromCatalog(item)
+      if (withheld) {
+        skipped[withheld]++
+        continue
+      }
+
       const type = item.type || "registry:item"
-      if (INTERNAL_TYPES.has(type)) {
-        skipped.internal++
-        continue
-      }
-
-      // Only what the indexer verified the origin serves. A refused item — a
-      // paywall, a login, a 404 behind a stale index — would be a search
-      // result that installs as our 502, and the official registry index
-      // samples this catalog daily and scores each one against us; an item
-      // no run could ask yet is a promise nobody has checked. The site still
-      // shows all of them; only the CLI-facing catalog withholds them.
-      if (item.resolution) {
-        skipped.withheld++
-        continue
-      }
-
-      // A font the origin lists without its metadata is not installable
-      // through anyone, and one such entry makes the CLI reject the whole
-      // catalog page it appears on. Leave it out rather than break the page.
       const font = item.type === "registry:font" ? item.font : undefined
-      if (item.type === "registry:font" && !font) {
-        skipped.fontWithoutMetadata++
-        continue
-      }
-
       items.push({
         name: item.name,
         namespaced: `${handle}/${item.name}`,

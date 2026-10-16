@@ -1,10 +1,8 @@
 import { MetadataRoute } from 'next'
 import { hasOnlyRenderableFiles } from "@/lib/file-utils"
-import {
-  loadDirectory,
-  registryBasePath,
-  loadRegistryIndex,
-} from "@/lib/resolve-registry"
+import { loadDirectory, registryBasePath } from "@/lib/resolve-registry"
+import { loadRegistryView } from "@/lib/registry-data"
+import { withheldFromCatalog } from "@/lib/catalog"
 import { fetchAllGitHubStats } from "@/lib/github-stats"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -58,10 +56,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           },
         ]
 
-        const registryData = await loadRegistryIndex(registry)
-        if (!registryData) return urls
+        const view = await loadRegistryView(registry)
+        if (!view) return urls
 
-        for (const item of registryData.items) {
+        // Only items someone can install: the set /r serves, by the rule /r
+        // uses. Everything else keeps its page, but the sitemap does not
+        // send crawlers to render thousands of them.
+        if (!view.resolvable) return urls
+
+        const seen = new Set<string>()
+        for (const item of view.items) {
+          if (seen.has(item.name)) continue
+          seen.add(item.name)
+          if (withheldFromCatalog(item)) continue
           if (!hasOnlyRenderableFiles(item.files)) {
             continue
           }

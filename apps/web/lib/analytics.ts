@@ -50,13 +50,6 @@ export interface ShareClickedProperties {
   file_path?: string;
 }
 
-export interface SessionDurationProperties {
-  duration_seconds: number;
-  files_viewed: number;
-  code_copied_count: number;
-  interactions_count: number;
-}
-
 export interface AIClickedProperties {
   ai_provider: AIProvider;
   file_path?: string;
@@ -145,7 +138,6 @@ export const ANALYTICS_EVENTS = {
   FILE_SELECTED: "ide.file.selected",
   CODE_COPIED: "ide.code.copied",
   SHARE_CLICKED: "ide.share.clicked",
-  SESSION_DURATION: "ide.session.duration",
 
   // Feature adoption
   AI_CLICKED: "ide.ai.clicked",
@@ -196,10 +188,6 @@ export function debounce<T extends (...args: any[]) => void>(
 
 class Analytics {
   #sessionId: string;
-  #sessionStartTime: number;
-  #filesViewed: Set<string>;
-  #codeCopiedCount: number;
-  #interactionsCount: number;
   #isDevelopment: boolean;
   #isClient: boolean;
 
@@ -207,32 +195,10 @@ class Analytics {
     this.#isClient = typeof window !== "undefined";
     this.#isDevelopment = process.env.NODE_ENV === "development";
     this.#sessionId = this.#generateSessionId();
-    this.#sessionStartTime = Date.now();
-    this.#filesViewed = new Set();
-    this.#codeCopiedCount = 0;
-    this.#interactionsCount = 0;
-
-    if (this.#isClient) {
-      this.#initializeSessionTracking();
-    }
   }
 
   #generateSessionId(): string {
     return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-  }
-
-  #initializeSessionTracking(): void {
-    // Track session duration on page unload
-    window.addEventListener("beforeunload", () => {
-      this.trackSessionDuration();
-    });
-
-    // Track session duration on page visibility change (mobile scenarios)
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) {
-        this.trackSessionDuration();
-      }
-    });
   }
 
   #getDeviceType(): DeviceType {
@@ -272,9 +238,6 @@ class Analytics {
     if (!this.#isDevelopment) {
       track(eventName, fullProperties);
     }
-
-    // Update interaction count
-    this.#interactionsCount++;
   }
 
   // ============================================================================
@@ -282,33 +245,15 @@ class Analytics {
   // ============================================================================
 
   trackFileSelected(properties: FileSelectedProperties & Partial<BaseEventProperties>): void {
-    this.#filesViewed.add(properties.file_path);
     this.#trackEvent(ANALYTICS_EVENTS.FILE_SELECTED, properties);
   }
 
   trackCodeCopied(properties: CodeCopiedProperties & Partial<BaseEventProperties>): void {
-    this.#codeCopiedCount++;
     this.#trackEvent(ANALYTICS_EVENTS.CODE_COPIED, properties);
   }
 
   trackShareClicked(properties: ShareClickedProperties & Partial<BaseEventProperties>): void {
     this.#trackEvent(ANALYTICS_EVENTS.SHARE_CLICKED, properties);
-  }
-
-  trackSessionDuration(): void {
-    const durationSeconds = Math.floor((Date.now() - this.#sessionStartTime) / 1000);
-
-    // Only track if session was meaningful (>5 seconds)
-    if (durationSeconds < 5) return;
-
-    const properties: SessionDurationProperties = {
-      duration_seconds: durationSeconds,
-      files_viewed: this.#filesViewed.size,
-      code_copied_count: this.#codeCopiedCount,
-      interactions_count: this.#interactionsCount,
-    };
-
-    this.#trackEvent(ANALYTICS_EVENTS.SESSION_DURATION, properties);
   }
 
   trackAIClicked(properties: AIClickedProperties & Partial<BaseEventProperties>): void {
