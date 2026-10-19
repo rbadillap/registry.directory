@@ -264,6 +264,78 @@
       ]
     },
     {
+      "name": "card",
+      "type": "registry:component",
+      "title": "Card",
+      "description": "Composable card with header, title, description, action, content and footer parts. Outlined or muted surfaces, standard or compact spacing, and an opt-in selectable state with press feedback that composes with Checkbox, Radio and Button.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/card.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/card.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:component",
+      "title": "Color Picker",
+      "description": "Composable color picker whose trigger chip morphs into the saturation and brightness area. A loupe lifts off each thumb while you drag. Includes hue and opacity sliders, hex, RGB and HSL fields, an eye dropper, presets, full keyboard control, and a controlled or uncontrolled value.",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/color-picker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/color-picker.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/presence-gate.tsx",
+          "type": "registry:lib",
+          "target": "@lib/presence-gate.tsx"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
       "name": "color-selector",
       "type": "registry:component",
       "title": "Animated Color Selector",
@@ -703,7 +775,7 @@
       "name": "tabs",
       "type": "registry:component",
       "title": "Tabs",
-      "description": "Pill, segment or underline tabs with a spring layoutId indicator.",
+      "description": "Pill, segment or underline tabs with a spring layoutId indicator and optional icons.",
       "dependencies": [
         "clsx",
         "lucide-react",
@@ -778,7 +850,7 @@
       "name": "select",
       "type": "registry:component",
       "title": "Select Select",
-      "description": "Composable primitives (Select, SelectTrigger, SelectValue, SelectContent, SelectItem); the panel pinches off the trigger and separates, with staggered items. Position-aware (opens upward when needed).",
+      "description": "Composable primitives (Select, SelectTrigger, SelectValue, SelectContent, SelectItem); the panel pinches off the trigger and separates, with a short, shared row reveal. Position-aware (opens upward when needed).",
       "dependencies": [
         "clsx",
         "lucide-react",
@@ -797,9 +869,24 @@
           "target": "@lib/ease.ts"
         },
         {
+          "path": "lib/hooks/use-listbox.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-listbox.ts"
+        },
+        {
           "path": "lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/hooks/use-on-open.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-on-open.ts"
+        },
+        {
+          "path": "lib/hooks/use-row-cursor.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-row-cursor.ts"
         }
       ]
     },
@@ -821,9 +908,24 @@
           "target": "@components/motion/select-morph.tsx"
         },
         {
+          "path": "lib/hooks/use-listbox.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-listbox.ts"
+        },
+        {
           "path": "lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/hooks/use-on-open.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-on-open.ts"
+        },
+        {
+          "path": "lib/hooks/use-row-cursor.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-row-cursor.ts"
         }
       ]
     },
@@ -1021,6 +1123,11 @@
           "path": "lib/ease.ts",
           "type": "registry:lib",
           "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-focus-trap.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-focus-trap.ts"
         },
         {
           "path": "lib/presence-gate.tsx",
@@ -1271,7 +1378,7 @@
       "name": "tooltip",
       "type": "registry:component",
       "title": "Tooltip",
-      "description": "Hover or focus tooltip with a subtle scale and fade, collision-aware placement, and optional cursor tracking.",
+      "description": "Composable hover, focus and tap tooltip with a subtle scale and fade, collision-aware side and alignment, an optional arrow, a pointer corridor onto hoverable content, one label at a time, keyboard-only focus reveal and optional cursor tracking.",
       "dependencies": [
         "@floating-ui/dom",
         "clsx",
@@ -1283,6 +1390,11 @@
           "path": "components/motion/tooltip.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
         },
         {
           "path": "components/motion/tooltip/positioner.tsx",
@@ -1417,7 +1529,7 @@
       "name": "popover-morph",
       "type": "registry:component",
       "title": "Popover Morph Popover",
-      "description": "Composable MorphPopover, MorphPopoverTrigger, MorphPopoverContent; the panel is laid out full size but clipped to the corner nearest the trigger, then unclips as one piece — a single-surface morph with a drop-shadow that hugs the shape. Side/align aware, controlled or uncontrolled.",
+      "description": "Composable MorphPopover, MorphPopoverTrigger, MorphPopoverContent. The full-size panel reveals from the corner nearest the trigger on one synchronized spring clip, keeping content and borders unscaled, then retraces the clip on close. Clip-path and its drop-shadow may paint. Side/align aware, controlled or uncontrolled.",
       "dependencies": [
         "clsx",
         "motion",
@@ -1466,6 +1578,11 @@
           "path": "lib/ease.ts",
           "type": "registry:lib",
           "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-focus-trap.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-focus-trap.ts"
         },
         {
           "path": "lib/presence-gate.tsx",
@@ -1977,6 +2094,11 @@
           "path": "lib/ease.ts",
           "type": "registry:lib",
           "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-focus-trap.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-focus-trap.ts"
         },
         {
           "path": "lib/presence-gate.tsx",
@@ -2810,6 +2932,11 @@
           "target": "@lib/ease.ts"
         },
         {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
+        },
+        {
           "path": "components/motion/tooltip/positioner.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip/positioner.tsx"
@@ -2843,6 +2970,112 @@
           "path": "lib/touch.ts",
           "type": "registry:lib",
           "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
+      "name": "candlestick-chart",
+      "type": "registry:component",
+      "title": "Candlestick Chart",
+      "description": "Live OHLC candles with volume, a last-price line, and a crosshair readout.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/candlestick-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/candlestick-chart.tsx"
+        },
+        {
+          "path": "components/charts/candlestick-chart/context.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/candlestick-chart/context.tsx"
+        },
+        {
+          "path": "components/charts/candlestick-chart/legend.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/candlestick-chart/legend.tsx"
+        },
+        {
+          "path": "components/charts/candlestick-chart/plot.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/candlestick-chart/plot.tsx"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        }
+      ]
+    },
+    {
+      "name": "donut-chart",
+      "type": "registry:component",
+      "title": "Donut Chart",
+      "description": "Rounded share segments with a linked center readout and legend.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/donut-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/donut-chart.tsx"
+        },
+        {
+          "path": "components/charts/donut-chart/center.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/donut-chart/center.tsx"
+        },
+        {
+          "path": "components/charts/donut-chart/context.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/donut-chart/context.tsx"
+        },
+        {
+          "path": "components/charts/donut-chart/legend.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/donut-chart/legend.tsx"
+        },
+        {
+          "path": "components/charts/donut-chart/model.ts",
+          "type": "registry:component",
+          "target": "@components/charts/donut-chart/model.ts"
+        },
+        {
+          "path": "components/charts/donut-chart/plot.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/donut-chart/plot.tsx"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/motion/digit-swap.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/digit-swap.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
         }
       ]
     },
@@ -2912,6 +3145,11 @@
           "path": "components/motion/tooltip.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
         },
         {
           "path": "components/motion/tooltip/positioner.tsx",
@@ -3006,6 +3244,11 @@
           "path": "components/motion/tooltip.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
         },
         {
           "path": "components/motion/tooltip/positioner.tsx",
@@ -3112,6 +3355,11 @@
           "target": "@components/motion/number-ticker.tsx"
         },
         {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
+        },
+        {
           "path": "components/motion/tooltip/positioner.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip/positioner.tsx"
@@ -3191,6 +3439,11 @@
           "target": "@lib/utils.ts"
         },
         {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
+        },
+        {
           "path": "components/motion/tooltip/positioner.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip/positioner.tsx"
@@ -3268,6 +3521,11 @@
           "path": "lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
         },
         {
           "path": "components/motion/tooltip/positioner.tsx",
@@ -3377,6 +3635,11 @@
           "path": "lib/ease.ts",
           "type": "registry:lib",
           "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
         },
         {
           "path": "components/motion/tooltip/positioner.tsx",
@@ -3526,6 +3789,11 @@
           "target": "@components/motion/tooltip.tsx"
         },
         {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
+        },
+        {
           "path": "components/motion/tooltip/positioner.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip/positioner.tsx"
@@ -3628,6 +3896,11 @@
           "path": "components/motion/tooltip.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
         },
         {
           "path": "components/motion/tooltip/positioner.tsx",
@@ -3742,6 +4015,11 @@
           "path": "components/motion/tooltip.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
         },
         {
           "path": "components/motion/tooltip/positioner.tsx",
@@ -4037,6 +4315,11 @@
           "target": "@components/motion/popover-position.ts"
         },
         {
+          "path": "lib/hooks/use-listbox.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-listbox.ts"
+        },
+        {
           "path": "lib/hooks/use-hover-capable.ts",
           "type": "registry:hook",
           "target": "@lib/hooks/use-hover-capable.ts"
@@ -4045,6 +4328,16 @@
           "path": "components/motion/magnetic.tsx",
           "type": "registry:component",
           "target": "@components/motion/magnetic.tsx"
+        },
+        {
+          "path": "lib/hooks/use-on-open.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-on-open.ts"
+        },
+        {
+          "path": "lib/hooks/use-row-cursor.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-row-cursor.ts"
         }
       ]
     },
@@ -4943,6 +5236,11 @@
           "target": "@lib/hooks/use-tap-gesture.ts"
         },
         {
+          "path": "lib/hooks/use-listbox.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-listbox.ts"
+        },
+        {
           "path": "lib/hooks/use-favicon.ts",
           "type": "registry:hook",
           "target": "@lib/hooks/use-favicon.ts"
@@ -4956,6 +5254,16 @@
           "path": "lib/touch.ts",
           "type": "registry:lib",
           "target": "@lib/touch.ts"
+        },
+        {
+          "path": "lib/hooks/use-on-open.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-on-open.ts"
+        },
+        {
+          "path": "lib/hooks/use-row-cursor.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-row-cursor.ts"
         },
         {
           "path": "lib/favicon.ts",
@@ -5170,6 +5478,11 @@
           "target": "@lib/utils.ts"
         },
         {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
+        },
+        {
           "path": "components/motion/tooltip/positioner.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip/positioner.tsx"
@@ -5299,6 +5612,11 @@
           "target": "@components/motion/select.tsx"
         },
         {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
+        },
+        {
           "path": "components/motion/tooltip/positioner.tsx",
           "type": "registry:component",
           "target": "@components/motion/tooltip/positioner.tsx"
@@ -5334,9 +5652,24 @@
           "target": "@components/motion/popover-position.ts"
         },
         {
+          "path": "lib/hooks/use-listbox.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-listbox.ts"
+        },
+        {
           "path": "lib/touch.ts",
           "type": "registry:lib",
           "target": "@lib/touch.ts"
+        },
+        {
+          "path": "lib/hooks/use-on-open.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-on-open.ts"
+        },
+        {
+          "path": "lib/hooks/use-row-cursor.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-row-cursor.ts"
         }
       ]
     },
@@ -5497,9 +5830,58 @@
       ]
     },
     {
+      "name": "morphing-search-chips",
+      "type": "registry:block",
+      "title": "Morphing Search Chip Search",
+      "description": "Docked search bar that springs wider on focus and unfolds a recent-searches panel out of its own edge. Terms become removable chips, the bar grows with them, and suggestions filter as you type.",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/morphing-search-chips.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/morphing-search-chips.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-on-open.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-on-open.ts"
+        },
+        {
+          "path": "lib/hooks/use-row-cursor.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-row-cursor.ts"
+        },
+        {
+          "path": "lib/presence-gate.tsx",
+          "type": "registry:lib",
+          "target": "@lib/presence-gate.tsx"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
       "name": "morphing-search",
       "type": "registry:block",
-      "title": "Morphing Search",
+      "title": "Morphing Search Morphing Search",
       "description": "Search field or compact icon that morphs into a glass results surface, whether opened by click or keyboard shortcut.",
       "dependencies": [
         "clsx",
@@ -5681,6 +6063,7 @@
       "description": "Mobile-style list rows that swipe left or right to reveal contextual action buttons.",
       "dependencies": [
         "clsx",
+        "lucide-react",
         "motion",
         "tailwind-merge"
       ],
@@ -5739,6 +6122,11 @@
           "path": "lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
         },
         {
           "path": "components/motion/tooltip/positioner.tsx",
@@ -5848,6 +6236,11 @@
           "path": "lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
         },
         {
           "path": "components/motion/tooltip/positioner.tsx",
@@ -6182,6 +6575,16 @@
           "path": "lib/ease.ts",
           "type": "registry:lib",
           "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-on-open.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-on-open.ts"
+        },
+        {
+          "path": "lib/hooks/use-row-cursor.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-row-cursor.ts"
         },
         {
           "path": "lib/utils.ts",

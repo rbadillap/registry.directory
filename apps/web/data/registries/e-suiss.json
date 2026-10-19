@@ -1,0 +1,5009 @@
+{
+  "key": "e-suiss",
+  "entry": "suiss/ui",
+  "name": "esuiss",
+  "homepage": "https://suiss.app/ui",
+  "indexUrl": "https://suiss.app/ui/r/registry.json",
+  "itemBase": "https://suiss.app/ui/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "A vertically stacked set of headings that each reveal a section of content.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "A modal dialog that interrupts the user to confirm an important action or acknowledge information.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/use-scrollbar-gap",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-sheet",
+      "type": "registry:ui",
+      "title": "Alert Sheet",
+      "description": "An action sheet that slides up from the bottom of the screen to confirm or choose an action.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/use-scrollbar-gap",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/alert-sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "A static callout that draws attention to an important message without interrupting the user.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "A container that keeps its content at a fixed width-to-height ratio.",
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "A compact file card that shows a document or image with its name, details, upload state and actions.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/attachment.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "A circular image that represents a person, with initials or an icon when no image is available.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "A small inline label for status, counts or metadata.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "A trail of links that shows where the current page sits in the site hierarchy.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "A chat-style message bubble with variants, alignment, a tail and optional reactions.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/bubble.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "A container that joins related buttons, inputs and menus into a single connected control.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/separator",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "A pill-shaped button that triggers an action, with variants for every level of emphasis.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "A month-grid date picker for selecting a single date, several dates or a date range.",
+      "dependencies": [
+        "react-day-picker"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A raised container that groups related content and actions about a single subject.",
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "A swipeable track of slides with buttons, dots and optional autoplay, built on Embla Carousel.",
+      "dependencies": [
+        "embla-carousel-react"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/direction",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Themed building blocks for Recharts charts, with a shared color config, tooltip and legend.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "A control that lets people turn a single option on or off.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code Block",
+      "description": "A surface for code, terminal output and diffs, with copy, line numbers, line states and streaming syntax highlighting.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/use-highlighted-code",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "A section that people can expand and collapse to show or hide its content.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "A text input with a filterable list of options, for choosing one or more values by typing.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/input-group",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "A searchable menu of commands, used inline or as a command palette in a dialog.",
+      "dependencies": [
+        "cmdk"
+      ],
+      "registryDependencies": [
+        "@esuiss/dialog",
+        "@esuiss/use-platform",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "A menu of actions that opens at the pointer when people right-click an area.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/use-platform",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "A modal window that appears above the page to focus people on a task or message.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/use-scrollbar-gap",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction",
+      "description": "A provider that sets the reading direction, left-to-right or right-to-left, for the components inside it.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/direction.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "A panel that slides in from an edge of the screen and can be dismissed with a swipe.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/use-scrollbar-gap",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "A menu of actions or options that opens from a button.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/use-platform",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "A placeholder that explains why a view has no content and what people can do next.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Building blocks for form fields that pair controls with labels, descriptions and error messages.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/label",
+        "@esuiss/separator",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fullscreen-menu",
+      "type": "registry:ui",
+      "title": "Fullscreen Menu",
+      "description": "A navigation menu that covers the whole screen, for site links on small viewports.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/fullscreen-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "A card that previews content behind a link when people hover over or focus it.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "A text field with icons, text, buttons or keyboard hints attached inside its border.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/input",
+        "@esuiss/textarea",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "A segmented field for entering one-time passcodes, one character per slot.",
+      "dependencies": [
+        "input-otp"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A single-line text field for entering and editing short values.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "A flexible row that pairs media, a title, a description and actions, for lists and settings.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Displays a keyboard key or shortcut, with a platform-aware modifier symbol.",
+      "registryDependencies": [
+        "@esuiss/use-platform",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "An accessible text label that names a form control.",
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "An inline annotation for timelines and conversations, such as a date divider or system event.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/marker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "A horizontal bar of menus, like a desktop application's menu bar.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/dropdown-menu",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message Scroller",
+      "description": "A scroll container for chat transcripts that opens at the latest message and keeps scroll position stable.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/scroll-area",
+        "@esuiss/use-message-scroller",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/message-scroller.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "Lays out a single chat message with an optional avatar, header and footer.",
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "A styled native select element for choosing one option from a list.",
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "A site navigation bar whose items open popover or full-width panels of links.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Navigation links for moving between pages of content, such as table results.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "A floating panel anchored to a trigger, for supplementary content and lightweight controls.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "A horizontal bar that shows the completion of a task.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "title": "Questionnaire",
+      "description": "A step-by-step form that shows one question at a time, with validation, skipping and keyboard shortcuts.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/use-questionnaire",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/questionnaire.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "A set of radio buttons where only one option can be selected at a time.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Panels separated by draggable handles that let users resize sections of a layout.",
+      "dependencies": [
+        "react-resizable-panels"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "A scrollable region with slim, custom-styled scrollbars.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "A button that opens a list of options so people can pick one value.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "A thin line that visually divides content, horizontally or vertically.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "A panel that slides in from an edge of the screen over the page.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/use-scrollbar-gap",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "A collapsible app sidebar for navigation, with icon, off-canvas and mobile sheet modes.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/direction",
+        "@esuiss/input",
+        "@esuiss/separator",
+        "@esuiss/sheet",
+        "@esuiss/skeleton",
+        "@esuiss/tooltip",
+        "@esuiss/use-mobile",
+        "@esuiss/use-platform",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "A pulsing placeholder block that stands in for content while it loads.",
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "A track with one or more draggable thumbs for choosing a value or range.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "An eight-spoke activity indicator that shows an indeterminate wait.",
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "A toggle control that turns a single setting on or off.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tab-bar",
+      "type": "registry:ui",
+      "title": "Tab Bar",
+      "description": "A floating bottom navigation bar whose overflow and extra sections expand from a More button.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tab-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Styled native table elements for displaying rows of structured data.",
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "A set of tabs that switches between panels of related content in the same place.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "A multi-line text field that grows with its content, with an optional resize handle.",
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "registry:ui",
+      "title": "Theme",
+      "description": "A theme provider with a light, dark and system toggle and an animated switch between them.",
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/theme.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Brief, stacked notifications that appear at the bottom of the screen and dismiss themselves.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "A set of toggle buttons for choosing one or several related options, including segmented controls.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/toggle",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "A two-state button that stays pressed until it's pressed again.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "A small label that appears next to an element on hover or keyboard focus.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "trace",
+      "type": "registry:ui",
+      "title": "Trace",
+      "description": "Rows for the steps an agent takes: reasoning, tool calls, sources, plans and file edits.",
+      "registryDependencies": [
+        "@esuiss/collapsible",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/trace.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "wheel-picker",
+      "type": "registry:ui",
+      "title": "Wheel Picker",
+      "description": "A scrolling, 3D-curved wheel of options, like the iOS picker, for choosing values such as dates and times.",
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/wheel-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "widget",
+      "type": "registry:ui",
+      "title": "Widget",
+      "description": "A rounded card in the style of home screen widgets, with fixed sizes and optional drag-to-resize.",
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/widget.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "action-bar",
+      "type": "registry:component",
+      "title": "Action Bar",
+      "description": "A row of menus that renders as a menubar on desktop and a single More actions sheet on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/alert-sheet",
+        "@esuiss/button",
+        "@esuiss/drawer",
+        "@esuiss/menubar",
+        "@esuiss/use-mobile",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/action-bar.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/action-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "action-menu",
+      "type": "registry:component",
+      "title": "Action Menu",
+      "description": "A list of actions that opens as a dropdown menu on desktop and an action sheet on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/alert-sheet",
+        "@esuiss/dropdown-menu",
+        "@esuiss/use-mobile"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/action-menu.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/action-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "app-shell",
+      "type": "registry:component",
+      "title": "App Shell",
+      "description": "An application frame with a collapsible sidebar on desktop and a floating tab bar on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/sidebar",
+        "@esuiss/tab-bar",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/app-shell.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/app-shell.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command-palette",
+      "type": "registry:component",
+      "title": "Command Palette",
+      "description": "A searchable command menu that opens in a dialog on desktop and a drawer on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/command",
+        "@esuiss/dialog",
+        "@esuiss/drawer",
+        "@esuiss/use-mobile",
+        "@esuiss/use-platform",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/command-palette.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/command-palette.tsx"
+        }
+      ]
+    },
+    {
+      "name": "confirm",
+      "type": "registry:component",
+      "title": "Confirm",
+      "description": "A confirmation prompt that opens as an alert dialog on desktop and an action sheet on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/alert-dialog",
+        "@esuiss/alert-sheet",
+        "@esuiss/use-mobile"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/confirm.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/confirm.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-actions",
+      "type": "registry:component",
+      "title": "Context Actions",
+      "description": "Actions for an element that open as a context menu on right click, or an action sheet on long press on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/alert-sheet",
+        "@esuiss/context-menu",
+        "@esuiss/use-mobile",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/context-actions.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/context-actions.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:component",
+      "title": "Date Picker",
+      "description": "A date field that opens a calendar popover on desktop and wheel pickers in a drawer on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/calendar",
+        "@esuiss/drawer",
+        "@esuiss/popover",
+        "@esuiss/use-mobile",
+        "@esuiss/utils",
+        "@esuiss/wheel-picker"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/date-picker.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/date-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "flyout",
+      "type": "registry:component",
+      "title": "Flyout",
+      "description": "A non-modal panel anchored to a trigger on desktop that becomes a bottom drawer on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/drawer",
+        "@esuiss/popover",
+        "@esuiss/use-mobile",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/flyout.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/flyout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "modal",
+      "type": "registry:component",
+      "title": "Modal",
+      "description": "A modal window that opens as a centered dialog on desktop and a bottom drawer on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/dialog",
+        "@esuiss/drawer",
+        "@esuiss/use-mobile",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/modal.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/modal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navbar",
+      "type": "registry:component",
+      "title": "Navbar",
+      "description": "A site header that renders a navigation menu on wide screens and a fullscreen menu when space runs out.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/fullscreen-menu",
+        "@esuiss/navigation-menu",
+        "@esuiss/use-mobile",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/navbar.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/navbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "paged-list",
+      "type": "registry:component",
+      "title": "Paged List",
+      "description": "A list that pages through items with numbered pagination on desktop and a Load more button on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/pagination",
+        "@esuiss/use-mobile",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/paged-list.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/paged-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "panel",
+      "type": "registry:component",
+      "title": "Panel",
+      "description": "A side panel that renders as a Sheet on desktop and a swipeable Drawer on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/drawer",
+        "@esuiss/sheet",
+        "@esuiss/use-mobile",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/panel.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/panel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "picker",
+      "type": "registry:component",
+      "title": "Picker",
+      "description": "A single-choice picker that renders a custom Select on desktop and a native select on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/native-select",
+        "@esuiss/select",
+        "@esuiss/use-mobile"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/picker.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "preview",
+      "type": "registry:component",
+      "title": "Preview",
+      "description": "A link preview that shows a hover card on desktop and a drawer on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/drawer",
+        "@esuiss/hover-card",
+        "@esuiss/use-mobile",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/preview.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/preview.tsx"
+        }
+      ]
+    },
+    {
+      "name": "search-picker",
+      "type": "registry:component",
+      "title": "Search Picker",
+      "description": "A searchable single-choice picker that renders a Combobox on desktop and a search drawer on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/combobox",
+        "@esuiss/command",
+        "@esuiss/drawer",
+        "@esuiss/use-mobile",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/search-picker.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/search-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "segment-picker",
+      "type": "registry:component",
+      "title": "Segment Picker",
+      "description": "A segmented control for one exclusive choice that becomes a native select on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/native-select",
+        "@esuiss/toggle-group",
+        "@esuiss/use-mobile"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/segment-picker.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/segment-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-view",
+      "type": "registry:component",
+      "title": "Split View",
+      "description": "A two- or three-column sidebar, list and detail layout that becomes a push navigation stack on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/resizable",
+        "@esuiss/use-mobile",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/split-view.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/split-view.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-list",
+      "type": "registry:component",
+      "title": "Table List",
+      "description": "Tabular data that renders as a table on desktop and a grouped list on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "registryDependencies": [
+        "@esuiss/table",
+        "@esuiss/use-mobile",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/table-list.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/table-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "trail",
+      "type": "registry:component",
+      "title": "Trail",
+      "description": "A navigation trail that shows breadcrumbs on desktop and a back link with history on mobile.",
+      "categories": [
+        "patterns"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/breadcrumb",
+        "@esuiss/use-mobile",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/patterns/trail.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/trail.tsx"
+        }
+      ]
+    },
+    {
+      "name": "island",
+      "type": "registry:component",
+      "title": "Island",
+      "description": "A floating pill at the top of the screen that shows live activities and brief notifications, like the Dynamic Island.",
+      "categories": [
+        "interactions"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/interactions/island.tsx",
+          "type": "registry:component",
+          "target": "@components/interactions/island.tsx"
+        }
+      ]
+    },
+    {
+      "name": "otp-autofill",
+      "type": "registry:component",
+      "title": "OTP Autofill",
+      "description": "A one-time code field that offers an incoming code, fills it digit by digit, and verifies it automatically.",
+      "categories": [
+        "interactions"
+      ],
+      "registryDependencies": [
+        "@esuiss/input-otp",
+        "@esuiss/use-mobile",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/interactions/otp-autofill.tsx",
+          "type": "registry:component",
+          "target": "@components/interactions/otp-autofill.tsx"
+        }
+      ]
+    },
+    {
+      "name": "preview-menu",
+      "type": "registry:component",
+      "title": "Preview Menu",
+      "description": "A context menu that lifts the pressed item into an enlarged preview above its actions, like iOS context menus.",
+      "categories": [
+        "interactions"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/interactions/preview-menu.tsx",
+          "type": "registry:component",
+          "target": "@components/interactions/preview-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pull-to-refresh",
+      "type": "registry:component",
+      "title": "Pull to Refresh",
+      "description": "A scroll container that refreshes its content when the user pulls down from the top.",
+      "categories": [
+        "interactions"
+      ],
+      "registryDependencies": [
+        "@esuiss/spinner",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/interactions/pull-to-refresh.tsx",
+          "type": "registry:component",
+          "target": "@components/interactions/pull-to-refresh.tsx"
+        }
+      ]
+    },
+    {
+      "name": "search-reveal",
+      "type": "registry:component",
+      "title": "Search Reveal",
+      "description": "A scrolling list with a search field tucked above it that appears when the user scrolls up.",
+      "categories": [
+        "interactions"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/interactions/search-reveal.tsx",
+          "type": "registry:component",
+          "target": "@components/interactions/search-reveal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "section-index",
+      "type": "registry:component",
+      "title": "Section Index",
+      "description": "An A to Z index bar for jumping between sections of a long list by tapping, dragging, or typing.",
+      "categories": [
+        "interactions"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/interactions/section-index.tsx",
+          "type": "registry:component",
+          "target": "@components/interactions/section-index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "selection-list",
+      "type": "registry:component",
+      "title": "Selection List",
+      "description": "A list with an edit mode for selecting multiple rows and acting on them from a floating toolbar.",
+      "categories": [
+        "interactions"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/interactions/selection-list.tsx",
+          "type": "registry:component",
+          "target": "@components/interactions/selection-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "A numeric field with minus and plus buttons that step the value, accelerating while held.",
+      "categories": [
+        "interactions"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/interactions/stepper.tsx",
+          "type": "registry:component",
+          "target": "@components/interactions/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "swipe-actions",
+      "type": "registry:component",
+      "title": "Swipe Actions",
+      "description": "A list row that reveals action buttons when swiped sideways, with optional full swipe to run an action.",
+      "categories": [
+        "interactions"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/interactions/swipe-actions.tsx",
+          "type": "registry:component",
+          "target": "@components/interactions/swipe-actions.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tip",
+      "type": "registry:component",
+      "title": "Tip",
+      "description": "A dismissible feature tip shown inline or as a popover, remembered once dismissed and sequenced in groups.",
+      "categories": [
+        "interactions"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/interactions/tip.tsx",
+          "type": "registry:component",
+          "target": "@components/interactions/tip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "undo-bar",
+      "type": "registry:component",
+      "title": "Undo Bar",
+      "description": "A floating bar that offers to undo the last action for a few seconds before committing it.",
+      "categories": [
+        "interactions"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/interactions/undo-bar.tsx",
+          "type": "registry:component",
+          "target": "@components/interactions/undo-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart-axes",
+      "type": "registry:block",
+      "title": "Area Chart Axes",
+      "description": "A gradient area with visible dots and a value axis on the right edge of the plot.",
+      "categories": [
+        "charts",
+        "charts-area"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/area-chart-axes.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/area-chart-axes.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart-default",
+      "type": "registry:block",
+      "title": "Area Chart Default",
+      "description": "A single filled area with a smooth curve showing one series across six months.",
+      "categories": [
+        "charts",
+        "charts-area"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/area-chart-default.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/area-chart-default.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart-gradient",
+      "type": "registry:block",
+      "title": "Area Chart Gradient",
+      "description": "Two overlapping areas whose fills fade out toward the bottom using SVG linear gradients.",
+      "categories": [
+        "charts",
+        "charts-area"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/area-chart-gradient.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/area-chart-gradient.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart-interactive",
+      "type": "registry:block",
+      "title": "Area Chart Interactive",
+      "description": "A stock price chart with time-range toggles, a scrubbing cursor that updates the header, and animated transitions between ranges.",
+      "categories": [
+        "charts",
+        "charts-area"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/charts/area-chart-interactive.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/area-chart-interactive.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart-linear",
+      "type": "registry:block",
+      "title": "Area Chart Linear",
+      "description": "A single filled area whose points are joined by straight segments instead of a smoothed curve.",
+      "categories": [
+        "charts",
+        "charts-area"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/area-chart-linear.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/area-chart-linear.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart-range",
+      "type": "registry:block",
+      "title": "Area Chart Range",
+      "description": "A heart-rate band showing each hour's low-to-high range as a shaded area with an average line through it.",
+      "categories": [
+        "charts",
+        "charts-area"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/area-chart-range.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/area-chart-range.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart-sparkline",
+      "type": "registry:block",
+      "title": "Area Chart Sparkline",
+      "description": "A watchlist with a tiny gradient area chart beside each price, colored by whether the stock is rising or falling.",
+      "categories": [
+        "charts",
+        "charts-area"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/area-chart-sparkline.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/area-chart-sparkline.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart-stacked-expand",
+      "type": "registry:block",
+      "title": "Area Chart Stacked Expand",
+      "description": "Two stacked areas normalized so every month fills 100%, showing each series' share rather than its value.",
+      "categories": [
+        "charts",
+        "charts-area"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/area-chart-stacked-expand.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/area-chart-stacked-expand.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart-stacked",
+      "type": "registry:block",
+      "title": "Area Chart Stacked",
+      "description": "Two areas stacked on top of each other so the top edge shows the combined total, with a legend.",
+      "categories": [
+        "charts",
+        "charts-area"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/area-chart-stacked.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/area-chart-stacked.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart-step",
+      "type": "registry:block",
+      "title": "Area Chart Step",
+      "description": "A single filled area drawn as steps, holding each value flat until the next reading.",
+      "categories": [
+        "charts",
+        "charts-area"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/area-chart-step.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/area-chart-step.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart-active",
+      "type": "registry:block",
+      "title": "Bar Chart Active",
+      "description": "A week of step counts where clicking a bar selects it, dims the others and updates the header.",
+      "categories": [
+        "charts",
+        "charts-bar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/bar-chart-active.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart-active.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart-default",
+      "type": "registry:block",
+      "title": "Bar Chart Default",
+      "description": "A single series of rounded vertical bars, one per month.",
+      "categories": [
+        "charts",
+        "charts-bar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/bar-chart-default.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart-default.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart-horizontal",
+      "type": "registry:block",
+      "title": "Bar Chart Horizontal",
+      "description": "Horizontal bars with category names on the left and a distinct color for each category.",
+      "categories": [
+        "charts",
+        "charts-bar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/bar-chart-horizontal.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart-horizontal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart-hourly",
+      "type": "registry:block",
+      "title": "Bar Chart Hourly",
+      "description": "Twenty-four thin bars of screen time per hour, with a dashed line marking the hourly average.",
+      "categories": [
+        "charts",
+        "charts-bar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/bar-chart-hourly.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart-hourly.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart-interactive",
+      "type": "registry:block",
+      "title": "Bar Chart Interactive",
+      "description": "A screen-time report with stacked category bars, a week and day toggle, selectable days and a most-used apps list.",
+      "categories": [
+        "charts",
+        "charts-bar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/charts/bar-chart-interactive.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart-interactive.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart-labeled",
+      "type": "registry:block",
+      "title": "Bar Chart Labeled",
+      "description": "A single bar series with each value printed above its bar and no grid lines.",
+      "categories": [
+        "charts",
+        "charts-bar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/bar-chart-labeled.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart-labeled.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart-multiple",
+      "type": "registry:block",
+      "title": "Bar Chart Multiple",
+      "description": "Two series drawn as grouped bars side by side for each month.",
+      "categories": [
+        "charts",
+        "charts-bar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/bar-chart-multiple.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart-multiple.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart-negative",
+      "type": "registry:block",
+      "title": "Bar Chart Negative",
+      "description": "Monthly cash flow bars that turn green above zero and red below it, with a zero baseline.",
+      "categories": [
+        "charts",
+        "charts-bar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/bar-chart-negative.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart-negative.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart-range",
+      "type": "registry:block",
+      "title": "Bar Chart Range",
+      "description": "A weather forecast where each horizontal pill spans the day's low and high on a shared gradient scale.",
+      "categories": [
+        "charts",
+        "charts-bar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/bar-chart-range.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart-range.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart-stacked",
+      "type": "registry:block",
+      "title": "Bar Chart Stacked",
+      "description": "Two series stacked into one bar per month, with a legend below the plot.",
+      "categories": [
+        "charts",
+        "charts-bar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/bar-chart-stacked.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart-stacked.tsx"
+        }
+      ]
+    },
+    {
+      "name": "line-chart-default",
+      "type": "registry:block",
+      "title": "Line Chart Default",
+      "description": "A single smooth line through six months of values, without point markers.",
+      "categories": [
+        "charts",
+        "charts-line"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/line-chart-default.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart-default.tsx"
+        }
+      ]
+    },
+    {
+      "name": "line-chart-dots",
+      "type": "registry:block",
+      "title": "Line Chart Dots",
+      "description": "A weight trend with a dot at every monthly reading and a fixed value axis on the right.",
+      "categories": [
+        "charts",
+        "charts-line"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/line-chart-dots.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart-dots.tsx"
+        }
+      ]
+    },
+    {
+      "name": "line-chart-forecast",
+      "type": "registry:block",
+      "title": "Line Chart Forecast",
+      "description": "A solid line for actual values that continues as a dashed forecast over a shaded future range.",
+      "categories": [
+        "charts",
+        "charts-line"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/line-chart-forecast.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart-forecast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "line-chart-goal-dots",
+      "type": "registry:block",
+      "title": "Line Chart Goal Dots",
+      "description": "Nightly sleep hours with a goal line and dots colored green or orange depending on whether the goal was met.",
+      "categories": [
+        "charts",
+        "charts-line"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/line-chart-goal-dots.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart-goal-dots.tsx"
+        }
+      ]
+    },
+    {
+      "name": "line-chart-goal",
+      "type": "registry:block",
+      "title": "Line Chart Goal",
+      "description": "Daily step counts plotted against a labeled dashed goal line at 10,000 steps.",
+      "categories": [
+        "charts",
+        "charts-line"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/line-chart-goal.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart-goal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "line-chart-interactive",
+      "type": "registry:block",
+      "title": "Line Chart Interactive",
+      "description": "Monthly temperatures for several cities, with chips to show or hide each city and an average, high or low switch.",
+      "categories": [
+        "charts",
+        "charts-line"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart",
+        "@esuiss/toggle",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/charts/line-chart-interactive.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart-interactive.tsx"
+        }
+      ]
+    },
+    {
+      "name": "line-chart-labeled",
+      "type": "registry:block",
+      "title": "Line Chart Labeled",
+      "description": "A single line with a dot and a printed value at every point, and no grid.",
+      "categories": [
+        "charts",
+        "charts-line"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/line-chart-labeled.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart-labeled.tsx"
+        }
+      ]
+    },
+    {
+      "name": "line-chart-linear",
+      "type": "registry:block",
+      "title": "Line Chart Linear",
+      "description": "A single line drawn with straight segments between readings instead of a smoothed curve.",
+      "categories": [
+        "charts",
+        "charts-line"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/line-chart-linear.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart-linear.tsx"
+        }
+      ]
+    },
+    {
+      "name": "line-chart-multiple",
+      "type": "registry:block",
+      "title": "Line Chart Multiple",
+      "description": "Two lines compared on the same axes, with a legend identifying each series.",
+      "categories": [
+        "charts",
+        "charts-line"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/line-chart-multiple.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart-multiple.tsx"
+        }
+      ]
+    },
+    {
+      "name": "line-chart-step",
+      "type": "registry:block",
+      "title": "Line Chart Step",
+      "description": "A single line drawn as horizontal steps, holding each value until the next reading.",
+      "categories": [
+        "charts",
+        "charts-line"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/line-chart-step.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart-step.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart-active",
+      "type": "registry:block",
+      "title": "Pie Chart Active",
+      "description": "A donut where one slice is enlarged and outlined with an outer arc to highlight it.",
+      "categories": [
+        "charts",
+        "charts-pie"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/pie-chart-active.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/pie-chart-active.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart-default",
+      "type": "registry:block",
+      "title": "Pie Chart Default",
+      "description": "A full pie split into five device slices, separated by thin card-colored borders.",
+      "categories": [
+        "charts",
+        "charts-pie"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/pie-chart-default.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/pie-chart-default.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart-donut-text",
+      "type": "registry:block",
+      "title": "Pie Chart Donut Text",
+      "description": "A donut with the total number of users displayed in the center of the ring.",
+      "categories": [
+        "charts",
+        "charts-pie"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/pie-chart-donut-text.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/pie-chart-donut-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart-donut",
+      "type": "registry:block",
+      "title": "Pie Chart Donut",
+      "description": "A donut chart with a hollow center and small gaps between slices.",
+      "categories": [
+        "charts",
+        "charts-pie"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/pie-chart-donut.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/pie-chart-donut.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart-half",
+      "type": "registry:block",
+      "title": "Pie Chart Half",
+      "description": "A semicircular gauge-style pie showing battery share by device, with a caption under the arc.",
+      "categories": [
+        "charts",
+        "charts-pie"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/pie-chart-half.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/pie-chart-half.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart-interactive",
+      "type": "registry:block",
+      "title": "Pie Chart Interactive",
+      "description": "A storage breakdown donut with a device switch, hover-linked list and lifted slices, plus a linear usage bar.",
+      "categories": [
+        "charts",
+        "charts-pie"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/charts/pie-chart-interactive.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/pie-chart-interactive.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart-label",
+      "type": "registry:block",
+      "title": "Pie Chart Label",
+      "description": "A pie with each category name drawn outside its slice and joined by a leader line.",
+      "categories": [
+        "charts",
+        "charts-pie"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/pie-chart-label.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/pie-chart-label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart-legend",
+      "type": "registry:block",
+      "title": "Pie Chart Legend",
+      "description": "A donut with a legend beneath it that lists every category and its color.",
+      "categories": [
+        "charts",
+        "charts-pie"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/pie-chart-legend.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/pie-chart-legend.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart-nested",
+      "type": "registry:block",
+      "title": "Pie Chart Nested",
+      "description": "Two concentric pies: an inner ring of grouped totals surrounded by an outer ring of individual categories.",
+      "categories": [
+        "charts",
+        "charts-pie"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/pie-chart-nested.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/pie-chart-nested.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart-separated",
+      "type": "registry:block",
+      "title": "Pie Chart Separated",
+      "description": "A donut whose slices are pulled apart with wide gaps and rounded corners.",
+      "categories": [
+        "charts",
+        "charts-pie"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/pie-chart-separated.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/pie-chart-separated.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart-default",
+      "type": "registry:block",
+      "title": "Radar Chart Default",
+      "description": "A single filled radar shape showing this month's scores across six training skills.",
+      "categories": [
+        "charts",
+        "charts-radar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radar-chart-default.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radar-chart-default.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart-dots",
+      "type": "registry:block",
+      "title": "Radar Chart Dots",
+      "description": "A single radar shape with a solid dot marking the value on every axis.",
+      "categories": [
+        "charts",
+        "charts-radar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radar-chart-dots.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radar-chart-dots.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart-grid-circle",
+      "type": "registry:block",
+      "title": "Radar Chart Grid Circle",
+      "description": "A single radar shape drawn over circular rings instead of polygonal grid lines.",
+      "categories": [
+        "charts",
+        "charts-radar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radar-chart-grid-circle.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radar-chart-grid-circle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart-grid-filled",
+      "type": "registry:block",
+      "title": "Radar Chart Grid Filled",
+      "description": "A borderless radar shape over shaded circular rings separated by card-colored lines.",
+      "categories": [
+        "charts",
+        "charts-radar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radar-chart-grid-filled.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radar-chart-grid-filled.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart-grid-none",
+      "type": "registry:block",
+      "title": "Radar Chart Grid None",
+      "description": "A single solid radar shape with no grid and no outline, leaving only the shape and axis labels.",
+      "categories": [
+        "charts",
+        "charts-radar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radar-chart-grid-none.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radar-chart-grid-none.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart-interactive",
+      "type": "registry:block",
+      "title": "Radar Chart Interactive",
+      "description": "A phone model comparison where toggle chips show up to three models, which grow in and out of the radar.",
+      "categories": [
+        "charts",
+        "charts-radar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart",
+        "@esuiss/toggle"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radar-chart-interactive.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radar-chart-interactive.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart-legend",
+      "type": "registry:block",
+      "title": "Radar Chart Legend",
+      "description": "Two overlapping radar shapes with a legend beneath that names each series.",
+      "categories": [
+        "charts",
+        "charts-radar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radar-chart-legend.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radar-chart-legend.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart-lines-only",
+      "type": "registry:block",
+      "title": "Radar Chart Lines Only",
+      "description": "Two radar outlines with no fill, comparing this month and last month by stroke alone.",
+      "categories": [
+        "charts",
+        "charts-radar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radar-chart-lines-only.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radar-chart-lines-only.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart-multiple",
+      "type": "registry:block",
+      "title": "Radar Chart Multiple",
+      "description": "Two overlapping radar shapes comparing this month with last month.",
+      "categories": [
+        "charts",
+        "charts-radar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radar-chart-multiple.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radar-chart-multiple.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart-radius-axis",
+      "type": "registry:block",
+      "title": "Radar Chart Radius Axis",
+      "description": "A single radar shape with a visible 0 to 100 value scale along the vertical axis.",
+      "categories": [
+        "charts",
+        "charts-radar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radar-chart-radius-axis.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radar-chart-radius-axis.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radial-chart-batteries",
+      "type": "registry:block",
+      "title": "Radial Chart Batteries",
+      "description": "A row of small battery rings, one per device, that turn red when charge is at or below 20%.",
+      "categories": [
+        "charts",
+        "charts-radial"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radial-chart-batteries.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radial-chart-batteries.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radial-chart-default",
+      "type": "registry:block",
+      "title": "Radial Chart Default",
+      "description": "Concentric radial bars, one per device, each running around a gray background track.",
+      "categories": [
+        "charts",
+        "charts-radial"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radial-chart-default.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radial-chart-default.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radial-chart-gauge",
+      "type": "registry:block",
+      "title": "Radial Chart Gauge",
+      "description": "A 240-degree gauge arc showing an air quality reading with its value and rating below the center.",
+      "categories": [
+        "charts",
+        "charts-radial"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radial-chart-gauge.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radial-chart-gauge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radial-chart-interactive",
+      "type": "registry:block",
+      "title": "Radial Chart Interactive",
+      "description": "A weekly activity view where picking a day animates three large rings and updates each ring's totals.",
+      "categories": [
+        "charts",
+        "charts-radial"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radial-chart-interactive.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radial-chart-interactive.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radial-chart-label",
+      "type": "registry:block",
+      "title": "Radial Chart Label",
+      "description": "Concentric radial bars with each category's name printed at the start of its bar.",
+      "categories": [
+        "charts",
+        "charts-radial"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radial-chart-label.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radial-chart-label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radial-chart-progress",
+      "type": "registry:block",
+      "title": "Radial Chart Progress",
+      "description": "A three-quarter arc tracking progress toward a goal, with the count shown in the center.",
+      "categories": [
+        "charts",
+        "charts-radial"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radial-chart-progress.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radial-chart-progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radial-chart-rings",
+      "type": "registry:block",
+      "title": "Radial Chart Rings",
+      "description": "Three nested activity rings for move, exercise and stand, drawn as plain SVG circles.",
+      "categories": [
+        "charts",
+        "charts-radial"
+      ],
+      "registryDependencies": [
+        "@esuiss/card"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radial-chart-rings.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radial-chart-rings.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radial-chart-stacked",
+      "type": "registry:block",
+      "title": "Radial Chart Stacked",
+      "description": "A half-circle arc with two series stacked end to end and the combined total beneath it.",
+      "categories": [
+        "charts",
+        "charts-radial"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radial-chart-stacked.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radial-chart-stacked.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radial-chart-text",
+      "type": "registry:block",
+      "title": "Radial Chart Text",
+      "description": "A single full-circle progress ring with a percentage and caption centered inside.",
+      "categories": [
+        "charts",
+        "charts-radial"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radial-chart-text.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radial-chart-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radial-chart-tinted",
+      "type": "registry:block",
+      "title": "Radial Chart Tinted",
+      "description": "Concentric radial bars whose unfilled track is a soft tint of each bar's own color.",
+      "categories": [
+        "charts",
+        "charts-radial"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/radial-chart-tinted.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/radial-chart-tinted.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-chart-custom",
+      "type": "registry:block",
+      "title": "Tooltip Chart Custom",
+      "description": "A bar chart whose tooltip is fully custom markup, showing a large total, a unit and the day.",
+      "categories": [
+        "charts",
+        "charts-tooltip"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/tooltip-chart-custom.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/tooltip-chart-custom.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-chart-dashed",
+      "type": "registry:block",
+      "title": "Tooltip Chart Dashed",
+      "description": "A stacked bar chart whose tooltip marks each series with a dashed outline indicator.",
+      "categories": [
+        "charts",
+        "charts-tooltip"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/tooltip-chart-dashed.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/tooltip-chart-dashed.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-chart-dot",
+      "type": "registry:block",
+      "title": "Tooltip Chart Dot",
+      "description": "A stacked bar chart showing the default tooltip indicator, a small colored square for each series.",
+      "categories": [
+        "charts",
+        "charts-tooltip"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/tooltip-chart-dot.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/tooltip-chart-dot.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-chart-formatter",
+      "type": "registry:block",
+      "title": "Tooltip Chart Formatter",
+      "description": "A bar chart of daily active energy whose tooltip shows a name, value and kcal unit through a custom formatter.",
+      "categories": [
+        "charts",
+        "charts-tooltip"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/tooltip-chart-formatter.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/tooltip-chart-formatter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-chart-icons",
+      "type": "registry:block",
+      "title": "Tooltip Chart Icons",
+      "description": "A stacked bar chart whose tooltip shows an icon for each series in place of a color swatch.",
+      "categories": [
+        "charts",
+        "charts-tooltip"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/tooltip-chart-icons.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/tooltip-chart-icons.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-chart-interactive",
+      "type": "registry:block",
+      "title": "Tooltip Chart Interactive",
+      "description": "A tooltip playground on quarterly revenue bars, with controls for indicator, trigger, title total and hidden parts.",
+      "categories": [
+        "charts",
+        "charts-tooltip"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart",
+        "@esuiss/switch",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/charts/tooltip-chart-interactive.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/tooltip-chart-interactive.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-chart-label-formatter",
+      "type": "registry:block",
+      "title": "Tooltip Chart Label Formatter",
+      "description": "A gradient area chart whose tooltip heading shows a longer date than the axis ticks.",
+      "categories": [
+        "charts",
+        "charts-tooltip"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/tooltip-chart-label-formatter.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/tooltip-chart-label-formatter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-chart-line",
+      "type": "registry:block",
+      "title": "Tooltip Chart Line",
+      "description": "A stacked bar chart whose tooltip marks each series with a thin vertical color bar.",
+      "categories": [
+        "charts",
+        "charts-tooltip"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/tooltip-chart-line.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/tooltip-chart-line.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-chart-no-indicator",
+      "type": "registry:block",
+      "title": "Tooltip Chart No Indicator",
+      "description": "A stacked bar chart whose tooltip lists series names and values without color indicators.",
+      "categories": [
+        "charts",
+        "charts-tooltip"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/tooltip-chart-no-indicator.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/tooltip-chart-no-indicator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-chart-no-label",
+      "type": "registry:block",
+      "title": "Tooltip Chart No Label",
+      "description": "A stacked bar chart whose tooltip omits the category heading and shows only the series rows.",
+      "categories": [
+        "charts",
+        "charts-tooltip"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/card",
+        "@esuiss/chart"
+      ],
+      "files": [
+        {
+          "path": "components/charts/tooltip-chart-no-label.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/tooltip-chart-no-label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bag-checkout",
+      "type": "registry:block",
+      "title": "Bag Checkout",
+      "description": "A three-step checkout with delivery, payment, and review steps beside an order summary.",
+      "categories": [
+        "blocks",
+        "bag"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/label",
+        "@esuiss/radio-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/bag-checkout.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/bag-checkout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bag-configure",
+      "type": "registry:block",
+      "title": "Bag Configure",
+      "description": "A product configurator for choosing a model, finish, and storage, with a live price and Add to Bag button.",
+      "categories": [
+        "blocks",
+        "bag"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/label",
+        "@esuiss/radio-group",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/bag-configure.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/bag-configure.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bag-review",
+      "type": "registry:block",
+      "title": "Bag Review",
+      "description": "A shopping bag review page with quantity steppers, removable line items, and a totals summary.",
+      "categories": [
+        "blocks",
+        "bag"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/stepper"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/bag-review.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/bag-review.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-closer-look",
+      "type": "registry:block",
+      "title": "Bento Closer Look",
+      "description": "A feature spotlight that pairs an auto-advancing accordion of features with a matching cross-fading image.",
+      "categories": [
+        "blocks",
+        "bento"
+      ],
+      "registryDependencies": [
+        "@esuiss/accordion"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/bento-closer-look.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/bento-closer-look.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-features",
+      "type": "registry:block",
+      "title": "Bento Features",
+      "description": "A bento grid of product feature tiles mixing photography, gradient figures, and short claims.",
+      "categories": [
+        "blocks",
+        "bento"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/bento-features.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/bento-features.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-stats",
+      "type": "registry:block",
+      "title": "Bento Stats",
+      "description": "A dark bento grid of headline product stats, with a photo tile and an animated charging bar.",
+      "categories": [
+        "blocks",
+        "bento"
+      ],
+      "registryDependencies": [
+        "@esuiss/progress"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/bento-stats.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/bento-stats.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chat-conversations",
+      "type": "registry:block",
+      "title": "Chat Conversations",
+      "description": "A messaging app layout with a conversation list beside the selected thread and a message composer.",
+      "categories": [
+        "blocks",
+        "chat"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/bubble",
+        "@esuiss/button",
+        "@esuiss/input",
+        "@esuiss/message",
+        "@esuiss/message-scroller",
+        "@esuiss/split-view"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/chat-conversations.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/chat-conversations.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chat-support",
+      "type": "registry:block",
+      "title": "Chat Support",
+      "description": "A support landing section with a floating chat panel, quick-reply suggestions, and a launcher button.",
+      "categories": [
+        "blocks",
+        "chat"
+      ],
+      "registryDependencies": [
+        "@esuiss/bubble",
+        "@esuiss/button",
+        "@esuiss/input",
+        "@esuiss/message",
+        "@esuiss/message-scroller"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/chat-support.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/chat-support.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chat-thread",
+      "type": "registry:block",
+      "title": "Chat Thread",
+      "description": "A single message thread inside a phone frame, with heart reactions and simulated replies.",
+      "categories": [
+        "blocks",
+        "chat"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/bubble",
+        "@esuiss/button",
+        "@esuiss/input",
+        "@esuiss/message",
+        "@esuiss/message-scroller"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/chat-thread.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/chat-thread.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dash-analytics",
+      "type": "registry:block",
+      "title": "Dash Analytics",
+      "description": "An app analytics dashboard with a metric switcher, an interactive area chart, and a regional breakdown.",
+      "categories": [
+        "blocks",
+        "dash"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/chart",
+        "@esuiss/item",
+        "@esuiss/sidebar",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/dash-analytics.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/dash-analytics.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dash-health",
+      "type": "registry:block",
+      "title": "Dash Health",
+      "description": "A health summary dashboard with pinned metric cards, sparklines, and category views in a sidebar.",
+      "categories": [
+        "blocks",
+        "dash"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/button",
+        "@esuiss/sidebar"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/dash-health.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/dash-health.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dash-store",
+      "type": "registry:block",
+      "title": "Dash Store",
+      "description": "A store admin overview with sales stats, an online versus in-store bar chart, and a filterable orders list.",
+      "categories": [
+        "blocks",
+        "dash"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/chart",
+        "@esuiss/item",
+        "@esuiss/sidebar",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/dash-store.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/dash-store.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-bag",
+      "type": "registry:block",
+      "title": "Empty Bag",
+      "description": "An empty shopping bag state with sign-in and shopping actions above a row of recommended products.",
+      "categories": [
+        "blocks",
+        "empty"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/empty"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/empty-bag.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/empty-bag.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-offline",
+      "type": "registry:block",
+      "title": "Empty Offline",
+      "description": "An offline empty state with a retry action that reconnects and reveals a grid of albums.",
+      "categories": [
+        "blocks",
+        "empty"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/empty",
+        "@esuiss/spinner"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/empty-offline.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/empty-offline.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-search",
+      "type": "registry:block",
+      "title": "Empty Search",
+      "description": "A search page showing live suggestions, a no-results state, and suggested queries.",
+      "categories": [
+        "blocks",
+        "empty"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/empty"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/empty-search.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/empty-search.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-compact",
+      "type": "registry:block",
+      "title": "Footer Compact",
+      "description": "A narrow site footer with a breadcrumb, a collapsible link directory, and legal lines.",
+      "categories": [
+        "blocks",
+        "footer"
+      ],
+      "registryDependencies": [
+        "@esuiss/accordion",
+        "@esuiss/breadcrumb"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/footer-compact.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/footer-compact.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-directory",
+      "type": "registry:block",
+      "title": "Footer Directory",
+      "description": "A full site footer with footnotes, a breadcrumb, a five-column link directory, and legal links.",
+      "categories": [
+        "blocks",
+        "footer"
+      ],
+      "registryDependencies": [
+        "@esuiss/accordion",
+        "@esuiss/breadcrumb"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/footer-directory.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/footer-directory.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-services",
+      "type": "registry:block",
+      "title": "Footer Services",
+      "description": "A footer with a band of service highlights, a newsletter signup, a link directory, and legal links.",
+      "categories": [
+        "blocks",
+        "footer"
+      ],
+      "registryDependencies": [
+        "@esuiss/input-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/footer-services.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/footer-services.tsx"
+        }
+      ]
+    },
+    {
+      "name": "grid-accessories",
+      "type": "registry:block",
+      "title": "Grid Accessories",
+      "description": "A filterable accessories grid with category chips and add-to-bag buttons that update a bag counter.",
+      "categories": [
+        "blocks",
+        "grid"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/grid-accessories.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/grid-accessories.tsx"
+        }
+      ]
+    },
+    {
+      "name": "grid-carousel",
+      "type": "registry:block",
+      "title": "Grid Carousel",
+      "description": "A horizontally scrolling carousel of product cards with previous and next controls.",
+      "categories": [
+        "blocks",
+        "grid"
+      ],
+      "registryDependencies": [
+        "@esuiss/carousel"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/grid-carousel.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/grid-carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "grid-lineup",
+      "type": "registry:block",
+      "title": "Grid Lineup",
+      "description": "A product lineup comparing models side by side, each with finish swatches, a price, and buy actions.",
+      "categories": [
+        "blocks",
+        "grid"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/grid-lineup.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/grid-lineup.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-cinematic",
+      "type": "registry:block",
+      "title": "Hero Cinematic",
+      "description": "A dark, centered product hero whose image, gradient title, and glow change with the selected finish.",
+      "categories": [
+        "blocks",
+        "hero"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/hero-cinematic.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/hero-cinematic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-product",
+      "type": "registry:block",
+      "title": "Hero Product",
+      "description": "A centered product launch hero with an eyebrow, headline, two actions, a wide image, and a pricing line.",
+      "categories": [
+        "blocks",
+        "hero"
+      ],
+      "registryDependencies": [
+        "@esuiss/button"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/hero-product.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/hero-product.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-tiles",
+      "type": "registry:block",
+      "title": "Hero Tiles",
+      "description": "A pair of promotional hero tiles, each with a title, tagline, two actions, and a product image.",
+      "categories": [
+        "blocks",
+        "hero"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/hero-tiles.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/hero-tiles.tsx"
+        }
+      ]
+    },
+    {
+      "name": "inbox-categories",
+      "type": "registry:block",
+      "title": "Inbox Categories",
+      "description": "A mail inbox sorted into Primary, Transactions, Updates, and Promotions, with a message reader and inline reply.",
+      "categories": [
+        "blocks",
+        "inbox"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/button",
+        "@esuiss/split-view",
+        "@esuiss/textarea",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/inbox-categories.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/inbox-categories.tsx"
+        }
+      ]
+    },
+    {
+      "name": "inbox-mail",
+      "type": "registry:block",
+      "title": "Inbox Mail",
+      "description": "A three-column mail client with mailboxes, a searchable message list, and a message reader with reply.",
+      "categories": [
+        "blocks",
+        "inbox"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/button",
+        "@esuiss/input-group",
+        "@esuiss/split-view",
+        "@esuiss/textarea"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/inbox-mail.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/inbox-mail.tsx"
+        }
+      ]
+    },
+    {
+      "name": "inbox-support",
+      "type": "registry:block",
+      "title": "Inbox Support",
+      "description": "A support ticket inbox with status views, a ticket list with priorities, and a detail pane for replying and resolving.",
+      "categories": [
+        "blocks",
+        "inbox"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/button",
+        "@esuiss/split-view",
+        "@esuiss/textarea",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/inbox-support.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/inbox-support.tsx"
+        }
+      ]
+    },
+    {
+      "name": "log-activity",
+      "type": "registry:block",
+      "title": "Log Activity",
+      "description": "An admin activity log grouped by day, with a type filter and expandable before-and-after details.",
+      "categories": [
+        "blocks",
+        "log"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/collapsible",
+        "@esuiss/select",
+        "@esuiss/sidebar"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/log-activity.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/log-activity.tsx"
+        }
+      ]
+    },
+    {
+      "name": "log-live",
+      "type": "registry:block",
+      "title": "Log Live",
+      "description": "A live admin activity feed that streams new events, with session stats and a pause control.",
+      "categories": [
+        "blocks",
+        "log"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/button",
+        "@esuiss/sidebar"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/log-live.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/log-live.tsx"
+        }
+      ]
+    },
+    {
+      "name": "log-security",
+      "type": "registry:block",
+      "title": "Log Security",
+      "description": "A security overview with a computed score ring, alert counts by severity, and resolvable alerts.",
+      "categories": [
+        "blocks",
+        "log"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/sidebar",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/log-security.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/log-security.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-account",
+      "type": "registry:block",
+      "title": "Login Account",
+      "description": "A two-step account sign-in form that asks for an email, then reveals a password field.",
+      "categories": [
+        "blocks",
+        "login"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/button",
+        "@esuiss/checkbox",
+        "@esuiss/input",
+        "@esuiss/label",
+        "@esuiss/spinner"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/login-account.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/login-account.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-passkey",
+      "type": "registry:block",
+      "title": "Login Passkey",
+      "description": "A passwordless sign-in screen that runs a simulated face scan in a dialog, then welcomes the user.",
+      "categories": [
+        "blocks",
+        "login"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/button",
+        "@esuiss/dialog"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/login-passkey.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/login-passkey.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-sheet",
+      "type": "registry:block",
+      "title": "Login Sheet",
+      "description": "A mobile app welcome screen with a Sign in with suiss bottom sheet for sharing or hiding an email.",
+      "categories": [
+        "blocks",
+        "login"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/label",
+        "@esuiss/radio-group",
+        "@esuiss/spinner"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/login-sheet.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/login-sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nav-categories",
+      "type": "registry:block",
+      "title": "Nav Categories",
+      "description": "A store landing header with a draggable carousel of category tiles and a heading that follows the selection.",
+      "categories": [
+        "blocks",
+        "nav"
+      ],
+      "registryDependencies": [
+        "@esuiss/carousel",
+        "@esuiss/toggle"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/nav-categories.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/nav-categories.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nav-global",
+      "type": "registry:block",
+      "title": "Nav Global",
+      "description": "A sticky global navigation bar with mega-menu panels, search and bag actions, above a sample product hero.",
+      "categories": [
+        "blocks",
+        "nav"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/navbar"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/nav-global.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/nav-global.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nav-local",
+      "type": "registry:block",
+      "title": "Nav Local",
+      "description": "A sticky product sub-navigation that highlights the section in view, shown on a dark product page.",
+      "categories": [
+        "blocks",
+        "nav"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/navbar"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/nav-local.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/nav-local.tsx"
+        }
+      ]
+    },
+    {
+      "name": "price-bundle",
+      "type": "registry:block",
+      "title": "Price Bundle",
+      "description": "A dark subscription bundle picker comparing three plans and the services each one includes.",
+      "categories": [
+        "blocks",
+        "price"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/label",
+        "@esuiss/radio-group",
+        "@esuiss/utils"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/price-bundle.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/price-bundle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "price-care",
+      "type": "registry:block",
+      "title": "Price Care",
+      "description": "A device protection plan picker with device chips, payment options, an optional theft add-on, and a live total.",
+      "categories": [
+        "blocks",
+        "price"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/label",
+        "@esuiss/radio-group",
+        "@esuiss/switch",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/price-care.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/price-care.tsx"
+        }
+      ]
+    },
+    {
+      "name": "price-storage",
+      "type": "registry:block",
+      "title": "Price Storage",
+      "description": "A cloud storage plan picker with a monthly or yearly toggle, four plan cards, and a switch action.",
+      "categories": [
+        "blocks",
+        "price"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/label",
+        "@esuiss/radio-group",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/price-storage.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/price-storage.tsx"
+        }
+      ]
+    },
+    {
+      "name": "roles-editor",
+      "type": "registry:block",
+      "title": "Roles Editor",
+      "description": "A role editor that lists roles beside grouped permission switches, with save and revert for unsaved changes.",
+      "categories": [
+        "blocks",
+        "roles"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/item",
+        "@esuiss/sidebar",
+        "@esuiss/split-view",
+        "@esuiss/switch"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/roles-editor.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/roles-editor.tsx"
+        }
+      ]
+    },
+    {
+      "name": "roles-matrix",
+      "type": "registry:block",
+      "title": "Roles Matrix",
+      "description": "A permissions matrix with a checkbox for every permission and role, grouped by area, with a save action.",
+      "categories": [
+        "blocks",
+        "roles"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/checkbox",
+        "@esuiss/sidebar"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/roles-matrix.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/roles-matrix.tsx"
+        }
+      ]
+    },
+    {
+      "name": "roles-requests",
+      "type": "registry:block",
+      "title": "Roles Requests",
+      "description": "An access request queue where admins approve or deny permission requests, with an approval length setting.",
+      "categories": [
+        "blocks",
+        "roles"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/button",
+        "@esuiss/empty",
+        "@esuiss/select",
+        "@esuiss/sidebar"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/roles-requests.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/roles-requests.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings-account",
+      "type": "registry:block",
+      "title": "Settings Account",
+      "description": "An account settings page with a profile sidebar and a Sign-In and Security section of editable cards.",
+      "categories": [
+        "blocks",
+        "settings"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/button",
+        "@esuiss/input",
+        "@esuiss/sidebar",
+        "@esuiss/switch"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/settings-account.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/settings-account.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings-device",
+      "type": "registry:block",
+      "title": "Settings Device",
+      "description": "A phone-style Settings screen with a search field, an account row, and grouped rows with switches.",
+      "categories": [
+        "blocks",
+        "settings"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/input-group",
+        "@esuiss/item",
+        "@esuiss/switch"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/settings-device.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/settings-device.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings-notifications",
+      "type": "registry:block",
+      "title": "Settings Notifications",
+      "description": "Per-app notification settings with a live lock screen preview that reflects each choice.",
+      "categories": [
+        "blocks",
+        "settings"
+      ],
+      "registryDependencies": [
+        "@esuiss/item",
+        "@esuiss/select",
+        "@esuiss/switch",
+        "@esuiss/toggle",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/settings-notifications.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/settings-notifications.tsx"
+        }
+      ]
+    },
+    {
+      "name": "signup-form",
+      "type": "registry:block",
+      "title": "Signup Form",
+      "description": "A full account creation form with name, country, birthday, email, and password fields and live password rules.",
+      "categories": [
+        "blocks",
+        "signup"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/input",
+        "@esuiss/native-select"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/signup-form.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/signup-form.tsx"
+        }
+      ]
+    },
+    {
+      "name": "signup-steps",
+      "type": "registry:block",
+      "title": "Signup Steps",
+      "description": "A one-question-at-a-time signup flow for name, email, and password, with a progress indicator.",
+      "categories": [
+        "blocks",
+        "signup"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/input"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/signup-steps.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/signup-steps.tsx"
+        }
+      ]
+    },
+    {
+      "name": "signup-trial",
+      "type": "registry:block",
+      "title": "Signup Trial",
+      "description": "A free trial signup split between a promotional image panel and a short form with a password strength meter.",
+      "categories": [
+        "blocks",
+        "signup"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/checkbox",
+        "@esuiss/input",
+        "@esuiss/label"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/signup-trial.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/signup-trial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "users-detail",
+      "type": "registry:block",
+      "title": "Users Detail",
+      "description": "A user directory with a member list beside a detail pane for profile, sessions, and security settings.",
+      "categories": [
+        "blocks",
+        "users"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/button",
+        "@esuiss/item",
+        "@esuiss/select",
+        "@esuiss/sidebar",
+        "@esuiss/split-view",
+        "@esuiss/switch",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/users-detail.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/users-detail.tsx"
+        }
+      ]
+    },
+    {
+      "name": "users-invite",
+      "type": "registry:block",
+      "title": "Users Invite",
+      "description": "An invite form that collects several email addresses as chips, assigns a role, and lists pending invitations.",
+      "categories": [
+        "blocks",
+        "users"
+      ],
+      "registryDependencies": [
+        "@esuiss/button",
+        "@esuiss/item",
+        "@esuiss/select",
+        "@esuiss/sidebar",
+        "@esuiss/switch",
+        "@esuiss/toast"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/users-invite.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/users-invite.tsx"
+        }
+      ]
+    },
+    {
+      "name": "users-table",
+      "type": "registry:block",
+      "title": "Users Table",
+      "description": "A searchable users table with role filters, row selection, and bulk role and status actions.",
+      "categories": [
+        "blocks",
+        "users"
+      ],
+      "registryDependencies": [
+        "@esuiss/avatar",
+        "@esuiss/button",
+        "@esuiss/checkbox",
+        "@esuiss/input-group",
+        "@esuiss/sidebar",
+        "@esuiss/table",
+        "@esuiss/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/users-table.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/users-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "verify-code",
+      "type": "registry:block",
+      "title": "Verify Code",
+      "description": "A two-factor authentication screen with a six-digit code entry, error feedback, and a resend countdown.",
+      "categories": [
+        "blocks",
+        "verify"
+      ],
+      "registryDependencies": [
+        "@esuiss/input-otp"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/verify-code.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/verify-code.tsx"
+        }
+      ]
+    },
+    {
+      "name": "verify-device",
+      "type": "registry:block",
+      "title": "Verify Device",
+      "description": "A trusted-device sign-in flow that pairs instructions with a simulated approval alert and code entry.",
+      "categories": [
+        "blocks",
+        "verify"
+      ],
+      "registryDependencies": [
+        "@esuiss/input-otp",
+        "@esuiss/spinner"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/verify-device.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/verify-device.tsx"
+        }
+      ]
+    },
+    {
+      "name": "verify-email",
+      "type": "registry:block",
+      "title": "Verify Email",
+      "description": "A check-your-inbox screen after signup, with open mail and resend actions and a cooldown timer.",
+      "categories": [
+        "blocks",
+        "verify"
+      ],
+      "registryDependencies": [
+        "@esuiss/button"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/verify-email.tsx",
+          "type": "registry:component",
+          "target": "@components/blocks/verify-email.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-highlighted-code",
+      "type": "registry:hook",
+      "title": "Use Highlighted Code",
+      "description": "Highlights code with Shiki and returns the tokens for each line.",
+      "registryDependencies": [
+        "@esuiss/highlighter"
+      ],
+      "files": [
+        {
+          "path": "hooks/use-highlighted-code.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-message-scroller",
+      "type": "registry:hook",
+      "title": "Use Message Scroller",
+      "description": "The scroll state and controls behind the message scroller.",
+      "files": [
+        {
+          "path": "hooks/use-message-scroller.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "title": "Use Mobile",
+      "description": "Reports whether the viewport is narrower than the mobile breakpoint.",
+      "files": [
+        {
+          "path": "hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-platform",
+      "type": "registry:hook",
+      "title": "Use Platform",
+      "description": "Detects Apple platforms so shortcuts can show the matching modifier key.",
+      "files": [
+        {
+          "path": "hooks/use-platform.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-questionnaire",
+      "type": "registry:hook",
+      "title": "Use Questionnaire",
+      "description": "The state and keyboard shortcuts behind the questionnaire.",
+      "files": [
+        {
+          "path": "hooks/use-questionnaire.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-scrollbar-gap",
+      "type": "registry:hook",
+      "title": "Use Scrollbar Gap",
+      "description": "Keeps the page from shifting when an overlay hides the scrollbar.",
+      "files": [
+        {
+          "path": "hooks/use-scrollbar-gap.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "highlighter",
+      "type": "registry:lib",
+      "title": "Highlighter",
+      "description": "A shared Shiki highlighter that loads languages and themes on demand.",
+      "dependencies": [
+        "shiki"
+      ],
+      "files": [
+        {
+          "path": "lib/highlighter.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utils",
+      "description": "The cn helper that merges Tailwind CSS class names.",
+      "dependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "theme-suiss",
+      "type": "registry:theme",
+      "title": "suiss/ui Theme",
+      "description": "The suiss/ui colors for light and dark mode, with the radius scale and the system font stack.",
+      "dependencies": [
+        "@fontsource-variable/inter"
+      ],
+      "cssVars": {
+        "theme": {
+          "font-sans": "-apple-system, BlinkMacSystemFont, \"Inter Variable\", sans-serif",
+          "radius-xs": "calc(var(--radius) * 0.3)",
+          "radius-sm": "calc(var(--radius) * 0.5)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.2)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.8)"
+        },
+        "light": {
+          "radius": "0.625rem",
+          "background": "oklch(1 0 0)",
+          "foreground": "oklch(0.2316 0.0038 286.09)",
+          "card": "oklch(1 0 0)",
+          "card-foreground": "oklch(0.2316 0.0038 286.09)",
+          "popover": "oklch(1 0 0)",
+          "popover-foreground": "oklch(0.2316 0.0038 286.09)",
+          "primary": "oklch(0.5629 0.1933 256.16)",
+          "primary-foreground": "oklch(1 0 0)",
+          "secondary": "oklch(0 0 0 / 4%)",
+          "secondary-foreground": "oklch(0.2316 0.0038 286.09)",
+          "muted": "oklch(0.9707 0.0026 286.29)",
+          "muted-foreground": "oklch(0.5399 0.0077 286.13)",
+          "accent": "oklch(0 0 0 / 6%)",
+          "accent-foreground": "oklch(0.2316 0.0038 286.09)",
+          "destructive": "oklch(0.5329 0.2255 27.27)",
+          "border": "oklch(0.8652 0.0068 286.24)",
+          "input": "oklch(0.6217 0.0074 286.17)",
+          "ring": "oklch(0.5629 0.1933 256.16)",
+          "chart-1": "oklch(0.6028 0.2177 257.42)",
+          "chart-2": "oklch(0.6998 0.1109 212.72)",
+          "chart-3": "oklch(0.5295 0.191 278.34)",
+          "chart-4": "oklch(0.7652 0.1752 62.57)",
+          "chart-5": "oklch(0.6483 0.0073 286.18)",
+          "sidebar": "oklch(0.9707 0.0026 286.29)",
+          "sidebar-foreground": "oklch(0.2316 0.0038 286.09)",
+          "sidebar-primary": "oklch(0.5629 0.1933 256.16)",
+          "sidebar-primary-foreground": "oklch(1 0 0)",
+          "sidebar-accent": "oklch(0 0 0 / 6%)",
+          "sidebar-accent-foreground": "oklch(0.2316 0.0038 286.09)",
+          "sidebar-border": "oklch(0.8652 0.0068 286.24)",
+          "sidebar-ring": "oklch(0.5629 0.1933 256.16)"
+        },
+        "dark": {
+          "background": "oklch(0 0 0)",
+          "foreground": "oklch(0.9707 0.0026 286.29)",
+          "card": "oklch(0.2316 0.0038 286.09)",
+          "card-foreground": "oklch(0.9707 0.0026 286.29)",
+          "popover": "oklch(0.2316 0.0038 286.09)",
+          "popover-foreground": "oklch(0.9707 0.0026 286.29)",
+          "primary": "oklch(0.669 0.1808 251.84)",
+          "primary-foreground": "oklch(1 0 0)",
+          "secondary": "oklch(1 0 0 / 10%)",
+          "secondary-foreground": "oklch(0.9707 0.0026 286.29)",
+          "muted": "oklch(0.2006 0.002 286.21)",
+          "muted-foreground": "oklch(0.7105 0.0072 286.2)",
+          "accent": "oklch(1 0 0 / 10%)",
+          "accent-foreground": "oklch(0.9707 0.0026 286.29)",
+          "destructive": "oklch(0.7033 0.2236 28.29)",
+          "border": "oklch(0.3802 0.005 286.15)",
+          "input": "oklch(0.5399 0.0077 286.13)",
+          "ring": "oklch(0.5629 0.1933 256.16)",
+          "chart-1": "oklch(0.6243 0.2056 255.49)",
+          "chart-2": "oklch(0.7706 0.1181 211.98)",
+          "chart-3": "oklch(0.5564 0.2032 278.15)",
+          "chart-4": "oklch(0.7824 0.1711 67.22)",
+          "chart-5": "oklch(0.6483 0.0073 286.18)",
+          "sidebar": "oklch(0.2006 0.002 286.21)",
+          "sidebar-foreground": "oklch(0.9707 0.0026 286.29)",
+          "sidebar-primary": "oklch(0.669 0.1808 251.84)",
+          "sidebar-primary-foreground": "oklch(1 0 0)",
+          "sidebar-accent": "oklch(1 0 0 / 10%)",
+          "sidebar-accent-foreground": "oklch(0.9707 0.0026 286.29)",
+          "sidebar-border": "oklch(0.3802 0.005 286.15)",
+          "sidebar-ring": "oklch(0.5629 0.1933 256.16)"
+        }
+      }
+    }
+  ]
+}

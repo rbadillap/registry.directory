@@ -707,108 +707,6 @@
       ]
     },
     {
-      "name": "balance-1",
-      "type": "registry:component",
-      "resolution": "gated",
-      "title": "Balance 1",
-      "description": "A data-rich component for showing an account balance at a glance, with supporting context over time. Combines a primary balance summary with trend indicators and a chart to help users quickly understand current state and recent movement without digging into detailed reports.",
-      "categories": [
-        "balance"
-      ],
-      "dependencies": [
-        "recharts"
-      ],
-      "registryDependencies": [
-        "badge",
-        "card",
-        "chart",
-        "@shadcncraft/semantic-tokens"
-      ],
-      "files": [
-        {
-          "path": "components/pro-application/balance/balance-1.tsx",
-          "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/balance-1.tsx"
-        }
-      ]
-    },
-    {
-      "name": "balance-2",
-      "type": "registry:component",
-      "resolution": "gated",
-      "title": "Balance 2",
-      "description": "A data-rich component for showing an account balance at a glance, with supporting context over time. Combines a primary balance summary with trend indicators, a chart, and optional actions to help users quickly understand current state and recent movement without digging into detailed reports.",
-      "categories": [
-        "balance"
-      ],
-      "dependencies": [
-        "recharts"
-      ],
-      "registryDependencies": [
-        "badge",
-        "card",
-        "chart",
-        "@shadcncraft/semantic-tokens"
-      ],
-      "files": [
-        {
-          "path": "components/pro-application/balance/balance-2.tsx",
-          "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/balance-2.tsx"
-        }
-      ]
-    },
-    {
-      "name": "balance-3",
-      "type": "registry:component",
-      "resolution": "gated",
-      "title": "Balance 3",
-      "description": "A data-rich component for showing an account balance at a glance, with supporting context over time. Combines a primary balance summary and a chart to help users quickly understand current state and recent movement without digging into detailed reports.",
-      "categories": [
-        "balance"
-      ],
-      "dependencies": [
-        "recharts"
-      ],
-      "registryDependencies": [
-        "card",
-        "chart"
-      ],
-      "files": [
-        {
-          "path": "components/pro-application/balance/balance-3.tsx",
-          "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/balance-3.tsx"
-        }
-      ]
-    },
-    {
-      "name": "expenses-1",
-      "type": "registry:component",
-      "resolution": "gated",
-      "title": "Expenses 1",
-      "description": "A compact data visualization component for showing spending by category over a selected time range. Uses simple bars and inline values to make comparisons easy at a glance, with support for hover details and quick period switching. Suitable for dashboards, reports, and financial overviews.",
-      "categories": [
-        "expenses"
-      ],
-      "dependencies": [
-        "recharts"
-      ],
-      "registryDependencies": [
-        "card",
-        "chart",
-        "select",
-        "separator"
-      ],
-      "files": [
-        {
-          "path": "components/pro-application/expenses/expenses-1.tsx",
-          "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/expenses-1.tsx"
-        }
-      ]
-    },
-    {
       "name": "message-card-1",
       "type": "registry:component",
       "resolution": "gated",
@@ -826,89 +724,6 @@
           "path": "components/pro-application/message-card/message-card-1.tsx",
           "type": "registry:component",
           "target": "@components/shadcncraft/pro-application/message-card-1.tsx"
-        }
-      ]
-    },
-    {
-      "name": "spending-balance-1",
-      "type": "registry:component",
-      "resolution": "gated",
-      "title": "Spending Balance 1",
-      "description": "A summary card that shows total spend for a period, with a clear visual cue and a simple category breakdown. Good for dashboards where you want one quick read before details. It answers “how much did I spend and where did it go” at a glance.",
-      "categories": [
-        "spending-balance"
-      ],
-      "dependencies": [
-        "recharts"
-      ],
-      "registryDependencies": [
-        "card",
-        "chart",
-        "select",
-        "separator",
-        "@shadcncraft/semantic-tokens",
-        "@shadcncraft/featured-icon"
-      ],
-      "files": [
-        {
-          "path": "components/pro-application/spending-balance/spending-balance-1.tsx",
-          "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/spending-balance-1.tsx"
-        }
-      ]
-    },
-    {
-      "name": "stock-market-1",
-      "type": "registry:component",
-      "resolution": "gated",
-      "title": "Stock Market 1",
-      "description": "A market snapshot card that shows current value, change over time, and basic context. The chart is the focus, with quick filters for time range and a couple of supporting stats. Good for dashboards where you want trend first, details second.",
-      "categories": [
-        "stock-market"
-      ],
-      "dependencies": [
-        "recharts"
-      ],
-      "registryDependencies": [
-        "badge",
-        "button",
-        "button-group",
-        "card",
-        "chart",
-        "separator",
-        "@shadcncraft/semantic-tokens"
-      ],
-      "files": [
-        {
-          "path": "components/pro-application/stock-market/stock-market-1.tsx",
-          "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/stock-market-1.tsx"
-        }
-      ]
-    },
-    {
-      "name": "transactions-1",
-      "type": "registry:component",
-      "resolution": "gated",
-      "title": "Transactions 1",
-      "description": "A compact transaction list for recent activity. Shows status filters, clear labels, amounts, and dates at a glance. Works well in dashboards where users need quick confirmation of money in or out, with a simple path to view the full history.",
-      "categories": [
-        "transactions"
-      ],
-      "registryDependencies": [
-        "button",
-        "card",
-        "select",
-        "separator",
-        "tabs",
-        "@shadcncraft/semantic-tokens",
-        "@shadcncraft/featured-icon"
-      ],
-      "files": [
-        {
-          "path": "components/pro-application/transactions/transactions-1.tsx",
-          "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/transactions-1.tsx"
         }
       ]
     },
@@ -4123,6 +3938,49 @@
       ]
     },
     {
+      "name": "app-shell-4",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "App Shell 4 – Inset sidebar with linked navigation",
+      "description": "App shell with an inset sidebar, a page selector and search header, and a content slot. Navigation rows are real links that highlight the current section, so it drives an app's routes directly. Collapsed variant included.",
+      "categories": [
+        "app-shells"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "dropdown-menu",
+        "sidebar",
+        "@shadcncraft/app-shell-header-6"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/app-shells/app-shell-4/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/app-shells/app-shell-4/index.tsx"
+        },
+        {
+          "path": "blocks/pro-application/app-shells/app-shell-4/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/app-shells/app-shell-4/components/app-sidebar.tsx"
+        },
+        {
+          "path": "blocks/pro-application/app-shells/app-shell-4/components/nav-links.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/app-shells/app-shell-4/components/nav-links.tsx"
+        },
+        {
+          "path": "blocks/pro-application/app-shells/app-shell-4/components/nav-user.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/app-shells/app-shell-4/components/nav-user.tsx"
+        },
+        {
+          "path": "blocks/pro-application/app-shells/app-shell-4/components/team-switcher.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/app-shells/app-shell-4/components/team-switcher.tsx"
+        }
+      ]
+    },
+    {
       "name": "app-shell-header-1",
       "type": "registry:block",
       "resolution": "gated",
@@ -4244,13 +4102,37 @@
       ]
     },
     {
+      "name": "app-shell-header-6",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "App Shell Header 6",
+      "description": "App shell header with a page selector that follows the current route, and search.",
+      "categories": [
+        "app-shell-headers"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu",
+        "input-group",
+        "separator",
+        "sidebar"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/app-shell-headers/app-shell-header-6/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/app-shell-headers/app-shell-header-6/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "metric-cards-1",
       "type": "registry:block",
       "resolution": "gated",
       "title": "Dashboard 1 – Metric cards",
       "description": "Four key metrics in a single strip: spend, revenue, cost per lead, and conversion rate.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "button",
@@ -4262,9 +4144,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/metric-cards-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/metric-cards-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/metric-cards-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/metric-cards-1/index.tsx"
         }
       ]
     },
@@ -4275,7 +4157,7 @@
       "title": "Dashboard 2 – Hero time series",
       "description": "Hero area chart comparing this period against the previous period.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "dependencies": [
         "recharts"
@@ -4289,9 +4171,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/hero-time-series-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/hero-time-series-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/hero-time-series-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/hero-time-series-1/index.tsx"
         }
       ]
     },
@@ -4302,7 +4184,7 @@
       "title": "Dashboard 3 – Traffic by channel",
       "description": "Total traffic with a segmented share bar and per-channel breakdown.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "button",
@@ -4312,9 +4194,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/traffic-by-channel-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/traffic-by-channel-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/traffic-by-channel-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/traffic-by-channel-1/index.tsx"
         }
       ]
     },
@@ -4325,7 +4207,7 @@
       "title": "Dashboard 4 – Channel performance",
       "description": "Clicks received vs leads converted, by channel, as grouped bars.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "dependencies": [
         "recharts"
@@ -4339,9 +4221,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/channel-performance-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/channel-performance-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/channel-performance-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/channel-performance-1/index.tsx"
         }
       ]
     },
@@ -4352,7 +4234,7 @@
       "title": "Dashboard 5 – Cost per acquisition trend",
       "description": "Daily cost per acquisition as an area trend with period comparison.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "dependencies": [
         "recharts"
@@ -4366,9 +4248,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/cost-per-acquisition-trend-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/cost-per-acquisition-trend-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/cost-per-acquisition-trend-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/cost-per-acquisition-trend-1/index.tsx"
         }
       ]
     },
@@ -4379,7 +4261,7 @@
       "title": "Dashboard 6 – Paid media allocation",
       "description": "Donut breakdown of spend across paid channels.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "dependencies": [
         "recharts"
@@ -4393,9 +4275,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/paid-media-allocation-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/paid-media-allocation-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/paid-media-allocation-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/paid-media-allocation-1/index.tsx"
         }
       ]
     },
@@ -4406,7 +4288,7 @@
       "title": "Dashboard 7 – Campaign performance",
       "description": "Top campaigns by leads generated, as a compact data table.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "button",
@@ -4419,9 +4301,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/campaign-performance-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/campaign-performance-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/campaign-performance-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/campaign-performance-1/index.tsx"
         }
       ]
     },
@@ -4432,7 +4314,7 @@
       "title": "Dashboard 8 – Top landing pages",
       "description": "Pages ranked by sessions with visitor share.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "button",
@@ -4443,9 +4325,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/top-landing-pages-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/top-landing-pages-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/top-landing-pages-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/top-landing-pages-1/index.tsx"
         }
       ]
     },
@@ -4456,7 +4338,7 @@
       "title": "Dashboard 9 – Marketing funnel",
       "description": "Stage-by-stage conversion across the marketing funnel.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "button",
@@ -4466,9 +4348,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/marketing-funnel-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/marketing-funnel-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/marketing-funnel-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/marketing-funnel-1/index.tsx"
         }
       ]
     },
@@ -4479,7 +4361,7 @@
       "title": "Dashboard 10 – Attribution breakdown",
       "description": "Revenue credited by first touch vs last touch, per channel.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "dependencies": [
         "recharts"
@@ -4493,9 +4375,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/attribution-breakdown-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/attribution-breakdown-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/attribution-breakdown-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/attribution-breakdown-1/index.tsx"
         }
       ]
     },
@@ -4506,7 +4388,7 @@
       "title": "Dashboard 11 – Growth simulator",
       "description": "Live sliders modeling monthly spend against projected pipeline.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "button",
@@ -4519,9 +4401,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/growth-simulator-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/growth-simulator-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/growth-simulator-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/growth-simulator-1/index.tsx"
         }
       ]
     },
@@ -4532,7 +4414,7 @@
       "title": "Dashboard 12 – Goal progress",
       "description": "Month-to-date attainment against monthly targets as bullet bars.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "button",
@@ -4543,9 +4425,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/goal-progress-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/goal-progress-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/goal-progress-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/goal-progress-1/index.tsx"
         }
       ]
     },
@@ -4556,7 +4438,7 @@
       "title": "Dashboard 13 – Engagement by day & hour",
       "description": "Open-rate heatmap by send day and hour.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "button",
@@ -4566,9 +4448,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/engagement-by-day-hour-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/engagement-by-day-hour-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/engagement-by-day-hour-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/engagement-by-day-hour-1/index.tsx"
         }
       ]
     },
@@ -4579,7 +4461,7 @@
       "title": "Dashboard 14 – Revenue vs target",
       "description": "Closed revenue against target and forecast as a tick meter.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "button",
@@ -4589,9 +4471,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/revenue-vs-target-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/revenue-vs-target-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/revenue-vs-target-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/revenue-vs-target-1/index.tsx"
         }
       ]
     },
@@ -4602,7 +4484,7 @@
       "title": "Dashboard 15 – Pipeline by stage",
       "description": "Open pipeline value and share across deal stages as a funnel.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "button",
@@ -4612,9 +4494,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/pipeline-by-stage-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/pipeline-by-stage-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/pipeline-by-stage-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/pipeline-by-stage-1/index.tsx"
         }
       ]
     },
@@ -4625,7 +4507,7 @@
       "title": "Dashboard 16 – Rep leaderboard",
       "description": "Reps ranked by quota attainment with target markers.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "avatar",
@@ -4637,9 +4519,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/rep-leaderboard-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/rep-leaderboard-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/rep-leaderboard-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/rep-leaderboard-1/index.tsx"
         }
       ]
     },
@@ -4650,7 +4532,7 @@
       "title": "Dashboard 17 – Deals table",
       "description": "Open deals with owner, stage, value, and close date.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "avatar",
@@ -4664,9 +4546,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/deals-table-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/deals-table-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/deals-table-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/deals-table-1/index.tsx"
         }
       ]
     },
@@ -4677,7 +4559,7 @@
       "title": "Dashboard 18 – Win rate",
       "description": "Win rate with stage-to-stage conversion bars.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "dependencies": [
         "recharts"
@@ -4691,9 +4573,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/win-rate-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/win-rate-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/win-rate-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/win-rate-1/index.tsx"
         }
       ]
     },
@@ -4704,7 +4586,7 @@
       "title": "Dashboard 19 – Deal velocity",
       "description": "Average days in stage by segment as a heatmap.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "button",
@@ -4714,9 +4596,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/deal-velocity-by-segment-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/deal-velocity-by-segment-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/deal-velocity-by-segment-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/deal-velocity-by-segment-1/index.tsx"
         }
       ]
     },
@@ -4727,7 +4609,7 @@
       "title": "Dashboard 20 – Lead-to-customer funnel",
       "description": "Marketing-to-sales handoff as concentric ring progress.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "dependencies": [
         "recharts"
@@ -4741,9 +4623,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/lead-to-customer-funnel-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/lead-to-customer-funnel-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/lead-to-customer-funnel-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/lead-to-customer-funnel-1/index.tsx"
         }
       ]
     },
@@ -4754,7 +4636,7 @@
       "title": "Dashboard 21 – Leads by region",
       "description": "Leads and pipeline value by country, with list and map views.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "button",
@@ -4766,9 +4648,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/leads-by-region-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/leads-by-region-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/leads-by-region-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/leads-by-region-1/index.tsx"
         }
       ]
     },
@@ -4779,7 +4661,7 @@
       "title": "Dashboard 22 – Customer health score",
       "description": "Average customer health as an arc gauge with score bands.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "dependencies": [
         "recharts"
@@ -4794,9 +4676,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/customer-health-score-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/customer-health-score-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/customer-health-score-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/customer-health-score-1/index.tsx"
         }
       ]
     },
@@ -4807,7 +4689,7 @@
       "title": "Dashboard 23 – AI insights",
       "description": "Alerts and opportunities surfaced automatically across the funnel.",
       "categories": [
-        "sales-marketing-dashboard"
+        "dashboard-sales-marketing"
       ],
       "registryDependencies": [
         "button",
@@ -4818,9 +4700,9 @@
       ],
       "files": [
         {
-          "path": "blocks/pro-application/sales-marketing-dashboard/ai-insights-1/index.tsx",
+          "path": "blocks/pro-application/dashboard-sales-marketing/ai-insights-1/index.tsx",
           "type": "registry:component",
-          "target": "@components/shadcncraft/pro-application/sales-marketing-dashboard/ai-insights-1/index.tsx"
+          "target": "@components/shadcncraft/pro-application/dashboard-sales-marketing/ai-insights-1/index.tsx"
         }
       ]
     },
@@ -6123,6 +6005,1728 @@
       ]
     },
     {
+      "name": "spending-balance-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Spending Balance 1",
+      "description": "A summary card that shows total spend for a period, with a clear visual cue and a simple category breakdown. Good for dashboards where you want one quick read before details. It answers “how much did I spend and where did it go” at a glance.",
+      "categories": [
+        "dashboard-finance"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "chart",
+        "select",
+        "separator",
+        "@shadcncraft/semantic-tokens",
+        "@shadcncraft/featured-icon"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-finance/spending-balance-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-finance/spending-balance-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "balance-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Balance 1",
+      "description": "A data-rich block for showing an account balance at a glance, with supporting context over time. Combines a primary balance summary with trend indicators and a chart to help users quickly understand current state and recent movement without digging into detailed reports.",
+      "categories": [
+        "dashboard-finance"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card",
+        "chart",
+        "@shadcncraft/semantic-tokens"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-finance/balance-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-finance/balance-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "balance-2",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Balance 2",
+      "description": "A data-rich block for showing an account balance at a glance, with supporting context over time. Combines a primary balance summary with trend indicators, a chart, and optional actions to help users quickly understand current state and recent movement without digging into detailed reports.",
+      "categories": [
+        "dashboard-finance"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card",
+        "chart",
+        "@shadcncraft/semantic-tokens"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-finance/balance-2/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-finance/balance-2/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "balance-3",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Balance 3",
+      "description": "A data-rich block for showing an account balance at a glance, with supporting context over time. Combines a primary balance summary and a chart to help users quickly understand current state and recent movement without digging into detailed reports.",
+      "categories": [
+        "dashboard-finance"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-finance/balance-3/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-finance/balance-3/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "expenses-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Expenses 1",
+      "description": "A compact data visualization block for showing spending by category over a selected time range. Uses simple bars and inline values to make comparisons easy at a glance, with support for hover details and quick period switching. Suitable for dashboards, reports, and financial overviews.",
+      "categories": [
+        "dashboard-finance"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "chart",
+        "select",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-finance/expenses-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-finance/expenses-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "transactions-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Transactions 1",
+      "description": "A compact transaction list for recent activity. Shows status filters, clear labels, amounts, and dates at a glance. Works well in dashboards where users need quick confirmation of money in or out, with a simple path to view the full history.",
+      "categories": [
+        "dashboard-finance"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "select",
+        "separator",
+        "tabs",
+        "@shadcncraft/semantic-tokens",
+        "@shadcncraft/featured-icon"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-finance/transactions-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-finance/transactions-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stock-market-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Stock Market 1",
+      "description": "A market snapshot block that shows current value, change over time, and basic context. The chart is the focus, with quick filters for time range and a couple of supporting stats. Good for dashboards where you want trend first, details second.",
+      "categories": [
+        "dashboard-finance"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "button-group",
+        "card",
+        "chart",
+        "separator",
+        "@shadcncraft/semantic-tokens"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-finance/stock-market-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-finance/stock-market-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "needs-attention-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Needs Attention 1 – Action queue with inline approve, sign and review",
+      "description": "An action queue for managers: a summary of pending approvals, signatures and reviews, then the most pressing tasks with their due date, a category badge and inline actions that resolve each task. Adapts to its column: badges and a footer when narrow, one row per task when wide. Includes loading, empty and error states. Adapt it for approvals, reviews, signatures or exceptions.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "empty",
+        "item",
+        "skeleton",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/needs-attention-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/needs-attention-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kudos-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Kudos 1 – Recognition feed with a compose box",
+      "description": "A recognition feed: this week's kudos, people recognized and top value, a timeline of who recognized whom with the value it was given for, and a composer to pick a teammate, a value and an optional note. Includes loading, empty and error states. Adapt it for acknowledgments or community highlights.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "card",
+        "empty",
+        "input",
+        "select",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/kudos-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/kudos-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "celebrations-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Celebrations 1 – Birthdays, anniversaries and new joiners",
+      "description": "A list of the week's team celebrations: birthdays, work anniversaries and new joiners, each with a portrait, when it happens and a badge for the occasion. Includes loading, empty and error states. Use it on team dashboards and intranet home pages.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "empty",
+        "item",
+        "skeleton",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/celebrations-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/celebrations-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "employee-spotlight-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Employee Spotlight 1 – Featured person with a nomination quote",
+      "description": "A featured profile: portrait, role and award, with the nomination quote set large, and a Nominate action. Includes loading, empty and error states. Adapt it for members, contributors or customers.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "empty",
+        "item",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/employee-spotlight-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/employee-spotlight-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "teams-table-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Teams Table 1 – Teams with lead, hiring status and hiring plan",
+      "description": "A teams table: each team with its lead, a hiring or frozen badge with open roles, its function, stacked member avatars and a hiring-plan meter, plus a status filter, export and row actions. Includes loading, empty and error states. Adapt it for departments, squads or cost centers.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "@tanstack/react-table@^8.21.3"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "dropdown-menu",
+        "empty",
+        "item",
+        "progress",
+        "skeleton",
+        "table",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/teams-table-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/teams-table-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "people-directory-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "People Directory 1 – Profile cards with team and location",
+      "description": "A responsive grid of people cards: avatar, name and role, a team badge and location with time zone. Columns follow the width of the container. Includes loading, empty and error states. Adapt it for members, collaborators or contacts.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "card",
+        "empty",
+        "item",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/people-directory-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/people-directory-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "org-chart-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Org Chart 1 – Reporting lines across three levels",
+      "description": "An org chart card that draws reporting lines from a nested tree of people, with avatar, name and role on each node. Scrolls sideways on narrow screens. Includes loading, empty and error states. Adapt it for ownership or any hierarchy.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "empty",
+        "item",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/org-chart-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/org-chart-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "employee-about-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Employee About 1 – Contact and employment details",
+      "description": "An employee details card: a labeled list of contact, employment, team, office and emergency contact fields. Includes loading, empty and error states. Adapt it for any record with key facts.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "empty",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/employee-about-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/employee-about-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "employee-rating-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Employee Rating 1 – Peer rating ring with verdict",
+      "description": "A rating card: a ring showing the average score out of five, a verdict and the number of peer reviews behind it, with a link to the reviews. Includes loading, empty and error states. Use it on employee profiles and performance pages.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "chart",
+        "empty",
+        "skeleton",
+        "@shadcncraft/semantic-tokens"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/employee-rating-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/employee-rating-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "job-timeline-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Job Timeline 1 – Role, team and contract history",
+      "description": "A job history card: tenure, roles held and managers, then a timeline of promotions, pay, manager, team and contract changes with who made each change, when, and a category badge. Includes loading, empty and error states. Adapt it for accounts, projects or records.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "card",
+        "empty",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/job-timeline-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/job-timeline-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "courses-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Courses 1 – Assigned courses with completion and status",
+      "description": "An assigned-courses card: a table of courses with a completion bar and a status badge that follows from it (not started, in progress, completed). Includes loading, empty and error states. Use it on employee profiles and learning dashboards.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "empty",
+        "progress",
+        "skeleton",
+        "table",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/courses-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/courses-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "leave-balances-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Leave Balances 1 – Days left per leave type",
+      "description": "A leave balance card: total days remaining across all leave types, then a progress bar per type with days left of the yearly allowance, and a Policy action. Includes loading, empty and error states. Adapt it for any quota, such as credits, seats or budget lines.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "empty",
+        "progress",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/leave-balances-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/leave-balances-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "coverage-planner-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Coverage Planner 1 – Weekly staffing against daily demand",
+      "description": "A weekly coverage planner: each person's shifts and leave per day, scheduled against required headcount, and a detail panel for the selected day that lists available backups to add one by one or all at once, with undo. Gaps show in the warning tint and the panel opens on the first gap. Includes week navigation and loading, empty and error states. Reuse it for staffing, project allocation, equipment or bookings.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "empty",
+        "item",
+        "separator",
+        "skeleton",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/coverage-planner-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/coverage-planner-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-absences-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Team Absences 1 – Monthly leave timeline per person",
+      "description": "A team absence card for one month: a table with a day timeline per person (annual, sick and casual leave in their own colors), leave type, days and approval status, a legend, and a footer with days out this month, the peak week and a Request leave action. Scrolls sideways on narrow screens. Includes loading, empty and error states.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "empty",
+        "separator",
+        "skeleton",
+        "table",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/team-absences-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/team-absences-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "leave-requests-table-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Leave Requests Table 1 – Leave history data table",
+      "description": "A leave request data table: request, dates, type, days, status and requested date, with a filter field, a status filter, density and column-visibility controls, export, row selection with a bulk action bar, sortable request and day columns, row actions and rows-per-page pagination. Includes loading, empty and error states. Built on TanStack Table.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "@tanstack/react-table@^8.21.3",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "button",
+        "checkbox",
+        "dropdown-menu",
+        "empty",
+        "input-group",
+        "skeleton",
+        "table",
+        "@shadcncraft/badge",
+        "@shadcncraft/data-table-pagination"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/leave-requests-table-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/leave-requests-table-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "projects-table-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Projects Table 1 – Project portfolio data table",
+      "description": "A project data table: project, lead, milestone, progress, status and target date, with row selection, sortable project and progress columns, row actions and rows-per-page pagination. Takes an optional `statuses` filter so a header Filter menu can narrow it, and collapses to project names in a narrow container. Includes loading, empty and error states. Built on TanStack Table.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "@tanstack/react-table@^8.21.3",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "button",
+        "checkbox",
+        "dropdown-menu",
+        "empty",
+        "skeleton",
+        "table",
+        "@shadcncraft/badge",
+        "@shadcncraft/data-table-pagination"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/projects-table-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/projects-table-1/index.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/projects-table-1/components/project-status.ts",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/projects-table-1/components/project-status.ts"
+        }
+      ]
+    },
+    {
+      "name": "calendar-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Calendar 1 – Week, day and month calendar with event details",
+      "description": "A full calendar: a week time grid with timed event chips, overlapping events side by side and blocked time, a month grid with overflow popovers, and a day view that phones get automatically. Filter tabs count meetings, events, conflicts and cancellations, and each event opens a popover with attendees, place and a join button. Includes loading, empty and error states.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "empty",
+        "popover",
+        "select",
+        "skeleton",
+        "tabs",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/calendar-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/calendar-1/index.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/calendar-1/components/calendar-event.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/calendar-1/components/calendar-event.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/calendar-1/components/time-grid.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/calendar-1/components/time-grid.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/calendar-1/components/month-grid.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/calendar-1/components/month-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "timesheet-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Timesheet 1 – Week of clock-ins with a day timeline and approvals",
+      "description": "A weekly timesheet: each day's worked sessions on a timeline, clock-in to clock-out hours, the day's total and its approval status, then the week's total, breaks and overtime with a submit button. Includes loading, empty and error states. Use it in time tracking, payroll or agency apps.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "empty",
+        "skeleton",
+        "table",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/timesheet-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/timesheet-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "project-time-log-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Project Time Log 1 – Time split across projects",
+      "description": "Where the week's time went: the total, a stacked bar sized by each project's share, and a table of projects with share bars and tracked time. Includes loading, empty and error states. Adapt it for clients, projects or categories.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "empty",
+        "progress",
+        "skeleton",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/project-time-log-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/project-time-log-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "top-apps-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Top Apps 1 – Team time by app",
+      "description": "The apps a team spends tracked time in: app logos, time today and a share bar with its percentage, plus a note on how much of the day the top apps cover. Includes loading, empty and error states. Use it in time tracking and productivity dashboards.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "empty",
+        "progress",
+        "skeleton",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/top-apps-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/top-apps-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-activity-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Team Activity 1 – Who is active and how much",
+      "description": "A team pulse card: the share of the team active in the last hour over a progress bar, then each member with their role, time tracked today and an activity badge. Includes loading, empty and error states. Use it on manager dashboards and time tracking apps.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "empty",
+        "item",
+        "progress",
+        "skeleton",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/team-activity-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/team-activity-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "benefit-plans-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Benefit Plans 1 – Plan cards with price, features and an action",
+      "description": "A responsive row of benefit plan cards: plan name and provider, monthly price with a note, a checklist of what is included, and a full-width action, with the current plan badged. One column on narrow containers, three side by side once there is room. Includes loading, empty and error states. Adapt it for pricing tiers, insurance or perks.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "empty",
+        "skeleton",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/benefit-plans-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/benefit-plans-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "benefits-table-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Benefits Table 1 – Enrolled benefits data table",
+      "description": "A benefits data table: plan with provider and coverage, enrollment status (active, pending, waived), enrolled and renewal dates and monthly cost, with a filter field, a status filter, column-visibility controls, an Add benefit action, row selection, sortable plan and cost columns, row actions and numbered pagination. Includes loading, empty and error states. Built on TanStack Table.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "@tanstack/react-table@^8.21.3",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "button",
+        "checkbox",
+        "dropdown-menu",
+        "empty",
+        "input-group",
+        "item",
+        "pagination",
+        "skeleton",
+        "table",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/benefits-table-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/benefits-table-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "documents-table-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Documents Table 1 – Employee documents with signing status",
+      "description": "An employee documents table: file-type icon, name, size and format, upload date and what is still needed (signature with a due date, acknowledgment, or available), introduced by a heading with a Download all action. Row actions to review and sign, acknowledge, download or copy a link, row selection, sortable name and date columns, and drag-and-drop reordering. Includes loading, empty and error states. Built on TanStack Table.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "@tanstack/react-table@^8.21.3",
+        "@dnd-kit/core@^6.3.1",
+        "@dnd-kit/modifiers@^9.0.0",
+        "@dnd-kit/sortable@^10.0.0",
+        "@dnd-kit/utilities@^3.2.2",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "button",
+        "checkbox",
+        "dropdown-menu",
+        "empty",
+        "item",
+        "skeleton",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/documents-table-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/documents-table-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "requests-table-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Requests Table 1 – Request queue with views and approvals",
+      "description": "An HR request queue: request, priority, due date (today in destructive), status (pending, approved, rejected), requester with avatar and email, and submitted date. All requests, Awaiting me and Due today views switch the list; a filter field, status, priority and column filters narrow it. Row actions approve or reject, with row selection, a sortable submitted column, drag-and-drop reordering and rows-per-page pagination. Includes loading, empty and error states. Built on TanStack Table.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "@tanstack/react-table@^8.21.3",
+        "@dnd-kit/core@^6.3.1",
+        "@dnd-kit/modifiers@^9.0.0",
+        "@dnd-kit/sortable@^10.0.0",
+        "@dnd-kit/utilities@^3.2.2",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "checkbox",
+        "dropdown-menu",
+        "empty",
+        "input-group",
+        "item",
+        "skeleton",
+        "table",
+        "@shadcncraft/badge",
+        "@shadcncraft/data-table-pagination"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/requests-table-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/requests-table-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "talent-grid-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Talent Grid 1 – Nine-box calibration grid",
+      "description": "A nine-box talent grid for calibration: people placed by performance (low to high, left to right) and potential (high to low, top to bottom), each box named (Diamond, Star, Core, At risk and so on) with an avatar stack, plus a Calibrate action. Includes loading, empty and error states. Use it for review calibration, succession planning or skills matrices.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "empty",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/talent-grid-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/talent-grid-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "one-on-one-agenda-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "1:1 Agenda 1 – Talking points and action items",
+      "description": "A 1:1 meeting card: who and when, a checklist of talking points and a checklist of action items, and an Add talking point action that opens an inline field. Includes loading, empty and error states. Use it for 1:1s, standups or any meeting agenda.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "checkbox",
+        "empty",
+        "input",
+        "label",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/one-on-one-agenda-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/one-on-one-agenda-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "performance-reviews-table-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Performance Reviews Table 1 – Review cycle data table",
+      "description": "A performance reviews table: employee, manager with avatar and email, review stage (not started, self-review, manager review, calibrated), a progress bar with percentage and a sortable due date. A filter field, stage and assignee filters, column visibility, row selection, row actions, drag-and-drop reordering and pagination. Includes loading, empty and error states. Built on TanStack Table.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "@tanstack/react-table@^8.21.3",
+        "@dnd-kit/core@^6.3.1",
+        "@dnd-kit/modifiers@^9.0.0",
+        "@dnd-kit/sortable@^10.0.0",
+        "@dnd-kit/utilities@^3.2.2",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "checkbox",
+        "dropdown-menu",
+        "empty",
+        "input-group",
+        "item",
+        "progress",
+        "skeleton",
+        "table",
+        "@shadcncraft/badge",
+        "@shadcncraft/data-table-pagination"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/performance-reviews-table-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/performance-reviews-table-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "new-hires-table-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "New Hires Table 1 – Joiners with onboarding progress",
+      "description": "A new joiners table led by a heading, a search field and an Import action: joiner with avatar and email, role and department, onboarding progress as a badge (percent and tasks done, a start date for upcoming joiners, or completed), start date, row actions and pagination. Includes loading, empty and error states. Built on TanStack Table.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "@tanstack/react-table@^8.21.3",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "dropdown-menu",
+        "empty",
+        "input-group",
+        "item",
+        "skeleton",
+        "table",
+        "@shadcncraft/badge",
+        "@shadcncraft/data-table-pagination"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/new-hires-table-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/new-hires-table-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "day-one-setup-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Day-one Setup 1 – Workflow run with a blocked step",
+      "description": "A selected-record workflow run: a dependency graph of step cards (one start step, two parallel steps, one final step) joined by connectors colored by state, a run status alert, and a side panel for the blocked step with its owner, the issue and a one-click fix that moves the run along (with undo). The graph scrolls sideways on narrow screens. Includes loading, empty and error states. Reuse it for onboarding, provisioning, fulfillment or approvals.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "alert",
+        "avatar",
+        "button",
+        "card",
+        "empty",
+        "item",
+        "separator",
+        "skeleton",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/day-one-setup-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/day-one-setup-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-pulse-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Team Pulse 1 – Engagement heatmap with insight and action plan",
+      "description": "An engagement survey matrix: participation, then favorable scores by team and dimension as a four-band heatmap with the change since the last survey. Selecting a score opens its insight (statement, favorable, neutral and unfavorable split, a suggested next step) and drafts an action plan with an owner and due date. Includes loading, empty and error states. Reuse it for service quality, product feedback or any team-by-metric scores.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "empty",
+        "separator",
+        "skeleton",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/team-pulse-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/team-pulse-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "headcount-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Headcount 1 – Monthly headcount area chart",
+      "description": "Workforce size over the last 12 months as an area chart on a pinned scale, with a month tooltip. Includes loading, empty and error states. Use it to review growth and staffing changes.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "chart",
+        "empty",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/headcount-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/headcount-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attrition-by-department-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Attrition by Department 1 – Voluntary turnover bars",
+      "description": "Voluntary turnover by department as horizontal gradient bars on a fixed percentage scale, each rate labelled on the right. Includes loading, empty and error states. Use it to spot teams that need a closer look.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "chart",
+        "empty",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/attrition-by-department-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/attrition-by-department-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "gender-split-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Gender Split 1 – Donut with share and count legend",
+      "description": "A category breakdown as a donut with the leading share in its center and a legend of percentages and counts, side by side when there is room and stacked when narrow. Includes loading, empty and error states. Adapt it for audience, inventory or other distributions.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "chart",
+        "empty",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/gender-split-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/gender-split-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tenure-distribution-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Tenure Distribution 1 – Employees by years at the company",
+      "description": "How long people have been at the company, as a column chart of tenure bands from under a year to nine plus. Includes loading, empty and error states.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "chart",
+        "empty",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/tenure-distribution-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/tenure-distribution-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "absence-rate-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Absence Rate 1 – Monthly sick and unplanned leave trend",
+      "description": "Sick and unplanned leave as a share of working days, month by month over the last year, as a line chart on a pinned percentage scale. Includes loading, empty and error states.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "chart",
+        "empty",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/absence-rate-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/absence-rate-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "headcount-by-department-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Headcount by Department 1 – Sortable department table with hub map",
+      "description": "Departments with headcount, voluntary turnover and average tenure in a sortable table, beside a world map marking each department's hub. Includes loading, empty and error states. Built on TanStack Table.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "@tanstack/react-table@^8.21.3"
+      ],
+      "registryDependencies": [
+        "button",
+        "empty",
+        "skeleton",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/headcount-by-department-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/headcount-by-department-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hr-dashboard-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "HR Dashboard 1 – Complete HR app with 14 screens",
+      "description": "The complete HR Dashboard app for Next.js: an inset app shell with 14 screens (personal and team dashboards, calendar, leave, timesheets, projects, teams, employee profile, benefits, documents, requests, performance, onboarding and analytics), assembled from the individually installable HR Dashboard blocks. Installs routes under `app/hr`, so the app lives at /hr beside your existing pages.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "dropdown-menu",
+        "tabs",
+        "tooltip",
+        "@shadcncraft/absence-rate-1",
+        "@shadcncraft/app-shell-4",
+        "@shadcncraft/attrition-by-department-1",
+        "@shadcncraft/benefit-plans-1",
+        "@shadcncraft/benefits-table-1",
+        "@shadcncraft/calendar-1",
+        "@shadcncraft/celebrations-1",
+        "@shadcncraft/course-progress-1",
+        "@shadcncraft/courses-1",
+        "@shadcncraft/coverage-planner-1",
+        "@shadcncraft/current-project-1",
+        "@shadcncraft/daily-feedback-1",
+        "@shadcncraft/day-one-setup-1",
+        "@shadcncraft/documents-table-1",
+        "@shadcncraft/employee-about-1",
+        "@shadcncraft/employee-rating-1",
+        "@shadcncraft/employee-spotlight-1",
+        "@shadcncraft/gender-split-1",
+        "@shadcncraft/headcount-1",
+        "@shadcncraft/headcount-by-department-1",
+        "@shadcncraft/job-timeline-1",
+        "@shadcncraft/kudos-1",
+        "@shadcncraft/leave-balances-1",
+        "@shadcncraft/leave-requests-table-1",
+        "@shadcncraft/metric-cards-1",
+        "@shadcncraft/needs-attention-1",
+        "@shadcncraft/new-hires-table-1",
+        "@shadcncraft/notes-1",
+        "@shadcncraft/one-on-one-agenda-1",
+        "@shadcncraft/org-chart-1",
+        "@shadcncraft/people-directory-1",
+        "@shadcncraft/performance-reviews-table-1",
+        "@shadcncraft/project-time-log-1",
+        "@shadcncraft/projects-table-1",
+        "@shadcncraft/requests-table-1",
+        "@shadcncraft/review-cycle-1",
+        "@shadcncraft/schedule-1",
+        "@shadcncraft/status-tracker-1",
+        "@shadcncraft/talent-grid-1",
+        "@shadcncraft/team-absences-1",
+        "@shadcncraft/team-activity-1",
+        "@shadcncraft/team-pulse-1",
+        "@shadcncraft/teams-table-1",
+        "@shadcncraft/tenure-distribution-1",
+        "@shadcncraft/time-off-summary-1",
+        "@shadcncraft/time-tracker-1",
+        "@shadcncraft/timesheet-1",
+        "@shadcncraft/top-apps-1"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/index.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/shell.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/shell.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/page.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/dashboard-overview.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/dashboard-overview.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/layout.tsx",
+          "type": "registry:page",
+          "target": "app/hr/layout.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/dashboard/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/dashboard/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/team-dashboard.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/team-dashboard.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/dashboard/team/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/dashboard/team/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/teams.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/teams.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/profile.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/profile.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/teams/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/teams/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/teams/profile/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/teams/profile/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/leave.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/leave.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/projects.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/projects.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/leave/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/leave/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/projects/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/projects/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/calendar.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/calendar.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/timesheets.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/timesheets.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/calendar/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/calendar/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/timesheets/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/timesheets/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/benefits.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/benefits.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/documents.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/documents.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/requests.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/requests.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/benefits/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/benefits/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/documents/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/documents/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/requests/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/requests/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/performance.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/performance.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/onboarding.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/onboarding.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/performance/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/performance/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/onboarding/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/onboarding/page.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/components/analytics.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/hr-dashboard-1/components/analytics.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/hr-dashboard-1/app/analytics/page.tsx",
+          "type": "registry:page",
+          "target": "app/hr/analytics/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "review-cycle-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Review Cycle 1 – Stage counts with per-person progress",
+      "description": "A review cycle summary: complete, not started and in-progress counts, a segmented meter across the whole cycle, and a table of reviews with progress and stage. Includes loading, empty and error states. Adapt it for reviews, audits or applications.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "empty",
+        "progress",
+        "skeleton",
+        "table",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/review-cycle-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/review-cycle-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-tracker-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Status Tracker 1 – Who is in, away or absent today",
+      "description": "A team presence card: counts for in today, away and absent, then who is absent and who is away with the reason and when they are back. Includes loading, empty and error states. Use it on manager dashboards and team pages.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "card",
+        "empty",
+        "item",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/status-tracker-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/status-tracker-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "schedule-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Schedule 1 – Month calendar with the day's meetings",
+      "description": "A schedule card pairing a month calendar with the selected day's meetings. Each meeting expands to show attendees, the platform and a category badge, and days without meetings show an empty state. Use it on personal dashboards, booking tools or team schedules.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "date-fns",
+        "react-day-picker"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "calendar",
+        "card",
+        "collapsible",
+        "empty",
+        "skeleton",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/schedule-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/schedule-1/index.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/schedule-1/components/meeting-item.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/schedule-1/components/meeting-item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "time-tracker-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Time Tracker 1 – Session clock with project and breaks",
+      "description": "A time-tracking card with the current session time, a status badge, the project being logged to with recent shortcuts, and progress against today's target. Clock out and take-a-break controls change the session state. Use it on employee dashboards, agency tools or timesheet apps.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "empty",
+        "field",
+        "progress",
+        "select",
+        "skeleton",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/time-tracker-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/time-tracker-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "current-project-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Current Project 1 – Project summary with milestones and task stats",
+      "description": "A single-project overview: name, status, timeline and team on the left, milestone progress and task completion counts on the right. Adapt it for projects, campaigns or initiatives on a personal or team dashboard.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "empty",
+        "item",
+        "progress",
+        "skeleton",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/current-project-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/current-project-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notes-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Notes 1 – Tagged notes with previews",
+      "description": "A compact notes card listing recent notes with a title, preview, date and category tag. Add note opens a dialog for the title, note and tag. Adapt it for personal notes, meeting notes or account context on a dashboard.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "dialog",
+        "empty",
+        "field",
+        "input",
+        "item",
+        "select",
+        "skeleton",
+        "textarea",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/notes-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/notes-1/index.tsx"
+        },
+        {
+          "path": "blocks/pro-application/dashboard-hr/notes-1/components/add-note-dialog.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/notes-1/components/add-note-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "time-off-summary-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Time Off Summary 1 – Allowance meter with recent requests",
+      "description": "A leave summary showing days used against the annual allowance as a segmented meter, followed by recent requests with their dates, length and approval status. Use it on employee dashboards and profile pages.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "empty",
+        "skeleton",
+        "@shadcncraft/badge"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/time-off-summary-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/time-off-summary-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "course-progress-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Course Progress 1 – Completion ring with next lesson",
+      "description": "A learning card with a completion ring for the current course, a short progress summary, the next lesson and a resume action. Use it on employee portals, LMS dashboards and onboarding programs.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "chart",
+        "empty",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/course-progress-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/course-progress-1/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "daily-feedback-1",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Daily Feedback 1 – Mood check-in with optional comment",
+      "description": "A quick daily check-in: five mood options, an optional comment and an anonymous submit, with a thank-you state after sending. Use it for pulse surveys and engagement tracking on employee dashboards.",
+      "categories": [
+        "dashboard-hr"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "empty",
+        "input",
+        "skeleton",
+        "toggle"
+      ],
+      "files": [
+        {
+          "path": "blocks/pro-application/dashboard-hr/daily-feedback-1/index.tsx",
+          "type": "registry:component",
+          "target": "@components/shadcncraft/pro-application/dashboard-hr/daily-feedback-1/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "checkout-1",
       "type": "registry:block",
       "resolution": "gated",
@@ -7026,8 +8630,9 @@
       "type": "registry:hook",
       "files": [
         {
-          "path": "src/registry/bases/radix/hooks/use-mobile.ts",
-          "type": "registry:hook"
+          "path": "src/registry/bases/radix/hooks/use-shadcncraft-mobile.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-shadcncraft-mobile.ts"
         }
       ]
     },

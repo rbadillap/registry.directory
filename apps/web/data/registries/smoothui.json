@@ -29,6 +29,9 @@
       "name": "data",
       "type": "registry:lib",
       "title": "Data",
+      "registryDependencies": [
+        "https://smoothui.dev/r/morph-toggle.json"
+      ],
       "files": [
         {
           "path": "app-icons.ts",
@@ -159,6 +162,7 @@
         "motion"
       ],
       "registryDependencies": [
+        "https://smoothui.dev/r/accordion.json",
         "https://smoothui.dev/r/tokens.json"
       ],
       "files": [
@@ -179,6 +183,9 @@
         "motion"
       ],
       "registryDependencies": [
+        "https://smoothui.dev/r/accordion.json",
+        "https://smoothui.dev/r/field.json",
+        "https://smoothui.dev/r/input.json",
         "https://smoothui.dev/r/tokens.json"
       ],
       "files": [
@@ -199,6 +206,8 @@
         "motion"
       ],
       "registryDependencies": [
+        "https://smoothui.dev/r/accordion.json",
+        "https://smoothui.dev/r/tabs.json",
         "https://smoothui.dev/r/tokens.json"
       ],
       "files": [
@@ -289,6 +298,8 @@
       ],
       "registryDependencies": [
         "https://smoothui.dev/r/smooth-button.json",
+        "https://smoothui.dev/r/field.json",
+        "https://smoothui.dev/r/input.json",
         "https://smoothui.dev/r/tokens.json"
       ],
       "files": [
@@ -310,6 +321,8 @@
       ],
       "registryDependencies": [
         "https://smoothui.dev/r/smooth-button.json",
+        "https://smoothui.dev/r/field.json",
+        "https://smoothui.dev/r/input.json",
         "https://smoothui.dev/r/tokens.json"
       ],
       "files": [
@@ -350,6 +363,7 @@
         "motion"
       ],
       "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json",
         "https://smoothui.dev/r/shared.json",
         "https://smoothui.dev/r/tokens.json"
       ],
@@ -376,6 +390,7 @@
         "motion"
       ],
       "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json",
         "https://smoothui.dev/r/shared.json",
         "https://smoothui.dev/r/data.json"
       ],
@@ -397,7 +412,8 @@
         "motion"
       ],
       "registryDependencies": [
-        "avatar",
+        "https://smoothui.dev/r/avatar.json",
+        "https://smoothui.dev/r/smooth-button.json",
         "https://smoothui.dev/r/shared.json",
         "https://smoothui.dev/r/data.json"
       ],
@@ -419,6 +435,7 @@
         "motion"
       ],
       "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json",
         "https://smoothui.dev/r/shared.json",
         "https://smoothui.dev/r/tokens.json"
       ],
@@ -550,6 +567,7 @@
       ],
       "registryDependencies": [
         "https://smoothui.dev/r/smooth-button.json",
+        "https://smoothui.dev/r/toggle-group.json",
         "https://smoothui.dev/r/tokens.json"
       ],
       "files": [
@@ -570,6 +588,7 @@
       ],
       "registryDependencies": [
         "https://smoothui.dev/r/smooth-button.json",
+        "https://smoothui.dev/r/toggle-group.json",
         "https://smoothui.dev/r/tokens.json"
       ],
       "files": [
@@ -590,6 +609,7 @@
       ],
       "registryDependencies": [
         "https://smoothui.dev/r/smooth-button.json",
+        "https://smoothui.dev/r/toggle-group.json",
         "https://smoothui.dev/r/tokens.json"
       ],
       "files": [
@@ -607,13 +627,10 @@
       "description": "Shared components for SmoothUI blocks",
       "dependencies": [
         "lucide-react",
-        "motion",
-        "class-variance-authority",
-        "@radix-ui/react-slot"
+        "motion"
       ],
       "registryDependencies": [
-        "https://smoothui.dev/r/smooth-button.json",
-        "https://smoothui.dev/r/tokens.json"
+        "https://smoothui.dev/r/smooth-button.json"
       ],
       "files": [
         {
@@ -640,11 +657,6 @@
           "path": "logos.tsx",
           "type": "registry:component",
           "target": "components/smoothui/shared/logos.tsx"
-        },
-        {
-          "path": "smoothbutton.tsx",
-          "type": "registry:component",
-          "target": "components/smoothui/shared/smoothbutton.tsx"
         }
       ]
     },
@@ -715,6 +727,7 @@
         "motion"
       ],
       "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json",
         "https://smoothui.dev/r/data.json"
       ],
       "files": [
@@ -755,7 +768,8 @@
         "motion"
       ],
       "registryDependencies": [
-        "avatar",
+        "https://smoothui.dev/r/avatar.json",
+        "https://smoothui.dev/r/smooth-button.json",
         "https://smoothui.dev/r/data.json"
       ],
       "files": [
@@ -776,7 +790,7 @@
         "motion"
       ],
       "registryDependencies": [
-        "avatar",
+        "https://smoothui.dev/r/avatar.json",
         "https://smoothui.dev/r/data.json"
       ],
       "files": [
@@ -784,6 +798,24 @@
           "path": "index.tsx",
           "type": "registry:block",
           "target": "components/smoothui/testimonials-3/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Animated Accordion primitive for SmoothUI with CSS height panel and chevron rotation.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/accordion/index.tsx"
         }
       ]
     },
@@ -825,6 +857,9 @@
       "dependencies": [
         "lucide-react",
         "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
       ],
       "files": [
         {
@@ -894,6 +929,9 @@
         "lucide-react",
         "motion"
       ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
+      ],
       "files": [
         {
           "path": "index.tsx",
@@ -926,6 +964,9 @@
       "dependencies": [
         "lucide-react",
         "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
       ],
       "files": [
         {
@@ -976,6 +1017,9 @@
         "lucide-react",
         "motion"
       ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
+      ],
       "files": [
         {
           "path": "index.tsx",
@@ -1014,7 +1058,8 @@
         "motion"
       ],
       "registryDependencies": [
-        "https://smoothui.dev/r/ai-core.json"
+        "https://smoothui.dev/r/ai-core.json",
+        "https://smoothui.dev/r/smooth-button.json"
       ],
       "files": [
         {
@@ -1083,6 +1128,9 @@
         "lucide-react",
         "motion"
       ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
+      ],
       "files": [
         {
           "path": "index.tsx",
@@ -1126,6 +1174,19 @@
       ]
     },
     {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Inline Alert for SmoothUI — info, success, warning, and destructive banners.",
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/alert/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "animated-avatar-group",
       "type": "registry:ui",
       "title": "Animated Avatar Group",
@@ -1149,30 +1210,14 @@
       "dependencies": [
         "motion"
       ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
+      ],
       "files": [
         {
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/animated-file-upload/index.tsx"
-        }
-      ]
-    },
-    {
-      "name": "animated-input",
-      "type": "registry:ui",
-      "title": "Animated Input",
-      "description": "A AnimatedInput component for SmoothUI.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "https://smoothui.dev/r/tokens.json"
-      ],
-      "files": [
-        {
-          "path": "index.tsx",
-          "type": "registry:ui",
-          "target": "components/smoothui/animated-input/index.tsx"
         }
       ]
     },
@@ -1184,23 +1229,6 @@
       "dependencies": [
         "motion"
       ],
-      "files": [
-        {
-          "path": "index.tsx",
-          "type": "registry:ui",
-          "target": "components/smoothui/animated-list/index.tsx"
-        }
-      ]
-    },
-    {
-      "name": "animated-number-input",
-      "type": "registry:ui",
-      "title": "Animated Number Input",
-      "description": "A numeric field with rolling digits, keyboard stepping and horizontal scrub-to-change.",
-      "dependencies": [
-        "motion",
-        "lucide-react"
-      ],
       "registryDependencies": [
         "https://smoothui.dev/r/smooth-button.json"
       ],
@@ -1208,41 +1236,7 @@
         {
           "path": "index.tsx",
           "type": "registry:ui",
-          "target": "components/smoothui/animated-number-input/index.tsx"
-        }
-      ]
-    },
-    {
-      "name": "animated-o-t-p-input",
-      "type": "registry:ui",
-      "title": "Animated O T P Input",
-      "description": "A AnimatedOTPInput component for SmoothUI.",
-      "dependencies": [
-        "motion",
-        "lucide-react",
-        "input-otp"
-      ],
-      "files": [
-        {
-          "path": "index.tsx",
-          "type": "registry:ui",
-          "target": "components/smoothui/animated-o-t-p-input/index.tsx"
-        }
-      ]
-    },
-    {
-      "name": "animated-progress-bar",
-      "type": "registry:ui",
-      "title": "Animated Progress Bar",
-      "description": "A AnimatedProgressBar component for SmoothUI.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "index.tsx",
-          "type": "registry:ui",
-          "target": "components/smoothui/animated-progress-bar/index.tsx"
+          "target": "components/smoothui/animated-list/index.tsx"
         }
       ]
     },
@@ -1263,25 +1257,6 @@
       ]
     },
     {
-      "name": "animated-tabs",
-      "type": "registry:ui",
-      "title": "Animated Tabs",
-      "description": "Animated tabs component with sliding indicator",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "https://smoothui.dev/r/tokens.json"
-      ],
-      "files": [
-        {
-          "path": "index.tsx",
-          "type": "registry:ui",
-          "target": "components/smoothui/animated-tabs/index.tsx"
-        }
-      ]
-    },
-    {
       "name": "animated-tags",
       "type": "registry:ui",
       "title": "Animated Tags",
@@ -1295,41 +1270,6 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/animated-tags/index.tsx"
-        }
-      ]
-    },
-    {
-      "name": "animated-toggle",
-      "type": "registry:ui",
-      "title": "Animated Toggle",
-      "description": "Animated toggle switch with morph and icon variants",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "https://smoothui.dev/r/tokens.json"
-      ],
-      "files": [
-        {
-          "path": "index.tsx",
-          "type": "registry:ui",
-          "target": "components/smoothui/animated-toggle/index.tsx"
-        }
-      ]
-    },
-    {
-      "name": "animated-tooltip",
-      "type": "registry:ui",
-      "title": "Animated Tooltip",
-      "description": "Spring-animated tooltip with multiple placement options",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "index.tsx",
-          "type": "registry:ui",
-          "target": "components/smoothui/animated-tooltip/index.tsx"
         }
       ]
     },
@@ -1359,6 +1299,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json",
         "https://smoothui.dev/r/data.json"
       ],
       "files": [
@@ -1464,74 +1405,38 @@
       ]
     },
     {
-      "name": "basic-accordion",
+      "name": "avatar",
       "type": "registry:ui",
-      "title": "Basic Accordion",
-      "description": "A BasicAccordion component for SmoothUI.",
+      "title": "Avatar",
+      "description": "Avatar, AvatarGroup, and status dot for SmoothUI with Base UI / Radix twins.",
       "dependencies": [
-        "motion",
-        "lucide-react"
+        "@base-ui/react"
       ],
       "files": [
         {
           "path": "index.tsx",
           "type": "registry:ui",
-          "target": "components/smoothui/basic-accordion/index.tsx"
+          "target": "components/smoothui/avatar/index.tsx"
         }
       ]
     },
     {
-      "name": "basic-dropdown",
+      "name": "badge",
       "type": "registry:ui",
-      "title": "Basic Dropdown",
-      "description": "A BasicDropdown component for SmoothUI.",
+      "title": "Badge",
+      "description": "Compact Badge and Status Dot for SmoothUI — labels, tags, and presence indicators.",
       "dependencies": [
-        "motion",
-        "lucide-react"
+        "motion"
       ],
       "registryDependencies": [
+        "https://smoothui.dev/r/lib.json",
         "https://smoothui.dev/r/tokens.json"
       ],
       "files": [
         {
           "path": "index.tsx",
           "type": "registry:ui",
-          "target": "components/smoothui/basic-dropdown/index.tsx"
-        }
-      ]
-    },
-    {
-      "name": "basic-modal",
-      "type": "registry:ui",
-      "title": "Basic Modal",
-      "description": "A BasicModal component for SmoothUI.",
-      "dependencies": [
-        "motion",
-        "lucide-react",
-        "usehooks-ts"
-      ],
-      "files": [
-        {
-          "path": "index.tsx",
-          "type": "registry:ui",
-          "target": "components/smoothui/basic-modal/index.tsx"
-        }
-      ]
-    },
-    {
-      "name": "basic-toast",
-      "type": "registry:ui",
-      "title": "Basic Toast",
-      "description": "A BasicToast component for SmoothUI.",
-      "dependencies": [
-        "motion",
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "index.tsx",
-          "type": "registry:ui",
-          "target": "components/smoothui/basic-toast/index.tsx"
+          "target": "components/smoothui/badge/index.tsx"
         }
       ]
     },
@@ -1647,11 +1552,34 @@
         "motion",
         "lucide-react"
       ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
+      ],
       "files": [
         {
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/button-copy/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Calendar date picker grid for SmoothUI built on react-day-picker.",
+      "dependencies": [
+        "lucide-react",
+        "react-day-picker"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/calendar/index.tsx"
         }
       ]
     },
@@ -1680,17 +1608,39 @@
       "title": "Checkbox",
       "description": "An animated Checkbox component for SmoothUI with checkmark and indeterminate state animations.",
       "dependencies": [
-        "motion",
-        "radix-ui"
+        "@base-ui/react",
+        "motion"
       ],
       "registryDependencies": [
-        "https://smoothui.dev/r/lib.json"
+        "https://smoothui.dev/r/lib.json",
+        "https://smoothui.dev/r/tokens.json"
       ],
       "files": [
         {
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/checkbox/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-group",
+      "type": "registry:ui",
+      "title": "Checkbox Group",
+      "description": "Checkbox Group for SmoothUI with parent/indeterminate support, Base UI twin and Radix-parity twin.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/lib.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/checkbox-group/index.tsx"
         }
       ]
     },
@@ -1751,19 +1701,36 @@
       ]
     },
     {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Animated Collapsible primitive for SmoothUI with CSS height panel animation.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/collapsible/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "combobox",
       "type": "registry:ui",
       "title": "Combobox",
       "description": "An animated Combobox component for SmoothUI with text filtering, async search, and keyboard navigation.",
       "dependencies": [
+        "cmdk",
         "motion",
-        "lucide-react"
+        "lucide-react",
+        "radix-ui"
       ],
       "registryDependencies": [
-        "command",
-        "popover",
-        "https://smoothui.dev/r/smooth-button.json",
-        "https://smoothui.dev/r/lib.json"
+        "https://smoothui.dev/r/smooth-button.json"
       ],
       "files": [
         {
@@ -1774,15 +1741,53 @@
       ]
     },
     {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Command palette for SmoothUI — cmdk list inside SmoothUI Dialog.",
+      "dependencies": [
+        "cmdk",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/dialog.json",
+        "https://smoothui.dev/r/kbd.json",
+        "https://smoothui.dev/r/fluid-hover-highlight.json",
+        "https://smoothui.dev/r/lib.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/command/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-skeleton",
+      "type": "registry:ui",
+      "title": "Content Skeleton",
+      "description": "Animated skeleton loading placeholders",
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/content-skeleton/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "context-menu",
       "type": "registry:ui",
       "title": "Context Menu",
       "description": "An animated Context Menu component for SmoothUI with spring animations, nested submenus, and keyboard navigation.",
       "dependencies": [
+        "lucide-react",
+        "radix-ui",
         "motion"
       ],
       "registryDependencies": [
-        "context-menu",
         "https://smoothui.dev/r/lib.json"
       ],
       "files": [
@@ -1813,10 +1818,29 @@
       ]
     },
     {
-      "name": "country-dialog",
+      "name": "count-badge",
       "type": "registry:ui",
-      "title": "Country Dialog",
-      "description": "A CountryDialog component for SmoothUI.",
+      "title": "Count Badge",
+      "description": "Animated notification badge with count and status variants",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/count-badge/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "country-picker",
+      "type": "registry:ui",
+      "title": "Country Picker",
+      "description": "A CountryPicker component for SmoothUI.",
       "dependencies": [
         "motion",
         "lucide-react"
@@ -1829,7 +1853,7 @@
         {
           "path": "index.tsx",
           "type": "registry:ui",
-          "target": "components/smoothui/country-dialog/index.tsx"
+          "target": "components/smoothui/country-picker/index.tsx"
         }
       ]
     },
@@ -1914,19 +1938,38 @@
       "title": "Dialog",
       "description": "Animated Dialog and AlertDialog components for SmoothUI.",
       "dependencies": [
+        "@base-ui/react",
         "lucide-react",
-        "motion",
-        "radix-ui"
+        "motion"
       ],
       "registryDependencies": [
-        "alert-dialog",
-        "dialog"
+        "https://smoothui.dev/r/lib.json"
       ],
       "files": [
         {
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/dialog/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "digit-roll",
+      "type": "registry:ui",
+      "title": "Digit Roll",
+      "description": "A numeric field with rolling digits, keyboard stepping and horizontal scrub-to-change.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/digit-roll/index.tsx"
         }
       ]
     },
@@ -2007,10 +2050,8 @@
       "title": "Drawer",
       "description": "An animated Drawer component for SmoothUI that slides from any side.",
       "dependencies": [
+        "@base-ui/react",
         "motion"
-      ],
-      "registryDependencies": [
-        "drawer"
       ],
       "files": [
         {
@@ -2045,10 +2086,11 @@
       "title": "Dropdown Menu",
       "description": "An animated Dropdown Menu component for SmoothUI with spring animations, nested submenus, and keyboard navigation.",
       "dependencies": [
+        "@base-ui/react",
+        "lucide-react",
         "motion"
       ],
       "registryDependencies": [
-        "dropdown-menu",
         "https://smoothui.dev/r/lib.json"
       ],
       "files": [
@@ -2129,6 +2171,19 @@
       ]
     },
     {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "Empty state layout for SmoothUI — title, description, and optional action.",
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/empty/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "expandable-cards",
       "type": "registry:ui",
       "title": "Expandable Cards",
@@ -2154,7 +2209,7 @@
         "motion"
       ],
       "registryDependencies": [
-        "https://smoothui.dev/r/tokens.json"
+        "https://smoothui.dev/r/smooth-button.json"
       ],
       "files": [
         {
@@ -2221,6 +2276,25 @@
       ]
     },
     {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Base UI Field compound primitives for SmoothUI — label, description, control, and error.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/field/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "figma-comment",
       "type": "registry:ui",
       "title": "Figma Comment",
@@ -2229,7 +2303,7 @@
         "motion"
       ],
       "registryDependencies": [
-        "avatar",
+        "https://smoothui.dev/r/avatar.json",
         "https://smoothui.dev/r/data.json"
       ],
       "files": [
@@ -2266,10 +2340,10 @@
       ]
     },
     {
-      "name": "floating-navbar",
+      "name": "float-input",
       "type": "registry:ui",
-      "title": "Floating Navbar",
-      "description": "A FloatingNavbar component for SmoothUI.",
+      "title": "Float Input",
+      "description": "A FloatInput component for SmoothUI.",
       "dependencies": [
         "motion"
       ],
@@ -2280,7 +2354,45 @@
         {
           "path": "index.tsx",
           "type": "registry:ui",
+          "target": "components/smoothui/float-input/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "floating-navbar",
+      "type": "registry:ui",
+      "title": "Floating Navbar",
+      "description": "A FloatingNavbar component for SmoothUI.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
           "target": "components/smoothui/floating-navbar/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fluid-hover-highlight",
+      "type": "registry:ui",
+      "title": "Fluid Hover Highlight",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/lib.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/fluid-hover-highlight/index.tsx"
         }
       ]
     },
@@ -2558,6 +2670,9 @@
         "lucide-react",
         "react-use-measure"
       ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
+      ],
       "files": [
         {
           "path": "index.tsx",
@@ -2604,6 +2719,41 @@
       ]
     },
     {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Base UI Input primitive for SmoothUI matching FieldControl styling. Base-only.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/input/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Input Group with leading/trailing addons for SmoothUI form controls.",
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/input-group/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "interactive-image-selector",
       "type": "registry:ui",
       "title": "Interactive Image Selector",
@@ -2640,6 +2790,19 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/job-listing-component/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Keyboard key hint for SmoothUI — shortcuts and command affordances.",
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/kbd/index.tsx"
         }
       ]
     },
@@ -2774,6 +2937,42 @@
       ]
     },
     {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "Desktop Menubar for SmoothUI with Base UI / Radix twins.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/menubar/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "meter",
+      "type": "registry:ui",
+      "title": "Meter",
+      "description": "Semantic Meter for SmoothUI with Base UI twin and ARIA Radix-parity twin for gauges and capacity.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/meter/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "micro-scale-fade",
       "type": "registry:ui",
       "title": "Micro Scale Fade",
@@ -2832,6 +3031,25 @@
       ]
     },
     {
+      "name": "morph-toggle",
+      "type": "registry:ui",
+      "title": "Morph Toggle",
+      "description": "Animated toggle switch with morph and icon variants",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/morph-toggle/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "motion-loader",
       "type": "registry:ui",
       "title": "Motion Loader",
@@ -2868,12 +3086,28 @@
       ]
     },
     {
-      "name": "notification-badge",
+      "name": "navigation-menu",
       "type": "registry:ui",
-      "title": "Notification Badge",
-      "description": "Animated notification badge with count and status variants",
+      "title": "Navigation Menu",
+      "description": "Site Navigation Menu for SmoothUI with Base UI / Radix twins.",
       "dependencies": [
-        "motion"
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/navigation-menu/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-field",
+      "type": "registry:ui",
+      "title": "Number Field",
+      "description": "Number Field for SmoothUI with steppers, Base UI twin and Radix-parity twin.",
+      "dependencies": [
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "https://smoothui.dev/r/tokens.json"
@@ -2882,7 +3116,7 @@
         {
           "path": "index.tsx",
           "type": "registry:ui",
-          "target": "components/smoothui/notification-badge/index.tsx"
+          "target": "components/smoothui/number-field/index.tsx"
         }
       ]
     },
@@ -2893,6 +3127,9 @@
       "description": "A NumberFlow component for SmoothUI.",
       "dependencies": [
         "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
       ],
       "files": [
         {
@@ -2950,6 +3187,46 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/organic-merge-transition/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "otp-field",
+      "type": "registry:ui",
+      "title": "Otp Field",
+      "description": "OTP Field for SmoothUI with Base UI twin and Radix-parity twin for one-time codes.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/otp-field/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "otp-slots",
+      "type": "registry:ui",
+      "title": "Otp Slots",
+      "description": "A OtpSlots component for SmoothUI.",
+      "dependencies": [
+        "motion",
+        "lucide-react",
+        "input-otp"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/otp-slots/index.tsx"
         }
       ]
     },
@@ -3146,6 +3423,26 @@
       ]
     },
     {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Animated Popover component for SmoothUI with Base UI / Radix twins and Motion enter animations.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/lib.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/popover/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "power-off-slide",
       "type": "registry:ui",
       "title": "Power Off Slide",
@@ -3159,6 +3456,26 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/power-off-slide/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "preview-card",
+      "type": "registry:ui",
+      "title": "Preview Card",
+      "description": "Hover preview card for SmoothUI with Base UI / Radix HoverCard twins and Motion overlay.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/lib.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/preview-card/index.tsx"
         }
       ]
     },
@@ -3211,6 +3528,27 @@
       ]
     },
     {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Animated Progress for SmoothUI with Base UI / Radix twins, determinate and indeterminate states.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/lib.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/progress/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "progressive-blur",
       "type": "registry:ui",
       "title": "Progressive Blur",
@@ -3248,8 +3586,8 @@
       "title": "Radio Group",
       "description": "An animated Radio Group component for SmoothUI with selection indicator spring animation.",
       "dependencies": [
-        "motion",
-        "radix-ui"
+        "@base-ui/react",
+        "motion"
       ],
       "registryDependencies": [
         "https://smoothui.dev/r/lib.json",
@@ -3305,6 +3643,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json",
         "https://smoothui.dev/r/tokens.json"
       ],
       "files": [
@@ -3324,6 +3663,9 @@
         "motion",
         "lucide-react",
         "@radix-ui/react-popover"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/smooth-button.json"
       ],
       "files": [
         {
@@ -3375,6 +3717,22 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/scramble-hover/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Styled Scroll Area for SmoothUI with Base UI / Radix twins and custom scrollbars.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/scroll-area/index.tsx"
         }
       ]
     },
@@ -3497,26 +3855,6 @@
       ]
     },
     {
-      "name": "searchable-dropdown",
-      "type": "registry:ui",
-      "title": "Searchable Dropdown",
-      "description": "A SearchableDropdown component for SmoothUI.",
-      "dependencies": [
-        "motion",
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "https://smoothui.dev/r/tokens.json"
-      ],
-      "files": [
-        {
-          "path": "index.tsx",
-          "type": "registry:ui",
-          "target": "components/smoothui/searchable-dropdown/index.tsx"
-        }
-      ]
-    },
-    {
       "name": "select",
       "type": "registry:ui",
       "title": "Select",
@@ -3526,13 +3864,30 @@
         "motion"
       ],
       "registryDependencies": [
-        "https://smoothui.dev/r/lib.json"
+        "https://smoothui.dev/r/lib.json",
+        "https://smoothui.dev/r/tokens.json"
       ],
       "files": [
         {
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/select/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Thin Separator for SmoothUI with Base UI / Radix twins, horizontal and vertical.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/separator/index.tsx"
         }
       ]
     },
@@ -3793,6 +4148,26 @@
       ]
     },
     {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Collapsible app sidebar shell for SmoothUI with provider and menu parts.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/fluid-hover-highlight.json",
+        "https://smoothui.dev/r/lib.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/sidebar/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "siri-orb",
       "type": "registry:ui",
       "title": "Siri Orb",
@@ -3812,15 +4187,42 @@
       ]
     },
     {
-      "name": "skeleton-loader",
+      "name": "skeleton",
       "type": "registry:ui",
-      "title": "Skeleton Loader",
-      "description": "Animated skeleton loading placeholders",
+      "title": "Skeleton",
+      "description": "Skeleton loading placeholders for SmoothUI with optional shimmer.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/lib.json"
+      ],
       "files": [
         {
           "path": "index.tsx",
           "type": "registry:ui",
-          "target": "components/smoothui/skeleton-loader/index.tsx"
+          "target": "components/smoothui/skeleton/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Animated Slider primitive for SmoothUI with spring thumb press feedback.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/lib.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/slider/index.tsx"
         }
       ]
     },
@@ -3830,7 +4232,7 @@
       "title": "Smooth Button",
       "description": "A polished button component with gradient variants and press animation",
       "dependencies": [
-        "@radix-ui/react-slot",
+        "@base-ui/react",
         "class-variance-authority",
         "motion"
       ],
@@ -3895,6 +4297,25 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/soft-blur-in/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Accessible loading Spinner for SmoothUI with Motion and reduced-motion support.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/lib.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/spinner/index.tsx"
         }
       ]
     },
@@ -4013,6 +4434,27 @@
       ]
     },
     {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "An animated Switch component for SmoothUI with a spring thumb toggle.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/lib.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/switch/index.tsx"
+        }
+      ]
+    },
+    {
       "name": "switchboard-card",
       "type": "registry:ui",
       "title": "Switchboard Card",
@@ -4029,6 +4471,31 @@
       ]
     },
     {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Animated Tabs primitive for SmoothUI with Base Indicator and underline/pill/segment variants.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/tabs/index.tsx"
+        },
+        {
+          "path": "use-active-tab-indicator.ts",
+          "type": "registry:ui",
+          "target": "components/smoothui/tabs/use-active-tab-indicator.ts"
+        }
+      ]
+    },
+    {
       "name": "text-morph",
       "type": "registry:ui",
       "title": "Text Morph",
@@ -4041,6 +4508,25 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/text-morph/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Multi-line Textarea for SmoothUI matching Input / FieldControl styling. Base-only.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/textarea/index.tsx"
         }
       ]
     },
@@ -4093,6 +4579,104 @@
           "path": "index.tsx",
           "type": "registry:ui",
           "target": "components/smoothui/time-machine-stack/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Toast notifications for SmoothUI built on Base UI Toast manager with Motion polish. Base-only.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/lib.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/toast/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Animated Toggle primitive for SmoothUI with press scale and pressed background.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/lib.json",
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/toggle/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Animated Toggle Group primitive for SmoothUI — segmented single or multi selection.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/toggle.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/toggle-group/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toolbar",
+      "type": "registry:ui",
+      "title": "Toolbar",
+      "description": "Accessible Toolbar for SmoothUI with Base UI / Radix twins for grouped controls.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://smoothui.dev/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/toolbar/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Animated Tooltip component for SmoothUI with Base UI / Radix twins and Motion fade/scale.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "index.tsx",
+          "type": "registry:ui",
+          "target": "components/smoothui/tooltip/index.tsx"
         }
       ]
     },
@@ -4176,7 +4760,7 @@
         "@radix-ui/react-popover"
       ],
       "registryDependencies": [
-        "https://smoothui.dev/r/tokens.json"
+        "https://smoothui.dev/r/smooth-button.json"
       ],
       "files": [
         {
@@ -4307,6 +4891,16 @@
           "path": "animation.ts",
           "type": "registry:lib",
           "target": "components/smoothui/lib/animation.ts"
+        },
+        {
+          "path": "springs.ts",
+          "type": "registry:lib",
+          "target": "components/smoothui/lib/springs.ts"
+        },
+        {
+          "path": "use-fluid-hover.ts",
+          "type": "registry:lib",
+          "target": "components/smoothui/lib/use-fluid-hover.ts"
         }
       ]
     },
@@ -4336,6 +4930,7 @@
         "https://smoothui.dev/r/ai-task-list.json",
         "https://smoothui.dev/r/ai-tool-call.json",
         "https://smoothui.dev/r/siri-orb.json",
+        "https://smoothui.dev/r/smooth-button.json",
         "https://smoothui.dev/r/data.json"
       ],
       "files": [
@@ -4822,6 +5417,52 @@
           "sidebar-primary": "oklch(0.70 0.15 162.48)",
           "sidebar-primary-foreground": "oklch(1 0 0)",
           "sidebar-ring": "oklch(0.70 0.15 162.48)",
+          "radius": "0.625rem"
+        },
+        "theme": {
+          "font-sans": "Inter, sans-serif"
+        }
+      }
+    },
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "SmoothUI",
+      "description": "SmoothUI theme: near-black ink, white cards on a gray canvas, hairline borders, light and dark mode included.",
+      "cssVars": {
+        "dark": {
+          "background": "oklch(0.16 0 0)",
+          "border": "oklch(0.3 0 0)",
+          "card": "oklch(0.21 0 0)",
+          "card-foreground": "oklch(0.96 0 0)",
+          "foreground": "oklch(0.96 0 0)",
+          "input": "oklch(0.3 0 0)",
+          "muted": "oklch(0.25 0 0)",
+          "muted-foreground": "oklch(0.72 0 0)",
+          "popover": "oklch(0.21 0 0)",
+          "popover-foreground": "oklch(0.96 0 0)",
+          "primary": "oklch(0.96 0 0)",
+          "primary-foreground": "oklch(0.16 0 0)",
+          "ring": "oklch(0.72 0 0)",
+          "secondary": "oklch(0.25 0 0)",
+          "secondary-foreground": "oklch(0.96 0 0)"
+        },
+        "light": {
+          "background": "oklch(0.965 0 0)",
+          "border": "oklch(0.91 0 0)",
+          "card": "oklch(1 0 0)",
+          "card-foreground": "oklch(0.16 0 0)",
+          "foreground": "oklch(0.16 0 0)",
+          "input": "oklch(0.91 0 0)",
+          "muted": "oklch(0.955 0 0)",
+          "muted-foreground": "oklch(0.56 0 0)",
+          "popover": "oklch(1 0 0)",
+          "popover-foreground": "oklch(0.16 0 0)",
+          "primary": "oklch(0.16 0 0)",
+          "primary-foreground": "oklch(1 0 0)",
+          "ring": "oklch(0.56 0 0)",
+          "secondary": "oklch(0.955 0 0)",
+          "secondary-foreground": "oklch(0.16 0 0)",
           "radius": "0.625rem"
         },
         "theme": {

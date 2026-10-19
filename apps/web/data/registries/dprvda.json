@@ -10,20 +10,69 @@
     {
       "name": "setup",
       "type": "registry:style",
-      "title": "Beamline",
-      "description": "Beamline's foundation: the runtime, the tokens and the source theme every element builds on."
+      "title": "Beamline source base",
+      "description": "Editable runtime, tokens, foundation CSS and helpers in your repository; no Beamline packages."
     },
     {
       "name": "look-prism",
       "type": "registry:theme",
       "title": "Prism look",
-      "description": "Beamline's Prism look and its typefaces (geist, geist-mono, instrument-serif)."
+      "description": "Editable Prism look and local font assets (geist, geist-mono, instrument-serif)."
+    },
+    {
+      "name": "look-soft",
+      "type": "registry:theme",
+      "resolution": "gated",
+      "title": "Soft look",
+      "description": "Editable Soft look and local font assets (geist, geist-mono, inter). (Beamline complete system)"
+    },
+    {
+      "name": "look-glass",
+      "type": "registry:theme",
+      "resolution": "gated",
+      "title": "Glass look",
+      "description": "Editable Glass look and local font assets (geist, geist-mono, inter). (Beamline complete system)"
+    },
+    {
+      "name": "look-glow",
+      "type": "registry:theme",
+      "resolution": "gated",
+      "title": "Glow look",
+      "description": "Editable Glow look and local font assets (geist, geist-mono, inter). (Beamline complete system)"
+    },
+    {
+      "name": "look-blueprint",
+      "type": "registry:theme",
+      "resolution": "gated",
+      "title": "Blueprint look",
+      "description": "Editable Blueprint look and local font assets (geist, geist-mono). (Beamline complete system)"
+    },
+    {
+      "name": "look-mono",
+      "type": "registry:theme",
+      "resolution": "gated",
+      "title": "Mono look",
+      "description": "Editable Mono look and local font assets (geist, geist-mono). (Beamline complete system)"
     },
     {
       "name": "look-metal",
       "type": "registry:theme",
       "title": "Metal look",
-      "description": "Beamline's Metal look and its typefaces (archivo, geist, geist-mono, inter)."
+      "description": "Editable Metal look and local font assets (archivo, geist, geist-mono, inter)."
+    },
+    {
+      "name": "look-pop",
+      "type": "registry:theme",
+      "resolution": "gated",
+      "title": "Pop look",
+      "description": "Editable Pop look and local font assets (figtree, gabarito, geist-mono). (Beamline complete system)"
+    },
+    {
+      "name": "look-ink",
+      "type": "registry:theme",
+      "resolution": "gated",
+      "title": "Ink look",
+      "description": "Editable Ink look and local font assets (geist-mono, instrument-serif). (Beamline complete system)"
     },
     {
       "name": "account-security",
@@ -150,7 +199,7 @@
       "type": "registry:block",
       "resolution": "gated",
       "title": "Conversation history",
-      "description": "Past conversations with an assistant, ready to pick up again: the list by day with bookmarks and unsent drafts, a search through every message that groups hits by conversation and lands on the exact message, a link to a conversation or to one message that reopens it there, an interrupted answer with Continue, and a composer whose draft stays with its conversation when you open another. (Beamline complete system)",
+      "description": "Past conversations with an assistant, ready to pick up again: the list by day with bookmarks and unsent drafts, a search through every message that groups hits by conversation and lands on the exact message, a link to a conversation or to one message that reopens it there, the versions of a conversation that branched (an edited question, a regenerated answer) with a switch on each message and a map of the branches, an interrupted answer with Continue, and a composer whose draft stays with its conversation when you open another. (Beamline complete system)",
       "categories": [
         "blocks"
       ]
@@ -161,6 +210,16 @@
       "resolution": "gated",
       "title": "CRM pipeline",
       "description": "A pipeline screen: KPIs and stage mix derived from a virtualised deals grid with inline edit, bulk moves and delete with undo; a row opens the deal in a side sheet with stage stepper, fields and notes. Every change goes to your onDealsChange. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "document-review",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Document review",
+      "description": "A PDF going through review: the document in the viewer with every comment pinned to its place, the reviewers' threads beside it (open or resolved, one opened at a time with its replies), what changed since the last version with each change marked in the page, a version switcher, and Approve or Request changes with a reason, both sent to your API and refused with the reason. (Beamline complete system)",
       "categories": [
         "blocks"
       ]
@@ -399,7 +458,7 @@
       "name": "settings",
       "type": "registry:block",
       "title": "Settings",
-      "description": "Profile and workspace settings with one draft and real save handler. Personal mode omits workspace data; optional profile fields share validation, persistence, error recovery and focus return. Existing members, billing, notifications and API sections remain available.",
+      "description": "Profile and workspace settings with one draft and a real save handler, on grouped panels: photo upload, time zone with the local time, appearance cards, notifications by channel, workspace security, members, plan and usage, API keys and a hold-to-confirm danger zone. Personal mode omits workspace data; optional profile fields share validation, persistence, error recovery and focus return.",
       "categories": [
         "blocks"
       ]
@@ -530,6 +589,16 @@
       "resolution": "gated",
       "title": "Voice agent",
       "description": "A voice agent in three layouts on one session: a support panel that mixes typing and talking, a call screen with the agent's orb and one call button, and a workspace with an empty state, the live transcript and the conversation bar. One adapter connects any provider. (Beamline complete system)",
+      "categories": [
+        "blocks"
+      ]
+    },
+    {
+      "name": "workflow-builder",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Workflow builder",
+      "description": "Automation rules for a SaaS without code: a trigger, conditions built with the query builder that branch into Yes and No, actions and waits, drawn as a flow you edit step by step; test it on sample records and watch each step decide, read past runs with what every step did, pause it with a reason everyone sees, and publish the draft only after reading what changed against the live version. (Beamline complete system)",
       "categories": [
         "blocks"
       ]
@@ -760,6 +829,16 @@
       ]
     },
     {
+      "name": "branch-navigator",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Branch navigator",
+      "description": "The versions of an assistant conversation that forked when a message was edited or an answer regenerated: a “‹ 2 / 3 ›” switch on each message that has alternates, and a map of the whole conversation where the path you are on runs straight down and every other version branches off it with how many turns it holds; choosing one shows that branch and lands on where it starts. (Beamline complete system)",
+      "categories": [
+        "ai"
+      ]
+    },
+    {
       "name": "breadcrumb",
       "type": "registry:component",
       "resolution": "gated",
@@ -851,9 +930,8 @@
     {
       "name": "checkbox",
       "type": "registry:component",
-      "resolution": "gated",
       "title": "Checkbox",
-      "description": "A yes/no choice with an optional label and help, including the mixed state for select-all; the check draws itself in. (Beamline complete system)",
+      "description": "A yes/no choice with an optional label and help, including the mixed state for select-all; the check draws itself in.",
       "categories": [
         "forms"
       ]
@@ -861,9 +939,8 @@
     {
       "name": "chip-group",
       "type": "registry:component",
-      "resolution": "gated",
       "title": "Chip group",
-      "description": "Quick filters as chips: a chosen chip fills and grows a check, counts show what each would return, and extra chips fold behind “+N”. (Beamline complete system)",
+      "description": "Quick filters as chips: a chosen chip fills and grows a check, counts show what each would return, and extra chips fold behind “+N”.",
       "categories": [
         "forms"
       ]
@@ -1040,7 +1117,7 @@
       "type": "registry:component",
       "resolution": "gated",
       "title": "Data grid",
-      "description": "Virtualised grid for thousands of rows: multi-sort, search and value filters, resizable and pinnable columns, range selection, inline edit, footer aggregates, keyboard cell navigation. (Beamline complete system)",
+      "description": "Virtualised local or server-driven grid: stable row IDs, manual sort and filters, pages or infinite loading, retry without losing rows, inline editing and keyboard navigation. (Beamline complete system)",
       "categories": [
         "data"
       ]
@@ -1112,6 +1189,16 @@
       "description": "Sets left-to-right or right-to-left for everything inside: text and logical spacing flip, and Radix parts read the direction for keys and placement. (Beamline complete system)",
       "categories": [
         "layout"
+      ]
+    },
+    {
+      "name": "document-viewer",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Document viewer",
+      "description": "A PDF or a paged document read and marked up in place: page thumbnails beside it, zoom to the width, the page or a percentage, pages by keyboard, a search that marks every hit and steps through them, and annotations (highlight text or mark an area, attach a comment) listed beside the pages, each jumping to its place; pages not drawn yet are hatched, and loading, empty, failed and password-locked documents each say so. pdf.js loads only when a PDF is opened. (Beamline complete system)",
+      "categories": [
+        "display"
       ]
     },
     {
@@ -1256,9 +1343,8 @@
     {
       "name": "glow",
       "type": "registry:component",
-      "resolution": "gated",
       "title": "Glow",
-      "description": "Ambient light around one element that says something is happening: an aurora under a working composer, or a ring of light round a live card. (Beamline complete system)",
+      "description": "Ambient light around one element that says something is happening: an aurora under a working composer, or a ring of light round a live card.",
       "categories": [
         "effects"
       ]
@@ -1423,9 +1509,8 @@
     {
       "name": "kbd",
       "type": "registry:component",
-      "resolution": "gated",
       "title": "Kbd",
-      "description": "Keyboard keys as keycaps, for combinations and sequences (G then A); `mod` resolves to ⌘ or Ctrl per platform, symbols are spoken as words. (Beamline complete system)",
+      "description": "Keyboard keys as keycaps, for combinations and sequences (G then A); `mod` resolves to ⌘ or Ctrl per platform, symbols are spoken as words.",
       "categories": [
         "display"
       ]
@@ -1444,7 +1529,7 @@
       "type": "registry:component",
       "resolution": "gated",
       "title": "Light band",
-      "description": "A band of split light in the dark behind a section, blue at one end and amber at the other with a bright core: Prism's light at a chosen place, a hero, the plan you sell or the closing call to action. Drawn live by default: it turns slowly in depth like a ribbon and its spectrum flows, more while the page moves; it moves at its own depth as its section passes, and a pulse of light runs along it while the page scrolls. Without WebGL, on a light page or under reduced motion it is the painted band. Draws only on screen. (Beamline complete system)",
+      "description": "A band of split light in the dark behind a section, blue at one end and amber at the other with a bright core: Prism's light at a chosen place, a hero, the plan you sell or the closing call to action. Drawn live by default: it turns slowly in depth like a ribbon and its spectrum flows, more while the page moves; it moves at its own depth as its section passes, and a pulse of light runs along it while the page scrolls. It moves while something happens (its first run, a scroll, the pointer over its section, a resize) and for 9 s after, then eases to rest and does no work until woken. Without WebGL, on a light page or under reduced motion it is the painted band. Draws only on screen. (Beamline complete system)",
       "categories": [
         "effects"
       ]
@@ -1702,9 +1787,8 @@
     {
       "name": "pagination",
       "type": "registry:component",
-      "resolution": "gated",
       "title": "Pagination",
-      "description": "Moves through pages of a known length: first, last and the current page's neighbours, with an optional “41–60 of 468”. It answers to its own room: narrow, “Page 6 of 24”; wide, one more neighbour on each side. (Beamline complete system)",
+      "description": "Moves through pages of a known length: first, last and the current page's neighbours, with an optional “41–60 of 468”. It answers to its own room: narrow, “Page 6 of 24”; wide, one more neighbour on each side.",
       "categories": [
         "navigation"
       ]
@@ -2041,9 +2125,8 @@
     {
       "name": "search-field",
       "type": "registry:component",
-      "resolution": "gated",
       "title": "Search field",
-      "description": "The search entry point: magnifier, clear button, Escape to clear, a shortcut hint and an optional live border beam. (Beamline complete system)",
+      "description": "The search entry point: magnifier, clear button, Escape to clear, a shortcut hint and an optional live border beam.",
       "categories": [
         "forms"
       ]
@@ -2180,7 +2263,7 @@
       "type": "registry:component",
       "resolution": "gated",
       "title": "Sound",
-      "description": "Interface sounds named by interaction class (tap, select, toggle, open/close, tick, success, error) through one provider; off by default. (Beamline complete system)",
+      "description": "Opt-in interface cues with scoped volume, graceful mute and bounded repetition; soft tactile gestures and restrained result tones. (Beamline complete system)",
       "categories": [
         "effects"
       ]
@@ -2277,7 +2360,7 @@
       "name": "table",
       "type": "registry:component",
       "title": "Table",
-      "description": "A plain, styled HTML table for small static data: header, body, footer, caption, numeric cells, three densities and a sticky header.",
+      "description": "A native HTML table for small datasets, composed with children or driven by records; shared server paging, sorting, filters, search, stable-ID selection and retry.",
       "categories": [
         "data"
       ]
@@ -2584,6 +2667,12 @@
       "categories": [
         "voice"
       ]
+    },
+    {
+      "name": "free",
+      "type": "registry:block",
+      "title": "Beamline free components",
+      "description": "All 36 free Beamline components, MIT: editable source in src/ui/beamline."
     }
   ]
 }
