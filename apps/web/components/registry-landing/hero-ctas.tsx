@@ -8,6 +8,7 @@ interface HeroCtasProps {
   registryName: string
   registryUrl: string
   visitHref: string
+  sponsored: boolean
   githubUrl?: string
 }
 
@@ -15,6 +16,7 @@ export function HeroCtas({
   registryName,
   registryUrl,
   visitHref,
+  sponsored,
   githubUrl,
 }: HeroCtasProps) {
   const analytics = useAnalytics()
@@ -24,7 +26,9 @@ export function HeroCtas({
       <a
         href={visitHref}
         target="_blank"
-        rel="noopener noreferrer"
+        // An affiliate link sends the referrer, so the vendor sees where the
+        // visit came from; noopener stays on every external link.
+        rel={sponsored ? "sponsored noopener" : "noopener noreferrer"}
         aria-label={`Visit ${registryName} website`}
         onClick={() => {
           analytics.trackRegistryVisit({

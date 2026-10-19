@@ -67,6 +67,7 @@ export function RegistryLanding({
               totalItems={totalItems}
               githubStats={githubStats}
               visitHref={visitHref}
+              sponsored={Boolean(affiliate)}
             />
             {(installArg || registry.pro) && (
               <div className="flex w-full max-w-[440px] flex-col gap-4">
