@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react"
 import { CopyButton } from "@/components/registry-landing/copy-button"
+import { ShadcnIcon } from "@/components/icons/shadcn"
 import { useAnalytics } from "@/hooks/use-analytics"
 
 interface ItemBarProps {
@@ -45,19 +46,16 @@ export function ItemBar({
         )}
       </div>
 
-      {/* On a phone the command gets a row of its own and wraps, so the
-          item's own part is never the part that is cut. From md up it is one
-          line, and the invariant prefix gives way before the item does. */}
+      {/* The shadcn mark stands for `npx shadcn@latest add`, which every
+          command shares; what is written out is only what this item adds.
+          Copying still copies the whole command. On a phone it wraps rather
+          than cut the item's ref. */}
       <div className="flex min-w-0 flex-wrap items-center gap-2 md:max-w-[min(560px,55%)] md:flex-nowrap">
         <div className="flex min-h-8 min-w-0 basis-full items-start gap-2.5 rounded-md border border-border bg-surface/50 px-3 py-1.5 font-mono text-xs md:basis-auto md:flex-1 md:items-center">
-          <span className="select-none leading-5 text-foreground-faint" aria-hidden="true">
-            $
-          </span>
-          <code className="min-w-0 flex-1 break-all leading-5 md:flex md:break-normal" title={command}>
-            <span className="text-muted-foreground md:min-w-0 md:shrink-[1000] md:truncate">
-              {"npx shadcn@latest add\u00a0"}
-            </span>
-            <span className="text-foreground md:min-w-0 md:truncate">{installArg}</span>
+          <ShadcnIcon className="mt-0.5 size-4 shrink-0 text-foreground md:mt-0" aria-hidden="true" />
+          <code className="min-w-0 flex-1 break-all leading-5 text-foreground md:truncate md:break-normal" title={command}>
+            <span className="sr-only">npx shadcn@latest add </span>
+            {installArg}
           </code>
           <CopyButton
             text={command}
