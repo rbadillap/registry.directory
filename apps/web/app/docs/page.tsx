@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import Link from "next/link"
+import { DocsBackLink } from "@/components/docs-back-link"
 
 export const dynamic = "force-static"
 
@@ -41,12 +41,7 @@ export default function DocsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <main className="max-w-2xl mx-auto px-4 py-16 md:py-24">
-        <Link
-          href="/"
-          className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
-        >
-          &larr; Back to directory
-        </Link>
+        <DocsBackLink />
 
         <h1 className="text-lg font-semibold mt-8 mb-6">API &amp; Docs</h1>
 
