@@ -10,6 +10,9 @@ export interface IndexedItem {
   // for voice-orb. Searched and shown; absent rather than empty.
   title?: string
   description: string
+  // The page on the author's own site where the item can be seen working.
+  // Absent when the author's sitemap names none.
+  demo?: string
   categories: string[]
   registry: {
     name: string

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ExternalLink as ExternalLinkIcon, Package, Star } from "lucide-react";
+import { ArrowUpRight, ExternalLink as ExternalLinkIcon, Package, Star } from "lucide-react";
 import { GitHubIcon } from "@/components/icons/github";
 import {
   Card,
@@ -29,6 +29,7 @@ import { useAnalytics } from "@/hooks/use-analytics";
 import { formatStars, formatRelativeTime } from "@/lib/format-utils";
 import { REGISTRY_TYPE_LABELS, REGISTRY_TYPE_ICONS } from "@/lib/registry-mappings";
 import { SubmitRegistryCard } from "@/components/submit-registry-dialog";
+import { DEMO_LINK_REL } from "@/lib/demo-link";
 
 interface ResultClickData {
   result_type: "registry" | "item";
@@ -238,6 +239,7 @@ function ItemResults({
   onExpandedChange?: (expanded: boolean) => void;
 }) {
   const [expanded, setExpanded] = useState(initiallyExpanded);
+  const { trackDemoClicked } = useAnalytics();
 
   // Reported on mount too: a new search remounts this list collapsed.
   useEffect(() => {
@@ -270,15 +272,15 @@ function ItemResults({
             const href = `${item.registry.basePath}/${item.name}`;
 
             return (
+              // Expanding a broad search can put thousands of these on the
+              // page. The browser skips layout and paint for the ones below
+              // the fold; the intrinsic size keeps the scrollbar honest, and
+              // auto lets it remember the real height once measured.
+              <div key={`${registryKey}/${item.name}`} className="result-card-deferred relative">
               <Link
-                key={`${registryKey}/${item.name}`}
                 href={href}
                 onClick={() => onResultClick?.({ result_type: "item", result_name: item.name, result_position: index }, { href })}
-                // Expanding a broad search can put thousands of these on the
-                // page. The browser skips layout and paint for the ones below
-                // the fold; the intrinsic size keeps the scrollbar honest, and
-                // auto lets it remember the real height once measured.
-                className="result-card-deferred"
+                className="block h-full"
               >
                 <Card className="bg-background border border-border-subtle rounded-none overflow-hidden shadow-none hover:shadow-lg hover:border-border transition-all h-full flex flex-col">
                   <CardHeader className="bg-background pt-3 pb-2 space-y-2">
@@ -314,7 +316,7 @@ function ItemResults({
                       )}
                     </div>
                   </CardHeader>
-                  <CardContent className="px-3 pb-3 pt-0 bg-background flex-1">
+                  <CardContent className={`px-3 pt-0 bg-background flex-1 ${item.demo ? "pb-10" : "pb-3"}`}>
                     {item.description && (
                       <CardDescription className="text-[13px] text-foreground-secondary line-clamp-2 text-pretty">
                         {item.description}
@@ -332,6 +334,26 @@ function ItemResults({
                   </CardContent>
                 </Card>
               </Link>
+              {/* Beside the card's link, not inside it: a link cannot hold
+                  another. It opens the author's demo straight from the
+                  results, so several can be compared without opening each
+                  item. The order of the results does not change for it. */}
+              {item.demo && (
+                <a
+                  href={item.demo}
+                  target="_blank"
+                  rel={DEMO_LINK_REL}
+                  onClick={() => trackDemoClicked({ surface: "card", registry: item.registry.name })}
+                  className="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-sm px-1.5 py-0.5 font-mono text-xs text-muted-foreground hover:bg-accent hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  Preview
+                  <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
+                  <span className="sr-only">
+                    {` ${item.title || item.name} on ${item.registry.name}'s site (opens in a new tab)`}
+                  </span>
+                </a>
+              )}
+              </div>
             );
           })}
         </div>
