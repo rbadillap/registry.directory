@@ -6,14 +6,16 @@ import { Check, Copy } from "lucide-react"
 interface CopyButtonProps {
   text: string
   label: string
+  onCopy?: () => void
 }
 
-export function CopyButton({ text, label }: CopyButtonProps) {
+export function CopyButton({ text, label, onCopy }: CopyButtonProps) {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = () => {
     navigator.clipboard.writeText(text)
     setCopied(true)
+    onCopy?.()
     setTimeout(() => setCopied(false), 1000)
   }
 

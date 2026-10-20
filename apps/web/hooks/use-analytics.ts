@@ -62,6 +62,8 @@ export function useAnalytics() {
         trackEvent(ANALYTICS_EVENTS.FILE_SELECTED, { registry, file_type: p.file_type }),
       trackCodeCopied: () =>
         trackEvent(ANALYTICS_EVENTS.CODE_COPIED, { registry, item }),
+      trackInstallCopied: () =>
+        trackEvent(ANALYTICS_EVENTS.INSTALL_COPIED, { registry, item }),
       trackShareClicked: (p: { share_method: ShareMethod }) =>
         trackEvent(ANALYTICS_EVENTS.SHARE_CLICKED, { share_method: p.share_method, registry }),
       trackAIClicked: (p: { ai_provider: AIProvider }) =>

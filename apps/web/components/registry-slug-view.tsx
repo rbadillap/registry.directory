@@ -14,6 +14,7 @@ import {
 import { getAffiliates } from "@/lib/affiliates"
 import { loadRegistryIndex, parseGithubRef } from "@/lib/resolve-registry"
 import { loadRegistryView } from "@/lib/registry-data"
+import { getInstallCommand } from "@/lib/install-command"
 import { JsonLd } from "@/components/json-ld"
 import { AnalyticsScopeProvider } from "@/hooks/use-analytics"
 import {
@@ -277,6 +278,8 @@ export async function RegistrySlugView({
         currentCategory={currentCategory}
         affiliate={affiliate}
         basePath={basePath}
+        installArg={getInstallCommand({ registry, itemName: itemData.name, basePath })}
+        itemResolution={itemData.resolution}
       />
     </AnalyticsScopeProvider>
   )

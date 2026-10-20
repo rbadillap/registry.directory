@@ -30,6 +30,7 @@ export const ANALYTICS_EVENTS = {
   // Core metrics
   FILE_SELECTED: "ide.file.selected",
   CODE_COPIED: "ide.code.copied",
+  INSTALL_COPIED: "ide.install.copied",
   SHARE_CLICKED: "ide.share.clicked",
 
   // Feature adoption
@@ -57,6 +58,7 @@ type EventName = (typeof ANALYTICS_EVENTS)[keyof typeof ANALYTICS_EVENTS];
 export interface EventProperties {
   "ide.file.selected": { registry: string | null; file_type: string };
   "ide.code.copied": { registry: string | null; item: string | null };
+  "ide.install.copied": { registry: string | null; item: string | null };
   "ide.share.clicked": { share_method: ShareMethod; registry: string | null };
   "ide.ai.clicked": { ai_provider: AIProvider; registry: string | null };
   "ide.search.used": { search_query: string; results_count: number };

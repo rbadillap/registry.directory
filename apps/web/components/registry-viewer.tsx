@@ -6,10 +6,12 @@ import { FileTree } from "./viewer/file-tree"
 import { CodeViewer } from "./viewer/code-viewer"
 import { InfoPanel } from "./viewer/info-panel"
 import { ViewerHeader } from "./viewer/viewer-header"
+import { ItemBar } from "./viewer/item-bar"
 import { StatusBar } from "./viewer/status-bar"
 import { MobileTabNavigation, type MobileTab } from "./viewer/mobile-tab-navigation"
 import { cn } from "@workspace/ui/lib/utils"
 import type { DirectoryEntry, AffiliateConfig } from "@/lib/types"
+import type { ItemResolution } from "@/lib/registry-data"
 import type { RegistryListing, RegistryItem, SourceStatus, ViewerFile, ViewerItem } from "@/lib/registry-types"
 import { generateGlobalsCss } from "@/lib/css-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
@@ -28,6 +30,10 @@ interface RegistryViewerProps {
   affiliate?: AffiliateConfig | null
   // Route prefix the viewer lives under: "/{owner}/{repo}" or "/{handle}"
   basePath: string
+  /** For an item page: what follows `npx shadcn@latest add` for it. */
+  installArg?: string
+  /** For an item page: what the indexer's probe found at its origin. */
+  itemResolution?: ItemResolution
 }
 
 type RegistryFile = ViewerFile
@@ -59,7 +65,7 @@ function addGlobalsCssFile(item: RegistryItem): RegistryItem {
   }
 }
 
-export function RegistryViewer({ registry, registryIndex, handle, categorySize, selectedItem: initialItem, currentCategory, affiliate, basePath }: RegistryViewerProps) {
+export function RegistryViewer({ registry, registryIndex, handle, categorySize, selectedItem: initialItem, currentCategory, affiliate, basePath, installArg, itemResolution }: RegistryViewerProps) {
   const analytics = useAnalytics()
 
   // The synthesised globals.css belongs to the component being read, not to
@@ -235,6 +241,17 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
   return (
     <div className="h-screen bg-background text-foreground flex flex-col">
       <ViewerHeader registry={registry} currentCategory={currentCategory} selectedItemName={initialItem?.name} affiliate={affiliate} basePath={basePath} />
+
+      {initialItem && installArg && (
+        <ItemBar
+          registryName={registry.name}
+          name={initialItem.name}
+          title={initialItem.title}
+          description={initialItem.description}
+          installArg={installArg}
+          resolution={itemResolution}
+        />
+      )}
 
       {/* The one place that speaks for the source request. The panels below
           show a file or they show nothing, and neither can be trusted to
