@@ -27,6 +27,7 @@ import {
 import { indexRegistries } from "./steps/registries.mjs";
 import { indexGithub } from "./steps/github.mjs";
 import { indexDerived } from "./steps/derived.mjs";
+import { indexDemos } from "./steps/demos.mjs";
 
 // Flags:
 //   --only=key,key   refresh just those views and merge them into the existing
@@ -36,6 +37,8 @@ import { indexDerived } from "./steps/derived.mjs";
 //                    answered 429/5xx. Off by default: the main run reports what
 //                    it could not reach and prints the command to come back for
 //                    it, instead of making every run wait on the same few sites.
+//   --demos          refresh the demo links now instead of waiting out the
+//                    week since the last refresh.
 function parseOnly() {
   const arg = process.argv.find((a) => a.startsWith("--only="));
   if (!arg) return null;
@@ -51,11 +54,12 @@ async function main() {
   const started = Date.now();
   const only = parseOnly();
   const retry = process.argv.includes("--retry");
+  const forceDemos = process.argv.includes("--demos");
 
-  console.log("→ step 1/4  registry indexes");
+  console.log("→ step 1/5  registry indexes");
   const records = await indexRegistries({ only, retry });
 
-  console.log("\n→ step 2/4  github stats");
+  console.log("\n→ step 2/5  github stats");
   // A targeted run is about registry views; leaving github.json untouched
   // keeps it from spending 66 API calls to change nothing.
   const github = only
@@ -63,7 +67,7 @@ async function main() {
     : await indexGithub();
   if (only) console.log("github: skipped on a partial run");
 
-  console.log("\n→ step 3/4  derived surfaces");
+  console.log("\n→ step 3/5  derived surfaces");
   const directory = await loadDirectory();
   const views = new Map(
     (
@@ -77,11 +81,17 @@ async function main() {
   );
   const derived = await indexDerived(views);
 
-  console.log("\n→ step 4/4  manifest");
+  console.log("\n→ step 4/5  demo links");
+  // After the views, which it matches against. Weekly by default: a partial
+  // run only touches the registries it named, and only when asked or due.
+  const demos = await indexDemos({ directory, force: forceDemos, only });
+
+  console.log("\n→ step 5/5  manifest");
 
   // A partial run refreshed some records; the rest of the manifest still
   // describes disk correctly, so it is merged rather than rebuilt. A full run
   // replaces the list outright.
+  const demoCount = (key) => Object.keys(demos.registries[key]?.demos ?? {}).length;
   const toRecord = (r) => ({
     key: r.key,
     name: r.name,
@@ -98,6 +108,8 @@ async function main() {
     ...(r.unverified ? { unverified: r.unverified } : {}),
     ...(r.embedsContent ? { originEmbedsContent: true } : {}),
     ...(r.error ? { error: r.error } : {}),
+    // Items with a link to their author's demo page. Absent when none.
+    ...(demoCount(r.key) ? { demos: demoCount(r.key) } : {}),
   });
 
   const priorManifest = await readJsonFile(join(DATA_DIR, "manifest.json"));
