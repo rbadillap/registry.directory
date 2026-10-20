@@ -107,18 +107,58 @@ export function matchDemos(items, urls, hosts) {
   }
 
   const demos = {};
+  const groups = [];
   let ambiguous = 0;
   for (const item of items) {
     if (item.resolution === "gone") continue;
-    const found = bySegment.get(item.name.toLowerCase());
-    if (!found) continue;
-    if (found.size > 1) {
-      ambiguous++;
-      continue;
+    // The first key that names exactly one page wins; one that names two
+    // stops the search, since a weaker key would only guess between them.
+    for (const [kind, key] of candidateKeys(item)) {
+      const found = bySegment.get(key);
+      if (!found) continue;
+      if (found.size > 1) {
+        ambiguous++;
+        break;
+      }
+      demos[item.name] = [...found][0];
+      if (kind === "group") groups.push(item.name);
+      break;
     }
-    demos[item.name] = [...found][0];
   }
-  return { demos, ambiguous };
+  return { demos, groups, ambiguous };
+}
+
+const VARIANT_SUFFIX = /-(demo|example|examples|preview|default|basic|showcase)$/;
+const NUMBER_SUFFIX = /-\d+$/;
+
+function slugify(text) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+/**
+ * The names an item's page could be published under, strongest first:
+ *
+ * - exact: the item's name (voice-orb → /components/voice-orb);
+ * - title: the title its author gave it, as a slug (\"Hero Section 1\" →
+ *   /blocks/hero-section-1), for authors whose pages follow the title;
+ * - variant: the name without a demo/example suffix (bg-animate-button-demo
+ *   → /docs/components/bg-animate-button), the page that shows the demo;
+ * - group: the name without a trailing number (accordion-01 → /accordion),
+ *   the page that shows a numbered set of variants together. It lands on
+ *   the group, not on the variant, and is recorded as such.
+ */
+export function candidateKeys(item) {
+  const name = item.name.toLowerCase();
+  const keys = [["exact", name]];
+  if (item.title) keys.push(["title", slugify(item.title)]);
+  keys.push(["variant", name.replace(VARIANT_SUFFIX, "")]);
+  keys.push(["group", name.replace(NUMBER_SUFFIX, "")]);
+  const seen = new Set();
+  return keys.filter(([kind, key]) => {
+    if (!key || seen.has(key) || (kind !== "exact" && key === name)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 /**
@@ -130,13 +170,14 @@ export function settle(next, previous, items) {
   const carried = previous?.demos
     ? Object.fromEntries(Object.entries(previous.demos).filter(([name]) => listed.has(name)))
     : null;
+  const carriedGroups = (previous?.groups ?? []).filter((name) => carried && name in carried);
   const carriedCount = carried ? Object.keys(carried).length : 0;
 
   if (next.error) {
     if (carriedCount > 0) {
-      return { status: "reused", reason: next.error, demos: carried };
+      return { status: "reused", reason: next.error, demos: carried, groups: carriedGroups };
     }
-    return { status: "missing", reason: next.error, demos: {} };
+    return { status: "missing", reason: next.error, demos: {}, groups: [] };
   }
 
   const count = Object.keys(next.demos).length;
@@ -145,9 +186,10 @@ export function settle(next, previous, items) {
       status: "reused",
       reason: `matches fell from ${carriedCount} to ${count}`,
       demos: carried,
+      groups: carriedGroups,
     };
   }
-  return { status: "ok", demos: next.demos };
+  return { status: "ok", demos: next.demos, groups: next.groups ?? [] };
 }
 
 async function fetchText(url) {
@@ -277,6 +319,9 @@ export async function indexDemos({ directory, force = false, only = null } = {})
         ...(sitemap.redirectedTo ? { redirectedTo: sitemap.redirectedTo } : {}),
         ...(next.ambiguous ? { ambiguous: next.ambiguous } : {}),
         demos: sortKeys(settled.demos),
+        // Items whose link lands on the page of their numbered group rather
+        // than on a page of their own. Absent when none.
+        ...(settled.groups.length ? { groups: [...settled.groups].sort() } : {}),
       },
     ];
   }, 4);

@@ -6,7 +6,7 @@
 
 import { strict as assert } from "node:assert";
 import { describe, it } from "node:test";
-import { matchDemos, parseLocs, readSitemap, settle, siteHost } from "./demos.mjs";
+import { candidateKeys, matchDemos, parseLocs, readSitemap, settle, siteHost } from "./demos.mjs";
 
 const items = (...names) => names.map((name) => ({ name, type: "registry:ui" }));
 
@@ -111,7 +111,7 @@ describe("settle", () => {
 
   it("accepts a fresh map that holds up", () => {
     const fresh = { demos: { a: "x", b: "y" } };
-    assert.deepEqual(settle(fresh, previous, items("a", "b", "c")), { status: "ok", demos: fresh.demos });
+    assert.deepEqual(settle(fresh, previous, items("a", "b", "c")), { status: "ok", demos: fresh.demos, groups: [] });
   });
 
   it("drops carried links for items the view no longer lists", () => {
@@ -182,5 +182,63 @@ describe("readSitemap", () => {
   it("reports a page that is not a sitemap", async () => {
     const { get } = serve({ "https://ui.test/sitemap.xml": "<!doctype html><html></html>" });
     assert.match((await readSitemap("https://ui.test", get)).error, /not a sitemap/);
+  });
+});
+
+describe("matching beyond the exact name", () => {
+  const hosts = new Set(["ui.test"]);
+
+  it("follows the author's title when the name does not match", () => {
+    const result = matchDemos(
+      [{ name: "hero1", title: "Hero Section 1", type: "registry:block" }],
+      ["https://ui.test/blocks/hero-section-1"],
+      hosts
+    );
+    assert.deepEqual(result.demos, { hero1: "https://ui.test/blocks/hero-section-1" });
+    assert.deepEqual(result.groups, []);
+  });
+
+  it("finds a demo item's component page without its -demo suffix", () => {
+    const result = matchDemos(items("bg-animate-button-demo"), ["https://ui.test/docs/components/bg-animate-button"], hosts);
+    assert.deepEqual(result.demos, { "bg-animate-button-demo": "https://ui.test/docs/components/bg-animate-button" });
+  });
+
+  it("links a numbered variant to its group's page and records it as a group link", () => {
+    const result = matchDemos(items("accordion-01", "accordion-02"), ["https://ui.test/docs/components/accordion"], hosts);
+    assert.equal(result.demos["accordion-01"], "https://ui.test/docs/components/accordion");
+    assert.deepEqual(result.groups, ["accordion-01", "accordion-02"]);
+  });
+
+  it("prefers a page of the item's own over its group's", () => {
+    const result = matchDemos(
+      items("pricing-2"),
+      ["https://ui.test/blocks/pricing-2", "https://ui.test/blocks/pricing"],
+      hosts
+    );
+    assert.equal(result.demos["pricing-2"], "https://ui.test/blocks/pricing-2");
+    assert.deepEqual(result.groups, []);
+  });
+
+  it("stops at an ambiguous key instead of falling back to a weaker one", () => {
+    const result = matchDemos(
+      [{ name: "card-1", title: "Card", type: "registry:ui" }],
+      ["https://ui.test/docs/radix/card", "https://ui.test/docs/base/card"],
+      hosts
+    );
+    assert.deepEqual(result.demos, {});
+    assert.equal(result.ambiguous, 1);
+  });
+
+  it("never offers the same key twice", () => {
+    const keys = candidateKeys({ name: "button", title: "Button" }).map(([, key]) => key);
+    assert.deepEqual(keys, ["button"]);
+  });
+});
+
+describe("settle with group links", () => {
+  it("carries group marks along with the links they belong to", () => {
+    const previous = { demos: { "a-1": "https://ui.test/docs/a", b: "https://ui.test/docs/b" }, groups: ["a-1"] };
+    const result = settle({ error: "boom" }, previous, items("a-1", "b"));
+    assert.deepEqual(result.groups, ["a-1"]);
   });
 });
