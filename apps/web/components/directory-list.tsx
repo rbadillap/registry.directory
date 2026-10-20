@@ -316,7 +316,7 @@ function ItemResults({
                       )}
                     </div>
                   </CardHeader>
-                  <CardContent className={`px-3 pt-0 bg-background flex-1 ${item.demo ? "pb-10" : "pb-3"}`}>
+                  <CardContent className={`px-3 pt-0 bg-background flex-1 ${item.demo ? "pb-12" : "pb-3"}`}>
                     {item.description && (
                       <CardDescription className="text-[13px] text-foreground-secondary line-clamp-2 text-pretty">
                         {item.description}
@@ -338,23 +338,32 @@ function ItemResults({
                   another. It opens the author's demo straight from the
                   results, so several can be compared without opening each
                   item. The order of the results does not change for it. */}
+              {/* The registry card's Explore button, in its filled variant:
+                  the same control family, raised one step because it is the
+                  card's one action that shows the component working. */}
               {item.demo && (
-                // noopener without noreferrer, on purpose: authors should see
-                // that their visitors came from the directory.
-                // eslint-disable-next-line react/jsx-no-target-blank
-                <a
-                  href={item.demo}
-                  target="_blank"
-                  rel={DEMO_LINK_REL}
-                  onClick={() => trackDemoClicked({ surface: "card", registry: item.registry.name })}
-                  className="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-sm px-1.5 py-0.5 font-mono text-xs text-muted-foreground hover:bg-accent hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                <Button
+                  asChild
+                  variant="secondary"
+                  size="sm"
+                  className="absolute bottom-3 right-3 h-7 gap-1 px-2.5 text-xs"
                 >
-                  Preview
-                  <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
-                  <span className="sr-only">
-                    {` ${item.title || item.name} on ${item.registry.name}'s site (opens in a new tab)`}
-                  </span>
-                </a>
+                  {/* noopener without noreferrer, on purpose: authors should
+                      see that their visitors came from the directory. */}
+                  {/* eslint-disable-next-line react/jsx-no-target-blank */}
+                  <a
+                    href={item.demo}
+                    target="_blank"
+                    rel={DEMO_LINK_REL}
+                    onClick={() => trackDemoClicked({ surface: "card", registry: item.registry.name })}
+                  >
+                    Preview
+                    <ArrowUpRight className="size-3" aria-hidden="true" />
+                    <span className="sr-only">
+                      {` ${item.title || item.name} on ${item.registry.name}'s site (opens in a new tab)`}
+                    </span>
+                  </a>
+                </Button>
               )}
               </div>
             );
