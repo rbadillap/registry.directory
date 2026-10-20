@@ -117,15 +117,41 @@ export default function DocsPage() {
               <code className="text-foreground">/api-reference/</code>.
             </li>
             <li>
-              Its last segment is the item&apos;s{" "}
-              <code className="text-foreground">name</code>, exactly as
-              registry.json spells it:{" "}
-              <code className="text-foreground">voice-orb</code> links to{" "}
-              <code className="text-foreground">/components/agents/voice-orb</code>.
+              Its last segment names the item. The first of these that a page
+              answers to wins:
+              <ol className="mt-2 list-decimal space-y-1.5 pl-5">
+                <li>
+                  the item&apos;s <code className="text-foreground">name</code>,
+                  exactly as registry.json spells it:{" "}
+                  <code className="text-foreground">voice-orb</code> →{" "}
+                  <code className="text-foreground">/components/agents/voice-orb</code>;
+                </li>
+                <li>
+                  its <code className="text-foreground">title</code>, written
+                  as a slug: &quot;Hero Section 1&quot; →{" "}
+                  <code className="text-foreground">/blocks/hero-section-1</code>;
+                </li>
+                <li>
+                  its name without a{" "}
+                  <code className="text-foreground">-demo</code>,{" "}
+                  <code className="text-foreground">-example</code> or{" "}
+                  <code className="text-foreground">-preview</code> suffix:{" "}
+                  <code className="text-foreground">button-demo</code> →{" "}
+                  <code className="text-foreground">/docs/components/button</code>;
+                </li>
+                <li>
+                  for numbered variants shown together, the group&apos;s page:{" "}
+                  <code className="text-foreground">accordion-01</code> through{" "}
+                  <code className="text-foreground">accordion-16</code> →{" "}
+                  <code className="text-foreground">/docs/components/accordion</code>.
+                  Preview then opens the page with every variant, this one
+                  among them.
+                </li>
+              </ol>
             </li>
             <li>
-              Only one page ends in that name. When two do, neither is linked
-              rather than guessing.
+              Only one page answers to that name. When two do, neither is
+              linked rather than guessing.
             </li>
           </ul>
           <p>
