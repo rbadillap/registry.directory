@@ -9,8 +9,9 @@ import { loadManifest } from "./registry-data"
 
 interface DemosRecord {
   status: "ok" | "reused" | "missing" | "skipped"
-  /** The host the homepage's sitemap.xml redirected to, when it moved. */
-  redirectedTo?: string
+  /** Hosts beyond the homepage's that its own sitemap.xml named, by
+   *  redirecting to them or by listing their sitemaps in its index. */
+  ownHosts?: string[]
   demos: Record<string, string>
 }
 
@@ -44,7 +45,7 @@ function host(url: string): string | null {
  * The indexer already kept only links on the registry's own hosts; the check
  * is repeated here because this is the last step before a link leaves the
  * site. The homepage it is checked against is the one in the directory; the
- * only other host allowed is the one that homepage redirected to.
+ * only other hosts allowed are the ones that homepage's own sitemap named.
  */
 export async function loadDemosFor(
   entry: DirectoryEntry
@@ -54,7 +55,7 @@ export async function loadDemosFor(
   const record = key ? file?.registries[key] : undefined
   if (!record?.demos) return {}
 
-  const hosts = new Set([host(entry.url), record.redirectedTo].filter(Boolean))
+  const hosts = new Set([host(entry.url), ...(record.ownHosts ?? [])].filter(Boolean))
   const trusted: Record<string, string> = {}
   for (const [name, url] of Object.entries(record.demos)) {
     if (!/^https?:\/\//.test(url)) continue

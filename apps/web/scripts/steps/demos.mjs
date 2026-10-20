@@ -223,38 +223,54 @@ function pickChildren(locs, hosts) {
 /**
  * 1 to 4 requests: the sitemap, and up to three children if it is an index.
  *
- * The registry's own hosts are its homepage's, plus the one its sitemap.xml
- * redirects to. A site that moved (retroui.dev to neobrutalism.com) says so
- * itself with that redirect, from the host the directory lists; a sitemap
- * that merely points elsewhere does not.
+ * The registry's own hosts are its homepage's, plus the ones its own
+ * sitemap.xml names, from the host the directory lists:
+ *
+ * - the host it redirects to, for a site that moved (retroui.dev to
+ *   neobrutalism.com);
+ * - the hosts of the sitemaps it lists, when it is an index (ui.beste.co's
+ *   points to beste.dev's). Only a sitemap index declares hosts; a page
+ *   listed in an ordinary sitemap does not.
  */
 export async function readSitemap(homepage, get = fetchText) {
   const origin = new URL(homepage).origin;
   const first = await get(`${origin}/sitemap.xml`);
   let requests = 1;
   if (first.error) return { error: `sitemap.xml ${first.error}`, requests };
-  const hosts = new Set([siteHost(homepage)]);
+  const homeHost = siteHost(homepage);
+  const hosts = new Set([homeHost]);
   const redirectedTo = first.finalUrl ? siteHost(first.finalUrl) : null;
-  if (redirectedTo && !hosts.has(redirectedTo)) hosts.add(redirectedTo);
-  const moved = redirectedTo && redirectedTo !== siteHost(homepage) ? { redirectedTo } : {};
+  if (redirectedTo) hosts.add(redirectedTo);
+  // The hosts beyond the homepage's, recorded so the site can check its
+  // links against the same set.
+  const own = () => {
+    const extra = [...hosts].filter((host) => host && host !== homeHost).sort();
+    return extra.length ? { ownHosts: extra } : {};
+  };
   if (!/<(urlset|sitemapindex)[\s>]/.test(first.text)) {
     return { error: "sitemap.xml is not a sitemap", requests };
   }
   if (!isSitemapIndex(first.text)) {
-    return { urls: parseLocs(first.text), hosts, requests, ...moved };
+    return { urls: parseLocs(first.text), hosts, requests, ...own() };
+  }
+
+  const children = parseLocs(first.text);
+  for (const child of children) {
+    const host = siteHost(child);
+    if (host) hosts.add(host);
   }
 
   const urls = [];
   let read = 0;
-  for (const child of pickChildren(parseLocs(first.text), hosts)) {
+  for (const child of pickChildren(children, hosts)) {
     const page = await get(child);
     requests++;
     if (page.error) continue;
     read++;
     urls.push(...parseLocs(page.text));
   }
-  if (read === 0) return { error: "no child sitemap on its own host could be read", requests };
-  return { urls, hosts, requests, ...moved };
+  if (read === 0) return { error: "no child sitemap could be read", requests };
+  return { urls, hosts, requests, ...own() };
 }
 
 function ageInDays(isoDate) {
@@ -311,9 +327,9 @@ export async function indexDemos({ directory, force = false, only = null } = {})
         ...(settled.reason ? { reason: settled.reason } : {}),
         checkedAt: today(),
         requests: sitemap.requests,
-        // Where the homepage's sitemap redirected: the one other host its
-        // links may live on. The site checks links against it too.
-        ...(sitemap.redirectedTo ? { redirectedTo: sitemap.redirectedTo } : {}),
+        // The hosts beyond the homepage's that its own sitemap named, by
+        // redirect or by index. The site checks links against them too.
+        ...(sitemap.ownHosts ? { ownHosts: sitemap.ownHosts } : {}),
         ...(next.ambiguous ? { ambiguous: next.ambiguous } : {}),
         demos: sortKeys(settled.demos),
         // Items whose link lands on the page of their numbered group rather

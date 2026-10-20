@@ -144,7 +144,7 @@ describe("readSitemap", () => {
     assert.equal(asked.length, 1);
   });
 
-  it("follows at most three same-host children of an index, components first", async () => {
+  it("follows at most three children of an index, components first", async () => {
     const index = `<sitemapindex>
       <sitemap><loc>https://ui.test/sitemap-pages.xml</loc></sitemap>
       <sitemap><loc>https://ui.test/sitemap-posts.xml</loc></sitemap>
@@ -158,9 +158,10 @@ describe("readSitemap", () => {
     });
     const result = await readSitemap("https://ui.test", get);
     assert.equal(result.requests, 4);
-    assert.equal(asked[1], "https://ui.test/sitemap-components.xml");
-    assert.ok(!asked.includes("https://cdn.other.test/sitemap-components.xml"));
-    assert.deepEqual(result.urls, ["https://ui.test/components/a"]);
+    // A host the index itself names is the registry's own, and a sitemap
+    // named for components goes first, wherever it lives.
+    assert.equal(asked[1], "https://cdn.other.test/sitemap-components.xml");
+    assert.deepEqual(result.ownHosts, ["cdn.other.test"]);
   });
 
   it("accepts the host the homepage's sitemap redirects to, and only that one", async () => {
@@ -172,11 +173,30 @@ describe("readSitemap", () => {
       </urlset>`,
     });
     const result = await readSitemap("https://old.test", get);
-    assert.equal(result.redirectedTo, "new.test");
+    assert.deepEqual(result.ownHosts, ["new.test"]);
     assert.deepEqual(
       matchDemos(items("a", "b"), result.urls, result.hosts).demos,
       { a: "https://new.test/docs/a" }
     );
+  });
+
+  it("takes the hosts the homepage's own index names as the registry's", async () => {
+    const { get } = serve({
+      "https://ui.beste.test/sitemap.xml": "<sitemapindex><sitemap><loc>https://beste.test/sitemap-blocks.xml</loc></sitemap></sitemapindex>",
+      "https://beste.test/sitemap-blocks.xml": "<urlset><url><loc>https://beste.test/block/hero1</loc></url></urlset>",
+    });
+    const result = await readSitemap("https://ui.beste.test", get);
+    assert.deepEqual(result.ownHosts, ["beste.test"]);
+    assert.deepEqual(matchDemos(items("hero1"), result.urls, result.hosts).demos, { hero1: "https://beste.test/block/hero1" });
+  });
+
+  it("does not take hosts from the pages an ordinary sitemap lists", async () => {
+    const { get } = serve({
+      "https://ui.test/sitemap.xml": "<urlset><url><loc>https://elsewhere.test/docs/a</loc></url></urlset>",
+    });
+    const result = await readSitemap("https://ui.test", get);
+    assert.equal(result.ownHosts, undefined);
+    assert.deepEqual(matchDemos(items("a"), result.urls, result.hosts).demos, {});
   });
 
   it("reports a page that is not a sitemap", async () => {
