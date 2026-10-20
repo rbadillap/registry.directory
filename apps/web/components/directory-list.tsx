@@ -29,7 +29,7 @@ import { useAnalytics } from "@/hooks/use-analytics";
 import { formatStars, formatRelativeTime } from "@/lib/format-utils";
 import { REGISTRY_TYPE_LABELS, REGISTRY_TYPE_ICONS } from "@/lib/registry-mappings";
 import { SubmitRegistryCard } from "@/components/submit-registry-dialog";
-import { DEMO_LINK_REL } from "@/lib/demo-link";
+import { DEMO_LINK_REL, demoHref, openPreviewWindow } from "@/lib/demo-link";
 
 interface ResultClickData {
   result_type: "registry" | "item";
@@ -57,9 +57,11 @@ interface DirectoryListProps {
   /** Open the item list past its first page from the start (a return to it). */
   itemsInitiallyExpanded?: boolean;
   onItemsExpandedChange?: (expanded: boolean) => void;
+  /** Referral partnerships by registry name, for Preview links on item cards. */
+  affiliatesByName?: Map<string, AffiliateConfig>;
 }
 
-export function DirectoryList({ entries, searchTerm = '', addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], itemsStatus = 'ready', onResultClick, itemsInitiallyExpanded = false, onItemsExpandedChange }: DirectoryListProps) {
+export function DirectoryList({ entries, searchTerm = '', addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], itemsStatus = 'ready', onResultClick, itemsInitiallyExpanded = false, onItemsExpandedChange, affiliatesByName }: DirectoryListProps) {
   const { trackHomeRegistryVisit } = useAnalytics();
   const showAddCard = !searchTerm && addCardLabel;
   const hasItems = itemResults.length > 0;
@@ -218,6 +220,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
         onResultClick={onResultClick}
         initiallyExpanded={itemsInitiallyExpanded}
         onExpandedChange={onItemsExpandedChange}
+        affiliatesByName={affiliatesByName}
       />
     )}
 
@@ -232,11 +235,13 @@ function ItemResults({
   onResultClick,
   initiallyExpanded,
   onExpandedChange,
+  affiliatesByName,
 }: {
   items: IndexedItem[];
   onResultClick?: (data: ResultClickData, target: ResultTarget) => void;
   initiallyExpanded: boolean;
   onExpandedChange?: (expanded: boolean) => void;
+  affiliatesByName?: Map<string, AffiliateConfig>;
 }) {
   const [expanded, setExpanded] = useState(initiallyExpanded);
   const { trackDemoClicked } = useAnalytics();
@@ -352,15 +357,18 @@ function ItemResults({
                       see that their visitors came from the directory. */}
                   {/* eslint-disable-next-line react/jsx-no-target-blank */}
                   <a
-                    href={item.demo}
+                    href={demoHref(item.demo, "card_preview", affiliatesByName?.get(item.registry.name))}
                     target="_blank"
                     rel={DEMO_LINK_REL}
-                    onClick={() => trackDemoClicked({ surface: "card", registry: item.registry.name })}
+                    onClick={(event) => {
+                      trackDemoClicked({ surface: "card", registry: item.registry.name });
+                      openPreviewWindow(event);
+                    }}
                   >
                     Preview
                     <ArrowUpRight className="size-3" aria-hidden="true" />
                     <span className="sr-only">
-                      {` ${item.title || item.name} on ${item.registry.name}'s site (opens in a new tab)`}
+                      {` ${item.title || item.name} on ${item.registry.name}'s site (opens in a new window)`}
                     </span>
                   </a>
                 </Button>

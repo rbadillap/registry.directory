@@ -134,8 +134,11 @@ export default function DocsPage() {
             </li>
           </ul>
           <p>
-            Links open your page in a new tab, marked{" "}
-            <code className="text-foreground">nofollow ugc</code>. If your
+            Links open your page in a window of its own, marked{" "}
+            <code className="text-foreground">nofollow ugc</code> and tagged{" "}
+            <code className="text-foreground">utm_source=registry.directory</code>
+            , or with your referral parameter when your partnership link
+            lives on the same host as your demos. If your
             items should have one and do not, check those four rules against
             your sitemap; the next weekly run picks the change up.
           </p>
