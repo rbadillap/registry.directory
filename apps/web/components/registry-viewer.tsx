@@ -7,6 +7,7 @@ import { CodeViewer } from "./viewer/code-viewer"
 import { InfoPanel } from "./viewer/info-panel"
 import { ViewerHeader } from "./viewer/viewer-header"
 import { ItemBar } from "./viewer/item-bar"
+import { PreviewButton } from "./viewer/preview-button"
 import { SourceUnavailable, type SourceUnavailableKind } from "./viewer/source-unavailable"
 import { StatusBar } from "./viewer/status-bar"
 import { MobileTabNavigation, type MobileTab } from "./viewer/mobile-tab-navigation"
@@ -37,6 +38,8 @@ interface RegistryViewerProps {
   installArg?: string
   /** For an item page: what the indexer's probe found at its origin. */
   itemResolution?: ItemResolution
+  /** For an item page: the author's demo page, when there is one. */
+  demoUrl?: string
 }
 
 type RegistryFile = ViewerFile
@@ -68,7 +71,7 @@ function addGlobalsCssFile(item: RegistryItem): RegistryItem {
   }
 }
 
-export function RegistryViewer({ registry, registryIndex, handle, categorySize, selectedItem: initialItem, currentCategory, affiliate, basePath, installArg, itemResolution }: RegistryViewerProps) {
+export function RegistryViewer({ registry, registryIndex, handle, categorySize, selectedItem: initialItem, currentCategory, affiliate, basePath, installArg, itemResolution, demoUrl }: RegistryViewerProps) {
   const analytics = useAnalytics()
 
   // The synthesised globals.css belongs to the component being read, not to
@@ -276,6 +279,20 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
       categoryLabel={REGISTRY_TYPE_LABELS[currentCategory] || currentCategory}
       onRetry={() => setAttempt((n) => n + 1)}
       errorMessage={sourceState.status === "error" ? sourceState.message : undefined}
+      // Without the source, the author's demo is often the one way left to
+      // see the component, so it leads.
+      actions={
+        demoUrl && initialItem ? (
+          <PreviewButton
+            demoUrl={demoUrl}
+            affiliate={affiliate}
+            itemLabel={initialItem.title || initialItem.name}
+            registryName={registry.name}
+            // Beside the card's own filled action, always the second one.
+            variant="outline"
+          />
+        ) : undefined
+      }
     />
   ) : null
 
@@ -292,6 +309,8 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
           // An item its origin no longer serves cannot be installed;
           // offering the command would only hand over an error.
           installArg={unavailable === "gone" ? undefined : installArg}
+          demoUrl={demoUrl}
+          affiliate={affiliate}
         />
       )}
 

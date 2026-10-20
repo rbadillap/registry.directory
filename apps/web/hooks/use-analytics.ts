@@ -90,6 +90,14 @@ export function useAnalytics() {
       trackTypeFiltered: (p: { type: string; enabled: boolean }) =>
         trackEvent(ANALYTICS_EVENTS.HOME_TYPE_FILTERED, p),
 
+      // The author's demo page. On a card, the registry is the card's own;
+      // on an item page, the page's.
+      trackDemoClicked: (p: { surface: "item" | "card"; registry?: string }) =>
+        trackEvent(ANALYTICS_EVENTS.DEMO_CLICKED, {
+          surface: p.surface,
+          registry: p.registry ?? registry,
+        }),
+
       // High-frequency events, debounced
       trackSearchUsed: debounce(trackSearchUsed, 500),
       trackFolderToggled: debounce(trackFolderToggled, 300),

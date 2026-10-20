@@ -1,9 +1,19 @@
 "use client"
 
-import type { ReactNode } from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { CircleHelp } from "lucide-react"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@workspace/ui/components/tooltip"
 import { CopyButton } from "@/components/registry-landing/copy-button"
 import { ShadcnIcon } from "@/components/icons/shadcn"
 import { useAnalytics } from "@/hooks/use-analytics"
+import { PreviewButton } from "./preview-button"
+import type { AffiliateConfig } from "@/lib/types"
 
 interface ItemBarProps {
   registryName: string
@@ -13,8 +23,10 @@ interface ItemBarProps {
   // What follows `npx shadcn@latest add` for this item; absent when the
   // item cannot be installed.
   installArg?: string
-  // Room for actions beside the command; nothing is drawn when absent.
-  actions?: ReactNode
+  // The page on the author's own site where the item can be seen working.
+  demoUrl?: string
+  // The registry's referral partnership, carried to the demo when it can be.
+  affiliate?: AffiliateConfig | null
 }
 
 // What the item is and how to get it, above the code. The viewer below
@@ -25,9 +37,11 @@ export function ItemBar({
   title,
   description,
   installArg,
-  actions,
+  demoUrl,
+  affiliate,
 }: ItemBarProps) {
   const analytics = useAnalytics()
+  const pathname = usePathname()
   const command = `npx shadcn@latest add ${installArg}`
 
   return (
@@ -66,7 +80,39 @@ export function ItemBar({
             />
           </div>
         )}
-        {actions}
+        {/* The one filled button on the page: seeing the component work
+            is what people asked for first. Absent, not disabled, when the
+            author's sitemap names no page for it. */}
+        {demoUrl && (
+          <PreviewButton
+            demoUrl={demoUrl}
+            affiliate={affiliate}
+            itemLabel={title || name}
+            registryName={registryName}
+          />
+        )}
+        {/* Where the link came from, for the reader who wonders and the
+            author who wants one. The tooltip only invites; the page behind
+            it, which also works on touch, explains, and offers the way
+            back to this item. */}
+        {demoUrl && (
+          <TooltipProvider delayDuration={200}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href={`/docs?${new URLSearchParams({ from: pathname, label: title || name })}#preview-links`}
+                  aria-label="How Preview links are found"
+                  className="flex size-8 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <CircleHelp className="size-4" aria-hidden="true" />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent side="bottom">
+                How Preview links work
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        )}
       </div>
     </section>
   )
