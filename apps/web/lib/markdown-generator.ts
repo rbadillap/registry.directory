@@ -6,7 +6,9 @@ import { parseGithubRef } from "./resolve-registry"
 export function generateMarkdownForItem(
   item: RegistryItem,
   registry: DirectoryEntry,
-  basePath: string
+  basePath: string,
+  // The author's demo page for this item, when their sitemap names one.
+  demoUrl?: string
 ): string {
   const markdown: string[] = []
 
@@ -25,6 +27,9 @@ export function generateMarkdownForItem(
   markdown.push('')
   markdown.push(`- **Type**: \`${item.type}\``)
   markdown.push(`- **Registry**: [${registry.name}](${registry.url})`)
+  if (demoUrl) {
+    markdown.push(`- **Demo**: ${demoUrl}`)
+  }
   const gh = parseGithubRef(registry.github_url)
   if (gh && registry.github_url) {
     markdown.push(`- **Repository**: [${gh.owner}/${gh.repo}](${registry.github_url})`)
