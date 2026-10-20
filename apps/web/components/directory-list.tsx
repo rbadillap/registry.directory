@@ -301,12 +301,13 @@ function ItemResults({
                       </span>
                     </div>
                     {/* The title reads as the item's name, the slug as what
-                        installs it — the same pairing the category list uses. */}
+                        installs it — the same pairing the category list uses.
+                        A title that only repeats the slug is not shown twice. */}
                     <div className="min-w-0">
                       <CardTitle className="type-card text-foreground truncate">
                         {item.title || item.name}
                       </CardTitle>
-                      {item.title && (
+                      {item.title && item.title.toLowerCase() !== item.name.toLowerCase() && (
                         <p className="font-mono text-xs text-muted-foreground truncate">
                           {item.name}
                         </p>
