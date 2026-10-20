@@ -87,6 +87,60 @@ export default function DocsPage() {
           </p>
         </div>
 
+        <h2 id="preview-links" className="text-base font-semibold mt-10 mb-4 scroll-mt-8">
+          Preview links
+        </h2>
+        <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+          <p>
+            An item gets a <span className="text-foreground">Preview</span>{" "}
+            button when your own site already shows it on a page of its own.
+            Nothing goes in registry.json: once a week the directory reads the{" "}
+            <code className="text-foreground">sitemap.xml</code> at the homepage
+            you listed and links an item to a page when all of these hold:
+          </p>
+          <ul className="list-disc space-y-2 pl-5">
+            <li>
+              The page is on your homepage&apos;s host, or on the host your{" "}
+              <code className="text-foreground">/sitemap.xml</code> redirects
+              to. A sitemap index is followed into at most three of its
+              sitemaps, the ones named for components first.
+            </li>
+            <li>
+              Its path is under{" "}
+              <code className="text-foreground">/components/</code>,{" "}
+              <code className="text-foreground">/blocks/</code>,{" "}
+              <code className="text-foreground">/docs/</code>,{" "}
+              <code className="text-foreground">/icons/</code>,{" "}
+              <code className="text-foreground">/ui/</code>,{" "}
+              <code className="text-foreground">/elements/</code>,{" "}
+              <code className="text-foreground">/primitives/</code>,{" "}
+              <code className="text-foreground">/library/</code> or{" "}
+              <code className="text-foreground">/objects/</code>, and not
+              under <code className="text-foreground">/blog/</code>,{" "}
+              <code className="text-foreground">/changelog/</code>,{" "}
+              <code className="text-foreground">/guides/</code> or{" "}
+              <code className="text-foreground">/api-reference/</code>.
+            </li>
+            <li>
+              Its last segment is the item&apos;s{" "}
+              <code className="text-foreground">name</code>, exactly as
+              registry.json spells it:{" "}
+              <code className="text-foreground">voice-orb</code> links to{" "}
+              <code className="text-foreground">/components/agents/voice-orb</code>.
+            </li>
+            <li>
+              Only one page ends in that name. When two do, neither is linked
+              rather than guessing.
+            </li>
+          </ul>
+          <p>
+            Links open your page in a new tab, marked{" "}
+            <code className="text-foreground">nofollow ugc</code>. If your
+            items should have one and do not, check those four rules against
+            your sitemap; the next weekly run picks the change up.
+          </p>
+        </div>
+
         <h2 className="text-base font-semibold mt-10 mb-4">
           Submitting a registry
         </h2>
