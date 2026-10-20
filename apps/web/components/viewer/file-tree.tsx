@@ -177,7 +177,6 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
       // Track folder toggle with debouncing
       const depthLevel = path.split('/').length
       analytics.trackFolderToggled({
-        folder_path: path,
         action,
         depth_level: depthLevel,
       })
@@ -268,10 +267,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
             onClick={() => {
               onSelectFile(item, file)
               analytics.trackFileSelected({
-                file_path: getTargetPath(file),
                 file_type: file.type,
-                is_multi_file_item: (item.files?.length || 0) > 1,
-                total_files_in_item: item.files?.length || 0,
               })
             }}
             className={cn(
@@ -340,10 +336,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                             onClick={() => {
                               onSelectFile(blockItem, file)
                               analytics.trackFileSelected({
-                                file_path: getTargetPath(file),
                                 file_type: file.type,
-                                is_multi_file_item: (blockItem.files?.length || 0) > 1,
-                                total_files_in_item: blockItem.files?.length || 0,
                               })
                             }}
                             className={cn(
@@ -423,10 +416,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                                     onClick={() => {
                                       onSelectFile(item, file)
                                       analytics.trackFileSelected({
-                                        file_path: getTargetPath(file),
                                         file_type: file.type,
-                                        is_multi_file_item: (item.files?.length || 0) > 1,
-                                        total_files_in_item: item.files?.length || 0,
                                       })
                                     }}
                                     className={cn(
@@ -457,10 +447,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                           onClick={() => {
                             onSelectFile(item, firstFile)
                             analytics.trackFileSelected({
-                              file_path: getTargetPath(firstFile),
                               file_type: firstFile.type,
-                              is_multi_file_item: (item.files?.length || 0) > 1,
-                              total_files_in_item: item.files?.length || 0,
                             })
                           }}
                           className={cn(
@@ -546,7 +533,6 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                 analytics.trackSearchUsed({
                   search_query: e.target.value,
                   results_count: matched.length,
-                  total_items: items.length,
                 })
               }
             }}

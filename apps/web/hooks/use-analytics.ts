@@ -1,23 +1,10 @@
-import { usePathname } from "next/navigation";
-import { useMemo, useCallback } from "react";
+"use client";
+
+import { createContext, createElement, useContext, useMemo, type ReactNode } from "react";
 import {
-  getAnalytics,
+  ANALYTICS_EVENTS,
   debounce,
-  type FileSelectedProperties,
-  type CodeCopiedProperties,
-  type ShareClickedProperties,
-  type AIClickedProperties,
-  type SearchUsedProperties,
-  type FolderToggledProperties,
-  type MobileTabSwitchedProperties,
-  type PathCopiedProperties,
-  type MarkdownExportedProperties,
-  type RegistryVisitProperties,
-  type SearchPerformedProperties,
-  type SearchResultClickedProperties,
-  type PremiumToggledProperties,
-  type HomeRegistryVisitProperties,
-  type TypeFilteredProperties,
+  trackEvent,
   type AIProvider,
   type ShareMethod,
   type ExportMethod,
@@ -27,252 +14,87 @@ import {
   type SearchResultType,
 } from "@/lib/analytics";
 
-interface RegistryContext {
-  registry_owner?: string;
-  registry_name?: string;
-  category?: string;
-  item_name?: string;
-  item_type?: string;
+// The registry and item a page is about, for the events that report them.
+// Given by the page rather than parsed from the URL: a route can be
+// /{owner}/{repo}/{item} or /{handle}/{item}, and the URL alone cannot tell
+// which segment is which. The registry is reported by the name people know
+// it by (beUI), not by its GitHub slug.
+interface AnalyticsScope {
+  registry: string | null;
+  item: string | null;
+}
+
+const AnalyticsScopeContext = createContext<AnalyticsScope>({
+  registry: null,
+  item: null,
+});
+
+export function AnalyticsScopeProvider({
+  registry,
+  item = null,
+  children,
+}: {
+  registry: string;
+  item?: string | null;
+  children: ReactNode;
+}) {
+  const value = useMemo(() => ({ registry, item }), [registry, item]);
+  return createElement(AnalyticsScopeContext.Provider, { value }, children);
 }
 
 /**
- * Hook for tracking analytics events with automatic context extraction from URL
- *
- * @example
- * const analytics = useAnalytics();
- *
- * // Track file selection
- * analytics.trackFileSelected({
- *   file_path: "Button.tsx",
- *   file_type: "tsx",
- *   is_multi_file_item: true,
- *   total_files_in_item: 3,
- * });
+ * Tracking methods for every event the site sends. Each takes only what the
+ * caller knows; the registry and item come from the page's scope.
  */
 export function useAnalytics() {
-  const pathname = usePathname();
+  const { registry, item } = useContext(AnalyticsScopeContext);
 
-  // Extract registry context from pathname
-  const context = useMemo((): RegistryContext => {
-    if (!pathname) return {};
-
-    // Expected format: /{owner}/{registry}/{category}/{item}
-    const parts = pathname.split("/").filter(Boolean);
-
-    if (parts.length < 2) return {};
+  return useMemo(() => {
+    const trackSearchUsed = (p: { search_query: string; results_count: number }) =>
+      trackEvent(ANALYTICS_EVENTS.SEARCH_USED, p);
+    const trackFolderToggled = (p: { action: FolderAction; depth_level: number }) =>
+      trackEvent(ANALYTICS_EVENTS.FOLDER_TOGGLED, p);
+    const trackSearchPerformed = (p: { search_query: string; item_results_count: number }) =>
+      trackEvent(ANALYTICS_EVENTS.HOME_SEARCH_PERFORMED, p);
 
     return {
-      registry_owner: parts[0] || undefined,
-      registry_name: parts[1] || undefined,
-      category: parts[2] || undefined,
-      item_name: parts[3] || undefined,
-      item_type: parts[3] ? "registry-item" : undefined,
+      trackFileSelected: (p: { file_type: string }) =>
+        trackEvent(ANALYTICS_EVENTS.FILE_SELECTED, { registry, file_type: p.file_type }),
+      trackCodeCopied: () =>
+        trackEvent(ANALYTICS_EVENTS.CODE_COPIED, { registry, item }),
+      trackShareClicked: (p: { share_method: ShareMethod }) =>
+        trackEvent(ANALYTICS_EVENTS.SHARE_CLICKED, { share_method: p.share_method, registry }),
+      trackAIClicked: (p: { ai_provider: AIProvider }) =>
+        trackEvent(ANALYTICS_EVENTS.AI_CLICKED, { ai_provider: p.ai_provider, registry }),
+      trackPathCopied: (p: { total_files: number }) =>
+        trackEvent(ANALYTICS_EVENTS.PATH_COPIED, { registry, total_files: p.total_files }),
+      trackMarkdownExported: (p: { export_method: ExportMethod }) =>
+        trackEvent(ANALYTICS_EVENTS.MARKDOWN_EXPORTED, { export_method: p.export_method, registry }),
+      trackRegistryVisit: (p: { destination: "registry" | "repository" }) =>
+        trackEvent(ANALYTICS_EVENTS.REGISTRY_VISIT, { destination: p.destination, registry }),
+      trackMobileTabSwitched: (p: { to_tab: MobileTab; has_file_selected: boolean }) =>
+        trackEvent(ANALYTICS_EVENTS.MOBILE_TAB_SWITCHED, p),
+
+      // Home search
+      trackSearchPerformed: debounce(trackSearchPerformed, 500),
+      trackSearchResultClicked: (p: { result_type: SearchResultType; result_position: number }) =>
+        trackEvent(ANALYTICS_EVENTS.HOME_SEARCH_RESULT_CLICKED, p),
+
+      // Home discovery
+      trackPremiumToggled: (p: { enabled: boolean; has_query: boolean }) =>
+        trackEvent(ANALYTICS_EVENTS.HOME_PREMIUM_TOGGLED, p),
+      trackHomeRegistryVisit: (p: { registry: string; sponsored: boolean }) =>
+        trackEvent(ANALYTICS_EVENTS.HOME_REGISTRY_VISIT, p),
+      trackTypeFiltered: (p: { type: string; enabled: boolean }) =>
+        trackEvent(ANALYTICS_EVENTS.HOME_TYPE_FILTERED, p),
+
+      // High-frequency events, debounced
+      trackSearchUsed: debounce(trackSearchUsed, 500),
+      trackFolderToggled: debounce(trackFolderToggled, 300),
     };
-  }, [pathname]);
-
-  // Get analytics instance
-  const analytics = getAnalytics();
-
-  // Create context-aware tracking methods
-  const trackFileSelected = useCallback(
-    (properties: Omit<FileSelectedProperties, keyof RegistryContext>) => {
-      analytics.trackFileSelected({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackCodeCopied = useCallback(
-    (properties: Omit<CodeCopiedProperties, keyof RegistryContext>) => {
-      analytics.trackCodeCopied({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackShareClicked = useCallback(
-    (properties: Omit<ShareClickedProperties, keyof RegistryContext>) => {
-      analytics.trackShareClicked({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackAIClicked = useCallback(
-    (properties: Omit<AIClickedProperties, keyof RegistryContext>) => {
-      analytics.trackAIClicked({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackSearchUsed = useCallback(
-    (properties: Omit<SearchUsedProperties, keyof RegistryContext>) => {
-      analytics.trackSearchUsed({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackFolderToggled = useCallback(
-    (properties: Omit<FolderToggledProperties, keyof RegistryContext>) => {
-      analytics.trackFolderToggled({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackMobileTabSwitched = useCallback(
-    (properties: Omit<MobileTabSwitchedProperties, keyof RegistryContext>) => {
-      analytics.trackMobileTabSwitched({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackPathCopied = useCallback(
-    (properties: Omit<PathCopiedProperties, keyof RegistryContext>) => {
-      analytics.trackPathCopied({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackMarkdownExported = useCallback(
-    (properties: Omit<MarkdownExportedProperties, keyof RegistryContext>) => {
-      analytics.trackMarkdownExported({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackRegistryVisit = useCallback(
-    (properties: Omit<RegistryVisitProperties, keyof RegistryContext>) => {
-      analytics.trackRegistryVisit({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackSearchPerformed = useCallback(
-    (properties: Omit<SearchPerformedProperties, keyof RegistryContext>) => {
-      analytics.trackSearchPerformed({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackSearchResultClicked = useCallback(
-    (properties: Omit<SearchResultClickedProperties, keyof RegistryContext>) => {
-      analytics.trackSearchResultClicked({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackPremiumToggled = useCallback(
-    (properties: Omit<PremiumToggledProperties, keyof RegistryContext>) => {
-      analytics.trackPremiumToggled({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackHomeRegistryVisit = useCallback(
-    (properties: Omit<HomeRegistryVisitProperties, keyof RegistryContext>) => {
-      analytics.trackHomeRegistryVisit({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  const trackTypeFiltered = useCallback(
-    (properties: Omit<TypeFilteredProperties, keyof RegistryContext>) => {
-      analytics.trackTypeFiltered({
-        ...context,
-        ...properties,
-      });
-    },
-    [analytics, context]
-  );
-
-  // Debounced tracking methods for high-frequency events
-  const trackSearchUsedDebounced = useMemo(
-    () => debounce(trackSearchUsed, 500),
-    [trackSearchUsed]
-  );
-
-  const trackFolderToggledDebounced = useMemo(
-    () => debounce(trackFolderToggled, 300),
-    [trackFolderToggled]
-  );
-
-  const trackSearchPerformedDebounced = useMemo(
-    () => debounce(trackSearchPerformed, 500),
-    [trackSearchPerformed]
-  );
-
-  return {
-    // Context
-    context,
-
-    // Regular tracking methods
-    trackFileSelected,
-    trackCodeCopied,
-    trackShareClicked,
-    trackAIClicked,
-    trackPathCopied,
-    trackMarkdownExported,
-    trackRegistryVisit,
-    trackMobileTabSwitched,
-
-    // Home search
-    trackSearchPerformed: trackSearchPerformedDebounced,
-    trackSearchResultClicked,
-
-    // Home discovery
-    trackPremiumToggled,
-    trackHomeRegistryVisit,
-    trackTypeFiltered,
-
-    // Debounced methods
-    trackSearchUsed: trackSearchUsedDebounced,
-    trackFolderToggled: trackFolderToggledDebounced,
-
-    // Direct access to analytics instance for session tracking
-    analytics,
-  };
+  }, [registry, item]);
 }
 
-// Export types for convenience
 export type {
   AIProvider,
   ShareMethod,

@@ -178,7 +178,6 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName, affi
             onClick={() => {
               analytics.trackRegistryVisit({
                 destination: "registry",
-                registry_url: registry.url,
               })
             }}
           >
@@ -201,7 +200,6 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName, affi
               onClick={() => {
                 analytics.trackRegistryVisit({
                   destination: "repository",
-                  github_url: registry.github_url,
                 })
               }}
             >

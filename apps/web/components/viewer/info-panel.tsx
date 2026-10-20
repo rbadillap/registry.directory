@@ -58,8 +58,6 @@ export function InfoPanel({ item }: InfoPanelProps) {
     // Track path copy
     if (item) {
       analytics.trackPathCopied({
-        path,
-        file_index: index,
         total_files: item.files?.length || 0,
       })
     }

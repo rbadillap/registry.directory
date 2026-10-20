@@ -1,4 +1,5 @@
 import { ViewerHeader } from "@/components/viewer/viewer-header"
+import { AnalyticsScopeProvider } from "@/hooks/use-analytics"
 import { addUtmParams } from "@/lib/utm-utils"
 import { getInstallCommand } from "@/lib/install-command"
 import { sortByTypeRelevance } from "@/lib/registry-mappings"
@@ -54,44 +55,46 @@ export function RegistryLanding({
     : null
 
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
-      <ViewerHeader registry={registry} affiliate={affiliate} basePath={basePath} />
+    <AnalyticsScopeProvider registry={registry.name}>
+      <div className="flex min-h-screen flex-col bg-background text-foreground">
+        <ViewerHeader registry={registry} affiliate={affiliate} basePath={basePath} />
 
-      <main className="flex-1 overflow-y-auto">
-        <div className="mx-auto w-full max-w-[1080px] space-y-10 px-4 py-8 md:px-6 md:py-12">
-          <section className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_440px] lg:items-start lg:gap-16">
-            <LandingHero
-              registry={registry}
-              basePath={basePath}
-              typesCount={categories?.size ?? 0}
-              totalItems={totalItems}
-              githubStats={githubStats}
-              visitHref={visitHref}
-            />
-            {(installArg || registry.pro) && (
-              <div className="flex w-full max-w-[440px] flex-col gap-4">
-                {installArg && (
-                  <InstallCard installArg={installArg} totalItems={totalItems} />
-                )}
-                {registry.pro && <ProCard pro={registry.pro} />}
-              </div>
+        <main className="flex-1 overflow-y-auto">
+          <div className="mx-auto w-full max-w-[1080px] space-y-10 px-4 py-8 md:px-6 md:py-12">
+            <section className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_440px] lg:items-start lg:gap-16">
+              <LandingHero
+                registry={registry}
+                basePath={basePath}
+                typesCount={categories?.size ?? 0}
+                totalItems={totalItems}
+                githubStats={githubStats}
+                visitHref={visitHref}
+              />
+              {(installArg || registry.pro) && (
+                <div className="flex w-full max-w-[440px] flex-col gap-4">
+                  {installArg && (
+                    <InstallCard installArg={installArg} totalItems={totalItems} />
+                  )}
+                  {registry.pro && <ProCard pro={registry.pro} />}
+                </div>
+              )}
+            </section>
+
+            {featuredItems.length > 0 && (
+              <FeaturedGrid
+                items={featuredItems.slice(0, 6)}
+                basePath={basePath}
+              />
             )}
-          </section>
 
-          {featuredItems.length > 0 && (
-            <FeaturedGrid
-              items={featuredItems.slice(0, 6)}
-              basePath={basePath}
-            />
-          )}
+            {!degraded && (
+              <BrowseByType categories={categories!} basePath={basePath} />
+            )}
 
-          {!degraded && (
-            <BrowseByType categories={categories!} basePath={basePath} />
-          )}
-
-          {!degraded && <TagsSection tags={semanticCategories} />}
-        </div>
-      </main>
-    </div>
+            {!degraded && <TagsSection tags={semanticCategories} />}
+          </div>
+        </main>
+      </div>
+    </AnalyticsScopeProvider>
   )
 }

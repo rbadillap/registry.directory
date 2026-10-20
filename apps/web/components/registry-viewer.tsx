@@ -13,7 +13,6 @@ import type { DirectoryEntry, AffiliateConfig } from "@/lib/types"
 import type { RegistryListing, RegistryItem, SourceStatus, ViewerFile, ViewerItem } from "@/lib/registry-types"
 import { generateGlobalsCss } from "@/lib/css-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
-import { getTargetPath } from "@/lib/path-utils"
 
 interface RegistryViewerProps {
   registry: DirectoryEntry
@@ -210,7 +209,6 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
         // Track successful native share
         analytics.trackShareClicked({
           share_method: "native",
-          file_path: getTargetPath(selectedFile),
         })
       }).catch((err) => {
         if (err.name !== "AbortError") {
@@ -224,7 +222,6 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
           // Track clipboard fallback
           analytics.trackShareClicked({
             share_method: "clipboard",
-            file_path: getTargetPath(selectedFile),
           })
           // TODO: Show toast notification
         },

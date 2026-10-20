@@ -47,7 +47,6 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
     // Track markdown export
     analytics.trackMarkdownExported({
       export_method: "view",
-      file_path: getTargetPath(selectedFile),
     })
   }
 
@@ -59,11 +58,9 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
     // Track AI click and markdown export
     analytics.trackAIClicked({
       ai_provider: "v0",
-      file_path: getTargetPath(selectedFile),
     })
     analytics.trackMarkdownExported({
       export_method: "ai_share",
-      file_path: getTargetPath(selectedFile),
     })
   }
 
@@ -75,11 +72,9 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
     // Track AI click and markdown export
     analytics.trackAIClicked({
       ai_provider: "chatgpt",
-      file_path: getTargetPath(selectedFile),
     })
     analytics.trackMarkdownExported({
       export_method: "ai_share",
-      file_path: getTargetPath(selectedFile),
     })
   }
 
@@ -91,11 +86,9 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
     // Track AI click and markdown export
     analytics.trackAIClicked({
       ai_provider: "claude",
-      file_path: getTargetPath(selectedFile),
     })
     analytics.trackMarkdownExported({
       export_method: "ai_share",
-      file_path: getTargetPath(selectedFile),
     })
   }
 
@@ -107,11 +100,9 @@ export function StatusBar({ totalItems, selectedFile, onShare }: StatusBarProps)
     // Track AI click and markdown export
     analytics.trackAIClicked({
       ai_provider: "scira",
-      file_path: getTargetPath(selectedFile),
     })
     analytics.trackMarkdownExported({
       export_method: "ai_share",
-      file_path: getTargetPath(selectedFile),
     })
   }
 

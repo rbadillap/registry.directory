@@ -1,137 +1,30 @@
 import { track } from "@vercel/analytics";
 
 // ============================================================================
-// Types & Interfaces
+// Two properties per event
 // ============================================================================
+//
+// Vercel Analytics on the Pro plan keeps two custom properties per event
+// (vercel.com/docs/analytics/limits-and-pricing). Every event used to send
+// ten — five of device and session, five of registry context, then its own —
+// and Vercel does not say which two survive. Each event below names the two
+// that answer the question it exists for, and sends nothing else.
+//
+// Dropped everywhere, and why:
+// - device_type, viewport_width, viewport_height: Vercel reports the device.
+// - session_id, timestamp: Vercel counts visitors and dates every event.
+// - registry_owner, registry_name: one `registry`, the name people know.
+// - category, item_type: read from the URL at the wrong depth; never true.
 
-export type DeviceType = "mobile" | "desktop";
-
-export type ShareMethod = "native" | "clipboard";
 export type AIProvider = "v0" | "chatgpt" | "claude" | "scira";
+export type ShareMethod = "native" | "clipboard";
 export type ExportMethod = "view" | "ai_share";
 export type FolderAction = "open" | "close";
 export type MobileTab = "files" | "code" | "info";
-
-// Base properties included in all events
-export interface BaseEventProperties {
-  // Registry context
-  registry_owner?: string;
-  registry_name?: string;
-  category?: string;
-  item_name?: string;
-  item_type?: string;
-
-  // Device context
-  device_type: DeviceType;
-  viewport_width: number;
-  viewport_height: number;
-
-  // Session
-  session_id: string;
-  timestamp: string;
-}
-
-// Event-specific properties
-export interface FileSelectedProperties {
-  file_path: string;
-  file_type: string;
-  is_multi_file_item: boolean;
-  total_files_in_item: number;
-}
-
-export interface CodeCopiedProperties {
-  file_path: string;
-  code_length: number;
-  has_content: boolean;
-}
-
-export interface ShareClickedProperties {
-  share_method: ShareMethod;
-  file_path?: string;
-}
-
-export interface AIClickedProperties {
-  ai_provider: AIProvider;
-  file_path?: string;
-}
-
-export interface SearchUsedProperties {
-  search_query: string;
-  results_count: number;
-  total_items: number;
-}
-
-export interface FolderToggledProperties {
-  folder_path: string;
-  action: FolderAction;
-  depth_level: number;
-}
-
-export interface MobileTabSwitchedProperties {
-  from_tab: MobileTab;
-  to_tab: MobileTab;
-  has_file_selected: boolean;
-}
-
-export interface PathCopiedProperties {
-  path: string;
-  file_index: number;
-  total_files: number;
-}
-
-export interface MarkdownExportedProperties {
-  export_method: ExportMethod;
-  file_path?: string;
-}
-
-export interface RegistryVisitProperties {
-  destination: "registry" | "repository";
-  registry_url?: string;
-  github_url?: string;
-}
-
 export type SearchResultType = "registry" | "item";
 export type HomeTab = "popular" | "stars" | "recently-active";
 
-export interface SearchPerformedProperties {
-  search_query: string;
-  active_tab: HomeTab;
-  registry_results_count: number;
-  item_results_count: number;
-  premium_only: boolean;
-}
-
-export interface SearchResultClickedProperties {
-  search_query: string;
-  result_type: SearchResultType;
-  result_name: string;
-  result_position: number;
-}
-
-export interface PremiumToggledProperties {
-  enabled: boolean;
-  active_tab: HomeTab;
-  has_query: boolean;
-  results_count: number;
-}
-
-export interface HomeRegistryVisitProperties {
-  registry: string;
-  sponsored: boolean;
-  premium_filter_active: boolean;
-}
-
-export interface TypeFilteredProperties {
-  type: string;
-  enabled: boolean;
-  active_tab: HomeTab;
-  has_query: boolean;
-  results_count: number;
-}
-
-// ============================================================================
-// Event Names
-// ============================================================================
+type Value = string | number | boolean | null;
 
 export const ANALYTICS_EVENTS = {
   // Core metrics
@@ -158,6 +51,27 @@ export const ANALYTICS_EVENTS = {
   HOME_TYPE_FILTERED: "home.type.filtered",
 } as const;
 
+type EventName = (typeof ANALYTICS_EVENTS)[keyof typeof ANALYTICS_EVENTS];
+
+// What each event sends: exactly two properties, never more.
+export interface EventProperties {
+  "ide.file.selected": { registry: string | null; file_type: string };
+  "ide.code.copied": { registry: string | null; item: string | null };
+  "ide.share.clicked": { share_method: ShareMethod; registry: string | null };
+  "ide.ai.clicked": { ai_provider: AIProvider; registry: string | null };
+  "ide.search.used": { search_query: string; results_count: number };
+  "ide.folder.toggled": { action: FolderAction; depth_level: number };
+  "ide.mobile.tab_switched": { to_tab: MobileTab; has_file_selected: boolean };
+  "ide.path.copied": { registry: string | null; total_files: number };
+  "ide.markdown.exported": { export_method: ExportMethod; registry: string | null };
+  "ide.registry.visit": { destination: "registry" | "repository"; registry: string | null };
+  "home.search.performed": { search_query: string; item_results_count: number };
+  "home.search.result_clicked": { result_type: SearchResultType; result_position: number };
+  "home.premium.toggled": { enabled: boolean; has_query: boolean };
+  "home.registry.visit": { registry: string; sponsored: boolean };
+  "home.type.filtered": { type: string; enabled: boolean };
+}
+
 // ============================================================================
 // Debounce Utility
 // ============================================================================
@@ -183,140 +97,25 @@ export function debounce<T extends (...args: any[]) => void>(
 }
 
 // ============================================================================
-// Analytics Class
+// Sending
 // ============================================================================
 
-class Analytics {
-  #sessionId: string;
-  #isDevelopment: boolean;
-  #isClient: boolean;
+const isDevelopment = process.env.NODE_ENV === "development";
 
-  constructor() {
-    this.#isClient = typeof window !== "undefined";
-    this.#isDevelopment = process.env.NODE_ENV === "development";
-    this.#sessionId = this.#generateSessionId();
-  }
+export function trackEvent<E extends EventName>(
+  event: E,
+  properties: EventProperties[E]
+): void {
+  if (typeof window === "undefined") return;
 
-  #generateSessionId(): string {
-    return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-  }
-
-  #getDeviceType(): DeviceType {
-    if (!this.#isClient) return "desktop";
-    return window.innerWidth < 768 ? "mobile" : "desktop";
-  }
-
-  #getBaseProperties(): BaseEventProperties {
-    return {
-      device_type: this.#getDeviceType(),
-      viewport_width: this.#isClient ? window.innerWidth : 0,
-      viewport_height: this.#isClient ? window.innerHeight : 0,
-      session_id: this.#sessionId,
-      timestamp: new Date().toISOString(),
-    };
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  #logEvent(eventName: string, properties: Record<string, any>): void {
-    if (this.#isDevelopment) {
-      console.log("[Analytics]", eventName, properties);
+  if (isDevelopment) {
+    // The interface above is the rule; this catches a cast that slipped by it.
+    if (Object.keys(properties).length > 2) {
+      console.warn("[Analytics]", event, "sends more than two properties; Vercel keeps two.");
     }
+    console.log("[Analytics]", event, properties);
+    return;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  #trackEvent(eventName: string, properties: Record<string, any>): void {
-    if (!this.#isClient) return;
-
-    const fullProperties = {
-      ...this.#getBaseProperties(),
-      ...properties,
-    };
-
-    this.#logEvent(eventName, fullProperties);
-
-    // Only send to Vercel Analytics in production
-    if (!this.#isDevelopment) {
-      track(eventName, fullProperties);
-    }
-  }
-
-  // ============================================================================
-  // Public Tracking Methods
-  // ============================================================================
-
-  trackFileSelected(properties: FileSelectedProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.FILE_SELECTED, properties);
-  }
-
-  trackCodeCopied(properties: CodeCopiedProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.CODE_COPIED, properties);
-  }
-
-  trackShareClicked(properties: ShareClickedProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.SHARE_CLICKED, properties);
-  }
-
-  trackAIClicked(properties: AIClickedProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.AI_CLICKED, properties);
-  }
-
-  trackSearchUsed(properties: SearchUsedProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.SEARCH_USED, properties);
-  }
-
-  trackFolderToggled(properties: FolderToggledProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.FOLDER_TOGGLED, properties);
-  }
-
-  trackMobileTabSwitched(properties: MobileTabSwitchedProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.MOBILE_TAB_SWITCHED, properties);
-  }
-
-  trackPathCopied(properties: PathCopiedProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.PATH_COPIED, properties);
-  }
-
-  trackMarkdownExported(properties: MarkdownExportedProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.MARKDOWN_EXPORTED, properties);
-  }
-
-  trackRegistryVisit(properties: RegistryVisitProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.REGISTRY_VISIT, properties);
-  }
-
-  trackSearchPerformed(properties: SearchPerformedProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.HOME_SEARCH_PERFORMED, properties);
-  }
-
-  trackSearchResultClicked(properties: SearchResultClickedProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.HOME_SEARCH_RESULT_CLICKED, properties);
-  }
-
-  trackPremiumToggled(properties: PremiumToggledProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.HOME_PREMIUM_TOGGLED, properties);
-  }
-
-  trackHomeRegistryVisit(properties: HomeRegistryVisitProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.HOME_REGISTRY_VISIT, properties);
-  }
-
-  trackTypeFiltered(properties: TypeFilteredProperties & Partial<BaseEventProperties>): void {
-    this.#trackEvent(ANALYTICS_EVENTS.HOME_TYPE_FILTERED, properties);
-  }
+  track(event, properties as Record<string, Value>);
 }
-
-// ============================================================================
-// Singleton Instance
-// ============================================================================
-
-let analyticsInstance: Analytics | null = null;
-
-export function getAnalytics(): Analytics {
-  if (!analyticsInstance) {
-    analyticsInstance = new Analytics();
-  }
-  return analyticsInstance;
-}
-
-// Default export for convenience
-export default getAnalytics;

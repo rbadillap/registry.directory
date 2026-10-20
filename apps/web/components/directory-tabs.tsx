@@ -4,7 +4,7 @@ import { useState, useMemo, useDeferredValue, useEffect, useCallback, useRef } f
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
 import { DirectoryList, type ResultTarget } from './directory-list';
 import { SearchBar } from './search-bar';
-import { useAnalytics, type SearchResultType, type HomeTab } from '@/hooks/use-analytics';
+import { useAnalytics, type SearchResultType } from '@/hooks/use-analytics';
 import { useUrlState, homeSearch } from '@/hooks/use-url-state';
 import { rememberSearch, readSearchReturn, forgetSearchReturn, type SearchReturn } from '@/lib/search-return';
 import { useItemIndex } from '@/hooks/use-item-index';
@@ -154,15 +154,9 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
       analytics.trackTypeFiltered({
         type: slug,
         enabled: checked,
-        active_tab: activeTab as HomeTab,
-        has_query: Boolean(searchTerm),
-        results_count: filterBySearch(
-          components.filter(entry => hasType(entry, next)),
-          searchTerm
-        ).length,
       });
     },
-    [typeFilters, setTypeFilters, analytics, activeTab, searchTerm, components, hasType]
+    [typeFilters, setTypeFilters, analytics]
   );
 
   const handleTypeClear = useCallback(() => {
@@ -174,11 +168,9 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
     setPremiumOnly(enabled);
     analytics.trackPremiumToggled({
       enabled,
-      active_tab: activeTab as HomeTab,
       has_query: Boolean(searchTerm),
-      results_count: filterBySearch(enabled ? components.filter(entry => entry.pro) : components, searchTerm).length,
     });
-  }, [premiumOnly, setPremiumOnly, activeTab, searchTerm, components, analytics]);
+  }, [premiumOnly, setPremiumOnly, searchTerm, analytics]);
 
   // P flips the Premium filter, mirroring the theme toggle's D shortcut
   // (same guards: no modifiers, never while typing).
@@ -219,34 +211,20 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
   }, [preparedIndex, deferredSearchTerm, typeFilters]);
 
   // What the event reports about a search, kept current without making the
-  // event depend on it: a tab change or a premium toggle alters these
-  // numbers, and neither of those is a search.
-  const searchContext = useRef({
-    tab: activeTab,
-    registryCount: 0,
-    itemCount: 0,
-    premiumOnly,
-  });
-  searchContext.current = {
-    tab: activeTab,
-    registryCount: sortedComponents.length,
-    itemCount: filteredItems.length,
-    premiumOnly,
-  };
+  // event depend on it: a type filter alters the count, and a filter is not
+  // a search.
+  const itemCount = useRef(0);
+  itemCount.current = filteredItems.length;
 
-  // One event per search, and only once its counts are true. Reporting
+  // One event per search, and only once its count is true. Reporting
   // before the index lands would record zero components found for a search
   // that finds plenty — the index simply had not arrived yet.
   useEffect(() => {
     if (!deferredSearchTerm) return;
     if (indexStatus !== 'ready') return;
-    const { tab, registryCount, itemCount, premiumOnly: premium } = searchContext.current;
     analytics.trackSearchPerformed({
       search_query: deferredSearchTerm,
-      active_tab: tab as SortMode,
-      registry_results_count: registryCount,
-      item_results_count: itemCount,
-      premium_only: premium,
+      item_results_count: itemCount.current,
     });
   }, [deferredSearchTerm, indexStatus, analytics]);
 
@@ -266,8 +244,8 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
       scrollY: window.scrollY,
     });
     analytics.trackSearchResultClicked({
-      search_query: searchTerm,
-      ...result,
+      result_type: result.result_type,
+      result_position: result.result_position,
     });
   }, [searchTerm, activeTab, typeFilters, premiumOnly, analytics]);
 
@@ -389,7 +367,6 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
             itemResults={filteredItems}
             itemsStatus={indexStatus}
             onResultClick={handleResultClick}
-            premiumFilterActive={premiumOnly}
             itemsInitiallyExpanded={restore?.expanded ?? false}
             onItemsExpandedChange={handleItemsExpandedChange}
           />

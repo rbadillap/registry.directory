@@ -53,13 +53,12 @@ interface DirectoryListProps {
   /** Whether the item index behind itemResults has arrived yet. */
   itemsStatus?: ItemIndexStatus;
   onResultClick?: (data: ResultClickData, target: ResultTarget) => void;
-  premiumFilterActive?: boolean;
   /** Open the item list past its first page from the start (a return to it). */
   itemsInitiallyExpanded?: boolean;
   onItemsExpandedChange?: (expanded: boolean) => void;
 }
 
-export function DirectoryList({ entries, searchTerm = '', addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], itemsStatus = 'ready', onResultClick, premiumFilterActive = false, itemsInitiallyExpanded = false, onItemsExpandedChange }: DirectoryListProps) {
+export function DirectoryList({ entries, searchTerm = '', addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], itemsStatus = 'ready', onResultClick, itemsInitiallyExpanded = false, onItemsExpandedChange }: DirectoryListProps) {
   const { trackHomeRegistryVisit } = useAnalytics();
   const showAddCard = !searchTerm && addCardLabel;
   const hasItems = itemResults.length > 0;
@@ -150,7 +149,6 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
                     onClick={() => trackHomeRegistryVisit({
                       registry: entry.name,
                       sponsored: Boolean(affiliate),
-                      premium_filter_active: premiumFilterActive,
                     })}
                   >
                     <ExternalLinkIcon className="w-3.5 h-3.5" />

@@ -30,7 +30,6 @@ export function MobileTabNavigation({ activeTab, onTabChange, hasFile }: MobileT
     // Only track if the tab actually changed (not on initial mount)
     if (previousTab !== activeTab && previousTab !== undefined) {
       analytics.trackMobileTabSwitched({
-        from_tab: previousTab,
         to_tab: activeTab,
         has_file_selected: hasFile,
       })
