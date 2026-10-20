@@ -339,6 +339,9 @@ function ItemResults({
                   results, so several can be compared without opening each
                   item. The order of the results does not change for it. */}
               {item.demo && (
+                // noopener without noreferrer, on purpose: authors should see
+                // that their visitors came from the directory.
+                // eslint-disable-next-line react/jsx-no-target-blank
                 <a
                   href={item.demo}
                   target="_blank"
