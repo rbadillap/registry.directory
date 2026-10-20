@@ -12,8 +12,6 @@ interface DemosRecord {
   /** The host the homepage's sitemap.xml redirected to, when it moved. */
   redirectedTo?: string
   demos: Record<string, string>
-  /** Items whose link lands on the page of their numbered group. */
-  groups?: string[]
 }
 
 interface DemosFile {
@@ -64,47 +62,4 @@ export async function loadDemosFor(
     trusted[name] = url
   }
   return trusted
-}
-
-/** Where a group link lands: the group's page, and how many variants it shows. */
-export interface DemoGroup {
-  label: string
-  count: number
-}
-
-/**
- * A registry's group links, keyed by item name: items such as accordion-01
- * whose link opens the page that shows the whole numbered set. The label is
- * the page's own last segment, as a reader would name it; the count is how
- * many of the registry's items land on that same page.
- */
-export async function loadDemoGroupsFor(
-  entry: DirectoryEntry
-): Promise<Record<string, DemoGroup>> {
-  const [file, manifest, demos] = await Promise.all([
-    loadDemosFile(),
-    loadManifest(),
-    loadDemosFor(entry),
-  ])
-  const key = manifest?.registries.find((r) => r.name === entry.name)?.key
-  const grouped = (key ? file?.registries[key]?.groups : undefined) ?? []
-
-  const perPage = new Map<string, number>()
-  for (const name of grouped) {
-    const url = demos[name]
-    if (url) perPage.set(url, (perPage.get(url) ?? 0) + 1)
-  }
-
-  const groups: Record<string, DemoGroup> = {}
-  for (const name of grouped) {
-    const url = demos[name]
-    if (!url) continue
-    const segment = new URL(url).pathname.replace(/\/+$/, "").split("/").pop() ?? ""
-    const words = decodeURIComponent(segment).replace(/[-_]+/g, " ").trim()
-    groups[name] = {
-      label: words.charAt(0).toUpperCase() + words.slice(1),
-      count: perPage.get(url) ?? 1,
-    }
-  }
-  return groups
 }

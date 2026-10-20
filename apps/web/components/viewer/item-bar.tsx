@@ -14,7 +14,6 @@ import { ShadcnIcon } from "@/components/icons/shadcn"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { PreviewButton } from "./preview-button"
 import type { AffiliateConfig } from "@/lib/types"
-import type { DemoGroup } from "@/lib/demos"
 
 interface ItemBarProps {
   registryName: string
@@ -26,8 +25,6 @@ interface ItemBarProps {
   installArg?: string
   // The page on the author's own site where the item can be seen working.
   demoUrl?: string
-  // Set when the demo link opens the item's numbered group page.
-  demoGroup?: DemoGroup
   // The registry's referral partnership, carried to the demo when it can be.
   affiliate?: AffiliateConfig | null
 }
@@ -41,7 +38,6 @@ export function ItemBar({
   description,
   installArg,
   demoUrl,
-  demoGroup,
   affiliate,
 }: ItemBarProps) {
   const analytics = useAnalytics()
@@ -93,7 +89,6 @@ export function ItemBar({
             affiliate={affiliate}
             itemLabel={title || name}
             registryName={registryName}
-            group={demoGroup}
           />
         )}
         {/* Where the link came from, for the reader who wonders and the

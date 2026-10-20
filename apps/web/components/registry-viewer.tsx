@@ -14,7 +14,6 @@ import { MobileTabNavigation, type MobileTab } from "./viewer/mobile-tab-navigat
 import { cn } from "@workspace/ui/lib/utils"
 import type { DirectoryEntry, AffiliateConfig } from "@/lib/types"
 import type { ItemResolution } from "@/lib/registry-data"
-import type { DemoGroup } from "@/lib/demos"
 import type { RegistryListing, RegistryItem, SourceStatus, ViewerFile, ViewerItem } from "@/lib/registry-types"
 import { generateGlobalsCss } from "@/lib/css-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
@@ -41,8 +40,6 @@ interface RegistryViewerProps {
   itemResolution?: ItemResolution
   /** For an item page: the author's demo page, when there is one. */
   demoUrl?: string
-  /** For an item page: set when that page is the item's numbered group's. */
-  demoGroup?: DemoGroup
 }
 
 type RegistryFile = ViewerFile
@@ -74,7 +71,7 @@ function addGlobalsCssFile(item: RegistryItem): RegistryItem {
   }
 }
 
-export function RegistryViewer({ registry, registryIndex, handle, categorySize, selectedItem: initialItem, currentCategory, affiliate, basePath, installArg, itemResolution, demoUrl, demoGroup }: RegistryViewerProps) {
+export function RegistryViewer({ registry, registryIndex, handle, categorySize, selectedItem: initialItem, currentCategory, affiliate, basePath, installArg, itemResolution, demoUrl }: RegistryViewerProps) {
   const analytics = useAnalytics()
 
   // The synthesised globals.css belongs to the component being read, not to
@@ -291,7 +288,6 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
             affiliate={affiliate}
             itemLabel={initialItem.title || initialItem.name}
             registryName={registry.name}
-            group={demoGroup}
             // Beside the card's own filled action, always the second one.
             variant="outline"
           />
@@ -314,7 +310,6 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
           // offering the command would only hand over an error.
           installArg={unavailable === "gone" ? undefined : installArg}
           demoUrl={demoUrl}
-          demoGroup={demoGroup}
           affiliate={affiliate}
         />
       )}

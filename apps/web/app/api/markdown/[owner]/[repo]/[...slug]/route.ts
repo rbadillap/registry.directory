@@ -5,7 +5,7 @@ import { generateMarkdownForItem } from "@/lib/markdown-generator"
 import { resolveByGithub } from "@/lib/resolve-registry"
 import { fetchItemData } from "@/lib/registry-item-source"
 import { UNTIL_NEXT_DEPLOY } from "@/lib/cdn-cache"
-import { loadDemosFor, loadDemoGroupsFor } from "@/lib/demos"
+import { loadDemosFor } from "@/lib/demos"
 
 // Force dynamic rendering - don't pre-generate during build
 export const dynamic = 'force-dynamic'
@@ -33,8 +33,8 @@ export async function GET(
     return new Response("Item not found", { status: 404 })
   }
 
-  const [demos, demoGroups] = await Promise.all([loadDemosFor(registry), loadDemoGroupsFor(registry)])
-  const markdown = generateMarkdownForItem(itemData, registry, `/${owner}/${repo}`, demos[itemData.name], demoGroups[itemData.name])
+  const demos = await loadDemosFor(registry)
+  const markdown = generateMarkdownForItem(itemData, registry, `/${owner}/${repo}`, demos[itemData.name])
 
   return new Response(markdown, {
     headers: {
