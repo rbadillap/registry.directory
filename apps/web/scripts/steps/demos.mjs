@@ -31,9 +31,9 @@ export const DEMOS_PATH = join(DATA_DIR, "demos.json");
 // Once a week is enough: a demo page moves far less often than a catalog.
 export const DEMOS_MAX_AGE_DAYS = 7;
 
-// Origins that throttle us on the index alone. A sitemap is one more request
-// they did not ask for, so they are never fetched.
-const NEVER_FETCH = new Set(["shadcnblocks", "reui", "zyeon", "motion-menu"]);
+// Every registry is read the same way: one sitemap a week, at most four
+// requests, never retried. Origins that throttle the indexer do so on the
+// item probe, which asks for thousands of files; this asks for one.
 
 // A path must name a place where components are shown, and must not name a
 // place where they are only written about.
@@ -294,9 +294,6 @@ export async function indexDemos({ directory, force = false, only = null } = {})
 
     if (!view?.items) {
       return [key, { status: "missing", reason: "no view on disk", checkedAt: today(), requests: 0, demos: {} }];
-    }
-    if (NEVER_FETCH.has(key)) {
-      return [key, { status: "skipped", reason: "rate-limited origin, never fetched", checkedAt: today(), requests: 0, demos: {} }];
     }
     if (!host || host === "github.com") {
       return [key, { status: "skipped", reason: "no site of its own", checkedAt: today(), requests: 0, demos: {} }];
