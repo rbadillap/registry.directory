@@ -249,7 +249,6 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
           title={initialItem.title}
           description={initialItem.description}
           installArg={installArg}
-          resolution={itemResolution}
         />
       )}
 
@@ -267,13 +266,24 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
           {sourceState.status === "loading" ? (
             <>Loading the source for <span className="font-mono">{initialItem?.name}</span>…</>
           ) : sourceState.status === "not-found" ? (
+            // The indexer's probe knows why, when it asked: a refusal is
+            // said as a refusal, never as an item that is gone, and neither
+            // is taken as proof that the item is paid or free.
             <>
               <span className="font-medium text-foreground">
-                This item is no longer served
+                {itemResolution === "gated"
+                  ? `${registry.name} asked for a sign-in or license`
+                  : itemResolution === "unverified"
+                    ? "Not checked yet"
+                    : "This item is no longer served"}
               </span>
               {" — "}
-              {registry.name} lists it, but it no longer resolves. What you see
-              below comes from this directory&apos;s own catalog.
+              {itemResolution === "gated"
+                ? "at the last check, so its source is not shown here."
+                : itemResolution === "unverified"
+                  ? `${registry.name} limits how often it can be asked.`
+                  : `${registry.name} lists it, but it no longer resolves.`}{" "}
+              What you see below comes from this directory&apos;s own catalog.
             </>
           ) : sourceState.status === "error" ? (
             <>

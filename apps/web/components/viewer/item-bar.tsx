@@ -3,7 +3,6 @@
 import type { ReactNode } from "react"
 import { CopyButton } from "@/components/registry-landing/copy-button"
 import { useAnalytics } from "@/hooks/use-analytics"
-import type { ItemResolution } from "@/lib/registry-data"
 
 interface ItemBarProps {
   registryName: string
@@ -12,22 +11,8 @@ interface ItemBarProps {
   description?: string
   // What follows `npx shadcn@latest add` for this item.
   installArg: string
-  resolution?: ItemResolution
   // Room for actions beside the command; nothing is drawn when absent.
   actions?: ReactNode
-}
-
-// Said plainly and only as far as the probe knows: a 401 is not proof that
-// an item is paid, and a page that once answered is not proof it is free.
-function resolutionNote(resolution: ItemResolution, registryName: string): string {
-  switch (resolution) {
-    case "gated":
-      return `${registryName} asked for a sign-in or license at the last check.`
-    case "gone":
-      return `${registryName} didn't serve this item at the last check.`
-    case "unverified":
-      return `Not checked yet: ${registryName} limits how often it can be asked.`
-  }
 }
 
 // What the item is and how to get it, above the code. The viewer below
@@ -38,7 +23,6 @@ export function ItemBar({
   title,
   description,
   installArg,
-  resolution,
   actions,
 }: ItemBarProps) {
   const analytics = useAnalytics()
@@ -61,28 +45,27 @@ export function ItemBar({
         )}
       </div>
 
-      <div className="flex min-w-0 flex-col gap-1.5 md:max-w-[min(560px,55%)] md:items-end">
-        <div className="flex min-w-0 items-center gap-2">
-          <div className="flex h-8 min-w-0 flex-1 items-center gap-2.5 rounded-md border border-border bg-surface/50 px-3 font-mono text-xs">
-            <span className="select-none text-foreground-faint" aria-hidden="true">
-              $
+      {/* On a phone the command gets a row of its own and wraps, so the
+          item's own part is never the part that is cut. From md up it is one
+          line, and the invariant prefix gives way before the item does. */}
+      <div className="flex min-w-0 flex-wrap items-center gap-2 md:max-w-[min(560px,55%)] md:flex-nowrap">
+        <div className="flex min-h-8 min-w-0 basis-full items-start gap-2.5 rounded-md border border-border bg-surface/50 px-3 py-1.5 font-mono text-xs md:basis-auto md:flex-1 md:items-center">
+          <span className="select-none leading-5 text-foreground-faint" aria-hidden="true">
+            $
+          </span>
+          <code className="min-w-0 flex-1 break-all leading-5 md:flex md:break-normal" title={command}>
+            <span className="text-muted-foreground md:min-w-0 md:shrink-[1000] md:truncate">
+              {"npx shadcn@latest add\u00a0"}
             </span>
-            <code className="min-w-0 flex-1 truncate text-foreground" title={command}>
-              {command}
-            </code>
-            <CopyButton
-              text={command}
-              label="Copy install command"
-              onCopy={() => analytics.trackInstallCopied()}
-            />
-          </div>
-          {actions}
+            <span className="text-foreground md:min-w-0 md:truncate">{installArg}</span>
+          </code>
+          <CopyButton
+            text={command}
+            label="Copy install command"
+            onCopy={() => analytics.trackInstallCopied()}
+          />
         </div>
-        {resolution && (
-          <p className="text-xs text-muted-foreground">
-            {resolutionNote(resolution, registryName)}
-          </p>
-        )}
+        {actions}
       </div>
     </section>
   )
