@@ -82,7 +82,7 @@ export default function DocsPage() {
           </p>
         </div>
 
-        <h2 id="preview-links" className="text-base font-semibold mt-10 mb-4 scroll-mt-8">
+        <h2 id="preview-links" className="text-base font-semibold mt-10 mb-4 scroll-mt-16">
           Preview links
         </h2>
         <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
