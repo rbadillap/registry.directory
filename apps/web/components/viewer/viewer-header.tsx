@@ -1,6 +1,8 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { ArrowLeft, ExternalLink, Home } from "lucide-react"
 import { GitHubIcon } from "@/components/icons/github"
 import { Button } from "@workspace/ui/components/button"
@@ -9,6 +11,7 @@ import type { DirectoryEntry, AffiliateConfig } from "@/lib/types"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { addUtmParams } from "@/lib/utm-utils"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { readSearchReturn } from "@/lib/search-return"
 
 interface ViewerHeaderProps {
   registry: DirectoryEntry
@@ -67,7 +70,18 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName, affi
     return '/'
   }
 
-  const backUrl = getBackUrl()
+  // Opened from a search, the arrow goes back to that search rather than up
+  // the registry's hierarchy. Only for the page the result pointed at: once
+  // the reader moves on inside the registry, the hierarchy is the way back.
+  // Read after mount, since storage does not exist on the server.
+  const pathname = usePathname()
+  const [searchReturn, setSearchReturn] = useState<string | null>(null)
+  useEffect(() => {
+    const entry = readSearchReturn()
+    setSearchReturn(entry && entry.target === pathname ? `/${entry.results}` : null)
+  }, [pathname])
+
+  const backUrl = searchReturn ?? getBackUrl()
 
   return (
     <div className="flex items-center justify-between border-b border-border bg-background px-4 py-3 md:px-6 md:py-4">
@@ -78,7 +92,7 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName, affi
           variant="ghost"
           className="text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background flex-shrink-0"
         >
-          <Link href={backUrl} aria-label="Go back">
+          <Link href={backUrl} aria-label={searchReturn ? "Back to search results" : "Go back"}>
             <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
           </Link>
         </Button>
