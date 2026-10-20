@@ -105,32 +105,17 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName, affi
           )}
 
           <div className="text-xs md:text-sm font-mono min-w-0 truncate">
-            {githubInfo || basePath ? (
+            {basePath ? (
               <>
-                {githubInfo ? (
-                  <>
-                    <Link
-                      href={basePath}
-                      className="text-muted-foreground hover:text-foreground hover:underline transition-colors"
-                    >
-                      {githubInfo.username}
-                    </Link>
-                    <span className="text-foreground-subtle mx-1 md:mx-1.5">/</span>
-                    <Link
-                      href={basePath}
-                      className="text-foreground font-semibold hover:underline transition-colors"
-                    >
-                      {githubInfo.repo}
-                    </Link>
-                  </>
-                ) : (
-                  <Link
-                    href={basePath}
-                    className="text-foreground font-semibold hover:underline transition-colors"
-                  >
-                    {basePath.slice(1)}
-                  </Link>
-                )}
+                {/* The registry's own name, not its GitHub slug: people know
+                    beUI, not starc007/ui-components. The repository is one
+                    click away on the GitHub button. */}
+                <Link
+                  href={basePath}
+                  className="text-foreground font-semibold hover:underline transition-colors"
+                >
+                  {registry.name}
+                </Link>
                 {currentCategory && (
                   <>
                     <span className="text-foreground-subtle mx-1 md:mx-1.5 hidden md:inline">/</span>
@@ -150,7 +135,6 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName, affi
                   <>
                     <span className="text-foreground-subtle mx-1 md:mx-1.5 hidden md:inline">/</span>
                     <span className="text-foreground hidden md:inline">{selectedItemName}</span>
-                    <span className="text-foreground-subtle hidden md:inline">.json</span>
                   </>
                 )}
               </>
