@@ -10,8 +10,9 @@ interface ItemBarProps {
   name: string
   title?: string
   description?: string
-  // What follows `npx shadcn@latest add` for this item.
-  installArg: string
+  // What follows `npx shadcn@latest add` for this item; absent when the
+  // item cannot be installed.
+  installArg?: string
   // Room for actions beside the command; nothing is drawn when absent.
   actions?: ReactNode
 }
@@ -51,18 +52,20 @@ export function ItemBar({
           Copying still copies the whole command. On a phone it wraps rather
           than cut the item's ref. */}
       <div className="flex min-w-0 flex-wrap items-center gap-2 md:max-w-[min(560px,55%)] md:flex-nowrap">
-        <div className="flex min-h-8 min-w-0 basis-full items-start gap-2.5 rounded-md border border-border bg-surface/50 px-3 py-1.5 font-mono text-xs md:basis-auto md:flex-1 md:items-center">
-          <ShadcnIcon className="mt-0.5 size-4 shrink-0 text-foreground md:mt-0" aria-hidden="true" />
-          <code className="min-w-0 flex-1 break-all leading-5 text-foreground md:truncate md:break-normal" title={command}>
-            <span className="sr-only">npx shadcn@latest add </span>
-            {installArg}
-          </code>
-          <CopyButton
-            text={command}
-            label="Copy install command"
-            onCopy={() => analytics.trackInstallCopied()}
-          />
-        </div>
+        {installArg && (
+          <div className="flex min-h-8 min-w-0 basis-full items-start gap-2.5 rounded-md border border-border bg-surface/50 px-3 py-1.5 font-mono text-xs md:basis-auto md:flex-1 md:items-center">
+            <ShadcnIcon className="mt-0.5 size-4 shrink-0 text-foreground md:mt-0" aria-hidden="true" />
+            <code className="min-w-0 flex-1 break-all leading-5 text-foreground md:truncate md:break-normal" title={command}>
+              <span className="sr-only">npx shadcn@latest add </span>
+              {installArg}
+            </code>
+            <CopyButton
+              text={command}
+              label="Copy install command"
+              onCopy={() => analytics.trackInstallCopied()}
+            />
+          </div>
+        )}
         {actions}
       </div>
     </section>

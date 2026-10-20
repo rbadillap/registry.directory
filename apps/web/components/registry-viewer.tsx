@@ -7,6 +7,7 @@ import { CodeViewer } from "./viewer/code-viewer"
 import { InfoPanel } from "./viewer/info-panel"
 import { ViewerHeader } from "./viewer/viewer-header"
 import { ItemBar } from "./viewer/item-bar"
+import { SourceUnavailable, type SourceUnavailableKind } from "./viewer/source-unavailable"
 import { StatusBar } from "./viewer/status-bar"
 import { MobileTabNavigation, type MobileTab } from "./viewer/mobile-tab-navigation"
 import { cn } from "@workspace/ui/lib/utils"
@@ -15,6 +16,8 @@ import type { ItemResolution } from "@/lib/registry-data"
 import type { RegistryListing, RegistryItem, SourceStatus, ViewerFile, ViewerItem } from "@/lib/registry-types"
 import { generateGlobalsCss } from "@/lib/css-utils"
 import { useAnalytics } from "@/hooks/use-analytics"
+import { addUtmParams } from "@/lib/utm-utils"
+import { REGISTRY_TYPE_LABELS } from "@/lib/registry-mappings"
 
 interface RegistryViewerProps {
   registry: DirectoryEntry
@@ -94,6 +97,9 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
       : { status: "ready" }
   )
 
+  // Bumped by "Try again": re-running the request below is the whole retry.
+  const [attempt, setAttempt] = useState(0)
+
   useEffect(() => {
     const name = initialItem?.name
     if (!name) {
@@ -172,7 +178,7 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
     return () => {
       controller.abort()
     }
-  }, [handle, initialItem])
+  }, [handle, initialItem, attempt])
 
   // Set initial selected file when component mounts or item changes
   useEffect(() => {
@@ -238,6 +244,35 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
     }
   }
 
+  // When the source is not coming, the place it would have filled says why,
+  // and the probe's finding decides how: a refusal is said as a refusal, an
+  // item no run has reached yet as not checked, and only the rest as gone.
+  // Said there and only there: the panels around it stay readable, since
+  // everything else on the page comes from the directory's own catalog.
+  const unavailable: SourceUnavailableKind | null =
+    sourceState.status === "error"
+      ? "error"
+      : sourceState.status === "not-found"
+        ? itemResolution === "gated"
+          ? "gated"
+          : itemResolution === "unverified"
+            ? "unverified"
+            : "gone"
+        : null
+
+  const sourceUnavailable = unavailable ? (
+    <SourceUnavailable
+      kind={unavailable}
+      registryName={registry.name}
+      visitHref={affiliate ? affiliate.affiliate_url : addUtmParams(registry.url, "item_unavailable")}
+      onVisit={() => analytics.trackRegistryVisit({ destination: "registry" })}
+      categoryHref={`${basePath}/${currentCategory}`}
+      categoryLabel={REGISTRY_TYPE_LABELS[currentCategory] || currentCategory}
+      onRetry={() => setAttempt((n) => n + 1)}
+      errorMessage={sourceState.status === "error" ? sourceState.message : undefined}
+    />
+  ) : null
+
   return (
     <div className="h-screen bg-background text-foreground flex flex-col">
       <ViewerHeader registry={registry} currentCategory={currentCategory} selectedItemName={initialItem?.name} affiliate={affiliate} basePath={basePath} />
@@ -248,53 +283,18 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
           name={initialItem.name}
           title={initialItem.title}
           description={initialItem.description}
-          installArg={installArg}
+          // An item its origin no longer serves cannot be installed;
+          // offering the command would only hand over an error.
+          installArg={unavailable === "gone" ? undefined : installArg}
         />
       )}
 
-      {/* The one place that speaks for the source request. The panels below
-          show a file or they show nothing, and neither can be trusted to
-          report a failure: a component with style variables always gets a
-          synthesised globals.css, which gives them a file to show and a
-          non-empty tree no matter what the origin answered. Keeping the news
-          here also keeps it from being told three times. */}
-      {sourceState.status !== "ready" && sourceState.status !== "idle" && (
+      {sourceState.status === "loading" && (
         <div
           role="status"
           className="px-3 py-2 border-b border-border bg-surface-elevated text-xs text-muted-foreground"
         >
-          {sourceState.status === "loading" ? (
-            <>Loading the source for <span className="font-mono">{initialItem?.name}</span>…</>
-          ) : sourceState.status === "not-found" ? (
-            // The indexer's probe knows why, when it asked: a refusal is
-            // said as a refusal, never as an item that is gone, and neither
-            // is taken as proof that the item is paid or free.
-            <>
-              <span className="font-medium text-foreground">
-                {itemResolution === "gated"
-                  ? `${registry.name} asked for a sign-in or license`
-                  : itemResolution === "unverified"
-                    ? "Not checked yet"
-                    : "This item is no longer served"}
-              </span>
-              {" — "}
-              {itemResolution === "gated"
-                ? "at the last check, so its source is not shown here."
-                : itemResolution === "unverified"
-                  ? `${registry.name} limits how often it can be asked.`
-                  : `${registry.name} lists it, but it no longer resolves.`}{" "}
-              What you see below comes from this directory&apos;s own catalog.
-            </>
-          ) : sourceState.status === "error" ? (
-            <>
-              <span className="font-medium text-foreground">
-                The source could not be loaded
-              </span>
-              {" — "}
-              {sourceState.message} What you see below comes from this
-              directory&apos;s own catalog.
-            </>
-          ) : null}
+          Loading the source for <span className="font-mono">{initialItem?.name}</span>…
         </div>
       )}
 
@@ -319,11 +319,13 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
           />
         </div>
         <div className={cn("h-full", mobileTab !== 'code' && "hidden")}>
-          <CodeViewer
-            file={selectedFile}
-            selectedItem={selectedItem}
-            sourceStatus={sourceState.status}
-          />
+          {sourceUnavailable ?? (
+            <CodeViewer
+              file={selectedFile}
+              selectedItem={selectedItem}
+              sourceStatus={sourceState.status}
+            />
+          )}
         </div>
         <div className={cn("h-full", mobileTab !== 'info' && "hidden")}>
           <InfoPanel item={selectedItem} />
@@ -348,11 +350,13 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
           <PanelResizeHandle className="w-px bg-border" />
 
           <Panel defaultSize={45} minSize={35} maxSize={55}>
-            <CodeViewer
-            file={selectedFile}
-            selectedItem={selectedItem}
-            sourceStatus={sourceState.status}
-          />
+            {sourceUnavailable ?? (
+              <CodeViewer
+                file={selectedFile}
+                selectedItem={selectedItem}
+                sourceStatus={sourceState.status}
+              />
+            )}
           </Panel>
 
           <PanelResizeHandle className="w-px bg-border" />
