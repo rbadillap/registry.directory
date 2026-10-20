@@ -161,3 +161,23 @@ describe("a prepared index answers the same as an unprepared one", () => {
     assert.deepEqual(names(searchPrepared(prepared, "dialog")), names(searchItems(catalog, "dialog")))
   })
 })
+
+// The title is the author's own name for an item, and often the only place a
+// word appears: a slug like "orb-v2" says nothing a title like "Voice Orb"
+// does not. It is found, but it never outranks the name people install.
+describe("searchItems with titles", () => {
+  const titled = (name: string, title: string, description = ""): IndexedItem => ({
+    ...item(name, description),
+    title,
+  })
+
+  it("finds an item by a word only its title holds", () => {
+    const catalog = [titled("orb-v2", "Voice Orb"), item("button")]
+    assert.deepEqual(names(searchItems(catalog, "voice")), ["orb-v2"])
+  })
+
+  it("ranks a name match above a title match", () => {
+    const catalog = [titled("orb-v2", "Voice Orb"), item("voice")]
+    assert.deepEqual(names(searchItems(catalog, "voice")), ["voice", "orb-v2"])
+  })
+})

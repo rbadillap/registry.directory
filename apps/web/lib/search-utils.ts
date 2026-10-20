@@ -18,6 +18,7 @@ interface ScoredItem<T> {
 interface PreparedItem<T> {
   item: T;
   name: string;
+  title: string;
   description: string;
   registryName: string;
   categories: string[];
@@ -35,6 +36,7 @@ export function prepareSearchIndex<T extends IndexedItem>(
   return items.map((item) => ({
     item,
     name: normalizeForSearch(item.name),
+    title: normalizeForSearch(item.title ?? ""),
     description: normalizeForSearch(item.description),
     registryName: normalizeForSearch(item.registry.name),
     categories: item.categories.map(normalizeForSearch),
@@ -97,7 +99,7 @@ export function searchPrepared<T extends IndexedItem>(
   for (const entry of prepared) {
     // Already normalised on both sides, so a name published as alert-dialog
     // answers to the words someone actually types.
-    const { name, description: desc, registryName: regName } = entry;
+    const { name, title, description: desc, registryName: regName } = entry;
 
     let totalScore = 0;
     let allTermsMatch = true;
@@ -114,7 +116,9 @@ export function searchPrepared<T extends IndexedItem>(
         termScore += 20;
       }
 
-      if (desc.includes(term)) {
+      // The title weighs what the description does: it is the author's own
+      // words for the item, and it must not outrank the name people install.
+      if (title.includes(term) || desc.includes(term)) {
         termScore += 10;
       }
 

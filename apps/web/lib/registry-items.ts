@@ -27,6 +27,7 @@ async function fetchItemsForRegistry(
     .map((item) => ({
       name: item.name,
       type: item.type,
+      ...(item.title ? { title: item.title } : {}),
       description: item.description || "",
       categories: item.categories || [],
       registry: {
