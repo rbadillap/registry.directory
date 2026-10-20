@@ -13,6 +13,9 @@ export interface IndexedItem {
   // The page on the author's own site where the item can be seen working.
   // Absent when the author's sitemap names none.
   demo?: string
+  // Set when that page is the item's numbered group's, which shows every
+  // variant together: the group's name and how many variants it holds.
+  demoGroup?: { label: string; count: number }
   categories: string[]
   registry: {
     name: string

@@ -8,7 +8,9 @@ export function generateMarkdownForItem(
   registry: DirectoryEntry,
   basePath: string,
   // The author's demo page for this item, when their sitemap names one.
-  demoUrl?: string
+  demoUrl?: string,
+  // Set when that page is the item's numbered group's.
+  demoGroup?: { label: string; count: number }
 ): string {
   const markdown: string[] = []
 
@@ -28,7 +30,11 @@ export function generateMarkdownForItem(
   markdown.push(`- **Type**: \`${item.type}\``)
   markdown.push(`- **Registry**: [${registry.name}](${registry.url})`)
   if (demoUrl) {
-    markdown.push(`- **Demo**: ${demoUrl}`)
+    markdown.push(
+      demoGroup
+        ? `- **Demo**: ${demoUrl} (the ${demoGroup.label} page, showing all ${demoGroup.count} variants)`
+        : `- **Demo**: ${demoUrl}`
+    )
   }
   const gh = parseGithubRef(registry.github_url)
   if (gh && registry.github_url) {

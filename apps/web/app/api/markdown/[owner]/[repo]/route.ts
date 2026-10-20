@@ -4,7 +4,7 @@ import { generateMarkdownForItem } from "@/lib/markdown-generator"
 import { resolveByHandle, parseGithubRef, entryHandle } from "@/lib/resolve-registry"
 import { fetchItemData } from "@/lib/registry-item-source"
 import { UNTIL_NEXT_DEPLOY } from "@/lib/cdn-cache"
-import { loadDemosFor } from "@/lib/demos"
+import { loadDemosFor, loadDemoGroupsFor } from "@/lib/demos"
 
 // Markdown export for handle-based item URLs: /{handle}/{item}.md
 // (github-backed registries use the 3-segment route)
@@ -31,8 +31,8 @@ export async function GET(
     return new Response("Item not found", { status: 404 })
   }
 
-  const demos = await loadDemosFor(registry)
-  const markdown = generateMarkdownForItem(itemData, registry, `/${entryHandle(registry)}`, demos[itemData.name])
+  const [demos, demoGroups] = await Promise.all([loadDemosFor(registry), loadDemoGroupsFor(registry)])
+  const markdown = generateMarkdownForItem(itemData, registry, `/${entryHandle(registry)}`, demos[itemData.name], demoGroups[itemData.name])
 
   return new Response(markdown, {
     headers: {

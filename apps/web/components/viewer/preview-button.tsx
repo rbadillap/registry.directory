@@ -2,9 +2,16 @@
 
 import { ArrowUpRight } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@workspace/ui/components/tooltip"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { demoHref, openPreviewWindow } from "@/lib/demo-link"
 import type { AffiliateConfig } from "@/lib/types"
+import type { DemoGroup } from "@/lib/demos"
 
 // The item page's Preview: the author's demo, in a window of its own. Shared
 // by the item bar and the state that stands in for a missing source, where
@@ -15,7 +22,11 @@ export function PreviewButton({
   itemLabel,
   registryName,
   variant = "default",
+  group,
 }: {
+  // Set when the link opens the page of the item's numbered group, which
+  // shows every variant together rather than this one alone.
+  group?: DemoGroup
   // Filled where Preview is the page's lead action; outlined beside a
   // stronger one, such as getting access to a licensed item.
   variant?: "default" | "outline"
@@ -25,7 +36,7 @@ export function PreviewButton({
   registryName: string
 }) {
   const analytics = useAnalytics()
-  return (
+  const button = (
     <Button asChild size="sm" variant={variant} className="shrink-0">
       {/* noopener without noreferrer, on purpose: authors should see that
           their visitors came from the directory. The two rels are described
@@ -42,9 +53,24 @@ export function PreviewButton({
         Preview
         <ArrowUpRight aria-hidden="true" />
         <span className="sr-only">
-          {` ${itemLabel} on ${registryName}'s site (opens in a new window)`}
+          {group
+            ? ` ${itemLabel}: ${registryName}'s ${group.label} page, with all ${group.count} variants (opens in a new window)`
+            : ` ${itemLabel} on ${registryName}'s site (opens in a new window)`}
         </span>
       </a>
     </Button>
+  )
+
+  if (!group) return button
+
+  return (
+    <TooltipProvider delayDuration={200}>
+      <Tooltip>
+        <TooltipTrigger asChild>{button}</TooltipTrigger>
+        <TooltipContent side="bottom" className="max-w-60 text-center">
+          Opens {registryName}&apos;s {group.label} page, with all {group.count} variants
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   )
 }

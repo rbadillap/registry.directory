@@ -30,6 +30,12 @@ import { formatStars, formatRelativeTime } from "@/lib/format-utils";
 import { REGISTRY_TYPE_LABELS, REGISTRY_TYPE_ICONS } from "@/lib/registry-mappings";
 import { SubmitRegistryCard } from "@/components/submit-registry-dialog";
 import { DEMO_LINK_REL, demoHref, openPreviewWindow } from "@/lib/demo-link";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@workspace/ui/components/tooltip";
 
 interface ResultClickData {
   result_type: "registry" | "item";
@@ -267,6 +273,7 @@ function ItemResults({
       </div>
 
       <div>
+        <TooltipProvider delayDuration={200}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5">
           {visibleItems.map((item, index) => {
             const registryKey = item.registry.basePath;
@@ -347,36 +354,18 @@ function ItemResults({
                   the same control family, raised one step because it is the
                   card's one action that shows the component working. */}
               {item.demo && (
-                <Button
-                  asChild
-                  variant="secondary"
-                  size="sm"
-                  className="absolute bottom-3 right-3 h-7 gap-1 px-2.5 text-xs"
-                >
-                  {/* noopener without noreferrer, on purpose: authors should
-                      see that their visitors came from the directory. */}
-                  {/* eslint-disable-next-line react/jsx-no-target-blank */}
-                  <a
-                    href={demoHref(item.demo, "card_preview", affiliatesByName?.get(item.registry.name))}
-                    target="_blank"
-                    rel={DEMO_LINK_REL}
-                    onClick={(event) => {
-                      trackDemoClicked({ surface: "card", registry: item.registry.name });
-                      openPreviewWindow(event);
-                    }}
-                  >
-                    Preview
-                    <ArrowUpRight className="size-3" aria-hidden="true" />
-                    <span className="sr-only">
-                      {` ${item.title || item.name} on ${item.registry.name}'s site (opens in a new window)`}
-                    </span>
-                  </a>
-                </Button>
+                <CardPreview
+                  item={item}
+                  demoUrl={item.demo}
+                  affiliate={affiliatesByName?.get(item.registry.name)}
+                  onOpen={() => trackDemoClicked({ surface: "card", registry: item.registry.name })}
+                />
               )}
               </div>
             );
           })}
         </div>
+        </TooltipProvider>
 
         {/* The control follows the results and never covers them: nothing
             that announces more should dim what is already being read. */}
@@ -392,5 +381,64 @@ function ItemResults({
         )}
       </div>
     </div>
+  );
+}
+
+// The card's Preview: the registry card's Explore button in its filled
+// variant, beside the card's link rather than inside it, since a link cannot
+// hold another. A link to the item's numbered group opens a page with every
+// variant, and the tooltip says so before anyone expects only this one.
+function CardPreview({
+  item,
+  demoUrl,
+  affiliate,
+  onOpen,
+}: {
+  item: IndexedItem;
+  demoUrl: string;
+  affiliate?: AffiliateConfig;
+  onOpen: () => void;
+}) {
+  const label = item.title || item.name;
+  const preview = (
+    <Button
+      asChild
+      variant="secondary"
+      size="sm"
+      className="absolute bottom-3 right-3 h-7 gap-1 px-2.5 text-xs"
+    >
+      {/* noopener without noreferrer, on purpose: authors should see that
+          their visitors came from the directory. */}
+      {/* eslint-disable-next-line react/jsx-no-target-blank */}
+      <a
+        href={demoHref(demoUrl, "card_preview", affiliate)}
+        target="_blank"
+        rel={DEMO_LINK_REL}
+        onClick={(event) => {
+          onOpen();
+          openPreviewWindow(event);
+        }}
+      >
+        Preview
+        <ArrowUpRight className="size-3" aria-hidden="true" />
+        <span className="sr-only">
+          {item.demoGroup
+            ? ` ${label}: ${item.registry.name}'s ${item.demoGroup.label} page, with all ${item.demoGroup.count} variants (opens in a new window)`
+            : ` ${label} on ${item.registry.name}'s site (opens in a new window)`}
+        </span>
+      </a>
+    </Button>
+  );
+
+  if (!item.demoGroup) return preview;
+
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>{preview}</TooltipTrigger>
+      <TooltipContent side="bottom" className="max-w-60 text-center">
+        Opens {item.registry.name}&apos;s {item.demoGroup.label} page, with all{" "}
+        {item.demoGroup.count} variants
+      </TooltipContent>
+    </Tooltip>
   );
 }
