@@ -28,6 +28,8 @@ interface SourceUnavailableProps {
   categoryLabel: string
   onRetry: () => void
   errorMessage?: string
+  // The item's title or name, for the licensed state's call to action.
+  itemLabel: string
   // Extra actions placed first, such as a Preview of the author's demo.
   actions?: ReactNode
 }
@@ -48,15 +50,24 @@ export function SourceUnavailable({
   categoryLabel,
   onRetry,
   errorMessage,
+  itemLabel,
   actions,
 }: SourceUnavailableProps) {
   const Icon = ICONS[kind]
 
+  if (kind === "gated") {
+    return (
+      <LicensedSource
+        registryName={registryName}
+        itemLabel={itemLabel}
+        accessHref={visitHref}
+        onAccess={onVisit}
+        actions={actions}
+      />
+    )
+  }
+
   const copy = {
-    gated: {
-      title: `Behind a license at ${registryName}`,
-      description: `${registryName} asked for a sign-in or license when this directory last checked, so the source isn't shown here. The name, description and files come from ${registryName}'s own index.`,
-    },
     gone: {
       title: `${registryName} no longer serves this item`,
       description: `It's still listed in ${registryName}'s index, but asking for it returns nothing, so it can't be installed. The name, description and files are kept from that index.`,
@@ -69,7 +80,7 @@ export function SourceUnavailable({
       title: "Couldn't load the source",
       description: `${errorMessage ? `${errorMessage} ` : ""}The rest of this page comes from the directory's own catalog.`,
     },
-  }[kind]
+  }[kind as Exclude<SourceUnavailableKind, "gated">]
 
   const visit = (
     <Button asChild variant="outline" size="sm">
@@ -113,5 +124,69 @@ export function SourceUnavailable({
         )}
       </EmptyContent>
     </Empty>
+  )
+}
+
+// Bars of varying length standing in for code: the shape of a file, never
+// its content. Blurred behind the access card, they say "there is source
+// here" without pretending to show any.
+const PLACEHOLDER_LINES = [62, 38, 0, 74, 55, 81, 46, 0, 68, 33, 77, 52, 0, 59, 41, 70, 36, 64, 0, 48, 72, 29]
+
+function LicensedSource({
+  registryName,
+  itemLabel,
+  accessHref,
+  onAccess,
+  actions,
+}: {
+  registryName: string
+  itemLabel: string
+  accessHref: string
+  onAccess: () => void
+  actions?: ReactNode
+}) {
+  return (
+    <div className="relative h-full overflow-hidden bg-background">
+      <div aria-hidden="true" className="absolute inset-0 space-y-2.5 px-6 py-6 blur-[3px]">
+        {PLACEHOLDER_LINES.map((width, index) => (
+          <div
+            key={index}
+            className="h-2.5 rounded-sm bg-muted-foreground/15"
+            style={{ width: width ? `${width}%` : 0, marginLeft: index % 4 === 1 ? "1.5rem" : 0 }}
+          />
+        ))}
+      </div>
+
+      {/* An access card, not an error: the item exists and is offered under
+          {registryName}'s license, and the way to it is one click away. It
+          states only what the origin answered (sign in or license), never
+          a price. */}
+      <div className="relative flex h-full items-center justify-center p-4">
+        <section
+          aria-labelledby="licensed-source-title"
+          className="w-full max-w-sm rounded-lg border border-border bg-background/95 p-6 text-center shadow-lg backdrop-blur-sm"
+        >
+          <div className="mx-auto mb-4 flex size-10 items-center justify-center rounded-full border border-border bg-muted">
+            <Lock className="size-4 text-foreground" aria-hidden="true" />
+          </div>
+          <h2 id="licensed-source-title" className="text-base font-medium text-foreground text-balance">
+            {itemLabel} is part of {registryName}&apos;s licensed catalog
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground text-pretty">
+            Sign in or get a license at {registryName} to see its source and
+            install it.
+          </p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
+            <Button asChild size="sm">
+              <a href={accessHref} target="_blank" rel="noopener noreferrer" onClick={onAccess}>
+                Get access at {registryName}
+                <ArrowUpRight aria-hidden="true" />
+              </a>
+            </Button>
+            {actions}
+          </div>
+        </section>
+      </div>
+    </div>
   )
 }
