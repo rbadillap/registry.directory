@@ -307,7 +307,7 @@ function ItemResults({
                         {item.title || item.name}
                       </CardTitle>
                       {item.title && (
-                        <p className="font-mono text-xs text-foreground-subtle truncate">
+                        <p className="font-mono text-xs text-muted-foreground truncate">
                           {item.name}
                         </p>
                       )}

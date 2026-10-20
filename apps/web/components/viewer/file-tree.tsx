@@ -575,7 +575,7 @@ export function FileTree({ items, selectedItem, selectedFile, onSelectFile, curr
                           {item.title || item.name}
                         </span>
                         {item.title && (
-                          <span className="block truncate text-xs font-mono text-foreground-subtle">
+                          <span className="block truncate text-xs font-mono text-muted-foreground">
                             {item.name}
                           </span>
                         )}
