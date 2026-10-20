@@ -271,9 +271,18 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
                         <TypeIcon className="w-3.5 h-3.5 text-foreground-subtle" aria-hidden="true" />
                       </span>
                     </div>
-                    <CardTitle className="type-card text-foreground truncate">
-                      {item.name}
-                    </CardTitle>
+                    {/* The title reads as the item's name, the slug as what
+                        installs it — the same pairing the category list uses. */}
+                    <div className="min-w-0">
+                      <CardTitle className="type-card text-foreground truncate">
+                        {item.title || item.name}
+                      </CardTitle>
+                      {item.title && (
+                        <p className="font-mono text-xs text-foreground-subtle truncate">
+                          {item.name}
+                        </p>
+                      )}
+                    </div>
                   </CardHeader>
                   <CardContent className="px-3 pb-3 pt-0 bg-background flex-1">
                     {item.description && (
