@@ -97,8 +97,10 @@ export default function DocsPage() {
             <li>
               The page is on your homepage&apos;s host, or on the host your{" "}
               <code className="text-foreground">/sitemap.xml</code> redirects
-              to. A sitemap index is followed into at most three of its
-              sitemaps, the ones named for components first.
+              to, or on a host whose sitemaps your{" "}
+              <code className="text-foreground">/sitemap.xml</code> index
+              lists. An index is followed into at most three of its sitemaps,
+              the ones named for components first.
             </li>
             <li>
               Its path is under{" "}
@@ -158,8 +160,8 @@ export default function DocsPage() {
             Links open your page in a window of its own, marked{" "}
             <code className="text-foreground">nofollow ugc</code> and tagged{" "}
             <code className="text-foreground">utm_source=registry.directory</code>
-            , or with your referral parameter when your partnership link
-            lives on the same host as your demos. If your
+            , or with your referral parameter when you have a partnership
+            with the directory. If your
             items should have one and do not, check those four rules against
             your sitemap; the next weekly run picks the change up.
           </p>

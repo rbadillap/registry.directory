@@ -1,6 +1,6 @@
-// A Preview link carries the registry's referral partnership when it can and
-// UTM tags when it cannot. Getting this wrong either loses an author's credit
-// or sends the visitor somewhere other than the demo.
+// A Preview link carries the registry's referral partnership when there is
+// one and UTM tags when there is not. Getting this wrong loses a partner's
+// credit or sends the visitor somewhere other than the demo.
 //
 // Run with: pnpm test
 
@@ -30,14 +30,11 @@ describe("demoHref", () => {
     )
   })
 
-  it("falls back to UTM tags when the partnership lives on another host", () => {
-    const href = new URL(
-      demoHref("https://magicui.design/docs/components/dock", "card_preview", affiliate("https://pro.magicui.design/?ref=registrydirectory"))
+  it("carries the partnership's parameters to a demo on another of the partner's domains", () => {
+    assert.equal(
+      demoHref("https://magicui.design/docs/components/dock", "card_preview", affiliate("https://pro.magicui.design/?ref=registrydirectory")),
+      "https://magicui.design/docs/components/dock?ref=registrydirectory"
     )
-    assert.equal(href.pathname, "/docs/components/dock")
-    assert.equal(href.searchParams.get("ref"), null)
-    assert.equal(href.searchParams.get("utm_source"), "registry.directory")
-    assert.equal(href.searchParams.get("utm_campaign"), "card_preview")
   })
 
   it("tags a demo with no partnership with UTM", () => {

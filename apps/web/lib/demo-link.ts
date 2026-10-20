@@ -6,31 +6,21 @@ import { addUtmParams } from "./utm-utils.ts"
 // endorsed, not given our ranking, and never handed a reference to this page.
 export const DEMO_LINK_REL = "nofollow ugc noopener"
 
-function siteHost(url: string): string | null {
-  try {
-    return new URL(url).hostname.toLowerCase().replace(/^www\./, "")
-  } catch {
-    return null
-  }
-}
-
 /**
  * The address a Preview link opens, tagged the way the registry's other
- * outbound links are.
+ * outbound links are: with the referral partnership's parameters (?ref=,
+ * ?atp=, ?via=) when the registry has one, and UTM tags otherwise.
  *
- * With a referral partnership whose link lives on the demo's own host, the
- * partnership's parameters (?ref=, ?atp=, ?via=) ride along, so a visit that
- * starts at a demo is credited like one that starts at the homepage. A
- * partnership on another host (pro.magicui.design for demos on
- * magicui.design) cannot be carried to a demo without sending the visitor
- * somewhere else, so those demos get the same UTM tags as everything else.
+ * The referral goes on every link to a partner, whichever of their domains
+ * it lands on. Whether a visit is credited is the partner's tracking to set
+ * up, not something this link can know.
  */
 export function demoHref(
   demoUrl: string,
   campaign: string,
   affiliate?: AffiliateConfig | null
 ): string {
-  if (affiliate && siteHost(affiliate.affiliate_url) === siteHost(demoUrl)) {
+  if (affiliate) {
     try {
       const target = new URL(demoUrl)
       for (const [key, value] of new URL(affiliate.affiliate_url).searchParams) {
