@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { REGISTRY_TYPE_ORDER } from '@/lib/registry-mappings';
 
@@ -46,17 +46,29 @@ function buildUrl(searchTerm: string, activeTab: string, typeFilters: string[], 
 export function useUrlState() {
   const searchParams = useSearchParams();
 
-  // Read initial values from URL (one-time seed)
-  const initialQ = searchParams.get('q') ?? '';
-  const rawTab = searchParams.get('tab');
-  const initialTab = isValidTab(rawTab) ? rawTab : DEFAULT_TAB;
-  const initialTypes = parseTypes(searchParams.get('type'));
-  const initialPremium = searchParams.get('premium') === '1';
+  // The home is prerendered once, with no query: its HTML is the empty
+  // search. Starting from the URL here made the first client render differ
+  // from that HTML whenever a link carried ?q=, and React threw it away
+  // (error #418). So the first render matches the HTML, and the URL is read
+  // right after, in a layout effect, before anything is painted.
+  const [searchTerm, setSearchTerm] = useState('');
+  const [activeTab, setActiveTab] = useState<string>(DEFAULT_TAB);
+  const [typeFilters, setTypeFilters] = useState<string[]>([]);
+  const [premiumOnly, setPremiumOnly] = useState(false);
+  // True once the URL has been read: state is the address bar's from here on.
+  const [ready, setReady] = useState(false);
 
-  const [searchTerm, setSearchTerm] = useState(initialQ);
-  const [activeTab, setActiveTab] = useState<string>(initialTab);
-  const [typeFilters, setTypeFilters] = useState<string[]>(initialTypes);
-  const [premiumOnly, setPremiumOnly] = useState(initialPremium);
+  useLayoutEffect(() => {
+    setSearchTerm(searchParams.get('q') ?? '');
+    const tab = searchParams.get('tab');
+    setActiveTab(isValidTab(tab) ? tab : DEFAULT_TAB);
+    setTypeFilters(parseTypes(searchParams.get('type')));
+    setPremiumOnly(searchParams.get('premium') === '1');
+    setReady(true);
+    // Read once, on arrival; afterwards the state writes the URL, not the
+    // other way round (back/forward is handled below).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Skip first URL sync on mount
   const isInitialMount = useRef(true);
@@ -68,7 +80,8 @@ export function useUrlState() {
 
     clearTimeout(searchTimerRef.current);
     searchTimerRef.current = setTimeout(() => {
-      window.history.replaceState(null, '', buildUrl(searchTerm, activeTab, typeFilters, premiumOnly));
+      const next = buildUrl(searchTerm, activeTab, typeFilters, premiumOnly);
+      if (next !== window.location.href) window.history.replaceState(null, '', next);
     }, 300);
 
     return () => clearTimeout(searchTimerRef.current);
@@ -83,7 +96,11 @@ export function useUrlState() {
 
     // Flush any pending search debounce so pushState captures current search term
     clearTimeout(searchTimerRef.current);
-    window.history.pushState(null, '', buildUrl(searchTerm, activeTab, typeFilters, premiumOnly));
+    // Reading the URL on arrival sets this state to what the address bar
+    // already says; pushing it again would add a history entry that goes
+    // nowhere.
+    const next = buildUrl(searchTerm, activeTab, typeFilters, premiumOnly);
+    if (next !== window.location.href) window.history.pushState(null, '', next);
   }, [activeTab, typeFilters, premiumOnly]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Handle browser back/forward
@@ -101,5 +118,5 @@ export function useUrlState() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  return { searchTerm, setSearchTerm, activeTab, setActiveTab, typeFilters, setTypeFilters, premiumOnly, setPremiumOnly };
+  return { ready, searchTerm, setSearchTerm, activeTab, setActiveTab, typeFilters, setTypeFilters, premiumOnly, setPremiumOnly };
 }

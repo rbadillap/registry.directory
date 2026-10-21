@@ -102,7 +102,7 @@ interface DirectoryTabsProps {
 
 export function DirectoryTabs({ components, stats, githubStats, affiliates, collections, shipped }: DirectoryTabsProps) {
   const analytics = useAnalytics();
-  const { activeTab, setActiveTab, searchTerm, setSearchTerm, typeFilters, setTypeFilters, premiumOnly, setPremiumOnly } = useUrlState();
+  const { ready: urlReady, activeTab, setActiveTab, searchTerm, setSearchTerm, typeFilters, setTypeFilters, premiumOnly, setPremiumOnly } = useUrlState();
   const deferredSearchTerm = useDeferredValue(searchTerm);
 
   // The item index is not in this page: it is fetched when someone is about
@@ -266,14 +266,17 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
   // search it was written for; an unrelated visit to the home ignores it.
   const [restore, setRestore] = useState<SearchReturn | null>(null);
   const restored = useRef(false);
+  const checkedReturn = useRef(false);
   useEffect(() => {
+    // Read once, against the state the page was opened with: the URL's, so
+    // only after it has been read.
+    if (!urlReady || checkedReturn.current) return;
+    checkedReturn.current = true;
     const entry = readSearchReturn();
     if (entry && entry.results === homeSearch(searchTerm, activeTab, typeFilters, premiumOnly)) {
       setRestore(entry);
     }
-    // Read once, against the state the page was opened with.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [urlReady, searchTerm, activeTab, typeFilters, premiumOnly]);
 
   // The results arrive after the page does, so the scroll can only be put
   // back once they have rendered.
