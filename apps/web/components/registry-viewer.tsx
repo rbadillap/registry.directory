@@ -269,6 +269,7 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
           ? affiliate.affiliate_url
           : addUtmParams(registry.url, unavailable === "gated" ? "item_license" : "item_unavailable")
       }
+      sponsored={Boolean(affiliate)}
       itemLabel={initialItem?.title || initialItem?.name || ""}
       onVisit={() => analytics.trackRegistryVisit({ destination: "registry" })}
       categoryHref={`${basePath}/${currentCategory}`}

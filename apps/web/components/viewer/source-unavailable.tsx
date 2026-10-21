@@ -17,6 +17,8 @@ interface SourceUnavailableProps {
   registryName: string
   // The registry's site, through its referral link or tagged with UTM.
   visitHref: string
+  // The link earns a commission: it declares so, and sends the referrer.
+  sponsored: boolean
   onVisit: () => void
   categoryHref: string
   categoryLabel: string
@@ -44,6 +46,7 @@ export function SourceUnavailable({
   kind,
   registryName,
   visitHref,
+  sponsored,
   onVisit,
   categoryHref,
   categoryLabel,
@@ -56,7 +59,15 @@ export function SourceUnavailable({
 
   const visit = (label: string, variant: "default" | "outline") => (
     <Button asChild size="sm" variant={variant}>
-      <a href={visitHref} target="_blank" rel="noopener noreferrer" onClick={onVisit}>
+      <a
+        href={visitHref}
+        target="_blank"
+        // The same rule as every Visit link: an affiliate link sends the
+        // referrer, so the vendor sees where the visit came from; noopener
+        // stays on every external link.
+        rel={sponsored ? "sponsored noopener" : "noopener noreferrer"}
+        onClick={onVisit}
+      >
         {label}
         <ArrowUpRight aria-hidden="true" />
       </a>
