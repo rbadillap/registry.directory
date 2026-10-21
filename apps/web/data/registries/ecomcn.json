@@ -1,0 +1,892 @@
+{
+  "key": "ecomcn",
+  "entry": "ecomcn",
+  "name": "ecomcn",
+  "homepage": "https://ecomcn.vercel.app",
+  "indexUrl": "https://ecomcn.vercel.app/r/registry.json",
+  "itemBase": "https://ecomcn.vercel.app/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "announcement-bar",
+      "type": "registry:component",
+      "title": "Announcement Bar",
+      "description": "The thin inverted ink bar above everything — free-shipping thresholds, sale windows, drops — with a brand dot between messages. Static, or a marquee at 26s a loop that holds still under the pointer or focus and has a pause button; under reduced motion the marquee doesn't run. Dismissing folds it away and is remembered per version, so it stays gone across routes and visits until the announcement changes; pass `dismissed` from a cookie to skip it on the server.",
+      "categories": [
+        "ecommerce",
+        "marketing"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/announcement-bar/announcement-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/announcement-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-editorial",
+      "type": "registry:block",
+      "title": "Editorial Hero",
+      "description": "An asymmetric split hero: an oversized serif headline on the left, a campaign image on the right with a product caption sitting on it. 1.05fr / 0.95fr, not 50/50. The image is the page's largest contentful paint, so it loads eagerly with fetchpriority=high inside a real aspect-ratio box and never shifts; renderImage hands the props to next/image. No state and no \"use client\": it renders on the server.",
+      "categories": [
+        "ecommerce",
+        "marketing"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/hero-editorial/hero-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/hero-editorial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "category-rail",
+      "type": "registry:block",
+      "title": "Category Rail",
+      "description": "Numbered category tiles with a photo and an item count, snapping along your shadcn Carousel. Tiles sit 1px apart over a track in your border colour, so the rail reads as one ruled object. The Carousel's previous and next buttons fade out and leave the tab order when everything fits; a tile reached by Tab scrolls into view. Loading skeleton included.",
+      "categories": [
+        "ecommerce",
+        "marketing"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "carousel",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/category-rail/category-rail.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/category-rail.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collection-grid",
+      "type": "registry:block",
+      "title": "Collection Grid",
+      "description": "Three collections as a magazine spread: one dominant tile spanning both rows on a 7/5 split, two supporting it, the type scaling with the tile. On a phone the lead stays full width and tall and the other two pair up beneath it, smaller — never three identical cards. Ruled 1px apart; a scrim keeps the words legible on any photo. Renders on the server.",
+      "categories": [
+        "ecommerce",
+        "marketing"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/collection-grid/collection-grid.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/collection-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "lookbook-strip",
+      "type": "registry:block",
+      "title": "Lookbook Strip",
+      "description": "A campaign photo you can shop: numbered hairline-ring hotspots, placed by percentage with their own positions for a mobile crop, each opening its product on your shadcn Popover — on hover with a pointer, on tap or Enter otherwise. The card grows out of the hotspot and folds back into it, held open until the fold has played (Motion; a fade under reduced motion). The same products are listed under the image, and hovering one marks its hotspot.",
+      "categories": [
+        "ecommerce",
+        "marketing"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/lookbook-strip/lookbook-strip.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/lookbook-strip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "price-tag",
+      "type": "registry:ui",
+      "title": "Price Tag",
+      "description": "Locale-aware price with compare-at strike, computed discount badge and a screen-reader announcement. No dependencies.",
+      "categories": [
+        "ecommerce",
+        "product",
+        "pricing"
+      ],
+      "cssVars": {
+        "light": {
+          "sale": "0 72% 42%"
+        },
+        "dark": {
+          "sale": "4 74% 58%"
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/ecomcn/price-tag/price-tag.tsx",
+          "type": "registry:ui",
+          "target": "components/ecomcn/price-tag.tsx"
+        }
+      ]
+    },
+    {
+      "name": "product-card",
+      "type": "registry:block",
+      "title": "Product Card",
+      "description": "Catalogue tile with badges, compare-at pricing, colour swatches that swap the image, rating, a keyboard-reachable quick-add, and a wishlist heart under the badge (your shadcn Toggle, optimistic). Colours can be hidden for products that don't come in any. Compound: use it as one tag, or recompose it from ProductCardMedia, ProductCardBody and their parts via useProductCard().",
+      "categories": [
+        "ecommerce",
+        "product",
+        "catalog"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "toggle",
+        "@ecomcn/price-tag"
+      ],
+      "cssVars": {
+        "light": {
+          "sale": "0 72% 42%",
+          "success": "138 30% 34%"
+        },
+        "dark": {
+          "sale": "4 74% 58%",
+          "success": "138 26% 52%"
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/ecomcn/product-card/product-card.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/product-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "product-grid",
+      "type": "registry:block",
+      "title": "Product Grid",
+      "description": "Responsive catalogue grid with box-matched loading skeletons, appended skeletons while more results load, a density switch, a renderCard slot for composed cards, and a left-aligned empty state.",
+      "categories": [
+        "ecommerce",
+        "catalog",
+        "listing"
+      ],
+      "registryDependencies": [
+        "skeleton",
+        "button",
+        "@ecomcn/product-card"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/product-grid/product-grid.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/product-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sort-toolbar",
+      "type": "registry:component",
+      "title": "Sort Toolbar",
+      "description": "The rule above a listing: a result count announced to screen readers once results settle, a native sort select, a density switch and a slot for the mobile filter trigger.",
+      "categories": [
+        "ecommerce",
+        "catalog",
+        "listing"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/sort-toolbar/sort-toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/sort-toolbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-results",
+      "type": "registry:component",
+      "title": "Empty Results",
+      "description": "A no-match state that names the filters that emptied the grid, offers the single change that brings the most back, and lets shoppers remove filters one at a time. Left-aligned, never centred.",
+      "categories": [
+        "ecommerce",
+        "catalog",
+        "listing",
+        "empty-state"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/empty-results/empty-results.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/empty-results.tsx"
+        }
+      ]
+    },
+    {
+      "name": "filter-panel",
+      "type": "registry:block",
+      "title": "Filter Panel",
+      "description": "Faceted filters with state that lives in the URL: applied-filter chips, checkbox lists with counts, a dual-handle range with typed inputs, colour swatches and toggles. Compound: one tag for the default layout, or FilterPanelHeader, FilterPanelChips and FilterPanelFacet in any order via useFilterPanel(). Ships a pure parser for server components and a useFilterParams hook.",
+      "categories": [
+        "ecommerce",
+        "catalog",
+        "listing",
+        "filters"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "checkbox",
+        "input",
+        "slider",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/filter-panel/filter-panel.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/filter-panel.tsx"
+        },
+        {
+          "path": "src/registry/ecomcn/filter-panel/filter-params.ts",
+          "type": "registry:lib",
+          "target": "lib/filter-params.ts"
+        },
+        {
+          "path": "src/registry/ecomcn/filter-panel/use-filter-params.ts",
+          "type": "registry:hook",
+          "target": "hooks/use-filter-params.ts"
+        }
+      ]
+    },
+    {
+      "name": "filter-sheet",
+      "type": "registry:block",
+      "title": "Filter Sheet",
+      "description": "The filter panel in a slide-over for small screens. Changes are staged and applied once — on Show or on close — with a live result count on the button and focus returned to the trigger. Accepts the same FilterPanel parts as children, so a custom layout stages too.",
+      "categories": [
+        "ecommerce",
+        "catalog",
+        "listing",
+        "filters",
+        "mobile"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "sheet",
+        "@ecomcn/filter-panel"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/filter-sheet/filter-sheet.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/filter-sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "load-more",
+      "type": "registry:component",
+      "title": "Load More",
+      "description": "Progressive loading for a product list: a progress rule and “Showing 24 of 312” count, a Load more button, optional hybrid or infinite auto-loading, focus moved to the first new item, and an announced count. The pattern Baymard found performs best, in one component.",
+      "categories": [
+        "ecommerce",
+        "catalog",
+        "listing",
+        "pagination"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/load-more/load-more.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/load-more.tsx"
+        }
+      ]
+    },
+    {
+      "name": "product-quick-view",
+      "type": "registry:block",
+      "title": "Product Quick View",
+      "description": "Quick view with a shared-element morph: the card image grows into the dialog and shrinks back on close. Motion's layoutId drives the morph, a native <dialog> does the modal work, focus returns to the trigger, and reduced-motion users get no movement. The one ecomcn block that depends on motion — opt-in.",
+      "categories": [
+        "ecommerce",
+        "catalog",
+        "listing",
+        "animation"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "@ecomcn/price-tag",
+        "@ecomcn/product-card"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/product-quick-view/product-quick-view.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/product-quick-view.tsx"
+        }
+      ]
+    },
+    {
+      "name": "product-details-accordion",
+      "type": "registry:component",
+      "title": "Product Details Accordion",
+      "description": "Materials, care, shipping and maker sections on your shadcn Accordion, first section open. Each closed row carries a one-line summary, so shoppers get the answer without opening it, and panels open with a Motion height morph. One tag from data, or composed from sections and a specs list; open state is shared through context. Works on Radix and Base UI.",
+      "categories": [
+        "ecommerce",
+        "product",
+        "pdp"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/product-details-accordion/product-details-accordion.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/product-details-accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "size-guide-dialog",
+      "type": "registry:component",
+      "title": "Size Guide Dialog",
+      "description": "A measurement table in your shadcn Dialog that morphs out of a quiet link beside the size label, and back into it (Motion; a fade under reduced motion). Centimetres and inches with tape-honest rounding, the shopper's selected size marked and announced, ranges and size equivalents (EU 38) in the same table, and a size column that stays put while the measurements scroll sideways on narrow screens. Composed from parts that share the unit through context.",
+      "categories": [
+        "ecommerce",
+        "product",
+        "pdp",
+        "sizing"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dialog",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/size-guide-dialog/size-guide-dialog.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/size-guide-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "variant-swatches",
+      "type": "registry:block",
+      "title": "Variant Swatches",
+      "description": "Colour swatches and a ruled size grid that work out stock from your variants: with a colour picked, sizes it has none of are struck through with a diagonal rule and read out as sold out, yet stay focusable and choosable — for a notify-me — while a live status line says why they can't be bought. Low stock shows under the size and in the status line. The selection mark slides between options with Motion (a fade under reduced motion). A radio group with roving focus; compound parts share the selection, the resolved variant and whether it can be bought through useVariantSwatches().",
+      "categories": [
+        "ecommerce",
+        "product",
+        "pdp",
+        "variants"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/variant-swatches/variant-swatches.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/variant-swatches.tsx"
+        }
+      ]
+    },
+    {
+      "name": "product-buy-box",
+      "type": "registry:block",
+      "title": "Product Buy Box",
+      "description": "The buy box: brand, name, a rating that links to the reviews, the price (the variant's own when it has one), stock-aware variant swatches, a quantity stepper, and an add-to-bag button that carries the live total — \"Add to bag — $840\". Adding is optimistic and rolls back with an inline message if your handler rejects. A missing size is asked for, not greyed out; a sold-out pick becomes \"Notify me\". Delivery is a date range from business days and a dispatch cut-off, never \"ships soon\". Labels, price and notices morph with Motion (a fade under reduced motion). Compound: the selected variant lives in one context, read through useProductBuyBox().",
+      "categories": [
+        "ecommerce",
+        "product",
+        "pdp",
+        "cart"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "@ecomcn/price-tag",
+        "@ecomcn/variant-swatches"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/product-buy-box/product-buy-box.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/product-buy-box.tsx"
+        }
+      ]
+    },
+    {
+      "name": "review-summary",
+      "type": "registry:block",
+      "title": "Review Summary",
+      "description": "The reviews section: the average set large, a star histogram whose rows are buttons that filter the list (and read out as \"5 stars, 226 reviews, 72%\"), a fit scale with its reading in words, and reviews with a Verified buyer badge. The active row's rule slides between rows, bars grow to their share, and the list grows to its measured height as it filters — Motion, a fade under reduced motion. Takes a page of reviews plus overall counts, and reports the filter so you can fetch server-side. Compound, through useReviewSummary().",
+      "categories": [
+        "ecommerce",
+        "product",
+        "pdp",
+        "reviews"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/review-summary/review-summary.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/review-summary.tsx"
+        }
+      ]
+    },
+    {
+      "name": "related-products",
+      "type": "registry:block",
+      "title": "Related Products",
+      "description": "A \"pairs well with\" rail of the exact product card on your shadcn Carousel, with the Carousel's own previous / next buttons in the header and a progress rule under it in place of a scrollbar. Below the fold by nature, so nothing in it loads with the page: the cards and their images mount when the rail comes within a screen of the viewport, fading in over skeletons of exactly their shape (Motion). Compound, through useRelatedProducts().",
+      "categories": [
+        "ecommerce",
+        "product",
+        "pdp",
+        "merchandising"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "carousel",
+        "skeleton",
+        "@ecomcn/product-card"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/related-products/related-products.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/related-products.tsx"
+        }
+      ]
+    },
+    {
+      "name": "product-gallery",
+      "type": "registry:block",
+      "title": "Product Gallery",
+      "description": "The product's photos: a main image on your shadcn Carousel with a counter, and thumbnails beside it on a desktop and under it on a phone (scrolling without a scrollbar). Swipe on touch; with a mouse the photo zooms where the pointer is. Pressing the photo opens it full screen on your shadcn Dialog — the screen grows out of the photo and folds back into it (Motion; a fade under reduced motion) — which is also the zoom for touch and the keyboard. The active thumbnail's frame slides to the next; the rest sit at 60%. The first photo loads with priority, the second early, the rest when they are next. Images are data rendered as <img>, or through your renderImage (next/image, say). Compound, through useProductGallery().",
+      "categories": [
+        "ecommerce",
+        "product",
+        "pdp",
+        "media"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "carousel",
+        "dialog"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/product-gallery/product-gallery.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/product-gallery.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cart-line-item",
+      "type": "registry:component",
+      "title": "Cart Line Item",
+      "description": "One line in a bag: thumbnail, name and variant, a quantity stepper, a right-aligned tabular line total, and save-for-later / remove. Removing never asks — the row folds into a \"Removed — Undo\" bar, focus moves to Undo, and onRemove runs only once the undo window has passed or the line leaves the page. Quantity changes show at once and reach onQuantityChange once, after the shopper settles. Either handler can reject: the line puts itself back and says so. Rows fold to their measured height with Motion (a fade under reduced motion). Compound, through useCartLineItem().",
+      "categories": [
+        "ecommerce",
+        "cart"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/cart-line-item/cart-line-item.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/cart-line-item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cart-sheet",
+      "type": "registry:block",
+      "title": "Cart Sheet",
+      "description": "The mini cart on your shadcn Sheet: a bag button with a count that turns over, and a sheet that grows out of it as a circle and folds back into it (Motion; a fade under reduced motion). Ruled header, body and footer bands — the lines are the only scroller, with soft edges instead of a scrollbar — and a footer with free-delivery progress, the subtotal and checkout. Focus is trapped and handed back to the bag button; lines are keyed by id, so a cart update never remounts one mid-undo, and the subtotal follows what the shopper sees before your cart catches up. Compound, through useCartSheet().",
+      "categories": [
+        "ecommerce",
+        "cart"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "sheet",
+        "button",
+        "@ecomcn/cart-line-item"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/cart-sheet/cart-sheet.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/cart-sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "order-summary",
+      "type": "registry:block",
+      "title": "Order Summary",
+      "description": "Free-shipping progress, promo code field with applied state, itemised totals and the checkout CTA. Totals logic lives in a separate hook you can test.",
+      "categories": [
+        "ecommerce",
+        "cart",
+        "checkout"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "cssVars": {
+        "light": {
+          "sale": "0 72% 42%",
+          "success": "138 30% 34%"
+        },
+        "dark": {
+          "sale": "4 74% 58%",
+          "success": "138 26% 52%"
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/ecomcn/order-summary/order-summary.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/order-summary.tsx"
+        },
+        {
+          "path": "src/registry/ecomcn/order-summary/use-order-totals.ts",
+          "type": "registry:hook",
+          "target": "hooks/use-order-totals.ts"
+        }
+      ]
+    },
+    {
+      "name": "checkout-stepper",
+      "type": "registry:component",
+      "title": "Checkout Stepper",
+      "description": "Where the shopper is in checkout: a rail of equal ruled cells, edge to edge. Done steps carry a check and are buttons back to them; the current step is aria-current=\"step\"; steps to come are not clickable. Never colour alone — a check, a number, and a heavy rule under the current step that slides on as the shopper moves (Motion; a fade under reduced motion). On a phone the rail shows numbers, with the step named below it.",
+      "categories": [
+        "ecommerce",
+        "checkout"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/checkout-stepper/checkout-stepper.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/checkout-stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "delivery-options",
+      "type": "registry:block",
+      "title": "Delivery Options",
+      "description": "How it gets there: one ruled list of delivery methods, each with its arrival dates and price. Arrival is a date range from business days and a dispatch cut-off on the shopper's own clock, worked out after hydration so the server never guesses their time zone, with a countdown to the cut-off on the chosen method. Prices are right-aligned tabular figures and a free method says Free. Unavailable methods give their reason in words; loading and empty states included. The heavy rule slides to the chosen method (Motion; a fade under reduced motion).",
+      "categories": [
+        "ecommerce",
+        "checkout"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "radio-group",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/delivery-options/delivery-options.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/delivery-options.tsx"
+        }
+      ]
+    },
+    {
+      "name": "address-form",
+      "type": "registry:block",
+      "title": "Address Form",
+      "description": "A shipping or billing address whose fields follow the country: a state and ZIP code for the US, a town and postcode for the UK, family name first for Japan, a generic shape for the rest. Country and region are your shadcn Combobox, searchable, and every field carries its section-prefixed autocomplete token, so browser autofill fills the lot. validateAddress is a pure function in its own file, so your server runs the same rules. Error summary that links to each field, an address-lookup slot, save-as-default, a loading skeleton. Fields that come and go with the country grow and fold to their measured height (Motion; a fade under reduced motion).",
+      "categories": [
+        "ecommerce",
+        "checkout"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "combobox",
+        "field",
+        "input",
+        "checkbox",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/address-form/address-form.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/address-form.tsx"
+        },
+        {
+          "path": "src/registry/ecomcn/address-form/address-format.ts",
+          "type": "registry:lib",
+          "target": "lib/address-format.ts"
+        }
+      ]
+    },
+    {
+      "name": "payment-selector",
+      "type": "registry:block",
+      "title": "Payment Selector",
+      "description": "How the shopper pays: one ruled list of methods (card, wallet, pay in instalments, bank) where the chosen one opens onto your payment provider's own fields. It never renders a card-number field: each panel is a renderPanel slot for Stripe's Payment Element, Adyen's Drop-in, PayPal or a redirect notice, kept mounted once opened so a provider iframe keeps the half-typed card. Panels sit outside the radio group, so arrow keys move between methods without reaching into a provider's fields, yet render under their own method as one object. Instalment lines from the order total, unavailable methods with their reason in words, a provider error in the open panel, loading and empty states. The heavy rule slides to the chosen method and its panel grows to its measured height (Motion; a fade under reduced motion).",
+      "categories": [
+        "ecommerce",
+        "checkout"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "radio-group",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/payment-selector/payment-selector.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/payment-selector.tsx"
+        }
+      ]
+    },
+    {
+      "name": "order-confirmation",
+      "type": "registry:block",
+      "title": "Order Confirmation",
+      "description": "The page after Pay: the receipt people screenshot, print and come back to. A thank-you set large in your serif on a grained band, with a check that draws itself; the order number, placed date, arrival window and amount paid in one ruled row above the fold; the items as a ledger with totals; ship-to, delivery and payment. Prints as a plain black-on-white receipt with the permalink written out; Copy order link for a permalink you give it. Calendar dates in UTC so they never slip a day; the placed time in the visitor's zone once hydrated. Loading skeleton included. Compound, through useOrderConfirmation().",
+      "categories": [
+        "ecommerce",
+        "post-purchase"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/order-confirmation/order-confirmation.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/order-confirmation.tsx"
+        }
+      ]
+    },
+    {
+      "name": "order-tracking",
+      "type": "registry:block",
+      "title": "Order Tracking",
+      "description": "Where the parcel is: a status chip, the arrival window, a vertical timeline of milestones and the carrier's updates. Carrier webhooks arrive out of order and twice, so events are de-duplicated by id and sorted by when they happened — sortTrackingEvents and trackingProgress live in lib/tracking-events.ts, with no \"use client\", so a webhook handler runs the same code. The current node is ringed with a live pulse, passed ones solid ink, those to come hollow grey; a carrier problem turns the chip to Needs attention and says why. Rules fill as the parcel moves and the update log grows to its measured height (Motion; a fade under reduced motion). Loading and empty states included.",
+      "categories": [
+        "ecommerce",
+        "post-purchase"
+      ],
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ecomcn/order-tracking/order-tracking.tsx",
+          "type": "registry:component",
+          "target": "components/ecomcn/order-tracking.tsx"
+        },
+        {
+          "path": "src/registry/ecomcn/order-tracking/tracking-events.ts",
+          "type": "registry:lib",
+          "target": "lib/tracking-events.ts"
+        }
+      ]
+    },
+    {
+      "name": "theme-editorial",
+      "type": "registry:theme",
+      "title": "Editorial Theme",
+      "description": "The ecomcn house style — warm paper, near-black ink, a single vermilion signal colour, and a 2px radius so nothing reads as a rounded card. Ships the complete shadcn token set plus --brand, --sale and --success.",
+      "categories": [
+        "theme",
+        "ecommerce"
+      ],
+      "cssVars": {
+        "light": {
+          "background": "hsl(40 30% 97%)",
+          "foreground": "hsl(30 9% 9%)",
+          "card": "hsl(40 30% 99%)",
+          "card-foreground": "hsl(30 9% 9%)",
+          "popover": "hsl(40 30% 99%)",
+          "popover-foreground": "hsl(30 9% 9%)",
+          "primary": "hsl(30 9% 9%)",
+          "primary-foreground": "hsl(40 30% 97%)",
+          "secondary": "hsl(38 20% 92%)",
+          "secondary-foreground": "hsl(30 9% 9%)",
+          "muted": "hsl(38 18% 93%)",
+          "muted-foreground": "hsl(32 6% 42%)",
+          "accent": "hsl(38 20% 92%)",
+          "accent-foreground": "hsl(30 9% 9%)",
+          "destructive": "hsl(0 72% 42%)",
+          "destructive-foreground": "hsl(40 30% 98%)",
+          "border": "hsl(34 14% 85%)",
+          "input": "hsl(34 14% 82%)",
+          "ring": "hsl(12 76% 50%)",
+          "brand": "hsl(12 76% 50%)",
+          "brand-foreground": "hsl(40 30% 98%)",
+          "sale": "hsl(0 72% 42%)",
+          "success": "hsl(138 30% 34%)",
+          "chart-1": "hsl(12 76% 50%)",
+          "chart-2": "hsl(138 30% 34%)",
+          "chart-3": "hsl(32 45% 52%)",
+          "chart-4": "hsl(200 22% 45%)",
+          "chart-5": "hsl(30 9% 25%)",
+          "sidebar": "hsl(40 30% 99%)",
+          "sidebar-foreground": "hsl(30 9% 9%)",
+          "sidebar-primary": "hsl(30 9% 9%)",
+          "sidebar-primary-foreground": "hsl(40 30% 97%)",
+          "sidebar-accent": "hsl(38 20% 92%)",
+          "sidebar-accent-foreground": "hsl(30 9% 9%)",
+          "sidebar-border": "hsl(34 14% 85%)",
+          "sidebar-ring": "hsl(12 76% 50%)",
+          "radius": "0.125rem"
+        },
+        "dark": {
+          "background": "hsl(30 8% 7%)",
+          "foreground": "hsl(40 22% 94%)",
+          "card": "hsl(30 8% 10%)",
+          "card-foreground": "hsl(40 22% 94%)",
+          "popover": "hsl(30 8% 10%)",
+          "popover-foreground": "hsl(40 22% 94%)",
+          "primary": "hsl(40 22% 94%)",
+          "primary-foreground": "hsl(30 8% 7%)",
+          "secondary": "hsl(30 6% 16%)",
+          "secondary-foreground": "hsl(40 22% 94%)",
+          "muted": "hsl(30 6% 15%)",
+          "muted-foreground": "hsl(36 8% 62%)",
+          "accent": "hsl(30 6% 16%)",
+          "accent-foreground": "hsl(40 22% 94%)",
+          "destructive": "hsl(4 74% 58%)",
+          "destructive-foreground": "hsl(30 8% 7%)",
+          "border": "hsl(30 6% 20%)",
+          "input": "hsl(30 6% 24%)",
+          "ring": "hsl(14 82% 58%)",
+          "brand": "hsl(14 82% 57%)",
+          "brand-foreground": "hsl(30 8% 7%)",
+          "sale": "hsl(4 74% 58%)",
+          "success": "hsl(138 26% 52%)",
+          "chart-1": "hsl(14 82% 57%)",
+          "chart-2": "hsl(138 26% 52%)",
+          "chart-3": "hsl(32 40% 62%)",
+          "chart-4": "hsl(200 20% 60%)",
+          "chart-5": "hsl(40 12% 74%)",
+          "sidebar": "hsl(30 8% 10%)",
+          "sidebar-foreground": "hsl(40 22% 94%)",
+          "sidebar-primary": "hsl(40 22% 94%)",
+          "sidebar-primary-foreground": "hsl(30 8% 7%)",
+          "sidebar-accent": "hsl(30 6% 16%)",
+          "sidebar-accent-foreground": "hsl(40 22% 94%)",
+          "sidebar-border": "hsl(30 6% 20%)",
+          "sidebar-ring": "hsl(14 82% 58%)"
+        }
+      }
+    }
+  ]
+}

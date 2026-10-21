@@ -1391,6 +1391,20 @@
       ]
     },
     {
+      "name": "background-cubes-grid",
+      "type": "registry:ui",
+      "dependencies": [
+        "three",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "ui/background-cubes-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "cards-demo-1",
       "type": "registry:block",
       "description": "Background Overlay Card",
@@ -4210,6 +4224,39 @@
       ]
     },
     {
+      "name": "morphing-hero-section",
+      "type": "registry:block",
+      "resolution": "gated",
+      "description": "Hero with pop-in platform pills, a navbar that morphs into a floating pill on scroll, and a live streaming studio mockup with morphing layouts and chat",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "block/morphing-hero-section.tsx",
+          "type": "registry:block",
+          "target": "block/morphing-hero-section.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-with-logo-ticker-and-workspace",
+      "type": "registry:block",
+      "resolution": "gated",
+      "description": "Dark and light hero with a split headline and logo ticker, above a three-panel app workspace with a crossfading clip player, sidebar, and assistant log",
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react"
+      ],
+      "files": [
+        {
+          "path": "block/hero-with-logo-ticker-and-workspace.tsx",
+          "type": "registry:block",
+          "target": "block/hero-with-logo-ticker-and-workspace.tsx"
+        }
+      ]
+    },
+    {
       "name": "saas-landing-page",
       "type": "registry:block",
       "resolution": "gated",
@@ -4419,6 +4466,89 @@
           "path": "page/inference-landing-page/components/ai-logos.tsx",
           "type": "registry:component",
           "target": "components/inference-landing-page/ai-logos.tsx"
+        }
+      ]
+    },
+    {
+      "name": "product-landing-page",
+      "type": "registry:block",
+      "resolution": "gated",
+      "description": "Landing page for Marquee, a design tool that runs on your codebase, with a live canvas hero, interactive feature art, handoff, review comments, pricing, sign-up and tour modals, an ASCII CTA and footer, in light and dark",
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react",
+        "@radix-ui/react-dialog"
+      ],
+      "files": [
+        {
+          "path": "page/product-landing-page/page.tsx",
+          "type": "registry:page",
+          "target": "app/product-landing-page/page.tsx"
+        },
+        {
+          "path": "page/product-landing-page/components/navbar.tsx",
+          "type": "registry:component",
+          "target": "components/product-landing-page/navbar.tsx"
+        },
+        {
+          "path": "page/product-landing-page/components/hero.tsx",
+          "type": "registry:component",
+          "target": "components/product-landing-page/hero.tsx"
+        },
+        {
+          "path": "page/product-landing-page/components/logos.tsx",
+          "type": "registry:component",
+          "target": "components/product-landing-page/logos.tsx"
+        },
+        {
+          "path": "page/product-landing-page/components/features.tsx",
+          "type": "registry:component",
+          "target": "components/product-landing-page/features.tsx"
+        },
+        {
+          "path": "page/product-landing-page/components/handoff.tsx",
+          "type": "registry:component",
+          "target": "components/product-landing-page/handoff.tsx"
+        },
+        {
+          "path": "page/product-landing-page/components/review.tsx",
+          "type": "registry:component",
+          "target": "components/product-landing-page/review.tsx"
+        },
+        {
+          "path": "page/product-landing-page/components/testimonial.tsx",
+          "type": "registry:component",
+          "target": "components/product-landing-page/testimonial.tsx"
+        },
+        {
+          "path": "page/product-landing-page/components/pricing.tsx",
+          "type": "registry:component",
+          "target": "components/product-landing-page/pricing.tsx"
+        },
+        {
+          "path": "page/product-landing-page/components/cta.tsx",
+          "type": "registry:component",
+          "target": "components/product-landing-page/cta.tsx"
+        },
+        {
+          "path": "page/product-landing-page/components/footer.tsx",
+          "type": "registry:component",
+          "target": "components/product-landing-page/footer.tsx"
+        },
+        {
+          "path": "page/product-landing-page/components/ui.tsx",
+          "type": "registry:component",
+          "target": "components/product-landing-page/ui.tsx"
+        },
+        {
+          "path": "page/product-landing-page/components/mark.tsx",
+          "type": "registry:component",
+          "target": "components/product-landing-page/mark.tsx"
+        },
+        {
+          "path": "page/product-landing-page/components/modals.tsx",
+          "type": "registry:component",
+          "target": "components/product-landing-page/modals.tsx"
         }
       ]
     }

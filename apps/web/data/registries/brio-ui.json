@@ -1,0 +1,119 @@
+{
+  "key": "brio-ui",
+  "entry": "Brio UI",
+  "name": "brio-free",
+  "homepage": "https://brioui.com",
+  "indexUrl": "https://brioui.com/r/free.json",
+  "itemBase": "https://brioui.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "install-command",
+      "type": "registry:ui",
+      "title": "Install Command",
+      "description": "npm / pnpm / yarn / bun tabs where only the words that differ change. Every block on the page follows your pick, in a cascade, and remembers it.",
+      "categories": [
+        "Text"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/install-command/install-command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pricing-toggle",
+      "type": "registry:ui",
+      "title": "Pricing Toggle",
+      "description": "Monthly / yearly switch with odometer prices. Drag halfway and prices sit halfway; land on yearly and the badge peels, the old price strikes through.",
+      "categories": [
+        "Commerce"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/pricing-toggle/pricing-toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "faq",
+      "type": "registry:ui",
+      "title": "FAQ",
+      "description": "Accordion with deep links, ⌘F that finds text in closed answers, optional search with highlights, and FAQPage structured data for Google.",
+      "categories": [
+        "Text"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/faq/faq.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "changelog",
+      "type": "registry:ui",
+      "title": "Changelog",
+      "description": "Remembers what each visitor has read: unread dots, a “since your last visit” line, dots that fade as you read, and a mark-all sweep. Releases hang off a measuring-tape rail.",
+      "categories": [
+        "Text"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/changelog/changelog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "code-input",
+      "type": "registry:ui",
+      "title": "Code Input",
+      "description": "A calm code field with a caret that glides between underlined slots. Digits rise into place, pasted codes stream in, a line runs while checking, and on success the underlines join into one with a check. Optional masking.",
+      "categories": [
+        "Forms"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/code-input/code-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "contact-form",
+      "type": "registry:ui",
+      "title": "Contact Form",
+      "description": "The contact form: topic chips with a sliding pill that reshape the fields (Sales adds company and team size) while the card's height glides; company filled from a work email's domain; a reply estimate computed from your business hours in the visitor's time zone plus an online/back status; drafts kept in sessionStorage with Discard; errors in the label row so nothing moves, bad fields shake once; the send folds into a summary with a reference and Send another; failures keep everything.",
+      "categories": [
+        "Forms"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/contact-form/contact-form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

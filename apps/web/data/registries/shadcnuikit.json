@@ -6981,9 +6981,9 @@
       "title": "Form layouts",
       "description": "Three step onboarding wizard with horizontal stepper: account fields with password toggles and timezone, company details selects, then billing cycle toggle, three plan cards, summary panel and terms checkbox.",
       "dependencies": [
+        "@base-ui/react@1",
         "@hookform/resolvers@3",
         "lucide-react@0",
-        "radix-ui",
         "react-hook-form@7",
         "zod@3"
       ],
@@ -7022,9 +7022,9 @@
       "title": "Form layouts",
       "description": "Four step product listing wizard with a vertical step rail: category cards, brand and condition, title, description, SKU and tags, price with compare-at discount and inventory switches, then a review step with edit buttons.",
       "dependencies": [
+        "@base-ui/react@1",
         "@hookform/resolvers@3",
         "lucide-react@0",
-        "radix-ui",
         "react-hook-form@7",
         "zod@3"
       ],
@@ -8466,6 +8466,7 @@
     {
       "name": "sidebar-layout",
       "type": "registry:block",
+      "resolution": "gated",
       "title": "Sidebar layouts",
       "description": "Full height sidebar layout with a brand button, scrollable Platform and Projects link groups and a header with a sidebar toggle and Dashboard title, next to an empty content panel.",
       "dependencies": [
@@ -10203,6 +10204,7 @@
       "title": "Checkout page",
       "description": "Three step checkout with a stepper for information, shipping and payment, delivery or pickup choice, Google Pay and PayPal buttons, and an order summary whose button label follows the step.",
       "dependencies": [
+        "@base-ui/react@1",
         "@hookform/resolvers@3",
         "lucide-react@0",
         "radix-ui",
@@ -11300,6 +11302,7 @@
     {
       "name": "promo-section",
       "type": "registry:block",
+      "resolution": "gated",
       "title": "Promo sections",
       "description": "Collection promo with a Summer styles headline, short copy and Shop Collection button beside two columns of product photos scrolling vertically in opposite directions, slowing on hover and fading at the edges.",
       "dependencies": [
@@ -11510,6 +11513,7 @@
     {
       "name": "store-navigation",
       "type": "registry:block",
+      "resolution": "gated",
       "title": "Store navigation",
       "description": "Ecommerce header with logo, Collections dropdown with featured image card, Accessories dropdown with icon grid, Women and Men links, search, wishlist, cart badge, Sign in and a mobile sheet menu.",
       "dependencies": [
@@ -12072,6 +12076,26 @@
           "path": "contents/blocks/marketing/cta-sections/11/index.tsx",
           "type": "registry:component",
           "target": "components/cta11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta12",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Cta sections",
+      "description": "Integrations CTA with brand logos placed on concentric half rings that fade out, a centered headline, supporting text and an Explore integrations button.",
+      "dependencies": [
+        "lucide-react@0"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/cta-sections/12/index.tsx",
+          "type": "registry:component",
+          "target": "components/cta12.tsx"
         }
       ]
     },
@@ -13047,6 +13071,126 @@
       ]
     },
     {
+      "name": "hero15",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Hero sections",
+      "description": "Split integrations hero with a logo navbar, pill Log in and Get started group, headline, highlighted paragraph, rounded CTA and team avatars, beside a central logo tile circled by app icons moving along two tilted orbits with depth.",
+      "dependencies": [
+        "@tabler/icons-react@3",
+        "lucide-react@0",
+        "motion@12"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/hero-sections/15/index.tsx",
+          "type": "registry:component",
+          "target": "components/hero15.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero16",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Hero sections",
+      "description": "Rounded primary card hero with a floating pill navbar, student avatars, serif headline, Find your tutor and outline buttons and counting stats, beside two tutor photo card columns scrolling in opposite directions.",
+      "dependencies": [
+        "lucide-react@0",
+        "motion@12",
+        "react-use-measure@2"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/hero-sections/16/index.tsx",
+          "type": "registry:component",
+          "target": "components/hero16.tsx"
+        },
+        {
+          "path": "components/ui/infinite-slider.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/infinite-slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero17",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Hero sections",
+      "description": "Full-bleed photo hero in a rounded frame with a centered logo navbar and a right Drawer menu, check note, large headline, white and frosted buttons, and three divided highlights along the bottom.",
+      "dependencies": [
+        "lucide-react@0"
+      ],
+      "registryDependencies": [
+        "button",
+        "drawer"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/hero-sections/17/index.tsx",
+          "type": "registry:component",
+          "target": "components/hero17.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero18",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Hero sections",
+      "description": "Centered SaaS hero with a logo navbar, outlined badge flanked by fading lines, large headline, Start free trial button and a glowing framed dashboard preview with an icon rail, hours card and capacity bar chart.",
+      "dependencies": [
+        "lucide-react@0",
+        "recharts@3"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "chart",
+        "toggle-group"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/hero-sections/18/index.tsx",
+          "type": "registry:component",
+          "target": "components/hero18.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero19",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Hero sections",
+      "description": "Full-height photo hero with a dark announcement bar, bordered navbar with mono uppercase links, a square-marked label and uppercase headline bottom left, and a paragraph, arrow links and Book now button bottom right.",
+      "dependencies": [
+        "lucide-react@0"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/hero-sections/19/index.tsx",
+          "type": "registry:component",
+          "target": "components/hero19.tsx"
+        }
+      ]
+    },
+    {
       "name": "hero2",
       "type": "registry:block",
       "resolution": "gated",
@@ -13065,6 +13209,175 @@
           "path": "contents/blocks/marketing/hero-sections/2/index.tsx",
           "type": "registry:component",
           "target": "components/hero2.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero20",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Hero sections",
+      "description": "Editorial split hero with a Menu button opening a left Drawer, centered two-line serif logo and Contact button, uppercase eyebrow and serif headline beside a paragraph and CTA, above a full-width photo.",
+      "dependencies": [
+        "lucide-react@0"
+      ],
+      "registryDependencies": [
+        "button",
+        "drawer"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/hero-sections/20/index.tsx",
+          "type": "registry:component",
+          "target": "components/hero20.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero21",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Hero sections",
+      "description": "Centered app hero with logo navbar, bold headline, short paragraph and Get started button above a phone mockup showing a profile and action list, with a streak card and a tilted task card floating beside it.",
+      "dependencies": [
+        "lucide-react@0"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "card",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/hero-sections/21/index.tsx",
+          "type": "registry:component",
+          "target": "components/hero21.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero22",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Hero sections",
+      "description": "Primary color hero with a pill navbar, large centered serif headline, volunteer and outline buttons, and three fanned photo cards that spread apart on hover.",
+      "dependencies": [
+        "lucide-react@0"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/hero-sections/22/index.tsx",
+          "type": "registry:component",
+          "target": "components/hero22.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero23",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Hero sections",
+      "description": "Dark SaaS hero with animated light rays, a central beam and a glowing horizon arc behind a dashboard preview showing uptime, live deployments and a requests area chart.",
+      "dependencies": [
+        "lucide-react@0",
+        "motion@12",
+        "recharts@3"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "chart",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/hero-sections/23/index.tsx",
+          "type": "registry:component",
+          "target": "components/hero23.tsx"
+        },
+        {
+          "path": "components/ui/light-rays.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/light-rays.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero24",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Hero sections",
+      "description": "Rounded primary panel hero with a soft grid pattern and stepped side blocks, centered headline and CTA, and three shipping cards for active parcels, weekly deliveries chart and a live route.",
+      "dependencies": [
+        "lucide-react@0",
+        "recharts@3"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "chart",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/hero-sections/24/index.tsx",
+          "type": "registry:component",
+          "target": "components/hero24.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero25",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Hero sections",
+      "description": "Full-height landscape photo hero fading into the background at the top, with a two-tone serif headline, secondary and arrow CTA buttons and a five star rating line.",
+      "dependencies": [
+        "lucide-react@0"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/hero-sections/25/index.tsx",
+          "type": "registry:component",
+          "target": "components/hero25.tsx"
+        },
+        {
+          "path": "components/ui/star-rating.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/star-rating.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero26",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Hero sections",
+      "description": "Centered community hero with split navigation around the logo, serif and bold two-line headline, CTA, a row of portraits curved in 3D perspective and three divided feature columns.",
+      "dependencies": [
+        "lucide-react@0"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/hero-sections/26/index.tsx",
+          "type": "registry:component",
+          "target": "components/hero26.tsx"
         }
       ]
     },
@@ -13270,6 +13583,23 @@
           "path": "contents/blocks/marketing/how-it-works/10/index.tsx",
           "type": "registry:component",
           "target": "components/how-it-works10.tsx"
+        }
+      ]
+    },
+    {
+      "name": "how-it-works11",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "How it works",
+      "description": "Centered heading and paragraph above three step cards, each with a step label, a large fading number in the corner, a title and a short description.",
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/how-it-works/11/index.tsx",
+          "type": "registry:component",
+          "target": "components/how-it-works11.tsx"
         }
       ]
     },
@@ -13522,6 +13852,28 @@
           "path": "components/ui/infinite-slider.tsx",
           "type": "registry:ui",
           "target": "components/ui/infinite-slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "integrations7",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Integrations",
+      "description": "Centered integrations heading with a badge and link on a dotted background, surrounded by brand logos that slowly orbit along a large ring.",
+      "dependencies": [
+        "lucide-react@0",
+        "motion@12"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/blocks/marketing/integrations/7/index.tsx",
+          "type": "registry:component",
+          "target": "components/integrations7.tsx"
         }
       ]
     },
@@ -19106,6 +19458,542 @@
       ]
     },
     {
+      "name": "code-block1",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "A syntax highlighted code block with copy and download actions, line numbers, diffs, diagnostics, folding and streaming support for docs and AI chat interfaces.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/1/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block1.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block10",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "button",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/10/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block10.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block11",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/11/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block11.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block12",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/12/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block12.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block13",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/13/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block13.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block14",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "button",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/14/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block14.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block15",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "lucide-react@0",
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/15/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block15.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block16",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/16/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block16.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block17",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "lucide-react@0",
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/17/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block17.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block18",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/18/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block18.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block2",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "A syntax highlighted code block with copy and download actions, line numbers, diffs, diagnostics, folding and streaming support for docs and AI chat interfaces.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "button",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/2/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block2.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block3",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "A syntax highlighted code block with copy and download actions, line numbers, diffs, diagnostics, folding and streaming support for docs and AI chat interfaces.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/3/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block3.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block4",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/4/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block4.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block5",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/5/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block5.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block6",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/6/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block6.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block7",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/7/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block7.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block8",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/8/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block8.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block9",
+      "type": "registry:component",
+      "title": "Code block",
+      "description": "Code block built with shadcn/ui.",
+      "dependencies": [
+        "shiki@3"
+      ],
+      "registryDependencies": [
+        "button",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "contents/components/code-block/9/index.tsx",
+          "type": "registry:component",
+          "target": "components/code-block9.tsx"
+        },
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        },
+        {
+          "path": "components/ui/code-block-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block-highlight.tsx"
+        }
+      ]
+    },
+    {
       "name": "collapsible1",
       "type": "registry:component",
       "title": "Collapsible",
@@ -24205,6 +25093,326 @@
           "path": "contents/components/spinner/9/index.tsx",
           "type": "registry:component",
           "target": "components/spinner9.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper1",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "A multi step navigation component that guides users through a process with numbered, icon or progress bar indicators, titles and step content.",
+      "dependencies": [
+        "@base-ui/react@1"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/1/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper1.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper10",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "Stepper built with shadcn/ui.",
+      "dependencies": [
+        "@base-ui/react@1"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/10/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper10.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper11",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "Stepper built with shadcn/ui.",
+      "dependencies": [
+        "@base-ui/react@1",
+        "lucide-react@0"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/11/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper11.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper12",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "Stepper built with shadcn/ui.",
+      "dependencies": [
+        "@base-ui/react@1",
+        "lucide-react@0"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/12/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper12.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper13",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "Stepper built with shadcn/ui.",
+      "dependencies": [
+        "@base-ui/react@1",
+        "lucide-react@0"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/13/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper13.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper14",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "Stepper built with shadcn/ui.",
+      "dependencies": [
+        "@base-ui/react@1",
+        "lucide-react@0"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "field",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/14/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper14.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper2",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "A multi step navigation component that guides users through a process with numbered, icon or progress bar indicators, titles and step content.",
+      "dependencies": [
+        "@base-ui/react@1",
+        "lucide-react@0"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/2/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper2.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper3",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "A multi step navigation component that guides users through a process with numbered, icon or progress bar indicators, titles and step content.",
+      "dependencies": [
+        "@base-ui/react@1"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/3/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper3.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper4",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "Stepper built with shadcn/ui.",
+      "dependencies": [
+        "@base-ui/react@1",
+        "lucide-react@0"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/4/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper4.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper5",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "Stepper built with shadcn/ui.",
+      "dependencies": [
+        "@base-ui/react@1",
+        "lucide-react@0"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/5/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper5.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper6",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "Stepper built with shadcn/ui.",
+      "dependencies": [
+        "@base-ui/react@1",
+        "lucide-react@0"
+      ],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/6/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper6.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper7",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "Stepper built with shadcn/ui.",
+      "dependencies": [
+        "@base-ui/react@1",
+        "lucide-react@0"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/7/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper7.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper8",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "Stepper built with shadcn/ui.",
+      "dependencies": [
+        "@base-ui/react@1",
+        "lucide-react@0"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/8/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper8.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper9",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "Stepper built with shadcn/ui.",
+      "dependencies": [
+        "@base-ui/react@1",
+        "lucide-react@0"
+      ],
+      "files": [
+        {
+          "path": "contents/components/stepper/9/index.tsx",
+          "type": "registry:component",
+          "target": "components/stepper9.tsx"
+        },
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
         }
       ]
     },

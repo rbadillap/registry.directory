@@ -27,15 +27,15 @@
       "name": "nextjs-middleware",
       "type": "registry:file",
       "title": "Clerk Next.js Middleware",
-      "description": "The clerkMiddleware() helper integrates Clerk authentication into your Next.js application through Middleware. clerkMiddleware() is compatible with both the App and Pages routers.",
+      "description": "The clerkMiddleware() helper integrates Clerk authentication into your Next.js application through Proxy. clerkMiddleware() is compatible with both the App and Pages routers.",
       "dependencies": [
         "@clerk/nextjs"
       ],
       "files": [
         {
-          "path": "nextjs/common/middleware/middleware.ts",
+          "path": "nextjs/common/middleware/proxy.ts",
           "type": "registry:file",
-          "target": "src/middleware.ts"
+          "target": "src/proxy.ts"
         }
       ]
     },

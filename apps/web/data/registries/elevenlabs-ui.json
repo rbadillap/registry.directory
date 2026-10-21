@@ -1,0 +1,881 @@
+{
+  "key": "elevenlabs-ui",
+  "entry": "ElevenLabs UI",
+  "name": "shadcn/ui",
+  "homepage": "https://ui.shadcn.com",
+  "indexUrl": "https://ui.elevenlabs.io/r/registry.json",
+  "itemBase": "https://ui.elevenlabs.io/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "index",
+      "type": "registry:style",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "style",
+      "type": "registry:style",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "orb",
+      "type": "registry:ui",
+      "dependencies": [
+        "@react-three/drei",
+        "@react-three/fiber",
+        "three",
+        "@types/three"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/orb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "waveform",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/waveform.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "live-waveform",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/live-waveform.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "shimmering-text",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/shimmering-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "audio-player",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-slider",
+        "@radix-ui/react-dropdown-menu"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/audio-player.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "conversation",
+      "type": "registry:ui",
+      "dependencies": [
+        "use-stick-to-bottom"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/conversation.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "response",
+      "type": "registry:ui",
+      "dependencies": [
+        "streamdown"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/response.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bar-visualizer",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/bar-visualizer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "matrix",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/matrix.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "voice-picker",
+      "type": "registry:ui",
+      "dependencies": [
+        "@elevenlabs/elevenlabs-js"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "command",
+        "popover",
+        "https://ui.elevenlabs.io/r/orb.json",
+        "https://ui.elevenlabs.io/r/audio-player.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/voice-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "voice-button",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "button",
+        "https://ui.elevenlabs.io/r/live-waveform.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/voice-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "conversation-bar",
+      "type": "registry:ui",
+      "dependencies": [
+        "@elevenlabs/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://ui.elevenlabs.io/r/live-waveform.json",
+        "card",
+        "separator",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/conversation-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "mic-selector",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "button",
+        "card",
+        "dropdown-menu",
+        "https://ui.elevenlabs.io/r/live-waveform.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/mic-selector.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "transcript-viewer",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "button",
+        "https://ui.elevenlabs.io/r/scrub-bar.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/transcript-viewer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scrub-bar",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/scrub-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "speech-input",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "skeleton",
+        "https://ui.elevenlabs.io/r/use-scribe.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/ui/speech-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "speaker-01",
+      "type": "registry:block",
+      "description": "EL-01 Speaker",
+      "categories": [
+        "audio"
+      ],
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/audio-player.json",
+        "https://ui.elevenlabs.io/r/orb.json",
+        "https://ui.elevenlabs.io/r/waveform.json",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/blocks/speaker-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/speaker/page.tsx"
+        },
+        {
+          "path": "registry/elevenlabs-ui/blocks/speaker-01/components/speaker.tsx",
+          "type": "registry:component",
+          "target": "components/speaker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "transcriber-01",
+      "type": "registry:block",
+      "description": "Transcriber",
+      "categories": [
+        "audio"
+      ],
+      "dependencies": [
+        "@elevenlabs/elevenlabs-js",
+        "streamdown"
+      ],
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/live-waveform.json",
+        "button",
+        "card",
+        "scroll-area",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/blocks/transcriber-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/transcriber-01/page.tsx"
+        },
+        {
+          "path": "registry/elevenlabs-ui/blocks/transcriber-01/actions/transcribe.ts",
+          "type": "registry:file",
+          "target": "app/transcriber-01/actions/transcribe.ts"
+        }
+      ]
+    },
+    {
+      "name": "realtime-transcriber-01",
+      "type": "registry:block",
+      "description": "Scribe V2 Realtime Transcriber",
+      "categories": [
+        "audio"
+      ],
+      "dependencies": [
+        "@elevenlabs/react",
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "scroll-area",
+        "https://ui.elevenlabs.io/r/shimmering-text.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/blocks/realtime-transcriber-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/realtime-transcriber-01/page.tsx"
+        },
+        {
+          "path": "registry/elevenlabs-ui/blocks/realtime-transcriber-01/actions/get-scribe-token.ts",
+          "type": "registry:file",
+          "target": "app/realtime-transcriber-01/actions/get-scribe-token.ts"
+        },
+        {
+          "path": "registry/elevenlabs-ui/blocks/realtime-transcriber-01/components/language-selector.tsx",
+          "type": "registry:component",
+          "target": "components/language-selector.tsx"
+        }
+      ]
+    },
+    {
+      "name": "voice-chat-01",
+      "type": "registry:block",
+      "description": "Voice chat 1",
+      "categories": [
+        "agents"
+      ],
+      "dependencies": [
+        "@elevenlabs/react"
+      ],
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/orb.json",
+        "https://ui.elevenlabs.io/r/shimmering-text.json",
+        "button",
+        "card",
+        "https://ui.elevenlabs.io/r/message.json",
+        "https://ui.elevenlabs.io/r/response.json",
+        "https://ui.elevenlabs.io/r/conversation.json",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/blocks/voice-chat-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/voice-chat/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "voice-chat-02",
+      "type": "registry:block",
+      "description": "Voice chat 2",
+      "categories": [
+        "agents"
+      ],
+      "dependencies": [
+        "@elevenlabs/react",
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/orb.json",
+        "https://ui.elevenlabs.io/r/shimmering-text.json",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/blocks/voice-chat-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/voice-chat/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "voice-chat-03",
+      "type": "registry:block",
+      "description": "Voice chat 3",
+      "categories": [
+        "agents"
+      ],
+      "dependencies": [
+        "@elevenlabs/react"
+      ],
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/conversation-bar.json",
+        "https://ui.elevenlabs.io/r/conversation.json",
+        "https://ui.elevenlabs.io/r/message.json",
+        "https://ui.elevenlabs.io/r/orb.json",
+        "https://ui.elevenlabs.io/r/response.json",
+        "tooltip",
+        "card",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/blocks/voice-chat-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/voice-chat/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "music-player-01",
+      "type": "registry:block",
+      "description": "Music player with playlist",
+      "categories": [
+        "audio"
+      ],
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/audio-player.json",
+        "button",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/blocks/music-player-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/music-player/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "music-player-02",
+      "type": "registry:block",
+      "description": "Simple music player",
+      "categories": [
+        "audio"
+      ],
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/audio-player.json",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/blocks/music-player-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/music-player/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "voice-form-01",
+      "type": "registry:block",
+      "description": "Voice-fill form",
+      "categories": [
+        "audio"
+      ],
+      "dependencies": [
+        "@elevenlabs/elevenlabs-js",
+        "ai",
+        "zod"
+      ],
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/voice-button.json",
+        "https://ui.elevenlabs.io/r/live-waveform.json",
+        "button",
+        "card",
+        "form",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/blocks/voice-form-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/voice-form/page.tsx"
+        },
+        {
+          "path": "registry/elevenlabs-ui/blocks/voice-form-01/schema.ts",
+          "type": "registry:file",
+          "target": "app/voice-form/schema.ts"
+        },
+        {
+          "path": "registry/elevenlabs-ui/blocks/voice-form-01/actions/voice-to-form.ts",
+          "type": "registry:file",
+          "target": "app/voice-form/actions/voice-to-form.ts"
+        }
+      ]
+    },
+    {
+      "name": "voice-nav-01",
+      "type": "registry:block",
+      "description": "Voice-nav site navigation",
+      "categories": [
+        "audio"
+      ],
+      "dependencies": [
+        "@elevenlabs/elevenlabs-js",
+        "ai",
+        "zod"
+      ],
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/voice-button.json",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/blocks/voice-nav-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/voice-nav/page.tsx"
+        },
+        {
+          "path": "registry/elevenlabs-ui/blocks/voice-nav-01/actions/voice-to-site.ts",
+          "type": "registry:file",
+          "target": "app/voice-nav/actions/voice-to-site.ts"
+        }
+      ]
+    },
+    {
+      "name": "pong-01",
+      "type": "registry:block",
+      "description": "Retro Pong game with Matrix display",
+      "categories": [
+        "audio"
+      ],
+      "dependencies": [
+        "@upstash/redis"
+      ],
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/matrix.json",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/blocks/pong-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/pong/page.tsx"
+        },
+        {
+          "path": "registry/elevenlabs-ui/blocks/pong-01/components/pong-game.tsx",
+          "type": "registry:component",
+          "target": "components/pong-game.tsx"
+        },
+        {
+          "path": "registry/elevenlabs-ui/blocks/pong-01/components/player-indicator.tsx",
+          "type": "registry:component",
+          "target": "components/player-indicator.tsx"
+        },
+        {
+          "path": "registry/elevenlabs-ui/blocks/pong-01/components/game-engine.ts",
+          "type": "registry:file",
+          "target": "lib/game-engine.ts"
+        },
+        {
+          "path": "registry/elevenlabs-ui/blocks/pong-01/components/sound-manager.ts",
+          "type": "registry:file",
+          "target": "lib/sound-manager.ts"
+        },
+        {
+          "path": "registry/elevenlabs-ui/blocks/pong-01/actions.ts",
+          "type": "registry:file",
+          "target": "actions/pong-actions.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-transcript-viewer",
+      "type": "registry:hook",
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/hooks/use-transcript-viewer.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-scribe",
+      "type": "registry:hook",
+      "dependencies": [
+        "@elevenlabs/client"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/hooks/use-scribe.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "audio-player-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/audio-player.json",
+        "button",
+        "card",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/audio-player-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "orb-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/orb.json",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/orb-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "waveform-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/waveform.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/waveform-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "live-waveform-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/live-waveform.json",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/live-waveform-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "bar-visualizer-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/bar-visualizer.json",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/bar-visualizer-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "matrix-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/matrix.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/matrix-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "message-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/message.json",
+        "https://ui.elevenlabs.io/r/response.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/message-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "response-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/response.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/response-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "shimmering-text-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/shimmering-text.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/shimmering-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "voice-picker-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/voice-picker.json",
+        "https://ui.elevenlabs.io/r/audio-player.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/voice-picker-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "voice-button-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/voice-button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/voice-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "conversation-bar-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/conversation-bar.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/conversation-bar-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "mic-selector-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/mic-selector.json",
+        "https://ui.elevenlabs.io/r/live-waveform.json",
+        "button",
+        "card",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/mic-selector-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "conversation-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/message.json",
+        "https://ui.elevenlabs.io/r/response.json",
+        "https://ui.elevenlabs.io/r/conversation.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/conversation-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "transcript-viewer-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/transcript-viewer.json",
+        "https://ui.elevenlabs.io/r/scrub-bar.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/transcript-viewer-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scrub-bar-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/scrub-bar.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/scrub-bar-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "speech-input-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://ui.elevenlabs.io/r/speech-input.json",
+        "input",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/elevenlabs-ui/examples/speech-input-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    }
+  ]
+}

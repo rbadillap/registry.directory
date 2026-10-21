@@ -1,0 +1,3134 @@
+{
+  "key": "getitdone-gmbh",
+  "entry": "Get IT Done UI",
+  "name": "getitdone",
+  "homepage": "https://zero-design.itdone.de",
+  "indexUrl": "https://zero-design.itdone.de/r/registry.json",
+  "itemBase": "https://zero-design.itdone.de/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:style",
+      "title": "zero theme",
+      "description": "CSS variables (light and dark), animations and the Tailwind CSS 3 preset of the Get IT Done design system. Import styles/getitdone/theme.css, animation.css and document-surface.css in your global CSS and add tailwind/getitdone/preset.cjs to presets.",
+      "dependencies": [
+        "tailwindcss-animate@^1.0.7",
+        "tailwindcss-themer@^3.1.2",
+        "@tailwindcss/container-queries@^0.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/theme/theme.css",
+          "type": "registry:file",
+          "target": "styles/getitdone/theme.css"
+        },
+        {
+          "path": "registry/theme/animation.css",
+          "type": "registry:file",
+          "target": "styles/getitdone/animation.css"
+        },
+        {
+          "path": "registry/theme/document-surface.css",
+          "type": "registry:file",
+          "target": "styles/getitdone/document-surface.css"
+        },
+        {
+          "path": "registry/theme/preset.cjs",
+          "type": "registry:file",
+          "target": "tailwind/getitdone/preset.cjs"
+        },
+        {
+          "path": "registry/theme/tailwind.preset.cjs",
+          "type": "registry:file",
+          "target": "tailwind/getitdone/tailwind.preset.cjs"
+        },
+        {
+          "path": "registry/theme/tailwind.theme.cjs",
+          "type": "registry:file",
+          "target": "tailwind/getitdone/tailwind.theme.cjs"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Accordion from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-accordion@^1.3.1",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "action-bar",
+      "type": "registry:ui",
+      "title": "Action Bar",
+      "description": "Action Bar from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/checkbox.json",
+        "https://zero-design.itdone.de/r/chip.json",
+        "https://zero-design.itdone.de/r/dropdown-menu.json",
+        "https://zero-design.itdone.de/r/input.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/select.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/action-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "activity-feed",
+      "type": "registry:ui",
+      "title": "Activity Feed",
+      "description": "Activity Feed from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/data-state-panel.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/activity-feed.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Alert from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "autosave-status",
+      "type": "registry:ui",
+      "title": "Autosave Status",
+      "description": "Autosave Status from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/autosave-status.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Avatar from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-avatar@^1.3.1",
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Badge from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "blockquote",
+      "type": "registry:ui",
+      "title": "Blockquote",
+      "description": "Blockquote from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/blockquote.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bottom-navigation",
+      "type": "registry:ui",
+      "title": "Bottom Navigation",
+      "description": "Bottom Navigation from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/bottom-navigation.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Breadcrumb from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-slot@^1.5.0",
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-close",
+      "type": "registry:ui",
+      "title": "Button Close",
+      "description": "Button Close from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/button-close.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Button Group from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-slot@^1.5.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Button from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-slot@^1.5.0",
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/status-dot.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar-grid",
+      "type": "registry:ui",
+      "title": "Calendar Grid",
+      "description": "Calendar Grid from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/data-state-panel.json",
+        "https://zero-design.itdone.de/r/edge.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/use-scroll-region.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/calendar-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Calendar from the Get IT Done design system.",
+      "dependencies": [
+        "date-fns@^2.30.0",
+        "lucide-react@^0.379.0",
+        "react-day-picker@^8.9.1"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card-default",
+      "type": "registry:ui",
+      "title": "Card Default",
+      "description": "Card Default from the Get IT Done design system.",
+      "dependencies": [
+        "clsx@^2.0.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/card/Card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/card/card.interface.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/card/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Card from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-slot@^1.5.0",
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Carousel from the Get IT Done design system.",
+      "dependencies": [
+        "embla-carousel-react@^8.5.1",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/labels.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/pagination-dot-group.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "cell-grid",
+      "type": "registry:ui",
+      "title": "Cell Grid",
+      "description": "Cell Grid from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/cell-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Chart from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/data-state-panel.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chat-window",
+      "type": "registry:ui",
+      "title": "Chat Window",
+      "description": "Chat Window from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/tabs.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/chat-window.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-group",
+      "type": "registry:ui",
+      "title": "Checkbox Group",
+      "description": "Checkbox Group from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/checkbox-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Checkbox from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-checkbox@^1.4.1",
+        "@radix-ui/react-icons@^1.3.2"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chip",
+      "type": "registry:ui",
+      "title": "Chip",
+      "description": "Chip from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-slot@^1.5.0",
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/skill-category.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/chip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "code-highlight",
+      "type": "registry:ui",
+      "title": "Code Highlight",
+      "description": "Helper used by the Get IT Done components.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/code-highlight.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "code-snippet",
+      "type": "registry:ui",
+      "title": "Code Snippet",
+      "description": "Code Snippet from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/code-highlight.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/code-snippet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Collapsible from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-collapsible@^1.2.1"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:ui",
+      "title": "Color Picker",
+      "description": "Color Picker from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-radio-group@^1.5.1",
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/input.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/popover.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/color-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Command from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-dialog@^1.3.1",
+        "cmdk@^1.1.1",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/dangling-controls.json",
+        "https://zero-design.itdone.de/r/dialog.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "confirm-dialog",
+      "type": "registry:ui",
+      "title": "Confirm Dialog",
+      "description": "Confirm Dialog from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/dialog.json",
+        "https://zero-design.itdone.de/r/input.json",
+        "https://zero-design.itdone.de/r/label.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/confirm-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "content-divider",
+      "type": "registry:ui",
+      "title": "Content Divider",
+      "description": "Content Divider from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/content-divider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "cookie-consent",
+      "type": "registry:ui",
+      "title": "Cookie Consent",
+      "description": "Cookie Consent from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/button-close.json",
+        "https://zero-design.itdone.de/r/labels.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/switch.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/cookie-consent.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "countdown",
+      "type": "registry:ui",
+      "title": "Countdown",
+      "description": "Countdown from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/countdown.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-grid",
+      "type": "registry:ui",
+      "title": "Data Grid",
+      "description": "Data Grid from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/checkbox.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/pagination.json",
+        "https://zero-design.itdone.de/r/skeleton.json",
+        "https://zero-design.itdone.de/r/table.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/data-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-state-panel",
+      "type": "registry:ui",
+      "title": "Data State Panel",
+      "description": "Data State Panel from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/edge.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/data-state-panel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "Date Picker from the Get IT Done design system.",
+      "dependencies": [
+        "date-fns@^2.30.0",
+        "lucide-react@^0.379.0",
+        "react-day-picker@^8.9.1"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/calendar.json",
+        "https://zero-design.itdone.de/r/dialog.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/popover.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/date-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "description-list",
+      "type": "registry:ui",
+      "title": "Description List",
+      "description": "Description List from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/avatar.json",
+        "https://zero-design.itdone.de/r/chip.json",
+        "https://zero-design.itdone.de/r/empty-state.json",
+        "https://zero-design.itdone.de/r/inline-edit.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/logo-tile.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/description-list.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "design-system-provider",
+      "type": "registry:ui",
+      "title": "Design System Provider",
+      "description": "Design System Provider from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/labels-de.json",
+        "https://zero-design.itdone.de/r/labels-en.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/design-system-provider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Dialog from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-dialog@^1.3.1",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/nested-layer.json",
+        "https://zero-design.itdone.de/r/return-focus.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "document-surface",
+      "type": "registry:ui",
+      "title": "Document Surface",
+      "description": "Document Surface from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/document-surface.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Drawer from the Get IT Done design system.",
+      "dependencies": [
+        "vaul@^1.1.2"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Dropdown Menu from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu@^2.2.1",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "edge",
+      "type": "registry:ui",
+      "title": "Edge",
+      "description": "Helper used by the Get IT Done components.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/edge.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:ui",
+      "title": "Empty State",
+      "description": "Empty State from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/empty-state.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "facet-filter",
+      "type": "registry:ui",
+      "title": "Facet Filter",
+      "description": "Facet Filter from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/checkbox.json",
+        "https://zero-design.itdone.de/r/input.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/toggle-group.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/facet-filter.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "featured-icon",
+      "type": "registry:ui",
+      "title": "Featured Icon",
+      "description": "Featured Icon from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/featured-icon.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "feed-item",
+      "type": "registry:ui",
+      "title": "Feed Item",
+      "description": "Feed Item from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/empty-state.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/feed-item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "file-icon",
+      "type": "registry:ui",
+      "title": "File Icon",
+      "description": "File Icon from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/file-icon.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:ui",
+      "title": "File Upload",
+      "description": "File Upload from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/loading-spinner.json",
+        "https://zero-design.itdone.de/r/progress.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/file-upload.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "filter-chip-bar",
+      "type": "registry:ui",
+      "title": "Filter Chip Bar",
+      "description": "Filter Chip Bar from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/chip.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/filter-chip-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "form-section",
+      "type": "registry:ui",
+      "title": "Form Section",
+      "description": "Form Section from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/form-section.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form",
+      "description": "Form from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-label@^2.1.17",
+        "@radix-ui/react-slot@^1.5.0",
+        "react-hook-form@^7.47.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/label.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "grid",
+      "type": "registry:ui",
+      "title": "Grid",
+      "description": "Grid from the Get IT Done design system.",
+      "dependencies": [
+        "clsx@^2.0.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/grid/Grid.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/grid/grid.interface.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/grid/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "heatmap",
+      "type": "registry:ui",
+      "title": "Heatmap",
+      "description": "Heatmap from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/data-state-panel.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/skill-category.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/heatmap.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "help-icon",
+      "type": "registry:ui",
+      "title": "Help Icon",
+      "description": "Help Icon from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/tooltip.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/help-icon.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero-section",
+      "type": "registry:ui",
+      "title": "Hero Section",
+      "description": "Hero Section from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/hero-section.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "Hover Card from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-hover-card@^1.2.1"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "illustration",
+      "type": "registry:ui",
+      "title": "Illustration",
+      "description": "Illustration from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/illustration.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "inline-cta",
+      "type": "registry:ui",
+      "title": "Inline Cta",
+      "description": "Inline Cta from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/inline-cta.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "inline-edit",
+      "type": "registry:ui",
+      "title": "Inline Edit",
+      "description": "Inline Edit from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/inline-edit.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-digit",
+      "type": "registry:ui",
+      "title": "Input Digit",
+      "description": "Input Digit from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/input-digit.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Input from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kanban-move-to-menu",
+      "type": "registry:ui",
+      "title": "Kanban Move To Menu",
+      "description": "Kanban Move To Menu from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/dropdown-menu.json",
+        "https://zero-design.itdone.de/r/kanban.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/kanban-move-to-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kanban-move",
+      "type": "registry:ui",
+      "title": "Kanban Move",
+      "description": "Kanban Move from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/kanban.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/kanban-move.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kanban",
+      "type": "registry:ui",
+      "title": "Kanban",
+      "description": "Kanban from the Get IT Done design system.",
+      "dependencies": [
+        "@dnd-kit/core@6.3.1",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/data-state-panel.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/kanban.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Kbd from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Label from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-label@^2.1.17",
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "labels-context",
+      "type": "registry:ui",
+      "title": "Labels Context",
+      "description": "Labels Context from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels.json",
+        "https://zero-design.itdone.de/r/labels-en.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/labels-context.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "labels-de",
+      "type": "registry:ui",
+      "title": "Labels De",
+      "description": "Labels De from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/labels-de.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "labels-en",
+      "type": "registry:ui",
+      "title": "Labels En",
+      "description": "Labels En from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/labels-en.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "labels",
+      "type": "registry:ui",
+      "title": "Labels",
+      "description": "Labels from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/labels.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "layout",
+      "type": "registry:ui",
+      "title": "Layout",
+      "description": "Layout from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/layout.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "link-card",
+      "type": "registry:ui",
+      "title": "Link Card",
+      "description": "Link Card from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/link-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "link",
+      "type": "registry:ui",
+      "title": "Link",
+      "description": "Link from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-slot@^1.5.0",
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/link.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "type": "registry:ui",
+      "title": "List",
+      "description": "List from the Get IT Done design system.",
+      "dependencies": [
+        "clsx@^2.0.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/list/List.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/list/index.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/list/list.interface.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "list-item",
+      "type": "registry:ui",
+      "title": "List Item",
+      "description": "List Item from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-slot@^1.5.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/list-item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "loading-overlay",
+      "type": "registry:ui",
+      "title": "Loading Overlay",
+      "description": "Loading Overlay from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-dialog@^1.3.1"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/loading-spinner.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/loading-overlay.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "loading-spinner",
+      "type": "registry:ui",
+      "title": "Loading Spinner",
+      "description": "Loading Spinner from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/loading-spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "logo-tile",
+      "type": "registry:ui",
+      "title": "Logo Tile",
+      "description": "Logo Tile from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/avatar.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/logo-tile.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "Message from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "metric-panel",
+      "type": "registry:ui",
+      "title": "Metric Panel",
+      "description": "Metric Panel from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/metric-panel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "metric",
+      "type": "registry:ui",
+      "title": "Metric",
+      "description": "Metric from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/metric.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "multiselect",
+      "type": "registry:ui",
+      "title": "Multiselect",
+      "description": "Multiselect from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0",
+        "react-dnd@^16.0.1",
+        "react-dnd-html5-backend@^16.0.1"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/card-default.json",
+        "https://zero-design.itdone.de/r/checkbox.json",
+        "https://zero-design.itdone.de/r/chip.json",
+        "https://zero-design.itdone.de/r/command.json",
+        "https://zero-design.itdone.de/r/dialog.json",
+        "https://zero-design.itdone.de/r/input.json",
+        "https://zero-design.itdone.de/r/is-mobile.json",
+        "https://zero-design.itdone.de/r/label.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/sheet.json",
+        "https://zero-design.itdone.de/r/spacing.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/multiselect.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "Navigation Menu from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-navigation-menu@^1.4.1",
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "notification-matrix",
+      "type": "registry:ui",
+      "title": "Notification Matrix",
+      "description": "Notification Matrix from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/chip.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/switch.json",
+        "https://zero-design.itdone.de/r/table.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/notification-matrix.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "notification",
+      "type": "registry:ui",
+      "title": "Notification",
+      "description": "Notification from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/notification.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "object-icon",
+      "type": "registry:ui",
+      "title": "Object Icon",
+      "description": "Object Icon from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/object-icon.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:ui",
+      "title": "Page Header",
+      "description": "Page Header from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/page-header.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination-dot-group",
+      "type": "registry:ui",
+      "title": "Pagination Dot Group",
+      "description": "Pagination Dot Group from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/pagination-dot-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Pagination from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/button-group.json",
+        "https://zero-design.itdone.de/r/labels.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/loading-spinner.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/select.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "phone-input",
+      "type": "registry:ui",
+      "title": "Phone Input",
+      "description": "Phone Input from the Get IT Done design system.",
+      "dependencies": [
+        "libphonenumber-js@^1.11.3",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/command.json",
+        "https://zero-design.itdone.de/r/input.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/popover.json",
+        "https://zero-design.itdone.de/r/scroll-area.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/phone-input/countries.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/phone-input/index.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/phone-input/use-state-history.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Popover from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-popover@^1.3.1"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress-circle",
+      "type": "registry:ui",
+      "title": "Progress Circle",
+      "description": "Progress Circle from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/progress-circle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Progress from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-cards",
+      "type": "registry:ui",
+      "title": "Radio Cards",
+      "description": "Radio Cards from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-radio-group@^1.5.1"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/radio-cards.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Radio Group from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-radio-group@^1.5.1"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "rating-input",
+      "type": "registry:ui",
+      "title": "Rating Input",
+      "description": "Rating Input from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-radio-group@^1.5.1",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/rating-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "rich-text-editor",
+      "type": "registry:ui",
+      "title": "Rich Text Editor",
+      "description": "Rich Text Editor from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/rich-text-markdown.json",
+        "https://zero-design.itdone.de/r/rich-text-toolbar.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/rich-text-editor.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "rich-text-markdown",
+      "type": "registry:ui",
+      "title": "Rich Text Markdown",
+      "description": "Rich Text Markdown from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/rich-text-toolbar.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/rich-text-markdown.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "rich-text-toolbar",
+      "type": "registry:ui",
+      "title": "Rich Text Toolbar",
+      "description": "Rich Text Toolbar from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/kbd.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/tooltip.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/rich-text-toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Scroll Area from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-scroll-area@^1.4.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "secondary-nav",
+      "type": "registry:ui",
+      "title": "Secondary Nav",
+      "description": "Secondary Nav from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/progress.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/secondary-nav.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "secret-field",
+      "type": "registry:ui",
+      "title": "Secret Field",
+      "description": "Secret Field from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/input.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/secret-field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "section",
+      "type": "registry:ui",
+      "title": "Section",
+      "description": "Section from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/section/section.interface.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/section/section.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "section-footer",
+      "type": "registry:ui",
+      "title": "Section Footer",
+      "description": "Section Footer from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/section-footer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "section-header",
+      "type": "registry:ui",
+      "title": "Section Header",
+      "description": "Section Header from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/section-header.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "section-label",
+      "type": "registry:ui",
+      "title": "Section Label",
+      "description": "Section Label from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/section-label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Select from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-select@^2.4.1",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/input.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Separator from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Sheet from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-dialog@^1.3.1",
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/autosave-status.json",
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/code-snippet.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/nested-layer.json",
+        "https://zero-design.itdone.de/r/return-focus.json",
+        "https://zero-design.itdone.de/r/skeleton.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-nav",
+      "type": "registry:ui",
+      "title": "Sidebar Nav",
+      "description": "Sidebar Nav from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-collapsible@^1.2.1",
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/sheet.json",
+        "https://zero-design.itdone.de/r/sidebar.json",
+        "https://zero-design.itdone.de/r/use-escape-key.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/sidebar-nav.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Sidebar from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-collapsible@^1.2.1",
+        "@radix-ui/react-slot@^1.5.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/dropdown-menu.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "signature-box",
+      "type": "registry:ui",
+      "title": "Signature Box",
+      "description": "Signature Box from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/signature-box.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "signature-pad",
+      "type": "registry:ui",
+      "title": "Signature Pad",
+      "description": "Signature Pad from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/signature-pad.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "singleselect",
+      "type": "registry:ui",
+      "title": "Singleselect",
+      "description": "Singleselect from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/card-default.json",
+        "https://zero-design.itdone.de/r/command.json",
+        "https://zero-design.itdone.de/r/dialog.json",
+        "https://zero-design.itdone.de/r/input.json",
+        "https://zero-design.itdone.de/r/is-mobile.json",
+        "https://zero-design.itdone.de/r/label.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/sheet.json",
+        "https://zero-design.itdone.de/r/spacing.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/singleselect.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Skeleton from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skill-category",
+      "type": "registry:ui",
+      "title": "Skill Category",
+      "description": "Helper used by the Get IT Done components.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/skill-category.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Slider from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spacing",
+      "type": "registry:ui",
+      "title": "Spacing",
+      "description": "Spacing from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/spacing/Spacing.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/spacing/index.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/spacing/spacer.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/spacing/spacing.interface.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "status-dot",
+      "type": "registry:ui",
+      "title": "Status Dot",
+      "description": "Status Dot from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/status-dot.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "step-marker",
+      "type": "registry:ui",
+      "title": "Step Marker",
+      "description": "Step Marker from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/step-marker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stepper",
+      "type": "registry:ui",
+      "title": "Stepper",
+      "description": "Stepper from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/collapsible.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/stepper/context.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/stepper/horizontal-step.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/stepper/index.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/stepper/step-button-container.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/stepper/step-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/stepper/step-label.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/stepper/step.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/stepper/types.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/stepper/use-media-query.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/stepper/use-stepper.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/stepper/vertical-step.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Switch from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-switch@^1.4.1"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table-cells",
+      "type": "registry:ui",
+      "title": "Table Cells",
+      "description": "Table Cells from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/chip.json",
+        "https://zero-design.itdone.de/r/input.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/popover.json",
+        "https://zero-design.itdone.de/r/progress.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/select.json",
+        "https://zero-design.itdone.de/r/switch.json",
+        "https://zero-design.itdone.de/r/table.json",
+        "https://zero-design.itdone.de/r/textarea.json",
+        "https://zero-design.itdone.de/r/tooltip.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/table-cells.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table-of-contents",
+      "type": "registry:ui",
+      "title": "Table Of Contents",
+      "description": "Table Of Contents from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/table-of-contents.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Table from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/edge.json",
+        "https://zero-design.itdone.de/r/empty-state.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/loading-spinner.json",
+        "https://zero-design.itdone.de/r/skeleton.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Tabs from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-tabs@^1.2.1",
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tag-input",
+      "type": "registry:ui",
+      "title": "Tag Input",
+      "description": "Tag Input from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/chip.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/tag-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Textarea from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Toast from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-toast@^1.3.1",
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toaster",
+      "type": "registry:ui",
+      "title": "Toaster",
+      "description": "Toaster from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/toast.json",
+        "https://zero-design.itdone.de/r/use-toast.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/toaster.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Toggle Group from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-toggle-group@^1.2.1",
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Toggle from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-toggle@^1.2.1",
+        "class-variance-authority@^0.7.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Tooltip from the Get IT Done design system.",
+      "dependencies": [
+        "@radix-ui/react-tooltip@^1.4.1"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "topbar",
+      "type": "registry:ui",
+      "title": "Topbar",
+      "description": "Topbar from the Get IT Done design system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.0",
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/accordion.json",
+        "https://zero-design.itdone.de/r/breadcrumb.json",
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/popover.json",
+        "https://zero-design.itdone.de/r/recipes.json",
+        "https://zero-design.itdone.de/r/sheet.json",
+        "https://zero-design.itdone.de/r/sidebar.json",
+        "https://zero-design.itdone.de/r/status-dot.json",
+        "https://zero-design.itdone.de/r/use-escape-key.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/topbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "use-scroll-region",
+      "type": "registry:ui",
+      "title": "Use Scroll Region",
+      "description": "Use Scroll Region from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/use-scroll-region.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "use-toast",
+      "type": "registry:ui",
+      "title": "Use Toast",
+      "description": "Use Toast from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/toast.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/use-toast.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "verified-tick",
+      "type": "registry:ui",
+      "title": "Verified Tick",
+      "description": "Verified Tick from the Get IT Done design system.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/verified-tick.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "versions",
+      "type": "registry:ui",
+      "title": "Versions",
+      "description": "Versions from the Get IT Done design system.",
+      "dependencies": [
+        "lucide-react@^0.379.0"
+      ],
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/badge.json",
+        "https://zero-design.itdone.de/r/button.json",
+        "https://zero-design.itdone.de/r/data-state-panel.json",
+        "https://zero-design.itdone.de/r/labels-context.json",
+        "https://zero-design.itdone.de/r/skeleton.json",
+        "https://zero-design.itdone.de/r/utils.json",
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/versions.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dangling-controls",
+      "type": "registry:lib",
+      "title": "Dangling Controls",
+      "description": "Helper used by the Get IT Done components.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/dangling-controls.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "is-mobile",
+      "type": "registry:lib",
+      "title": "Is Mobile",
+      "description": "Helper used by the Get IT Done components.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/is-mobile.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "nested-layer",
+      "type": "registry:lib",
+      "title": "Nested Layer",
+      "description": "Helper used by the Get IT Done components.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/nested-layer.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "recipes",
+      "type": "registry:lib",
+      "title": "Recipes",
+      "description": "Helper used by the Get IT Done components.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/recipes.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "return-focus",
+      "type": "registry:lib",
+      "title": "Return Focus",
+      "description": "Helper used by the Get IT Done components.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/return-focus.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "use-escape-key",
+      "type": "registry:lib",
+      "title": "Use Escape Key",
+      "description": "Helper used by the Get IT Done components.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/use-escape-key.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utils",
+      "description": "Helper used by the Get IT Done components.",
+      "dependencies": [
+        "clsx@^2.0.0",
+        "tailwind-merge@^2.0.0"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    }
+  ]
+}
