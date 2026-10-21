@@ -8,6 +8,34 @@
   "resolvable": true,
   "items": [
     {
+      "name": "timeline",
+      "type": "registry:component",
+      "title": "Timeline",
+      "description": "A draggable timeline of dated events around a focused card.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/timeline.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/timeline.tsx"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
       "name": "alert",
       "type": "registry:component",
       "title": "Animated Alert",

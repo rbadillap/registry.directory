@@ -1787,14 +1787,16 @@
       "name": "eased-chart-core",
       "type": "registry:ui",
       "title": "Chart core primitive",
-      "description": "The engine under every Eased chart: nice scales, container sizing, path morphs on shared x samples, a slider-model scrub with a trailing tooltip, sliding gridlines, a hidden data table, ChartRangeContext and the validated --eased-chart-1…6 palette.",
+      "description": "The engine under every Eased chart: nice scales, container sizing, path morphs on shared x samples, keyed arc layouts and morphs, a sequential colour scale, rolling value labels with collision-aware placement, a slider-model scrub with a trailing tooltip, sliding gridlines, a hidden data table, ChartRangeContext and the validated --eased-chart-1…6 palette.",
       "dependencies": [
         "motion",
-        "d3-scale"
+        "d3-scale",
+        "d3-shape"
       ],
       "registryDependencies": [
         "https://eased.dev/r/eased-tokens.json",
-        "https://eased.dev/r/eased-motion.json"
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/eased-number-roll.json"
       ],
       "files": [
         {
@@ -1846,6 +1848,21 @@
           "path": "src/registry/eased/_primitives/chart-core/tokens.tsx",
           "type": "registry:ui",
           "target": "@components/eased/_primitives/chart-core/tokens.tsx"
+        },
+        {
+          "path": "src/registry/eased/_primitives/chart-core/polar.ts",
+          "type": "registry:ui",
+          "target": "@components/eased/_primitives/chart-core/polar.ts"
+        },
+        {
+          "path": "src/registry/eased/_primitives/chart-core/value-label.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/_primitives/chart-core/value-label.tsx"
+        },
+        {
+          "path": "src/registry/eased/_primitives/chart-core/sequential.ts",
+          "type": "registry:ui",
+          "target": "@components/eased/_primitives/chart-core/sequential.ts"
         }
       ]
     },
@@ -2227,6 +2244,53 @@
       ]
     },
     {
+      "name": "image-compare-demo",
+      "type": "registry:example",
+      "title": "Image Compare demo",
+      "description": "Plain vs Eased: the same share card as a default kit draws it and as Eased does, with a Loading mode that compares the skeleton with the loaded card.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/image-compare.json",
+        "https://eased.dev/r/avatar.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/segmented.json",
+        "https://eased.dev/r/skeleton.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/eased-layout.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/image-compare/image-compare-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/image-compare/image-compare-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-compare",
+      "type": "registry:ui",
+      "title": "Image Compare",
+      "description": "Compare any two layers (screenshots, themes, a plain component and its polished twin) with one divider. A flick coasts to 0, 50 or 100, a slow release stays where it lands, the tags fade as the line passes under them, and the knob is a keyboard slider.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/eased-gesture.json",
+        "https://eased.dev/r/eased-inertia-core.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/image-compare/image-compare.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/image-compare/image-compare.tsx"
+        }
+      ]
+    },
+    {
       "name": "eased-calendar-core",
       "type": "registry:lib",
       "title": "Calendar core primitive",
@@ -2318,6 +2382,11 @@
           "path": "src/registry/eased/_primitives/fixtures/ai.ts",
           "type": "registry:lib",
           "target": "@components/eased/_primitives/fixtures/ai.ts"
+        },
+        {
+          "path": "src/registry/eased/_primitives/fixtures/ai-approvals.ts",
+          "type": "registry:lib",
+          "target": "@components/eased/_primitives/fixtures/ai-approvals.ts"
         },
         {
           "path": "src/registry/eased/_primitives/fixtures/crypto.ts",
