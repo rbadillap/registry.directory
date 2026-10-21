@@ -175,7 +175,9 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName, affi
           <a
             href={affiliate ? affiliate.affiliate_url : addUtmParams(registry.url, "registry_ide")}
             target="_blank"
-            rel="noopener noreferrer"
+            // An affiliate link sends the referrer, so the vendor sees where the
+            // visit came from; noopener stays on every external link.
+            rel={affiliate ? "sponsored noopener" : "noopener noreferrer"}
             aria-label={`Visit ${registry.name} website`}
             onClick={() => {
               analytics.trackRegistryVisit({

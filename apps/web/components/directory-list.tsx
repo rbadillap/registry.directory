@@ -136,7 +136,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
                     target="_blank"
                     // A link that earns a commission declares it to crawlers
                     // too, not only in the ribbon a person can read.
-                    rel={affiliate ? "sponsored noopener noreferrer" : "noopener noreferrer"}
+                    rel={affiliate ? "sponsored noopener" : "noopener noreferrer"}
                     aria-label={`Visit ${entry.name} website`}
                     className="text-foreground-subtle hover:text-muted-foreground transition-colors"
                     onClick={() => trackHomeRegistryVisit({

@@ -10,6 +10,7 @@ interface LandingHeroProps {
   totalItems: number
   githubStats?: { stars: number; lastCommit: string } | null
   visitHref: string
+  sponsored: boolean
 }
 
 export function LandingHero({
@@ -19,6 +20,7 @@ export function LandingHero({
   totalItems,
   githubStats,
   visitHref,
+  sponsored,
 }: LandingHeroProps) {
   return (
     <div className="flex min-w-0 flex-col gap-5">
@@ -106,6 +108,7 @@ export function LandingHero({
         registryName={registry.name}
         registryUrl={registry.url}
         visitHref={visitHref}
+        sponsored={sponsored}
         githubUrl={registry.github_url}
       />
     </div>
