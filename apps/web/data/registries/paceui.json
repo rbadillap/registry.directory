@@ -15,284 +15,262 @@
         "tw-animate-css",
         "class-variance-authority",
         "lucide-react"
-      ],
-      "registryDependencies": [
-        "utils"
       ]
     },
     {
-      "name": "interactive-logs-chart",
+      "name": "dashboard-chart-1",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Interactive Logs Chart",
-      "description": "An interactive chart visualizing system logs over time with data tooltips and active hover states.",
-      "registryDependencies": [
-        "card",
-        "chart",
-        "select"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/charts/interactive-logs-chart.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Chart 1",
+      "description": "An interactive chart visualizing system logs over time with data tooltips and active hover states."
     },
     {
-      "name": "traffic-logs-chart",
+      "name": "dashboard-chart-2",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Traffic Logs Chart",
-      "description": "A visual representation of web traffic volume and request spikes across different time periods.",
-      "registryDependencies": [
-        "card",
-        "tooltip"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/charts/traffic-logs-chart.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Chart 2",
+      "description": "A visual representation of web traffic volume and request spikes across different time periods."
     },
     {
-      "name": "interactive-sales-chart",
+      "name": "dashboard-chart-3",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Interactive Sales Chart",
-      "description": "A dynamic chart tracking revenue trends and performance with interactive cursor details and tooltips.",
-      "registryDependencies": [
-        "card",
-        "button",
-        "chart",
-        "dropdown-menu"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/charts/interactive-sales-chart.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Chart 3",
+      "description": "A dynamic chart tracking revenue trends and performance with interactive cursor details and tooltips."
     },
     {
-      "name": "channel-sales-chart",
+      "name": "dashboard-chart-4",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Channel Sales Chart",
-      "description": "A circular chart illustrating revenue distribution across different marketing acquisition and sales channels.",
-      "registryDependencies": [
-        "card",
-        "chart"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/charts/channel-sales-chart.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Chart 4",
+      "description": "A circular chart illustrating revenue distribution across different marketing acquisition and sales channels."
     },
     {
-      "name": "live-logs-feed",
+      "name": "dashboard-chart-5",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Live Log Feed",
+      "title": "Chart 5",
+      "description": "A stacked bar chart visualizing monthly profit and loss amounts with interactive tooltips and custom striped indicators."
+    },
+    {
+      "name": "dashboard-chart-6",
+      "type": "registry:block",
+      "title": "Chart 6",
+      "description": "A card showing transactions over time with a badge metric, stacked bar chart, and detailed transaction summary status grid."
+    },
+    {
+      "name": "dashboard-widget-1",
+      "type": "registry:block",
+      "title": "Widget 1",
       "description": "A real-time activity stream displaying recent system events and errors in a chronological layout.",
-      "registryDependencies": [
-        "card",
-        "button"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/feeds/live-logs-feed.tsx",
-          "type": "registry:block"
-        }
+      "dependencies": [
+        "motion"
       ]
     },
     {
-      "name": "create-user-form",
+      "name": "dashboard-widget-2",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Create User Form",
-      "description": "Structured account creation form for onboarding new team members, including profile details, role assignment, department selection, and secure password setup.",
-      "registryDependencies": [
-        "button",
-        "card",
-        "form-input",
-        "form-password",
-        "form-select",
-        "form-switch"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/forms/create-user-form.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Widget 2",
+      "description": "An interactive seat selector for cinema and aircraft cabin booking, featuring hover details, status indicators, and total price calculation."
     },
     {
-      "name": "usage-logs-meter",
+      "name": "dashboard-stat-1",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Usage Logs Meter",
-      "description": "A visual gauge displaying current system resource consumption against defined operational quota limits.",
-      "registryDependencies": [
-        "badge",
-        "button",
-        "card",
-        "progress"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/meters/usage-logs-meter.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Stat 1",
+      "description": "A minimal statistic card displaying total log counts with a clean, numerical layout."
     },
     {
-      "name": "source-sales-meter",
+      "name": "dashboard-stat-2",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Source Sales Meter",
-      "description": "A list of progress bars ranking sales performance by acquisition source with percentage indicators.",
-      "registryDependencies": [
-        "card",
-        "button",
-        "dropdown-menu",
-        "progress"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/meters/source-sales-meter.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Stat 2",
+      "description": "A detailed dashboard card highlighting total revenue with trend indicators and percentage growth."
     },
     {
-      "name": "upgrade-sales-promo",
+      "name": "dashboard-stat-3",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Upgrade Sales Promo",
-      "description": "An attention-grabbing card encouraging users to unlock premium analytics features and historical data access.",
-      "registryDependencies": [
-        "badge",
-        "card",
-        "button"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/promos/upgrade-sales-promo.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Stat 3",
+      "description": "A stat card displaying a metric with icon, trend indicator, and monthly goal progress."
     },
     {
-      "name": "simple-logs-stat",
+      "name": "dashboard-stat-4",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Simple Log Stat",
-      "description": "A minimal statistic card displaying total log counts with a clean, numerical layout.",
-      "registryDependencies": [
-        "card"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/stats/simple-logs-stat.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Stat 4",
+      "description": "A statistic card featuring a primary metric value, trend indicator, and a responsive area sparkline chart."
     },
     {
-      "name": "rich-sales-stat",
+      "name": "dashboard-table-1",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Rich Sales Stat",
-      "description": "A detailed dashboard card highlighting total revenue with trend indicators and percentage growth.",
-      "registryDependencies": [
-        "card",
-        "badge"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/stats/rich-sales-stat.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Table 1",
+      "description": "A clean data table listing system events with timestamp, severity, and message columns."
     },
     {
-      "name": "simple-logs-table",
+      "name": "dashboard-table-3",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Simple Log Table",
-      "description": "A clean data table listing system events with timestamp, severity, and message columns.",
-      "registryDependencies": [
-        "badge",
-        "card",
-        "table"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/tables/simple-logs-table.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Table 3",
+      "description": "Structured table layout for managing team members, showing profile details, roles, departments, account status, and recent activity."
     },
     {
-      "name": "product-sales-table",
+      "name": "app-analytics-1",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Product Sales Table",
-      "description": "A comprehensive data list showing product performance, quantities sold, and total revenue generated.",
-      "registryDependencies": [
-        "avatar",
-        "badge",
-        "button",
-        "card",
-        "dropdown-menu",
-        "table"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/tables/product-sales-table.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Analytics 1",
+      "description": "A weekly audience growth statistics widget showcasing active readers and email leads, complete with a highlighted weekly bar chart."
     },
     {
-      "name": "simple-users-table",
+      "name": "app-analytics-2",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Users Table",
-      "description": "Structured table layout for managing team members, showing profile details, roles, departments, account status, and recent activity.",
-      "registryDependencies": [
-        "avatar",
-        "badge",
-        "button",
-        "card",
-        "dropdown-menu",
-        "table"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/tables/simple-users-table.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Analytics 2",
+      "description": "A statistics card displaying user retention and goal completion progress bars with status badges and options dropdown menu."
     },
     {
-      "name": "shadcn-day-fan",
+      "name": "app-analytics-3",
       "type": "registry:block",
-      "resolution": "gated",
-      "title": "Shadcn Day",
-      "description": "Use this component when highlighting special events, milestones, or important dates.",
-      "registryDependencies": [
-        "card"
-      ],
-      "files": [
-        {
-          "path": "components/blocks/fans/shadcn-day.tsx",
-          "type": "registry:block"
-        }
-      ]
+      "title": "Analytics 3",
+      "description": "A comparison widget displaying revenue distribution between paid acquisition and organic search channels with a dual progress bar."
+    },
+    {
+      "name": "app-analytics-4",
+      "type": "registry:block",
+      "title": "Analytics 4",
+      "description": "A campaign goals progress tracking widget displaying marketing completion percentages with inline metrics."
+    },
+    {
+      "name": "app-health-1",
+      "type": "registry:block",
+      "title": "Health 1",
+      "description": "A weekly habit and streak tracking widget displaying current and longest streaks with a status grid."
+    },
+    {
+      "name": "app-education-1",
+      "type": "registry:block",
+      "title": "Education 1",
+      "description": "A course syllabus tracker widget showing current module completion status and collapsible chapter item cards."
+    },
+    {
+      "name": "app-project-3",
+      "type": "registry:block",
+      "title": "Project 3",
+      "description": "A project task card displaying priority status, task details, assignee, and calendar due date."
+    },
+    {
+      "name": "app-finance-1",
+      "type": "registry:block",
+      "title": "Finance 1",
+      "description": "A visual commodities portfolio tracker showcasing gold, silver, and crude oil allocations with an integrated segmented bar chart and detailed item metrics."
+    },
+    {
+      "name": "marketing-testimonials-1",
+      "type": "registry:block",
+      "title": "Testimonials 1",
+      "description": "An interactive client testimonials block featuring tabbed categorization (e.g., startups vs enterprise), custom metrics display, and trust rating social proof in the footer."
+    },
+    {
+      "name": "marketing-hero-1",
+      "type": "registry:block",
+      "title": "Hero 1",
+      "description": "A premium marketing hero block for educational courses featuring interactive progress track selectors, graduate avatar groups, and statistics summary cards."
+    },
+    {
+      "name": "marketing-features-1",
+      "type": "registry:block",
+      "title": "Features 1",
+      "description": "A premium developer features grid highlighting edge deployments, serverless DB pooling, and real-time Recharts monitoring."
+    },
+    {
+      "name": "marketing-features-4",
+      "type": "registry:block",
+      "title": "Features 4",
+      "description": "A clean marketing features grid outlining sprint management, milestones, and project blueprints."
+    },
+    {
+      "name": "marketing-topbar-1",
+      "type": "registry:block",
+      "title": "Topbar 1",
+      "description": "Classic logo left, centered main navigation, search and notifications right with user avatar menu."
+    },
+    {
+      "name": "marketing-topbar-2",
+      "type": "registry:block",
+      "title": "Topbar 2",
+      "description": "Search-focused header with expandable keyboard shortcut search bar, quick links, and utility icons."
+    },
+    {
+      "name": "marketing-topbar-3",
+      "type": "registry:block",
+      "title": "Topbar 3",
+      "description": "Dual call-to-action layout featuring compact search bar, utility controls, and primary action button."
+    },
+    {
+      "name": "marketing-topbar-4",
+      "type": "registry:block",
+      "title": "Topbar 4",
+      "description": "Two-row layout with top primary navigation and bottom secondary filter tab strip with quick search."
+    },
+    {
+      "name": "marketing-topbar-5",
+      "type": "registry:block",
+      "title": "Topbar 5",
+      "description": "Global command search topbar with interactive badge notifications and active user status badge."
+    },
+    {
+      "name": "marketing-footer-1",
+      "type": "registry:block",
+      "title": "Footer 1",
+      "description": "Minimal centered layout with brand mark, call-to-action button, horizontal nav links, and social icons."
+    },
+    {
+      "name": "marketing-footer-2",
+      "type": "registry:block",
+      "title": "Footer 2",
+      "description": "Clean split row layout featuring brand logo, inline navigation, social media icons, and legal footer strip."
+    },
+    {
+      "name": "marketing-footer-3",
+      "type": "registry:block",
+      "title": "Footer 3",
+      "description": "Dual-column layout pairing brand information and social icons with a newsletter subscription box."
+    },
+    {
+      "name": "marketing-footer-4",
+      "type": "registry:block",
+      "title": "Footer 4",
+      "description": "Multi-column layout featuring brand description, social links, categorized sitemap columns, and bottom copyright bar."
+    },
+    {
+      "name": "marketing-cookie-consent-1",
+      "type": "registry:block",
+      "title": "Cookie Consent 1",
+      "description": "Ultra minimal floating bar layout with concise policy text and primary accept button."
+    },
+    {
+      "name": "marketing-cookie-consent-2",
+      "type": "registry:block",
+      "title": "Cookie Consent 2",
+      "description": "Centered modal card with icon header, privacy copy, and stacked/inline decision buttons."
+    },
+    {
+      "name": "marketing-cookie-consent-3",
+      "type": "registry:block",
+      "title": "Cookie Consent 3",
+      "description": "Left-aligned toast banner featuring icon avatar, description text, and customization buttons."
+    },
+    {
+      "name": "layout-notification-1",
+      "type": "registry:block",
+      "title": "Notification Dialog 1",
+      "description": "A popover-based notification dialog showing recent notifications, unread badge indicator, and quick actions."
+    },
+    {
+      "name": "layout-profile-1",
+      "type": "registry:block",
+      "title": "Profile Dropdown Menu 1",
+      "description": "A dropdown menu for user profile options showing user details, account settings, billing, notifications, and sign out."
+    },
+    {
+      "name": "layout-widget-2",
+      "type": "registry:block",
+      "title": "Language Selector Widget 2",
+      "description": "A dropdown menu for selecting language/country with country flag indicator."
+    },
+    {
+      "name": "layout-promo-1",
+      "type": "registry:block",
+      "title": "Promo 1",
+      "description": "An attention-grabbing card encouraging users to unlock premium analytics features and historical data access."
     },
     {
       "name": "form-input",
@@ -301,34 +279,13 @@
       "description": "A form input component with validation and error handling.",
       "dependencies": [
         "@tanstack/react-form"
-      ],
-      "registryDependencies": [
-        "field",
-        "input",
-        "@paceui/form-error"
-      ],
-      "files": [
-        {
-          "path": "components/ui/forms/form-input.tsx",
-          "type": "registry:component"
-        }
       ]
     },
     {
       "name": "form-password",
       "type": "registry:component",
       "title": "Form Password",
-      "description": "A password input field with visibility toggle and validation.",
-      "registryDependencies": [
-        "button",
-        "@paceui/form-input"
-      ],
-      "files": [
-        {
-          "path": "components/ui/forms/form-password.tsx",
-          "type": "registry:component"
-        }
-      ]
+      "description": "A password input field with visibility toggle and validation."
     },
     {
       "name": "form-select",
@@ -337,17 +294,6 @@
       "description": "A select input field with options and validation.",
       "dependencies": [
         "@tanstack/react-form"
-      ],
-      "registryDependencies": [
-        "field",
-        "select",
-        "@paceui/form-error"
-      ],
-      "files": [
-        {
-          "path": "components/ui/forms/form-select.tsx",
-          "type": "registry:component"
-        }
       ]
     },
     {
@@ -357,17 +303,6 @@
       "description": "A switch input field with on/off state and validation.",
       "dependencies": [
         "@tanstack/react-form"
-      ],
-      "registryDependencies": [
-        "field",
-        "switch",
-        "@paceui/form-error"
-      ],
-      "files": [
-        {
-          "path": "components/ui/forms/form-switch.tsx",
-          "type": "registry:component"
-        }
       ]
     },
     {
@@ -377,17 +312,6 @@
       "description": "A textarea input field with validation and error handling.",
       "dependencies": [
         "@tanstack/react-form"
-      ],
-      "registryDependencies": [
-        "field",
-        "textarea",
-        "@paceui/form-error"
-      ],
-      "files": [
-        {
-          "path": "components/ui/forms/form-textarea.tsx",
-          "type": "registry:component"
-        }
       ]
     },
     {
@@ -397,17 +321,6 @@
       "description": "A checkbox input field with validation and error handling.",
       "dependencies": [
         "@tanstack/react-form"
-      ],
-      "registryDependencies": [
-        "field",
-        "checkbox",
-        "@paceui/form-error"
-      ],
-      "files": [
-        {
-          "path": "components/ui/forms/form-checkbox.tsx",
-          "type": "registry:component"
-        }
       ]
     },
     {
@@ -417,13 +330,1881 @@
       "description": "A component for displaying form validation errors.",
       "dependencies": [
         "@tanstack/react-form"
-      ],
-      "files": [
-        {
-          "path": "components/ui/forms/form-error.tsx",
-          "type": "registry:component"
-        }
       ]
+    },
+    {
+      "name": "plugin-filepond",
+      "type": "registry:component",
+      "title": "File Pond",
+      "description": "file pond",
+      "dependencies": [
+        "react-filepond",
+        "filepond-plugin-image-preview"
+      ]
+    },
+    {
+      "name": "mcp-block-viewer",
+      "type": "registry:component",
+      "title": "Block Viewer",
+      "description": "React context managing block variant navigation, theme toggling, and clipboard actions.",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-ai-suggestions",
+      "type": "registry:ui",
+      "title": "AI Suggestions",
+      "description": "Get smart, real-time AI recommendations to refine and improve your work",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-ai-model-selector",
+      "type": "registry:ui",
+      "title": "Model Selector",
+      "description": "AI-focused model selector with preview, tooltips, and capability indicators built-in",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-ai-model-ability-selector",
+      "type": "registry:ui",
+      "title": "Model Ability Selector",
+      "description": "Compact selector for toggling abilities with icons and custom styles",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-ai-response-writer",
+      "type": "registry:ui",
+      "title": "Response Writer",
+      "description": "An auto-scrolling text display that smoothly keeps the latest response always visible",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-ai-token-counter",
+      "type": "registry:ui",
+      "title": "Token Counter",
+      "description": "Compact selector for toggling abilities with icons and custom styles",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-reveal-text",
+      "type": "registry:component",
+      "title": "Reveal Text",
+      "description": "A smooth text reveals animation where each heading reveals related content on interaction.",
+      "dependencies": [
+        "motion",
+        "split-type"
+      ]
+    },
+    {
+      "name": "motion-scramble-text",
+      "type": "registry:ui",
+      "title": "Scramble Text",
+      "description": "A hover-triggered text effect that scrambles and restores characters with smooth motion",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-squash-text",
+      "type": "registry:ui",
+      "title": "Squash Text",
+      "description": "Characters bounce and squash into place with playful, dynamic energy.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-bouncing-text",
+      "type": "registry:ui",
+      "title": "Bouncing Text",
+      "description": "A playful animation where characters bounce in sequence across the text.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-draw-line-text",
+      "type": "registry:ui",
+      "title": "Draw Line Text",
+      "description": "A smooth text effect that draws characters as strokes and fills them in-perfect for headers and highlights.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-mouse-wave-text",
+      "type": "registry:ui",
+      "title": "Mouse Wave Text",
+      "description": "Creates a wave-like bounce effect on text as the mouse moves across",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-text-fall-button",
+      "type": "registry:ui",
+      "title": "Text Fall Button",
+      "description": "A button with dynamic text that falls into place with a smooth, elastic motion on hover or click.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-spring-button",
+      "type": "registry:ui",
+      "title": "Spring Button",
+      "description": "A button that shrinks on press and springs back with bounce.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-fillable-button",
+      "type": "registry:ui",
+      "title": "Fillable Button",
+      "description": "A button that fills with color on hover.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-infinite-scroller",
+      "type": "registry:ui",
+      "title": "Infinite Scroller",
+      "description": "A smooth, physics-driven infinite scroller featuring drag momentum and scroll acceleration.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-gradient-shadow",
+      "type": "registry:ui",
+      "title": "Gradient Shadow",
+      "description": "Smooth horizontal gradient flow, creating a subtle glowing hover shadow effect.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-layered-stack",
+      "type": "registry:ui",
+      "title": "Layered Stack",
+      "description": "An interactive component that dynamically layers elements, creating a visually engaging stacked animation effect.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-profile-peek",
+      "type": "registry:ui",
+      "title": "Profile Peek",
+      "description": "Hover to peek profile with smooth reveal, right from the image.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-flip-reveal",
+      "type": "registry:ui",
+      "title": "Flip Reveal",
+      "description": "Animated container that reveals or hides items using GSAP Flip transitions and keys.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-reveal-on-scroll",
+      "type": "registry:ui",
+      "title": "Reveal On Scroll",
+      "description": "Animate content into view on scroll with effects like fade, slide, zoom, and blur.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-swap",
+      "type": "registry:ui",
+      "title": "Swap",
+      "description": "A flexible swap component that animates content changes with smooth customizable transition effects.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "motion-accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "A vertically stacked set of interactive headings that each reveal a section of content with motion animations.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Displays a menu to the user-triggered by a button-with spring entrance transitions, submenus, checkboxes, and radio items.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "A set of layered sections of content-known as tab panels-that are displayed one at a time with layout-aware spring indicator animations.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "A control that allows the user to toggle between checked and not checked with jelly squash-and-stretch active physics and bouncy spring animations.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react"
+      ]
+    },
+    {
+      "name": "motion-tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it, with shared provider morphing and blur-replace animations.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "A date picker component that allows users to select dates and ranges with interactive spring selection animations.",
+      "dependencies": [
+        "motion",
+        "react-day-picker",
+        "lucide-react",
+        "date-fns",
+        "@base-ui/react"
+      ]
+    },
+    {
+      "name": "motion-checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "A control that allows the user to toggle between checked and not checked with tactile spring press physics and animated checkmark transitions.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "An interactive component which expands/collapses a panel with smooth spring height morphing and mask-gradient transitions.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "An interactive searchable input with a filtered list of selectable items, animated floating highlight, and multi-select chip transitions.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Displays a menu located at the pointer position, triggered by a right-click or long-press, with spring entrance transitions, submenus, checkboxes, and radio items.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "A desktop-style horizontal menu bar with shared gliding trigger indicators, floating popup transition, and animated items.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "A collection of links and navigation elements with shared gliding indicator, spring popup scale entrance, and viewport dimension morphing.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar with spring motion animations.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react"
+      ]
+    },
+    {
+      "name": "motion-radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "A set of checkable buttons-known as radio buttons-where no more than one button can be checked at a time, featuring tactile press physics and spring indicator pop transitions.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Displays a list of options for the user to pick from-triggered by a button-with spring popup reveals, shared gliding active item highlight, and animated checkmarks.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "A composable, themeable, and customizable sidebar component with collapsible states, variants, and responsive sheet behavior.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "An input where the user selects a value from within a given range with spring thumb scaling physics.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react"
+      ]
+    },
+    {
+      "name": "motion-hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "For sighted users to preview content available behind a link with spring entrance transitions.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react"
+      ]
+    },
+    {
+      "name": "motion-alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Displays a callout for user attention with spring motion entrance and exit transitions.",
+      "dependencies": [
+        "motion",
+        "class-variance-authority"
+      ]
+    },
+    {
+      "name": "motion-empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "Displays an empty state placeholder when no data, results, or items are present with spring entrance animations.",
+      "dependencies": [
+        "motion",
+        "class-variance-authority"
+      ]
+    },
+    {
+      "name": "motion-input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "Accessible one-time password component with spring animations for character entry and active slot focus.",
+      "dependencies": [
+        "motion",
+        "input-otp",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Pagination with page navigation, next and previous links, and motion shared active glide.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "motion-scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Augments native scroll functionality for custom, cross-browser styling with smooth scrolling, tactile spring thumb interactions, and transition physics.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react"
+      ]
+    },
+    {
+      "name": "gsap-ai-suggestions",
+      "type": "registry:ui",
+      "title": "AI Suggestions",
+      "description": "Get smart, real-time AI recommendations to refine and improve your work",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-ai-model-selector",
+      "type": "registry:ui",
+      "title": "Model Selector",
+      "description": "AI-focused model selector with preview, tooltips, and capability indicators built-in",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-ai-model-ability-selector",
+      "type": "registry:ui",
+      "title": "Model Ability Selector",
+      "description": "Compact selector for toggling abilities with icons and custom styles",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-ai-response-writer",
+      "type": "registry:ui",
+      "title": "Response Writer",
+      "description": "An auto-scrolling text display that smoothly keeps the latest response always visible",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-ai-token-counter",
+      "type": "registry:ui",
+      "title": "Token Counter",
+      "description": "Compact selector for toggling abilities with icons and custom styles",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-reveal-text",
+      "type": "registry:ui",
+      "title": "Reveal Text",
+      "description": "A smooth text reveals animation where each heading reveals related content on interaction.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-scramble-text",
+      "type": "registry:ui",
+      "title": "Scramble Text",
+      "description": "A hover-triggered text effect that scrambles and restores characters with smooth motion",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-squash-text",
+      "type": "registry:ui",
+      "title": "Squash Text",
+      "description": "Characters bounce and squash into place with playful, dynamic energy.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-bouncing-text",
+      "type": "registry:ui",
+      "title": "Bouncing Text",
+      "description": "A playful animation where characters bounce in sequence across the text.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-draw-line-text",
+      "type": "registry:ui",
+      "title": "Draw Line Text",
+      "description": "A smooth text effect that draws characters as strokes and fills them in-perfect for headers and highlights.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-mouse-wave-text",
+      "type": "registry:ui",
+      "title": "Mouse Wave Text",
+      "description": "Creates a wave-like bounce effect on text as the mouse moves across",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-text-fall-button",
+      "type": "registry:ui",
+      "title": "Text Fall Button",
+      "description": "A button with dynamic text that falls into place with a smooth, elastic motion on hover or click.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-spring-button",
+      "type": "registry:ui",
+      "title": "Spring Button",
+      "description": "A button that shrinks on press and springs back with bounce.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-fillable-button",
+      "type": "registry:ui",
+      "title": "Fillable Button",
+      "description": "A button that fills with color on hover.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-swap",
+      "type": "registry:ui",
+      "title": "Swap",
+      "description": "A flexible swap component that animates content changes with smooth customizable transition effects.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-animated-stack",
+      "type": "registry:ui",
+      "title": "Animated Stack",
+      "description": "A smooth stacked card component that expands on hover and collapses with animation.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-layered-stack",
+      "type": "registry:ui",
+      "title": "Layered Stack",
+      "description": "An interactive component that dynamically layers elements, creating a visually engaging stacked animation effect.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-gradient-shadow",
+      "type": "registry:ui",
+      "title": "Gradient Shadow",
+      "description": "Smooth horizontal gradient flow, creating a subtle glowing hover shadow effect.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-github-star-counter",
+      "type": "registry:ui",
+      "title": "GitHub Star Counter",
+      "description": "Display live GitHub star count for any public repository",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-rolling-number",
+      "type": "registry:ui",
+      "title": "Rolling Number",
+      "description": "A smooth rolling number component powered by GSAP.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-profile-peek",
+      "type": "registry:ui",
+      "title": "Profile Peek",
+      "description": "Hover to peek profile with smooth reveal, right from the image.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-flip-reveal",
+      "type": "registry:ui",
+      "title": "Flip Reveal",
+      "description": "Animated container that reveals or hides items using GSAP Flip transitions and keys.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-reveal-on-scroll",
+      "type": "registry:ui",
+      "title": "Reveal On Scroll",
+      "description": "Animate content into view on scroll with effects like fade, slide, zoom, and blur.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-stagger-on-scroll",
+      "type": "registry:ui",
+      "title": "Stagger on Scroll",
+      "description": "Stagger elements into view with scroll-triggered fade, slide, zoom, or blur effects.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-liquid-cursor",
+      "type": "registry:ui",
+      "title": "Liquid Cursor",
+      "description": "A smooth, fluid cursor that follows your mouse with gentle stretch and bounce effects.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-liquid-glass",
+      "type": "registry:ui",
+      "title": "Liquid Glass",
+      "description": "A smooth glass effect with subtle blur, ideal for UI highlights and overlays.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-tilt-card",
+      "type": "registry:ui",
+      "title": "Tilt Card",
+      "description": "Interactive 3D tilt card that responds to cursor, adds depth and motion",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-distort-text",
+      "type": "registry:ui",
+      "title": "Distort Text",
+      "description": "Distort text with interactive hover motion.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "gsap-overlay-effect",
+      "type": "registry:ui",
+      "title": "Overlay Effect",
+      "description": "Overlay effect with GSAP animation.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ]
+    },
+    {
+      "name": "dot-display-dot-loader",
+      "type": "registry:ui",
+      "title": "Dot Loader",
+      "description": "Frame-by-frame 9x9 LED dot matrix loader animation component.",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "dot-display-dot-flow",
+      "type": "registry:ui",
+      "title": "Dot Flow",
+      "description": "Animated step flow combining text status transitions with dot matrix animations.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react",
+        "cn"
+      ]
+    },
+    {
+      "name": "free-dashboard-template",
+      "type": "registry:block",
+      "title": "Free Admin Dashboard",
+      "description": "This premium admin dashboard template delivers responsive layouts, diverse charts, and advanced tables for your web applications.",
+      "dependencies": [
+        "motion"
+      ]
+    },
+    {
+      "name": "personal-portfolio-template",
+      "type": "registry:block",
+      "title": "Personal Portfolio",
+      "description": "Landing template"
+    },
+    {
+      "name": "tanstack-charts-area-gradient",
+      "type": "registry:block",
+      "title": "Area Gradient",
+      "description": "A gradient area chart demonstrating desktop and mobile visitors over 6 months built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-area-stack-expanded",
+      "type": "registry:block",
+      "title": "Area Stack Expanded",
+      "description": "An expanded stacked area chart illustrating traffic distribution ratios normalized to 100% built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-area-stacked",
+      "type": "registry:block",
+      "title": "Area Stacked",
+      "description": "A stacked area chart displaying combined desktop and mobile website traffic built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-area-step",
+      "type": "registry:block",
+      "title": "Area Step",
+      "description": "A step area chart illustrating active microservice replica transitions built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-area-linear",
+      "type": "registry:block",
+      "title": "Area Linear",
+      "description": "A linear area chart tracking cloud infrastructure compute consumption built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-area-interactive",
+      "type": "registry:block",
+      "title": "Area Interactive",
+      "description": "An interactive network bandwidth and throughput area chart with time range select built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-area-axes",
+      "type": "registry:block",
+      "title": "Area Chart Axes",
+      "description": "An area chart displaying stacked desktop and mobile visitors with custom axes built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-area-default",
+      "type": "registry:block",
+      "title": "Area Chart Default",
+      "description": "A default single area chart displaying website visitor trends built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-area-chart-gradient",
+      "type": "registry:block",
+      "title": "Area Chart Gradient Multiple",
+      "description": "A stacked gradient area chart demonstrating desktop and mobile visitors over 6 months built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-area-icons",
+      "type": "registry:block",
+      "title": "Area Chart Icons",
+      "description": "An area chart displaying stacked desktop and mobile visitors with custom legend icons built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-area-legend",
+      "type": "registry:block",
+      "title": "Area Chart Legend",
+      "description": "An area chart displaying stacked desktop and mobile visitors with a bottom legend built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-temperature-range-band",
+      "type": "registry:block",
+      "title": "Temperature Range Band",
+      "description": "Band area chart depicting high-low temperature range envelope."
+    },
+    {
+      "name": "tanstack-charts-stacked-time-area",
+      "type": "registry:block",
+      "title": "Stacked Time Area",
+      "description": "Stacked area chart displaying aggregated time series volume."
+    },
+    {
+      "name": "tanstack-charts-normalized-stacked-area",
+      "type": "registry:block",
+      "title": "Normalized Stacked Area",
+      "description": "100% normalized stacked area chart visualizing sector percentage share."
+    },
+    {
+      "name": "tanstack-charts-streamgraph",
+      "type": "registry:block",
+      "title": "Streamgraph Chart",
+      "description": "Organic center-aligned streamgraph displaying continuous sector volume flows."
+    },
+    {
+      "name": "tanstack-charts-bollinger-band",
+      "type": "registry:block",
+      "title": "Bollinger Band",
+      "description": "Bollinger volatility bands around rolling moving average line."
+    },
+    {
+      "name": "tanstack-charts-difference-chart",
+      "type": "registry:block",
+      "title": "Difference Chart",
+      "description": "Dual-color difference area chart tracking asset premium vs discount to moving average."
+    },
+    {
+      "name": "tanstack-charts-contour-topography",
+      "type": "registry:block",
+      "title": "Contour Topography",
+      "description": "Topographic vector field isoline contours indicating spatial wind speed gradients."
+    },
+    {
+      "name": "tanstack-charts-density-contours",
+      "type": "registry:block",
+      "title": "Density Contours",
+      "description": "Kernel density estimation contours displaying 2D spatial clustering concentration."
+    },
+    {
+      "name": "tanstack-charts-quantile-ribbon",
+      "type": "registry:block",
+      "title": "Quantile Ribbon",
+      "description": "10th-90th percentile band area chart tracking median and outer bounds."
+    },
+    {
+      "name": "tanstack-charts-ridgeline-density",
+      "type": "registry:block",
+      "title": "Ridgeline Density",
+      "description": "Overlapping ridgeline density plot comparing continuous distribution mountain curves."
+    },
+    {
+      "name": "tanstack-charts-violin-distributions",
+      "type": "registry:block",
+      "title": "Violin Distributions",
+      "description": "Symmetric KDE violin profiles overlaid with boxplot quartiles."
+    },
+    {
+      "name": "tanstack-charts-treemap",
+      "type": "registry:block",
+      "title": "Treemap Chart",
+      "description": "Squarified hierarchical treemap tiling nested package data blocks."
+    },
+    {
+      "name": "tanstack-charts-themed-interactive-area",
+      "type": "registry:block",
+      "title": "Themed Monotone Interactive Area",
+      "description": "Smooth monotone curved area chart with responsive time range filter tabs."
+    },
+    {
+      "name": "tanstack-charts-geojson-map",
+      "type": "registry:block",
+      "title": "GeoJSON Map",
+      "description": "Spatial geographic boundary paths mapping data values to map regions."
+    },
+    {
+      "name": "tanstack-charts-hexbin-density",
+      "type": "registry:block",
+      "title": "Hexbin Density",
+      "description": "Spatial hexbin clustering mapping point density concentration."
+    },
+    {
+      "name": "tanstack-charts-line-custom-dots",
+      "type": "registry:block",
+      "title": "Line Custom Dots",
+      "description": "A line chart with custom dual-ring dots tracking software deployment release frequency built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-line-dots",
+      "type": "registry:block",
+      "title": "Line Dots",
+      "description": "A line chart with discrete data dots showing e-commerce conversion rate trends built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-line-multiple",
+      "type": "registry:block",
+      "title": "Line Multiple",
+      "description": "A multiple line chart tracking automated resolutions vs critical incident volume built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-line-step",
+      "type": "registry:block",
+      "title": "Line Step",
+      "description": "A step line chart displaying infrastructure capacity and active server counts built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-line-linear",
+      "type": "registry:block",
+      "title": "Line Linear",
+      "description": "A linear 16-week revenue performance line chart built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-line-interactive",
+      "type": "registry:block",
+      "title": "Line Interactive",
+      "description": "An interactive visitor traffic line chart with desktop and mobile tab filtering built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-line-default",
+      "type": "registry:block",
+      "title": "Line Chart Default",
+      "description": "A default curved line chart displaying visitor trends built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-line-dots-colors",
+      "type": "registry:block",
+      "title": "Line Chart Dots Colors",
+      "description": "A line chart featuring colorful dots per browser data point built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-line-dots-custom",
+      "type": "registry:block",
+      "title": "Line Chart Custom Dots",
+      "description": "A line chart featuring custom stem dots built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-line-label-custom",
+      "type": "registry:block",
+      "title": "Line Chart Custom Label",
+      "description": "A line chart with custom browser data labels built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-line-label",
+      "type": "registry:block",
+      "title": "Line Chart Label",
+      "description": "A line chart displaying data labels directly above data points built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-line-gaps",
+      "type": "registry:block",
+      "title": "Line Gaps",
+      "description": "Line chart handling missing or null data gaps with defined line breaks."
+    },
+    {
+      "name": "tanstack-charts-multi-line-end-labels",
+      "type": "registry:block",
+      "title": "Multi Line End Labels",
+      "description": "Multi-series line chart with inline end-of-line labels."
+    },
+    {
+      "name": "tanstack-charts-lollipop",
+      "type": "registry:block",
+      "title": "Lollipop Chart",
+      "description": "Lollipop chart featuring discrete category stems with endpoint dot markers."
+    },
+    {
+      "name": "tanstack-charts-dumbbell",
+      "type": "registry:block",
+      "title": "Dumbbell Plot",
+      "description": "Dumbbell chart comparing dual-period point shifts across discrete categories."
+    },
+    {
+      "name": "tanstack-charts-moving-average-line",
+      "type": "registry:block",
+      "title": "Moving Average Line",
+      "description": "Line chart with smoothed 7-day rolling window moving averages."
+    },
+    {
+      "name": "tanstack-charts-parallel-coordinates",
+      "type": "registry:block",
+      "title": "Parallel Coordinates",
+      "description": "Parallel coordinates chart visualizing multi-attribute metric tradeoffs."
+    },
+    {
+      "name": "tanstack-charts-slopegraph",
+      "type": "registry:block",
+      "title": "Slopegraph Chart",
+      "description": "Slopegraph comparing multi-period scalar trajectory shifts across categories."
+    },
+    {
+      "name": "tanstack-charts-linear-regression",
+      "type": "registry:block",
+      "title": "Linear Regression",
+      "description": "Scatterplot with fitted linear regression trend line."
+    },
+    {
+      "name": "tanstack-charts-change-arrows",
+      "type": "registry:block",
+      "title": "Change Arrows",
+      "description": "2D vector change arrows depicting bivariate shift direction."
+    },
+    {
+      "name": "tanstack-charts-delaunay-network",
+      "type": "registry:block",
+      "title": "Delaunay Network",
+      "description": "2D Delaunay spatial triangulation mesh network."
+    },
+    {
+      "name": "tanstack-charts-empirical-cdf",
+      "type": "registry:block",
+      "title": "Empirical Cumulative Distribution",
+      "description": "Step-after empirical cumulative probability distribution curve."
+    },
+    {
+      "name": "tanstack-charts-beeswarm-dodge",
+      "type": "registry:block",
+      "title": "Beeswarm Dodge",
+      "description": "1D collision-avoidance dodge layout packing discrete data points along category lanes."
+    },
+    {
+      "name": "tanstack-charts-log-scale-scatter",
+      "type": "registry:block",
+      "title": "Log Scale Scatter",
+      "description": "Log-scale X axis scatterplot showing multi-order magnitude distributions."
+    },
+    {
+      "name": "tanstack-charts-bump-ranking",
+      "type": "registry:block",
+      "title": "Bump Ranking",
+      "description": "Curve-bump ranking lines tracking position changes over time."
+    },
+    {
+      "name": "tanstack-charts-indexed-multi-line",
+      "type": "registry:block",
+      "title": "Indexed Multi Line",
+      "description": "Normalized multi-line comparison relative to an index baseline."
+    },
+    {
+      "name": "tanstack-charts-connected-scatter",
+      "type": "registry:block",
+      "title": "Connected Scatter",
+      "description": "2D path trajectory tracking driving distance vs gas price over time."
+    },
+    {
+      "name": "tanstack-charts-scatter-marginal-histograms",
+      "type": "registry:block",
+      "title": "Scatter Marginal Histograms",
+      "description": "Bivariate scatterplot paired with marginal X/Y frequency density distributions."
+    },
+    {
+      "name": "tanstack-charts-select-extrema",
+      "type": "registry:block",
+      "title": "Select Extrema",
+      "description": "Line chart automatically pinpointing and labeling high/low extrema points."
+    },
+    {
+      "name": "tanstack-charts-lag-autocorrelation",
+      "type": "registry:block",
+      "title": "Lag Autocorrelation",
+      "description": "Scatter plot comparing current value to a lagged time step observation."
+    },
+    {
+      "name": "tanstack-charts-composed-chart",
+      "type": "registry:block",
+      "title": "Composed Chart",
+      "description": "Layered combination composed of Area, Bar, and Line marks in a single view."
+    },
+    {
+      "name": "tanstack-charts-many-point-scatter",
+      "type": "registry:block",
+      "title": "Many Point Scatter",
+      "description": "High-density multivariate bubble scatterplot encoding weight, economy, and power."
+    },
+    {
+      "name": "tanstack-charts-echarts-axis-pointer",
+      "type": "registry:block",
+      "title": "ECharts Axis Pointer",
+      "description": "Snapped vertical axis pointer with grouped tooltip details."
+    },
+    {
+      "name": "tanstack-charts-recharts-interactive-legend",
+      "type": "registry:block",
+      "title": "Recharts Interactive Legend",
+      "description": "Interactive toggleable series legend to show or hide individual series dynamically."
+    },
+    {
+      "name": "tanstack-charts-chart-table-selection",
+      "type": "registry:block",
+      "title": "Chart Table Selection",
+      "description": "Bidirectional state synchronization connecting scatter plot points and interactive table rows."
+    },
+    {
+      "name": "tanstack-charts-focus-context-window",
+      "type": "registry:block",
+      "title": "Focus Context Window",
+      "description": "Dual overview and detail window with interactive brush area selector."
+    },
+    {
+      "name": "tanstack-charts-pinned-nested-chart-tooltip",
+      "type": "registry:block",
+      "title": "Pinned Nested Chart Tooltip",
+      "description": "Rich interactive popover tooltip rendering a nested sub-chart upon hover."
+    },
+    {
+      "name": "tanstack-charts-streaming-window-preservation",
+      "type": "registry:block",
+      "title": "Live Streaming Window Preservation",
+      "description": "Real-time streaming time series with sliding window data buffer retention."
+    },
+    {
+      "name": "tanstack-charts-echarts-synchronized-cursors",
+      "type": "registry:block",
+      "title": "Synchronized Dual-Grid X-Axis Crosshair",
+      "description": "Multi-panel vertically synchronized chart grid with linked inspection cursor."
+    },
+    {
+      "name": "tanstack-charts-echarts-free-cursor",
+      "type": "registry:block",
+      "title": "Free 2D Continuous Crosshair Cursor",
+      "description": "Arbitrary XY continuous crosshairs with dynamic coordinate popup tooltip."
+    },
+    {
+      "name": "tanstack-charts-brush-range-selection",
+      "type": "registry:block",
+      "title": "Dual-Handle Interactive Brush Range",
+      "description": "Drag handles horizontally to select date domain window bounds."
+    },
+    {
+      "name": "tanstack-charts-zoomable-time-window",
+      "type": "registry:block",
+      "title": "Wheel & Drag Pannable Zoom Time Window",
+      "description": "Scroll wheel to zoom domain and drag to pan time window.",
+      "dependencies": [
+        "@tanstack/charts",
+        "@tanstack/react-charts",
+        "d3-scale",
+        "d3-selection",
+        "d3-transition",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "tanstack-charts-timeline-playback-scrubber",
+      "type": "registry:block",
+      "title": "Animated Timeline Playback Scrubber",
+      "description": "Interactive timeline play/pause scrubber with keyframe animation."
+    },
+    {
+      "name": "tanstack-charts-editable-event-range",
+      "type": "registry:block",
+      "title": "Direct Editable Milestone Event Range",
+      "description": "Bidirectional drag handle and date picker event range adjuster."
+    },
+    {
+      "name": "tanstack-charts-polar-line",
+      "type": "registry:block",
+      "title": "Seasonal Annual Polar Line Cycle",
+      "description": "Continuous 360-degree cyclical temperature polar chart."
+    },
+    {
+      "name": "tanstack-charts-polar-scatter",
+      "type": "registry:block",
+      "title": "Surface Wind Directional Polar Scatter",
+      "description": "2D polar coordinate distribution plotting wind speed and angle heading."
+    },
+    {
+      "name": "tanstack-charts-premium-kpi-sparklines",
+      "type": "registry:block",
+      "title": "Premium KPI Sparklines",
+      "description": "Compact micro sparkline KPI cards with trend indicators."
+    },
+    {
+      "name": "tanstack-charts-force-directed-network",
+      "type": "registry:block",
+      "title": "Force Directed Network",
+      "description": "Force-directed graph layout visualizing nodes and physics spring link connections."
+    },
+    {
+      "name": "tanstack-charts-vector-field",
+      "type": "registry:block",
+      "title": "Vector Field",
+      "description": "Directional vector arrows mapping circulation and flow field magnitude."
+    },
+    {
+      "name": "tanstack-charts-framed-scatter",
+      "type": "registry:block",
+      "title": "Framed Scatter",
+      "description": "Framed 2D scatter plot visualizing metric distributions."
+    },
+    {
+      "name": "tanstack-charts-bar-multiple",
+      "type": "registry:block",
+      "title": "Bar Chart Multiple",
+      "description": "A grouped bar chart comparing desktop and mobile visitors over 6 months built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-bar-active",
+      "type": "registry:block",
+      "title": "Bar Chart Active",
+      "description": "A bar chart showcasing browser market share with active element styling built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-bar-default",
+      "type": "registry:block",
+      "title": "Bar Chart Default",
+      "description": "A default vertical bar chart displaying visitor metrics built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-bar-horizontal",
+      "type": "registry:block",
+      "title": "Bar Chart Horizontal",
+      "description": "A horizontal bar chart displaying visitor statistics built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-bar-interactive",
+      "type": "registry:block",
+      "title": "Bar Chart Interactive",
+      "description": "An interactive bar chart with tabbed metric selection built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-bar-label-custom",
+      "type": "registry:block",
+      "title": "Bar Chart Custom Label",
+      "description": "A horizontal bar chart with custom month and visitor labels built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-bar-label",
+      "type": "registry:block",
+      "title": "Bar Chart Label",
+      "description": "A bar chart with labels displayed above bars built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-bar-mixed",
+      "type": "registry:block",
+      "title": "Bar Chart Mixed",
+      "description": "A multi-colored horizontal bar chart tracking browser visitors built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-bar-negative",
+      "type": "registry:block",
+      "title": "Bar Chart Negative",
+      "description": "A bar chart displaying positive and negative data values built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-bar-stacked",
+      "type": "registry:block",
+      "title": "Bar Chart Stacked",
+      "description": "A stacked bar chart comparing desktop and mobile visitors with legend built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-interval-timeline",
+      "type": "registry:block",
+      "title": "Interval Timeline",
+      "description": "Gantt-style timeline chart mapping continuous interval event ranges."
+    },
+    {
+      "name": "tanstack-charts-error-bars",
+      "type": "registry:block",
+      "title": "Error Bars",
+      "description": "Sample point estimates with confidence deviation error range bars."
+    },
+    {
+      "name": "tanstack-charts-boxplot",
+      "type": "registry:block",
+      "title": "Boxplot Chart",
+      "description": "Grouped quartile boxplots highlighting median and outlier spreads."
+    },
+    {
+      "name": "tanstack-charts-cumulative-histogram",
+      "type": "registry:block",
+      "title": "Cumulative Histogram",
+      "description": "Binned cumulative frequency histogram of population metrics."
+    },
+    {
+      "name": "tanstack-charts-quantitative-binned-heatmap",
+      "type": "registry:block",
+      "title": "Quantitative Binned Heatmap",
+      "description": "Two-dimensional quantitative binned density heatmap grid."
+    },
+    {
+      "name": "tanstack-charts-calendar-heatmap",
+      "type": "registry:block",
+      "title": "Calendar Heatmap",
+      "description": "12-week matrix cell calendar heatmap displaying daily observations."
+    },
+    {
+      "name": "tanstack-charts-diverging-likert",
+      "type": "registry:block",
+      "title": "Diverging Likert",
+      "description": "Diverging Likert scale bars anchored around neutral survey sentiment."
+    },
+    {
+      "name": "tanstack-charts-candlestick",
+      "type": "registry:block",
+      "title": "Candlestick Chart",
+      "description": "Financial Open-High-Low-Close price action candlestick chart."
+    },
+    {
+      "name": "tanstack-charts-waterfall",
+      "type": "registry:block",
+      "title": "Waterfall Chart",
+      "description": "Sequential revenue bridge waterfall chart tracking period variance drivers."
+    },
+    {
+      "name": "tanstack-charts-hierarchy-tree",
+      "type": "registry:block",
+      "title": "Hierarchy Tree",
+      "description": "Tree layout algorithm mapping hierarchical package dependencies."
+    },
+    {
+      "name": "tanstack-charts-faceted-distributions",
+      "type": "registry:block",
+      "title": "Faceted Distributions",
+      "description": "Small multiples faceting histogram distributions across species and sex categories."
+    },
+    {
+      "name": "tanstack-charts-grouped-reducer-bars",
+      "type": "registry:block",
+      "title": "Grouped Reducer Bars",
+      "description": "Grouped dataset aggregation calculating mean values per category."
+    },
+    {
+      "name": "tanstack-charts-marimekko-mosaic",
+      "type": "registry:block",
+      "title": "Marimekko Mosaic",
+      "description": "Variable-width mosaic chart where column widths reflect segment proportion."
+    },
+    {
+      "name": "tanstack-charts-population-pyramid",
+      "type": "registry:block",
+      "title": "Population Pyramid",
+      "description": "Bilateral horizontal bar chart displaying demographic population breakdowns."
+    },
+    {
+      "name": "tanstack-charts-recharts-mixed-bars",
+      "type": "registry:block",
+      "title": "Recharts Mixed Bars",
+      "description": "Hybrid bar chart combining stacked bars alongside single comparison bars."
+    },
+    {
+      "name": "tanstack-charts-scrollable-resource-lanes",
+      "type": "registry:block",
+      "title": "Horizontal Gantt Resource Timeline",
+      "description": "Multi-team resource scheduling lanes displaying overlapping task intervals."
+    },
+    {
+      "name": "tanstack-charts-stacked-bar-band-cursor",
+      "type": "registry:block",
+      "title": "Stacked Bar Chart with Dynamic Focus Band",
+      "description": "Hover crosshairs highlight full column band with breakdown tooltip."
+    },
+    {
+      "name": "tanstack-charts-active-bar-dashboard",
+      "type": "registry:block",
+      "title": "Active Bar Visitor Dashboard",
+      "description": "Interactive tabbed bar dashboard switching desktop and mobile traffic."
+    },
+    {
+      "name": "tanstack-charts-sales-funnel",
+      "type": "registry:block",
+      "title": "Sales Lead Conversion Step Funnel",
+      "description": "Step-down conversion stages tracking user dropoff through sales pipeline."
+    },
+    {
+      "name": "tanstack-charts-waffle-unit-chart",
+      "type": "registry:block",
+      "title": "Waffle Unit Chart",
+      "description": "Square cell unit grid visualizing proportion and volume."
+    },
+    {
+      "name": "tanstack-charts-heatmap-calendar",
+      "type": "registry:block",
+      "title": "Calendar Heatmap Chart",
+      "description": "A 12-week daily rainfall intensity matrix using cell marks in TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-heatmap-quantitative-binned",
+      "type": "registry:block",
+      "title": "Quantitative Binned Heatmap Chart",
+      "description": "A 2D binned density histogram mapping bill length vs depth built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-heatmap-token-usage",
+      "type": "registry:block",
+      "title": "52-Week Token Activity Calendar Heatmap",
+      "description": "GitHub-style 52-week activity contribution grid for API token volume built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-pie-donut-text",
+      "type": "registry:block",
+      "title": "Pie Chart Donut with Text",
+      "description": "A donut pie chart with centered total visitor text overlay built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-pie-donut-active",
+      "type": "registry:block",
+      "title": "Pie Chart Donut Active",
+      "description": "A donut pie chart with an active pop-out slice built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-pie-donut",
+      "type": "registry:block",
+      "title": "Pie Chart Donut",
+      "description": "A clean donut pie chart displaying visitor distribution built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-pie-interactive",
+      "type": "registry:block",
+      "title": "Pie Chart Interactive",
+      "description": "An interactive donut pie chart with month selection built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-pie-label-custom",
+      "type": "registry:block",
+      "title": "Pie Chart Custom Label",
+      "description": "A pie chart displaying custom value labels outside the slices built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-pie-label-list",
+      "type": "registry:block",
+      "title": "Pie Chart Label List",
+      "description": "A pie chart displaying category labels inside the slices built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-pie-label",
+      "type": "registry:block",
+      "title": "Pie Chart Label",
+      "description": "A pie chart with leader lines pointing to slice value labels built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-pie-legend",
+      "type": "registry:block",
+      "title": "Pie Chart Legend",
+      "description": "A pie chart featuring a custom legend built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-pie-separator-none",
+      "type": "registry:block",
+      "title": "Pie Chart Separator None",
+      "description": "A seamless pie chart without slice stroke borders built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-pie-simple",
+      "type": "registry:block",
+      "title": "Pie Chart Simple",
+      "description": "A simple pie chart displaying browser market share built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-pie-stacked",
+      "type": "registry:block",
+      "title": "Pie Chart Stacked",
+      "description": "A concentric multi-ring stacked pie chart built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-chart",
+      "type": "registry:block",
+      "title": "Radar Chart",
+      "description": "Multivariate polar radar spider chart evaluating multi-axis performance dimensions."
+    },
+    {
+      "name": "tanstack-charts-pie-chart",
+      "type": "registry:block",
+      "title": "Pie Chart",
+      "description": "Solid sector pie proportions chart displaying category share breakdown."
+    },
+    {
+      "name": "tanstack-charts-donut-chart",
+      "type": "registry:block",
+      "title": "Donut Chart",
+      "description": "Ring cutout donut distribution chart showing category proportions."
+    },
+    {
+      "name": "tanstack-charts-gauge-chart",
+      "type": "registry:block",
+      "title": "Gauge Chart",
+      "description": "Radial gauge metric dial indicating completion percentage."
+    },
+    {
+      "name": "tanstack-charts-labeled-pie",
+      "type": "registry:block",
+      "title": "Pie Chart with Radial Callout Leader Lines",
+      "description": "Categorical breakdown pie chart with pointer callout labels."
+    },
+    {
+      "name": "tanstack-charts-center-donut",
+      "type": "registry:block",
+      "title": "Donut Chart with Central KPI Radial Stat",
+      "description": "Hollow inner radius donut chart displaying center KPI metric."
+    },
+    {
+      "name": "tanstack-charts-rounded-donut",
+      "type": "registry:block",
+      "title": "Donut Chart with Rounded Arc Corner Caps",
+      "description": "Segmented donut ring visualization with smooth rounded arc endpoints."
+    },
+    {
+      "name": "tanstack-charts-nested-donut",
+      "type": "registry:block",
+      "title": "Nested Multi-Ring Sunburst Donut Chart",
+      "description": "Concentric multi-level donut rings representing hierarchical category breakdown."
+    },
+    {
+      "name": "tanstack-charts-rose",
+      "type": "registry:block",
+      "title": "Polar Coxcomb Nightingale Rose Chart",
+      "description": "Variable-radius polar sector chart displaying cyclical seasonal metrics."
+    },
+    {
+      "name": "tanstack-charts-needle-gauge",
+      "type": "registry:block",
+      "title": "Semicircular Metric Needle Dial Gauge",
+      "description": "Arc dial gauge featuring colored risk zones and animated needle pointer."
+    },
+    {
+      "name": "tanstack-charts-comparative-radar",
+      "type": "registry:block",
+      "title": "Comparative Polygon Spider Radar Overlay",
+      "description": "Multi-entity polygon radar overlay evaluating performance dimensions."
+    },
+    {
+      "name": "tanstack-charts-radial-bars",
+      "type": "registry:block",
+      "title": "Concentric Circular Radial Metric Bars",
+      "description": "Concentric stacked rings with rounded pill caps tracking progress."
+    },
+    {
+      "name": "tanstack-charts-sunburst",
+      "type": "registry:block",
+      "title": "Hierarchical Partition Sunburst Radial Tree",
+      "description": "Concentric multi-ring sunburst displaying nested file system hierarchy."
+    },
+    {
+      "name": "tanstack-charts-active-donut-metric",
+      "type": "registry:block",
+      "title": "Interactive Active Donut Wedge Metric",
+      "description": "Clickable/hoverable donut sectors with detailed metric breakdown."
+    },
+    {
+      "name": "tanstack-charts-radar-multiple",
+      "type": "registry:block",
+      "title": "Radar Chart Multiple",
+      "description": "A radar chart displaying desktop and mobile visitors over 6 months built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-default",
+      "type": "registry:block",
+      "title": "Radar Chart Default",
+      "description": "A standard single-series radar chart built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-dots",
+      "type": "registry:block",
+      "title": "Radar Chart Dots",
+      "description": "A radar chart with data point dot markers built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-grid-circle-fill",
+      "type": "registry:block",
+      "title": "Radar Chart Grid Circle Filled",
+      "description": "A radar chart with circular filled grid backgrounds built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-grid-circle-no-lines",
+      "type": "registry:block",
+      "title": "Radar Chart Grid Circle No Lines",
+      "description": "A radar chart with circular grid rings without radial axis lines built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-grid-circle",
+      "type": "registry:block",
+      "title": "Radar Chart Grid Circle",
+      "description": "A radar chart with circular grid lines built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-grid-custom",
+      "type": "registry:block",
+      "title": "Radar Chart Grid Custom",
+      "description": "A radar chart with custom single outer grid line built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-grid-fill",
+      "type": "registry:block",
+      "title": "Radar Chart Grid Filled",
+      "description": "A radar chart with polygonal filled grid background built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-grid-none",
+      "type": "registry:block",
+      "title": "Radar Chart Grid None",
+      "description": "A clean radar chart without grid background lines built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-icons",
+      "type": "registry:block",
+      "title": "Radar Chart Icons",
+      "description": "A radar chart featuring icons in the legend built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-label-custom",
+      "type": "registry:block",
+      "title": "Radar Chart Custom Label",
+      "description": "A radar chart with custom formatted value labels on outer vertices built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-legend",
+      "type": "registry:block",
+      "title": "Radar Chart Legend",
+      "description": "A multi-series radar chart with custom legend built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-lines-only",
+      "type": "registry:block",
+      "title": "Radar Chart Lines Only",
+      "description": "A radar chart rendering stroke outlines without area fills built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radar-radius",
+      "type": "registry:block",
+      "title": "Radar Chart Radius Axis",
+      "description": "A radar chart displaying radial axis labels built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radial-text",
+      "type": "registry:block",
+      "title": "Radial Chart Text",
+      "description": "A radial gauge chart displaying visitor metrics with centered text built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radial-grid",
+      "type": "registry:block",
+      "title": "Radial Chart Grid",
+      "description": "A radial bar chart with polar grid lines built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radial-label",
+      "type": "registry:block",
+      "title": "Radial Chart Label",
+      "description": "A radial bar chart with text labels on each ring built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radial-shape",
+      "type": "registry:block",
+      "title": "Radial Chart Shape",
+      "description": "A single metric gauge chart with custom shape and centered total text built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radial-simple",
+      "type": "registry:block",
+      "title": "Radial Chart Simple",
+      "description": "A clean radial bar chart with background rings built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-radial-stacked",
+      "type": "registry:block",
+      "title": "Radial Chart Stacked",
+      "description": "A semi-circle stacked radial bar chart with centered total text built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-tooltip-default",
+      "type": "registry:block",
+      "title": "Tooltip Default",
+      "description": "A stacked bar chart with default tooltip styling built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-tooltip-formatter",
+      "type": "registry:block",
+      "title": "Tooltip Formatter",
+      "description": "A chart tooltip demonstrating custom formatted values built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-tooltip-icons",
+      "type": "registry:block",
+      "title": "Tooltip Icons",
+      "description": "A chart tooltip displaying custom series icons built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-tooltip-indicator-line",
+      "type": "registry:block",
+      "title": "Tooltip Line Indicator",
+      "description": "A chart tooltip with vertical line indicator bars built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-tooltip-indicator-none",
+      "type": "registry:block",
+      "title": "Tooltip No Indicator",
+      "description": "A clean chart tooltip without color indicator shapes built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-tooltip-label-custom",
+      "type": "registry:block",
+      "title": "Tooltip Custom Label",
+      "description": "A chart tooltip displaying custom text header label built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-tooltip-label-formatter",
+      "type": "registry:block",
+      "title": "Tooltip Label Formatter",
+      "description": "A chart tooltip displaying custom formatted date label built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-tooltip-label-none",
+      "type": "registry:block",
+      "title": "Tooltip No Label",
+      "description": "A compact chart tooltip with header label omitted built with TanStack Charts."
+    },
+    {
+      "name": "tanstack-charts-pointer-tooltip",
+      "type": "registry:block",
+      "title": "Pointer Tooltip",
+      "description": "Interactive pointer tooltip dynamically tracking spatial mouse cursor position."
+    },
+    {
+      "name": "tanstack-charts-grouped-tooltip",
+      "type": "registry:block",
+      "title": "Grouped Tooltip",
+      "description": "Multi-series grouped tooltip combining all series data points for a single X-index focus."
+    },
+    {
+      "name": "tanstack-charts-voronoi-nearest-tooltip",
+      "type": "registry:block",
+      "title": "Voronoi Nearest Tooltip",
+      "description": "Spatial Delaunay Voronoi tessellation providing nearest-point hover targeting."
+    },
+    {
+      "name": "native-ai-browser-support",
+      "type": "registry:ui",
+      "title": "Browser Support",
+      "description": "Detects browser local AI support and guides users through enabling Chrome Built-in AI"
+    },
+    {
+      "name": "use-browser-support",
+      "type": "registry:hook",
+      "title": "useBrowserSupport Hook",
+      "description": "Custom React hook for checking client browser local AI capabilities and hardware acceleration"
+    },
+    {
+      "name": "native-ai-response-renderer",
+      "type": "registry:ui",
+      "title": "Response Renderer",
+      "description": "Styled markdown renderer optimized for displaying AI-generated responses",
+      "dependencies": [
+        "react-markdown",
+        "remark-gfm"
+      ]
+    },
+    {
+      "name": "native-ai-quick-chat",
+      "type": "registry:ui",
+      "title": "Quick Chat",
+      "description": "A ready-to-use chat interface powered by Chrome's native Gemini Nano with streaming responses",
+      "dependencies": [
+        "react-markdown",
+        "remark-gfm",
+        "prompt-api-polyfill"
+      ]
+    },
+    {
+      "name": "native-ai-follow-ups",
+      "type": "registry:ui",
+      "title": "FollowUps Chat",
+      "description": "Advanced AI chat with follow-up suggestions, structured answer parsing, and context-aware prompting",
+      "dependencies": [
+        "react-markdown",
+        "remark-gfm",
+        "prompt-api-polyfill"
+      ]
+    },
+    {
+      "name": "use-native-ai",
+      "type": "registry:hook",
+      "title": "useNativeAI Hook",
+      "description": "Custom React hook for handling device-local AI text completion, streaming, and parallel structured query prompting",
+      "dependencies": [
+        "prompt-api-polyfill"
+      ]
+    },
+    {
+      "name": "native-ai-chat-header",
+      "type": "registry:ui",
+      "title": "Chat Header",
+      "description": "Renders the header with the assistant name/icon, model load status, and token usage counter"
+    },
+    {
+      "name": "native-ai-chat-messages",
+      "type": "registry:ui",
+      "title": "Chat Messages",
+      "description": "Handles message rendering and scrolling, displaying user and assistant messages, plus a typing indicator",
+      "dependencies": [
+        "react-markdown",
+        "remark-gfm"
+      ]
+    },
+    {
+      "name": "native-ai-chat-suggestions",
+      "type": "registry:ui",
+      "title": "Chat Suggestions",
+      "description": "Displays a horizontal list of clickable follow-up queries or suggested actions"
+    },
+    {
+      "name": "native-ai-chat-input",
+      "type": "registry:ui",
+      "title": "Chat Input",
+      "description": "Renders the message input area, supporting key event handling (Enter to submit) and loading status"
+    },
+    {
+      "name": "craft-test",
+      "type": "registry:block",
+      "title": "Test",
+      "description": "A dynamic bento image showcase that progressively subdivides into multi-pane cells with smooth rolling slide transitions and ease settling."
+    },
+    {
+      "name": "craft-test-2",
+      "type": "registry:block",
+      "title": "Test 2",
+      "description": "A dynamic bento image showcase that progressively subdivides into multi-pane cells with smooth rolling slide transitions and ease settling."
     }
   ]
 }

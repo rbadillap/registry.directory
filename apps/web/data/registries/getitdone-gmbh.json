@@ -60,6 +60,7 @@
         "lucide-react@^0.379.0"
       ],
       "registryDependencies": [
+        "https://zero-design.itdone.de/r/card.json",
         "https://zero-design.itdone.de/r/labels-context.json",
         "https://zero-design.itdone.de/r/utils.json",
         "https://zero-design.itdone.de/r/theme.json"
@@ -108,6 +109,7 @@
       ],
       "registryDependencies": [
         "https://zero-design.itdone.de/r/data-state-panel.json",
+        "https://zero-design.itdone.de/r/heading-tag.json",
         "https://zero-design.itdone.de/r/labels-context.json",
         "https://zero-design.itdone.de/r/recipes.json",
         "https://zero-design.itdone.de/r/utils.json",
@@ -130,6 +132,7 @@
         "lucide-react@^0.379.0"
       ],
       "registryDependencies": [
+        "https://zero-design.itdone.de/r/heading-tag.json",
         "https://zero-design.itdone.de/r/labels-context.json",
         "https://zero-design.itdone.de/r/utils.json",
         "https://zero-design.itdone.de/r/theme.json"
@@ -418,6 +421,7 @@
         "class-variance-authority@^0.7.0"
       ],
       "registryDependencies": [
+        "https://zero-design.itdone.de/r/heading-tag.json",
         "https://zero-design.itdone.de/r/labels-context.json",
         "https://zero-design.itdone.de/r/utils.json",
         "https://zero-design.itdone.de/r/theme.json"
@@ -500,6 +504,7 @@
         "lucide-react@^0.379.0"
       ],
       "registryDependencies": [
+        "https://zero-design.itdone.de/r/heading-tag.json",
         "https://zero-design.itdone.de/r/labels.json",
         "https://zero-design.itdone.de/r/labels-context.json",
         "https://zero-design.itdone.de/r/recipes.json",
@@ -541,7 +546,7 @@
       "description": "Checkbox from the Get IT Done design system.",
       "dependencies": [
         "@radix-ui/react-checkbox@^1.4.1",
-        "@radix-ui/react-icons@^1.3.2"
+        "lucide-react@^0.379.0"
       ],
       "registryDependencies": [
         "https://zero-design.itdone.de/r/labels-context.json",
@@ -730,6 +735,7 @@
       "registryDependencies": [
         "https://zero-design.itdone.de/r/button.json",
         "https://zero-design.itdone.de/r/button-close.json",
+        "https://zero-design.itdone.de/r/heading-tag.json",
         "https://zero-design.itdone.de/r/labels.json",
         "https://zero-design.itdone.de/r/labels-context.json",
         "https://zero-design.itdone.de/r/switch.json",
@@ -842,6 +848,7 @@
         "https://zero-design.itdone.de/r/avatar.json",
         "https://zero-design.itdone.de/r/chip.json",
         "https://zero-design.itdone.de/r/empty-state.json",
+        "https://zero-design.itdone.de/r/heading-tag.json",
         "https://zero-design.itdone.de/r/inline-edit.json",
         "https://zero-design.itdone.de/r/labels-context.json",
         "https://zero-design.itdone.de/r/logo-tile.json",
@@ -1001,6 +1008,7 @@
       ],
       "registryDependencies": [
         "https://zero-design.itdone.de/r/checkbox.json",
+        "https://zero-design.itdone.de/r/heading-tag.json",
         "https://zero-design.itdone.de/r/input.json",
         "https://zero-design.itdone.de/r/labels-context.json",
         "https://zero-design.itdone.de/r/recipes.json",
@@ -1086,6 +1094,7 @@
         "lucide-react@^0.379.0"
       ],
       "registryDependencies": [
+        "https://zero-design.itdone.de/r/file-icon.json",
         "https://zero-design.itdone.de/r/labels.json",
         "https://zero-design.itdone.de/r/labels-context.json",
         "https://zero-design.itdone.de/r/loading-spinner.json",
@@ -1186,6 +1195,21 @@
         },
         {
           "path": "registry/ui/grid/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "heading-tag",
+      "type": "registry:ui",
+      "title": "Heading Tag",
+      "description": "Helper used by the Get IT Done components.",
+      "registryDependencies": [
+        "https://zero-design.itdone.de/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/heading-tag.ts",
           "type": "registry:ui"
         }
       ]
@@ -1417,6 +1441,7 @@
       ],
       "registryDependencies": [
         "https://zero-design.itdone.de/r/data-state-panel.json",
+        "https://zero-design.itdone.de/r/heading-tag.json",
         "https://zero-design.itdone.de/r/labels-context.json",
         "https://zero-design.itdone.de/r/recipes.json",
         "https://zero-design.itdone.de/r/utils.json",
@@ -1709,10 +1734,10 @@
       "title": "Message",
       "description": "Message from the Get IT Done design system.",
       "dependencies": [
-        "class-variance-authority@^0.7.0",
-        "lucide-react@^0.379.0"
+        "class-variance-authority@^0.7.0"
       ],
       "registryDependencies": [
+        "https://zero-design.itdone.de/r/file-icon.json",
         "https://zero-design.itdone.de/r/labels-context.json",
         "https://zero-design.itdone.de/r/recipes.json",
         "https://zero-design.itdone.de/r/utils.json",
@@ -2350,6 +2375,7 @@
         "https://zero-design.itdone.de/r/autosave-status.json",
         "https://zero-design.itdone.de/r/button.json",
         "https://zero-design.itdone.de/r/code-snippet.json",
+        "https://zero-design.itdone.de/r/heading-tag.json",
         "https://zero-design.itdone.de/r/labels-context.json",
         "https://zero-design.itdone.de/r/nested-layer.json",
         "https://zero-design.itdone.de/r/return-focus.json",

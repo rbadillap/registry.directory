@@ -59,6 +59,86 @@
       ]
     },
     {
+      "name": "hold-to-delete-button",
+      "type": "registry:component",
+      "title": "Hold to Delete Button",
+      "description": "A delete button that only fires when held: an orange bar fills linearly from left to right as a matching glow builds behind it, snapping back if you let go early and landing on a check with a pulse once it completes.",
+      "categories": [
+        "button",
+        "click"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/microkit/hold-to-delete-button.tsx",
+          "type": "registry:component",
+          "target": "@components/microkit/hold-to-delete-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fuse-undo-button",
+      "type": "registry:component",
+      "title": "Fuse Undo Button",
+      "description": "An archive button that turns into Undo and lights an orange fuse around its outline; the fuse holds still while you hover it, so the chance to undo only runs out once you look away.",
+      "categories": [
+        "button",
+        "hover"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/microkit/fuse-undo-button.tsx",
+          "type": "registry:component",
+          "target": "@components/microkit/fuse-undo-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-ring-check",
+      "type": "registry:component",
+      "title": "Progress Ring Check",
+      "description": "A task status icon whose dashed ring closes into a spinning arc, fills to its progress, then draws a check or a cross and strikes the label through.",
+      "categories": [
+        "button",
+        "click"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/microkit/progress-ring-check.tsx",
+          "type": "registry:component",
+          "target": "@components/microkit/progress-ring-check.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bounce-checkbox",
+      "type": "registry:component",
+      "title": "Bounce Checkbox",
+      "description": "A checkbox whose fill springs out past the box with a little swell, draws its tick, then strikes the label through and dims it.",
+      "categories": [
+        "input",
+        "click"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/microkit/bounce-checkbox.tsx",
+          "type": "registry:component",
+          "target": "@components/microkit/bounce-checkbox.tsx"
+        }
+      ]
+    },
+    {
       "name": "social-icon-buttons",
       "type": "registry:component",
       "title": "Social Icon Buttons",

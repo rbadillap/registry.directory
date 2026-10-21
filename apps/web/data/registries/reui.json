@@ -1037,6 +1037,11 @@
           "target": "components/ui/svgs/discord.tsx"
         },
         {
+          "path": "drive.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/drive.tsx"
+        },
+        {
           "path": "dropbox.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/dropbox.tsx"
@@ -1045,11 +1050,6 @@
           "path": "googleCalendar.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/googleCalendar.tsx"
-        },
-        {
-          "path": "googleDrive.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/svgs/googleDrive.tsx"
         },
         {
           "path": "googleMeet.tsx",
@@ -4914,6 +4914,116 @@
           "path": "views-drawer.tsx",
           "type": "registry:block",
           "target": "components/blocks/app-shell-35/components/views-drawer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "app-shell-36",
+      "type": "registry:block",
+      "resolution": "unverified",
+      "title": "Observability app shell with grouped sidebar, pinned pages with Undo and nav search",
+      "description": "Monitoring console layout on the shadcn Sidebar: workspace switcher, a Cmd+F nav filter, pinnable pages with Undo, one breadcrumb header and one skeleton card grid as every page body. Card, Empty, Sidebar. For APM and tracing apps.",
+      "dependencies": [
+        "@headless-tree/core",
+        "@headless-tree/react",
+        "cn",
+        "next-themes",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/icon-tile",
+        "@reui/tree",
+        "avatar",
+        "breadcrumb",
+        "button",
+        "card",
+        "dropdown-menu",
+        "empty",
+        "input-group",
+        "kbd",
+        "separator",
+        "sheet",
+        "sidebar",
+        "skeleton",
+        "toggle",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/page.tsx"
+        },
+        {
+          "path": "app-header.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/app-header.tsx"
+        },
+        {
+          "path": "app-rail.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/app-rail.tsx"
+        },
+        {
+          "path": "app-shell.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/app-shell.tsx"
+        },
+        {
+          "path": "app-sidebar.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/app-sidebar.tsx"
+        },
+        {
+          "path": "content-skeleton.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/content-skeleton.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/data.tsx"
+        },
+        {
+          "path": "demo-state.ts",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/demo-state.ts"
+        },
+        {
+          "path": "icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/icons.tsx"
+        },
+        {
+          "path": "nav-tree.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/nav-tree.tsx"
+        },
+        {
+          "path": "page-states.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/page-states.tsx"
+        },
+        {
+          "path": "sidebar-search.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/sidebar-search.tsx"
+        },
+        {
+          "path": "user-menu.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/user-menu.tsx"
+        },
+        {
+          "path": "value-faces.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/value-faces.tsx"
+        },
+        {
+          "path": "workspace-switcher.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/app-shell-36/components/workspace-switcher.tsx"
         }
       ]
     },
@@ -11217,6 +11327,7 @@
     {
       "name": "c-button-45",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Outline button with inline count badge",
       "description": "Outline button with inline count badge",
       "registryDependencies": [
@@ -11234,6 +11345,7 @@
     {
       "name": "c-button-46",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button with status dot badge",
       "description": "Button with status dot badge",
       "registryDependencies": [
@@ -11250,6 +11362,7 @@
     {
       "name": "c-button-47",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Ghost button with a status badge",
       "description": "Ghost button with a status badge",
       "registryDependencies": [
@@ -11267,6 +11380,7 @@
     {
       "name": "c-button-48",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Icon button with notification badge",
       "description": "Icon button with notification badge",
       "registryDependencies": [
@@ -11284,6 +11398,7 @@
     {
       "name": "c-button-49",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Go back link button",
       "description": "Go back link button",
       "registryDependencies": [
@@ -11300,6 +11415,7 @@
     {
       "name": "c-button-5",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Destructive button",
       "description": "Destructive button",
       "registryDependencies": [
@@ -11316,6 +11432,7 @@
     {
       "name": "c-button-50",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Go back link button with animation",
       "description": "Go back link button with animation",
       "registryDependencies": [
@@ -11332,6 +11449,7 @@
     {
       "name": "c-button-51",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Expanding button from icon to label",
       "description": "Expanding button from icon to label",
       "registryDependencies": [
@@ -11348,6 +11466,7 @@
     {
       "name": "c-button-52",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Multi-line button with icon, title & description",
       "description": "Multi-line button with icon, title & description",
       "registryDependencies": [
@@ -11364,6 +11483,7 @@
     {
       "name": "c-button-53",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Sliding Icon Button (Hover reveal)",
       "description": "Sliding Icon Button (Hover reveal)",
       "registryDependencies": [
@@ -11380,6 +11500,7 @@
     {
       "name": "c-button-54",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Shortcut Tooltip Button (Kbd hints)",
       "description": "Shortcut Tooltip Button (Kbd hints)",
       "registryDependencies": [
@@ -11398,6 +11519,7 @@
     {
       "name": "c-button-55",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button with avatar",
       "description": "Button with avatar",
       "registryDependencies": [
@@ -11415,6 +11537,7 @@
     {
       "name": "c-button-56",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Outline button with avatar",
       "description": "Outline button with avatar",
       "registryDependencies": [
@@ -11432,6 +11555,7 @@
     {
       "name": "c-button-57",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Small button with avatar",
       "description": "Small button with avatar",
       "registryDependencies": [
@@ -11449,6 +11573,7 @@
     {
       "name": "c-button-58",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Small outline button with avatar",
       "description": "Small outline button with avatar",
       "registryDependencies": [
@@ -11466,6 +11591,7 @@
     {
       "name": "c-button-59",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Social login buttons with Remix icons",
       "description": "Social login buttons with Remix icons",
       "dependencies": [
@@ -11485,6 +11611,7 @@
     {
       "name": "c-button-6",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Link button variant",
       "description": "Link button variant",
       "registryDependencies": [
@@ -11501,6 +11628,7 @@
     {
       "name": "c-button-60",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Social icon-only buttons with Remix icons",
       "description": "Social icon-only buttons with Remix icons",
       "dependencies": [
@@ -11520,6 +11648,7 @@
     {
       "name": "c-button-61",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Theme toggle button with animated moon and sun icons",
       "description": "Theme toggle button with animated moon and sun icons",
       "dependencies": [
@@ -11539,6 +11668,7 @@
     {
       "name": "c-button-7",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Extra small button",
       "description": "Extra small button",
       "registryDependencies": [
@@ -11555,6 +11685,7 @@
     {
       "name": "c-button-8",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Small button",
       "description": "Small button",
       "registryDependencies": [
@@ -11571,6 +11702,7 @@
     {
       "name": "c-button-9",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Large button",
       "description": "Large button",
       "registryDependencies": [
@@ -11587,6 +11719,7 @@
     {
       "name": "c-button-group-1",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Basic button group with two buttons",
       "description": "Basic button group with two buttons",
       "registryDependencies": [
@@ -11604,6 +11737,7 @@
     {
       "name": "c-button-group-10",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group used for standard pagination",
       "description": "Button group used for standard pagination",
       "registryDependencies": [
@@ -11621,6 +11755,7 @@
     {
       "name": "c-button-group-11",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Pagination split into page numbers and navigation arrows",
       "description": "Pagination split into page numbers and navigation arrows",
       "registryDependencies": [
@@ -11638,6 +11773,7 @@
     {
       "name": "c-button-group-12",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group for editor text alignment controls",
       "description": "Button group for editor text alignment controls",
       "registryDependencies": [
@@ -11655,6 +11791,7 @@
     {
       "name": "c-button-group-13",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Vertical button group orientation",
       "description": "Vertical button group orientation",
       "registryDependencies": [
@@ -11672,6 +11809,7 @@
     {
       "name": "c-button-group-14",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Nested vertical button group for complex tool palettes",
       "description": "Nested vertical button group for complex tool palettes",
       "registryDependencies": [
@@ -11689,6 +11827,7 @@
     {
       "name": "c-button-group-15",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Star button group with count and dropdown",
       "description": "Star button group with count and dropdown",
       "registryDependencies": [
@@ -11708,6 +11847,7 @@
     {
       "name": "c-button-group-16",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Search input with filter menu and clear button",
       "description": "Search input with filter menu and clear button",
       "registryDependencies": [
@@ -11727,6 +11867,7 @@
     {
       "name": "c-button-group-17",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group with comprehensive action menu",
       "description": "Button group with comprehensive action menu",
       "registryDependencies": [
@@ -11745,6 +11886,7 @@
     {
       "name": "c-button-group-18",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Advanced git toolbar with branch selection and split commit button",
       "description": "Advanced git toolbar with branch selection and split commit button",
       "registryDependencies": [
@@ -11763,6 +11905,7 @@
     {
       "name": "c-button-group-19",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group with dropdown menu and input group",
       "description": "Button group with dropdown menu and input group",
       "registryDependencies": [
@@ -11782,6 +11925,7 @@
     {
       "name": "c-button-group-2",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group with button followed by input",
       "description": "Button group with button followed by input",
       "registryDependencies": [
@@ -11800,6 +11944,7 @@
     {
       "name": "c-button-group-20",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group with input group and button",
       "description": "Button group with input group and button",
       "registryDependencies": [
@@ -11819,6 +11964,7 @@
     {
       "name": "c-button-group-21",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group with dropdown menu and input group",
       "description": "Button group with dropdown menu and input group",
       "registryDependencies": [
@@ -11838,6 +11984,7 @@
     {
       "name": "c-button-group-22",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Basic button group with disabled button",
       "description": "Basic button group with disabled button",
       "registryDependencies": [
@@ -11855,6 +12002,7 @@
     {
       "name": "c-button-group-23",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group buttons with separators",
       "description": "Button group buttons with separators",
       "registryDependencies": [
@@ -11872,6 +12020,7 @@
     {
       "name": "c-button-group-24",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "View switcher for dashboard layouts",
       "description": "View switcher for dashboard layouts",
       "registryDependencies": [
@@ -11889,6 +12038,7 @@
     {
       "name": "c-button-group-25",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Rating scale using numerical buttons",
       "description": "Rating scale using numerical buttons",
       "dependencies": [
@@ -11909,6 +12059,7 @@
     {
       "name": "c-button-group-26",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group with user selection select",
       "description": "Button group with user selection select",
       "registryDependencies": [
@@ -11928,6 +12079,7 @@
     {
       "name": "c-button-group-27",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group with select status addon",
       "description": "Button group with select status addon",
       "dependencies": [
@@ -11949,6 +12101,7 @@
     {
       "name": "c-button-group-28",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Volume controller with plus/minus actions",
       "description": "Volume controller with plus/minus actions",
       "registryDependencies": [
@@ -11966,6 +12119,7 @@
     {
       "name": "c-button-group-29",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group with follower count",
       "description": "Button group with follower count",
       "registryDependencies": [
@@ -11983,6 +12137,7 @@
     {
       "name": "c-button-group-3",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group with buttons and badge",
       "description": "Button group with buttons and badge",
       "registryDependencies": [
@@ -12001,6 +12156,7 @@
     {
       "name": "c-button-group-30",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Active state button group with count",
       "description": "Active state button group with count",
       "registryDependencies": [
@@ -12018,6 +12174,7 @@
     {
       "name": "c-button-group-31",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Horizontal button group with primary and secondary labels",
       "description": "Horizontal button group with primary and secondary labels",
       "registryDependencies": [
@@ -12035,6 +12192,7 @@
     {
       "name": "c-button-group-32",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group with dropdown menu and view toggle",
       "description": "Button group with dropdown menu and view toggle",
       "dependencies": [
@@ -12056,6 +12214,7 @@
     {
       "name": "c-button-group-33",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group with select controls",
       "description": "Button group with select controls",
       "registryDependencies": [
@@ -12073,6 +12232,7 @@
     {
       "name": "c-button-group-34",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Segmented control with dropdown inside button group",
       "description": "Segmented control with dropdown inside button group",
       "dependencies": [
@@ -12094,6 +12254,7 @@
     {
       "name": "c-button-group-35",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Pagination button group",
       "description": "Pagination button group",
       "registryDependencies": [
@@ -12111,6 +12272,7 @@
     {
       "name": "c-button-group-36",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "View switcher button group",
       "description": "View switcher button group",
       "dependencies": [
@@ -12131,6 +12293,7 @@
     {
       "name": "c-button-group-37",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Zoom controls button group",
       "description": "Zoom controls button group",
       "registryDependencies": [
@@ -12148,6 +12311,7 @@
     {
       "name": "c-button-group-38",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Media player controls button group",
       "description": "Media player controls button group",
       "registryDependencies": [
@@ -12165,6 +12329,7 @@
     {
       "name": "c-button-group-39",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Split button with dropdown trigger",
       "description": "Split button with dropdown trigger",
       "registryDependencies": [
@@ -12183,6 +12348,7 @@
     {
       "name": "c-button-group-4",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group with dropdown menu",
       "description": "Button group with dropdown menu",
       "registryDependencies": [
@@ -12201,6 +12367,7 @@
     {
       "name": "c-button-group-40",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Vertical button group",
       "description": "Vertical button group",
       "dependencies": [
@@ -12221,6 +12388,7 @@
     {
       "name": "c-button-group-41",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Model selector with tier badges",
       "description": "Model selector with tier badges",
       "dependencies": [
@@ -12243,6 +12411,7 @@
     {
       "name": "c-button-group-42",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Segmented order type selector",
       "description": "Segmented order type selector",
       "dependencies": [
@@ -12264,6 +12433,7 @@
     {
       "name": "c-button-group-43",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Buy sell hold toggle group",
       "description": "Buy sell hold toggle group",
       "registryDependencies": [
@@ -12281,6 +12451,7 @@
     {
       "name": "c-button-group-44",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Pipeline stage mover with dropdown",
       "description": "Pipeline stage mover with dropdown",
       "registryDependencies": [
@@ -12299,6 +12470,7 @@
     {
       "name": "c-button-group-45",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Environment switcher with indicator",
       "description": "Environment switcher with indicator",
       "dependencies": [
@@ -12320,6 +12492,7 @@
     {
       "name": "c-button-group-46",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Compact time interval selector",
       "description": "Compact time interval selector",
       "dependencies": [
@@ -12340,6 +12513,7 @@
     {
       "name": "c-button-group-47",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Review actions split button",
       "description": "Review actions split button",
       "registryDependencies": [
@@ -12358,6 +12532,7 @@
     {
       "name": "c-button-group-48",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Toolbar filter with export and view toggle",
       "description": "Toolbar filter with export and view toggle",
       "dependencies": [
@@ -12379,6 +12554,7 @@
     {
       "name": "c-button-group-49",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Vertical nav links with icons",
       "description": "Vertical nav links with icons",
       "dependencies": [
@@ -12399,6 +12575,7 @@
     {
       "name": "c-button-group-5",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Team activity and collaboration group",
       "description": "Team activity and collaboration group",
       "registryDependencies": [
@@ -12418,6 +12595,7 @@
     {
       "name": "c-button-group-50",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Toolbar filter sort and more",
       "description": "Toolbar filter sort and more",
       "registryDependencies": [
@@ -12436,6 +12614,7 @@
     {
       "name": "c-button-group-51",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "New button with create dropdown",
       "description": "New button with create dropdown",
       "registryDependencies": [
@@ -12454,6 +12633,7 @@
     {
       "name": "c-button-group-52",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Refresh share and export dropdown",
       "description": "Refresh share and export dropdown",
       "registryDependencies": [
@@ -12472,6 +12652,7 @@
     {
       "name": "c-button-group-53",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Publish controls with split button and overflow",
       "description": "Publish controls with split button and overflow",
       "registryDependencies": [
@@ -12492,6 +12673,7 @@
     {
       "name": "c-button-group-54",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "API service environment and version selectors",
       "description": "API service environment and version selectors",
       "registryDependencies": [
@@ -12510,6 +12692,7 @@
     {
       "name": "c-button-group-55",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Payout release controls with amount context",
       "description": "Payout release controls with amount context",
       "registryDependencies": [
@@ -12528,6 +12711,7 @@
     {
       "name": "c-button-group-56",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Attachment button group with download action",
       "description": "Attachment button group with download action",
       "registryDependencies": [
@@ -12545,6 +12729,7 @@
     {
       "name": "c-button-group-57",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Agent mode selector with credit cap dropdown",
       "description": "Agent mode selector with credit cap dropdown",
       "dependencies": [
@@ -12566,6 +12751,7 @@
     {
       "name": "c-button-group-6",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group using icons for visual actions",
       "description": "Button group using icons for visual actions",
       "registryDependencies": [
@@ -12583,6 +12769,7 @@
     {
       "name": "c-button-group-7",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Dropdown menu with status indicator",
       "description": "Dropdown menu with status indicator",
       "registryDependencies": [
@@ -12601,6 +12788,7 @@
     {
       "name": "c-button-group-8",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Button group styled as a like button with a counter",
       "description": "Button group styled as a like button with a counter",
       "registryDependencies": [
@@ -12618,6 +12806,7 @@
     {
       "name": "c-button-group-9",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Nested button groups for complex action sets",
       "description": "Nested button groups for complex action sets",
       "registryDependencies": [
@@ -12637,6 +12826,7 @@
     {
       "name": "c-calendar-1",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Basic calendar",
       "description": "Basic calendar",
       "registryDependencies": [
@@ -12654,6 +12844,7 @@
     {
       "name": "c-calendar-10",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Display week numbers",
       "description": "Display week numbers",
       "dependencies": [
@@ -12674,6 +12865,7 @@
     {
       "name": "c-calendar-11",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Current month button",
       "description": "Current month button",
       "dependencies": [
@@ -12695,6 +12887,7 @@
     {
       "name": "c-calendar-12",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Today button",
       "description": "Today button",
       "dependencies": [
@@ -12716,6 +12909,7 @@
     {
       "name": "c-calendar-13",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Custom navigation with year view",
       "description": "Custom navigation with year view",
       "dependencies": [
@@ -12739,6 +12933,7 @@
     {
       "name": "c-calendar-14",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Preset time selection",
       "description": "Preset time selection",
       "dependencies": [
@@ -12761,6 +12956,7 @@
     {
       "name": "c-calendar-15",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Calendar with presets",
       "description": "Calendar with presets",
       "dependencies": [
@@ -12782,6 +12978,7 @@
     {
       "name": "c-calendar-16",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Range calendar with presets",
       "description": "Range calendar with presets",
       "dependencies": [
@@ -12804,6 +13001,7 @@
     {
       "name": "c-calendar-17",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Calendar with pricing",
       "description": "Calendar with pricing",
       "registryDependencies": [
@@ -12820,6 +13018,7 @@
     {
       "name": "c-calendar-18",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Calendar with presets",
       "description": "Calendar with presets",
       "dependencies": [
@@ -12841,6 +13040,7 @@
     {
       "name": "c-calendar-19",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Appointment calendar",
       "description": "Appointment calendar",
       "registryDependencies": [
@@ -12860,6 +13060,7 @@
     {
       "name": "c-calendar-2",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Range calendar",
       "description": "Range calendar",
       "dependencies": [
@@ -12881,6 +13082,7 @@
     {
       "name": "c-calendar-20",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Display 2 months",
       "description": "Display 2 months",
       "registryDependencies": [
@@ -12898,6 +13100,7 @@
     {
       "name": "c-calendar-21",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Display 2 months with range picker",
       "description": "Display 2 months with range picker",
       "dependencies": [
@@ -12918,6 +13121,7 @@
     {
       "name": "c-calendar-22",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Calendar with event list",
       "description": "Calendar with event list",
       "dependencies": [
@@ -12940,6 +13144,7 @@
     {
       "name": "c-calendar-23",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Localize calendar",
       "description": "Localize calendar",
       "dependencies": [
@@ -12961,6 +13166,7 @@
     {
       "name": "c-calendar-24",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Calendar with date picker",
       "description": "Calendar with date picker",
       "dependencies": [
@@ -12983,6 +13189,7 @@
     {
       "name": "c-calendar-25",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Calendar with date range picker",
       "description": "Calendar with date range picker",
       "dependencies": [
@@ -13007,6 +13214,7 @@
     {
       "name": "c-calendar-26",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Calendar with date picker and year view",
       "description": "Calendar with date picker and year view",
       "dependencies": [
@@ -13032,6 +13240,7 @@
     {
       "name": "c-calendar-27",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Calendar with date and appointment picker",
       "description": "Calendar with date and appointment picker",
       "dependencies": [
@@ -13056,6 +13265,7 @@
     {
       "name": "c-calendar-28",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Calendar with date picker and presets",
       "description": "Calendar with date picker and presets",
       "dependencies": [
@@ -13079,6 +13289,7 @@
     {
       "name": "c-calendar-29",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Range calendar with date picker and presets",
       "description": "Range calendar with date picker and presets",
       "dependencies": [
@@ -13103,6 +13314,7 @@
     {
       "name": "c-calendar-3",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Disabled dates",
       "description": "Disabled dates",
       "dependencies": [
@@ -13123,6 +13335,7 @@
     {
       "name": "c-calendar-30",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Calendar with date and time range picker",
       "description": "Calendar with date and time range picker",
       "dependencies": [
@@ -13148,6 +13361,7 @@
     {
       "name": "c-calendar-4",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Multiple day selection",
       "description": "Multiple day selection",
       "dependencies": [
@@ -13168,6 +13382,7 @@
     {
       "name": "c-calendar-5",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Custom select day style",
       "description": "Custom select day style",
       "registryDependencies": [
@@ -13185,6 +13400,7 @@
     {
       "name": "c-calendar-6",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Custom select range style",
       "description": "Custom select range style",
       "dependencies": [
@@ -13206,6 +13422,7 @@
     {
       "name": "c-calendar-7",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Right navigation",
       "description": "Right navigation",
       "registryDependencies": [
@@ -13223,6 +13440,7 @@
     {
       "name": "c-calendar-8",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Month and year selection",
       "description": "Month and year selection",
       "dependencies": [
@@ -13244,6 +13462,7 @@
     {
       "name": "c-calendar-9",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Year select with navigation",
       "description": "Year select with navigation",
       "dependencies": [
@@ -13265,6 +13484,7 @@
     {
       "name": "c-card-1",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Basic card",
       "description": "Basic card",
       "registryDependencies": [
@@ -13282,6 +13502,7 @@
     {
       "name": "c-card-10",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Full card with image and shadow fade effect",
       "description": "Full card with image and shadow fade effect",
       "registryDependencies": [
@@ -13300,6 +13521,7 @@
     {
       "name": "c-card-11",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Card with stacked depth effect",
       "description": "Card with stacked depth effect",
       "registryDependencies": [
@@ -13317,6 +13539,7 @@
     {
       "name": "c-card-12",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Advanced clean login form card",
       "description": "Advanced clean login form card",
       "registryDependencies": [
@@ -13337,6 +13560,7 @@
     {
       "name": "c-card-13",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Expandable billing usage card",
       "description": "Expandable billing usage card",
       "dependencies": [
@@ -13358,6 +13582,7 @@
     {
       "name": "c-card-14",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Deployment status summary card",
       "description": "Deployment status summary card",
       "dependencies": [
@@ -13377,6 +13602,7 @@
     {
       "name": "c-card-15",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Stat card with trend and overflow menu",
       "description": "Stat card with trend and overflow menu",
       "registryDependencies": [
@@ -13397,6 +13623,7 @@
     {
       "name": "c-card-16",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Card with header badge and actions",
       "description": "Card with header badge and actions",
       "registryDependencies": [
@@ -13417,6 +13644,7 @@
     {
       "name": "c-card-17",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Card with icon, title and link",
       "description": "Card with icon, title and link",
       "registryDependencies": [
@@ -13433,6 +13661,7 @@
     {
       "name": "c-card-18",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Card with header label and link",
       "description": "Card with header label and link",
       "registryDependencies": [
@@ -13449,6 +13678,7 @@
     {
       "name": "c-card-2",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Card header with border",
       "description": "Card header with border",
       "registryDependencies": [
@@ -13465,6 +13695,7 @@
     {
       "name": "c-card-3",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Card with border separation",
       "description": "Card with border separation",
       "registryDependencies": [
@@ -13482,6 +13713,7 @@
     {
       "name": "c-card-4",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Card with header and footer",
       "description": "Card with header and footer",
       "registryDependencies": [
@@ -13499,6 +13731,7 @@
     {
       "name": "c-card-5",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Card with link",
       "description": "Card with link",
       "registryDependencies": [
@@ -13516,6 +13749,7 @@
     {
       "name": "c-card-6",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Card with dropdown menu",
       "description": "Card with dropdown menu",
       "registryDependencies": [
@@ -13535,6 +13769,7 @@
     {
       "name": "c-card-7",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Card with image",
       "description": "Card with image",
       "registryDependencies": [
@@ -13553,6 +13788,7 @@
     {
       "name": "c-card-8",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Card with image scale hover effect",
       "description": "Card with image scale hover effect",
       "registryDependencies": [
@@ -13569,6 +13805,7 @@
     {
       "name": "c-card-9",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Card with full image",
       "description": "Card with full image",
       "registryDependencies": [
@@ -13587,6 +13824,7 @@
     {
       "name": "c-carousel-1",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Basic carousel with single item",
       "description": "Basic carousel with single item",
       "registryDependencies": [
@@ -13604,6 +13842,7 @@
     {
       "name": "c-carousel-10",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Carousel with overlay thumbnail navigation",
       "description": "Carousel with overlay thumbnail navigation",
       "dependencies": [
@@ -13623,6 +13862,7 @@
     {
       "name": "c-carousel-11",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Carousel with dots navigation and content overlays",
       "description": "Carousel with dots navigation and content overlays",
       "dependencies": [
@@ -13643,6 +13883,7 @@
     {
       "name": "c-carousel-2",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Vertical carousel orientation",
       "description": "Vertical carousel orientation",
       "registryDependencies": [
@@ -13660,6 +13901,7 @@
     {
       "name": "c-carousel-3",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Carousel with multiple items visible",
       "description": "Carousel with multiple items visible",
       "registryDependencies": [
@@ -13677,6 +13919,7 @@
     {
       "name": "c-carousel-4",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Carousel with responsive basis",
       "description": "Carousel with responsive basis",
       "registryDependencies": [
@@ -13694,6 +13937,7 @@
     {
       "name": "c-carousel-5",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Carousel with autoplay plugin",
       "description": "Carousel with autoplay plugin",
       "dependencies": [
@@ -13714,6 +13958,7 @@
     {
       "name": "c-carousel-6",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Carousel with centered slide alignment",
       "description": "Carousel with centered slide alignment",
       "registryDependencies": [
@@ -13731,6 +13976,7 @@
     {
       "name": "c-carousel-7",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Carousel with custom spacing",
       "description": "Carousel with custom spacing",
       "registryDependencies": [
@@ -13748,6 +13994,7 @@
     {
       "name": "c-carousel-8",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Carousel with images and overlays",
       "description": "Carousel with images and overlays",
       "registryDependencies": [
@@ -13765,6 +14012,7 @@
     {
       "name": "c-carousel-9",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Carousel with thumbnail navigation",
       "description": "Carousel with thumbnail navigation",
       "dependencies": [
@@ -13784,6 +14032,7 @@
     {
       "name": "c-cascader-1",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Nested attribute picker with drill-down navigation.",
       "description": "Nested attribute picker with drill-down navigation.",
       "registryDependencies": [
@@ -13804,6 +14053,7 @@
     {
       "name": "c-cascader-10",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Translated labels across a country picker.",
       "description": "A German country picker where every string the primitive renders comes from labels, including the live-region announcements, with each flag in an IconTile.",
       "registryDependencies": [
@@ -13824,6 +14074,7 @@
     {
       "name": "c-cascader-11",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Two-line rows with descriptions and a disabled option.",
       "description": "Two-line rows with descriptions and a disabled option.",
       "registryDependencies": [
@@ -13845,6 +14096,7 @@
     {
       "name": "c-cascader-12",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Form field that submits like a native input.",
       "description": "Form field that submits like a native input.",
       "registryDependencies": [
@@ -13866,6 +14118,7 @@
     {
       "name": "c-cascader-13",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Columns mode with independently scrolling panels.",
       "description": "A media library in Miller columns where all three panes overflow and each scrolls on its own.",
       "dependencies": [
@@ -13891,6 +14144,7 @@
     {
       "name": "c-cascader-14",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Tree mode with inline expand and multi-select scopes.",
       "description": "Tree mode with inline expand and multi-select scopes.",
       "registryDependencies": [
@@ -13911,6 +14165,7 @@
     {
       "name": "c-cascader-15",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Async drill-down that loads before it navigates.",
       "description": "Async drill-down that loads before it navigates.",
       "dependencies": [
@@ -13935,6 +14190,7 @@
     {
       "name": "c-cascader-16",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Virtualized level with thousands of rows.",
       "description": "Six unevenly sized regions of country markets, windowed so only the visible rows ever mount.",
       "dependencies": [
@@ -13960,6 +14216,7 @@
     {
       "name": "c-cascader-17",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Consumer-rendered removable chips with path-aware labels.",
       "description": "Chips rendered outside the primitive from useCascaderSelection, each carrying its full path so repeated column names stay distinct.",
       "registryDependencies": [
@@ -13981,6 +14238,7 @@
     {
       "name": "c-cascader-18",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Cascading tree multi-select inside a popover.",
       "description": "A cascading tree with indeterminate branches in a popover, bounded by the positioner's available height.",
       "registryDependencies": [
@@ -14001,6 +14259,7 @@
     {
       "name": "c-cascader-19",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Status and priority colour dots via renderLabel.",
       "description": "Status and priority colour dots via renderLabel.",
       "dependencies": [
@@ -14025,6 +14284,7 @@
     {
       "name": "c-cascader-2",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Multi-select permissions with checkboxes and a selection cap.",
       "description": "Multi-select permissions with checkboxes and a selection cap.",
       "dependencies": [
@@ -14049,6 +14309,7 @@
     {
       "name": "c-cascader-20",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Expense accounts with a colour inherited down each branch.",
       "description": "Expense accounts with a colour inherited down each branch.",
       "dependencies": [
@@ -19560,7 +19821,6 @@
     {
       "name": "c-field-2",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Field with input and textarea",
       "description": "Field with input and textarea",
       "registryDependencies": [
@@ -19579,7 +19839,6 @@
     {
       "name": "c-field-3",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Field with select control",
       "description": "Field with select control",
       "registryDependencies": [
@@ -19597,7 +19856,6 @@
     {
       "name": "c-field-4",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Field with radio groups and checkboxes",
       "description": "Field with radio groups and checkboxes",
       "registryDependencies": [
@@ -19616,7 +19874,6 @@
     {
       "name": "c-field-5",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Filed with slider and switch",
       "description": "Filed with slider and switch",
       "registryDependencies": [
@@ -19635,7 +19892,6 @@
     {
       "name": "c-field-6",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Field with OTP input",
       "description": "Field with OTP input",
       "registryDependencies": [
@@ -19654,7 +19910,6 @@
     {
       "name": "c-field-7",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Settings form with validation",
       "description": "Settings form with validation",
       "registryDependencies": [
@@ -19676,7 +19931,6 @@
     {
       "name": "c-field-8",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Permission settings with checkboxes",
       "description": "Permission settings with checkboxes",
       "registryDependencies": [
@@ -19694,7 +19948,6 @@
     {
       "name": "c-field-9",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Responsive field layout",
       "description": "Responsive field layout",
       "registryDependencies": [
@@ -19714,7 +19967,6 @@
     {
       "name": "c-file-type-1",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Common formats",
       "description": "The formats people share most, in their brand colors.",
       "registryDependencies": [
@@ -19731,7 +19983,6 @@
     {
       "name": "c-file-type-10",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Custom labels",
       "description": "Version tags and document codes in place of the extension.",
       "registryDependencies": [
@@ -19749,7 +20000,6 @@
     {
       "name": "c-file-type-11",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Custom colors and unknown types",
       "description": "Unknown extensions fall back to a neutral icon, and one class recolors any type.",
       "registryDependencies": [
@@ -19766,7 +20016,6 @@
     {
       "name": "c-file-type-12",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Export format picker",
       "description": "Radio cards for choosing an export format, each with its file type icon.",
       "registryDependencies": [
@@ -19786,7 +20035,6 @@
     {
       "name": "c-file-type-13",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Locked, linked and starred",
       "description": "A lock, link or star drawn on the icon in place of the extension label.",
       "registryDependencies": [
@@ -19803,7 +20051,6 @@
     {
       "name": "c-file-type-14",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Restyled labels",
       "description": "File type extension labels restyled through labelClassName: rounded, outlined, inverted, recolored.",
       "registryDependencies": [
@@ -19820,7 +20067,6 @@
     {
       "name": "c-file-type-15",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Dotfiles and build names",
       "description": "Icons read from names such as .env.local, Dockerfile and Makefile, which carry no usual extension.",
       "registryDependencies": [
@@ -19837,7 +20083,6 @@
     {
       "name": "c-file-type-2",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Outline, solid, light and mono",
       "description": "The 4 variants side by side: outlined, filled, soft grey and one gray for every type.",
       "registryDependencies": [
@@ -19854,7 +20099,6 @@
     {
       "name": "c-file-type-3",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Sizes",
       "description": "6 sizes from 18px to 56px drawing the same icon, tuned to stay legible at 18px.",
       "registryDependencies": [
@@ -19871,7 +20115,6 @@
     {
       "name": "c-file-type-4",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Family glyphs",
       "description": "One glyph per family, drawn on one grid, for family types and the glyph option.",
       "registryDependencies": [
@@ -19888,7 +20131,6 @@
     {
       "name": "c-file-type-5",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "All formats",
       "description": "Every built-in format grouped by family, with a variant switch.",
       "registryDependencies": [
@@ -19906,7 +20148,6 @@
     {
       "name": "c-file-type-6",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Data grid file browser",
       "description": "Mini icons resolved from each file name in the rows of a sortable data grid.",
       "dependencies": [
@@ -19930,7 +20171,6 @@
     {
       "name": "c-file-type-7",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Attachment list",
       "description": "Attachments with their type, size and a download action.",
       "registryDependencies": [
@@ -19949,7 +20189,6 @@
     {
       "name": "c-file-type-8",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Upload queue",
       "description": "Files uploading with progress, each icon resolved from its MIME type.",
       "registryDependencies": [
@@ -19969,7 +20208,6 @@
     {
       "name": "c-file-type-9",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Resolve from a file name",
       "description": "Type a file name, path, URL or MIME type and see the icon it resolves to.",
       "registryDependencies": [
@@ -19990,7 +20228,6 @@
     {
       "name": "c-file-upload-1",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Basic file upload",
       "description": "Basic file upload",
       "registryDependencies": [
@@ -20008,7 +20245,6 @@
     {
       "name": "c-file-upload-10",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Cover image upload.",
       "description": "Cover image upload.",
       "dependencies": [
@@ -20030,7 +20266,6 @@
     {
       "name": "c-file-upload-2",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Avatar upload",
       "description": "Avatar upload",
       "dependencies": [
@@ -20052,7 +20287,6 @@
     {
       "name": "c-file-upload-3",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Basic drag and drop file upload",
       "description": "Basic drag and drop file upload",
       "dependencies": [
@@ -20074,7 +20308,6 @@
     {
       "name": "c-file-upload-4",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Gallery file upload",
       "description": "Gallery file upload",
       "dependencies": [
@@ -20098,7 +20331,6 @@
     {
       "name": "c-file-upload-5",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Progress file upload",
       "description": "Progress file upload",
       "dependencies": [
@@ -20122,7 +20354,6 @@
     {
       "name": "c-file-upload-6",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Table file upload",
       "description": "Table file upload",
       "dependencies": [
@@ -20146,7 +20377,6 @@
     {
       "name": "c-file-upload-7",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Image upload",
       "description": "Image upload",
       "dependencies": [
@@ -20169,7 +20399,6 @@
     {
       "name": "c-file-upload-8",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Image upload with sorting.",
       "description": "Image upload with sorting.",
       "dependencies": [
@@ -20194,7 +20423,6 @@
     {
       "name": "c-file-upload-9",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Card file upload.",
       "description": "Card file upload.",
       "dependencies": [
@@ -20217,7 +20445,6 @@
     {
       "name": "c-filters-1",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Everything in one filter bar",
       "description": "Multi-select, nested fields, async options and stacked values.",
       "dependencies": [
@@ -20240,7 +20467,6 @@
     {
       "name": "c-filters-10",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Nested groups in a popover",
       "description": "A data grid paged, sorted and totalled under a popover builder.",
       "dependencies": [
@@ -20273,7 +20499,6 @@
     {
       "name": "c-filters-11",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Nested groups inline, walked back out",
       "description": "The builder inline, beside its own tree read back as an expression.",
       "dependencies": [
@@ -20298,7 +20523,6 @@
     {
       "name": "c-filters-12",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Controlled, sized and translated",
       "description": "One controlled query, three locales and every change reported.",
       "dependencies": [
@@ -20324,7 +20548,6 @@
     {
       "name": "c-filters-2",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Nested attributes at workspace scale",
       "description": "Drill-down groups, a filterable branch and deep search.",
       "registryDependencies": [
@@ -20343,7 +20566,6 @@
     {
       "name": "c-filters-3",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Status and priority colour badges",
       "description": "Colour-coded options and badges in the chip.",
       "dependencies": [
@@ -20366,7 +20588,6 @@
     {
       "name": "c-filters-4",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Avatars, paging and a restored view",
       "description": "Avatar options, results paged over the wire and a saved view.",
       "registryDependencies": [
@@ -20387,7 +20608,6 @@
     {
       "name": "c-filters-5",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "A date and a date range editor",
       "description": "Consumer-owned date and date range controls.",
       "registryDependencies": [
@@ -20410,7 +20630,6 @@
     {
       "name": "c-filters-6",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Sliders as the value editor",
       "description": "One slider editor for range and single-value operators.",
       "registryDependencies": [
@@ -20431,7 +20650,6 @@
     {
       "name": "c-filters-7",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Filtering a table",
       "description": "The query tree compiled to a row predicate.",
       "dependencies": [
@@ -20462,7 +20680,6 @@
     {
       "name": "c-filters-8",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Choice controls as editors",
       "description": "Toggle group, radios, checkboxes, select and switch.",
       "dependencies": [
@@ -20491,7 +20708,6 @@
     {
       "name": "c-filters-9",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Typed values in shadcn inputs",
       "description": "An input group, a term list, code slots and a validated domain.",
       "dependencies": [
@@ -20518,7 +20734,6 @@
     {
       "name": "c-frame-1",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Basic frame",
       "description": "Basic frame",
       "registryDependencies": [
@@ -20535,7 +20750,6 @@
     {
       "name": "c-frame-10",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with small spacing",
       "description": "Frame with small spacing",
       "registryDependencies": [
@@ -20552,7 +20766,6 @@
     {
       "name": "c-frame-11",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with default spacing",
       "description": "Frame with default spacing",
       "registryDependencies": [
@@ -20569,7 +20782,6 @@
     {
       "name": "c-frame-12",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with large spacing",
       "description": "Frame with large spacing",
       "registryDependencies": [
@@ -20586,7 +20798,6 @@
     {
       "name": "c-frame-13",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with small border radius",
       "description": "Frame with small border radius",
       "registryDependencies": [
@@ -20603,7 +20814,6 @@
     {
       "name": "c-frame-14",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with medium border radius",
       "description": "Frame with medium border radius",
       "registryDependencies": [
@@ -20620,7 +20830,6 @@
     {
       "name": "c-frame-15",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with large border radius",
       "description": "Frame with large border radius",
       "registryDependencies": [
@@ -20637,7 +20846,6 @@
     {
       "name": "c-frame-16",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with default border radius",
       "description": "Frame with default border radius",
       "registryDependencies": [
@@ -20654,7 +20862,6 @@
     {
       "name": "c-frame-17",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with extra large border radius",
       "description": "Frame with extra large border radius",
       "registryDependencies": [
@@ -20671,7 +20878,6 @@
     {
       "name": "c-frame-18",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with content-only panels",
       "description": "Frame with content-only panels",
       "registryDependencies": [
@@ -20688,7 +20894,6 @@
     {
       "name": "c-frame-19",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with stacked content-only panels",
       "description": "Frame with stacked content-only panels",
       "registryDependencies": [
@@ -20705,7 +20910,6 @@
     {
       "name": "c-frame-2",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with separated panels",
       "description": "Frame with separated panels",
       "registryDependencies": [
@@ -20722,7 +20926,6 @@
     {
       "name": "c-frame-3",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with stacked panels",
       "description": "Frame with stacked panels",
       "registryDependencies": [
@@ -20739,7 +20942,6 @@
     {
       "name": "c-frame-4",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with stacked panels and dense style",
       "description": "Frame with stacked panels and dense style",
       "registryDependencies": [
@@ -20756,7 +20958,6 @@
     {
       "name": "c-frame-5",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with collapsible panels",
       "description": "Frame with collapsible panels",
       "registryDependencies": [
@@ -20774,7 +20975,6 @@
     {
       "name": "c-frame-6",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with ghost variant",
       "description": "Frame with ghost variant",
       "registryDependencies": [
@@ -20791,7 +20991,6 @@
     {
       "name": "c-frame-7",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with dense layout",
       "description": "Frame with dense layout",
       "registryDependencies": [
@@ -20808,7 +21007,6 @@
     {
       "name": "c-frame-8",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with stacked panels",
       "description": "Frame with stacked panels",
       "registryDependencies": [
@@ -20825,7 +21023,6 @@
     {
       "name": "c-frame-9",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Frame with extra small spacing",
       "description": "Frame with extra small spacing",
       "registryDependencies": [
@@ -20842,7 +21039,6 @@
     {
       "name": "c-gantt-1",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Gantt chart with settings menu and schedulable rows",
       "description": "Gantt chart with settings menu and schedulable rows",
       "dependencies": [
@@ -20874,7 +21070,6 @@
     {
       "name": "c-gantt-2",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Gantt chart with drag-to-reorder tree rows",
       "description": "Gantt chart with drag-to-reorder tree rows",
       "dependencies": [
@@ -20898,7 +21093,6 @@
     {
       "name": "c-gantt-3",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Gantt chart with quarter roadmap and rollups",
       "description": "Gantt chart with quarter roadmap and rollups",
       "dependencies": [
@@ -20923,7 +21117,6 @@
     {
       "name": "c-gantt-4",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Gantt chart with weekly capacity board",
       "description": "Gantt chart with weekly capacity board",
       "dependencies": [
@@ -20949,7 +21142,6 @@
     {
       "name": "c-gantt-5",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Gantt chart with task table and progress",
       "description": "Gantt chart with task table and progress",
       "dependencies": [
@@ -20976,7 +21168,6 @@
     {
       "name": "c-gantt-6",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Gantt chart with as-built baseline tracking",
       "description": "Gantt chart with as-built baseline tracking",
       "dependencies": [
@@ -21000,7 +21191,6 @@
     {
       "name": "c-gantt-7",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Gantt chart with dependency arrows and milestones",
       "description": "Gantt chart with dependency arrows and milestones",
       "dependencies": [
@@ -21024,7 +21214,6 @@
     {
       "name": "c-hover-card-1",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Basic hover card.",
       "description": "Basic hover card.",
       "registryDependencies": [
@@ -21042,7 +21231,6 @@
     {
       "name": "c-hover-card-2",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Hover card with positions.",
       "description": "Hover card with positions.",
       "registryDependencies": [
@@ -21060,7 +21248,6 @@
     {
       "name": "c-hover-card-3",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Hover card with profile information.",
       "description": "Hover card with profile information.",
       "dependencies": [
@@ -21081,7 +21268,6 @@
     {
       "name": "c-hover-card-4",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Hover card with icon",
       "description": "Hover card with icon",
       "registryDependencies": [
@@ -21099,7 +21285,6 @@
     {
       "name": "c-hover-card-5",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Hover card with an image and text content.",
       "description": "Hover card with an image and text content.",
       "registryDependencies": [
@@ -21117,7 +21302,6 @@
     {
       "name": "c-hover-card-6",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Hover card inside a dialog.",
       "description": "Hover card inside a dialog.",
       "registryDependencies": [
@@ -21136,7 +21320,6 @@
     {
       "name": "c-hover-card-7",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Timestamp hover card with active relative time",
       "description": "Timestamp hover card with active relative time",
       "dependencies": [
@@ -21158,7 +21341,6 @@
     {
       "name": "c-hover-card-8",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Hover card with paginated release notes",
       "description": "Hover card with paginated release notes",
       "registryDependencies": [
@@ -21177,7 +21359,6 @@
     {
       "name": "c-icon-stack-1",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Isometric icon stack",
       "description": "Layered isometric icon",
       "registryDependencies": [
@@ -21194,7 +21375,6 @@
     {
       "name": "c-icon-stack-2",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Icon stack sizes",
       "description": "Responsive icon stack sizes",
       "registryDependencies": [
@@ -21211,7 +21391,6 @@
     {
       "name": "c-icon-stack-3",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Icon stack colors",
       "description": "Semantic icon stack colors",
       "registryDependencies": [
@@ -21228,7 +21407,6 @@
     {
       "name": "c-icon-stack-4",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Icon badge stack",
       "description": "Icon stack with badge overlay",
       "registryDependencies": [
@@ -21245,7 +21423,6 @@
     {
       "name": "c-icon-stack-5",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Empty state illustration",
       "description": "Shadcn empty state illustration",
       "registryDependencies": [
@@ -21264,7 +21441,6 @@
     {
       "name": "c-icon-stack-6",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Item media stack",
       "description": "Icon stack in shadcn item",
       "registryDependencies": [
@@ -21282,7 +21458,6 @@
     {
       "name": "c-icon-tile-1",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Default icon tile",
       "description": "Default icon tile",
       "registryDependencies": [
@@ -21299,7 +21474,6 @@
     {
       "name": "c-icon-tile-10",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "List row",
       "description": "Icon tile in a list row",
       "registryDependencies": [
@@ -21317,7 +21491,6 @@
     {
       "name": "c-icon-tile-11",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Feature card",
       "description": "Icon tile in a feature card",
       "registryDependencies": [
@@ -21335,7 +21508,6 @@
     {
       "name": "c-icon-tile-12",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Empty state",
       "description": "Icon tile in an empty state",
       "registryDependencies": [
@@ -21353,7 +21525,6 @@
     {
       "name": "c-icon-tile-13",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Interactive tile",
       "description": "Interactive icon tile",
       "registryDependencies": [
@@ -21370,7 +21541,6 @@
     {
       "name": "c-icon-tile-14",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Status overlay",
       "description": "Icon tile with status overlay",
       "registryDependencies": [
@@ -21387,7 +21557,6 @@
     {
       "name": "c-icon-tile-15",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Soft tones",
       "description": "Tone-adjustable soft variant",
       "registryDependencies": [
@@ -21404,7 +21573,6 @@
     {
       "name": "c-icon-tile-16",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Solid tones",
       "description": "Tone-adjustable solid variant",
       "registryDependencies": [
@@ -21421,7 +21589,6 @@
     {
       "name": "c-icon-tile-17",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Brand colors",
       "description": "Elevated tile with a Tailwind color fill",
       "registryDependencies": [
@@ -21438,7 +21605,6 @@
     {
       "name": "c-icon-tile-2",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Elevated icon tile",
       "description": "Icon tile with elevated surface",
       "registryDependencies": [
@@ -21455,7 +21621,6 @@
     {
       "name": "c-icon-tile-3",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Framed icon tile",
       "description": "Icon tile with framed surface",
       "registryDependencies": [
@@ -21472,7 +21637,6 @@
     {
       "name": "c-icon-tile-4",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "All variants",
       "description": "Every icon tile variant",
       "registryDependencies": [
@@ -21489,7 +21653,6 @@
     {
       "name": "c-icon-tile-5",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Sizes",
       "description": "Icon tile size scale",
       "registryDependencies": [
@@ -21506,7 +21669,6 @@
     {
       "name": "c-icon-tile-6",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Circular tiles",
       "description": "Icon tiles with circular shape",
       "registryDependencies": [
@@ -21523,7 +21685,6 @@
     {
       "name": "c-icon-tile-7",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Custom sizing",
       "description": "Icon tile with custom sizing",
       "registryDependencies": [
@@ -21540,7 +21701,6 @@
     {
       "name": "c-icon-tile-8",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Color tones",
       "description": "Semantic icon tile color tones",
       "registryDependencies": [
@@ -21557,7 +21717,6 @@
     {
       "name": "c-icon-tile-9",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Text content",
       "description": "Icon tile with text content",
       "registryDependencies": [
@@ -21574,7 +21733,6 @@
     {
       "name": "c-input-1",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Basic input",
       "description": "Basic input",
       "registryDependencies": [
@@ -21592,7 +21750,6 @@
     {
       "name": "c-input-10",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with number type",
       "description": "Input with number type",
       "registryDependencies": [
@@ -21610,7 +21767,6 @@
     {
       "name": "c-input-11",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with date type",
       "description": "Input with date type",
       "registryDependencies": [
@@ -21628,7 +21784,6 @@
     {
       "name": "c-input-12",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with file type",
       "description": "Input with file type",
       "registryDependencies": [
@@ -21646,7 +21801,6 @@
     {
       "name": "c-input-13",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with required indicator",
       "description": "Input with required indicator",
       "registryDependencies": [
@@ -21664,7 +21818,6 @@
     {
       "name": "c-input-14",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with time type",
       "description": "Input with time type",
       "registryDependencies": [
@@ -21682,7 +21835,6 @@
     {
       "name": "c-input-15",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Complex input form with multiple fields",
       "description": "Complex input form with multiple fields",
       "registryDependencies": [
@@ -21702,7 +21854,6 @@
     {
       "name": "c-input-16",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input label with tooltip",
       "description": "Input label with tooltip",
       "registryDependencies": [
@@ -21721,7 +21872,6 @@
     {
       "name": "c-input-17",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input label with badge",
       "description": "Input label with badge",
       "registryDependencies": [
@@ -21740,7 +21890,6 @@
     {
       "name": "c-input-18",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input label with optional badge",
       "description": "Input label with optional badge",
       "registryDependencies": [
@@ -21759,7 +21908,6 @@
     {
       "name": "c-input-19",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input label with link and visibility toggle",
       "description": "Input label with link and visibility toggle",
       "registryDependencies": [
@@ -21777,7 +21925,6 @@
     {
       "name": "c-input-2",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with label",
       "description": "Input with label",
       "registryDependencies": [
@@ -21795,7 +21942,6 @@
     {
       "name": "c-input-20",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with horizontal orientation",
       "description": "Input with horizontal orientation",
       "registryDependencies": [
@@ -21813,7 +21959,6 @@
     {
       "name": "c-input-21",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with multiple error messages",
       "description": "Input with multiple error messages",
       "registryDependencies": [
@@ -21831,7 +21976,6 @@
     {
       "name": "c-input-22",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Basic password strength with dynamic hint and icons",
       "description": "Basic password strength with dynamic hint and icons",
       "dependencies": [
@@ -21852,7 +21996,6 @@
     {
       "name": "c-input-23",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Advanced password strength indicator with progress",
       "description": "Advanced password strength indicator with progress",
       "registryDependencies": [
@@ -21870,7 +22013,6 @@
     {
       "name": "c-input-24",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with pulsed background animation",
       "description": "Input with pulsed background animation",
       "registryDependencies": [
@@ -21888,7 +22030,6 @@
     {
       "name": "c-input-25",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with custom focus ring",
       "description": "Input with custom focus ring",
       "registryDependencies": [
@@ -21906,7 +22047,6 @@
     {
       "name": "c-input-26",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with subtle background",
       "description": "Input with subtle background",
       "registryDependencies": [
@@ -21924,7 +22064,6 @@
     {
       "name": "c-input-27",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with bottom border only",
       "description": "Input with bottom border only",
       "registryDependencies": [
@@ -21942,7 +22081,6 @@
     {
       "name": "c-input-28",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Color input",
       "description": "Color input",
       "registryDependencies": [
@@ -21960,7 +22098,6 @@
     {
       "name": "c-input-29",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Range input with value indicator",
       "description": "Range input with value indicator",
       "registryDependencies": [
@@ -21978,7 +22115,6 @@
     {
       "name": "c-input-3",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with description",
       "description": "Input with description",
       "registryDependencies": [
@@ -21996,7 +22132,6 @@
     {
       "name": "c-input-30",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Pill-shaped input",
       "description": "Pill-shaped input",
       "registryDependencies": [
@@ -22014,7 +22149,6 @@
     {
       "name": "c-input-31",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Minimal input without borders or background",
       "description": "Minimal input without borders or background",
       "registryDependencies": [
@@ -22032,7 +22166,6 @@
     {
       "name": "c-input-4",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Disabled input",
       "description": "Disabled input",
       "registryDependencies": [
@@ -22050,7 +22183,6 @@
     {
       "name": "c-input-5",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with error message",
       "description": "Input with error message",
       "registryDependencies": [
@@ -22068,7 +22200,6 @@
     {
       "name": "c-input-6",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with character counter",
       "description": "Input with character counter",
       "registryDependencies": [
@@ -22086,7 +22217,6 @@
     {
       "name": "c-input-7",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with password type",
       "description": "Input with password type",
       "registryDependencies": [
@@ -22104,7 +22234,6 @@
     {
       "name": "c-input-8",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with phone type",
       "description": "Input with phone type",
       "registryDependencies": [
@@ -22122,7 +22251,6 @@
     {
       "name": "c-input-9",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input with URL type",
       "description": "Input with URL type",
       "registryDependencies": [
@@ -22140,7 +22268,6 @@
     {
       "name": "c-input-group-1",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Basic input group",
       "description": "Basic input group",
       "registryDependencies": [
@@ -22158,7 +22285,6 @@
     {
       "name": "c-input-group-10",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group with action button addon",
       "description": "Input group with action button addon",
       "registryDependencies": [
@@ -22176,7 +22302,6 @@
     {
       "name": "c-input-group-11",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group with icon button action",
       "description": "Input group with icon button action",
       "dependencies": [
@@ -22197,7 +22322,6 @@
     {
       "name": "c-input-group-12",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group with dropdown menu selection",
       "description": "Input group with dropdown menu selection",
       "registryDependencies": [
@@ -22216,7 +22340,6 @@
     {
       "name": "c-input-group-13",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group with keyboard shortcut (Kbd)",
       "description": "Input group with keyboard shortcut (Kbd)",
       "registryDependencies": [
@@ -22235,7 +22358,6 @@
     {
       "name": "c-input-group-14",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group with tooltip action",
       "description": "Input group with tooltip action",
       "registryDependencies": [
@@ -22254,7 +22376,6 @@
     {
       "name": "c-input-group-15",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group with loading spinner",
       "description": "Input group with loading spinner",
       "registryDependencies": [
@@ -22273,7 +22394,6 @@
     {
       "name": "c-input-group-16",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group with block-start addon",
       "description": "Input group with block-start addon",
       "registryDependencies": [
@@ -22291,7 +22411,6 @@
     {
       "name": "c-input-group-17",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Textarea input group with dynamic character limit",
       "description": "Textarea input group with dynamic character limit",
       "registryDependencies": [
@@ -22309,7 +22428,6 @@
     {
       "name": "c-input-group-18",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "AI Chat textarea with rich toolbar actions",
       "description": "AI Chat textarea with rich toolbar actions",
       "registryDependencies": [
@@ -22329,7 +22447,6 @@
     {
       "name": "c-input-group-19",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "AI Chat interface with file and context attachments",
       "description": "AI Chat interface with file and context attachments",
       "registryDependencies": [
@@ -22348,7 +22465,6 @@
     {
       "name": "c-input-group-2",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group in disabled state",
       "description": "Input group in disabled state",
       "registryDependencies": [
@@ -22366,7 +22482,6 @@
     {
       "name": "c-input-group-20",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group demonstrating label usage",
       "description": "Input group demonstrating label usage",
       "registryDependencies": [
@@ -22384,7 +22499,6 @@
     {
       "name": "c-input-group-21",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group with multiple icons/buttons at the end",
       "description": "Input group with multiple icons/buttons at the end",
       "dependencies": [
@@ -22405,7 +22519,6 @@
     {
       "name": "c-input-group-22",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group with popover trigger addon",
       "description": "Input group with popover trigger addon",
       "registryDependencies": [
@@ -22424,7 +22537,6 @@
     {
       "name": "c-input-group-23",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group with Sparkles icon and complex Kbd shortcut",
       "description": "Input group with Sparkles icon and complex Kbd shortcut",
       "registryDependencies": [
@@ -22443,7 +22555,6 @@
     {
       "name": "c-input-group-24",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group with success indicator circle",
       "description": "Input group with success indicator circle",
       "registryDependencies": [
@@ -22461,7 +22572,6 @@
     {
       "name": "c-input-group-25",
       "type": "registry:block",
-      "resolution": "gated",
       "title": "Input group with search results count",
       "description": "Input group with search results count",
       "registryDependencies": [
@@ -32287,9 +32397,9 @@
           "target": "components/blocks/card-13/components/data.tsx"
         },
         {
-          "path": "appStore.tsx",
+          "path": "appstore.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/appStore.tsx"
+          "target": "components/ui/svgs/appstore.tsx"
         },
         {
           "path": "convex.tsx",
@@ -32431,9 +32541,9 @@
           "target": "components/blocks/card-16/components/card-item.tsx"
         },
         {
-          "path": "btcchinaDark.tsx",
+          "path": "binance.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/btcchinaDark.tsx"
+          "target": "components/ui/svgs/binance.tsx"
         }
       ]
     },
@@ -32735,9 +32845,9 @@
           "target": "components/blocks/card-24/components/card-item.tsx"
         },
         {
-          "path": "btcchinaWhite.tsx",
+          "path": "binance.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/btcchinaWhite.tsx"
+          "target": "components/ui/svgs/binance.tsx"
         },
         {
           "path": "data.tsx",
@@ -32850,9 +32960,9 @@
           "target": "components/blocks/card-27/components/card-item.tsx"
         },
         {
-          "path": "coinholder.tsx",
+          "path": "coinbase.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/coinholder.tsx"
+          "target": "components/ui/svgs/coinbase.tsx"
         },
         {
           "path": "data.tsx",
@@ -37248,6 +37358,11 @@
           "target": "components/blocks/chart-45/components/value-faces.tsx"
         },
         {
+          "path": "drive.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/drive.tsx"
+        },
+        {
           "path": "dropbox.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/dropbox.tsx"
@@ -37266,11 +37381,6 @@
           "path": "googleCloud.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/googleCloud.tsx"
-        },
-        {
-          "path": "googleDrive.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/svgs/googleDrive.tsx"
         },
         {
           "path": "linear.tsx",
@@ -37399,9 +37509,9 @@
           "target": "components/blocks/chart-47/components/data.tsx"
         },
         {
-          "path": "googleDrive.tsx",
+          "path": "drive.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/googleDrive.tsx"
+          "target": "components/ui/svgs/drive.tsx"
         },
         {
           "path": "format.ts",
@@ -38339,9 +38449,9 @@
           "target": "components/ui/svgs/binance.tsx"
         },
         {
-          "path": "coinholder.tsx",
+          "path": "coinbase.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/coinholder.tsx"
+          "target": "components/ui/svgs/coinbase.tsx"
         },
         {
           "path": "eth.tsx",
@@ -38657,7 +38767,7 @@
       "type": "registry:block",
       "resolution": "gated",
       "title": "Two-column checkout with order summary and payment form",
-      "description": "Ecommerce checkout with order summary and payment form. Product list with totals, shipping details, card input with Apple Pay button and card logos. Uses ReUI Badge; shadcn Button, Card, Checkbox, Field, Input, Item, Select, Separator, Tooltip.",
+      "description": "Ecommerce checkout with order summary and payment form. Product list with totals, shipping details, card input with Apple Pay button and payment brand logos. Uses ReUI Badge; shadcn Button, Card, Checkbox, Field, Input, Item, Select, Separator, Tooltip.",
       "registryDependencies": [
         "@reui/badge",
         "button",
@@ -38682,9 +38792,9 @@
           "target": "components/blocks/checkout-6/components/checkout.tsx"
         },
         {
-          "path": "applePay.tsx",
+          "path": "apple.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/applePay.tsx"
+          "target": "components/ui/svgs/apple.tsx"
         },
         {
           "path": "data.tsx",
@@ -38692,29 +38802,24 @@
           "target": "components/blocks/checkout-6/components/data.tsx"
         },
         {
-          "path": "americanExpress.tsx",
+          "path": "google.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/americanExpress.tsx"
+          "target": "components/ui/svgs/google.tsx"
         },
         {
-          "path": "discover.tsx",
+          "path": "mercadoPago.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/discover.tsx"
+          "target": "components/ui/svgs/mercadoPago.tsx"
         },
         {
-          "path": "jcb.tsx",
+          "path": "paypal.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/jcb.tsx"
+          "target": "components/ui/svgs/paypal.tsx"
         },
         {
-          "path": "mastercard.tsx",
+          "path": "stripe.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/mastercard.tsx"
-        },
-        {
-          "path": "visa.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/svgs/visa.tsx"
+          "target": "components/ui/svgs/stripe.tsx"
         }
       ]
     },
@@ -42176,11 +42281,242 @@
       ]
     },
     {
+      "name": "data-grid-advanced-8",
+      "type": "registry:block",
+      "resolution": "unverified",
+      "title": "KPI grid of products with photo tiles, revenue trends, promo calendars and KPI status segments",
+      "description": "KPI review of 29 products over 4, 13 or 26 weeks: revenue with its change on the prior period and a trend of both, profit, a promo calendar that opens each week and a KPI Status on three guardrails across ten markets. ReUI DataGrid, Filters, Frame.",
+      "dependencies": [
+        "@tanstack/react-table",
+        "cn",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/cascader",
+        "@reui/data-grid",
+        "@reui/filters",
+        "@reui/frame",
+        "@reui/icon-tile",
+        "@reui/number-field",
+        "alert-dialog",
+        "avatar",
+        "button",
+        "button-group",
+        "@reui/cascader-item",
+        "@reui/cascader-nav",
+        "@reui/cascader-types",
+        "@reui/data-grid-column-header",
+        "@reui/data-grid-i18n",
+        "@reui/data-grid-pagination",
+        "@reui/data-grid-scroll-area",
+        "@reui/data-grid-table",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "@reui/filters-operators",
+        "@reui/filters-query",
+        "@reui/filters-types",
+        "input",
+        "input-group",
+        "kbd",
+        "popover",
+        "progress",
+        "select",
+        "separator",
+        "sheet",
+        "slider",
+        "switch",
+        "table",
+        "tabs",
+        "textarea",
+        "toggle-group",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/page.tsx"
+        },
+        {
+          "path": "columns-menu.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/columns-menu.tsx"
+        },
+        {
+          "path": "columns.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/columns.tsx"
+        },
+        {
+          "path": "data-grid-view.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/data-grid-view.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/data.ts"
+        },
+        {
+          "path": "delete-dialog.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/delete-dialog.tsx"
+        },
+        {
+          "path": "grid-toolbar.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/grid-toolbar.tsx"
+        },
+        {
+          "path": "guardrails-menu.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/guardrails-menu.tsx"
+        },
+        {
+          "path": "icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/icons.tsx"
+        },
+        {
+          "path": "kpi-health.ts",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/kpi-health.ts"
+        },
+        {
+          "path": "kpi-status.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/kpi-status.tsx"
+        },
+        {
+          "path": "line-activity-tab.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/line-activity-tab.tsx"
+        },
+        {
+          "path": "line-activity.ts",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/line-activity.ts"
+        },
+        {
+          "path": "line-cells.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/line-cells.tsx"
+        },
+        {
+          "path": "line-export.ts",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/line-export.ts"
+        },
+        {
+          "path": "line-filters.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/line-filters.tsx"
+        },
+        {
+          "path": "line-form-fields.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/line-form-fields.tsx"
+        },
+        {
+          "path": "line-math.ts",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/line-math.ts"
+        },
+        {
+          "path": "line-overview-tab.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/line-overview-tab.tsx"
+        },
+        {
+          "path": "line-promotions-tab.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/line-promotions-tab.tsx"
+        },
+        {
+          "path": "line-query.ts",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/line-query.ts"
+        },
+        {
+          "path": "line-sheet.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/line-sheet.tsx"
+        },
+        {
+          "path": "line-store.ts",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/line-store.ts"
+        },
+        {
+          "path": "market-health.ts",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/market-health.ts"
+        },
+        {
+          "path": "market-map.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/market-map.tsx"
+        },
+        {
+          "path": "promo-calendar.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/promo-calendar.tsx"
+        },
+        {
+          "path": "selection-bar.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/selection-bar.tsx"
+        },
+        {
+          "path": "settings-menu.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/settings-menu.tsx"
+        },
+        {
+          "path": "sheet-section.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/sheet-section.tsx"
+        },
+        {
+          "path": "status-line.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/status-line.tsx"
+        },
+        {
+          "path": "trend-chart.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/trend-chart.tsx"
+        },
+        {
+          "path": "trend-readout.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/trend-readout.tsx"
+        },
+        {
+          "path": "value-faces.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/value-faces.tsx"
+        },
+        {
+          "path": "week-focus-store.ts",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/week-focus-store.ts"
+        },
+        {
+          "path": "world-dots.ts",
+          "type": "registry:block",
+          "target": "components/blocks/data-grid-advanced-8/components/world-dots.ts"
+        }
+      ]
+    },
+    {
       "name": "data-grid-advanced-9",
       "type": "registry:block",
       "resolution": "unverified",
-      "title": "Kitchen service visit planner with a three week day matrix and unbooked due markers",
-      "description": "Facilities planner for 18 restaurant kitchens: contractor visits by status on a 3 week day matrix, unbooked markers where a cycle runs out, vendor contact, sign-off with report numbers, CSV history. ReUI DataGrid, Frame; shadcn Popover, Calendar.",
+      "title": "Kitchen service visit planner with a three week day matrix and a coverage column",
+      "description": "Facilities planner for 18 restaurant kitchens: contractor visits by status on a 3 week day matrix, coverage naming the next due service, vendor contact, sign-off with report numbers, CSV history. ReUI DataGrid, Frame; shadcn Popover, Calendar.",
       "dependencies": [
         "@tanstack/react-table",
         "cn",
@@ -45459,19 +45795,19 @@
           "target": "components/blocks/data-grid-virtualization-1/components/columns.tsx"
         },
         {
-          "path": "americanExpress.tsx",
+          "path": "apple.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/americanExpress.tsx"
+          "target": "components/ui/svgs/apple.tsx"
         },
         {
-          "path": "mastercard.tsx",
+          "path": "google.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/mastercard.tsx"
+          "target": "components/ui/svgs/google.tsx"
         },
         {
-          "path": "visa.tsx",
+          "path": "paypal.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/visa.tsx"
+          "target": "components/ui/svgs/paypal.tsx"
         },
         {
           "path": "data-grid-view.tsx",
@@ -45843,6 +46179,58 @@
           "path": "data.tsx",
           "type": "registry:block",
           "target": "components/blocks/dialog-14/components/data.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-16",
+      "type": "registry:block",
+      "resolution": "unverified",
+      "title": "Duplicate contact dialog with ranked match candidates, a Link button per row and create new",
+      "description": "Dedupe modal before saving a contact: candidates ranked by match score with Strong, Likely and Weak badges, matched email and company marked, a Link button per row and a Create new fallback. Dialog, Item, Avatar, Empty, ReUI Badge.",
+      "dependencies": [
+        "cn",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "avatar",
+        "button",
+        "dialog",
+        "empty",
+        "item",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/dialog-16/page.tsx"
+        },
+        {
+          "path": "candidate-list.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/dialog-16/components/candidate-list.tsx"
+        },
+        {
+          "path": "data.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/dialog-16/components/data.tsx"
+        },
+        {
+          "path": "demo-state.ts",
+          "type": "registry:block",
+          "target": "components/blocks/dialog-16/components/demo-state.ts"
+        },
+        {
+          "path": "duplicate-match-dialog.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/dialog-16/components/duplicate-match-dialog.tsx"
+        },
+        {
+          "path": "value-faces.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/dialog-16/components/value-faces.tsx"
         }
       ]
     },
@@ -46404,8 +46792,8 @@
       "name": "empty-state-13",
       "type": "registry:block",
       "resolution": "gated",
-      "title": "File sources empty state with cloud storage connector grid (Dropbox, Box, Drive, OneDrive)",
-      "description": "Empty state for linking cloud storage: header, IconStack illustration, and a responsive grid of brand-logo connect buttons (Dropbox, Box, Google Drive, OneDrive). ReUI Frame, IconStack, shadcn Empty, Separator. For integrations screens.",
+      "title": "File sources empty state with cloud storage connector grid (Dropbox, R2, Drive, OneDrive)",
+      "description": "Empty state for linking cloud storage: header, IconStack illustration, and a responsive grid of brand-logo connect buttons (Dropbox, Cloudflare R2, Google Drive, OneDrive). ReUI Frame, IconStack, shadcn Empty, Separator. For integrations screens.",
       "registryDependencies": [
         "@reui/frame",
         "@reui/icon-stack",
@@ -46424,9 +46812,14 @@
           "target": "components/blocks/empty-state-13/components/data.tsx"
         },
         {
-          "path": "box.tsx",
+          "path": "cloudflare.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/box.tsx"
+          "target": "components/ui/svgs/cloudflare.tsx"
+        },
+        {
+          "path": "drive.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/drive.tsx"
         },
         {
           "path": "dropbox.tsx",
@@ -46434,14 +46827,9 @@
           "target": "components/ui/svgs/dropbox.tsx"
         },
         {
-          "path": "googleDrive.tsx",
+          "path": "microsoftOnedrive.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/googleDrive.tsx"
-        },
-        {
-          "path": "microsoftOneDrive.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/svgs/microsoftOneDrive.tsx"
+          "target": "components/ui/svgs/microsoftOnedrive.tsx"
         },
         {
           "path": "empty-state.tsx",
@@ -51204,6 +51592,11 @@
           "target": "components/ui/svgs/discord.tsx"
         },
         {
+          "path": "drive.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/drive.tsx"
+        },
+        {
           "path": "gemini.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/gemini.tsx"
@@ -51212,11 +51605,6 @@
           "path": "googleCalendar.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/googleCalendar.tsx"
-        },
-        {
-          "path": "googleDrive.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/svgs/googleDrive.tsx"
         },
         {
           "path": "googleMeet.tsx",
@@ -51507,6 +51895,11 @@
           "target": "components/ui/svgs/discord.tsx"
         },
         {
+          "path": "drive.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/drive.tsx"
+        },
+        {
           "path": "gemini.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/gemini.tsx"
@@ -51515,11 +51908,6 @@
           "path": "googleCalendar.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/googleCalendar.tsx"
-        },
-        {
-          "path": "googleDrive.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/svgs/googleDrive.tsx"
         },
         {
           "path": "googleMeet.tsx",
@@ -52099,9 +52487,9 @@
           "target": "components/ui/svgs/google.tsx"
         },
         {
-          "path": "microsoftOneDrive.tsx",
+          "path": "microsoftOnedrive.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/microsoftOneDrive.tsx"
+          "target": "components/ui/svgs/microsoftOnedrive.tsx"
         },
         {
           "path": "nvidiaIconDark.tsx",
@@ -52293,14 +52681,14 @@
           "target": "components/blocks/list-10/components/data.tsx"
         },
         {
-          "path": "box.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/svgs/box.tsx"
-        },
-        {
           "path": "hotmart.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/hotmart.tsx"
+        },
+        {
+          "path": "metamask.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/metamask.tsx"
         },
         {
           "path": "procure.tsx",
@@ -52308,9 +52696,9 @@
           "target": "components/ui/svgs/procure.tsx"
         },
         {
-          "path": "coinholder.tsx",
+          "path": "vercel.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/coinholder.tsx"
+          "target": "components/ui/svgs/vercel.tsx"
         },
         {
           "path": "recent-investments.tsx",
@@ -52415,14 +52803,14 @@
           "target": "components/ui/svgs/binance.tsx"
         },
         {
-          "path": "coinholder.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/svgs/coinholder.tsx"
-        },
-        {
           "path": "eth.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/eth.tsx"
+        },
+        {
+          "path": "metamask.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/metamask.tsx"
         },
         {
           "path": "neon.tsx",
@@ -52485,9 +52873,9 @@
           "target": "components/ui/svgs/binance.tsx"
         },
         {
-          "path": "coinholder.tsx",
+          "path": "coinbase.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/coinholder.tsx"
+          "target": "components/ui/svgs/coinbase.tsx"
         },
         {
           "path": "inflow-row.tsx",
@@ -60427,9 +60815,9 @@
           "target": "components/ui/svgs/googleCloud.tsx"
         },
         {
-          "path": "googleDrive.tsx",
+          "path": "drive.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/googleDrive.tsx"
+          "target": "components/ui/svgs/drive.tsx"
         },
         {
           "path": "linear.tsx",
@@ -60575,9 +60963,9 @@
           "target": "components/ui/svgs/googleCloud.tsx"
         },
         {
-          "path": "googleDrive.tsx",
+          "path": "drive.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/googleDrive.tsx"
+          "target": "components/ui/svgs/drive.tsx"
         },
         {
           "path": "linear.tsx",
@@ -60705,9 +61093,9 @@
           "target": "components/ui/svgs/googleCloud.tsx"
         },
         {
-          "path": "googleDrive.tsx",
+          "path": "drive.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/googleDrive.tsx"
+          "target": "components/ui/svgs/drive.tsx"
         },
         {
           "path": "linear.tsx",
@@ -61497,14 +61885,14 @@
           "target": "components/blocks/shopping-cart-5/components/data.tsx"
         },
         {
+          "path": "apple.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/apple.tsx"
+        },
+        {
           "path": "btc.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/btc.tsx"
-        },
-        {
-          "path": "mastercard.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/svgs/mastercard.tsx"
         },
         {
           "path": "paypal.tsx",
@@ -63763,6 +64151,117 @@
       ]
     },
     {
+      "name": "solution-billing-10",
+      "type": "registry:block",
+      "resolution": "unverified",
+      "title": "Tenant billing settings with hosted Checkout, fixed test plans, usage meters, card and invoices",
+      "description": "Signed in tenant's Stripe billing page: current plan, three fixed recurring test plans via hosted Checkout or the Customer Portal, usage against limits, payment summary and invoices. ReUI Frame, Badge, Alert; shadcn Item, ToggleGroup, Progress.",
+      "dependencies": [
+        "cn",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/alert",
+        "@reui/badge",
+        "@reui/frame",
+        "button",
+        "empty",
+        "item",
+        "progress",
+        "skeleton",
+        "spinner",
+        "toggle-group",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/page.tsx"
+        },
+        {
+          "path": "billing-states.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/components/billing-states.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/components/data.ts"
+        },
+        {
+          "path": "demo-state.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/components/demo-state.ts"
+        },
+        {
+          "path": "icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/components/icons.tsx"
+        },
+        {
+          "path": "invoices-frame.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/components/invoices-frame.tsx"
+        },
+        {
+          "path": "payment-frame.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/components/payment-frame.tsx"
+        },
+        {
+          "path": "stripeWordmark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/stripeWordmark.tsx"
+        },
+        {
+          "path": "plans-frame.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/components/plans-frame.tsx"
+        },
+        {
+          "path": "stripe-button.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/components/stripe-button.tsx"
+        },
+        {
+          "path": "subscription-frame.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/components/subscription-frame.tsx"
+        },
+        {
+          "path": "tenant-billing.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/components/tenant-billing.tsx"
+        },
+        {
+          "path": "usage-frame.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/components/usage-frame.tsx"
+        },
+        {
+          "path": "use-stripe-return.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/components/use-stripe-return.ts"
+        },
+        {
+          "path": "value-faces.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-billing-10/components/value-faces.tsx"
+        },
+        {
+          "path": "mastercard.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/mastercard.tsx"
+        },
+        {
+          "path": "visa.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/visa.tsx"
+        }
+      ]
+    },
+    {
       "name": "solution-billing-2",
       "type": "registry:block",
       "resolution": "gated",
@@ -64440,39 +64939,52 @@
       "name": "solution-bookings-1",
       "type": "registry:block",
       "resolution": "gated",
-      "title": "Salon Front-Desk Booking Dashboard with Appointment Queue and Chair Capacity",
-      "description": "Front-desk surface for daily salon scheduling: KPI cards, a chair-capacity donut, and a searchable appointment queue with status badges and no-show tracking. ReUI Frame, Badge, DataGrid; shadcn Avatar. Booking dashboard, appointment scheduler.",
+      "title": "Salon front desk with KPI tiles, arrivals, stylist load and booking sheets",
+      "description": "Salon front desk for one day: KPI tiles with an arrival strip, a load line and split bars, arrivals to check in, stylist load, an appointment grid with views and bulk reminders, and floating booking and detail sheets. ReUI Frame, Data Grid, Sheet.",
       "dependencies": [
         "@tanstack/react-table",
         "cn",
-        "date-fns",
-        "react-day-picker",
+        "recharts",
         "sonner"
       ],
       "registryDependencies": [
+        "@reui/alert",
         "@reui/badge",
+        "@reui/cascader",
         "@reui/data-grid",
         "@reui/frame",
+        "@reui/icon-stack",
+        "@reui/icon-tile",
         "@reui/timeline",
+        "alert-dialog",
         "avatar",
         "breadcrumb",
         "button",
-        "calendar",
+        "@reui/cascader-item",
+        "@reui/cascader-nav",
+        "@reui/cascader-types",
         "chart",
         "checkbox",
+        "combobox",
         "@reui/data-grid-column-header",
         "@reui/data-grid-pagination",
         "@reui/data-grid-scroll-area",
         "@reui/data-grid-table",
         "dropdown-menu",
+        "empty",
+        "field",
+        "input",
         "input-group",
-        "item",
-        "label",
         "popover",
         "progress",
         "select",
         "separator",
+        "sheet",
+        "skeleton",
+        "switch",
         "tabs",
+        "textarea",
+        "toggle-group",
         "tooltip"
       ],
       "files": [
@@ -64480,11 +64992,6 @@
           "path": "page.tsx",
           "type": "registry:block",
           "target": "components/blocks/solution-bookings-1/page.tsx"
-        },
-        {
-          "path": "booking-capacity.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/solution-bookings-1/components/booking-capacity.tsx"
         },
         {
           "path": "booking-columns.tsx",
@@ -64497,9 +65004,19 @@
           "target": "components/blocks/solution-bookings-1/components/booking-dashboard.tsx"
         },
         {
+          "path": "booking-form-fields.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-1/components/booking-form-fields.tsx"
+        },
+        {
           "path": "booking-grid.tsx",
           "type": "registry:block",
           "target": "components/blocks/solution-bookings-1/components/booking-grid.tsx"
+        },
+        {
+          "path": "booking-math.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-1/components/booking-math.ts"
         },
         {
           "path": "booking-metrics.tsx",
@@ -64512,14 +65029,64 @@
           "target": "components/blocks/solution-bookings-1/components/booking-navbar.tsx"
         },
         {
-          "path": "booking-performance.tsx",
+          "path": "booking-sheet.tsx",
           "type": "registry:block",
-          "target": "components/blocks/solution-bookings-1/components/booking-performance.tsx"
+          "target": "components/blocks/solution-bookings-1/components/booking-sheet.tsx"
         },
         {
-          "path": "data.tsx",
+          "path": "cancel-dialog.tsx",
           "type": "registry:block",
-          "target": "components/blocks/solution-bookings-1/components/data.tsx"
+          "target": "components/blocks/solution-bookings-1/components/cancel-dialog.tsx"
+        },
+        {
+          "path": "chair-load-panel.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-1/components/chair-load-panel.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-1/components/data.ts"
+        },
+        {
+          "path": "demo-state.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-1/components/demo-state.ts"
+        },
+        {
+          "path": "export-csv.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-1/components/export-csv.ts"
+        },
+        {
+          "path": "format.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-1/components/format.ts"
+        },
+        {
+          "path": "grid-menus.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-1/components/grid-menus.tsx"
+        },
+        {
+          "path": "icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-1/components/icons.tsx"
+        },
+        {
+          "path": "surface-states.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-1/components/surface-states.tsx"
+        },
+        {
+          "path": "up-next-panel.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-1/components/up-next-panel.tsx"
+        },
+        {
+          "path": "value-faces.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-1/components/value-faces.tsx"
         }
       ]
     },
@@ -64603,6 +65170,192 @@
           "path": "data.tsx",
           "type": "registry:block",
           "target": "components/blocks/solution-bookings-3/components/data.tsx"
+        }
+      ]
+    },
+    {
+      "name": "solution-bookings-4",
+      "type": "registry:block",
+      "resolution": "unverified",
+      "title": "Hotel room board with reservations, drag to move stays and a guest worklist",
+      "description": "Front desk page for a hotel: occupancy, ADR, arrival and departure tiles with charts, a room gantt to reserve, block, drag and resize stays, and an arrivals grid. Built on ReUI Gantt, Data Grid, Frame. Tape chart, reservation calendar.",
+      "dependencies": [
+        "@tanstack/react-table",
+        "cn",
+        "recharts",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/alert",
+        "@reui/badge",
+        "@reui/cascader",
+        "@reui/data-grid",
+        "@reui/date-selector",
+        "@reui/filters",
+        "@reui/frame",
+        "@reui/gantt",
+        "@reui/icon-stack",
+        "@reui/icon-tile",
+        "@reui/number-field",
+        "@reui/signature-pad",
+        "@reui/timeline",
+        "alert-dialog",
+        "avatar",
+        "button",
+        "calendar",
+        "@reui/cascader-item",
+        "@reui/cascader-nav",
+        "@reui/cascader-types",
+        "chart",
+        "combobox",
+        "context-menu",
+        "@reui/data-grid-column-header",
+        "@reui/data-grid-pagination",
+        "@reui/data-grid-scroll-area",
+        "@reui/data-grid-table",
+        "dialog",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "@reui/filters-query",
+        "@reui/filters-types",
+        "@reui/gantt-nav",
+        "@reui/gantt-types",
+        "@reui/gantt-view",
+        "input",
+        "input-group",
+        "popover",
+        "progress",
+        "select",
+        "separator",
+        "sheet",
+        "skeleton",
+        "switch",
+        "tabs",
+        "textarea",
+        "toggle-group",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/page.tsx"
+        },
+        {
+          "path": "arrivals-grid.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/arrivals-grid.tsx"
+        },
+        {
+          "path": "block-form-fields.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/block-form-fields.tsx"
+        },
+        {
+          "path": "board-math.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/board-math.ts"
+        },
+        {
+          "path": "board-toolbar.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/board-toolbar.tsx"
+        },
+        {
+          "path": "board-tree.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/board-tree.tsx"
+        },
+        {
+          "path": "check-in-dialog.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/check-in-dialog.tsx"
+        },
+        {
+          "path": "confirm-dialog.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/confirm-dialog.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/data.ts"
+        },
+        {
+          "path": "demo-state.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/demo-state.ts"
+        },
+        {
+          "path": "format.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/format.ts"
+        },
+        {
+          "path": "grid-menus.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/grid-menus.tsx"
+        },
+        {
+          "path": "icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/icons.tsx"
+        },
+        {
+          "path": "kpi-row.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/kpi-row.tsx"
+        },
+        {
+          "path": "reservation-board.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/reservation-board.tsx"
+        },
+        {
+          "path": "reservation-form-fields.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/reservation-form-fields.tsx"
+        },
+        {
+          "path": "room-board.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/room-board.tsx"
+        },
+        {
+          "path": "stay-bar.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/stay-bar.tsx"
+        },
+        {
+          "path": "stay-filters.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/stay-filters.ts"
+        },
+        {
+          "path": "stay-sheet.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/stay-sheet.tsx"
+        },
+        {
+          "path": "stay-store.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/stay-store.ts"
+        },
+        {
+          "path": "surface-states.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/surface-states.tsx"
+        },
+        {
+          "path": "value-faces.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/value-faces.tsx"
+        },
+        {
+          "path": "worklist-columns.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-bookings-4/components/worklist-columns.tsx"
         }
       ]
     },
@@ -64752,9 +65505,9 @@
           "target": "components/ui/svgs/google.tsx"
         },
         {
-          "path": "microsoftOneDrive.tsx",
+          "path": "microsoftOnedrive.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/microsoftOneDrive.tsx"
+          "target": "components/ui/svgs/microsoftOnedrive.tsx"
         },
         {
           "path": "nvidiaIconDark.tsx",
@@ -64875,14 +65628,14 @@
           "target": "components/blocks/solution-crm-3/components/data.tsx"
         },
         {
-          "path": "box.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/svgs/box.tsx"
-        },
-        {
           "path": "docker.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/docker.tsx"
+        },
+        {
+          "path": "drive.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/drive.tsx"
         },
         {
           "path": "dropbox.tsx",
@@ -64890,9 +65643,9 @@
           "target": "components/ui/svgs/dropbox.tsx"
         },
         {
-          "path": "googleDrive.tsx",
+          "path": "figma.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/googleDrive.tsx"
+          "target": "components/ui/svgs/figma.tsx"
         },
         {
           "path": "openai.tsx",
@@ -66643,9 +67396,9 @@
           "target": "components/ui/svgs/googleCloud.tsx"
         },
         {
-          "path": "googleDrive.tsx",
+          "path": "drive.tsx",
           "type": "registry:ui",
-          "target": "components/ui/svgs/googleDrive.tsx"
+          "target": "components/ui/svgs/drive.tsx"
         },
         {
           "path": "linear.tsx",
@@ -67545,24 +68298,24 @@
           "target": "components/blocks/solution-inventory-6/components/columns.tsx"
         },
         {
-          "path": "box.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/svgs/box.tsx"
-        },
-        {
-          "path": "coinholder.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/svgs/coinholder.tsx"
-        },
-        {
           "path": "discord.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/discord.tsx"
         },
         {
+          "path": "figma.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/figma.tsx"
+        },
+        {
           "path": "hotmart.tsx",
           "type": "registry:ui",
           "target": "components/ui/svgs/hotmart.tsx"
+        },
+        {
+          "path": "metamask.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/metamask.tsx"
         },
         {
           "path": "openai.tsx",
@@ -67731,6 +68484,283 @@
           "path": "track-shipping-sheet.tsx",
           "type": "registry:block",
           "target": "components/blocks/solution-inventory-9/components/track-shipping-sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "solution-travel-1",
+      "type": "registry:block",
+      "resolution": "unverified",
+      "title": "Event Travel Operator Home with Order KPIs, Recent Orders and Upcoming Events",
+      "description": "Event travel operator home: order, revenue, fulfillment and at risk KPIs, a recent orders grid with fulfillment and stepped new order sheets, event filters and tasks. ReUI Frame, Data Grid, Stepper. Travel dashboard, tour operator admin.",
+      "dependencies": [
+        "@tanstack/react-table",
+        "cn",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/alert",
+        "@reui/badge",
+        "@reui/data-grid",
+        "@reui/frame",
+        "@reui/icon-stack",
+        "@reui/number-field",
+        "@reui/stepper",
+        "alert-dialog",
+        "avatar",
+        "button",
+        "checkbox",
+        "@reui/data-grid-column-header",
+        "@reui/data-grid-pagination",
+        "@reui/data-grid-scroll-area",
+        "@reui/data-grid-table",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "input",
+        "input-group",
+        "progress",
+        "radio-group",
+        "select",
+        "sheet",
+        "skeleton",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/page.tsx"
+        },
+        {
+          "path": "cancel-order-dialog.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/cancel-order-dialog.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/data.ts"
+        },
+        {
+          "path": "demo-state.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/demo-state.ts"
+        },
+        {
+          "path": "event-sheet.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/event-sheet.tsx"
+        },
+        {
+          "path": "format.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/format.ts"
+        },
+        {
+          "path": "home-header.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/home-header.tsx"
+        },
+        {
+          "path": "icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/icons.tsx"
+        },
+        {
+          "path": "kpi-band.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/kpi-band.tsx"
+        },
+        {
+          "path": "new-order-sheet.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/new-order-sheet.tsx"
+        },
+        {
+          "path": "operator-home.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/operator-home.tsx"
+        },
+        {
+          "path": "order-columns.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/order-columns.tsx"
+        },
+        {
+          "path": "order-sheet.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/order-sheet.tsx"
+        },
+        {
+          "path": "order-stepper.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/order-stepper.tsx"
+        },
+        {
+          "path": "orders-grid.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/orders-grid.tsx"
+        },
+        {
+          "path": "selectors.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/selectors.ts"
+        },
+        {
+          "path": "surface-states.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/surface-states.tsx"
+        },
+        {
+          "path": "task-list.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/task-list.tsx"
+        },
+        {
+          "path": "upcoming-events.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/upcoming-events.tsx"
+        },
+        {
+          "path": "value-faces.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-1/components/value-faces.tsx"
+        }
+      ]
+    },
+    {
+      "name": "solution-travel-2",
+      "type": "registry:block",
+      "resolution": "unverified",
+      "title": "Travel Itinerary Builder with Day Tabs, Reorderable Stops, Timing Checks and Stop Margins",
+      "description": "Admin itinerary editor for one booked package: day tabs over a stop timeline, drag stops into new slots, timing checks with one-click fixes, margin by stop and day against target and a stepped traveler preview. ReUI Sortable, Stepper, Frame.",
+      "dependencies": [
+        "cn",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/alert",
+        "@reui/badge",
+        "@reui/frame",
+        "@reui/icon-stack",
+        "@reui/icon-tile",
+        "@reui/sortable",
+        "@reui/stepper",
+        "alert-dialog",
+        "avatar",
+        "button",
+        "dropdown-menu",
+        "empty",
+        "field",
+        "input",
+        "input-group",
+        "progress",
+        "select",
+        "sheet",
+        "skeleton",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/page.tsx"
+        },
+        {
+          "path": "builder-header.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/builder-header.tsx"
+        },
+        {
+          "path": "confirm-dialog.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/confirm-dialog.tsx"
+        },
+        {
+          "path": "conflicts-panel.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/conflicts-panel.tsx"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/data.ts"
+        },
+        {
+          "path": "day-plan.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/day-plan.tsx"
+        },
+        {
+          "path": "day-rail.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/day-rail.tsx"
+        },
+        {
+          "path": "demo-state.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/demo-state.ts"
+        },
+        {
+          "path": "export-csv.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/export-csv.ts"
+        },
+        {
+          "path": "format.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/format.ts"
+        },
+        {
+          "path": "header-menu.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/header-menu.tsx"
+        },
+        {
+          "path": "icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/icons.tsx"
+        },
+        {
+          "path": "itinerary-builder.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/itinerary-builder.tsx"
+        },
+        {
+          "path": "selectors.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/selectors.ts"
+        },
+        {
+          "path": "stop-row.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/stop-row.tsx"
+        },
+        {
+          "path": "stop-sheet.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/stop-sheet.tsx"
+        },
+        {
+          "path": "surface-states.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/surface-states.tsx"
+        },
+        {
+          "path": "traveler-view.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/traveler-view.tsx"
+        },
+        {
+          "path": "trip-summary.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/trip-summary.tsx"
+        },
+        {
+          "path": "value-faces.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-travel-2/components/value-faces.tsx"
         }
       ]
     },
@@ -68207,6 +69237,106 @@
           "path": "status-indicator.tsx",
           "type": "registry:block",
           "target": "components/blocks/solution-users-7/components/status-indicator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "solution-users-8",
+      "type": "registry:block",
+      "resolution": "unverified",
+      "title": "Team access settings with seat use, member roles, expiring guests, pending invites and admin alerts",
+      "description": "Workspace admin page in 2 tabs: members with role selects and removal, guests with expiring access, pending invites with resend or revoke, and an admin alert matrix by channel. ReUI Frame, Badge; shadcn Tabs, Select, Checkbox, Dialog. Team settings.",
+      "dependencies": [
+        "cn",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@reui/badge",
+        "@reui/frame",
+        "alert-dialog",
+        "avatar",
+        "button",
+        "checkbox",
+        "dialog",
+        "empty",
+        "field",
+        "input-group",
+        "item",
+        "progress",
+        "select",
+        "skeleton",
+        "switch",
+        "table",
+        "tabs",
+        "textarea",
+        "toggle-group",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "page.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-users-8/page.tsx"
+        },
+        {
+          "path": "alerts-tab.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-users-8/components/alerts-tab.tsx"
+        },
+        {
+          "path": "choice-select.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-users-8/components/choice-select.tsx"
+        },
+        {
+          "path": "columns.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-users-8/components/columns.ts"
+        },
+        {
+          "path": "data.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-users-8/components/data.ts"
+        },
+        {
+          "path": "demo-state.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-users-8/components/demo-state.ts"
+        },
+        {
+          "path": "export.ts",
+          "type": "registry:block",
+          "target": "components/blocks/solution-users-8/components/export.ts"
+        },
+        {
+          "path": "icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-users-8/components/icons.tsx"
+        },
+        {
+          "path": "invite-dialog.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-users-8/components/invite-dialog.tsx"
+        },
+        {
+          "path": "people-tab.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-users-8/components/people-tab.tsx"
+        },
+        {
+          "path": "team-access.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-users-8/components/team-access.tsx"
+        },
+        {
+          "path": "team-states.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-users-8/components/team-states.tsx"
+        },
+        {
+          "path": "value-faces.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/solution-users-8/components/value-faces.tsx"
         }
       ]
     },

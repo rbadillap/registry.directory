@@ -862,6 +862,50 @@
       ]
     },
     {
+      "name": "button-press",
+      "type": "registry:component",
+      "title": "Button Press",
+      "description": "Cursor clicks a button: a cursor walks onto a split action button (label, divider, chevron), it darkens on hover, gives on press, spins while pending and lands on a drawn tick. The deploy, publish or send beat of every launch video. Built on cursor-track.",
+      "dependencies": [
+        "remotion",
+        "@remotion/google-fonts"
+      ],
+      "registryDependencies": [
+        "https://snapcn.dev/r/snap-cn-ui.json",
+        "https://snapcn.dev/r/cursor-track.json"
+      ],
+      "files": [
+        {
+          "path": "registry/snap-cn/button-press/index.tsx",
+          "type": "registry:component",
+          "target": "components/snap-cn/button-press.tsx"
+        }
+      ]
+    },
+    {
+      "name": "click-type",
+      "type": "registry:component",
+      "title": "Click Type",
+      "description": "Click to type: a prompt composer (Prompt Send's glass panel, writing surface and round send button) whose placeholder writes itself while a cursor flies in from the edge and clicks the field, then a hard cut into the field where the real prompt types at the caret and send arms. Two shots of one composer under a constant camera, anchored on the first letter, so the type never scales while it moves. Built on cursor-track.",
+      "dependencies": [
+        "remotion",
+        "@remotion/google-fonts"
+      ],
+      "registryDependencies": [
+        "https://snapcn.dev/r/snap-cn-ui.json",
+        "https://snapcn.dev/r/input.json",
+        "https://snapcn.dev/r/caret.json",
+        "https://snapcn.dev/r/cursor-track.json"
+      ],
+      "files": [
+        {
+          "path": "registry/snap-cn/click-type/index.tsx",
+          "type": "registry:component",
+          "target": "components/snap-cn/click-type.tsx"
+        }
+      ]
+    },
+    {
       "name": "capture-reveal",
       "type": "registry:component",
       "title": "Capture Reveal",
