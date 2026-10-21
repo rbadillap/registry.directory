@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Rendered by install.sh into ~/Library/LaunchAgents. Edit the template, not the copy. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>@LABEL@</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>@RUN@</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>REGISTRY_DIRECTORY_REPO</key>
+    <string>@REPO@</string>
+  </dict>
+  <!-- Once a day. A Mac asleep at this hour runs the job when it wakes;
+       one powered off does not, and the day is missed. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>@HOUR@</integer>
+    <key>Minute</key>
+    <integer>@MINUTE@</integer>
+  </dict>
+  <key>RunAtLoad</key>
+  <false/>
+  <key>ProcessType</key>
+  <string>Background</string>
+  <key>StandardOutPath</key>
+  <string>@LOG_DIR@/launchd.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>@LOG_DIR@/launchd.err.log</string>
+</dict>
+</plist>
