@@ -6,7 +6,7 @@
 
 import { strict as assert } from "node:assert"
 import { describe, it } from "node:test"
-import { demoHref, demoRel } from "./demo-link.ts"
+import { demoHref } from "./demo-link.ts"
 
 const affiliate = (affiliate_url: string) => ({
   url: "https://example.test/",
@@ -43,12 +43,3 @@ describe("demoHref", () => {
   })
 })
 
-describe("demoRel", () => {
-  it("declares an affiliate's demo link sponsored and keeps the referrer", () => {
-    assert.equal(demoRel(affiliate("https://ui.aceternity.com/?ref=registrydirectory")), "sponsored noopener")
-  })
-
-  it("marks any other demo link as user-generated, not endorsed", () => {
-    assert.equal(demoRel(null), "nofollow ugc noopener")
-  })
-})

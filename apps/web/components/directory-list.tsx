@@ -29,7 +29,7 @@ import { useAnalytics } from "@/hooks/use-analytics";
 import { formatStars, formatRelativeTime } from "@/lib/format-utils";
 import { REGISTRY_TYPE_LABELS, REGISTRY_TYPE_ICONS } from "@/lib/registry-mappings";
 import { SubmitRegistryCard } from "@/components/submit-registry-dialog";
-import { demoHref, demoRel, openPreviewWindow } from "@/lib/demo-link";
+import { demoHref, openPreviewWindow } from "@/lib/demo-link";
 
 interface ResultClickData {
   result_type: "registry" | "item";
@@ -358,7 +358,7 @@ function ItemResults({
                   <a
                     href={demoHref(item.demo, "card_preview", affiliatesByName?.get(item.registry.name))}
                     target="_blank"
-                    rel={demoRel(affiliatesByName?.get(item.registry.name))}
+                    rel={affiliatesByName?.has(item.registry.name) ? "sponsored noopener" : "nofollow ugc noopener"}
                     onClick={(event) => {
                       trackDemoClicked({ surface: "card", registry: item.registry.name });
                       openPreviewWindow(event);

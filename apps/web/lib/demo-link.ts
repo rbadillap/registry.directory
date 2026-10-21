@@ -2,18 +2,13 @@ import type { MouseEvent } from "react"
 import type { AffiliateConfig } from "./types"
 import { addUtmParams } from "./utm-utils.ts"
 
-// Author demo links are user-generated content on another site: not
-// endorsed, not given our ranking, and never handed a reference to this page.
-export const DEMO_LINK_REL = "nofollow ugc noopener"
-
-// A demo link to an affiliate earns a commission, so it follows the rule of
-// every affiliate link (#162): it declares itself sponsored and sends the
-// referrer, and noopener stays.
-export const AFFILIATE_DEMO_REL = "sponsored noopener"
-
-export function demoRel(affiliate?: AffiliateConfig | null): string {
-  return affiliate ? AFFILIATE_DEMO_REL : DEMO_LINK_REL
-}
+// The rel of a demo link is written out where the link is, as a literal
+// for each case, so the lint rule on target="_blank" can read it:
+// - to an affiliate, "sponsored noopener": the link earns a commission and
+//   follows the rule of every affiliate link (#162), sending the referrer;
+// - to anyone else, "nofollow ugc noopener": the author's content on the
+//   author's site, not endorsed and not given our ranking.
+// noopener is on both, so the page opened never gets a reference to this one.
 
 /**
  * The address a Preview link opens, tagged the way the registry's other
