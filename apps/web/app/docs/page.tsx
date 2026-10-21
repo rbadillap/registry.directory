@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import Link from "next/link"
+import { DocsBackLink } from "@/components/docs-back-link"
 
 export const dynamic = "force-static"
 
@@ -41,12 +41,7 @@ export default function DocsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <main className="max-w-2xl mx-auto px-4 py-16 md:py-24">
-        <Link
-          href="/"
-          className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
-        >
-          &larr; Back to directory
-        </Link>
+        <DocsBackLink />
 
         <h1 className="text-lg font-semibold mt-8 mb-6">API &amp; Docs</h1>
 
@@ -84,6 +79,91 @@ export default function DocsPage() {
               /api/markdown/{"{owner}"}/{"{repo}"}/{"{slug}"}
             </code>
             .
+          </p>
+        </div>
+
+        <h2 id="preview-links" className="text-base font-semibold mt-10 mb-4 scroll-mt-16">
+          Preview links
+        </h2>
+        <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+          <p>
+            An item gets a <span className="text-foreground">Preview</span>{" "}
+            button when your own site already shows it on a page of its own.
+            Nothing goes in registry.json: once a week the directory reads the{" "}
+            <code className="text-foreground">sitemap.xml</code> at the homepage
+            you listed and links an item to a page when all of these hold:
+          </p>
+          <ul className="list-disc space-y-2 pl-5">
+            <li>
+              The page is on your homepage&apos;s host, or on the host your{" "}
+              <code className="text-foreground">/sitemap.xml</code> redirects
+              to, or on a host whose sitemaps your{" "}
+              <code className="text-foreground">/sitemap.xml</code> index
+              lists. An index is followed into at most three of its sitemaps,
+              the ones named for components first.
+            </li>
+            <li>
+              Its path is under{" "}
+              <code className="text-foreground">/components/</code>,{" "}
+              <code className="text-foreground">/blocks/</code>,{" "}
+              <code className="text-foreground">/docs/</code>,{" "}
+              <code className="text-foreground">/icons/</code>,{" "}
+              <code className="text-foreground">/ui/</code>,{" "}
+              <code className="text-foreground">/elements/</code>,{" "}
+              <code className="text-foreground">/primitives/</code>,{" "}
+              <code className="text-foreground">/library/</code> or{" "}
+              <code className="text-foreground">/objects/</code>, and not
+              under <code className="text-foreground">/blog/</code>,{" "}
+              <code className="text-foreground">/changelog/</code>,{" "}
+              <code className="text-foreground">/guides/</code> or{" "}
+              <code className="text-foreground">/api-reference/</code>.
+            </li>
+            <li>
+              Its last segment names the item. The first of these that a page
+              answers to wins:
+              <ol className="mt-2 list-decimal space-y-1.5 pl-5">
+                <li>
+                  the item&apos;s <code className="text-foreground">name</code>,
+                  exactly as registry.json spells it:{" "}
+                  <code className="text-foreground">voice-orb</code> →{" "}
+                  <code className="text-foreground">/components/agents/voice-orb</code>;
+                </li>
+                <li>
+                  its <code className="text-foreground">title</code>, written
+                  as a slug: &quot;Hero Section 1&quot; →{" "}
+                  <code className="text-foreground">/blocks/hero-section-1</code>;
+                </li>
+                <li>
+                  its name without a{" "}
+                  <code className="text-foreground">-demo</code>,{" "}
+                  <code className="text-foreground">-example</code> or{" "}
+                  <code className="text-foreground">-preview</code> suffix:{" "}
+                  <code className="text-foreground">button-demo</code> →{" "}
+                  <code className="text-foreground">/docs/components/button</code>;
+                </li>
+                <li>
+                  for numbered variants shown together, the group&apos;s page:{" "}
+                  <code className="text-foreground">accordion-01</code> through{" "}
+                  <code className="text-foreground">accordion-16</code> →{" "}
+                  <code className="text-foreground">/docs/components/accordion</code>.
+                  Preview then opens the page with every variant, this one
+                  among them.
+                </li>
+              </ol>
+            </li>
+            <li>
+              Only one page answers to that name. When two do, neither is
+              linked rather than guessing.
+            </li>
+          </ul>
+          <p>
+            Links open your page in a window of its own, marked{" "}
+            <code className="text-foreground">nofollow ugc</code> and tagged{" "}
+            <code className="text-foreground">utm_source=registry.directory</code>
+            , or with your referral parameter when you have a partnership
+            with the directory. If your
+            items should have one and do not, check those four rules against
+            your sitemap; the next weekly run picks the change up.
           </p>
         </div>
 

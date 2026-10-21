@@ -198,6 +198,18 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
     [filteredComponents, activeTab, githubStats]
   );
 
+  // Item results name their registry, not its URL, and partnerships are
+  // keyed by URL; the Preview links on item cards look them up by name.
+  const affiliatesByName = useMemo(
+    () =>
+      new Map(
+        components.flatMap((entry) =>
+          affiliates[entry.url] ? [[entry.name, affiliates[entry.url]!] as const] : []
+        )
+      ),
+    [components, affiliates]
+  );
+
   // Normalised once per index, not once per keystroke.
   const preparedIndex = useMemo(() => prepareSearchIndex(items), [items]);
 
@@ -364,6 +376,7 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
             stats={stats}
             githubStats={githubStats}
             affiliates={affiliates}
+            affiliatesByName={affiliatesByName}
             itemResults={filteredItems}
             itemsStatus={indexStatus}
             onResultClick={handleResultClick}

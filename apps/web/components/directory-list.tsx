@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ExternalLink as ExternalLinkIcon, Package, Star } from "lucide-react";
+import { ArrowUpRight, ExternalLink as ExternalLinkIcon, Package, Star } from "lucide-react";
 import { GitHubIcon } from "@/components/icons/github";
 import {
   Card,
@@ -29,6 +29,7 @@ import { useAnalytics } from "@/hooks/use-analytics";
 import { formatStars, formatRelativeTime } from "@/lib/format-utils";
 import { REGISTRY_TYPE_LABELS, REGISTRY_TYPE_ICONS } from "@/lib/registry-mappings";
 import { SubmitRegistryCard } from "@/components/submit-registry-dialog";
+import { demoHref, openPreviewWindow } from "@/lib/demo-link";
 
 interface ResultClickData {
   result_type: "registry" | "item";
@@ -56,9 +57,11 @@ interface DirectoryListProps {
   /** Open the item list past its first page from the start (a return to it). */
   itemsInitiallyExpanded?: boolean;
   onItemsExpandedChange?: (expanded: boolean) => void;
+  /** Referral partnerships by registry name, for Preview links on item cards. */
+  affiliatesByName?: Map<string, AffiliateConfig>;
 }
 
-export function DirectoryList({ entries, searchTerm = '', addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], itemsStatus = 'ready', onResultClick, itemsInitiallyExpanded = false, onItemsExpandedChange }: DirectoryListProps) {
+export function DirectoryList({ entries, searchTerm = '', addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], itemsStatus = 'ready', onResultClick, itemsInitiallyExpanded = false, onItemsExpandedChange, affiliatesByName }: DirectoryListProps) {
   const { trackHomeRegistryVisit } = useAnalytics();
   const showAddCard = !searchTerm && addCardLabel;
   const hasItems = itemResults.length > 0;
@@ -217,6 +220,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
         onResultClick={onResultClick}
         initiallyExpanded={itemsInitiallyExpanded}
         onExpandedChange={onItemsExpandedChange}
+        affiliatesByName={affiliatesByName}
       />
     )}
 
@@ -231,13 +235,16 @@ function ItemResults({
   onResultClick,
   initiallyExpanded,
   onExpandedChange,
+  affiliatesByName,
 }: {
   items: IndexedItem[];
   onResultClick?: (data: ResultClickData, target: ResultTarget) => void;
   initiallyExpanded: boolean;
   onExpandedChange?: (expanded: boolean) => void;
+  affiliatesByName?: Map<string, AffiliateConfig>;
 }) {
   const [expanded, setExpanded] = useState(initiallyExpanded);
+  const { trackDemoClicked } = useAnalytics();
 
   // Reported on mount too: a new search remounts this list collapsed.
   useEffect(() => {
@@ -270,15 +277,15 @@ function ItemResults({
             const href = `${item.registry.basePath}/${item.name}`;
 
             return (
+              // Expanding a broad search can put thousands of these on the
+              // page. The browser skips layout and paint for the ones below
+              // the fold; the intrinsic size keeps the scrollbar honest, and
+              // auto lets it remember the real height once measured.
+              <div key={`${registryKey}/${item.name}`} className="result-card-deferred relative">
               <Link
-                key={`${registryKey}/${item.name}`}
                 href={href}
                 onClick={() => onResultClick?.({ result_type: "item", result_name: item.name, result_position: index }, { href })}
-                // Expanding a broad search can put thousands of these on the
-                // page. The browser skips layout and paint for the ones below
-                // the fold; the intrinsic size keeps the scrollbar honest, and
-                // auto lets it remember the real height once measured.
-                className="result-card-deferred"
+                className="block h-full"
               >
                 <Card className="bg-background border border-border-subtle rounded-none overflow-hidden shadow-none hover:shadow-lg hover:border-border transition-all h-full flex flex-col">
                   <CardHeader className="bg-background pt-3 pb-2 space-y-2">
@@ -314,7 +321,7 @@ function ItemResults({
                       )}
                     </div>
                   </CardHeader>
-                  <CardContent className="px-3 pb-3 pt-0 bg-background flex-1">
+                  <CardContent className={`px-3 pt-0 bg-background flex-1 ${item.demo ? "pb-12" : "pb-3"}`}>
                     {item.description && (
                       <CardDescription className="text-[13px] text-foreground-secondary line-clamp-2 text-pretty">
                         {item.description}
@@ -332,6 +339,40 @@ function ItemResults({
                   </CardContent>
                 </Card>
               </Link>
+              {/* Beside the card's link, not inside it: a link cannot hold
+                  another. It opens the author's demo straight from the
+                  results, so several can be compared without opening each
+                  item. The order of the results does not change for it. */}
+              {/* The registry card's Explore button, in its filled variant:
+                  the same control family, raised one step because it is the
+                  card's one action that shows the component working. */}
+              {item.demo && (
+                <Button
+                  asChild
+                  variant="secondary"
+                  size="sm"
+                  className="absolute bottom-3 right-3 h-7 gap-1 px-2.5 text-xs"
+                >
+                  {/* noopener without noreferrer, on purpose: authors should
+                      see that their visitors came from the directory. */}
+                  <a
+                    href={demoHref(item.demo, "card_preview", affiliatesByName?.get(item.registry.name))}
+                    target="_blank"
+                    rel={affiliatesByName?.has(item.registry.name) ? "sponsored noopener" : "nofollow ugc noopener"}
+                    onClick={(event) => {
+                      trackDemoClicked({ surface: "card", registry: item.registry.name });
+                      openPreviewWindow(event);
+                    }}
+                  >
+                    Preview
+                    <ArrowUpRight className="size-3" aria-hidden="true" />
+                    <span className="sr-only">
+                      {` ${item.title || item.name} on ${item.registry.name}'s site (opens in a new window)`}
+                    </span>
+                  </a>
+                </Button>
+              )}
+              </div>
             );
           })}
         </div>

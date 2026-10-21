@@ -15,6 +15,7 @@ import { getAffiliates } from "@/lib/affiliates"
 import { loadRegistryIndex, parseGithubRef } from "@/lib/resolve-registry"
 import { loadRegistryView } from "@/lib/registry-data"
 import { getInstallCommand } from "@/lib/install-command"
+import { loadDemosFor } from "@/lib/demos"
 import { JsonLd } from "@/components/json-ld"
 import { AnalyticsScopeProvider } from "@/hooks/use-analytics"
 import {
@@ -249,6 +250,7 @@ export async function RegistrySlugView({
   }
 
   const categoryLabel = REGISTRY_TYPE_LABELS[currentCategory] || currentCategory
+  const demos = await loadDemosFor(registry)
 
   return (
     <AnalyticsScopeProvider registry={registry.name} item={itemData.name}>
@@ -280,6 +282,7 @@ export async function RegistrySlugView({
         basePath={basePath}
         installArg={getInstallCommand({ registry, itemName: itemData.name, basePath })}
         itemResolution={itemData.resolution}
+        demoUrl={demos[itemData.name]}
       />
     </AnalyticsScopeProvider>
   )

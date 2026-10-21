@@ -50,6 +50,9 @@ export const ANALYTICS_EVENTS = {
   HOME_PREMIUM_TOGGLED: "home.premium.toggled",
   HOME_REGISTRY_VISIT: "home.registry.visit",
   HOME_TYPE_FILTERED: "home.type.filtered",
+
+  // The author's demo page, from an item page or a result card
+  DEMO_CLICKED: "demo_clicked",
 } as const;
 
 type EventName = (typeof ANALYTICS_EVENTS)[keyof typeof ANALYTICS_EVENTS];
@@ -72,6 +75,7 @@ export interface EventProperties {
   "home.premium.toggled": { enabled: boolean; has_query: boolean };
   "home.registry.visit": { registry: string; sponsored: boolean };
   "home.type.filtered": { type: string; enabled: boolean };
+  "demo_clicked": { surface: "item" | "card"; registry: string | null };
 }
 
 // ============================================================================

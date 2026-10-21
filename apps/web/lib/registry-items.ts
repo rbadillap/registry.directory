@@ -1,6 +1,7 @@
 import { hasOnlyRenderableFiles } from "./file-utils";
 import type { DirectoryEntry } from "./types";
 import type { IndexedItem } from "./items-index";
+import { loadDemosFor } from "./demos";
 import {
   registryBasePath,
   parseGithubRef,
@@ -19,7 +20,10 @@ async function fetchItemsForRegistry(
     ? `https://github.com/${gh.owner}.png`
     : (registry.github_profile ?? null);
 
-  const data = await loadRegistryIndex(registry);
+  const [data, demos] = await Promise.all([
+    loadRegistryIndex(registry),
+    loadDemosFor(registry),
+  ]);
   if (!data?.items || data.items.length === 0) return [];
 
   return data.items
@@ -30,6 +34,7 @@ async function fetchItemsForRegistry(
       ...(item.title ? { title: item.title } : {}),
       description: item.description || "",
       categories: item.categories || [],
+      ...(demos[item.name] ? { demo: demos[item.name] } : {}),
       registry: {
         name: registry.name,
         basePath,
