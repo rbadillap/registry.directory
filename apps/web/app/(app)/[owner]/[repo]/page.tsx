@@ -1,6 +1,7 @@
 import { notFound, permanentRedirect } from "next/navigation"
 import type { Metadata } from "next"
 import { RegistryLanding } from "@/components/registry-landing/registry-landing"
+import { AnalyticsScopeProvider } from "@/hooks/use-analytics"
 import { groupItemsByCategory } from "@/lib/registry-mappings"
 import { hasOnlyRenderableFiles } from "@/lib/file-utils"
 import { loadLandingData } from "@/lib/landing-data"
@@ -156,11 +157,13 @@ export default async function RegistryLandingPage({
             }),
           ]}
         />
-        <RegistryLanding
-          registry={ghRegistry}
-          basePath={basePath}
-          {...landingData}
-        />
+        <AnalyticsScopeProvider registry={ghRegistry.name}>
+          <RegistryLanding
+            registry={ghRegistry}
+            basePath={basePath}
+            {...landingData}
+          />
+        </AnalyticsScopeProvider>
       </>
     )
   }

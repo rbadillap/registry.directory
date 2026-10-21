@@ -1,6 +1,7 @@
 import { notFound, permanentRedirect } from "next/navigation"
 import type { Metadata } from "next"
 import { RegistryLanding } from "@/components/registry-landing/registry-landing"
+import { AnalyticsScopeProvider } from "@/hooks/use-analytics"
 import { loadLandingData } from "@/lib/landing-data"
 import {
   loadDirectory,
@@ -80,10 +81,12 @@ export default async function HandlePage({
 
   const landingData = await loadLandingData(registry)
   return (
-    <RegistryLanding
-      registry={registry}
-      basePath={`/${entryHandle(registry)}`}
-      {...landingData}
-    />
+    <AnalyticsScopeProvider registry={registry.name}>
+      <RegistryLanding
+        registry={registry}
+        basePath={`/${entryHandle(registry)}`}
+        {...landingData}
+      />
+    </AnalyticsScopeProvider>
   )
 }
