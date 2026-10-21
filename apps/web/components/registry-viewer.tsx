@@ -96,7 +96,9 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
   // first paint claim the item had no files, before anything had looked.
   const [sourceState, setSourceState] = useState<SourceState>(() =>
     initialItem && !initialItem.files?.some((file) => file.content)
-      ? { status: "loading" }
+      ? itemResolution
+        ? { status: "not-found" }
+        : { status: "loading" }
       : { status: "ready" }
   )
 
@@ -111,6 +113,12 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
     }
     if (initialItem?.files?.some((file) => file.content)) {
       setSourceState({ status: "ready" })
+      return
+    }
+    // The indexer already found that the origin refuses this item, or could
+    // not ask: /r withholds it, so asking would only come back as a 404.
+    if (itemResolution) {
+      setSourceState({ status: "not-found" })
       return
     }
 
@@ -181,7 +189,7 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
     return () => {
       controller.abort()
     }
-  }, [handle, initialItem, attempt])
+  }, [handle, initialItem, itemResolution, attempt])
 
   // Set initial selected file when component mounts or item changes
   useEffect(() => {
