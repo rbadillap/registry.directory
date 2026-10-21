@@ -6,7 +6,6 @@ import { useAnalytics } from "@/hooks/use-analytics"
 
 interface HeroCtasProps {
   registryName: string
-  registryUrl: string
   visitHref: string
   sponsored: boolean
   githubUrl?: string
@@ -14,7 +13,6 @@ interface HeroCtasProps {
 
 export function HeroCtas({
   registryName,
-  registryUrl,
   visitHref,
   sponsored,
   githubUrl,
@@ -33,7 +31,6 @@ export function HeroCtas({
         onClick={() => {
           analytics.trackRegistryVisit({
             destination: "registry",
-            registry_url: registryUrl,
           })
         }}
         className="inline-flex h-10 items-center gap-2 rounded-lg bg-foreground px-5 text-sm font-semibold text-background transition-opacity hover:opacity-90"
@@ -50,7 +47,6 @@ export function HeroCtas({
           onClick={() => {
             analytics.trackRegistryVisit({
               destination: "repository",
-              github_url: githubUrl,
             })
           }}
           className="inline-flex h-10 items-center gap-2 rounded-lg border border-border px-4 text-sm font-medium text-foreground transition-colors hover:bg-accent"

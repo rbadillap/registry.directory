@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ExternalLink as ExternalLinkIcon, Package, Star } from "lucide-react";
 import { GitHubIcon } from "@/components/icons/github";
@@ -36,6 +36,11 @@ interface ResultClickData {
   result_position: number;
 }
 
+// Where a result leads, so the home can remember the way back to it.
+export interface ResultTarget {
+  href: string;
+}
+
 interface DirectoryListProps {
   entries: DirectoryEntry[];
   searchTerm?: string;
@@ -47,11 +52,13 @@ interface DirectoryListProps {
   itemResults?: IndexedItem[];
   /** Whether the item index behind itemResults has arrived yet. */
   itemsStatus?: ItemIndexStatus;
-  onResultClick?: (data: ResultClickData) => void;
-  premiumFilterActive?: boolean;
+  onResultClick?: (data: ResultClickData, target: ResultTarget) => void;
+  /** Open the item list past its first page from the start (a return to it). */
+  itemsInitiallyExpanded?: boolean;
+  onItemsExpandedChange?: (expanded: boolean) => void;
 }
 
-export function DirectoryList({ entries, searchTerm = '', addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], itemsStatus = 'ready', onResultClick, premiumFilterActive = false }: DirectoryListProps) {
+export function DirectoryList({ entries, searchTerm = '', addCardLabel, showViewButton = false, stats, githubStats, affiliates, itemResults = [], itemsStatus = 'ready', onResultClick, itemsInitiallyExpanded = false, onItemsExpandedChange }: DirectoryListProps) {
   const { trackHomeRegistryVisit } = useAnalytics();
   const showAddCard = !searchTerm && addCardLabel;
   const hasItems = itemResults.length > 0;
@@ -142,7 +149,6 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
                     onClick={() => trackHomeRegistryVisit({
                       registry: entry.name,
                       sponsored: Boolean(affiliate),
-                      premium_filter_active: premiumFilterActive,
                     })}
                   >
                     <ExternalLinkIcon className="w-3.5 h-3.5" />
@@ -189,7 +195,7 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
                   >
                     <Link
                       href={viewerHref}
-                      onClick={() => searchTerm && onResultClick?.({ result_type: "registry", result_name: entry.name, result_position: index })}
+                      onClick={() => searchTerm && onResultClick?.({ result_type: "registry", result_name: entry.name, result_position: index }, { href: viewerHref })}
                     >
                       Explore
                     </Link>
@@ -205,7 +211,13 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
 
     {/* Item results — flat list, each card shows registry as metadata */}
     {hasItems && (
-      <ItemResults key={searchTerm} items={itemResults} onResultClick={onResultClick} />
+      <ItemResults
+        key={searchTerm}
+        items={itemResults}
+        onResultClick={onResultClick}
+        initiallyExpanded={itemsInitiallyExpanded}
+        onExpandedChange={onItemsExpandedChange}
+      />
     )}
 
     </>
@@ -214,8 +226,23 @@ export function DirectoryList({ entries, searchTerm = '', addCardLabel, showView
 
 const INITIAL_ITEMS_LIMIT = 12;
 
-function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultClick?: (data: ResultClickData) => void }) {
-  const [expanded, setExpanded] = useState(false);
+function ItemResults({
+  items,
+  onResultClick,
+  initiallyExpanded,
+  onExpandedChange,
+}: {
+  items: IndexedItem[];
+  onResultClick?: (data: ResultClickData, target: ResultTarget) => void;
+  initiallyExpanded: boolean;
+  onExpandedChange?: (expanded: boolean) => void;
+}) {
+  const [expanded, setExpanded] = useState(initiallyExpanded);
+
+  // Reported on mount too: a new search remounts this list collapsed.
+  useEffect(() => {
+    onExpandedChange?.(expanded);
+  }, [expanded, onExpandedChange]);
   const hasMore = items.length > INITIAL_ITEMS_LIMIT;
   const visibleItems = expanded ? items : items.slice(0, INITIAL_ITEMS_LIMIT);
 
@@ -240,11 +267,13 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
             const typeLabel = REGISTRY_TYPE_LABELS[itemTypeSlug] || itemTypeSlug;
             const TypeIcon = REGISTRY_TYPE_ICONS[itemTypeSlug] || Package;
 
+            const href = `${item.registry.basePath}/${item.name}`;
+
             return (
               <Link
                 key={`${registryKey}/${item.name}`}
-                href={`${item.registry.basePath}/${item.name}`}
-                onClick={() => onResultClick?.({ result_type: "item", result_name: item.name, result_position: index })}
+                href={href}
+                onClick={() => onResultClick?.({ result_type: "item", result_name: item.name, result_position: index }, { href })}
                 // Expanding a broad search can put thousands of these on the
                 // page. The browser skips layout and paint for the ones below
                 // the fold; the intrinsic size keeps the scrollbar honest, and
@@ -271,9 +300,19 @@ function ItemResults({ items, onResultClick }: { items: IndexedItem[]; onResultC
                         <TypeIcon className="w-3.5 h-3.5 text-foreground-subtle" aria-hidden="true" />
                       </span>
                     </div>
-                    <CardTitle className="type-card text-foreground truncate">
-                      {item.name}
-                    </CardTitle>
+                    {/* The title reads as the item's name, the slug as what
+                        installs it — the same pairing the category list uses.
+                        A title that only repeats the slug is not shown twice. */}
+                    <div className="min-w-0">
+                      <CardTitle className="type-card text-foreground truncate">
+                        {item.title || item.name}
+                      </CardTitle>
+                      {item.title && item.title.toLowerCase() !== item.name.toLowerCase() && (
+                        <p className="font-mono text-xs text-muted-foreground truncate">
+                          {item.name}
+                        </p>
+                      )}
+                    </div>
                   </CardHeader>
                   <CardContent className="px-3 pb-3 pt-0 bg-background flex-1">
                     {item.description && (

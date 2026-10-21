@@ -14,7 +14,9 @@ import {
 import { getAffiliates } from "@/lib/affiliates"
 import { loadRegistryIndex, parseGithubRef } from "@/lib/resolve-registry"
 import { loadRegistryView } from "@/lib/registry-data"
+import { getInstallCommand } from "@/lib/install-command"
 import { JsonLd } from "@/components/json-ld"
+import { AnalyticsScopeProvider } from "@/hooks/use-analytics"
 import {
   buildBreadcrumbSchema,
   buildRegistryItemSchema,
@@ -194,7 +196,7 @@ export async function RegistrySlugView({
     const categoryLabel = REGISTRY_TYPE_LABELS[slug] || slug
 
     return (
-      <>
+      <AnalyticsScopeProvider registry={registry.name}>
         <JsonLd
           data={buildBreadcrumbSchema([
             { name: registry.name, path: basePath },
@@ -211,7 +213,7 @@ export async function RegistrySlugView({
           affiliate={affiliate}
           basePath={basePath}
         />
-      </>
+      </AnalyticsScopeProvider>
     )
   }
 
@@ -249,7 +251,7 @@ export async function RegistrySlugView({
   const categoryLabel = REGISTRY_TYPE_LABELS[currentCategory] || currentCategory
 
   return (
-    <>
+    <AnalyticsScopeProvider registry={registry.name} item={itemData.name}>
       <JsonLd
         data={[
           buildBreadcrumbSchema([
@@ -276,7 +278,9 @@ export async function RegistrySlugView({
         currentCategory={currentCategory}
         affiliate={affiliate}
         basePath={basePath}
+        installArg={getInstallCommand({ registry, itemName: itemData.name, basePath })}
+        itemResolution={itemData.resolution}
       />
-    </>
+    </AnalyticsScopeProvider>
   )
 }

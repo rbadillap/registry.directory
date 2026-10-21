@@ -2,10 +2,11 @@
 
 import { useState, useMemo, useDeferredValue, useEffect, useCallback, useRef } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
-import { DirectoryList } from './directory-list';
+import { DirectoryList, type ResultTarget } from './directory-list';
 import { SearchBar } from './search-bar';
-import { useAnalytics, type SearchResultType, type HomeTab } from '@/hooks/use-analytics';
-import { useUrlState } from '@/hooks/use-url-state';
+import { useAnalytics, type SearchResultType } from '@/hooks/use-analytics';
+import { useUrlState, homeSearch } from '@/hooks/use-url-state';
+import { rememberSearch, readSearchReturn, forgetSearchReturn, type SearchReturn } from '@/lib/search-return';
 import { useItemIndex } from '@/hooks/use-item-index';
 import { JustShipped, StackSections } from '@/components/home/collections';
 import type { CollectionsFile, ShippedFile } from '@/lib/registry-data';
@@ -101,7 +102,7 @@ interface DirectoryTabsProps {
 
 export function DirectoryTabs({ components, stats, githubStats, affiliates, collections, shipped }: DirectoryTabsProps) {
   const analytics = useAnalytics();
-  const { activeTab, setActiveTab, searchTerm, setSearchTerm, typeFilters, setTypeFilters } = useUrlState();
+  const { activeTab, setActiveTab, searchTerm, setSearchTerm, typeFilters, setTypeFilters, premiumOnly, setPremiumOnly } = useUrlState();
   const deferredSearchTerm = useDeferredValue(searchTerm);
 
   // The item index is not in this page: it is fetched when someone is about
@@ -114,8 +115,6 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
   useEffect(() => {
     if (searchTerm) loadItemIndex();
   }, [searchTerm, loadItemIndex]);
-
-  const [premiumOnly, setPremiumOnly] = useState(false);
 
   // Two faces, one page. Nobody asked for anything yet, so the page offers
   // collections instead of listing the catalogue at them; the moment someone
@@ -155,15 +154,9 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
       analytics.trackTypeFiltered({
         type: slug,
         enabled: checked,
-        active_tab: activeTab as HomeTab,
-        has_query: Boolean(searchTerm),
-        results_count: filterBySearch(
-          components.filter(entry => hasType(entry, next)),
-          searchTerm
-        ).length,
       });
     },
-    [typeFilters, setTypeFilters, analytics, activeTab, searchTerm, components, hasType]
+    [typeFilters, setTypeFilters, analytics]
   );
 
   const handleTypeClear = useCallback(() => {
@@ -175,11 +168,9 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
     setPremiumOnly(enabled);
     analytics.trackPremiumToggled({
       enabled,
-      active_tab: activeTab as HomeTab,
       has_query: Boolean(searchTerm),
-      results_count: filterBySearch(enabled ? components.filter(entry => entry.pro) : components, searchTerm).length,
     });
-  }, [premiumOnly, activeTab, searchTerm, components, analytics]);
+  }, [premiumOnly, setPremiumOnly, searchTerm, analytics]);
 
   // P flips the Premium filter, mirroring the theme toggle's D shortcut
   // (same guards: no modifiers, never while typing).
@@ -220,44 +211,72 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
   }, [preparedIndex, deferredSearchTerm, typeFilters]);
 
   // What the event reports about a search, kept current without making the
-  // event depend on it: a tab change or a premium toggle alters these
-  // numbers, and neither of those is a search.
-  const searchContext = useRef({
-    tab: activeTab,
-    registryCount: 0,
-    itemCount: 0,
-    premiumOnly,
-  });
-  searchContext.current = {
-    tab: activeTab,
-    registryCount: sortedComponents.length,
-    itemCount: filteredItems.length,
-    premiumOnly,
-  };
+  // event depend on it: a type filter alters the count, and a filter is not
+  // a search.
+  const itemCount = useRef(0);
+  itemCount.current = filteredItems.length;
 
-  // One event per search, and only once its counts are true. Reporting
+  // One event per search, and only once its count is true. Reporting
   // before the index lands would record zero components found for a search
   // that finds plenty — the index simply had not arrived yet.
   useEffect(() => {
     if (!deferredSearchTerm) return;
     if (indexStatus !== 'ready') return;
-    const { tab, registryCount, itemCount, premiumOnly: premium } = searchContext.current;
     analytics.trackSearchPerformed({
       search_query: deferredSearchTerm,
-      active_tab: tab as SortMode,
-      registry_results_count: registryCount,
-      item_results_count: itemCount,
-      premium_only: premium,
+      item_results_count: itemCount.current,
     });
   }, [deferredSearchTerm, indexStatus, analytics]);
 
-  const handleResultClick = useCallback((result: { result_type: SearchResultType; result_name: string; result_position: number }) => {
+  // Whether the item list is open past its first page, as last reported by
+  // the list itself. Read at the moment a result is opened.
+  const itemsExpanded = useRef(false);
+  const handleItemsExpandedChange = useCallback((expanded: boolean) => {
+    itemsExpanded.current = expanded;
+  }, []);
+
+  const handleResultClick = useCallback((result: { result_type: SearchResultType; result_name: string; result_position: number }, target: ResultTarget) => {
     if (!searchTerm) return;
-    analytics.trackSearchResultClicked({
-      search_query: searchTerm,
-      ...result,
+    rememberSearch({
+      results: homeSearch(searchTerm, activeTab, typeFilters, premiumOnly),
+      target: target.href,
+      expanded: itemsExpanded.current,
+      scrollY: window.scrollY,
     });
-  }, [searchTerm, analytics]);
+    analytics.trackSearchResultClicked({
+      result_type: result.result_type,
+      result_position: result.result_position,
+    });
+  }, [searchTerm, activeTab, typeFilters, premiumOnly, analytics]);
+
+  // A return from a result puts the list back as it was left: the same page
+  // of results, scrolled to the same place. The entry only applies to the
+  // search it was written for; an unrelated visit to the home ignores it.
+  const [restore, setRestore] = useState<SearchReturn | null>(null);
+  const restored = useRef(false);
+  useEffect(() => {
+    const entry = readSearchReturn();
+    if (entry && entry.results === homeSearch(searchTerm, activeTab, typeFilters, premiumOnly)) {
+      setRestore(entry);
+    }
+    // Read once, against the state the page was opened with.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // The results arrive after the page does, so the scroll can only be put
+  // back once they have rendered.
+  useEffect(() => {
+    if (!restore || restored.current) return;
+    if (indexStatus === 'error') {
+      restored.current = true;
+      forgetSearchReturn();
+      return;
+    }
+    if (indexStatus !== 'ready') return;
+    restored.current = true;
+    forgetSearchReturn();
+    requestAnimationFrame(() => window.scrollTo(0, restore.scrollY));
+  }, [restore, indexStatus]);
 
 
   return (
@@ -348,7 +367,8 @@ export function DirectoryTabs({ components, stats, githubStats, affiliates, coll
             itemResults={filteredItems}
             itemsStatus={indexStatus}
             onResultClick={handleResultClick}
-            premiumFilterActive={premiumOnly}
+            itemsInitiallyExpanded={restore?.expanded ?? false}
+            onItemsExpandedChange={handleItemsExpandedChange}
           />
         </TabsContent>
         )}

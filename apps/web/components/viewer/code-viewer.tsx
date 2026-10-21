@@ -193,11 +193,7 @@ export function CodeViewer({ file, selectedItem, sourceStatus = "ready" }: CodeV
     setTimeout(() => setCopied(false), 2000)
 
     // Track code copy
-    analytics.trackCodeCopied({
-      file_path: getTargetPath(file),
-      code_length: file.content.length,
-      has_content: Boolean(file.content),
-    })
+    analytics.trackCodeCopied()
   }
 
   return (

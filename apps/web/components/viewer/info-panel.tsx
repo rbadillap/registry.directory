@@ -58,8 +58,6 @@ export function InfoPanel({ item }: InfoPanelProps) {
     // Track path copy
     if (item) {
       analytics.trackPathCopied({
-        path,
-        file_index: index,
         total_files: item.files?.length || 0,
       })
     }
@@ -88,7 +86,10 @@ export function InfoPanel({ item }: InfoPanelProps) {
       </div>
 
       <div className="flex-1 min-h-0">
-        <ScrollArea className="h-full">
+        {/* Radix lays the viewport's content out as a table, which grows to
+            its longest unbreakable line — a file path here — and pushed the
+            Type chip out of a narrow panel. As a block, the paths truncate. */}
+        <ScrollArea className="h-full [&_[data-slot=scroll-area-viewport]>div]:!block">
           {/* One continuous surface. Sections are told apart by a rule and by
               the room around them, not by boxing each one. */}
           <div className="divide-y divide-border">

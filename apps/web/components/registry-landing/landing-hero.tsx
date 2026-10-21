@@ -106,7 +106,6 @@ export function LandingHero({
 
       <HeroCtas
         registryName={registry.name}
-        registryUrl={registry.url}
         visitHref={visitHref}
         sponsored={sponsored}
         githubUrl={registry.github_url}
