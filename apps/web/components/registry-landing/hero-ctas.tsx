@@ -29,9 +29,7 @@ export function HeroCtas({
         rel={sponsored ? "sponsored noopener" : "noopener noreferrer"}
         aria-label={`Visit ${registryName} website`}
         onClick={() => {
-          analytics.trackRegistryVisit({
-            destination: "registry",
-          })
+          analytics.trackRegistryVisit({ sponsored })
         }}
         className="inline-flex h-10 items-center gap-2 rounded-lg bg-foreground px-5 text-sm font-semibold text-background transition-opacity hover:opacity-90"
       >
@@ -45,9 +43,7 @@ export function HeroCtas({
           rel="noopener noreferrer"
           aria-label={`${registryName} on GitHub`}
           onClick={() => {
-            analytics.trackRegistryVisit({
-              destination: "repository",
-            })
+            analytics.trackRepositoryVisit()
           }}
           className="inline-flex h-10 items-center gap-2 rounded-lg border border-border px-4 text-sm font-medium text-foreground transition-colors hover:bg-accent"
         >
