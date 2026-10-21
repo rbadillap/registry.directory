@@ -3,10 +3,10 @@
 import { ArrowUpRight } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
 import { useAnalytics } from "@/hooks/use-analytics"
-import { demoHref, openPreviewWindow } from "@/lib/demo-link"
+import { demoHref } from "@/lib/demo-link"
 import type { AffiliateConfig } from "@/lib/types"
 
-// The item page's Preview: the author's demo, in a window of its own. Shared
+// The item page's Preview: the author's demo, in a new tab. Shared
 // by the item bar and the state that stands in for a missing source, where
 // a demo is often the only way left to see the component.
 export function PreviewButton({
@@ -34,15 +34,12 @@ export function PreviewButton({
         href={demoHref(demoUrl, "item_preview", affiliate)}
         target="_blank"
         rel={affiliate ? "sponsored noopener" : "nofollow ugc noopener"}
-        onClick={(event) => {
-          analytics.trackDemoClicked({ surface: "item" })
-          openPreviewWindow(event)
-        }}
+        onClick={() => analytics.trackDemoClicked({ surface: "item" })}
       >
         Preview
         <ArrowUpRight aria-hidden="true" />
         <span className="sr-only">
-          {` ${itemLabel} on ${registryName}'s site (opens in a new window)`}
+          {` ${itemLabel} on ${registryName}'s site (opens in a new tab)`}
         </span>
       </a>
     </Button>

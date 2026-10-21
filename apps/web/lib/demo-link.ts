@@ -1,4 +1,3 @@
-import type { MouseEvent } from "react"
 import type { AffiliateConfig } from "./types"
 import { addUtmParams } from "./utm-utils.ts"
 
@@ -36,24 +35,4 @@ export function demoHref(
     }
   }
   return addUtmParams(demoUrl, campaign)
-}
-
-const PREVIEW_WINDOW = "popup,width=1280,height=860"
-
-/**
- * Opens a Preview in a window of its own, beside the directory rather than
- * over it, so results and a demo can be looked at side by side.
- *
- * Only a plain click: a modified or middle click keeps doing what the reader
- * asked the browser for (a background tab, a new tab), and the href stays
- * real for both and for anyone without script.
- */
-export function openPreviewWindow(event: MouseEvent<HTMLAnchorElement>): void {
-  if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
-    return
-  }
-  event.preventDefault()
-  // noopener: the window gets no handle back to this page, as the rel says.
-  // A click is a user gesture, so popup blockers let it through.
-  window.open(event.currentTarget.href, "_blank", `${PREVIEW_WINDOW},noopener`)
 }
