@@ -29,7 +29,7 @@ import { useAnalytics } from "@/hooks/use-analytics";
 import { formatStars, formatRelativeTime } from "@/lib/format-utils";
 import { REGISTRY_TYPE_LABELS, REGISTRY_TYPE_ICONS } from "@/lib/registry-mappings";
 import { SubmitRegistryCard } from "@/components/submit-registry-dialog";
-import { demoHref, openPreviewWindow } from "@/lib/demo-link";
+import { demoHref } from "@/lib/demo-link";
 
 interface ResultClickData {
   result_type: "registry" | "item";
@@ -359,15 +359,12 @@ function ItemResults({
                     href={demoHref(item.demo, "card_preview", affiliatesByName?.get(item.registry.name))}
                     target="_blank"
                     rel={affiliatesByName?.has(item.registry.name) ? "sponsored noopener" : "nofollow ugc noopener"}
-                    onClick={(event) => {
-                      trackDemoClicked({ surface: "card", registry: item.registry.name });
-                      openPreviewWindow(event);
-                    }}
+                    onClick={() => trackDemoClicked({ surface: "card", registry: item.registry.name })}
                   >
                     Preview
                     <ArrowUpRight className="size-3" aria-hidden="true" />
                     <span className="sr-only">
-                      {` ${item.title || item.name} on ${item.registry.name}'s site (opens in a new window)`}
+                      {` ${item.title || item.name} on ${item.registry.name}'s site (opens in a new tab)`}
                     </span>
                   </a>
                 </Button>

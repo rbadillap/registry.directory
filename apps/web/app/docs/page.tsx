@@ -157,7 +157,7 @@ export default function DocsPage() {
             </li>
           </ul>
           <p>
-            Links open your page in a window of its own, marked{" "}
+            Links open your page in a new tab, marked{" "}
             <code className="text-foreground">nofollow ugc</code> and tagged{" "}
             <code className="text-foreground">utm_source=registry.directory</code>
             , or with your referral parameter when you have a partnership
