@@ -6,6 +6,15 @@ import { addUtmParams } from "./utm-utils.ts"
 // endorsed, not given our ranking, and never handed a reference to this page.
 export const DEMO_LINK_REL = "nofollow ugc noopener"
 
+// A demo link to an affiliate earns a commission, so it follows the rule of
+// every affiliate link (#162): it declares itself sponsored and sends the
+// referrer, and noopener stays.
+export const AFFILIATE_DEMO_REL = "sponsored noopener"
+
+export function demoRel(affiliate?: AffiliateConfig | null): string {
+  return affiliate ? AFFILIATE_DEMO_REL : DEMO_LINK_REL
+}
+
 /**
  * The address a Preview link opens, tagged the way the registry's other
  * outbound links are: with the referral partnership's parameters (?ref=,

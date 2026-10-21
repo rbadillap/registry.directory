@@ -29,7 +29,7 @@ import { useAnalytics } from "@/hooks/use-analytics";
 import { formatStars, formatRelativeTime } from "@/lib/format-utils";
 import { REGISTRY_TYPE_LABELS, REGISTRY_TYPE_ICONS } from "@/lib/registry-mappings";
 import { SubmitRegistryCard } from "@/components/submit-registry-dialog";
-import { DEMO_LINK_REL, demoHref, openPreviewWindow } from "@/lib/demo-link";
+import { demoHref, demoRel, openPreviewWindow } from "@/lib/demo-link";
 
 interface ResultClickData {
   result_type: "registry" | "item";
@@ -355,11 +355,10 @@ function ItemResults({
                 >
                   {/* noopener without noreferrer, on purpose: authors should
                       see that their visitors came from the directory. */}
-                  {/* eslint-disable-next-line react/jsx-no-target-blank */}
                   <a
                     href={demoHref(item.demo, "card_preview", affiliatesByName?.get(item.registry.name))}
                     target="_blank"
-                    rel={DEMO_LINK_REL}
+                    rel={demoRel(affiliatesByName?.get(item.registry.name))}
                     onClick={(event) => {
                       trackDemoClicked({ surface: "card", registry: item.registry.name });
                       openPreviewWindow(event);
