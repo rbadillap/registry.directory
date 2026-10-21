@@ -178,9 +178,7 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName, affi
             rel={affiliate ? "sponsored noopener" : "noopener noreferrer"}
             aria-label={`Visit ${registry.name} website`}
             onClick={() => {
-              analytics.trackRegistryVisit({
-                destination: "registry",
-              })
+              analytics.trackRegistryVisit({ sponsored: Boolean(affiliate) })
             }}
           >
             <ExternalLink className="h-4 w-4" />
@@ -200,9 +198,7 @@ export function ViewerHeader({ registry, currentCategory, selectedItemName, affi
               rel="noopener noreferrer"
               aria-label={`${registry.name} on GitHub`}
               onClick={() => {
-                analytics.trackRegistryVisit({
-                  destination: "repository",
-                })
+                analytics.trackRepositoryVisit()
               }}
             >
               <GitHubIcon className="h-4 w-4" aria-hidden="true" />

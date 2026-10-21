@@ -274,7 +274,7 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
       }
       sponsored={Boolean(affiliate)}
       itemLabel={initialItem?.title || initialItem?.name || ""}
-      onVisit={() => analytics.trackRegistryVisit({ destination: "registry" })}
+      onVisit={() => analytics.trackRegistryVisit({ sponsored: Boolean(affiliate) })}
       categoryHref={`${basePath}/${currentCategory}`}
       categoryLabel={REGISTRY_TYPE_LABELS[currentCategory] || currentCategory}
       onRetry={() => setAttempt((n) => n + 1)}

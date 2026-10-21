@@ -60,10 +60,8 @@ export function useAnalytics() {
     return {
       trackFileSelected: (p: { file_type: string }) =>
         trackEvent(ANALYTICS_EVENTS.FILE_SELECTED, { registry, file_type: p.file_type }),
-      trackCodeCopied: () =>
-        trackEvent(ANALYTICS_EVENTS.CODE_COPIED, { registry, item }),
-      trackInstallCopied: () =>
-        trackEvent(ANALYTICS_EVENTS.INSTALL_COPIED, { registry, item }),
+      trackCodeCopied: (p: { via: "button" | "selection" | "install" }) =>
+        trackEvent(ANALYTICS_EVENTS.CODE_COPIED, { registry, via: p.via }),
       trackShareClicked: (p: { share_method: ShareMethod }) =>
         trackEvent(ANALYTICS_EVENTS.SHARE_CLICKED, { share_method: p.share_method, registry }),
       trackAIClicked: (p: { ai_provider: AIProvider }) =>
@@ -72,8 +70,10 @@ export function useAnalytics() {
         trackEvent(ANALYTICS_EVENTS.PATH_COPIED, { registry, total_files: p.total_files }),
       trackMarkdownExported: (p: { export_method: ExportMethod }) =>
         trackEvent(ANALYTICS_EVENTS.MARKDOWN_EXPORTED, { export_method: p.export_method, registry }),
-      trackRegistryVisit: (p: { destination: "registry" | "repository" }) =>
-        trackEvent(ANALYTICS_EVENTS.REGISTRY_VISIT, { destination: p.destination, registry }),
+      trackRegistryVisit: (p: { sponsored: boolean }) =>
+        trackEvent(ANALYTICS_EVENTS.REGISTRY_VISIT, { registry, sponsored: p.sponsored }),
+      trackRepositoryVisit: () =>
+        trackEvent(ANALYTICS_EVENTS.REPOSITORY_VISIT, { registry }),
       trackMobileTabSwitched: (p: { to_tab: MobileTab; has_file_selected: boolean }) =>
         trackEvent(ANALYTICS_EVENTS.MOBILE_TAB_SWITCHED, p),
 

@@ -30,7 +30,6 @@ export const ANALYTICS_EVENTS = {
   // Core metrics
   FILE_SELECTED: "ide.file.selected",
   CODE_COPIED: "ide.code.copied",
-  INSTALL_COPIED: "ide.install.copied",
   SHARE_CLICKED: "ide.share.clicked",
 
   // Feature adoption
@@ -41,6 +40,7 @@ export const ANALYTICS_EVENTS = {
   PATH_COPIED: "ide.path.copied",
   MARKDOWN_EXPORTED: "ide.markdown.exported",
   REGISTRY_VISIT: "ide.registry.visit",
+  REPOSITORY_VISIT: "ide.repository.visit",
 
   // Home search
   HOME_SEARCH_PERFORMED: "home.search.performed",
@@ -60,8 +60,9 @@ type EventName = (typeof ANALYTICS_EVENTS)[keyof typeof ANALYTICS_EVENTS];
 // What each event sends: exactly two properties, never more.
 export interface EventProperties {
   "ide.file.selected": { registry: string | null; file_type: string };
-  "ide.code.copied": { registry: string | null; item: string | null };
-  "ide.install.copied": { registry: string | null; item: string | null };
+  // Every way code leaves the page: the viewer's copy button, a selection
+  // copied by hand from the code (most copies are), and the install command.
+  "ide.code.copied": { registry: string | null; via: "button" | "selection" | "install" };
   "ide.share.clicked": { share_method: ShareMethod; registry: string | null };
   "ide.ai.clicked": { ai_provider: AIProvider; registry: string | null };
   "ide.search.used": { search_query: string; results_count: number };
@@ -69,7 +70,10 @@ export interface EventProperties {
   "ide.mobile.tab_switched": { to_tab: MobileTab; has_file_selected: boolean };
   "ide.path.copied": { registry: string | null; total_files: number };
   "ide.markdown.exported": { export_method: ExportMethod; registry: string | null };
-  "ide.registry.visit": { destination: "registry" | "repository"; registry: string | null };
+  // The registry's own site; sponsored when the link is its referral link.
+  "ide.registry.visit": { registry: string | null; sponsored: boolean };
+  // Its GitHub repository, never a paid link.
+  "ide.repository.visit": { registry: string | null };
   "home.search.performed": { search_query: string; item_results_count: number };
   "home.search.result_clicked": { result_type: SearchResultType; result_position: number };
   "home.premium.toggled": { enabled: boolean; has_query: boolean };
