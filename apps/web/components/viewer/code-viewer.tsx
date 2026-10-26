@@ -192,8 +192,7 @@ export function CodeViewer({ file, selectedItem, sourceStatus = "ready" }: CodeV
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
 
-    // Track code copy
-    analytics.trackCodeCopied()
+    analytics.trackCodeCopied({ via: "button" })
   }
 
   return (
@@ -215,7 +214,18 @@ export function CodeViewer({ file, selectedItem, sourceStatus = "ready" }: CodeV
         </Button>
       </div>
 
-      <div className="flex-1 min-h-0">
+      {/* Most code leaves this page by being selected and copied by hand,
+          not through the button above; the copy event catches that too.
+          The button writes to the clipboard directly, which fires no copy
+          event, so the two are never counted twice. */}
+      <div
+        className="flex-1 min-h-0"
+        onCopy={() => {
+          if (window.getSelection()?.toString()) {
+            analytics.trackCodeCopied({ via: "selection" })
+          }
+        }}
+      >
         <ScrollArea className="h-full">
           {isLoading ? (
             <div className="p-3 md:p-4 text-sm text-muted-foreground">Loading...</div>

@@ -94,10 +94,18 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
   // Starts where the server leaves it: an item whose files have no contents is
   // waiting for them, and the markup says so. Defaulting to idle made the
   // first paint claim the item had no files, before anything had looked.
+  //
+  // An item the indexer found withheld (gated, gone or unverified) is not
+  // asked for at all: /r leaves it out of the catalog and answers 404, so
+  // the request could only cost a function invocation to learn what the
+  // page already knows. It starts, and stays, as not found.
+  const withheld = Boolean(itemResolution)
   const [sourceState, setSourceState] = useState<SourceState>(() =>
-    initialItem && !initialItem.files?.some((file) => file.content)
-      ? { status: "loading" }
-      : { status: "ready" }
+    withheld
+      ? { status: "not-found" }
+      : initialItem && !initialItem.files?.some((file) => file.content)
+        ? { status: "loading" }
+        : { status: "ready" }
   )
 
   // Bumped by "Try again": re-running the request below is the whole retry.
@@ -107,6 +115,10 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
     const name = initialItem?.name
     if (!name) {
       setSourceState({ status: "idle" })
+      return
+    }
+    if (withheld) {
+      setSourceState({ status: "not-found" })
       return
     }
     if (initialItem?.files?.some((file) => file.content)) {
@@ -181,7 +193,7 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
     return () => {
       controller.abort()
     }
-  }, [handle, initialItem, attempt])
+  }, [handle, initialItem, attempt, withheld])
 
   // Set initial selected file when component mounts or item changes
   useEffect(() => {
@@ -274,7 +286,7 @@ export function RegistryViewer({ registry, registryIndex, handle, categorySize, 
       }
       sponsored={Boolean(affiliate)}
       itemLabel={initialItem?.title || initialItem?.name || ""}
-      onVisit={() => analytics.trackRegistryVisit({ destination: "registry" })}
+      onVisit={() => analytics.trackRegistryVisit({ sponsored: Boolean(affiliate) })}
       categoryHref={`${basePath}/${currentCategory}`}
       categoryLabel={REGISTRY_TYPE_LABELS[currentCategory] || currentCategory}
       onRetry={() => setAttempt((n) => n + 1)}

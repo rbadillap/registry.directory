@@ -76,7 +76,7 @@ export function ItemBar({
             <CopyButton
               text={command}
               label="Copy install command"
-              onCopy={() => analytics.trackInstallCopied()}
+              onCopy={() => analytics.trackCodeCopied({ via: "install" })}
             />
           </div>
         )}
