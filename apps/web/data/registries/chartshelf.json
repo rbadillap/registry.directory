@@ -1,0 +1,30 @@
+{
+  "key": "chartshelf",
+  "entry": "Chartshelf",
+  "name": "chartshelf",
+  "homepage": "https://github.com/chartshelf/charts",
+  "indexUrl": "https://chartshelf-charts.vercel.app/r/registry.json",
+  "itemBase": "https://chartshelf-charts.vercel.app/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "calendar-heatmap",
+      "type": "registry:component",
+      "title": "Calendar Heatmap",
+      "description": "A calendar heatmap for shadcn/ui charts. Uses ChartConfig and your theme tokens. Light and dark mode, empty, loading, and error states, negative values, keyboard focus, and screen reader text.",
+      "registryDependencies": [
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "registry/calendar-heatmap/calendar-heatmap.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/calendar-heatmap/calendar-heatmap-utils.ts",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

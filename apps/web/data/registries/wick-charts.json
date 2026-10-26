@@ -1,0 +1,304 @@
+{
+  "key": "wick-charts",
+  "entry": "Wick Charts",
+  "name": "wick-charts",
+  "homepage": "https://wick-charts.eeff.io/",
+  "indexUrl": "https://wick-charts.eeff.io/r/registry.json",
+  "itemBase": "https://wick-charts.eeff.io/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "wick-theme",
+      "type": "registry:hook",
+      "title": "Wick Theme",
+      "description": "A hook that builds a Wick Charts theme from your shadcn/ui CSS variables and follows dark mode.",
+      "categories": [
+        "charts",
+        "theme"
+      ],
+      "dependencies": [
+        "@wick-charts/react@^0.8.4"
+      ],
+      "files": [
+        {
+          "path": "hooks/use-wick-theme.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "wick-chart",
+      "type": "registry:ui",
+      "title": "Wick Chart",
+      "description": "A canvas chart container, themed from your CSS variables and sized with classes. Put Wick Charts series and overlays inside.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "@wick-charts/react@^0.8.4"
+      ],
+      "registryDependencies": [
+        "https://wick-charts.eeff.io/r/wick-theme.json"
+      ],
+      "files": [
+        {
+          "path": "ui/wick-chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-live",
+      "type": "registry:block",
+      "title": "Live Line Chart",
+      "description": "A line chart that streams a new point every second, with an animated live value in the card header.",
+      "categories": [
+        "charts",
+        "dashboard"
+      ],
+      "dependencies": [
+        "@wick-charts/react@^0.8.4"
+      ],
+      "registryDependencies": [
+        "card",
+        "https://wick-charts.eeff.io/r/wick-chart.json"
+      ],
+      "files": [
+        {
+          "path": "blocks/chart-line-live.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chart-candlestick",
+      "type": "registry:block",
+      "title": "Candlestick Chart",
+      "description": "Live OHLC candles in your chart colors, with an OHLC info bar, a crosshair and a price badge.",
+      "categories": [
+        "charts",
+        "finance"
+      ],
+      "dependencies": [
+        "@wick-charts/react@^0.8.4"
+      ],
+      "registryDependencies": [
+        "card",
+        "https://wick-charts.eeff.io/r/wick-chart.json"
+      ],
+      "files": [
+        {
+          "path": "blocks/chart-candlestick.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chart-order-book",
+      "type": "registry:block",
+      "title": "Order Book",
+      "description": "Cumulative bid and ask depth around the mid price in your chart colors, updated every second.",
+      "categories": [
+        "charts",
+        "finance"
+      ],
+      "dependencies": [
+        "@wick-charts/react@^0.8.4"
+      ],
+      "registryDependencies": [
+        "card",
+        "https://wick-charts.eeff.io/r/wick-chart.json"
+      ],
+      "files": [
+        {
+          "path": "blocks/chart-order-book.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chart-sparkline-cards",
+      "type": "registry:block",
+      "title": "Sparkline Cards",
+      "description": "Three KPI cards with a live value, a change badge and an edge-to-edge sparkline.",
+      "categories": [
+        "charts",
+        "dashboard"
+      ],
+      "dependencies": [
+        "@wick-charts/react@^0.8.4"
+      ],
+      "registryDependencies": [
+        "card",
+        "https://wick-charts.eeff.io/r/wick-chart.json"
+      ],
+      "files": [
+        {
+          "path": "blocks/chart-sparkline-cards.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar-grouped",
+      "type": "registry:block",
+      "title": "Grouped Bar Chart",
+      "description": "Two series side by side on a category axis, with a tooltip and a legend that toggles them.",
+      "categories": [
+        "charts",
+        "dashboard"
+      ],
+      "dependencies": [
+        "@wick-charts/react@^0.8.4"
+      ],
+      "registryDependencies": [
+        "card",
+        "https://wick-charts.eeff.io/r/wick-chart.json"
+      ],
+      "files": [
+        {
+          "path": "blocks/chart-bar-grouped.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie-donut",
+      "type": "registry:block",
+      "title": "Donut Chart",
+      "description": "A donut with an animated total in the center; the slices resize as new data arrives.",
+      "categories": [
+        "charts",
+        "dashboard"
+      ],
+      "dependencies": [
+        "@wick-charts/react@^0.8.4"
+      ],
+      "registryDependencies": [
+        "card",
+        "https://wick-charts.eeff.io/r/wick-chart.json"
+      ],
+      "files": [
+        {
+          "path": "blocks/chart-pie-donut.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chart-band-latency",
+      "type": "registry:block",
+      "title": "Band Chart",
+      "description": "Live latency percentiles: a median line over p25–p75 and p5–p95 bands.",
+      "categories": [
+        "charts",
+        "monitoring"
+      ],
+      "dependencies": [
+        "@wick-charts/react@^0.8.4"
+      ],
+      "registryDependencies": [
+        "card",
+        "https://wick-charts.eeff.io/r/wick-chart.json"
+      ],
+      "files": [
+        {
+          "path": "blocks/chart-band-latency.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chart-area-stacked",
+      "type": "registry:block",
+      "title": "Stacked Area Chart",
+      "description": "Two series stacked over three months, with a tooltip and a legend that toggles them.",
+      "categories": [
+        "charts",
+        "dashboard"
+      ],
+      "dependencies": [
+        "@wick-charts/react@^0.8.4"
+      ],
+      "registryDependencies": [
+        "card",
+        "https://wick-charts.eeff.io/r/wick-chart.json"
+      ],
+      "files": [
+        {
+          "path": "blocks/chart-area-stacked.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chart-heatmap",
+      "type": "registry:block",
+      "title": "Heatmap",
+      "description": "Sessions by weekday and hour on a ramp from your theme, with a cell tooltip.",
+      "categories": [
+        "charts",
+        "dashboard"
+      ],
+      "dependencies": [
+        "@wick-charts/react@^0.8.4"
+      ],
+      "registryDependencies": [
+        "card",
+        "https://wick-charts.eeff.io/r/wick-chart.json"
+      ],
+      "files": [
+        {
+          "path": "blocks/chart-heatmap.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-annotations",
+      "type": "registry:block",
+      "title": "Annotated Line Chart",
+      "description": "An error rate with an SLO line, a shaded incident window and a deploy marker.",
+      "categories": [
+        "charts",
+        "monitoring"
+      ],
+      "dependencies": [
+        "@wick-charts/react@^0.8.4"
+      ],
+      "registryDependencies": [
+        "card",
+        "https://wick-charts.eeff.io/r/wick-chart.json"
+      ],
+      "files": [
+        {
+          "path": "blocks/chart-line-annotations.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-navigator",
+      "type": "registry:block",
+      "title": "Line Chart with Navigator",
+      "description": "A year of daily closes with a navigator strip to pick the visible window.",
+      "categories": [
+        "charts",
+        "finance"
+      ],
+      "dependencies": [
+        "@wick-charts/react@^0.8.4"
+      ],
+      "registryDependencies": [
+        "card",
+        "https://wick-charts.eeff.io/r/wick-chart.json"
+      ],
+      "files": [
+        {
+          "path": "blocks/chart-line-navigator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2404 @@
+{
+  "key": "glassyui",
+  "entry": "Glassy UI",
+  "name": "glassyui",
+  "homepage": "https://glassyui.com",
+  "indexUrl": "https://glassyui.com/r/registry.json",
+  "itemBase": "https://glassyui.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "glass-provider",
+      "type": "registry:ui",
+      "title": "Glass Provider",
+      "description": "Sets the theme and accessibility preferences that every Glassy UI component follows.",
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        }
+      ]
+    },
+    {
+      "name": "glass-surface",
+      "type": "registry:ui",
+      "title": "Glass Surface",
+      "description": "The glass material as a plain div, for building your own glass components.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-button",
+      "type": "registry:ui",
+      "title": "Glass Button",
+      "description": "A glass button with four variants, three sizes and an asChild mode for links.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-button.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-button.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-panel",
+      "type": "registry:ui",
+      "title": "Glass Panel",
+      "description": "A glass container in a panel, card or pill shape.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-header",
+      "type": "registry:ui",
+      "title": "Glass Header",
+      "description": "A floating glass header with a brand, navigation links, actions and a compact menu.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-header.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-header.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/liquid-motion.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/liquid-motion.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/header.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/header.css"
+        }
+      ]
+    },
+    {
+      "name": "glass-input",
+      "type": "registry:ui",
+      "title": "Glass Input",
+      "description": "A recessed glass text field with an optional label and hint.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-input.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-checkbox",
+      "type": "registry:ui",
+      "title": "Glass Checkbox",
+      "description": "A glass checkbox with an optional label, description and indeterminate state.",
+      "dependencies": [
+        "@radix-ui/react-checkbox",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-radio-group",
+      "type": "registry:ui",
+      "title": "Glass Radio Group",
+      "description": "A group of glass radio buttons where exactly one option is chosen.",
+      "dependencies": [
+        "@radix-ui/react-radio-group",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-radio-group.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-textarea",
+      "type": "registry:ui",
+      "title": "Glass Textarea",
+      "description": "A recessed glass text area that can grow with its text.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-textarea.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-select",
+      "type": "registry:ui",
+      "title": "Glass Select",
+      "description": "A select field whose options open on a raised glass panel.",
+      "dependencies": [
+        "clsx",
+        "@radix-ui/react-select"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui/glass-select.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-tabs",
+      "type": "registry:ui",
+      "title": "Glass Tabs",
+      "description": "Tabs on a glass pill, with one indicator that moves to the selected tab.",
+      "dependencies": [
+        "clsx",
+        "@radix-ui/react-tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui/glass-tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-tabs.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/liquid-motion.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/liquid-motion.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-dialog",
+      "type": "registry:ui",
+      "title": "Glass Dialog",
+      "description": "A modal glass dialog with an overlay, a focus trap and a close button.",
+      "dependencies": [
+        "clsx",
+        "@radix-ui/react-dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui/glass-dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-popover",
+      "type": "registry:ui",
+      "title": "Glass Popover",
+      "description": "A glass popover anchored to the control that opens it.",
+      "dependencies": [
+        "clsx",
+        "@radix-ui/react-popover"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui/glass-popover.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-tooltip",
+      "type": "registry:ui",
+      "title": "Glass Tooltip",
+      "description": "A small glass label that appears on hover and keyboard focus.",
+      "dependencies": [
+        "clsx",
+        "@radix-ui/react-tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui/glass-tooltip.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-toast",
+      "type": "registry:ui",
+      "title": "Glass Toast",
+      "description": "A glass notification for brief updates that screen readers announce.",
+      "dependencies": [
+        "clsx",
+        "@radix-ui/react-toast"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui/glass-toast.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-accordion",
+      "type": "registry:ui",
+      "title": "Glass Accordion",
+      "description": "Collapsible glass sections that open one at a time or several at once.",
+      "dependencies": [
+        "clsx",
+        "@radix-ui/react-accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui/glass-accordion.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-switch",
+      "type": "registry:ui",
+      "title": "Glass Switch",
+      "description": "A glass on/off switch in two sizes.",
+      "dependencies": [
+        "@radix-ui/react-switch",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-switch.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-switch.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/liquid-motion.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/liquid-motion.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-slider",
+      "type": "registry:ui",
+      "title": "Glass Slider",
+      "description": "A glass slider for one value or a range, with one named thumb per value.",
+      "dependencies": [
+        "@radix-ui/react-slider",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-slider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-slider.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/liquid-motion.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/liquid-motion.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-segmented-control",
+      "type": "registry:ui",
+      "title": "Glass Segmented Control",
+      "description": "A single-choice glass control for two to six options, with a draggable selection.",
+      "dependencies": [
+        "clsx",
+        "@radix-ui/react-radio-group"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui/glass-segmented-control.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-segmented-control.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/liquid-motion.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/liquid-motion.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-badge",
+      "type": "registry:ui",
+      "title": "Glass Badge",
+      "description": "A small tinted glass label for status, counts and categories.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-badge.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-progress",
+      "type": "registry:ui",
+      "title": "Glass Progress",
+      "description": "A glass progress bar for known values, with a sweeping state for unknown lengths.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-progress.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-spinner",
+      "type": "registry:ui",
+      "title": "Glass Spinner",
+      "description": "A small spinning ring that tells screen readers something is loading.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-spinner.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-skeleton",
+      "type": "registry:ui",
+      "title": "Glass Skeleton",
+      "description": "A glass placeholder block, circle or set of text lines shown while content loads.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-skeleton.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-alert",
+      "type": "registry:ui",
+      "title": "Glass Alert",
+      "description": "A tinted glass message with four tones, an icon and an optional dismiss button.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-alert.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-avatar",
+      "type": "registry:ui",
+      "title": "Glass Avatar",
+      "description": "A round photo that falls back to initials, with a presence dot and stacked groups.",
+      "dependencies": [
+        "@radix-ui/react-avatar",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-kbd",
+      "type": "registry:ui",
+      "title": "Glass Kbd",
+      "description": "A keycap for showing keyboard shortcuts in menus, hints and docs.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-kbd.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-kbd.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-scroll-area",
+      "type": "registry:ui",
+      "title": "Glass Scroll Area",
+      "description": "A scroll container with a thin glass scrollbar that shows on hover and while scrolling.",
+      "dependencies": [
+        "@radix-ui/react-scroll-area",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-scroll-area.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-dock",
+      "type": "registry:ui",
+      "title": "Glass Dock",
+      "description": "A row of app icons on a glass shelf, with labels on hover and focus.",
+      "dependencies": [
+        "clsx",
+        "@radix-ui/react-slot"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-dock.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-dock.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-breadcrumb",
+      "type": "registry:ui",
+      "title": "Glass Breadcrumb",
+      "description": "A breadcrumb trail to the current page, with an ellipsis for folded steps.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-breadcrumb.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-pagination",
+      "type": "registry:ui",
+      "title": "Glass Pagination",
+      "description": "Numbered page buttons with previous and next, folding long runs into an ellipsis.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-pagination.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-sheet",
+      "type": "registry:ui",
+      "title": "Glass Sheet",
+      "description": "A modal glass panel that slides in from a screen edge; bottom sheets drag down to close.",
+      "dependencies": [
+        "clsx",
+        "@radix-ui/react-dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui/glass-sheet.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-menu",
+      "type": "registry:ui",
+      "title": "Glass Menu",
+      "description": "A glass dropdown menu with shortcuts, checkbox and radio items, and submenus.",
+      "dependencies": [
+        "clsx",
+        "@radix-ui/react-dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui/glass-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-command",
+      "type": "registry:ui",
+      "title": "Glass Command",
+      "description": "A searchable command list that filters as you type, alone or in a dialog.",
+      "dependencies": [
+        "clsx",
+        "@radix-ui/react-dialog",
+        "cmdk"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui/glass-command.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-command.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-lens",
+      "type": "registry:ui",
+      "title": "Glass Lens",
+      "description": "A draggable magnifier with a glass rim that bends the content beneath it.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/use-refraction-filter.tsx",
+          "type": "registry:hook",
+          "target": "components/glassyui/lib/use-refraction-filter.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/glass-lens.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-lens.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-scene",
+      "type": "registry:ui",
+      "title": "Glass Scene",
+      "description": "A WebGL2 canvas that refracts a backdrop image through the glass components inside it.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui/liquid-filters.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/liquid-filters.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/liquid.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/liquid.css"
+        },
+        {
+          "path": "registry/glassyui/glass-scene.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-scene.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/merge-refs.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/merge-refs.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-renderer.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-renderer.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/liquid-motion.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/liquid-motion.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-logo-reveal",
+      "type": "registry:ui",
+      "title": "Glass Logo Reveal",
+      "description": "A WebGL2 logo sting: a ball of thick glass swells around your mark, squares into a glass tile and clears, leaving the real mark.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-logo-reveal.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-logo-reveal.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/logo-reveal-renderer.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/logo-reveal-renderer.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/logo-reveal.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/logo-reveal.css"
+        }
+      ]
+    },
+    {
+      "name": "glass-laptop",
+      "type": "registry:ui",
+      "title": "Glass Laptop",
+      "description": "A CSS 3D laptop mockup whose screen shows your screenshot or React content.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-laptop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-laptop.tsx"
+        },
+        {
+          "path": "registry/glassyui/styles/laptop.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/laptop.css"
+        }
+      ]
+    },
+    {
+      "name": "glass-phone-duo",
+      "type": "registry:ui",
+      "title": "Glass Phone Duo",
+      "description": "A WebGL2 folding phone mockup with your screenshots on both displays.",
+      "dependencies": [
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui/glass-phone-duo.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-phone-duo.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/phone-duo-renderer.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/phone-duo-renderer.ts"
+        },
+        {
+          "path": "registry/glassyui/styles/phone-duo.css",
+          "type": "registry:file",
+          "target": "components/glassyui/styles/phone-duo.css"
+        }
+      ]
+    },
+    {
+      "name": "glassy-theme",
+      "type": "registry:theme",
+      "title": "Glassy UI theme for shadcn/ui",
+      "description": "Gives stock shadcn/ui components the Glassy UI look, tinted from your own palette, with one command.",
+      "cssVars": {
+        "theme": {
+          "ease-glassy-spring": "linear(0, 0.033, 0.115, 0.225, 0.348, 0.47, 0.586, 0.689, 0.778, 0.852, 0.91, 0.955, 0.989, 1.012, 1.026, 1.035, 1.038, 1.038, 1.036, 1.032, 1.027, 1.023, 1.018, 1.014, 1.01, 1.007, 1.004, 1.002, 1)",
+          "ease-glassy-out": "cubic-bezier(0.32, 0.72, 0, 1)"
+        },
+        "light": {
+          "glassy-tint": "97%",
+          "glassy-tint-depth": "0.24",
+          "glassy-rim-split": "0.28",
+          "glassy-pill-lift": "0%",
+          "glassy-surface": "64%",
+          "glassy-field": "58%",
+          "glassy-frost": "14px",
+          "glassy-lens-frost": "6px",
+          "glassy-float-frost": "22px",
+          "glassy-saturate": "1.6",
+          "glassy-rim": "0.82",
+          "glassy-shade": "0.24",
+          "glassy-sheen": "0.22",
+          "glassy-pane-sheen": "0.22",
+          "glassy-shadow": "24 24 27"
+        },
+        "dark": {
+          "glassy-tint": "97%",
+          "glassy-tint-depth": "0.2",
+          "glassy-rim-split": "0.28",
+          "glassy-pill-lift": "18%",
+          "glassy-surface": "58%",
+          "glassy-field": "46%",
+          "glassy-frost": "16px",
+          "glassy-lens-frost": "6px",
+          "glassy-float-frost": "26px",
+          "glassy-saturate": "1.7",
+          "glassy-rim": "0.3",
+          "glassy-shade": "0.55",
+          "glassy-sheen": "0.08",
+          "glassy-pane-sheen": "0",
+          "glassy-shadow": "0 0 0"
+        }
+      }
+    },
+    {
+      "name": "glassy-ui-new-york",
+      "type": "registry:ui",
+      "title": "Glassy UI components for shadcn/ui (new-york)",
+      "description": "Replaces shadcn/ui's new-york components (Radix (radix-ui)) with Glassy UI versions that keep their API, so your imports stay as they are.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "cssVars": {
+        "theme": {
+          "ease-glassy-spring": "linear(0, 0.033, 0.115, 0.225, 0.348, 0.47, 0.586, 0.689, 0.778, 0.852, 0.91, 0.955, 0.989, 1.012, 1.026, 1.035, 1.038, 1.038, 1.036, 1.032, 1.027, 1.023, 1.018, 1.014, 1.01, 1.007, 1.004, 1.002, 1)",
+          "ease-glassy-out": "cubic-bezier(0.32, 0.72, 0, 1)"
+        },
+        "light": {
+          "glassy-glass": "255 255 255",
+          "glassy-edge": "0 0 0",
+          "glassy-edge-alpha": "0.14",
+          "glassy-control-alpha": "0.72",
+          "glassy-control-hover-alpha": "0.95",
+          "glassy-control-frost": "blur(16px) brightness(1.06) contrast(1.02) saturate(1.8)",
+          "glassy-control-depth": "inset 0 1px 2px rgb(0 0 0 / 0.08), inset 0 -1px 0 rgb(255 255 255 / 0.8)",
+          "glassy-bevel": "inset 0 0 12px -4px rgb(255 255 255 / 0.14), inset 1.5px 2.5px 1px -2px rgb(255 255 255 / 0.7), inset -1.5px -2px 1px -2px rgb(255 255 255 / 0.55), inset -0.3px -1px 4px 0 rgb(0 0 0 / 0.08), inset -1.5px 2.5px 0 -2px rgb(0 0 0 / 0.114), inset 0 3px 4px -2px rgb(0 0 0 / 0.114), inset 2px 0 3px -1px rgb(80 160 255 / 0.05), inset -2px 0 3px -1px rgb(255 90 150 / 0.05), inset 0 0.5px 3px 0 rgb(255 255 255 / 0.11)",
+          "glassy-specular": "radial-gradient(circle at 50% 30%, rgb(255 255 255 / 0.13), transparent 42%), linear-gradient(to right bottom, rgb(255 255 255 / 0.7) 0%, rgb(255 255 255 / 0.35) 32%, rgb(255 255 255 / 0.35) 68%, rgb(255 255 255 / 0.55) 100%)",
+          "glassy-gloss": "radial-gradient(circle at 50% 30%, rgb(255 255 255 / 0.02), transparent 65%), linear-gradient(rgb(255 255 255 / 0.08), transparent 45%)",
+          "glassy-glass-alpha": "0.08",
+          "glassy-glass-frost": "blur(8px) brightness(1.06) contrast(1.02) saturate(1.8)",
+          "glassy-panel-frost": "blur(14px) brightness(1.06) contrast(1.02) saturate(1.8)",
+          "glassy-raised": "0 1px 2px rgb(0 0 0 / 0.06), 0 8px 24px -6px rgb(0 0 0 / 0.14)",
+          "glassy-floating": "0 2px 6px rgb(0 0 0 / 0.06), 0 28px 56px -18px rgb(0 0 0 / 0.26)",
+          "glassy-lift": "0 1.8px 2px -1px rgb(52 62 84 / 0.18), 0 6.7px 10px -5px rgb(52 62 84 / 0.2)",
+          "glassy-bubble": "linear-gradient(rgb(255 255 255 / 0.9), rgb(255 255 255 / 0.82))",
+          "glassy-bubble-depth": "inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 3px rgb(0 0 0 / 0.1), 0 4px 12px -4px rgb(0 0 0 / 0.16)",
+          "glassy-track-alpha": "0.2",
+          "glassy-knob-depth": "0 2px 6px rgb(28 28 30 / 0.16), 0 1px 2px rgb(28 28 30 / 0.1), 0 0 0 0.5px rgb(28 28 30 / 0.05)",
+          "glassy-scrim-alpha": "0.16",
+          "glassy-focus": "102 102 106",
+          "glassy-lens-saturation": "1.5",
+          "glassy-danger": "var(--destructive)",
+          "glassy-slab": "80%",
+          "glassy-slab-frost": "3px",
+          "glassy-slab-brightness": "1",
+          "glassy-slab-rim-brightness": "1"
+        },
+        "dark": {
+          "glassy-glass": "245 245 247",
+          "glassy-edge": "245 245 247",
+          "glassy-edge-alpha": "0.22",
+          "glassy-control-alpha": "0.08",
+          "glassy-control-hover-alpha": "0.14",
+          "glassy-control-frost": "blur(16px) brightness(1) contrast(0.9) saturate(1.8)",
+          "glassy-control-depth": "inset 0 1px 2px rgb(0 0 0 / 0.24), inset 0 -1px 0 rgb(255 255 255 / 0.06)",
+          "glassy-bevel": "inset 0 0 12px -4px rgb(255 255 255 / 0.06), inset 1.5px 2.5px 1px -2px rgb(255 255 255 / 0.294), inset -1.5px -2px 1px -2px rgb(255 255 255 / 0.23), inset -0.3px -1px 4px 0 rgb(0 0 0 / 0.14), inset -1.5px 2.5px 0 -2px rgb(0 0 0 / 0.196), inset 0 3px 4px -2px rgb(0 0 0 / 0.196), inset 2px 0 3px -1px rgb(80 160 255 / 0.06), inset -2px 0 3px -1px rgb(255 90 150 / 0.06), inset 0 0 3px 0 rgb(255 255 255 / 0.05)",
+          "glassy-specular": "linear-gradient(to right bottom, rgb(255 255 255 / 0.45) 0%, rgb(255 255 255 / 0.07) 32%, rgb(255 255 255 / 0.07) 68%, rgb(255 255 255 / 0.22) 100%)",
+          "glassy-gloss": "linear-gradient(rgb(255 255 255 / 0.05), transparent 45%)",
+          "glassy-glass-alpha": "0.08",
+          "glassy-glass-frost": "blur(8px) brightness(1) contrast(0.9) saturate(1.8)",
+          "glassy-panel-frost": "blur(14px) brightness(1) contrast(0.9) saturate(1.8)",
+          "glassy-raised": "0 1px 2px rgb(0 0 0 / 0.18), 0 8px 24px -4px rgb(0 0 0 / 0.28)",
+          "glassy-floating": "0 2px 6px rgb(0 0 0 / 0.2), 0 30px 60px -18px rgb(0 0 0 / 0.55)",
+          "glassy-lift": "0 1.8px 2px -1px rgb(0 0 0 / 0.32), 0 6.7px 10px -5px rgb(0 0 0 / 0.36)",
+          "glassy-bubble": "linear-gradient(rgb(255 255 255 / 0.2), rgb(255 255 255 / 0.12))",
+          "glassy-bubble-depth": "inset 0 1px 0 rgb(255 255 255 / 0.22), inset 0 -1px 0 rgb(0 0 0 / 0.12), 0 1px 3px rgb(0 0 0 / 0.24), 0 4px 12px -4px rgb(0 0 0 / 0.4)",
+          "glassy-track-alpha": "0.36",
+          "glassy-knob-depth": "0 2px 6px rgb(28 28 30 / 0.16), 0 1px 2px rgb(28 28 30 / 0.1), 0 0 0 0.5px rgb(28 28 30 / 0.05)",
+          "glassy-scrim-alpha": "0.45",
+          "glassy-focus": "184 184 190",
+          "glassy-lens-saturation": "1.5",
+          "glassy-danger": "color-mix(in oklab, var(--destructive) 60%, var(--background))",
+          "glassy-slab": "30%",
+          "glassy-slab-frost": "3px",
+          "glassy-slab-brightness": "0.38",
+          "glassy-slab-rim-brightness": "0.46"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/glassyui/glassy-engine.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glassy-engine.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/glassy-button-root.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glassy-button-root.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/alert.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/badge.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/card.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/checkbox.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dialog.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dropdown-menu.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/popover.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/popover.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/radio-group.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/select.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/select.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/sheet.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sheet.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/slider.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/slider.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/switch.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/switch.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tabs.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/new-york/textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glassy-ui-base-nova",
+      "type": "registry:ui",
+      "title": "Glassy UI components for shadcn/ui (base-nova)",
+      "description": "Replaces shadcn/ui's base-nova components (Base UI (@base-ui/react)) with Glassy UI versions that keep their API, so your imports stay as they are.",
+      "cssVars": {
+        "theme": {
+          "ease-glassy-spring": "linear(0, 0.033, 0.115, 0.225, 0.348, 0.47, 0.586, 0.689, 0.778, 0.852, 0.91, 0.955, 0.989, 1.012, 1.026, 1.035, 1.038, 1.038, 1.036, 1.032, 1.027, 1.023, 1.018, 1.014, 1.01, 1.007, 1.004, 1.002, 1)",
+          "ease-glassy-out": "cubic-bezier(0.32, 0.72, 0, 1)"
+        },
+        "light": {
+          "glassy-glass": "255 255 255",
+          "glassy-edge": "0 0 0",
+          "glassy-edge-alpha": "0.14",
+          "glassy-control-alpha": "0.72",
+          "glassy-control-hover-alpha": "0.95",
+          "glassy-control-frost": "blur(16px) brightness(1.06) contrast(1.02) saturate(1.8)",
+          "glassy-control-depth": "inset 0 1px 2px rgb(0 0 0 / 0.08), inset 0 -1px 0 rgb(255 255 255 / 0.8)",
+          "glassy-bevel": "inset 0 0 12px -4px rgb(255 255 255 / 0.14), inset 1.5px 2.5px 1px -2px rgb(255 255 255 / 0.7), inset -1.5px -2px 1px -2px rgb(255 255 255 / 0.55), inset -0.3px -1px 4px 0 rgb(0 0 0 / 0.08), inset -1.5px 2.5px 0 -2px rgb(0 0 0 / 0.114), inset 0 3px 4px -2px rgb(0 0 0 / 0.114), inset 2px 0 3px -1px rgb(80 160 255 / 0.05), inset -2px 0 3px -1px rgb(255 90 150 / 0.05), inset 0 0.5px 3px 0 rgb(255 255 255 / 0.11)",
+          "glassy-specular": "radial-gradient(circle at 50% 30%, rgb(255 255 255 / 0.13), transparent 42%), linear-gradient(to right bottom, rgb(255 255 255 / 0.7) 0%, rgb(255 255 255 / 0.35) 32%, rgb(255 255 255 / 0.35) 68%, rgb(255 255 255 / 0.55) 100%)",
+          "glassy-gloss": "radial-gradient(circle at 50% 30%, rgb(255 255 255 / 0.02), transparent 65%), linear-gradient(rgb(255 255 255 / 0.08), transparent 45%)",
+          "glassy-glass-alpha": "0.08",
+          "glassy-glass-frost": "blur(8px) brightness(1.06) contrast(1.02) saturate(1.8)",
+          "glassy-panel-frost": "blur(14px) brightness(1.06) contrast(1.02) saturate(1.8)",
+          "glassy-raised": "0 1px 2px rgb(0 0 0 / 0.06), 0 8px 24px -6px rgb(0 0 0 / 0.14)",
+          "glassy-floating": "0 2px 6px rgb(0 0 0 / 0.06), 0 28px 56px -18px rgb(0 0 0 / 0.26)",
+          "glassy-lift": "0 1.8px 2px -1px rgb(52 62 84 / 0.18), 0 6.7px 10px -5px rgb(52 62 84 / 0.2)",
+          "glassy-bubble": "linear-gradient(rgb(255 255 255 / 0.9), rgb(255 255 255 / 0.82))",
+          "glassy-bubble-depth": "inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 3px rgb(0 0 0 / 0.1), 0 4px 12px -4px rgb(0 0 0 / 0.16)",
+          "glassy-track-alpha": "0.2",
+          "glassy-knob-depth": "0 2px 6px rgb(28 28 30 / 0.16), 0 1px 2px rgb(28 28 30 / 0.1), 0 0 0 0.5px rgb(28 28 30 / 0.05)",
+          "glassy-scrim-alpha": "0.16",
+          "glassy-focus": "102 102 106",
+          "glassy-lens-saturation": "1.5",
+          "glassy-danger": "var(--destructive)",
+          "glassy-slab": "80%",
+          "glassy-slab-frost": "3px",
+          "glassy-slab-brightness": "1",
+          "glassy-slab-rim-brightness": "1"
+        },
+        "dark": {
+          "glassy-glass": "245 245 247",
+          "glassy-edge": "245 245 247",
+          "glassy-edge-alpha": "0.22",
+          "glassy-control-alpha": "0.08",
+          "glassy-control-hover-alpha": "0.14",
+          "glassy-control-frost": "blur(16px) brightness(1) contrast(0.9) saturate(1.8)",
+          "glassy-control-depth": "inset 0 1px 2px rgb(0 0 0 / 0.24), inset 0 -1px 0 rgb(255 255 255 / 0.06)",
+          "glassy-bevel": "inset 0 0 12px -4px rgb(255 255 255 / 0.06), inset 1.5px 2.5px 1px -2px rgb(255 255 255 / 0.294), inset -1.5px -2px 1px -2px rgb(255 255 255 / 0.23), inset -0.3px -1px 4px 0 rgb(0 0 0 / 0.14), inset -1.5px 2.5px 0 -2px rgb(0 0 0 / 0.196), inset 0 3px 4px -2px rgb(0 0 0 / 0.196), inset 2px 0 3px -1px rgb(80 160 255 / 0.06), inset -2px 0 3px -1px rgb(255 90 150 / 0.06), inset 0 0 3px 0 rgb(255 255 255 / 0.05)",
+          "glassy-specular": "linear-gradient(to right bottom, rgb(255 255 255 / 0.45) 0%, rgb(255 255 255 / 0.07) 32%, rgb(255 255 255 / 0.07) 68%, rgb(255 255 255 / 0.22) 100%)",
+          "glassy-gloss": "linear-gradient(rgb(255 255 255 / 0.05), transparent 45%)",
+          "glassy-glass-alpha": "0.08",
+          "glassy-glass-frost": "blur(8px) brightness(1) contrast(0.9) saturate(1.8)",
+          "glassy-panel-frost": "blur(14px) brightness(1) contrast(0.9) saturate(1.8)",
+          "glassy-raised": "0 1px 2px rgb(0 0 0 / 0.18), 0 8px 24px -4px rgb(0 0 0 / 0.28)",
+          "glassy-floating": "0 2px 6px rgb(0 0 0 / 0.2), 0 30px 60px -18px rgb(0 0 0 / 0.55)",
+          "glassy-lift": "0 1.8px 2px -1px rgb(0 0 0 / 0.32), 0 6.7px 10px -5px rgb(0 0 0 / 0.36)",
+          "glassy-bubble": "linear-gradient(rgb(255 255 255 / 0.2), rgb(255 255 255 / 0.12))",
+          "glassy-bubble-depth": "inset 0 1px 0 rgb(255 255 255 / 0.22), inset 0 -1px 0 rgb(0 0 0 / 0.12), 0 1px 3px rgb(0 0 0 / 0.24), 0 4px 12px -4px rgb(0 0 0 / 0.4)",
+          "glassy-track-alpha": "0.36",
+          "glassy-knob-depth": "0 2px 6px rgb(28 28 30 / 0.16), 0 1px 2px rgb(28 28 30 / 0.1), 0 0 0 0.5px rgb(28 28 30 / 0.05)",
+          "glassy-scrim-alpha": "0.45",
+          "glassy-focus": "184 184 190",
+          "glassy-lens-saturation": "1.5",
+          "glassy-danger": "color-mix(in oklab, var(--destructive) 60%, var(--background))",
+          "glassy-slab": "30%",
+          "glassy-slab-frost": "3px",
+          "glassy-slab-brightness": "0.38",
+          "glassy-slab-rim-brightness": "0.46"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/glassyui/glassy-engine.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glassy-engine.tsx"
+        },
+        {
+          "path": "registry/glassyui/lib/refraction-map.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/refraction-map.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/slab-optics.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/slab-optics.ts"
+        },
+        {
+          "path": "registry/glassyui/lib/scene-context.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/scene-context.ts"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/glassy-button-root.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glassy-button-root.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/alert.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/badge.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/card.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/checkbox.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dialog.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dropdown-menu.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/popover.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/popover.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/radio-group.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/select.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/select.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/sheet.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sheet.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/slider.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/slider.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/switch.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/switch.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tabs.tsx"
+        },
+        {
+          "path": "registry/glassyui-shadcn/base-nova/textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/textarea.tsx"
+        }
+      ]
+    }
+  ]
+}

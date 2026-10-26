@@ -1,0 +1,576 @@
+{
+  "key": "illos-dev",
+  "entry": "Illos.dev",
+  "name": "illos",
+  "homepage": "https://illos.dev",
+  "indexUrl": "https://illos.dev/r/registry.json",
+  "itemBase": "https://illos.dev/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "vector-search",
+      "type": "registry:component",
+      "title": "Vector search",
+      "description": "a query lands among your vectors, and the nearest cluster lights up with its score."
+    },
+    {
+      "name": "context-window",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Context window",
+      "description": "instructions, history and the new message fill the window, and the rest is room to spare."
+    },
+    {
+      "name": "rate-limit",
+      "type": "registry:component",
+      "title": "Rate limiting",
+      "description": "traffic runs under the limit, and the burst above it is refused."
+    },
+    {
+      "name": "agent-memory",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Agent memory",
+      "description": "new memories churn in short-term, then sink and settle into long-term."
+    },
+    {
+      "name": "streaming-tokens",
+      "type": "registry:component",
+      "title": "Streaming tokens",
+      "description": "the answer streams in chunks, and the response writes itself out line by line."
+    },
+    {
+      "name": "cache-layer",
+      "type": "registry:component",
+      "title": "Cache layer",
+      "description": "a hit comes straight back from the cache, and a miss goes on to the database."
+    },
+    {
+      "name": "load-balancer",
+      "type": "registry:component",
+      "title": "Load balancer",
+      "description": "traffic comes in one door, and the balancer spreads it across the servers in turn."
+    },
+    {
+      "name": "autoscaling",
+      "type": "registry:component",
+      "title": "Autoscaling",
+      "description": "as load rises new instances bud off it, and as it falls they fold back in."
+    },
+    {
+      "name": "cdn-cache",
+      "type": "registry:component",
+      "title": "CDN cache",
+      "description": "content waits at edges near your users, so each request is answered close by."
+    },
+    {
+      "name": "data-pipeline",
+      "type": "registry:component",
+      "title": "Data pipeline",
+      "description": "raw data flows in messy and leaves clean, combed calmer at every stage."
+    },
+    {
+      "name": "realtime-sync",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Realtime sync",
+      "description": "a change in one client shows up in every other one moments later."
+    },
+    {
+      "name": "sharding",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Sharding",
+      "description": "one mass of data splits into four even shards, each lit in turn by its traffic."
+    },
+    {
+      "name": "canary-rollout",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Canary rollout",
+      "description": "a small new version grows beside the stable one and takes its traffic band by band."
+    },
+    {
+      "name": "retry-backoff",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Retry with backoff",
+      "description": "a request knocks at a closed service, waits twice as long each time, then gets through."
+    },
+    {
+      "name": "queue-backlog",
+      "type": "registry:component",
+      "title": "Queue backlog",
+      "description": "jobs pour in faster than workers drain them, then the backlog levels off."
+    },
+    {
+      "name": "webhook-fanout",
+      "type": "registry:component",
+      "title": "Webhook fan-out",
+      "description": "one event rings out from the source and lands on every subscriber at once."
+    },
+    {
+      "name": "garbage-collection",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Garbage collection",
+      "description": "a sweep crosses a cluttered heap and leaves only the live data behind."
+    },
+    {
+      "name": "feature-flags",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Feature flags",
+      "description": "traffic takes the old path, bends onto the new one when the flag flips, then flips back."
+    },
+    {
+      "name": "traces",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Traces",
+      "description": "one request's spans grow as nested bars, and the slow database query stands out."
+    },
+    {
+      "name": "backups",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Backups",
+      "description": "live data keeps changing while a scan lays a fresh copy into the snapshot below."
+    },
+    {
+      "name": "agent-pipeline",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Agent pipeline",
+      "description": "requests stream into the agent, pass a check, and land where they belong."
+    },
+    {
+      "name": "consensus",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Consensus",
+      "description": "three nodes beat out of step, then fall into one rhythm and agree."
+    },
+    {
+      "name": "data-drift",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Data drift",
+      "description": "live data slides away from what the model learned, and the gap is measured."
+    },
+    {
+      "name": "internet",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Internet",
+      "description": "a link goes down, and the route finds its way around it."
+    },
+    {
+      "name": "model-routing",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Model routing",
+      "description": "easy prompts go to a small model, and only the hard ones reach the big one."
+    },
+    {
+      "name": "search-ranking",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Search ranking",
+      "description": "every result is scored, and the most relevant rises to the top."
+    },
+    {
+      "name": "transfer",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Data transfer",
+      "description": "a big file moves in parallel streams, and the other side fills up."
+    },
+    {
+      "name": "not-found",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "404",
+      "description": "a request walks the site's pages and finds an empty slot where the page should be."
+    },
+    {
+      "name": "web-crawler",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Web crawler",
+      "description": "a crawler reads each page, lights up its links, and climbs to the next."
+    },
+    {
+      "name": "edge",
+      "type": "registry:component",
+      "title": "Edge network",
+      "description": "requests reach the nearest edge of your network, wherever they start."
+    },
+    {
+      "name": "monitoring",
+      "type": "registry:component",
+      "title": "Monitoring",
+      "description": "a sweep checks every service, and the one in trouble raises an alert."
+    },
+    {
+      "name": "search",
+      "type": "registry:component",
+      "title": "Search index",
+      "description": "a query drops through the index and finds its match."
+    },
+    {
+      "name": "traffic",
+      "type": "registry:component",
+      "title": "Traffic map",
+      "description": "requests flow along the routes of your map, busiest first."
+    },
+    {
+      "name": "training",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Model training",
+      "description": "the model walks down the loss surface until it settles."
+    },
+    {
+      "name": "hotspots",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Hotspots",
+      "description": "load rises like terrain, and the hottest peak gets marked."
+    },
+    {
+      "name": "sandbox",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Sandbox",
+      "description": "untrusted code runs sealed in its own box."
+    },
+    {
+      "name": "coverage",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Test coverage",
+      "description": "tests sweep the codebase and light up everything they cover."
+    },
+    {
+      "name": "mesh",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Service mesh",
+      "description": "services sit round a core, and a request routes through the mesh."
+    },
+    {
+      "name": "orbit",
+      "type": "registry:component",
+      "title": "Scheduler",
+      "description": "a job rides its schedule and fires each run on time."
+    },
+    {
+      "name": "embeddings",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Embeddings",
+      "description": "words stream into the model and come out as vectors."
+    },
+    {
+      "name": "device",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Device update",
+      "description": "an update reaches the device, and the dial fills as it installs."
+    },
+    {
+      "name": "metrics",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Metrics panel",
+      "description": "latency spikes after a deploy, the panel catches it, and it recovers."
+    },
+    {
+      "name": "compute",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Compute",
+      "description": "a request goes in, the chip lights layer by layer, and a result comes out."
+    },
+    {
+      "name": "globe",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Global regions",
+      "description": "one write lands, and every region gets it."
+    },
+    {
+      "name": "signals",
+      "type": "registry:component",
+      "title": "Event broadcast",
+      "description": "one event goes out, and every subscriber receives it."
+    },
+    {
+      "name": "cost-meter",
+      "type": "registry:component",
+      "title": "Cost meter",
+      "description": "spend climbs toward the budget, and a forecast mark shows where the month will end."
+    },
+    {
+      "name": "latency-heatmap",
+      "type": "registry:component",
+      "title": "Latency heatmap",
+      "description": "cells warm where requests are slow, and the hottest route is flagged with its p99."
+    },
+    {
+      "name": "incident-timeline",
+      "type": "registry:component",
+      "title": "Incident timeline",
+      "description": "an alert fires on the timeline, and the incident runs to resolved fifteen minutes later."
+    },
+    {
+      "name": "log-stream",
+      "type": "registry:component",
+      "title": "Log stream",
+      "description": "log lines scroll past, and the one error is caught and pinned."
+    },
+    {
+      "name": "terrain-survey",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Terrain survey",
+      "description": "the land rises out of flat ground, and a scan marks every site on it."
+    },
+    {
+      "name": "anomaly",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Anomaly band",
+      "description": "a metric jumps out of its normal band, gets flagged, and settles back."
+    },
+    {
+      "name": "uptime",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Uptime ring",
+      "description": "a check fails, the incident is logged, and your uptime still reads 99.98%."
+    },
+    {
+      "name": "queue",
+      "type": "registry:component",
+      "title": "Queue",
+      "description": "jobs wait their turn, and the worker takes the next one."
+    },
+    {
+      "name": "replication",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Replication",
+      "description": "a change lands on the primary and every replica catches up."
+    },
+    {
+      "name": "key",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Sign-in key",
+      "description": "a key card drops into the reader, and the door to your API opens."
+    },
+    {
+      "name": "stack",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Platform stack",
+      "description": "data, models, agents and deploys, one layer on another."
+    },
+    {
+      "name": "docs",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Living docs",
+      "description": "how your process runs becomes documentation you can read."
+    },
+    {
+      "name": "hub",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Integrations hub",
+      "description": "every tool plugs into one hub, and actions come out the other side."
+    },
+    {
+      "name": "automation",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Automation",
+      "description": "work rides in, passes through the machine, and comes out done."
+    },
+    {
+      "name": "validate",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Data validation",
+      "description": "raw records go in, and only checked ones come out."
+    },
+    {
+      "name": "factory",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Build factory",
+      "description": "your build runs like a factory, and a release ships out the gate."
+    },
+    {
+      "name": "billing",
+      "type": "registry:component",
+      "title": "Usage billing",
+      "description": "usage stacks up in the meter, and at the end of the month it prints the invoice."
+    },
+    {
+      "name": "cron",
+      "type": "registry:component",
+      "title": "Cron jobs",
+      "description": "the clock reaches each mark and stamps a job onto the belt, right on schedule."
+    },
+    {
+      "name": "email",
+      "type": "registry:component",
+      "title": "Email delivery",
+      "description": "letters land in their pigeonholes, and one comes back as a bounce."
+    },
+    {
+      "name": "uploads",
+      "type": "registry:component",
+      "title": "File uploads",
+      "description": "a file splits into chunks that drop down the chute and come back together in storage."
+    },
+    {
+      "name": "notifications",
+      "type": "registry:component",
+      "title": "Notifications",
+      "description": "the bell rings and a card lands on top of the stack on the phone."
+    },
+    {
+      "name": "version-control",
+      "type": "registry:component",
+      "title": "Version control",
+      "description": "a branch leaves main, picks up a commit and merges back in."
+    },
+    {
+      "name": "migration",
+      "type": "registry:component",
+      "title": "Database migration",
+      "description": "rows move from the old table into the new one and pick up the new column on the way."
+    },
+    {
+      "name": "image-processing",
+      "type": "registry:component",
+      "title": "Image processing",
+      "description": "a photo goes into the press and comes out in three sizes."
+    },
+    {
+      "name": "analytics",
+      "type": "registry:component",
+      "title": "Analytics funnel",
+      "description": "events drop through the funnel, and the chart rises bar by bar."
+    },
+    {
+      "name": "kubernetes",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Kubernetes cluster",
+      "description": "a node fails, its pods move to the healthy ones, and a fresh node joins the cluster."
+    },
+    {
+      "name": "payments",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Payments flow",
+      "description": "a card payment runs through the processor, the bank and the ledger, and a receipt prints."
+    },
+    {
+      "name": "cpu",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "CPU",
+      "description": "the heat spreader lifts, work arrives on the bus, and the cores light up one by one."
+    },
+    {
+      "name": "deploy",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Cloud deploy",
+      "description": "a build rises out of the box, travels the trace, and lights up the cloud."
+    },
+    {
+      "name": "event-stream",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Event streaming",
+      "description": "devices send events to a broker, and it fans them out to every service."
+    },
+    {
+      "name": "fraud",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Fraud screening",
+      "description": "cards pass the scanner, most go through, and the bad one is pulled aside."
+    },
+    {
+      "name": "functions",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Serverless functions",
+      "description": "a request wakes a function, it runs, answers, and goes back to sleep."
+    },
+    {
+      "name": "memory",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Memory",
+      "description": "an address comes in, a row is read, and a new value is written back."
+    },
+    {
+      "name": "model-eval",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Model evaluation",
+      "description": "three models are scored side by side, and the best one lights up."
+    },
+    {
+      "name": "rack",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Server rack",
+      "description": "a server slides into the rack, and its lights wake from top to bottom."
+    },
+    {
+      "name": "storage",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Storage",
+      "description": "each write lands on two drives at once, and the capacity gauge fills."
+    },
+    {
+      "name": "switch",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Network switch",
+      "description": "a packet comes in, the switch looks up its port, and sends it on the right way."
+    },
+    {
+      "name": "team-activity",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Team activity",
+      "description": "a week of your team's hours, with the busiest day pinned."
+    },
+    {
+      "name": "vault",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Secrets vault",
+      "description": "the vault lends a key for a while, then takes it back when time runs out."
+    },
+    {
+      "name": "agent-factory",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Agent factory",
+      "description": "an agent runs the factory floor, and finished illustrations roll out the end."
+    }
+  ]
+}

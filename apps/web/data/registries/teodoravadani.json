@@ -1,0 +1,197 @@
+{
+  "key": "teodoravadani",
+  "entry": "qodesign-free",
+  "name": "qodesign-free",
+  "homepage": "https://qodesign.dev/?utm_source=github&utm_medium=registry&utm_campaign=free_repo",
+  "indexUrl": "https://teodoravadani.github.io/qodesign-free/r/registry.json",
+  "itemBase": "https://teodoravadani.github.io/qodesign-free/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "orbit-dashboard",
+      "type": "registry:block",
+      "title": "Orbit: infrastructure observability dashboard",
+      "description": "Dark ops dashboard: KPI cards with count-up and sparklines, animated service map, p50/p95/p99 latency chart with crosshair, uptime, regions, cluster rings, deploys and a filterable events table. Free, MIT, by qodesign.dev.",
+      "dependencies": [
+        "framer-motion@11.18.2"
+      ],
+      "files": [
+        {
+          "path": "dashboards/orbit-observability/react/src/components/orbit/EventsTable.tsx",
+          "type": "registry:component",
+          "target": "components/orbit/EventsTable.tsx"
+        },
+        {
+          "path": "dashboards/orbit-observability/react/src/components/orbit/Kpis.tsx",
+          "type": "registry:component",
+          "target": "components/orbit/Kpis.tsx"
+        },
+        {
+          "path": "dashboards/orbit-observability/react/src/components/orbit/LatencyChart.tsx",
+          "type": "registry:component",
+          "target": "components/orbit/LatencyChart.tsx"
+        },
+        {
+          "path": "dashboards/orbit-observability/react/src/components/orbit/OrbitDashboard.tsx",
+          "type": "registry:component",
+          "target": "components/orbit/OrbitDashboard.tsx"
+        },
+        {
+          "path": "dashboards/orbit-observability/react/src/components/orbit/Panels.tsx",
+          "type": "registry:component",
+          "target": "components/orbit/Panels.tsx"
+        },
+        {
+          "path": "dashboards/orbit-observability/react/src/components/orbit/ServiceMap.tsx",
+          "type": "registry:component",
+          "target": "components/orbit/ServiceMap.tsx"
+        },
+        {
+          "path": "dashboards/orbit-observability/react/src/components/orbit/data.ts",
+          "type": "registry:component",
+          "target": "components/orbit/data.ts"
+        },
+        {
+          "path": "dashboards/orbit-observability/react/src/components/orbit/kit.tsx",
+          "type": "registry:component",
+          "target": "components/orbit/kit.tsx"
+        },
+        {
+          "path": "dashboards/orbit-observability/react/src/components/orbit/motionPresets.ts",
+          "type": "registry:component",
+          "target": "components/orbit/motionPresets.ts"
+        },
+        {
+          "path": "dashboards/orbit-observability/react/src/components/orbit/orbit.css",
+          "type": "registry:file",
+          "target": "components/orbit/orbit.css"
+        }
+      ]
+    },
+    {
+      "name": "ledger-dashboard",
+      "type": "registry:block",
+      "title": "Ledger: trading desk dashboard",
+      "description": "Dark trading screen: candlesticks with MA lines and volume, crosshair OHLC, flashing order book, buy/sell ticket, portfolio donut, watchlist and trades table. Simulated prices. Free, MIT, by qodesign.dev.",
+      "dependencies": [
+        "framer-motion@11.18.2"
+      ],
+      "files": [
+        {
+          "path": "dashboards/ledger-trading/react/src/components/ledger/ChartCard.tsx",
+          "type": "registry:component",
+          "target": "components/ledger/ChartCard.tsx"
+        },
+        {
+          "path": "dashboards/ledger-trading/react/src/components/ledger/CountUp.tsx",
+          "type": "registry:component",
+          "target": "components/ledger/CountUp.tsx"
+        },
+        {
+          "path": "dashboards/ledger-trading/react/src/components/ledger/LedgerDashboard.tsx",
+          "type": "registry:component",
+          "target": "components/ledger/LedgerDashboard.tsx"
+        },
+        {
+          "path": "dashboards/ledger-trading/react/src/components/ledger/Panels.tsx",
+          "type": "registry:component",
+          "target": "components/ledger/Panels.tsx"
+        },
+        {
+          "path": "dashboards/ledger-trading/react/src/components/ledger/ledger.css",
+          "type": "registry:file",
+          "target": "components/ledger/ledger.css"
+        },
+        {
+          "path": "dashboards/ledger-trading/react/src/components/ledger/motionPresets.ts",
+          "type": "registry:component",
+          "target": "components/ledger/motionPresets.ts"
+        },
+        {
+          "path": "dashboards/ledger-trading/react/src/components/ledger/store.ts",
+          "type": "registry:component",
+          "target": "components/ledger/store.ts"
+        }
+      ]
+    },
+    {
+      "name": "toast-stack",
+      "type": "registry:component",
+      "title": "Toast Stack",
+      "description": "Toasts that stack like a deck, fan out on hover with the page blurred behind, swipe away, and morph from spinner to check for promises. Free, MIT, by qodesign.dev.",
+      "dependencies": [
+        "framer-motion@11.18.2"
+      ],
+      "files": [
+        {
+          "path": "components/toast-stack/react/src/components/ToastStack.tsx",
+          "type": "registry:component",
+          "target": "components/toast-stack/ToastStack.tsx"
+        },
+        {
+          "path": "components/toast-stack/react/src/components/toast-stack.css",
+          "type": "registry:file",
+          "target": "components/toast-stack/toast-stack.css"
+        }
+      ]
+    },
+    {
+      "name": "pricing-switch",
+      "type": "registry:component",
+      "title": "Pricing Switch",
+      "description": "Monthly/yearly pricing switch with a stretchy pill, odometer prices, a 2-months-free badge and a featured card with a spinning border. Free, MIT, by qodesign.dev.",
+      "dependencies": [
+        "framer-motion@11.18.2"
+      ],
+      "files": [
+        {
+          "path": "components/pricing-switch/react/src/components/PricingSwitch.tsx",
+          "type": "registry:component",
+          "target": "components/pricing-switch/PricingSwitch.tsx"
+        },
+        {
+          "path": "components/pricing-switch/react/src/components/pricing-switch.css",
+          "type": "registry:file",
+          "target": "components/pricing-switch/pricing-switch.css"
+        }
+      ]
+    },
+    {
+      "name": "upload-dropzone",
+      "type": "registry:component",
+      "title": "Upload Dropzone",
+      "description": "Drag-and-drop upload zone: the border lights up, a shockwave rolls out on drop, each file gets its own progress ring that pops into a check, failures shake and offer Retry. Free, MIT, by qodesign.dev.",
+      "dependencies": [
+        "framer-motion@11.18.2"
+      ],
+      "files": [
+        {
+          "path": "components/upload-dropzone/react/src/components/UploadDropzone.tsx",
+          "type": "registry:component",
+          "target": "components/upload-dropzone/UploadDropzone.tsx"
+        },
+        {
+          "path": "components/upload-dropzone/react/src/components/upload-dropzone.css",
+          "type": "registry:file",
+          "target": "components/upload-dropzone/upload-dropzone.css"
+        }
+      ]
+    },
+    {
+      "name": "day-night-toggle",
+      "type": "registry:component",
+      "title": "Day / Night Toggle",
+      "description": "Theme switch where the sun rolls into a moon, clouds fall away and stars drop in. Free, MIT, by qodesign.dev.",
+      "dependencies": [
+        "framer-motion@11.18.2"
+      ],
+      "files": [
+        {
+          "path": "components/day-night-toggle/react/src/components/DayNightToggle.tsx",
+          "type": "registry:component",
+          "target": "components/day-night-toggle/DayNightToggle.tsx"
+        }
+      ]
+    }
+  ]
+}

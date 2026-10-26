@@ -224,6 +224,11 @@
           "path": "lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/focusable.ts",
+          "type": "registry:lib",
+          "target": "@lib/focusable.ts"
         }
       ]
     },
@@ -288,6 +293,11 @@
           "path": "components/motion/popover-position.ts",
           "type": "registry:component",
           "target": "@components/motion/popover-position.ts"
+        },
+        {
+          "path": "lib/focusable.ts",
+          "type": "registry:lib",
+          "target": "@lib/focusable.ts"
         }
       ]
     },
@@ -432,6 +442,11 @@
           "path": "components/motion/popover-position.ts",
           "type": "registry:component",
           "target": "@components/motion/popover-position.ts"
+        },
+        {
+          "path": "lib/focusable.ts",
+          "type": "registry:lib",
+          "target": "@lib/focusable.ts"
         }
       ]
     },
@@ -1578,6 +1593,11 @@
           "path": "lib/ease.ts",
           "type": "registry:lib",
           "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/focusable.ts",
+          "type": "registry:lib",
+          "target": "@lib/focusable.ts"
         },
         {
           "path": "lib/utils.ts",
@@ -2879,6 +2899,115 @@
           "path": "lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "sankey-chart",
+      "type": "registry:component",
+      "title": "Sankey Chart",
+      "description": "Weighted flows between stages that draw in and morph with your data.",
+      "dependencies": [
+        "@floating-ui/dom",
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/sankey-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/sankey-chart.tsx"
+        },
+        {
+          "path": "components/charts/sankey-chart/context.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/sankey-chart/context.tsx"
+        },
+        {
+          "path": "components/charts/sankey-chart/model.ts",
+          "type": "registry:component",
+          "target": "@components/charts/sankey-chart/model.ts"
+        },
+        {
+          "path": "components/charts/sankey-chart/plot.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/sankey-chart/plot.tsx"
+        },
+        {
+          "path": "components/charts/sankey-chart/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/sankey-chart/tooltip.tsx"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "lib/hooks/use-row-cursor.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-row-cursor.ts"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/motion/number-ticker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/number-ticker.tsx"
+        },
+        {
+          "path": "components/motion/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
+        },
+        {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-gesture.ts"
+        },
+        {
+          "path": "lib/hooks/use-tap-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-tap-gesture.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
         }
       ]
     },
@@ -4343,6 +4472,11 @@
           "target": "@components/motion/popover-position.ts"
         },
         {
+          "path": "lib/focusable.ts",
+          "type": "registry:lib",
+          "target": "@lib/focusable.ts"
+        },
+        {
           "path": "lib/hooks/use-listbox.ts",
           "type": "registry:hook",
           "target": "@lib/hooks/use-listbox.ts"
@@ -5007,6 +5141,11 @@
           "path": "components/motion/popover-position.ts",
           "type": "registry:component",
           "target": "@components/motion/popover-position.ts"
+        },
+        {
+          "path": "lib/focusable.ts",
+          "type": "registry:lib",
+          "target": "@lib/focusable.ts"
         }
       ]
     },
@@ -5217,6 +5356,11 @@
           "path": "components/motion/popover-position.ts",
           "type": "registry:component",
           "target": "@components/motion/popover-position.ts"
+        },
+        {
+          "path": "lib/focusable.ts",
+          "type": "registry:lib",
+          "target": "@lib/focusable.ts"
         },
         {
           "path": "components/motion/action-swap.tsx",
@@ -5678,6 +5822,11 @@
           "path": "components/motion/popover-position.ts",
           "type": "registry:component",
           "target": "@components/motion/popover-position.ts"
+        },
+        {
+          "path": "lib/focusable.ts",
+          "type": "registry:lib",
+          "target": "@lib/focusable.ts"
         },
         {
           "path": "lib/hooks/use-listbox.ts",
@@ -6579,6 +6728,34 @@
           "path": "components/motion/magnetic.tsx",
           "type": "registry:component",
           "target": "@components/motion/magnetic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-dealer",
+      "type": "registry:block",
+      "title": "Card Dealer",
+      "description": "A card table with a face-down deck, a fanned hand and a discard pile. Cards arc across the table between them and flip in flight, hop over each other when the hand is sorted, and lift on hover. Data-driven by each card's zone, with custom faces and backs, keyboard-playable hand cards and reduced-motion support.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/motion/card-dealer.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/card-dealer.tsx"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
         }
       ]
     },

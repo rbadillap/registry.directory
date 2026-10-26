@@ -48,9 +48,6 @@
       "type": "registry:component",
       "title": "Flick Card",
       "description": "A two-sided card you spin with a drag or a flick, with thickness, light and a floor shadow that follow the angle.",
-      "dependencies": [
-        "lucide-react"
-      ],
       "files": [
         {
           "path": "components/kokonutui/card-flip.tsx",
@@ -168,7 +165,7 @@
       "name": "ai-input-search",
       "type": "registry:component",
       "title": "AI Input Search",
-      "description": "AI composer with a Tools menu of modes (browse, investigate, draft a visual, run code, reason), a tool header with a Change key, a model picker, an Ask key and a live trace that stacks each source's avatar as it is read. Built with React, Tailwind CSS and Motion.",
+      "description": "AI composer with a Tools menu (browse, investigate, draft, run code, reason), a model picker and a live trace that stacks each source's avatar as it is read.",
       "dependencies": [
         "lucide-react",
         "motion"
@@ -204,7 +201,7 @@
       "name": "currency-transfer",
       "type": "registry:component",
       "title": "Currency Transfer",
-      "description": "Transfer tracker that converts the amount in place, walks through each step on a filling rail, and ends with a copyable reference. Built with React and Tailwind CSS.",
+      "description": "Transfer tracker that converts the amount in place, walks through each step on a filling rail and ends with a copyable reference.",
       "dependencies": [
         "lucide-react"
       ],
@@ -493,7 +490,7 @@
       "name": "gradient-button",
       "type": "registry:component",
       "title": "Gradient Button",
-      "description": "Layered gradient button with emerald, purple, and orange variants, a gradient border in light and dark mode, soft inner glow, press feedback, and an optional icon, styled entirely with Tailwind CSS in React.",
+      "description": "Layered gradient button with emerald, purple and orange variants, a gradient border, a soft inner glow, press feedback and an optional icon.",
       "registryDependencies": [
         "button"
       ],
@@ -1170,6 +1167,337 @@
       "files": [
         {
           "path": "components/kokonutui/ai-agent-lanes.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ai-inline-edit",
+      "type": "registry:component",
+      "title": "AI Inline Edit",
+      "description": "Select text in a document and ask AI to rewrite it. The edit streams in place as a word-level diff you accept, discard or try again.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/ai-inline-edit.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ai-message-queue",
+      "type": "registry:component",
+      "title": "AI Message Queue",
+      "description": "Keep typing while the agent works. Follow-ups stack above the composer, where you can reorder, edit or send one now, and go in one by one when the run ends.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/ai-message-queue.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ai-redact",
+      "type": "registry:component",
+      "title": "AI Redact",
+      "description": "Masks names, emails, card numbers and keys as placeholders before a prompt is sent, then fills the real values back into the reply.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/ai-redact.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ai-memory",
+      "type": "registry:component",
+      "title": "AI Memory",
+      "description": "An assistant that saves what it learns about you into a memory list. New facts replace the ones they contradict, and you can edit or forget any of them.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/ai-memory.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "marker-text",
+      "type": "registry:component",
+      "title": "Marker Text",
+      "description": "Hand-drawn highlights, underlines, circles, boxes and strikes that draw themselves in reading order when the text comes into view.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/marker-text.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ink-background",
+      "type": "registry:component",
+      "title": "Ink Background",
+      "description": "A hero written in ink on water. Stir it and the letters bleed, click to drop ink, and the headline gathers itself again. Built with WebGL.",
+      "files": [
+        {
+          "path": "components/kokonutui/ink-background.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "caustics-background",
+      "type": "registry:component",
+      "title": "Caustics Background",
+      "description": "A hero on the floor of a pool. Light ripples across it, clicks drop rings that bend the light, and the headline's shadow wobbles below.",
+      "files": [
+        {
+          "path": "components/kokonutui/caustics-background.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "rain-glass-background",
+      "type": "registry:component",
+      "title": "Rain Glass Background",
+      "description": "A hero seen through a rainy window. Drops gather and run, each a tiny lens on the view, and dragging wipes the fog off the glass.",
+      "files": [
+        {
+          "path": "components/kokonutui/rain-glass-background.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shadow-text",
+      "type": "registry:component",
+      "title": "Shadow Text",
+      "description": "A headline that works as a sundial. Each letter casts a long, soft shadow set by the reader's clock, and bringing the pointer close turns it into a lamp.",
+      "files": [
+        {
+          "path": "components/kokonutui/shadow-text.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "seat-map",
+      "type": "registry:component",
+      "title": "Seat Map",
+      "description": "Pick seats for a show. Drag along a row to take several, and it points out any single seat you'd leave stranded.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/seat-map.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "amount-pad",
+      "type": "registry:component",
+      "title": "Amount Pad",
+      "description": "A keypad for sending money. Digits spring into place, commas slide them along, and the amount shrinks to fit as it grows.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/amount-pad.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slide-to-confirm",
+      "type": "registry:component",
+      "title": "Slide to Confirm",
+      "description": "A confirm control for payments and other actions you can't take back. Slide the thumb to the end, or flick it.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/slide-to-confirm.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "save-button",
+      "type": "registry:component",
+      "title": "Save Button",
+      "description": "A bookmark button that files into collections. Tap to save to the last one, then change it or make a new one from the strip.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/save-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cart-button",
+      "type": "registry:component",
+      "title": "Cart Button",
+      "description": "An Add button that opens into a quantity stepper in place, with a bin at one and press-and-hold to repeat.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/cart-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-field",
+      "type": "registry:component",
+      "title": "Card Field",
+      "description": "A one-row card input for checkout. The number groups the way the brand prints it, then slides to its last four to make room for expiry and CVC.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/card-field.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "stay-picker",
+      "type": "registry:component",
+      "title": "Stay Picker",
+      "description": "A date range picker for booking stays. Every night shows its price, sold-out nights are hatched, and your stay is one pill that wraps across weeks.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/stay-picker.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slot-picker",
+      "type": "registry:component",
+      "title": "Slot Picker",
+      "description": "Book a meeting on a day rail. Drag a meeting into a free gap; it hops over existing bookings, resizes in place and shows the host's local time.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/slot-picker.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tip-selector",
+      "type": "registry:component",
+      "title": "Tip Selector",
+      "description": "A tip picker for checkout, set on a tape you drag and flick. The ticks you pass fill in, the amounts roll, and Round up makes the total a whole amount.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/tip-selector.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "boarding-pass",
+      "type": "registry:component",
+      "title": "Boarding Pass",
+      "description": "A boarding pass that keeps itself current. When the gate or times change, only the changed characters roll over, the old value struck through.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/boarding-pass.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-flap-text",
+      "type": "registry:component",
+      "title": "Split Flap Text",
+      "description": "Departure-board lettering for headlines and status lines. Each tile flips only as far as its new letter, on a hinge, a beat after its neighbour.",
+      "files": [
+        {
+          "path": "components/kokonutui/split-flap-text.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "location-picker",
+      "type": "registry:component",
+      "title": "Location Picker",
+      "description": "Set a pickup point the way ride apps do. Drag the map under a fixed pin; it lifts off its shadow, glides onto the nearest curb, drops, and the street rolls in.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/location-picker.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "contact-sheet",
+      "type": "registry:component",
+      "title": "Contact Sheet",
+      "description": "Pick from a shoot the way photographers do. Circle a frame in china marker, click again to strike it, and look through a loupe at the detail first.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/kokonutui/contact-sheet.tsx",
           "type": "registry:component"
         }
       ]
