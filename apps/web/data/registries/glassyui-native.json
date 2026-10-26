@@ -1,0 +1,1845 @@
+{
+  "key": "glassyui-native",
+  "entry": "Glassy UI Native",
+  "name": "glassyui-native",
+  "homepage": "https://glassyui.com/guides/expo",
+  "indexUrl": "https://glassyui.com/r/native/registry.json",
+  "itemBase": "https://glassyui.com/r/native",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "glass-provider",
+      "type": "registry:ui",
+      "title": "Glass Provider",
+      "description": "Follows the device's appearance and accessibility settings and lets your app override them.",
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-surface",
+      "type": "registry:ui",
+      "title": "Glass Surface",
+      "description": "The glass material on its own, with the backdrop Android blurs: the system’s own glass on iOS 26 and later, a lit blur elsewhere.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        }
+      ]
+    },
+    {
+      "name": "glass-button",
+      "type": "registry:ui",
+      "title": "Glass Button",
+      "description": "A glass button that sets down under a press and lights up from the point you press.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-button.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-panel",
+      "type": "registry:ui",
+      "title": "Glass Panel",
+      "description": "Glass cards, panels and pills for anything that floats above your content.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-input",
+      "type": "registry:ui",
+      "title": "Glass Input",
+      "description": "A recessed glass text field with a label and an optional hint.",
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-input.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-textarea",
+      "type": "registry:ui",
+      "title": "Glass Textarea",
+      "description": "A recessed glass field for longer text that can grow as you type.",
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-input.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-input.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-checkbox",
+      "type": "registry:ui",
+      "title": "Glass Checkbox",
+      "description": "A glass checkbox whose mark draws itself in, with an indeterminate state.",
+      "dependencies": [
+        "react-native-svg"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-checkbox.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/check-field.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/check-field.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/icons.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/icons.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-radio-group",
+      "type": "registry:ui",
+      "title": "Glass Radio Group",
+      "description": "Options where exactly one is chosen, with a dot that pops in.",
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-radio-group.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-radio-group.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/check-field.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/check-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-switch",
+      "type": "registry:ui",
+      "title": "Glass Switch",
+      "description": "An on/off switch whose knob turns to glass under a finger as it slides.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-switch.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-slider",
+      "type": "registry:ui",
+      "title": "Glass Slider",
+      "description": "A slider whose knob turns to glass while you drag it, for one value or a range.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-slider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-segmented-control",
+      "type": "registry:ui",
+      "title": "Glass Segmented Control",
+      "description": "A single-choice control whose glass bubble springs between options.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-segmented-control.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-segmented-control.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-selection-indicator.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-selection-indicator.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-tabs",
+      "type": "registry:ui",
+      "title": "Glass Tabs",
+      "description": "Tabs whose glass bubble springs to the selected tab.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-tabs.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-selection-indicator.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-selection-indicator.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-badge",
+      "type": "registry:ui",
+      "title": "Glass Badge",
+      "description": "A small tinted label for status, counts and categories.",
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-badge.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-progress",
+      "type": "registry:ui",
+      "title": "Glass Progress",
+      "description": "A glass track with a fill that slides to its value, or sweeps when the length is unknown.",
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-progress.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-progress.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/plain-text.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/plain-text.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-loop.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-loop.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-spinner",
+      "type": "registry:ui",
+      "title": "Glass Spinner",
+      "description": "A ring with a fading tail, for waiting on something short.",
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-spinner.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-spinner.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-loop.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-loop.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-skeleton",
+      "type": "registry:ui",
+      "title": "Glass Skeleton",
+      "description": "A quiet placeholder with a slow sheen, shaped like what will replace it.",
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-skeleton.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-skeleton.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-loop.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-loop.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-alert",
+      "type": "registry:ui",
+      "title": "Glass Alert",
+      "description": "A short message set in tinted glass, with four tones and an optional dismiss.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect",
+        "react-native-svg"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-alert.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-alert.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/icons.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/icons.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/plain-text.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/plain-text.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-avatar",
+      "type": "registry:ui",
+      "title": "Glass Avatar",
+      "description": "A round photo that falls back to coloured initials, with a presence dot and stacked groups.",
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-avatar.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/plain-text.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/plain-text.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-accordion",
+      "type": "registry:ui",
+      "title": "Glass Accordion",
+      "description": "Sections that expand and collapse on glass, one at a time or several.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect",
+        "react-native-svg"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-accordion.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-accordion.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/icons.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/icons.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/plain-text.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/plain-text.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-dock",
+      "type": "registry:ui",
+      "title": "Glass Dock",
+      "description": "A row of icons on a glass shelf for an app's main destinations.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-dock.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-dock.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/plain-text.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/plain-text.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-dialog",
+      "type": "registry:ui",
+      "title": "Glass Dialog",
+      "description": "A modal on raised glass that rises into place and holds focus until it closes.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect",
+        "react-native-safe-area-context",
+        "react-native-svg"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-dialog.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/modal-layer.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/modal-layer.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/icons.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/icons.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-sheet",
+      "type": "registry:ui",
+      "title": "Glass Sheet",
+      "description": "A glass panel that slides in from an edge. Bottom sheets drag down to dismiss.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect",
+        "react-native-safe-area-context",
+        "react-native-svg"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-sheet.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-sheet.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/modal-layer.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/modal-layer.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/icons.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/icons.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-toast",
+      "type": "registry:ui",
+      "title": "Glass Toast",
+      "description": "A glass notification for brief updates, announced to screen readers.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect",
+        "react-native-safe-area-context",
+        "react-native-svg"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-panel.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-panel.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-toast.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-toast.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/icons.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/icons.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/modal-layer.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/modal-layer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-menu",
+      "type": "registry:ui",
+      "title": "Glass Menu",
+      "description": "A menu on glass that grows from its trigger, with checkbox and radio items.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect",
+        "react-native-safe-area-context",
+        "react-native-svg"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-menu.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/anchored-overlay.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/anchored-overlay.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/icons.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/icons.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/modal-layer.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/modal-layer.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/plain-text.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/plain-text.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-select",
+      "type": "registry:ui",
+      "title": "Glass Select",
+      "description": "A glass trigger that opens a slab of glass to choose from.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect",
+        "react-native-safe-area-context",
+        "react-native-svg"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-select.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-select.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/anchored-overlay.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/anchored-overlay.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/icons.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/icons.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/plain-text.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/plain-text.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/modal-layer.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/modal-layer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-popover",
+      "type": "registry:ui",
+      "title": "Glass Popover",
+      "description": "Floating glass content anchored to the control that opens it.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect",
+        "react-native-safe-area-context",
+        "react-native-svg"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-popover.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-popover.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/anchored-overlay.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/anchored-overlay.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/plain-text.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/plain-text.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/modal-layer.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/modal-layer.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/icons.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/icons.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-picker",
+      "type": "registry:ui",
+      "title": "Glass Picker",
+      "description": "A labelled glass picker: a native menu or wheel on iOS, a dropdown on Android and a select on the web.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect",
+        "@expo/ui"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-picker.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-picker.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/picker.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/picker.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/picker.ios.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/picker.ios.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/picker.web.tsx",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/picker.web.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glass-swipe-row",
+      "type": "registry:ui",
+      "title": "Glass Swipe Row",
+      "description": "A row that reveals action buttons on swipe, for iOS, Android and the web.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect",
+        "react-native-gesture-handler",
+        "react-native-reanimated",
+        "react-native-worklets",
+        "expo-haptics"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-swipe-row.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-swipe-row.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/selection-haptic.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/selection-haptic.ts"
+        }
+      ]
+    },
+    {
+      "name": "glass-card-stack",
+      "type": "registry:ui",
+      "title": "Glass Card Stack",
+      "description": "A swipeable card deck with Previous and Next buttons, for iOS, Android and the web.",
+      "dependencies": [
+        "expo-blur",
+        "expo-glass-effect",
+        "react-native-gesture-handler",
+        "react-native-reanimated",
+        "react-native-worklets",
+        "expo-haptics"
+      ],
+      "files": [
+        {
+          "path": "registry/glassyui-native/glass-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-provider.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/preferences.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/preferences.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/tokens.ts"
+        },
+        {
+          "path": "registry/glassyui-native/lib/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/glassyui-native/glass-surface.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-surface.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-backdrop.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-backdrop.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/material.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/material.ts"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurView.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurView.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/SharedBlurController.java",
+          "type": "registry:file",
+          "target": "components/glassyui/android/SharedBlurController.java"
+        },
+        {
+          "path": "registry/glassyui-native/android/with-glassy-blur.cjs",
+          "type": "registry:file",
+          "target": "components/glassyui/android/with-glassy-blur.cjs"
+        },
+        {
+          "path": "registry/glassyui-native/glass-button.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-button.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/glass-card-stack.tsx",
+          "type": "registry:ui",
+          "target": "components/glassyui/glass-card-stack.tsx"
+        },
+        {
+          "path": "registry/glassyui-native/lib/selection-haptic.ts",
+          "type": "registry:lib",
+          "target": "components/glassyui/lib/selection-haptic.ts"
+        }
+      ]
+    }
+  ]
+}

@@ -826,7 +826,8 @@
       "title": "Particle Sphere",
       "description": "A 3D particle background built with Three.js. 9,000 particles sit on a slowly spinning sphere in warm gold and cool silver. Free account required to install; source is free to read.",
       "dependencies": [
-        "three"
+        "three",
+        "@types/three"
       ],
       "files": [
         {
@@ -908,7 +909,8 @@
       "title": "Product Card Deck",
       "description": "A draggable card deck you flick through one card at a time. The top card leans toward your drag, then spins away with momentum to reveal the next, and the deck loops endlessly. Every card pairs a picture with a title and a pill action button with hover and press states. Free account required to install; source is free to read.",
       "dependencies": [
-        "framer-motion"
+        "framer-motion",
+        "@phosphor-icons/react"
       ],
       "files": [
         {
@@ -1120,7 +1122,8 @@
       "description": "A draggable sticker card wall. Drop notes, toss emoji, pile them up with real 2D physics. Free account required to install; source is free to read.",
       "dependencies": [
         "framer-motion",
-        "matter-js"
+        "matter-js",
+        "@types/matter-js"
       ],
       "files": [
         {
@@ -1239,22 +1242,6 @@
           "path": "components/aicanvas/wave-lines.tsx",
           "type": "registry:ui",
           "target": "components/aicanvas/wave-lines.tsx"
-        }
-      ]
-    },
-    {
-      "name": "wild-morph",
-      "type": "registry:ui",
-      "title": "Wild Morph",
-      "description": "Italic SVG word that warps under the cursor, a spring-physics text animation. Free account required to install; source is free to read.",
-      "dependencies": [
-        "framer-motion"
-      ],
-      "files": [
-        {
-          "path": "components/aicanvas/wild-morph.tsx",
-          "type": "registry:ui",
-          "target": "components/aicanvas/wild-morph.tsx"
         }
       ]
     },

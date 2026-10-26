@@ -1616,6 +1616,227 @@
       ]
     },
     {
+      "name": "chart-7",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Chart 7",
+      "description": "A sales report with 7, 30 and 90-day totals against the previous period and a stepped area chart split by sales channel",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-7/page.tsx",
+          "type": "registry:page",
+          "target": "app/chart-7/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-7/chart-7.tsx",
+          "type": "registry:component",
+          "target": "@components/chart-7.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-7/chart-7-step-lines.tsx",
+          "type": "registry:component",
+          "target": "@components/chart-7-step-lines.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-7/chart-7-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/chart-7-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "chart-8",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Chart 8",
+      "description": "Weekly orders as rounded pill bars with a glowing peak day, a dashed outline for the day in progress and a period breakdown",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-8/page.tsx",
+          "type": "registry:page",
+          "target": "app/chart-8/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-8/chart-8.tsx",
+          "type": "registry:component",
+          "target": "@components/chart-8.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-8/chart-8-pill-bars.tsx",
+          "type": "registry:component",
+          "target": "@components/chart-8-pill-bars.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-8/chart-8-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/chart-8-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "chart-9",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Chart 9",
+      "description": "Daily sales as rounded bars with the previous period as a dashed line, a headline total and change against the period before",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-9/page.tsx",
+          "type": "registry:page",
+          "target": "app/chart-9/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-9/chart-9.tsx",
+          "type": "registry:component",
+          "target": "@components/chart-9.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-9/chart-9-trend-bars.tsx",
+          "type": "registry:component",
+          "target": "@components/chart-9-trend-bars.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-9/chart-9-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/chart-9-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "chart-10",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Chart 10",
+      "description": "Visits over time as a glowing curve over a dotted fill, a peak marker that follows the pointer, a dotted tail for today and three summary figures",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-10/page.tsx",
+          "type": "registry:page",
+          "target": "app/chart-10/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-10/chart-10.tsx",
+          "type": "registry:component",
+          "target": "@components/chart-10.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-10/chart-10-glow-area.tsx",
+          "type": "registry:component",
+          "target": "@components/chart-10-glow-area.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-10/chart-10-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/chart-10-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "chart-11",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Chart 11",
+      "description": "A punch card of orders by weekday and time of day, with the busiest slot, busiest day and orders counted",
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-11/page.tsx",
+          "type": "registry:page",
+          "target": "app/chart-11/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-11/chart-11.tsx",
+          "type": "registry:component",
+          "target": "@components/chart-11.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-11/chart-11-punch-card.tsx",
+          "type": "registry:component",
+          "target": "@components/chart-11-punch-card.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-11/chart-11-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/chart-11-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "chart-12",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Chart 12",
+      "description": "New customers as dumbbells running from the period before to this one, with the returning-customer rate",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card",
+        "chart",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-12/page.tsx",
+          "type": "registry:page",
+          "target": "app/chart-12/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-12/chart-12.tsx",
+          "type": "registry:component",
+          "target": "@components/chart-12.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-12/chart-12-dumbbell.tsx",
+          "type": "registry:component",
+          "target": "@components/chart-12-dumbbell.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/charts/chart-12/chart-12-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/chart-12-data.ts"
+        }
+      ]
+    },
+    {
       "name": "datatable-1",
       "type": "registry:block",
       "title": "Datatable 1",
@@ -1910,6 +2131,116 @@
           "path": "storage/app/registry-sources/application/datatables/datatable-5/datatable-5-records.ts",
           "type": "registry:lib",
           "target": "@components/data/datatable-5-records.ts"
+        }
+      ]
+    },
+    {
+      "name": "datatable-6",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Datatable 6",
+      "description": "An orders table with view tabs, search, six faceted filters, sortable columns, a column menu, row selection, pagination and product photos",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "checkbox",
+        "command",
+        "dropdown-menu",
+        "empty",
+        "input-group",
+        "popover",
+        "select",
+        "separator",
+        "table",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/datatables/datatable-6/page.tsx",
+          "type": "registry:page",
+          "target": "app/datatable-6/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/datatables/datatable-6/datatable-6.tsx",
+          "type": "registry:component",
+          "target": "@components/datatable-6.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/datatables/datatable-6/datatable-6-faceted-filter.tsx",
+          "type": "registry:component",
+          "target": "@components/datatable-6-faceted-filter.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/datatables/datatable-6/datatable-6-pagination.tsx",
+          "type": "registry:component",
+          "target": "@components/datatable-6-pagination.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/datatables/datatable-6/datatable-6-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/datatable-6-data.ts"
+        },
+        {
+          "path": "storage/app/registry-sources/application/datatables/datatable-6/datatable-6-thumbnails.ts",
+          "type": "registry:lib",
+          "target": "@components/data/datatable-6-thumbnails.ts"
+        }
+      ]
+    },
+    {
+      "name": "datatable-7",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Datatable 7",
+      "description": "A collections table with stacked product-photo covers, search, a type filter, sortable columns and pagination",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "command",
+        "empty",
+        "input-group",
+        "popover",
+        "select",
+        "separator",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/datatables/datatable-7/page.tsx",
+          "type": "registry:page",
+          "target": "app/datatable-7/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/datatables/datatable-7/datatable-7.tsx",
+          "type": "registry:component",
+          "target": "@components/datatable-7.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/datatables/datatable-7/datatable-7-faceted-filter.tsx",
+          "type": "registry:component",
+          "target": "@components/datatable-7-faceted-filter.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/datatables/datatable-7/datatable-7-pagination.tsx",
+          "type": "registry:component",
+          "target": "@components/datatable-7-pagination.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/datatables/datatable-7/datatable-7-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/datatable-7-data.ts"
+        },
+        {
+          "path": "storage/app/registry-sources/application/datatables/datatable-7/datatable-7-thumbnails.ts",
+          "type": "registry:lib",
+          "target": "@components/data/datatable-7-thumbnails.ts"
         }
       ]
     },
@@ -3172,6 +3503,209 @@
           "path": "storage/app/registry-sources/application/widgets/widget-7/widget-7-data.ts",
           "type": "registry:lib",
           "target": "@components/data/widget-7-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "widget-8",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Widget 8",
+      "description": "A needs-attention widget with sliding tabs for orders to ship, payments to capture, low stock and returns to handle",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "card",
+        "item"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-8/page.tsx",
+          "type": "registry:page",
+          "target": "app/widget-8/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-8/widget-8.tsx",
+          "type": "registry:component",
+          "target": "@components/widget-8.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-8/widget-8-line-tabs.tsx",
+          "type": "registry:component",
+          "target": "@components/widget-8-line-tabs.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-8/widget-8-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/widget-8-data.ts"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-8/widget-8-thumbnails.ts",
+          "type": "registry:lib",
+          "target": "@components/data/widget-8-thumbnails.ts"
+        }
+      ]
+    },
+    {
+      "name": "widget-9",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Widget 9",
+      "description": "Two horizontal trend cards: average order with a running-average line over glowing pill columns, and refunds with spotlight pills",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-9/page.tsx",
+          "type": "registry:page",
+          "target": "app/widget-9/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-9/widget-9.tsx",
+          "type": "registry:component",
+          "target": "@components/widget-9.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-9/widget-9-charts.tsx",
+          "type": "registry:component",
+          "target": "@components/widget-9-charts.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-9/widget-9-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/widget-9-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "widget-10",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Widget 10",
+      "description": "A sales-by-channel widget with a segmented share bar and a ranked table of orders, share and sales per channel",
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-10/page.tsx",
+          "type": "registry:page",
+          "target": "app/widget-10/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-10/widget-10.tsx",
+          "type": "registry:component",
+          "target": "@components/widget-10.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-10/widget-10-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/widget-10-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "widget-11",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Widget 11",
+      "description": "A sales-by-product-type widget with inline unit bars, sales totals and change against the previous period",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-11/page.tsx",
+          "type": "registry:page",
+          "target": "app/widget-11/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-11/widget-11.tsx",
+          "type": "registry:component",
+          "target": "@components/widget-11.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-11/widget-11-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/widget-11-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "widget-12",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Widget 12",
+      "description": "Two product leaderboards side by side: top products by sales and highest return rates, with product photos",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-12/page.tsx",
+          "type": "registry:page",
+          "target": "app/widget-12/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-12/widget-12.tsx",
+          "type": "registry:component",
+          "target": "@components/widget-12.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-12/widget-12-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/widget-12-data.ts"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-12/widget-12-thumbnails.ts",
+          "type": "registry:lib",
+          "target": "@components/data/widget-12-thumbnails.ts"
+        }
+      ]
+    },
+    {
+      "name": "widget-13",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Widget 13",
+      "description": "A checkout funnel widget from sessions to purchase, with the share kept at each step and abandoned carts as the headline",
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-13/page.tsx",
+          "type": "registry:page",
+          "target": "app/widget-13/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-13/widget-13.tsx",
+          "type": "registry:component",
+          "target": "@components/widget-13.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/application/widgets/widget-13/widget-13-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/widget-13-data.ts"
         }
       ]
     },
@@ -7719,6 +8253,80 @@
       ]
     },
     {
+      "name": "feature-13",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Feature 13",
+      "description": "A scroll-pinned product tour that slides a strip of linked photo cards sideways, with a detail chip on each",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/marketing/features/feature-13/page.tsx",
+          "type": "registry:page",
+          "target": "app/feature-13/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/marketing/features/feature-13/feature-13.tsx",
+          "type": "registry:component",
+          "target": "@components/feature-13.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/marketing/features/feature-13/feature-13-pinned-strip.ts",
+          "type": "registry:component",
+          "target": "@components/feature-13-pinned-strip.ts"
+        },
+        {
+          "path": "storage/app/registry-sources/marketing/features/feature-13/feature-13-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/feature-13-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "feature-14",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Feature 14",
+      "description": "A dashed spec-sheet feature grid with numbered cells, proof tags and corner icons that draw on hover",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/marketing/features/feature-14/page.tsx",
+          "type": "registry:page",
+          "target": "app/feature-14/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/marketing/features/feature-14/feature-14.tsx",
+          "type": "registry:component",
+          "target": "@components/feature-14.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/marketing/features/feature-14/feature-14-draw-icon.tsx",
+          "type": "registry:component",
+          "target": "@components/feature-14-draw-icon.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/marketing/features/feature-14/feature-14-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/feature-14-data.ts"
+        }
+      ]
+    },
+    {
       "name": "footer-section-1",
       "type": "registry:block",
       "title": "Footer Section 1",
@@ -9752,6 +10360,75 @@
           "path": "storage/app/registry-sources/marketing/statistics/statistic-8/statistic-8-data.ts",
           "type": "registry:lib",
           "target": "@components/data/statistic-8-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "statistic-9",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Statistic 9",
+      "description": "Four last-24-hours KPI tiles with an hourly bar chart, a dashed comparison curve and change against the previous 24 hours",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/marketing/statistics/statistic-9/page.tsx",
+          "type": "registry:page",
+          "target": "app/statistic-9/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/marketing/statistics/statistic-9/statistic-9.tsx",
+          "type": "registry:component",
+          "target": "@components/statistic-9.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/marketing/statistics/statistic-9/statistic-9-hour-bars.tsx",
+          "type": "registry:component",
+          "target": "@components/statistic-9-hour-bars.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/marketing/statistics/statistic-9/statistic-9-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/statistic-9-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "statistic-10",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Statistic 10",
+      "description": "A five-figure KPI strip split by hairlines: net sales, orders, gross profit, average order and refunds against the period before",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "storage/app/registry-sources/marketing/statistics/statistic-10/page.tsx",
+          "type": "registry:page",
+          "target": "app/statistic-10/page.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/marketing/statistics/statistic-10/statistic-10.tsx",
+          "type": "registry:component",
+          "target": "@components/statistic-10.tsx"
+        },
+        {
+          "path": "storage/app/registry-sources/marketing/statistics/statistic-10/statistic-10-data.ts",
+          "type": "registry:lib",
+          "target": "@components/data/statistic-10-data.ts"
         }
       ]
     },

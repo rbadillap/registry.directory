@@ -196,7 +196,7 @@
       "name": "undo-pill",
       "type": "registry:ui",
       "title": "Undo Pill",
-      "description": "A pill that rises after a destructive action with a draining countdown ring. Undo (or ⌘Z) reverts it; only expiry commits it. Hover or focus pauses the countdown.",
+      "description": "Undo toast for React and shadcn: a pill with a draining countdown ring that commits the destructive action only when it runs out.",
       "dependencies": [
         "motion"
       ],
@@ -238,7 +238,7 @@
       "name": "concentric-frame",
       "type": "registry:ui",
       "title": "Concentric Frame",
-      "description": "A layout primitive that exposes outer, padding and inner radius as CSS variables so nested corners stay concentric.",
+      "description": "Concentric border radius frame for React and shadcn: nested corners take the outer radius minus padding and border, through CSS variables.",
       "registryDependencies": [
         "https://eased.dev/r/eased-tokens.json"
       ],
@@ -292,7 +292,7 @@
       "name": "accordion",
       "type": "registry:ui",
       "title": "Accordion",
-      "description": "Disclosures whose height springs open with no overshoot, content fading in as the height lands and the chevron turning on the same spring. Base UI Accordion behaviour.",
+      "description": "Animated accordion for React and shadcn: panels open to their real height, one or several at a time, built on Base UI.",
       "dependencies": [
         "@base-ui/react"
       ],
@@ -335,7 +335,7 @@
       "name": "avatar",
       "type": "registry:ui",
       "title": "Avatar",
-      "description": "Avatar and AvatarGroup on Base UI Avatar: images fade in from a 4px blur once loaded so initials never flash; overlapping stacks with a cut-out ring spread apart on hover; the overflow count rolls.",
+      "description": "Animated avatar for React and shadcn: images fade in from a soft blur, initials fill in when they fail, and avatar groups spread apart on hover.",
       "dependencies": [
         "@base-ui/react"
       ],
@@ -375,7 +375,7 @@
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",
-      "description": "A status or count chip. Counts roll their digits; a count-only badge pops in above zero and leaves when cleared; a live dot breathes slowly and stops under reduced motion.",
+      "description": "Animated badge for React and shadcn for statuses and counts: counts roll their digits, and a count-only badge leaves at zero.",
       "dependencies": [
         "motion"
       ],
@@ -414,7 +414,7 @@
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
-      "description": "A Base UI button whose press scale depends on its width, whose label swaps with y + blur while the width springs, and whose loading spinner overlays the label so the width never changes. Popover triggers never scale.",
+      "description": "Animated button for React and shadcn: labels swap while the width springs, and the loading spinner keeps its width.",
       "dependencies": [
         "@base-ui/react",
         "motion"
@@ -664,7 +664,7 @@
       "name": "field",
       "type": "registry:ui",
       "title": "Field",
-      "description": "Label, control and one message line on Base UI Field. The description and the error share the line and swap with y + blur; inside Base UI's Form, submitting focuses the first invalid field.",
+      "description": "Form field for React and shadcn: a label, a control and one message line where help text and errors swap in place.",
       "registryDependencies": [
         "https://eased.dev/r/eased-tokens.json",
         "https://eased.dev/r/eased-field.json"
@@ -699,7 +699,7 @@
       "name": "input",
       "type": "registry:ui",
       "title": "Input",
-      "description": "A Base UI text input whose focus is the border alone. An error shakes it once, 6px, then the field's message opens with a height spring. Leading and trailing addons.",
+      "description": "Text input for React and shadcn on Base UI, with leading and trailing addons and an error state that shakes once.",
       "dependencies": [
         "@base-ui/react"
       ],
@@ -737,7 +737,7 @@
       "name": "kbd",
       "type": "registry:ui",
       "title": "Kbd",
-      "description": "A keycap that presses down when the real key does: the face drops 1px onto its base and springs back on release. Glyphs are announced by name; useKeysHeld lights up whatever a chord belongs to.",
+      "description": "Keyboard shortcut keycap (kbd) for React and shadcn that presses down while the real key is held.",
       "registryDependencies": [
         "https://eased.dev/r/eased-tokens.json"
       ],
@@ -775,7 +775,7 @@
       "name": "number-roll",
       "type": "registry:ui",
       "title": "Number Roll",
-      "description": "Tabular digits that roll in the direction of change: a 9 → 0 carry rolls forward, a value that changes mid-roll redirects, new places fade in while the rest slide over. Intl formatting, locale-aware separators.",
+      "description": "Animated number counter for React and shadcn: each digit rolls to its new value, formatted for the user's locale.",
       "registryDependencies": [
         "https://eased.dev/r/eased-tokens.json",
         "https://eased.dev/r/eased-number-roll.json"
@@ -814,7 +814,7 @@
       "name": "popover",
       "type": "registry:ui",
       "title": "Popover",
-      "description": "A panel that opens from its trigger's transform-origin with a 5px directional offset, closes at half the distance in 150ms, and reverses mid-flight. Its trigger presses by colour, never by scale.",
+      "description": "Animated popover for React and shadcn that grows out of its trigger, moves focus inside and closes on Esc, built on Base UI.",
       "dependencies": [
         "@base-ui/react"
       ],
@@ -859,7 +859,7 @@
       "name": "progress",
       "type": "registry:ui",
       "title": "Progress",
-      "description": "A progress bar on Base UI Progress: the bar rides a spring and its value rolls; an unknown length sweeps with an accelerate–decelerate curve and hands over to the bar when a value arrives.",
+      "description": "Animated progress bar for React and shadcn on Base UI, with a spring-driven bar, a rolling value and an indeterminate sweep.",
       "dependencies": [
         "motion",
         "@base-ui/react"
@@ -901,7 +901,7 @@
       "name": "progressive-blur",
       "type": "registry:ui",
       "title": "Progressive Blur",
-      "description": "A blur that ramps from 0 to 20px over 80px toward an edge, from stacked masked backdrop layers, for headers, bottom bars and composers. Optionally scroll-linked so it appears only once content is underneath.",
+      "description": "Progressive blur for React and shadcn: a backdrop blur that ramps up to 20px toward an edge, under sticky headers, bottom bars and composers.",
       "dependencies": [
         "motion"
       ],
@@ -938,7 +938,7 @@
       "name": "radio-group",
       "type": "registry:ui",
       "title": "Radio Group",
-      "description": "Radios whose dot scales out from the centre on a snappy spring, and radio cards whose selected border travels between cards. Base UI RadioGroup behaviour.",
+      "description": "Radio group for React and shadcn, with plain radios or selectable cards whose selected border travels between them.",
       "dependencies": [
         "@base-ui/react"
       ],
@@ -977,7 +977,7 @@
       "name": "scroll-area",
       "type": "registry:ui",
       "title": "Scroll Area",
-      "description": "A native scroller with a thin themed overlay scrollbar that thickens under the pointer, and edge fades that appear only when there is more to scroll. Base UI Scroll Area underneath.",
+      "description": "Custom scrollbar for React and shadcn: a thin overlay bar on a native scroller, with edge fades only where more remains.",
       "dependencies": [
         "@base-ui/react"
       ],
@@ -1021,7 +1021,7 @@
       "name": "segmented",
       "type": "registry:ui",
       "title": "Segmented",
-      "description": "A single-choice segmented control whose thumb glides to the selection on a spring. Base UI RadioGroup behaviour, concentric thumb, labels that never change weight.",
+      "description": "Segmented control for React and shadcn: a thumb glides to the chosen option, with radio semantics that submit with a form.",
       "dependencies": [
         "@base-ui/react"
       ],
@@ -1060,7 +1060,7 @@
       "name": "skeleton",
       "type": "registry:ui",
       "title": "Skeleton",
-      "description": "Loading placeholders with one page-wide shimmer: every skeleton shares a viewport-space highlight and one phase, so a single band sweeps across all of them. Wrap the real content and it hands off in place, fading in from a soft blur.",
+      "description": "Skeleton loader for React and shadcn: every placeholder on the page shares one shimmer, and the real content fades in in place.",
       "dependencies": [
         "motion"
       ],
@@ -1103,7 +1103,7 @@
       "name": "spinner",
       "type": "registry:ui",
       "title": "Spinner",
-      "description": "A quarter arc turning on a faint ring, the eased.dev status-badge mark. Spins on the compositor, pauses off-screen, freezes under reduced motion, announces itself unless visible text already does.",
+      "description": "Loading spinner for React and shadcn: a CSS arc that keeps turning while the main thread is busy and announces itself to screen readers.",
       "dependencies": [
         "motion"
       ],
@@ -1141,7 +1141,7 @@
       "name": "tabs",
       "type": "registry:ui",
       "title": "Tabs",
-      "description": "Tabs with a gliding indicator (underline or pill) and panels that cross-fade 6px in the direction of travel while their container's height springs. Base UI Tabs behaviour.",
+      "description": "Animated tabs for React and shadcn: an underline or pill indicator glides to the active tab and panels cross-fade.",
       "dependencies": [
         "motion",
         "@base-ui/react"
@@ -1183,7 +1183,7 @@
       "name": "text-swap",
       "type": "registry:ui",
       "title": "Text Swap",
-      "description": "Change a label, status or short value with y + blur, and spring the width to fit, so neighbours glide instead of jumping. Direction-aware for counts and steps.",
+      "description": "Animated text change for React and shadcn: a label or value swaps with a lift and blur while the width springs to fit.",
       "registryDependencies": [
         "https://eased.dev/r/eased-tokens.json",
         "https://eased.dev/r/eased-text-swap.json"
@@ -1220,7 +1220,7 @@
       "name": "textarea",
       "type": "registry:ui",
       "title": "Textarea",
-      "description": "A textarea that grows with its text on a smooth height spring instead of jumping a line at a time. The character counter rolls its digits and turns warning-coloured at 90%.",
+      "description": "Auto-resizing textarea for React and shadcn: it grows with its text on a spring, with a character counter whose digits roll.",
       "dependencies": [
         "@base-ui/react",
         "motion"
@@ -1260,7 +1260,7 @@
       "name": "toggle-group",
       "type": "registry:ui",
       "title": "Toggle Group",
-      "description": "Toggle buttons sharing one highlight: it travels between items in single mode, and pressed neighbours fuse into one shape in multiple mode. Base UI ToggleGroup behaviour.",
+      "description": "Toggle button group for React and shadcn, single or multiple selection, for toolbars like bold, italic and underline.",
       "dependencies": [
         "motion",
         "@base-ui/react"
@@ -1303,7 +1303,7 @@
       "name": "tooltip",
       "type": "registry:ui",
       "title": "Tooltip",
-      "description": "A short label that waits 400ms for the first trigger, then follows the pointer instantly across its neighbours. Enters 3px toward its trigger, shows an optional shortcut, never appears on touch.",
+      "description": "Animated tooltip for React and shadcn with an optional keyboard shortcut; after the first, neighbours open instantly.",
       "dependencies": [
         "@base-ui/react"
       ],
@@ -1343,7 +1343,7 @@
       "name": "cells",
       "type": "registry:ui",
       "title": "Cells kit",
-      "description": "Table cells that make rows look finished: avatar with name, status badge, number with a rolling value and coloured delta, a progress meter that fills on view, a self-updating relative time, and a mono ID with a copy button.",
+      "description": "Table cells for React and shadcn: avatars with names, status badges, rolling numbers with coloured deltas, progress meters, times and IDs.",
       "dependencies": [
         "motion"
       ],
@@ -1407,7 +1407,7 @@
       "name": "table",
       "type": "registry:ui",
       "title": "Table",
-      "description": "A premium hairline table on TanStack Table: half-pixel row rules, a quiet sentence-case header, numbers right-aligned on one edge, one emphasised cell per row, a sticky header, and dense or comfortable rows.",
+      "description": "Data table for React and shadcn on TanStack Table, with half-pixel row rules, a sticky header and 36px or 48px rows.",
       "dependencies": [
         "@tanstack/react-table"
       ],
@@ -1445,7 +1445,7 @@
       "name": "attachment",
       "type": "registry:ui",
       "title": "Attachment Chip",
-      "description": "A chat attachment: images as a thumbnail that sharpens from a blur once decoded, files as a typed chip. Upload progress is a ring that springs between reports; a failure shakes once and offers Retry; removing one lets its neighbours slide into the gap.",
+      "description": "File attachment chip for React and shadcn: image thumbnails sharpen as they load, a ring tracks the upload, and failures offer Retry.",
       "dependencies": [
         "motion"
       ],
@@ -1486,7 +1486,7 @@
       "name": "composer",
       "type": "registry:ui",
       "title": "Composer",
-      "description": "A chat composer that grows on a spring, opens an attachments row with Auto Height, and morphs its Send arrow into a Stop square while a reply streams. Enter sends, Shift+Enter breaks the line, Escape stops; files can be picked, dropped or pasted. Wires straight into AI SDK useChat.",
+      "description": "AI chat input for React and shadcn: the box grows as you type, files drop or paste in, and Send morphs into Stop while a reply streams.",
       "dependencies": [
         "motion"
       ],
@@ -1586,7 +1586,7 @@
       "name": "message",
       "type": "registry:ui",
       "title": "Message",
-      "description": "A chat message: the user's in a sunken bubble on the right, the assistant's flush on the left. Consecutive bubbles from one author merge, their touching corners tightening as the next one lands. Renders AI SDK UIMessage text and file parts.",
+      "description": "Chat message bubble for React and shadcn that renders AI SDK messages, tightening the corners where consecutive bubbles meet.",
       "dependencies": [
         "motion"
       ],
@@ -1673,7 +1673,7 @@
       "name": "shimmer-text",
       "type": "registry:ui",
       "title": "Shimmer Text",
-      "description": "A soft band of light sweeps across a label while something is working. Every shimmer on the page shares one phase, status changes swap in without restarting the band, and turning it off fades the band out in place.",
+      "description": "Shimmer text effect for React and shadcn: a band of light sweeps a loading label, in one phase shared by every shimmer on the page.",
       "dependencies": [
         "motion"
       ],
@@ -1716,7 +1716,7 @@
       "name": "thinking-bar",
       "type": "registry:ui",
       "title": "Thinking Bar",
-      "description": "The line above a reasoning model's answer: the label shimmers while a seconds counter rolls, then \"Thinking\" morphs into \"Thought for 12s\" and the reasoning folds away a second after the answer starts.",
+      "description": "AI reasoning indicator for React and shadcn: \"Thinking 4s\" counts up while the model reasons, then reads \"Thought for 12s\" and folds away.",
       "dependencies": [
         "motion",
         "@base-ui/react"
@@ -1767,7 +1767,7 @@
       "name": "agent-orb",
       "type": "registry:ui",
       "title": "Agent Orb",
-      "description": "A small living orb for an assistant's state: colour fields drift inside a glassy sphere and it breathes, idle, listening, thinking or speaking, with its speed tied to the token rate so it keeps pace with the stream.",
+      "description": "AI agent orb for React and shadcn showing idle, listening, thinking or speaking, with a swirl that speeds up with the token rate.",
       "dependencies": [
         "motion"
       ],
@@ -1905,7 +1905,7 @@
       "name": "sparkline",
       "type": "registry:ui",
       "title": "Sparkline",
-      "description": "A word-sized line chart that draws in once, rings its newest point in the surface colour and morphs to new values from the shape on screen. Optional scrub readout.",
+      "description": "Sparkline chart for React and shadcn: a word-sized line that draws in once and morphs to new values, with an optional scrub readout.",
       "registryDependencies": [
         "https://eased.dev/r/eased-tokens.json",
         "https://eased.dev/r/eased-chart-core.json"
@@ -1939,7 +1939,7 @@
       "name": "code-block",
       "type": "registry:ui",
       "title": "Code Block",
-      "description": "Shiki-highlighted code in warm stone and cream themes, with a file title bar and language pill, a copy button that morphs into a check while \"Copied\" slides out, highlighted and focused lines, and long blocks that collapse under a progressive blur with \"Show 22 more lines\".",
+      "description": "Code block for React and shadcn with Shiki syntax highlighting, a copy button, line highlights and long blocks that collapse under a blur.",
       "dependencies": [
         "motion",
         "shiki"
@@ -1977,7 +1977,7 @@
       "name": "code-tabs",
       "type": "registry:ui",
       "title": "Code Tabs",
-      "description": "Several files, or one command per package manager, in one code block: the underline glides between tabs, the code cross-fades 6px in the direction of travel while the height springs, and with a groupId every block on the page switches together and remembers the choice.",
+      "description": "Code tabs for React and shadcn: several files or one install command per package manager, with the pnpm or npm choice synced across the page.",
       "dependencies": [
         "motion",
         "@base-ui/react",
@@ -2074,7 +2074,7 @@
       "name": "snippet",
       "type": "registry:ui",
       "title": "Snippet",
-      "description": "A one-line command with a $ prompt and a copy button that morphs into a check. When the command changes (pnpm ↔ npm) the text swaps and the width springs, so the copy button glides instead of jumping.",
+      "description": "Copyable command snippet for React and shadcn: one shell line with a $ prompt that is never copied, and a copy button that turns into a check.",
       "dependencies": [
         "motion",
         "shiki"
@@ -2148,7 +2148,7 @@
       "name": "mac-hud",
       "type": "registry:ui",
       "title": "Mac HUD",
-      "description": "The macOS volume and brightness overlay: a frosted, click-through HUD in the classic 200×200 square or the macOS 26 pill. Repeat changes update it in place and restart its 1.1s hold; it never replays its entrance.",
+      "description": "macOS volume and brightness HUD for React and shadcn, square or macOS 26 pill, updating in place and holding 1.1s after each change.",
       "dependencies": [
         "motion"
       ],
@@ -2187,7 +2187,7 @@
       "name": "mac-menu-popover",
       "type": "registry:ui",
       "title": "Mac menu popover",
-      "description": "A macOS menu bar popover: a status item and a frosted panel whose arrow and panel are one shape, so one blur and one hairline follow the arrow. It grows from the arrow tip, reverses mid-flight, and drops its CSS blur for native Tauri or Electron vibrancy.",
+      "description": "macOS menu bar popover for React and shadcn, for Tauri and Electron apps: the panel grows from its arrow tip and reverses mid-flight.",
       "dependencies": [
         "@base-ui/react"
       ],
@@ -2272,7 +2272,7 @@
       "name": "image-compare",
       "type": "registry:ui",
       "title": "Image Compare",
-      "description": "Compare any two layers (screenshots, themes, a plain component and its polished twin) with one divider. A flick coasts to 0, 50 or 100, a slow release stays where it lands, the tags fade as the line passes under them, and the knob is a keyboard slider.",
+      "description": "Before and after image comparison slider for React and shadcn: drag the divider, flick it to 0, 50 or 100, or move it by keyboard.",
       "dependencies": [
         "motion"
       ],
@@ -2287,6 +2287,50 @@
           "path": "src/registry/eased/image-compare/image-compare.tsx",
           "type": "registry:ui",
           "target": "@components/eased/image-compare/image-compare.tsx"
+        }
+      ]
+    },
+    {
+      "name": "like-button-demo",
+      "type": "registry:example",
+      "title": "Like Button demo",
+      "description": "A changelog post with replies: like it for the burst while other readers keep the count rolling.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/like-button.json",
+        "https://eased.dev/r/avatar.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/eased-layout.json",
+        "https://eased.dev/r/eased-motion.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/like-button/like-button-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/like-button/like-button-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "like-button",
+      "type": "registry:ui",
+      "title": "Like Button",
+      "description": "Animated like button for React and shadcn: the heart pops with a burst of sparks, and the optimistic count reverts if saving fails.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/eased-number-roll.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/like-button/like-button.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/like-button/like-button.tsx"
         }
       ]
     },
@@ -2585,6 +2629,83 @@
       ]
     },
     {
+      "name": "alert-demo",
+      "type": "registry:example",
+      "title": "Alert demo",
+      "description": "Billing: a failed payment that retries into a success, and a note you can dismiss.",
+      "registryDependencies": [
+        "https://eased.dev/r/alert.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/alert/alert-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/alert/alert-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Inline alert for React and shadcn for info, success, warning and error messages, with optional actions and a dismiss button.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/eased-auto-height.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/alert/alert.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/alert/alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-demo",
+      "type": "registry:example",
+      "title": "Checkbox demo",
+      "description": "An export dialog: All columns follows the columns below it.",
+      "registryDependencies": [
+        "https://eased.dev/r/checkbox.json",
+        "https://eased.dev/r/eased-demo-frame.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/checkbox/checkbox-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/checkbox/checkbox-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Animated checkbox for React and shadcn: the check draws itself and morphs into a dash for indeterminate parent checkboxes.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/checkbox/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/checkbox/checkbox.tsx"
+        }
+      ]
+    },
+    {
       "name": "eased-overlay-core",
       "type": "registry:ui",
       "title": "Overlay core",
@@ -2604,6 +2725,271 @@
           "path": "src/registry/eased/_primitives/overlay-core/overlay-core.tsx",
           "type": "registry:ui",
           "target": "@components/eased/_primitives/overlay-core/overlay-core.tsx"
+        }
+      ]
+    },
+    {
+      "name": "heading-demo",
+      "type": "registry:example",
+      "title": "Heading demo",
+      "description": "A type scale from 48 to 16px, each size with its own weight and tracking.",
+      "registryDependencies": [
+        "https://eased.dev/r/heading.json",
+        "https://eased.dev/r/eased-demo-frame.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/heading/heading-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/heading/heading-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "heading",
+      "type": "registry:ui",
+      "title": "Heading",
+      "description": "Heading component for React and shadcn: size, weight, tracking and leading set together from 16 to 60px, separate from the h1–h6 level.",
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/heading/heading.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/heading/heading.tsx"
+        }
+      ]
+    },
+    {
+      "name": "prose-demo",
+      "type": "registry:example",
+      "title": "Prose demo",
+      "description": "Release notes that switch between chat and document density.",
+      "registryDependencies": [
+        "https://eased.dev/r/prose.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/segmented.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/prose/prose-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/prose/prose-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "prose",
+      "type": "registry:ui",
+      "title": "Prose",
+      "description": "Prose typography for rendered markdown in React and shadcn, with a chat density for AI replies and a document density for long reads.",
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/prose/prose.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/prose/prose.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider-demo",
+      "type": "registry:example",
+      "title": "Slider demo",
+      "description": "Usage limits: a spend cap, a price range and an alert threshold.",
+      "registryDependencies": [
+        "https://eased.dev/r/slider.json",
+        "https://eased.dev/r/eased-demo-frame.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/slider/slider-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/slider/slider-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Range slider for React and shadcn, single or two-thumb, with a value readout whose digits roll as it steps.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-number-roll.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/slider/slider.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/slider/slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-demo",
+      "type": "registry:example",
+      "title": "Switch demo",
+      "description": "Notification settings with switches on one right edge.",
+      "registryDependencies": [
+        "https://eased.dev/r/switch.json",
+        "https://eased.dev/r/eased-demo-frame.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/switch/switch-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/switch/switch-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Toggle switch for React and shadcn: the thumb stretches toward where it is going, and a label turns it into a settings row.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/switch/switch.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/switch/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-demo",
+      "type": "registry:example",
+      "title": "Dialog demo",
+      "description": "API keys: a create-key dialog whose Cancel asks in a nested alert dialog, and a revoke alert dialog per key.",
+      "registryDependencies": [
+        "https://eased.dev/r/dialog.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/input.json",
+        "https://eased.dev/r/segmented.json",
+        "https://eased.dev/r/eased-layout.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/dialog/dialog-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/dialog/dialog-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Modal dialog for React and shadcn, with confirm (alert) dialogs and nested dialogs, built on Base UI.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-overlay-core.json",
+        "https://eased.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/dialog/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/dialog/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command-palette-demo",
+      "type": "registry:example",
+      "title": "Command Palette demo",
+      "description": "An issue tracker header whose search trigger (and ⌘K, while the demo is on screen) opens a palette of suggestions, navigation, theme and team commands.",
+      "registryDependencies": [
+        "https://eased.dev/r/command-palette.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/avatar.json",
+        "https://eased.dev/r/text-swap.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/command-palette/command-palette-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/command-palette/command-palette-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command-palette",
+      "type": "registry:ui",
+      "title": "Command Palette",
+      "description": "Command palette for React and shadcn: ⌘K opens it at once, commands filter as you type, and Enter runs the first match.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/eased-overlay-core.json",
+        "https://eased.dev/r/eased-scroll-fade.json",
+        "https://eased.dev/r/kbd.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/command-palette/command-palette.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/command-palette/command-palette.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-demo",
+      "type": "registry:example",
+      "title": "Context Menu demo",
+      "description": "A grid of brand assets: right-click or press and hold a file to open, duplicate, tag, star or move it to Trash with undo.",
+      "registryDependencies": [
+        "https://eased.dev/r/context-menu.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/context-menu/context-menu-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/context-menu/context-menu-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Right-click context menu for React and shadcn on Base UI: it opens at the pointer, or on a 500ms long press on touch, with submenus.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-floating.json",
+        "https://eased.dev/r/eased-overlay-core.json",
+        "https://eased.dev/r/dropdown-menu.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/context-menu/context-menu.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/context-menu/context-menu.tsx"
         }
       ]
     },
@@ -2632,7 +3018,7 @@
       "name": "dropdown-menu",
       "type": "registry:ui",
       "title": "Dropdown Menu",
-      "description": "A menu that opens on mousedown 4px from its trigger, with one highlight gliding between rows and a macOS blink before it closes. Checkbox and radio rows, shortcuts and submenus share three aligned tracks.",
+      "description": "Dropdown menu for React and shadcn: one highlight glides between rows, and a chosen row blinks before the menu closes, as on macOS.",
       "dependencies": [
         "@base-ui/react"
       ],
@@ -2648,6 +3034,187 @@
           "path": "src/registry/eased/dropdown-menu/dropdown-menu.tsx",
           "type": "registry:ui",
           "target": "@components/eased/dropdown-menu/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet-demo",
+      "type": "registry:example",
+      "title": "Sheet demo",
+      "description": "An orders list whose Filters open a right sheet (a bottom sheet on phones) with a nested Ship to sheet, and each order opens a bottom sheet.",
+      "registryDependencies": [
+        "https://eased.dev/r/sheet.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/avatar.json",
+        "https://eased.dev/r/badge.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/checkbox.json",
+        "https://eased.dev/r/radio-group.json",
+        "https://eased.dev/r/segmented.json",
+        "https://eased.dev/r/switch.json",
+        "https://eased.dev/r/toggle-group.json",
+        "https://eased.dev/r/eased-layout.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/sheet/sheet-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/sheet/sheet-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Sheet and side drawer for React and shadcn on Base UI Drawer: swipe to dismiss, and side sheets become bottom sheets under 640px.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-overlay-core.json",
+        "https://eased.dev/r/eased-scroll-fade.json",
+        "https://eased.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/sheet/sheet.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/sheet/sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox-demo",
+      "type": "registry:example",
+      "title": "Combobox demo",
+      "description": "A pull request's sidebar: a repository combobox, reviewers with avatars in grouped teams, and colour-dotted labels as chips.",
+      "registryDependencies": [
+        "https://eased.dev/r/combobox.json",
+        "https://eased.dev/r/eased-field.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/avatar.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/combobox/combobox-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/combobox/combobox-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Searchable select (combobox) for React and shadcn, with filtering, a clear button and multi-select chips, on Base UI.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/eased-overlay-core.json",
+        "https://eased.dev/r/eased-floating.json",
+        "https://eased.dev/r/eased-field.json",
+        "https://eased.dev/r/spinner.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/combobox/combobox.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/combobox/combobox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-demo",
+      "type": "registry:example",
+      "title": "Select demo",
+      "description": "Workspace settings: a grouped data-region select, a timezone list that scrolls, and a fixed-width role select per member.",
+      "registryDependencies": [
+        "https://eased.dev/r/select.json",
+        "https://eased.dev/r/eased-field.json",
+        "https://eased.dev/r/eased-fixtures.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/eased-layout.json",
+        "https://eased.dev/r/avatar.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/select/select-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/select/select-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Select dropdown for React and shadcn that opens with the chosen option over its trigger, like a macOS pop-up button.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-overlay-core.json",
+        "https://eased.dev/r/eased-floating.json",
+        "https://eased.dev/r/eased-field.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/select/select.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/select/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-demo",
+      "type": "registry:example",
+      "title": "Toast demo",
+      "description": "A project screen whose Deploy, Move to Done and Retry buttons fire a promise toast, an Undo toast and an error toast into the frame.",
+      "registryDependencies": [
+        "https://eased.dev/r/toast.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/eased-layout.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/text-swap.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/toast/toast-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/toast/toast-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Toast notifications for React and shadcn: toasts stack behind the newest, fan out on hover and pause their timers, with an Undo action.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/eased-overlay-core.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/spinner.json",
+        "https://eased.dev/r/text-swap.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/toast/toast.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/toast/toast.tsx"
         }
       ]
     },
@@ -2729,7 +3296,7 @@
       "name": "breadcrumb",
       "type": "registry:ui",
       "title": "Breadcrumb",
-      "description": "A trail from the root to the current page that folds its middle crumbs into a menu when it runs out of room, measured rather than guessed, with links that underline on hover.",
+      "description": "Animated breadcrumb for React and shadcn that folds the middle crumbs into a menu when the trail runs out of room.",
       "registryDependencies": [
         "https://eased.dev/r/eased-tokens.json",
         "https://eased.dev/r/dropdown-menu.json",
@@ -2769,7 +3336,7 @@
       "name": "pagination",
       "type": "registry:ui",
       "title": "Pagination",
-      "description": "Numbered pages whose selected chip glides on a spring, with ellipses in a fixed number of slots so the width never changes, and a compact Page 3 of 12 variant.",
+      "description": "Animated pagination for React and shadcn: the selected page chip glides on a spring, and the width never changes as you page.",
       "dependencies": [
         "motion"
       ],
@@ -2813,7 +3380,7 @@
       "name": "rating",
       "type": "registry:ui",
       "title": "Rating",
-      "description": "Star rating on Base UI RadioGroup with a hover preview, half steps and a read-only mode for any fraction. Icons fill from the left and pop in turn on a spring.",
+      "description": "Star rating for React and shadcn on Base UI RadioGroup, with hover preview, half stars and a read-only mode for any fraction.",
       "dependencies": [
         "@base-ui/react",
         "motion"
@@ -2852,7 +3419,7 @@
       "name": "carousel",
       "type": "registry:ui",
       "title": "Carousel",
-      "description": "A scroll-snap carousel with native momentum, mouse drag and arrow keys. Its dot stretches between pages as you scroll and its edges fade only where there is more.",
+      "description": "Carousel for React and shadcn on native scroll snapping, with mouse drag, arrow keys and a dot that stretches between pages.",
       "dependencies": [
         "motion"
       ],
@@ -2893,7 +3460,7 @@
       "name": "file-upload",
       "type": "registry:ui",
       "title": "File Upload",
-      "description": "A dropzone that wakes when files cross the page and lifts as they reach it. Rows rise in with per-file progress on a spring, and refused files are explained inline.",
+      "description": "Drag and drop file upload for React and shadcn: the dropzone wakes when files cross the page, with per-file progress and retry.",
       "dependencies": [
         "motion"
       ],
@@ -2933,7 +3500,7 @@
       "name": "tree",
       "type": "registry:ui",
       "title": "Tree",
-      "description": "A file tree whose folders open on a height spring as the chevron turns, both interruptible. One selection glides between rows, guides mark each level, and keys follow WAI-ARIA.",
+      "description": "React file tree for shadcn: folders spring open, one selection glides between rows, and arrow keys and typeahead follow WAI-ARIA.",
       "dependencies": [
         "motion"
       ],
@@ -2975,7 +3542,7 @@
       "name": "date-picker",
       "type": "registry:ui",
       "title": "Date Picker",
-      "description": "A date field with a calendar popover on Base UI and calendar-core. Typed dates parse in the field's locale, months slide the way you page, the selection glides between days, and ranges preview as you hover.",
+      "description": "Date picker for React and shadcn with a calendar popover and ranges, reading typed dates such as 24 Oct or tomorrow in the field's locale.",
       "dependencies": [
         "@base-ui/react",
         "motion"
@@ -3025,7 +3592,7 @@
       "name": "number-field",
       "type": "registry:ui",
       "title": "Number Field",
-      "description": "A number input on Base UI's NumberField with steppers that speed up while held, digits that roll on every step, Intl formatting with a true minus, min, max and step, and an optional scrub label.",
+      "description": "Number input for React and shadcn on Base UI: steppers speed up the longer you hold them, and each step rolls the digits.",
       "dependencies": [
         "@base-ui/react",
         "motion"
@@ -3067,7 +3634,7 @@
       "name": "otp-field",
       "type": "registry:ui",
       "title": "OTP Field",
-      "description": "A one-time-code input on Base UI's OTPField: autofill and paste fill every cell, the caret blinks in the empty cell, characters pop in, a wrong code shakes once and an accepted one ripples green.",
+      "description": "OTP input for React and shadcn on Base UI: SMS autofill, password managers and a pasted code fill every cell at once.",
       "dependencies": [
         "@base-ui/react",
         "motion"
@@ -3103,6 +3670,55 @@
           "path": "src/registry/eased/_primitives/commerce-core/commerce-core.tsx",
           "type": "registry:ui",
           "target": "@components/eased/_primitives/commerce-core/commerce-core.tsx"
+        }
+      ]
+    },
+    {
+      "name": "variant-picker-demo",
+      "type": "registry:example",
+      "title": "Variant Picker demo",
+      "description": "The Ridgeline Down Jacket in three colourways, one marked down, with thin stock and a sold-out size.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/variant-picker.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/eased-fixtures.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/eased-commerce-core.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/variant-picker/variant-picker-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/variant-picker/variant-picker-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "variant-picker",
+      "type": "registry:ui",
+      "title": "Variant Picker",
+      "description": "Product variant picker for React and shadcn: colour swatches and sizes on Base UI radio groups, with sold-out sizes struck through.",
+      "dependencies": [
+        "motion",
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/eased-number-roll.json",
+        "https://eased.dev/r/eased-commerce-core.json",
+        "https://eased.dev/r/eased-indicator.json",
+        "https://eased.dev/r/eased-text-swap.json",
+        "https://eased.dev/r/badge.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/variant-picker/variant-picker.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/variant-picker/variant-picker.tsx"
         }
       ]
     },
@@ -3199,6 +3815,860 @@
           "path": "src/registry/eased/_primitives/health-core/health-core.tsx",
           "type": "registry:ui",
           "target": "@components/eased/_primitives/health-core/health-core.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart-demo",
+      "type": "registry:example",
+      "title": "Area Chart demo",
+      "description": "Weekly signups against the previous period, with a headline that follows the crosshair and a range switch that morphs the area.",
+      "registryDependencies": [
+        "https://eased.dev/r/area-chart.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/segmented.json",
+        "https://eased.dev/r/number-roll.json",
+        "https://eased.dev/r/text-swap.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/area-chart/area-chart-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/area-chart/area-chart-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart",
+      "type": "registry:ui",
+      "title": "Area Chart",
+      "description": "Area chart for React and shadcn that draws in once, morphs to new data while its scale springs, and has a crosshair tooltip.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/eased-chart-core.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/area-chart/area-chart.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/area-chart/area-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-demo",
+      "type": "registry:example",
+      "title": "Card demo",
+      "description": "A workspace overview: a plan card with an action, a plain stat, two project cards that are links, and an activity card that grows.",
+      "registryDependencies": [
+        "https://eased.dev/r/card.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/avatar.json",
+        "https://eased.dev/r/badge.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/progress.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/card/card-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/card/card-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Card component for React and shadcn with shadcn's parts and slots, plus a CardLink that makes the whole card one clickable link.",
+      "dependencies": [
+        "@base-ui/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-auto-height.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/card/card.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/card/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "appointment-scheduler-demo",
+      "type": "registry:example",
+      "title": "Appointment Scheduler demo",
+      "description": "Booking a 20-minute follow-up at Willow Health across three clinicians and the next five weekdays.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/appointment-scheduler.json",
+        "https://eased.dev/r/eased-fixtures.json",
+        "https://eased.dev/r/eased-demo-frame.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/appointment-scheduler/appointment-scheduler-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/appointment-scheduler/appointment-scheduler-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "appointment-scheduler",
+      "type": "registry:ui",
+      "title": "Appointment Scheduler",
+      "description": "Appointment booking for React and shadcn: pick a provider, day and time, and the chosen slot lifts into the confirmation card.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/eased-indicator.json",
+        "https://eased.dev/r/eased-text-swap.json",
+        "https://eased.dev/r/eased-health-core.json",
+        "https://eased.dev/r/avatar.json",
+        "https://eased.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/appointment-scheduler/appointment-scheduler.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/appointment-scheduler/appointment-scheduler.tsx"
+        }
+      ]
+    },
+    {
+      "name": "caption-ticker-demo",
+      "type": "registry:example",
+      "title": "Caption Ticker demo",
+      "description": "Four onboarding captions on their own clock, each with its own timing, lighting the step they describe.",
+      "registryDependencies": [
+        "https://eased.dev/r/caption-ticker.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/eased-demo-frame.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/caption-ticker/caption-ticker-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/caption-ticker/caption-ticker-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "caption-ticker",
+      "type": "registry:ui",
+      "title": "Caption Ticker",
+      "description": "An animated caption ticker for React and shadcn, stepping short captions in under a scene one line at a time.",
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-text-swap.json",
+        "https://eased.dev/r/eased-demo-core.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/caption-ticker/caption-ticker.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/caption-ticker/caption-ticker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "click-ripple-demo",
+      "type": "registry:example",
+      "title": "Click Ripple demo",
+      "description": "A settings panel where every press rings at the point you click, on the canvas and on the buttons, played once on its own first.",
+      "registryDependencies": [
+        "https://eased.dev/r/click-ripple.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/eased-demo-core.json",
+        "https://eased.dev/r/eased-demo-frame.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/click-ripple/click-ripple-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/click-ripple/click-ripple-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "click-ripple",
+      "type": "registry:ui",
+      "title": "Click Ripple",
+      "description": "An animated click ripple for React and shadcn, a ring that spreads from the exact press point.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/eased-demo-core.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/click-ripple/click-ripple.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/click-ripple/click-ripple.tsx"
+        }
+      ]
+    },
+    {
+      "name": "demo-cursor-demo",
+      "type": "registry:example",
+      "title": "Demo Cursor demo",
+      "description": "An attachments panel played by Ama's cursor: it picks up a file, drags it into the drop zone, then glides to Attach and presses it.",
+      "registryDependencies": [
+        "https://eased.dev/r/demo-cursor.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/eased-demo-core.json",
+        "https://eased.dev/r/eased-demo-frame.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/demo-cursor/demo-cursor-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/demo-cursor/demo-cursor-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "demo-cursor",
+      "type": "registry:ui",
+      "title": "Demo Cursor",
+      "description": "An animated demo cursor for React and shadcn, a scripted pointer that glides to real elements and presses them.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/eased-text-swap.json",
+        "https://eased.dev/r/eased-demo-core.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/demo-cursor/demo-cursor.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/demo-cursor/demo-cursor.tsx"
+        }
+      ]
+    },
+    {
+      "name": "demo-scene",
+      "type": "registry:example",
+      "title": "Product demo scene",
+      "description": "The Product demo set on one timeline: a cursor presses Deploy, a ripple rings, the label swaps, the build count rolls, a caption steps on and the view pushes in on the live deploy, then it loops.",
+      "registryDependencies": [
+        "https://eased.dev/r/demo-cursor.json",
+        "https://eased.dev/r/click-ripple.json",
+        "https://eased.dev/r/zoom-spotlight.json",
+        "https://eased.dev/r/caption-ticker.json",
+        "https://eased.dev/r/text-swap.json",
+        "https://eased.dev/r/number-roll.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/badge.json",
+        "https://eased.dev/r/card.json",
+        "https://eased.dev/r/eased-demo-core.json",
+        "https://eased.dev/r/eased-demo-frame.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/demo-scene/demo-scene.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/demo-scene/demo-scene.tsx"
+        }
+      ]
+    },
+    {
+      "name": "eased-demo-core",
+      "type": "registry:lib",
+      "title": "Demo core primitive",
+      "description": "What the Product demo set shares: useDemoTimeline, one drift-free clock of named steps that plays, loops, seeks, pauses off-screen and in hidden tabs, and rests on its result under reduced motion; DemoTarget, an element by ref, a data-demo name or a point; and the press event a Click Ripple rings at.",
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/_primitives/demo-core/demo-core.ts",
+          "type": "registry:lib",
+          "target": "@components/eased/_primitives/demo-core/demo-core.ts"
+        }
+      ]
+    },
+    {
+      "name": "zoom-spotlight-demo",
+      "type": "registry:example",
+      "title": "Zoom Spotlight demo",
+      "description": "Fathom's usage overview pushing in on p95 latency, springing back, then lighting the latest deploy.",
+      "registryDependencies": [
+        "https://eased.dev/r/zoom-spotlight.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/eased-demo-core.json",
+        "https://eased.dev/r/eased-demo-frame.json",
+        "https://eased.dev/r/eased-fixtures.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/zoom-spotlight/zoom-spotlight-demo.tsx",
+          "type": "registry:example",
+          "target": "@components/eased/zoom-spotlight/zoom-spotlight-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "zoom-spotlight",
+      "type": "registry:ui",
+      "title": "Zoom Spotlight",
+      "description": "An animated zoom spotlight for React and shadcn, pushing in on one region of live UI and dimming the rest.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/eased-demo-core.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/zoom-spotlight/zoom-spotlight.tsx",
+          "type": "registry:ui",
+          "target": "@components/eased/zoom-spotlight/zoom-spotlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-clients",
+      "type": "registry:block",
+      "title": "Agency: Clients",
+      "description": "Client names as wordmarks in a ruled grid, then three numbers that roll up once.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json",
+        "https://eased.dev/r/number-roll.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/clients.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/clients.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-contact",
+      "type": "registry:block",
+      "title": "Agency: Contact",
+      "description": "The question, a line on how the studio replies, and the email set large with a copy button.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/eased-copy.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/contact.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/contact.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-core",
+      "type": "registry:lib",
+      "title": "Agency: content and kit",
+      "description": "Every word of the agency template and its client projects, plus the palette, tile mark, column, section labels, page heading, entrance, the drawn client sites and the notes' covers its sections share.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/content.ts",
+          "type": "registry:lib",
+          "target": "@components/eased/templates/agency/content.ts"
+        },
+        {
+          "path": "src/registry/eased/templates/agency/content-work.ts",
+          "type": "registry:lib",
+          "target": "@components/eased/templates/agency/content-work.ts"
+        },
+        {
+          "path": "src/registry/eased/templates/agency/content-services.ts",
+          "type": "registry:lib",
+          "target": "@components/eased/templates/agency/content-services.ts"
+        },
+        {
+          "path": "src/registry/eased/templates/agency/content-studio.ts",
+          "type": "registry:lib",
+          "target": "@components/eased/templates/agency/content-studio.ts"
+        },
+        {
+          "path": "src/registry/eased/templates/agency/content-careers.ts",
+          "type": "registry:lib",
+          "target": "@components/eased/templates/agency/content-careers.ts"
+        },
+        {
+          "path": "src/registry/eased/templates/agency/content-journal.ts",
+          "type": "registry:lib",
+          "target": "@components/eased/templates/agency/content-journal.ts"
+        },
+        {
+          "path": "src/registry/eased/templates/agency/content-contact.ts",
+          "type": "registry:lib",
+          "target": "@components/eased/templates/agency/content-contact.ts"
+        },
+        {
+          "path": "src/registry/eased/templates/agency/content-legal.ts",
+          "type": "registry:lib",
+          "target": "@components/eased/templates/agency/content-legal.ts"
+        },
+        {
+          "path": "src/registry/eased/templates/agency/kit.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/kit.tsx"
+        },
+        {
+          "path": "src/registry/eased/templates/agency/client-art.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/client-art.tsx"
+        },
+        {
+          "path": "src/registry/eased/templates/agency/covers.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/covers.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-footer",
+      "type": "registry:block",
+      "title": "Agency: Footer",
+      "description": "A newsletter sign-up, the studio's links and address, and the legal line with its local time.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/field.json",
+        "https://eased.dev/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/footer.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/footer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-header",
+      "type": "registry:block",
+      "title": "Agency: Header",
+      "description": "One line with the studio's availability, its pages as a list and the way in, then its name set bold, edge to edge.",
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/header.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-intro",
+      "type": "registry:block",
+      "title": "Agency: Intro",
+      "description": "What the studio is in one serif sentence, the page's heading, with one way into the work.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/intro.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/intro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-latest",
+      "type": "registry:block",
+      "title": "Agency: Latest and careers",
+      "description": "News, writing and a role as cards with drawn covers, then the open roles as a ruled list.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json",
+        "https://eased.dev/r/badge.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/latest.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/latest.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-reel",
+      "type": "registry:block",
+      "title": "Agency: Reel",
+      "description": "An ink-blue panel with a browser and a rail of projects: the address bar types each client's domain and the site loads line by line.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/text-swap.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/reel.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/reel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-services",
+      "type": "registry:block",
+      "title": "Agency: Services",
+      "description": "The studio's claim beside its four services as an accordion, each with what it delivers.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json",
+        "https://eased.dev/r/accordion.json",
+        "https://eased.dev/r/badge.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/services.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/services.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-work-page",
+      "type": "registry:block",
+      "title": "Agency: Work index",
+      "description": "Every project in one ruled grid: a small cover, the client, the project, its disciplines and its year.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/work-page.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/work-page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-work",
+      "type": "registry:block",
+      "title": "Agency: Selected work",
+      "description": "A grid of project covers with a filter by discipline; the grid reflows on a spring.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json",
+        "https://eased.dev/r/segmented.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/work.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/work.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency",
+      "type": "registry:block",
+      "title": "Agency",
+      "description": "A site for an independent design studio: its name across the page, a reel of client sites, the work, services, clients, news and contact, plus case studies, services, studio, careers, journal, contact, legal and not-found pages.",
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-header.json",
+        "https://eased.dev/r/agency-reel.json",
+        "https://eased.dev/r/agency-intro.json",
+        "https://eased.dev/r/agency-work.json",
+        "https://eased.dev/r/agency-services.json",
+        "https://eased.dev/r/agency-clients.json",
+        "https://eased.dev/r/agency-latest.json",
+        "https://eased.dev/r/agency-contact.json",
+        "https://eased.dev/r/agency-footer.json",
+        "https://eased.dev/r/agency-work-page.json",
+        "https://eased.dev/r/agency-case-study.json",
+        "https://eased.dev/r/agency-services-page.json",
+        "https://eased.dev/r/agency-studio.json",
+        "https://eased.dev/r/agency-careers.json",
+        "https://eased.dev/r/agency-journal.json",
+        "https://eased.dev/r/agency-enquiry.json",
+        "https://eased.dev/r/agency-legal.json",
+        "https://eased.dev/r/agency-not-found.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/site.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/site.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-careers",
+      "type": "registry:block",
+      "title": "Agency: Careers",
+      "description": "The open roles as one ruled grid with what everyone gets and how the studio hires, and a job post per role with its facts and an apply link.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json",
+        "https://eased.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/careers.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/careers.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-case-study",
+      "type": "registry:block",
+      "title": "Agency: Case study",
+      "description": "A project's story on its own page: the client's site drawn as wide as the page, the challenge beside the facts, what the studio made, three outcomes, the credits and the next project.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/case-study.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/case-study.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-enquiry",
+      "type": "registry:block",
+      "title": "Agency: Contact page",
+      "description": "The email and the studio's address beside a project enquiry form with budget and timeline, checked on submit, that gives way to a sent state.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json",
+        "https://eased.dev/r/button.json",
+        "https://eased.dev/r/field.json",
+        "https://eased.dev/r/input.json",
+        "https://eased.dev/r/select.json",
+        "https://eased.dev/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/enquiry.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/enquiry.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-journal",
+      "type": "registry:block",
+      "title": "Agency: Journal",
+      "description": "The journal index as a ruled list with drawn covers, and a post page with its author, a wide cover, the text in one reading column and more posts.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json",
+        "https://eased.dev/r/avatar.json",
+        "https://eased.dev/r/badge.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/journal.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/journal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-legal",
+      "type": "registry:block",
+      "title": "Agency: Legal page",
+      "description": "Privacy and imprint as a ruled list of parts, under a note that the text is a sample to replace.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/legal.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/legal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-not-found",
+      "type": "registry:block",
+      "title": "Agency: Not found",
+      "description": "The template's 404: the code beside the studio's mark with its tile missing, a line and the pages people usually want.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/not-found.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/not-found.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-services-page",
+      "type": "registry:block",
+      "title": "Agency: Services pages",
+      "description": "The services index as one ruled list, and a page per service with a typical project's facts, what it delivers, how it runs week by week and recent work.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json",
+        "https://eased.dev/r/agency-work.json",
+        "https://eased.dev/r/badge.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/services-page.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/services-page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agency-studio",
+      "type": "registry:block",
+      "title": "Agency: Studio",
+      "description": "What the studio is, its people with initials avatars and how a project runs, with a line to the open roles.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://eased.dev/r/eased-tokens.json",
+        "https://eased.dev/r/eased-motion.json",
+        "https://eased.dev/r/agency-core.json",
+        "https://eased.dev/r/avatar.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/templates/agency/studio.tsx",
+          "type": "registry:component",
+          "target": "@components/eased/templates/agency/studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "eased-onboarding-core",
+      "type": "registry:lib",
+      "title": "Onboarding core primitive",
+      "description": "The headless step engine under Eased onboarding flows: useSteps holds the open step, the direction of the last move, the data, per-step validity, branching, skip, back and jumps, async onNext and onComplete, a live-region announcement and optional saved progress through a storage adapter; useAutoplay plays a flow for a demo and hands it to the visitor on their first press.",
+      "registryDependencies": [
+        "https://eased.dev/r/eased-motion.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eased/_primitives/onboarding-core/onboarding-core.ts",
+          "type": "registry:lib",
+          "target": "@components/eased/_primitives/onboarding-core/onboarding-core.ts"
+        },
+        {
+          "path": "src/registry/eased/_primitives/onboarding-core/autoplay.ts",
+          "type": "registry:lib",
+          "target": "@components/eased/_primitives/onboarding-core/autoplay.ts"
         }
       ]
     }
