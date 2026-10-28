@@ -50,6 +50,29 @@ function parseOnly() {
   return keys.length > 0 ? new Set(keys) : null;
 }
 
+// What /r will list, by the same rules as lib/catalog.ts: a resolvable view,
+// each name once, no example or internal items, nothing with a resolution,
+// no font without its metadata. Subtracting the manifest's refusal counts
+// from its item total missed the internal types and overstated /r.
+const INTERNAL_TYPES = new Set(["registry:example", "registry:internal"]);
+
+function countCatalogItems(views) {
+  let count = 0;
+  for (const view of views.values()) {
+    if (!view.resolvable) continue;
+    const seen = new Set();
+    for (const item of view.items ?? []) {
+      if (seen.has(item.name)) continue;
+      seen.add(item.name);
+      if (INTERNAL_TYPES.has(item.type || "registry:item")) continue;
+      if (item.resolution) continue;
+      if (item.type === "registry:font" && !item.font) continue;
+      count++;
+    }
+  }
+  return count;
+}
+
 async function main() {
   const started = Date.now();
   const only = parseOnly();
@@ -185,9 +208,7 @@ async function main() {
         .join(", ")} — run \`pnpm index --only=${throttled.map((r) => r.key).join(",")}\` to verify more`
     );
   }
-  console.log(
-    `/r lists ${(manifest.counts.items - gated - gone - unverified).toLocaleString("en-US")} items`
-  );
+  console.log(`/r lists ${countCatalogItems(views).toLocaleString("en-US")} items`);
   if (reusedViews.length > 0) {
     console.log(`reused: ${reusedViews.map((r) => `${r.name} (${r.error})`).join(", ")}`);
   }
