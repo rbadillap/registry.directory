@@ -4651,6 +4651,7 @@
     {
       "name": "datatable-15",
       "type": "registry:block",
+      "resolution": "gated",
       "title": "Datatable 15 - Task Manager Table",
       "description": "A grouped task table with collapsible status sections, drag-and-drop between groups, an add task dialog, and filters. Useful for task trackers and project management dashboards.",
       "dependencies": [
@@ -4687,6 +4688,7 @@
     {
       "name": "datatable-16",
       "type": "registry:block",
+      "resolution": "gated",
       "title": "Datatable 16 - Master Detail Table",
       "description": "A team directory table with live search and department tabs. Clicking a row opens a side sheet with the full profile. Useful for HR, CRM, and team dashboards.",
       "dependencies": [
@@ -4718,6 +4720,7 @@
     {
       "name": "datatable-17",
       "type": "registry:block",
+      "resolution": "gated",
       "title": "Datatable 17 - Column Actions Table",
       "description": "A customer table with a dropdown on every column title to sort, pin, and move columns, plus a Columns menu to show or hide them. Useful for admin tables users can customize.",
       "dependencies": [
@@ -4747,6 +4750,7 @@
     {
       "name": "datatable-18",
       "type": "registry:block",
+      "resolution": "gated",
       "title": "Datatable 18 - Hover Preview Appointments Table",
       "description": "A clinic appointments table with search, an add appointment dialog, row actions, and a cancel confirmation. Hovering a row opens a preview card with the visit details. Useful for healthcare and booking dashboards.",
       "dependencies": [
@@ -4783,6 +4787,7 @@
     {
       "name": "datatable-19",
       "type": "registry:block",
+      "resolution": "gated",
       "title": "Datatable 19 - Tree Table",
       "description": "A tree table with nested programs, courses, and classes, status and completion filters, and totals rolled up to every parent. Useful for school dashboards, org charts, and nested data.",
       "dependencies": [
@@ -13045,6 +13050,2062 @@
           "path": "src/components/shadcn-dashboard/dots/dots-12.tsx",
           "type": "registry:component",
           "target": "components/shadcn-dashboard/dots/dots-12.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-01",
+      "type": "registry:component",
+      "title": "Toggle 01 - Variants & Sizes",
+      "description": "Default and outline toggles in small, default, and large sizes with pressed, disabled, and text states.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "toggle"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/toggle/toggle-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/toggle/toggle-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-02",
+      "type": "registry:component",
+      "title": "Toggle 02 - Bookmark",
+      "description": "Save for later toggle with a filled bookmark icon, a spring pop on save, and a Save / Saved label.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "toggle"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/toggle/toggle-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/toggle/toggle-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-03",
+      "type": "registry:component",
+      "title": "Toggle 03 - Follow Button",
+      "description": "Follow toggle in a profile row that switches to Following, shows Unfollow on hover, and updates the follower count.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "toggle",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/toggle/toggle-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/toggle/toggle-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-04",
+      "type": "registry:component",
+      "title": "Toggle 04 - Call Controls",
+      "description": "Video call control bar with microphone, camera, screen share, and raise hand toggles plus a live status line.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "toggle"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/toggle/toggle-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/toggle/toggle-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-05",
+      "type": "registry:component",
+      "title": "Toggle 05 - Editor View Options",
+      "description": "Code editor toolbar with word wrap, line numbers, and active line highlight toggles that update the code preview.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "toggle"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/toggle/toggle-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/toggle/toggle-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-01",
+      "type": "registry:component",
+      "title": "Toggle Group 01 - Variants & Sizes",
+      "description": "Single and multiple selection toggle groups in default and outline variants, attached and spaced, small and large, and vertical.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "toggle-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/toggle-group/toggle-group-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/toggle-group/toggle-group-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-02",
+      "type": "registry:component",
+      "title": "Toggle Group 02 - View Switcher",
+      "description": "Grid, list, and board view switcher that always keeps one view selected and re-lays out a project list.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "toggle-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/toggle-group/toggle-group-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/toggle-group/toggle-group-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-03",
+      "type": "registry:component",
+      "title": "Toggle Group 03 - Weekday Picker",
+      "description": "Multiple selection weekday picker for recurring schedules with round day toggles, presets, and a readable summary like Every weekday.",
+      "registryDependencies": [
+        "toggle-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/toggle-group/toggle-group-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/toggle-group/toggle-group-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-04",
+      "type": "registry:component",
+      "title": "Toggle Group 04 - Chart Time Range",
+      "description": "Analytics card with a 24h, 7d, 30d, and 90d time range toggle that updates the total, trend, and bar chart.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "toggle-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/toggle-group/toggle-group-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/toggle-group/toggle-group-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-05",
+      "type": "registry:component",
+      "title": "Toggle Group 05 - Product Options",
+      "description": "Product variant picker with color swatch and size toggle groups, sold out sizes, low stock messages, and an add to cart button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "toggle-group",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/toggle-group/toggle-group-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/toggle-group/toggle-group-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper-01",
+      "type": "registry:component",
+      "title": "Stepper 01 - Vertical Setup Guide",
+      "description": "Vertical stepper for a CLI setup guide where the active step expands with instructions and a command, and completed steps can be revisited.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/stepper/stepper-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/stepper/stepper-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper-02",
+      "type": "registry:component",
+      "title": "Stepper 02 - Checkout with Validation",
+      "description": "Checkout stepper for shipping, payment, and review with per-step validation, error indicators, card formatting, and an order placed screen.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/stepper/stepper-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/stepper/stepper-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper-03",
+      "type": "registry:component",
+      "title": "Stepper 03 - Compact Mobile Onboarding",
+      "description": "Compact segmented progress stepper for mobile onboarding questions with a step counter, back button, skip, and a completion screen.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/stepper/stepper-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/stepper/stepper-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper-04",
+      "type": "registry:component",
+      "title": "Stepper 04 - Optional & Skipped Steps",
+      "description": "Workspace setup stepper with required and optional steps, a skipped state, and a summary that links back to skipped steps.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/stepper/stepper-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/stepper/stepper-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper-05",
+      "type": "registry:component",
+      "title": "Stepper 05 - Deployment Pipeline",
+      "description": "Vertical pipeline stepper with pending, running, success, and failed states, step logs, a simulated failure, and retry from the failed step.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "label",
+        "spinner",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/stepper/stepper-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/stepper/stepper-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-07",
+      "type": "registry:component",
+      "title": "Switch 07 - Sizes & States",
+      "description": "Small and default switches in off, on, disabled, and invalid states with clickable labels.",
+      "registryDependencies": [
+        "switch",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/switch/switch-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/switch/switch-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-08",
+      "type": "registry:component",
+      "title": "Switch 08 - Async Save",
+      "description": "Two-factor authentication switch that saves to the server with a saving state, a saved confirmation, and a revert with an error message when the request fails.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "switch",
+        "label",
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/switch/switch-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/switch/switch-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-09",
+      "type": "registry:component",
+      "title": "Switch 09 - Parent & Child Switches",
+      "description": "Master switch that enables or disables a group of nested switches, with a live enabled count and automatic off when every child is off.",
+      "registryDependencies": [
+        "switch",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/switch/switch-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/switch/switch-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-10",
+      "type": "registry:component",
+      "title": "Switch 10 - Notification Matrix",
+      "description": "Notification preferences table with email, push, and SMS switches per event type and a column switch to toggle a whole channel.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/switch/switch-10.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/switch/switch-10.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-11",
+      "type": "registry:component",
+      "title": "Switch 11 - Confirm Before Enabling",
+      "description": "Maintenance mode switch that asks for confirmation in an alert dialog before turning on, and shows an offline status banner while active.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "switch",
+        "label",
+        "alert-dialog"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/switch/switch-11.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/switch/switch-11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-10",
+      "type": "registry:component",
+      "title": "Checkbox 10 - Bulk Selection",
+      "description": "Inbox list with a select all checkbox that shows an indeterminate state, a selected count, and bulk mark as read, archive, and delete actions.",
+      "dependencies": [
+        "lucide-react",
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "checkbox",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/checkbox/checkbox-10.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/checkbox/checkbox-10.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-11",
+      "type": "registry:component",
+      "title": "Checkbox 11 - Add-on Cards",
+      "description": "Selectable add-on cards with icons, descriptions, and prices that update the monthly total as you check them.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/checkbox/checkbox-11.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/checkbox/checkbox-11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-12",
+      "type": "registry:component",
+      "title": "Checkbox 12 - Terms Consent",
+      "description": "Sign up consent with a required terms checkbox that shows an error on submit, linked policies, and an optional marketing opt in.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "checkbox",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/checkbox/checkbox-12.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/checkbox/checkbox-12.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-13",
+      "type": "registry:component",
+      "title": "Checkbox 13 - Shift Click Range Select",
+      "description": "File list where Shift + click selects or clears every row between the last click and the current one, with a selected count and clear action.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "checkbox",
+        "kbd"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/checkbox/checkbox-13.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/checkbox/checkbox-13.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-14",
+      "type": "registry:component",
+      "title": "Checkbox 14 - Filter Chips",
+      "description": "Pill shaped checkbox chips for filtering with result counts, a checked style, and a clear all action.",
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/checkbox/checkbox-14.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/checkbox/checkbox-14.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-06",
+      "type": "registry:component",
+      "title": "Skeleton 06 - Product Card Grid",
+      "description": "Responsive product grid skeleton with square image, title, subtitle, price, and add to cart button placeholders.",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/skeleton/skeleton-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/skeleton/skeleton-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-07",
+      "type": "registry:component",
+      "title": "Skeleton 07 - Loading to Content",
+      "description": "Blog card that shows a matching skeleton while loading, fades in the real content, and can be reloaded to replay the state.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "skeleton",
+        "avatar",
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/skeleton/skeleton-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/skeleton/skeleton-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-08",
+      "type": "registry:component",
+      "title": "Skeleton 08 - Chat Conversation",
+      "description": "Chat skeleton with a contact header, incoming and outgoing message bubbles of varied length, and a message composer.",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/skeleton/skeleton-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/skeleton/skeleton-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-09",
+      "type": "registry:component",
+      "title": "Skeleton 09 - Dashboard",
+      "description": "Dashboard skeleton with four KPI cards and a bar chart panel with header, varied bar heights, and axis labels.",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/skeleton/skeleton-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/skeleton/skeleton-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-10",
+      "type": "registry:component",
+      "title": "Skeleton 10 - Shimmer Article",
+      "description": "Article skeleton with a staggered shimmer sweep instead of a pulse, covering title, author, cover image, and paragraph lines.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/skeleton/skeleton-10.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/skeleton/skeleton-10.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination-04",
+      "type": "registry:component",
+      "title": "Pagination 04 - Numbered with Ellipsis",
+      "description": "Classic numbered pagination that always shows the first and last page, collapses the rest into ellipses, and disables Previous and Next at the ends.",
+      "registryDependencies": [
+        "pagination"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/pagination/pagination-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/pagination/pagination-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination-05",
+      "type": "registry:component",
+      "title": "Pagination 05 - Table Footer",
+      "description": "Invoice table with a rows per page select, a showing range label, and first, previous, next, and last page buttons.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/pagination/pagination-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/pagination/pagination-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination-06",
+      "type": "registry:component",
+      "title": "Pagination 06 - Load More",
+      "description": "Photo grid with a Load more button, loading spinner, progress bar, item count, an end of list message, and focus moved to the new items.",
+      "registryDependencies": [
+        "button",
+        "progress",
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/pagination/pagination-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/pagination/pagination-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination-07",
+      "type": "registry:component",
+      "title": "Pagination 07 - Docs Previous / Next",
+      "description": "Documentation style previous and next page cards with page titles and arrow hover motion.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/pagination/pagination-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/pagination/pagination-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination-08",
+      "type": "registry:component",
+      "title": "Pagination 08 - Infinite Scroll",
+      "description": "Scrollable member list that loads the next page automatically with an IntersectionObserver sentinel, a loading row, and an end of list message.",
+      "registryDependencies": [
+        "avatar",
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/pagination/pagination-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/pagination/pagination-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-09",
+      "type": "registry:component",
+      "title": "Avatar 09 - Status Indicators",
+      "description": "Avatars with online, away, do not disturb, and offline status badges, a grayscale offline photo, and status labels.",
+      "registryDependencies": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/avatar/avatar-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/avatar/avatar-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-10",
+      "type": "registry:component",
+      "title": "Avatar 10 - Upload with Preview",
+      "description": "Profile photo uploader with instant preview, a camera hover overlay, file type and size validation, and a remove option that falls back to initials.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/avatar/avatar-10.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/avatar/avatar-10.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-11",
+      "type": "registry:component",
+      "title": "Avatar 11 - Group with Tooltips",
+      "description": "Avatar group with name tooltips on hover and a +N counter that opens a popover listing the remaining members and their roles.",
+      "registryDependencies": [
+        "avatar",
+        "popover",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/avatar/avatar-11.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/avatar/avatar-11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-12",
+      "type": "registry:component",
+      "title": "Avatar 12 - Instagram Story Rings",
+      "description": "Instagram style story row with gradient rings for new stories, gray rings once viewed, an add story button, and a new story count.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/avatar/avatar-12.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/avatar/avatar-12.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-13",
+      "type": "registry:component",
+      "title": "Avatar 13 - Generated Initials",
+      "description": "Initials avatars with a color picked from the name, so each person keeps the same color, shown in three sizes and a square shape.",
+      "registryDependencies": [
+        "avatar",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/avatar/avatar-13.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/avatar/avatar-13.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-07",
+      "type": "registry:component",
+      "title": "Alert 07 - Semantic Variants",
+      "description": "Info, success, warning, and error alerts with matching icons, tinted backgrounds, and borders that work in light and dark mode.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "alert"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/alert/alert-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/alert/alert-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-08",
+      "type": "registry:component",
+      "title": "Alert 08 - Update Available",
+      "description": "Dismissible update alert with Update now and Remind me later actions, a loading state while updating, and a way to bring it back.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "alert",
+        "button",
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/alert/alert-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/alert/alert-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-09",
+      "type": "registry:component",
+      "title": "Alert 09 - Announcement Banner",
+      "description": "Full width announcement bar for the top of a page with an icon, a call to action link, and a dismiss button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/alert/alert-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/alert/alert-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-10",
+      "type": "registry:component",
+      "title": "Alert 10 - Form Error Summary",
+      "description": "Form error summary alert that lists every invalid field with links that focus it, receives focus on submit, and clears errors as fields are fixed.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "alert",
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/alert/alert-10.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/alert/alert-10.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-11",
+      "type": "registry:component",
+      "title": "Alert 11 - Usage Limit",
+      "description": "Usage warning alert with a quota progress bar, used and remaining counts, a reset date, and Upgrade plan and View usage actions.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "alert",
+        "button",
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/alert/alert-11.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/alert/alert-11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider-05",
+      "type": "registry:component",
+      "title": "Slider 05 - With Number Input",
+      "description": "Opacity slider kept in sync with a number input that clamps and rounds typed values, plus a live preview swatch.",
+      "registryDependencies": [
+        "slider",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/slider/slider-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/slider/slider-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider-06",
+      "type": "registry:component",
+      "title": "Slider 06 - Ticks & Labels",
+      "description": "Stepped instance size slider with tick marks and clickable XS to XL labels aligned to each step, showing CPU and memory for the chosen size.",
+      "registryDependencies": [
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/slider/slider-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/slider/slider-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider-07",
+      "type": "registry:component",
+      "title": "Slider 07 - Pricing Calculator",
+      "description": "Team seats slider with volume pricing tiers, per seat price, a savings badge, and a live monthly total.",
+      "registryDependencies": [
+        "slider",
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/slider/slider-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/slider/slider-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider-08",
+      "type": "registry:component",
+      "title": "Slider 08 - Floating Value Label",
+      "description": "Decimal slider with a value label that follows the thumb, grows while dragging, and a Precise / Balanced / Creative hint.",
+      "registryDependencies": [
+        "slider",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/slider/slider-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/slider/slider-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider-09",
+      "type": "registry:component",
+      "title": "Slider 09 - Video Scrubber",
+      "description": "Media seek bar built on the slider primitive with a buffered range, a thumb that appears on hover, play and pause, and elapsed time.",
+      "dependencies": [
+        "lucide-react",
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/slider/slider-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/slider/slider-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-04",
+      "type": "registry:component",
+      "title": "Collapsible 04 - File Tree",
+      "description": "Nested file explorer built from collapsibles with open and closed folder icons, file type icons, a selected file, and its path.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/collapsible/collapsible-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/collapsible/collapsible-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-05",
+      "type": "registry:component",
+      "title": "Collapsible 05 - Read More",
+      "description": "Review card that shows the first paragraph with a fade and expands the full text with a Read more / Show less toggle.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "collapsible",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/collapsible/collapsible-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/collapsible/collapsible-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-06",
+      "type": "registry:component",
+      "title": "Collapsible 06 - Order Summary",
+      "description": "Mobile checkout order summary that shows the total in the trigger and expands to items with quantities, subtotal, shipping, and tax.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/collapsible/collapsible-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/collapsible/collapsible-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-07",
+      "type": "registry:component",
+      "title": "Collapsible 07 - Advanced Options",
+      "description": "Webhook form that hides a signing secret, retry count, and batching switch inside an animated Advanced options section.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "collapsible",
+        "button",
+        "input",
+        "label",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/collapsible/collapsible-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/collapsible/collapsible-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-08",
+      "type": "registry:component",
+      "title": "Collapsible 08 - Expandable Code",
+      "description": "Code snippet that shows the first lines with line numbers and a fade, and expands to the full file with a Show more lines toggle.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/collapsible/collapsible-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/collapsible/collapsible-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-05",
+      "type": "registry:component",
+      "title": "Progress 05 - Circular Rings",
+      "description": "SVG circular progress rings for storage, bandwidth, and build minutes with a centered percentage and usage details.",
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/progress/progress-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/progress/progress-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-06",
+      "type": "registry:component",
+      "title": "Progress 06 - Labeled Colors",
+      "description": "Goal progress bars with a label, a percentage value, and a different color per bar, composed from the progress primitive.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/progress/progress-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/progress/progress-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-07",
+      "type": "registry:component",
+      "title": "Progress 07 - Segmented Storage",
+      "description": "Multi segment storage bar showing photos, apps, documents, system, and other usage with a legend and free space.",
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/progress/progress-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/progress/progress-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-08",
+      "type": "registry:component",
+      "title": "Progress 08 - Multi File Upload",
+      "description": "Upload list with live per file progress, uploaded size, cancel and retry actions, a completed state, and an overall count.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "progress",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/progress/progress-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/progress/progress-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-09",
+      "type": "registry:component",
+      "title": "Progress 09 - Page Loading & Indeterminate",
+      "description": "Top page loading bar that trickles and finishes on navigation, plus an indeterminate progress bar for tasks with unknown duration.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/progress/progress-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/progress/progress-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-10",
+      "type": "registry:component",
+      "title": "Textarea 10 - Markdown Write & Preview",
+      "description": "Comment editor with Write and Preview tabs and a toolbar that wraps the selection in bold, italic, code, or link markdown.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "textarea",
+        "button",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/textarea/textarea-10.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/textarea/textarea-10.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-11",
+      "type": "registry:component",
+      "title": "Textarea 11 - AI Prompt Composer",
+      "description": "Chat prompt box where Enter sends and Shift + Enter adds a line, with attach and model buttons, a stop button while generating, and prompt suggestions.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "textarea",
+        "button",
+        "kbd"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/textarea/textarea-11.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/textarea/textarea-11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-12",
+      "type": "registry:component",
+      "title": "Textarea 12 - Mentions",
+      "description": "Comment textarea that suggests people when you type @, with keyboard navigation, Enter or Tab to insert, and a mention button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "textarea",
+        "avatar",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/textarea/textarea-12.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/textarea/textarea-12.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-13",
+      "type": "registry:component",
+      "title": "Textarea 13 - Autosave Draft",
+      "description": "Notes textarea that autosaves after you stop typing, with unsaved, saving, and saved x seconds ago states plus word count and read time.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "textarea",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/textarea/textarea-13.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/textarea/textarea-13.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-14",
+      "type": "registry:component",
+      "title": "Textarea 14 - JSON Validation",
+      "description": "Monospace JSON textarea with live validation, line and column error messages, and Format and Minify actions.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "textarea",
+        "button",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/textarea/textarea-14.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/textarea/textarea-14.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-03",
+      "type": "registry:component",
+      "title": "Context Menu 03 - File Manager",
+      "description": "File cards with a right click menu for open, rename, star, a share submenu, duplicate, download, and move to trash, with keyboard shortcut hints.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "context-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/context-menu/context-menu-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/context-menu/context-menu-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-04",
+      "type": "registry:component",
+      "title": "Context Menu 04 - View Options",
+      "description": "Editor preview with a right click menu of checkbox items for line numbers, wrap, and highlight, and radio groups for zoom and theme.",
+      "registryDependencies": [
+        "context-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/context-menu/context-menu-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/context-menu/context-menu-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-05",
+      "type": "registry:component",
+      "title": "Context Menu 05 - Table Row Actions",
+      "description": "Invoice table where each row opens a context menu to open, copy the ID, send a reminder, mark as paid or unpaid, or delete.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "context-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/context-menu/context-menu-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/context-menu/context-menu-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-06",
+      "type": "registry:component",
+      "title": "Context Menu 06 - Kanban Card",
+      "description": "Kanban board cards with a context menu to move between columns, toggle labels, assign people through submenus, duplicate, or delete.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "context-menu",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/context-menu/context-menu-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/context-menu/context-menu-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-07",
+      "type": "registry:component",
+      "title": "Context Menu 07 - Chat Message",
+      "description": "Chat bubbles with a context menu that adds emoji reactions, reply, copy, pin, and edit or delete for your own messages.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "context-menu",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/context-menu/context-menu-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/context-menu/context-menu-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-03",
+      "type": "registry:component",
+      "title": "Date Picker 03 - Range with Presets",
+      "description": "Date range picker with preset shortcuts like Last 7 days and This month, a two-month calendar, and Apply / Cancel actions.",
+      "dependencies": [
+        "lucide-react",
+        "date-fns",
+        "react-day-picker"
+      ],
+      "registryDependencies": [
+        "button",
+        "calendar",
+        "label",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/date-picker/date-picker-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/date-picker/date-picker-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-04",
+      "type": "registry:component",
+      "title": "Date Picker 04 - Date of Birth",
+      "description": "Birthday picker with month and year dropdowns, future dates disabled, and a live age check with a minimum age message.",
+      "dependencies": [
+        "lucide-react",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "button",
+        "calendar",
+        "label",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/date-picker/date-picker-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/date-picker/date-picker-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-05",
+      "type": "registry:component",
+      "title": "Date Picker 05 - Natural Language Input",
+      "description": "Date input that understands phrases like tomorrow, next friday, and in 2 weeks, with a live preview, quick suggestions, and a calendar button.",
+      "dependencies": [
+        "lucide-react",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "calendar",
+        "input-group",
+        "label",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/date-picker/date-picker-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/date-picker/date-picker-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-06",
+      "type": "registry:component",
+      "title": "Date Picker 06 - Task Due Date",
+      "description": "Task due date picker with Today, Tomorrow, This weekend, and Next week shortcuts, overdue and due soon states, and a remove option.",
+      "dependencies": [
+        "lucide-react",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "button",
+        "calendar",
+        "popover",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/date-picker/date-picker-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/date-picker/date-picker-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-07",
+      "type": "registry:component",
+      "title": "Date Picker 07 - Multiple Dates",
+      "description": "Time off picker for selecting multiple dates with weekends disabled, a day allowance limit, and removable date chips.",
+      "dependencies": [
+        "lucide-react",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "button",
+        "calendar",
+        "label",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/date-picker/date-picker-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/date-picker/date-picker-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer-02",
+      "type": "registry:component",
+      "title": "Drawer 02 - Share Sheet",
+      "description": "Bottom share sheet with a swipe handle, colored share targets, and a read-only link field with a copy button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "drawer",
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/drawer/drawer-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/drawer/drawer-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer-03",
+      "type": "registry:component",
+      "title": "Drawer 03 - Filters Panel",
+      "description": "Left side filter drawer with category checkboxes, a price range slider, an in stock switch, a live result count, and Reset / Show results actions.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "drawer",
+        "badge",
+        "button",
+        "checkbox",
+        "label",
+        "separator",
+        "slider",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/drawer/drawer-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/drawer/drawer-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer-04",
+      "type": "registry:component",
+      "title": "Drawer 04 - Notifications",
+      "description": "Right side notifications drawer with an unread badge, All / Unread tabs, mark as read on click, mark all read, and an empty state.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "drawer",
+        "avatar",
+        "button",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/drawer/drawer-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/drawer/drawer-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer-05",
+      "type": "registry:component",
+      "title": "Drawer 05 - Snap Points Order Tracking",
+      "description": "Bottom drawer with peek, half, and full snap points showing delivery ETA, rider contact, a status timeline, and the order summary.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "drawer",
+        "avatar",
+        "button",
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/drawer/drawer-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/drawer/drawer-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer-06",
+      "type": "registry:component",
+      "title": "Drawer 06 - Mobile Navigation",
+      "description": "Left side mobile menu drawer with workspace header, active link state, a collapsible projects group, and an account footer.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "drawer",
+        "avatar",
+        "badge",
+        "button",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/drawer/drawer-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/drawer/drawer-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sonner-08",
+      "type": "registry:component",
+      "title": "Sonner 08 - Toast Types",
+      "description": "Default, success, info, warning, and error toasts with tinted icon badges and borders, plus a toast with a close button and longer duration.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "toast"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/sonner/sonner-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/sonner/sonner-08.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/sonner/toaster.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/sonner/toaster.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sonner-09",
+      "type": "registry:component",
+      "title": "Sonner 09 - Undo Action",
+      "description": "Archive a conversation from a list and restore it to its original position with the Undo action in the toast.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "toast"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/sonner/sonner-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/sonner/sonner-09.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/sonner/toaster.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/sonner/toaster.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sonner-10",
+      "type": "registry:component",
+      "title": "Sonner 10 - Promise Toast",
+      "description": "Toast that moves from loading to success or error, with a switch to simulate a failed request and a Retry action.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "label",
+        "switch",
+        "toast"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/sonner/sonner-10.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/sonner/sonner-10.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/sonner/toaster.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/sonner/toaster.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sonner-11",
+      "type": "registry:component",
+      "title": "Sonner 11 - Positions",
+      "description": "Position picker that fires toasts at top left, top center, top right, bottom left, bottom center, and bottom right, each with its own stack.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "toast"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/sonner/sonner-11.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/sonner/sonner-11.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/sonner/toaster.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/sonner/toaster.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sonner-12",
+      "type": "registry:component",
+      "title": "Sonner 12 - New Message",
+      "description": "Custom chat message toast with an online avatar, a two line preview, Reply and Mark as read actions, and a dismiss button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "avatar",
+        "toast"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/sonner/sonner-12.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/sonner/sonner-12.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/sonner/toaster.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/sonner/toaster.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs-08",
+      "type": "registry:component",
+      "title": "Tabs 08 - Package Manager",
+      "description": "Install command tabs for npm, pnpm, yarn and bun with a one-click copy button.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "tabs",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/tabs/tabs-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/tabs/tabs-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs-09",
+      "type": "registry:component",
+      "title": "Tabs 09 - Browser Tabs",
+      "description": "Editor-style closable file tabs with file type icons and line-numbered content.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "tabs",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/tabs/tabs-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/tabs/tabs-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs-10",
+      "type": "registry:component",
+      "title": "Tabs 10 - Scrollable Overflow",
+      "description": "Horizontally scrollable tabs with arrow buttons, edge fades, and auto-scroll to the active tab.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "tabs",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/tabs/tabs-10.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/tabs/tabs-10.tsx"
+        },
+        {
+          "path": "src/components/shadcn-dashboard/tabs/tabs-10.css",
+          "type": "registry:style",
+          "target": "components/shadcn-dashboard/tabs/tabs-10.css"
+        }
+      ]
+    },
+    {
+      "name": "tabs-11",
+      "type": "registry:component",
+      "title": "Tabs 11 - Billing Toggle",
+      "description": "Monthly and yearly billing tabs with a savings badge and animated pricing cards.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "tabs",
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/tabs/tabs-11.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/tabs/tabs-11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs-12",
+      "type": "registry:component",
+      "title": "Tabs 12 - Status Dots",
+      "description": "Underline tabs with colored status dots, counts, and a filtered project list per status.",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/tabs/tabs-12.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/tabs/tabs-12.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs-13",
+      "type": "registry:component",
+      "title": "Tabs 13 - Wizard Steps",
+      "description": "Multi-step wizard tabs with numbered steps, an animated progress line, and Back and Next navigation.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "tabs",
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/tabs/tabs-13.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/tabs/tabs-13.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-20",
+      "type": "registry:component",
+      "title": "Input 20 - Password Strength",
+      "description": "Password input with a show/hide toggle, a 4-step strength meter, and a live requirements checklist.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/input/input-20.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/input/input-20.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-21",
+      "type": "registry:component",
+      "title": "Input 21 - Search with Shortcut",
+      "description": "Search input with a Cmd/Ctrl K shortcut hint, loading spinner, clear button, and live result status.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button",
+        "kbd",
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/input/input-21.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/input/input-21.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-22",
+      "type": "registry:component",
+      "title": "Input 22 - Username Availability",
+      "description": "Username input with debounced availability check, inline status icons, and one-click suggestions when taken.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button",
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/input/input-22.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/input/input-22.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-23",
+      "type": "registry:component",
+      "title": "Input 23 - Email Typo Suggestion",
+      "description": "Email input that detects common domain typos and offers a one-click 'Did you mean' fix.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/input/input-23.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/input/input-23.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-24",
+      "type": "registry:component",
+      "title": "Input 24 - Inline Edit",
+      "description": "Click-to-edit text that turns into an input, with Enter to save, Esc to cancel, and empty-value validation.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/input/input-24.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/input/input-24.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-07",
+      "type": "registry:component",
+      "title": "Dialog 07 - Edit Profile",
+      "description": "Edit profile dialog with photo upload preview, validated name and username fields, a bio counter, and a saving state.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dialog",
+        "avatar",
+        "button",
+        "input",
+        "label",
+        "spinner",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dialog/dialog-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dialog/dialog-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-08",
+      "type": "registry:component",
+      "title": "Dialog 08 - Sign In",
+      "description": "Compact sign in dialog with Google and GitHub buttons, email and password validation, a show password toggle, and a loading state.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dialog",
+        "button",
+        "checkbox",
+        "input",
+        "label",
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dialog/dialog-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dialog/dialog-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-09",
+      "type": "registry:component",
+      "title": "Dialog 09 - Sign Up",
+      "description": "Compact sign up dialog with Google and GitHub buttons, a password strength meter, required terms checkbox, and validation.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dialog",
+        "button",
+        "checkbox",
+        "input",
+        "label",
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dialog/dialog-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dialog/dialog-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-10",
+      "type": "registry:component",
+      "title": "Dialog 10 - OTP Verification",
+      "description": "Email verification dialog with a 6-digit OTP input, auto-submit, attempt limit, resend countdown, and a verified state.",
+      "dependencies": [
+        "lucide-react",
+        "input-otp"
+      ],
+      "registryDependencies": [
+        "dialog",
+        "button",
+        "input-otp",
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dialog/dialog-10.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dialog/dialog-10.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-11",
+      "type": "registry:component",
+      "title": "Dialog 11 - Upgrade Plan",
+      "description": "Upgrade plan dialog with a yearly billing switch, selectable plan cards, an included features list, and a success state.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dialog",
+        "badge",
+        "button",
+        "label",
+        "radio-group",
+        "spinner",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dialog/dialog-11.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dialog/dialog-11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-12",
+      "type": "registry:component",
+      "title": "Dialog 12 - Responsive Dialog",
+      "description": "Responsive pattern that shows a dialog on desktop and a swipeable bottom drawer on mobile, sharing one form.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dialog",
+        "drawer",
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-dashboard/dialog/dialog-12.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-dashboard/dialog/dialog-12.tsx"
         }
       ]
     }

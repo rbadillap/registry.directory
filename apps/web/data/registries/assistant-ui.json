@@ -99,7 +99,7 @@
       "title": "Elements Task",
       "description": "Shared task state, labels, timing, and elapsed time for task elements.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30"
+        "@assistant-ui/react@^0.15.32"
       ],
       "files": [
         {
@@ -1265,7 +1265,7 @@
       "title": "Activity graph",
       "description": "A half-year of runs as a calendar of cells, dense where the work was.",
       "dependencies": [
-        "heat-graph@^0.0.25"
+        "heat-graph@^0.0.26"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-surfaces.json"
@@ -1971,7 +1971,7 @@
       "title": "AI SDK Quick Start",
       "description": "Assistant page wired to the AI SDK chat route, with the thread component installed.",
       "dependencies": [
-        "@assistant-ui/ai-sdk@^0.0.14"
+        "@assistant-ui/ai-sdk@^0.0.16"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/ai-sdk-backend.json",
@@ -1993,7 +1993,7 @@
       "dependencies": [
         "ai",
         "@ai-sdk/openai",
-        "@assistant-ui/ai-sdk@^0.0.14"
+        "@assistant-ui/ai-sdk@^0.0.16"
       ],
       "files": [
         {
@@ -2011,8 +2011,8 @@
       "dependencies": [
         "ai",
         "@ai-sdk/openai",
-        "@assistant-ui/ai-sdk@^0.0.14",
-        "assistant-stream@^0.3.53",
+        "@assistant-ui/ai-sdk@^0.0.16",
+        "assistant-stream@^0.3.55",
         "next"
       ],
       "files": [
@@ -2040,12 +2040,12 @@
       "description": "Chat page for an Eve agent, rendering the session through an assistant-ui thread.",
       "dependencies": [
         "@assistant-ui/eve@^0.0.24",
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "lucide-react",
         "zustand",
         "class-variance-authority",
         "tw-shimmer@^0.4.14",
-        "@assistant-ui/react-markdown@^0.14.23",
+        "@assistant-ui/react-markdown@^0.14.24",
         "remark-gfm",
         "radix-ui"
       ],
@@ -2069,6 +2069,11 @@
           "path": "components/assistant-ui/elements/tooltip-icon-button.tsx",
           "type": "registry:file",
           "target": "components/assistant-ui/elements/tooltip-icon-button.tsx"
+        },
+        {
+          "path": "components/assistant-ui/elements/attachment-state.ts",
+          "type": "registry:file",
+          "target": "components/assistant-ui/elements/attachment-state.ts"
         },
         {
           "path": "hooks/use-attachment-src.ts",
@@ -2193,7 +2198,7 @@
       "title": "Eve Ask Question",
       "description": "Renders Eve's built-in ask_question tool as a standalone question with answer controls, outside the collapsed tool group.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30"
+        "@assistant-ui/react@^0.15.32"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/tool-fallback.json"
@@ -2211,7 +2216,7 @@
       "title": "Thread",
       "description": "Chat container with message list, composer, auto scroll, and accessibility built in.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -2254,11 +2259,27 @@
       "registryDependencies": [
         "tooltip",
         "https://r.assistant-ui.com/elements-tokens.json",
-        "https://r.assistant-ui.com/elements-context-usage.json"
+        "https://r.assistant-ui.com/elements-context-usage.json",
+        "https://r.assistant-ui.com/elements-context-display-state.json"
       ],
       "files": [
         {
           "path": "components/assistant-ui/elements/context-display.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elements-context-display-state",
+      "type": "registry:component",
+      "title": "Elements Context Display State",
+      "description": "Shared context display state and reset behavior.",
+      "registryDependencies": [
+        "https://r.assistant-ui.com/elements-context-usage.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/utils/context-display-state.ts",
           "type": "registry:component"
         }
       ]
@@ -2281,7 +2302,7 @@
       "title": "Voice",
       "description": "Realtime voice session controls with connect, mute, and a status indicator.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -2302,7 +2323,7 @@
       "title": "Voice conversation",
       "description": "The live call screen bound to the thread's voice session: orb, caption, transcript, mute, and end call.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30"
+        "@assistant-ui/react@^0.15.32"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-voice-conversation.json"
@@ -2320,7 +2341,7 @@
       "title": "Task card",
       "description": "A runtime task card with nested transcripts, timing, results, and grouped task lanes.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30"
+        "@assistant-ui/react@^0.15.32"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-task-card.json",
@@ -2341,7 +2362,7 @@
       "title": "Agent status",
       "description": "A runtime task summary chip with an optional tray for every task in the thread.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30"
+        "@assistant-ui/react@^0.15.32"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-agent-status.json",
@@ -2374,8 +2395,8 @@
       "title": "Markdown Text",
       "description": "Render assistant markdown with headings, lists, links, and code blocks.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
-        "@assistant-ui/react-markdown@^0.14.23",
+        "@assistant-ui/react@^0.15.32",
+        "@assistant-ui/react-markdown@^0.14.24",
         "lucide-react",
         "remark-gfm"
       ],
@@ -2396,7 +2417,7 @@
       "title": "Reasoning",
       "description": "Collapsible panel for assistant reasoning and thinking content.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30"
+        "@assistant-ui/react@^0.15.32"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-reasoning.json",
@@ -2415,7 +2436,7 @@
       "title": "Conversation Map",
       "description": "Runtime-backed thread rail: a tick per turn, the turn being read marked and the ones on screen deepened, a hover preview, and a click that scrolls there.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30"
+        "@assistant-ui/react@^0.15.32"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-conversation-map.json"
@@ -2457,7 +2478,7 @@
       "title": "Message Timing",
       "description": "Badge with streaming stats: time to first token, total time, and tokens per second.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30"
+        "@assistant-ui/react@^0.15.32"
       ],
       "registryDependencies": [
         "tooltip"
@@ -2475,8 +2496,8 @@
       "title": "Context Display",
       "description": "Token usage against a model's context window as a ring, bar, or text, with a hover popover.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
-        "@assistant-ui/ai-sdk@^0.0.14"
+        "@assistant-ui/react@^0.15.32",
+        "@assistant-ui/ai-sdk@^0.0.16"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-context-display.json"
@@ -2494,7 +2515,7 @@
       "title": "Thread List",
       "description": "Sidebar or dropdown for switching conversations, with search and active selection.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -2515,7 +2536,7 @@
       "title": "MCP Config Dialog",
       "description": "Dialog listing MCP connectors and custom servers, with OAuth and bearer auth controls.",
       "dependencies": [
-        "@assistant-ui/react-mcp@^0.1.24",
+        "@assistant-ui/react-mcp@^0.1.26",
         "@assistant-ui/store@^0.3.22",
         "lucide-react"
       ],
@@ -2541,7 +2562,7 @@
       "title": "Elements MCP Config State",
       "description": "Shared focus and announcement state for MCP config dialogs.",
       "dependencies": [
-        "@assistant-ui/react-mcp@^0.1.24",
+        "@assistant-ui/react-mcp@^0.1.26",
         "@assistant-ui/store@^0.3.22"
       ],
       "files": [
@@ -2557,7 +2578,7 @@
       "title": "Use Attachment Src",
       "description": "Resolve an image attachment to a preview source URL.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "zustand"
       ],
       "files": [
@@ -2568,12 +2589,30 @@
       ]
     },
     {
+      "name": "elements-attachment-state",
+      "type": "registry:component",
+      "title": "Elements Attachment State",
+      "description": "Shared attachment status and preview state.",
+      "dependencies": [
+        "@assistant-ui/react@^0.15.32"
+      ],
+      "registryDependencies": [
+        "https://r.assistant-ui.com/use-attachment-src.json"
+      ],
+      "files": [
+        {
+          "path": "components/assistant-ui/elements/attachment-state.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "attachment",
       "type": "registry:component",
       "title": "Attachment",
       "description": "Attach files from the composer and view them inside messages.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -2581,7 +2620,7 @@
         "tooltip",
         "avatar",
         "https://r.assistant-ui.com/tooltip-icon-button.json",
-        "https://r.assistant-ui.com/use-attachment-src.json"
+        "https://r.assistant-ui.com/elements-attachment-state.json"
       ],
       "files": [
         {
@@ -2596,7 +2635,7 @@
       "title": "Follow Up Suggestions",
       "description": "Prompt chips rendered from runtime generated follow up suggestions.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30"
+        "@assistant-ui/react@^0.15.32"
       ],
       "files": [
         {
@@ -2631,7 +2670,7 @@
       "description": "Code block highlighting powered by react-syntax-highlighter.",
       "dependencies": [
         "@assistant-ui/react-syntax-highlighter@^0.14.7",
-        "@assistant-ui/react-markdown@^0.14.23",
+        "@assistant-ui/react-markdown@^0.14.24",
         "react-syntax-highlighter",
         "@types/react-syntax-highlighter"
       ],
@@ -2660,7 +2699,7 @@
       "title": "Assistant Modal",
       "description": "Floating chat bubble for support widgets and help desks, with a thread list and a resizable window.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -2682,7 +2721,7 @@
       "title": "Assistant Sidebar",
       "description": "Side panel chat for copilot experiences and inline assistance.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30"
+        "@assistant-ui/react@^0.15.32"
       ],
       "registryDependencies": [
         "resizable",
@@ -2701,7 +2740,7 @@
       "title": "Tool Fallback",
       "description": "Default renderer for tool calls that have no dedicated UI.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "lucide-react",
         "tw-shimmer@^0.4.14"
       ],
@@ -2723,7 +2762,7 @@
       "title": "Tool Group",
       "description": "Collapsible wrapper around consecutive tool calls.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "lucide-react",
         "class-variance-authority",
         "tw-shimmer@^0.4.14"
@@ -2746,8 +2785,8 @@
       "dependencies": [
         "react-shiki",
         "shiki",
-        "@assistant-ui/react@^0.15.30",
-        "@assistant-ui/react-markdown@^0.14.23"
+        "@assistant-ui/react@^0.15.32",
+        "@assistant-ui/react-markdown@^0.14.24"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-shiki-highlighter.json"
@@ -2781,8 +2820,8 @@
       "title": "Mermaid Diagram",
       "description": "Render Mermaid diagrams in messages, including while they stream.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
-        "@assistant-ui/react-markdown@^0.14.23"
+        "@assistant-ui/react@^0.15.32",
+        "@assistant-ui/react-markdown@^0.14.24"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-mermaid-diagram.json"
@@ -2818,7 +2857,7 @@
       "dependencies": [
         "diff",
         "parse-diff",
-        "@assistant-ui/react-markdown@^0.14.23",
+        "@assistant-ui/react-markdown@^0.14.24",
         "class-variance-authority",
         "lucide-react"
       ],
@@ -2861,7 +2900,7 @@
       "title": "Quote",
       "description": "Select and quote message text with a floating toolbar and a composer preview.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "lucide-react"
       ],
       "files": [
@@ -2877,7 +2916,7 @@
       "title": "Sources",
       "description": "Display URL sources with favicon, title, and an external link.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -2897,7 +2936,7 @@
       "title": "Image",
       "description": "Display image parts with preview, loading states, and a fullscreen dialog.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "lucide-react",
         "class-variance-authority"
       ],
@@ -2917,7 +2956,7 @@
       "title": "File",
       "description": "Display file parts with icon, name, size, and a download button, playing audio and video inline.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "lucide-react",
         "class-variance-authority"
       ],
@@ -2937,7 +2976,7 @@
       "title": "Model Selector",
       "description": "Model picker with reasoning effort levels, search, and runtime integration.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30"
+        "@assistant-ui/react@^0.15.32"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-model-selector.json"
@@ -3104,7 +3143,7 @@
       "title": "Heat Graph",
       "description": "Activity heat map with month and weekday labels.",
       "dependencies": [
-        "heat-graph@^0.0.25"
+        "heat-graph@^0.0.26"
       ],
       "files": [
         {
@@ -3123,7 +3162,7 @@
       "title": "Composer Trigger Popover",
       "description": "Character triggered picker for @ mentions, / commands, and similar popovers.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30",
+        "@assistant-ui/react@^0.15.32",
         "lucide-react"
       ],
       "files": [
@@ -3139,7 +3178,7 @@
       "title": "Directive Text",
       "description": "Render mention directives as inline chips in user messages.",
       "dependencies": [
-        "@assistant-ui/react@^0.15.30"
+        "@assistant-ui/react@^0.15.32"
       ],
       "registryDependencies": [
         "https://r.assistant-ui.com/elements-directive-text.json"
@@ -3190,7 +3229,7 @@
       "title": "Generative UI",
       "description": "Styled component library for rendering generative UI output.",
       "dependencies": [
-        "@assistant-ui/generative-ui@^0.0.6",
+        "@assistant-ui/generative-ui@^0.0.8",
         "react-markdown",
         "remark-gfm",
         "zod"

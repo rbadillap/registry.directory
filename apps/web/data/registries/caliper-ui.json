@@ -764,6 +764,39 @@
       ]
     },
     {
+      "name": "boop",
+      "type": "registry:ui",
+      "title": "Boop",
+      "description": "Gives an icon a small springy nudge when the control around it is hovered or focused, then lets it settle back on its own even if the pointer stays: a bell rings, a cog turns, an arrow leans forward.",
+      "categories": [
+        "motion"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://caliperui.site/r/styles.json"
+      ],
+      "files": [
+        {
+          "path": "ui/boop.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/boop.tsx"
+        },
+        {
+          "path": "ui/lib/cn.ts",
+          "type": "registry:ui",
+          "target": "components/ui/lib/cn.ts"
+        },
+        {
+          "path": "ui/boop.css",
+          "type": "registry:file",
+          "target": "components/ui/boop.css"
+        }
+      ]
+    },
+    {
       "name": "breadcrumb",
       "type": "registry:ui",
       "title": "Breadcrumb",
@@ -1419,6 +1452,39 @@
           "path": "ui/shared/chip-option.css",
           "type": "registry:file",
           "target": "components/ui/shared/chip-option.css"
+        }
+      ]
+    },
+    {
+      "name": "clip-reveal",
+      "type": "registry:ui",
+      "title": "Clip reveal",
+      "description": "Uncovers an image or section with a wipe as it scrolls into view, the content settling from a slight zoom behind the edge. From any side or as an iris from the middle, once or every time.",
+      "categories": [
+        "motion"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://caliperui.site/r/styles.json"
+      ],
+      "files": [
+        {
+          "path": "ui/clip-reveal.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/clip-reveal.tsx"
+        },
+        {
+          "path": "ui/lib/cn.ts",
+          "type": "registry:ui",
+          "target": "components/ui/lib/cn.ts"
+        },
+        {
+          "path": "ui/clip-reveal.css",
+          "type": "registry:file",
+          "target": "components/ui/clip-reveal.css"
         }
       ]
     },
@@ -2655,6 +2721,39 @@
           "path": "ui/lib/cn.ts",
           "type": "registry:ui",
           "target": "components/ui/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "equalizer-bars",
+      "type": "registry:ui",
+      "title": "Equalizer bars",
+      "description": "The small bouncing bars that mark what is playing in a list of tracks. Each bar keeps its own tempo so they never line up, and pausing settles them low and still.",
+      "categories": [
+        "motion"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://caliperui.site/r/styles.json"
+      ],
+      "files": [
+        {
+          "path": "ui/equalizer-bars.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/equalizer-bars.tsx"
+        },
+        {
+          "path": "ui/lib/cn.ts",
+          "type": "registry:ui",
+          "target": "components/ui/lib/cn.ts"
+        },
+        {
+          "path": "ui/equalizer-bars.css",
+          "type": "registry:file",
+          "target": "components/ui/equalizer-bars.css"
         }
       ]
     },
@@ -3998,6 +4097,39 @@
       ]
     },
     {
+      "name": "push-button",
+      "type": "registry:ui",
+      "title": "Push button",
+      "description": "A chunky button with visible depth: the face sits on its own edge, lifts a pixel on hover, travels down onto the edge when pressed and springs back when let go. For playful flows such as onboarding, lessons and rewards.",
+      "categories": [
+        "motion"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://caliperui.site/r/styles.json"
+      ],
+      "files": [
+        {
+          "path": "ui/lib/cn.ts",
+          "type": "registry:ui",
+          "target": "components/ui/lib/cn.ts"
+        },
+        {
+          "path": "ui/push-button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/push-button.tsx"
+        },
+        {
+          "path": "ui/push-button.css",
+          "type": "registry:file",
+          "target": "components/ui/push-button.css"
+        }
+      ]
+    },
+    {
       "name": "radio",
       "type": "registry:ui",
       "title": "Radio",
@@ -4056,6 +4188,39 @@
           "path": "ui/rating.css",
           "type": "registry:file",
           "target": "components/ui/rating.css"
+        }
+      ]
+    },
+    {
+      "name": "ripple",
+      "type": "registry:ui",
+      "title": "Ripple",
+      "description": "Ink that spreads from where a surface is pressed. Drop it inside anything pressable; it listens to its parent. A held press keeps the ink until release, and Enter or Space start it from the centre.",
+      "categories": [
+        "motion"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://caliperui.site/r/styles.json"
+      ],
+      "files": [
+        {
+          "path": "ui/lib/cn.ts",
+          "type": "registry:ui",
+          "target": "components/ui/lib/cn.ts"
+        },
+        {
+          "path": "ui/ripple.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/ripple.tsx"
+        },
+        {
+          "path": "ui/ripple.css",
+          "type": "registry:file",
+          "target": "components/ui/ripple.css"
         }
       ]
     },
@@ -4576,6 +4741,39 @@
       ]
     },
     {
+      "name": "sparkle-text",
+      "type": "registry:ui",
+      "title": "Sparkle text",
+      "description": "Text with small four-point stars that bloom, turn and fade around it at uneven moments, for the one word that should feel special: a reward, a new plan, a finished setup.",
+      "categories": [
+        "motion"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://caliperui.site/r/styles.json"
+      ],
+      "files": [
+        {
+          "path": "ui/lib/cn.ts",
+          "type": "registry:ui",
+          "target": "components/ui/lib/cn.ts"
+        },
+        {
+          "path": "ui/sparkle-text.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sparkle-text.tsx"
+        },
+        {
+          "path": "ui/sparkle-text.css",
+          "type": "registry:file",
+          "target": "components/ui/sparkle-text.css"
+        }
+      ]
+    },
+    {
       "name": "sparkline",
       "type": "registry:ui",
       "title": "Sparkline",
@@ -4709,6 +4907,39 @@
           "path": "ui/stat-card.tsx",
           "type": "registry:ui",
           "target": "components/ui/stat-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-icon",
+      "type": "registry:ui",
+      "title": "Status icon",
+      "description": "The small status glyph beside a task: a dashed ring for backlog, an open ring for todo, a ring filling like a pie while in progress and in review, a filled disc with a tick when done and a crossed disc when cancelled. Every state is built from the same four shapes, so a change animates from one to the next.",
+      "categories": [
+        "motion"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://caliperui.site/r/styles.json"
+      ],
+      "files": [
+        {
+          "path": "ui/lib/cn.ts",
+          "type": "registry:ui",
+          "target": "components/ui/lib/cn.ts"
+        },
+        {
+          "path": "ui/status-icon.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/status-icon.tsx"
+        },
+        {
+          "path": "ui/status-icon.css",
+          "type": "registry:file",
+          "target": "components/ui/status-icon.css"
         }
       ]
     },
@@ -5271,6 +5502,39 @@
           "path": "ui/glide-highlight.css",
           "type": "registry:file",
           "target": "components/ui/glide-highlight.css"
+        }
+      ]
+    },
+    {
+      "name": "wavy-progress",
+      "type": "registry:ui",
+      "title": "Wavy progress",
+      "description": "Progress drawn as a travelling wave: the done part ripples while work is happening, the rest is a flat track that ends in a stop mark, and the wave lies flat once the work is finished. As a bar or a ring, with an indeterminate sweep when the amount is unknown.",
+      "categories": [
+        "motion"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://caliperui.site/r/styles.json"
+      ],
+      "files": [
+        {
+          "path": "ui/lib/cn.ts",
+          "type": "registry:ui",
+          "target": "components/ui/lib/cn.ts"
+        },
+        {
+          "path": "ui/wavy-progress.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/wavy-progress.tsx"
+        },
+        {
+          "path": "ui/wavy-progress.css",
+          "type": "registry:file",
+          "target": "components/ui/wavy-progress.css"
         }
       ]
     }
