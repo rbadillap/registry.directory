@@ -201,6 +201,83 @@
       "description": "a crawler reads each page, lights up its links, and climbs to the next."
     },
     {
+      "name": "agent-run",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Agent run",
+      "description": "the agent works on its own branch, and the diff merges only after every test passes."
+    },
+    {
+      "name": "billing-basin",
+      "type": "registry:component",
+      "title": "Usage billing",
+      "description": "usage fills the basin day by day, and at the month's end it drains into the invoice."
+    },
+    {
+      "name": "eval-gate",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Eval gate",
+      "description": "the agent's first diff fails the evals, and only the fixed one opens a pull request."
+    },
+    {
+      "name": "run-trace",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Run trace",
+      "description": "an agent run plays out step by step on one timeline, and the slow test step stands out."
+    },
+    {
+      "name": "uptime-probe",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Uptime probe",
+      "description": "probes in three regions ping your app, and each reply shows its round trip time."
+    },
+    {
+      "name": "agent-sandbox",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Sandbox",
+      "description": "the agent works in a sealed cell, and only the diff it wrote gets out."
+    },
+    {
+      "name": "rag",
+      "type": "registry:component",
+      "title": "RAG answer",
+      "description": "the closest pages are pulled in, and the answer is written from them with citations."
+    },
+    {
+      "name": "dns",
+      "type": "registry:component",
+      "title": "DNS lookup",
+      "description": "the resolver asks the root, then COM, then the domain, and the address comes back."
+    },
+    {
+      "name": "failover",
+      "type": "registry:component",
+      "title": "Failover",
+      "description": "the primary region goes dark, and the router sends every request to the standby."
+    },
+    {
+      "name": "ddos-shield",
+      "type": "registry:component",
+      "title": "DDoS shield",
+      "description": "a flood of requests breaks on the shield, and the one real request gets through."
+    },
+    {
+      "name": "data-warehouse",
+      "type": "registry:component",
+      "title": "Data warehouse",
+      "description": "raw data from three sources is cleaned into rows, and one query reads across all three."
+    },
+    {
+      "name": "tool-calls",
+      "type": "registry:component",
+      "title": "Tool calls",
+      "description": "the agent calls search, code and calendar in turn, ticking off each step of the task."
+    },
+    {
       "name": "edge",
       "type": "registry:component",
       "title": "Edge network",
@@ -350,6 +427,49 @@
       "resolution": "gated",
       "title": "Uptime ring",
       "description": "a check fails, the incident is logged, and your uptime still reads 99.98%."
+    },
+    {
+      "name": "billing-stack",
+      "type": "registry:component",
+      "title": "Usage billing",
+      "description": "a month of daily usage adds up, and only on day 30 does the invoice print its total."
+    },
+    {
+      "name": "usage-limit",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Usage limit",
+      "description": "a burst pushes usage up to your limit, and the extra requests wait for room."
+    },
+    {
+      "name": "alerts",
+      "type": "registry:component",
+      "title": "Alerts",
+      "description": "a metric crosses its threshold, the bell rings, and one key press acknowledges it."
+    },
+    {
+      "name": "threat-detection",
+      "type": "registry:component",
+      "title": "Threat detection",
+      "description": "the scan sweeps the network, finds the packet that does not belong, and cages it."
+    },
+    {
+      "name": "server-health",
+      "type": "registry:component",
+      "title": "Server health",
+      "description": "a job heats the server up, and its fans spin up to bring the temperature down."
+    },
+    {
+      "name": "api-status",
+      "type": "registry:component",
+      "title": "API status",
+      "description": "an endpoint's latency crosses the SLO, its light turns red, and the next check clears it."
+    },
+    {
+      "name": "audit-log",
+      "type": "registry:component",
+      "title": "Audit log",
+      "description": "every action is printed on the tape with who and when, and wound onto a locked spool."
     },
     {
       "name": "queue",
@@ -571,6 +691,69 @@
       "resolution": "gated",
       "title": "Agent factory",
       "description": "an agent runs the factory floor, and finished illustrations roll out the end."
+    },
+    {
+      "name": "database",
+      "type": "registry:component",
+      "title": "Database",
+      "description": "a query goes in, the read head climbs to the right tier, and the rows come back out."
+    },
+    {
+      "name": "firewall",
+      "type": "registry:component",
+      "title": "Firewall",
+      "description": "the rule plate lets port 443 through the gate and drops port 23 into the box below."
+    },
+    {
+      "name": "encryption",
+      "type": "registry:component",
+      "title": "Encryption",
+      "description": "a readable card goes in and comes out sealed, and only the key opens it again."
+    },
+    {
+      "name": "two-factor",
+      "type": "registry:component",
+      "title": "Two-factor sign-in",
+      "description": "a fresh code shows on the token, and the lock opens only once it is keyed in."
+    },
+    {
+      "name": "containers",
+      "type": "registry:component",
+      "title": "Containers",
+      "description": "the crane lowers a new container into the host, and its light comes on as it runs."
+    },
+    {
+      "name": "api-gateway",
+      "type": "registry:component",
+      "title": "API gateway",
+      "description": "each request is checked at the gateway and turned toward the service it belongs to."
+    },
+    {
+      "name": "ci-pipeline",
+      "type": "registry:component",
+      "title": "CI pipeline",
+      "description": "a commit rides through build, test and ship, and each check lights as it passes."
+    },
+    {
+      "name": "gpu",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "GPU",
+      "description": "the cooler lifts, a batch runs in, and the compute units light up in waves."
+    },
+    {
+      "name": "parcel-scale",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Parcel scale",
+      "description": "a parcel stops on the scale, the weight settles, and its shipping label is pressed on."
+    },
+    {
+      "name": "access-badge",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Access badge",
+      "description": "a blank card is printed with a face and a name, and drops onto the stack of badges."
     }
   ]
 }

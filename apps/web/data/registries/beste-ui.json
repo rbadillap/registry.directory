@@ -11719,6 +11719,30 @@
       ]
     },
     {
+      "name": "contact7",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Contact Details, Form and Map",
+      "description": "A two column contact section. Labeled groups for address, phone numbers, fax and email sit on the left, and a form with first and last name side by side, email, subject, message and a full width send button sits on the right. A wide embedded Google Map runs underneath.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/contact7/contact7.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/contact7.tsx"
+        }
+      ]
+    },
+    {
       "name": "crypto1",
       "type": "registry:block",
       "title": "Token Price Hero",
@@ -28186,6 +28210,47 @@
       ]
     },
     {
+      "name": "feature333",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Service Card Carousel",
+      "description": "A joined row of square service cards in a carousel, five across on wide screens. Each card centers an icon or a small image, a title and a Details link. The cards can be inverted, use the primary color, sit on the card surface, or take any custom background and text color. Previous and next arrows sit under the cards at the bottom right.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "embla-carousel-react"
+      ],
+      "registryDependencies": [
+        "carousel"
+      ],
+      "files": [
+        {
+          "path": "registry/feature333/feature333.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/feature333.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature334",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Three Column Text Explainer",
+      "description": "Three equal text columns, each with an optional 4:3 photo on top, a bold title and a long paragraph, for explaining related products or policies side by side. An optional heading and intro sit above. The columns stack on small screens.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "registry/feature334/feature334.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/feature334.tsx"
+        }
+      ]
+    },
+    {
       "name": "fitness5",
       "type": "registry:block",
       "resolution": "gated",
@@ -43830,6 +43895,25 @@
           "path": "registry/navbar117/navbar117.tsx",
           "type": "registry:component",
           "target": "components/beste/block/navbar117.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navbar118",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Navbar With Contact Bar and Hanging Logo",
+      "description": "A two row header for service businesses. A thin top bar lists address, email and phone in ruled cells, with social icons in square cells on the right. Below it, a logo card hangs over the next section beside the company name, and the links sit on the right with an active state and a standard dropdown that opens on hover, click or keyboard focus. On small screens the top bar keeps only the linked contacts, the logo card still hangs over the next section, the company name sits centered, and a bordered menu button opens the links with collapsible submenus.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/navbar118/navbar118.tsx",
+          "type": "registry:component",
+          "target": "components/beste/block/navbar118.tsx"
         }
       ]
     },

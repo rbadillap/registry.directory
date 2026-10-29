@@ -2903,6 +2903,341 @@
       ]
     },
     {
+      "name": "line-chart",
+      "type": "registry:component",
+      "title": "Line Chart",
+      "description": "Line and area charts that morph with your data, with a snapping crosshair and value tooltips.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/line-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart.tsx"
+        },
+        {
+          "path": "components/charts/line-chart/context.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart/context.tsx"
+        },
+        {
+          "path": "components/charts/line-chart/legend.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart/legend.tsx"
+        },
+        {
+          "path": "components/charts/line-chart/plot.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart/plot.tsx"
+        },
+        {
+          "path": "components/charts/line-chart/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/line-chart/tooltip.tsx"
+        },
+        {
+          "path": "components/charts/xy/data-table.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/xy/data-table.tsx"
+        },
+        {
+          "path": "components/charts/xy/model.ts",
+          "type": "registry:component",
+          "target": "@components/charts/xy/model.ts"
+        },
+        {
+          "path": "components/charts/xy/path.ts",
+          "type": "registry:component",
+          "target": "@components/charts/xy/path.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/charts/xy/scale.ts",
+          "type": "registry:component",
+          "target": "@components/charts/xy/scale.ts"
+        },
+        {
+          "path": "components/charts/xy/use-inspection.ts",
+          "type": "registry:component",
+          "target": "@components/charts/xy/use-inspection.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "components/charts/xy/legend.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/xy/legend.tsx"
+        },
+        {
+          "path": "components/charts/xy/axis.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/xy/axis.tsx"
+        },
+        {
+          "path": "components/charts/xy/inspector.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/xy/inspector.tsx"
+        },
+        {
+          "path": "components/charts/xy/use-points.ts",
+          "type": "registry:component",
+          "target": "@components/charts/xy/use-points.ts"
+        },
+        {
+          "path": "components/charts/xy/use-width.ts",
+          "type": "registry:component",
+          "target": "@components/charts/xy/use-width.ts"
+        },
+        {
+          "path": "components/motion/text-shimmer.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/text-shimmer.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/charts/xy/tooltip-content.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/xy/tooltip-content.tsx"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
+          "path": "lib/text-shimmer.ts",
+          "type": "registry:lib",
+          "target": "@lib/text-shimmer.ts"
+        },
+        {
+          "path": "components/motion/number-ticker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/number-ticker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart",
+      "type": "registry:component",
+      "title": "Bar Chart",
+      "description": "Grouped, stacked and horizontal bars that grow in, rescale and reorder with springs.",
+      "dependencies": [
+        "@floating-ui/dom",
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/bar-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart.tsx"
+        },
+        {
+          "path": "components/charts/bar-chart/context.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart/context.tsx"
+        },
+        {
+          "path": "components/charts/bar-chart/legend.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart/legend.tsx"
+        },
+        {
+          "path": "components/charts/bar-chart/plot.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart/plot.tsx"
+        },
+        {
+          "path": "components/charts/bar-chart/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/bar-chart/tooltip.tsx"
+        },
+        {
+          "path": "components/charts/xy/data-table.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/xy/data-table.tsx"
+        },
+        {
+          "path": "components/charts/xy/model.ts",
+          "type": "registry:component",
+          "target": "@components/charts/xy/model.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "components/charts/xy/scale.ts",
+          "type": "registry:component",
+          "target": "@components/charts/xy/scale.ts"
+        },
+        {
+          "path": "components/charts/xy/use-inspection.ts",
+          "type": "registry:component",
+          "target": "@components/charts/xy/use-inspection.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "components/charts/xy/legend.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/xy/legend.tsx"
+        },
+        {
+          "path": "components/charts/xy/axis.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/xy/axis.tsx"
+        },
+        {
+          "path": "components/charts/xy/inspector.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/xy/inspector.tsx"
+        },
+        {
+          "path": "components/charts/xy/use-width.ts",
+          "type": "registry:component",
+          "target": "@components/charts/xy/use-width.ts"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "components/charts/xy/tooltip-content.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/xy/tooltip-content.tsx"
+        },
+        {
+          "path": "components/motion/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip.tsx"
+        },
+        {
+          "path": "components/motion/number-ticker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/number-ticker.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/grace.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/grace.ts"
+        },
+        {
+          "path": "components/motion/tooltip/positioner.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/positioner.tsx"
+        },
+        {
+          "path": "components/motion/tooltip/use-position.ts",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip/use-position.ts"
+        },
+        {
+          "path": "components/motion/tooltip-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/tooltip-surface.tsx"
+        },
+        {
+          "path": "lib/hooks/use-dismiss.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-dismiss.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-gesture.ts"
+        },
+        {
+          "path": "lib/hooks/use-tap-gesture.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-tap-gesture.ts"
+        },
+        {
+          "path": "lib/touch.ts",
+          "type": "registry:lib",
+          "target": "@lib/touch.ts"
+        }
+      ]
+    },
+    {
+      "name": "sparkline",
+      "type": "registry:component",
+      "title": "Sparkline",
+      "description": "A compact inline trend for stat cards and tables, with a change badge and optional readout.",
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/charts/sparkline.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/sparkline.tsx"
+        },
+        {
+          "path": "components/charts/xy/inspector.tsx",
+          "type": "registry:component",
+          "target": "@components/charts/xy/inspector.tsx"
+        },
+        {
+          "path": "components/charts/xy/path.ts",
+          "type": "registry:component",
+          "target": "@components/charts/xy/path.ts"
+        },
+        {
+          "path": "components/charts/xy/use-points.ts",
+          "type": "registry:component",
+          "target": "@components/charts/xy/use-points.ts"
+        },
+        {
+          "path": "components/charts/xy/use-width.ts",
+          "type": "registry:component",
+          "target": "@components/charts/xy/use-width.ts"
+        },
+        {
+          "path": "components/motion/number-ticker.tsx",
+          "type": "registry:component",
+          "target": "@components/motion/number-ticker.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "@lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:hook",
+          "target": "@lib/hooks/use-hover-capable.ts"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
       "name": "sankey-chart",
       "type": "registry:component",
       "title": "Sankey Chart",

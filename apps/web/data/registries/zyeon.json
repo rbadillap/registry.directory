@@ -5523,7 +5523,7 @@
     {
       "name": "chart-gauge",
       "type": "registry:ui",
-      "resolution": "unverified",
+      "resolution": "gated",
       "title": "Gauge Chart",
       "description": "A four-state needle dial that reads one metric against contract-driven threshold bands, with explicit boundary attribution and an out-of-range caret.",
       "dependencies": [
@@ -5597,7 +5597,7 @@
     {
       "name": "chart-histogram",
       "type": "registry:ui",
-      "resolution": "unverified",
+      "resolution": "gated",
       "title": "Histogram",
       "description": "A four-state distribution chart that bins raw values itself — auto / fixed-count / fixed-width bins with optional percentile reference lines.",
       "dependencies": [
@@ -5650,7 +5650,7 @@
     {
       "name": "chart-step-line",
       "type": "registry:ui",
-      "resolution": "unverified",
+      "resolution": "gated",
       "title": "Step Line Chart",
       "description": "A four-state step chart for discrete state over time — values hold flat then jump, with three step alignments, change markers and a change table.",
       "dependencies": [
@@ -5701,7 +5701,6 @@
     {
       "name": "hero-section",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Hero Section",
       "description": "A props-driven landing hero with eyebrow, dual CTAs, social-proof bar and an optional visual that collapses to a centred column when omitted.",
       "dependencies": [
@@ -5720,7 +5719,7 @@
     {
       "name": "feature-grid",
       "type": "registry:block",
-      "resolution": "unverified",
+      "resolution": "gated",
       "title": "Feature Grid",
       "description": "A four-state feature section: equal-weight icon cards with optional real \"learn more\" links, and no cap on how many render.",
       "dependencies": [
@@ -5744,7 +5743,6 @@
     {
       "name": "cta-band",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "CTA Band",
       "description": "A closing call-to-action strip — headline, supporting line and a primary/secondary CTA pair, in four surfaces (plain, card, muted, accent) and row or stacked layouts.",
       "registryDependencies": [
@@ -5760,7 +5758,7 @@
     {
       "name": "logo-cloud",
       "type": "registry:block",
-      "resolution": "unverified",
+      "resolution": "gated",
       "title": "Logo Cloud",
       "description": "A trusted-by logo wall that optically equalises logos of wildly different aspect ratios, as a static grid or a reduced-motion-aware marquee.",
       "dependencies": [
@@ -5783,7 +5781,6 @@
     {
       "name": "newsletter-signup",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Newsletter Signup",
       "description": "An email capture band driven by a real submit state machine: zod validation, a duplicate-submit guard, a role=status confirmation, an idempotent already-subscribed branch, and a failure that keeps the address you typed.",
       "dependencies": [
@@ -5803,7 +5800,7 @@
     {
       "name": "site-footer",
       "type": "registry:block",
-      "resolution": "unverified",
+      "resolution": "gated",
       "title": "Site Footer",
       "description": "A contract-driven site footer: brand block with named social links, collapsible link columns on mobile, and a legal bottom bar with an optional locale switcher.",
       "dependencies": [
@@ -5827,7 +5824,7 @@
     {
       "name": "team-grid",
       "type": "registry:block",
-      "resolution": "unverified",
+      "resolution": "gated",
       "title": "Team Grid",
       "description": "A four-state team section with equal-height member cards, initials-fallback avatars, real social links and optional department grouping.",
       "dependencies": [
@@ -5851,7 +5848,6 @@
     {
       "name": "contact-section",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Contact Section",
       "description": "A contact block built around its submit state machine: zod-validated name/email/topic/message, a duplicate-submit guard, a confirmation panel that names the address it replied to, and a failure that keeps every character you typed — beside contact rows whose mailto:/tel:/map links are derived from their own values.",
       "dependencies": [
@@ -5871,7 +5867,7 @@
     {
       "name": "blog-card-grid",
       "type": "registry:block",
-      "resolution": "unverified",
+      "resolution": "gated",
       "title": "Blog Card Grid",
       "description": "A four-state article grid: one stretched link per card (category and author stay independently clickable), a featured post that spans two columns, and deliberate, configurable line clamping so mismatched title lengths still line up.",
       "dependencies": [
@@ -5937,7 +5933,7 @@
     {
       "name": "integration-grid",
       "type": "registry:block",
-      "resolution": "unverified",
+      "resolution": "gated",
       "title": "Integration Grid",
       "description": "A four-state integrations directory: debounced search and category facets that really filter, a live result count, and per-card connect / disconnect with pending, error and retry.",
       "dependencies": [
@@ -5988,7 +5984,6 @@
     {
       "name": "error-page",
       "type": "registry:block",
-      "resolution": "unverified",
       "title": "Error Page",
       "description": "A full-viewport error page for 404 / 403 / 500 / offline / maintenance — per-type copy and advice, a back button that degrades when the history stack is empty, live online status, and a copyable error ID behind collapsed diagnostics.",
       "dependencies": [
@@ -6033,7 +6028,7 @@
     {
       "name": "job-listings",
       "type": "registry:block",
-      "resolution": "unverified",
+      "resolution": "gated",
       "title": "Job Listings",
       "description": "A four-state careers board: roles grouped by department, three filters that really combine (department, location, remote-only), a live result count, and salary ranges whose absence is spelled out instead of left blank.",
       "dependencies": [
@@ -6082,7 +6077,7 @@
     {
       "name": "poll-results",
       "type": "registry:ui",
-      "resolution": "unverified",
+      "resolution": "gated",
       "title": "Poll Results",
       "description": "A poll / survey result readout — one bar per option with largest-remainder percentages that always total exactly 100%, tie-aware leader badges, a your-vote marker, and a ballot view that hides the counts until the visitor votes.",
       "dependencies": [
@@ -6107,7 +6102,7 @@
     {
       "name": "resource-usage",
       "type": "registry:ui",
-      "resolution": "unverified",
+      "resolution": "gated",
       "title": "Resource Usage",
       "description": "A quota panel for heterogeneous resources — per-unit formatting (1024-based bytes, throughput, duration, cores, counts, money), unlimited rows with no bar at all, rescaled over-quota tracks, collapsible groups and usage sorting.",
       "dependencies": [
@@ -6131,7 +6126,7 @@
     {
       "name": "metric-comparison",
       "type": "registry:ui",
-      "resolution": "unverified",
+      "resolution": "gated",
       "title": "Metric Comparison",
       "description": "A period-over-period comparison table — current, previous, absolute change and change %, with polarity-aware tone, sortable columns, expandable breakdowns and four data states.",
       "dependencies": [
@@ -6204,7 +6199,6 @@
     {
       "name": "event-card",
       "type": "registry:ui",
-      "resolution": "unverified",
       "title": "Event Card",
       "description": "An event card whose calendar tear-off survives cross-day, cross-month and cross-year spans, formats every instant in an explicit IANA zone, and drives an ordered capacity machine where ended outranks the seat count.",
       "dependencies": [
@@ -6224,7 +6218,6 @@
     {
       "name": "keyboard-map",
       "type": "registry:ui",
-      "resolution": "unverified",
       "title": "Keyboard Map",
       "description": "A keyboard layout diagram with your app's shortcuts painted onto the caps — platform-correct glyphs and modifier order (⌘ ⌥ vs Ctrl Alt), whole-chord highlighting, and a readable binding list.",
       "registryDependencies": [
@@ -6298,7 +6291,6 @@
     {
       "name": "variant-selector",
       "type": "registry:ui",
-      "resolution": "unverified",
       "title": "Variant Selector",
       "description": "Multi-dimension product options resolved against a sparse SKU matrix — impossible combinations stay visible and struck through, availability converges from either direction, and dead ends name the one dimension to change.",
       "dependencies": [
@@ -6317,7 +6309,6 @@
     {
       "name": "model-selector",
       "type": "registry:ui",
-      "resolution": "unverified",
       "title": "Model Selector",
       "description": "An LLM model picker whose options carry context window, per-million input/output rates, capability badges and real availability — and can be filtered and sorted by them.",
       "dependencies": [
@@ -6356,7 +6347,6 @@
     {
       "name": "video-timeline",
       "type": "registry:ui",
-      "resolution": "gated",
       "title": "Video Timeline",
       "description": "A controlled scrub track with chapter-segmented rail, buffered ranges, keyframe hover previews and draggable in/out trim handles — delta dragging, frame-accurate keys, no player attached.",
       "dependencies": [
@@ -6375,7 +6365,6 @@
     {
       "name": "qr-scanner",
       "type": "registry:ui",
-      "resolution": "gated",
       "title": "QR Scanner",
       "description": "A camera QR reader on the native BarcodeDetector with a pluggable decoder — an enforced scan frame, a throttled decode loop, a per-value cooldown, an image fallback, and a camera that is always released.",
       "dependencies": [
@@ -6395,7 +6384,6 @@
     {
       "name": "pagination-cursor",
       "type": "registry:ui",
-      "resolution": "unverified",
       "title": "Cursor Pagination",
       "description": "A load-more control for cursor APIs — a synchronous in-flight guard so one cursor is never fetched twice, an optional intersection sentinel with a burst budget, retry that keeps the loaded rows, and a live-region count.",
       "dependencies": [
@@ -6415,7 +6403,6 @@
     {
       "name": "tab-overflow",
       "type": "registry:ui",
-      "resolution": "unverified",
       "title": "Tab Overflow",
       "description": "A measured tab strip that folds the tabs it cannot fit into a \"More\" menu — real tablist semantics, the selected tab is never collapsed, and no breakpoints anywhere.",
       "dependencies": [
@@ -18445,6 +18432,7 @@
     {
       "name": "morphing-nav-indicator",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Morphing Nav Indicator",
       "description": "A nav landmark whose active indicator is one DOM-measured capsule that springs between items and morphs its width and height to fit any label, in pill or underline form.",
       "registryDependencies": [
@@ -18461,6 +18449,7 @@
     {
       "name": "sticky-cta-bar",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Sticky CTA Bar",
       "description": "A conversion bar that docks to the bottom or top edge once a sentinel element leaves the viewport, carrying a headline, a primary action and a dismissal that is remembered for the rest of the tab session.",
       "dependencies": [
@@ -18480,6 +18469,7 @@
     {
       "name": "line-draw-scroll",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Line Draw on Scroll",
       "description": "SVG paths that draw themselves as the block scrolls through the viewport — lengths measured with getTotalLength(), dashoffset unwound per path, sequentially or in parallel.",
       "registryDependencies": [
@@ -18496,6 +18486,7 @@
     {
       "name": "mobile-app-bar",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Mobile App Bar",
       "description": "A phone screen header whose large in-flow title scrolls away and crossfades into a 44px bar, with the bar's surface bleeding under the safe-area top inset.",
       "dependencies": [
@@ -18515,6 +18506,7 @@
     {
       "name": "dynamic-island",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Dynamic Island",
       "description": "A notch-anchored live-activity pill that morphs between idle, compact, minimal and expanded presentations.",
       "dependencies": [
@@ -18534,6 +18526,7 @@
     {
       "name": "status-bar-mock",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Status Bar Mock",
       "description": "A mocked OS status bar — clock, cellular, Wi-Fi, battery — that fills the safe-area band above a phone screen, with notch, Dynamic Island, punch-hole and flat glass.",
       "registryDependencies": [
@@ -18549,6 +18542,7 @@
     {
       "name": "notch-inset-layout",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Notch Inset Layout",
       "description": "A screen shell that lays itself out from the insets the device actually reports — filling, passing under, or stepping away from the notch, island, corner arcs and home-indicator lane.",
       "registryDependencies": [
@@ -18564,6 +18558,7 @@
     {
       "name": "screen-transition",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Screen Transition",
       "description": "A push/pop screen stack with an interactive left-edge back swipe, a parallaxing under-layer and a drag that stays cancellable until you let go.",
       "dependencies": [
@@ -18583,6 +18578,7 @@
     {
       "name": "thumb-toolbar",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Thumb Toolbar",
       "description": "A bottom action bar sized to the thumb-reach arc: a hand-side overflow key that opens its menu upward, press-and-slide selection, safe-area padding and a full keyboard path.",
       "dependencies": [
@@ -18601,6 +18597,7 @@
     {
       "name": "reachability-pull",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Reachability Pull",
       "description": "One-handed mode as a wrapper: a pull on the home-indicator strip brings the whole screen down into the thumb arc — sliding, shrinking or leaning into a corner — with a button, arrow keys, Escape, a tap and a timeout that all send it back.",
       "dependencies": [
@@ -18620,6 +18617,7 @@
     {
       "name": "list-index-bar",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "List Index Bar",
       "description": "An edge-hugging A–Z rail that jumps a sectioned list from one continuous thumb drag, with a magnified preview bubble, dot compression and a full keyboard path.",
       "registryDependencies": [
@@ -18635,6 +18633,7 @@
     {
       "name": "action-sheet",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Action Sheet",
       "description": "An OS-style sheet of grouped choices raised from the bottom edge, with a destructive tone, a detached Cancel, drag-to-dismiss and safe-area padding.",
       "registryDependencies": [
@@ -18653,6 +18652,7 @@
     {
       "name": "context-peek",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Context Peek",
       "description": "The long-press peek: the held target lifts out of a blurred page and its actions resolve under the finger, as a menu, an icon toolbar or an expanded preview card.",
       "registryDependencies": [
@@ -18668,6 +18668,7 @@
     {
       "name": "share-sheet",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Share Sheet",
       "description": "The system share surface: a subject header you can pull down to dismiss, a swipeable recents rail, a 4-up app grid and an activity list, on one scrollable sheet with safe-area padding.",
       "dependencies": [
@@ -18687,6 +18688,7 @@
     {
       "name": "permission-primer",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Permission Primer",
       "description": "A pre-permission sheet that spends the phone's one-shot system dialog on purpose — reasons first, a swipe or a button to refuse, and a Settings round trip that re-checks itself when the app comes back.",
       "dependencies": [
@@ -18706,6 +18708,7 @@
     {
       "name": "rating-prompt",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Rating Prompt",
       "description": "An in-app review request that rises from the bottom edge, forks a happy answer to the store and an unhappy one into a private message box, and refuses to render once the remembered outcome says it has already asked.",
       "dependencies": [
@@ -18727,6 +18730,7 @@
     {
       "name": "app-update-sheet",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "App Update Sheet",
       "description": "A bottom-edge update prompt with release notes, an installed-versus-available comparison and a download state machine — postponable, or a required gate that refuses to be dismissed.",
       "dependencies": [
@@ -18748,6 +18752,7 @@
     {
       "name": "paywall-sheet",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Paywall Sheet",
       "description": "A subscription paywall that rises from the bottom edge — plan radio rows, trial framing, restore purchases and the auto-renew fine print under a pinned, safe-area action bar.",
       "dependencies": [
@@ -18768,6 +18773,7 @@
     {
       "name": "filter-sheet",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Filter Sheet",
       "description": "A bottom-edge filter panel with grouped facets, a staged draft, a live result count and an Apply bar padded clear of the home indicator.",
       "dependencies": [
@@ -18788,6 +18794,7 @@
     {
       "name": "long-press",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Long Press",
       "description": "Press-and-hold on any row or tile — a ring, bar or swell charges under the finger, drift hands the gesture back to the scroller, and the completion fires exactly once, with a tap, a held key and a 44px button all reaching the same action.",
       "dependencies": [
@@ -18806,6 +18813,7 @@
     {
       "name": "double-tap-heart",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Double Tap Heart",
       "description": "A media surface that likes on double tap, bursting a mark where the thumb landed while the first tap is left to the control underneath.",
       "dependencies": [
@@ -18825,6 +18833,7 @@
     {
       "name": "pinch-zoom",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Pinch Zoom",
       "description": "A photo you pinch, drag and double-tap inside its own frame: fit is 100%, every edge is a rubber band, and the sideways swipe past an edge is reported to the host instead of performed.",
       "dependencies": [
@@ -18844,6 +18853,7 @@
     {
       "name": "swipe-pager",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Swipe Pager",
       "description": "Full-width paged views under a horizontal drag — the deck tracks the finger 1:1, resists past the first and last page, commits on flick or distance, and reports position through a dot, bar or counter rail.",
       "dependencies": [
@@ -18863,6 +18873,7 @@
     {
       "name": "drag-reorder-list",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Drag Reorder List",
       "description": "A touch list where a press-and-hold lifts a row under the finger, the gap opens live, the edges auto-scroll, and space plus arrow keys do the identical job.",
       "dependencies": [
@@ -18881,6 +18892,7 @@
     {
       "name": "swipe-to-reply",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Swipe To Reply",
       "description": "A chat row whose sideways swipe arms a reply — the row tracks the thumb, a mark fills the gutter behind it, and past the threshold releasing commits and springs the row straight back.",
       "dependencies": [
@@ -18900,6 +18912,7 @@
     {
       "name": "amount-keypad",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Amount Keypad",
       "description": "An in-app currency keypad that replaces the software keyboard — oversized live-grouped digits, decimal-point or cash-register entry, and a delete key that repeats on hold.",
       "dependencies": [
@@ -18918,6 +18931,7 @@
     {
       "name": "keyboard-accessory",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Keyboard Accessory",
       "description": "The bar that rides on top of the software keyboard: previous / next field travel, quick-insert chips, and a Done key that hands focus back on purpose.",
       "dependencies": [
@@ -18936,6 +18950,7 @@
     {
       "name": "keyboard-avoider",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Keyboard Avoider",
       "description": "A screen container that keeps its content and pinned footer clear of the software keyboard by the height the visual viewport actually reports — resize the frame, lift the frame, or ride only the bar.",
       "registryDependencies": [
@@ -18952,6 +18967,7 @@
     {
       "name": "wheel-picker",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Wheel Picker",
       "description": "An iOS-style drum picker: scroll-snap detents under the thumb, optional wrapping, unlandable rows, and the same turns from the keyboard and two chevrons.",
       "dependencies": [
@@ -18971,6 +18987,7 @@
     {
       "name": "finger-draw-annotate",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Finger Draw Annotate",
       "description": "Mark up a photo with a finger — pen, arrow and highlighter in a thumb-reachable dock, per-mark undo, a caret and arrow keys as the equal non-touch path, and a flattened PNG export.",
       "dependencies": [
@@ -18990,6 +19007,7 @@
     {
       "name": "mobile-search-bar",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Mobile Search Bar",
       "description": "A phone search field that turns the screen into search mode — Cancel, a scope bar and recent searches — measured against the software keyboard and padded off the notch.",
       "dependencies": [
@@ -19010,6 +19028,7 @@
     {
       "name": "chip-scroller",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Chip Scroller",
       "description": "A one-line filter chip rail that snaps under the thumb, fades at whichever edge still has chips behind it, and pins the off-screen count where it stays reachable.",
       "dependencies": [
@@ -19029,6 +19048,7 @@
     {
       "name": "inline-picker-row",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Inline Picker Row",
       "description": "A settings row that expands in place to reveal its picker — slide a thumb across the options and lift to choose, instead of pushing a whole screen.",
       "dependencies": [
@@ -19048,6 +19068,7 @@
     {
       "name": "phone-number-input",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Phone Number Input",
       "description": "A mobile phone field that regroups digits as you type, picks the country from a bottom sheet, and normalises pasted international numbers into E.164.",
       "dependencies": [
@@ -19093,6 +19114,7 @@
     {
       "name": "answer-highlight",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Answer Highlight",
       "description": "The conclusion of an AI answer stated first — four monochrome priority levels across plain, rule, KPI and icon compositions, plus a rail that pins the verdict below the notch once the reader has thumbed past the card.",
       "dependencies": [
@@ -19112,6 +19134,7 @@
     {
       "name": "criteria-checklist",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Criteria Checklist",
       "description": "A live rule-satisfaction panel for a field being typed on a phone: a row per rule, a two-column grid, or a one-line summary of the next thing to fix — chosen from the keyboard height the visual viewport actually reports.",
       "dependencies": [
@@ -19131,6 +19154,7 @@
     {
       "name": "reasoning-timeline",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Reasoning Timeline",
       "description": "A thumb-scrubbed reasoning chain for phones — the running node is called out on an inverted card, resolved nodes fold into a count, and the window never becomes a nested scroller.",
       "dependencies": [
@@ -19149,6 +19173,7 @@
     {
       "name": "chat-message-actions",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Chat Message Actions",
       "description": "Hold one chat bubble and its quick reactions plus that message's actions come up against it — as an anchored menu, a compact toolbar or a sheet from the bottom edge.",
       "dependencies": [
@@ -19167,6 +19192,7 @@
     {
       "name": "hold-to-talk",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Hold To Talk",
       "description": "A press-and-hold voice-message button: the strip takes over the composer with a live waveform, sliding up locks the recording hands-free, sliding toward the edge discards it, releasing sends it — and every one of those has a key or a button.",
       "dependencies": [
@@ -19186,6 +19212,7 @@
     {
       "name": "prompt-rail",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Prompt Rail",
       "description": "A one-line rail of conversation starters that scrolls under the thumb and folds itself away — on a flick, on a key, or the moment the thread starts.",
       "dependencies": [
@@ -19205,6 +19232,7 @@
     {
       "name": "attachment-tray",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Attachment Tray",
       "description": "The composer's + tray: a source panel that opens at the software keyboard's own height and pushes the composer up instead of covering it, driven by drag or button.",
       "dependencies": [
@@ -19223,6 +19251,7 @@
     {
       "name": "source-sheet",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Source Sheet",
       "description": "A citation opened as a bottom sheet instead of a popover — the passage in the thumb arc, the cited line lifted clear of the sheet, and a way back to where you were reading.",
       "dependencies": [
@@ -19242,6 +19271,7 @@
     {
       "name": "stream-stop-bar",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Stream Stop Bar",
       "description": "A bottom-edge run bar for a streaming answer — it mints the AbortSignal, stops the run from the thumb arc, climbs above the soft keyboard, and flicks away to uncover the text it covers.",
       "dependencies": [
@@ -19261,6 +19291,7 @@
     {
       "name": "snackbar",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Snackbar",
       "description": "A bottom-edge message bar with one action, swipe-to-dismiss and a single-slot queue that never lets two share the thumb arc.",
       "dependencies": [
@@ -19280,6 +19311,7 @@
     {
       "name": "offline-banner",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Offline Banner",
       "description": "A safe-area connectivity banner for phones that lists the changes waiting, sends them when the link returns, and can be swiped into a peek tab that keeps the count.",
       "dependencies": [
@@ -19298,6 +19330,7 @@
     {
       "name": "mini-player",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Mini Player",
       "description": "A now-playing bar docked above the tab bar that a swipe up, a tap or a key morphs into a full-screen player, with safe-area padding and a read-only timeline when no seek handler is wired.",
       "dependencies": [
@@ -19317,6 +19350,7 @@
     {
       "name": "download-row",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Download Row",
       "description": "A per-transfer mobile row whose rate and ETA disappear the moment bytes stop arriving, with pause, resume, retry and a press-and-hold cancel that answers to the keyboard.",
       "dependencies": [
@@ -19335,6 +19369,7 @@
     {
       "name": "sticky-section-list",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Sticky Section List",
       "description": "A grouped mobile list whose section headers pin to the safe-area line and push each other out, with a thumb-arc pager that walks the sections and reports the one being read.",
       "dependencies": [
@@ -19354,6 +19389,7 @@
     {
       "name": "pull-menu",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Pull Menu",
       "description": "An overscroll quick-action menu: pull a list past its top to reveal actions, the one under your thumb arms as you keep pulling or slide sideways, and releasing runs it.",
       "dependencies": [
@@ -19372,6 +19408,7 @@
     {
       "name": "map-bottom-sheet",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Map Bottom Sheet",
       "description": "A map with a draggable sheet over it: detents, velocity settling, and a map that lifts its focal point by half of whatever the sheet covers.",
       "dependencies": [
@@ -19391,6 +19428,7 @@
     {
       "name": "passcode-lock",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Passcode Lock",
       "description": "An app lock screen with keypad passcode entry, biometric fallback, escalating attempt backoff and a terminal locked-out state.",
       "dependencies": [
@@ -19410,6 +19448,7 @@
     {
       "name": "wallet-card-stack",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Wallet Card Stack",
       "description": "A phone-screen wallet: cards overlap so only a tappable strip of each shows, tapping one lifts it to the top safe-area edge and tucks the rest under the bottom, and a downward drag — or Escape — puts it back.",
       "dependencies": [
@@ -20115,6 +20154,7 @@
     {
       "name": "chart-partner-chemistry",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Partner Chemistry",
       "description": "A four-state doubles pairing grid — one roster on both axes, the lower triangle carrying each partnership's win rate over its match count, samples under the minimum-match bar hatched out of the colour ramp and the verdict, each player's own average on the diagonal to read chemistry against, a per-player lens on the row headers, and a load strip whose largest-remainder widths always add to exactly 100%.",
       "dependencies": [
@@ -20138,6 +20178,7 @@
     {
       "name": "chart-point-leverage",
       "type": "registry:ui",
+      "resolution": "unverified",
       "title": "Point Leverage",
       "description": "A four-state point-leverage scatter in hand-rolled SVG — every point of a match plotted by the win-probability swing it could produce against match time, priced either by a supplied win-probability model or by a standard table keyed by game and set score, with a draggable high-leverage line, the biggest points ringed and labelled with their score, and each player's conversion above the line.",
       "dependencies": [
@@ -20162,6 +20203,7 @@
     {
       "name": "account-danger-zone",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Danger Zone",
       "description": "A settings-page danger zone — one row per irreversible action with its consequences itemised before the confirm, a type-the-resource-name gate, grace windows dated from the payload's own clock, and blocked actions that name their blocker instead of rendering a dead button.",
       "dependencies": [
@@ -20188,6 +20230,7 @@
     {
       "name": "webhooks-manager",
       "type": "registry:block",
+      "resolution": "unverified",
       "title": "Webhooks Manager",
       "description": "A four-state webhook endpoint manager — an event multi-select editor that refuses unreachable URLs with the reason, reveal-on-demand signing secrets rotated behind a stated overlap window, a test sender that names its blocker, and per-endpoint deliveries with outcome mix and retry.",
       "dependencies": [
