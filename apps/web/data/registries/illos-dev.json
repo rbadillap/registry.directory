@@ -472,6 +472,13 @@
       "description": "every action is printed on the tape with who and when, and wound onto a locked spool."
     },
     {
+      "name": "query-timeout",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Query timeout",
+      "description": "queries pile up at a busy database, and the one that waits too long is dropped."
+    },
+    {
       "name": "queue",
       "type": "registry:component",
       "title": "Queue",
@@ -754,6 +761,292 @@
       "resolution": "gated",
       "title": "Access badge",
       "description": "a blank card is printed with a face and a name, and drops onto the stack of badges."
+    },
+    {
+      "name": "failover-standby",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Failover",
+      "description": "the primary goes down, and the request shifts across to the standby, which takes it."
+    },
+    {
+      "name": "tenant-isolation",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Tenant isolation",
+      "description": "each workspace has its own lid and lock, and only the right one opens for a record."
+    },
+    {
+      "name": "webhook-listener",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Webhook listener",
+      "description": "a button is pressed, the listener hears it, and a payload shoots to the endpoint."
+    },
+    {
+      "name": "etl-pipeline",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "ETL pipeline",
+      "description": "raw blocks drop into the transformer and roll out as clean blocks with a chart on them."
+    },
+    {
+      "name": "audit-trail",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Audit trail",
+      "description": "every event is stamped with the time and filed in a locked archive."
+    },
+    {
+      "name": "rbac-roles",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Roles",
+      "description": "a member's badge opens one locker, and the admin's badge opens all three."
+    },
+    {
+      "name": "team-seats",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Team seats",
+      "description": "one invite goes into the splitter, and a copy lands on every desk."
+    },
+    {
+      "name": "api-keys",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "API keys",
+      "description": "a blank key is cut tooth by tooth, then locked away in the key safe."
+    },
+    {
+      "name": "feature-gate",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Feature gate",
+      "description": "a request waits at the gate until the upgrade pass goes in, then rides through."
+    },
+    {
+      "name": "quota-warning",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Quota warning",
+      "description": "usage fills the tank, the beacon flashes at the 80 mark, and the monthly reset drains it."
+    },
+    {
+      "name": "data-enrichment",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Data enrichment",
+      "description": "a record passes three integrations and picks up a new layer of fields at each."
+    },
+    {
+      "name": "maintenance-window",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Maintenance window",
+      "description": "when the schedule reaches the window, the server stops for service and comes back after."
+    },
+    {
+      "name": "empty-search",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Empty search",
+      "description": "the lens checks every compartment in the index drawer and comes back with nothing."
+    },
+    {
+      "name": "calendar-booking",
+      "type": "registry:component",
+      "title": "Calendar booking",
+      "description": "a visitor picks a time, and the call is booked on the spot."
+    },
+    {
+      "name": "role-permissions",
+      "type": "registry:component",
+      "title": "Role permissions",
+      "description": "one tick in the grid lets editors delete."
+    },
+    {
+      "name": "api-key-copy",
+      "type": "registry:component",
+      "title": "API key copy",
+      "description": "one click copies the secret key, and the button confirms it."
+    },
+    {
+      "name": "settings-toggle",
+      "type": "registry:component",
+      "title": "Settings toggle",
+      "description": "two-step sign-in switches on with a single toggle."
+    },
+    {
+      "name": "invoice-reminder",
+      "type": "registry:component",
+      "title": "Invoice reminder",
+      "description": "an overdue invoice gets a reminder in one click."
+    },
+    {
+      "name": "search-filters",
+      "type": "registry:component",
+      "title": "Search filters",
+      "description": "one filter narrows the results to the docs you need."
+    },
+    {
+      "name": "requests-chart",
+      "type": "registry:component",
+      "title": "Requests chart",
+      "description": "pick a day on the chart to see its request count."
+    },
+    {
+      "name": "team-invite",
+      "type": "registry:component",
+      "title": "Team invite",
+      "description": "type an address, press Invite, and the invite joins the team list."
+    },
+    {
+      "name": "command-menu",
+      "type": "registry:component",
+      "title": "Command menu",
+      "description": "type three letters and the right command is ready for Enter."
+    },
+    {
+      "name": "usage-meter",
+      "type": "registry:component",
+      "title": "Usage meter",
+      "description": "the meter shows how much of the month's API calls are used."
+    },
+    {
+      "name": "password-reset",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Password reset",
+      "description": "request a link, open the mail, and set a new password."
+    },
+    {
+      "name": "invite-flow",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Invite flow",
+      "description": "an invite goes out, the teammate accepts, and they join the team."
+    },
+    {
+      "name": "rollback-flow",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Rollback flow",
+      "description": "a failed deploy rolls back, and the last good version is live again."
+    },
+    {
+      "name": "onboarding-checklist",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Onboarding checklist",
+      "description": "add a domain, and the last steps of setup tick off."
+    },
+    {
+      "name": "sign-up-flow",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Sign-up flow",
+      "description": "an email, a code from the inbox, and the account is open."
+    },
+    {
+      "name": "plan-upgrade",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Plan upgrade",
+      "description": "switch to yearly billing, and the Team plan is active."
+    },
+    {
+      "name": "file-share",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "File share",
+      "description": "pick a file, choose who can open it, and copy the link."
+    },
+    {
+      "name": "support-ticket",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Support ticket",
+      "description": "a question comes in, support picks it up, and it is resolved."
+    },
+    {
+      "name": "export-report",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Export report",
+      "description": "pick a range, export, and the report is ready to download."
+    },
+    {
+      "name": "connect-integration",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Connect integration",
+      "description": "choose an app, allow access, and the two are connected."
+    },
+    {
+      "name": "notification-inbox",
+      "type": "registry:component",
+      "title": "Notification inbox",
+      "description": "two unread updates clear with a single click."
+    },
+    {
+      "name": "comment-mention",
+      "type": "registry:component",
+      "title": "Comment mention",
+      "description": "a teammate is mentioned, and the comment lands in the thread."
+    },
+    {
+      "name": "task-board",
+      "type": "registry:component",
+      "title": "Task board",
+      "description": "a task moves to Done, and both columns count it."
+    },
+    {
+      "name": "feature-flag",
+      "type": "registry:component",
+      "title": "Feature flag",
+      "description": "a new feature goes out to half the users, saved with one click."
+    },
+    {
+      "name": "appearance-theme",
+      "type": "registry:component",
+      "title": "Appearance",
+      "description": "a click switches the theme, and the preview follows."
+    },
+    {
+      "name": "data-import",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Data import",
+      "description": "a CSV drops in, its columns match, and 1,240 rows import."
+    },
+    {
+      "name": "approval-request",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Approval request",
+      "description": "a request goes out, the approver says yes, and the requester hears back."
+    },
+    {
+      "name": "ai-answer",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "AI answer",
+      "description": "a question gets a fresh answer, with its sources beside it."
+    },
+    {
+      "name": "incident-response",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Incident response",
+      "description": "an alert fires, someone takes it, and the status returns to resolved."
+    },
+    {
+      "name": "webhook-setup",
+      "type": "registry:component",
+      "resolution": "gated",
+      "title": "Webhook setup",
+      "description": "a test event goes out, and the endpoint answers 200 OK."
     }
   ]
 }

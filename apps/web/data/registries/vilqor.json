@@ -1,0 +1,322 @@
+{
+  "key": "vilqor",
+  "entry": "Midnight Lite",
+  "name": "vilqor",
+  "homepage": "https://midnight-lite.vilqor.com",
+  "indexUrl": "https://midnight-lite.vilqor.com/r/registry.json",
+  "itemBase": "https://midnight-lite.vilqor.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "midnight-theme",
+      "type": "registry:theme",
+      "title": "Midnight theme",
+      "description": "The Midnight theme: night-blue surfaces, ink text, a champagne accent, font variables for Fraunces and Geist, and the type, surface and glint styles the blocks use. Dark only.",
+      "categories": [
+        "theme"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-paper": "var(--paper)",
+          "color-surface": "var(--surface)",
+          "color-surface-2": "var(--surface-2)",
+          "color-line": "var(--line)",
+          "color-line-strong": "var(--line-strong)",
+          "color-ink": "var(--ink)",
+          "color-ink-2": "var(--ink-2)",
+          "color-ink-3": "var(--ink-3)",
+          "color-positive": "var(--positive)",
+          "color-brand": "var(--brand)",
+          "color-brand-ink": "var(--brand-ink)",
+          "color-brand-on-ink": "var(--brand-on-ink)",
+          "color-brand-soft": "var(--brand-soft)",
+          "color-brand-glint": "var(--brand-glint)",
+          "color-night-ink": "var(--night-ink)",
+          "font-sans": "var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif",
+          "font-serif": "var(--font-fraunces), ui-serif, Georgia, serif",
+          "font-heading": "var(--font-fraunces), ui-serif, Georgia, serif",
+          "font-mono": "var(--font-geist-mono), ui-monospace, monospace",
+          "ease-out-soft": "cubic-bezier(0.2, 0.7, 0.2, 1)"
+        },
+        "light": {
+          "paper": "#0b1020",
+          "surface": "#111731",
+          "surface-2": "#182039",
+          "line": "#242c4b",
+          "line-strong": "#343d63",
+          "ink": "#ece9e1",
+          "ink-2": "#a9afc4",
+          "ink-3": "#8f96ad",
+          "positive": "#7cc49b",
+          "brand": "#d9b77e",
+          "brand-ink": "#e3c592",
+          "night-ink": "#ece9e1",
+          "background": "#0b1020",
+          "foreground": "#ece9e1",
+          "card": "#111731",
+          "card-foreground": "#ece9e1",
+          "popover": "#111731",
+          "popover-foreground": "#ece9e1",
+          "primary": "#d9b77e",
+          "primary-foreground": "#0b1020",
+          "secondary": "#182039",
+          "secondary-foreground": "#ece9e1",
+          "muted": "#182039",
+          "muted-foreground": "#a9afc4",
+          "accent": "#182039",
+          "accent-foreground": "#ece9e1",
+          "border": "#242c4b",
+          "input": "#343d63",
+          "ring": "#d9b77e",
+          "radius": "0.75rem"
+        },
+        "dark": {
+          "paper": "#0b1020",
+          "surface": "#111731",
+          "surface-2": "#182039",
+          "line": "#242c4b",
+          "line-strong": "#343d63",
+          "ink": "#ece9e1",
+          "ink-2": "#a9afc4",
+          "ink-3": "#8f96ad",
+          "positive": "#7cc49b",
+          "brand": "#d9b77e",
+          "brand-ink": "#e3c592",
+          "night-ink": "#ece9e1",
+          "background": "#0b1020",
+          "foreground": "#ece9e1",
+          "card": "#111731",
+          "card-foreground": "#ece9e1",
+          "popover": "#111731",
+          "popover-foreground": "#ece9e1",
+          "primary": "#d9b77e",
+          "primary-foreground": "#0b1020",
+          "secondary": "#182039",
+          "secondary-foreground": "#ece9e1",
+          "muted": "#182039",
+          "muted-foreground": "#a9afc4",
+          "accent": "#182039",
+          "accent-foreground": "#ece9e1",
+          "border": "#242c4b",
+          "input": "#343d63",
+          "ring": "#d9b77e",
+          "radius": "0.75rem"
+        }
+      }
+    },
+    {
+      "name": "midnight-night-sky",
+      "type": "registry:component",
+      "title": "Night sky",
+      "description": "A seeded star field with twinkling stars and rare shooting stars, drawn in the browser after load; the motion stops for people who ask for reduced motion.",
+      "categories": [
+        "background"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://midnight-lite.vilqor.com/r/midnight-theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/site/night-sky.tsx",
+          "type": "registry:component",
+          "target": "@components/midnight/night-sky.tsx"
+        },
+        {
+          "path": "src/lib/seeded.ts",
+          "type": "registry:lib",
+          "target": "@lib/seeded.ts"
+        },
+        {
+          "path": "src/hooks/use-mounted.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-mounted.ts"
+        }
+      ]
+    },
+    {
+      "name": "midnight-guilloche",
+      "type": "registry:component",
+      "title": "Guilloche rosette",
+      "description": "An engraved guilloche rosette drawn as fine SVG lines, with sparks of light running along them, for a quiet background ornament.",
+      "categories": [
+        "background"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://midnight-lite.vilqor.com/r/midnight-theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/site/guilloche.tsx",
+          "type": "registry:component",
+          "target": "@components/midnight/guilloche.tsx"
+        },
+        {
+          "path": "src/components/site/guilloche-paths.ts",
+          "type": "registry:component",
+          "target": "@components/midnight/guilloche-paths.ts"
+        },
+        {
+          "path": "src/hooks/use-mounted.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-mounted.ts"
+        }
+      ]
+    },
+    {
+      "name": "midnight-header",
+      "type": "registry:block",
+      "title": "Midnight header",
+      "description": "A header that is open at the top of the page and turns into a glass bar on scroll, with a wordmark, section links that follow the section you read, and one button.",
+      "categories": [
+        "header"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils",
+        "https://midnight-lite.vilqor.com/r/midnight-theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/site/header.tsx",
+          "type": "registry:component",
+          "target": "@components/midnight/header.tsx"
+        },
+        {
+          "path": "src/components/site/logo.tsx",
+          "type": "registry:component",
+          "target": "@components/midnight/logo.tsx"
+        },
+        {
+          "path": "src/lib/fill.ts",
+          "type": "registry:lib",
+          "target": "@lib/fill.ts"
+        }
+      ]
+    },
+    {
+      "name": "midnight-hero",
+      "type": "registry:block",
+      "title": "Midnight hero",
+      "description": "A dark hero with a serif display title and a gold accent line, a lead and two buttons over a star field and a guilloche rosette, set from the left on phones.",
+      "categories": [
+        "hero"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils",
+        "https://midnight-lite.vilqor.com/r/midnight-theme.json",
+        "https://midnight-lite.vilqor.com/r/midnight-night-sky.json",
+        "https://midnight-lite.vilqor.com/r/midnight-guilloche.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/site/hero.tsx",
+          "type": "registry:component",
+          "target": "@components/midnight/hero.tsx"
+        },
+        {
+          "path": "src/components/site/section-head.tsx",
+          "type": "registry:component",
+          "target": "@components/midnight/section-head.tsx"
+        }
+      ]
+    },
+    {
+      "name": "midnight-features",
+      "type": "registry:block",
+      "title": "Midnight product tiles",
+      "description": "A product section built from interface fragments instead of icons: a research list, a sentence with numbered sources in tooltips, and three facts shown as a schedule, a switch and language codes.",
+      "categories": [
+        "features"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "tooltip",
+        "utils",
+        "https://midnight-lite.vilqor.com/r/midnight-theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/site/features.tsx",
+          "type": "registry:component",
+          "target": "@components/midnight/features.tsx"
+        },
+        {
+          "path": "src/components/site/section-head.tsx",
+          "type": "registry:component",
+          "target": "@components/midnight/section-head.tsx"
+        },
+        {
+          "path": "src/components/site/cite.tsx",
+          "type": "registry:component",
+          "target": "@components/midnight/cite.tsx"
+        },
+        {
+          "path": "src/lib/fill.ts",
+          "type": "registry:lib",
+          "target": "@lib/fill.ts"
+        }
+      ]
+    },
+    {
+      "name": "midnight-cta",
+      "type": "registry:block",
+      "title": "Midnight call to action",
+      "description": "A closing call to action with a large serif title, an accent word and one button under a field of stars.",
+      "categories": [
+        "cta"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils",
+        "https://midnight-lite.vilqor.com/r/midnight-theme.json",
+        "https://midnight-lite.vilqor.com/r/midnight-night-sky.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/site/final-cta.tsx",
+          "type": "registry:component",
+          "target": "@components/midnight/final-cta.tsx"
+        }
+      ]
+    },
+    {
+      "name": "midnight-footer",
+      "type": "registry:block",
+      "title": "Midnight footer",
+      "description": "A footer with a short description, link columns that fold on phones, and the product name set large and fading out.",
+      "categories": [
+        "footer"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://midnight-lite.vilqor.com/r/midnight-theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/site/footer.tsx",
+          "type": "registry:component",
+          "target": "@components/midnight/footer.tsx"
+        },
+        {
+          "path": "src/components/site/logo.tsx",
+          "type": "registry:component",
+          "target": "@components/midnight/logo.tsx"
+        }
+      ]
+    }
+  ]
+}
