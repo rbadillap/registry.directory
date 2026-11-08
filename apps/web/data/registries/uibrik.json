@@ -1,0 +1,4146 @@
+{
+  "key": "uibrik",
+  "entry": "uibrik",
+  "name": "uibrik",
+  "homepage": "https://uibrik.com",
+  "indexUrl": "https://uibrik.com/r/registry.json",
+  "itemBase": "https://uibrik.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:block",
+      "title": "Accordion",
+      "description": "Sections that ease open to their height while the content fades up behind, one at a time or several, with full keyboard support.",
+      "categories": [
+        "faq"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/accordion/accordion.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/accordion/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "activity-log",
+      "type": "registry:block",
+      "title": "Activity Log",
+      "description": "An audit log grouped by day, with live search and filters by person and event type.",
+      "categories": [
+        "app"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "scrollbar-thumb": "#d4d4d8",
+          "scrollbar-thumb-hover": "#a1a1aa",
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "scrollbar-thumb": "#52525b",
+          "scrollbar-thumb-hover": "#71717a",
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/activity-log/activity-log.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/activity-log/activity-log.tsx"
+        },
+        {
+          "path": "registry/_app/app-kit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_app/app-kit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-blob",
+      "type": "registry:component",
+      "title": "AI Blob",
+      "description": "A 3D dotted orb for AI states. Click to morph between five shapes.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ai-blob/ai-blob.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/ai-blob/ai-blob.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ai-orb",
+      "type": "registry:component",
+      "title": "AI Orb",
+      "description": "A glass assistant orb filled with a living mesh gradient of shades that rests, listens, thinks and speaks, reacting to a live voice level.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ai-orb/ai-orb.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/ai-orb/ai-orb.tsx"
+        }
+      ]
+    },
+    {
+      "name": "amount-pad",
+      "type": "registry:component",
+      "title": "Amount Pad",
+      "description": "A money field where each digit drops in and lands, commas slide into place as the number grows, the amount shrinks to fit, and a digit past the limit bounces off in red.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/amount-pad/amount-pad.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/amount-pad/amount-pad.tsx"
+        }
+      ]
+    },
+    {
+      "name": "anagram-shuffle",
+      "type": "registry:component",
+      "title": "Anagram Shuffle",
+      "description": "Letters rearrange themselves into the next anagram.",
+      "categories": [
+        "transitions"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/anagram-shuffle/anagram-shuffle.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/anagram-shuffle/anagram-shuffle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-tabs",
+      "type": "registry:component",
+      "title": "Animated Tabs",
+      "description": "Tabs whose underline or pill springs between tabs, with a highlight that follows the pointer, panels that slide in from the direction you moved and a panel area that eases to each panel's height.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/animated-tabs/animated-tabs.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/animated-tabs/animated-tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "announcement-pill",
+      "type": "registry:component",
+      "title": "Announcement Pill",
+      "description": "A small New pill for above a hero heading, with a band of light along its border and an arrow that grows on hover.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "theme": {
+          "ease-out-strong": "cubic-bezier(0.23, 1, 0.32, 1)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/announcement-pill/announcement-pill.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/announcement-pill/announcement-pill.tsx"
+        }
+      ]
+    },
+    {
+      "name": "apple-keyboard",
+      "type": "registry:component",
+      "title": "Apple Keyboard",
+      "description": "A Magic Keyboard drawn in CSS that mirrors your typing, with keys that sink into their wells and synthesised scissor-switch sounds.",
+      "categories": [
+        "inputs"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/apple-keyboard/apple-keyboard.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/apple-keyboard/apple-keyboard.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart",
+      "type": "registry:block",
+      "title": "Area Chart",
+      "description": "A time-series chart with soft area washes and one crosshair that reads every series at once.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/area-chart/area-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/area-chart/area-chart.tsx"
+        },
+        {
+          "path": "registry/_charts/chart-kit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_charts/chart-kit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ascii-field",
+      "type": "registry:component",
+      "title": "ASCII Field",
+      "description": "A slow field of light drawn as type, glyphs thickening where it brightens; the pointer brings a lens that reshuffles them.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ascii-field/ascii-field.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/ascii-field/ascii-field.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        },
+        {
+          "path": "registry/_shader-background/shades.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/_shader-background/shades.ts"
+        }
+      ]
+    },
+    {
+      "name": "aurora",
+      "type": "registry:component",
+      "title": "Aurora",
+      "description": "Slow curtains of light with fine rays that lean toward the cursor.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/aurora/aurora.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/aurora/aurora.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        },
+        {
+          "path": "registry/aurora/first-frame.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/aurora/first-frame.ts"
+        }
+      ]
+    },
+    {
+      "name": "auth-forms",
+      "type": "registry:block",
+      "title": "Auth Forms",
+      "description": "Sign in, sign up, code verification and password reset in one card that eases between modes.",
+      "categories": [
+        "app"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "scrollbar-thumb": "#d4d4d8",
+          "scrollbar-thumb-hover": "#a1a1aa",
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "scrollbar-thumb": "#52525b",
+          "scrollbar-thumb-hover": "#71717a",
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/auth-forms/auth-forms.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/auth-forms/auth-forms.tsx"
+        },
+        {
+          "path": "registry/_app/app-kit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_app/app-kit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-stack",
+      "type": "registry:component",
+      "title": "Avatar Stack",
+      "description": "Overlapping avatars that fan on hover and spring apart into a named list on a card growing out of the row.",
+      "categories": [
+        "identity"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/avatar-stack/avatar-stack.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/avatar-stack/avatar-stack.tsx"
+        }
+      ]
+    },
+    {
+      "name": "balloon-button",
+      "type": "registry:component",
+      "title": "Balloon Button",
+      "description": "An inflated, half-balloon button drawn with a WebGL shader, with folds along its seam and a springy dent when pressed.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "three@^0.186.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/balloon-button/balloon-button.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/balloon-button/balloon-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-list",
+      "type": "registry:block",
+      "title": "Bar List",
+      "description": "A ranked list of top pages, referrers or countries whose rows slide to their new rank and resize when you switch lists.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/bar-list/bar-list.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/bar-list/bar-list.tsx"
+        },
+        {
+          "path": "registry/_charts/chart-kit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_charts/chart-kit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "beam-network",
+      "type": "registry:component",
+      "title": "Beam Network",
+      "description": "Nodes joined by curved lines with a beam of light that runs from start to end, for any shape of connection.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/beam-network/beam-network.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/beam-network/beam-network.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blob-selector",
+      "type": "registry:component",
+      "title": "Blob Selector",
+      "description": "A segmented control whose pill pours like liquid between options, stretching and thinning as it travels, with press-and-drag scrubbing.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blob-selector/blob-selector.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/blob-selector/blob-selector.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blur-reveal",
+      "type": "registry:component",
+      "title": "Blur Reveal",
+      "description": "Letters sharpen out of a blur, one after another.",
+      "categories": [
+        "entrances"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/blur-reveal/blur-reveal.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/blur-reveal/blur-reveal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "boarding-pass",
+      "type": "registry:component",
+      "title": "Boarding Pass",
+      "description": "A ticket whose stub you pull off: the perforation gives one paper bridge at a time, in WebGL, leaving a fibrous edge and a checked-in mark.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/boarding-pass/boarding-pass.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/boarding-pass/boarding-pass.tsx"
+        },
+        {
+          "path": "registry/boarding-pass/tear-gl.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/boarding-pass/tear-gl.ts"
+        }
+      ]
+    },
+    {
+      "name": "bookmark-button",
+      "type": "registry:component",
+      "title": "Bookmark Button",
+      "description": "A save button whose bookmark fills from the top like a dropped ribbon while the label rolls to Saved.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/bookmark-button/bookmark-button.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/bookmark-button/bookmark-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cart-flight",
+      "type": "registry:block",
+      "title": "Cart Flight",
+      "description": "A product grid where added items fly on a curve into the cart, the cart grows into a drawer, and removed items fly back to their card.",
+      "categories": [
+        "app"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "scrollbar-thumb": "#d4d4d8",
+          "scrollbar-thumb-hover": "#a1a1aa"
+        },
+        "dark": {
+          "scrollbar-thumb": "#52525b",
+          "scrollbar-thumb-hover": "#71717a"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/cart-flight/cart-flight.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/cart-flight/cart-flight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "caustics",
+      "type": "registry:component",
+      "title": "Caustics",
+      "description": "Sunlight on a pool floor, from light rays bent by moving water; click to drop a ripple.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/caustics/caustics.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/caustics/caustics.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        }
+      ]
+    },
+    {
+      "name": "classic-navbar",
+      "type": "registry:block",
+      "title": "Classic Navbar",
+      "description": "A full-width bar that hides while you scroll down and returns on scroll up, with an underline that slides to the current page. Links left, centred or right; zero to two CTAs.",
+      "categories": [
+        "navbars"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/classic-navbar/classic-navbar.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/classic-navbar/classic-navbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:component",
+      "title": "Code Block",
+      "description": "A code block that shows plain text at once and colours it in place with on-demand Shiki, with tabs that sync across blocks, marked lines, diffs, collapsing and a copy button.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "motion@^13.1.1",
+        "shiki@^3.23.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/code-block/code-block.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/code-block/code-block.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-sidebar",
+      "type": "registry:block",
+      "title": "Collapsible Sidebar",
+      "description": "An app sidebar that folds to an icon rail with the icons staying put, tooltips in the rail and a sliding highlight; ⌘B toggles it.",
+      "categories": [
+        "sidebars"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/collapsible-sidebar/collapsible-sidebar.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/collapsible-sidebar/collapsible-sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsing-breadcrumb",
+      "type": "registry:component",
+      "title": "Collapsing Breadcrumb",
+      "description": "A breadcrumb that folds its middle crumbs into an ellipsis when space runs out and unfolds them in place on hover or tap, each crumb sliding open to its own width.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/collapsing-breadcrumb/collapsing-breadcrumb.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/collapsing-breadcrumb/collapsing-breadcrumb.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command-menu",
+      "type": "registry:component",
+      "title": "Command Menu",
+      "description": "A calm ⌘K command menu: fuzzy and server search, grouped results, nested pages, recents, hotkeys and full keyboard control, with optional filter pills.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/command-menu/command-menu.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/command-menu/command-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "company-card",
+      "type": "registry:component",
+      "title": "Company Card",
+      "description": "A business card rendered as a real 3D slab in WebGL: foil and holographic logos, diffraction, glitter, lenticular and pearl finishes, and a pattern seeded by the company name, all lit by the pointer as the card tilts.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "three@^0.186.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/company-card/company-card.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/company-card/company-card.tsx"
+        },
+        {
+          "path": "registry/company-card/shader.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/company-card/shader.ts"
+        }
+      ]
+    },
+    {
+      "name": "compare-slider",
+      "type": "registry:component",
+      "title": "Compare Slider",
+      "description": "A before-and-after frame that sweeps in on first view, with a smooth draggable divider, keyboard support and labels that step aside.",
+      "categories": [
+        "media"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/compare-slider/compare-slider.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/compare-slider/compare-slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:component",
+      "title": "Context Menu",
+      "description": "A menu that opens where you right-click or long-press, with submenus, checkable items and full keyboard control.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/context-menu/context-menu.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/context-menu/context-menu.tsx"
+        },
+        {
+          "path": "registry/_overlay/menu.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_overlay/menu.tsx"
+        },
+        {
+          "path": "registry/_overlay/overlay.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_overlay/overlay.tsx"
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:component",
+      "title": "Copy Button",
+      "description": "A copy button whose two sheets slide together into a check while the label rolls to Copied.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/copy-button/copy-button.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/copy-button/copy-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "crumble-to-sand",
+      "type": "registry:component",
+      "title": "Crumble to Sand",
+      "description": "The phrase crumbles into grains that rebuild the next one.",
+      "categories": [
+        "transitions"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/crumble-to-sand/crumble-to-sand.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/crumble-to-sand/crumble-to-sand.tsx"
+        }
+      ]
+    },
+    {
+      "name": "deploy-pipeline",
+      "type": "registry:block",
+      "title": "Deploy Pipeline",
+      "description": "A deploy card that runs itself: steps spin and check off down a filling rail, then the card turns Ready with the live URL.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/deploy-pipeline/deploy-pipeline.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/deploy-pipeline/deploy-pipeline.tsx"
+        }
+      ]
+    },
+    {
+      "name": "diagonal-beams",
+      "type": "registry:component",
+      "title": "Diagonal Beams",
+      "description": "One soft light falling across sharp, slanted pleats in the dark, its edge dissolving into fine grain.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/diagonal-beams/diagonal-beams.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/diagonal-beams/diagonal-beams.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:component",
+      "title": "Dialog",
+      "description": "A modal that grows out of the button that opened it, holds focus, and eases back when another dialog opens on top.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/dialog/dialog.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/dialog/dialog.tsx"
+        },
+        {
+          "path": "registry/_overlay/overlay.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_overlay/overlay.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dither-gradient",
+      "type": "registry:component",
+      "title": "Dither Gradient",
+      "description": "A bending gradient drawn only in your colours through an ordered dither.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/dither-gradient/dither-gradient.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/dither-gradient/dither-gradient.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        }
+      ]
+    },
+    {
+      "name": "domino-letters",
+      "type": "registry:component",
+      "title": "Domino Letters",
+      "description": "Letters topple one into the next like dominoes.",
+      "categories": [
+        "entrances"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/domino-letters/domino-letters.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/domino-letters/domino-letters.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dot-grid",
+      "type": "registry:component",
+      "title": "Dot Grid",
+      "description": "A quiet grid of dots lit by a drifting wave and by the cursor.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/dot-grid/dot-grid.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/dot-grid/dot-grid.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dotted-globe",
+      "type": "registry:block",
+      "title": "Dotted Globe",
+      "description": "A turning globe of dotted land in five modes: arcs flying between cities, people coming online, pulses of activity, routes with travelling packets, and labelled locations. Drag to spin it.",
+      "categories": [
+        "cards"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/dotted-globe/dotted-globe.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/dotted-globe/dotted-globe.tsx"
+        }
+      ]
+    },
+    {
+      "name": "draggable-letters",
+      "type": "registry:component",
+      "title": "Draggable Letters",
+      "description": "Letters you can pull apart; they spring home.",
+      "categories": [
+        "interactive"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/draggable-letters/draggable-letters.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/draggable-letters/draggable-letters.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:component",
+      "title": "Dropdown Menu",
+      "description": "A menu with icons, shortcuts, checkbox and radio items and submenus, a sliding highlight and full keyboard control.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/dropdown-menu/dropdown-menu.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/dropdown-menu/dropdown-menu.tsx"
+        },
+        {
+          "path": "registry/_overlay/menu.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_overlay/menu.tsx"
+        },
+        {
+          "path": "registry/_overlay/overlay.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_overlay/overlay.tsx"
+        }
+      ]
+    },
+    {
+      "name": "elastic-slider",
+      "type": "registry:component",
+      "title": "Elastic Slider",
+      "description": "A slider that stretches like rubber past its ends and springs back.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "https://uibrik.com/r/squircle.json"
+      ],
+      "files": [
+        {
+          "path": "registry/elastic-slider/elastic-slider.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/elastic-slider/elastic-slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "email-composer",
+      "type": "registry:block",
+      "title": "Email Composer",
+      "description": "An email composer with recipient chips and suggestions, contact cards on hover, drag-and-drop attachments with upload progress, and a send button that schedules.",
+      "categories": [
+        "app"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "scrollbar-thumb": "#d4d4d8",
+          "scrollbar-thumb-hover": "#a1a1aa",
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "scrollbar-thumb": "#52525b",
+          "scrollbar-thumb-hover": "#71717a",
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/email-composer/email-composer.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/email-composer/email-composer.tsx"
+        },
+        {
+          "path": "registry/_app/app-kit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_app/app-kit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "event-feed",
+      "type": "registry:block",
+      "title": "Event Feed",
+      "description": "A live feed card where new events drop in at the top with a soft highlight, push the rest down and age in real time.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/event-feed/event-feed.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/event-feed/event-feed.tsx"
+        }
+      ]
+    },
+    {
+      "name": "expand-button",
+      "type": "registry:component",
+      "title": "Expand Button",
+      "description": "An icon-only button that springs open to reveal its label on hover or keyboard focus.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/expand-button/expand-button.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/expand-button/expand-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fade-left-to-right",
+      "type": "registry:component",
+      "title": "Fade In Left to Right",
+      "description": "A soft-edged mask reveals the text from left to right.",
+      "categories": [
+        "entrances"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/fade-left-to-right/fade-left-to-right.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/fade-left-to-right/fade-left-to-right.tsx"
+        }
+      ]
+    },
+    {
+      "name": "falling-letters",
+      "type": "registry:component",
+      "title": "Falling Letters",
+      "description": "Letters drop in and settle with a small bounce.",
+      "categories": [
+        "entrances"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/falling-letters/falling-letters.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/falling-letters/falling-letters.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ferrofluid-menu",
+      "type": "registry:component",
+      "title": "Ferrofluid Menu",
+      "description": "A glossy drop of ferrofluid that grows spikes toward the pointer, then pours out droplets that spread into a menu.",
+      "categories": [
+        "overlays"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ferrofluid-menu/ferrofluid-menu.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/ferrofluid-menu/ferrofluid-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "file-card",
+      "type": "registry:block",
+      "title": "File Card",
+      "description": "A document card whose corner curls on hover to show the next page, with older versions stacked behind the sheet.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/file-card/file-card.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/file-card/file-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "filter-grid",
+      "type": "registry:component",
+      "title": "Filter Grid",
+      "description": "Tabs over a grid of tiles that can sit in several tabs: tiles in both glide to their new places, leaving ones blur away, newcomers grow in one by one, and the grid's height eases to fit.",
+      "categories": [
+        "layout"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/filter-grid/filter-grid.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/filter-grid/filter-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "flaming-todos",
+      "type": "registry:component",
+      "title": "Flaming Todos",
+      "description": "A todo list where finished items burn away in WebGL flames.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "three@^0.186.1"
+      ],
+      "registryDependencies": [
+        "https://uibrik.com/r/squircle.json"
+      ],
+      "files": [
+        {
+          "path": "registry/flaming-todos/flaming-todos.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/flaming-todos/flaming-todos.tsx"
+        },
+        {
+          "path": "registry/flaming-todos/burn.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/flaming-todos/burn.ts"
+        }
+      ]
+    },
+    {
+      "name": "fold-tabs",
+      "type": "registry:component",
+      "title": "Fold Tabs",
+      "description": "Tabs that fold into an accordion when their container gets narrow, with the track, the active pill and every label carried across so the switch reads as one object changing shape.",
+      "categories": [
+        "layout"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/fold-tabs/fold-tabs.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/fold-tabs/fold-tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fold-toolbar",
+      "type": "registry:component",
+      "title": "Fold Toolbar",
+      "description": "An icon button that unfolds into a tray of tools, pushing its neighbours aside, and folds back into whichever tool you pick.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/fold-toolbar/fold-toolbar.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/fold-toolbar/fold-toolbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "folder-faq",
+      "type": "registry:block",
+      "title": "Folder FAQ",
+      "description": "An FAQ laid out as files in a drawer: each question peeks out on its tab, and opening one lifts it from the stack while the folders in front slide down to uncover the answer.",
+      "categories": [
+        "faq"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/folder-faq/folder-faq.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/folder-faq/folder-faq.tsx"
+        }
+      ]
+    },
+    {
+      "name": "folder-peek",
+      "type": "registry:component",
+      "title": "Folder Peek",
+      "description": "A folder whose file previews rise and fan out on hover, fly out into a list when opened, and that takes files dropped onto it.",
+      "categories": [
+        "media"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "scrollbar-thumb": "#d4d4d8",
+          "scrollbar-thumb-hover": "#a1a1aa",
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "scrollbar-thumb": "#52525b",
+          "scrollbar-thumb-hover": "#71717a",
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/folder-peek/folder-peek.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/folder-peek/folder-peek.tsx"
+        }
+      ]
+    },
+    {
+      "name": "gauge-dial",
+      "type": "registry:component",
+      "title": "Gauge Dial",
+      "description": "A 240-degree dial whose gradient arc fills behind a spring-driven knob, with lit ticks and a zone badge; drag it or use the arrow keys.",
+      "categories": [
+        "stats"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/gauge-dial/gauge-dial.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/gauge-dial/gauge-dial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "grain-gradient",
+      "type": "registry:component",
+      "title": "Grain Gradient",
+      "description": "Colour that folds slowly like silk, finished with film grain.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/grain-gradient/grain-gradient.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/grain-gradient/grain-gradient.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        }
+      ]
+    },
+    {
+      "name": "halftone",
+      "type": "registry:component",
+      "title": "Halftone",
+      "description": "A screen of lit dots: swirling ribbons of light drawn by the size and brightness of each dot.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/halftone/halftone.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/halftone/halftone.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        }
+      ]
+    },
+    {
+      "name": "halftone-horizon",
+      "type": "registry:component",
+      "title": "Halftone Horizon",
+      "description": "An arched horizon printed in halftone in the dark, where the dots grow with the light until they fuse into a smooth glow.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/halftone-horizon/halftone-horizon.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/halftone-horizon/halftone-horizon.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        },
+        {
+          "path": "registry/_shader-background/shades.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/_shader-background/shades.ts"
+        }
+      ]
+    },
+    {
+      "name": "hamburger-sheet",
+      "type": "registry:component",
+      "title": "Hamburger Sheet",
+      "description": "A menu button that grows into its own sheet: the shape unfolds from the button's corner while the three lines cross into the close mark.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/hamburger-sheet/hamburger-sheet.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/hamburger-sheet/hamburger-sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "highlighter",
+      "type": "registry:component",
+      "title": "Highlighter",
+      "description": "A marker stroke sweeps across a key phrase.",
+      "categories": [
+        "entrances"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/highlighter/highlighter.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/highlighter/highlighter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hold-to-confirm",
+      "type": "registry:component",
+      "title": "Hold to Confirm",
+      "description": "A destructive-action button that has to be held down; a fill grows across it and drains back if released early.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/hold-to-confirm/hold-to-confirm.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/hold-to-confirm/hold-to-confirm.tsx"
+        }
+      ]
+    },
+    {
+      "name": "horizon-gradient",
+      "type": "registry:component",
+      "title": "Horizon Gradient",
+      "description": "Black fading through deep blue to white in bands that arch like a horizon, breathing slowly.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/horizon-gradient/horizon-gradient.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/horizon-gradient/horizon-gradient.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:component",
+      "title": "Hover Card",
+      "description": "A preview card that opens while you rest on a link and stays while you move into it, so its own links work.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/hover-card/hover-card.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/hover-card/hover-card.tsx"
+        },
+        {
+          "path": "registry/_overlay/overlay.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_overlay/overlay.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-weight",
+      "type": "registry:component",
+      "title": "Hover Weight",
+      "description": "Letters grow heavier as the cursor nears them.",
+      "categories": [
+        "interactive"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/hover-weight/hover-weight.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/hover-weight/hover-weight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ink-plume",
+      "type": "registry:component",
+      "title": "Ink Plume",
+      "description": "A soft plume of black ink rising through white, split at its edges into ultramarine and vermilion, spreading to a haze as it climbs.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ink-plume/ink-plume.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/ink-plume/ink-plume.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        },
+        {
+          "path": "registry/_shader-background/shades.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/_shader-background/shades.ts"
+        }
+      ]
+    },
+    {
+      "name": "inline-confirm",
+      "type": "registry:component",
+      "title": "Inline Confirm",
+      "description": "A destructive button that splits into Cancel and Confirm in its own footprint, so nothing around it moves.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/inline-confirm/inline-confirm.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/inline-confirm/inline-confirm.tsx"
+        }
+      ]
+    },
+    {
+      "name": "inline-edit",
+      "type": "registry:component",
+      "title": "Inline Edit",
+      "description": "A label that opens into an input in place, with save and cancel sliding out from its edge, then folds back to the new value.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/inline-edit/inline-edit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/inline-edit/inline-edit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "integration-orbit",
+      "type": "registry:block",
+      "title": "Integration Orbit",
+      "description": "Your logo at the centre of two slow rings of app icons; pointing at one stops the rings, draws a line to the middle and names the app.",
+      "categories": [
+        "features"
+      ],
+      "dependencies": [
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/integration-orbit/integration-orbit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/integration-orbit/integration-orbit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "jiggle-grid",
+      "type": "registry:component",
+      "title": "Jiggle Grid",
+      "description": "A home-screen grid you rearrange like on a phone: hold a tile and they all wobble, drag one and the rest spring aside to make room.",
+      "categories": [
+        "layout"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/jiggle-grid/jiggle-grid.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/jiggle-grid/jiggle-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kpi-tile",
+      "type": "registry:component",
+      "title": "KPI Tile",
+      "description": "A dashboard stat with its change and a sparkline you can scrub, rolling the number to any day.",
+      "categories": [
+        "stats"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/kpi-tile/kpi-tile.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/kpi-tile/kpi-tile.tsx"
+        },
+        {
+          "path": "registry/_charts/chart-kit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_charts/chart-kit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "large-title-header",
+      "type": "registry:component",
+      "title": "Large Title Header",
+      "description": "A large page title that rides up with the content and docks into the top bar as you scroll, moving and scaling as one piece, with the bar filling in behind it.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/large-title-header/large-title-header.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/large-title-header/large-title-header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "lean-scramble",
+      "type": "registry:component",
+      "title": "Lean and Scramble",
+      "description": "Words lean and scramble under the cursor.",
+      "categories": [
+        "interactive"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/lean-scramble/lean-scramble.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/lean-scramble/lean-scramble.tsx"
+        }
+      ]
+    },
+    {
+      "name": "light-badge",
+      "type": "registry:component",
+      "title": "Light Badge",
+      "description": "A badge lit from below by a rotating gradient stroke and soft rays.",
+      "categories": [
+        "identity"
+      ],
+      "files": [
+        {
+          "path": "registry/light-badge/GradientStrokePill.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/light-badge/GradientStrokePill.tsx"
+        },
+        {
+          "path": "registry/light-badge/renderer.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/light-badge/renderer.ts"
+        }
+      ]
+    },
+    {
+      "name": "light-rain",
+      "type": "registry:component",
+      "title": "Light Rain",
+      "description": "Thin lines of blue light falling through the dark, with bright glints sliding along them.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/light-rain/light-rain.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/light-rain/light-rain.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        }
+      ]
+    },
+    {
+      "name": "light-stream",
+      "type": "registry:component",
+      "title": "Light Stream",
+      "description": "An hourglass of fine iridescent light streaks with glittering dust, flowing through the dark.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/light-stream/light-stream.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/light-stream/light-stream.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        }
+      ]
+    },
+    {
+      "name": "line-rise",
+      "type": "registry:component",
+      "title": "Line-by-line Rise",
+      "description": "Each wrapped line rises into place in turn.",
+      "categories": [
+        "entrances"
+      ],
+      "dependencies": [
+        "@chenglou/pretext@^0.0.9",
+        "motion@^13.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/line-rise/line-rise.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/line-rise/line-rise.tsx"
+        }
+      ]
+    },
+    {
+      "name": "liquid-progress",
+      "type": "registry:component",
+      "title": "Liquid Progress",
+      "description": "A simple progress bar with a liquid feel: tones of one colour that brighten as it fills, a soft shine, and a front that settles with a small wobble.",
+      "categories": [
+        "loaders"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/liquid-progress/liquid-progress.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/liquid-progress/liquid-progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "live-cursors",
+      "type": "registry:block",
+      "title": "Live Cursors",
+      "description": "A shared document where three teammates' cursors select, type and drag a card at their own pace, to show real-time collaboration.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/live-cursors/live-cursors.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/live-cursors/live-cursors.tsx"
+        }
+      ]
+    },
+    {
+      "name": "loading-shimmer",
+      "type": "registry:component",
+      "title": "Loading Shimmer",
+      "description": "A light sweep across text while something loads.",
+      "categories": [
+        "loaders"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/loading-shimmer/loading-shimmer.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/loading-shimmer/loading-shimmer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marquee",
+      "type": "registry:component",
+      "title": "Marquee",
+      "description": "An endless, seamless row of logos, quotes or tags that slows on hover and fades out at the edges.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/marquee/marquee.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/marquee/marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "mesh-gradient",
+      "type": "registry:component",
+      "title": "Mesh Gradient",
+      "description": "Six drifting points of colour melting into each other along soft, curling seams.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/mesh-gradient/mesh-gradient.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/mesh-gradient/mesh-gradient.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        },
+        {
+          "path": "registry/_shader-background/shades.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/_shader-background/shades.ts"
+        }
+      ]
+    },
+    {
+      "name": "mitosis-menu",
+      "type": "registry:component",
+      "title": "Mitosis Menu",
+      "description": "A round button that divides like a cell: each option buds off on a stretching neck of liquid that snaps, then fuses back in when the menu closes.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/mitosis-menu/mitosis-menu.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/mitosis-menu/mitosis-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "morphing-popover",
+      "type": "registry:component",
+      "title": "Morphing Popover",
+      "description": "A button that grows into a panel by springing its real size and corners, so nothing stretches, then folds back into the button.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/morphing-popover/morphing-popover.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/morphing-popover/morphing-popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nested-sidebar",
+      "type": "registry:block",
+      "title": "Nested Sidebar",
+      "description": "A sidebar for deep navigation: items open in place beside a guide line, search (press /) filters the tree, and it folds to a rail of top-level icons.",
+      "categories": [
+        "sidebars"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/nested-sidebar/nested-sidebar.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/nested-sidebar/nested-sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notification-center",
+      "type": "registry:component",
+      "title": "Notification Center",
+      "description": "A bell with an unread count that opens every notification in one panel: grouped by day, marked read as you open them, cleared one at a time or all at once.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/notification-center/notification-center.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/notification-center/notification-center.tsx"
+        },
+        {
+          "path": "registry/_overlay/overlay.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_overlay/overlay.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notification-stack",
+      "type": "registry:component",
+      "title": "Notification Stack",
+      "description": "Notifications that pile up as panes of frosted glass, fan out on hover and blur away when swiped.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/notification-stack/notification-stack.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/notification-stack/notification-stack.tsx"
+        }
+      ]
+    },
+    {
+      "name": "oil-slick",
+      "type": "registry:component",
+      "title": "Oil Slick",
+      "description": "Light on a film of oil over dark water, folding slowly through blue, gold and coral, shot on grainy film.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/oil-slick/oil-slick.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/oil-slick/oil-slick.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        },
+        {
+          "path": "registry/_shader-background/shades.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/_shader-background/shades.ts"
+        }
+      ]
+    },
+    {
+      "name": "on-this-page",
+      "type": "registry:component",
+      "title": "On This Page",
+      "description": "A section outline where a dot rides a rail with your scroll, subsections fold open as you reach them, and clicking jumps to a section.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/on-this-page/on-this-page.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/on-this-page/on-this-page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "org-chart",
+      "type": "registry:block",
+      "title": "Org Chart",
+      "description": "A pan-and-zoom org chart whose teams grow out of and fold back into their manager, with search that flies to a person, a minimap and profile cards.",
+      "categories": [
+        "app"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "scrollbar-thumb": "#d4d4d8",
+          "scrollbar-thumb-hover": "#a1a1aa",
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "scrollbar-thumb": "#52525b",
+          "scrollbar-thumb-hover": "#71717a",
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/org-chart/org-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/org-chart/org-chart.tsx"
+        },
+        {
+          "path": "registry/_app/app-kit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_app/app-kit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "otp-input",
+      "type": "registry:component",
+      "title": "OTP Input",
+      "description": "One-time code field whose boxes merge and scramble into a pass or fail result.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/otp-input/otp-input.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/otp-input/otp-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "outline-fill",
+      "type": "registry:component",
+      "title": "Outline then Fill",
+      "description": "Letters are drawn as outlines, then filled in.",
+      "categories": [
+        "entrances"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/outline-fill/outline-fill.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/outline-fill/outline-fill.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-indicator",
+      "type": "registry:component",
+      "title": "Page Indicator",
+      "description": "Pagination dashes you can click, scrub, step with arrows or type into.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "https://uibrik.com/r/squircle.json"
+      ],
+      "files": [
+        {
+          "path": "registry/page-indicator/page-indicator.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/page-indicator/page-indicator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "paper-shredder",
+      "type": "registry:component",
+      "title": "Paper Shredder",
+      "description": "Drag a document into the slot and the motor pulls it through, out into strips that sway, drop and crumple onto the pile.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "three@^0.186.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/paper-shredder/paper-shredder.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/paper-shredder/paper-shredder.tsx"
+        },
+        {
+          "path": "registry/paper-shredder/strips.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/paper-shredder/strips.ts"
+        }
+      ]
+    },
+    {
+      "name": "particle-logo",
+      "type": "registry:component",
+      "title": "Particle Logo",
+      "description": "A logo made of dots that gather in from across the frame, part around the pointer like sand and spring back, and scatter outward on a press.",
+      "categories": [
+        "logos"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/particle-logo/particle-logo.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/particle-logo/particle-logo.tsx"
+        },
+        {
+          "path": "registry/_logo/logo-kit.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/_logo/logo-kit.ts"
+        },
+        {
+          "path": "registry/_logo/logos.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/_logo/logos.ts"
+        }
+      ]
+    },
+    {
+      "name": "particle-scatter",
+      "type": "registry:component",
+      "title": "Particle Scatter",
+      "description": "Each press breaks the phrase into particles that regroup.",
+      "categories": [
+        "transitions"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/particle-scatter/particle-scatter.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/particle-scatter/particle-scatter.tsx"
+        },
+        {
+          "path": "registry/scatter-text/shatter-text.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/scatter-text/shatter-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pixel-bot",
+      "type": "registry:component",
+      "title": "Pixel Bot",
+      "description": "A tiny pixel face that cycles through animated expressions.",
+      "categories": [
+        "ai"
+      ],
+      "files": [
+        {
+          "path": "registry/pixel-bot/pixel-grid.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/pixel-bot/pixel-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pixel-burst",
+      "type": "registry:component",
+      "title": "Pixel Burst",
+      "description": "Square pixels burst from the centre or the edges in a checkerboard that pales into loose, flickering pixels, with a ring pulsing out now and then.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pixel-burst/pixel-burst.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/pixel-burst/pixel-burst.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        },
+        {
+          "path": "registry/_shader-background/shades.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/_shader-background/shades.ts"
+        }
+      ]
+    },
+    {
+      "name": "plucked-curve",
+      "type": "registry:component",
+      "title": "Plucked Curve",
+      "description": "Text rides a curve that wobbles like a plucked string.",
+      "categories": [
+        "entrances"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/plucked-curve/plucked-curve.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/plucked-curve/plucked-curve.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:component",
+      "title": "Popover",
+      "description": "A panel that grows out of its button, flips when there's no room, and keeps its arrow pointed at the button.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/popover/popover.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/popover/popover.tsx"
+        },
+        {
+          "path": "registry/_overlay/overlay.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_overlay/overlay.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-receipt",
+      "type": "registry:block",
+      "title": "Pricing Receipt",
+      "description": "Pick a plan and a receipt prints with the line items and total due today, then gets stamped.",
+      "categories": [
+        "pricing"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/pricing-receipt/pricing-receipt.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/pricing-receipt/pricing-receipt.tsx"
+        },
+        {
+          "path": "registry/_pricing/parts.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_pricing/parts.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:component",
+      "title": "Progress",
+      "description": "Progress as a bar, a ring, a segmented breakdown and a list of steps. Values ease on a spring so fast updates never stutter, numbers roll, and finishing draws a check.",
+      "categories": [
+        "loaders"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/progress/progress.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/progress/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-dots",
+      "type": "registry:component",
+      "title": "Progress Dots",
+      "description": "Pagination dots where the active one stretches into a pill that fills as it plays, and the row opens into labelled steps on hover. Also comes as full-width story segments.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/progress-dots/progress-dots.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/progress-dots/progress-dots.tsx"
+        }
+      ]
+    },
+    {
+      "name": "project-dashboard",
+      "type": "registry:block",
+      "title": "Project Dashboard",
+      "description": "A team overview with cycle progress, issues by status, workload per person, recently updated issues and an activity feed.",
+      "categories": [
+        "dashboards"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "scrollbar-thumb": "#d4d4d8",
+          "scrollbar-thumb-hover": "#a1a1aa",
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "scrollbar-thumb": "#52525b",
+          "scrollbar-thumb-hover": "#71717a",
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/project-dashboard/project-dashboard.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/project-dashboard/project-dashboard.tsx"
+        },
+        {
+          "path": "registry/_app/app-kit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_app/app-kit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "prompt-input",
+      "type": "registry:component",
+      "title": "Prompt Input",
+      "description": "An AI prompt box that grows as you type, with file attachments, a model picker, slash commands, @mentions, a send button that turns into stop, and voice dictation whose words settle in as they are heard.",
+      "categories": [
+        "ai"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/prompt-input/prompt-input.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/prompt-input/prompt-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pull-to-cursor",
+      "type": "registry:component",
+      "title": "Pull Toward Cursor",
+      "description": "Letters lean toward the cursor like a magnet.",
+      "categories": [
+        "interactive"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pull-to-cursor/pull-to-cursor.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/pull-to-cursor/pull-to-cursor.tsx"
+        }
+      ]
+    },
+    {
+      "name": "redact-reveal",
+      "type": "registry:component",
+      "title": "Redact and Reveal",
+      "description": "Black bars redact a line, then lift to reveal the next.",
+      "categories": [
+        "transitions"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/redact-reveal/redact-reveal.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/redact-reveal/redact-reveal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ripple-to-still",
+      "type": "registry:component",
+      "title": "Ripple to Still",
+      "description": "Text ripples like water, then settles.",
+      "categories": [
+        "entrances"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/ripple-to-still/ripple-to-still.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/ripple-to-still/ripple-to-still.tsx"
+        }
+      ]
+    },
+    {
+      "name": "rolling-word",
+      "type": "registry:component",
+      "title": "Rolling Word",
+      "description": "One word rolls to the next like a drum.",
+      "categories": [
+        "transitions"
+      ],
+      "dependencies": [
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/rolling-word/rolling-word.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/rolling-word/rolling-word.tsx"
+        }
+      ]
+    },
+    {
+      "name": "rust-text",
+      "type": "registry:component",
+      "title": "Rust Text",
+      "description": "Brushed steel type that rusts while you watch and flakes away, polished back to a shine wherever the pointer passes.",
+      "categories": [
+        "interactive"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/rust-text/rust-text.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/rust-text/rust-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scatter-text",
+      "type": "registry:component",
+      "title": "Scatter Text",
+      "description": "Phrases shatter into particles that regroup into the next phrase.",
+      "categories": [
+        "transitions"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/scatter-text/shatter-text.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/scatter-text/shatter-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scramble-text",
+      "type": "registry:component",
+      "title": "Scramble Text",
+      "description": "Letters resolve from random characters out of a soft blur, one after another.",
+      "categories": [
+        "entrances"
+      ],
+      "dependencies": [
+        "@gsap/react@^2.1.2",
+        "gsap@^3.15.0"
+      ],
+      "files": [
+        {
+          "path": "registry/scramble-text/scramble-text.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/scramble-text/scramble-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scramble-to-word",
+      "type": "registry:component",
+      "title": "Scramble to Word",
+      "description": "A split-flap board scrambles to the next word.",
+      "categories": [
+        "transitions"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/scramble-to-word/scramble-to-word.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/scramble-to-word/scramble-to-word.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-highlight",
+      "type": "registry:component",
+      "title": "Scroll to Highlight",
+      "description": "Words light up as you scroll past them.",
+      "categories": [
+        "entrances"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "scrollbar-thumb": "#d4d4d8",
+          "scrollbar-thumb-hover": "#a1a1aa"
+        },
+        "dark": {
+          "scrollbar-thumb": "#52525b",
+          "scrollbar-thumb-hover": "#71717a"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/scroll-highlight/scroll-highlight.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/scroll-highlight/scroll-highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scrub-number",
+      "type": "registry:component",
+      "title": "Scrub Number",
+      "description": "A number field you drag sideways to change: a tick ruler opens out from the pointer with a magnified patch under the marker, notches every fifth tick, soft limits, faster steps on a quick drag, a finer step on Shift, typing on click and reset on double-click.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/scrub-number/scrub-number.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/scrub-number/scrub-number.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scrub-timeline",
+      "type": "registry:component",
+      "title": "Scrub Timeline",
+      "description": "A week-by-week ruler that swells under the pointer like a dock. Milestones pull the playhead in as you drag, ticks click past like detents, and a date pill grows into the milestone's card.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/scrub-timeline/scrub-timeline.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/scrub-timeline/scrub-timeline.tsx"
+        }
+      ]
+    },
+    {
+      "name": "section-pill",
+      "type": "registry:component",
+      "title": "Section Pill",
+      "description": "A floating pill that names the section you're reading, with a ring for how far down the page you are, and opens into the full list, carrying the current title to its row.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/section-pill/section-pill.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/section-pill/section-pill.tsx"
+        }
+      ]
+    },
+    {
+      "name": "segmented-control",
+      "type": "registry:component",
+      "title": "Segmented Control",
+      "description": "A segmented control whose pill slides between options on a spring, squishes when pressed and can be dragged across the segments like the one on iOS.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/segmented-control/segmented-control.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/segmented-control/segmented-control.tsx"
+        }
+      ]
+    },
+    {
+      "name": "send",
+      "type": "registry:component",
+      "title": "Send",
+      "description": "File upload that fills, then launches a paper plane out of the card.",
+      "categories": [
+        "loaders"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "https://uibrik.com/r/squircle.json"
+      ],
+      "files": [
+        {
+          "path": "registry/send/send.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/send/send.tsx"
+        }
+      ]
+    },
+    {
+      "name": "share-menu",
+      "type": "registry:component",
+      "title": "Share Menu",
+      "description": "A share button that flips open into a pill of options, resizing to fit.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "https://uibrik.com/r/squircle.json"
+      ],
+      "files": [
+        {
+          "path": "registry/share-menu/share-menu.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/share-menu/share-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "silk-cloth",
+      "type": "registry:component",
+      "title": "Silk Cloth",
+      "description": "A sheet of satin rippling in a light breeze, with a long sheen along every fold.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/silk-cloth/silk-cloth.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/silk-cloth/silk-cloth.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        }
+      ]
+    },
+    {
+      "name": "silk-vortex",
+      "type": "registry:component",
+      "title": "Silk Vortex",
+      "description": "Liquid glass streaming outward from a dark void: glossy folds mapped through a colour gradient.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/silk-vortex/silk-vortex.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/silk-vortex/silk-vortex.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        }
+      ]
+    },
+    {
+      "name": "siri-orb",
+      "type": "registry:component",
+      "title": "Siri Orb",
+      "description": "A glass assistant orb, black above and clear below, holding a twisting helix of light that splits into colour at the rim and winds wider while listening.",
+      "categories": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/siri-orb/siri-orb.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/siri-orb/siri-orb.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:component",
+      "title": "Skeleton",
+      "description": "A skeleton measured from the real layout: one bar per wrapped line of text, a box for every image and control, one shimmer across them all, and a top-to-bottom reveal when the content arrives.",
+      "categories": [
+        "loaders"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/skeleton/skeleton.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/skeleton/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slot-letters",
+      "type": "registry:component",
+      "title": "Slot-machine Letters",
+      "description": "Each letter spins like a reel and lands on the next word.",
+      "categories": [
+        "transitions"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/slot-letters/slot-letters.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/slot-letters/slot-letters.tsx"
+        }
+      ]
+    },
+    {
+      "name": "smart-address",
+      "type": "registry:component",
+      "title": "Smart Address",
+      "description": "One address field that splits a pasted address into street, city, region, postcode and country, flying each word from where it was pasted into its own field.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/smart-address/smart-address.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/smart-address/smart-address.tsx"
+        },
+        {
+          "path": "registry/smart-address/parse.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/smart-address/parse.ts"
+        }
+      ]
+    },
+    {
+      "name": "soft-button",
+      "type": "registry:component",
+      "title": "Soft Button",
+      "description": "A plain button made with care: a gentle top-to-bottom gradient, a faint inner highlight and shade, and a crisp border, in primary, secondary and accent.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/soft-button/soft-button.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/soft-button/soft-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "soft-clouds",
+      "type": "registry:component",
+      "title": "Soft Clouds",
+      "description": "A soft summer sky shot on grainy film, with billowing clouds drifting slowly on the wind.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/soft-clouds/soft-clouds.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/soft-clouds/soft-clouds.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        },
+        {
+          "path": "registry/_shader-background/shades.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/_shader-background/shades.ts"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:component",
+      "title": "Spinner",
+      "description": "A small family of loading indicators (ring, radial, dots, bars, orbit) drawn on one grid with one stroke and tempo.",
+      "categories": [
+        "loaders"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/spinner/spinner.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/spinner/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-accordion",
+      "type": "registry:block",
+      "title": "Split Accordion",
+      "description": "Sections that sit together as one block. Opening one splits it away from its neighbours with an easing margin, rounds the corners at the break and reveals the answer; closing it merges the block back.",
+      "categories": [
+        "faq"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/split-accordion/split-accordion.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/split-accordion/split-accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-bar",
+      "type": "registry:block",
+      "title": "Split Bar",
+      "description": "Parts of a whole on one bar, linked to a list, with segments that slide to new shares when the data changes.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/split-bar/split-bar.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/split-bar/split-bar.tsx"
+        },
+        {
+          "path": "registry/_charts/chart-kit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_charts/chart-kit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-button",
+      "type": "registry:component",
+      "title": "Split Button",
+      "description": "A primary button with a menu of alternative actions; the chosen one rolls into the main label.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/split-button/split-button.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/split-button/split-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-panes",
+      "type": "registry:component",
+      "title": "Split Panes",
+      "description": "Resizable panes that follow the pointer exactly, snap into an icon rail when dragged past their minimum, and fold on their own when the container gets small.",
+      "categories": [
+        "layout"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/split-panes/split-panes.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/split-panes/split-panes.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-dashboard",
+      "type": "registry:block",
+      "title": "Status Dashboard",
+      "description": "An infrastructure status screen with overall health, 90-day uptime per service, live latency, region health and an incident timeline.",
+      "categories": [
+        "dashboards"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "scrollbar-thumb": "#d4d4d8",
+          "scrollbar-thumb-hover": "#a1a1aa",
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "scrollbar-thumb": "#52525b",
+          "scrollbar-thumb-hover": "#71717a",
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/status-dashboard/status-dashboard.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/status-dashboard/status-dashboard.tsx"
+        },
+        {
+          "path": "registry/_app/app-kit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_app/app-kit.tsx"
+        },
+        {
+          "path": "registry/_charts/chart-kit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_charts/chart-kit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-stamp",
+      "type": "registry:component",
+      "title": "Status Stamp",
+      "description": "An ink stamp slams down: approved, in review, rejected.",
+      "categories": [
+        "transitions"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/status-stamp/status-stamp.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/status-stamp/status-stamp.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper-button",
+      "type": "registry:component",
+      "title": "Stepper Button",
+      "description": "An add-to-cart button that reshapes into a quantity stepper in the same pill.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/stepper-button/stepper-button.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/stepper-button/stepper-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "streak-calendar",
+      "type": "registry:component",
+      "title": "Streak Calendar",
+      "description": "An activity heatmap whose days lift under the pointer or arrow keys, with a tooltip that glides between them, a today cell that fills when logged, and a beat for a new record.",
+      "categories": [
+        "stats"
+      ],
+      "dependencies": [
+        "@number-flow/react@^0.6.2",
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/streak-calendar/streak-calendar.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/streak-calendar/streak-calendar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "strike-todos",
+      "type": "registry:component",
+      "title": "Strike Todos",
+      "description": "A plain to-do list: checking an item draws a line through it, and unchecking wipes the line away.",
+      "categories": [
+        "data"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://uibrik.com/r/squircle.json"
+      ],
+      "files": [
+        {
+          "path": "registry/strike-todos/strike-todos.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/strike-todos/strike-todos.tsx"
+        }
+      ]
+    },
+    {
+      "name": "swap-fields",
+      "type": "registry:component",
+      "title": "Swap Fields",
+      "description": "A from/to pair whose fields trade places along opposite arcs when you press swap, carrying their values with them while the slot labels hand over.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/swap-fields/swap-fields.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/swap-fields/swap-fields.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tactile-toggle",
+      "type": "registry:component",
+      "title": "Tactile Toggle",
+      "description": "A single switch whose knob squishes under the finger, drags like the real thing and springs home on release.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/tactile-toggle/tactile-toggle.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/tactile-toggle/tactile-toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tactile-toggles",
+      "type": "registry:component",
+      "title": "Tactile Toggles",
+      "description": "A settings list whose switches squish under the finger, drag like the real thing, sweep a faint tint across the row as they turn on, and pause the rows they override.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/tactile-toggles/tactile-toggles.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/tactile-toggles/tactile-toggles.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tag-input",
+      "type": "registry:component",
+      "title": "Tag Input",
+      "description": "A field that turns typed or pasted text into chips that pop in and shrink out, with Backspace to select and remove, arrow keys to move between chips and a nudge for duplicates.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/tag-input/tag-input.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/tag-input/tag-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "terminal-demo",
+      "type": "registry:block",
+      "title": "Terminal Demo",
+      "description": "A terminal that plays a short session on view: the command types itself, output arrives line by line and a progress bar fills.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/terminal-demo/terminal-demo.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/terminal-demo/terminal-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-carousel",
+      "type": "registry:block",
+      "title": "Testimonial Carousel",
+      "description": "One large quote at a time over a faint oversized quote mark, with a pill pager below; the frame eases to each quote's height, and it swipes and steps with the arrow keys.",
+      "categories": [
+        "testimonials"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/testimonial-carousel/testimonial-carousel.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/testimonial-carousel/testimonial-carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-orbit",
+      "type": "registry:block",
+      "title": "Testimonial Orbit",
+      "description": "Customer photos on a slow ring around one quote; picking a face flies it into the middle while the quote cross-fades. On narrow screens the ring becomes an arch above the quote.",
+      "categories": [
+        "testimonials"
+      ],
+      "dependencies": [
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/testimonial-orbit/testimonial-orbit.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/testimonial-orbit/testimonial-orbit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-wall",
+      "type": "registry:block",
+      "title": "Testimonial Wall",
+      "description": "Columns or rows of quote cards that scroll endlessly at their own pace, neighbours running against each other; hovering a lane stops it so the quote can be read.",
+      "categories": [
+        "testimonials"
+      ],
+      "dependencies": [
+        "motion@^13.1.1",
+        "react-use-measure@^2.1.7"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {
+        "light": {
+          "edge-outer": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.9), 0 1px 2px rgb(0 0 0 / 0.03)",
+          "edge-inner": "inset 0 0 0 1px rgb(0 0 0 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.04)",
+          "edge-tile": "inset 0 0 0 1px rgb(0 0 0 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.7)"
+        },
+        "dark": {
+          "edge-outer": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.09)",
+          "edge-inner": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 1px 2px rgb(0 0 0 / 0.5)",
+          "edge-tile": "inset 0 0 0 1px rgb(255 255 255 / 0.04), inset 0 1px 0 rgb(255 255 255 / 0.06)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/testimonial-wall/testimonial-wall.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/testimonial-wall/testimonial-wall.tsx"
+        },
+        {
+          "path": "registry/marquee/marquee.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/marquee/marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theme-switch",
+      "type": "registry:component",
+      "title": "Theme Switch",
+      "description": "Switches the page theme: the sun pulls in its rays and is eclipsed into a moon while the new theme spreads out from the button.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/theme-switch/theme-switch.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/theme-switch/theme-switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tick-nav",
+      "type": "registry:component",
+      "title": "Tick Nav",
+      "description": "A section list on a ruler whose ticks swell like a dock under the pointer, sliding each label out with its tick.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/tick-nav/tick-nav.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/tick-nav/tick-nav.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:component",
+      "title": "Toast",
+      "description": "Toasts that stack, fan out on hover, swipe away, and follow a promise from loading to done in one toast.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/toast/toast.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/toast/toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:component",
+      "title": "Tooltip",
+      "description": "A quiet tooltip that waits before the first one shows, then swaps instantly between neighbours in a toolbar.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/tooltip/tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/tooltip/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "topographic-lines",
+      "type": "registry:component",
+      "title": "Topographic Lines",
+      "description": "Contour lines of a slowly shifting landscape, like a survey map; the pointer raises a hill the lines ring around.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/topographic-lines/topographic-lines.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/topographic-lines/topographic-lines.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        },
+        {
+          "path": "registry/_shader-background/shades.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/_shader-background/shades.ts"
+        }
+      ]
+    },
+    {
+      "name": "tray-navbar",
+      "type": "registry:block",
+      "title": "Tray Navbar",
+      "description": "A navbar whose links sit in an inset tray, with a raised pill that slides to the current page. Links left, centred or right; zero to two CTAs.",
+      "categories": [
+        "navbars"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/tray-navbar/tray-navbar.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/tray-navbar/tray-navbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tree-view",
+      "type": "registry:component",
+      "title": "Tree View",
+      "description": "A file and folder tree with folders that ease open, guide lines, a sliding selection and full tree keyboard control.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/tree-view/tree-view.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/tree-view/tree-view.tsx"
+        }
+      ]
+    },
+    {
+      "name": "type-fighter",
+      "type": "registry:component",
+      "title": "Type Fighter",
+      "description": "A text field where each typed glyph flies in like a comet, or is written by pen.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "@chenglou/pretext@^0.0.9",
+        "motion@^13.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/type-fighter/type-fighter.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/type-fighter/type-fighter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "typewriter",
+      "type": "registry:component",
+      "title": "Typewriter",
+      "description": "Text typed with a human rhythm, mistakes included.",
+      "categories": [
+        "entrances"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/typewriter/typewriter.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/typewriter/typewriter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "viscosity-menu",
+      "type": "registry:component",
+      "title": "Viscosity Menu",
+      "description": "A dot that pours into a menu panel like a drop of liquid.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "@tabler/icons-react@^3.46.0",
+        "motion@^13.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/viscosity-menu/viscosity-menu.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/viscosity-menu/viscosity-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "voronoi-cells",
+      "type": "registry:component",
+      "title": "Voronoi Cells",
+      "description": "A living mesh of cells with waves of light hopping through it like signals across a network; the pointer lights the cells it passes.",
+      "categories": [
+        "backgrounds"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/voronoi-cells/voronoi-cells.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/voronoi-cells/voronoi-cells.tsx"
+        },
+        {
+          "path": "registry/_shader-background/ShaderSurface.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/_shader-background/ShaderSurface.tsx"
+        },
+        {
+          "path": "registry/_shader-background/shades.ts",
+          "type": "registry:lib",
+          "target": "@components/uibrik/_shader-background/shades.ts"
+        }
+      ]
+    },
+    {
+      "name": "waitlist-input",
+      "type": "registry:component",
+      "title": "Waitlist Input",
+      "description": "An email field with its button inside that shrinks to a spinner, then settles into a confirmation in the same space.",
+      "categories": [
+        "inputs"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/waitlist-input/waitlist-input.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/waitlist-input/waitlist-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "zoom-past",
+      "type": "registry:component",
+      "title": "Zoom Past",
+      "description": "Words fly toward you and the next one arrives behind.",
+      "categories": [
+        "transitions"
+      ],
+      "dependencies": [
+        "motion@^13.1.1"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/zoom-past/zoom-past.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/zoom-past/zoom-past.tsx"
+        }
+      ]
+    },
+    {
+      "name": "squircle",
+      "type": "registry:lib",
+      "title": "Squircle",
+      "description": "Squircle corner utilities with a paint worklet, falling back to rounded corners.",
+      "dependencies": [
+        "@squircle/core@^1.0.6",
+        "@squircle/tailwindcss@^1.0.6"
+      ],
+      "files": [
+        {
+          "path": "lib/squircle-provider.tsx",
+          "type": "registry:component",
+          "target": "@components/uibrik/squircle-provider.tsx"
+        }
+      ]
+    }
+  ]
+}
