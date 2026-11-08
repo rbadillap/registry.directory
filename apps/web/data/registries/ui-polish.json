@@ -1,0 +1,542 @@
+{
+  "key": "ui-polish",
+  "entry": "UI Polish",
+  "name": "uipolish",
+  "homepage": "https://uipolish.com/",
+  "indexUrl": "https://uipolish.com/r/registry.json",
+  "itemBase": "https://uipolish.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "tokens",
+      "type": "registry:item",
+      "title": "UI Polish tokens",
+      "description": "The --ui-* roles every UI Polish component reads, with UI Polish's own light and dark values, plus the Tailwind bridge (bg-ui-surface, text-ui-muted)."
+    },
+    {
+      "name": "theme",
+      "type": "registry:item",
+      "title": "UI Polish on your shadcn/ui theme",
+      "description": "The tokens, the Tailwind bridge and a mapping that points the color and radius roles at your shadcn/ui variables, so the components follow your theme in light and dark."
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Disclosure sections that open on a grid-row transition, one or several at a time. An item named in the URL hash is already open on first paint."
+    },
+    {
+      "name": "agent-console",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Agent console",
+      "description": "A working console for running AI agents, for the Next.js App Router: emailed-code sign-in, a sidebar with workspaces, live runs with their full traces, an approvals inbox that pauses a run until someone decides, a knowledge base the agents search, per-agent model, tools, permissions and limits, usage against a monthly limit, and workspace settings. Runs come from a mock runner until a model is set (Anthropic, OpenAI or any OpenAI-compatible API), or until you plug yours in; the runner, auth and storage each sit behind one small file you swap. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "agent-settings",
+      "type": "registry:ui",
+      "title": "Agent settings",
+      "description": "A whole settings screen for an AI agent, built from the kit: model, MCP connections, what it may do without asking, a daily spending limit and memory. Every change saves in its row, and a sticky section nav follows you down the page."
+    },
+    {
+      "name": "agent-task",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Agent task",
+      "description": "The live view of an agent doing a multi-step task: a phase whose color runs through the card, a checklist, a panel that shows what it's reading, searching, weighing, writing or revising, the tool in use, the model, and tokens, cost and time that never shift. Pause, stop, and run again. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "agent-workspace",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Agent workspace",
+      "description": "A working Next.js app for coding with agents, in three calm panes: a sidebar with workspaces, pinned and recent sessions (shared ones with their faces) and the team's presence; open sessions as tabs over a conversation whose tool calls fold to one line, with the files each turn changed as chips; and a changes pane with the pull request's merge status, all files, changes with diff stats, checks, review and a run panel. A scripted mock agent edits, tests, opens the pull request and runs its checks until you connect a model (Anthropic, OpenAI or any OpenAI-compatible API) or your own agent; the agent, sign-in and storage each sit behind one small file. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "ai-chat-app",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Chat app",
+      "description": "A working AI chat app for the Next.js App Router: sign-in with an emailed code, a sidebar with workspaces and chat history, chats that stream from Claude, OpenAI or any OpenAI-compatible API (or a mock until one is set) with reasoning, tool steps and sources, and settings for the assistant, billing and members. Auth, storage and the model each sit behind one small file you swap. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Inline banner for info, success, warning and error. It reserves its space up front or opens on a press, so a late status never pushes the page."
+    },
+    {
+      "name": "approvals-inbox",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Approvals inbox",
+      "description": "A review queue for anything that needs a sign-off: expenses, time off, discounts, access, refunds, payments, posts and config changes, asked for by people or by agents. A list on the left, filtered by status and searchable, optionally grouped by requester or due date; the request in full on the right, drawn as the payment, message, post, diff, deletion, key/value change or code it is (or your own preview), with the requester's note and who it reaches. Approve, decline with a note, or edit then approve, from the keyboard too, with due dates, bulk approve and an undo window before anything is sent. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "authorize",
+      "type": "registry:ui",
+      "title": "Authorize",
+      "description": "The consent screen an MCP server shows when an agent asks to connect: who's asking, what it will be able to do, and where you go back to. Risky permissions start off."
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Photo with initials on an opaque quiet fill behind it, or a head and shoulders with no name. A quick photo never flashes initials, a broken one never shows its broken mark, and groups overlap with a +N that says how many."
+    },
+    {
+      "name": "background-run",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Background run",
+      "description": "An agent task that keeps going while the person is elsewhere. One calm row says how it’s going in a glyph and one line, marks what finished while they were away, and opens to its progress, what changed and up to two actions. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "A static label for a status or a count, exactly as tall as the line it sits in. Counts are round for one digit and set in equal-width figures."
+    },
+    {
+      "name": "batch-progress",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Batch progress",
+      "description": "An agent working through many items at once: a header with done of total, the clock and time left over a segmented track, then every item as a row with its status, result and time. Filter to what's running, failed or done; pause, resume or stop; retry one failure or all of them. Windowed, so 1,000 items scroll like 10. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "billing",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Billing",
+      "description": "The billing settings page of a SaaS product: current plan, usage meters that warn at 80% and say what to do at 100%, plan changes with proration and what a downgrade loses, payment method, billing details, invoices and cancel. Trial, past-due and canceled states included. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "breadcrumbs",
+      "type": "registry:ui",
+      "title": "Breadcrumbs",
+      "description": "Trail of links to the current page. A long middle folds into a … that opens in place, long labels fade instead of wrapping, and any router’s link fits."
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Pill button that presses instantly and springs back. The busy state keeps its width, and the label morphs when its text changes."
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Base UI checkbox whose tick draws on and off. The mixed-state dash morphs into the tick, and the box aligns to the first line of its label."
+    },
+    {
+      "name": "chip",
+      "type": "registry:ui",
+      "title": "Chip",
+      "description": "Filter chips that stay pressed, and removable chips with their own named remove button. A plus swings into a check without changing the width, and removed chips fade before the rest slide into place."
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code block",
+      "description": "Code block for AI apps that streams in without flashing or jumping. Copy, line wrap and calm token-colored highlighting are built in, with no highlighter library."
+    },
+    {
+      "name": "code-input",
+      "type": "registry:ui",
+      "title": "Code input",
+      "description": "One-time code boxes that fill from a paste or platform autofill and step back on Backspace. The active box shows a dark edge and a caret, invalid shows in the edges; an optional status folds the boxes into a centered, edgeless Verifying pill that turns to Verified, or opens back up on a wrong code."
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Type-to-filter autocomplete for local or async results. Each match marks the typed text, and stale results stay in place while new ones load."
+    },
+    {
+      "name": "command-palette",
+      "type": "registry:ui",
+      "title": "Command palette",
+      "description": "⌘K palette with fuzzy matching, recents and grouped results. Async sources never flash a loading state, and the height follows the results."
+    },
+    {
+      "name": "connections",
+      "type": "registry:ui",
+      "title": "Connections",
+      "description": "The agent app's list of MCP servers: one quiet row each, a switch, and a status line that says what's wrong and the one thing that fixes it. Adds a server by URL and hands sign-in to the browser."
+    },
+    {
+      "name": "copy-field",
+      "type": "registry:ui",
+      "title": "Copy field",
+      "description": "Read-only value with a Copy button whose icon turns into a check and says “Copied” to screen readers. A secret masks as a fixed row of dots that gives away nothing about its length."
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data table",
+      "description": "Keyboard-first grid for real data: one tab stop, arrow keys between cells, a stable sort whose arrow flips its head, columns resized by pointer or keys, range selection, and thousands of rows virtualized without a dependency."
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date picker",
+      "description": "Date field that opens a calendar dialog with full grid keyboard support. Months slide a short way in the direction you moved, crossfading inside a soft-edged panel, and ranges are optional."
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Modal that grows out of its trigger and eases to fit its content as steps change. It locks scroll without a shift and asks before discarding edits."
+    },
+    {
+      "name": "diff-stat",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Diff stat",
+      "description": "Lines added and removed, “+12 −3”, in the type around it: added in green, removed in red, figures of equal width, and one sentence for screen readers. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "diff-view",
+      "type": "registry:ui",
+      "title": "Diff view",
+      "description": "Unified diff with the changed part of each line marked and unchanged stretches folded. In streaming mode, new lines fade in as they arrive."
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Modal panel that slides in from the end edge, and on phones rises as a sheet you drag down to dismiss, at the speed of your flick. The body scrolls between a header and footer that stay put."
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown menu",
+      "description": "Menu button with checkbox, radio and submenu items. Submenus forgive a diagonal pointer path, and pointer and keyboard share one highlight."
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:ui",
+      "title": "Empty state",
+      "description": "The message for an empty list or view: a clean isometric line drawing with crisp corners (a stack, a box, a folder, a tray, a magnifier, a calendar or an unplugged cord), drawn once as it comes into view, with a title, one sentence and one action."
+    },
+    {
+      "name": "file-changes",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "File changes",
+      "description": "The files an agent changed, one 32px row each: what happened to the file, its folder muted and cut from the start so the name stays whole, and lines added and removed. A totals line, selection that follows the arrow keys, loading and empty states, and a chip for naming a file inline. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:ui",
+      "title": "File upload",
+      "description": "Drop zone with a fixed-height file list. Each row fills with its upload progress, and the list scrolls inside its height, so the page never moves."
+    },
+    {
+      "name": "inline-edit",
+      "type": "registry:ui",
+      "title": "Inline edit",
+      "description": "Text that becomes an input where it stands, in the same font and the same place, so not a letter moves. Enter saves, Escape restores, and an error keeps you editing."
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "A key or a shortcut as the reader’s keyboard labels it: ⌘K on Apple, Ctrl K elsewhere. Decided before the first paint, so the server and the browser agree and nothing moves."
+    },
+    {
+      "name": "knowledge-base",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Knowledge base",
+      "description": "The screen where a team gives its AI agent documents to answer from: upload files, add a site or sitemap, or connect Google Drive, Notion or Dropbox; watch each source move through reading, chunking and indexing with counts that never shift; retry failures, re-sync, remove, see usage against the plan, and test which passages a question retrieves. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "list",
+      "type": "registry:ui",
+      "title": "List",
+      "description": "Rows of peers, static, links or buttons, each row one tab stop with nothing nested inside it. Secondary actions show on hover or focus without moving anything, and every row keeps its height in every state."
+    },
+    {
+      "name": "markdown",
+      "type": "registry:ui",
+      "title": "Markdown",
+      "description": "Renders a model's markdown reply while it streams: no flash of raw asterisks, backticks or half-typed tables, code fences open as live code blocks, and HTML in the reply shows as text."
+    },
+    {
+      "name": "merge-status",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Merge status",
+      "description": "A pull request in one line: its number linking out, where it stands (draft, checks running, a check failed, conflicts, ready, merged) in its status color, and the move it's waiting for: a Merge button in the success color once it's ready, busy until the merge lands. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "message-thread",
+      "type": "registry:ui",
+      "title": "Message thread",
+      "description": "Chat transcript that fades in only the newly streamed words. It stays pinned to the bottom until you scroll up and announces each reply once it ends."
+    },
+    {
+      "name": "model-picker",
+      "type": "registry:ui",
+      "title": "Model picker",
+      "description": "Compact trigger that resizes to fit the current model’s name. It opens a list of models with one-line descriptions and a drawn check on the selection."
+    },
+    {
+      "name": "nav-rail",
+      "type": "registry:ui",
+      "title": "Nav rail",
+      "description": "A compact app rail of icon items. One tooltip glides from item to item, easing to each label’s width with the shortcut beside it, and a raised capsule glides to the current page."
+    },
+    {
+      "name": "number-input",
+      "type": "registry:ui",
+      "title": "Number input",
+      "description": "Spinbutton whose − and + buttons speed up while held. A typed value outside min or max is pulled into range, with a note that says so."
+    },
+    {
+      "name": "onboarding",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Onboarding",
+      "description": "The first-run setup for an AI product, in four steps: the workspace, the tools the agent may use (each with its own consent and a connect that can fail or stall), what the agent may do without asking, and a first task it streams in front of you. The panel's height glides between steps, steps slide the way you're going, and every answer is handed back to save and resume. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Page numbers in a fixed number of slots, so the control never changes width as you page. Numbers slide under one moving pill, and Next stays focusable at the end."
+    },
+    {
+      "name": "phone-input",
+      "type": "registry:ui",
+      "title": "Phone input",
+      "description": "Phone field with a country picker. The number groups as you type without moving the caret, a pasted +44 number picks its country, and the form gets E.164."
+    },
+    {
+      "name": "pipeline",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Pipeline",
+      "description": "A multi-stage run (a deploy, an import, a sync) as a row of nodes whose connectors fill as each stage finishes, over the live output of the stage you’re looking at. A failure stops where it happened, says why, and offers Retry. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "plan-approval",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Plan approval",
+      "description": "The moment an agent proposes a multi-step plan and the person reviews it before anything runs. Approve or skip each step from the keyboard, then watch the steps check in as the plan runs. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Click-triggered panel anchored to its trigger. It moves focus into forms, leaves it on the trigger for explanations, and returns it on close."
+    },
+    {
+      "name": "pricing",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Pricing",
+      "description": "The public pricing page of an AI SaaS product: a monthly/yearly switch with the saving said quietly, plan cards whose prices roll between the two without moving anything, per-seat and usage-based notes (\"then $4 per 1,000 credits\"), one featured plan, an Enterprise row, a full comparison table with a sticky plan header and a plan picker on phones, and questions in an accordion. Choosing a plan waits on your async callback and says what went wrong if it fails. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Linear progress whose fill moves on a spring. The indeterminate state sweeps a band of light through the track, and a segmented variant shows named steps."
+    },
+    {
+      "name": "prompt-input",
+      "type": "registry:ui",
+      "title": "Prompt input",
+      "description": "Chat composer that grows with its text and sends on Enter, never mid-IME. Send turns into Stop while a reply streams, and dropped files become chips."
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio group",
+      "description": "Base UI radios in a fieldset, as a list or as cards. The mark opens from its center, arrow keys choose, and the whole group takes one tab stop."
+    },
+    {
+      "name": "reasoning",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Reasoning",
+      "description": "The thinking block of an AI reply: the current step as a label that rises to each new one, a live timer and a short window of reasoning. It folds to “Thought for 8s” when the answer starts. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "research-progress",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Research progress",
+      "description": "The live view of an agent researching the web, as one quiet line: “Reading 4 of 9 sources”, a few of the sites’ marks and the elapsed time. Open it for the searches and every source, each with its status, and the reason any couldn’t be read. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "response-actions",
+      "type": "registry:ui",
+      "title": "Response actions",
+      "description": "The row under an assistant reply: copy, thumbs up and down, and retry. A thumbs down can open a “What went wrong?” field in place."
+    },
+    {
+      "name": "run-history",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Run history",
+      "description": "The screen where a team inspects past AI agent runs: a filterable, paged table of runs with live ones counting up in place, and a run's trace as a calm waterfall of model and tool calls, with retries and the failing step called out, collapsed long outputs, a token and cost breakdown, the final output, and Re-run, Copy ID and Share link. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll area",
+      "description": "Scroll container whose edges fade with a mask only where more content remains. It works on any background and scrolls by keyboard."
+    },
+    {
+      "name": "search-field",
+      "type": "registry:ui",
+      "title": "Search field",
+      "description": "Search input whose clear button fades in over room it already holds, so the text never moves. Escape clears, then leaves, and the magnifier breathes while results load."
+    },
+    {
+      "name": "segmented-control",
+      "type": "registry:ui",
+      "title": "Segmented control",
+      "description": "Base UI radio group with the Tabs' look: a clear hairline track and one flat pill that glides to the checked option. Arrow keys and form values come with the group."
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Select-only combobox whose trigger fits the chosen label and morphs to the next one. Touch screens get the native picker instead."
+    },
+    {
+      "name": "settings",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Settings",
+      "description": "The settings screen of an AI product's workspace: name, URL, logo, time zone and deleting the workspace; API keys with scopes and expiry, the secret shown once, revoke and flags for expired or unused keys; the default model, per-feature models, a monthly spend limit with an alert threshold, rate limits and usage against them; and notification switches per channel with a test send. One save bar holds unsaved changes, with inline validation, optimistic saves that roll back, a leave guard, a read-only viewer state and loading skeletons. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "The app sidebar for an AI product: a workspace switcher, items with counts and shortcuts, folding sections, a recent chats list with rename, pin and delete, and an account menu. Collapses to an icon rail with one gliding tooltip, and becomes a drawer on phones."
+    },
+    {
+      "name": "sign-in",
+      "type": "registry:block",
+      "title": "Sign in",
+      "description": "A passwordless sign-in and sign-up screen: work email, then a one-time code with a resend countdown, plus optional OAuth providers and SSO by work domain. Wrong, expired and rate-limited codes, blocked domains and failed providers each say what to do next."
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Placeholders shaped like the content on its way, with text lines exactly as tall as the text, so the swap moves nothing. One element per bone; one soft diagonal sheen crosses every skeleton on the page together, and nothing shows for loads under 300ms."
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "A label row with a steady-width value over a sunken track, an accent range and a raised capsule thumb that glides to place. Base UI's slider underneath handles pointer, keyboard and touch."
+    },
+    {
+      "name": "sources",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Sources",
+      "description": "Numbered citation markers for AI answers, each with a preview card on hover, focus or tap. Markers and the source list highlight each other. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "stat",
+      "type": "registry:ui",
+      "title": "Stat",
+      "description": "A figure with its label and a change stated by both an arrow and words. The hint always takes two lines, so tiles in a row stay level."
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Base UI switch with role=\"switch\": the segmented control in miniature, a sunken track with a raised pill that glides across. Two sizes on the control scale and a busy state for saves."
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Tabs built on Base UI, with a pill that stretches from one tab to the next. Optional URL sync supports back and forward, and panels crossfade in place."
+    },
+    {
+      "name": "team-members",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Team members",
+      "description": "The members section of a workspace's settings: everyone's role and last activity, invites by pasting a list of addresses with seat limits enforced, pending invites to resend or revoke, and guards so the last owner can't be removed. Optimistic role changes roll back with an inline error. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "text-field",
+      "type": "registry:ui",
+      "title": "Text field",
+      "description": "Labeled input that validates when you leave it and clears the error as soon as the value is fixed. The error takes the hint’s line, so nothing shifts."
+    },
+    {
+      "name": "theme-toggle",
+      "type": "registry:ui",
+      "title": "Theme toggle",
+      "description": "Icon capsule that switches light and dark: one drawing where the sun's disc grows into a crescent as a second circle slides over it. Stores the choice, follows the system until there is one, and paints the right theme before the first frame."
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Imperative toasts in a collapsed stack that fans out on hover. Timers pause while you read, and a flick swipes a toast away."
+    },
+    {
+      "name": "tool-approval",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Tool approval",
+      "description": "The card an agent shows when a tool call needs your OK. Says what will happen in words, weighs sends, deletes and payments, and settles into one line once you answer. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "tool-steps",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Tool steps",
+      "description": "An agent’s actions as a quiet timeline. Each step opens to its raw input and output, and the list folds to “Ran 5 steps in 12s” when the run ends. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Short hint that opens after a pause, then instantly as you move between triggers. Keyboard focus opens it at once."
+    },
+    {
+      "name": "turn-summary",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Turn summary",
+      "description": "The work behind an agent's answer, folded to one quiet line, “17 tool calls, 3 messages”, that opens to its notes and tool calls; and the footer under the answer, with the files it changed and their diff stats, how long it took, Copy and More. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "usage-meter",
+      "type": "registry:ui",
+      "title": "Usage meter",
+      "description": "How much of an agent’s context window or spending budget is used, as a ring and a percentage in the composer toolbar. Opens to a breakdown, warns before the limit and offers to compact."
+    },
+    {
+      "name": "voice-input",
+      "type": "registry:ui",
+      "resolution": "gated",
+      "title": "Voice input",
+      "description": "Mic button whose circle opens into a recording bar with a scrolling waveform, a timer and Stop. A blocked mic gets a plain explanation. (UI Polish Pro: needs a license key.)"
+    },
+    {
+      "name": "voice-session",
+      "type": "registry:block",
+      "resolution": "gated",
+      "title": "Voice session",
+      "description": "A live voice call with an AI agent: a calm visual of who's speaking, a state label that morphs in place, a transcript where the agent's words appear as they're said and lookups show inline, mute, device and captions controls, and a summary of what was decided when you hang up. Covers a blocked or missing mic, slow connections, network drops and agent errors. (UI Polish Pro: needs a license key.)"
+    }
+  ]
+}

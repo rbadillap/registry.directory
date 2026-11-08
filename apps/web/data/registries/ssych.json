@@ -1,0 +1,2029 @@
+{
+  "key": "ssych",
+  "entry": "ssych ui",
+  "name": "ssych",
+  "homepage": "https://ui.ssych.com",
+  "indexUrl": "https://ui.ssych.com/r/registry.json",
+  "itemBase": "https://ui.ssych.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "file-tree",
+      "type": "registry:ui",
+      "title": "File Tree",
+      "description": "A file tree for code bundles, data exports and research folders, with folding folders, keyboard navigation and sizes on the right.",
+      "categories": [
+        "layout"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "A collapsible sidebar navigation for SaaS admin panels and trading dashboards, with accordion sections, an active rail and a mobile drawer.",
+      "categories": [
+        "layout"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "macos-dock",
+      "type": "registry:ui",
+      "title": "macOS Dock",
+      "description": "A macOS style app dock with magnifying icons and a ⌘K command menu, for launchers and workspace switchers in trading and AI tools.",
+      "categories": [
+        "layout"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "browser-window",
+      "type": "registry:ui",
+      "title": "Browser Window",
+      "description": "A browser window mockup for showing a dashboard or web app on a landing page, in Chrome or Safari frames, with a phone layout under 480px.",
+      "categories": [
+        "layout"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "macbook-frame",
+      "type": "registry:ui",
+      "title": "MacBook Frame",
+      "description": "A MacBook mockup frame for product screenshots and live app embeds on landing pages, pitch decks and fintech case studies.",
+      "categories": [
+        "layout"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "card-stack",
+      "type": "registry:ui",
+      "title": "Card Stack",
+      "description": "A swipeable card stack carousel for product showcases and feature tours; drag the top card away or click it to open a detail modal.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/bento-gallery.json",
+        "https://ssych.com/r/project-card.json"
+      ]
+    },
+    {
+      "name": "card-grid",
+      "type": "registry:ui",
+      "title": "Card Grid",
+      "description": "A responsive card grid for products, strategies or case studies, with hover actions on each card and a shared detail modal.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/bento-gallery.json",
+        "https://ssych.com/r/project-card.json"
+      ]
+    },
+    {
+      "name": "card-list",
+      "type": "registry:ui",
+      "title": "Card List",
+      "description": "A vertical card list for reports, products or case studies, each card with media and copy, opening into a shared detail modal.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/bento-gallery.json",
+        "https://ssych.com/r/project-card.json"
+      ]
+    },
+    {
+      "name": "bento-gallery",
+      "type": "registry:ui",
+      "title": "Bento Gallery",
+      "description": "A draggable bento grid gallery for product shots and dashboard screenshots that opens into a shared lightbox.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/macos-dock.json"
+      ]
+    },
+    {
+      "name": "cutout-card",
+      "type": "registry:ui",
+      "title": "Cutout Card",
+      "description": "Media card with a scooped-out content tray (concave corners), hover-reveal action button, and gradient overlay.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "An accordion for feature and FAQ sections on product pages, each row opening to a body, a checklist and a screenshot.",
+      "categories": [
+        "layout"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/macbook-frame.json"
+      ]
+    },
+    {
+      "name": "project-card",
+      "type": "registry:ui",
+      "title": "Project Card",
+      "description": "Shared cutout project card with blurred-gradient media and a liquid-metal hover ring.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "metal-fx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/bento-gallery.json",
+        "https://ssych.com/r/cutout-card.json"
+      ]
+    },
+    {
+      "name": "historical-eps",
+      "type": "registry:ui",
+      "title": "Historical EPS",
+      "description": "A quarterly EPS chart for stock research and earnings screens, with forecast against reported bars and the surprise on hover.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "price-target-fan",
+      "type": "registry:ui",
+      "title": "Price Target Fan",
+      "description": "An analyst price target chart for stock research: a year of price history, then projections fanning out to the high, mean and low targets.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "market-watchlist",
+      "type": "registry:ui",
+      "title": "Market Watchlist",
+      "description": "A watchlist that reads as one chart: every watched coin as a line from the same open, a row per coin, and the whole market beside it in tokens, sectors and yields, where any row adds itself to the list.",
+      "categories": [
+        "charts",
+        "data",
+        "dashboard"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "sma-chart",
+      "type": "registry:ui",
+      "title": "SMA Chart",
+      "description": "A stock price chart with 20 and 50 day simple moving average overlays and crosshair scrubbing, for trading and technical analysis screens.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "dotted-area-chart",
+      "type": "registry:ui",
+      "title": "Dotted Area Chart",
+      "description": "A crypto price area chart on a dotted field; scrub it to light the stretch you have passed and read the price and move at any point.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "health-gauge",
+      "type": "registry:ui",
+      "title": "Health Gauge",
+      "description": "A gauge chart for margin ratio, fear and greed or liquidity scores, on a 270 degree dial that counts up and cycles metrics on click.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/segmented-control.json"
+      ]
+    },
+    {
+      "name": "market-heatmap",
+      "type": "registry:ui",
+      "title": "Market Heatmap",
+      "description": "A stock market heatmap with tiles sized by market cap and tinted by the daily move, for market overview and trading dashboards.",
+      "categories": [
+        "charts",
+        "trading",
+        "crypto"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "sankey-flow",
+      "type": "registry:ui",
+      "title": "Sankey Diagram",
+      "description": "A Sankey diagram for cash flow, budgets and fund flows, where income pools in one hub and each ribbon width stands for the amount.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "donut-chart",
+      "type": "registry:ui",
+      "title": "Donut Chart",
+      "description": "A crypto portfolio donut chart that shows allocation as a ring with the total in the centre, the ring and its legend highlighting together.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "balance-header",
+      "type": "registry:ui",
+      "title": "Balance Header",
+      "description": "A wallet and bank balance header with the total, the 24h move and a privacy toggle that masks every figure, for crypto and fintech apps.",
+      "categories": [
+        "data",
+        "trading",
+        "crypto"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "market-snapshot",
+      "type": "registry:ui",
+      "title": "Market Snapshot",
+      "description": "A stock price card with periods from 1D to All and a line chart you scrub for the price at any moment, for broker and market apps.",
+      "categories": [
+        "charts",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "index-card",
+      "type": "registry:ui",
+      "title": "Index Card",
+      "description": "A market index card for the S&P 500, Dow, Nasdaq and Russell, with tabs between indices and an intraday line you can scrub.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "range-navigator",
+      "type": "registry:ui",
+      "title": "Range Navigator",
+      "description": "A price history chart with a range selector minimap; drag the window to pan and pull an edge to zoom, for trading and analytics apps.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "sectors-donut",
+      "type": "registry:ui",
+      "title": "Sectors Donut",
+      "description": "A sector allocation donut for ETF and fund pages that shows each sector weight and dims the rest while you hover one.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "ratings-radar",
+      "type": "registry:ui",
+      "title": "Ratings Radar",
+      "description": "An analyst ratings chart for stock research pages, spreading strong buy to strong sell on a pentagon pulled toward the consensus.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "analyst-radar",
+      "type": "registry:ui",
+      "title": "Analyst Radar",
+      "description": "A factor score radar chart for equity research, comparing a company with its sector on value, growth, profit, momentum and quality.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "kpi-card-row",
+      "type": "registry:ui",
+      "title": "KPI Card Row",
+      "description": "A KPI card row for SaaS, AI and API dashboards, with metrics like requests and uptime counting up over area charts you can scrub.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "heat-calendar",
+      "type": "registry:ui",
+      "title": "Heat Calendar",
+      "description": "A calendar heatmap of daily activity such as transactions, trades or API calls, with a readout on hover and a selected span that totals the days.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/segmented-control.json"
+      ]
+    },
+    {
+      "name": "returns-calendar",
+      "type": "registry:ui",
+      "title": "Returns Calendar",
+      "description": "A monthly returns heatmap for funds, strategies and backtests, with a compounded yearly column and spans you select to compound returns.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "holdings-table",
+      "type": "registry:ui",
+      "title": "Holdings Table",
+      "description": "A fund holdings table with market value, price, YTD return and portfolio weight bars, sortable by any column, for ETF and wealth apps.",
+      "categories": [
+        "data",
+        "trading",
+        "crypto"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "trade-journal-table",
+      "type": "registry:ui",
+      "title": "Trade Journal Table",
+      "description": "A trade journal table for crypto and stock traders, with the open position lit and every closed trade settled to a win or loss.",
+      "categories": [
+        "data",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/segmented-control.json"
+      ]
+    },
+    {
+      "name": "fills-blotter",
+      "type": "registry:ui",
+      "title": "Fills Blotter",
+      "description": "A live order fills blotter for brokers and trading desks, streaming executions that land as working and resolve to filled or rejected.",
+      "categories": [
+        "data",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "candlestick",
+      "type": "registry:ui",
+      "title": "Candlestick Chart",
+      "description": "A candlestick chart with a volume histogram, a magnet crosshair and a live OHLC legend, for stock and crypto trading terminals.",
+      "categories": [
+        "charts",
+        "trading",
+        "crypto"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "equity-drawdown",
+      "type": "registry:ui",
+      "title": "Equity & Drawdown",
+      "description": "An equity curve with a synced drawdown chart for backtests and trading performance, one crosshair reading return, drawdown and days below peak.",
+      "categories": [
+        "charts",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "balance-chart",
+      "type": "registry:ui",
+      "title": "Balance Chart",
+      "description": "A wallet balance chart for crypto and banking apps: an area line coloured by trend, with high and low marks and timeframes from 1H to All.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "price-scrubber",
+      "type": "registry:ui",
+      "title": "Price Scrubber",
+      "description": "A stock price chart you scrub with a magnet crosshair and price and time badges on the axes, the headline price turning green or red against the open.",
+      "categories": [
+        "charts",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/segmented-control.json"
+      ]
+    },
+    {
+      "name": "comb-rows",
+      "type": "registry:ui",
+      "title": "Comb Rows",
+      "description": "A peer comparison chart that draws each company as a ruler of ticks, for valuation metrics like P/E across a sector.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "ticker-tape",
+      "type": "registry:ui",
+      "title": "Ticker Tape",
+      "description": "A scrolling stock and crypto ticker tape with BTC, ETH, TAO and NVDA, green up and red down, paused on hover, for headers and trading dashboards.",
+      "categories": [
+        "data",
+        "trading",
+        "crypto"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "trade-tape",
+      "type": "registry:ui",
+      "title": "Trade Tape",
+      "description": "A live time and sales tape for trading terminals, streaming prints coloured by side and sized by volume, with block trades highlighted.",
+      "categories": [
+        "data",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "simple-chart",
+      "type": "registry:ui",
+      "title": "Mini Price Chart",
+      "description": "A compact crypto price card with one line and one number that follows your pointer, for wallets, exchanges and market widgets.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "matrix-ticker-board",
+      "type": "registry:ui",
+      "title": "Matrix Ticker Board",
+      "description": "A dot matrix stock price board drawn on canvas, where changed digits dissolve and redraw on each quote, for trading floors and landing pages.",
+      "categories": [
+        "showcase"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "request-log",
+      "type": "registry:ui",
+      "title": "API Request Log",
+      "description": "An API request log for developer dashboards, with method, path, status and latency per call and the response body unfolding inline.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "new-items-pill",
+      "type": "registry:ui",
+      "title": "New Items Pill",
+      "description": "A live trade feed that holds your place while new rows arrive and counts them into a pill, for tapes, alerts and activity feeds.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "inbox",
+      "type": "registry:ui",
+      "title": "Notification Inbox",
+      "description": "A notification inbox for SaaS and trading apps, with unread markers that clear as you read and a mark all as read action.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "project-index",
+      "type": "registry:ui",
+      "title": "Project Index",
+      "description": "A list of companies or projects where each row shows its cover beside the cursor on hover, for fund portfolios and case study pages.",
+      "categories": [
+        "showcase"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "news-card",
+      "type": "registry:ui",
+      "title": "News Card",
+      "description": "A market news card that cycles headlines with their source and time, for trading dashboards, broker apps and crypto portals.",
+      "categories": [
+        "showcase"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "alert-stack",
+      "type": "registry:ui",
+      "title": "Alert Stack",
+      "description": "A stacked notification panel for price alerts, margin warnings and order fills that fans open on hover and settles as you dismiss.",
+      "categories": [
+        "showcase"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "assets-balance-card",
+      "type": "registry:ui",
+      "title": "Assets Balance Card",
+      "description": "A portfolio balance card with rolling odometer digits and an intraday chart you can drag taller, for crypto wallets and banking apps.",
+      "categories": [
+        "charts",
+        "crypto"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "onboarding-checklist",
+      "type": "registry:ui",
+      "title": "Onboarding Checklist",
+      "description": "An onboarding checklist for developer and fintech products, with steps that check off and a progress bar counting what is done.",
+      "categories": [
+        "flows"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "preferences-card",
+      "type": "registry:ui",
+      "title": "Preferences Card",
+      "description": "An account settings card with rows for profile, payment method and notifications, for SaaS, banking and exchange account pages.",
+      "categories": [
+        "flows"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:ui",
+      "title": "Empty State",
+      "description": "An empty state for trading and fintech dashboards: a quiet dotted field with one line of copy and one call to action.",
+      "categories": [
+        "flows"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "swap-ticket",
+      "type": "registry:ui",
+      "title": "Swap Ticket",
+      "description": "A token swap widget for DEX and crypto wallet apps, with an editable amount, a flip button, a token picker and slippage settings.",
+      "categories": [
+        "flows",
+        "trading",
+        "crypto"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "segmented-control",
+      "type": "registry:ui",
+      "title": "Segmented Control",
+      "description": "A segmented control for timeframes and view modes like 24h, 7d and 30d, with a thumb that slides between the options.",
+      "categories": [
+        "controls"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "avatar-stack",
+      "type": "registry:ui",
+      "title": "Avatar Stack",
+      "description": "An overlapping avatar stack for teams, signers or token holders that lifts and names one on hover and lists the overflow.",
+      "categories": [
+        "controls"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "amount",
+      "type": "registry:ui",
+      "title": "Currency Amount",
+      "description": "Currency and crypto amount formatters that keep symbols, decimals, abbreviations and signed colours consistent across a fintech screen.",
+      "categories": [
+        "data",
+        "trading",
+        "crypto"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "crypto-fiat",
+      "type": "registry:ui",
+      "title": "Crypto/Fiat",
+      "description": "A crypto amount input that switches between fiat and token units at the current rate, for wallets, exchanges and payment flows.",
+      "categories": [
+        "controls",
+        "trading",
+        "crypto"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "screen-shuffle",
+      "type": "registry:ui",
+      "title": "Screen Shuffle",
+      "description": "A stack of product screenshots that rotates the front screen to the back, for SaaS and fintech landing page heroes.",
+      "categories": [
+        "showcase"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "mouse-trail-cta",
+      "type": "registry:ui",
+      "title": "Mouse-Trail CTA",
+      "description": "A call to action button whose glow is fed by a cursor particle trail, for the landing page hero of an AI or fintech product.",
+      "categories": [
+        "showcase"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "ascii-turntable",
+      "type": "registry:ui",
+      "title": "ASCII Turntable",
+      "description": "A 3D logo or token mark drawn in ASCII characters that turns with the cursor, for crypto, AI and developer tool landing pages.",
+      "categories": [
+        "showcase"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "three"
+      ]
+    },
+    {
+      "name": "metal-badge",
+      "type": "registry:ui",
+      "title": "Metal Badge",
+      "description": "Any SVG mark as a domed chrome badge, drawn in WebGPU. It leans toward the cursor with the light following, and a click flips it. Falls back to a flat chrome face where WebGPU is missing.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "stone-badge",
+      "type": "registry:ui",
+      "title": "Stone Badge",
+      "description": "Any SVG mark as a carved stone badge, drawn in WebGPU: facets, fissures and mineral speckle on a roughened dome. It leans toward the cursor with the key light following, and a click flips it. Falls back to a flat stone face where WebGPU is missing.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "gold-badge",
+      "type": "registry:ui",
+      "title": "Gold Badge",
+      "description": "The metal badge in gold: any SVG mark as a domed, brushed gold badge drawn in WebGPU. It leans toward the cursor with the light following, and a click flips it.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "holo-badge",
+      "type": "registry:ui",
+      "title": "Holographic Badge",
+      "description": "Any SVG mark as a holographic badge: a silver dome under a thin film whose colour shifts with the angle, with a fine sparkle. Drawn in WebGPU, it leans toward the cursor and flips on click.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "glass-badge",
+      "type": "registry:ui",
+      "title": "Glass Badge",
+      "description": "Any SVG mark as a frosted glass badge: translucent, with the light catching its rolled edge and the page showing through. Drawn in WebGPU, it leans toward the cursor and flips on click.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "neon-badge",
+      "type": "registry:ui",
+      "title": "Neon Badge",
+      "description": "Any SVG mark as a dark badge with a neon outline that glows and breathes. Drawn in WebGPU, it leans toward the cursor and flips on click.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "lightning-badge",
+      "type": "registry:ui",
+      "title": "Lightning Badge",
+      "description": "Any SVG mark as a dark glass badge with lightning crawling over its face. Drawn in WebGPU, it leans toward the cursor and flips on click.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "ascii-badge",
+      "type": "registry:ui",
+      "title": "ASCII Badge",
+      "description": "Any SVG mark as a domed badge drawn in characters: the lit surface is read per cell and each cell's brightness picks a character from the ramp, so the letters change with the light as it turns. Drawn in WebGPU, it leans toward the cursor and flips on click.",
+      "categories": [
+        "effects"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "account-dropdown",
+      "type": "registry:ui",
+      "title": "Account Dropdown",
+      "description": "A crypto wallet account switcher that lists each address with its balance and share of the total, for multi wallet web3 apps.",
+      "categories": [
+        "controls"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "depth-chart",
+      "type": "registry:ui",
+      "title": "Depth Chart",
+      "description": "A market depth chart for crypto exchanges showing bid and ask liquidity around the mid price, with a readout of size on each side.",
+      "categories": [
+        "charts",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/segmented-control.json"
+      ]
+    },
+    {
+      "name": "gantt-mini",
+      "type": "registry:ui",
+      "title": "Gantt Chart",
+      "description": "A compact Gantt chart for sprint and release planning, with a today line and the dates, length and owner of each task on hover.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "leverage-ticket",
+      "type": "registry:ui",
+      "title": "Leverage Ticket",
+      "description": "A perpetual futures order ticket with margin, long or short and a leverage slider that updates position size, fees and the liquidation price.",
+      "categories": [
+        "flows",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/inline-slider.json"
+      ]
+    },
+    {
+      "name": "order-book",
+      "type": "registry:ui",
+      "title": "Order Book",
+      "description": "A crypto exchange order book with bids, asks and depth bars, reading the cumulative size and value up to any price level.",
+      "categories": [
+        "data",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/segmented-control.json"
+      ]
+    },
+    {
+      "name": "quick-ticket",
+      "type": "registry:ui",
+      "title": "Quick Ticket",
+      "description": "A watchlist row that expands into a quick order ticket for market and limit orders, for broker and stock trading apps.",
+      "categories": [
+        "flows",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "setup-stepper",
+      "type": "registry:ui",
+      "title": "Setup Stepper",
+      "description": "A setup stepper for onboarding flows like domain verification or API setup, with numbered steps down a rail and a Continue action.",
+      "categories": [
+        "flows"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "tool-call-card",
+      "type": "registry:ui",
+      "title": "Tool Call Card",
+      "description": "An AI agent tool call card that shows the arguments, result, duration and status of one call, with a run again action.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "vitals-strip",
+      "type": "registry:ui",
+      "title": "Key Stats Strip",
+      "description": "A key stats strip for a stock page with price, market cap, index weight, volume and P/E, each figure showing its formula on hover.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "agent-run-timeline",
+      "type": "registry:ui",
+      "title": "Agent Run Timeline",
+      "description": "An AI agent run timeline that shows each step with its tool call, duration and status, with the input and output one click away.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "automation-builder",
+      "type": "registry:ui",
+      "title": "Automation Builder",
+      "description": "A trading automation builder that writes a strategy as sentences, from news sentiment to orders, with editable values and a test run.",
+      "categories": [
+        "flows"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "dialog-stack",
+      "type": "registry:ui",
+      "title": "Dialog Stack",
+      "description": "Stacked dialogs for multi step confirmations like plan changes, approvals and sign off, where each step layers on top and Escape steps back.",
+      "categories": [
+        "flows"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "graph-comparison",
+      "type": "registry:ui",
+      "title": "Graph Comparison",
+      "description": "A stock comparison chart that indexes up to four tickers to the same start, for relative performance from 1M to 1Y.",
+      "categories": [
+        "charts",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/segmented-control.json"
+      ]
+    },
+    {
+      "name": "market-shelf",
+      "type": "registry:ui",
+      "title": "Market Shelf",
+      "description": "A row of crypto market tiles with price, daily change and a 7 day sparkline, for exchange and portfolio home screens.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "order-ticket",
+      "type": "registry:ui",
+      "title": "Order Ticket",
+      "description": "A buy and sell order form for limit and market orders where price, amount and total stay in sync, for crypto exchanges and broker apps.",
+      "categories": [
+        "controls",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "radial-gauge",
+      "type": "registry:ui",
+      "title": "Radial Gauge",
+      "description": "A radial gauge for pass rates like model evals, health checks or compliance tests, with fail, watch and pass bands you can read.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "stacked-bars",
+      "type": "registry:ui",
+      "title": "Stacked Bar Chart",
+      "description": "A stacked bar chart of monthly totals by series, shown with AI inference spend by model, reading value and share on hover.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "top-coins",
+      "type": "registry:ui",
+      "title": "Top Coins",
+      "description": "A top cryptocurrencies widget with Bitcoin, Ethereum and Solana prices and sparklines over 3M to 1Y, scrubbable for any week.",
+      "categories": [
+        "charts",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/segmented-control.json"
+      ]
+    },
+    {
+      "name": "volume-profile",
+      "type": "registry:ui",
+      "title": "Volume Profile",
+      "description": "A volume profile chart of traded volume by price with the point of control and value area, for futures and crypto traders.",
+      "categories": [
+        "charts",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "allocation-treemap",
+      "type": "registry:ui",
+      "title": "Allocation Treemap",
+      "description": "A portfolio allocation treemap with holdings sized by weight, reading the share and value of each position on hover.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "event-feed",
+      "type": "registry:ui",
+      "title": "Market Event Feed",
+      "description": "A market events feed grouped by day, each headline with its ticker, price and move, for stock research and trading dashboards.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "info-card",
+      "type": "registry:ui",
+      "title": "Info Card",
+      "description": "A small callout card with a title, one line and an action row, for help prompts and upsells in a dashboard sidebar.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "modal",
+      "type": "registry:ui",
+      "title": "Modal",
+      "description": "An accessible modal dialog for confirmations like cancelling orders or revoking API keys, with a focus trap and Escape to close.",
+      "categories": [
+        "flows"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "payment-card",
+      "type": "registry:ui",
+      "title": "Payment Card",
+      "description": "A saved payment card for billing and banking settings that lifts out of its pocket to show the card face, with an update card form.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "release-feed",
+      "type": "registry:ui",
+      "title": "Release Feed",
+      "description": "A changelog feed for developer tools and APIs that groups release notes by added, changed and fixed, with copyable versions.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "stat-tile",
+      "type": "registry:ui",
+      "title": "Stat Tile",
+      "description": "Compact stat tiles for trading metrics like net P&L, win rate and Sharpe ratio, each with a sparkline you scrub for any point.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "total-balance",
+      "type": "registry:ui",
+      "title": "Total Balance",
+      "description": "A total balance chart for crypto and banking accounts with windows from 24h to All, reading balance, change and drawdown at any point.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/segmented-control.json"
+      ]
+    },
+    {
+      "name": "wallet-drawer",
+      "type": "registry:ui",
+      "title": "Wallet Drawer",
+      "description": "A crypto wallet drawer with holdings, DeFi positions and activity, plus send, receive and settings views, for web3 apps.",
+      "categories": [
+        "showcase"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/segmented-control.json"
+      ]
+    },
+    {
+      "name": "amount-slider",
+      "type": "registry:ui",
+      "title": "Amount Slider",
+      "description": "An amount slider for choosing a share of a balance with 25, 50, 75 and 100 percent presets, for trade, withdraw and stake forms.",
+      "categories": [
+        "controls"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/inline-slider.json"
+      ]
+    },
+    {
+      "name": "cross-chain-swap",
+      "type": "registry:ui",
+      "title": "Cross Chain Swap",
+      "description": "A cross chain bridge and swap widget for moving tokens between networks like Ethereum, Solana and Arbitrum, reversible in one click.",
+      "categories": [
+        "flows",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "execution-controls",
+      "type": "registry:ui",
+      "title": "Execution Controls",
+      "description": "A hold to confirm order button for trading apps that shows the order as working, filled or rejected, with a timed undo.",
+      "categories": [
+        "controls",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "inline-slider",
+      "type": "registry:ui",
+      "title": "Inline Slider",
+      "description": "A range filter slider with its label and value inside the track, for screeners and GPU marketplaces filtering memory, cores and price.",
+      "categories": [
+        "controls"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "model-comparison",
+      "type": "registry:ui",
+      "title": "Model Comparison",
+      "description": "An LLM comparison table of quality, latency, cost per million tokens and context window, showing each gap to the best model.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "performance-chart",
+      "type": "registry:ui",
+      "title": "Performance Chart",
+      "description": "A portfolio performance chart against a benchmark index, shaded green while ahead and red while behind, with the gap on any day.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/segmented-control.json"
+      ]
+    },
+    {
+      "name": "scatter-plot",
+      "type": "registry:ui",
+      "title": "Scatter Plot",
+      "description": "A risk and return scatter plot of stocks by volatility and yearly return, naming each point with a hairline to both axes.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "swap-confirm",
+      "type": "registry:ui",
+      "title": "Swap Confirm",
+      "description": "A stock swap confirmation that sells one holding for another, showing the rate and the minimum received before you confirm.",
+      "categories": [
+        "flows"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "uptime-bars",
+      "type": "registry:ui",
+      "title": "Uptime Bars",
+      "description": "A 90 day uptime status chart for APIs and inference services, reading the uptime and incident of any day on hover.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "watchlist-stack",
+      "type": "registry:ui",
+      "title": "Watchlist Stack",
+      "description": "A stock watchlist with an intraday sparkline, price and daily move per ticker, scrubbable for the price at any moment.",
+      "categories": [
+        "data",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "approval-quorum",
+      "type": "registry:ui",
+      "title": "Approval Quorum",
+      "description": "A multisig approval widget for treasury and payment releases, where risk, treasury and compliance sign off until the quorum is met.",
+      "categories": [
+        "flows"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "date-range-picker",
+      "type": "registry:ui",
+      "title": "Date Range Picker",
+      "description": "A date range picker with two month calendars and presets like last 7, 30 and 90 days, for analytics, reporting and trade history filters.",
+      "categories": [
+        "controls"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "flow-bars",
+      "type": "registry:ui",
+      "title": "Net Flow Bars",
+      "description": "A net flow bar chart for daily ETF, exchange or wallet inflows and outflows, where dragging across days sums the run.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "kanban-board",
+      "type": "registry:ui",
+      "title": "Kanban Board",
+      "description": "A kanban board for engineering, ops and compliance work with three columns and counts, moving a card forward in one click.",
+      "categories": [
+        "layout"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "morph-disclosure",
+      "type": "registry:ui",
+      "title": "Morph Disclosure",
+      "description": "An expandable row that opens in place into a short sheet of summary and key facts, for product, strategy or company listings.",
+      "categories": [
+        "controls"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "positions-table",
+      "type": "registry:ui",
+      "title": "Positions Table",
+      "description": "An open positions table for futures and margin trading with entry, mark, liquidation price and unrealised P&L, plus hold to close.",
+      "categories": [
+        "data",
+        "trading"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "series-spotlight",
+      "type": "registry:ui",
+      "title": "Series Spotlight",
+      "description": "A multi line chart of twelve crypto assets with one highlighted at a time, for comparing coins without losing the one you track.",
+      "categories": [
+        "charts"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://ssych.com/r/segmented-control.json"
+      ]
+    },
+    {
+      "name": "tape-flow",
+      "type": "registry:ui",
+      "title": "Order Flow",
+      "description": "An order flow chart of the last 48 trades as bars sized by volume and coloured by side, for crypto and futures trading terminals.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "view-switch",
+      "type": "registry:ui",
+      "title": "View Switch",
+      "description": "A view switcher for desktop, mobile and code previews where only the selected option shows its label, for docs and component galleries.",
+      "categories": [
+        "controls"
+      ],
+      "dependencies": [
+        "clsx",
+        "motion",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "portfolio-book",
+      "type": "registry:block",
+      "title": "Portfolio Overview (paid screen)",
+      "description": "The balance-first book on one ruled grid: holdings, history and share-of-total composed from six library components, with the page composing and never editing them.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "lucide-react",
+        "motion",
+        "react-dom"
+      ]
+    },
+    {
+      "name": "portfolio-allocation",
+      "type": "registry:block",
+      "title": "Portfolio Allocation (paid screen)",
+      "description": "Composition first. Leads with what the book is made of and how concentrated it is, which is the analyst's first question rather than the owner's.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "lucide-react",
+        "motion",
+        "react-dom"
+      ]
+    },
+    {
+      "name": "portfolio-tiers",
+      "type": "registry:block",
+      "title": "Multi-account Portfolio (paid screen)",
+      "description": "The book as four accounts rather than one balance. One pill per tier under the bar, and the pill row is a selector rather than decoration, carrying share-of-total on the tier.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "lucide-react",
+        "motion",
+        "react-dom"
+      ]
+    },
+    {
+      "name": "discover-board",
+      "type": "registry:block",
+      "title": "Market Discovery (paid screen)",
+      "description": "The browsing problem, not the reporting one: filters and a trending rail for finding something you do not already hold.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "lucide-react",
+        "motion",
+        "react-dom"
+      ]
+    },
+    {
+      "name": "discover-screener",
+      "type": "registry:block",
+      "title": "Token Screener (paid screen)",
+      "description": "The screener take on discovery: a dense sortable board where the row is the unit and the filters carry the state.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "lucide-react",
+        "motion",
+        "react-dom"
+      ]
+    },
+    {
+      "name": "terminal-cex",
+      "type": "registry:block",
+      "title": "Trading Terminal (paid screen)",
+      "description": "An exchange terminal on one ruled workspace: candle chart under an interval bar, book or tape as tabs, ticket and account on the right, and a full-width positions register at the fold.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "clsx",
+        "lucide-react",
+        "motion",
+        "react-dom",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "gpu-pods",
+      "type": "registry:block",
+      "title": "GPU Marketplace (paid screen)",
+      "description": "A GPU rental marketplace's browse screen: 150 pods in a 15-column table you can sort, search and cross-read, with a filter rail whose counts are honest and a product rail of its own. White on black, no accent hue.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "clsx",
+        "lucide-react",
+        "motion",
+        "react-dom",
+        "tailwind-merge"
+      ]
+    },
+    {
+      "name": "wallet-home",
+      "type": "registry:block",
+      "title": "Crypto Wallet (paid screen)",
+      "description": "A self-custody wallet's home and coin pages in one screen: balance, four actions, every coin by share, and a coin's own chart, position and activity one click away, with a working swap beside them.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "lucide-react",
+        "motion",
+        "react-dom"
+      ]
+    },
+    {
+      "name": "business-balances",
+      "type": "registry:block",
+      "title": "Business Balances (paid screen)",
+      "description": "A business account's cash across five currencies: one total in any display currency, scheduled money in and out, idle cash moved into yield, and transfers, conversions and payment links that update the balances they touch.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "lucide-react",
+        "motion",
+        "react-dom"
+      ]
+    },
+    {
+      "name": "payout-balance",
+      "type": "registry:block",
+      "title": "Payout Balance (paid screen)",
+      "description": "A seller's balance and its ledger: available, reserved and treasury money as one split, and every payment, refund and payout in a filterable, reorderable table, with deposit, withdraw and move flows that write new rows.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "lucide-react",
+        "motion",
+        "react-dom"
+      ]
+    },
+    {
+      "name": "money-account",
+      "type": "registry:block",
+      "title": "Multi-currency Account (paid screen)",
+      "description": "A personal account across four currencies: the total, the month's money in and out, a balance per currency with its own account details, and send, add money and request flows that stack as sheets.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "lucide-react",
+        "motion",
+        "react-dom"
+      ]
+    },
+    {
+      "name": "wealth-invest",
+      "type": "registry:block",
+      "title": "Wealth Portfolio (paid screen)",
+      "description": "A household's investments against the market: portfolio growth drawn against four benchmarks, every holding in one sortable table, and an assistant whose answers cite the numbers and the sources they come from.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "lucide-react",
+        "motion",
+        "react-dom"
+      ]
+    },
+    {
+      "name": "asset-alerts",
+      "type": "registry:block",
+      "title": "Asset and Alerts (paid screen)",
+      "description": "One asset's page with its price alerts: the day's line green above the open and red below it, the position, a swap card, and an alerts panel to search, sort, switch on and off and create from.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "lucide-react",
+        "motion",
+        "react-dom"
+      ]
+    },
+    {
+      "name": "ascii-scroll-morph",
+      "type": "registry:block",
+      "title": "ASCII Scroll Morph (paid screen)",
+      "description": "An immersive landing page with live 3D ASCII shapes that respond to the cursor and transition as you scroll. Adapt the vector artwork, copy and colours in code to fit your brand, while keeping the motion system intact.",
+      "categories": [
+        "landing-page"
+      ],
+      "dependencies": [
+        "three"
+      ]
+    },
+    {
+      "name": "tradeboard-landing",
+      "type": "registry:block",
+      "title": "Trading Platform Landing (paid screen)",
+      "description": "A product landing built on one rule: one ground, one subject, one accent. Giant display headline, the product UI as the hero image, then metric cards, a bento container grid and a three-step band.",
+      "categories": [
+        "landing-page"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "clsx",
+        "motion",
+        "react-router-dom",
+        "tailwind-merge",
+        "three",
+        "vgpu"
+      ]
+    },
+    {
+      "name": "stablecoin-landing",
+      "type": "registry:block",
+      "title": "Stablecoin Landing (paid screen)",
+      "description": "A token landing on the same structure: hero with a brand marquee, a three-card product explainer, a backers marquee and a use-modes grid. Everything structural is shared with the Tradeboard page, so the two stay one system.",
+      "categories": [
+        "landing-page"
+      ],
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "motion",
+        "react-router-dom",
+        "tailwind-merge",
+        "three",
+        "vgpu"
+      ]
+    },
+    {
+      "name": "simple-landing",
+      "type": "registry:block",
+      "title": "Developer Tools Landing (paid screen)",
+      "description": "The library's own marketing page: a near-black ground, one object per section, two-tone display type carrying the hierarchy, and every count read live from the registry.",
+      "categories": [
+        "landing-page"
+      ],
+      "dependencies": [
+        "@phosphor-icons/react",
+        "clsx",
+        "motion",
+        "react-router-dom",
+        "tailwind-merge",
+        "three",
+        "vgpu"
+      ]
+    }
+  ]
+}

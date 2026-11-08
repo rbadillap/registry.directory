@@ -1,0 +1,140 @@
+{
+  "key": "lukemeno",
+  "entry": "Animlets",
+  "name": "animlets",
+  "homepage": "https://github.com/lukemeno/animlets",
+  "indexUrl": "https://raw.githubusercontent.com/lukemeno/animlets/main/public/r/registry.json",
+  "itemBase": "https://raw.githubusercontent.com/lukemeno/animlets/main/public/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "fade-in",
+      "type": "registry:ui",
+      "title": "Fade in",
+      "description": "A Motion wrapper that fades its children in and skips that animation when the user prefers reduced motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/animlets/fade-in.tsx",
+          "type": "registry:ui",
+          "target": "@components/animlets/fade-in.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-ticker",
+      "type": "registry:ui",
+      "title": "Number ticker",
+      "description": "A spring count for a KPI that keeps tabular figures, announces the final value once, and shows that value immediately when reduced motion is requested.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/animlets/number-ticker.tsx",
+          "type": "registry:ui",
+          "target": "@components/animlets/number-ticker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-tabs",
+      "type": "registry:ui",
+      "title": "Animated tabs",
+      "description": "Tabs with a shared sliding indicator. Keyboard behavior comes from Radix Tabs.",
+      "dependencies": [
+        "motion",
+        "@radix-ui/react-tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/animlets/animated-tabs.tsx",
+          "type": "registry:ui",
+          "target": "@components/animlets/animated-tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stagger-list",
+      "type": "registry:ui",
+      "title": "Stagger list",
+      "description": "Staggers the entrance of cards or rows with opacity and transform so the list keeps its layout, and skips the stagger when reduced motion is requested.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/animlets/stagger-list.tsx",
+          "type": "registry:ui",
+          "target": "@components/animlets/stagger-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "success-check",
+      "type": "registry:ui",
+      "title": "Success check",
+      "description": "Draws a checkmark for a saved form or a finished step and exposes the confirmation as a status message.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/animlets/success-check.tsx",
+          "type": "registry:ui",
+          "target": "@components/animlets/success-check.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hold-to-confirm",
+      "type": "registry:ui",
+      "title": "Hold to confirm",
+      "description": "A destructive button that confirms after a press-and-hold, with a one-action alternative for people who cannot hold, and a countdown instead of a moving fill when reduced motion is requested.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/animlets/hold-to-confirm.tsx",
+          "type": "registry:ui",
+          "target": "@components/animlets/hold-to-confirm.tsx"
+        }
+      ]
+    },
+    {
+      "name": "inline-loader",
+      "type": "registry:ui",
+      "title": "Inline loader",
+      "description": "Dots, a bar, or a spinner for an inline loading status. Reduced motion keeps the status text and drops the moving graphic.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/animlets/inline-loader.tsx",
+          "type": "registry:ui",
+          "target": "@components/animlets/inline-loader.tsx"
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:ui",
+      "title": "Copy button",
+      "description": "Copies text to the clipboard and morphs the icon to a check or an error mark. The swap is instant when reduced motion is requested.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/animlets/copy-button.tsx",
+          "type": "registry:ui",
+          "target": "@components/animlets/copy-button.tsx"
+        }
+      ]
+    }
+  ]
+}
