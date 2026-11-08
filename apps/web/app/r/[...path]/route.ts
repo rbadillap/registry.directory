@@ -4,6 +4,7 @@ import type { IndexedItem } from "@/lib/items-index"
 import { loadCatalog, type Catalog, type CatalogItem } from "@/lib/catalog"
 import { registryFetch } from "@/lib/fetch-utils"
 import { BRIEFLY, UNTIL_NEXT_DEPLOY } from "@/lib/cdn-cache"
+import { originFailure } from "@/lib/origin-failure"
 
 // Aggregated shadcn registry endpoint (dynamic search protocol):
 //
@@ -36,11 +37,12 @@ const JSON_HEADERS = {
 function jsonResponse(
   body: unknown,
   status = 200,
-  cacheControl = status >= 500 ? BRIEFLY : UNTIL_NEXT_DEPLOY
+  cacheControl = status >= 500 ? BRIEFLY : UNTIL_NEXT_DEPLOY,
+  headers?: Record<string, string>
 ): Response {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { ...JSON_HEADERS, "Cache-Control": cacheControl },
+    headers: { ...JSON_HEADERS, ...headers, "Cache-Control": cacheControl },
   })
 }
 
@@ -161,17 +163,13 @@ async function itemResponse(catalog: Catalog, namespaced: string): Promise<Respo
     })
 
     if (!response.ok) {
-      // A 404 here is the origin's, not the catalog's: an index that moved
-      // or a deploy caught mid-flight. Kept briefly, so a passing one does
-      // not withhold the item until the next deployment.
-      const status = response.status === 404 ? 404 : 502
-      return jsonResponse(
-        {
-          error: `Origin registry "${item.registryName}" responded ${response.status} for "${item.name}".`,
-        },
-        status,
-        BRIEFLY
+      const failure = originFailure(
+        response.status,
+        item.registryName,
+        item.name,
+        response.headers.get("retry-after")
       )
+      return jsonResponse(failure.body, failure.status, failure.cacheControl, failure.headers)
     }
 
     const originItem = (await response.json()) as Record<string, unknown>
