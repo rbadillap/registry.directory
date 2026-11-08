@@ -39,6 +39,24 @@ describe("originFailure", () => {
     assert.deepEqual(originFailure(429, "Example", "button", " ").headers, { "Retry-After": "60" })
   })
 
+  it("passes only whole seconds between 1 and 3600, anything else becomes 60", () => {
+    const retry = (value: string) => originFailure(429, "Example", "button", value).headers
+    assert.deepEqual(retry(" 3600 "), { "Retry-After": "3600" })
+    assert.deepEqual(retry("1"), { "Retry-After": "1" })
+    for (const value of [
+      "999999999",
+      "3601",
+      "0",
+      "-5",
+      "1.5",
+      "soon",
+      "Wed, 21 Oct 2026 07:28:00 GMT",
+      "60\r\nSet-Cookie: x=1",
+    ]) {
+      assert.deepEqual(retry(value), { "Retry-After": "60" }, value)
+    }
+  })
+
   it("keeps 502 for a WAF's 403 and for server errors", () => {
     for (const code of [403, 500, 503]) {
       const f = originFailure(code, "Example", "button")

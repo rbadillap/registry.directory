@@ -43,9 +43,19 @@ export function originFailure(
       status: 503,
       body: { error: `${said} Retry later.` },
       cacheControl: BRIEFLY,
-      headers: { "Retry-After": retryAfter?.trim() || "60" },
+      headers: { "Retry-After": String(retryAfterSeconds(retryAfter)) },
     }
   }
 
   return { status: 502, body: { error: said }, cacheControl: BRIEFLY }
+}
+
+// The origin controls its Retry-After and we hand it to every caller, so only
+// whole seconds within an hour pass. Anything else, an HTTP date included,
+// becomes 60.
+function retryAfterSeconds(value?: string | null): number {
+  const trimmed = value?.trim() ?? ""
+  if (!/^\d+$/.test(trimmed)) return 60
+  const seconds = Number(trimmed)
+  return seconds >= 1 && seconds <= 3600 ? seconds : 60
 }
