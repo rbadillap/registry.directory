@@ -1,0 +1,947 @@
+{
+  "key": "mekai-ui",
+  "entry": "Mekai UI",
+  "name": "mekai-ui",
+  "homepage": "https://ui.mekaigames.com",
+  "indexUrl": "https://ui.mekaigames.com/r/registry.json",
+  "itemBase": "https://ui.mekaigames.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "scramble-text",
+      "type": "registry:ui",
+      "title": "Scramble Text",
+      "description": "Text that decodes from random glyphs, left to right, on hover or focus.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/scramble-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "blur-text",
+      "type": "registry:ui",
+      "title": "Blur Text",
+      "description": "Words that sharpen out of a blur, one after another, when the text scrolls into view.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/blur-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "split-text",
+      "type": "registry:ui",
+      "title": "Split Text",
+      "description": "Letters that spring into place one by one when the text scrolls into view.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/split-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "shiny-text",
+      "type": "registry:ui",
+      "title": "Shiny Text",
+      "description": "Text with a soft band of light that sweeps across it on a loop.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/shiny-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "typewriter",
+      "type": "registry:ui",
+      "title": "Typewriter",
+      "description": "Types a list of phrases one character at a time, deletes them and moves on, with a blinking caret.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/typewriter.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "circular-text",
+      "type": "registry:ui",
+      "title": "Circular Text",
+      "description": "Text set evenly around a slowly turning ring, with a slot in the middle for an icon or logo.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/circular-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "true-focus",
+      "type": "registry:ui",
+      "title": "True Focus",
+      "description": "A sentence where one word at a time is sharp, framed by corner brackets that glide from word to word.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/true-focus.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "echo-text",
+      "type": "registry:ui",
+      "title": "Echo Text",
+      "description": "A headline with trailing copies that fade out behind it, breathe in a slow loop and swing toward the pointer.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/echo-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "masked-reveal",
+      "type": "registry:ui",
+      "title": "Masked Reveal",
+      "description": "A multi-line heading whose lines slide up from behind a mask, then an accent line draws in underneath.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/masked-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stroke-text",
+      "type": "registry:ui",
+      "title": "Stroke Text",
+      "description": "Outlined text that fills with color on hover or focus, sweeping in from the left, the bottom or the center.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/stroke-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "highlighter-text",
+      "type": "registry:ui",
+      "title": "Highlighter Text",
+      "description": "A marker stroke draws behind the words you choose when they scroll into view, with an uneven hand-drawn edge and text that changes color under the pen.",
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/highlighter-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "magnetic-button",
+      "type": "registry:ui",
+      "title": "Magnetic Button",
+      "description": "A call to action that leans toward the pointer and springs back when it leaves.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/magnetic-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tilt-card",
+      "type": "registry:ui",
+      "title": "Tilt Card",
+      "description": "A card that tilts in 3D toward the pointer with a moving glare, then springs back when the pointer leaves.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tilt-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "click-spark",
+      "type": "registry:ui",
+      "title": "Click Spark",
+      "description": "A wrapper that throws short spark lines out of every click inside it.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/click-spark.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ripple-button",
+      "type": "registry:ui",
+      "title": "Ripple Button",
+      "description": "A button whose ripple spreads from the exact point that was pressed.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ripple-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "logo-marquee",
+      "type": "registry:ui",
+      "title": "Logo Marquee",
+      "description": "An endless row of logos with faded edges that slows to a stop on hover.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/logo-marquee.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "flip-card",
+      "type": "registry:ui",
+      "title": "Flip Card",
+      "description": "A two-sided card that turns over in 3D on hover or click to show its back.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/flip-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "glare-hover",
+      "type": "registry:ui",
+      "title": "Glare Hover",
+      "description": "A wrapper that sweeps a band of light across its content on hover and on keyboard focus.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/glare-hover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "reveal",
+      "type": "registry:ui",
+      "title": "Reveal",
+      "description": "A wrapper that fades, slides, unblurs or scales its content in as it scrolls into view.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/reveal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "gradual-blur",
+      "type": "registry:ui",
+      "title": "Gradual Blur",
+      "description": "A scroll area whose edge melts into a progressive blur that clears when you reach the end.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/gradual-blur.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "orbit",
+      "type": "registry:ui",
+      "title": "Orbit",
+      "description": "Items circling a center on one or more rings, staying upright and showing labels on hover.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/orbit.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-progress-ring",
+      "type": "registry:ui",
+      "title": "Scroll Progress Ring",
+      "description": "A floating ring that shows how far a page has been read and turns into a back-to-top button at the end.",
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/scroll-progress-ring.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "aurora",
+      "type": "registry:ui",
+      "title": "Aurora",
+      "description": "Soft blurred color blobs that drift slowly in two layers, like warm northern lights.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/aurora.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dot-grid",
+      "type": "registry:ui",
+      "title": "Dot Grid",
+      "description": "A canvas dot grid where ripples travel out from the pointer, and from random spots when it is idle.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dot-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "meteors",
+      "type": "registry:ui",
+      "title": "Meteors",
+      "description": "Diagonal meteor streaks with glowing heads, launched at random intervals over a faint starry sky.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/meteors.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "plasma",
+      "type": "registry:ui",
+      "title": "Plasma",
+      "description": "A flowing plasma color field that the pointer warps like a lens.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/plasma.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "grainient",
+      "type": "registry:ui",
+      "title": "Grainient",
+      "description": "A grainy gradient mesh of up to four colors that slowly morph, with a seed for stable compositions.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/grainient.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "orb",
+      "type": "registry:ui",
+      "title": "Orb",
+      "description": "A glowing, breathing energy orb with a swirling surface that brightens and wobbles under the pointer.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/orb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "magnet-lines",
+      "type": "registry:ui",
+      "title": "Magnet Lines",
+      "description": "A grid of short lines that all turn to face the pointer, and sway in a slow wave when it is away.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/magnet-lines.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "constellation",
+      "type": "registry:ui",
+      "title": "Constellation",
+      "description": "Drifting points that connect with lines when they come close, and move gently out of the way of the pointer.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/constellation.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "A swipeable carousel with momentum snapping, a focused center slide and screen reader announcements.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bounce-cards",
+      "type": "registry:ui",
+      "title": "Bounce Cards",
+      "description": "A fanned hand of cards that bounces in, then lifts a card and pushes its neighbors aside on hover or focus.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/bounce-cards.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "expand-gallery",
+      "type": "registry:ui",
+      "title": "Expand Gallery",
+      "description": "A row of tall panels where the hovered or focused one widens to show its title and caption.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/expand-gallery.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "glass-card",
+      "type": "registry:ui",
+      "title": "Glass Card",
+      "description": "A frosted glass card with a lit rim and a soft shine that follows the pointer, with a solid fallback where blur isn't supported.",
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/glass-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "before-after",
+      "type": "registry:ui",
+      "title": "Before / After",
+      "description": "A before and after comparison with a divider you drag, tap or move with the arrow keys, side by side or stacked.",
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/before-after.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "animated-tabs",
+      "type": "registry:ui",
+      "title": "Animated Tabs",
+      "description": "Tabs with a sliding indicator, panels that follow its direction and full keyboard support.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/animated-tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "segmented-control",
+      "type": "registry:ui",
+      "title": "Segmented Control",
+      "description": "A compact single-choice control whose thumb slides to the selected option.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/segmented-control.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "An accessible modal that springs in over a blurred backdrop and hands focus back on close.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Sections that open with an animated height, one at a time or several together.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "animated-tooltip",
+      "type": "registry:ui",
+      "title": "Animated Tooltip",
+      "description": "A tooltip that springs out of its trigger, leans toward the pointer and shows on focus too.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/animated-tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-stack",
+      "type": "registry:ui",
+      "title": "Avatar Stack",
+      "description": "Overlapping avatars that fan out with names on hover, plus a bubble for the rest.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/avatar-stack.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pill-nav",
+      "type": "registry:ui",
+      "title": "Pill Nav",
+      "description": "A pill navbar where the active pill slides between links and a softer pill previews where you point.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/pill-nav.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "animated-list",
+      "type": "registry:ui",
+      "title": "Animated List",
+      "description": "A scrollable list whose rows pop in as they appear, with keyboard selection and edge fades.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/animated-list.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "rolling-counter",
+      "type": "registry:ui",
+      "title": "Rolling Counter",
+      "description": "An odometer counter whose digits roll the shortest way, with separators, decimals and negatives.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/rolling-counter.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder",
+      "type": "registry:ui",
+      "title": "Folder",
+      "description": "A folder button that opens on hover or click and fans out papers that lean toward the pointer.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/folder.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-loader",
+      "type": "registry:ui",
+      "title": "Skeleton Loader",
+      "description": "Skeleton shapes you compose freely, all lit by one shimmer, that cross-fade into the real content when it loads.",
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/skeleton-loader.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-switch",
+      "type": "registry:ui",
+      "title": "Toggle Switch",
+      "description": "A switch whose knob rides a spring and stretches with its own speed.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle-switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "floating-input",
+      "type": "registry:ui",
+      "title": "Floating Input",
+      "description": "A text field whose label floats up on focus, with an underline that grows from the center and an error that shakes.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/floating-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "animated-checkbox",
+      "type": "registry:ui",
+      "title": "Animated Checkbox",
+      "description": "A checkbox that pops when checked and draws its tick, with an indeterminate dash for partial selections.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/animated-checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "star-rating",
+      "type": "registry:ui",
+      "title": "Star Rating",
+      "description": "Stars that fill in a stagger on hover, pop on click and follow the arrow keys.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/star-rating.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "xp-bar",
+      "type": "registry:ui",
+      "title": "XP Bar",
+      "description": "A level badge and a spring-filled progress bar that bursts when the player levels up.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/xp-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pixel-button",
+      "type": "registry:ui",
+      "title": "Pixel Button",
+      "description": "A chunky 8-bit button with a hard shadow that physically presses down.",
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/pixel-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "health-bar",
+      "type": "registry:ui",
+      "title": "Health Bar",
+      "description": "An HP bar that drops instantly on a hit while a lighter chip bar trails behind, and glows on heal.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.mekaigames.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/health-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
