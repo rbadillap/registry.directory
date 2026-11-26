@@ -1,0 +1,720 @@
+{
+  "key": "blhasn-sehli",
+  "entry": "mpkcn",
+  "name": "mpkcn",
+  "homepage": "https://blhasn-sehli.github.io/mpkcn",
+  "indexUrl": "https://blhasn-sehli.github.io/mpkcn/r/shadcn/registry.json",
+  "itemBase": "https://blhasn-sehli.github.io/mpkcn/r/shadcn",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "Theme",
+      "description": "The mpkcn design tokens: dark and light palettes, mono and sans fonts, and the blink animation as Tailwind 4 theme variables.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/font-space-grotesk.json",
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/font-jetbrains-mono.json"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-mpk-bg": "var(--mpk-bg)",
+          "color-mpk-bg-soft": "var(--mpk-bg-soft)",
+          "color-mpk-line": "var(--mpk-line)",
+          "color-mpk-ink": "var(--mpk-ink)",
+          "color-mpk-dim": "var(--mpk-dim)",
+          "color-mpk-dim2": "var(--mpk-dim2)",
+          "color-mpk-amber": "var(--mpk-amber)",
+          "color-mpk-blue": "var(--mpk-blue)",
+          "font-mpk-mono": "var(--font-jetbrains-mono, \"JetBrains Mono\"), ui-monospace, Consolas, monospace",
+          "font-mpk-sans": "var(--font-space-grotesk, \"Space Grotesk\"), ui-sans-serif, system-ui, sans-serif",
+          "animate-mpk-blink": "mpk-blink 1s steps(1) infinite"
+        },
+        "light": {
+          "mpk-bg": "oklch(0.975 0.006 240)",
+          "mpk-bg-soft": "oklch(0.945 0.011 240)",
+          "mpk-line": "oklch(0.86 0.014 240)",
+          "mpk-ink": "oklch(0.21 0.02 250)",
+          "mpk-dim": "oklch(0.45 0.022 245)",
+          "mpk-dim2": "oklch(0.5 0.02 245)",
+          "mpk-amber": "oklch(0.5 0.115 65)",
+          "mpk-blue": "oklch(0.49 0.17 258)"
+        },
+        "dark": {
+          "mpk-bg": "#0a0d10",
+          "mpk-bg-soft": "#10151a",
+          "mpk-line": "#1f2b34",
+          "mpk-ink": "#eef2f4",
+          "mpk-dim": "#7c8fa0",
+          "mpk-dim2": "#47555f",
+          "mpk-amber": "#e8a33d",
+          "mpk-blue": "#6fb2ff"
+        }
+      }
+    },
+    {
+      "name": "theme-provider",
+      "type": "registry:component",
+      "title": "Theme Provider",
+      "description": "next-themes with the mpkcn defaults (class attribute, dark first, dark and light only). The CLI wires it into your root layout.",
+      "dependencies": [
+        "next-themes"
+      ],
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/theme-provider.tsx",
+          "type": "registry:component",
+          "target": "@components/theme-provider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "boot-screen",
+      "type": "registry:ui",
+      "title": "Boot Screen",
+      "description": "A tuigreet-style login screen with a typed username, password dots and optional matrix rain that plays before your page appears.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/boot-screen.tsx",
+          "type": "registry:ui",
+          "target": "@ui/boot-screen.tsx"
+        },
+        {
+          "path": "src/registry/lib/matrix-rain.ts",
+          "type": "registry:lib",
+          "target": "@ui/lib/matrix-rain.ts"
+        }
+      ]
+    },
+    {
+      "name": "theme-toggle",
+      "type": "registry:ui",
+      "title": "Theme Toggle",
+      "description": "A dark and light switch for next-themes, as a round icon button or a mono text flag, with no hydration flash.",
+      "dependencies": [
+        "next-themes"
+      ],
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json",
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme-provider.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/theme-toggle.tsx",
+          "type": "registry:ui",
+          "target": "@ui/theme-toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "reveal",
+      "type": "registry:ui",
+      "title": "Reveal",
+      "description": "Fades and slides content in as it scrolls into view, and keeps still under reduced motion.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/reveal.tsx",
+          "type": "registry:ui",
+          "target": "@ui/reveal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ascii-image",
+      "type": "registry:ui",
+      "title": "ASCII Image",
+      "description": "An image that starts as a wall of flickering code glyphs and decodes into the real picture in a left-to-right sweep.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ascii-image.tsx",
+          "type": "registry:ui",
+          "target": "@ui/ascii-image.tsx"
+        }
+      ]
+    },
+    {
+      "name": "back-to-top",
+      "type": "registry:ui",
+      "title": "Back to Top",
+      "description": "A small square button that appears after the first screen and scrolls back up, with a reduced-motion jump and optional focus target.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/back-to-top.tsx",
+          "type": "registry:ui",
+          "target": "@ui/back-to-top.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command-palette",
+      "type": "registry:ui",
+      "title": "Command Palette",
+      "description": "A terminal-style Ctrl+K command palette with groups, fuzzy word filtering and full keyboard control, as a dialog or inline.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/command-palette.tsx",
+          "type": "registry:ui",
+          "target": "@ui/command-palette.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cursor",
+      "type": "registry:ui",
+      "title": "Cursor",
+      "description": "A terminal-style pointer follower, a block caret with a trailing square ring and magnetic buttons, that steps aside for touch, text fields, the keyboard and reduced motion.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/cursor.tsx",
+          "type": "registry:ui",
+          "target": "@ui/cursor.tsx"
+        }
+      ]
+    },
+    {
+      "name": "eyebrow",
+      "type": "registry:ui",
+      "title": "Eyebrow",
+      "description": "A small mono label for above a heading that types itself out, with a block cursor, as it scrolls into view.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/eyebrow.tsx",
+          "type": "registry:ui",
+          "target": "@ui/eyebrow.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-list",
+      "type": "registry:ui",
+      "title": "Feature List",
+      "description": "A spec-sheet list of label and value rows between hairlines, sliding in one by one.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/feature-list.tsx",
+          "type": "registry:ui",
+          "target": "@ui/feature-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "grain",
+      "type": "registry:ui",
+      "title": "Grain",
+      "description": "A static film-grain overlay in two blend layers that stays visible on both the dark and the light theme, at no per-frame cost.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/grain.tsx",
+          "type": "registry:ui",
+          "target": "@ui/grain.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-placeholder",
+      "type": "registry:ui",
+      "title": "Image Placeholder",
+      "description": "A framed image slot that shows a striped placeholder with a mono label until the image exists or when it fails to load.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/image-placeholder.tsx",
+          "type": "registry:ui",
+          "target": "@ui/image-placeholder.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "A keyboard key badge with a thick bottom edge, for single keys or combos like Ctrl + K.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/kbd.tsx",
+          "type": "registry:ui",
+          "target": "@ui/kbd.tsx"
+        }
+      ]
+    },
+    {
+      "name": "konami",
+      "type": "registry:ui",
+      "title": "Konami",
+      "description": "A useKonami hook and an easter-egg component that fires a callback and plays matrix rain when someone types the Konami code.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/konami.tsx",
+          "type": "registry:ui",
+          "target": "@ui/konami.tsx"
+        },
+        {
+          "path": "src/registry/lib/matrix-rain.ts",
+          "type": "registry:lib",
+          "target": "@ui/lib/matrix-rain.ts"
+        }
+      ]
+    },
+    {
+      "name": "letter-reveal",
+      "type": "registry:ui",
+      "title": "Letter Reveal",
+      "description": "Splits a heading into letters that spring up and flip into place one after another.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/letter-reveal.tsx",
+          "type": "registry:ui",
+          "target": "@ui/letter-reveal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scene-canvas",
+      "type": "registry:ui",
+      "title": "Scene Canvas",
+      "description": "A slow wave rippling through a grid of dots on a canvas, capped at 30fps and paused off screen, in hidden tabs, on weak devices and under reduced motion.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/scene-canvas.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scene-canvas.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-progress",
+      "type": "registry:ui",
+      "title": "Scroll Progress",
+      "description": "A thin accent bar that fills as the page or a scroll container is scrolled.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/scroll-progress.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scroll-progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "section-divider",
+      "type": "registry:ui",
+      "title": "Section Divider",
+      "description": "A terminal-style break between sections: hairlines grow out and a linked label types \"EOF about $ cd ../work\".",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/section-divider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/section-divider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "section-rail",
+      "type": "registry:ui",
+      "title": "Section Rail",
+      "description": "A slim side rail of numbered dots that tracks the section in view and jumps to a section on click.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/section-rail.tsx",
+          "type": "registry:ui",
+          "target": "@ui/section-rail.tsx"
+        }
+      ]
+    },
+    {
+      "name": "roadmap",
+      "type": "registry:ui",
+      "title": "Roadmap",
+      "description": "A roadmap of milestones joined by a path that draws itself as you scroll, with a marker travelling along it and stops that light up when reached.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/roadmap.tsx",
+          "type": "registry:ui",
+          "target": "@ui/roadmap.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shortcuts-dialog",
+      "type": "registry:ui",
+      "title": "Shortcuts Dialog",
+      "description": "A keyboard-shortcut cheat sheet in a terminal-style dialog that opens with \"?\".",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/shortcuts-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/shortcuts-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spotlight",
+      "type": "registry:ui",
+      "title": "Spotlight",
+      "description": "A panel with a soft accent glow that follows the pointer while it hovers, drawn in CSS without re-rendering.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/spotlight.tsx",
+          "type": "registry:ui",
+          "target": "@ui/spotlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "terminal-form",
+      "type": "registry:ui",
+      "title": "Terminal Form",
+      "description": "A form that runs like a terminal prompt: one question at a time, editable answers, then a confirm step that hands the values to your callback.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/terminal-form.tsx",
+          "type": "registry:ui",
+          "target": "@ui/terminal-form.tsx"
+        }
+      ]
+    },
+    {
+      "name": "terminal-shell",
+      "type": "registry:ui",
+      "title": "Terminal Shell",
+      "description": "An interactive fake shell: you pass the commands, it handles the prompt, history, tab completion, help, clear and Ctrl+L.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json",
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/terminal-window.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/terminal-shell.tsx",
+          "type": "registry:ui",
+          "target": "@ui/terminal-shell.tsx"
+        }
+      ]
+    },
+    {
+      "name": "terminal-window",
+      "type": "registry:ui",
+      "title": "Terminal Window",
+      "description": "A terminal window with title bar and dots that types out commands and their output line by line, then shows your content.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/terminal-window.tsx",
+          "type": "registry:ui",
+          "target": "@ui/terminal-window.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tmux-bar",
+      "type": "registry:ui",
+      "title": "Tmux Bar",
+      "description": "A tmux-style status bar with a session block, clickable windows, custom segments, a clock, uptime and scroll position.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/tmux-bar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tmux-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "arch-diagram",
+      "type": "registry:ui",
+      "title": "Arch Diagram",
+      "description": "A small architecture diagram of boxes on a grid joined by right-angled lines; pick a box to light up its links and print its details.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/arch-diagram.tsx",
+          "type": "registry:ui",
+          "target": "@ui/arch-diagram.tsx"
+        }
+      ]
+    },
+    {
+      "name": "case-card",
+      "type": "registry:ui",
+      "title": "Case Card",
+      "description": "A project case study card: name, one-liner, tags, links and a screenshot beside a spec-sheet list of features.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/case-card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/case-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "env-card",
+      "type": "registry:ui",
+      "title": "Env Card",
+      "description": "Contact or config details shown as a syntax-colored .env file, with links, copy buttons and masked secrets.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/env-card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/env-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fetch-card",
+      "type": "registry:ui",
+      "title": "Fetch Card",
+      "description": "A neofetch-style info card: ASCII art, a user@host header, key / value rows and a palette strip, with lines that slide in and art that tilts towards the pointer.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/fetch-card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/fetch-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "file-explorer",
+      "type": "registry:ui",
+      "title": "File Explorer",
+      "description": "A ranger-style file browser with Miller columns, a preview pane, a path bar and a / filter, driven entirely from the keyboard.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/file-explorer.tsx",
+          "type": "registry:ui",
+          "target": "@ui/file-explorer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "media-lightbox",
+      "type": "registry:ui",
+      "title": "Media Lightbox",
+      "description": "An accessible image and video lightbox with arrows, keyboard and swipe navigation, thumbnails, click-to-zoom and a focus trap.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/media-lightbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/media-lightbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "parallax-image",
+      "type": "registry:ui",
+      "title": "Parallax Image",
+      "description": "An image in a viewfinder frame that drifts with the pointer and with scroll, and holds still under reduced motion.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/parallax-image.tsx",
+          "type": "registry:ui",
+          "target": "@ui/parallax-image.tsx"
+        }
+      ]
+    },
+    {
+      "name": "prompt-footer",
+      "type": "registry:ui",
+      "title": "Prompt Footer",
+      "description": "A site footer laid out as a shell session: ls prints your link columns, date the copyright and an optional live clock, and the last prompt blinks.",
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/prompt-footer.tsx",
+          "type": "registry:ui",
+          "target": "@ui/prompt-footer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-hint",
+      "type": "registry:ui",
+      "title": "Scroll Hint",
+      "description": "An animated scroll-down indicator (line, chevron or mouse) that fades out as you scroll and can jump to the next section.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/scroll-hint.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scroll-hint.tsx"
+        }
+      ]
+    },
+    {
+      "name": "site-header",
+      "type": "registry:ui",
+      "title": "Site Header",
+      "description": "A sticky terminal-style top bar with a logo slot and block cursor, numbered links with a sliding active marker, an actions slot and a drop-down mobile menu.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/site-header.tsx",
+          "type": "registry:ui",
+          "target": "@ui/site-header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tech-stack",
+      "type": "registry:ui",
+      "title": "Tech Stack",
+      "description": "A tech stack grouped by category, as a stack.json file or a chip grid, with optional icons and a jq-style detail panel for the picked item.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://blhasn-sehli.github.io/mpkcn/r/shadcn/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/tech-stack.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tech-stack.tsx"
+        }
+      ]
+    },
+    {
+      "name": "font-space-grotesk",
+      "type": "registry:font",
+      "title": "Space Grotesk",
+      "description": "Space Grotesk for the mpkcn theme, as the --font-space-grotesk variable.",
+      "font": {
+        "family": "'Space Grotesk Variable', sans-serif",
+        "provider": "google",
+        "import": "Space_Grotesk",
+        "variable": "--font-space-grotesk",
+        "subsets": [
+          "latin"
+        ]
+      }
+    },
+    {
+      "name": "font-jetbrains-mono",
+      "type": "registry:font",
+      "title": "JetBrains Mono",
+      "description": "JetBrains Mono for the mpkcn theme, as the --font-jetbrains-mono variable.",
+      "font": {
+        "family": "'JetBrains Mono Variable', monospace",
+        "provider": "google",
+        "import": "JetBrains_Mono",
+        "variable": "--font-jetbrains-mono",
+        "subsets": [
+          "latin"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,4241 @@
+{
+  "key": "uiset",
+  "entry": "UISet",
+  "name": "uiset",
+  "homepage": "https://uiset.dev",
+  "indexUrl": "https://uiset.dev/r/registry.json",
+  "itemBase": "https://uiset.dev/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "uiset",
+      "type": "registry:ui",
+      "title": "UISet",
+      "description": "The UISet root: skins, a key color, and sound and haptics for every UI SDK component inside it.",
+      "categories": [
+        "theme"
+      ],
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/uiset.tsx",
+          "type": "registry:ui",
+          "target": "@ui/uiset.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/uiset/base.css",
+          "type": "registry:file",
+          "target": "@ui/uiset/base.css"
+        },
+        {
+          "path": "registry/uiset/ui/uiset/feedback.ts",
+          "type": "registry:file",
+          "target": "@ui/uiset/feedback.ts"
+        },
+        {
+          "path": "registry/uiset/ui/uiset/haptics.ts",
+          "type": "registry:file",
+          "target": "@ui/uiset/haptics.ts"
+        },
+        {
+          "path": "registry/uiset/ui/uiset/layers.ts",
+          "type": "registry:file",
+          "target": "@ui/uiset/layers.ts"
+        },
+        {
+          "path": "registry/uiset/ui/uiset/skins/base.css",
+          "type": "registry:file",
+          "target": "@ui/uiset/skins/base.css"
+        },
+        {
+          "path": "registry/uiset/ui/uiset/skins/blueprint.css",
+          "type": "registry:file",
+          "target": "@ui/uiset/skins/blueprint.css"
+        },
+        {
+          "path": "registry/uiset/ui/uiset/skins/ink.css",
+          "type": "registry:file",
+          "target": "@ui/uiset/skins/ink.css"
+        },
+        {
+          "path": "registry/uiset/ui/uiset/skins/phosphor.css",
+          "type": "registry:file",
+          "target": "@ui/uiset/skins/phosphor.css"
+        },
+        {
+          "path": "registry/uiset/ui/uiset/skins/studio.css",
+          "type": "registry:file",
+          "target": "@ui/uiset/skins/studio.css"
+        },
+        {
+          "path": "registry/uiset/ui/uiset/sound.ts",
+          "type": "registry:file",
+          "target": "@ui/uiset/sound.ts"
+        },
+        {
+          "path": "registry/uiset/ui/uiset/tokens.css",
+          "type": "registry:file",
+          "target": "@ui/uiset/tokens.css"
+        },
+        {
+          "path": "registry/uiset/ui/uiset/uiset.css",
+          "type": "registry:file",
+          "target": "@ui/uiset/uiset.css"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "A button in solid, outline and ghost variants, and one that asks for a second press.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "An on and off switch, with its thumb in place.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "A range slider whose track, fill and named thumbs render in one line.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/slider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "segmented-control",
+      "type": "registry:ui",
+      "title": "Segmented control",
+      "description": "One choice among a few, in a row with a moving indicator.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/segmented-control.tsx",
+          "type": "registry:ui",
+          "target": "@ui/segmented-control.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Choose from a list in a popup; the trigger shows what's chosen.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "A label, control, description and error, connected for screen readers.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "A modal window for a focused task, closed by Escape or its close button.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Panels that share one space, switched by a row of tabs.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Sections that open one or many at a time.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/accordion.tsx",
+          "type": "registry:ui",
+          "target": "@ui/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert dialog",
+      "description": "A confirmation that interrupts, with agent confirmation built in.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "autocomplete",
+      "type": "registry:ui",
+      "title": "Autocomplete",
+      "description": "Free text with suggestions as you type.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/autocomplete.tsx",
+          "type": "registry:ui",
+          "target": "@ui/autocomplete.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "A person's image with initials as the fallback.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "A month grid for picking dates, ready to use as is.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/calendar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/calendar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Slides with previous and next controls and keyboard paging.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/carousel.tsx",
+          "type": "registry:ui",
+          "target": "@ui/carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "A checkbox with its check mark, and checkbox groups.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "One section that shows and hides.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "@ui/collapsible.tsx"
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:ui",
+      "title": "Color picker",
+      "description": "Area, hue and alpha sliders, swatch and hex input, ready to use.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/color-picker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/color-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Search a list and choose one or several.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/combobox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/combobox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "A searchable list of commands, for palettes and launchers.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/command.tsx",
+          "type": "registry:ui",
+          "target": "@ui/command.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-input",
+      "type": "registry:ui",
+      "title": "Date input",
+      "description": "A date typed segment by segment, in the reader's locale.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/date-input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/date-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date picker",
+      "description": "A date field with a calendar popup.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/date-picker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/date-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "A panel that slides in from an edge.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/drawer.tsx",
+          "type": "registry:ui",
+          "target": "@ui/drawer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "file-input",
+      "type": "registry:ui",
+      "title": "File input",
+      "description": "Choose, drop or paste files, with validation.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/file-input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/file-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover card",
+      "description": "A preview that opens on hover or focus.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/hover-card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/hover-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-cropper",
+      "type": "registry:ui",
+      "title": "Image cropper",
+      "description": "Crop, zoom, rotate and flip an image.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/image-cropper.tsx",
+          "type": "registry:ui",
+          "target": "@ui/image-cropper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A text field, with clear button and groups.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "A label for any control.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "listbox",
+      "type": "registry:ui",
+      "title": "Listbox",
+      "description": "An always-visible list to choose from.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/listbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/listbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "type": "registry:ui",
+      "title": "Menu",
+      "description": "Actions from a button or a right click, with submenus.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "An application menu bar.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/menubar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/menubar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "meter",
+      "type": "registry:ui",
+      "title": "Meter",
+      "description": "A measurement within a range, as a bar or a ring.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/meter.tsx",
+          "type": "registry:ui",
+          "target": "@ui/meter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation menu",
+      "description": "Site navigation with panels.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/navigation-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-input",
+      "type": "registry:ui",
+      "title": "Number input",
+      "description": "A number field with named step buttons, ready to use.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/number-input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/number-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "otp-input",
+      "type": "registry:ui",
+      "title": "One-time code",
+      "description": "A one-time code field with a slot per character.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/otp-input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/otp-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Page links with named previous and next, ready to use.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/pagination.tsx",
+          "type": "registry:ui",
+          "target": "@ui/pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "password-input",
+      "type": "registry:ui",
+      "title": "Password input",
+      "description": "A password field with a show toggle.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/password-input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/password-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "A panel beside its trigger.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "preferences",
+      "type": "registry:ui",
+      "title": "Preferences",
+      "description": "User preferences applied as data attributes and saved.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/preferences.tsx",
+          "type": "registry:ui",
+          "target": "@ui/preferences.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Progress of a task, as a bar or a ring.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/progress.tsx",
+          "type": "registry:ui",
+          "target": "@ui/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio",
+      "type": "registry:ui",
+      "title": "Radio",
+      "description": "Radio groups with their dot, and cards that choose an option wherever you press.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/field.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/radio.tsx",
+          "type": "registry:ui",
+          "target": "@ui/radio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "rating",
+      "type": "registry:ui",
+      "title": "Rating",
+      "description": "A star rating, ready to use.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/rating.tsx",
+          "type": "registry:ui",
+          "target": "@ui/rating.tsx"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Panels you resize by dragging or with the keyboard.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/resizable.tsx",
+          "type": "registry:ui",
+          "target": "@ui/resizable.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll area",
+      "description": "Styled scrolling, plus ScrollBox with the parts in place.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scroll-area.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/rearm-end.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/rearm-end.ts"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "A line between content.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Multi-line text that can grow with its content, and a count of its limit.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/field.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "time-input",
+      "type": "registry:ui",
+      "title": "Time input",
+      "description": "A time typed segment by segment.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/time-input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/time-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "timeline",
+      "type": "registry:ui",
+      "title": "Timeline",
+      "description": "Events in order, with markers and a connecting line.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/timeline.tsx",
+          "type": "registry:ui",
+          "target": "@ui/timeline.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Notifications, with a Toaster ready to render once.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/toast.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Pressed buttons and toggle groups.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/toggle.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "token-input",
+      "type": "registry:ui",
+      "title": "Token input",
+      "description": "Text mixed with tokens for files, people or tags.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/token-input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/token-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toolbar",
+      "type": "registry:ui",
+      "title": "Toolbar",
+      "description": "Buttons and toggles with one tab stop.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/toolbar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toolbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "A short hint on hover or focus.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "type": "registry:ui",
+      "title": "Tree",
+      "description": "A hierarchy you expand and select.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/tree.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tree.tsx"
+        }
+      ]
+    },
+    {
+      "name": "trigger-menu",
+      "type": "registry:ui",
+      "title": "Trigger menu",
+      "description": "Suggestions after @, / or # in a text field.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/trigger-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/trigger-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "waterfall",
+      "type": "registry:ui",
+      "title": "Waterfall",
+      "description": "Spans on a time axis, like request timings or a trace.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/waterfall.tsx",
+          "type": "registry:ui",
+          "target": "@ui/waterfall.tsx"
+        }
+      ]
+    },
+    {
+      "name": "app-shell",
+      "type": "registry:ui",
+      "title": "App shell",
+      "description": "A sidebar layout that collapses to icons with Mod+B, remembers it, and becomes a drawer on narrow screens; with sidebar navigation.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/app-shell.tsx",
+          "type": "registry:ui",
+          "target": "@ui/app-shell.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumbs",
+      "type": "registry:ui",
+      "title": "Breadcrumbs",
+      "description": "Where you are, with the current page marked.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/breadcrumbs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/breadcrumbs.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:ui",
+      "title": "Page header",
+      "description": "A page title with description and actions.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/page-header.tsx",
+          "type": "registry:ui",
+          "target": "@ui/page-header.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A bordered block with header, title, description, content and footer.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "A short status label in five tones, readable in every skin, and a count badge for the corner of an icon or avatar.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "A plain HTML table in a scroll area: sticky headings, a sticky first column, and rows that stack into labelled blocks on narrow screens.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/table.tsx",
+          "type": "registry:ui",
+          "target": "@ui/table.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/table/table.css",
+          "type": "registry:file",
+          "target": "@ui/table/table.css"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code block",
+      "description": "Code in its language's colors with a file name, line numbers, marked lines and a copy button; tabs for versions of the same code; and one command for npm, pnpm, yarn and bun that remembers the choice.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16",
+        "shiki@4.6.0"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/copy-button.json",
+        "https://uiset.dev/r/scroll-area.json",
+        "https://uiset.dev/r/tabs.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "@ui/code-block.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/code-block/commands.ts",
+          "type": "registry:file",
+          "target": "@ui/code-block/commands.ts"
+        },
+        {
+          "path": "registry/uiset/ui/code-block/code-block.css",
+          "type": "registry:file",
+          "target": "@ui/code-block/code-block.css"
+        },
+        {
+          "path": "registry/uiset/ui/code/highlight.ts",
+          "type": "registry:file",
+          "target": "@ui/code/highlight.ts"
+        },
+        {
+          "path": "registry/uiset/ui/code/code.css",
+          "type": "registry:file",
+          "target": "@ui/code/code.css"
+        }
+      ]
+    },
+    {
+      "name": "inline-edit",
+      "type": "registry:ui",
+      "title": "Inline edit",
+      "description": "Text you edit where it shows: press it, Enter or F2 to edit, Enter to save, Escape to cancel, with validation and optional Save and Cancel buttons.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/inline-edit.tsx",
+          "type": "registry:ui",
+          "target": "@ui/inline-edit.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/inline-edit/inline-edit.ts",
+          "type": "registry:file",
+          "target": "@ui/inline-edit/inline-edit.ts"
+        },
+        {
+          "path": "registry/uiset/ui/inline-edit/inline-edit.css",
+          "type": "registry:file",
+          "target": "@ui/inline-edit/inline-edit.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "tag-input",
+      "type": "registry:ui",
+      "title": "Tag input",
+      "description": "Tags people type, paste or pick: a comma or Enter adds one, a pasted list becomes one tag each, and Enter or F2 edits a tag in place. No duplicates, a limit, your own rules with the reason shown, and agents add and remove tags by name.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/combobox.json",
+        "https://uiset.dev/r/field.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/tag-input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tag-input.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/tag-input/tags.ts",
+          "type": "registry:file",
+          "target": "@ui/tag-input/tags.ts"
+        },
+        {
+          "path": "registry/uiset/ui/tag-input/tag-input.ts",
+          "type": "registry:file",
+          "target": "@ui/tag-input/tag-input.ts"
+        },
+        {
+          "path": "registry/uiset/ui/tag-input/tag-input.css",
+          "type": "registry:file",
+          "target": "@ui/tag-input/tag-input.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "phone-input",
+      "type": "registry:ui",
+      "title": "Phone input",
+      "description": "A phone number with a country picker: formatted as it's typed with the caret kept in place, a typed calling code chooses the country, any script's digits, left to right on any page, and the value in E.164. Agents set the number in any format and the country by name.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16",
+        "libphonenumber-js@1.13.17"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/combobox.json",
+        "https://uiset.dev/r/field.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/phone-input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/phone-input.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/phone-input/phone.ts",
+          "type": "registry:file",
+          "target": "@ui/phone-input/phone.ts"
+        },
+        {
+          "path": "registry/uiset/ui/phone-input/phone-input.ts",
+          "type": "registry:file",
+          "target": "@ui/phone-input/phone-input.ts"
+        },
+        {
+          "path": "registry/uiset/ui/phone-input/phone-input.css",
+          "type": "registry:file",
+          "target": "@ui/phone-input/phone-input.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/format-as-you-type.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/format-as-you-type.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/after-press.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/after-press.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "payments",
+      "type": "registry:ui",
+      "title": "Payments",
+      "description": "How to pay and what it pays for: payment methods as cards to choose from, card fields whose security code follows the brand, a bank account by IBAN with its mandate, an order summary with a discount code and totals in the shop's currency, and a Pay button an agent can't press without a person.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/input-mask.json",
+        "https://uiset.dev/r/number-input.json",
+        "https://uiset.dev/r/radio.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/payments.tsx",
+          "type": "registry:ui",
+          "target": "@ui/payments.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/payments/order.ts",
+          "type": "registry:file",
+          "target": "@ui/payments/order.ts"
+        },
+        {
+          "path": "registry/uiset/ui/payments/payments.css",
+          "type": "registry:file",
+          "target": "@ui/payments/payments.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "address",
+      "type": "registry:ui",
+      "title": "Address",
+      "description": "An address whose fields follow its country: the order it writes them in, its names for them (ZIP code, Eircode, Prefecture), the ones it requires, a list of regions where it has one, and its postal code's shape, from Google's address data for 252 countries. Autofill fills it; an agent fills it in one step by field name.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/combobox.json",
+        "https://uiset.dev/r/field.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/address.tsx",
+          "type": "registry:ui",
+          "target": "@ui/address.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/address/address.ts",
+          "type": "registry:file",
+          "target": "@ui/address/address.ts"
+        },
+        {
+          "path": "registry/uiset/ui/address/address-fields.ts",
+          "type": "registry:file",
+          "target": "@ui/address/address-fields.ts"
+        },
+        {
+          "path": "registry/uiset/ui/address/formats.ts",
+          "type": "registry:file",
+          "target": "@ui/address/formats.ts"
+        },
+        {
+          "path": "registry/uiset/ui/address/address.css",
+          "type": "registry:file",
+          "target": "@ui/address/address.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/after-press.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/after-press.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "input-mask",
+      "type": "registry:ui",
+      "title": "Input mask",
+      "description": "Fields formatted as they're typed with the caret kept in place: card numbers grouped by brand with the brand named, expiry dates and security codes, IBANs checked by country and checksum, amounts grouped in the locale, and patterns of your own. Each checks itself and reports its value without separators; agents set them in any format.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/field.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/input-mask.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-mask.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/input-mask/masks.ts",
+          "type": "registry:file",
+          "target": "@ui/input-mask/masks.ts"
+        },
+        {
+          "path": "registry/uiset/ui/input-mask/input-mask.ts",
+          "type": "registry:file",
+          "target": "@ui/input-mask/input-mask.ts"
+        },
+        {
+          "path": "registry/uiset/ui/input-mask/input-mask.css",
+          "type": "registry:file",
+          "target": "@ui/input-mask/input-mask.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/format-as-you-type.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/format-as-you-type.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/after-press.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/after-press.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "sortable-list",
+      "type": "registry:ui",
+      "title": "Sortable list",
+      "description": "A list people put in order: drag an item by its grip, or pick it up with Space and move it with the arrows. Select several to move together, lock items in place, and let agents move items by name.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/sortable-list.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sortable-list.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/sortable-list/sortable-list.ts",
+          "type": "registry:file",
+          "target": "@ui/sortable-list/sortable-list.ts"
+        },
+        {
+          "path": "registry/uiset/ui/sortable-list/sortable-list.css",
+          "type": "registry:file",
+          "target": "@ui/sortable-list/sortable-list.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/drag-preview.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/drag-preview.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/glide.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/glide.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "sortable-tree",
+      "type": "registry:ui",
+      "title": "Sortable tree",
+      "description": "A tree people reorder and nest: drag a row up or down and sideways to change its level, or pick it up with Space and use the arrows. Only branches hold items, a drop elsewhere goes back and says why, and agents move items into branches by name.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/sortable-tree.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sortable-tree.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/sortable-tree/sortable-tree.ts",
+          "type": "registry:file",
+          "target": "@ui/sortable-tree/sortable-tree.ts"
+        },
+        {
+          "path": "registry/uiset/ui/sortable-tree/sortable-tree.css",
+          "type": "registry:file",
+          "target": "@ui/sortable-tree/sortable-tree.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/drag-preview.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/drag-preview.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/glide.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/glide.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "number-ticker",
+      "type": "registry:ui",
+      "title": "Number ticker",
+      "description": "A number that moves to its new value, each skin its own way: Base rolls its digits, Blueprint counts, Studio steps, Phosphor types it, Ink redraws. It can count up once when first seen. People and agents read the value itself.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/number-ticker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/number-ticker.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/motion/ticker.ts",
+          "type": "registry:file",
+          "target": "@ui/motion/ticker.ts"
+        },
+        {
+          "path": "registry/uiset/ui/motion/motion.css",
+          "type": "registry:file",
+          "target": "@ui/motion/motion.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "text-reveal",
+      "type": "registry:ui",
+      "title": "Text reveal",
+      "description": "Text that arrives a word or a letter at a time, each skin its own way, and reveals only what's new as a streamed answer grows. The whole text is in the page from the start, for screen readers and agents.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/text-reveal.tsx",
+          "type": "registry:ui",
+          "target": "@ui/text-reveal.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/motion/reveal.ts",
+          "type": "registry:file",
+          "target": "@ui/motion/reveal.ts"
+        },
+        {
+          "path": "registry/uiset/ui/motion/motion.css",
+          "type": "registry:file",
+          "target": "@ui/motion/motion.css"
+        }
+      ]
+    },
+    {
+      "name": "thinking",
+      "type": "registry:ui",
+      "title": "Thinking",
+      "description": "A wait, each skin its own way: words that shimmer, moving hatching, an LED chase, printing dots, or still dots. A status, so screen readers hear it once.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/thinking.tsx",
+          "type": "registry:ui",
+          "target": "@ui/thinking.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/motion/motion.css",
+          "type": "registry:file",
+          "target": "@ui/motion/motion.css"
+        }
+      ]
+    },
+    {
+      "name": "crossfade",
+      "type": "registry:ui",
+      "title": "Crossfade",
+      "description": "Content swapped in place, each skin its own way, while the box moves to the new content's size. The leaving content can't be reached or read.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/crossfade.tsx",
+          "type": "registry:ui",
+          "target": "@ui/crossfade.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/motion/crossfade.ts",
+          "type": "registry:file",
+          "target": "@ui/motion/crossfade.ts"
+        },
+        {
+          "path": "registry/uiset/ui/motion/motion.css",
+          "type": "registry:file",
+          "target": "@ui/motion/motion.css"
+        }
+      ]
+    },
+    {
+      "name": "schema-form",
+      "type": "registry:ui",
+      "title": "Schema form",
+      "description": "A form from one definition: its fields with UISet's controls, steps with a review, checks as people type and on submit, and an agent that fills it by field name while a person approves the submit. The same definition is JSON Schema for an agent tool.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/checkbox.json",
+        "https://uiset.dev/r/date-input.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/input-mask.json",
+        "https://uiset.dev/r/number-input.json",
+        "https://uiset.dev/r/phone-input.json",
+        "https://uiset.dev/r/radio.json",
+        "https://uiset.dev/r/select.json",
+        "https://uiset.dev/r/stepper.json",
+        "https://uiset.dev/r/switch.json",
+        "https://uiset.dev/r/tag-input.json",
+        "https://uiset.dev/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/schema-form.tsx",
+          "type": "registry:ui",
+          "target": "@ui/schema-form.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/schema-form/schema.ts",
+          "type": "registry:file",
+          "target": "@ui/schema-form/schema.ts"
+        },
+        {
+          "path": "registry/uiset/ui/schema-form/form.ts",
+          "type": "registry:file",
+          "target": "@ui/schema-form/form.ts"
+        },
+        {
+          "path": "registry/uiset/ui/schema-form/tool.ts",
+          "type": "registry:file",
+          "target": "@ui/schema-form/tool.ts"
+        },
+        {
+          "path": "registry/uiset/ui/schema-form/labels.ts",
+          "type": "registry:file",
+          "target": "@ui/schema-form/labels.ts"
+        },
+        {
+          "path": "registry/uiset/ui/schema-form/schema-form.css",
+          "type": "registry:file",
+          "target": "@ui/schema-form/schema-form.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/after-press.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/after-press.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "upload",
+      "type": "registry:ui",
+      "title": "Upload",
+      "description": "A drop zone and a queue of uploads on UI SDK's File input: each file's preview, progress and status, with cancel, retry and remove, a few going up at a time, to whatever storage you use.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/file-input.json",
+        "https://uiset.dev/r/progress.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/upload.tsx",
+          "type": "registry:ui",
+          "target": "@ui/upload.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/upload/queue.ts",
+          "type": "registry:file",
+          "target": "@ui/upload/queue.ts"
+        },
+        {
+          "path": "registry/uiset/ui/upload/upload.css",
+          "type": "registry:file",
+          "target": "@ui/upload/upload.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "avatar-group",
+      "type": "registry:ui",
+      "title": "Avatar group",
+      "description": "Avatars stacked in a row, with a count of the ones that don't fit.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/avatar.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/avatar-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar-group.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "stat",
+      "type": "registry:ui",
+      "title": "Stat",
+      "description": "A number with its change, said in words as well as color, and an optional trend sparkline.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/sparkline.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/stat.tsx",
+          "type": "registry:ui",
+          "target": "@ui/stat.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:ui",
+      "title": "Empty state",
+      "description": "What to do when there's nothing here yet.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/empty-state.tsx",
+          "type": "registry:ui",
+          "target": "@ui/empty-state.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Loading placeholders, and a Loading region that announces once.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "description-list",
+      "type": "registry:ui",
+      "title": "Description list",
+      "description": "Terms and their details.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/description-list.tsx",
+          "type": "registry:ui",
+          "target": "@ui/description-list.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "item-list",
+      "type": "registry:ui",
+      "title": "Item list",
+      "description": "Rows with media, title, description, meta and actions.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/item-list.tsx",
+          "type": "registry:ui",
+          "target": "@ui/item-list.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "An inline message in four tones that names its tone, interrupts only when urgent, and can be dismissed.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/alert.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Keyboard key",
+      "description": "Keys written the way this platform writes them.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/kbd.tsx",
+          "type": "registry:ui",
+          "target": "@ui/kbd.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "A loading indicator that says what's loading.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/spinner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/spinner.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "stepper",
+      "type": "registry:ui",
+      "title": "Stepper",
+      "description": "Steps of a flow with the current one marked and later ones locked.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": "@ui/stepper.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "search-field",
+      "type": "registry:ui",
+      "title": "Search field",
+      "description": "A search box with a clear button and a key that focuses it from anywhere.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/search-field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/search-field.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:ui",
+      "title": "Copy button",
+      "description": "Copies a value and says so.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/copy-button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/copy-button.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "data-grid",
+      "type": "registry:ui",
+      "title": "Data grid",
+      "description": "A spreadsheet-grade grid on UI SDK: virtualized rows, sorting, filters, grouping, pinned, resizable and movable columns, row and cell selection, inline editing with validation, clipboard copy and paste, CSV export, a saved layout and agent actions.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/combobox.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/menu.json",
+        "https://uiset.dev/r/popover.json",
+        "https://uiset.dev/r/scroll-area.json",
+        "https://uiset.dev/r/search-field.json",
+        "https://uiset.dev/r/select.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/data-grid.tsx",
+          "type": "registry:ui",
+          "target": "@ui/data-grid.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/data-grid/grid.ts",
+          "type": "registry:file",
+          "target": "@ui/data-grid/grid.ts"
+        },
+        {
+          "path": "registry/uiset/ui/data-grid/view.ts",
+          "type": "registry:file",
+          "target": "@ui/data-grid/view.ts"
+        },
+        {
+          "path": "registry/uiset/ui/data-grid/columns.ts",
+          "type": "registry:file",
+          "target": "@ui/data-grid/columns.ts"
+        },
+        {
+          "path": "registry/uiset/ui/data-grid/data-grid.css",
+          "type": "registry:file",
+          "target": "@ui/data-grid/data-grid.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "The frame every UISet chart shares: title, a legend that isolates series, a Chart/Table switch with the table twin, a keyboard listbox of data positions, tooltips, palettes validated for color blindness per skin, and agent actions.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/scroll-area.json",
+        "https://uiset.dev/r/segmented-control.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/chart.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chart.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/chart/points.ts",
+          "type": "registry:file",
+          "target": "@ui/chart/points.ts"
+        },
+        {
+          "path": "registry/uiset/ui/chart/scale.ts",
+          "type": "registry:file",
+          "target": "@ui/chart/scale.ts"
+        },
+        {
+          "path": "registry/uiset/ui/chart/plot.ts",
+          "type": "registry:file",
+          "target": "@ui/chart/plot.ts"
+        },
+        {
+          "path": "registry/uiset/ui/chart/vnode.ts",
+          "type": "registry:file",
+          "target": "@ui/chart/vnode.ts"
+        },
+        {
+          "path": "registry/uiset/ui/chart/tokens.css",
+          "type": "registry:file",
+          "target": "@ui/chart/tokens.css"
+        },
+        {
+          "path": "registry/uiset/ui/chart/chart.css",
+          "type": "registry:file",
+          "target": "@ui/chart/chart.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "line-chart",
+      "type": "registry:ui",
+      "title": "Line chart",
+      "description": "Trends over time: one or more lines, a soft area for one series, or stacked areas, with a crosshair that lists every series and labels at line ends.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/chart.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/line-chart.tsx",
+          "type": "registry:ui",
+          "target": "@ui/line-chart.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/chart/plots/line.ts",
+          "type": "registry:file",
+          "target": "@ui/chart/plots/line.ts"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart",
+      "type": "registry:ui",
+      "title": "Bar chart",
+      "description": "Categories compared: columns or horizontal bars, grouped or stacked, ranked, with thin marks and values at the tips.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/chart.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/bar-chart.tsx",
+          "type": "registry:ui",
+          "target": "@ui/bar-chart.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/chart/plots/bar.ts",
+          "type": "registry:file",
+          "target": "@ui/chart/plots/bar.ts"
+        }
+      ]
+    },
+    {
+      "name": "scatter-chart",
+      "type": "registry:ui",
+      "title": "Scatter chart",
+      "description": "Two measures per item, up to three groups, with hover that finds the nearest point.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/chart.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/scatter-chart.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scatter-chart.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/chart/plots/scatter.ts",
+          "type": "registry:file",
+          "target": "@ui/chart/plots/scatter.ts"
+        }
+      ]
+    },
+    {
+      "name": "heatmap",
+      "type": "registry:ui",
+      "title": "Heatmap",
+      "description": "Magnitude on a grid in one hue, with a scale and arrows that move by cell and by row.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/chart.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/heatmap.tsx",
+          "type": "registry:ui",
+          "target": "@ui/heatmap.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/chart/plots/heatmap.ts",
+          "type": "registry:file",
+          "target": "@ui/chart/plots/heatmap.ts"
+        }
+      ]
+    },
+    {
+      "name": "segmented-bar",
+      "type": "registry:ui",
+      "title": "Segmented bar",
+      "description": "One whole split into up to six parts, with shares printed where they fit: the readable answer to a donut.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/chart.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/segmented-bar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/segmented-bar.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/chart/plots/segmented-bar.ts",
+          "type": "registry:file",
+          "target": "@ui/chart/plots/segmented-bar.ts"
+        }
+      ]
+    },
+    {
+      "name": "sparkline",
+      "type": "registry:ui",
+      "title": "Sparkline",
+      "description": "A trend inside text, a table cell or a stat, whose name says where the values went. Works in Server Components.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/sparkline.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sparkline.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/chart/scale.ts",
+          "type": "registry:file",
+          "target": "@ui/chart/scale.ts"
+        },
+        {
+          "path": "registry/uiset/ui/chart/vnode.ts",
+          "type": "registry:file",
+          "target": "@ui/chart/vnode.ts"
+        },
+        {
+          "path": "registry/uiset/ui/chart/plots/sparkline.ts",
+          "type": "registry:file",
+          "target": "@ui/chart/plots/sparkline.ts"
+        },
+        {
+          "path": "registry/uiset/ui/chart/tokens.css",
+          "type": "registry:file",
+          "target": "@ui/chart/tokens.css"
+        },
+        {
+          "path": "registry/uiset/ui/chart/chart.css",
+          "type": "registry:file",
+          "target": "@ui/chart/chart.css"
+        }
+      ]
+    },
+    {
+      "name": "board",
+      "type": "registry:ui",
+      "title": "Board",
+      "description": "A kanban board on UI SDK createTransfer: one tab stop, arrows across cards and columns, Space to carry a card, drag with the pointer, column limits, add in place, a details dialog to edit, move or delete, filters, and agent actions.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/alert-dialog.json",
+        "https://uiset.dev/r/avatar.json",
+        "https://uiset.dev/r/badge.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/checkbox.json",
+        "https://uiset.dev/r/dialog.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/label.json",
+        "https://uiset.dev/r/scroll-area.json",
+        "https://uiset.dev/r/search-field.json",
+        "https://uiset.dev/r/select.json",
+        "https://uiset.dev/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/board.tsx",
+          "type": "registry:ui",
+          "target": "@ui/board.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/board/board.ts",
+          "type": "registry:file",
+          "target": "@ui/board/board.ts"
+        },
+        {
+          "path": "registry/uiset/ui/board/board.css",
+          "type": "registry:file",
+          "target": "@ui/board/board.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/drag-preview.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/drag-preview.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/glide.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/glide.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "canvas",
+      "type": "registry:ui",
+      "title": "Canvas",
+      "description": "A node editor on UI SDK's canvas behaviors: pan and zoom, drag nodes or move them with Alt and arrows, spatial focus, Shift-drag box selection, wires drawn by pointer or with C and arrows, a minimap, zoom controls, a toolbar, an inspector, undo, and agent actions.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/menu.json",
+        "https://uiset.dev/r/toolbar.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/canvas.tsx",
+          "type": "registry:ui",
+          "target": "@ui/canvas.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/canvas/canvas.ts",
+          "type": "registry:file",
+          "target": "@ui/canvas/canvas.ts"
+        },
+        {
+          "path": "registry/uiset/ui/canvas/geometry.ts",
+          "type": "registry:file",
+          "target": "@ui/canvas/geometry.ts"
+        },
+        {
+          "path": "registry/uiset/ui/canvas/canvas.css",
+          "type": "registry:file",
+          "target": "@ui/canvas/canvas.css"
+        },
+        {
+          "path": "registry/uiset/ui/chart/tokens.css",
+          "type": "registry:file",
+          "target": "@ui/chart/tokens.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "ide",
+      "type": "registry:ui",
+      "title": "IDE",
+      "description": "A code editor's parts on UI SDK: a file tree on Tree with version control marks, New, Rename, Move and Delete, and files dragged into folders; editor tabs on Tabs; a code editor with syntax colors, indenting and problems; a command palette on Command; problems and a status bar.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16",
+        "shiki@4.6.0"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/alert-dialog.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/command.json",
+        "https://uiset.dev/r/dialog.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/menu.json",
+        "https://uiset.dev/r/scroll-area.json",
+        "https://uiset.dev/r/select.json",
+        "https://uiset.dev/r/tabs.json",
+        "https://uiset.dev/r/textarea.json",
+        "https://uiset.dev/r/tree.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/ide.tsx",
+          "type": "registry:ui",
+          "target": "@ui/ide.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/ide/ide.css",
+          "type": "registry:file",
+          "target": "@ui/ide/ide.css"
+        },
+        {
+          "path": "registry/uiset/ui/ide/editing.ts",
+          "type": "registry:file",
+          "target": "@ui/ide/editing.ts"
+        },
+        {
+          "path": "registry/uiset/ui/ide/file-drag.ts",
+          "type": "registry:file",
+          "target": "@ui/ide/file-drag.ts"
+        },
+        {
+          "path": "registry/uiset/ui/code/highlight.ts",
+          "type": "registry:file",
+          "target": "@ui/code/highlight.ts"
+        },
+        {
+          "path": "registry/uiset/ui/code/code.css",
+          "type": "registry:file",
+          "target": "@ui/code/code.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/drag-preview.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/drag-preview.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "mobile",
+      "type": "registry:ui",
+      "title": "Mobile",
+      "description": "Phone app parts on UI SDK: rows that swipe aside to actions (createSwipeActions), wheel pickers and a time wheel (bindScrollPicker), bottom sheets and action sheets (Drawer), pull to refresh, an app bar and a tab bar.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/drawer.json",
+        "https://uiset.dev/r/listbox.json",
+        "https://uiset.dev/r/menu.json",
+        "https://uiset.dev/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/mobile.tsx",
+          "type": "registry:ui",
+          "target": "@ui/mobile.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/mobile/swipe-list.ts",
+          "type": "registry:file",
+          "target": "@ui/mobile/swipe-list.ts"
+        },
+        {
+          "path": "registry/uiset/ui/mobile/wheel.ts",
+          "type": "registry:file",
+          "target": "@ui/mobile/wheel.ts"
+        },
+        {
+          "path": "registry/uiset/ui/mobile/mobile.css",
+          "type": "registry:file",
+          "target": "@ui/mobile/mobile.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "terminal",
+      "type": "registry:ui",
+      "title": "Terminal",
+      "description": "A terminal on UI SDK's input history and stick-to-bottom: ANSI colors kept readable in every skin, links, streaming commands with progress lines, Tab completion, Ctrl+C and Ctrl+L, built-in help, clear and history, and agent actions.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/terminal.tsx",
+          "type": "registry:ui",
+          "target": "@ui/terminal.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/terminal/ansi.ts",
+          "type": "registry:file",
+          "target": "@ui/terminal/ansi.ts"
+        },
+        {
+          "path": "registry/uiset/ui/terminal/session.ts",
+          "type": "registry:file",
+          "target": "@ui/terminal/session.ts"
+        },
+        {
+          "path": "registry/uiset/ui/terminal/terminal.css",
+          "type": "registry:file",
+          "target": "@ui/terminal/terminal.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "scheduler",
+      "type": "registry:ui",
+      "title": "Scheduler",
+      "description": "Calendars on UI SDK createSpans: a week, a day or a room timeline where people draw, move and resize events with the pointer or arrows, overlapping events sharing lanes, a month view, a toolbar, an event dialog, and agent actions.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/alert-dialog.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/calendar.json",
+        "https://uiset.dev/r/dialog.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/scroll-area.json",
+        "https://uiset.dev/r/segmented-control.json",
+        "https://uiset.dev/r/select.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/scheduler.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scheduler.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/scheduler/schedule.ts",
+          "type": "registry:file",
+          "target": "@ui/scheduler/schedule.ts"
+        },
+        {
+          "path": "registry/uiset/ui/scheduler/scheduler.css",
+          "type": "registry:file",
+          "target": "@ui/scheduler/scheduler.css"
+        },
+        {
+          "path": "registry/uiset/ui/chart/tokens.css",
+          "type": "registry:file",
+          "target": "@ui/chart/tokens.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "knob",
+      "type": "registry:ui",
+      "title": "Knob",
+      "description": "A rotary control built as a UI SDK primitive: drag, arrow keys, log scales, double-click reset, agent actions.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/knob.tsx",
+          "type": "registry:ui",
+          "target": "@ui/knob.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/studio/knob.ts",
+          "type": "registry:file",
+          "target": "@ui/studio/knob.ts"
+        },
+        {
+          "path": "registry/uiset/ui/studio/knob.css",
+          "type": "registry:file",
+          "target": "@ui/studio/knob.css"
+        }
+      ]
+    },
+    {
+      "name": "patch-bay",
+      "type": "registry:ui",
+      "title": "Patch bay",
+      "description": "Jacks and cables built on UI SDK createConnect: patch by drag, keyboard or agent.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/patch-bay.tsx",
+          "type": "registry:ui",
+          "target": "@ui/patch-bay.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/studio/patch-bay.ts",
+          "type": "registry:file",
+          "target": "@ui/studio/patch-bay.ts"
+        },
+        {
+          "path": "registry/uiset/ui/studio/cables.ts",
+          "type": "registry:file",
+          "target": "@ui/studio/cables.ts"
+        },
+        {
+          "path": "registry/uiset/ui/studio/patch-bay.css",
+          "type": "registry:file",
+          "target": "@ui/studio/patch-bay.css"
+        }
+      ]
+    },
+    {
+      "name": "fader",
+      "type": "registry:ui",
+      "title": "Fader",
+      "description": "A vertical UI SDK slider with its label and readout.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/slider.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/fader.tsx",
+          "type": "registry:ui",
+          "target": "@ui/fader.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/studio/instruments.css",
+          "type": "registry:file",
+          "target": "@ui/studio/instruments.css"
+        }
+      ]
+    },
+    {
+      "name": "level-meter",
+      "type": "registry:ui",
+      "title": "Level meter",
+      "description": "A UI SDK meter drawn as an LED ladder.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/level-meter.tsx",
+          "type": "registry:ui",
+          "target": "@ui/level-meter.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/studio/instruments.css",
+          "type": "registry:file",
+          "target": "@ui/studio/instruments.css"
+        }
+      ]
+    },
+    {
+      "name": "chat",
+      "type": "registry:ui",
+      "title": "Chat",
+      "description": "A conversation built on UI SDK: thread that follows new messages, messages with avatars, actions and versions, suggestions, plans and a thinking shimmer.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/chat.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chat.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/chat/chat.css",
+          "type": "registry:file",
+          "target": "@ui/chat/chat.css"
+        },
+        {
+          "path": "registry/uiset/ui/chat/opening.ts",
+          "type": "registry:file",
+          "target": "@ui/chat/opening.ts"
+        }
+      ]
+    },
+    {
+      "name": "chat-response",
+      "type": "registry:ui",
+      "title": "Chat response",
+      "description": "Streaming markdown that repairs itself mid-stream and never renders raw HTML, with code blocks highlighted by skin colors.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16",
+        "react-markdown@10.1.0",
+        "remark-gfm@4.0.1",
+        "remend@1.4.0",
+        "shiki@4.6.0"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/chat.json",
+        "https://uiset.dev/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/chat-response.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chat-response.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/chat/chat.css",
+          "type": "registry:file",
+          "target": "@ui/chat/chat.css"
+        },
+        {
+          "path": "registry/uiset/ui/code/highlight.ts",
+          "type": "registry:file",
+          "target": "@ui/code/highlight.ts"
+        },
+        {
+          "path": "registry/uiset/ui/code/code.css",
+          "type": "registry:file",
+          "target": "@ui/code/code.css"
+        }
+      ]
+    },
+    {
+      "name": "chat-parts",
+      "type": "registry:ui",
+      "title": "Chat parts",
+      "description": "Reasoning that opens while the model thinks, tool calls with status, input and output and Allow or Deny when one waits for approval, subagent runs with their own steps, checkpoints to restore, sources, citations and images.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/chat.json",
+        "https://uiset.dev/r/scroll-area.json",
+        "https://uiset.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/chat-parts.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chat-parts.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/chat/chat.css",
+          "type": "registry:file",
+          "target": "@ui/chat/chat.css"
+        }
+      ]
+    },
+    {
+      "name": "chat-message-parts",
+      "type": "registry:ui",
+      "title": "Chat message parts",
+      "description": "Draws a Vercel AI SDK message's parts with the chat kit: Markdown text that completes while it streams, reasoning, tool calls in every state with approvals, sources, files, a plan, checkpoints and subagent runs. No dependency on the ai package.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/chat.json",
+        "https://uiset.dev/r/chat-parts.json",
+        "https://uiset.dev/r/chat-response.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/chat-message-parts.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chat-message-parts.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/chat/chat.css",
+          "type": "registry:file",
+          "target": "@ui/chat/chat.css"
+        }
+      ]
+    },
+    {
+      "name": "chat-composer",
+      "type": "registry:ui",
+      "title": "Chat composer",
+      "description": "The message box: Enter to send, history with ArrowUp, slash commands and mentions, attachments by drop, paste or picker, a model picker, a usage meter, and the messages queued while the agent works.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/chat.json",
+        "https://uiset.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/chat-composer.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chat-composer.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/chat/chat.css",
+          "type": "registry:file",
+          "target": "@ui/chat/chat.css"
+        }
+      ]
+    },
+    {
+      "name": "chat-sidebar",
+      "type": "registry:ui",
+      "title": "Chat sidebar",
+      "description": "A list of chats with rename and confirmed delete, and a floating assistant launcher.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/chat.json",
+        "https://uiset.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/chat-sidebar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chat-sidebar.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/chat/chat.css",
+          "type": "registry:file",
+          "target": "@ui/chat/chat.css"
+        }
+      ]
+    },
+    {
+      "name": "rich-text",
+      "type": "registry:ui",
+      "title": "Rich text editor",
+      "description": "A rich text editor on UI SDK with no editor library: headings, nested and numbered lists, to-dos, quotes, code, links, mentions, dividers and images; a toolbar, Markdown as you type, \"/\" for blocks and \"@\" for people (TriggerMenu); safe paste from documents and the web; undo; Markdown and clean HTML out; agents read and write Markdown.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/popover.json",
+        "https://uiset.dev/r/scroll-area.json",
+        "https://uiset.dev/r/select.json",
+        "https://uiset.dev/r/toggle.json",
+        "https://uiset.dev/r/toolbar.json",
+        "https://uiset.dev/r/trigger-menu.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/rich-text.tsx",
+          "type": "registry:ui",
+          "target": "@ui/rich-text.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/rich-text/model.ts",
+          "type": "registry:file",
+          "target": "@ui/rich-text/model.ts"
+        },
+        {
+          "path": "registry/uiset/ui/rich-text/serialize.ts",
+          "type": "registry:file",
+          "target": "@ui/rich-text/serialize.ts"
+        },
+        {
+          "path": "registry/uiset/ui/rich-text/view.ts",
+          "type": "registry:file",
+          "target": "@ui/rich-text/view.ts"
+        },
+        {
+          "path": "registry/uiset/ui/rich-text/primitive.ts",
+          "type": "registry:file",
+          "target": "@ui/rich-text/primitive.ts"
+        },
+        {
+          "path": "registry/uiset/ui/rich-text/commands.ts",
+          "type": "registry:file",
+          "target": "@ui/rich-text/commands.ts"
+        },
+        {
+          "path": "registry/uiset/ui/rich-text/rich-text.css",
+          "type": "registry:file",
+          "target": "@ui/rich-text/rich-text.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        }
+      ]
+    },
+    {
+      "name": "agent-console",
+      "type": "registry:ui",
+      "title": "Agent Console",
+      "description": "The human side of the UI SDK agent bridge: approvals in your app, an activity feed with undo, highlights where the agent changed something, a thread and a prompt.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/agent-console.tsx",
+          "type": "registry:ui",
+          "target": "@ui/agent-console.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/agent/approvals.ts",
+          "type": "registry:file",
+          "target": "@ui/agent/approvals.ts"
+        },
+        {
+          "path": "registry/uiset/ui/agent/highlight.ts",
+          "type": "registry:file",
+          "target": "@ui/agent/highlight.ts"
+        },
+        {
+          "path": "registry/uiset/ui/agent/tools.ts",
+          "type": "registry:file",
+          "target": "@ui/agent/tools.ts"
+        },
+        {
+          "path": "registry/uiset/ui/agent/console.css",
+          "type": "registry:file",
+          "target": "@ui/agent/console.css"
+        }
+      ]
+    },
+    {
+      "name": "step-sequencer",
+      "type": "registry:ui",
+      "title": "Step sequencer",
+      "description": "A row of steps built on UI SDK ToggleGroup, with downbeats and a playhead.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/step-sequencer.tsx",
+          "type": "registry:ui",
+          "target": "@ui/step-sequencer.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/studio/instruments.css",
+          "type": "registry:file",
+          "target": "@ui/studio/instruments.css"
+        }
+      ]
+    },
+    {
+      "name": "auth",
+      "type": "registry:block",
+      "title": "Auth pages",
+      "description": "Sign in, sign up, forgot and reset password, and verify a code: native validation, server messages, autocomplete hints and a password strength meter.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/alert.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/checkbox.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/meter.json",
+        "https://uiset.dev/r/otp-input.json",
+        "https://uiset.dev/r/password-input.json",
+        "https://uiset.dev/r/spinner.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/templates/auth.tsx",
+          "type": "registry:ui",
+          "target": "@ui/templates/auth.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/templates/templates.css",
+          "type": "registry:file",
+          "target": "@ui/templates/templates.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "type": "registry:block",
+      "title": "Dashboard page",
+      "description": "A date range that scopes everything: figures with trends, revenue, orders by channel, plan mix and recent orders.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/app-shell.json",
+        "https://uiset.dev/r/badge.json",
+        "https://uiset.dev/r/bar-chart.json",
+        "https://uiset.dev/r/data-grid.json",
+        "https://uiset.dev/r/empty-state.json",
+        "https://uiset.dev/r/line-chart.json",
+        "https://uiset.dev/r/page-header.json",
+        "https://uiset.dev/r/segmented-bar.json",
+        "https://uiset.dev/r/segmented-control.json",
+        "https://uiset.dev/r/stat.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/templates/dashboard.tsx",
+          "type": "registry:ui",
+          "target": "@ui/templates/dashboard.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/templates/dashboard-sample.ts",
+          "type": "registry:file",
+          "target": "@ui/templates/dashboard-sample.ts"
+        },
+        {
+          "path": "registry/uiset/ui/templates/templates.css",
+          "type": "registry:file",
+          "target": "@ui/templates/templates.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "type": "registry:block",
+      "title": "Settings page",
+      "description": "Profile, security and sessions, notifications, billing with usage and invoices, team with invites and removal, and a danger zone.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/alert-dialog.json",
+        "https://uiset.dev/r/app-shell.json",
+        "https://uiset.dev/r/avatar.json",
+        "https://uiset.dev/r/badge.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/card.json",
+        "https://uiset.dev/r/data-grid.json",
+        "https://uiset.dev/r/dialog.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/item-list.json",
+        "https://uiset.dev/r/meter.json",
+        "https://uiset.dev/r/page-header.json",
+        "https://uiset.dev/r/password-input.json",
+        "https://uiset.dev/r/scroll-area.json",
+        "https://uiset.dev/r/select.json",
+        "https://uiset.dev/r/switch.json",
+        "https://uiset.dev/r/tabs.json",
+        "https://uiset.dev/r/textarea.json",
+        "https://uiset.dev/r/toast.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/templates/settings.tsx",
+          "type": "registry:ui",
+          "target": "@ui/templates/settings.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/templates/settings-sample.ts",
+          "type": "registry:file",
+          "target": "@ui/templates/settings-sample.ts"
+        },
+        {
+          "path": "registry/uiset/ui/templates/templates.css",
+          "type": "registry:file",
+          "target": "@ui/templates/templates.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "admin",
+      "type": "registry:block",
+      "title": "Admin records page",
+      "description": "A records list with search, filters, columns and export; create and edit in a drawer; inline edits; confirmed bulk delete; an empty state.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/alert-dialog.json",
+        "https://uiset.dev/r/app-shell.json",
+        "https://uiset.dev/r/badge.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/data-grid.json",
+        "https://uiset.dev/r/drawer.json",
+        "https://uiset.dev/r/empty-state.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/page-header.json",
+        "https://uiset.dev/r/scroll-area.json",
+        "https://uiset.dev/r/select.json",
+        "https://uiset.dev/r/toast.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/templates/admin.tsx",
+          "type": "registry:ui",
+          "target": "@ui/templates/admin.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/templates/admin-sample.ts",
+          "type": "registry:file",
+          "target": "@ui/templates/admin-sample.ts"
+        },
+        {
+          "path": "registry/uiset/ui/templates/templates.css",
+          "type": "registry:file",
+          "target": "@ui/templates/templates.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "inbox",
+      "type": "registry:block",
+      "title": "Inbox page",
+      "description": "Mail in three panes: folders, a message list you arrow through, the message with star, archive and delete, and compose.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/app-shell.json",
+        "https://uiset.dev/r/avatar.json",
+        "https://uiset.dev/r/badge.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/dialog.json",
+        "https://uiset.dev/r/empty-state.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/listbox.json",
+        "https://uiset.dev/r/search-field.json",
+        "https://uiset.dev/r/textarea.json",
+        "https://uiset.dev/r/toast.json",
+        "https://uiset.dev/r/toggle.json",
+        "https://uiset.dev/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/templates/inbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/templates/inbox.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/templates/inbox-sample.ts",
+          "type": "registry:file",
+          "target": "@ui/templates/inbox-sample.ts"
+        },
+        {
+          "path": "registry/uiset/ui/templates/templates.css",
+          "type": "registry:file",
+          "target": "@ui/templates/templates.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "chat-app",
+      "type": "registry:block",
+      "title": "Chat app page",
+      "description": "The chat kit as a product: chats, a thread and a composer, with your model plugged in as an async stream of events.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/chat.json",
+        "https://uiset.dev/r/chat-composer.json",
+        "https://uiset.dev/r/chat-message-parts.json",
+        "https://uiset.dev/r/chat-parts.json",
+        "https://uiset.dev/r/chat-response.json",
+        "https://uiset.dev/r/chat-sidebar.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/templates/chat-app.tsx",
+          "type": "registry:ui",
+          "target": "@ui/templates/chat-app.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/templates/chat-app-sample.ts",
+          "type": "registry:file",
+          "target": "@ui/templates/chat-app-sample.ts"
+        },
+        {
+          "path": "registry/uiset/ui/templates/templates.css",
+          "type": "registry:file",
+          "target": "@ui/templates/templates.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "ide-app",
+      "type": "registry:block",
+      "title": "IDE page",
+      "description": "A code editor in resizable panes: files with version control marks, tabs, an editor with syntax colors, a command palette (files, commands, lines), problems, an outline and a status bar.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/alert-dialog.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/ide.json",
+        "https://uiset.dev/r/resizable.json",
+        "https://uiset.dev/r/scroll-area.json",
+        "https://uiset.dev/r/tabs.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/templates/ide-app.tsx",
+          "type": "registry:ui",
+          "target": "@ui/templates/ide-app.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/templates/ide-sample.ts",
+          "type": "registry:file",
+          "target": "@ui/templates/ide-sample.ts"
+        },
+        {
+          "path": "registry/uiset/ui/templates/templates.css",
+          "type": "registry:file",
+          "target": "@ui/templates/templates.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "project-board",
+      "type": "registry:block",
+      "title": "Project board page",
+      "description": "A project's issues as a board or a list: sprint progress, search and an assignee filter, column limits, card details, a new-issue form and Undo on moves.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/app-shell.json",
+        "https://uiset.dev/r/avatar.json",
+        "https://uiset.dev/r/badge.json",
+        "https://uiset.dev/r/board.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/data-grid.json",
+        "https://uiset.dev/r/dialog.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/meter.json",
+        "https://uiset.dev/r/page-header.json",
+        "https://uiset.dev/r/segmented-control.json",
+        "https://uiset.dev/r/select.json",
+        "https://uiset.dev/r/toast.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/templates/project-board.tsx",
+          "type": "registry:ui",
+          "target": "@ui/templates/project-board.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/templates/project-sample.ts",
+          "type": "registry:file",
+          "target": "@ui/templates/project-sample.ts"
+        },
+        {
+          "path": "registry/uiset/ui/templates/templates.css",
+          "type": "registry:file",
+          "target": "@ui/templates/templates.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "calendar-app",
+      "type": "registry:block",
+      "title": "Calendar page",
+      "description": "A calendar app: day, week and month views, a small month to jump to a day, calendars to show or hide, what's next, and events created, edited and deleted in a dialog.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/app-shell.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/calendar.json",
+        "https://uiset.dev/r/checkbox.json",
+        "https://uiset.dev/r/label.json",
+        "https://uiset.dev/r/scheduler.json",
+        "https://uiset.dev/r/toast.json",
+        "https://uiset.dev/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/templates/calendar-app.tsx",
+          "type": "registry:ui",
+          "target": "@ui/templates/calendar-app.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/templates/calendar-app-sample.ts",
+          "type": "registry:file",
+          "target": "@ui/templates/calendar-app-sample.ts"
+        },
+        {
+          "path": "registry/uiset/ui/templates/templates.css",
+          "type": "registry:file",
+          "target": "@ui/templates/templates.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "checkout",
+      "type": "registry:block",
+      "title": "Checkout page",
+      "description": "A checkout: contact, a delivery address whose fields follow its country, delivery options, card or bank payment with a billing address when it differs, and the order with a discount code and Pay beside it. Pay checks the whole page and focuses the first problem; an agent fills it and a person pays.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/address.json",
+        "https://uiset.dev/r/alert.json",
+        "https://uiset.dev/r/checkbox.json",
+        "https://uiset.dev/r/field.json",
+        "https://uiset.dev/r/payments.json",
+        "https://uiset.dev/r/phone-input.json",
+        "https://uiset.dev/r/radio.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/templates/checkout.tsx",
+          "type": "registry:ui",
+          "target": "@ui/templates/checkout.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/templates/checkout-sample.ts",
+          "type": "registry:file",
+          "target": "@ui/templates/checkout-sample.ts"
+        },
+        {
+          "path": "registry/uiset/ui/templates/templates.css",
+          "type": "registry:file",
+          "target": "@ui/templates/templates.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "invoice",
+      "type": "registry:block",
+      "title": "Invoice page",
+      "description": "An invoice: who it's from and to (each address as its country writes it), its dates and status, the lines with tax and total in its currency, how to pay by bank transfer with the IBAN and reference to copy, and notes. It prints clean.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/address.json",
+        "https://uiset.dev/r/badge.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/copy-button.json",
+        "https://uiset.dev/r/description-list.json",
+        "https://uiset.dev/r/input-mask.json",
+        "https://uiset.dev/r/payments.json",
+        "https://uiset.dev/r/table.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/templates/invoice.tsx",
+          "type": "registry:ui",
+          "target": "@ui/templates/invoice.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/templates/invoice-model.ts",
+          "type": "registry:file",
+          "target": "@ui/templates/invoice-model.ts"
+        },
+        {
+          "path": "registry/uiset/ui/templates/invoice-sample.ts",
+          "type": "registry:file",
+          "target": "@ui/templates/invoice-sample.ts"
+        },
+        {
+          "path": "registry/uiset/ui/templates/templates.css",
+          "type": "registry:file",
+          "target": "@ui/templates/templates.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "pricing",
+      "type": "registry:block",
+      "title": "Pricing section",
+      "description": "Plans with a monthly or yearly switch, a recommended plan, a comparison table and questions.",
+      "dependencies": [
+        "@ui-sdk/core@0.1.0-beta.16",
+        "@ui-sdk/react@0.1.0-beta.16"
+      ],
+      "registryDependencies": [
+        "https://uiset.dev/r/uiset.json",
+        "https://uiset.dev/r/accordion.json",
+        "https://uiset.dev/r/badge.json",
+        "https://uiset.dev/r/button.json",
+        "https://uiset.dev/r/scroll-area.json",
+        "https://uiset.dev/r/segmented-control.json"
+      ],
+      "files": [
+        {
+          "path": "registry/uiset/ui/templates/pricing.tsx",
+          "type": "registry:ui",
+          "target": "@ui/templates/pricing.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/templates/pricing-sample.ts",
+          "type": "registry:file",
+          "target": "@ui/templates/pricing-sample.ts"
+        },
+        {
+          "path": "registry/uiset/ui/templates/templates.css",
+          "type": "registry:file",
+          "target": "@ui/templates/templates.css"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icons.tsx",
+          "type": "registry:file",
+          "target": "@ui/shell/icons.tsx"
+        },
+        {
+          "path": "registry/uiset/ui/shell/icon-paths.ts",
+          "type": "registry:file",
+          "target": "@ui/shell/icon-paths.ts"
+        },
+        {
+          "path": "registry/uiset/ui/shell/shell.css",
+          "type": "registry:file",
+          "target": "@ui/shell/shell.css"
+        }
+      ]
+    },
+    {
+      "name": "agent-check",
+      "type": "registry:lib",
+      "title": "Agent readiness check",
+      "description": "Checks whether an agent can use a page: every control named, each name finding one control, and none that only looks clickable, with a score. Through a UI SDK app's agent bridge, or by reading any site's accessibility tree. In a test (expectAgentReady, expectPageReady), on a page in Playwright, from the command line, or drawn over the page (showAgentReadiness).",
+      "files": [
+        {
+          "path": "registry/uiset/ui/agent-check/check.ts",
+          "type": "registry:file",
+          "target": "@ui/agent-check/check.ts"
+        },
+        {
+          "path": "registry/uiset/ui/agent-check/page.ts",
+          "type": "registry:file",
+          "target": "@ui/agent-check/page.ts"
+        },
+        {
+          "path": "registry/uiset/ui/agent-check/overlay.ts",
+          "type": "registry:file",
+          "target": "@ui/agent-check/overlay.ts"
+        },
+        {
+          "path": "registry/uiset/ui/agent-check/playwright.ts",
+          "type": "registry:file",
+          "target": "@ui/agent-check/playwright.ts"
+        },
+        {
+          "path": "registry/uiset/ui/agent-check/cli.ts",
+          "type": "registry:file",
+          "target": "@ui/agent-check/cli.ts"
+        }
+      ]
+    }
+  ]
+}

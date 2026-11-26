@@ -1,0 +1,3711 @@
+{
+  "key": "vladislavkorzh",
+  "entry": "Tray UI",
+  "name": "trayui",
+  "homepage": "https://trayui.com",
+  "indexUrl": "https://trayui.com/r/registry.json",
+  "itemBase": "https://trayui.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:item",
+      "title": "Accordion",
+      "description": "An accordion is a list of questions that open one at a time: hairline rows, a bold question, a plus tile that turns into a cross.",
+      "categories": [
+        "display"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-nav.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Accordion.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "activity-feed",
+      "type": "registry:item",
+      "title": "Activity Feed",
+      "description": "An activity feed is the record of who did what, newest first: a mark, one sentence and the time for each event, joined by a hairline.",
+      "categories": [
+        "metrics"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/avatar.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/ActivityFeed.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/ActivityFeed.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:item",
+      "title": "Alert",
+      "description": "An alert is a message that stays in the page until its cause is gone: a tray row with an icon tile, a title and a sentence.",
+      "categories": [
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Alert.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:item",
+      "title": "Alert Dialog",
+      "description": "An alert dialog stops a person before something that cannot be undone, and makes them choose.",
+      "categories": [
+        "overlays"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-overlays.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/AlertDialog.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/AlertDialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "api-keys",
+      "type": "registry:item",
+      "title": "API Keys",
+      "description": "API keys lists the keys of a workspace with the secret masked, and shows a new key in full once, at the moment it is made.",
+      "categories": [
+        "account"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/badge.json",
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/dialog.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/lib-account.json",
+        "https://trayui.com/r/lib-static.json",
+        "https://trayui.com/r/table.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/ApiKeys.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/ApiKeys.tsx"
+        }
+      ]
+    },
+    {
+      "name": "app-shell",
+      "type": "registry:item",
+      "title": "App Shell",
+      "description": "The app shell is the frame of a product: the sidebar on a tray at the start edge, the top bar over the content, and one centred column for the page.",
+      "categories": [
+        "app shell"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-shell.json",
+        "https://trayui.com/r/sheet.json",
+        "https://trayui.com/r/sidebar.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/AppShell.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/AppShell.tsx"
+        }
+      ]
+    },
+    {
+      "name": "article-01",
+      "type": "registry:item",
+      "title": "Long read with contents",
+      "description": "A long read: standfirst, byline, a wide lead picture, the contents at the side, prose with a pull quote and figures, then tags and share links.",
+      "categories": [
+        "article"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/article-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Article01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "article-02",
+      "type": "registry:item",
+      "title": "Article with key facts",
+      "description": "A how-to article beside an ink card of key facts: a callout, a table of how long a jar keeps, numbered notes and a note of what was updated.",
+      "categories": [
+        "article"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/article-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Article02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "article-03",
+      "type": "registry:item",
+      "title": "The end of an article",
+      "description": "Where an article ends: its last paragraphs, the author, the previous and next articles, comments with a reply, a comment form and three related ones.",
+      "categories": [
+        "article"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/article-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Article03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "articles-01",
+      "type": "registry:item",
+      "title": "Journal",
+      "description": "The front page of a journal: its name, topic tabs, one featured article, a grid of six more, pages, and a letter to sign up for.",
+      "categories": [
+        "articles"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/articles-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Articles01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "articles-02",
+      "type": "registry:item",
+      "title": "Search the articles",
+      "description": "A search of the journal: the query typed, topics and a year to narrow it, the number of results, rows with the words marked, and Load more.",
+      "categories": [
+        "articles"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/articles-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Articles02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "articles-03",
+      "type": "registry:item",
+      "title": "Archive",
+      "description": "Every article by month: tabs for the year, a row per article with its day, title and topic, and the topics and authors with their counts at the side.",
+      "categories": [
+        "articles"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/articles-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Articles03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:item",
+      "title": "Aspect Ratio",
+      "description": "Aspect ratio keeps a box in a fixed proportion while its width changes, so media never shifts the layout as it loads.",
+      "categories": [
+        "layout"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/AspectRatio.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/AspectRatio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:item",
+      "title": "Attachment",
+      "description": "An attachment is a file or an image that travels with a message: a small tray with a tile, a name and one line about it.",
+      "categories": [
+        "conversation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Attachment.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Attachment.tsx"
+        }
+      ]
+    },
+    {
+      "name": "auth-form",
+      "type": "registry:item",
+      "title": "Auth Form",
+      "description": "The auth form is the card a person meets before the product: sign in or create an account. One column, one yellow button.",
+      "categories": [
+        "account"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/alert.json",
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/field.json",
+        "https://trayui.com/r/input.json",
+        "https://trayui.com/r/input-group.json",
+        "https://trayui.com/r/separator.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/AuthForm.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/AuthForm.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:item",
+      "title": "Avatar",
+      "description": "An avatar stands for a person or a team: a softly squared tile with a photo or initials.",
+      "categories": [
+        "display"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Avatar.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:item",
+      "title": "Badge",
+      "description": "A badge is a short word or a number on a small chip: a status, a tag, a count.",
+      "categories": [
+        "display"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Badge.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "banner",
+      "type": "registry:item",
+      "title": "Banner",
+      "description": "A banner is one line across the top of a page or a section, about the whole product or the whole account: a trial that is ending, planned maintenance, a payment that failed.",
+      "categories": [
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Banner.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Banner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "billing-summary",
+      "type": "registry:item",
+      "title": "Billing Summary",
+      "description": "The billing summary opens the billing page: the plan the workspace is on, what it costs and when it renews on an ink card, with the facts of the next invoice beside it.",
+      "categories": [
+        "billing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/badge.json",
+        "https://trayui.com/r/card.json",
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/BillingSummary.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/BillingSummary.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog-01",
+      "type": "registry:item",
+      "title": "Blog home",
+      "description": "A blog home: the latest posts with their date, author and tags, pages at the end, and an about card, the tags and a subscribe form at the side.",
+      "categories": [
+        "blog"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/blog-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Blog01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog-02",
+      "type": "registry:item",
+      "title": "Author page",
+      "description": "One author's page: avatar, role, a short bio and links, three figures about their writing, their posts as cards with pages, and the other authors.",
+      "categories": [
+        "blog"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/blog-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Blog02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog-03",
+      "type": "registry:item",
+      "title": "Posts with a tag",
+      "description": "One tag's page: tabs to switch tags, its posts by year in sections that fold, the current year open, and the season's figure and authors at the side.",
+      "categories": [
+        "blog"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/blog-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Blog03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:item",
+      "title": "Breadcrumb",
+      "description": "A breadcrumb shows where a page sits and leads back up, one level per link.",
+      "categories": [
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Breadcrumb.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Breadcrumb.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:item",
+      "title": "Bubble",
+      "description": "A bubble is the surface of a message: a soft block of fill around what was said.",
+      "categories": [
+        "conversation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-chat.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Bubble.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Bubble.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:item",
+      "title": "Button",
+      "description": "A button starts an action; the yellow one is the single most important action in view.",
+      "categories": [
+        "actions"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Button.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:item",
+      "title": "Button Group",
+      "description": "A button group is a tray that holds related buttons 4px apart, so they read as one control.",
+      "categories": [
+        "actions"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/lib-nav.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/ButtonGroup.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/ButtonGroup.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:item",
+      "title": "Calendar",
+      "description": "A calendar shows a month as a grid of days and takes one date or a range.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/dropdown-menu.json",
+        "https://trayui.com/r/lib-static.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Calendar.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Calendar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "call-to-action",
+      "type": "registry:item",
+      "title": "Call to Action",
+      "description": "The call to action closes a page: one yellow card with the offer in a headline and the button that takes it.",
+      "categories": [
+        "marketing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/card.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/input-group.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/CallToAction.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/CallToAction.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:item",
+      "title": "Card",
+      "description": "A card is a tray: a grey surface with 40px corners that groups what belongs together. Fill alone sets it apart: no border, no shadow.",
+      "categories": [
+        "display"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Card.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:item",
+      "title": "Carousel",
+      "description": "A carousel is one row of cards that scrolls sideways and snaps to each card, with previous and next buttons and a \"2 / 5\" count.",
+      "categories": [
+        "layout"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Carousel.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "catalog-01",
+      "type": "registry:item",
+      "title": "Catalog with filters on top",
+      "description": "Products in a grid of cards under a filter bar for type, size and price, with the count, the sort and pages; for a range that three filters cover.",
+      "categories": [
+        "catalog"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/catalog-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Catalog01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "catalog-02",
+      "type": "registry:item",
+      "title": "Catalog with a filter column",
+      "description": "Products as rows beside a column of filters: checkboxes, a price limit and an in-stock switch. On a phone or a tablet the column opens from a button.",
+      "categories": [
+        "catalog"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/catalog-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Catalog02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "catalog-03",
+      "type": "registry:item",
+      "title": "The range at a glance",
+      "description": "The whole range on one page: a tile per category with its count, a table of jar sizes with the price of 10 g, and the three products ordered most.",
+      "categories": [
+        "catalog"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/catalog-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Catalog03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "changelog",
+      "type": "registry:item",
+      "title": "Changelog",
+      "description": "The changelog tells people what changed in the product: one entry per release, the date at the start edge, a title, a tag for the kind of change, and a short list.",
+      "categories": [
+        "onboarding"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/badge.json",
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Changelog.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Changelog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:item",
+      "title": "Checkbox",
+      "description": "A checkbox turns one option on or off; a group of them lets several be on at once.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-field.json",
+        "https://trayui.com/r/lib-static.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Checkbox.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkout-01",
+      "type": "registry:item",
+      "title": "Cart",
+      "description": "The first step of a checkout, under a stepper: jars with a quantity, a meter to free delivery, a gift box with a note, a promo code and the summary.",
+      "categories": [
+        "checkout"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/checkout-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Checkout01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkout-02",
+      "type": "registry:item",
+      "title": "One-page checkout",
+      "description": "Contact, delivery with a day and a time slot, and the payment method on one page, beside the order summary.",
+      "categories": [
+        "checkout"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/checkout-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Checkout02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkout-03",
+      "type": "registry:item",
+      "title": "Order placed",
+      "description": "The page after paying: the order number, the delivery, what happens next, the summary, and where the jars come from.",
+      "categories": [
+        "checkout"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/checkout-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Checkout03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkout-summary",
+      "type": "registry:item",
+      "title": "Checkout Summary",
+      "description": "The checkout summary is the card beside a payment form: what is being bought, line by line, a place for a promo code, the total in the largest type, and the button that pays.",
+      "categories": [
+        "billing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/card.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/field.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/input-group.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/CheckoutSummary.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/CheckoutSummary.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:item",
+      "title": "Code Block",
+      "description": "A code block sets code apart from prose: a tray in the mono face with a header that names it and copies it.",
+      "categories": [
+        "conversation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/CodeBlock.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/CodeBlock.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:item",
+      "title": "Collapsible",
+      "description": "A collapsible shows and hides one block of detail under a short trigger, with a 44px plus tile that turns into a cross while open.",
+      "categories": [
+        "display"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-nav.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Collapsible.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Collapsible.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:item",
+      "title": "Combobox",
+      "description": "A combobox is a field that filters a list as you type and takes one of its options.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/dropdown-menu.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/lib-field.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Combobox.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Combobox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:item",
+      "title": "Command",
+      "description": "Command is a search field over a list of destinations and actions: type a few letters, press Enter.",
+      "categories": [
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/dropdown-menu.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/kbd.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Command.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Command.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:item",
+      "title": "Context Menu",
+      "description": "A context menu opens where something is right-clicked and offers the actions for that thing.",
+      "categories": [
+        "overlays"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/dropdown-menu.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/ContextMenu.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/ContextMenu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cookie-consent",
+      "type": "registry:item",
+      "title": "Cookie Consent",
+      "description": "Cookie consent is a raised panel in the corner of the first visit: what is stored and why, and three equal ways to answer.",
+      "categories": [
+        "onboarding"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/collapsible.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/switch.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/CookieConsent.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/CookieConsent.tsx"
+        }
+      ]
+    },
+    {
+      "name": "core",
+      "type": "registry:item",
+      "title": "Tray UI core for React",
+      "description": "What every Tray UI component in React needs: the helpers, the behaviours of the system as a module, the icons, and an import of the stylesheet from the package trayui.",
+      "categories": [
+        "core"
+      ],
+      "dependencies": [
+        "trayui@0.4.1"
+      ],
+      "files": [
+        {
+          "path": "react/src/icons.ts",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/icons.ts"
+        },
+        {
+          "path": "react/src/lib/icon.ts",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/lib/icon.ts"
+        },
+        {
+          "path": "react/src/lib/util.ts",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/lib/util.ts"
+        },
+        {
+          "path": "react/src/runtime.ts",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/runtime.ts"
+        },
+        {
+          "path": "react/src/styles.ts",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/styles.ts"
+        },
+        {
+          "path": "LICENSE",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/LICENSE"
+        },
+        {
+          "path": "src/LUCIDE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/LUCIDE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-01",
+      "type": "registry:item",
+      "title": "Dashboard",
+      "description": "An app's home: a sidebar with a workspace switcher, four stat cards, a chart of orders per day and a table of the latest orders to select and sort.",
+      "categories": [
+        "dashboard"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/dashboard-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Dashboard01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:item",
+      "title": "Data Table",
+      "description": "A data table is a Table that can be searched, sorted, selected and paged.",
+      "categories": [
+        "data"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/empty.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/input.json",
+        "https://trayui.com/r/table.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/DataTable.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/DataTable.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:item",
+      "title": "Date Picker",
+      "description": "A date picker is a field that opens a calendar and shows the chosen date in words.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/dropdown-menu.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/lib-field.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/DatePicker.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/DatePicker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "description-list",
+      "type": "registry:item",
+      "title": "Description List",
+      "description": "A description list sets out the facts about one thing as pairs: the name of the fact in soft ink at the start edge, its value beside it, a hairline between rows.",
+      "categories": [
+        "display"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/DescriptionList.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/DescriptionList.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:item",
+      "title": "Dialog",
+      "description": "A dialog asks for one decision or one small task in a panel over the page, and holds the page still until it is done.",
+      "categories": [
+        "overlays"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-overlays.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Dialog.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:item",
+      "title": "Direction",
+      "description": "Direction sets the reading direction of a region: with `dir=\"rtl\"` every component inside mirrors, because the styles use logical properties throughout.",
+      "categories": [
+        "layout"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Direction.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Direction.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:item",
+      "title": "Drawer",
+      "description": "A drawer is a panel that rises from the bottom edge: the dialog of a phone.",
+      "categories": [
+        "overlays"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-overlays.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Drawer.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Drawer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:item",
+      "title": "Dropdown Menu",
+      "description": "A dropdown menu is a short list of actions that opens from a button.",
+      "categories": [
+        "overlays"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/lib-static.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/DropdownMenu.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/DropdownMenu.tsx"
+        },
+        {
+          "path": "react/src/lib/menus.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/lib/menus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:item",
+      "title": "Empty",
+      "description": "An empty state fills the place where content will be: an icon tile, a title, one sentence, and the action that makes the first item.",
+      "categories": [
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Empty.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Empty.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-01",
+      "type": "registry:item",
+      "title": "First run",
+      "description": "The orders page of a workspace on its first day: the first steps to take, a way to bring old orders, and the empty table where new ones will land.",
+      "categories": [
+        "empty states"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/empty-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Empty01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-02",
+      "type": "registry:item",
+      "title": "No results",
+      "description": "A customer list whose search and filters match nobody: the filters stay in view, and the empty table names the near matches and clears the filters.",
+      "categories": [
+        "empty states"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/empty-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Empty02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-03",
+      "type": "registry:item",
+      "title": "No access",
+      "description": "A packer opens the reports: a dimmed picture of what the page holds, who can open it, a way to ask for access, and the pages that are open to them.",
+      "categories": [
+        "empty states"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/empty-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Empty03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-grid",
+      "type": "registry:item",
+      "title": "Feature Grid",
+      "description": "The feature grid tells what the product does in a few cards of unequal size: each one a small icon tile, a title, and two lines.",
+      "categories": [
+        "marketing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/card.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/FeatureGrid.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/FeatureGrid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feedback-widget",
+      "type": "registry:item",
+      "title": "Feedback Widget",
+      "description": "The feedback widget asks one question with a row of numbers, then offers a box for the reason, then says thanks.",
+      "categories": [
+        "onboarding"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/field.json",
+        "https://trayui.com/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/FeedbackWidget.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/FeedbackWidget.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:item",
+      "title": "Field",
+      "description": "A field is one question in a form: a label, its control, and one line of help or error beneath. The control inside is linked to the label and the message by itself. The label is a `<label for>` the control; for a group of inputs, such as Input OTP, it is a span the group is named by (`aria-labelledby`).",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-field.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Field.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:item",
+      "title": "File Upload",
+      "description": "File upload is a tray with a dashed edge that takes files dropped on it or chosen from the device, and lists them underneath.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/attachment.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/lib-account.json",
+        "https://trayui.com/r/lib-field.json",
+        "https://trayui.com/r/lib-static.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/FileUpload.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/FileUpload.tsx"
+        }
+      ]
+    },
+    {
+      "name": "filter-bar",
+      "type": "registry:item",
+      "title": "Filter Bar",
+      "description": "The filter bar sits over a list or a table: search at the start, filters as menus, sorting and the view at the end, and a chip for every filter that is on.",
+      "categories": [
+        "app shell"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/dropdown-menu.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/input-group.json",
+        "https://trayui.com/r/lib-static.json",
+        "https://trayui.com/r/native-select.json",
+        "https://trayui.com/r/toggle-group.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/FilterBar.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/FilterBar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer",
+      "type": "registry:item",
+      "title": "Footer",
+      "description": "The footer ends every public page: the name and a line about the product, the site's links in columns, and a last row for the legal lines.",
+      "categories": [
+        "marketing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Footer.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Footer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero",
+      "type": "registry:item",
+      "title": "Hero",
+      "description": "The hero is the first screen of a product's public page: what it is in one headline, one sentence, one yellow button, and something real to look at beside them.",
+      "categories": [
+        "marketing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/card.json",
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Hero.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Hero.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:item",
+      "title": "Hover Card",
+      "description": "A hover card previews what is behind a link when the pointer rests on it: a person, an order, a note.",
+      "categories": [
+        "overlays"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/HoverCard.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/HoverCard.tsx"
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "registry:item",
+      "title": "Icon",
+      "description": "An icon in the colour of the text around it. The system's icons are Lucide's: the ones built in go by name, and any other comes from `react-icons/lu`.",
+      "categories": [
+        "display"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Icon.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Icon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:item",
+      "title": "Input",
+      "description": "An input takes one line of text: a grey fill, 16px corners, 56px tall, no stroke. The fill follows the ground: white on a grey card.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-field.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Input.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:item",
+      "title": "Input Group",
+      "description": "An input group is one field that also holds an icon, a unit, a prefix or one small button.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/dropdown-menu.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/lib-field.json",
+        "https://trayui.com/r/lib-static.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/InputGroup.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/InputGroup.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:item",
+      "title": "Input OTP",
+      "description": "Input OTP takes a short one-time code, one character per cell.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-field.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/InputOTP.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/InputOTP.tsx"
+        }
+      ]
+    },
+    {
+      "name": "integration-card",
+      "type": "registry:item",
+      "title": "Integration Card",
+      "description": "An integration card stands for one outside service the product can work with: its mark, its name, what connecting it does, and the control that connects it.",
+      "categories": [
+        "account"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/switch.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/IntegrationCard.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/IntegrationCard.tsx"
+        }
+      ]
+    },
+    {
+      "name": "invite-form",
+      "type": "registry:item",
+      "title": "Invite Form",
+      "description": "The invite form takes several emails at once, a role for all of them, and sends the invitations.",
+      "categories": [
+        "account"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/field.json",
+        "https://trayui.com/r/lib-account.json",
+        "https://trayui.com/r/native-select.json",
+        "https://trayui.com/r/tag-input.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/InviteForm.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/InviteForm.tsx"
+        }
+      ]
+    },
+    {
+      "name": "invoice-list",
+      "type": "registry:item",
+      "title": "Invoice List",
+      "description": "The invoice list is the table of past invoices: number, date, amount, whether it was paid, and a button to download each.",
+      "categories": [
+        "billing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/badge.json",
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/table.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/InvoiceList.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/InvoiceList.tsx"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:item",
+      "title": "Item",
+      "description": "An item is one row of a list: a media tile, a title with a line of detail, and something at the end.",
+      "categories": [
+        "display"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Item.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:item",
+      "title": "Kbd",
+      "description": "Kbd shows a key of the keyboard as a small cap in the mono face.",
+      "categories": [
+        "display"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Kbd.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Kbd.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:item",
+      "title": "Label",
+      "description": "A label names a control in plain words, above it, in `label` type. A Field draws its own label; use Label for a control outside a Field.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Label.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "lib-account",
+      "type": "registry:item",
+      "title": "lib-account",
+      "description": "Shared code for account: the components that need it bring it.",
+      "categories": [
+        "lib"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/lib/account.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/lib/account.tsx"
+        }
+      ]
+    },
+    {
+      "name": "lib-chat",
+      "type": "registry:item",
+      "title": "lib-chat",
+      "description": "Shared code for chat: the components that need it bring it.",
+      "categories": [
+        "lib"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/lib/chat.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/lib/chat.tsx"
+        }
+      ]
+    },
+    {
+      "name": "lib-field",
+      "type": "registry:item",
+      "title": "lib-field",
+      "description": "Shared code for field: the components that need it bring it.",
+      "categories": [
+        "lib"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/lib/field.ts",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/lib/field.ts"
+        }
+      ]
+    },
+    {
+      "name": "lib-forms",
+      "type": "registry:item",
+      "title": "lib-forms",
+      "description": "Shared code for forms: the components that need it bring it.",
+      "categories": [
+        "lib"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/lib/forms.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/lib/forms.tsx"
+        }
+      ]
+    },
+    {
+      "name": "lib-nav",
+      "type": "registry:item",
+      "title": "lib-nav",
+      "description": "Shared code for nav: the components that need it bring it.",
+      "categories": [
+        "lib"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/lib/nav.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/lib/nav.tsx"
+        }
+      ]
+    },
+    {
+      "name": "lib-overlays",
+      "type": "registry:item",
+      "title": "lib-overlays",
+      "description": "Shared code for overlays: the components that need it bring it.",
+      "categories": [
+        "lib"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-static.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/lib/overlays.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/lib/overlays.tsx"
+        }
+      ]
+    },
+    {
+      "name": "lib-shell",
+      "type": "registry:item",
+      "title": "lib-shell",
+      "description": "Shared code for shell: the components that need it bring it.",
+      "categories": [
+        "lib"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/dropdown-menu.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/lib/shell.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/lib/shell.tsx"
+        }
+      ]
+    },
+    {
+      "name": "lib-static",
+      "type": "registry:item",
+      "title": "lib-static",
+      "description": "Shared code for static: the components that need it bring it.",
+      "categories": [
+        "lib"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/lib/static.ts",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/lib/static.ts"
+        }
+      ]
+    },
+    {
+      "name": "lightbox",
+      "type": "registry:item",
+      "title": "Lightbox",
+      "description": "A lightbox shows the pictures of a gallery one at a time, as large as the window allows, over the whole page.",
+      "categories": [
+        "display"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Lightbox.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Lightbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-01",
+      "type": "registry:item",
+      "title": "Sign-in form",
+      "description": "The plainest sign-in: a card centred on the page with email, a password you can show, a link for a forgotten one and six other accounts to use.",
+      "categories": [
+        "login"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/login-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Login01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-02",
+      "type": "registry:item",
+      "title": "Sign-in page with a cover",
+      "description": "The sign-in form in one half of the page, a cover in the other with a headline and a meter of the day's orders; for a sign-in that shows the product.",
+      "categories": [
+        "login"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/login-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Login02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-03",
+      "type": "registry:item",
+      "title": "Sign-in page on a tray",
+      "description": "A white sign-in panel on a grey ground, with Google and Apple shown and four more accounts in a menu, and the terms and privacy notice below.",
+      "categories": [
+        "login"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/login-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Login03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-04",
+      "type": "registry:item",
+      "title": "Sign-in card with a picture",
+      "description": "A wide card with the sign-in form beside a dark panel that follows one order, with the time of each step, from its arrival to the courier.",
+      "categories": [
+        "login"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/login-04.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Login04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-05",
+      "type": "registry:item",
+      "title": "Email-only sign-in",
+      "description": "Sign-in without a password: a link to the email that works for 15 minutes, six other accounts and a passkey; for a product that signs in by link.",
+      "categories": [
+        "login"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/login-05.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Login05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-06",
+      "type": "registry:item",
+      "title": "Sign-in with social accounts",
+      "description": "A sign-in card of six full-width account buttons and a link to use your email instead; for when most people use an account they already have.",
+      "categories": [
+        "login"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/login-06.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Login06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:item",
+      "title": "Marker",
+      "description": "A marker is a line in a conversation that is not a message: a date, a status, something the system did.",
+      "categories": [
+        "conversation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Marker.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Marker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:item",
+      "title": "Menubar",
+      "description": "A menubar is the row of menus at the top of a working tool: File, Edit, View.",
+      "categories": [
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/dropdown-menu.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Menubar.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Menubar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:item",
+      "title": "Message",
+      "description": "A message is one row of a conversation: who spoke, what they said, and what happened to it.",
+      "categories": [
+        "conversation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/avatar.json",
+        "https://trayui.com/r/bubble.json",
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/lib-chat.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Message.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Message.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:item",
+      "title": "Message Scroller",
+      "description": "The message scroller is the window a conversation lives in: it keeps the newest message in view, and steps aside when the reader scrolls back.",
+      "categories": [
+        "conversation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/MessageScroller.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/MessageScroller.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:item",
+      "title": "Native Select",
+      "description": "A native select is the browser's own menu in the system's field: the right choice on phones and in long forms.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-field.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/NativeSelect.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/NativeSelect.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:item",
+      "title": "Navigation Menu",
+      "description": "The navigation menu is the header of a site: the wordmark, a strip of links, and one small primary action.",
+      "categories": [
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/dropdown-menu.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/NavigationMenu.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/NavigationMenu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notification-center",
+      "type": "registry:item",
+      "title": "Notification Center",
+      "description": "The notification centre is the panel behind the bell: what happened while you were away, newest first, unread ones marked and counted on the bell.",
+      "categories": [
+        "app shell"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/avatar.json",
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-shell.json",
+        "https://trayui.com/r/lib-static.json",
+        "https://trayui.com/r/toggle-group.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/NotificationCenter.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/NotificationCenter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notification-preferences",
+      "type": "registry:item",
+      "title": "Notification Preferences",
+      "description": "Notification preferences is a grid of checkboxes: what can happen down the side, the ways to be told across the top.",
+      "categories": [
+        "account"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/checkbox.json",
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/NotificationPreferences.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/NotificationPreferences.tsx"
+        }
+      ]
+    },
+    {
+      "name": "onboarding-checklist",
+      "type": "registry:item",
+      "title": "Onboarding Checklist",
+      "description": "The onboarding checklist gets a new workspace to its first real result: a short list of tasks, the next one opened with its button, a bar that fills as they are done.",
+      "categories": [
+        "onboarding"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/card.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/progress.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/OnboardingChecklist.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/OnboardingChecklist.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:item",
+      "title": "Page Header",
+      "description": "The page header names the page: its title in `title` type, one line about it, the page's actions at the end edge, and tabs for its sections underneath.",
+      "categories": [
+        "app shell"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/breadcrumb.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/tabs.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/PageHeader.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/PageHeader.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:item",
+      "title": "Pagination",
+      "description": "Pagination moves through a long list one page at a time: 44px pages, the current one in solid ink, with Previous and Next on the resting fill.",
+      "categories": [
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Pagination.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "payment-method",
+      "type": "registry:item",
+      "title": "Payment Method",
+      "description": "Payment method lists the cards on file as choices, marks the one that is charged, and takes a new card in three fields.",
+      "categories": [
+        "billing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/badge.json",
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/field.json",
+        "https://trayui.com/r/input.json",
+        "https://trayui.com/r/input-group.json",
+        "https://trayui.com/r/radio-group.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/PaymentMethod.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/PaymentMethod.tsx"
+        }
+      ]
+    },
+    {
+      "name": "plan-comparison",
+      "type": "registry:item",
+      "title": "Plan Comparison",
+      "description": "The plan comparison is the full table under the pricing cards: every feature as a row, every plan as a column, a check, a dash or a number in each cell.",
+      "categories": [
+        "billing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/table.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/PlanComparison.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/PlanComparison.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:item",
+      "title": "Popover",
+      "description": "A popover is a small panel that opens beside the button that asked for it, for a few controls or a short explanation.",
+      "categories": [
+        "overlays"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Popover.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-01",
+      "type": "registry:item",
+      "title": "Plans at the end of a trial",
+      "description": "Three plans side by side with a monthly or yearly switch, and what the trial used against the plan it fits.",
+      "categories": [
+        "pricing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/pricing-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Pricing01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-02",
+      "type": "registry:item",
+      "title": "Plans compared feature by feature",
+      "description": "Every plan in one table, feature by feature in groups, with the price and a button at the head of each column.",
+      "categories": [
+        "pricing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/pricing-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Pricing02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-03",
+      "type": "registry:item",
+      "title": "Pricing by usage",
+      "description": "One plan priced by the order: a slider that works out the month's price, what farms like yours pay, and questions that fold.",
+      "categories": [
+        "pricing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/pricing-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Pricing03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-table",
+      "type": "registry:item",
+      "title": "Pricing Table",
+      "description": "The pricing table sets the plans side by side: a card each with the name, the price as the largest thing on it, who it is for, one button, and what is included. One plan is yellow.",
+      "categories": [
+        "billing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/badge.json",
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/card.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/toggle-group.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/PricingTable.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/PricingTable.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:item",
+      "title": "Progress",
+      "description": "A progress bar shows how much of a known whole is done: an 8px pill in `track`, filled in ink, with its name and value above.",
+      "categories": [
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Progress.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:item",
+      "title": "Questionnaire",
+      "description": "A questionnaire asks a few questions one at a time, when an assistant or a flow needs answers before it can go on.",
+      "categories": [
+        "conversation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Questionnaire.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Questionnaire.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:item",
+      "title": "Radio Group",
+      "description": "A radio group picks exactly one option from a few that are all shown: plain radios for short lists, or choice cards for choices that need explaining.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/RadioGroup.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/RadioGroup.tsx"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:item",
+      "title": "Resizable",
+      "description": "Resizable splits a box into two panes with a handle between them that can be dragged, or moved with the arrow keys.",
+      "categories": [
+        "layout"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-nav.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Resizable.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Resizable.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:item",
+      "title": "Scroll Area",
+      "description": "A scroll area keeps a long list or a wide row inside a fixed box, with a thin scrollbar in the system's rule colour.",
+      "categories": [
+        "layout"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/ScrollArea.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/ScrollArea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:item",
+      "title": "Select",
+      "description": "A select picks one option from a short list that opens under its trigger.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/dropdown-menu.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/lib-field.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Select.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:item",
+      "title": "Separator",
+      "description": "A separator is the one rule in the system: a 1px line in `hairline`.",
+      "categories": [
+        "layout"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Separator.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings-01",
+      "type": "registry:item",
+      "title": "Profile settings",
+      "description": "A personal profile in sections: a photo to upload, name and contact, language and time, and one bar that saves every change.",
+      "categories": [
+        "settings"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/settings-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Settings01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings-02",
+      "type": "registry:item",
+      "title": "Notifications by channel",
+      "description": "Notification settings channel by channel: switches for email and the phone app, a phone number to add for text messages, and quiet hours for the night.",
+      "categories": [
+        "settings"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/settings-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Settings02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings-03",
+      "type": "registry:item",
+      "title": "Security and the danger zone",
+      "description": "Two-step sign-in, the devices you are signed in on, and deleting the workspace behind a dialog that asks you to type its name.",
+      "categories": [
+        "settings"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/settings-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Settings03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings-section",
+      "type": "registry:item",
+      "title": "Settings Section",
+      "description": "A settings section is one topic of a settings page: its name and a line of explanation in a narrow column at the start edge, its controls on a card beside it.",
+      "categories": [
+        "account"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/card.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/input.json",
+        "https://trayui.com/r/input-group.json",
+        "https://trayui.com/r/native-select.json",
+        "https://trayui.com/r/switch.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/SettingsSection.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/SettingsSection.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:item",
+      "title": "Sheet",
+      "description": "A sheet is a panel that slides in from the side and keeps the page in view beside it.",
+      "categories": [
+        "overlays"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-overlays.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Sheet.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shop-01",
+      "type": "registry:item",
+      "title": "Product page",
+      "description": "A product page: pictures with thumbnails, the rating, sizes, the quantity, Add to cart, the delivery, tabs of details, reviews and four more products.",
+      "categories": [
+        "shop"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/shop-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Shop01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shop-02",
+      "type": "registry:item",
+      "title": "Cart page with product lines",
+      "description": "A cart inside the shop's header and footer: lines with a picture, quantity and Remove, the way to free delivery, three things to add and the summary.",
+      "categories": [
+        "shop"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/shop-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Shop02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shop-03",
+      "type": "registry:item",
+      "title": "Cart in a sheet",
+      "description": "Gifts on a page whose cart opens in a sheet at the side: lines with a quantity, the way to free delivery, the subtotal and Check out.",
+      "categories": [
+        "shop"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/shop-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Shop03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:item",
+      "title": "Sidebar",
+      "description": "A sidebar is the navigation of an application: a tray down the side with groups of links, and the person's account at its foot.",
+      "categories": [
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/avatar.json",
+        "https://trayui.com/r/badge.json",
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/lib-static.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Sidebar.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-01",
+      "type": "registry:item",
+      "title": "Sidebar grouped by section",
+      "description": "The base app sidebar: a wordmark, main items with a count, two labelled sections and the user at the foot. Start here for one level of navigation.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-02",
+      "type": "registry:item",
+      "title": "Sidebar with sections that fold",
+      "description": "The base sidebar with labelled sections that fold under their headings, one open and one closed; for when there are many sections and people use few.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-03",
+      "type": "registry:item",
+      "title": "Sidebar with a second level",
+      "description": "A sidebar with a second level always open under its items, such as the statuses under Orders; for a short second level used every day.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-04",
+      "type": "registry:item",
+      "title": "Sidebar with a level that folds",
+      "description": "A sidebar whose items fold open to show their second level, Orders open and the rest closed; for when the second level is too long to keep open.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-04.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-05",
+      "type": "registry:item",
+      "title": "Sidebar with menus",
+      "description": "A sidebar whose items open their second level in a menu beside them, so the list stays short; for when people go straight to a page under an item.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-05.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-06",
+      "type": "registry:item",
+      "title": "Sidebar that collapses to icons",
+      "description": "A sidebar that a button in the top bar folds to a rail of icons with tooltips, with a workspace switcher, a meter of orders and an account menu.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-06.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-07",
+      "type": "registry:item",
+      "title": "Inset sidebar",
+      "description": "An inset sidebar on a grey ground, the page in one white panel: a workspace switcher, the main items, a list of recent batches and an account menu.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-07.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-08",
+      "type": "registry:item",
+      "title": "Two sidebars",
+      "description": "Two sidebars: a rail of section icons beside an inbox of messages with a search and an Unread switch; for when a section is a list to pick from.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-08.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-09",
+      "type": "registry:item",
+      "title": "Sidebar with a file tree",
+      "description": "A sidebar for files: the changed files marked as modified, added or deleted, then a tree of folders that fold, with the open file in the breadcrumb.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-09.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-10",
+      "type": "registry:item",
+      "title": "Sidebar with a calendar",
+      "description": "A wide sidebar for a calendar: a month to pick the day, your own and the shared calendars as checkboxes in groups that fold, and a button to add one.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-10.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar10.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-11",
+      "type": "registry:item",
+      "title": "Sidebar at the end",
+      "description": "A sidebar at the end of the page with the contents of a long guide: headings, sub-headings, the current place marked and a link back to the top.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-11.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-12",
+      "type": "registry:item",
+      "title": "Sidebar on each side",
+      "description": "Navigation at the start of the page and details at the end: one order's customer, items, total and next deliveries, with a button to pack it.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-12.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar12.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-13",
+      "type": "registry:item",
+      "title": "Sidebar under a site header",
+      "description": "A sidebar under a header that spans the whole product and holds the wordmark, the breadcrumb, a search, notifications and the account.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-13.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar13.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-14",
+      "type": "registry:item",
+      "title": "Sidebar in a dialog",
+      "description": "A settings dialog open over the app, with a sidebar of its own: six sections down the side and the notification switches of the chosen one.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-14.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar14.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-15",
+      "type": "registry:item",
+      "title": "Navigation in a popover",
+      "description": "A page with no sidebar: a Menu button in the header opens the navigation in a popover; for small products or pages that need the full width.",
+      "categories": [
+        "sidebar"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/sidebar-15.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Sidebar15.tsx"
+        }
+      ]
+    },
+    {
+      "name": "signup-01",
+      "type": "registry:item",
+      "title": "Sign-up form",
+      "description": "The plainest sign-up: a card centred on the page with work email, a password of at least 12 characters, six other accounts and a line on the terms.",
+      "categories": [
+        "signup"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/signup-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Signup01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "signup-02",
+      "type": "registry:item",
+      "title": "Sign-up page with a cover",
+      "description": "The sign-up form in one half of the page and a cover in the other, listing three things a new account gets, from 14 free days to exporting your data.",
+      "categories": [
+        "signup"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/signup-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Signup02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "signup-03",
+      "type": "registry:item",
+      "title": "Sign-up page on a tray",
+      "description": "A white sign-up panel on a grey ground, with Google and Apple shown and four more accounts in a menu, and the terms and privacy notice below.",
+      "categories": [
+        "signup"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/signup-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Signup03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "signup-04",
+      "type": "registry:item",
+      "title": "Sign-up card with a picture",
+      "description": "A wide card with the sign-up form beside a panel of three first steps, from adding the products to packing the first order.",
+      "categories": [
+        "signup"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/signup-04.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Signup04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "signup-05",
+      "type": "registry:item",
+      "title": "Sign-up with sign-in providers",
+      "description": "Sign-up that leads with six accounts, with the email and password right below on the same page; for when people should see both ways at once.",
+      "categories": [
+        "signup"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/signup-05.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Signup05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "signup-06",
+      "type": "registry:item",
+      "title": "Sign-up with social accounts",
+      "description": "A sign-up card of six full-width account buttons and a link to use your email instead; for when the email form can live on a page of its own.",
+      "categories": [
+        "signup"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/signup-06.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Signup06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:item",
+      "title": "Skeleton",
+      "description": "A skeleton holds the place of content that is loading, in the shape of what will arrive: a grey shape with a slow pulse.",
+      "categories": [
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Skeleton.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:item",
+      "title": "Slider",
+      "description": "A slider picks a number from a range by dragging, when the feel of the value matters more than its digits.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-field.json",
+        "https://trayui.com/r/lib-forms.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Slider.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:item",
+      "title": "Spinner",
+      "description": "A spinner says that something is in progress and its length is unknown: an open ring in the text colour, always with words.",
+      "categories": [
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Spinner.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:item",
+      "title": "Stat Card",
+      "description": "A stat card shows one number that matters: what it counts, the figure, how it moved, and optionally the line of its last weeks.",
+      "categories": [
+        "metrics"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/StatCard.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/StatCard.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-01",
+      "type": "registry:item",
+      "title": "Stat cards with a period switch",
+      "description": "Six stat cards in two groups under a switch between 7 days, 30 days and the season, each set against the period before, the season against last year.",
+      "categories": [
+        "stats"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/stats-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Stats01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-02",
+      "type": "registry:item",
+      "title": "Stat cards over a season chart",
+      "description": "Stat cards and one large chart of the season on the ink card, with the harvest by bed and the goals of the season beneath.",
+      "categories": [
+        "stats"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/stats-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Stats02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-03",
+      "type": "registry:item",
+      "title": "Breakdown by channel",
+      "description": "A breakdown of the month: orders by channel beside the best sellers with their share, then orders by city and the share of repeat customers.",
+      "categories": [
+        "stats"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/stats-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Stats03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper",
+      "type": "registry:item",
+      "title": "Stepper",
+      "description": "A stepper shows where a person is in a short, fixed sequence: the steps as numbered marks over a bar that fills as they go.",
+      "categories": [
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Stepper.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:item",
+      "title": "Switch",
+      "description": "A switch turns one setting on or off, and the change applies at once.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-field.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Switch.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:item",
+      "title": "Table",
+      "description": "A table sets figures in rows and columns: hairline rows, quiet heads, numbers aligned on the right.",
+      "categories": [
+        "data"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Table.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Table.tsx"
+        },
+        {
+          "path": "react/src/lib/data.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/lib/data.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-01",
+      "type": "registry:item",
+      "title": "Table with filters and bulk actions",
+      "description": "A table of batches in a card: a filter bar with search, two filters and a date range, rows to select with actions, a total and numbered pages.",
+      "categories": [
+        "tables"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/table-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Table01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-02",
+      "type": "registry:item",
+      "title": "Table with sortable columns and row menus",
+      "description": "A table of customers with avatars, columns that sort, a search and a menu on each row, beside a sidebar folded to a rail.",
+      "categories": [
+        "tables"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/table-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Table02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-03",
+      "type": "registry:item",
+      "title": "Table with status tabs and a details sheet",
+      "description": "Deliveries of the day in a table filtered by tabs with counts; each order opens its details in a sheet.",
+      "categories": [
+        "tables"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/table-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Table03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:item",
+      "title": "Tabs",
+      "description": "Tabs switch between views of the same thing: a tray strip of 44px tabs, the current one in solid ink.",
+      "categories": [
+        "navigation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/badge.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-static.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Tabs.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tag-input",
+      "type": "registry:item",
+      "title": "Tag Input",
+      "description": "A tag input takes several short values in one field: each becomes a chip that can be removed, and the caret waits after the last one.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/lib-account.json",
+        "https://trayui.com/r/lib-field.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/TagInput.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/TagInput.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-members",
+      "type": "registry:item",
+      "title": "Team Members",
+      "description": "Team members is the table of people in a workspace: who they are, their role, whether they have joined, and when they were last seen.",
+      "categories": [
+        "account"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/avatar.json",
+        "https://trayui.com/r/badge.json",
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-account.json",
+        "https://trayui.com/r/native-select.json",
+        "https://trayui.com/r/table.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/TeamMembers.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/TeamMembers.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial",
+      "type": "registry:item",
+      "title": "Testimonial",
+      "description": "A testimonial is a customer's own sentence about the product, set large, with who said it underneath.",
+      "categories": [
+        "marketing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/avatar.json",
+        "https://trayui.com/r/card.json",
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Testimonial.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Testimonial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:item",
+      "title": "Textarea",
+      "description": "A textarea takes several lines of text, in the same fill and corners as an input.",
+      "categories": [
+        "forms"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/lib-field.json",
+        "https://trayui.com/r/lib-forms.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Textarea.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:item",
+      "title": "Toast",
+      "description": "A toast confirms that something just happened, in a small panel at the corner of the screen that leaves by itself.",
+      "categories": [
+        "feedback"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Toast.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:item",
+      "title": "Toggle",
+      "description": "A toggle is one button that stays pressed: on is solid ink, off is the resting fill.",
+      "categories": [
+        "actions"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/lib-static.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Toggle.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:item",
+      "title": "Toggle Group",
+      "description": "A toggle group is the segmented control: a tray of segments where the selected one is solid ink.",
+      "categories": [
+        "actions"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/ToggleGroup.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/ToggleGroup.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:item",
+      "title": "Tooltip",
+      "description": "A tooltip is one short line that names a control when the pointer or the keyboard is on it.",
+      "categories": [
+        "overlays"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Tooltip.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "top-bar",
+      "type": "registry:item",
+      "title": "Top Bar",
+      "description": "The top bar is the row above the content: where you are at the start edge; search, notifications and the account at the end edge.",
+      "categories": [
+        "app shell"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/breadcrumb.json",
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/kbd.json",
+        "https://trayui.com/r/lib-shell.json",
+        "https://trayui.com/r/lib-static.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/TopBar.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/TopBar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tour",
+      "type": "registry:item",
+      "title": "Tour",
+      "description": "A tour points at parts of a screen one at a time: a small raised panel beside the part, with a count, a sentence or two, and \"Next\".",
+      "categories": [
+        "onboarding"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Tour.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Tour.tsx"
+        }
+      ]
+    },
+    {
+      "name": "trace",
+      "type": "registry:item",
+      "title": "Trace",
+      "description": "A trace shows what an agent did on the way to an answer: one line per step, with its state and how long it took.",
+      "categories": [
+        "conversation"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Trace.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Trace.tsx"
+        }
+      ]
+    },
+    {
+      "name": "typography",
+      "type": "registry:item",
+      "title": "Typography",
+      "description": "Typography sets text in one of the system's type styles: one grotesque, Onest, weight 700 with tight tracking for anything that names, weight 400 with open leading for anything that explains.",
+      "categories": [
+        "display"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Typography.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Typography.tsx"
+        }
+      ]
+    },
+    {
+      "name": "upgrade-prompt",
+      "type": "registry:item",
+      "title": "Upgrade Prompt",
+      "description": "An upgrade prompt stands where a feature would be when the plan does not have it: what the feature does, which plan has it, and one button to get it.",
+      "categories": [
+        "billing"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/alert.json",
+        "https://trayui.com/r/button.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/UpgradePrompt.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/UpgradePrompt.tsx"
+        }
+      ]
+    },
+    {
+      "name": "uptime",
+      "type": "registry:item",
+      "title": "Uptime",
+      "description": "Uptime shows whether a service is working now and how it did over the last 90 days: its state in words, a bar per day, and the share of time it was up.",
+      "categories": [
+        "metrics"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/Uptime.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/Uptime.tsx"
+        }
+      ]
+    },
+    {
+      "name": "usage-meter",
+      "type": "registry:item",
+      "title": "Usage Meter",
+      "description": "A usage meter shows how much of a plan's allowance is used: a Progress bar per limit with `role=\"meter\"`, the numbers in words, and a note once a limit is near.",
+      "categories": [
+        "metrics"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/UsageMeter.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/UsageMeter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "user-menu",
+      "type": "registry:item",
+      "title": "User Menu",
+      "description": "The user menu opens from the avatar at the end of the top bar: who is signed in, then the account's pages, the theme, help and signing out.",
+      "categories": [
+        "app shell"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/avatar.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/dropdown-menu.json",
+        "https://trayui.com/r/lib-shell.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/UserMenu.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/UserMenu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "video-player",
+      "type": "registry:item",
+      "title": "Video Player",
+      "description": "A video player is a film with the system's controls under it: play, the place in the film, captions, sound and full screen.",
+      "categories": [
+        "display"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/VideoPlayer.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/VideoPlayer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wiki-01",
+      "type": "registry:item",
+      "title": "Wiki page",
+      "description": "A handbook page beside a tree of pages: who edited it last, an infobox, numbered steps, a callout, a table and a question on whether it helped.",
+      "categories": [
+        "wiki"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/wiki-01.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Wiki01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wiki-02",
+      "type": "registry:item",
+      "title": "Wiki home",
+      "description": "A handbook's front page: a search, the sections as tiles with their page counts, recent changes, the most read pages and those due for a review.",
+      "categories": [
+        "wiki"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/wiki-02.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Wiki02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wiki-03",
+      "type": "registry:item",
+      "title": "Page history",
+      "description": "The history of a handbook page: revisions with the date, author, summary and size of each, two ticked to compare, and the difference line by line.",
+      "categories": [
+        "wiki"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/core.json"
+      ],
+      "files": [
+        {
+          "path": "project/blocks/wiki-03.html",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/blocks/Wiki03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "workspace-switcher",
+      "type": "registry:item",
+      "title": "Workspace Switcher",
+      "description": "The workspace switcher is the button at the top of the sidebar that says which workspace you are in and opens the list of the others.",
+      "categories": [
+        "app shell"
+      ],
+      "registryDependencies": [
+        "https://trayui.com/r/avatar.json",
+        "https://trayui.com/r/core.json",
+        "https://trayui.com/r/icon.json",
+        "https://trayui.com/r/lib-shell.json"
+      ],
+      "files": [
+        {
+          "path": "react/src/components/WorkspaceSwitcher.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/trayui/components/WorkspaceSwitcher.tsx"
+        }
+      ]
+    }
+  ]
+}
