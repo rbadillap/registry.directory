@@ -1,0 +1,1463 @@
+{
+  "key": "react-motionkit",
+  "entry": "React MotionKit",
+  "name": "motionkit",
+  "homepage": "https://reactmotionkit.com",
+  "indexUrl": "https://reactmotionkit.com/r/registry.json",
+  "itemBase": "https://reactmotionkit.com/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "as-built",
+      "type": "registry:ui",
+      "title": "As-built",
+      "description": "A photograph is drawn out of itself along its own edges: where the hand passes, chalk lines run through the architecture and the picture drains to a blueprint.",
+      "categories": [
+        "effect-media"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-glsl.json",
+        "https://reactmotionkit.com/r/fx-preset.json",
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json"
+      ],
+      "files": [
+        {
+          "path": "components/effects/as-built.tsx",
+          "type": "registry:ui",
+          "target": "components/effects/as-built.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ball",
+      "type": "registry:lib",
+      "title": "useBall",
+      "description": "The travelling ball: a round body that charges toward its destination, springs across and squashes against the wall it lands on (the Switch thumb physics for dots, thumbs, carets and rails).",
+      "categories": [
+        "internal"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/motion-presets.json"
+      ],
+      "files": [
+        {
+          "path": "lib/ball.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "beats",
+      "type": "registry:lib",
+      "title": "Beats",
+      "description": "The three beats as helpers: press charge (usePress, sink, stretch), the cascade of secondary parts after a hero movement, the put-down of a landing part and the reflow spring for siblings.",
+      "categories": [
+        "internal"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/motion-presets.json"
+      ],
+      "files": [
+        {
+          "path": "lib/beats.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "blue-peter",
+      "type": "registry:block",
+      "title": "Blue Peter",
+      "description": "A closing call to action set on the signal flag a ship hoists before she sails: the panel is the flag's white, and the pointer's wind sends folds from hoist to fly.",
+      "categories": [
+        "sections"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/number-ticker.json",
+        "https://reactmotionkit.com/r/shimmer-button.json",
+        "https://reactmotionkit.com/r/status-badge.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "components/sections/blue-peter.tsx",
+          "type": "registry:component",
+          "target": "components/sections/blue-peter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Where you are in a hierarchy: ball separators nod toward the crumb you point at, new levels unfold from the last separator and the current page switches to a sibling in place.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "motion",
+        "@radix-ui/react-dropdown-menu"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/ball.json",
+        "https://reactmotionkit.com/r/beats.json"
+      ],
+      "files": [
+        {
+          "path": "ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "by-numbers",
+      "type": "registry:ui",
+      "title": "By Numbers",
+      "description": "A photograph as a paint-by-numbers canvas: the hand floods one numbered area at a time with wet acrylic that stops at the outline, and a click lets the kit finish itself.",
+      "categories": [
+        "effect-media"
+      ],
+      "dependencies": [
+        "ogl@1.0.11"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-preset.json",
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json"
+      ],
+      "files": [
+        {
+          "path": "components/effects/by-numbers.tsx",
+          "type": "registry:ui",
+          "target": "components/effects/by-numbers.tsx"
+        },
+        {
+          "path": "components/effects/by-numbers-kit.ts",
+          "type": "registry:ui",
+          "target": "components/effects/by-numbers-kit.ts"
+        }
+      ]
+    },
+    {
+      "name": "casement",
+      "type": "registry:ui",
+      "title": "Casement",
+      "description": "The page is a cut in a wall and the headline is a mural bigger than the window: the hand carries an oval that shows the same wall at dusk, and a press opens it.",
+      "categories": [
+        "effect-type"
+      ],
+      "dependencies": [
+        "ogl@1.0.11"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-glsl.json",
+        "https://reactmotionkit.com/r/fx-preset.json",
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json"
+      ],
+      "files": [
+        {
+          "path": "components/effects/casement.tsx",
+          "type": "registry:ui",
+          "target": "components/effects/casement.tsx"
+        }
+      ]
+    },
+    {
+      "name": "category-three",
+      "type": "registry:block",
+      "title": "Category Three",
+      "description": "Product detail for one pair of sunglasses: the sea at noon is washed out to the bare eye; only inside the held lenses is it seen, tinted and darkened to the lens transmission",
+      "categories": [
+        "sections"
+      ],
+      "dependencies": [
+        "@radix-ui/react-radio-group",
+        "ogl@1.0.11"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-glsl.json",
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/section-runtime.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "components/sections/category-three.tsx",
+          "type": "registry:component",
+          "target": "components/sections/category-three.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Checkbox whose primary fill grows from the press point as the box rounds toward a circle and back, then the tick draws itself; tri-state with a pill.",
+      "categories": [
+        "controls"
+      ],
+      "dependencies": [
+        "@radix-ui/react-checkbox",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/beats.json"
+      ],
+      "files": [
+        {
+          "path": "ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "coach-marks",
+      "type": "registry:ui",
+      "title": "Coach Marks",
+      "description": "Onboarding tours: one window in the scrim morphs from target to target, the callout rides along and the step ball rolls down its rail.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/ball.json",
+        "https://reactmotionkit.com/r/beats.json",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/morph.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/roll.json"
+      ],
+      "files": [
+        {
+          "path": "ui/coach-marks.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "cold-front",
+      "type": "registry:ui",
+      "title": "Cold Front",
+      "description": "Two aligned photographs, late summer over deep winter: a ragged snowline comes down the mountain as the page scrolls, and the hand pulls the cold toward it.",
+      "categories": [
+        "effect-media"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-glsl.json",
+        "https://reactmotionkit.com/r/fx-preset.json",
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json"
+      ],
+      "files": [
+        {
+          "path": "components/effects/cold-front.tsx",
+          "type": "registry:ui",
+          "target": "components/effects/cold-front.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Search field for long option lists on cmdk and Radix Popover: the list unrolls from the field, a pill tracks the highlight and the chosen text rolls up into the field.",
+      "categories": [
+        "controls"
+      ],
+      "dependencies": [
+        "@radix-ui/react-popover",
+        "cmdk",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/beats.json",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/morph.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/pill.json",
+        "https://reactmotionkit.com/r/use-should-animate.json"
+      ],
+      "files": [
+        {
+          "path": "ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "compose-refs",
+      "type": "registry:lib",
+      "title": "composeRefs",
+      "description": "Combines several React refs into one callback ref, with React 19 ref cleanup support.",
+      "categories": [
+        "internal"
+      ],
+      "files": [
+        {
+          "path": "lib/compose-refs.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:ui",
+      "title": "Copy Button",
+      "description": "Copies a value to the clipboard. The icon charges, morphs into a drawn check and the result is announced; for secrets it wipes the clipboard after a countdown ring.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "class-variance-authority",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-success": "var(--success)"
+        },
+        "light": {
+          "success": "oklch(0.56 0.14 155)"
+        },
+        "dark": {
+          "success": "oklch(0.72 0.15 155)"
+        }
+      },
+      "files": [
+        {
+          "path": "ui/copy-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "countdown",
+      "type": "registry:ui",
+      "title": "Countdown",
+      "description": "Time left to an absolute instant in tiles of tabular digits; the colon's ball carries each borrow and spent units fold away until a pill says it is time.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/ball.json",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-should-animate.json"
+      ],
+      "files": [
+        {
+          "path": "ui/countdown.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "cutaway",
+      "type": "registry:ui",
+      "title": "Cutaway",
+      "description": "A shape cut through the paper travels across the page and reveals your picture and a second reading of the content; it follows the pointer and changes form.",
+      "categories": [
+        "effect-media"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-preset.json",
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json"
+      ],
+      "files": [
+        {
+          "path": "components/effects/cutaway.tsx",
+          "type": "registry:ui",
+          "target": "components/effects/cutaway.tsx"
+        },
+        {
+          "path": "components/effects/cutaway-paint.ts",
+          "type": "registry:ui",
+          "target": "components/effects/cutaway-paint.ts"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data Table",
+      "description": "TanStack table with calm reflow on sort, a rolling sort ball, merged selection rails and cascading filter results.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu",
+        "@tanstack/react-table",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/ball.json",
+        "https://reactmotionkit.com/r/beats.json",
+        "https://reactmotionkit.com/r/checkbox.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/pill.json",
+        "https://reactmotionkit.com/r/skeleton.json",
+        "https://reactmotionkit.com/r/use-should-animate.json"
+      ],
+      "files": [
+        {
+          "path": "ui/data-table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "deep-press",
+      "type": "registry:ui",
+      "title": "Deep Press",
+      "description": "A key with real thickness to hold all the way down: resistance grows, a dry snap confirms and latches it, and letting go early makes it jump back.",
+      "categories": [
+        "effect-interactive"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json"
+      ],
+      "files": [
+        {
+          "path": "components/effects/deep-press.tsx",
+          "type": "registry:ui",
+          "target": "components/effects/deep-press.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Side and bottom sheets that follow the finger, spring to snap points and squash against the edge when thrown, built on Radix Dialog.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-focus-scope",
+        "aria-hidden",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/beats.json",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json"
+      ],
+      "files": [
+        {
+          "path": "ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "field-label",
+      "type": "registry:lib",
+      "title": "FloatingLabel",
+      "description": "The field family's floating label: a pill with the travelling ball's physics, thrown onto the rim on focus where it lands with a squash, tinted toward ring.",
+      "categories": [
+        "internal"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/ball.json",
+        "https://reactmotionkit.com/r/beats.json",
+        "https://reactmotionkit.com/r/motion-presets.json"
+      ],
+      "files": [
+        {
+          "path": "lib/field-label.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "fx-glsl",
+      "type": "registry:lib",
+      "title": "Effects GLSL chunks",
+      "description": "Shared GLSL chunks for effect shaders: simplex noise with fbm, OKLab color conversion and film grain.",
+      "categories": [
+        "internal"
+      ],
+      "files": [
+        {
+          "path": "lib/fx-glsl.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "fx-preset",
+      "type": "registry:lib",
+      "title": "Effects presets",
+      "description": "Resolves the preset and temperament props of an effect into colors, intensity and speed.",
+      "categories": [
+        "internal"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/motion-presets.json"
+      ],
+      "files": [
+        {
+          "path": "lib/fx-preset.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "fx-runtime",
+      "type": "registry:lib",
+      "title": "Effects runtime",
+      "description": "Shared runtime of the Effects collection: gated frame loop, mouse and touch pointer with ghost hand, CSS colour conversion and capped device pixel ratio.",
+      "categories": [
+        "internal"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json",
+        "https://reactmotionkit.com/r/use-should-animate.json"
+      ],
+      "files": [
+        {
+          "path": "lib/fx-runtime.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/fx-color.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "little-planet",
+      "type": "registry:ui",
+      "title": "Little Planet",
+      "description": "One straight-down photograph folded live into a round planet that turns under the hand; a click unfolds it back into the flat aerial view.",
+      "categories": [
+        "effect-media"
+      ],
+      "dependencies": [
+        "ogl@1.0.11"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-glsl.json",
+        "https://reactmotionkit.com/r/fx-preset.json",
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json"
+      ],
+      "files": [
+        {
+          "path": "components/effects/little-planet.tsx",
+          "type": "registry:ui",
+          "target": "components/effects/little-planet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marquee",
+      "type": "registry:ui",
+      "title": "Marquee",
+      "description": "Infinite horizontal or vertical ticker that eases to a stop on hover, focus or pause and stops when off screen.",
+      "categories": [
+        "layout"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-should-animate.json"
+      ],
+      "files": [
+        {
+          "path": "ui/marquee.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "misted",
+      "type": "registry:block",
+      "title": "Misted",
+      "description": "Sauna on the 31st floor, regulars' notes written with a finger on the steamed window",
+      "categories": [
+        "sections"
+      ],
+      "dependencies": [
+        "ogl@1.0.11"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-glsl.json",
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/section-runtime.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "components/sections/misted.tsx",
+          "type": "registry:component",
+          "target": "components/sections/misted.tsx"
+        }
+      ]
+    },
+    {
+      "name": "morph",
+      "type": "registry:lib",
+      "title": "Morph",
+      "description": "One surface becomes another: shared-layout surfaces without bounce, content that travels without stretching, a box-shadow rim that stays 1px, and parts that rise in after the surface.",
+      "categories": [
+        "internal"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/beats.json",
+        "https://reactmotionkit.com/r/compose-refs.json"
+      ],
+      "files": [
+        {
+          "path": "lib/morph.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "motion-kit",
+      "type": "registry:lib",
+      "title": "MotionKit Provider",
+      "description": "Sets the temperament (calm, lively, playful), global time scale and reduced-motion policy for every MotionKit component.",
+      "categories": [
+        "internal"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json"
+      ],
+      "files": [
+        {
+          "path": "lib/motion-kit.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "motion-presets",
+      "type": "registry:lib",
+      "title": "Motion Presets",
+      "description": "The motion language: temperament table (calm, lively, playful), springs, durations, easing curves and stagger rules used by every MotionKit component.",
+      "categories": [
+        "internal"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/temperaments.json"
+      ],
+      "files": [
+        {
+          "path": "lib/motion.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "number-ticker",
+      "type": "registry:ui",
+      "title": "Number Ticker",
+      "description": "Odometer digits that count into view, then mark which digits moved on every change, tinted by trend.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-brand": "var(--brand)",
+          "color-brand-muted": "var(--brand-muted)",
+          "color-success": "var(--success)"
+        },
+        "light": {
+          "brand": "oklch(0.55 0.2 278)",
+          "brand-muted": "oklch(0.55 0.2 278 / 0.12)",
+          "success": "oklch(0.56 0.14 155)"
+        },
+        "dark": {
+          "brand": "oklch(0.7 0.16 278)",
+          "brand-muted": "oklch(0.7 0.16 278 / 0.16)",
+          "success": "oklch(0.72 0.15 155)"
+        }
+      },
+      "files": [
+        {
+          "path": "ui/number-ticker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "parasol",
+      "type": "registry:block",
+      "title": "Parasol",
+      "description": "A hero seen from above at two in the afternoon: a café parasol tilts toward the hand and its shadow, whose rim bounds the copy, follows a beat later.",
+      "categories": [
+        "sections"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/status-badge.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "components/sections/parasol.tsx",
+          "type": "registry:component",
+          "target": "components/sections/parasol.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pill",
+      "type": "registry:lib",
+      "title": "usePill",
+      "description": "The stretching pill: an active-item capsule whose leading edge springs ahead while the trailing edge follows, so it stretches over the travel and contracts on arrival.",
+      "categories": [
+        "internal"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/motion-presets.json"
+      ],
+      "files": [
+        {
+          "path": "lib/pill.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "planisphere",
+      "type": "registry:block",
+      "title": "Planisphere",
+      "description": "Observatory booking on a card star wheel: the disc is the date picker, the oval window is the night you book",
+      "categories": [
+        "sections"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/section-runtime.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "components/sections/planisphere.tsx",
+          "type": "registry:component",
+          "target": "components/sections/planisphere.tsx"
+        },
+        {
+          "path": "components/sections/planisphere-sky.ts",
+          "type": "registry:component",
+          "target": "components/sections/planisphere-sky.ts"
+        }
+      ]
+    },
+    {
+      "name": "plunger-button",
+      "type": "registry:ui",
+      "title": "Plunger Button",
+      "description": "Hold to confirm a heavy action: the pill's cap compresses like a pinball plunger, then fires its ball into the ring beside it, which becomes the status.",
+      "categories": [
+        "buttons"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/shape.json"
+      ],
+      "files": [
+        {
+          "path": "ui/plunger-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pressed-type",
+      "type": "registry:ui",
+      "title": "Pressed Type",
+      "description": "Your text debossed into a plate of coloured stock: a slow raking light moves across the impression and follows the pointer, as on letterpress paper.",
+      "categories": [
+        "effect-type"
+      ],
+      "dependencies": [
+        "ogl@1.0.11"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-glsl.json",
+        "https://reactmotionkit.com/r/fx-preset.json",
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json"
+      ],
+      "files": [
+        {
+          "path": "components/effects/pressed-type.tsx",
+          "type": "registry:ui",
+          "target": "components/effects/pressed-type.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Progress bar, segmented meter and ring whose fill leads with a rounded tip and, at 100%, squashes on the wall into a ball with a check.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@radix-ui/react-progress",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/pill.json",
+        "https://reactmotionkit.com/r/use-should-animate.json"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-success": "var(--success)",
+          "color-warning": "var(--warning)"
+        },
+        "light": {
+          "success": "oklch(0.56 0.14 155)",
+          "warning": "oklch(0.7 0.15 70)"
+        },
+        "dark": {
+          "success": "oklch(0.72 0.15 155)",
+          "warning": "oklch(0.8 0.14 75)"
+        }
+      },
+      "files": [
+        {
+          "path": "ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "promo-banner",
+      "type": "registry:ui",
+      "title": "Promo Banner",
+      "description": "A flap hinged on the top edge of the page for an announcement or a sale: it swings down once, dismisses up and away, and the app owns the dismissal.",
+      "categories": [
+        "layout"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/beats.json",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-should-animate.json"
+      ],
+      "files": [
+        {
+          "path": "ui/promo-banner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Radio group with one shared dot that charges toward the pressed option, travels through the gap and squashes into the ring it lands in.",
+      "categories": [
+        "controls"
+      ],
+      "dependencies": [
+        "@radix-ui/react-radio-group",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/ball.json",
+        "https://reactmotionkit.com/r/beats.json",
+        "https://reactmotionkit.com/r/pill.json",
+        "https://reactmotionkit.com/r/compose-refs.json"
+      ],
+      "files": [
+        {
+          "path": "ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "roll",
+      "type": "registry:lib",
+      "title": "Roll",
+      "description": "The digit roll: tabular digits that travel vertically like a ball between stops, only the changed ones, in the direction of change, with reserved width so the layout never shifts.",
+      "categories": [
+        "internal"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/motion-kit.json"
+      ],
+      "files": [
+        {
+          "path": "lib/roll.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "scroll-progress",
+      "type": "registry:ui",
+      "title": "Scroll Progress",
+      "description": "Reading progress bar for the page, an article or a scroll area: glides after the scroll, with section ticks you can jump to and the reading time left.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-brand": "var(--brand)"
+        },
+        "light": {
+          "brand": "oklch(0.55 0.2 278)"
+        },
+        "dark": {
+          "brand": "oklch(0.7 0.16 278)"
+        }
+      },
+      "files": [
+        {
+          "path": "ui/scroll-progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "section-runtime",
+      "type": "registry:lib",
+      "title": "Sections runtime",
+      "description": "Shared runtime of the Sections collection: loads a section's heavy graphics the first time it nears the viewport, with a still frame meanwhile.",
+      "categories": [
+        "internal"
+      ],
+      "files": [
+        {
+          "path": "lib/section-runtime.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "shape",
+      "type": "registry:lib",
+      "title": "Shape",
+      "description": "The shape language as data: the built-in ball, pill, tile and triangle as SVG paths, custom paths with their viewBox, fitting, masks and a cached sampled outline for physics.",
+      "categories": [
+        "internal"
+      ],
+      "files": [
+        {
+          "path": "lib/shape.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "shimmer-button",
+      "type": "registry:ui",
+      "title": "Shimmer Button",
+      "description": "Primary action button whose light sweeps across its surface and rim on hover, focus, press, and whenever the change it commits is updated.",
+      "categories": [
+        "buttons"
+      ],
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-should-animate.json"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-brand": "var(--brand)",
+          "color-brand-foreground": "var(--brand-foreground)"
+        },
+        "light": {
+          "brand": "oklch(0.55 0.2 278)",
+          "brand-foreground": "oklch(0.985 0.002 264)"
+        },
+        "dark": {
+          "brand": "oklch(0.7 0.16 278)",
+          "brand-foreground": "oklch(0.16 0.02 278)"
+        }
+      },
+      "files": [
+        {
+          "path": "ui/shimmer-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Placeholders made of the three shapes under one shared sweep; when data arrives each one morphs into its content, numbers count up, and empty or failed loads resolve in place.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/beats.json",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-should-animate.json"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-brand": "var(--brand)"
+        },
+        "light": {
+          "brand": "oklch(0.55 0.2 278)"
+        },
+        "dark": {
+          "brand": "oklch(0.7 0.16 278)"
+        }
+      },
+      "files": [
+        {
+          "path": "ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "snowfall",
+      "type": "registry:ui",
+      "title": "Snowfall",
+      "description": "Night snow seen through a long lens, in three depth planes under your content; the warm hand melts the flakes it reaches and the hole closes when it leaves.",
+      "categories": [
+        "effect-backgrounds"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-preset.json",
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json"
+      ],
+      "files": [
+        {
+          "path": "components/effects/snowfall.tsx",
+          "type": "registry:ui",
+          "target": "components/effects/snowfall.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spotlight-card",
+      "type": "registry:ui",
+      "title": "Spotlight Card",
+      "description": "A card that answers the pointer with shape and light: the nearest corner rounds, a rim light and a soft glow follow the pointer, and a status lights the rim and rounds the icon into a ball.",
+      "categories": [
+        "cards"
+      ],
+      "dependencies": [
+        "motion",
+        "@radix-ui/react-slot"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/beats.json",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-should-animate.json"
+      ],
+      "files": [
+        {
+          "path": "ui/spotlight-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "status-badge",
+      "type": "registry:ui",
+      "title": "Status Badge",
+      "description": "Status chip whose dot squashes against the wall and whose label crossfades as the badge reflows when the status changes.",
+      "categories": [
+        "data"
+      ],
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/ball.json",
+        "https://reactmotionkit.com/r/use-should-animate.json"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-success": "var(--success)",
+          "color-warning": "var(--warning)",
+          "color-info": "var(--info)"
+        },
+        "light": {
+          "success": "oklch(0.56 0.14 155)",
+          "warning": "oklch(0.7 0.15 70)",
+          "info": "oklch(0.55 0.16 252)"
+        },
+        "dark": {
+          "success": "oklch(0.72 0.15 155)",
+          "warning": "oklch(0.8 0.14 75)",
+          "info": "oklch(0.72 0.13 252)"
+        }
+      },
+      "files": [
+        {
+          "path": "ui/status-badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Toggle switch whose thumb charges on press, springs across, squashes against the far wall and settles, with optional icons inside.",
+      "categories": [
+        "controls"
+      ],
+      "dependencies": [
+        "@radix-ui/react-switch",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/motion-kit.json"
+      ],
+      "files": [
+        {
+          "path": "ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tangram-word",
+      "type": "registry:ui",
+      "title": "Tangram Word",
+      "description": "A short word or status cut in tangram pieces: letters fold into tangram squares on hover, and a status change rearranges the squares into the new word.",
+      "categories": [
+        "text"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/use-should-animate.json"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-brand": "var(--brand)"
+        },
+        "light": {
+          "brand": "oklch(0.55 0.2 278)"
+        },
+        "dark": {
+          "brand": "oklch(0.7 0.16 278)"
+        }
+      },
+      "files": [
+        {
+          "path": "ui/tangram-word.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "temperaments",
+      "type": "registry:lib",
+      "title": "Temperaments",
+      "description": "The single table of MotionKit temperaments (calm, lively, playful): springs, physics, durations, squash, tilt, stagger and CSS easings.",
+      "categories": [
+        "internal"
+      ],
+      "files": [
+        {
+          "path": "lib/temperaments.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "thin-air",
+      "type": "registry:ui",
+      "title": "Thin Air",
+      "description": "An empty-state headline of hairline letters that swell to Black under the hand and fill with a photograph from the baseline, like liquid rising in a glass.",
+      "categories": [
+        "effect-type"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-preset.json",
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json"
+      ],
+      "files": [
+        {
+          "path": "components/effects/thin-air.tsx",
+          "type": "registry:ui",
+          "target": "components/effects/thin-air.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Tooltip pinched out of the trigger's edge: a ball stretches into the label's capsule, and one tooltip travels along a toolbar.",
+      "categories": [
+        "overlays"
+      ],
+      "dependencies": [
+        "@radix-ui/react-tooltip",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/morph.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/pill.json"
+      ],
+      "files": [
+        {
+          "path": "ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tree-view",
+      "type": "registry:ui",
+      "title": "Tree View",
+      "description": "Hierarchies for files, outlines and permissions: the selection is a ball that rolls along the guide lines, branches trace open and children cascade in.",
+      "categories": [
+        "navigation"
+      ],
+      "dependencies": [
+        "motion",
+        "@radix-ui/react-slot"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://reactmotionkit.com/r/checkbox.json",
+        "https://reactmotionkit.com/r/ball.json",
+        "https://reactmotionkit.com/r/beats.json",
+        "https://reactmotionkit.com/r/compose-refs.json",
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/motion-presets.json"
+      ],
+      "files": [
+        {
+          "path": "ui/tree-view.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "use-page-visible",
+      "type": "registry:hook",
+      "title": "usePageVisible",
+      "description": "SSR-safe hook that reports whether the browser tab is visible, used to pause continuous animations.",
+      "categories": [
+        "internal"
+      ],
+      "files": [
+        {
+          "path": "hooks/use-page-visible.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-prefers-reduced-motion",
+      "type": "registry:hook",
+      "title": "usePrefersReducedMotion",
+      "description": "Hydration-safe hook that reports the user's reduced-motion preference and updates when it changes.",
+      "categories": [
+        "internal"
+      ],
+      "files": [
+        {
+          "path": "hooks/use-prefers-reduced-motion.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-should-animate",
+      "type": "registry:hook",
+      "title": "useShouldAnimate",
+      "description": "Combines viewport, tab visibility and reduced-motion preference to decide whether a loop should run.",
+      "categories": [
+        "internal"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/motion-kit.json",
+        "https://reactmotionkit.com/r/use-page-visible.json"
+      ],
+      "files": [
+        {
+          "path": "hooks/use-should-animate.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "velvet-field",
+      "type": "registry:ui",
+      "title": "Velvet Field",
+      "description": "A viewport of fine fibres leaning like velvet nap: a warm light follows the pointer and moving the pointer brushes the pile, which slowly recovers.",
+      "categories": [
+        "effect-backgrounds"
+      ],
+      "dependencies": [
+        "ogl@1.0.11"
+      ],
+      "registryDependencies": [
+        "https://reactmotionkit.com/r/fx-glsl.json",
+        "https://reactmotionkit.com/r/fx-preset.json",
+        "https://reactmotionkit.com/r/fx-runtime.json",
+        "https://reactmotionkit.com/r/motion-presets.json",
+        "https://reactmotionkit.com/r/use-prefers-reduced-motion.json"
+      ],
+      "files": [
+        {
+          "path": "components/effects/velvet-field.tsx",
+          "type": "registry:ui",
+          "target": "components/effects/velvet-field.tsx"
+        }
+      ]
+    }
+  ]
+}

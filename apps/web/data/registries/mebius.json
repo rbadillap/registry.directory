@@ -1,0 +1,1651 @@
+{
+  "key": "mebius",
+  "entry": "mebius",
+  "name": "mebius",
+  "homepage": "https://www.mebius.design",
+  "indexUrl": "https://www.mebius.design/r/registry.json",
+  "itemBase": "https://www.mebius.design/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "charts-ethereum",
+      "type": "registry:block",
+      "title": "Ethereum Chart",
+      "description": "A coin price card: the price with its change over the period, a Week / Month / Year switch, the NAV and market price with their changes, and green and red candles on a dashed price grid with the volume under them. Hover, drag or the arrow keys inspect a candle: the others fade back and a dark tooltip reads its time, change, open, high, low, close and volume. Animated with anime.js: the candles grow out of their opens one after another, and a new period morphs them into the new ones while the numbers count.",
+      "categories": [
+        "Charts",
+        "Candlestick chart"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-chart-card.json",
+        "https://www.mebius.design/r/charts-button.json",
+        "https://www.mebius.design/r/charts-icons.json",
+        "https://www.mebius.design/r/charts-segmented-control.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json",
+        "https://www.mebius.design/r/charts-use-chart-size.json",
+        "https://www.mebius.design/r/charts-use-controllable-state.json",
+        "https://www.mebius.design/r/charts-format.json",
+        "https://www.mebius.design/r/charts-series.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/blocks/ethereum-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "charts-category-breakdown",
+      "type": "registry:block",
+      "title": "Category Breakdown Chart",
+      "description": "A spending breakdown card: the month's revenue and expenses with their change from last month in badges, a Manage balance button, and the expenses as a meter of thin round ticks split among the categories, each starting with a tall tick under its name and share and shaded by its parts. Hover, drag or the arrow keys pick a part: its ticks rise, the other categories fade and a tooltip gives its amount and share; a click or Enter pins the category. Animated with anime.js: the figures count up, the ticks rise from left to right, the names come in as their ticks rise, and new amounts move the tall ticks and names while the ticks change colour.",
+      "categories": [
+        "Charts",
+        "Progress chart"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-chart-card.json",
+        "https://www.mebius.design/r/charts-button.json",
+        "https://www.mebius.design/r/charts-icons.json",
+        "https://www.mebius.design/r/charts-change-badge.json",
+        "https://www.mebius.design/r/charts-tooltip-lines.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json",
+        "https://www.mebius.design/r/charts-use-chart-size.json",
+        "https://www.mebius.design/r/charts-use-controllable-state.json",
+        "https://www.mebius.design/r/charts-format.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/blocks/category-breakdown-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "charts-financial-trends",
+      "type": "registry:block",
+      "title": "Financial Trends Chart",
+      "description": "A cash flow card drawn as a dot matrix: the period's total net cash flow with a Week / Month / Year control over a grid of squares, one column per stretch of time and every square an equal amount, the money out stacked in blue from the bottom and the money in grey on top. A dashed line marks the selected column and a tooltip gives its dates and both amounts; the legend items take a series off the grid. Hover, drag or the arrow keys pick a column. Animated with anime.js: the matrix ripples in, the squares light up column by column while the total counts up, then the line runs down and the tooltip pops in; a new period slides the columns into place and recolours the squares that change.",
+      "categories": [
+        "Charts",
+        "Bar chart"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-chart-card.json",
+        "https://www.mebius.design/r/charts-button.json",
+        "https://www.mebius.design/r/charts-icons.json",
+        "https://www.mebius.design/r/charts-legend-swatch.json",
+        "https://www.mebius.design/r/charts-segmented-control.json",
+        "https://www.mebius.design/r/charts-trends-tooltip.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json",
+        "https://www.mebius.design/r/charts-use-chart-size.json",
+        "https://www.mebius.design/r/charts-use-controllable-state.json",
+        "https://www.mebius.design/r/charts-format.json",
+        "https://www.mebius.design/r/charts-series.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/blocks/financial-trends-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "charts-asset-allocation",
+      "type": "registry:block",
+      "title": "Asset Allocation Chart",
+      "description": "An asset allocation card: the amount allocated and the portfolio's total next to a two-column flow chart in which bands carry the money from the classes it leaves to the classes it joins, labelled with each amount and its share, and a dark tooltip on the selected band with its share of both classes. Hover, focus or click a band to raise it with its tooltip, hover a class to light its bands, and switch classes off in the legend to reflow the chart. Animated with anime.js.",
+      "categories": [
+        "Charts",
+        "Sankey chart"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-chart-card.json",
+        "https://www.mebius.design/r/charts-button.json",
+        "https://www.mebius.design/r/charts-icons.json",
+        "https://www.mebius.design/r/charts-icon-tile.json",
+        "https://www.mebius.design/r/charts-legend-dot.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json",
+        "https://www.mebius.design/r/charts-use-chart-size.json",
+        "https://www.mebius.design/r/charts-use-controllable-state.json",
+        "https://www.mebius.design/r/charts-format.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/blocks/asset-allocation-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "charts-asset-overview-bar",
+      "type": "registry:block",
+      "title": "Asset Overview Bar Chart",
+      "description": "An asset overview card: a Week / Month / Year switch, the period's Mutual Funds and Stocks totals, and a stacked bar per slot of the period (blue funds under an orange stocks cap) with the days named under them, an insight line and a See insight button. Scrubbing dims the other bars and shows a tooltip with both amounts; each total toggles its series. The bars stack up from the baseline and morph in a wave when the period changes. Animated with anime.js.",
+      "categories": [
+        "Charts",
+        "Bar chart"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-chart-card.json",
+        "https://www.mebius.design/r/charts-button.json",
+        "https://www.mebius.design/r/charts-icons.json",
+        "https://www.mebius.design/r/charts-segmented-control.json",
+        "https://www.mebius.design/r/charts-swatch.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json",
+        "https://www.mebius.design/r/charts-use-chart-size.json",
+        "https://www.mebius.design/r/charts-use-controllable-state.json",
+        "https://www.mebius.design/r/charts-format.json",
+        "https://www.mebius.design/r/charts-series.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/blocks/asset-overview-bar-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "charts-expenses",
+      "type": "registry:block",
+      "title": "Expenses Chart",
+      "description": "An expenses card: the period's total with its change, a Week / Month / Year switch, a row per category and a donut of the categories on the period's budget, what is left of it hatched. Pointing at a segment, a row or the hatched part brings it forward and shows its amount and share in the middle of the ring; pressing a row holds it. The segments sweep round from 12 o'clock and turn to their new sizes between periods. Animated with anime.js.",
+      "categories": [
+        "Charts",
+        "Pie chart"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-chart-card.json",
+        "https://www.mebius.design/r/charts-button.json",
+        "https://www.mebius.design/r/charts-icons.json",
+        "https://www.mebius.design/r/charts-change-badge.json",
+        "https://www.mebius.design/r/charts-segmented-control.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json",
+        "https://www.mebius.design/r/charts-use-controllable-state.json",
+        "https://www.mebius.design/r/charts-format.json",
+        "https://www.mebius.design/r/charts-arcs.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/blocks/expenses-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "charts-finance-overview-timeline",
+      "type": "registry:block",
+      "title": "Finance Overview Timeline Chart",
+      "description": "A week of spending on a timeline: a purple-tiled title, the total spent, the average a day and the share of the budget, and a purple track with a bar for each spending, as wide as the time it took and darker the more it cost, over the days of the week, with Export and Share actions. Hover, drag or the arrow keys pick a bar and show what it was, when and how much. Animated with anime.js.",
+      "categories": [
+        "Charts",
+        "Timeline chart"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-chart-card.json",
+        "https://www.mebius.design/r/charts-button.json",
+        "https://www.mebius.design/r/charts-icons.json",
+        "https://www.mebius.design/r/charts-tooltip-lines.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json",
+        "https://www.mebius.design/r/charts-use-chart-size.json",
+        "https://www.mebius.design/r/charts-format.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/blocks/finance-overview-timeline-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "charts-income-overview",
+      "type": "registry:block",
+      "title": "Income Overview Chart",
+      "description": "An income overview card: the year's total revenue with its change against last year, and glossy blue bars, one per quarter in its own track, read against an axis up to the quarterly target. Hover or focus a quarter to tag its bar with the amount and its share of the target while the other bars dim, click to keep the tag; the bars grow in with a light sweeping across them and the numbers count. Animated with anime.js.",
+      "categories": [
+        "Charts",
+        "Bar chart"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-chart-card.json",
+        "https://www.mebius.design/r/charts-button.json",
+        "https://www.mebius.design/r/charts-icons.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json",
+        "https://www.mebius.design/r/charts-use-chart-size.json",
+        "https://www.mebius.design/r/charts-use-controllable-state.json",
+        "https://www.mebius.design/r/charts-format.json",
+        "https://www.mebius.design/r/charts-series.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/blocks/income-overview-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "charts-revenue-overview",
+      "type": "registry:block",
+      "title": "Revenue Overview Chart",
+      "description": "A revenue overview card: the month's revenue on a half-circle gauge toward the monthly target, the blue band filled up to today and a line along it with a point for each day with sales, the amount and its change from last month in the middle, and a box that says whether the month is on pace. Hover, touch or the arrow keys scrub the points with a tooltip of the day and the revenue so far. Animated with anime.js: the band sweeps round with the line drawing along and the points popping up while the amount counts, and today's point pulses.",
+      "categories": [
+        "Charts",
+        "Radial chart"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-chart-card.json",
+        "https://www.mebius.design/r/charts-button.json",
+        "https://www.mebius.design/r/charts-icons.json",
+        "https://www.mebius.design/r/charts-tooltip-lines.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json",
+        "https://www.mebius.design/r/charts-use-chart-size.json",
+        "https://www.mebius.design/r/charts-format.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/blocks/revenue-overview-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "charts-total-expenses",
+      "type": "registry:block",
+      "title": "Total Expenses Chart",
+      "description": "A spending card on a blue glow: the period's total and its change, a legend of categories with amounts and trends, and a line chart with a soft area. A Weekly / Monthly / Yearly menu morphs the line; hover or arrow keys read the points. Animated with anime.js.",
+      "categories": [
+        "Charts",
+        "Line chart"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-chart-card.json",
+        "https://www.mebius.design/r/charts-icons.json",
+        "https://www.mebius.design/r/charts-menu.json",
+        "https://www.mebius.design/r/charts-swatch.json",
+        "https://www.mebius.design/r/charts-trend.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json",
+        "https://www.mebius.design/r/charts-use-chart-size.json",
+        "https://www.mebius.design/r/charts-use-controllable-state.json",
+        "https://www.mebius.design/r/charts-format.json",
+        "https://www.mebius.design/r/charts-series.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/blocks/total-expenses-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "forms-invoice",
+      "type": "registry:block",
+      "title": "Invoice Form",
+      "description": "An invoice editor: the client's name and email edited in place, issue and due dates (\"in 14 days\" read from them), an editable table of lines you add and remove, a card payments switch, and the subtotal, tax and total computed as you type. Save draft, or validate and send. Animated with anime.js.",
+      "categories": [
+        "Forms",
+        "Billing"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0",
+        "lucide-react@^1.64.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/forms-theme.json",
+        "https://www.mebius.design/r/forms-use-form-motion.json",
+        "https://www.mebius.design/r/forms-use-form-submit.json",
+        "https://www.mebius.design/r/forms-use-controllable-state.json",
+        "https://www.mebius.design/r/forms-font-geist.json",
+        "https://www.mebius.design/r/forms-font-geist-mono.json"
+      ],
+      "files": [
+        {
+          "path": "registry/forms/blocks/invoice-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "forms-pro-session-scheduling",
+      "type": "registry:block",
+      "title": "Schedule a Session Form",
+      "description": "A \"Schedule a session\" booking dialog: the host and session details beside a week of days, the open morning and afternoon times of the picked day and a live summary, with fully booked and closed days explained, week navigation and a time zone switch that re-reads every time. Validates, books through onSubmit and shows a confirmation. Animated with anime.js.",
+      "categories": [
+        "Forms",
+        "Booking"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0",
+        "lucide-react@^1.64.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/forms-pro-theme.json",
+        "https://www.mebius.design/r/forms-pro-use-form-motion.json",
+        "https://www.mebius.design/r/forms-pro-use-form-submit.json",
+        "https://www.mebius.design/r/forms-pro-use-controllable-state.json",
+        "https://www.mebius.design/r/forms-pro-font-geist.json",
+        "https://www.mebius.design/r/forms-pro-font-geist-mono.json"
+      ],
+      "files": [
+        {
+          "path": "registry/forms-pro/blocks/session-scheduling-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "forms-pro-terminal-workspace",
+      "type": "registry:block",
+      "title": "Create a Workspace Form",
+      "description": "A terminal window (create-workspace.sh) that sets up a workspace from CLI-style flags: --name and --email with a block cursor, a --region list, a --seats count the arrow keys step, a --plan table read from your plans and options that follow the plan. Validates on submit, spins while it creates, then prints the command and what it made (the monthly price from plan and seats, the trial's end). Animates with anime.js.",
+      "categories": [
+        "Forms",
+        "Onboarding"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/forms-pro-theme.json",
+        "https://www.mebius.design/r/forms-pro-use-form-motion.json",
+        "https://www.mebius.design/r/forms-pro-use-form-submit.json",
+        "https://www.mebius.design/r/forms-pro-use-controllable-state.json",
+        "https://www.mebius.design/r/forms-pro-font-jetbrains-mono.json"
+      ],
+      "files": [
+        {
+          "path": "registry/forms-pro/blocks/terminal-workspace-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "forms-pro-new-product",
+      "type": "registry:block",
+      "title": "New Product Form",
+      "description": "A new-product dialog for a digital store: a cover image you drop or pick (type, size and dimensions checked, previewed in place), name, a price with a currency picker and your share, a licenses stepper, tags you add and remove, a license-tiers switch whose prices follow the price until edited, Save draft with a live \"Draft saved 2 min ago\" and Publish. Validates and ends on the product's link. Animated with anime.js.",
+      "categories": [
+        "Forms",
+        "Commerce"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0",
+        "lucide-react@^1.64.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/forms-pro-theme.json",
+        "https://www.mebius.design/r/forms-pro-use-form-motion.json",
+        "https://www.mebius.design/r/forms-pro-use-form-submit.json",
+        "https://www.mebius.design/r/forms-pro-use-controllable-state.json",
+        "https://www.mebius.design/r/forms-pro-font-geist.json",
+        "https://www.mebius.design/r/forms-pro-font-geist-mono.json"
+      ],
+      "files": [
+        {
+          "path": "registry/forms-pro/blocks/new-product-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "forms-pro-mural-booking",
+      "type": "registry:block",
+      "title": "Paint a Wall Form",
+      "description": "A four-step open call for muralists: artist and Instagram, a pick of the walls still open (the count follows), the start day on a calendar with the days on site and the crew, paint and tools, the sketch upload and an insurance check. Continue checks each step, the last one sends the application; it animates with anime.js.",
+      "categories": [
+        "Forms",
+        "Booking"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/forms-pro-theme.json",
+        "https://www.mebius.design/r/forms-pro-use-form-motion.json",
+        "https://www.mebius.design/r/forms-pro-use-form-submit.json",
+        "https://www.mebius.design/r/forms-pro-use-controllable-state.json",
+        "https://www.mebius.design/r/forms-pro-font-unbounded.json",
+        "https://www.mebius.design/r/forms-pro-font-instrument-sans.json"
+      ],
+      "files": [
+        {
+          "path": "registry/forms-pro/blocks/mural-booking-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "forms-new-project",
+      "type": "registry:block",
+      "title": "New Project Form",
+      "description": "A four-step \"New project\" modal in split panes: a steps pane that tracks your progress and the team's plan usage, then Details (name, a URL that follows the name, a team select, Private / Public), Repository, Environment variables you add and remove, and Review. Continue validates each step, every count is read from the data, and it animates with anime.js.",
+      "categories": [
+        "Forms",
+        "Multi-step"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0",
+        "lucide-react@^1.64.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/forms-theme.json",
+        "https://www.mebius.design/r/forms-use-form-motion.json",
+        "https://www.mebius.design/r/forms-use-form-submit.json",
+        "https://www.mebius.design/r/forms-use-controllable-state.json",
+        "https://www.mebius.design/r/forms-font-geist.json",
+        "https://www.mebius.design/r/forms-font-geist-mono.json"
+      ],
+      "files": [
+        {
+          "path": "registry/forms/blocks/new-project-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "forms-pro-cron-job",
+      "type": "registry:block",
+      "title": "New Cron Job Form",
+      "description": "A cron job dialog: the job's name, the endpoint's method and path, an Hourly / Daily / Weekdays / Custom schedule over the five cron fields (ranges, lists, steps and names work), and a time zone. The schedule reads back in words and as its next runs in that zone, computed as you type. Validates on submit (each cron field, a schedule that never runs), shows a submitting state and a confirmation, and animates with anime.js.",
+      "categories": [
+        "Forms",
+        "Developer"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0",
+        "lucide-react@^1.64.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/forms-pro-theme.json",
+        "https://www.mebius.design/r/forms-pro-use-form-motion.json",
+        "https://www.mebius.design/r/forms-pro-use-form-submit.json",
+        "https://www.mebius.design/r/forms-pro-use-controllable-state.json",
+        "https://www.mebius.design/r/forms-pro-font-geist.json",
+        "https://www.mebius.design/r/forms-pro-font-geist-mono.json"
+      ],
+      "files": [
+        {
+          "path": "registry/forms-pro/blocks/cron-job-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "forms-pro-pixel-checkout",
+      "type": "registry:block",
+      "title": "Pixel Checkout Form",
+      "description": "An 8-bit checkout: the step over a dither band, the order's lines, a card number spaced in fours and checked with Luhn, expiry and CVC, a toggle that adds a pass, and a pay bar whose amount is read from the order. Validates the card, shows a paying state and a pixel receipt, and animates with anime.js: the band builds up, the amount counts and the receipt draws its check.",
+      "categories": [
+        "Forms",
+        "Checkout"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0",
+        "radix-ui@^1.8.1",
+        "@fontsource/silkscreen@^5.3.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/forms-pro-theme.json",
+        "https://www.mebius.design/r/forms-pro-use-form-motion.json",
+        "https://www.mebius.design/r/forms-pro-use-form-submit.json",
+        "https://www.mebius.design/r/forms-pro-use-controllable-state.json",
+        "https://www.mebius.design/r/forms-pro-font-silkscreen.json",
+        "https://www.mebius.design/r/forms-pro-font-vt323.json"
+      ],
+      "files": [
+        {
+          "path": "registry/forms-pro/blocks/pixel-checkout-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "forms-pro-retro-os-account",
+      "type": "registry:block",
+      "title": "New User Account Form",
+      "description": "A retro OS dialog built from inner-shadow bevels: General, Profile and Security tabs, a picture you browse for, a user name that follows the full name, a department list, a password shown as asterisks and option check boxes. OK and Apply validate and send it, with a segmented status bar your request can report its progress to; the title bar's buttons roll it up, widen it and close it. Animates with anime.js.",
+      "categories": [
+        "Forms",
+        "Settings"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/forms-pro-theme.json",
+        "https://www.mebius.design/r/forms-pro-use-form-motion.json",
+        "https://www.mebius.design/r/forms-pro-use-form-submit.json",
+        "https://www.mebius.design/r/forms-pro-use-controllable-state.json",
+        "https://www.mebius.design/r/forms-pro-font-silkscreen.json",
+        "https://www.mebius.design/r/forms-pro-font-jetbrains-mono.json"
+      ],
+      "files": [
+        {
+          "path": "registry/forms-pro/blocks/retro-os-account-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "forms-pro-token-transfer",
+      "type": "registry:block",
+      "title": "Secure Transfer Form",
+      "description": "A glass sheet for sending a token: token, network and saved-recipient menus (or a typed 0x address or ENS name), an amount with Max and a live USD estimate, a Slow / Standard / Fast network speed, and the gas fee, arrival time and token contract read from the choices. Validates the amount against the balance, then sends and turns the lock into a check. Animated with anime.js.",
+      "categories": [
+        "Forms",
+        "Payments"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/forms-pro-theme.json",
+        "https://www.mebius.design/r/forms-pro-use-form-motion.json",
+        "https://www.mebius.design/r/forms-pro-use-form-submit.json",
+        "https://www.mebius.design/r/forms-pro-use-controllable-state.json",
+        "https://www.mebius.design/r/forms-pro-font-montserrat.json",
+        "https://www.mebius.design/r/forms-pro-font-jetbrains-mono.json"
+      ],
+      "files": [
+        {
+          "path": "registry/forms-pro/blocks/token-transfer-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "charts-arcs",
+      "type": "registry:lib",
+      "title": "Chart arc geometry",
+      "description": "sectorPath: the ring segments of the radial, donut and gauge cards (angles in radians clockwise from 12 o'clock, around the centre of a square box), their corners rounded the way Figma rounds an arc's: a cubic that starts the corner radius along each edge, held to half the segment's length and width.",
+      "categories": [
+        "Charts",
+        "Foundations"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/lib/chart-arcs.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "charts-button",
+      "type": "registry:ui",
+      "title": "Chart Button",
+      "description": "Keitoto's Button for the chart cards: Secondary (white, #ececec ring, soft shadow) and Primary (accent fill, white inner glow and inside stroke), 12px or pill corners, a 36 × 36 icon size, and the hover and disabled states of the component set.",
+      "categories": [
+        "Charts",
+        "Buttons"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/ui/chart-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "charts-change-badge",
+      "type": "registry:ui",
+      "title": "Chart Change Badge",
+      "description": "Figma's Change Badge: a green-50 pill with an arrow-circle-up and the change in green-500, or error-50 with an arrow down and error-500 for a fall; the colours cross-fade when the sign flips.",
+      "categories": [
+        "Charts",
+        "Activity"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-icons.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/ui/chart-change-badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "charts-chart-card",
+      "type": "registry:ui",
+      "title": "Chart Card",
+      "description": "The white card every chart sits in (24px corners, 20px padding, 24px gap); scopes the chart tokens to the card with data-charts.",
+      "categories": [
+        "Charts",
+        "Cards"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/ui/chart-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "charts-format",
+      "type": "registry:lib",
+      "title": "Chart number formatting",
+      "description": "formatCurrency (optionally without grouping), formatCurrencyParts, formatCompactCurrency (optionally with fixed digits), formatPercent (with optional fixed digits), formatNumber (counts and compact numbers), wholePercents (shares that add up to 100), formatDay and formatTime: cached Intl helpers the chart cards use for amounts, changes, axes, dates and animated counters.",
+      "categories": [
+        "Charts",
+        "Foundations"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/lib/chart-format.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "charts-icon-tile",
+      "type": "registry:ui",
+      "title": "Chart Icon Tile",
+      "description": "Figma's Icon Container, the coloured tile beside a card title with the icon in white: the glossy 44px tile (orange or blue) or the flat 30px one (orange or green).",
+      "categories": [
+        "Charts",
+        "Icons"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/ui/chart-icon-tile.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "charts-icons",
+      "type": "registry:ui",
+      "title": "Chart Icons",
+      "description": "The icons the chart cards use, exported from the Keitoto Figma (eye / eye-off, dots, wallet, coins, calendars, download, the insight sparkle, shopping bag, car, home, piggy bank, credit card and more), drawn in currentColor.",
+      "categories": [
+        "Charts",
+        "Icons"
+      ],
+      "registryDependencies": [
+        "https://www.mebius.design/r/charts-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/ui/chart-icons.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "charts-legend-dot",
+      "type": "registry:ui",
+      "title": "Chart Legend Dot",
+      "description": "The round legend swatch of the Keitoto chart cards: 14px (or scaled to 12px), a 1px ring set with --dot-ring, a soft drop shadow and a white inside stroke fading out downward.",
+      "categories": [
+        "Charts",
+        "Legends"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/ui/chart-legend-dot.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "charts-legend-swatch",
+      "type": "registry:ui",
+      "title": "Chart Legend Swatch",
+      "description": "The legend swatch of the Keitoto chart cards: 14px with 4.67px corners and a 1.17px ring set with --swatch-ring (or, with size={10}, the Trends cards' 10px swatch), a soft drop shadow and a white inside stroke fading out downward.",
+      "categories": [
+        "Charts",
+        "Legends"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/ui/chart-legend-swatch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "charts-menu",
+      "type": "registry:ui",
+      "title": "Chart Menu",
+      "description": "A small dropdown for the chart cards' period buttons (Weekly / Monthly / Yearly): Radix DropdownMenu with radio items, a check on the selected one and an anime.js scale-in.",
+      "categories": [
+        "Charts",
+        "Menus"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-icons.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/ui/chart-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "charts-segmented-control",
+      "type": "registry:ui",
+      "title": "Chart Segmented Control",
+      "description": "The Keitoto Segment Control (Week / Month / Year): default or rounded, text or icon segments, a white thumb that slides to the selected segment with anime.js.",
+      "categories": [
+        "Charts",
+        "Toggles"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json",
+        "https://www.mebius.design/r/charts-use-controllable-state.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/ui/chart-segmented-control.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "charts-series",
+      "type": "registry:lib",
+      "title": "Chart series geometry",
+      "description": "Geometry and scales for the chart cards: seriesToPixels, linePath, smoothPath (monotone curves) with smoothTangents and smoothCurveAt (its y at any x), areaPath, valueAt, alignPolylines (resamples two lines on the same x positions, straight or along a curve, so a period change can morph one into the other), polylineLengths, xAtLength and reachAt (where a line drawing itself in has got to, and when it reaches an x), roundCorners and edgeAt (Figma's corner radius on every vertex), niceTicks (linear axes), barTicks (axes from zero), timeTicks (UTC time axes), fittedDash (Figma's dash fitting), figmaGradientTransform (Figma's gradient matrix as an SVG gradientTransform), starPath and trianglePath (Figma's sparkles), seededRandom and bridgeWalk (repeatable sample data).",
+      "categories": [
+        "Charts",
+        "Foundations"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/lib/chart-series.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "charts-swatch",
+      "type": "registry:ui",
+      "title": "Chart Swatch",
+      "description": "The 16 × 6 legend swatch of the chart cards: 2px corners, soft shadows, an inner glow and a fading 0.5px white stroke; coloured with a background class.",
+      "categories": [
+        "Charts",
+        "Legends"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/ui/chart-swatch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "charts-theme",
+      "type": "registry:theme",
+      "title": "Charts theme",
+      "description": "Keitoto library tokens for the chart cards: the \"Color Style\" variables (surfaces, text, borders, icons and the blue, green, orange, purple, yellow, error and light-blue palettes) as Tailwind colours, the SF Pro Rounded text styles as typo-* utilities, the font-rounded family and hug-w (text boxes rounded up to whole pixels like Figma's hug width). The variables are scoped to the charts (data-charts), so installing it never changes your app's own colours.",
+      "categories": [
+        "Charts",
+        "Foundations"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-surface-white": "var(--surface-white)",
+          "color-surface-base": "var(--surface-base)",
+          "color-surface-disable": "var(--surface-disable)",
+          "color-surface-soft": "var(--surface-soft)",
+          "color-surface-subdued": "var(--surface-subdued)",
+          "color-surface-loud": "var(--surface-loud)",
+          "color-surface-muted": "var(--surface-muted)",
+          "color-surface-popup": "var(--surface-popup)",
+          "color-fg-loud": "var(--fg-loud)",
+          "color-fg-normal": "var(--fg-normal)",
+          "color-fg-soft": "var(--fg-soft)",
+          "color-fg-disable": "var(--fg-disable)",
+          "color-fg-white": "var(--fg-white)",
+          "color-border-soft": "var(--border-soft)",
+          "color-border-sub": "var(--border-sub)",
+          "color-border-white": "var(--border-white)",
+          "color-border-loud": "var(--border-loud)",
+          "color-border-normal": "var(--border-normal)",
+          "color-icon-loud": "var(--icon-loud)",
+          "color-icon-normal": "var(--icon-normal)",
+          "color-icon-soft": "var(--icon-soft)",
+          "color-icon-disable": "var(--icon-disable)",
+          "color-primary-blue-50": "var(--primary-blue-50)",
+          "color-primary-blue-100": "var(--primary-blue-100)",
+          "color-primary-blue-200": "var(--primary-blue-200)",
+          "color-primary-blue-300": "var(--primary-blue-300)",
+          "color-primary-blue-400": "var(--primary-blue-400)",
+          "color-primary-blue-500": "var(--primary-blue-500)",
+          "color-primary-blue-600": "var(--primary-blue-600)",
+          "color-primary-blue-700": "var(--primary-blue-700)",
+          "color-primary-blue-800": "var(--primary-blue-800)",
+          "color-primary-green-50": "var(--primary-green-50)",
+          "color-primary-green-100": "var(--primary-green-100)",
+          "color-primary-green-200": "var(--primary-green-200)",
+          "color-primary-green-300": "var(--primary-green-300)",
+          "color-primary-green-400": "var(--primary-green-400)",
+          "color-primary-green-500": "var(--primary-green-500)",
+          "color-primary-green-600": "var(--primary-green-600)",
+          "color-primary-green-700": "var(--primary-green-700)",
+          "color-primary-green-800": "var(--primary-green-800)",
+          "color-primary-green-900": "var(--primary-green-900)",
+          "color-primary-orange-50": "var(--primary-orange-50)",
+          "color-primary-orange-100": "var(--primary-orange-100)",
+          "color-primary-orange-200": "var(--primary-orange-200)",
+          "color-primary-orange-300": "var(--primary-orange-300)",
+          "color-primary-orange-400": "var(--primary-orange-400)",
+          "color-primary-orange-500": "var(--primary-orange-500)",
+          "color-primary-orange-600": "var(--primary-orange-600)",
+          "color-primary-orange-700": "var(--primary-orange-700)",
+          "color-primary-purple-50": "var(--primary-purple-50)",
+          "color-primary-purple-100": "var(--primary-purple-100)",
+          "color-primary-purple-200": "var(--primary-purple-200)",
+          "color-primary-purple-300": "var(--primary-purple-300)",
+          "color-primary-purple-400": "var(--primary-purple-400)",
+          "color-primary-purple-500": "var(--primary-purple-500)",
+          "color-primary-purple-600": "var(--primary-purple-600)",
+          "color-primary-purple-700": "var(--primary-purple-700)",
+          "color-primary-yellow-50": "var(--primary-yellow-50)",
+          "color-primary-yellow-100": "var(--primary-yellow-100)",
+          "color-primary-yellow-300": "var(--primary-yellow-300)",
+          "color-primary-yellow-400": "var(--primary-yellow-400)",
+          "color-primary-yellow-500": "var(--primary-yellow-500)",
+          "color-error-50": "var(--error-50)",
+          "color-error-100": "var(--error-100)",
+          "color-error-200": "var(--error-200)",
+          "color-error-500": "var(--error-500)",
+          "color-error-600": "var(--error-600)",
+          "color-accent-light-blue-500": "var(--accent-light-blue-500)",
+          "color-accent-light-blue-700": "var(--accent-light-blue-700)",
+          "font-rounded": "var(--font-charts-rounded)"
+        }
+      }
+    },
+    {
+      "name": "charts-tooltip-lines",
+      "type": "registry:ui",
+      "title": "Chart Tooltip Lines",
+      "description": "The text of the Keitoto chart tooltips: the dark tooltip's two lines (the label in Text/Disable over the value in white), and the label and value on their own for the dark or the light (white) tooltip.",
+      "categories": [
+        "Charts",
+        "Tooltips"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/ui/chart-tooltip-lines.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "charts-trend",
+      "type": "registry:ui",
+      "title": "Chart Trend",
+      "description": "A trend-up / trend-down arrow with the change in green or red and a soft label (\"↗ 4.82% this month\"); a new value counts from the previous one.",
+      "categories": [
+        "Charts",
+        "Activity"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-icons.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json",
+        "https://www.mebius.design/r/charts-format.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/ui/chart-trend.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "charts-trends-tooltip",
+      "type": "registry:ui",
+      "title": "Chart Trends Tooltip",
+      "description": "The content of the Trends cards' tooltip: the date on a grey pill, then a row per series with its 10px legend swatch, its name and the amount (counting to new values with anime.js), the amounts lined up.",
+      "categories": [
+        "Charts",
+        "Tooltips"
+      ],
+      "registryDependencies": [
+        "https://www.mebius.design/r/charts-theme.json",
+        "https://www.mebius.design/r/charts-legend-swatch.json",
+        "https://www.mebius.design/r/charts-use-chart-motion.json"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/ui/chart-trends-tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "charts-use-chart-motion",
+      "type": "registry:hook",
+      "title": "useChartMotion",
+      "description": "anime.js helpers for the charts: a scope bound to the chart's root (reverted on unmount), the reduced-motion preference, an entrance that plays once the chart scrolls into view, useInView (whether the chart is on screen, to pause ambient loops), useCountUp (numbers that count to new values) and releaseStyles (hands an element back to its classes).",
+      "categories": [
+        "Charts",
+        "Foundations"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/hooks/use-chart-motion.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "charts-use-chart-size",
+      "type": "registry:hook",
+      "title": "useChartSize",
+      "description": "An element's content-box size from a ResizeObserver (callback ref + size, starting at the design size), so line charts draw their paths at the width they get.",
+      "categories": [
+        "Charts",
+        "Foundations"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/hooks/use-chart-size.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "charts-use-controllable-state",
+      "type": "registry:hook",
+      "title": "useControllableState",
+      "description": "State a parent can control (value + onChange) or leave to the component (defaultValue); used by the segmented control, the tabs and the chart cards.",
+      "categories": [
+        "Charts",
+        "Foundations"
+      ],
+      "files": [
+        {
+          "path": "registry/charts/hooks/use-controllable-state.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "forms-font-geist",
+      "type": "registry:font",
+      "title": "Geist",
+      "description": "Geist, loaded as --font-geist-sans (next/font in Next.js, @fontsource-variable/geist elsewhere); the form blocks set it with font-form-geist.",
+      "categories": [
+        "Foundations"
+      ],
+      "font": {
+        "family": "Geist Variable",
+        "provider": "google",
+        "import": "Geist",
+        "variable": "--font-geist-sans",
+        "weight": [
+          "400",
+          "500",
+          "600",
+          "700"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource-variable/geist"
+      }
+    },
+    {
+      "name": "forms-font-geist-mono",
+      "type": "registry:font",
+      "title": "Geist Mono",
+      "description": "Geist Mono, loaded as --font-geist-mono (next/font in Next.js, @fontsource-variable/geist-mono elsewhere); the form blocks set it with font-form-geist-mono.",
+      "categories": [
+        "Foundations"
+      ],
+      "font": {
+        "family": "Geist Mono Variable",
+        "provider": "google",
+        "import": "Geist_Mono",
+        "variable": "--font-geist-mono",
+        "weight": [
+          "400",
+          "500",
+          "600"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource-variable/geist-mono"
+      }
+    },
+    {
+      "name": "forms-pro-font-geist",
+      "type": "registry:font",
+      "title": "Geist",
+      "description": "Geist, loaded as --font-geist-sans (next/font in Next.js, @fontsource-variable/geist elsewhere); the form blocks set it with font-form-geist.",
+      "categories": [
+        "Foundations"
+      ],
+      "font": {
+        "family": "Geist Variable",
+        "provider": "google",
+        "import": "Geist",
+        "variable": "--font-geist-sans",
+        "weight": [
+          "400",
+          "500",
+          "600",
+          "700"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource-variable/geist"
+      }
+    },
+    {
+      "name": "forms-pro-font-geist-mono",
+      "type": "registry:font",
+      "title": "Geist Mono",
+      "description": "Geist Mono, loaded as --font-geist-mono (next/font in Next.js, @fontsource-variable/geist-mono elsewhere); the form blocks set it with font-form-geist-mono.",
+      "categories": [
+        "Foundations"
+      ],
+      "font": {
+        "family": "Geist Mono Variable",
+        "provider": "google",
+        "import": "Geist_Mono",
+        "variable": "--font-geist-mono",
+        "weight": [
+          "400",
+          "500",
+          "600",
+          "700"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource-variable/geist-mono"
+      }
+    },
+    {
+      "name": "forms-pro-font-instrument-sans",
+      "type": "registry:font",
+      "title": "Instrument Sans",
+      "description": "Instrument Sans, loaded as --font-instrument-sans (next/font in Next.js, @fontsource-variable/instrument-sans elsewhere); the form blocks set it with font-form-instrument-sans.",
+      "categories": [
+        "Foundations"
+      ],
+      "font": {
+        "family": "Instrument Sans Variable",
+        "provider": "google",
+        "import": "Instrument_Sans",
+        "variable": "--font-instrument-sans",
+        "weight": [
+          "400",
+          "500",
+          "600",
+          "700"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource-variable/instrument-sans"
+      }
+    },
+    {
+      "name": "forms-pro-font-jetbrains-mono",
+      "type": "registry:font",
+      "title": "JetBrains Mono",
+      "description": "JetBrains Mono, loaded as --font-jetbrains-mono (next/font in Next.js, @fontsource-variable/jetbrains-mono elsewhere); the form blocks set it with font-form-jetbrains-mono.",
+      "categories": [
+        "Foundations"
+      ],
+      "font": {
+        "family": "JetBrains Mono Variable",
+        "provider": "google",
+        "import": "JetBrains_Mono",
+        "variable": "--font-jetbrains-mono",
+        "weight": [
+          "400",
+          "500",
+          "600",
+          "700"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource-variable/jetbrains-mono"
+      }
+    },
+    {
+      "name": "forms-pro-font-montserrat",
+      "type": "registry:font",
+      "title": "Montserrat",
+      "description": "Montserrat, loaded as --font-montserrat (next/font in Next.js, @fontsource-variable/montserrat elsewhere); the form blocks set it with font-form-montserrat.",
+      "categories": [
+        "Foundations"
+      ],
+      "font": {
+        "family": "Montserrat Variable",
+        "provider": "google",
+        "import": "Montserrat",
+        "variable": "--font-montserrat",
+        "weight": [
+          "400",
+          "500",
+          "600",
+          "700"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource-variable/montserrat"
+      }
+    },
+    {
+      "name": "forms-pro-font-silkscreen",
+      "type": "registry:font",
+      "title": "Silkscreen",
+      "description": "Silkscreen, loaded as --font-silkscreen (next/font in Next.js, @fontsource/silkscreen elsewhere); the form blocks set it with font-form-silkscreen.",
+      "categories": [
+        "Foundations"
+      ],
+      "font": {
+        "family": "Silkscreen",
+        "provider": "google",
+        "import": "Silkscreen",
+        "variable": "--font-silkscreen",
+        "weight": [
+          "400",
+          "700"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource/silkscreen"
+      }
+    },
+    {
+      "name": "forms-pro-font-unbounded",
+      "type": "registry:font",
+      "title": "Unbounded",
+      "description": "Unbounded, loaded as --font-unbounded (next/font in Next.js, @fontsource-variable/unbounded elsewhere); the form blocks set it with font-form-unbounded.",
+      "categories": [
+        "Foundations"
+      ],
+      "font": {
+        "family": "Unbounded Variable",
+        "provider": "google",
+        "import": "Unbounded",
+        "variable": "--font-unbounded",
+        "weight": [
+          "400",
+          "500",
+          "600",
+          "700",
+          "800"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource-variable/unbounded"
+      }
+    },
+    {
+      "name": "forms-pro-font-vt323",
+      "type": "registry:font",
+      "title": "VT323",
+      "description": "VT323, loaded as --font-vt323 (next/font in Next.js, @fontsource/vt323 elsewhere); the form blocks set it with font-form-vt323.",
+      "categories": [
+        "Foundations"
+      ],
+      "font": {
+        "family": "VT323",
+        "provider": "google",
+        "import": "VT323",
+        "variable": "--font-vt323",
+        "weight": [
+          "400"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource/vt323"
+      }
+    },
+    {
+      "name": "forms-pro-theme",
+      "type": "registry:theme",
+      "title": "Forms Pro theme",
+      "description": "Tokens for the Forms Pro blocks: the Figma \"color/*\" variables of the system-style forms (canvas, surfaces, borders, text, accent, on-accent, success, warning, pro, inverse) as form-* Tailwind colours, plus form-danger for errors (the variables have no red yet), a font-form-* family utility for every typeface the forms are drawn in, and hug-w (text boxes rounded up to whole pixels like Figma's hug width). Light values in :root and dark in .dark (your app's dark class), from the Figma's light and dark forms; each form also switches its own palette with that class. Every name starts with form-, so installing it never changes your app's own colours or fonts, and it agrees with the free Forms theme where both define a token.",
+      "categories": [
+        "Forms",
+        "Foundations"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-form-canvas": "var(--form-canvas)",
+          "color-form-surface": "var(--form-surface)",
+          "color-form-surface-2": "var(--form-surface-2)",
+          "color-form-surface-3": "var(--form-surface-3)",
+          "color-form-border": "var(--form-border)",
+          "color-form-border-strong": "var(--form-border-strong)",
+          "color-form-text": "var(--form-text)",
+          "color-form-text-2": "var(--form-text-2)",
+          "color-form-text-3": "var(--form-text-3)",
+          "color-form-accent": "var(--form-accent)",
+          "color-form-accent-soft": "var(--form-accent-soft)",
+          "color-form-success": "var(--form-success)",
+          "color-form-success-soft": "var(--form-success-soft)",
+          "color-form-warning": "var(--form-warning)",
+          "color-form-warning-soft": "var(--form-warning-soft)",
+          "color-form-danger": "var(--form-danger)",
+          "color-form-danger-soft": "var(--form-danger-soft)",
+          "color-form-pro": "var(--form-pro)",
+          "color-form-pro-soft": "var(--form-pro-soft)",
+          "color-form-inverse": "var(--form-inverse)",
+          "color-form-on-inverse": "var(--form-on-inverse)",
+          "color-form-primary": "var(--form-primary)",
+          "color-form-muted": "var(--form-muted)",
+          "color-form-on-accent": "var(--form-on-accent)",
+          "font-form-geist": "var(--font-geist-sans, \"Geist Variable\"), \"Geist\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-geist-mono": "var(--font-geist-mono, \"Geist Mono Variable\"), \"Geist Mono\", ui-monospace, monospace",
+          "font-form-inter": "var(--font-inter, \"Inter Variable\"), \"Inter\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-space-mono": "var(--font-space-mono, \"Space Mono\"), ui-monospace, monospace",
+          "font-form-archivo-black": "var(--font-archivo-black, \"Archivo Black\"), ui-sans-serif, system-ui, sans-serif",
+          "font-form-vt323": "var(--font-vt323, \"VT323\"), ui-monospace, monospace",
+          "font-form-martian-mono": "var(--font-martian-mono, \"Martian Mono Variable\"), \"Martian Mono\", ui-monospace, monospace",
+          "font-form-montserrat": "var(--font-montserrat, \"Montserrat Variable\"), \"Montserrat\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-jetbrains-mono": "var(--font-jetbrains-mono, \"JetBrains Mono Variable\"), \"JetBrains Mono\", ui-monospace, monospace",
+          "font-form-instrument-sans": "var(--font-instrument-sans, \"Instrument Sans Variable\"), \"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-fraunces": "var(--font-fraunces, \"Fraunces Variable\"), \"Fraunces\", ui-serif, Georgia, serif",
+          "font-form-bricolage": "var(--font-bricolage-grotesque, \"Bricolage Grotesque Variable\"), \"Bricolage Grotesque\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-silkscreen": "var(--font-silkscreen, \"Silkscreen\"), ui-monospace, monospace",
+          "font-form-pixelify": "var(--font-pixelify-sans, \"Pixelify Sans Variable\"), \"Pixelify Sans\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-poppins": "var(--font-poppins, \"Poppins\"), ui-sans-serif, system-ui, sans-serif",
+          "font-form-fredoka": "var(--font-fredoka, \"Fredoka Variable\"), \"Fredoka\", ui-rounded, ui-sans-serif, system-ui, sans-serif",
+          "font-form-nunito": "var(--font-nunito, \"Nunito Variable\"), \"Nunito\", ui-rounded, ui-sans-serif, system-ui, sans-serif",
+          "font-form-ibm-plex-mono": "var(--font-ibm-plex-mono, \"IBM Plex Mono\"), ui-monospace, monospace",
+          "font-form-instrument-serif": "var(--font-instrument-serif, \"Instrument Serif\"), ui-serif, Georgia, serif",
+          "font-form-space-grotesk": "var(--font-space-grotesk, \"Space Grotesk Variable\"), \"Space Grotesk\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-sora": "var(--font-sora, \"Sora Variable\"), \"Sora\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-eb-garamond": "var(--font-eb-garamond, \"EB Garamond Variable\"), \"EB Garamond\", ui-serif, Georgia, serif",
+          "font-form-unbounded": "var(--font-unbounded, \"Unbounded Variable\"), \"Unbounded\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-gloock": "var(--font-gloock, \"Gloock\"), ui-serif, Georgia, serif",
+          "font-form-press-start": "var(--font-press-start-2p, \"Press Start 2P\"), ui-monospace, monospace",
+          "font-form-bitcount": "var(--font-bitcount-grid-single, \"Bitcount Grid Single Variable\"), \"Bitcount Grid Single\", ui-monospace, monospace",
+          "font-form-hina-mincho": "var(--font-hina-mincho, \"Hina Mincho\"), ui-serif, serif",
+          "font-form-newsreader": "var(--font-newsreader, \"Newsreader Variable\"), \"Newsreader\", ui-serif, Georgia, serif"
+        },
+        "light": {
+          "form-canvas": "#f4f5f7",
+          "form-surface": "#ffffff",
+          "form-surface-2": "#f7f7f8",
+          "form-surface-3": "#eeeef0",
+          "form-border": "#e4e4e7",
+          "form-border-strong": "#d5d5d9",
+          "form-text": "#18181b",
+          "form-text-2": "#55555e",
+          "form-text-3": "#7a7a85",
+          "form-accent": "#4d7cfe",
+          "form-accent-soft": "#4d7cfe24",
+          "form-success": "#3dd68c",
+          "form-success-soft": "#3dd68c1f",
+          "form-warning": "#a0660d",
+          "form-warning-soft": "#f5b4511f",
+          "form-danger": "#dc2626",
+          "form-danger-soft": "#f871711f",
+          "form-pro": "#6138fa",
+          "form-pro-soft": "#8b5cf629",
+          "form-inverse": "#1b1b1d",
+          "form-on-inverse": "#f3f3f4",
+          "form-primary": "#1a1a1a",
+          "form-muted": "#73737d",
+          "form-on-accent": "#ffffff"
+        },
+        "dark": {
+          "form-canvas": "#0b0b0c",
+          "form-surface": "#141416",
+          "form-surface-2": "#1b1b1e",
+          "form-surface-3": "#232327",
+          "form-border": "#27272b",
+          "form-border-strong": "#34343a",
+          "form-text": "#f4f4f5",
+          "form-text-2": "#a1a1aa",
+          "form-text-3": "#6b6b74",
+          "form-accent": "#4d7cfe",
+          "form-accent-soft": "#4d7cfe24",
+          "form-success": "#3dd68c",
+          "form-success-soft": "#3dd68c1f",
+          "form-warning": "#f5b451",
+          "form-warning-soft": "#f5b4511f",
+          "form-danger": "#f87171",
+          "form-danger-soft": "#f871711f",
+          "form-pro": "#c4b5fd",
+          "form-pro-soft": "#8b5cf629",
+          "form-inverse": "#f4f4f5",
+          "form-on-inverse": "#0b0b0c",
+          "form-primary": "#f5f5f5",
+          "form-muted": "#82828c",
+          "form-on-accent": "#ffffff"
+        }
+      }
+    },
+    {
+      "name": "forms-pro-use-controllable-state",
+      "type": "registry:hook",
+      "title": "useControllableState",
+      "description": "State a parent can control (value + onChange) or leave to the component (defaultValue); used by the form blocks' segmented controls, steppers and pickers.",
+      "categories": [
+        "Forms",
+        "Foundations"
+      ],
+      "files": [
+        {
+          "path": "registry/forms-pro/hooks/use-controllable-state.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "forms-pro-use-form-motion",
+      "type": "registry:hook",
+      "title": "useFormMotion",
+      "description": "anime.js helpers for the form blocks: the reduced-motion preference, an entrance that plays once the form scrolls into view (its first frame applied before paint), useAnimeScope (animations reverted on unmount), useInView (to pause ambient loops off screen), useCountUp (numbers that count to new values), shake (an invalid submit) and releaseStyles (hands an element back to its classes).",
+      "categories": [
+        "Forms",
+        "Foundations"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0"
+      ],
+      "files": [
+        {
+          "path": "registry/forms-pro/hooks/use-form-motion.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "forms-pro-use-form-submit",
+      "type": "registry:hook",
+      "title": "useFormSubmit",
+      "description": "The submit status every form block shows (idle, submitting, success): runs your onSubmit, waits for it when it returns a promise, and goes back to idle when it throws.",
+      "categories": [
+        "Forms",
+        "Foundations"
+      ],
+      "files": [
+        {
+          "path": "registry/forms-pro/hooks/use-form-submit.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "forms-theme",
+      "type": "registry:theme",
+      "title": "Forms theme",
+      "description": "Tokens for the free form blocks: the Figma \"color/*\" variables of the system-style forms (canvas, surfaces, borders, text, accent, success, warning, pro, inverse) as form-* Tailwind colours, plus form-danger for errors (the Figma variables have no red yet), a font-form-* family utility for every typeface the forms are drawn in, and hug-w (text boxes rounded up to whole pixels like Figma's hug width). Light values in :root and dark in .dark (your app's dark class), from the Figma's light and dark forms; each form also switches its own palette with that class. Every name starts with form-, so installing it never changes your app's own colours or fonts.",
+      "categories": [
+        "Forms",
+        "Foundations"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-form-canvas": "var(--form-canvas)",
+          "color-form-surface": "var(--form-surface)",
+          "color-form-surface-2": "var(--form-surface-2)",
+          "color-form-surface-3": "var(--form-surface-3)",
+          "color-form-border": "var(--form-border)",
+          "color-form-border-strong": "var(--form-border-strong)",
+          "color-form-text": "var(--form-text)",
+          "color-form-text-2": "var(--form-text-2)",
+          "color-form-text-3": "var(--form-text-3)",
+          "color-form-accent": "var(--form-accent)",
+          "color-form-accent-soft": "var(--form-accent-soft)",
+          "color-form-success": "var(--form-success)",
+          "color-form-success-soft": "var(--form-success-soft)",
+          "color-form-warning": "var(--form-warning)",
+          "color-form-warning-soft": "var(--form-warning-soft)",
+          "color-form-danger": "var(--form-danger)",
+          "color-form-danger-soft": "var(--form-danger-soft)",
+          "color-form-pro": "var(--form-pro)",
+          "color-form-pro-soft": "var(--form-pro-soft)",
+          "color-form-inverse": "var(--form-inverse)",
+          "color-form-on-inverse": "var(--form-on-inverse)",
+          "color-form-primary": "var(--form-primary)",
+          "color-form-muted": "var(--form-muted)",
+          "font-form-geist": "var(--font-geist-sans, \"Geist Variable\"), \"Geist\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-geist-mono": "var(--font-geist-mono, \"Geist Mono Variable\"), \"Geist Mono\", ui-monospace, monospace",
+          "font-form-inter": "var(--font-inter, \"Inter Variable\"), \"Inter\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-space-mono": "var(--font-space-mono, \"Space Mono\"), ui-monospace, monospace",
+          "font-form-archivo-black": "var(--font-archivo-black, \"Archivo Black\"), ui-sans-serif, system-ui, sans-serif",
+          "font-form-doto": "var(--font-doto, \"Doto Variable\"), \"Doto\", ui-monospace, monospace",
+          "font-form-vt323": "var(--font-vt323, \"VT323\"), ui-monospace, monospace",
+          "font-form-martian-mono": "var(--font-martian-mono, \"Martian Mono Variable\"), \"Martian Mono\", ui-monospace, monospace",
+          "font-form-montserrat": "var(--font-montserrat, \"Montserrat Variable\"), \"Montserrat\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-jetbrains-mono": "var(--font-jetbrains-mono, \"JetBrains Mono Variable\"), \"JetBrains Mono\", ui-monospace, monospace",
+          "font-form-instrument-sans": "var(--font-instrument-sans, \"Instrument Sans Variable\"), \"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-fraunces": "var(--font-fraunces, \"Fraunces Variable\"), \"Fraunces\", ui-serif, Georgia, serif",
+          "font-form-bricolage": "var(--font-bricolage-grotesque, \"Bricolage Grotesque Variable\"), \"Bricolage Grotesque\", ui-sans-serif, system-ui, sans-serif",
+          "font-form-silkscreen": "var(--font-silkscreen, \"Silkscreen\"), ui-monospace, monospace",
+          "font-form-pixelify": "var(--font-pixelify-sans, \"Pixelify Sans Variable\"), \"Pixelify Sans\", ui-sans-serif, system-ui, sans-serif"
+        },
+        "light": {
+          "form-canvas": "#f4f5f7",
+          "form-surface": "#ffffff",
+          "form-surface-2": "#f7f7f8",
+          "form-surface-3": "#eeeef0",
+          "form-border": "#e4e4e7",
+          "form-border-strong": "#d5d5d9",
+          "form-text": "#18181b",
+          "form-text-2": "#55555e",
+          "form-text-3": "#7a7a85",
+          "form-accent": "#4d7cfe",
+          "form-accent-soft": "#4d7cfe24",
+          "form-success": "#3dd68c",
+          "form-success-soft": "#3dd68c1f",
+          "form-warning": "#a0660d",
+          "form-warning-soft": "#f5b4511f",
+          "form-danger": "#dc2626",
+          "form-danger-soft": "#f871711f",
+          "form-pro": "#6138fa",
+          "form-pro-soft": "#8b5cf629",
+          "form-inverse": "#1b1b1d",
+          "form-on-inverse": "#f3f3f4",
+          "form-primary": "#1a1a1a",
+          "form-muted": "#73737d"
+        },
+        "dark": {
+          "form-canvas": "#0b0b0c",
+          "form-surface": "#141416",
+          "form-surface-2": "#1b1b1e",
+          "form-surface-3": "#232327",
+          "form-border": "#27272b",
+          "form-border-strong": "#34343a",
+          "form-text": "#f4f4f5",
+          "form-text-2": "#a1a1aa",
+          "form-text-3": "#6b6b74",
+          "form-accent": "#4d7cfe",
+          "form-accent-soft": "#4d7cfe24",
+          "form-success": "#3dd68c",
+          "form-success-soft": "#3dd68c1f",
+          "form-warning": "#f5b451",
+          "form-warning-soft": "#f5b4511f",
+          "form-danger": "#f87171",
+          "form-danger-soft": "#f871711f",
+          "form-pro": "#c4b5fd",
+          "form-pro-soft": "#8b5cf629",
+          "form-inverse": "#f4f4f5",
+          "form-on-inverse": "#0b0b0c",
+          "form-primary": "#f5f5f5",
+          "form-muted": "#82828c"
+        }
+      }
+    },
+    {
+      "name": "forms-use-controllable-state",
+      "type": "registry:hook",
+      "title": "useControllableState",
+      "description": "State a parent can control (value + onChange) or leave to the component (defaultValue); used by the form blocks' segmented controls, steppers and pickers.",
+      "categories": [
+        "Forms",
+        "Foundations"
+      ],
+      "files": [
+        {
+          "path": "registry/forms/hooks/use-controllable-state.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "forms-use-form-motion",
+      "type": "registry:hook",
+      "title": "useFormMotion",
+      "description": "anime.js helpers for the form blocks: the reduced-motion preference, an entrance that plays once the form scrolls into view (its first frame applied before paint), useAnimeScope (animations reverted on unmount), useInView (to pause ambient loops off screen), useCountUp (numbers that count to new values), shake (an invalid submit) and releaseStyles (hands an element back to its classes).",
+      "categories": [
+        "Forms",
+        "Foundations"
+      ],
+      "dependencies": [
+        "animejs@^4.5.0"
+      ],
+      "files": [
+        {
+          "path": "registry/forms/hooks/use-form-motion.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "forms-use-form-submit",
+      "type": "registry:hook",
+      "title": "useFormSubmit",
+      "description": "The submit status every form block shows (idle, submitting, success): runs your onSubmit, waits for it when it returns a promise, and goes back to idle when it throws.",
+      "categories": [
+        "Forms",
+        "Foundations"
+      ],
+      "files": [
+        {
+          "path": "registry/forms/hooks/use-form-submit.ts",
+          "type": "registry:hook"
+        }
+      ]
+    }
+  ]
+}

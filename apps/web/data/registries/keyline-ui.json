@@ -1,0 +1,4194 @@
+{
+  "key": "keyline-ui",
+  "entry": "Keyline UI",
+  "name": "keyline",
+  "homepage": "https://keyline-ui.dev",
+  "indexUrl": "https://keyline-ui.dev/r/registry.json",
+  "itemBase": "https://keyline-ui.dev/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Stacked sections in one frame: header rows on shared keylines, panels unfold from the header's keyline; one or many open.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/accordion.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion-policies",
+      "type": "registry:block",
+      "title": "Accordion: branch policies",
+      "description": "An example of Accordion: branch policies.",
+      "categories": [
+        "accordion"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/accordion",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/accordion-policies.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/accordion-policies.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert dialog",
+      "description": "Installs the dialog item, which exports AlertDialog, AlertDialogTrigger, AlertDialogPopup and AlertDialogContent (focus on the safe action, destructive or primary tone) beside Dialog. Import from dialog.",
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/dialog"
+      ]
+    },
+    {
+      "name": "alert-dialog-remove",
+      "type": "registry:block",
+      "title": "Alert dialog: remove client",
+      "description": "An example of Alert dialog: remove client.",
+      "categories": [
+        "alert-dialog"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/dialog",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/alert-dialog-remove.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/alert-dialog-remove.tsx"
+        }
+      ]
+    },
+    {
+      "name": "app-shell",
+      "type": "registry:ui",
+      "title": "App shell",
+      "description": "Header frame (navigation toggle, breadcrumb, actions), a sidebar, the page and an aside, one gutter apart; the sidebar is a full-height column that can collapse to a rail; below a width of its own the sidebar and aside become sheets.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/nav",
+        "@keyline-ui/sheet"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/app-shell.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/app-shell.tsx"
+        }
+      ]
+    },
+    {
+      "name": "app-shell-office",
+      "type": "registry:block",
+      "title": "App shell: office shell",
+      "description": "An example of App shell: office shell.",
+      "categories": [
+        "app-shell"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/app-shell",
+        "@keyline-ui/breadcrumb",
+        "@keyline-ui/button",
+        "@keyline-ui/inspector",
+        "@keyline-ui/item",
+        "@keyline-ui/keyline",
+        "@keyline-ui/nav",
+        "@keyline-ui/status"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/app-shell-office.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/app-shell-office.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "A file as a frame of cells that never change: media, name (the extension stays in view) and detail, one action. Uploading fills the bottom keyline; processing runs the pending segment; error stops the bar in red and floods the media cell with !; an upload that lands floods it yellow with a tick for 900ms. layout=\"cell\" makes it a cell of a Bubble.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/attachment.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/attachment.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachment-upload",
+      "type": "registry:block",
+      "title": "Attachment: invoice uploads",
+      "description": "An example of Attachment: invoice uploads.",
+      "categories": [
+        "attachment"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/attachment",
+        "@keyline-ui/button",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/attachment-upload.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/attachment-upload.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "A person or organisation as a square cell (Base UI Avatar): the photo rises in from the bottom keyline, initials hold the cell while it loads or after it fails, status as its floor keyline (a line shape per kind, never over the face); AvatarGroup joins avatars on shared seams with a +N count cell.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/keyline-render",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-status",
+      "type": "registry:block",
+      "title": "Avatar: whos in",
+      "description": "An example of Avatar: whos in.",
+      "categories": [
+        "avatar"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/avatar",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/avatar-status.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/avatar-status.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-team",
+      "type": "registry:block",
+      "title": "Avatar: account team",
+      "description": "An example of Avatar: account team.",
+      "categories": [
+        "avatar"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/avatar",
+        "@keyline-ui/checkbox-group",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/avatar-team.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/avatar-team.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Where a page sits: ancestor link cells and a cobalt cell for here; earlier levels fold into a menu by count or width.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/menu"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/breadcrumb.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-drive",
+      "type": "registry:block",
+      "title": "Breadcrumb: drive folder",
+      "description": "An example of Breadcrumb: drive folder.",
+      "categories": [
+        "breadcrumb"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/breadcrumb",
+        "@keyline-ui/button",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/breadcrumb-drive.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/breadcrumb-drive.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "One message as a control-weight frame (2px, no radius) holding cells: the text, then files (Attachment layout=\"cell\"). Consecutive bubbles attach on a 1px seam. Tone by role: plain (theirs), tint (yours), attention (not sent: the attention frame and an inserted ! cell). pending runs the Signal segment on the bottom keyline while it sends. Reactions sit on the bottom keyline.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/bubble.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/bubble.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bubble-reactions",
+      "type": "registry:block",
+      "title": "Bubble: party announcement",
+      "description": "An example of Bubble: party announcement.",
+      "categories": [
+        "bubble"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/avatar",
+        "@keyline-ui/bubble",
+        "@keyline-ui/keyline",
+        "@keyline-ui/message"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/bubble-reactions.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/bubble-reactions.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Framed button with affix cells, key travel and pending/done/failed signals.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/keyline-render",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-affix",
+      "type": "registry:block",
+      "title": "Button: warehouse queue",
+      "description": "An example of Button: warehouse queue.",
+      "categories": [
+        "button"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/button-affix.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/button-affix.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button group",
+      "description": "Buttons attached in one control frame: Button cells on shared seams, each its own Tab stop; text cells and a heavier separator; horizontal or vertical. Toolbar is the one-Tab-stop row; SplitButton the action with its menu.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/button",
+        "@keyline-ui/keyline-render",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/button-group.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/button-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group-menu",
+      "type": "registry:block",
+      "title": "Button group: tracking link",
+      "description": "An example of Button group: tracking link.",
+      "categories": [
+        "button-group"
+      ],
+      "dependencies": [
+        "lucide-react@1.71.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/button-group",
+        "@keyline-ui/keyline",
+        "@keyline-ui/menu"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/button-group-menu.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/button-group-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group-review",
+      "type": "registry:block",
+      "title": "Button group: order review",
+      "description": "An example of Button group: order review.",
+      "categories": [
+        "button-group"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/button-group",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/button-group-review.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/button-group-review.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group-zoom",
+      "type": "registry:block",
+      "title": "Button group: report zoom",
+      "description": "An example of Button group: report zoom.",
+      "categories": [
+        "button-group"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/button-group",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/button-group-zoom.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/button-group-zoom.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-invoice",
+      "type": "registry:block",
+      "title": "Button: invoice actions",
+      "description": "An example of Button: invoice actions.",
+      "categories": [
+        "button"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/button-invoice.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/button-invoice.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-retry",
+      "type": "registry:block",
+      "title": "Button: corporate sync",
+      "description": "An example of Button: corporate sync.",
+      "categories": [
+        "button"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/button-retry.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/button-retry.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-variants",
+      "type": "registry:block",
+      "title": "Button: expense review",
+      "description": "An example of Button: expense review.",
+      "categories": [
+        "button"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/button-variants.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/button-variants.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:lib",
+      "title": "Calendar logic",
+      "description": "Pure range helpers: ordering, available-day count and locale-aware range formatting. The grid and keyboard are react-day-picker's.",
+      "files": [
+        {
+          "path": "src/registry/keyline/lib/calendar.ts",
+          "type": "registry:lib",
+          "target": "components/keyline/lib/calendar.ts"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Slides on Embla, as the reference: a frame of slides on travelling 1px seams with a control row of cells (previous, n / N with position ticks, next). APG carousel without rotation: named region, slides labelled n of N, out-of-view slides inert, arrow keys mirrored in RTL, moves announced politely, instant steps under reduced motion.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "embla-carousel-react@8.6.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/button",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/carousel.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "carousel-posters",
+      "type": "registry:block",
+      "title": "Carousel: employee of the month",
+      "description": "An example of Carousel: employee of the month.",
+      "categories": [
+        "carousel"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/carousel",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/carousel-posters.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/carousel-posters.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Charts on recharts, as the reference: series colours by role from the data tokens (focal, comparison, rest, mark, alert) as --color-<key>; solid hairline grid, Code-voice ticks, square marks and keys, an inverse tooltip with tabular figures. ChartFigure adds a title and a Chart / Table switch over the same rows. RTL axes and reduced motion are applied for you.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "recharts@3.10.1"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/table",
+        "utils",
+        "@keyline-ui/segmented",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/chart.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart-returns",
+      "type": "registry:block",
+      "title": "Chart: returns by client",
+      "description": "An example of Chart: returns by client.",
+      "categories": [
+        "chart"
+      ],
+      "dependencies": [
+        "recharts@3.10.1"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/chart",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/chart-returns.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/chart-returns.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart-sales",
+      "type": "registry:block",
+      "title": "Chart: sales by rep",
+      "description": "An example of Chart: sales by rep.",
+      "categories": [
+        "chart"
+      ],
+      "dependencies": [
+        "recharts@3.10.1"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/chart",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/chart-sales.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/chart-sales.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart-target",
+      "type": "registry:block",
+      "title": "Chart: weekly target",
+      "description": "An example of Chart: weekly target.",
+      "categories": [
+        "chart"
+      ],
+      "dependencies": [
+        "recharts@3.10.1"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/chart",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/chart-target.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/chart-target.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Square check box and a labelled checkbox row with description; indeterminate supported.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-closing",
+      "type": "registry:block",
+      "title": "Checkbox: closing checklist",
+      "description": "An example of Checkbox: closing checklist.",
+      "categories": [
+        "checkbox"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/checkbox",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/checkbox-closing.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/checkbox-closing.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-group",
+      "type": "registry:ui",
+      "title": "Checkbox group",
+      "description": "Several independent choices to one question in one frame (Base UI CheckboxGroup): an optional parent row that checks or clears all with a count, rows with description and meta, Form participant.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/checkbox",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/checkbox-group.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/checkbox-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-group-party",
+      "type": "registry:block",
+      "title": "Checkbox group: party supplies",
+      "description": "An example of Checkbox group: party supplies.",
+      "categories": [
+        "checkbox-group"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/checkbox-group",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/checkbox-group-party.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/checkbox-group-party.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-group-price-list",
+      "type": "registry:block",
+      "title": "Checkbox group: price list recipients",
+      "description": "An example of Checkbox group: price list recipients.",
+      "categories": [
+        "checkbox-group"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/checkbox-group",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/checkbox-group-price-list.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/checkbox-group-price-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-invoices",
+      "type": "registry:block",
+      "title": "Checkbox: print invoices",
+      "description": "An example of Checkbox: print invoices.",
+      "categories": [
+        "checkbox"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/checkbox",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/checkbox-invoices.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/checkbox-invoices.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "One unframed disclosure: a caret box whose keyline runs down the panel as a spine; the panel unfolds.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/collapsible.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-options",
+      "type": "registry:block",
+      "title": "Collapsible: delivery options",
+      "description": "An example of Collapsible: delivery options.",
+      "categories": [
+        "collapsible"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/collapsible",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline",
+        "@keyline-ui/switch"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/collapsible-options.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/collapsible-options.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collection",
+      "type": "registry:lib",
+      "title": "Collection helpers",
+      "description": "Pure helpers: the sort cycle of a column header, a numeric-aware locale comparator, and the constant-width window of page numbers.",
+      "files": [
+        {
+          "path": "src/registry/keyline/lib/collection.ts",
+          "type": "registry:lib",
+          "target": "components/keyline/lib/collection.ts"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Single-value combobox: a Select you can type into. Local filtering or an async source (abort, status, retry), optional groups; the list docks to the frame.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/options",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/combobox.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/combobox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox-client",
+      "type": "registry:block",
+      "title": "Combobox: find client",
+      "description": "An example of Combobox: find client.",
+      "categories": [
+        "combobox"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/combobox",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/combobox-client.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/combobox-client.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox-directory",
+      "type": "registry:block",
+      "title": "Combobox: corporate directory",
+      "description": "An example of Combobox: corporate directory.",
+      "categories": [
+        "combobox"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/combobox",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/combobox-directory.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/combobox-directory.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command menu",
+      "description": "⌘K command menu: digit cells run by index, grouped results, empty state.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "cmdk"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/kbd",
+        "@keyline-ui/dialog",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/keyline-scope"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/command.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/command.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command-office",
+      "type": "registry:block",
+      "title": "Command menu: office commands",
+      "description": "An example of Command menu: office commands.",
+      "categories": [
+        "command"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/command",
+        "@keyline-ui/kbd",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/command-office.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/command-office.tsx"
+        }
+      ]
+    },
+    {
+      "name": "composition-cells",
+      "type": "registry:block",
+      "title": "Composition: declared cells",
+      "description": "An example of Composition: declared cells.",
+      "categories": [
+        "guide"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline",
+        "@keyline-ui/panel",
+        "@keyline-ui/segmented"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/composition-cells.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/composition-cells.tsx"
+        }
+      ]
+    },
+    {
+      "name": "config-scope",
+      "type": "registry:block",
+      "title": "Configuration: branch theme",
+      "description": "An example of Configuration: branch theme.",
+      "categories": [
+        "guide"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/checkbox",
+        "@keyline-ui/keyline",
+        "@keyline-ui/keyline-config",
+        "@keyline-ui/segmented",
+        "@keyline-ui/select",
+        "@keyline-ui/status"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/config-scope.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/config-scope.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context menu",
+      "description": "Menu opened on an object (right-click, long-press, Menu key): Menu's rows and submenus; marks the object while open.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/menu",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/context-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/context-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-clients",
+      "type": "registry:block",
+      "title": "Context menu: client list",
+      "description": "An example of Context menu: client list.",
+      "categories": [
+        "context-menu"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/context-menu",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/context-menu-clients.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/context-menu-clients.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data Table",
+      "description": "TanStack Table driving the Keyline table parts: useDataTable (sorting, multi-sort, filters, a search, paging, row selection, column visibility; each slice controlled or not) and DataTable, DataTableBulkBar, DataTablePagination and DataTableSearch. Selecting a row re-renders that row alone.",
+      "dependencies": [
+        "@tanstack/react-table@9.3.1"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/table",
+        "@keyline-ui/data-table-model",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/data-table.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/data-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-table-model",
+      "type": "registry:lib",
+      "title": "Data table model",
+      "description": "Pure helpers behind the Data Table: the sort cycle and multi-sort ordinal of a column, aria-sort, a column's alignment, the pager's range, and the filter model (text, set and range filters, a search, and the filter's words for a token).",
+      "registryDependencies": [
+        "@keyline-ui/collection"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/lib/data-table.ts",
+          "type": "registry:lib",
+          "target": "components/keyline/lib/data-table.ts"
+        }
+      ]
+    },
+    {
+      "name": "data-table-orders",
+      "type": "registry:block",
+      "title": "Data Table: orders data table",
+      "description": "An example of Data Table: orders data table.",
+      "categories": [
+        "data-table"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/data-table",
+        "@keyline-ui/keyline",
+        "@keyline-ui/status",
+        "@keyline-ui/table"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/data-table-orders.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/data-table-orders.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date picker",
+      "description": "Single-date calendar and picker on react-day-picker, sharing the range calendar's look, wording and bounds; the chosen day floods ink. DateTimePicker adds a time row (a TimeField cell, 24- or 12-hour, with optional minTime/maxTime) under the calendar.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "react-day-picker@9.14.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/calendar",
+        "@keyline-ui/date-range",
+        "@keyline-ui/field",
+        "@keyline-ui/time-field"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/date-picker.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/date-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-delivery",
+      "type": "registry:block",
+      "title": "Date picker: delivery day",
+      "description": "An example of Date picker: delivery day.",
+      "categories": [
+        "date-picker"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/date-picker",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/date-picker-delivery.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/date-picker-delivery.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-meeting",
+      "type": "registry:block",
+      "title": "Date picker: client meeting",
+      "description": "An example of Date picker: client meeting.",
+      "categories": [
+        "date-picker"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/date-picker",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/date-picker-meeting.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/date-picker-meeting.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-range",
+      "type": "registry:ui",
+      "title": "Date range picker",
+      "description": "Range calendar on react-day-picker (pinned) styled as a Keyline grid: a flooded range with ink ends, row-break notches, hover and keyboard preview, hatched unavailable days, month and year dropdowns, min/max, presets and a day count.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "react-day-picker@9.14.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/select",
+        "@keyline-ui/calendar"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/date-range.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/date-range.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-range-vacation",
+      "type": "registry:block",
+      "title": "Date range picker: vacation request",
+      "description": "An example of Date range picker: vacation request.",
+      "categories": [
+        "date-range"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/date-range",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/date-range-vacation.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/date-range-vacation.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Dialog (header, scrolling body, footer cells) and AlertDialog (an attention cell; focus lands on the safe action): region-framed modals on Base UI. Also installable as @keyline-ui/alert-dialog.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/scroll-area",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-new-client",
+      "type": "registry:block",
+      "title": "Dialog: new client",
+      "description": "An example of Dialog: new client.",
+      "categories": [
+        "dialog"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/dialog",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/dialog-new-client.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/dialog-new-client.tsx"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction",
+      "description": "DirectionProvider: sets a subtree's writing direction for both the DOM (Keyline's CSS and DOM-reading components) and Base UI (the sides tooltips, popovers and menus take; arrow keys). useDirection reads it.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/direction.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/direction.tsx"
+        }
+      ]
+    },
+    {
+      "name": "direction-rtl",
+      "type": "registry:block",
+      "title": "Direction: mirrored invoices",
+      "description": "An example of Direction: mirrored invoices.",
+      "categories": [
+        "direction"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/breadcrumb",
+        "@keyline-ui/button",
+        "@keyline-ui/direction",
+        "@keyline-ui/keyline",
+        "@keyline-ui/pagination",
+        "@keyline-ui/segmented",
+        "@keyline-ui/tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/direction-rtl.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/direction-rtl.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "A sheet you swipe away, on Base UI Drawer as the reference: swipe with velocity, snap points, nested drawers, focus trap, Escape and the keyboard inset are the library's. Keyline: the page-facing edge at region weight, a grip on it, logical sides (end and start mirror in RTL), the system's motion timings.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/dialog"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/drawer.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/drawer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer-delivery",
+      "type": "registry:block",
+      "title": "Drawer: truck route",
+      "description": "An example of Drawer: truck route.",
+      "categories": [
+        "drawer"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/drawer",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/drawer-delivery.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/drawer-delivery.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "Nothing here, said plainly: a count cell, the message and the way out, in one frame or as a cell. Empty, error and first-use kinds.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/keyline-render",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/empty.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/empty.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-calls",
+      "type": "registry:block",
+      "title": "Empty: call log",
+      "description": "An example of Empty: call log.",
+      "categories": [
+        "empty"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/empty",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/empty-calls.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/empty-calls.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-search",
+      "type": "registry:block",
+      "title": "Empty: client search",
+      "description": "An example of Empty: client search.",
+      "categories": [
+        "empty"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/empty",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/empty-search.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/empty-search.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Field, input, affix cells, field group and validation with an inserted attention cell. Form (Base UI Form) and vertical, horizontal or responsive field orientation.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/field.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field-carton",
+      "type": "registry:block",
+      "title": "Field: carton size",
+      "description": "An example of Field: carton size.",
+      "categories": [
+        "field"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/field",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/field-carton.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/field-carton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field-order",
+      "type": "registry:block",
+      "title": "Field: new order",
+      "description": "An example of Field: new order.",
+      "categories": [
+        "field"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/field-order.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/field-order.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field-tracking",
+      "type": "registry:block",
+      "title": "Field: track shipment",
+      "description": "An example of Field: track shipment.",
+      "categories": [
+        "field"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/field-tracking.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/field-tracking.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover card",
+      "description": "A link that previews its destination (Base UI Preview Card): the underline draws along its keyline during the open delay; the card is a control frame of cells (media, title, code, facts on seams) one gutter from the link. Supplementary content only.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/hover-card.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/hover-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-card-client",
+      "type": "registry:block",
+      "title": "Hover card: client cards",
+      "description": "An example of Hover card: client cards.",
+      "categories": [
+        "hover-card"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/avatar",
+        "@keyline-ui/hover-card",
+        "@keyline-ui/keyline",
+        "@keyline-ui/status"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/hover-card-client.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/hover-card-client.tsx"
+        }
+      ]
+    },
+    {
+      "name": "inspector",
+      "type": "registry:ui",
+      "title": "Inspector",
+      "description": "Non-modal contextual panel: header with the inspected object's code, key/value cells and a sticky action strip.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/inspector.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/inspector.tsx"
+        }
+      ]
+    },
+    {
+      "name": "inspector-order",
+      "type": "registry:block",
+      "title": "Inspector: order inspector",
+      "description": "An example of Inspector: order inspector.",
+      "categories": [
+        "inspector"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/inspector",
+        "@keyline-ui/item",
+        "@keyline-ui/keyline",
+        "@keyline-ui/status"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/inspector-order.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/inspector-order.tsx"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "List rows on shared keylines: media cell, content, meta and action cells; render-prop rows for links and buttons.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/keyline-render",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/item.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "item-settings",
+      "type": "registry:block",
+      "title": "Item: alert settings",
+      "description": "An example of Item: alert settings.",
+      "categories": [
+        "item"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/item",
+        "@keyline-ui/keyline",
+        "@keyline-ui/switch"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/item-settings.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/item-settings.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "A key in the Code voice: a key cell with a 2px floor; KbdGroup joins a chord's keys on seams (nested kbd), with the separator read, not drawn. Used by Command.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/keyline-render",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/kbd.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/kbd.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd-shortcuts",
+      "type": "registry:block",
+      "title": "Kbd: order shortcuts",
+      "description": "An example of Kbd: order shortcuts.",
+      "categories": [
+        "kbd"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/kbd",
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/kbd-shortcuts.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/kbd-shortcuts.tsx"
+        }
+      ]
+    },
+    {
+      "name": "keyline",
+      "type": "registry:theme",
+      "title": "Keyline",
+      "description": "Keyline tokens and construction primitives: role weights, the optional cut (--kl-cut), cells, flood, lamp, unfold, dock, pending. Source tokens go to your :root and .dark; theme/tokens.ts holds them as data.",
+      "dependencies": [
+        "@fontsource-variable/atkinson-hyperlegible-mono",
+        "@fontsource-variable/atkinson-hyperlegible-next"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-kl-paper": "var(--kl-paper)",
+          "color-kl-cell": "var(--kl-cell)",
+          "color-kl-raised": "var(--kl-raised)",
+          "color-kl-tint": "var(--kl-tint)",
+          "color-kl-press": "var(--kl-press)",
+          "color-kl-ink": "var(--kl-ink)",
+          "color-kl-ink-2": "var(--kl-ink-2)",
+          "color-kl-ink-3": "var(--kl-ink-3)",
+          "color-kl-line": "var(--kl-line)",
+          "color-kl-seam": "var(--kl-seam)",
+          "color-kl-line-soft": "var(--kl-line-soft)",
+          "color-kl-dis": "var(--kl-dis)",
+          "color-kl-dis-line": "var(--kl-dis-line)",
+          "color-kl-inverse": "var(--kl-inverse)",
+          "color-kl-on-inverse": "var(--kl-on-inverse)",
+          "color-kl-scrim": "var(--kl-scrim)",
+          "color-kl-yellow": "var(--kl-yellow)",
+          "color-kl-on-yellow": "var(--kl-on-yellow)",
+          "color-kl-yellow-row": "var(--kl-yellow-row)",
+          "color-kl-cobalt": "var(--kl-cobalt)",
+          "color-kl-cobalt-hi": "var(--kl-cobalt-hi)",
+          "color-kl-cobalt-lo": "var(--kl-cobalt-lo)",
+          "color-kl-cobalt-text": "var(--kl-cobalt-text)",
+          "color-kl-on-cobalt": "var(--kl-on-cobalt)",
+          "color-kl-red": "var(--kl-red)",
+          "color-kl-red-hi": "var(--kl-red-hi)",
+          "color-kl-red-lo": "var(--kl-red-lo)",
+          "color-kl-red-text": "var(--kl-red-text)",
+          "color-kl-on-red": "var(--kl-on-red)",
+          "color-kl-focus": "var(--kl-focus)",
+          "color-kl-data-1": "var(--kl-data-1)",
+          "color-kl-data-2": "var(--kl-data-2)",
+          "color-kl-data-3": "var(--kl-data-3)",
+          "color-kl-data-mark": "var(--kl-data-mark)",
+          "color-kl-data-alert": "var(--kl-data-alert)",
+          "font-kl": "var(--kl-font)",
+          "font-kl-mono": "var(--kl-font-mono)",
+          "font-weight-kl-strong": "var(--kl-weight-strong)",
+          "font-weight-kl-display": "var(--kl-weight-display)",
+          "spacing-kl-ctl": "var(--kl-ctl)",
+          "spacing-kl-row": "var(--kl-row)",
+          "spacing-kl-inset": "var(--kl-inset)",
+          "spacing-kl-gutter": "var(--kl-gutter)",
+          "spacing-kl-k1": "var(--kl-k1)",
+          "spacing-kl-k2": "var(--kl-k2)",
+          "spacing-kl-k3": "var(--kl-k3)",
+          "spacing-kl-cut-region": "var(--kl-cut-region)",
+          "spacing-kl-cut-control": "var(--kl-cut-control)",
+          "spacing-kl-cut-nested": "var(--kl-cut-nested)",
+          "text-kl-code": "var(--kl-text-code)",
+          "text-kl-meta": "var(--kl-text-meta)",
+          "text-kl-label": "var(--kl-text-label)",
+          "text-kl-body": "var(--kl-text-body)",
+          "text-kl-lead": "var(--kl-text-lead)",
+          "text-kl-title": "var(--kl-text-title)",
+          "text-kl-display": "var(--kl-text-display)",
+          "ease-kl-out": "var(--kl-ease-out)",
+          "ease-kl-in": "var(--kl-ease-in)"
+        },
+        "light": {
+          "kl-working": "oklch(0.9 0.17 98)",
+          "kl-commit": "oklch(0.48 0.2 262)",
+          "kl-attention": "oklch(0.55 0.2 33)",
+          "kl-neutral-h": "262",
+          "kl-neutral-c": "1",
+          "kl-font": "\"Atkinson Hyperlegible Next Variable\", ui-sans-serif, system-ui, sans-serif",
+          "kl-font-mono": "\"Atkinson Hyperlegible Mono Variable\", ui-monospace, monospace",
+          "kl-weight-strong": "700",
+          "kl-weight-display": "800",
+          "kl-dark": "0"
+        },
+        "dark": {
+          "kl-dark": "1"
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/keyline/theme/tokens.ts",
+          "type": "registry:lib",
+          "target": "components/keyline/theme/tokens.ts"
+        }
+      ]
+    },
+    {
+      "name": "keyline-config",
+      "type": "registry:lib",
+      "title": "Keyline configuration",
+      "description": "The configuration contract as data: palette presets, fonts, weights, cut, density, theme, motion. Generates the CSS, attributes and registry item a configuration needs, and a runtime KeylineConfigScope.",
+      "registryDependencies": [
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/lib/keyline-config.ts",
+          "type": "registry:lib",
+          "target": "components/keyline/lib/keyline-config.ts"
+        }
+      ]
+    },
+    {
+      "name": "keyline-motion",
+      "type": "registry:lib",
+      "title": "Keyline motion",
+      "description": "Flood origin, zero-bounce stretch springs and the useStretch hook. No runtime provider.",
+      "files": [
+        {
+          "path": "src/registry/keyline/lib/keyline-motion.ts",
+          "type": "registry:lib",
+          "target": "components/keyline/lib/keyline-motion.ts"
+        }
+      ]
+    },
+    {
+      "name": "keyline-render",
+      "type": "registry:lib",
+      "title": "Keyline render helpers",
+      "description": "Merge Keyline's classes and styles with a className or style given as a function of state, and mirror variant props to data attributes.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/lib/keyline-render.ts",
+          "type": "registry:lib",
+          "target": "components/keyline/lib/keyline-render.ts"
+        }
+      ]
+    },
+    {
+      "name": "keyline-scope",
+      "type": "registry:lib",
+      "title": "Keyline portal scope",
+      "description": "Carries subtree configuration (palette, font, weights, cut, density, motion, theme, dir) onto portaled overlays. No provider.",
+      "files": [
+        {
+          "path": "src/registry/keyline/lib/keyline-scope.ts",
+          "type": "registry:lib",
+          "target": "components/keyline/lib/keyline-scope.ts"
+        }
+      ]
+    },
+    {
+      "name": "keyline-shadcn",
+      "type": "registry:theme",
+      "title": "Keyline for the whole app (opt-in)",
+      "description": "Maps shadcn's semantic tokens, radius, fonts, focus ring and page body to Keyline, so stock shadcn components take Keyline's look. Not needed to use Keyline components.",
+      "registryDependencies": [
+        "@keyline-ui/keyline"
+      ],
+      "cssVars": {
+        "theme": {
+          "font-sans": "var(--kl-font)",
+          "font-mono": "var(--kl-font-mono)",
+          "radius": "0px"
+        },
+        "light": {
+          "background": "var(--kl-paper)",
+          "foreground": "var(--kl-ink)",
+          "card": "var(--kl-cell)",
+          "card-foreground": "var(--kl-ink)",
+          "popover": "var(--kl-raised)",
+          "popover-foreground": "var(--kl-ink)",
+          "primary": "var(--kl-cobalt)",
+          "primary-foreground": "var(--kl-on-cobalt)",
+          "secondary": "var(--kl-tint)",
+          "secondary-foreground": "var(--kl-ink)",
+          "muted": "var(--kl-tint)",
+          "muted-foreground": "var(--kl-ink-2)",
+          "accent": "var(--kl-yellow)",
+          "accent-foreground": "var(--kl-on-yellow)",
+          "destructive": "var(--kl-red)",
+          "border": "var(--kl-seam)",
+          "input": "var(--kl-line)",
+          "ring": "var(--kl-focus)",
+          "sidebar": "var(--kl-cell)",
+          "sidebar-foreground": "var(--kl-ink)",
+          "sidebar-primary": "var(--kl-cobalt)",
+          "sidebar-primary-foreground": "var(--kl-on-cobalt)",
+          "sidebar-accent": "var(--kl-yellow)",
+          "sidebar-accent-foreground": "var(--kl-on-yellow)",
+          "sidebar-border": "var(--kl-seam)",
+          "sidebar-ring": "var(--kl-focus)",
+          "radius": "0px"
+        },
+        "dark": {
+          "background": "var(--kl-paper)",
+          "foreground": "var(--kl-ink)",
+          "card": "var(--kl-cell)",
+          "card-foreground": "var(--kl-ink)",
+          "popover": "var(--kl-raised)",
+          "popover-foreground": "var(--kl-ink)",
+          "primary": "var(--kl-cobalt)",
+          "primary-foreground": "var(--kl-on-cobalt)",
+          "secondary": "var(--kl-tint)",
+          "secondary-foreground": "var(--kl-ink)",
+          "muted": "var(--kl-tint)",
+          "muted-foreground": "var(--kl-ink-2)",
+          "accent": "var(--kl-yellow)",
+          "accent-foreground": "var(--kl-on-yellow)",
+          "destructive": "var(--kl-red)",
+          "border": "var(--kl-seam)",
+          "input": "var(--kl-line)",
+          "ring": "var(--kl-focus)",
+          "sidebar": "var(--kl-cell)",
+          "sidebar-foreground": "var(--kl-ink)",
+          "sidebar-primary": "var(--kl-cobalt)",
+          "sidebar-primary-foreground": "var(--kl-on-cobalt)",
+          "sidebar-accent": "var(--kl-yellow)",
+          "sidebar-accent-foreground": "var(--kl-on-yellow)",
+          "sidebar-border": "var(--kl-seam)",
+          "sidebar-ring": "var(--kl-focus)"
+        }
+      }
+    },
+    {
+      "name": "keyline-skill",
+      "type": "registry:file",
+      "title": "Keyline agent skill",
+      "description": "An agent skill for coding assistants: add Keyline items, compose them, and upgrade installed items from the changelog.",
+      "files": [
+        {
+          "path": "skills/keyline/SKILL.md",
+          "type": "registry:file",
+          "target": ".claude/skills/keyline/SKILL.md"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "A step in a conversation or activity timeline in the Code voice: a glyph cell and words, a separator between seams, or a keyline under the words; pending runs the pending segment and is a polite status.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/keyline-render",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/marker.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/marker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marker-activity",
+      "type": "registry:block",
+      "title": "Marker: order activity",
+      "description": "An example of Marker: order activity.",
+      "categories": [
+        "marker"
+      ],
+      "dependencies": [
+        "lucide-react@1.71.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/marker",
+        "@keyline-ui/status"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/marker-activity.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/marker-activity.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "type": "registry:ui",
+      "title": "Menu",
+      "description": "Docked menu with code cells, shortcut cells, ink cursor, destructive rows, checkbox and radio items, and submenus.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/menu.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menu-notifications",
+      "type": "registry:block",
+      "title": "Menu: notification menu",
+      "description": "An example of Menu: notification menu.",
+      "categories": [
+        "menu"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/menu"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/menu-notifications.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/menu-notifications.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menu-order-actions",
+      "type": "registry:block",
+      "title": "Menu: order actions",
+      "description": "An example of Menu: order actions.",
+      "categories": [
+        "menu"
+      ],
+      "dependencies": [
+        "lucide-react@1.71.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/menu"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/menu-order-actions.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/menu-order-actions.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "A row of menus in one frame (Base UI Menubar): title key cells, the open title inverse, menus docked to the frame's edge with Menu's rows and checkbox and radio items.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/scroll-edges",
+        "@keyline-ui/menu",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/menubar.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/menubar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menubar-report",
+      "type": "registry:block",
+      "title": "Menubar: sales report menus",
+      "description": "An example of Menubar: sales report menus.",
+      "categories": [
+        "menubar"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/menubar"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/menubar-report.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/menubar-report.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "A sender's run in a conversation, on one reading edge: the header (name, time), every bubble's text, the file glyphs and the receipt start on the same line. Consecutive bubbles stack on shared keylines; the avatar sits in the gutter level with the first bubble. align=\"end\" is the reader's own run, at the end of the log, mirrored with the writing direction.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/message.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/message.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message scroller",
+      "description": "A conversation log on @shadcn/react's MessageScroller, as the reference: stays on the newest message, holds the reader's place when scrolled up, keeps position when older messages are prepended; role=log inside a focusable region. Keyline adds: the place also holds when content above changes size (in every engine), arrivals unfold from their top keyline while the reader follows, and a Latest cell that counts what arrived below and jumps a bounded, interruptible distance. The log scrolls inside Keyline's Scroll Area, so its bar is the shared one; the jump reveals it, and pressing it is the reader taking over.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "@shadcn/react@0.3.1"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/message-scroller.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/message-scroller.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller-chat",
+      "type": "registry:block",
+      "title": "Message scroller: driver chat",
+      "description": "An example of Message scroller: driver chat.",
+      "categories": [
+        "message-scroller"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/avatar",
+        "@keyline-ui/bubble",
+        "@keyline-ui/button",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline",
+        "@keyline-ui/message",
+        "@keyline-ui/message-scroller"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/message-scroller-chat.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/message-scroller-chat.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message-thread",
+      "type": "registry:block",
+      "title": "Message: thread with jim",
+      "description": "An example of Message: thread with jim.",
+      "categories": [
+        "message"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/avatar",
+        "@keyline-ui/bubble",
+        "@keyline-ui/keyline",
+        "@keyline-ui/message"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/message-thread.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/message-thread.tsx"
+        }
+      ]
+    },
+    {
+      "name": "modes-region",
+      "type": "registry:block",
+      "title": "Modes: modes region",
+      "description": "An example of Modes: modes region.",
+      "categories": [
+        "guide"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/direction",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline",
+        "@keyline-ui/segmented",
+        "@keyline-ui/select"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/modes-region.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/modes-region.tsx"
+        }
+      ]
+    },
+    {
+      "name": "multiselect",
+      "type": "registry:ui",
+      "title": "Multiselect",
+      "description": "Searchable async multiselect, a preset over Combobox's parts with Base UI's multiple: chips are cells in the field frame, the list docks to it.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/combobox"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/multiselect.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/multiselect.tsx"
+        }
+      ]
+    },
+    {
+      "name": "multiselect-memo",
+      "type": "registry:block",
+      "title": "Multiselect: memo recipients",
+      "description": "An example of Multiselect: memo recipients.",
+      "categories": [
+        "multiselect"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/multiselect"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/multiselect-memo.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/multiselect-memo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native select",
+      "description": "The platform's own select in a Keyline field frame: the caret cell drawn over its end, the OS list in the page's scheme, options or groups, a Field participant (name, required, validate, Form errors).",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/field"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/native-select.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/native-select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-select-transfer",
+      "type": "registry:block",
+      "title": "Native select: transfer request",
+      "description": "An example of Native select: transfer request.",
+      "categories": [
+        "native-select"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline",
+        "@keyline-ui/native-select"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/native-select-transfer.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/native-select-transfer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nav",
+      "type": "registry:ui",
+      "title": "Nav",
+      "description": "Vertical (or wrapping) location list; the cobalt band stretches between items. Labelled groups, icon key cells, nested links under a disclosure, row actions (NavAction), a brand identity block and a footer; a rail of key cells with tooltips inside AppShell. With AppShell it is the sidebar (@keyline-ui/sidebar).",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/scroll-edges",
+        "@keyline-ui/tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/nav.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/nav.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nav-sidebar",
+      "type": "registry:block",
+      "title": "Nav: office sidebar",
+      "description": "An example of Nav: office sidebar.",
+      "categories": [
+        "nav"
+      ],
+      "dependencies": [
+        "lucide-react@1.71.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/nav"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/nav-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/nav-sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation menu",
+      "description": "Site navigation (Base UI Navigation Menu): a control frame of section triggers and links, the open trigger inverse, the current page cobalt; each section's panel docks to the frame's keyline with link cells on shared seams (title, description, code).",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/scroll-edges",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/navigation-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu-site",
+      "type": "registry:block",
+      "title": "Navigation menu: paper site nav",
+      "description": "An example of Navigation menu: paper site nav.",
+      "categories": [
+        "navigation-menu"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/navigation-menu"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/navigation-menu-site.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/navigation-menu-site.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notice",
+      "type": "registry:ui",
+      "title": "Notice",
+      "description": "Inline message: a tone cell with a glyph, the message, and action cells; folds away; narrow layout drops actions to their own row.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/keyline-render",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/notice.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/notice.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notice-stock",
+      "type": "registry:block",
+      "title": "Notice: paper stock",
+      "description": "An example of Notice: paper stock.",
+      "categories": [
+        "notice"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/notice"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/notice-stock.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/notice-stock.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-field",
+      "type": "registry:ui",
+      "title": "Number field",
+      "description": "A number in a field frame with stepper key cells and a unit cell: Base UI NumberField (locale parsing, hold-to-repeat, min/max) inside a Field.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/field"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/number-field.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/number-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-field-price",
+      "type": "registry:block",
+      "title": "Number field: unit price",
+      "description": "An example of Number field: unit price.",
+      "categories": [
+        "number-field"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/number-field"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/number-field-price.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/number-field-price.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-field-reorder",
+      "type": "registry:block",
+      "title": "Number field: reorder",
+      "description": "An example of Number field: reorder.",
+      "categories": [
+        "number-field"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/number-field"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/number-field-reorder.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/number-field-reorder.tsx"
+        }
+      ]
+    },
+    {
+      "name": "options",
+      "type": "registry:lib",
+      "title": "Option and value helpers",
+      "description": "Pure helpers: group options under headings in first-appearance order, and the longest value a numeric scale prints.",
+      "files": [
+        {
+          "path": "src/registry/keyline/lib/options.ts",
+          "type": "registry:lib",
+          "target": "components/keyline/lib/options.ts"
+        }
+      ]
+    },
+    {
+      "name": "otp-field",
+      "type": "registry:ui",
+      "title": "OTP field",
+      "description": "A one-time code in one field frame (Base UI OTP Field): a cell per character on shared seams, groups split by a join cell, paste and SMS autofill, a Field participant; verification signals pending, done and failed in the frame.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/field"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/otp-field.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/otp-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "otp-sign-in",
+      "type": "registry:block",
+      "title": "OTP field: sign in code",
+      "description": "An example of OTP field: sign in code.",
+      "categories": [
+        "otp-field"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/otp-field"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/otp-sign-in.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/otp-sign-in.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Page numbers as cells with a cobalt current page; constant width while paging; folds to \"5 / 20\" when narrow; buttons or links.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/collection"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/pagination.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination-invoices",
+      "type": "registry:block",
+      "title": "Pagination: invoice archive",
+      "description": "An example of Pagination: invoice archive.",
+      "categories": [
+        "pagination"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/pagination"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/pagination-invoices.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/pagination-invoices.tsx"
+        }
+      ]
+    },
+    {
+      "name": "panel",
+      "type": "registry:ui",
+      "title": "Panel",
+      "description": "Region frame with header, body and footer cells; PanelGrid joins panels into one frame with shared keylines.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/panel.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/panel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "panel-grid",
+      "type": "registry:block",
+      "title": "Panel: branch board",
+      "description": "An example of Panel: branch board.",
+      "categories": [
+        "panel"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/panel",
+        "@keyline-ui/status"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/panel-grid.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/panel-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "panel-targets",
+      "type": "registry:block",
+      "title": "Panel: sales targets",
+      "description": "An example of Panel: sales targets.",
+      "categories": [
+        "panel"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/panel",
+        "@keyline-ui/stat"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/panel-targets.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/panel-targets.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Arbitrary content docked to its trigger (or detached by one gutter), with optional header, body and footer cells.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/popover.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover-note",
+      "type": "registry:block",
+      "title": "Popover: delivery note",
+      "description": "An example of Popover: delivery note.",
+      "categories": [
+        "popover"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline",
+        "@keyline-ui/popover"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/popover-note.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/popover-note.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Task progress: the pending signal made determinate (yellow fill, ink leading edge), indeterminate, complete and failed states.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/keyline-render",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/progress.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-print",
+      "type": "registry:block",
+      "title": "Progress: print invoices",
+      "description": "An example of Progress: print invoices.",
+      "categories": [
+        "progress"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/progress"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/progress-print.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/progress-print.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-upload",
+      "type": "registry:block",
+      "title": "Progress: upload report",
+      "description": "An example of Progress: upload report.",
+      "categories": [
+        "progress"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/progress"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/progress-upload.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/progress-upload.tsx"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "title": "Questionnaire",
+      "description": "A multi-step form on @shadcn/react's Questionnaire, as the reference: single choice (the radio group's rows and ink band), multiple choice (checkbox rows), free text (the field frame), required and optional steps, Back, Skip, Next and Submit as Button cells, answers kept when going back, errors described on the current step, focus on the new step's heading, Progress for the step.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "@shadcn/react@0.3.1"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/radio-group",
+        "@keyline-ui/checkbox",
+        "utils",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/button",
+        "@keyline-ui/field",
+        "@keyline-ui/progress"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/questionnaire.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/questionnaire.tsx"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire-party",
+      "type": "registry:block",
+      "title": "Questionnaire: birthday survey",
+      "description": "An example of Questionnaire: birthday survey.",
+      "categories": [
+        "questionnaire"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/panel",
+        "@keyline-ui/questionnaire",
+        "@keyline-ui/status"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/questionnaire-party.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/questionnaire-party.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio group",
+      "description": "Exclusive choice as framed rows; the ink band stretches to the chosen row.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/checkbox",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/keyline-scope"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-delivery",
+      "type": "registry:block",
+      "title": "Radio group: delivery choice",
+      "description": "An example of Radio group: delivery choice.",
+      "categories": [
+        "radio-group"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/radio-group"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/radio-group-delivery.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/radio-group-delivery.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-panel",
+      "type": "registry:block",
+      "title": "Radio group: paper weight",
+      "description": "An example of Radio group: paper weight.",
+      "categories": [
+        "radio-group"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/panel",
+        "@keyline-ui/radio-group"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/radio-group-panel.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/radio-group-panel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Panels that share a seam you can move, on react-resizable-panels v4: the 1px seam is the handle, thickening to 3px ink on hover or drag and drawn in the focus colour on keyboard focus; an optional grip cell. Keys, collapse, reset, touch targets and persistence are the library's.",
+      "dependencies": [
+        "react-resizable-panels@4.14.8"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/resizable.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/resizable.tsx"
+        }
+      ]
+    },
+    {
+      "name": "resizable-calls",
+      "type": "registry:block",
+      "title": "Resizable: call log",
+      "description": "An example of Resizable: call log.",
+      "categories": [
+        "resizable"
+      ],
+      "dependencies": [
+        "lucide-react@1.71.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/item",
+        "@keyline-ui/keyline",
+        "@keyline-ui/panel",
+        "@keyline-ui/resizable"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/resizable-calls.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/resizable-calls.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "A native scroll container with Keyline scrollbars (Base UI Scroll Area): a bar is a cell on the region's edge, owning its seam; content is padded only while an axis overflows; corner cell for both bars; focusable viewport with an inset ring. The thumb reveals while its axis scrolls and when the pointer is on the bar, widens and darkens there, inks while held, then fades (overlay platforms; always shown where native bars take space, in forced colours and for more contrast).",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/keyline-scope"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/scroll-area.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area-log",
+      "type": "registry:block",
+      "title": "Scroll Area: activity log",
+      "description": "An example of Scroll Area: activity log.",
+      "categories": [
+        "scroll-area"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/item",
+        "@keyline-ui/keyline",
+        "@keyline-ui/panel",
+        "@keyline-ui/scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/scroll-area-log.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/scroll-area-log.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-edges",
+      "type": "registry:lib",
+      "title": "Scroll edges",
+      "description": "Marks the edge of a sideways-scrolling cell row where items are hidden (data-kl-more); the theme casts an ink shadow inward from that edge.",
+      "files": [
+        {
+          "path": "src/registry/keyline/lib/scroll-edges.ts",
+          "type": "registry:lib",
+          "target": "components/keyline/lib/scroll-edges.ts"
+        }
+      ]
+    },
+    {
+      "name": "segmented",
+      "type": "registry:ui",
+      "title": "Segmented control",
+      "description": "Exclusive choice in one frame; the ink band stretches between cells.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/scroll-edges",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/segmented.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/segmented.tsx"
+        }
+      ]
+    },
+    {
+      "name": "segmented-panel",
+      "type": "registry:block",
+      "title": "Segmented control: leaderboard",
+      "description": "An example of Segmented control: leaderboard.",
+      "categories": [
+        "segmented"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/panel",
+        "@keyline-ui/segmented"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/segmented-panel.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/segmented-panel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "segmented-period",
+      "type": "registry:block",
+      "title": "Segmented control: sales by period",
+      "description": "An example of Segmented control: sales by period.",
+      "categories": [
+        "segmented"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/segmented"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/segmented-period.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/segmented-period.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Single select: field-frame trigger with a caret cell; the list docks to the frame. Options form (with groups) or parts named as Base UI names them (SelectRoot, SelectTrigger, SelectValue, SelectPopup, SelectItem, SelectGroup, SelectSeparator …).",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/options",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-assign",
+      "type": "registry:block",
+      "title": "Select: assign lead",
+      "description": "An example of Select: assign lead.",
+      "categories": [
+        "select"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/select"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/select-assign.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/select-assign.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-form",
+      "type": "registry:block",
+      "title": "Select: quote form",
+      "description": "An example of Select: quote form.",
+      "categories": [
+        "select"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/field",
+        "@keyline-ui/keyline",
+        "@keyline-ui/select"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/select-form.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/select-form.tsx"
+        }
+      ]
+    },
+    {
+      "name": "selection",
+      "type": "registry:lib",
+      "title": "Selection scope",
+      "description": "Pure helpers and a hook for page / all-matching selection with hidden-row accounting, plus snapshot-based undo.",
+      "files": [
+        {
+          "path": "src/registry/keyline/lib/selection.ts",
+          "type": "registry:lib",
+          "target": "components/keyline/lib/selection.ts"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "A region docked to a viewport edge (end, start, bottom): Base UI Dialog behaviour, unfolds from its edge, cut on the inner corner.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/dialog"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/sheet.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet-order",
+      "type": "registry:block",
+      "title": "Sheet: order sheet",
+      "description": "An example of Sheet: order sheet.",
+      "categories": [
+        "sheet"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/sheet",
+        "@keyline-ui/status"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/sheet-order.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/sheet-order.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shipments-block",
+      "type": "registry:block",
+      "title": "Blocks: shipments block",
+      "description": "An example of Blocks: shipments block.",
+      "categories": [
+        "guide"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/shipments-demo"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/shipments-block.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/shipments-block.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shipments-demo",
+      "type": "registry:block",
+      "title": "Shipments (demo block)",
+      "description": "A working application composition: a Data Table with filters, selection and expanded detail, an inspector, bulk actions with undo.",
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/button",
+        "@keyline-ui/menu",
+        "@keyline-ui/toolbar",
+        "@keyline-ui/field",
+        "@keyline-ui/multiselect",
+        "@keyline-ui/date-range",
+        "@keyline-ui/table",
+        "@keyline-ui/data-table",
+        "@keyline-ui/data-table-model",
+        "@keyline-ui/collection",
+        "@keyline-ui/status",
+        "@keyline-ui/kbd",
+        "@keyline-ui/nav",
+        "@keyline-ui/app-shell",
+        "@keyline-ui/breadcrumb",
+        "@keyline-ui/notice",
+        "@keyline-ui/dialog",
+        "@keyline-ui/inspector",
+        "@keyline-ui/command",
+        "@keyline-ui/toast",
+        "@keyline-ui/selection"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/blocks/shipments/shipments.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/blocks/shipments/shipments.tsx"
+        },
+        {
+          "path": "src/registry/keyline/blocks/shipments/shipments-data.ts",
+          "type": "registry:lib",
+          "target": "components/keyline/blocks/shipments/shipments-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar (AppShell + Nav)",
+      "description": "Installs the sidebar: AppShell (the column, its toggle, collapse to an icon rail, a start sheet on narrow layouts) and Nav (groups, icon keys, nested links, row actions, identity and footer). Import from app-shell and nav.",
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/app-shell",
+        "@keyline-ui/nav"
+      ]
+    },
+    {
+      "name": "sidebar-rail",
+      "type": "registry:block",
+      "title": "Sidebar (AppShell + Nav): rail sidebar",
+      "description": "An example of Sidebar (AppShell + Nav): rail sidebar.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react@1.71.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/app-shell",
+        "@keyline-ui/breadcrumb",
+        "@keyline-ui/keyline",
+        "@keyline-ui/nav"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/sidebar-rail.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/sidebar-rail.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "A placeholder for content on its way: the table's loading cell outside the table, in line, block, value and control shapes; a busy group that names what is loading.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/keyline-render",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-client",
+      "type": "registry:block",
+      "title": "Skeleton: client card",
+      "description": "An example of Skeleton: client card.",
+      "categories": [
+        "skeleton"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/panel",
+        "@keyline-ui/skeleton",
+        "@keyline-ui/stat"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/skeleton-client.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/skeleton-client.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "A continuous or stepped value (or a range) in one control frame: the Meter's rail with an ink fill, a 2px thumb with a grip keyline, and a readout cell sized for the longest value.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/options",
+        "@keyline-ui/field"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/slider.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider-discount",
+      "type": "registry:block",
+      "title": "Slider: county discount",
+      "description": "An example of Slider: county discount.",
+      "categories": [
+        "slider"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/slider"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/slider-discount.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/slider-discount.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider-range",
+      "type": "registry:block",
+      "title": "Slider: price range",
+      "description": "An example of Slider: price range.",
+      "categories": [
+        "slider"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/slider"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/slider-range.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/slider-range.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-button",
+      "type": "registry:ui",
+      "title": "Split button",
+      "description": "One control frame, two cells: the action and its menu. The menu docks to the frame.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/menu",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/split-button.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/split-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-button-delivery",
+      "type": "registry:block",
+      "title": "Split button: book delivery",
+      "description": "An example of Split button: book delivery.",
+      "categories": [
+        "split-button"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/menu",
+        "@keyline-ui/split-button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/split-button-delivery.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/split-button-delivery.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-button-export",
+      "type": "registry:block",
+      "title": "Split button: export report",
+      "description": "An example of Split button: export report.",
+      "categories": [
+        "split-button"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/menu",
+        "@keyline-ui/split-button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/split-button-export.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/split-button-export.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat",
+      "type": "registry:ui",
+      "title": "Stat",
+      "description": "Count voice with label, unit, delta signal and an optional meter.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/keyline-render",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/stat.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/stat.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-sales",
+      "type": "registry:block",
+      "title": "Stat: branch stats",
+      "description": "An example of Stat: branch stats.",
+      "categories": [
+        "stat"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/panel",
+        "@keyline-ui/segmented",
+        "@keyline-ui/stat"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/stat-sales.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/stat-sales.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-warehouse",
+      "type": "registry:block",
+      "title": "Stat: warehouse space",
+      "description": "An example of Stat: warehouse space.",
+      "categories": [
+        "stat"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/stat"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/stat-warehouse.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/stat-warehouse.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status",
+      "type": "registry:ui",
+      "title": "Status and badge",
+      "description": "Status glyph + text (shape survives forced colours); square code badge.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/keyline-render",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/status.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/status.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-badges",
+      "type": "registry:block",
+      "title": "Status and badge: invoice badges",
+      "description": "An example of Status and badge: invoice badges.",
+      "categories": [
+        "status"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/status"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/status-badges.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/status-badges.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-deliveries",
+      "type": "registry:block",
+      "title": "Status and badge: delivery board",
+      "description": "An example of Status and badge: delivery board.",
+      "categories": [
+        "status"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/status"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/status-deliveries.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/status-deliveries.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Binary setting: a two-cell frame whose block stretches to the on side.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/checkbox",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-alerts",
+      "type": "registry:block",
+      "title": "Switch: alert settings",
+      "description": "An example of Switch: alert settings.",
+      "categories": [
+        "switch"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/switch"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/switch-alerts.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/switch-alerts.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Presentational table parts on utilities: Table, TableHeader, TableBody, TableRow, TableHead, TableCell, TableCaption, TableSortHeader, TableBulkBar and TablePager, each with render and a className that may be a function of its state, plus the frame's views, toolbar, index column, expanded detail, empty/error rows and pagination. No part holds state.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/scroll-area",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/checkbox",
+        "@keyline-ui/tabs",
+        "@keyline-ui/status",
+        "@keyline-ui/empty",
+        "@keyline-ui/toolbar",
+        "@keyline-ui/collection"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/table.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-lines",
+      "type": "registry:block",
+      "title": "Table: order lines",
+      "description": "An example of Table: order lines.",
+      "categories": [
+        "table"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/table"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/table-lines.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/table-lines.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-loading",
+      "type": "registry:block",
+      "title": "Table: invoice table",
+      "description": "An example of Table: invoice table.",
+      "categories": [
+        "table"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/table"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/table-loading.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/table-loading.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-orders",
+      "type": "registry:block",
+      "title": "Table: open orders",
+      "description": "An example of Table: open orders.",
+      "categories": [
+        "table"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/status",
+        "@keyline-ui/table"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/table-orders.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/table-orders.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Tabs with a cobalt location band that stretches; optional count voice; panels.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/scroll-edges",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs-account",
+      "type": "registry:block",
+      "title": "Tabs: client account",
+      "description": "An example of Tabs: client account.",
+      "categories": [
+        "tabs"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/tabs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/tabs-account.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/tabs-account.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs-views",
+      "type": "registry:block",
+      "title": "Tabs: call views",
+      "description": "An example of Tabs: call views.",
+      "categories": [
+        "tabs"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/tabs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/tabs-views.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/tabs-views.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theming-roles",
+      "type": "registry:block",
+      "title": "Theming: role cards",
+      "description": "An example of Theming: role cards.",
+      "categories": [
+        "guide"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/theming-roles.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/theming-roles.tsx"
+        }
+      ]
+    },
+    {
+      "name": "time-field",
+      "type": "registry:ui",
+      "title": "Time field",
+      "description": "A time of day in one field frame: hour and minute spin-button cells that wrap, a day-period cell on a 12-hour clock, a zone affix, optional min/max bounds; the 24-hour \"HH:MM\" value reaches Base UI Form and FormData.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/field"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/time-field.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/time-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "time-field-delivery",
+      "type": "registry:block",
+      "title": "Time field: dock time",
+      "description": "An example of Time field: dock time.",
+      "categories": [
+        "time-field"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/time-field"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/time-field-delivery.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/time-field-delivery.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Actionable feedback on Base UI Toast that docks into a host cell or floats at the inline-end corner: done, failed, info, warning and loading kinds, a description line, one action (Undo, Retry), the countdown draining the keyline. useToaster() and createToaster() add promise tracking, update and dismiss, and calls from outside React.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/toast.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-promise",
+      "type": "registry:block",
+      "title": "Toast: send report",
+      "description": "An example of Toast: send report.",
+      "categories": [
+        "toast"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/toast"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/toast-promise.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/toast-promise.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-undo",
+      "type": "registry:block",
+      "title": "Toast: archive undo",
+      "description": "An example of Toast: archive undo.",
+      "categories": [
+        "toast"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/toast"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/toast-undo.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/toast-undo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "One on/off button (Base UI Toggle, aria-pressed): pressed floods yellow and fills the lamp; icon toggles show a floor keyline. Control or cell, alone or as a cell of a field frame. ToggleGroup composes its cells.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/toggle.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle group",
+      "description": "Independent toggles in one frame; each cell floods from the press point and carries a lamp.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/toggle",
+        "@keyline-ui/scroll-edges",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/toggle-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-panel",
+      "type": "registry:block",
+      "title": "Toggle group: supply room",
+      "description": "An example of Toggle group: supply room.",
+      "categories": [
+        "toggle-group"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/panel",
+        "@keyline-ui/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/toggle-group-panel.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/toggle-group-panel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-reps",
+      "type": "registry:block",
+      "title": "Toggle group: orders by rep",
+      "description": "An example of Toggle group: orders by rep.",
+      "categories": [
+        "toggle-group"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/toggle-group-reps.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/toggle-group-reps.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-icon",
+      "type": "registry:block",
+      "title": "Toggle: pin client",
+      "description": "An example of Toggle: pin client.",
+      "categories": [
+        "toggle"
+      ],
+      "dependencies": [
+        "lucide-react@1.71.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/toggle"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/toggle-icon.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/toggle-icon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-receipts",
+      "type": "registry:block",
+      "title": "Toggle: expense filter",
+      "description": "An example of Toggle: expense filter.",
+      "categories": [
+        "toggle"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/toggle"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/toggle-receipts.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/toggle-receipts.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toolbar",
+      "type": "registry:ui",
+      "title": "Toolbar",
+      "description": "A row of commands that is one Tab stop (Base UI Toolbar): item cells on shared seams, groups on a 2px keyline, toggles that flood, an exclusive group whose ink band stretches, menus docked to the frame, a text input cell; horizontal or vertical.",
+      "dependencies": [
+        "@base-ui/react@1.9.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-motion",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/scroll-edges",
+        "@keyline-ui/menu",
+        "@keyline-ui/keyline-render",
+        "@keyline-ui/toolbar-overflow"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/toolbar.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/toolbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toolbar-editor",
+      "type": "registry:block",
+      "title": "Toolbar: memo editor",
+      "description": "An example of Toolbar: memo editor.",
+      "categories": [
+        "toolbar"
+      ],
+      "dependencies": [
+        "lucide-react@1.71.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/menu",
+        "@keyline-ui/toolbar",
+        "@keyline-ui/tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/toolbar-editor.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/toolbar-editor.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toolbar-overflow",
+      "type": "registry:lib",
+      "title": "Toolbar overflow",
+      "description": "Pure logic behind Toolbar's overflow menu: items identified by data-slot, which leave for a given count, where More goes, and one step of the fit (with its sub-pixel rule).",
+      "files": [
+        {
+          "path": "src/registry/keyline/lib/toolbar-overflow.ts",
+          "type": "registry:lib",
+          "target": "components/keyline/lib/toolbar-overflow.ts"
+        }
+      ]
+    },
+    {
+      "name": "toolbar-panel",
+      "type": "registry:block",
+      "title": "Toolbar: orders panel",
+      "description": "An example of Toolbar: orders panel.",
+      "categories": [
+        "toolbar"
+      ],
+      "dependencies": [
+        "lucide-react@1.71.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/menu",
+        "@keyline-ui/panel",
+        "@keyline-ui/toolbar"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/toolbar-panel.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/toolbar-panel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toolbar-scroll",
+      "type": "registry:block",
+      "title": "Toolbar: order commands",
+      "description": "An example of Toolbar: order commands.",
+      "categories": [
+        "toolbar"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/toolbar"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/toolbar-scroll.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/toolbar-scroll.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toolbar-vertical",
+      "type": "registry:block",
+      "title": "Toolbar: floor plan tools",
+      "description": "An example of Toolbar: floor plan tools.",
+      "categories": [
+        "toolbar"
+      ],
+      "dependencies": [
+        "lucide-react@1.71.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "@keyline-ui/toolbar"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/toolbar-vertical.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/toolbar-vertical.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Ink label docked to the focus ring of its trigger, with an optional shortcut cell. Never cut.",
+      "dependencies": [
+        "@base-ui/react@1.9.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/keyline",
+        "utils",
+        "@keyline-ui/keyline-scope",
+        "@keyline-ui/keyline-render"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "components/keyline/ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-icons",
+      "type": "registry:block",
+      "title": "Tooltip: invoice tools",
+      "description": "An example of Tooltip: invoice tools.",
+      "categories": [
+        "tooltip"
+      ],
+      "dependencies": [
+        "lucide-react@1.71.0"
+      ],
+      "registryDependencies": [
+        "@keyline-ui/button",
+        "@keyline-ui/keyline",
+        "@keyline-ui/tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/registry/keyline/examples/tooltip-icons.tsx",
+          "type": "registry:component",
+          "target": "components/keyline/examples/tooltip-icons.tsx"
+        }
+      ]
+    }
+  ]
+}

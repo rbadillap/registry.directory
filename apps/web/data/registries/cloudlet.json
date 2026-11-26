@@ -1,0 +1,77 @@
+{
+  "key": "cloudlet",
+  "entry": "Cloudlet",
+  "name": "cloudlet",
+  "homepage": "https://cloudlet.dev",
+  "indexUrl": "https://cloudlet.dev/r/registry.json",
+  "itemBase": "https://cloudlet.dev/r",
+  "resolvable": true,
+  "items": [
+    {
+      "name": "toaster",
+      "type": "registry:ui",
+      "title": "Cloudlet Toaster",
+      "description": "Client Provider/Toaster adapter with shadcn theme tokens. The application explicitly owns its @cloudlet/toast controller.",
+      "dependencies": [
+        "@cloudlet/toast@1.3.0"
+      ],
+      "files": [
+        {
+          "path": "registry/cloudlet/toaster.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cloudlet/toaster.css",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:ui",
+      "title": "Cloudlet Color Picker",
+      "description": "A round swatch that morphs into a color picker on interruptible springs: a saturation × brightness area, hue and optional opacity sliders, an editable value in hex, rgb, hsl or oklch, an eyedropper where the browser has one, and copy. ColorPickerPanel renders the same panel inline. No dependencies.",
+      "files": [
+        {
+          "path": "apps/site/src/components/ui/color-picker/color-picker.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "apps/site/src/components/ui/color-picker/color-picker.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "apps/site/src/components/ui/color-picker/color.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "apps/site/src/components/ui/color-picker/morph.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "apps/site/src/lib/spring.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "color-palette",
+      "type": "registry:ui",
+      "title": "Cloudlet Color Palette",
+      "description": "One to four colors in a row, each a Cloudlet color picker: an add button that opens the new color's picker at once, removal with Delete or the pointer's ×, one Tab stop with arrow keys, springs that grow and fold the swatches. Installs the color picker with it.",
+      "registryDependencies": [
+        "@cloudlet/color-picker"
+      ],
+      "files": [
+        {
+          "path": "apps/site/src/components/ui/color-palette/color-palette.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "apps/site/src/components/ui/color-palette/color-palette.css",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
