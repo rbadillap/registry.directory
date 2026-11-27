@@ -21,6 +21,28 @@ person gets started, lives in [`README.md`](README.md).
   [`packages/organizations`](packages/organizations) and
   [`packages/feedback`](packages/feedback).
 
+## Architecture of the Dashboard (on `dev`)
+
+The Dashboard is the design system layer for a team: it sits between a team
+and its design system, and between its agents and its rules.
+
+- **Three faces over one API,** authenticated with tokens: the web
+  (`/dashboard`), an **MCP App** inside Claude, and `/r` for the shadcn CLI.
+- **The web is where you manage; the MCP App is where you work.** First the
+  MCP App supports Claude only: search, preview, install, see inconsistencies
+  in the local repo, read the rules, preview a preset and save to the team.
+  For anything administrative it links to the exact web screen. Later it
+  offers more tools by role, filtered with `can()` on the connected token.
+- **`/r` hosts each team's items.** It no longer proxies public registries.
+- **Build order:** `/r` counts everything that passes through it; then "Find
+  me a component" in the MCP App, without an account; then Save to team, where
+  the account and the Overview begin. After that: Inconsistencies, Brand
+  presets and Agent rules. What isn't built yet shows as Coming next, and its
+  clicks help decide what moves up.
+
+The site's routes, `/r` rules and interface names are in
+[`apps/web/AGENTS.md`](apps/web/AGENTS.md).
+
 ## Commands
 
 ```bash
@@ -50,7 +72,8 @@ this file.
 
 | Path | What its `AGENTS.md` covers |
 |---|---|
-| `/` (this file) | The stack, the commands and the rules for the whole repo |
+| `/` (this file) | The stack, the architecture, the commands and the rules for the whole repo |
+| [`apps/web`](apps/web/AGENTS.md) | Routes and reserved names, `/r`, interface names, the empty state |
 | [`packages/organizations`](packages/organizations/AGENTS.md) | Teams, roles, permissions, tokens and audit |
 | [`packages/feedback`](packages/feedback/AGENTS.md) | The Feedback Loop: track, answer, measure, status |
 
