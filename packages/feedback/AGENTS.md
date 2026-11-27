@@ -30,6 +30,10 @@ Never break these. If a change needs to, stop and ask.
    defaults; changes live in data, and everything reads the effective value
    (team, then platform, then default). If a value can only change by editing
    code, that's a design error.
+10. **Wording and goals are the platform's.** Only `feedback:manage` (the
+    platform Admin) changes a question's text or a goal. A team's setting
+    (`feedback:configure`) can only change how often its people are asked, or
+    turn asking off.
 
 ## Boundaries
 

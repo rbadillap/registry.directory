@@ -143,9 +143,23 @@ await feedback.settings("find-component").get()
 
 The effective value is the team's setting if there is one, then the
 platform's, then the default in `measure()`. `Ask` and `status` always read
-the effective value. Who can change what is a proposal: the platform Admin
-adjusts goals and questions from Analytics; a team Owner can adjust how often
-their team is asked and the wording it sees, never the platform's goals.
+the effective value.
+
+Who can change what:
+
+- **The platform Admin** (`feedback:manage`) changes goals, the wording of the
+  questions and how often they're asked, from Analytics.
+- **A team** (`feedback:configure`, held by the Owner by default) can only
+  change how often its own people are asked, or turn the questions off:
+
+  ```ts
+  await feedback.settings("find-component", { teamId }).set({
+    when: { once: "month" }, // or { off: true }
+  })
+  ```
+
+  A team never changes the wording. If every team rephrased a question, the
+  answers would stop measuring the same thing and couldn't be compared.
 
 ## Recipes
 

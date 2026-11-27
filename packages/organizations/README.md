@@ -4,8 +4,7 @@ Teams and access for the registry.directory Dashboard. It answers one question
 everywhere it's asked: **can this identity do this to this resource?**
 
 > **Draft.** We're still designing, and this file gets rewritten as decisions
-> close. No code yet: the examples show the intended API. Names marked
-> *proposal* aren't settled.
+> close. No code yet: the examples show the intended API.
 
 It plugs into your design system; it doesn't compete with it. The core has no
 React, so `/r`, the MCP App and scripts use it directly. Behavior components
@@ -53,7 +52,7 @@ import { createTeam, listRoles } from "@workspace/organizations"
 const team = await createTeam(userId)
 team.handle // "team-7k3m9q"
 
-await listRoles(team.id) // proposal
+await listRoles(team.id)
 // [ { name: "Owner",  system: true },
 //   { name: "Member", system: true },
 //   { name: "Viewer", system: true } ]
@@ -86,6 +85,11 @@ await removeMember(team.id, userId)
 | `members:manage` | ✓ | | |
 | `tokens:manage` | ✓ | | |
 | `settings:write` | ✓ | | |
+| `feedback:configure` | ✓ | | |
+
+`feedback:configure` lets a team change how often its people are asked
+questions, or turn them off. It's separate from `settings:write` so a custom
+role can grant it without granting all of Settings.
 
 A Viewer sees and installs what the team has, for example to prepare a demo
 with a client's brand. Owner can't be edited or deleted and always holds every
@@ -98,7 +102,7 @@ can build its own roles, and `can()` treats them exactly like the system ones.
 Custom roles come later, with their own screen:
 
 ```ts
-await createRole(team.id, { // proposal
+await createRole(team.id, {
   name: "Manager",
   permissions: ["members:manage", "tokens:manage", "presets:write", "items:read"],
 })
@@ -189,7 +193,7 @@ import { TeamSwitcher } from "@workspace/organizations/react"
 
 <TeamSwitcher render={MyMenu} />
 
-function MyMenu({ teams, current, switchTo }) { // props: proposal
+function MyMenu({ teams, current, switchTo }) {
   return (
     <DropdownMenu>
       {teams.map((t) => (
@@ -220,8 +224,9 @@ uses these same recipes.
 
 ## The platform Admin
 
-Platform permissions (`submissions:review`, `origins:read`, `home:edit` and
-`analytics:read`) belong to one role, Admin, which belongs to the platform and
+Platform permissions (`submissions:review`, `origins:read`, `home:edit`,
+`analytics:read` and `feedback:manage`, which covers feedback goals and
+wording) belong to one role, Admin, which belongs to the platform and
 not to any team. No team Owner can grant it; only another Admin or a database
 migration can, and the platform is never left without one.
 
