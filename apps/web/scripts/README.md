@@ -257,6 +257,45 @@ a registry's catalog held on a given day, and nobody else keeps one. A day
 skipped is a day gone. `shipped.json` also diffs consecutive snapshots, so a gap
 makes one day claim everything that happened since the last one.
 
+### The daily snapshot, unattended — `scripts/daily/`
+
+A LaunchAgent runs a full index once a day so the archive does not depend on
+someone remembering to. It works in a throwaway worktree of `origin/main`,
+keeps only what the run archives to Blob, and throws away the `data/` it wrote:
+nothing is committed and nothing is deployed. The checkout you work in is never
+touched.
+
+Secrets stay local. The run goes through `pnpm index`, so 1Password asks for
+Touch ID as it does by hand. A Mac asleep at the hour runs the job when it
+wakes; a Mac powered off, or an approval nobody gives, is a missed day, and the
+log says which.
+
+```bash
+apps/web/scripts/daily/install.sh install 09:00   # local time; default 09:00
+apps/web/scripts/daily/install.sh status          # loaded? last seven runs
+apps/web/scripts/daily/install.sh run             # now, as launchd would
+apps/web/scripts/daily/install.sh uninstall       # removes the agent, keeps the logs
+apps/web/scripts/daily/run.sh --dry-run           # network, worktree, install; no index
+```
+
+`~/Library/Logs/registry-directory/daily-index.tsv` gets one line per run:
+start time, outcome, seconds, the commit indexed, a detail. `runs/` beside it
+keeps each run's full output.
+
+| Outcome | Meaning |
+|---|---|
+| `archived` | today's snapshot written |
+| `already` | today's snapshot existed (a manual run got there first) |
+| `no-network` | no network within ten minutes of starting |
+| `auth` | 1Password did not release the secrets |
+| `snapshot-failed` | the index ran, the archive did not |
+| `setup-failed` | fetch, worktree or `pnpm install` failed |
+| `failed` | the index exited with an error |
+| `locked` | another run was still going |
+
+Days are UTC, as the snapshots are. Counting missed days is counting dates
+with no `archived` or `already` line.
+
 ### Deploying — as often as the site needs to know
 
 ```bash
