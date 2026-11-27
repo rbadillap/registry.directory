@@ -53,11 +53,13 @@ feedback.track(name, { subject, teamId, props })
 feedback.answer(name, answer, { subject, teamId })
 
 measure(feature, { question, track, answer, goal })
-feedback.status(feature) // "watching" | "promising" | "ready"
+feedback.status(feature)   // "watching" | "promising" | "ready"
+feedback.evidence(feature) // the dated weeks behind that status
 ```
 
-- The Analytics screen reads `status` and its evidence. There is no public
-  API for raw aggregates.
+- The Analytics screen reads `status`, and `evidence` when a person opens a
+  feature in `ready` before deciding. There is no public API for raw
+  aggregates.
 - The app keeps one `measure()` per feature of the map, in
   `apps/web/feedback/features/`.
 - **Store:** an interface with `write(event)` and `aggregate(query)`. The
