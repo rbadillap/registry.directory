@@ -4,7 +4,10 @@ The Feedback Loop for registry.directory: **Observe → Ask → Improve**. It
 records what people do and what they answer, and turns that into one signal
 per feature.
 
-> **Status:** proposal, no code yet. Nothing here is a contract.
+> **Status:** no code yet. What it does, what it doesn't, its invariants and
+> who uses it are settled. The API names are a proposal. That a person, not
+> the package, decides each Improve is the design, still waiting on explicit
+> sign-off.
 
 ## The loop
 
