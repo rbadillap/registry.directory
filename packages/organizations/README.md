@@ -13,7 +13,7 @@ everywhere it's asked: **can this identity do this to this resource?**
   depending on React or on any styles. It lives here, in
   `packages/organizations/`.
 - **Default components, as shadcn registry items.** Ready-made pieces you
-  install with `npx shadcn add @registrydirectory/<item>`. Once installed, the
+  install with `npx shadcn add @registrydirectory/organizations/<item>`. Once installed, the
   code is yours to adapt to your brand and tokens. They aren't bundled into the
   core, so they don't tie you to our React version or our styles. They will
   live in `registry/organizations/`:

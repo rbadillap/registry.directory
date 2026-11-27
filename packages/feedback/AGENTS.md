@@ -25,5 +25,10 @@ Never break these. If a change needs to, stop and ask.
 
 ## Boundaries
 
+- The core has no UI. Kit components are shadcn registry items in
+  `registry/feedback/`, never inside this package.
+- Kit components never touch the database or import the core on the client.
+  They call a server action or a route, which calls `loop.ask` or
+  `loop.observe`.
 - No permission checks here. The caller decides who sees what.
 - No product decisions in code. The package reports; a person decides.

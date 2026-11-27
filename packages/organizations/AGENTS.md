@@ -26,7 +26,9 @@ Never break these. If a change needs to, stop and ask.
 7. **Every team table has `team_id` and forced row-level security.** The app
    connects with a `NOBYPASSRLS` role.
 8. **Handles are unique** and respect the reserved list shared with the site's
-   routes.
+   routes. That list includes the name of every package of ours (`feedback`,
+   `organizations` and any future one), because their kits install at the same
+   level as team handles: `@registrydirectory/feedback/<item>`.
 9. **A non-member gets 404, never 403**, so a response never reveals that a
    team exists. This applies to `/r/{handle}/...` and `/dashboard/{handle}`.
 10. **A member without the permission gets 403 with a clear `message`.** The

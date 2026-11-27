@@ -8,6 +8,24 @@ per feature.
 > close. No code yet. What it does, what it doesn't, its invariants and who
 > uses it are settled; the API names are a proposal.
 
+## Two layers
+
+- **The core, with no UI.** `observe`, `ask`, `signals`, `state` and the
+  Store. It lives here, in `packages/feedback/`, and ships no components.
+- **The kit: default components, as shadcn registry items.** Install them
+  with `npx shadcn add @registrydirectory/feedback/<item>`; once installed,
+  the code is yours to edit. They live in `registry/feedback/`, never inside
+  the core:
+  - `thumbs`: a thumbs-up question;
+  - `coming-next`: what's coming, with "I want this";
+  - `quick-actions`: the phrase buttons of an empty state;
+  - `one-question`: the right question at the right moment.
+
+  A kit component never touches the database and never imports the core on
+  the client. It calls a server action or a route, and that calls
+  `loop.ask` or `loop.observe`. The component is the face; the core stores.
+  The Dashboard uses this same kit.
+
 ## The loop
 
 - **Observe:** what people do, recorded without interrupting them. For
