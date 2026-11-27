@@ -20,7 +20,7 @@ Never break these. If a change needs to, stop and ask.
 5. **Cross-team aggregates are read only with `analytics:read`**, a platform
    permission from [`packages/organizations`](../organizations).
 6. **Improve is never automatic.** A person decides, from the Analytics
-   screen. `decide` is a heads-up for that person, not a trigger.
+   screen. `ready` is a heads-up for that person, not a trigger.
 7. **Portable.** No imports from Next.js or from the app's schema.
 
 ## Boundaries
@@ -28,7 +28,10 @@ Never break these. If a change needs to, stop and ask.
 - The core has no UI. Kit components are shadcn registry items in
   `registry/feedback/`, never inside this package.
 - Kit components never touch the database or import the core on the client.
-  They call a server action or a route, which calls `loop.ask` or
-  `loop.observe`.
+  They call a server action or a route, which calls `feedback.answer` or
+  `feedback.track`.
+- Public names say what the code does, in plain English. Observe and Ask are
+  the names of the idea; in code they are `track` and `answer`. Don't bring
+  back `observe`, `ask`, `signals`, `state` or `defineLoop` as public names.
 - No permission checks here. The caller decides who sees what.
 - No product decisions in code. The package reports; a person decides.
