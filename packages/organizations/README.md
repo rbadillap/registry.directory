@@ -60,7 +60,8 @@ sequenceDiagram
   R->>O: verifyToken(token)
   O-->>R: identity and its team_id
   R->>O: resolveHandle("acme")
-  alt handle isn't the token's team, or not a member
+  R->>O: can(identity, "items:read", acme)
+  alt no token, handle isn't the token's team, or not a member
     R-->>CLI: 404, as if acme didn't exist
   else member without items:read
     O->>DB: record the denial
