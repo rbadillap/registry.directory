@@ -1,0 +1,94 @@
+# AGENTS.md: `apps/web`
+
+The site: the public directory, `/r` and, on `dev`, the Dashboard. The stack,
+the commands and the rules for the whole repo are in the
+[root `AGENTS.md`](../../AGENTS.md); the indexer and its guard are in
+[`scripts/README.md`](scripts/README.md).
+
+> **Draft.** The Dashboard is being designed on `dev`, and this file gets
+> rewritten as decisions close. Production doesn't have any of the Dashboard
+> yet.
+
+## Routes
+
+- The Dashboard lives in this same Next.js app, under one segment:
+  `/dashboard/{handle}/...` for a team and `/dashboard/admin/...` for the
+  platform. Sign-in goes under `/api/auth`.
+- Registry pages live at the root (`/{owner}`), so every fixed root folder
+  hides a registry with the same key. Keep root routes to a short **reserved
+  list**: `dashboard`, `api`, `r`, the site's own pages (`about`, `docs`…) and
+  the name of every package of ours (`feedback`, `organizations`…).
+- The reserved list is checked in two places: submit rejects a reserved
+  namespace with a clear message, and the indexer refuses to publish one. If a
+  clash ever happens, reject the slug; never leave a registry without its page.
+- A team handle the visitor can't access answers 404, never 403, both in
+  `/dashboard/{handle}` and in `/r/{handle}/...`. See
+  [`packages/organizations`](../../packages/organizations/AGENTS.md).
+
+## `/r`
+
+On `dev`, `/r` is the registry that hosts each team's items. It doesn't proxy
+public registries.
+
+- **Names:** `@registrydirectory/{handle}/{item}` for a team's components and
+  presets, and `@registrydirectory/{package}/{item}` for our own recipes.
+- **Auth:** one header, `Authorization: Bearer ${REGISTRY_TOKEN}`. The URL says
+  whose item it is; the token only says whether you may pass. Public items
+  need no token.
+- **Everything that passes through `/r` is counted,** so item responses go
+  through the function, never the CDN. Only the index of our own catalog and
+  its search stay on the CDN.
+- **Private items are never cached** in the CDN or any shared cache:
+  `Cache-Control: private, no-store`, because the answer depends on the token.
+- **Record the install after responding,** with `after()`. Recording never
+  makes the CLI wait and never breaks the response.
+- The Runtime Cache, if used, only saves a database read. It's an
+  optimization, not a rule.
+- An environment variable sends public items back to the CDN if cost demands
+  it.
+- **Presets** are `registry:theme` items with their own handle
+  (`acme/brand`, `acme/brand-dark`). A preset can extend another and overrides
+  only the CSS variables that change; one is the team's default.
+
+## The Dashboard reads from the API
+
+Everything the Dashboard shows comes from the same API that the MCP App and
+`/r` use, never from components reading the database directly. That keeps the
+three faces reusing one source.
+
+## Names in the interface
+
+Every feature has two names. A short noun for the sidebar, and a phrase, what
+a person would say, for the MCP App, empty states and Quick actions. Interfaces
+are in English.
+
+| Sidebar | Phrase | What it is |
+|---|---|---|
+| Overview | "What are we using?" | The team's home, fed by what `/r` serves to the team |
+| Components | "Find me a component" | Filters: Saved, Ours, Inconsistencies ("What doesn't match?") |
+| Brand | "This is our look" | The team's presets, and "Show it as a client" to preview another one |
+| Agent rules | "Teach my agent" | Written on the web, read by the agent in the MCP App |
+| Settings | | Invite, Roles, Tokens, Custom handle, Activity |
+| Admin › Analytics | | Platform only: where a person decides each Improve |
+
+- Navigation names say what's inside, never how it's built. Not "Inventory",
+  "Private registry" or "Tenant themes".
+- **Save to team** is a button next to any component, not a section. Without
+  an account it leads to sign-in and comes back already saved. Toast: "Saved
+  to your team".
+- Connecting with a token is **Connect project** in the CLI and **Connect
+  agent** in the MCP App.
+- No notification center in the first version.
+
+## The empty state
+
+The first screen is "What do you need today?", on the web and in the MCP App,
+with the same phrases (the MCP App may show fewer).
+
+- **Quick actions** show only what works today.
+- **Coming next** shows what doesn't exist yet, apart and greyed out: one line
+  on what it will do and an "I want this" button. Never the word "soon", no
+  email, no dates. When tapped, it answers "Noted. Thanks." and the click is
+  recorded with [`packages/feedback`](../../packages/feedback).
+- Every feature on the web has its signal in Admin › Analytics. A feature
+  without its signal isn't ready to ship.
