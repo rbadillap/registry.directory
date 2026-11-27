@@ -54,7 +54,8 @@ design system instead of competing with it.
    built with `Ask`. Install one with
    `npx shadcn add @registrydirectory/feedback/<item>`, read it and change it.
    The Dashboard uses these same recipes. They live in `registry/feedback/`:
-   - `one-question`: the right question at the right moment;
+   - `one-question`: the right question at the right moment, with a thumbs
+     component inside as its `render`;
    - `coming-next`: what's coming, with "I want this";
    - `quick-actions`: the phrase buttons of an empty state;
    - `empty-state`: an empty screen that asks instead of sitting blank.
