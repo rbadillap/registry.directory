@@ -76,7 +76,12 @@ sequenceDiagram
 
 ## Who can do what
 
-Team permissions come from a role:
+**Permissions are a fixed, typed list in the code.** **Roles are data:** each
+team has its own roles, and each role is a group of permissions from that
+list. `can()` resolves role → permissions from the database, so any role works
+the same way.
+
+Every team is born with three system roles:
 
 | Permission | Owner | Member | Viewer |
 |---|:---:|:---:|:---:|
@@ -90,15 +95,20 @@ Team permissions come from a role:
 | `settings:write` | ✓ | | |
 
 A **Viewer** sees and installs what the team has, for example to prepare a
-demo with a client's brand, and nothing else.
+demo with a client's brand, and nothing else. **Owner** can't be edited or
+deleted: it always holds every team permission. Member and Viewer can't be
+deleted either.
 
-Platform permissions come from one role, **Admin**, kept apart from team
-roles: `submissions:review`, `origins:read`, `home:edit` and
-`analytics:read`. No team Owner can grant it; only another Admin or a
-database migration can.
+**Custom roles** come later, with their own interface: an Owner creates a role
+by picking team permissions, for example a Manager who handles people, tokens
+and presets. A custom role never includes platform permissions, and nobody can
+grant a permission they don't hold.
 
-Custom roles come later: groups of permissions created from an interface,
-without touching the rest. "Admin" is reserved for the platform.
+Platform permissions come from one role, **Admin**, which belongs to the
+platform, not to any team, and isn't stored with team roles:
+`submissions:review`, `origins:read`, `home:edit` and `analytics:read`. No
+team Owner can grant it; only another Admin or a database migration can.
+"Admin" is reserved for the platform.
 
 ## What the core guarantees
 

@@ -44,6 +44,16 @@ Never break these. If a change needs to, stop and ask.
 
     The technical permission goes in a separate field of the response
     (`"permission": "items:read"`) and in the log, for debugging.
+11. **Permissions live in code; roles live in data.** The permission list is
+    fixed and typed. Roles are rows per team, and `can()` resolves role →
+    permissions from the database. Never hardcode a role's permissions in a
+    check.
+12. **Owner is immutable.** It can't be edited or deleted and always holds
+    every team permission. The system roles (Owner, Member, Viewer) are
+    created with each team and can't be deleted.
+13. **A custom role holds only team permissions,** never platform ones.
+14. **Nobody grants what they don't hold,** whether building a role, assigning
+    one or creating a token.
 
 ## Boundaries
 
