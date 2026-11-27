@@ -36,8 +36,10 @@ pnpm --filter web test
 
 Two files per folder, and only where a folder needs them:
 
-- **`README.md` is for people.** What it is, a visual when it helps
-  understanding, and a basic guide to get going.
+- **`README.md` is for people.** What it is and a basic guide to get going.
+  Code first: each concept gets a short example of how it's used, with the
+  explanation around the code. A diagram only when it explains something the
+  code can't.
 - **`AGENTS.md` is for agents.** The rules for changing that part: its
   invariants and its boundaries. It doesn't repeat what a level above already
   says.
@@ -61,6 +63,21 @@ Other places:
 - **Engineers** (agent definitions) live in [`.claude/agents/`](.claude/agents).
   Each engineer maintains its own definition so it can evolve. A definition
   describes a role and nothing else: no people, projects, accounts or history.
+
+## Engineering principle: sensible defaults, customizable without code
+
+The system ships with defaults that work out of the box, and the model is
+designed so each team can change them without touching code. Defaults are
+data, not hardcoded behavior.
+
+- Every team is born with the Owner, Member and Viewer roles, but roles are
+  rows and teams can create their own.
+- Feedback ships with default questions and thresholds, and each one can be
+  adjusted.
+- A team gets a default Brand preset, and can add and extend its own.
+
+When you design something new, ask two questions: what's the sensible
+default, and how does a team change it without a deploy?
 
 ## Rules for the whole repo
 
