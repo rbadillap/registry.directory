@@ -91,6 +91,35 @@ are in English.
   after that, the old handle stays as an alias.
 - **Presets** can also be exported as a shadcn `--preset` code, as an option.
 
+## The MCP App, stage 1
+
+Claude only. It's where people work; anything administrative links to the
+exact web screen ("Invite teammates →" opens Settings › Invite). This section
+moves to the MCP App's own folder once it has one.
+
+A person asks in their own words ("a pricing section that looks like our
+brand"), and the app answers with a card, not text:
+
+1. **The team's own first.** If the team already has a component that fits, it
+   leads as a large preview ("Your team already uses this in 3 repos").
+2. **One primary button, Install.** Save to team and the rest go in a "…"
+   menu. Claude runs the install with the shadcn command.
+3. **Alternatives** as a small gallery below.
+4. **A brand picker that talks like a person:** "Brand: Acme ▾", with "Acme"
+   and "Globex (client)", never preset handles.
+5. **"Won't follow your brand"** in a grey line when a component ignores the
+   preset (hardcoded colors).
+6. **One question after installing,** with `Ask`: "Did it fit what you
+   needed?", at most once a week, and never once the feature is `ready`.
+
+Tools (proposal): `find_components`, `preview_component`,
+`install_component`, `save_to_team` (opens sign-in when there's no account)
+and `want_this`. Inconsistencies and Agent rules join when they leave Coming
+next. Every call is recorded with `feedback.track`.
+
+Previews are images generated when indexing, never a live render of someone
+else's code.
+
 ## The empty state
 
 The first screen is "What do you need today?", on the web and in the MCP App,
