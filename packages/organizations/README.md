@@ -78,21 +78,26 @@ sequenceDiagram
 
 Team permissions come from a role:
 
-| Permission | Owner | Member |
-|---|:---:|:---:|
-| `items:read`, `items:save`, `items:mark` | ✓ | ✓ |
-| `rules:read`, `rules:write` | ✓ | ✓ |
-| `activity:read` | ✓ | ✓ |
-| `presets:write` | ✓ | |
-| `members:manage` | ✓ | |
-| `tokens:manage` | ✓ | |
-| `settings:write` | ✓ | |
+| Permission | Owner | Member | Viewer |
+|---|:---:|:---:|:---:|
+| `items:read` | ✓ | ✓ | ✓ |
+| `items:save`, `items:mark` | ✓ | ✓ | |
+| `rules:read`, `rules:write` | ✓ | ✓ | |
+| `activity:read` | ✓ | ✓ | |
+| `presets:write` | ✓ | | |
+| `members:manage` | ✓ | | |
+| `tokens:manage` | ✓ | | |
+| `settings:write` | ✓ | | |
+
+A **Viewer** sees and installs what the team has, for example to prepare a
+demo with a client's brand, and nothing else.
 
 Platform permissions come from no role. Only the **Platform team** holds them:
 `submissions:review`, `origins:read`, `home:edit` and `analytics:read`.
 
 More roles can be added as new groups of permissions, without touching the
-rest.
+rest. A possible next one is an Admin, who would manage members, tokens and
+presets without being able to delete, transfer or rename the team.
 
 ## What the core guarantees
 
