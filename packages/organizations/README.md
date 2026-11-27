@@ -4,8 +4,7 @@ Teams and access for the registry.directory Dashboard. It answers one question
 everywhere it's asked: **can this identity do this to this resource?**
 
 > **Status:** design only, no code yet. The model and the API below are
-> settled, except two open points: whether members get `rules:write`, and what
-> a member without a permission receives (see [`AGENTS.md`](AGENTS.md)).
+> settled.
 
 ## What it does
 
@@ -44,7 +43,7 @@ outranks its creator, and the audit log is insert-only.
 | Area | API |
 |---|---|
 | Permissions | `Permission`: a union of `thing:action` strings. Team: `items:read`, `items:save`, `items:mark`, `presets:write`, `rules:read`, `rules:write`, `activity:read`, `members:manage`, `tokens:manage`, `settings:write`. Platform: `submissions:review`, `origins:read`, `home:edit`, `analytics:read`. |
-| Roles | `owner` holds every team permission. `member` holds `items:*`, `rules:read` and `activity:read`. Whether `rules:write` belongs to members is still open. |
+| Roles | `owner` holds every team permission. `member` holds `items:*`, `rules:read`, `rules:write` and `activity:read`. |
 | Check | `can(identity, permission, resource) → boolean`, `requireCan(...)` |
 | Teams | `createTeam(userId)` creates a team with an automatic, neutral handle; `renameHandle(teamId, handle)`; `resolveHandle(handle) → teamId`, following aliases |
 | Members | `addMember`, `removeMember`, `setRole` |

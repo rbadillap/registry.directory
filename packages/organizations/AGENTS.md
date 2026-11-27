@@ -3,7 +3,7 @@
 What this package is and what it does live in [`README.md`](README.md). This
 file is the rules for changing it.
 
-> **Status:** design only, no code yet. Two points are open, listed at the end.
+> **Status:** design only, no code yet.
 
 ## Invariants
 
@@ -28,15 +28,9 @@ Never break these. If a change needs to, stop and ask.
    routes.
 9. **A non-member gets 404, never 403**, so a response never reveals that a
    team exists. This applies to `/r/{handle}/...` and `/dashboard/{handle}`.
-
-## Open
-
-Don't implement either of these until they're decided.
-
-- Whether `rules:write` belongs only to Owner, or to Member too.
-- What a **member** without the permission receives: 404 like everyone else,
-  or 403 with a message (the shadcn CLI shows the response's `message` field).
-  A non-member always gets 404.
+10. **A member without the permission gets 403 with a clear `message`.** The
+    shadcn CLI shows that field to the person, so it should say what's
+    missing.
 
 ## Boundaries
 
