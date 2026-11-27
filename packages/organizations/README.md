@@ -92,12 +92,13 @@ Team permissions come from a role:
 A **Viewer** sees and installs what the team has, for example to prepare a
 demo with a client's brand, and nothing else.
 
-Platform permissions come from no role. Only the **Platform team** holds them:
-`submissions:review`, `origins:read`, `home:edit` and `analytics:read`.
+Platform permissions come from one role, **Admin**, kept apart from team
+roles: `submissions:review`, `origins:read`, `home:edit` and
+`analytics:read`. No team Owner can grant it; only another Admin or a
+database migration can.
 
-More roles can be added as new groups of permissions, without touching the
-rest. A possible next one is an Admin, who would manage members, tokens and
-presets without being able to delete, transfer or rename the team.
+Custom roles come later: groups of permissions created from an interface,
+without touching the rest. "Admin" is reserved for the platform.
 
 ## What the core guarantees
 
@@ -105,8 +106,8 @@ presets without being able to delete, transfer or rename the team.
 - **A token never outranks its creator.**
 - **One team never sees another team's rows,** enforced by the database, not
   only the app.
-- **The Platform team can't be deleted,** and **a team is never left without
-  an Owner.**
+- **A team is never left without an Owner,** and **the platform is never left
+  without an Admin.**
 - **The audit log can only grow.**
 
 The full list of rules for changing this package is in

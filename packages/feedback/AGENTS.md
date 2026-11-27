@@ -17,8 +17,8 @@ Never break these. If a change needs to, stop and ask.
 3. **No personal data in `props`:** no IP address, raw user agent or email.
 4. **`team_id` is set only when the caller authenticated with that team's
    token.**
-5. **Cross-team aggregates are read only with `analytics:read`**, a platform
-   permission from [`packages/organizations`](../organizations).
+5. **Cross-team aggregates are read only with `analytics:read`**, a
+   permission of the platform's Admin role, from [`packages/organizations`](../organizations).
 6. **Improve is never automatic.** A person decides, from the Analytics
    screen. `ready` is a heads-up for that person, not a trigger.
 7. **Portable.** The core imports no React, no Next.js and nothing from the

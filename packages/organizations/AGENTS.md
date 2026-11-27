@@ -21,8 +21,11 @@ Never break these. If a change needs to, stop and ask.
 4. **Token secrets are stored hashed** and shown once, at creation.
 5. **The audit log is insert-only.** No update or delete, enforced by grants
    or a trigger. It records every denial and every sensitive change.
-6. **The Platform team can't be deleted, transferred or have its members
-   changed from the app.**
+6. **Admin is a platform role, kept apart from team roles.** `setRole`
+   handles only Owner, Member and Viewer, and no Owner can grant Admin. Only
+   another Admin or a database migration assigns it: a trigger blocks any
+   other path, and every assignment is audited. The platform is never left
+   without an Admin, just as a team is never left without an Owner.
 7. **Every team table has `team_id` and forced row-level security.** The app
    connects with a `NOBYPASSRLS` role.
 8. **Handles are unique** and respect the reserved list shared with the site's
