@@ -79,6 +79,17 @@ are in English.
 - Connecting with a token is **Connect project** in the CLI and **Connect
   agent** in the MCP App.
 - No notification center in the first version.
+- **Overview** sees what the team installs from its own registry and from our
+  catalog. What a team saves from the directory and then installs goes
+  straight to the origin, so Overview never shows it.
+- **Inconsistencies** is read locally by the agent, in the MCP App. A GitHub
+  App comes later, on the web.
+- **Handles in onboarding:** a team is born on its first Save with an automatic,
+  neutral handle (`team-7k3m9q`), with no extra step. Settings › Custom handle
+  offers a real one when it matters: on the first token or the first Ours
+  component. It can change freely until the first private item is published;
+  after that, the old handle stays as an alias.
+- **Presets** can also be exported as a shadcn `--preset` code, as an option.
 
 ## The empty state
 
