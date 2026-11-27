@@ -9,6 +9,14 @@ whether it's time to decide something.
 > uses it are settled; the exact signatures, options and the table are a
 > proposal.
 
+## Names
+
+- `@workspace/feedback` and `@workspace/feedback/react` are the package's
+  names inside this monorepo, like `@workspace/ui`. A public npm name would be
+  decided later, if it's ever published.
+- `@registrydirectory/feedback/<item>` is something else: the shadcn registry
+  namespace the recipes install from. It's not an npm package.
+
 ## Behavior, not look
 
 The package never decides how anything looks. It brings the behavior, and the
@@ -17,11 +25,11 @@ design system instead of competing with it.
 
 ## Three layers
 
-1. **The core: `@registrydirectory/feedback`.** No React, no Next.js.
+1. **The core: `@workspace/feedback`.** No React, no Next.js.
    `createFeedback`, `track`, `answer`, `measure`, `status`, `evidence` and
    the Store. `/r`, scripts and the server use it.
-2. **Behavior: `@registrydirectory/feedback/react`.** A separate export of the
-   same package, shipped through npm. React only: no styles, no Next.js. It
+2. **Behavior: `@workspace/feedback/react`.** A separate export of the same
+   package, shipped as a package, not through the registry. React only: no styles, no Next.js. It
    holds `Ask` and its hook, `useAsk`. `Ask` decides whether to ask this
    person now, records the answer and feeds Analytics. It receives the visual
    component as a prop, plus an `answer` function (a server action, in
