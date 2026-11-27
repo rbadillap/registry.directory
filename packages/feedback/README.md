@@ -17,14 +17,16 @@ design system instead of competing with it.
 
 ## Three layers
 
-1. **The core, with no React.** `createFeedback`, `track`, `answer`,
-   `measure`, `status`, `evidence` and the Store. It lives here, in
-   `packages/feedback/`.
-2. **One behavior component: `Ask`.** It lives in a separate `react` export
-   of this package (name to be settled), so code that only needs the core
-   never pulls in React. `Ask` decides whether to ask this person now, records
-   the answer and feeds Analytics. The team's own component decides how it
-   looks:
+1. **The core: `@registrydirectory/feedback`.** No React, no Next.js.
+   `createFeedback`, `track`, `answer`, `measure`, `status`, `evidence` and
+   the Store. `/r`, scripts and the server use it.
+2. **Behavior: `@registrydirectory/feedback/react`.** A separate export of the
+   same package, shipped through npm. React only: no styles, no Next.js. It
+   holds `Ask` and its hook, `useAsk`. `Ask` decides whether to ask this
+   person now, records the answer and feeds Analytics. It receives the visual
+   component as a prop, plus an `answer` function (a server action, in
+   Next.js) that is its only door to the core. The team's own component
+   decides how it looks:
 
    ```tsx
    <Ask

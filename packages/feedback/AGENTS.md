@@ -21,7 +21,8 @@ Never break these. If a change needs to, stop and ask.
    permission from [`packages/organizations`](../organizations).
 6. **Improve is never automatic.** A person decides, from the Analytics
    screen. `ready` is a heads-up for that person, not a trigger.
-7. **Portable.** No imports from Next.js or from the app's schema.
+7. **Portable.** The core imports no React, no Next.js and nothing from the
+   app's schema. The `react` export imports only React.
 8. **The package never decides the look.** Anything visible comes in as the
    team's prop. Neither `Ask` nor the team's component touches the database:
    they go through a server action.
@@ -31,8 +32,9 @@ Never break these. If a change needs to, stop and ask.
 - **Three layers, kept apart** (see the README):
   - The core has no React. Nothing outside the `react` export may import
     React.
-  - `Ask`, in the `react` export, brings behavior only: no styles, no markup
-    of its own beyond what the `render` prop returns.
+  - `Ask` and `useAsk`, in the `react` export, bring behavior only: no
+    styles, no markup of their own beyond what the `render` prop returns. The
+    `answer` function they receive is their only door to the core.
   - Recipes are shadcn registry items in `registry/feedback/`, built with
     `Ask`. They never go inside this package.
 - Public names say what the code does, in plain English. Observe and Ask are
