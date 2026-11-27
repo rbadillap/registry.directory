@@ -4,84 +4,77 @@ Teams and access for the registry.directory Dashboard. It answers one question
 everywhere it's asked: **can this identity do this to this resource?**
 
 > **Draft.** We're still designing, and this file gets rewritten as decisions
-> close. No code yet.
+> close. No code yet: the examples show the intended API. Names marked
+> *proposal* aren't settled.
 
-## It plugs into your design system; it doesn't compete with it
+It plugs into your design system; it doesn't compete with it. The core has no
+React, so `/r`, the MCP App and scripts use it directly. Behavior components
+live in `@workspace/organizations/react`, and ready-made recipes install from
+the registry.
 
-```mermaid
-flowchart TB
-  subgraph R["3 · Recipes · registry/organizations/"]
-    direction LR
-    r1[Team switcher] ~~~ r2[Member list] ~~~ r3[Create token] ~~~ r4[Activity log] ~~~ r5[No permission]
-  end
-  subgraph B["2 · Behavior · @workspace/organizations/react"]
-    b1["React, no styles. The look comes in as a prop."]
-  end
-  subgraph C["1 · Core · @workspace/organizations"]
-    c1["can() · requireCan() · tokens · schema · database rules"]
-  end
-  R -- "you install and change them" --> B
-  B --> C
-  web[apps/web] --> B
-  rr["/r"] --> C
-  mcp[MCP App] --> C
+## Checking a permission
+
+Everything goes through one check. `can()` answers yes or no:
+
+```ts
+import { can } from "@workspace/organizations"
+
+if (await can(identity, "presets:write", team)) {
+  // show the "New preset" button
+}
 ```
 
-1. **The core, with no React.** Logic, schema, database rules, tokens,
-   `can()` and `requireCan()`. `/r`, the MCP App and scripts use it without
-   loading React.
-2. **Behavior components, with React and no styles,** in a separate export,
-   `@workspace/organizations/react`. They bring the behavior, not the look:
-   you pass the visual piece as a prop. A `TeamSwitcher` knows which teams you
-   have, switches between them and respects permissions, but takes the menu
-   from you. They ship as part of the package, not through the registry,
-   because they're logic and should update with it.
-3. **Recipes, as shadcn registry items.** Each one builds a piece end to end
-   on top of layers 1 and 2. Install one with
-   `npx shadcn add @registrydirectory/organizations/<item>` and make it yours.
-   The Dashboard uses these same recipes.
+`requireCan()` is the same check, but it stops the request when the answer is
+no. Use it at the top of a route or a server action:
 
-## What happens when you install a private component
+```ts
+import { requireCan } from "@workspace/organizations"
 
-Two guards stand between a request and a team's data: the app checks, and the
-database checks again.
-
-```mermaid
-sequenceDiagram
-  autonumber
-  actor Dev as Developer
-  participant CLI as shadcn CLI
-  participant R as /r
-  participant O as organizations
-  participant DB as Postgres (RLS)
-
-  Dev->>CLI: npx shadcn add @registrydirectory/acme/button
-  CLI->>R: GET with Authorization: Bearer token
-  R->>O: verifyToken(token)
-  O-->>R: identity and its team_id
-  R->>O: resolveHandle("acme")
-  R->>O: can(identity, "items:read", acme)
-  alt no token, handle isn't the token's team, or not a member
-    R-->>CLI: 404, as if acme didn't exist
-  else member without items:read
-    O->>DB: record the denial
-    R-->>CLI: 403 "You can't install private components from acme. Ask an Owner of acme for access."
-  else allowed
-    R->>DB: read the item
-    Note over DB: Guard 2: row-level security never returns another team's rows, even if the app got it wrong
-    DB-->>R: the item
-    R-->>CLI: 200
-  end
+export async function createPresetAction(input: PresetInput) {
+  await requireCan(identity, "presets:write", team)
+  // only reached when allowed
+}
 ```
 
-## Who can do what
+The `identity` comes from your auth adapter (Auth0 today). This package never
+signs anyone in; it only decides what that identity may do.
 
-**Permissions are a fixed, typed list in the code.** **Roles are data:** each
-team has its own roles, and each role is a group of permissions from that
-list. `can()` resolves role → permissions from the database, so any role works
-the same way.
+Both checks deny by default: an unknown permission, no identity, no membership
+or a database error all mean no, and every denial is recorded.
 
-Every team is born with three system roles:
+## Teams and their roles
+
+Creating a team gives it an automatic, neutral handle and its three system
+roles:
+
+```ts
+import { createTeam, listRoles } from "@workspace/organizations"
+
+const team = await createTeam(userId)
+team.handle // "team-7k3m9q"
+
+await listRoles(team.id) // proposal
+// [ { name: "Owner",  system: true },
+//   { name: "Member", system: true },
+//   { name: "Viewer", system: true } ]
+```
+
+The creator becomes the Owner. A team can take its own handle later:
+
+```ts
+await renameHandle(team.id, "acme")
+await resolveHandle("acme") // team.id, and old handles keep resolving as aliases
+```
+
+Members get a role when they join, and it can change:
+
+```ts
+await addMember(team.id, userId, "Member")
+await setRole(team.id, userId, "Viewer")
+await removeMember(team.id, userId)
+```
+
+### What each system role can do
 
 | Permission | Owner | Member | Viewer |
 |---|:---:|:---:|:---:|
@@ -94,56 +87,155 @@ Every team is born with three system roles:
 | `tokens:manage` | ✓ | | |
 | `settings:write` | ✓ | | |
 
-A **Viewer** sees and installs what the team has, for example to prepare a
-demo with a client's brand, and nothing else. **Owner** can't be edited or
-deleted: it always holds every team permission. Member and Viewer can't be
-deleted either.
+A Viewer sees and installs what the team has, for example to prepare a demo
+with a client's brand. Owner can't be edited or deleted and always holds every
+team permission. Member and Viewer can't be deleted.
 
-**Custom roles** come later, with their own interface: an Owner creates a role
-by picking team permissions, for example a Manager who handles people, tokens
-and presets. A custom role never includes platform permissions, and nobody can
-grant a permission they don't hold.
+## Custom roles
 
-Platform permissions come from one role, **Admin**, which belongs to the
-platform, not to any team, and isn't stored with team roles:
-`submissions:review`, `origins:read`, `home:edit` and `analytics:read`. No
-team Owner can grant it; only another Admin or a database migration can.
-"Admin" is reserved for the platform.
+Permissions are a fixed list in the code; roles are data. That's why a team
+can build its own roles, and `can()` treats them exactly like the system ones.
+Custom roles come later, with their own screen:
 
-## What the core guarantees
+```ts
+await createRole(team.id, { // proposal
+  name: "Manager",
+  permissions: ["members:manage", "tokens:manage", "presets:write", "items:read"],
+})
+```
 
-- **Deny by default,** and every denial is recorded.
-- **A token never outranks its creator.**
-- **One team never sees another team's rows,** enforced by the database, not
-  only the app.
-- **A team is never left without an Owner,** and **the platform is never left
-  without an Admin.**
-- **The audit log can only grow.**
+Two limits always hold. A custom role can only hold team permissions, never
+platform ones. And nobody can put a permission in a role, or give a role to
+someone, if they don't hold that permission themselves.
 
-The full list of rules for changing this package is in
-[`AGENTS.md`](AGENTS.md).
+## Tokens
+
+The CLI and agents authenticate with a team token. A token carries scopes, and
+those scopes can never be more than its creator's permissions:
+
+```ts
+const { token, secret } = await createToken(team.id, ["items:read"], expiresAt)
+// `secret` is shown once and stored hashed. Copy it now.
+
+await revokeToken(token.id)
+```
+
+The team puts the secret in its `components.json`:
+
+```json
+{
+  "registries": {
+    "@registrydirectory": {
+      "url": "https://registry.directory/r/{name}.json",
+      "headers": { "Authorization": "Bearer ${REGISTRY_TOKEN}" }
+    }
+  }
+}
+```
+
+## Installing a private component
+
+When someone runs this:
+
+```bash
+npx shadcn add @registrydirectory/acme/button
+```
+
+`/r` checks it like this:
+
+```ts
+const identity = await verifyToken(secret)            // whose token, which team
+const teamId = await resolveHandle("acme")            // which team owns the item
+await requireCan(identity, "items:read", { teamId })  // may they read it?
+// then the item is read through row-level security
+```
+
+And there are three possible answers:
+
+```http
+HTTP/1.1 200 OK
+```
+
+The item, when the token belongs to a member of `acme` who holds `items:read`.
+
+```http
+HTTP/1.1 403 Forbidden
+
+{ "message": "You can't install private components from acme. Ask an Owner of acme for access.",
+  "permission": "items:read" }
+```
+
+A member of `acme` without the permission. The shadcn CLI shows the `message`
+to the person, so it names the action and who to ask, never the technical
+permission. That one goes in its own field, for debugging.
+
+```http
+HTTP/1.1 404 Not Found
+```
+
+No token, a token from another team, or not a member. It answers as if `acme`
+didn't exist, so nobody can find out which teams are there.
+
+Even if the app got the check wrong, the database wouldn't return another
+team's rows: row-level security is the second guard.
+
+## Behavior components
+
+Components in `@workspace/organizations/react` bring the behavior and leave
+the look to you. You pass your own component as a prop:
+
+```tsx
+import { TeamSwitcher } from "@workspace/organizations/react"
+
+<TeamSwitcher render={MyMenu} />
+
+function MyMenu({ teams, current, switchTo }) { // props: proposal
+  return (
+    <DropdownMenu>
+      {teams.map((t) => (
+        <DropdownMenuItem key={t.id} onSelect={() => switchTo(t.id)}>
+          {t.handle}
+        </DropdownMenuItem>
+      ))}
+    </DropdownMenu>
+  )
+}
+```
+
+`TeamSwitcher` knows which teams you belong to, switches between them and
+respects permissions. It has no styles of its own.
+
+## Recipes
+
+If you'd rather start from something finished, install a recipe and make it
+yours:
+
+```bash
+npx shadcn add @registrydirectory/organizations/team-switcher
+```
+
+The recipes are the team switcher, the member list, the create-token dialog,
+the activity log and the "you don't have permission" message. The Dashboard
+uses these same recipes.
+
+## The platform Admin
+
+Platform permissions (`submissions:review`, `origins:read`, `home:edit` and
+`analytics:read`) belong to one role, Admin, which belongs to the platform and
+not to any team. No team Owner can grant it; only another Admin or a database
+migration can, and the platform is never left without one.
 
 ## What it doesn't do
 
-- **Sign people in.** Identity comes from outside (Auth0) through an adapter.
+- **Sign people in.** Identity comes from an adapter.
 - **Serve `/r`.** It verifies the token; `/r` serves the item.
 - **Record product events.** That is [`packages/feedback`](../feedback).
-
-## API
-
-| Area | API |
-|---|---|
-| Check | `can(identity, permission, resource) → boolean`, `requireCan(...)` |
-| Teams | `createTeam(userId)` creates a team with an automatic, neutral handle; `renameHandle(teamId, handle)`; `resolveHandle(handle) → teamId`, following aliases |
-| Members | `addMember`, `removeMember`, `setRole` |
-| Tokens | `createToken(teamId, scopes, expiresAt)` returns the secret once; `verifyToken(secret) → identity`; `revokeToken(id)` |
-| Audit | `listActivity(teamId)` |
 
 ## Depends on and used by
 
 - **Depends on:** Postgres (Neon) through Drizzle, and an identity adapter
   (Auth0).
-- **Used by:** `apps/web` (Dashboard routes and actions), `/r` (private
-  items) and the MCP App server. Later, the MCP App will also use `can()` on
-  the connected token to decide which tools to offer, so an Owner gets the
-  admin tools without leaving the chat.
+- **Used by:** `apps/web`, `/r` and the MCP App server. Later, the MCP App
+  will also use `can()` on the connected token to decide which tools to offer.
+
+Working on this package? Read [`AGENTS.md`](AGENTS.md) first.
