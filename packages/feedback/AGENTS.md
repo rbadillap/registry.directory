@@ -3,7 +3,7 @@
 What this package is and what it does live in [`README.md`](README.md). This
 file is the rules for changing it.
 
-> **Status:** no code yet. The invariants are settled, except where marked.
+> **Status:** no code yet. The invariants are settled.
 > Don't treat the API names as a contract until code lands.
 
 ## Invariants
@@ -18,8 +18,8 @@ Never break these. If a change needs to, stop and ask.
    token.**
 5. **Cross-team aggregates are read only with `analytics:read`**, a platform
    permission from [`packages/organizations`](../organizations).
-6. **Improve is never automatic.** `decide` is a heads-up for a person. (This
-   is the design; explicit sign-off is pending.)
+6. **Improve is never automatic.** A person decides, from the Analytics
+   screen. `decide` is a heads-up for that person, not a trigger.
 7. **Portable.** No imports from Next.js or from the app's schema.
 
 ## Boundaries
