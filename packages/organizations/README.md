@@ -81,6 +81,8 @@ outranks its creator, and the audit log is insert-only.
 - **Depends on:** Postgres (Neon) through Drizzle, and an identity adapter
   (Auth0).
 - **Used by:** `apps/web` (Dashboard routes and actions), `/r` (`verifyToken`
-  and `items:read` for private items) and the MCP App server.
+  and `items:read` for private items) and the MCP App server. Later, the MCP
+  App will also use `can()` on the connected token to decide which tools to
+  offer, so an Owner gets the admin tools without leaving the chat.
 
 Working on this package? Read [`AGENTS.md`](AGENTS.md) first.
