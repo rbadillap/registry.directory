@@ -3,8 +3,7 @@
 What this package is and what it does live in [`README.md`](README.md). This
 file is the rules for changing it.
 
-> **Status:** design only, no code yet. API names in the README are a proposal:
-> don't treat them as a contract until code lands.
+> **Status:** design only, no code yet. Two points are open, listed at the end.
 
 ## Invariants
 
@@ -13,7 +12,9 @@ Never break these. If a change needs to, stop and ask.
 1. **Deny by default.** An unknown permission, no identity, no membership or a
    database error all mean no.
 2. **Authorize by `team_id`, never by handle.** The handle only selects the
-   team; the check runs on the id.
+   team; the check runs on the id. In `/r`, `verifyToken` gives the token's
+   `team_id`, `items:read` is checked against it, and the handle in the URL
+   must match that `team_id`.
 3. **A token never outranks its creator.** Its scopes are a subset of the
    creator's permissions at the moment it's created.
 4. **Token secrets are stored hashed** and shown once, at creation.
@@ -27,6 +28,15 @@ Never break these. If a change needs to, stop and ask.
    routes.
 9. **A non-member gets 404, never 403**, so a response never reveals that a
    team exists. This applies to `/r/{handle}/...` and `/dashboard/{handle}`.
+
+## Open
+
+Don't implement either of these until they're decided.
+
+- Whether `rules:write` belongs only to Owner, or to Member too.
+- What a **member** without the permission receives: 404 like everyone else,
+  or 403 with a message (the shadcn CLI shows the response's `message` field).
+  A non-member always gets 404.
 
 ## Boundaries
 

@@ -3,8 +3,9 @@
 Teams and access for the registry.directory Dashboard. It answers one question
 everywhere it's asked: **can this identity do this to this resource?**
 
-> **Status:** design only, no code yet. The model below is settled. The API
-> names are a proposal and can still change.
+> **Status:** design only, no code yet. The model and the API below are
+> settled, except two open points: whether members get `rules:write`, and what
+> a member without a permission receives (see [`AGENTS.md`](AGENTS.md)).
 
 ## What it does
 
@@ -38,9 +39,9 @@ outranks its creator, and the audit log is insert-only.
 - **Draw any UI.**
 - **Record product events.** That is [`packages/feedback`](../feedback).
 
-## Concepts and proposed API
+## Concepts and API
 
-| Area | Proposed API |
+| Area | API |
 |---|---|
 | Permissions | `Permission`: a union of `thing:action` strings. Team: `items:read`, `items:save`, `items:mark`, `presets:write`, `rules:read`, `rules:write`, `activity:read`, `members:manage`, `tokens:manage`, `settings:write`. Platform: `submissions:review`, `origins:read`, `home:edit`, `analytics:read`. |
 | Roles | `owner` holds every team permission. `member` holds `items:*`, `rules:read` and `activity:read`. Whether `rules:write` belongs to members is still open. |
