@@ -44,9 +44,14 @@ Never break these. If a change needs to, stop and ask.
 
 ## Boundaries
 
-- The core has no UI: no React, no styles. Default components are shadcn
-  registry items in `registry/organizations/`, and they call the core. They
-  never go inside this package.
+- **Three layers, kept apart** (see the README):
+  - The core has no React and no styles. Nothing outside the `react` export
+    may import React.
+  - A behavior component in the `react` export never sets the look. Anything
+    visual comes in through props (a render prop or a slot), and it has no
+    styles of its own.
+  - Recipes are shadcn registry items in `registry/organizations/`, built on
+    the core and the `react` export. They never go inside this package.
 - No sign-in code here. Identity arrives through an adapter.
 - No product event logging. Use [`packages/feedback`](../feedback).
 - No imports from `apps/web`. The app depends on this package, not the other

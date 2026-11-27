@@ -6,22 +6,32 @@ everywhere it's asked: **can this identity do this to this resource?**
 > **Draft.** We're still designing, and this file gets rewritten as decisions
 > close. No code yet.
 
-## Two layers
+## Three layers
 
-- **The core, with no UI.** Logic, schema, database rules, `can()` and
-  `requireCan()`. Routes, `/r`, the MCP App and scripts use it without
-  depending on React or on any styles. It lives here, in
-  `packages/organizations/`.
-- **Default components, as shadcn registry items.** Ready-made pieces you
-  install with `npx shadcn add @registrydirectory/organizations/<item>`. Once installed, the
-  code is yours to adapt to your brand and tokens. They aren't bundled into the
-  core, so they don't tie you to our React version or our styles. They will
-  live in `registry/organizations/`:
-  - the team switcher;
-  - the member list: invite, remove, change role;
-  - the create-token dialog, which shows the secret once;
-  - the activity log;
-  - the "you don't have permission" message.
+It plugs into your design system; it doesn't compete with it.
+
+1. **The core, with no React.** Logic, schema, database rules, tokens,
+   `can()` and `requireCan()`. `/r`, the MCP App and scripts use it without
+   loading React. It lives here, in `packages/organizations/`.
+2. **Behavior components, with React and no styles.** They live in this same
+   package under a separate export (`@workspace/organizations/react`, or
+   whatever name the monorepo settles on), so code that only needs the core
+   never pulls in React. They bring the behavior, not the look: you pass the
+   visual piece in as a prop (a render prop or a slot). For example, a
+   `TeamSwitcher` knows which teams you have, switches between them and
+   respects permissions, but takes the team menu as a prop. They ship through
+   npm, not the registry, because they're logic: they update with the package,
+   and nobody should need to copy or fork them.
+3. **Recipes, as shadcn registry items.** Examples that build each piece end
+   to end with shadcn on top of layers 1 and 2. You install one with
+   `npx shadcn add @registrydirectory/organizations/<item>` and change it as
+   you like. The Dashboard uses these same recipes. They live in
+   `registry/organizations/`:
+   - the team switcher;
+   - the member list: invite, remove, change role;
+   - the create-token dialog, which shows the secret once;
+   - the activity log;
+   - the "you don't have permission" message.
 
 ## What the core does
 
