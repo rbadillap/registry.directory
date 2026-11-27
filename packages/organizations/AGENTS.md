@@ -22,7 +22,7 @@ Never break these. If a change needs to, stop and ask.
 5. **The audit log is insert-only.** No update or delete, enforced by grants
    or a trigger. It records every denial and every sensitive change.
 6. **Admin is a platform role, kept apart from team roles.** `setRole`
-   handles only Owner, Member and Viewer, and no Owner can grant Admin. Only
+   handles only a team's own roles, and no Owner can grant Admin. Only
    another Admin or a database migration assigns it: a trigger blocks any
    other path, and every assignment is audited. The platform is never left
    without an Admin, just as a team is never left without an Owner.
