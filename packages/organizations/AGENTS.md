@@ -29,8 +29,15 @@ Never break these. If a change needs to, stop and ask.
 9. **A non-member gets 404, never 403**, so a response never reveals that a
    team exists. This applies to `/r/{handle}/...` and `/dashboard/{handle}`.
 10. **A member without the permission gets 403 with a clear `message`.** The
-    shadcn CLI shows that field to the person, so it should say what's
-    missing.
+    shadcn CLI shows that field to the person, and the MCP App shows the same
+    text. The message names the action and who to ask, never the technical
+    permission:
+    - "You can't install private components from acme. Ask an Owner of acme
+      for access."
+    - "Only Owners of acme can create tokens."
+
+    The technical permission goes in a separate field of the response
+    (`"permission": "items:read"`) and in the log, for debugging.
 
 ## Boundaries
 
