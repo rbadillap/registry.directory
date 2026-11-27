@@ -13,8 +13,8 @@ whether it's time to decide something.
 
 ```mermaid
 flowchart LR
-  T["Track<br/>what people do"] --> A["Answer<br/>a designed question"]
-  A --> S{"Status"}
+  T["Track<br/>what people do"] --> S{"Status"}
+  A["Answer<br/>a designed question"] --> S
   S -- watching --> T
   S -- promising --> T
   S -- ready --> P(["A person decides"])
@@ -23,7 +23,7 @@ flowchart LR
 
 | Idea | In code | What it is |
 |---|---|---|
-| Observe | `feedback.track` | What people do, recorded without interrupting them. |
+| Observe | `feedback.track` | What people do, recorded without interrupting them. Track and answer are independent: someone can install without answering, or say "I want this" without installing anything. |
 | Ask | `feedback.answer`, and the `Ask` component | The answer to something designed on purpose: a thumbs up, an "I want this". |
 | Improve | `measure`, `feedback.status`, `feedback.evidence` | Each feature declares what it tracks, what it asks and its goal. `status` says where it stands. **A person decides** what changes. |
 
@@ -51,11 +51,14 @@ measure("find-component", {
 })
 ```
 
-**2. Track the install** (the MCP App server, after it installs)
+**2. Track the install** (`/r`, when the CLI fetches the item)
 
 ```ts
 after(() => feedback.track("install", { subject: "acme/pricing-compare", teamId }))
 ```
+
+The MCP App server tracks the search and the install request; `/r` tracks
+what actually gets fetched.
 
 **3. Ask, with the team's own look**
 
