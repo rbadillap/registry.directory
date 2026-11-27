@@ -26,6 +26,10 @@ Never break these. If a change needs to, stop and ask.
 8. **The package never decides the look.** Anything visible comes in as the
    team's prop. Neither `Ask` nor the team's component touches the database:
    they go through a server action.
+9. **A default never needs a deploy to change.** `measure()` holds the
+   defaults; changes live in data, and everything reads the effective value
+   (team, then platform, then default). If a value can only change by editing
+   code, that's a design error.
 
 ## Boundaries
 

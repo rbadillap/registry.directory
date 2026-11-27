@@ -2,14 +2,11 @@
 
 The Feedback Loop for registry.directory: **Observe → Ask → Improve**. It
 tracks what people do and what they answer, and tells you, feature by feature,
-whether it's time to decide something.
+when it's time for a person to decide something.
 
 > **Draft.** We're still designing, and this file gets rewritten as decisions
-> close. No code yet. What it does, what it doesn't, its invariants and who
-> uses it are settled; the exact signatures, options and the table are a
-> proposal.
-
-## The loop
+> close. No code yet: the examples show the intended API, and its exact
+> signatures are a proposal.
 
 ```mermaid
 flowchart LR
@@ -21,29 +18,30 @@ flowchart LR
   P -- the product changes --> T
 ```
 
-| Idea | In code | What it is |
-|---|---|---|
-| Observe | `feedback.track` | What people do, recorded without interrupting them. Track and answer are independent: someone can install without answering, or say "I want this" without installing anything. |
-| Ask | `feedback.answer`, and the `Ask` component | The answer to something designed on purpose: a thumbs up, an "I want this". |
-| Improve | `measure`, `feedback.status`, `feedback.evidence` | Each feature declares what it tracks, what it asks and its goal. `status` says where it stands. **A person decides** what changes. |
+Track and answer come in separately: someone can install without answering,
+or say "I want this" without installing anything. And `ready` never changes
+anything by itself; it ends with a person.
 
-The three states:
+## Setting it up
 
-- **`watching`:** only one side moves (people install, but nobody answers, or
-  the other way around).
-- **`promising`:** both sides move, but not to the goal yet.
-- **`ready`:** both sides reach the goal, in more than one week. It's a
-  heads-up for a person, never a trigger.
-
-## One feature, end to end
-
-"Find me a component" in the MCP App: someone searches, installs, and is
-asked whether it fit. The goal values are examples.
-
-**1. Measure the feature**
+The core has no React and no Next.js, so `/r`, scripts and the server use it
+directly. You give it a Store; Postgres is the first one:
 
 ```ts
-measure("find-component", {
+import { createFeedback } from "@workspace/feedback"
+
+export const feedback = createFeedback({ store: postgresStore(db) })
+```
+
+## Measuring a feature
+
+Each feature declares what it tracks, what it asks and its goal. The app keeps
+one `measure()` per feature, in `apps/web/feedback/features/`:
+
+```ts
+import { measure } from "@workspace/feedback"
+
+export default measure("find-component", {
   question: "Do people find what they need?",
   track: "install",
   answer: { name: "did-it-fit", value: "yes" },
@@ -51,18 +49,30 @@ measure("find-component", {
 })
 ```
 
-**2. Track the install** (`/r`, when the CLI fetches the item)
+The values in `measure()` are the defaults. They can be changed later without
+touching this file (see below).
+
+## Tracking what people do
+
+Track without making anyone wait. In `/r`, the install is recorded after the
+response, when the CLI fetches the item:
 
 ```ts
 after(() => feedback.track("install", { subject: "acme/pricing-compare", teamId }))
 ```
 
-The MCP App server tracks the search and the install request; `/r` tracks
-what actually gets fetched.
+If recording fails, it logs and the response goes on. Never put an IP address,
+a raw user agent or an email in `props`.
 
-**3. Ask, with the team's own look**
+## Asking a question
+
+`Ask` lives in `@workspace/feedback/react`. It decides whether to ask this
+person now, records the answer and feeds Analytics. How it looks is up to you:
+pass your own component as `render`.
 
 ```tsx
+import { Ask } from "@workspace/feedback/react"
+
 <Ask
   feature="find-component"
   question="Did it fit what you needed?"
@@ -71,11 +81,41 @@ what actually gets fetched.
 />
 ```
 
-`Thumbs` is the team's component. It receives `{ question, answer }` and calls
-`answer("yes")` or `answer("no")`. That `answer` is a server action that calls
-`feedback.answer("did-it-fit", value, { subject, teamId })`.
+Your component receives `{ question, answer }` and only knows how it looks:
 
-**4. What Analytics shows**
+```tsx
+function Thumbs({ question, answer }) {
+  return (
+    <div>
+      <p>{question}</p>
+      <Button onClick={() => answer("yes")}>👍</Button>
+      <Button onClick={() => answer("no")}>👎</Button>
+    </div>
+  )
+}
+```
+
+`answer` is a server action that calls
+`feedback.answer("did-it-fit", value, { subject, teamId })`. It's the only way
+from the component to the core: neither `Ask` nor your component touches the
+database.
+
+The `when` options are a proposal: `once`, at most once per person per period;
+`stopWhen: "ready"`, stop asking once there's enough evidence; and `max`, a
+cap on answers.
+
+## Reading the status
+
+```ts
+await feedback.status("find-component")   // "watching" | "promising" | "ready"
+await feedback.evidence("find-component") // the dated weeks behind that status
+```
+
+- **`watching`:** only one side moves.
+- **`promising`:** both sides move, but not to the goal yet.
+- **`ready`:** both sides reach the goal, in more than one week.
+
+The Analytics screen shows it like this:
 
 ```
 Find me a component · "Do people find what they need?"
@@ -83,82 +123,66 @@ Find me a component · "Do people find what they need?"
   62 installs · 12 fits · 2 weeks        → promising
 ```
 
-In the second case people install, but it isn't clear they find what they
-were looking for.
+In the second case people install, but it isn't clear they find what they were
+looking for. When a feature reaches `ready`, a person opens its evidence and
+decides. There's no public API for raw aggregates.
 
-## Behavior, not look
+## Defaults you can change
 
-```mermaid
-flowchart TB
-  subgraph R["3 · Recipes · registry/feedback/"]
-    direction LR
-    r1[one-question] ~~~ r2[coming-next] ~~~ r3[quick-actions] ~~~ r4[empty-state]
-  end
-  subgraph B["2 · Behavior · @workspace/feedback/react"]
-    b1["Ask and useAsk: when to ask, whom, when to stop. The look is a prop."]
-  end
-  subgraph C["1 · Core · @workspace/feedback"]
-    c1["track · answer · measure · status · evidence · Store"]
-  end
-  R -- "you install and change them" --> B
-  B -- "answer(), a server action" --> C
-  rr["/r"] --> C
-  mcp[MCP App server] --> C
+`measure()` ships the defaults: the question, the goal and `when`. Changes are
+stored as data, so nobody needs a deploy to adjust them:
+
+```ts
+await feedback.settings("find-component").set({ // proposal
+  goal: { installs: 80, fits: 40, weeks: 2 },
+})
+
+await feedback.settings("find-component").get()
+// the effective value
 ```
 
-The package never decides how anything looks, so it plugs into anyone's design
-system instead of competing with it.
+The effective value is the team's setting if there is one, then the
+platform's, then the default in `measure()`. `Ask` and `status` always read
+the effective value. Who can change what is a proposal: the platform Admin
+adjusts goals and questions from Analytics; a team Owner can adjust how often
+their team is asked and the wording it sees, never the platform's goals.
 
-1. **The core, `@workspace/feedback`.** No React, no Next.js. `/r`, scripts
-   and the server use it.
-2. **Behavior, `@workspace/feedback/react`.** React only: no styles, no
-   Next.js. `Ask` decides whether to ask this person now, records the answer
-   and feeds Analytics. Options for `when` (proposal): `once`, at most once
-   per person per period; `stopWhen: "ready"`, stop asking once there's
-   enough evidence; and `max`, a cap on answers.
-3. **Recipes, as shadcn registry items.** Complete flows built with `Ask`.
-   Install one with `npx shadcn add @registrydirectory/feedback/<item>` and
-   make it yours. The Dashboard uses these same recipes:
-   - `one-question`: the right question at the right moment, with a thumbs
-     component as its `render`;
-   - `coming-next`: what doesn't exist yet, greyed out and apart from what
-     works today, with one line on what it will do and an "I want this"
-     button. No email, no dates;
-   - `quick-actions`: the phrase buttons of an empty state;
-   - `empty-state`: an empty screen that asks instead of sitting blank.
+## Recipes
+
+If you'd rather start from something finished, install a recipe and make it
+yours:
+
+```bash
+npx shadcn add @registrydirectory/feedback/coming-next
+```
+
+`coming-next` shows what doesn't exist yet, greyed out and apart from what
+works today, with one line on what it will do and an "I want this" button. No
+email, no dates. The other recipes are `one-question` (a question with a
+thumbs component as its `render`), `quick-actions` (the phrase buttons of an
+empty state) and `empty-state` (an empty screen that asks instead of sitting
+blank). The Dashboard uses these same recipes.
 
 `@workspace/...` are the package's names inside this monorepo.
 `@registrydirectory/feedback/<item>` is the shadcn registry namespace the
 recipes install from, not an npm package.
 
+## The Store
+
+An interface with `write(event)` and `aggregate(query)`. The Postgres store
+uses two tables, both proposals: `feedback_event(id, at, kind, name, subject,
+team_id, props)`, where `kind` is `track` or `answer`, and
+`feedback_setting(feature, team_id, question, goal, when)`, where a null
+`team_id` is the platform's setting.
+
 ## What it doesn't do
 
-- **Decide how anything looks.** The visible part is always the team's.
+- **Decide how anything looks.** The visible part is always yours.
 - **Change the product.** `ready` is a heads-up, never an automatic change.
-- **Store personal data.** No IP addresses, raw user agents or emails.
+- **Store personal data.**
 - **Know about permissions.** The caller filters what each person may see.
   Access lives in [`packages/organizations`](../organizations).
 - **Replace Vercel Analytics** on the public site.
-
-## Core API (proposal)
-
-```ts
-const feedback = createFeedback({ store })
-
-feedback.track(name, { subject, teamId, props })
-feedback.answer(name, answer, { subject, teamId })
-
-measure(feature, { question, track, answer, goal })
-feedback.status(feature)   // "watching" | "promising" | "ready"
-feedback.evidence(feature) // the dated weeks behind that status
-```
-
-- Analytics reads `status`, and `evidence` when a person opens a feature in
-  `ready` before deciding. There is no public API for raw aggregates.
-- The app keeps one `measure()` per feature, in `apps/web/feedback/features/`.
-- **Store:** an interface with `write(event)` and `aggregate(query)`. The
-  Postgres store uses one table: `feedback_event(id, at, kind, name, subject,
-  team_id, props)`, where `kind` is `track` or `answer`.
 
 ## Depends on and used by
 
