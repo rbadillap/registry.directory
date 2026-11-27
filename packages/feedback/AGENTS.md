@@ -3,7 +3,8 @@
 What this package is and what it does live in [`README.md`](README.md). This
 file is the rules for changing it.
 
-> **Status:** no code yet. The invariants are settled.
+> **Draft.** We're still designing, and this file gets rewritten as decisions
+> close. No code yet. The invariants are settled.
 > Don't treat the API names as a contract until code lands.
 
 ## Invariants

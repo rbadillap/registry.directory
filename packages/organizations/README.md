@@ -3,10 +3,27 @@
 Teams and access for the registry.directory Dashboard. It answers one question
 everywhere it's asked: **can this identity do this to this resource?**
 
-> **Status:** design only, no code yet. The model and the API below are
-> settled.
+> **Draft.** We're still designing, and this file gets rewritten as decisions
+> close. No code yet.
 
-## What it does
+## Two layers
+
+- **The core, with no UI.** Logic, schema, database rules, `can()` and
+  `requireCan()`. Routes, `/r`, the MCP App and scripts use it without
+  depending on React or on any styles. It lives here, in
+  `packages/organizations/`.
+- **Default components, as shadcn registry items.** Ready-made pieces you
+  install with `npx shadcn add @registrydirectory/<item>`. Once installed, the
+  code is yours to adapt to your brand and tokens. They aren't bundled into the
+  core, so they don't tie you to our React version or our styles. They will
+  live in `registry/organizations/`:
+  - the team switcher;
+  - the member list: invite, remove, change role;
+  - the create-token dialog, which shows the secret once;
+  - the activity log;
+  - the "you don't have permission" message.
+
+## What the core does
 
 - **Teams.** A team is the unit that owns things. Each one has a readable,
   unique **handle**, the same in every place it shows up: the web
@@ -35,7 +52,6 @@ outranks its creator, and the audit log is insert-only.
 - **Sign people in.** Identity comes from outside (Auth0 today) through an
   adapter. This package only decides what that identity may do.
 - **Serve `/r`.** It verifies the token; `/r` serves the item.
-- **Draw any UI.**
 - **Record product events.** That is [`packages/feedback`](../feedback).
 
 ## Concepts and API

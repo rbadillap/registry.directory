@@ -4,8 +4,9 @@ The Feedback Loop for registry.directory: **Observe → Ask → Improve**. It
 records what people do and what they answer, and turns that into one signal
 per feature.
 
-> **Status:** no code yet. What it does, what it doesn't, its invariants and
-> who uses it are settled. The API names are a proposal.
+> **Draft.** We're still designing, and this file gets rewritten as decisions
+> close. No code yet. What it does, what it doesn't, its invariants and who
+> uses it are settled; the API names are a proposal.
 
 ## The loop
 

@@ -3,7 +3,8 @@
 What this package is and what it does live in [`README.md`](README.md). This
 file is the rules for changing it.
 
-> **Status:** design only, no code yet.
+> **Draft.** We're still designing, and this file gets rewritten as decisions
+> close. No code yet.
 
 ## Invariants
 
@@ -41,6 +42,9 @@ Never break these. If a change needs to, stop and ask.
 
 ## Boundaries
 
+- The core has no UI: no React, no styles. Default components are shadcn
+  registry items in `registry/organizations/`, and they call the core. They
+  never go inside this package.
 - No sign-in code here. Identity arrives through an adapter.
 - No product event logging. Use [`packages/feedback`](../feedback).
 - No imports from `apps/web`. The app depends on this package, not the other
