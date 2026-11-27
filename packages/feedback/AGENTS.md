@@ -22,16 +22,22 @@ Never break these. If a change needs to, stop and ask.
 6. **Improve is never automatic.** A person decides, from the Analytics
    screen. `ready` is a heads-up for that person, not a trigger.
 7. **Portable.** No imports from Next.js or from the app's schema.
+8. **The package never decides the look.** Anything visible comes in as the
+   team's prop. Neither `Ask` nor the team's component touches the database:
+   they go through a server action.
 
 ## Boundaries
 
-- The core has no UI. Kit components are shadcn registry items in
-  `registry/feedback/`, never inside this package.
-- Kit components never touch the database or import the core on the client.
-  They call a server action or a route, which calls `feedback.answer` or
-  `feedback.track`.
+- **Three layers, kept apart** (see the README):
+  - The core has no React. Nothing outside the `react` export may import
+    React.
+  - `Ask`, in the `react` export, brings behavior only: no styles, no markup
+    of its own beyond what the `render` prop returns.
+  - Recipes are shadcn registry items in `registry/feedback/`, built with
+    `Ask`. They never go inside this package.
 - Public names say what the code does, in plain English. Observe and Ask are
-  the names of the idea; in code they are `track` and `answer`. Don't bring
-  back `observe`, `ask`, `signals`, `state` or `defineLoop` as public names.
+  the names of the idea; in code they are `track`, `answer` and the `Ask`
+  component. Don't bring back `observe`, `signals`, `state` or `defineLoop`
+  as public names.
 - No permission checks here. The caller decides who sees what.
 - No product decisions in code. The package reports; a person decides.
