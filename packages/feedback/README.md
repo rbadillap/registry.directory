@@ -56,7 +56,9 @@ design system instead of competing with it.
    The Dashboard uses these same recipes. They live in `registry/feedback/`:
    - `one-question`: the right question at the right moment, with a thumbs
      component inside as its `render`;
-   - `coming-next`: what's coming, with "I want this";
+   - `coming-next`: what doesn't exist yet, greyed out and apart from what
+     works today, with one line on what it will do and an "I want this"
+     button. No email, no dates;
    - `quick-actions`: the phrase buttons of an empty state;
    - `empty-state`: an empty screen that asks instead of sitting blank.
 
@@ -105,7 +107,7 @@ feedback.evidence(feature) // the dated weeks behind that status
 
 - **Depends on:** a Store. Postgres is the first one.
 - **Used by:** `/r` (tracks installs), `apps/web` (empty-state clicks, "I
-  want this" on upcoming features, Save to team, and the Analytics screen,
+  want this" in Coming next, Save to team, and the Analytics screen,
   which reads status) and the MCP App (search, preview and install).
 
 Working on this package? Read [`AGENTS.md`](AGENTS.md) first.
