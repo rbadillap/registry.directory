@@ -31,9 +31,17 @@ the commands and the rules for the whole repo are in the
 
 ## `/r`
 
-With `DASHBOARD_ENABLED` on, `/r` is the registry that hosts each team's items,
-and it doesn't proxy public registries. With the flag off, as in production
-today, `/r` keeps working as it does now until launch.
+With `DASHBOARD_ENABLED` off, as in production today, `/r` works as it does
+now. With the flag on, the new `/r` and the current one live side by side
+until the cut-over:
+
+- the new `/r` serves team handles, our packages and our own catalog;
+- everything else falls through to the current behavior until the cut-over,
+  which is part of the launch plan;
+- meanwhile, team handles and directory keys can't overlap (see Routes).
+
+After the cut-over, `/r` only hosts our own items and stops proxying public
+registries.
 
 - **Names:** `@registrydirectory/{handle}/{item}` for a team's components and
   presets, and `@registrydirectory/{package}/{item}` for our own recipes.
