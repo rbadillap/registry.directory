@@ -3,8 +3,8 @@
 Rules for agents working in this repository. What the project is, and how a
 person gets started, lives in [`README.md`](README.md).
 
-> **Draft.** The Dashboard is being designed on the `dev` branch, and this
-> file gets rewritten as decisions close.
+> **Draft.** The Dashboard is being built on `main`, turned off in production
+> behind `DASHBOARD_ENABLED`, and this file gets rewritten as decisions close.
 
 ## Stack
 
@@ -16,12 +16,25 @@ person gets started, lives in [`README.md`](README.md).
 - **Secrets:** Varlock, from `apps/web/.env.schema`. Nothing secret is needed
   to run the site locally.
 - **Hosting:** Vercel, with Vercel Blob for submissions.
-- **Planned for the Dashboard** (on `dev`, not in production yet): Postgres on
+- **Planned for the Dashboard** (behind `DASHBOARD_ENABLED`): Postgres on
   Neon through Drizzle, and Auth0 for identity only. See
   [`packages/organizations`](packages/organizations) and
   [`packages/feedback`](packages/feedback).
 
-## Architecture of the Dashboard (on `dev`)
+## Branches and environments
+
+- **One trunk, `main`, and short-lived branches.** Every slice enters `main`
+  through a small pull request. There are no long-lived branches: they drift
+  from `main`, which changes almost daily with submissions and the indexer.
+- **Unfinished work merges turned off,** behind `DASHBOARD_ENABLED`.
+  Production deploys `main` with the flag off. The `dev` environment
+  (`dev.registry.directory`) follows `main` with the flag on, for testing.
+- **Launching is turning the flag on in production; rolling back is turning it
+  off.** Neither is a merge.
+- Each environment has its own database branch, and nothing in one
+  environment reads another's data.
+
+## Architecture of the Dashboard (behind `DASHBOARD_ENABLED`)
 
 The Dashboard is the design system layer for a team: it sits between a team
 and its design system, and between its agents and its rules.
@@ -115,7 +128,6 @@ default, and how does a team change it without a deploy?
 4. **What goes into an `AGENTS.md` is agreed, and guarded.** Agents propose
    additions; the Documentation Engineer writes them, keeping each file short
    and free of anything a level above already says.
-5. **`dev` only takes changes through pull requests.** No direct pushes, no
-   force pushes, no deleting the branch. Each merge to `dev` deploys it, so
-   make every pull request one meaningful slice, not one commit per tweak.
-   `main` also changes only through pull requests.
+5. **`main` only takes changes through pull requests,** from short-lived
+   branches. Make every pull request one meaningful slice, not one commit per
+   tweak: each merge deploys.

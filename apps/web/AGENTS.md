@@ -1,13 +1,14 @@
 # AGENTS.md: `apps/web`
 
-The site: the public directory, `/r` and, on `dev`, the Dashboard. The stack,
+The site: the public directory, `/r` and, behind `DASHBOARD_ENABLED`, the
+Dashboard. The stack,
 the commands and the rules for the whole repo are in the
 [root `AGENTS.md`](../../AGENTS.md); the indexer and its guard are in
 [`scripts/README.md`](scripts/README.md).
 
-> **Draft.** The Dashboard is being designed on `dev`, and this file gets
-> rewritten as decisions close. Production doesn't have any of the Dashboard
-> yet.
+> **Draft.** The Dashboard is being built on `main` behind
+> `DASHBOARD_ENABLED`, off in production and on in the `dev` environment. This
+> file gets rewritten as decisions close.
 
 ## Routes
 
@@ -27,8 +28,9 @@ the commands and the rules for the whole repo are in the
 
 ## `/r`
 
-On `dev`, `/r` is the registry that hosts each team's items. It doesn't proxy
-public registries.
+With `DASHBOARD_ENABLED` on, `/r` is the registry that hosts each team's items,
+and it doesn't proxy public registries. With the flag off, as in production
+today, `/r` keeps working as it does now until launch.
 
 - **Names:** `@registrydirectory/{handle}/{item}` for a team's components and
   presets, and `@registrydirectory/{package}/{item}` for our own recipes.
