@@ -146,7 +146,7 @@ data, not hardcoded behavior.
   rows and teams can create their own.
 - Feedback ships with default questions and thresholds, and each one can be
   adjusted.
-- A team gets a default Brand preset, and can add and extend its own.
+- A team's brand can start from a shadcn preset and become its own DESIGN.md.
 
 When you design something new, ask two questions: what's the sensible
 default, and how does a team change it without a deploy?
