@@ -15,6 +15,8 @@ Never break these. If a change needs to, stop and ask.
    response (`after()`). If it fails, it logs and the response goes on.
 2. **Events are insert-only.**
 3. **No personal data in `props`:** no IP address, raw user agent or email.
+   For someone without an account, how often `Ask` appears is decided only on
+   the client; never send an identifier to make it work.
 4. **`team_id` is set only when the caller authenticated with that team's
    token.**
 5. **Cross-team aggregates are read only with `analytics:read`**, a

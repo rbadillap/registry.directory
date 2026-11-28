@@ -104,6 +104,10 @@ The `when` options are a proposal: `once`, at most once per person per period;
 `stopWhen: "ready"`, stop asking once there's enough evidence; and `max`, a
 cap on answers.
 
+For someone without an account, `once` is enforced only on the client, and
+nothing that identifies them is sent to us. With an account, it's tracked per
+user.
+
 ## Reading the status
 
 ```ts
@@ -162,6 +166,9 @@ Who can change what:
   answers would stop measuring the same thing and couldn't be compared.
 
 ## Recipes
+
+Recipes import `Ask`, so they install outside this monorepo once `Ask`'s
+distribution is decided. Until then, they're used inside it.
 
 If you'd rather start from something finished, install a recipe and make it
 yours:
