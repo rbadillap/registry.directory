@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ["@workspace/ui"],
+  transpilePackages: ["@workspace/ui", "@workspace/organizations"],
   // next dev and next build corrupt each other when they share .next —
   // separate dirs let a production build run while the dev server is up
   distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",

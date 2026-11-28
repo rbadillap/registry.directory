@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { isReservedHandle } from "@workspace/organizations/handles";
 import { readBodyWithLimit } from "@/lib/body-limit";
 import {
   submissionSchema,
@@ -172,6 +173,16 @@ export async function POST(request: Request) {
         docs: DOCS_URL,
       },
       { status: 409 }
+    );
+  }
+
+  // The site and our packages own these names at the root of every URL; a
+  // registry under one would have no page. The indexer refuses them too.
+  if (parsed.data.namespace && isReservedHandle(parsed.data.namespace.replace(/^@/, ""))) {
+    const reservedError = `namespace ${parsed.data.namespace} is reserved by registry.directory. Omit the field, or use a different one.`;
+    return NextResponse.json(
+      { error: reservedError, fields: { namespace: [reservedError] }, docs: DOCS_URL },
+      { status: 422 }
     );
   }
 

@@ -1,0 +1,12 @@
+{
+  "extends": "@workspace/typescript-config/base.json",
+  "compilerOptions": {
+    // Files import each other by their real .ts name so plain Node (tests,
+    // the indexer) runs them without a build. tsc only type-checks here.
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "lib": ["es2022"],
+    "types": ["node"]
+  },
+  "include": ["src"]
+}

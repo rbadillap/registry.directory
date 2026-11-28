@@ -7,7 +7,7 @@
 
 import { strict as assert } from "node:assert";
 import { describe, it } from "node:test";
-import { fetchRemainingPages } from "./registries.mjs";
+import { fetchRemainingPages, reservedKeyError } from "./registries.mjs";
 
 const URL_UNDER_TEST = "https://example.test/r/registry.json";
 
@@ -447,5 +447,26 @@ describe("countResolutions", () => {
       ]),
       { gated: 2, gone: 1, unverified: 1 },
     );
+  });
+});
+
+describe("reservedKeyError", () => {
+  const entry = (namespace) => ({ name: "Example", description: "", url: "", namespace });
+
+  it("refuses a key reserved for the site or one of our packages", () => {
+    for (const key of ["dashboard", "feedback", "organizations", "mcp"]) {
+      assert.match(reservedKeyError(entry(`@${key}`)), /reserved/);
+    }
+  });
+
+  it("refuses a key shaped like an automatic team handle", () => {
+    assert.match(reservedKeyError(entry("@team-7k3m9q")), /team handle/);
+  });
+
+  it("accepts every registry in the directory today", async () => {
+    const { readFile } = await import("node:fs/promises");
+    const file = new URL("../../public/directory.json", import.meta.url);
+    const { registries } = JSON.parse(await readFile(file, "utf8"));
+    assert.deepEqual(registries.map(reservedKeyError).filter(Boolean), []);
   });
 });
