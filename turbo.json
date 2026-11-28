@@ -1,7 +1,7 @@
 {
   "$schema": "https://v2-8-7.turborepo.dev/schema.json",
   "ui": "tui",
-  "globalEnv": ["SUBMISSION_SECRET", "CRON_SECRET"],
+  "globalEnv": ["SUBMISSION_SECRET", "CRON_SECRET", "DASHBOARD_ENABLED", "APP_DATABASE_URL", "APP_BASE_URL"],
   "globalDependencies": [".github/workflows/ci.yml"],
   "tasks": {
     "build": {

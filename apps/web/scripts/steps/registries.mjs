@@ -7,6 +7,7 @@
 
 import { join } from "node:path";
 import { head, put } from "@vercel/blob";
+import { AUTOMATIC_HANDLE, isReservedHandle } from "@workspace/organizations/handles";
 import {
   CONCURRENCY,
   DEFINITIVE_ERROR,
@@ -387,6 +388,25 @@ function describeResolutions({ gated, gone, unverified }) {
   return parts.length > 0 ? ` (${parts.join(", ")})` : "";
 }
 
+// A registry can't be published under a name the site or a team uses: the
+// reserved list (root routes and our packages, shared with team handles in
+// packages/organizations) or the shape of an automatic team handle. Until the
+// cut-over from the current /r, team handles and directory keys share one
+// namespace; custom team handles come later, and with them a check against
+// the teams in the database.
+export function reservedKeyError(entry) {
+  const key = registryKey(entry);
+  if (isReservedHandle(key)) {
+    return `Registry key "${key}" (${entry.name}) is reserved for the site or one of our packages. ` +
+      `Give it a different namespace in public/directory.json.`;
+  }
+  if (AUTOMATIC_HANDLE.test(key)) {
+    return `Registry key "${key}" (${entry.name}) looks like a team handle. ` +
+      `Give it a different namespace in public/directory.json.`;
+  }
+  return null;
+}
+
 function viewPath(key) {
   return join(REGISTRIES_DIR, `${key}.json`);
 }
@@ -407,6 +427,8 @@ export async function indexRegistries({ probe = true, only = null, retry = false
       );
     }
     byKey.set(key, entry);
+    const reserved = reservedKeyError(entry);
+    if (reserved) throw new Error(reserved);
   }
 
   const entries = only
