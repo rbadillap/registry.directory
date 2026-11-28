@@ -14,7 +14,10 @@ person gets started, lives in [`README.md`](README.md).
 - **UI:** Tailwind CSS v4 and shadcn/ui, with the shared components in
   `packages/ui` (Radix underneath).
 - **Secrets:** Varlock, from `apps/web/.env.schema`. Nothing secret is needed
-  to run the site locally.
+  to run the public site locally. To run the Dashboard locally, use
+  `pnpm exec varlock run -- pnpm dev`: it resolves the Auth0 and Neon settings
+  from 1Password references in the schema. The `dev` environment holds its own
+  values in Vercel, and production holds none of them.
 - **Hosting:** Vercel, with Vercel Blob for submissions.
 - **Planned for the Dashboard** (behind `DASHBOARD_ENABLED`):
   `@auth0/nextjs-auth0` for identity only, `drizzle-orm` with `drizzle-kit`
@@ -167,5 +170,6 @@ default, and how does a team change it without a deploy?
 5. **`main` only takes changes through pull requests,** from short-lived
    branches. Make every pull request one meaningful slice, not one commit per
    tweak: each merge deploys.
-6. **Every pull request into `main` runs CI** (lint, typecheck, tests, build).
-   A red check never reaches review.
+6. **Every pull request into `main` runs CI** (lint, typecheck, tests, build)
+   on what it affects, through Turborepo: a docs-only change outside the
+   packages runs nothing. A red check never reaches review.
