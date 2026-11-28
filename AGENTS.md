@@ -115,7 +115,7 @@ default, and how does a team change it without a deploy?
 4. **What goes into an `AGENTS.md` is agreed, and guarded.** Agents propose
    additions; the Documentation Engineer writes them, keeping each file short
    and free of anything a level above already says.
-5. **`dev` and `main` only take changes through pull requests.** No direct
-   pushes, no force pushes, no deleting the branch. Each merge to `dev` deploys
-   it, so make every pull request one meaningful slice, not one commit per
-   tweak.
+5. **`dev` only takes changes through pull requests.** No direct pushes, no
+   force pushes, no deleting the branch. Each merge to `dev` deploys it, so
+   make every pull request one meaningful slice, not one commit per tweak.
+   `main` also changes only through pull requests.
