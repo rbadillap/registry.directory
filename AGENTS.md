@@ -16,8 +16,13 @@ person gets started, lives in [`README.md`](README.md).
 - **Secrets:** Varlock, from `apps/web/.env.schema`. Nothing secret is needed
   to run the site locally.
 - **Hosting:** Vercel, with Vercel Blob for submissions.
-- **Planned for the Dashboard** (behind `DASHBOARD_ENABLED`): Postgres on
-  Neon through Drizzle, and Auth0 for identity only. See
+- **Planned for the Dashboard** (behind `DASHBOARD_ENABLED`):
+  `@auth0/nextjs-auth0` for identity only, `drizzle-orm` with `drizzle-kit`
+  on `@neondatabase/serverless`, and `mcp-handler` with
+  `@modelcontextprotocol/server` and `@modelcontextprotocol/ext-apps` for the
+  MCP App. The behavior layer of our packages (`Ask`, `TeamSwitcher`) is built
+  on UI SDK (`@ui-sdk/react`, `@ui-sdk/core`), pinned to exact versions; the
+  app itself stays on shadcn/ui. See
   [`packages/organizations`](packages/organizations) and
   [`packages/feedback`](packages/feedback).
 
@@ -37,22 +42,48 @@ person gets started, lives in [`README.md`](README.md).
 
 ## Architecture of the Dashboard (behind `DASHBOARD_ENABLED`)
 
-The Dashboard is the design system layer for a team: it sits between a team
-and its design system, and between its agents and its rules.
+A team connects its design system, and registry.directory serves it under the
+team's handle: private, with a token, and counting what gets used. Everything
+else (Brand, agent rules, the MCP App, the directory) is a way to reach that
+same `/r`.
 
+- **The team's items are served from its own `registry.json`,** as it is. We
+  store a reference to the connected registry, never copies of its items.
 - **Three faces over one API,** authenticated with tokens: the web
   (`/dashboard`), an **MCP App** inside Claude, and `/r` for the shadcn CLI.
-- **The web is where you manage; the MCP App is where you work.** First the
-  MCP App supports Claude only: search, preview, install, see inconsistencies
-  in the local repo, read the rules, preview a preset and save to the team.
-  For anything administrative it links to the exact web screen. Later it
-  offers more tools by role, filtered with `can()` on the connected token.
-- **`/r` hosts each team's items.** It no longer proxies public registries.
-- **Build order:** `/r` counts everything that passes through it; then "Find
-  me a component" in the MCP App, without an account; then Save to team, where
-  the account and the Overview begin. After that: Inconsistencies, Brand
-  presets and Agent rules. What isn't built yet shows as Coming next, and its
-  clicks help decide what moves up.
+- **The web is where you manage; the MCP App is where you work.** The MCP App
+  supports Claude first, and links to the exact web screen for anything
+  administrative. Later it offers more tools by role, filtered with `can()` on
+  the connected token.
+- **Inside a team, people install only the team's items.** Searching the whole
+  directory without an account stays a personal use.
+- **Build order,** one section at a time, each lighting up its block in the
+  Overview:
+  1. Connect your design system
+  2. Brand
+  3. Members and roles
+  4. Agent rules and Connect
+  5. Find your items from Claude
+
+  Later: Inconsistencies, Activity, a free catalog, and searching the whole
+  directory.
+
+## Database names
+
+- Three schemas, each with one owner: `dashboard` (`registries`, `presets`,
+  `agent_rules`), `organizations` (`users`, `teams`, `members`, `roles`,
+  `role_permissions`, `invitations`, `tokens`, `handle_aliases`) and
+  `feedback` (`events`, `settings`).
+- Table names are words from the product, in English, plural and snake_case.
+- Common columns: `id`, `team_id`, `created_at`, `created_by`, and
+  `updated_at` where rows are edited. `feedback.events` has no `created_by`
+  on purpose.
+- `users` holds only `id` and the Auth0 subject. Names and emails stay in
+  Auth0.
+- Every table and column has a plain-language `COMMENT`, written in the
+  migration SQL, and a test fails if one is missing.
+- Row-level security policies have readable names, such as "members see their
+  team's items".
 
 The site's routes, `/r` rules and interface names are in
 [`apps/web/AGENTS.md`](apps/web/AGENTS.md).

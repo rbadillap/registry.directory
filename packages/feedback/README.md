@@ -191,10 +191,11 @@ recipes install from, not an npm package.
 ## The Store
 
 An interface with `write(event)` and `aggregate(query)`. The Postgres store
-uses two tables, both proposals: `feedback_event(id, at, kind, name, subject,
-team_id, props)`, where `kind` is `track` or `answer`, and
-`feedback_setting(feature, team_id, question, goal, when)`, where a null
-`team_id` is the platform's setting.
+lives in the `feedback` schema, with two tables: `feedback.events(id, at, kind,
+name, subject, team_id, props)`, where `kind` is `track` or `answer` and there
+is no `created_by` on purpose, and `feedback.settings(feature, team_id,
+question, goal, when)`, where a null `team_id` is the platform's setting. The
+columns are a proposal.
 
 ## What it doesn't do
 
@@ -208,8 +209,8 @@ team_id, props)`, where `kind` is `track` or `answer`, and
 ## Depends on and used by
 
 - **Depends on:** a Store. Postgres is the first one.
-- **Used by:** `/r` (tracks installs), `apps/web` (empty-state clicks, "I want
-  this" in Coming next, Save to team, and the Analytics screen) and the MCP
-  App (search, preview and install).
+- **Used by:** `/r` (tracks installs), `apps/web` (quick actions, "I want
+  this" in Coming next, the Dashboard's first question and the Analytics
+  screen) and the MCP App (search, preview and install).
 
 Working on this package? Read [`AGENTS.md`](AGENTS.md) first.
