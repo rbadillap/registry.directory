@@ -14,10 +14,19 @@ person gets started, lives in [`README.md`](README.md).
 - **UI:** Tailwind CSS v4 and shadcn/ui, with the shared components in
   `packages/ui` (Radix underneath).
 - **Secrets:** Varlock, from `apps/web/.env.schema`. Nothing secret is needed
-  to run the site locally.
+  to run the public site locally. To run the Dashboard locally, use
+  `pnpm exec varlock run -- pnpm dev`: it resolves the Auth0 and Neon settings
+  from 1Password references in the schema. The `dev` environment holds its own
+  values in Vercel, and production holds none of them.
 - **Hosting:** Vercel, with Vercel Blob for submissions.
-- **Planned for the Dashboard** (behind `DASHBOARD_ENABLED`): Postgres on
-  Neon through Drizzle, and Auth0 for identity only. See
+- **Planned for the Dashboard** (behind `DASHBOARD_ENABLED`):
+  `@auth0/nextjs-auth0` for identity only, `drizzle-orm` with `drizzle-kit`
+  on `@neondatabase/serverless`, `@google/design.md` to validate and export
+  a team's brand, and `mcp-handler` with
+  `@modelcontextprotocol/server` and `@modelcontextprotocol/ext-apps` for the
+  MCP App. The behavior layer of our packages (`Ask`, `TeamSwitcher`) is built
+  on UI SDK (`@ui-sdk/react`, `@ui-sdk/core`), pinned to exact versions; the
+  app itself stays on shadcn/ui. See
   [`packages/organizations`](packages/organizations) and
   [`packages/feedback`](packages/feedback).
 
@@ -37,22 +46,51 @@ person gets started, lives in [`README.md`](README.md).
 
 ## Architecture of the Dashboard (behind `DASHBOARD_ENABLED`)
 
-The Dashboard is the design system layer for a team: it sits between a team
-and its design system, and between its agents and its rules.
+registry.directory helps a team create its design system and serves it under
+the team's handle: private, with a token, and counting what gets used.
+Everything else (members, agent rules, the MCP App, the directory) is a way to
+reach that same `/r`.
 
+- **A team's brand is a [DESIGN.md](https://github.com/google-labs-code/design.md),**
+  the open spec that describes a visual identity to coding agents. It's created
+  in the Dashboard, from a shadcn preset, or imported, and stored and served
+  from our database. Connecting a design system that already lives in a
+  team's repo comes later.
 - **Three faces over one API,** authenticated with tokens: the web
   (`/dashboard`), an **MCP App** inside Claude, and `/r` for the shadcn CLI.
-- **The web is where you manage; the MCP App is where you work.** First the
-  MCP App supports Claude only: search, preview, install, see inconsistencies
-  in the local repo, read the rules, preview a preset and save to the team.
-  For anything administrative it links to the exact web screen. Later it
-  offers more tools by role, filtered with `can()` on the connected token.
-- **`/r` hosts each team's items.** It no longer proxies public registries.
-- **Build order:** `/r` counts everything that passes through it; then "Find
-  me a component" in the MCP App, without an account; then Save to team, where
-  the account and the Overview begin. After that: Inconsistencies, Brand
-  presets and Agent rules. What isn't built yet shows as Coming next, and its
-  clicks help decide what moves up.
+- **The web is where you manage; the MCP App is where you work.** The MCP App
+  supports Claude first, and links to the exact web screen for anything
+  administrative. Later it offers more tools by role, filtered with `can()` on
+  the connected token.
+- **Inside a team, people install only the team's items.** Searching the whole
+  directory without an account stays a personal use.
+- **Build order,** one section at a time, each lighting up its block in the
+  Overview:
+  1. Brand: create your design system
+  2. Members and roles
+  3. Agent rules and Connect (the brand's do's and don'ts are the first rules)
+  4. Find your items from Claude
+
+  Later: a public link to a team's DESIGN.md; connecting an existing design
+  system; Inconsistencies, Activity, a free catalog; and searching the whole
+  directory.
+
+## Database names
+
+- Three schemas, each with one owner: `dashboard` (`brands`, `items`,
+  `agent_rules`), `organizations` (`users`, `teams`, `members`, `roles`,
+  `role_permissions`, `invitations`, `tokens`, `handle_aliases`) and
+  `feedback` (`events`, `settings`).
+- Table names are words from the product, in English, plural and snake_case.
+- Common columns: `id`, `team_id`, `created_at`, `created_by`, and
+  `updated_at` where rows are edited. `feedback.events` has no `created_by`
+  on purpose.
+- `users` holds only `id` and the Auth0 subject. Names and emails stay in
+  Auth0.
+- Every table and column has a plain-language `COMMENT`, written in the
+  migration SQL, and a test fails if one is missing.
+- Row-level security policies have readable names, such as "members see their
+  team's items".
 
 The site's routes, `/r` rules and interface names are in
 [`apps/web/AGENTS.md`](apps/web/AGENTS.md).
@@ -111,7 +149,7 @@ data, not hardcoded behavior.
   rows and teams can create their own.
 - Feedback ships with default questions and thresholds, and each one can be
   adjusted.
-- A team gets a default Brand preset, and can add and extend its own.
+- A team's brand can start from a shadcn preset and become its own DESIGN.md.
 
 When you design something new, ask two questions: what's the sensible
 default, and how does a team change it without a deploy?
@@ -132,5 +170,6 @@ default, and how does a team change it without a deploy?
 5. **`main` only takes changes through pull requests,** from short-lived
    branches. Make every pull request one meaningful slice, not one commit per
    tweak: each merge deploys.
-6. **Every pull request into `main` runs CI** (lint, typecheck, tests, build).
-   A red check never reaches review.
+6. **Every pull request into `main` runs CI** (lint, typecheck, tests, build)
+   on what it affects, through Turborepo: a docs-only change outside the
+   packages runs nothing. A red check never reaches review.

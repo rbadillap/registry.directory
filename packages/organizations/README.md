@@ -65,7 +65,8 @@ await renameHandle(team.id, "acme")
 await resolveHandle("acme") // team.id, and old handles keep resolving as aliases
 ```
 
-Members get a role when they join, and it can change:
+People join through an invitation link (email can come later), and get a role
+when they join. It can change:
 
 ```ts
 await addMember(team.id, userId, "Member")
@@ -114,8 +115,9 @@ someone, if they don't hold that permission themselves.
 
 ## Tokens
 
-The CLI and agents authenticate with a team token. A token carries scopes, and
-those scopes can never be more than its creator's permissions:
+The CLI authenticates with a token, one per person. A token carries scopes,
+and those scopes can never be more than its creator's permissions. When an
+install is counted, only the team is kept, never the token or the person:
 
 ```ts
 const { token, secret } = await createToken(team.id, ["items:read"], expiresAt)
