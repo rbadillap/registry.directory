@@ -32,6 +32,14 @@ Never break these. If a change needs to, stop and ask.
    routes. That list includes the name of every package of ours (`feedback`,
    `organizations` and any future one), because their kits install at the same
    level as team handles: `@registrydirectory/feedback/<item>`.
+
+   **Temporary, until the cut-over from the current `/r`:** team handles and
+   directory keys share one namespace both ways. Onboarding rejects any
+   directory key as a handle, and the indexer refuses a new registry whose key
+   is already a team's handle. While both `/r`s live side by side, the new one
+   serves team handles and everything else falls through to the current one,
+   so a team named `efferd` would hide that registry. Review this rule at the
+   cut-over.
 9. **A non-member gets 404, never 403**, so a response never reveals that a
    team exists. This applies to `/r/{handle}/...` and `/dashboard/{handle}`.
 10. **A member without the permission gets 403 with a clear `message`.** The

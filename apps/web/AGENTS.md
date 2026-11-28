@@ -22,6 +22,9 @@ the commands and the rules for the whole repo are in the
 - The reserved list is checked in two places: submit rejects a reserved
   namespace with a clear message, and the indexer refuses to publish one. If a
   clash ever happens, reject the slug; never leave a registry without its page.
+- **Until the cut-over,** a team handle can't be a directory key, and the
+  indexer refuses a new registry whose key is a team's handle. See invariant 8
+  in [`packages/organizations`](../../packages/organizations/AGENTS.md).
 - A team handle the visitor can't access answers 404, never 403, both in
   `/dashboard/{handle}` and in `/r/{handle}/...`. See
   [`packages/organizations`](../../packages/organizations/AGENTS.md).
