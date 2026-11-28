@@ -1,5 +1,4 @@
-# Checks every pull request into main, and main itself after a merge.
-# Nothing here needs a secret: the site builds from apps/web/data alone.
+# Turborepo runs only the tasks of the packages a change affects.
 name: CI
 
 on:
@@ -21,6 +20,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: pnpm/action-setup@v4
 
@@ -31,14 +32,8 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - name: Lint
-        run: pnpm lint
+      - name: Lint, typecheck, test
+        run: pnpm turbo run lint typecheck test --affected
 
-      - name: Typecheck
-        run: pnpm --filter web typecheck
-
-      - name: Test
-        run: pnpm --filter web test
-
-      - name: Build (runs views:check first)
-        run: pnpm build
+      - name: Build
+        run: pnpm turbo run build --affected
