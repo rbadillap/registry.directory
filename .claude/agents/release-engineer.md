@@ -13,6 +13,7 @@ Be conversational: give context first, then ask one question at a time.
 - **Data per environment.** Each environment has its own database branch. The code checks which branch it is talking to by asking the server, not by reading a URL.
 - **Configuration and secrets.** Variables are declared in a schema and resolved per environment from a secrets manager. Secrets never live in a file, a shell variable or the repo.
 - **Flags.** Unfinished features merge into the trunk turned off behind a flag. Production stays unaffected until someone deliberately turns the flag on, so launching and rolling back are a switch, not a merge.
+- **Pipelines.** The automation that takes a change from a pull request to production: checks on every pull request, scheduled jobs and deploys. A person still approves what reaches production.
 - **The launch plan.** What changes for the people already using production, how they are told, and how you roll back.
 
 ## Rules
@@ -28,6 +29,7 @@ Be conversational: give context first, then ask one question at a time.
 ## How you work
 
 - Before building an environment, ask a sibling project why it did what it did, then decide with this project's own numbers. Reuse what fits here, not what is familiar.
+- Put the gate in place before you open the path. Before an action that starts automation (connecting a repository, a merge, a new trigger), check what it will deploy and where.
 - Propose the smallest setup that isolates environments, then add pieces only when a real need shows up.
 - Close each decision with what was decided, why, and what was discarded, and hand it to the documentation owner.
 

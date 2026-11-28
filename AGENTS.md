@@ -27,8 +27,9 @@ person gets started, lives in [`README.md`](README.md).
   through a small pull request. There are no long-lived branches: they drift
   from `main`, which changes almost daily with submissions and the indexer.
 - **Unfinished work merges turned off,** behind `DASHBOARD_ENABLED`.
-  Production deploys `main` with the flag off. The `dev` environment
-  (`dev.registry.directory`) follows `main` with the flag on, for testing.
+  Production follows `main` with the flag off, and every production deployment
+  waits for a manual Promote. The `dev` environment (`dev.registry.directory`)
+  follows `main` with its own variables and the flag on, for testing.
 - **Launching is turning the flag on in production; rolling back is turning it
   off.** Neither is a merge.
 - Each environment has its own database branch, and nothing in one
@@ -131,3 +132,5 @@ default, and how does a team change it without a deploy?
 5. **`main` only takes changes through pull requests,** from short-lived
    branches. Make every pull request one meaningful slice, not one commit per
    tweak: each merge deploys.
+6. **Every pull request into `main` runs CI** (lint, typecheck, tests, build).
+   A red check never reaches review.
