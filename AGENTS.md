@@ -18,7 +18,8 @@ person gets started, lives in [`README.md`](README.md).
 - **Hosting:** Vercel, with Vercel Blob for submissions.
 - **Planned for the Dashboard** (behind `DASHBOARD_ENABLED`):
   `@auth0/nextjs-auth0` for identity only, `drizzle-orm` with `drizzle-kit`
-  on `@neondatabase/serverless`, and `mcp-handler` with
+  on `@neondatabase/serverless`, `@google/design.md` to validate and export
+  a team's brand, and `mcp-handler` with
   `@modelcontextprotocol/server` and `@modelcontextprotocol/ext-apps` for the
   MCP App. The behavior layer of our packages (`Ask`, `TeamSwitcher`) is built
   on UI SDK (`@ui-sdk/react`, `@ui-sdk/core`), pinned to exact versions; the
@@ -42,13 +43,16 @@ person gets started, lives in [`README.md`](README.md).
 
 ## Architecture of the Dashboard (behind `DASHBOARD_ENABLED`)
 
-A team connects its design system, and registry.directory serves it under the
-team's handle: private, with a token, and counting what gets used. Everything
-else (Brand, agent rules, the MCP App, the directory) is a way to reach that
-same `/r`.
+registry.directory helps a team create its design system and serves it under
+the team's handle: private, with a token, and counting what gets used.
+Everything else (members, agent rules, the MCP App, the directory) is a way to
+reach that same `/r`.
 
-- **The team's items are served from its own `registry.json`,** as it is. We
-  store a reference to the connected registry, never copies of its items.
+- **A team's brand is a [DESIGN.md](https://github.com/google-labs-code/design.md),**
+  the open spec that describes a visual identity to coding agents. It's created
+  in the Dashboard, from a shadcn preset, or imported, and stored and served
+  from our database. Connecting a design system that already lives in a
+  team's repo comes later.
 - **Three faces over one API,** authenticated with tokens: the web
   (`/dashboard`), an **MCP App** inside Claude, and `/r` for the shadcn CLI.
 - **The web is where you manage; the MCP App is where you work.** The MCP App
@@ -59,18 +63,18 @@ same `/r`.
   directory without an account stays a personal use.
 - **Build order,** one section at a time, each lighting up its block in the
   Overview:
-  1. Connect your design system
-  2. Brand
-  3. Members and roles
-  4. Agent rules and Connect
-  5. Find your items from Claude
+  1. Brand: create your design system
+  2. Members and roles
+  3. Agent rules and Connect (the brand's do's and don'ts are the first rules)
+  4. Find your items from Claude
 
-  Later: Inconsistencies, Activity, a free catalog, and searching the whole
+  Later: a public link to a team's DESIGN.md; connecting an existing design
+  system; Inconsistencies, Activity, a free catalog; and searching the whole
   directory.
 
 ## Database names
 
-- Three schemas, each with one owner: `dashboard` (`registries`, `presets`,
+- Three schemas, each with one owner: `dashboard` (`brands`, `items`,
   `agent_rules`), `organizations` (`users`, `teams`, `members`, `roles`,
   `role_permissions`, `invitations`, `tokens`, `handle_aliases`) and
   `feedback` (`events`, `settings`).

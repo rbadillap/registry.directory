@@ -43,13 +43,16 @@ until the cut-over:
 After the cut-over, `/r` only hosts our own items and stops proxying public
 registries.
 
-- **Where a team's items come from:** the team's own `registry.json`, as it
-  is. `/r` serves them under the team's handle from that reference, without
-  copying them. Presets made in Brand are served from our database.
-- **Names:** one namespace per team, shared by components and presets:
-  `@registrydirectory/acme/button`, `@registrydirectory/acme/theme`. Each name
-  is unique within the team. What an item is comes from shadcn's `type` field
-  (`registry:ui`, `registry:theme`), never from its name. Our own recipes are
+- **Where a team's items come from:** our database. A team's brand is a
+  DESIGN.md, and it gives the team two private items: `theme`, the brand as
+  shadcn variables (`registry:theme`), and `design`, the DESIGN.md itself for
+  agents (`registry:file`). Nothing lives outside us, so private is real from
+  the first version.
+- **Names:** one namespace per team, shared by every item:
+  `@registrydirectory/acme/theme`, `@registrydirectory/acme/design`. Each name
+  is unique within the team, and the Dashboard warns when saving. What an item
+  is comes from shadcn's `type` field, never from its name; `theme` and
+  `design` are suggested names, not rules. Our own recipes are
   `@registrydirectory/{package}/{item}`.
 - **Tokens:** one per person. Counting keeps only the team, never the token or
   the person.
@@ -67,10 +70,8 @@ registries.
   optimization, not a rule.
 - An environment variable sends public items back to the CDN if cost demands
   it.
-- **Presets** are `registry:theme` items. `theme` is the suggested name for
-  the first one (`theme`, `theme-dark`), not a rule. A preset can extend
-  another and overrides only the CSS variables that change; one is the team's
-  default.
+- **The brand is validated before it's saved** with `@google/design.md`
+  (tokens and WCAG contrast), which also exports the shadcn variables.
 
 ## The Dashboard reads from the API
 
@@ -87,8 +88,8 @@ are in English.
 | Sidebar | Phrase | What it is |
 |---|---|---|
 | Overview | "What are we using?" | One block per section: dashed with a quick action until it's set up, solid once it is |
-| Items | | The team's items: type (component or preset), where it comes from (the team's registry or Brand), and how many times it's installed. Later: Inconsistencies, Free catalog |
-| Brand | "This is our look" | The team's presets, previewed on base components |
+| Brand | "This is our look" | The team's brand as a DESIGN.md: created here, started from a shadcn preset, or imported. Previewed on base components (button, card, input, badge) |
+| Items | | The team's items: type (component, theme, design file), where it comes from, and how many times it's installed. Later: Inconsistencies, Free catalog |
 | Agent rules | "Teach my agent" | The rules Claude follows in the team's projects |
 | Connect | | Connecting Claude to the team: **Connect agent** in the MCP App, **Connect project** in the CLI |
 | Activity | | Who did what |
@@ -97,17 +98,16 @@ are in English.
 | Admin › Analytics | | Platform only: where a person decides each Improve |
 
 - Navigation names say what's inside, never how it's built. Not "Inventory",
-  "Private registry" or "Tenant themes". A preset is an item too, so the
-  section is "Items", not "Components".
+  "Private registry" or "Tenant themes". A theme and a design file are items
+  too, so the section is "Items", not "Components".
 - No notification center in the first version.
 - **Handles in onboarding:** signing in creates the team with an automatic,
   neutral handle (`team-7k3m9q`), with no extra step. Settings › Custom handle
   offers a real one when it matters, such as on the first token. It can change
   freely until the first private item is published; after that, the old
   handle stays as an alias.
-- **Presets** can also be exported as a shadcn `--preset` code, as an option.
 - After the first counted install, the Dashboard asks once, with `Ask`: "Did
-  your items show up as you expected?"
+  your brand look the way you expected?"
 
 ## The Overview and what isn't built yet
 
